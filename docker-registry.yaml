@@ -2,8 +2,9 @@ id: docker-registry
 
 info:
   name: Docker Registry Listing
-  author: puzzlepeaches
+  author: d3sca
   severity: medium
+  tags: docker,devops
 
 requests:
   - method: GET
@@ -16,6 +17,7 @@ requests:
       - type: word
         words:
           - '"repositories":'
+          - "login"
       - type: word
         words:
           - "application/json"
