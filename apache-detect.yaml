@@ -1,17 +1,13 @@
-id: apache-detect
-
+id: apache-version-detect
 info:
-  name: Apache Detection
+  name: Apache Version
   author: philippedelteil
-  severity: info
   description: Some Apache servers have the version on the response header. The OpenSSL version can be also obtained
-  tags: tech,apache
-
+  severity: info
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
 

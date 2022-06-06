@@ -1,4 +1,5 @@
 id: dzs-zoomsounds-listing
+
 info:
   name: WordPress Plugin dzs zoomsounds
   author: pussycat0x
@@ -17,6 +18,7 @@ requests:
         words:
           - "Index of"
           - "/wp-content/plugins/dzs-zoomsounds"
+        condition: and
 
       - type: status
         status:
