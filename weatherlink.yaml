@@ -4,9 +4,8 @@ info:
   name: WeatherLinkIP Configuration
   author: dhiyaneshDK
   severity: info
-  reference:
-    - https://www.exploit-db.com/ghdb/6007
-  tags: panel,edb
+  reference: https://www.exploit-db.com/ghdb/6007
+  tags: panel
 
 requests:
   - method: GET

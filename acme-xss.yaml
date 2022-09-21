@@ -1,9 +1,9 @@
 id: acme-xss
 
 info:
-  name: ACME / Let's Encrypt Cross-Site Scripting
+  name: ACME / Let's Encrypt Reflected XSS
   author: pdteam
-  severity: medium
+  severity: low
   tags: xss,acme
 
 requests:
