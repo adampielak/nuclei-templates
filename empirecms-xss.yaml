@@ -1,12 +1,12 @@
 id: empirecms-xss
 
 info:
-  name: EmpireCMS v75 XSS
+  name: EmpireCMS v75 Cross-Site Scripting
   author: pikpikcu
   severity: medium
-  reference: https://www.geek-share.com/detail/2777280260.html
+  reference:
+    - https://www.geek-share.com/detail/2777280260.html
   tags: empirecms,xss
-
 
 requests:
   - method: GET

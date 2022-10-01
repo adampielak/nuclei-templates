@@ -1,10 +1,10 @@
 id: tikiwiki-reflected-xss
 
 info:
-  name: Tiki Wiki CMS Groupware 5.2 Reflected Cross-site Scripting
+  name: Tiki Wiki CMS Groupware 5.2 Cross-Site Scripting
   author: madrobot
   severity: medium
-  tags: xss
+  tags: xss,tikiwiki
 
 requests:
   - method: GET

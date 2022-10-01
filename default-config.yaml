@@ -3,7 +3,6 @@ id: Config file exposure
 info:
   name: Config file exposure
   description: This template can be used to detect config files containing sensitive information.
-  author: rahulkadavil
   severity: Low
   tags: exposure
 
@@ -15,7 +14,6 @@ requests:
       - "{{BaseURL}}/ssh-config.json"
       - "{{BaseURL}}/database-config.json"
       - "{{BaseURL}}/config.json"
-      - "{{BaseURL}}/git_config.json"
 
     matchers-condition: or
     matchers:
