@@ -1,12 +1,13 @@
 id: api-ticketmaster
 
 info:
-  name: Ticketmaster API Test
-  author: daffainfo
+  name: Ticket Master API Test
+  author: 0xlittleboy
   severity: info
   reference:
-    - http://developer.ticketmaster.com/products-and-docs/apis/getting-started
-    - https://github.com/daffainfo/all-about-apikey/tree/main/ticketmaster/
+    - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+  metadata:
+    verified: true
   tags: token-spray,ticketmaster
 
 self-contained: true
@@ -14,12 +15,12 @@ requests:
   - method: GET
     path:
       - "https://app.ticketmaster.com/discovery/v2/events.json?apikey={{token}}"
-
     matchers:
       - type: word
         part: body
         words:
-          - '"_embedded":'
-          - '"events"'
+          - '"id"'
+          - '"name"'
           - '"type"'
+          - '"images"'
         condition: and

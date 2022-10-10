@@ -4,6 +4,8 @@ info:
   name: Drupal User Enumration [Ajax]
   author: 0w4ys
   severity: info
+  metadata:
+    shodan-query: http.component:"drupal"
   tags: drupal
 
 requests:
@@ -13,9 +15,8 @@ requests:
       - "{{BaseURL}}/views/ajax/autocomplete/user/a"
       - "{{BaseURL}}/?q=admin/views/ajax/autocomplete/user/a"
       - "{{BaseURL}}/?q=views/ajax/autocomplete/user/a"
-    headers:
-      User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

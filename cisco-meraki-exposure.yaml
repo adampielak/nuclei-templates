@@ -4,8 +4,9 @@ info:
   name: Cisco Meraki cloud & security Appliances Information Disclosure
   author: dhiyaneshDK,r3naissance
   severity: info
-  reference: https://www.exploit-db.com/ghdb/6708
-  tags: panel,cisco,meraki,disclosure
+  reference:
+    - https://www.exploit-db.com/ghdb/6708
+  tags: panel,cisco,meraki,disclosure,edb
 
 requests:
   - method: GET

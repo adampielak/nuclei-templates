@@ -4,8 +4,9 @@ info:
   name: CrushFTP WebInterface
   author: dhiyaneshDK
   severity: info
-  reference: https://www.exploit-db.com/ghdb/6591
-  tags: panel
+  reference:
+    - https://www.exploit-db.com/ghdb/6591
+  tags: panel,edb
 
 requests:
   - method: GET

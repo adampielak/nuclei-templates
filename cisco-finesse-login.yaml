@@ -4,8 +4,9 @@ info:
   name: Cisco Finesse Login
   author: dhiyaneshDK
   severity: info
-  reference: https://www.exploit-db.com/ghdb/6824
-  tags: panel,cisco
+  reference:
+    - https://www.exploit-db.com/ghdb/6824
+  tags: panel,cisco,edb
 
 requests:
   - method: GET
