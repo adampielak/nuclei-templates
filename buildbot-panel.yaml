@@ -4,8 +4,7 @@ info:
   name: Buildbot Panel Detect
   author: thardt-praetorian
   severity: info
-  reference:
-    - https://buildbot.net
+  reference: https://buildbot.net
   metadata:
     shodan-query: http.title:"BuildBot"
   tags: panel,buildbot,cicd

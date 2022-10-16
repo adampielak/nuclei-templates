@@ -1,12 +1,10 @@
 id: AVideo-user-leakge
-
 info:
   name: AVideo 用户信息泄露
   author: Str1am
   severity: high
   reference: https://github.com/WWBN/AVideo
   tags: AVideo,user,leakge
-
 requests:
   - method: GET
     path:

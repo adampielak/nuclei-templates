@@ -1,5 +1,4 @@
 id: H3C-SECPATH-loginBypass
-
 info:
   name: H3C SECPATH运维审计系统任意用户登录
   author: str1am
@@ -7,7 +6,6 @@ info:
   reference:
     - https://www.cnblogs.com/q1ya/articles/14956391.html
   tags: SECPATH,loginBypass
-
 requests:
   - method: GET
     path:

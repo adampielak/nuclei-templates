@@ -1,11 +1,9 @@
 id: AIC-leakage
-
 info:
   name: AIC智能校园系统信息泄露漏洞
   author: Str1am
   severity: high
   tags: AIC,leakage
-
 requests:
   - method: GET
     path:

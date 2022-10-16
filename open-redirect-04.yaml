@@ -4,21 +4,17 @@ type: fuzz
 info:
   name: Open Redirect
   risk: Low
-
 # jaeles scan -p 'dest=example.com' or -p 'dest=http://example.com' or ...
 params:
   - dest: '{{.oob}}'
-
 variables:
   - prefix: |
       /
       //
       ///
       ///;@
-
 payloads:
   - "{{.dest}}"
-
 requests:
   - method: GET
   - generators:

@@ -3,8 +3,9 @@ id: cerebro-panel
 info:
   name: Cerebro Panel
   author: huowuzhao,elder tao
-  severity: high
-  reference: https://github.com/lmenezes/cerebro
+  severity: info
+  reference:
+    - https://github.com/lmenezes/cerebro
   tags: panel,cerebro
 
 requests:

@@ -10,7 +10,7 @@ info:
     - https://www.exploit-db.com/ghdb/7970
   metadata:
     shodan-query: http.html:"JupyterHub"
-  tags: edb,panel,jupyter,notebook,exposure
+  tags: panel,jupyter,notebook,exposure
 
 requests:
   - method: GET
@@ -23,7 +23,6 @@ requests:
     stop-at-first-match: true
     redirects: true
     max-redirects: 2
-    matchers-condition: and
     matchers:
       - type: word
         part: body

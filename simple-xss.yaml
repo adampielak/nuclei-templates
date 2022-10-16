@@ -1,15 +1,12 @@
 # info to search signature
 id: simple-xss
-
 type: fuzz
 info:
   name: XSS Fuzz
   risk: High
-
 # origin: gonna come from Burp
 payloads:
-    - abc<xsshere>abc
-    
+  - abc<xsshere>abc
 requests:
   - redirect: true
   - generators:

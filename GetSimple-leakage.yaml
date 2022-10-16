@@ -1,11 +1,9 @@
 id: GetSimple-leakage
-
 info:
   name: GetSimple CMS系统3.3.15版本信息泄露
   author: str1am
   severity: medium
   tags: GetSimple,leakage
-
 requests:
   - method: GET
     path:

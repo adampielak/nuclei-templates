@@ -4,9 +4,8 @@ info:
   name: OpenStack Dashboard
   author: dhiyaneshDK,hackergautam
   severity: info
-  reference:
-    - https://www.exploit-db.com/ghdb/6464
-  tags: panel,openstack,edb
+  reference: https://www.exploit-db.com/ghdb/6464
+  tags: panel,openstack
 
 requests:
   - method: GET

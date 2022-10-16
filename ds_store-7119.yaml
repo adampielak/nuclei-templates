@@ -1,0 +1,24 @@
+id: ds-store-file
+info:
+  name: Directory Listing via DS_Store
+  author: 0w4ys
+  severity: info
+  tags: exposure
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.DS_Store"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "\0@\0"
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "Accept-Ranges: bytes"
+          - "octet-stream"
+        condition: or
+        part: header

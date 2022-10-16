@@ -4,9 +4,8 @@ info:
   name: Plesk Obsidian
   author: dhiyaneshDK
   severity: info
-  reference:
-    - https://www.exploit-db.com/ghdb/6951
-  tags: plesk,edb,panel
+  reference: https://www.exploit-db.com/ghdb/6951
+  tags: panel,plesk
 
 requests:
   - method: GET

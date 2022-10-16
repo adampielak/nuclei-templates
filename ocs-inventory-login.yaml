@@ -2,11 +2,9 @@ id: ocs-inventory-login
 
 info:
   name: OCS Inventory Login Panel
-  author: pikpikcu,ritikchaddha
+  author: pikpikcu
   severity: info
   metadata:
-    verified: true
-    shodan-query: title:"OCS Inventory"
     fofa-query: title="OCS Inventory"
   tags: ocs-inventory,panel
 
@@ -14,9 +12,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-      - "{{BaseURL}}/ocsreports"
 
-    stop-at-first-match: true
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -24,7 +20,7 @@ requests:
       - type: word
         part: body
         words:
-          - '<title>OCS Inventory'
+          - '<title>OCS Inventory</title>'
 
       - type: status
         status:

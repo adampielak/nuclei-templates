@@ -7,7 +7,7 @@ info:
   reference:
     - https://hackerone.com/reports/761158
     - https://hackerone.com/reports/300539
-  tags: hackerone,config,exposure,sharepoint
+  tags: config,exposure,sharepoint
 
 requests:
   - method: GET

@@ -5,7 +5,7 @@ info:
   author: pussycat0x,daffainfo
   severity: info
   metadata:
-    google-query: inurl:EMSWebClient/
+    google-dork: inurl:EMSWebClient/
   tags: panel,ems
 
 requests:

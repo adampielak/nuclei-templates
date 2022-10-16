@@ -6,7 +6,7 @@ info:
   severity: info
   reference:
     - https://www.exploit-db.com/ghdb/7008
-  tags: watchguard,edb,panel
+  tags: panel,watchguard
 
 requests:
   - method: GET

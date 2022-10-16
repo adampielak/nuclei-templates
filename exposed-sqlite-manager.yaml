@@ -4,8 +4,9 @@ info:
   name: SQLiteManager
   author: dhiyaneshDK
   severity: medium
-  reference: https://www.exploit-db.com/ghdb/5003
-  tags: sqlite
+  reference:
+    - https://www.exploit-db.com/ghdb/5003
+  tags: sqlite,edb
 
 requests:
   - method: GET

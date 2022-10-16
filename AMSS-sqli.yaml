@@ -1,13 +1,11 @@
 id: AMSS-sqli
-
 info:
   name: AMSS sqli
-  author: Str1am    
+  author: Str1am
   severity: high
   description: AMSS++系统maildetail.php文件存在SQL注入漏洞
   reference: http://www.str1am.top
   tags: AMSS,sqli
-
 requests:
   - method: GET
     path:
