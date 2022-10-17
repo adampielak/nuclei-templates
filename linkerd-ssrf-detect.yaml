@@ -19,11 +19,12 @@ info:
   name: Linkerd SSRF detection
   author: dudez
   severity: info
+  tags: ssrf,linkerd
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/"
+      - "{{BaseURL}}"
     headers:
       l5d-dtab: /svc/* => /$/inet/example.com/443
 

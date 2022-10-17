@@ -4,7 +4,6 @@ info:
   name: OpenAPI
   author: pdteam
   severity: info
-  tags: exposure,api
 
 requests:
   - method: GET

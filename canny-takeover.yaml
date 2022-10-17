@@ -2,7 +2,7 @@ id: canny-takeover
 
 info:
   name: canny takeover detection
-  author: pdteam
+  author: pdcommunity
   severity: high
   tags: takeover
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
@@ -15,6 +15,5 @@ requests:
     matchers:
       - type: word
         words:
-          - 'Company Not Found'
-          - 'There is no such company. Did you enter the right URL?'
-        condition: and
+          - Company Not Found
+          - There is no such company. Did you enter the right URL?

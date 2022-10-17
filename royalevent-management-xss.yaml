@@ -1,7 +1,7 @@
 id: royalevent-management-xss
 
 info:
-  name: Royal Event - Cross-Site Scripting
+  name: Royal Event - Cross-Site Scripting(XSS)
   author: ritikchaddha
   severity: medium
   description: |

@@ -2,9 +2,8 @@ id: kafka-monitoring
 
 info:
   name: Apache Kafka Monitor Exposure
-  author: pdteam
+  author: pd-team
   severity: low
-  tags: panel,kafka,apache
 
 requests:
   - method: GET

@@ -4,7 +4,6 @@ info:
   name: Fortinet FortiGate SSL VPN Panel
   author: bsysop
   severity: info
-  tags: panel,fortinet,fortigate
 
 requests:
   - method: GET

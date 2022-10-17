@@ -1,12 +1,11 @@
 id: api-pendo
-
 info:
   name: Pendo API Test
   author: zzeitlin
   severity: info
-  reference: https://help.pendo.io/resources/support-library/api/index.html
+  reference:
+    - https://help.pendo.io/resources/support-library/api/index.html
   tags: token-spray,pendo
-
 self-contained: true
 requests:
   - method: GET
@@ -15,7 +14,6 @@ requests:
     headers:
       Content-Type: application/json
       X-Pendo-Integration-Key: "{{token}}"
-
     matchers:
       - type: word
         part: body

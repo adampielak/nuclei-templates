@@ -1,7 +1,7 @@
 id: unaunthenticated-jenkin
 
 info:
-  name: Unauthenticated Jenkins Dashboard
+  name: Unauthenticated Jenkin Dashboard
   author: dhiyaneshDK
   severity: high
   tags: jenkins

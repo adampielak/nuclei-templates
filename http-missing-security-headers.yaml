@@ -13,7 +13,7 @@ requests:
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 3
     matchers-condition: or
     matchers:
@@ -32,9 +32,9 @@ requests:
         condition: and
 
       - type: dsl
-        name: permissions-policy
+        name: permission-policy
         dsl:
-          - "!regex('(?i)permissions-policy', all_headers)"
+          - "!regex('(?i)permission-policy', all_headers)"
           - "status_code != 301 && status_code != 302"
         condition: and
 

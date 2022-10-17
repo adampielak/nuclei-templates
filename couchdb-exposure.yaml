@@ -3,14 +3,13 @@ info:
   name: couchdb exposure
   author: organiccrap
   severity: low
-  tags: panel,couchdb
 
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/_all_dbs'
-
-    matchers-condition: and
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers:
       - type: word
         words:
@@ -18,7 +17,3 @@ requests:
           - Erlang OTP/
         part: header
         condition: and
-
-      - type: status
-        status:
-          - 200

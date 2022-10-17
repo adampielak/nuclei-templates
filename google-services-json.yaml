@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     google-query: intitle:"index of" "google-services.json"
-  tags: google,cloud,exposure,files
+  tags: google,cloud,exposure
 
 requests:
   - method: GET

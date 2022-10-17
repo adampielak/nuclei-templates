@@ -2,9 +2,8 @@ id: druid-console-exposure
 
 info:
   name: Alibaba Druid Console Exposure
-  author: pdteam
+  author: pd-team
   severity: medium
-  tags: panel,alibaba,druid
 
 requests:
   - method: GET

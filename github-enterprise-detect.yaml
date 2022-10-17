@@ -4,7 +4,6 @@ info:
   name: Detect Github Enterprise
   author: ehsahil
   severity: info
-  tags: panel,github
 
 requests:
   - method: GET

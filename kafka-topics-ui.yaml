@@ -2,9 +2,8 @@ id: kafka-topics-ui
 
 info:
   name: Apache Kafka Topics UI Exposure
-  author: pdteam
+  author: pd-team
   severity: low
-  tags: panel,kafka,apache
 
 requests:
   - method: GET

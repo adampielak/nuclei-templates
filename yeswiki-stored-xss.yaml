@@ -1,7 +1,7 @@
 id: yeswiki-stored-xss
 
 info:
-  name: YesWiki - Stored Cross-Site Scripting
+  name: YesWiki - Cross-site Scripting (Stored)
   author: arafatansari
   severity: medium
   description: |
@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.html:"yeswiki"
-  tags: yeswiki,xss,stored,huntr
+  tags: yeswiki,xss,stored
 
 requests:
   - raw:

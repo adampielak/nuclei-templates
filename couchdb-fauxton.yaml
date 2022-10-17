@@ -2,9 +2,8 @@ id: couchdb-fauxton
 
 info:
   name: Apache CouchDB Fauxton Exposure
-  author: pdteam
+  author: pd-team
   severity: low
-  tags: panel,apache,couchdb
 
 requests:
   - method: GET

@@ -1,12 +1,11 @@
 id: api-mailgun
-
 info:
   name: Mailgun API Test
   author: zzeitlin
   severity: info
-  reference: https://documentation.mailgun.com/en/latest/api-intro.html
+  reference:
+    - https://documentation.mailgun.com/en/latest/api-intro.html
   tags: token-spray,mailgun
-
 self-contained: true
 requests:
   - method: GET
@@ -14,7 +13,6 @@ requests:
       - "https://api.mailgun.net/v3/domains"
     headers:
       Authorization: Basic {{base64('api:' + token)}}
-
     matchers:
       - type: word
         part: body

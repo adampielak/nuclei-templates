@@ -4,7 +4,6 @@ info:
   name: Jaspersoft detected
   author: koti2
   severity: info
-  tags: tech,jaspersoft
 
 requests:
   - method: GET

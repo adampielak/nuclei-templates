@@ -1,7 +1,7 @@
 id: yeswiki-xss
 
 info:
-  name: yeswiki/yeswiki - Cross-Site Scripting
+  name: yeswiki/yeswiki - Unauthenticated Cross Site Scripting - Reflected
   author: arafatansari
   severity: medium
   description: |
@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.html:"yeswiki"
-  tags: yeswiki,unauth,huntr,cve,cve2022,xss
+  tags: cve,cve2022,xss,yeswiki,unauth
 
 requests:
   - method: GET

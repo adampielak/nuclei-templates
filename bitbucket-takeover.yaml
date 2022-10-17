@@ -2,7 +2,7 @@ id: bitbucket-takeover
 
 info:
   name: Bitbucket Takeover Detection
-  author: pdteam
+  author: pdcommunity
   severity: high
   tags: takeover
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
@@ -12,14 +12,8 @@ requests:
     path:
       - "{{BaseURL}}"
 
-    matchers-condition: and
     matchers:
       - type: word
         words:
-          - "Repository not found"
-        part: body
-
-      - type: word
-        words:
-          - "text/plain"
-        part: header
+          - The page you have requested does not exist
+          - Repository not found

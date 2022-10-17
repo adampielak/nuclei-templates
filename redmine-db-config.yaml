@@ -4,7 +4,6 @@ info:
   author: geeknik
   description: Redmine is a flexible project management web application written using Ruby on Rails framework - https://redmine.org/projects/redmine
   severity: medium
-  tags: config,exposure
 
 requests:
   - method: GET
@@ -16,10 +15,9 @@ requests:
       - type: word
         part: body
         words:
-          - 'adapter:'
-          - 'database:'
-          - 'host:'
-          - 'production:'
+          - adapter
+          - database
+          - host
         condition: and
 
       - type: status

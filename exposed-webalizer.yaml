@@ -2,9 +2,8 @@ id: exposed-webalizer
 
 info:
   name: Publicly exposed Webalizer Interface
-  author: pdteam
+  author: pd-team
   severity: low
-  tags: panel,webalizer
 
 requests:
   - method: GET

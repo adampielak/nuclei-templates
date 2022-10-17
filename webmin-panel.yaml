@@ -4,7 +4,6 @@ info:
   name: Webmin Admin Panel
   author: PR3R00T
   severity: info
-  tags: panel,webmin
 
 requests:
   - method: GET

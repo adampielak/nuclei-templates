@@ -5,7 +5,6 @@ info:
   author: geeknik
   severity: low
   reference: https://circleci.com/docs/2.0/sample-config/
-  tags: config,exposure,circleci
 
 requests:
   - method: GET
@@ -18,7 +17,7 @@ requests:
     matchers:
       - type: dsl
         dsl:
-          - 'regex("^version: ", body) && contains(body, "jobs:")'
+          - 'regex("^version: ", body) && contains(body, "jobs:") == true'
 
       - type: status
         status:

@@ -1,22 +1,32 @@
-id: jfrog-login
-
-info:
-  name: JFrog Login
-  author: dhiyaneshDK
-  severity: info
-  reference: https://www.exploit-db.com/ghdb/6797
-  tags: panel,jfrog
-
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/ui/login/'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>JFrog</title>'
-      - type: status
-        status:
-          - 200
+name: jfrog
+priority: 3
+nuclei_tags:
+  - []
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - src=/ui/img/jfrog
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <meta http-equiv="refresh" content="0;URL=/artifactory">
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers:
+      Location: /artifactory/
+    keyword: []
+    favicon_hash: []

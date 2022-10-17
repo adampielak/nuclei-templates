@@ -5,13 +5,11 @@ info:
   severity: high
   reference: https://www.hoteldruid.com/
   tags: hoteldruid,panel,unauth
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /hoteldruid/inizio.php HTTP/1.1
@@ -22,7 +20,6 @@ requests:
       - type: status
         status:
           - 200
-
       - type: word
         part: body
         words:

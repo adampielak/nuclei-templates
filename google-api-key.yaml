@@ -3,14 +3,12 @@ id: google-api-key
 info:
   name: Google API Key
   author: Swissky
-  severity: info
-  tags: exposure,token,google
+  severity: low
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-      - "{{BaseURL}}/hopfully404"
 
     extractors:
       - type: regex

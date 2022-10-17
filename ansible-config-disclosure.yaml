@@ -2,9 +2,8 @@ id: ansible-config-disclosure
 
 info:
   name: Ansible Configuration Exposure
-  author: pdteam
+  author: pd-team
   severity: medium
-  tags: config,exposure
 
 requests:
   - method: GET

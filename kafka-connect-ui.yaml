@@ -2,9 +2,8 @@ id: kafka-connect-ui
 
 info:
   name: Apache Kafka Connect UI Exposure
-  author: pdteam
+  author: pd-team
   severity: low
-  tags: panel,kafka,apache
 
 requests:
   - method: GET

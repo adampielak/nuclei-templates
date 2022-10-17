@@ -4,11 +4,10 @@ info:
   name: circleci ssh-config exposure
   author: geeknik
   severity: low
-  tags: config,exposure,circleci
 
 requests:
   - method: GET
-    host-redirects: true
+    redirects: true
     max-redirects: 3
     path:
       - "{{BaseURL}}/.circleci/ssh-config"

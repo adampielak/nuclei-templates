@@ -4,7 +4,6 @@ info:
   name: SAP Hybris Management Console
   author: dogasantos
   severity: info
-  tags: panel,sap
 
 requests:
   - method: GET

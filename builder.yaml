@@ -1,0 +1,48 @@
+name: "Database builder"
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@master
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies
+        run: |
+          sudo apt install jq -y
+          python -m pip install -r .github/scripts/requirements.txt
+
+      - name: Check if update available
+        id: update
+        run: |
+          LOCAL="$(cat db.json | jq -r .version)"
+          REMOTE="$(python .github/scripts/builder.py get-latest)"
+
+          [[ "${LOCAL}" != "${REMOTE}" ]] && STATUS="true" || STATUS="false"
+          echo "::set-output name=available::$STATUS"
+
+      - name: Building & update database...
+        if: steps.update.outputs.available == 'true'
+        id: build
+        run: |
+          python .github/scripts/builder.py 1>db.json
+          echo "::set-output name=changes::$(git status -s | wc -l)"
+
+      - name: Commit changes
+        if: steps.build.outputs.changes > 0
+        run: |
+          git config --local user.email "me@dw1.io"
+          git config --local user.name "Dwi Siswanto"
+          git add .
+          git commit -m "Update DB [$(date)] :robot:"
+          git push origin master
