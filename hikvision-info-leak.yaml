@@ -1,25 +1,12 @@
 id: hikvision-info-leak
 
-info:
-  name: Hikvision Info Leak
-  author: pikpikcu
-  severity: medium
-  tags: exposure,config,hikvision
-
+name: Hikvision Info Leak  
+severity: medium
+  
 requests:
   - method: GET
-    path:
-      - '{{BaseURL}}/config/user.xml'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<user name='
-          - 'password='
-        condition: and
-
-      - type: word
-        words:
-          - "text/xml"
-        part: header
+    paths:
+      - 'HOSTNAME/config/user.xml'
+    patterns:
+      - '<user name='
+      - 'password='

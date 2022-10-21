@@ -1,14 +1,22 @@
-name: elasticsearch
-priority: 3
-nuclei_tags:
-  - - elasticsearch
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 200
-    headers: {}
-    keyword:
-      - '  "tagline" : "You Know, for Search"'
-    favicon_hash: []
+id: elasticsearch
+
+info:
+  name: ElasticSearch Information Disclosure
+  author: Shine
+  severity: low
+  tags: elastic,unauth
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/_cat/indices?v'
+      - '{{BaseURL}}/_all/_search'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '"took":'
+      - type: status
+        status:
+          - 200
