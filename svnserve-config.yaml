@@ -1,12 +1,22 @@
 id: svnserve-config
 
-name: svnserve config file disclosure
-severity: low
-  
+info:
+  name: svnserve config file disclosure
+  author: sheikhrishad
+  severity: low
+  tags: config,exposure,svnserve
+
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/svnserve.conf"
+    path:
+      - "{{BaseURL}}/svnserve.conf"
 
-    patterns:
-      - "This file controls the configuration of the svnserve daemon"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "This file controls the configuration of the svnserve daemon"
+
+      - type: status
+        status:
+          - 200

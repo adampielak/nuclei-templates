@@ -1,13 +1,24 @@
 id: php-fpm-config
 
-name: PHP-FPM Config file disclosure
-severity: low
-  
+info:
+  name: PHP-FPM Config file disclosure
+  author: sheikhrishad
+  severity: low
+  tags: config,exposure,php
+
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/php-fpm.conf"
+    path:
+      - "{{BaseURL}}/php-fpm.conf"
 
-    patterns:
-        - "FPM Configuration"
-        - "Pool Definitions"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "FPM Configuration"
+          - "Pool Definitions"
+        condition: and
+
+      - type: status
+        status:
+          - 200

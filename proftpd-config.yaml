@@ -1,13 +1,24 @@
 id: proftpd-config
 
-name: ProFTPD Config file disclosure
-severity: low
-  
+info:
+  name: ProFTPD Config file disclosure
+  author: sheikhrishad
+  severity: low
+  tags: config,exposure,proftpd
+
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/proftpd.conf"
+    path:
+      - "{{BaseURL}}/proftpd.conf"
 
-    patterns:
-      - "ProFTPD"
-      - "ServerName"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "ProFTPD"
+          - "ServerName"
+        condition: and
+
+      - type: status
+        status:
+          - 200
