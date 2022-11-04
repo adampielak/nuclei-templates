@@ -4,13 +4,14 @@ info:
   name: Detect Github Enterprise
   author: ehsahil
   severity: info
+  tags: panel,github
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login"
 
-    redirects: true
+    host-redirects: true
     max-redirects: 2
     matchers:
       - type: word

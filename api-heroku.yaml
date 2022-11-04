@@ -1,4 +1,5 @@
 id: api-heroku
+
 info:
   name: Heroku API Test
   author: zzeitlin
@@ -6,6 +7,7 @@ info:
   reference:
     - https://devcenter.heroku.com/articles/platform-api-quickstart#calling-the-api
   tags: token-spray,heroku
+
 self-contained: true
 requests:
   - method: POST
@@ -14,6 +16,7 @@ requests:
     headers:
       Accept: application/vnd.heroku+json; version=3
       Authorization: Bearer {{token}}
+
     matchers:
       - type: word
         part: body

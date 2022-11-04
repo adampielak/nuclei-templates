@@ -1,19 +1,22 @@
 id: swagger-api
 
 info:
-  name: Swagger API
-  author: pd-team
+  name: Public Swagger API
+  author: pdteam
   severity: info
+  tags: exposure,api,swagger
 
 requests:
   - method: GET
     path:
+      - "{{BaseURL}}/swagger/ui/index"
       - "{{BaseURL}}/swagger/index.html"
       - "{{BaseURL}}/swagger-ui.html"
       - "{{BaseURL}}/swagger/swagger-ui.html"
       - "{{BaseURL}}/api/swagger-ui.html"
       - "{{BaseURL}}/api-docs/swagger.json"
       - "{{BaseURL}}/api-docs/swagger.yaml"
+      - "{{BaseURL}}/api_docs"
       - "{{BaseURL}}/swagger.json"
       - "{{BaseURL}}/swagger.yaml"
       - "{{BaseURL}}/swagger/v1/swagger.json"
@@ -48,12 +51,15 @@ requests:
       - "{{BaseURL}}/api/v1/swagger-ui/swagger.json"
       - "{{BaseURL}}/api/v1/swagger-ui/swagger.yaml"
       - "{{BaseURL}}/swagger-resources/restservices/v2/api-docs"
+      - "{{BaseURL}}/api/swagger_doc.json"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "swagger:"
+          - "Swagger 2.0"
           - "\"swagger\":"
           - "Swagger UI"
           - "**token**:"

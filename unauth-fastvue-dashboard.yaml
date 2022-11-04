@@ -1,5 +1,4 @@
 id: unauth-fastvue-dashboard
-
 info:
   name: Unauthenticated Fastvue Dashboard
   author: DhiyaneshDK
@@ -8,12 +7,10 @@ info:
     verified: true
     shodan-query: http.favicon.hash:-1117549627
   tags: panel,fastvue,unauth,misconfig
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/dashboard.aspx"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -21,12 +18,10 @@ requests:
           - "<title>Fastvue Sophos Reporter</title>"
           - "<title>Fastvue Reporter for SonicWall</title>"
         condition: or
-
       - type: word
         part: body
         words:
           - "Dashboard"
-
       - type: status
         status:
           - 200

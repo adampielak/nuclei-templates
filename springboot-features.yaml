@@ -1,7 +1,7 @@
 id: springboot-features
 
 info:
-  name: Detects Springboot Features Actuator
+  name: Detect Springboot Features Actuator
   author: DhiyaneshDK
   severity: low
   metadata:

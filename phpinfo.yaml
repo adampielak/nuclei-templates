@@ -1,15 +1,28 @@
-name: phpinfo
-priority: 1
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - <title>phpinfo
-      - Virtual Directory Support
-    favicon_hash: []
+id: phpinfo-files
+
+info:
+  name: phpinfo Disclosure
+  author: bauthard
+  severity: low
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/php.php"
+      - "{{BaseURL}}/phpinfo.php"
+      - "{{BaseURL}}/info.php"
+      - "{{BaseURL}}/_profiler/phpinfo"
+      - "{{BaseURL}}/infophp.php"
+      - "{{BaseURL}}/php_info.php"
+      - "{{BaseURL}}/test.php"
+      - "{{BaseURL}}/i.php"
+      - "{{BaseURL}}/asdf.php"
+      - "{{BaseURL}}/pinfo.php"
+      - "{{BaseURL}}/phpversion.php"
+      - "{{BaseURL}}/time.php"
+    matchers:
+      - type: word
+        words:
+          - "PHP Extension"
+          - "PHP Version"
+        condition: and

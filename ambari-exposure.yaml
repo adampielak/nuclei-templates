@@ -1,9 +1,14 @@
 id: ambari-exposure
 
 info:
-  name: Apache Ambari Exposure / Unauthenticated Access
-  author: pd-team
-  severity: medium
+  name: Apache Ambari Exposure Admin Login Panel
+  author: pdteam
+  severity: info
+  description: An Apache Ambari panel was discovered.
+  classification:
+    cvss-score: 0.0
+    cwe-id: CWE-668
+  tags: panel,apache,ambari,exposure
 
 requests:
   - method: GET
@@ -16,3 +21,5 @@ requests:
           - '<title>Ambari</title>'
           - 'href="http://www.apache.org/licenses/LICENSE-2.0"'
         condition: and
+
+# Enhanced by mp on 2022/03/16

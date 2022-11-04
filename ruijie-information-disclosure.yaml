@@ -4,8 +4,9 @@ info:
   name: Ruijie Information Disclosure
   author: pikpikcu
   severity: high
-  reference: https://www.cnblogs.com/cHr1s/p/14499858.html
-  tags: ruijie
+  reference:
+    - https://www.cnblogs.com/cHr1s/p/14499858.html
+  tags: ruijie,config,exposure
 
 requests:
   - method: GET

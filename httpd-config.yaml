@@ -1,12 +1,24 @@
 id: httpd-config
 
-name: Httpd Config file disclosure
-severity: info
-  
+info:
+  name: Httpd Config file disclosure
+  author: sheikhrishad
+  severity: info
+  tags: config,exposure,httpd
+
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/httpd.conf"
+    path:
+      - "{{BaseURL}}/httpd.conf"
 
-    patterns:
-      - "# LoadModule"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "LoadModule"
+          - "# LoadModule"
+        condition: and
+
+      - type: status
+        status:
+          - 200

@@ -1,5 +1,4 @@
 id: 3cx-phone-management-panel
-
 info:
   name: 3CX Phone System Management Console Detect
   author: idealphase
@@ -14,12 +13,10 @@ info:
       - http.favicon.hash:970132176
     google-query: intitle:"3CX Phone System Management Console"
   tags: panel,3cx
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers:
       - type: word
         words:

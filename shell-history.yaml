@@ -2,15 +2,14 @@ id: shell-history
 
 info:
   name: Shell History
-  author: pentest_swissky & geeknik
+  author: pentest_swissky,geeknik
   severity: low
   description: Discover history for bash, ksh, sh, and zsh
-  tags: config
+  tags: misconfig
 
 requests:
   - method: GET
-    redirects: true
-    max-redirects: 5
+    max-redirects: 1
     path:
       - "{{BaseURL}}/.bash_history"
       - "{{BaseURL}}/.ksh_history"
@@ -21,7 +20,31 @@ requests:
     matchers:
       - type: word
         words:
+          - "mkdir "
           - "chmod "
+          - "mv "
+          - "nano "
+          - "vim "
+          - "pico "
+          - "sudo "
+          - "cd "
+          - "cp "
+          - "ps aux "
+        condition: or
+
+      - type: word
+        part: response
+        words:
+          - "<?xml"
+          - "<env"
+          - "application/javascript"
+          - "application/json"
+          - "application/xml"
+          - "html>"
+          - "text/html"
+          - "image/"
+        negative: true
+
       - type: status
         status:
           - 200

@@ -1,8 +1,10 @@
-id: cache-poisoning
+id: cache-poisoning    
+
 info:
   name: Cache Poisoning
   author: melbadry9 & xelkomy
   severity: low
+
 requests:
   - raw:
       - |
@@ -10,8 +12,10 @@ requests:
         X-Forwarded-Prefix: cache.melbadry9.com
         X-Forwarded-Host: cache.melbadry9.com
         X-Forwarded-For: cache.melbadry9.com
+
       - |
         GET /?mel=9 HTTP/1.1
+
     req-condition: true
     matchers:
       - type: dsl

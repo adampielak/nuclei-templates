@@ -1,7 +1,7 @@
 id: springboot-logfile
 
 info:
-  name: Detects Springboot Logfile Actuator
+  name: Detect Springboot Logfile Actuator
   author: DhiyaneshDK
   severity: low
   reference:

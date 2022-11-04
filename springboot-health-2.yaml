@@ -1,18 +1,15 @@
 id: springboot-health 2
-
 info:
   name: Detect Springboot Health Actuator
   author: pussycat0x
   severity: info
   description: Additional routes may be displayed
   tags: springboot,exposure
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /actuator/health HTTP/1.1
@@ -28,7 +25,6 @@ requests:
           - '"diskSpace"'
           - '"jms"'
         condition: and
-
       - type: status
         status:
           - 200
