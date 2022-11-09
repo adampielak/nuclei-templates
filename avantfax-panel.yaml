@@ -4,12 +4,6 @@ info:
   name: AvantFAX Login Panel
   author: pikpikcu,daffainfo
   severity: info
-  description: An AvantFAX login panel was discovered.
-  reference:
-    - http://www.avantfax.com/
-  classification:
-    cvss-score: 0.0
-    cwe-id: CWE-668
   metadata:
     shodan-query: http.title:"AvantFAX - Login"
   tags: panel,avantfax,login
@@ -36,5 +30,3 @@ requests:
         group: 1
         regex:
           - '<p align="center">([0-9.]+)<\/p>'
-
-# Enhanced by mp on 2022/03/20

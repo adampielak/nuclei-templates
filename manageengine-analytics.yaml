@@ -1,12 +1,11 @@
-id: manageengine-analytics
+id: zoho-manageengine-analyticsplus
 
 info:
-  name: ZOHO ManageEngine Analytics Plus
+  name: ZOHO-ManageEngine-Analytics Plus
   author: dhiyaneshDK
   severity: info
-  metadata:
-    fofa-query: app="ZOHO-流量管理"
-  tags: panel,zoho,manageengine
+  reference: https://fofa.so/result?qbase64=YXBwPSJaT0hPLea1gemHj%2BeuoeeQhiI%3D
+  tags: panel,zoho
 
 requests:
   - method: GET

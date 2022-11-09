@@ -11,9 +11,9 @@ requests:
     path:
       - "{{BaseURL}}/login"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word
         words:
-          - "GitHub Â· Enterprise"
+          - "GitHub · Enterprise"

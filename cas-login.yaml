@@ -4,17 +4,17 @@ info:
   name: CAS Login Panel
   author: pdteam
   severity: info
+  tags: apereo,cas,panel,login
   metadata:
     shodan-query: http.title:'CAS - Central Authentication Service'
     github: https://github.com/apereo/cas
-  tags: apereo,cas,panel,login
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/cas/login"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word

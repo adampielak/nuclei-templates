@@ -4,16 +4,16 @@ info:
   name: Oracle Peoplesoft Sign-in
   author: idealphase
   severity: info
+  tags: oracle,panel
   metadata:
     shodan-query: http.title:"Oracle PeopleSoft Sign-in"
-  tags: oracle,panel
 
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:

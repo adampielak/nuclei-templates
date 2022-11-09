@@ -1,14 +1,24 @@
-name: hp-virtual-connect-manager
-priority: 3
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - name='mx_hidden' src="common/hiddenframe.html
-    favicon_hash: []
+id: hp-virtual-connect-manager
+
+info:
+  name: HP Virtual Connect Manager
+  author: dhiyaneshDK
+  severity: info
+  metadata:
+    shodan-query: http.title:"HP Virtual Connect Manager"
+  tags: panel,hp
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/index.html"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "<title>HP Virtual Connect Manager</title>"

@@ -1,5 +1,4 @@
 id: kafka-manager-panel
-
 info:
   name: Kafka Manager Panel
   author: Paper-Pen
@@ -10,19 +9,16 @@ info:
   metadata:
     fofa-query: app="Kafka-Manager"
   tags: tech,kafka
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: or
     matchers:
       - type: word
         part: body
         words:
           - "Kafka Manager"
-
       - type: word
         part: header
         words:

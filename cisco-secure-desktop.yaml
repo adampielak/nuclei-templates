@@ -11,13 +11,15 @@ requests:
     path:
       - "{{BaseURL}}/CACHE/sdesktop/install/start.htm"
 
+    redirects: true
+    max-redirects: 2
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
-          - "Installation"
+          - "<title>Installation</title>"
           - "WebLaunch"
+        part: body
         condition: and
 
       - type: status

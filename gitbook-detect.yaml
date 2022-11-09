@@ -18,5 +18,5 @@ requests:
         part: body
         regex:
           - "<title>.*[Gg]it[bB]ook</title>"
-          - "<title>.*Â· [Gg]it[bB]ook.*</title>"
+          - "<title>.*· [Gg]it[bB]ook.*</title>"
         condition: or

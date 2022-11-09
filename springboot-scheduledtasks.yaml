@@ -1,5 +1,4 @@
 id: springboot-scheduledtasks
-
 info:
   name: Springboot Scheduledtasks Actuator
   author: ELSFA7110
@@ -10,13 +9,11 @@ info:
   metadata:
     verified: true
   tags: misconfig,springboot,exposure
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/scheduledtasks"
       - "{{BaseURL}}/actuator/scheduledtasks"
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -26,7 +23,6 @@ requests:
           - "cron"
           - "fixedDelay"
         condition: and
-
       - type: word
         part: header
         words:
@@ -35,7 +31,6 @@ requests:
           - "application/vnd.spring-boot.actuator.v1+json"
           - "application/vnd.spring-boot.actuator.v2+json"
         condition: or
-
       - type: status
         status:
           - 200

@@ -1,10 +1,11 @@
-id: manageengine-applications-manager
+id: zoho-manageengine-applications-manager
 
 info:
-  name: ZOHO ManageEngine Applications Manager
+  name: ZOHO-ManageEngine-Applications-Manager
   author: dhiyaneshDK
   severity: info
-  tags: panel,zoho,manageengine
+  reference: https://fofa.so/result?qbase64=YXBwPSJaT0hPLU1hbmFnZUVuZ2luZS1BcHBsaWNhdGlvbnMtTWFuYWdlciI%3D
+  tags: panel,zoho
 
 requests:
   - method: GET

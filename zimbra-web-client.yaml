@@ -2,16 +2,12 @@ id: zimbra-web-client
 
 info:
   name: Zimbra Web Client - Sign In
-  author: dhiyaneshDk,idealphase
+  author: dhiyaneshDk
   severity: info
-  description: Zimbra provides open source server and client software for messaging and collaboration.
-  reference:
-    - https://www.exploit-db.com/ghdb/7409
-    - https://www.zimbra.com/
+  reference: https://www.exploit-db.com/ghdb/7409
   metadata:
-    verified: true
-    shodan-query: http.title:"Zimbra Web Client Sign In"
-  tags: edb,panel,zimbra
+    shodan-query: 'http.title:"Zimbra Web Client Sign In"'
+  tags: panel,zimbra
 
 requests:
   - method: GET
@@ -28,10 +24,3 @@ requests:
       - type: status
         status:
           - 200
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - 'AjxPackage\.setQueryString\("v=(.+)"\);'
