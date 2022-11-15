@@ -1,5 +1,4 @@
 id: ibm-maximo-login
-
 info:
   name: IBM Maximo Login Panel
   author: ritikchaddha
@@ -16,7 +15,7 @@ requests:
     path:
       - "{{BaseURL}}/maximo/webclient/login/login.jsp"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:

@@ -1,13 +1,12 @@
 id: rockmongo-xss
 
 info:
-  name: RockMongo V1.1.8 Cross-Site Scripting
+  name: RockMongo V1.1.8 XSS
   author: pikpikcu
   severity: medium
   description: A vulnerability in RockMongo allows attackers to inject arbitrary javascript into the response returned by the application.
-  reference:
-    - https://packetstormsecurity.com/files/136658/RockMongo-1.1.8-Cross-Site-Request-Forgery-Cross-Site-Scripting.html
-  tags: rockmongo,xss,packetstorm
+  reference: https://packetstormsecurity.com/files/136658/RockMongo-1.1.8-Cross-Site-Request-Forgery-Cross-Site-Scripting.html
+  tags: rockmongo,xss
 
 requests:
   - method: POST

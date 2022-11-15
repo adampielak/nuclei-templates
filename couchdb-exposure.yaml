@@ -1,15 +1,22 @@
 id: couchdb-exposure
+
 info:
-  name: couchdb exposure
+  name: Apache CouchDB Panel - Detect
   author: organiccrap
   severity: low
+  description: Apache CouchDB panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: panel,couchdb
 
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/_all_dbs'
-    headers:
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+
+    matchers-condition: and
     matchers:
       - type: word
         words:
@@ -17,3 +24,9 @@ requests:
           - Erlang OTP/
         part: header
         condition: and
+
+      - type: status
+        status:
+          - 200
+
+# Enhanced by md on 2022/11/09

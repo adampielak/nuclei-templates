@@ -2,7 +2,7 @@ id: looker-panel
 
 info:
   name: Looker Login Panel
-  author: ritikchaddha,daffainfo
+  author: ritikchaddha
   severity: info
   metadata:
     verified: true
@@ -21,14 +21,8 @@ requests:
         words:
           - "lookerVersion"
           - "lookerLocation.title"
-        condition: and
+        condition: or
 
       - type: status
         status:
           - 200
-
-    extractors:
-      - type: regex
-        group: 1
-        regex:
-          - "lookerVersion: '([0-9.]+)',"

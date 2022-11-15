@@ -12,8 +12,6 @@ requests:
     path:
       - "{{BaseURL}}/configprops"
       - "{{BaseURL}}/actuator/configprops"
-
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

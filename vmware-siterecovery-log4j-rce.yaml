@@ -37,11 +37,6 @@ requests:
         regex:
           - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'  # Match for extracted ${hostName} variable
 
-      - type: word
-        part: body
-        words:
-          - '<title>Error - Site Recovery</title>'
-
     extractors:
       - type: kval
         kval:
@@ -52,3 +47,5 @@ requests:
         group: 1
         regex:
           - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'  # Print extracted ${hostName} in output
+
+# Enhanced by md on 2022/10/05
