@@ -1,17 +1,11 @@
 id: crushftp-login
 
 info:
-  name: CrushFTP WebInterface Login Panel - Detect
+  name: CrushFTP WebInterface
   author: dhiyaneshDK
   severity: info
-  description: CrushFTP WebInterface login panel was detected.
-  reference:
-    - https://www.exploit-db.com/ghdb/6591
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,edb
+  reference: https://www.exploit-db.com/ghdb/6591
+  tags: panel
 
 requests:
   - method: GET
@@ -26,5 +20,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/09
