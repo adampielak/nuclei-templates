@@ -1,5 +1,4 @@
 id: api-github
-
 info:
   name: GitHub API Test
   author: zzeitlin
@@ -7,7 +6,6 @@ info:
   reference:
     - https://docs.github.com/en/rest/reference/users
   tags: token-spray,github
-
 self-contained: true
 requests:
   - method: GET
@@ -15,7 +13,6 @@ requests:
       - "https://api.github.com/user"
     headers:
       Authorization: Basic {{base64('user:' + token)}}
-
     matchers:
       - type: word
         part: body
