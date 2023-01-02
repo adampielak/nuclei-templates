@@ -4,7 +4,7 @@ info:
   name: Workspace ONE Unified Endpoint Management (UEM) AirWatch
   author: hanlaomo
   severity: info
-  tags: panel,workspaceone
+  tags: panel
 
 requests:
   - method: GET

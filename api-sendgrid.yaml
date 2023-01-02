@@ -1,11 +1,12 @@
 id: api-sendgrid
+
 info:
   name: Sendgrid API Test
   author: zzeitlin
   severity: info
-  reference:
-    - https://docs.sendgrid.com/for-developers/sending-email/getting-started-smtp
+  reference: https://docs.sendgrid.com/for-developers/sending-email/getting-started-smtp
   tags: token-spray,sendgrid
+
 self-contained: true
 network:
   - inputs:
@@ -15,6 +16,7 @@ network:
         read: 1024
     host:
       - "tls://smtp.sendgrid.net:465"
+
     matchers:
       - type: word
         words:

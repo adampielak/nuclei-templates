@@ -15,6 +15,7 @@ requests:
 
     redirects: true
     max-redirects: 2
+
     matchers:
       - type: word
         part: header

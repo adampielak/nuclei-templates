@@ -2,7 +2,7 @@ id: jenkins-detect
 
 info:
   name: Jenkins detect (version)
-  author: philippdelteil,daffainfo
+  author: philippdelteil
   severity: info
   tags: tech,jenkins
 
@@ -10,19 +10,16 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "X-Jenkins"
-          - "X-Jenkins-Session"
         part: header
-        condition: and
 
       - type: word
         words:
-          - "<title>Dashboard [Jenkins]</title>"
+          - "<title>Sign in [Jenkins]</title>"
         part: body
 
     extractors:

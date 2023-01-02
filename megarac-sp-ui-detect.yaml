@@ -28,3 +28,6 @@ requests:
         part: body
         words:
           - "<title>Megarac SP</title>"
+          - "<title>MegaRAC SP-X</title>"
+          - "<title>TSM</title>"
+        condition: or

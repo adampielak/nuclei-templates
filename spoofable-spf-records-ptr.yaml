@@ -17,4 +17,4 @@ dns:
         words:
           - "v=spf1"
           - " ptr "
-        condition: and 
+        condition: and

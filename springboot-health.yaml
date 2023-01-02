@@ -13,7 +13,6 @@ requests:
       - "{{BaseURL}}/health"
       - "{{BaseURL}}/actuator/health"
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

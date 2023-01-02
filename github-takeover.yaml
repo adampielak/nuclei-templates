@@ -15,10 +15,6 @@ requests:
 
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         words:
           - "There isn't a GitHub Pages site here."
@@ -30,4 +26,4 @@ requests:
           - '!contains(host,"githubapp.com")'
           - '!contains(host,"github.com")'
           - '!contains(host,"github.io")'
-        condition: and
+        condition: or

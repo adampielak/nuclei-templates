@@ -3,20 +3,17 @@ info:
   name: VNC Service Detection
   author: pussycat0x
   severity: info
-  tags: network,vnc,service
+  tags: network,vnc
   description: VNC service detection
 network:
   - inputs:
       - data: "\r\n"
     host:
-      - "{{Host}}:5900"
-      - "{{Hostname}}"
-
+      - "{{Hostname}}:5900"
     matchers:
       - type: word
         words:
           - "RFB"
-
     extractors:
       - type: regex
         part: body
