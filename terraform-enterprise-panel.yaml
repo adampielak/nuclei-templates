@@ -18,7 +18,7 @@ requests:
     path:
       - '{{BaseURL}}/session'
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word

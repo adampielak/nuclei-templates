@@ -2,12 +2,9 @@ id: lancom-router-panel
 
 info:
   name: Lancom Router Panel
-  author: __Fazal,daffainfo
+  author: __Fazal
   severity: info
-  metadata:
-    verified: "true"
-    shodan-query: html:"LANCOM Systems GmbH"
-  tags: panel,lancom,router
+  tags: panel,lancom
 
 requests:
   - method: GET
@@ -16,13 +13,10 @@ requests:
 
     matchers-condition: and
     matchers:
-      - type: word
-        part: body
-        words:
-          - 'alt="LANCOM Systems GmbH"'
-          - 'class="outside_device_string_common">LANCOM'
-        condition: or
-
       - type: status
         status:
           - 200
+
+      - type: word
+        words:
+          - "LANCOM 1790VA-4G"

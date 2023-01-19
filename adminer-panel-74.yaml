@@ -1,4 +1,5 @@
 id: adminer-panel
+
 info:
   name: Adminer Login Panel
   author: random_robbie,meme-lord
@@ -14,6 +15,7 @@ info:
   metadata:
     shodan-query: title:"Login - Adminer"
   tags: panel,adminer
+
 requests:
   - method: GET
     path:
@@ -24,17 +26,21 @@ requests:
       - '{{BaseURL}}/mysql.php'
       - '{{BaseURL}}/sql.php'
       - '{{BaseURL}}/wp-content/plugins/adminer/adminer.php'
+
     headers:
       Accept-Language: en-US,en;q=0.5
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "Login - Adminer"
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

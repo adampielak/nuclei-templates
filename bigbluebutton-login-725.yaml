@@ -1,4 +1,5 @@
 id: bigbluebutton-login
+
 info:
   name: BigBlueButton Login Panel
   author: myztique
@@ -9,16 +10,19 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,bigbluebutton
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - 'content="BigBlueButton'
+
     extractors:
       - type: regex
         part: body

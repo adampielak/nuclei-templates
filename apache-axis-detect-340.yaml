@@ -1,4 +1,5 @@
 id: apache-axis-detect
+
 info:
   name: apache-axis-detect
   author: dogasantos
@@ -8,12 +9,14 @@ info:
     verified: true
     shodan-query: http.html:"Apache Axis"
   tags: tech,axis2,middleware,apache
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/axis2/"
       - "{{BaseURL}}/axis/"
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -26,6 +29,7 @@ requests:
           - "installation"
           - "Admin"
         condition: and
+
       - type: status
         status:
           - 200

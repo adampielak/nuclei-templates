@@ -4,7 +4,7 @@ info:
   name: Github Personal Token
   author: geeknik
   severity: high
-  tags: token,file
+  tags: token,file,github
 
 file:
   - extensions:
@@ -14,3 +14,4 @@ file:
       - type: regex
         regex:
           - "ghp_.{36}"
+          - "github_pat_.{82}"

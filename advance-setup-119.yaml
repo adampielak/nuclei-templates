@@ -1,4 +1,5 @@
 id: advanced-setup-login
+
 info:
   name: ActionTec Modem Advanced Setup Login Panel
   author: dhiyaneshDK
@@ -13,10 +14,12 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/cgi-bin/webcm?getpage=../html/login.html'
+
     matchers-condition: and
     matchers:
       - type: word

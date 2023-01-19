@@ -1,4 +1,5 @@
 id: api-urlscan
+
 info:
   name: URLScan API Test
   author: daffainfo
@@ -7,6 +8,7 @@ info:
     - https://urlscan.io/docs/api/
     - https://github.com/daffainfo/all-about-apikey/blob/main/Anti-Malware/URLScan.md
   tags: token-spray,urlscan
+
 self-contained: true
 requests:
   - raw:
@@ -15,6 +17,7 @@ requests:
         Host: urlscan.io
         Content-Type: application/json
         API-Key: {{token}}
+
     matchers:
       - type: word
         part: body

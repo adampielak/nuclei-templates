@@ -1,13 +1,16 @@
 id: bitrix-login
+
 info:
   name: Bitrix Login Panel
   author: juicypotato1
   severity: info
   tags: panel,bitrix,login
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/bitrix/admin/"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -18,6 +21,7 @@ requests:
           - "/bitrix/js/main/"
         part: body
         condition: and
+
       - type: status
         status:
           - 200

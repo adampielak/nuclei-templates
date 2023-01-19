@@ -1,4 +1,5 @@
 id: buildbot-panel
+
 info:
   name: Buildbot Panel Detect
   author: thardt-praetorian
@@ -7,10 +8,12 @@ info:
   metadata:
     shodan-query: http.title:"BuildBot"
   tags: panel,buildbot,cicd
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -19,6 +22,7 @@ requests:
         part: body
         regex:
           - '<title(.*)>Buildbot</title>'
+
       - type: status
         status:
           - 200

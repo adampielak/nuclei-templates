@@ -1,4 +1,5 @@
 id: automation-direct
+
 info:
   name: Automation Direct
   author: DhiyaneshDK
@@ -8,18 +9,22 @@ info:
     shodan-query: http.title:"C-more -- the best HMI presented by AutomationDirect"
     google-dork: intitle:"C-more -- the best HMI presented by AutomationDirect"
   tags: panel,iot
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/index.html'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "<TITLE>C-more -- the best HMI presented by AutomationDirect</TITLE>"
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

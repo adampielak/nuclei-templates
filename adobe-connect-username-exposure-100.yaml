@@ -1,4 +1,5 @@
 id: adobe-connect-username-exposure
+
 info:
   name: Adobe Connect Username Exposure
   author: dhiyaneshDk
@@ -6,10 +7,12 @@ info:
   reference:
     - https://packetstormsecurity.com/files/161345/Adobe-Connect-10-Username-Disclosure.html
   tags: adobe,disclosure
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/system/help/support"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -18,6 +21,7 @@ requests:
           - 'Support Administrators email address:'
         part: body
         condition: and
+
       - type: status
         status:
           - 200

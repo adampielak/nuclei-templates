@@ -1,10 +1,12 @@
 id: api-pagerduty
+
 info:
   name: Pagerduty API Test
   author: zzeitlin
   severity: info
   reference: https://developer.pagerduty.com/api-reference
   tags: token-spray,pagerduty
+
 self-contained: true
 requests:
   - method: GET
@@ -13,6 +15,7 @@ requests:
     headers:
       Accept: application/vnd.pagerduty+json;version=2
       Authorization: Token token={{token}}
+
     matchers:
       - type: word
         part: body

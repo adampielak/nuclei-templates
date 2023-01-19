@@ -1,10 +1,15 @@
 id: somfy-login
 
 info:
-  name: Somfy Login Page
+  name: Somfy Login Panel - Detect
   author: DhiyaneshDK
   severity: info
-  tags: panel
+  description: Somfy login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: panel,login
 
 requests:
   - method: GET
@@ -20,3 +25,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/01/15

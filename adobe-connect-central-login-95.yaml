@@ -1,4 +1,5 @@
 id: adobe-connect-central-login
+
 info:
   name: Adobe Connect Central Login Panel
   author: dhiyaneshDk
@@ -9,16 +10,19 @@ info:
   classification:
     cwe-id: CWE-200
   tags: adobe,panel,connect-central
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/system/login"
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>Adobe Connect Central Login</title>'
         part: body
+
       - type: status
         status:
           - 200

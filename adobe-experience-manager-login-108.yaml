@@ -1,4 +1,5 @@
 id: adobe-experience-manager-login
+
 info:
   name: Adobe Experience Manager Login Panel
   author: dhiyaneshDK
@@ -10,15 +11,18 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,aem,adobe
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/libs/granite/core/content/login.html'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>AEM Sign In</title>'
+
       - type: status
         status:
           - 200

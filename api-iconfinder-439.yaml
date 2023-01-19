@@ -1,4 +1,5 @@
 id: api-iconfinder
+
 info:
   name: IconFinder API Test
   author: daffainfo
@@ -7,6 +8,7 @@ info:
     - https://developer.iconfinder.com/reference/overview-1
     - https://github.com/daffainfo/all-about-apikey/blob/main/Art%20Design/IconFinder.md
   tags: token-spray,iconfinder
+
 self-contained: true
 requests:
   - raw:
@@ -15,6 +17,7 @@ requests:
         Host: api.iconfinder.com
         Accept: application/json
         Authorization: Bearer {{token}}
+
     matchers:
       - type: word
         part: body

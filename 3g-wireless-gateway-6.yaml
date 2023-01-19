@@ -5,10 +5,12 @@ info:
   severity: info
   reference: https://www.exploit-db.com/ghdb/7050
   tags: panel,router
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/htmlcode/html/indexdefault.asp"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -17,6 +19,7 @@ requests:
           - "g_sysinfo_sim_state"
           - "g_iUID"
         condition: and
+
       - type: status
         status:
           - 200

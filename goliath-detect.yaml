@@ -1,11 +1,17 @@
 id: goliath-detect
 
 info:
-  name: Detect Goliath
+  name: Goliath Detection
   author: geeknik
-  description: Goliath is a non-blocking Ruby web server framework -- https://github.com/postrank-labs/goliath
   severity: info
-  tags: goliath
+  description: |
+    Goliath is a non-blocking Ruby web server framework
+  reference:
+    - https://github.com/postrank-labs/goliath
+  metadata:
+    verified: true
+    shodan-query: 'Server: Goliath'
+  tags: tech,goliath
 
 requests:
   - method: GET
@@ -14,7 +20,6 @@ requests:
 
     matchers-condition: and
     matchers:
-
       - type: regex
         part: header
         regex:

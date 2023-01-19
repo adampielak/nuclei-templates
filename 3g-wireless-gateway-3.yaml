@@ -1,4 +1,5 @@
 id: 3g-wireless-gateway
+
 info:
   name: 3G Wireless Gateway Detection
   author: pussycat0x
@@ -12,10 +13,12 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/htmlcode/html/indexdefault.asp"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -24,6 +27,7 @@ requests:
           - "g_sysinfo_sim_state"
           - "g_iUID"
         condition: and
+
       - type: status
         status:
           - 200

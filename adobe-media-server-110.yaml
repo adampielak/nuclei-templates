@@ -1,4 +1,5 @@
 id: adobe-media-server
+
 info:
   name: Adobe Media Server Login Panel
   author: dhiyaneshDK
@@ -13,15 +14,18 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>Adobe Media Server</title>'
+
       - type: status
         status:
           - 200

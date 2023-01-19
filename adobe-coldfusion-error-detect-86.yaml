@@ -1,4 +1,5 @@
 id: adobe-coldfusion-error-detect
+
 info:
   name: Adobe ColdFusion Detector
   author: philippedelteil
@@ -10,16 +11,19 @@ info:
     verified: true
     shodan-query: http.component:"Adobe ColdFusion"
   tags: adobe,coldfusion
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/_something_.cfm"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - 'ColdFusion documentation'
+
       - type: status
         status:
           - 404

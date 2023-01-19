@@ -1,34 +1,29 @@
 id: qnap-qts-panel
 
 info:
-  name: QNAP - QTS login panel
-  author: idealphase,daffainfo
+  name: QNAP QTS Panel
+  author: idealphase
   severity: info
   description: |
-    QTS (QNAP Turbo NAS System) is the Turbo NAS Operating System, providing file storage, backup, disaster recovery, security management and virtualization applications for businesses
+    Simple, Secure, Scalable & Reliable, Based on Linux, QTS 4 is designed to deliver high-performance applications and services fulfilling your needs in file sharing, storage management, backup, virtual environments, multimedia, surveillance and more.
   reference:
-    - https://www.qnap.com/qts/
+    - https://www.qnap.com/en/qts4/con_show.php?op=showone&cid=1
   metadata:
     verified: true
     shodan-query: product:"QNAP"
-    google-query: intitle:"QNAP Turbo NAS" inurl:/cgi-bin
   tags: panel,qnap,qts
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/"
-      - "{{BaseURL}}/cgi-bin/html/login.html"
 
-    stop-at-first-match: true
-    redirects: true
-    max-redirects: 2
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - "QNAP Turbo NAS</title>"
+          - "<title>QNAP Turbo NAS</title>"
 
       - type: status
         status:

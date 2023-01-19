@@ -1,8 +1,10 @@
 id: ApPHP-MicroBlog-rc
+
 info:
-  name: ApPHP-MicroBlog-rce.yaml
+  name:  ApPHP-MicroBlog-rce.yaml
   author: medbsq
   severity: hight
+
 requests:
   - method: GET
     path:

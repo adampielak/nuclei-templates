@@ -4,9 +4,8 @@ info:
   name: tumblr takeover detection
   author: pdteam,philippedelteil
   severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/240
   tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz/issues/240
 
 requests:
   - method: GET
@@ -15,10 +14,6 @@ requests:
 
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         words:
           - Whatever you were looking for doesn't currently exist at this address.
@@ -29,5 +24,4 @@ requests:
         dsl:
           - '!contains(host,"tumblr.com")'
           - '!contains(host,"txmblr.com")'
-          - '!contains(host,"umblr.com")'
         condition: and

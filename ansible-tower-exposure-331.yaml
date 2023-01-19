@@ -1,4 +1,5 @@
 id: ansible-tower-exposure
+
 info:
   name: Ansible Tower Exposure
   author: pdteam,idealphase
@@ -13,16 +14,19 @@ info:
     google-query: intitle:"Ansible Tower"
     shodan-query: title:"Ansible Tower"
   tags: panel,ansible
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers:
       - type: word
         words:
           - "<title>Ansible Tower</title>"
           - "ansible-bootstrap"
         condition: or
+
     extractors:
       - type: regex
         group: 1

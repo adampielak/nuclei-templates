@@ -1,4 +1,5 @@
 id: aem-gql-servlet
+
 info:
   name: AEM GQLServlet
   author: dhiyaneshDk,prettyboyaaditya
@@ -6,6 +7,7 @@ info:
   reference:
     - https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/index.html?org/apache/jackrabbit/commons/query/GQL.html
   tags: aem
+
 requests:
   - method: GET
     path:
@@ -38,12 +40,14 @@ requests:
       - '{{BaseURL}}///bin///wcm///search///gql.json///a.png?query=type:base%20limit:..1&pathPrefix='
       - '{{BaseURL}}///bin///wcm///search///gql.json///a.js?query=type:base%20limit:..1&pathPrefix='
       - '{{BaseURL}}///bin///wcm///search///gql.json///a.html?query=type:base%20limit:..1&pathPrefix='
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'excerpt'

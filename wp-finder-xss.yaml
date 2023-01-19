@@ -1,12 +1,11 @@
 id: wp-finder-xss
 
 info:
-  name: WordPress Plugin Finder - 'order' Cross-Site Scripting
+  name: WordPress Plugin Finder - 'order' Reflected Cross-Site Scripting (XSS)
   author: daffainfo
   severity: medium
-  reference:
-    - https://packetstormsecurity.com/files/115902/WordPress-Finder-Cross-Site-Scripting.html
-  tags: xss,wp-plugin,packetstorm,wordpress
+  reference: https://packetstormsecurity.com/files/115902/WordPress-Finder-Cross-Site-Scripting.html
+  tags: wordpress,xss,wp-plugin
 
 requests:
   - method: GET

@@ -1,4 +1,5 @@
 id: akamai-cloudtest
+
 info:
   name: Akamai CloudTest Panel
   author: emadshanab
@@ -9,10 +10,12 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,akamai
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/concerto/Login?goto=Central"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -20,6 +23,7 @@ requests:
           - "Akamai Inc. All rights reserved"
           - "Akamai CloudTest"
         condition: and
+
       - type: status
         status:
           - 200
