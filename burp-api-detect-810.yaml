@@ -1,5 +1,4 @@
 id: burp-rest-api-detect
-
 info:
   name: Burp Rest API Server Running
   author: joanbono
@@ -7,12 +6,10 @@ info:
   reference:
     - https://portswigger.net/burp/documentation/enterprise/api-reference
   tags: burp,tech
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/v0.1/"
-
     matchers-condition: and
     matchers:
       - type: word

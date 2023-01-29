@@ -1,8 +1,10 @@
 id: grafana-detect
+
 info:
   name: Grafana panel detect
   author: organiccrap
   severity: info
+
 requests:
   - method: GET
     path:

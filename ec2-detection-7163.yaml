@@ -1,4 +1,5 @@
 id: ec2-detection
+
 info:
   name: AWS EC2 Detection
   author: melbadry9
@@ -9,9 +10,11 @@ info:
   classification:
     cwe-id: CWE-200
   tags: dns,ec2,aws
+
 dns:
   - name: "{{FQDN}}"
     type: CNAME
+
     extractors:
       - type: regex
         regex:

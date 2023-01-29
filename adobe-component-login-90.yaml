@@ -1,4 +1,5 @@
 id: adobe-coldfusion-login
+
 info:
   name: Adobe ColdFusion Component Browser Login Panel
   author: dhiyaneshDK
@@ -11,11 +12,13 @@ info:
   metadata:
     shodan-query: http.component:"Adobe ColdFusion"
   tags: panel,adobe,coldfusion
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/CFIDE/componentutils/login.cfm'
       - '{{BaseURL}}/cfide/componentutils/login.cfm'
+
     matchers-condition: and
     matchers:
       - type: word

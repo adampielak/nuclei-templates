@@ -1,9 +1,11 @@
 id: error-logs
+
 info:
   name: common error log files
   author: geeknik,daffainfo,ELSFA7110
   severity: low
   tags: logs,exposure,error
+
 requests:
   - method: GET
     path:
@@ -35,6 +37,7 @@ requests:
       - "{{BaseURL}}/routes/error_log"
       - "{{BaseURL}}/{{Hostname}}/error.log"
       - "{{BaseURL}}/{{Hostname}}/errors.log"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -47,10 +50,12 @@ requests:
           - "Exception"
           - "Fatal"
         condition: or
+
       - type: word
         words:
           - text/plain
         part: header
+
       - type: status
         status:
           - 200

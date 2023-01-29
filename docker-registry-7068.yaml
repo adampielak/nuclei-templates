@@ -1,8 +1,10 @@
 id: docker-registry
+
 info:
   name: Docker Registry Listing
   author: puzzlepeaches
   severity: medium
+
 requests:
   - method: GET
     path:

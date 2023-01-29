@@ -1,12 +1,10 @@
 id: api-intercom
-
 info:
   name: Intercom API Test
   author: dwisiswant0
   reference: https://developers.intercom.com/building-apps/docs/rest-api-reference
   severity: info
   tags: token-spray,intercom
-
 self-contained: true
 requests:
   - method: GET
@@ -15,7 +13,6 @@ requests:
     headers:
       Authorization: Bearer {{token}}
       Accept: application/json
-
     matchers:
       - type: word
         part: body

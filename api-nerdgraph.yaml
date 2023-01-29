@@ -1,5 +1,4 @@
 id: api-nerdgraph
-
 info:
   name: New Relic NerdGraph API Test
   author: zzeitlin
@@ -7,7 +6,6 @@ info:
   reference:
     - https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/
   tags: token-spray,newrelic,nerdgraph
-
 self-contained: true
 requests:
   - method: POST
@@ -17,7 +15,6 @@ requests:
       Content-Type: application/json
       API-Key: "{{token}}"
     body: "{ \"query\":  \"{ requestContext { userId apiKey }}\" }"
-
     matchers:
       - type: word
         part: body

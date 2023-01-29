@@ -2,9 +2,11 @@ id: open-redirect-00
 info:
   name: Open Redirect Lite
   risk: Low
+
 params:
   - root: "{{.BaseURL}}"
   - dest: "bing.com"
+
 variables:
   - prefix: |
       /
@@ -15,6 +17,7 @@ variables:
       /%0d/
       /%5c/%2f%2e%2e
       /〱%2f%2e%2e
+
 requests:
   - method: GET
     redirect: false
@@ -25,6 +28,7 @@ requests:
     detections:
       - >-
         (StatusCode() >= 300 && StatusCode() < 400) && (StringSearch("resHeaders", "Location: http://{{.dest}}") || StringSearch("resHeaders", "Location: https://{{.dest}}") || StringSearch("resHeaders", "Location: {{.dest}}") || StringSearch("resHeaders", "Location: https:///{{.dest}}")) && !StringSearch("resHeaders", "Location: https://{{.Host}}")
+
   # with scheme
   - method: GET
     redirect: false

@@ -1,11 +1,12 @@
-id: zoho-manageengine-desktop
+id: manageengine-desktop
 
 info:
-  name: ZOHO-ManageEngine-Desktop
+  name: ZOHO ManageEngine Desktop
   author: dhiyaneshDK
   severity: info
-  reference: https://www.shodan.io/search?query=http.title%3A%22ManageEngine+Desktop+Central+10%22
-  tags: panel,zoho
+  metadata:
+    shodan-query: http.title:"ManageEngine Desktop Central 10"
+  tags: panel,zoho,manageengine
 
 requests:
   - method: GET

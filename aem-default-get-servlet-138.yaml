@@ -5,6 +5,8 @@ info:
   severity: low
   reference: https://speakerdeck.com/0ang3el/hunting-for-security-bugs-in-aem-webapps?slide=43
   tags: aem
+
+
 requests:
   - method: GET
     path:
@@ -64,12 +66,14 @@ requests:
       - '{{BaseURL}}///etc.children.json/FNZ.html'
       - '{{BaseURL}}///etc.children.json/FNZ.png'
       - '{{BaseURL}}///etc.children.json/FNZ.ico'
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'jcr:createdBy'

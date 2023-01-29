@@ -1,13 +1,16 @@
 id: exposed-prometheus-log
+
 info:
   name: Exposed Prometheus
   author: dhiyaneshDK
   severity: low
   tags: exposure,prometheus,logs
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/prometheus"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -15,6 +18,7 @@ requests:
           - 'gateway_request_total'
           - 'logback_events_total'
         condition: or
+
       - type: status
         status:
           - 200

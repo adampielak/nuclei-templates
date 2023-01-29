@@ -1,5 +1,4 @@
 id: barracuda-panel
-
 info:
   name: Barracuda SSL VPN Log In
   author: dhiyaneshDK
@@ -8,18 +7,15 @@ info:
   classification:
     cwe-id: CWE-200
   tags: barracuda,panel,vpn
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/default/showLogon.do"
-
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: word
         words:
           - 'Barracuda SSL VPN'

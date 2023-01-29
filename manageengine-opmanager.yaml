@@ -1,11 +1,14 @@
-id: zoho-manageengine-opmanager
+id: manageengine-opmanager
 
 info:
-  name: ZOHO-ManageEngine-OpManager
-  author: dhiyaneshDK
+  name: ZOHO ManageEngine OpManager
+  author: dhiyaneshDK,daffainfo
   severity: info
-  reference: https://www.shodan.io/search?query=http.title%3A%22OpManager+Plus%22
-  tags: panel,zoho
+  reference:
+    - https://www.manageengine.com/
+  metadata:
+    shodan-query: http.title:"OpManager Plus"
+  tags: panel,zoho,manageengine
 
 requests:
   - method: GET
@@ -15,8 +18,12 @@ requests:
     matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
-          - '<h2>OpManager Plus<span>'
+          - "<div class='opmIconsHolder'>"
+          - "<div class='opmLoginFieldHolder'>"
+          - "<div class='opmIconsRight'>"
+        condition: and
 
       - type: status
         status:

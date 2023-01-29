@@ -1,8 +1,10 @@
 id: globalprotect-panel
+
 info:
   name: PaloAlto Networks GlobalProtect Panel
   author: organiccrap
   severity: info
+
 requests:
   - method: GET
     path:

@@ -1,5 +1,4 @@
 id: api-wordcloud
-
 info:
   name: Word Cloud API Test
   author: daffainfo
@@ -8,7 +7,6 @@ info:
     - https://wordcloudapi.com/getting-started
     - https://github.com/daffainfo/all-about-apikey/blob/main/Art-Design/Word%20Cloud.md
   tags: token-spray,wordcloud
-
 self-contained: true
 requests:
   - raw:
@@ -36,7 +34,6 @@ requests:
           "language": "en",
           "uppercase": false
         }
-
     matchers:
       - type: word
         part: body

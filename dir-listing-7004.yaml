@@ -1,8 +1,10 @@
 id: dir-listing
+
 info:
   name: Directory Listing
   author: notnotnotveg
   severity: informative
+
 requests:
   - method: GET
     path:

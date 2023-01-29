@@ -1,9 +1,11 @@
 id: DocCMS-keyword-sqli
+
 info:
   name: DocCMS keyword 参数 SQL 注入漏洞
   author: Str1am
   severity: high
   tags: DocCMS,sqli
+
 requests:
   - method: GET
     path:

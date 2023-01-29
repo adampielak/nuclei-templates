@@ -6,11 +6,13 @@ info:
   description: Glances is a cross-platform system monitoring tool written in Python.
   reference: https://nicolargo.github.io/glances/
   tags: glances,exposure
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET / HTTP/1.1
@@ -23,6 +25,7 @@ requests:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'title">Glances</title>'

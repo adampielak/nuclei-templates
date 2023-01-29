@@ -1,5 +1,4 @@
 id: arcgis-panel
-
 info:
   name: ArcGIS Enterprise Panel
   author: Podalirius
@@ -13,12 +12,10 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/portal/portalhelp/en/'
-
     matchers-condition: and
     matchers:
       - type: word
@@ -26,18 +23,15 @@ requests:
           - 'ArcGIS Enterprise'
           - 'Installation and Deployment'
         condition: or
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body
         group: 1
         regex:
           - '&nbsp;([0-9.]+)</span>'
-
       - type: regex
         part: body
         group: 2

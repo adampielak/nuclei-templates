@@ -4,14 +4,14 @@ info:
   author: ffffffff0x
   severity: info
   metadata:
+    verified: true
+    shodan-query: http.html:"Apache Cocoon"
     fofa-query: app="APACHE-Cocoon"
   tags: apache,cocoon,tech
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     redirects: true
     max-redirects: 2
     matchers:
@@ -19,7 +19,6 @@ requests:
         part: header
         words:
           - "X-Cocoon-Version"
-
     extractors:
       - type: regex
         part: header

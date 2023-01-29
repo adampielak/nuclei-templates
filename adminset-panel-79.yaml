@@ -1,4 +1,5 @@
 id: adminset-panel
+
 info:
   name: Adminset Login Panel
   author: ffffffff0x
@@ -11,10 +12,12 @@ info:
     reference:
       - https://github.com/guhongze/adminset/
   tags: adminset,panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -23,6 +26,7 @@ requests:
         part: body
         words:
           - "<title>AdminSet Login</title>"
+
       - type: status
         status:
           - 200

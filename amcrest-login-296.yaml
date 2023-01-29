@@ -1,5 +1,4 @@
 id: amcrest-login
-
 info:
   name: Amcrest Login
   author: DhiyaneshDK
@@ -16,12 +15,10 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers-condition: and
     matchers:
       - type: word
@@ -29,7 +26,6 @@ requests:
           - "Amcrest Technologies"
           - "LDAPUser"
         condition: and
-
       - type: status
         status:
           - 200

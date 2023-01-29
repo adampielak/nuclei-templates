@@ -4,11 +4,13 @@ info:
   author: yashanand155
   severity: low
   tags: panel,jmx
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /jmx-console/ HTTP/1.1

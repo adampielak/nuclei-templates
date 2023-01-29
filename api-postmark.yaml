@@ -1,5 +1,4 @@
 id: api-postmark
-
 info:
   name: PostMark API Test
   author: zzeitlin
@@ -7,7 +6,6 @@ info:
   reference:
     - https://postmarkapp.com/developer/api/overview
   tags: token-spray,postmark
-
 self-contained: true
 requests:
   - method: GET
@@ -16,7 +14,6 @@ requests:
     headers:
       Accept: application/json
       X-Postmark-Server-Token: "{{token}}"
-
     matchers:
       - type: word
         part: body

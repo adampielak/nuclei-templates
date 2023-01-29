@@ -1,9 +1,11 @@
 id: active-admin-exposure
+
 info:
   name: ActiveAdmin Admin Dasboard Exposure
   author: pdteam
   severity: info
   tags: panel
+
 requests:
   - method: GET
     path:

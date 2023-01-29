@@ -1,4 +1,5 @@
 id: icinga-web-login
+
 info:
   name: Icinga Web 2 Login
   author: dhiyaneshDK
@@ -6,10 +7,12 @@ info:
   metadata:
     shodan-query: http.title:"Icinga Web 2 Login"
   tags: panel,icinga
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/authentication/login'
+
     matchers-condition: and
     matchers:
       - type: word

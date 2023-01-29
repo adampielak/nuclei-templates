@@ -1,5 +1,4 @@
 id: api-fastly
-
 info:
   name: Fastly API Test
   author: Adam Crosser
@@ -7,7 +6,6 @@ info:
   reference:
     - https://developer.fastly.com/reference/api/
   tags: token-spray,fastly
-
 self-contained: true
 requests:
   - method: GET
@@ -15,7 +13,6 @@ requests:
       - "https://api.fastly.com/current_user"
     headers:
       Fastly-Key: "{{token}}"
-
     matchers:
       - type: word
         part: body

@@ -1,5 +1,4 @@
 id: alienVault-usm
-
 info:
   name: AlienVault USM Login Panel
   author: dhiyaneshDK
@@ -13,12 +12,10 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/ossim/session/login.php'
-
     matchers-condition: and
     matchers:
       - type: word

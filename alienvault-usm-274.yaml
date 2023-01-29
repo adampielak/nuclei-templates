@@ -1,5 +1,4 @@
 id: alienVault-usm
-
 info:
   name: AlienVault USM Login Panel
   author: dhiyaneshDK
@@ -10,12 +9,10 @@ info:
   metadata:
     shodan-query: http.title:"AlienVault USM"
   tags: panel,alienvault
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/ossim/session/login.php'
-
     matchers-condition: and
     matchers:
       - type: word

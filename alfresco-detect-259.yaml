@@ -1,5 +1,4 @@
 id: alfresco-detect
-
 info:
   name: Alfresco CMS Detection
   author: pathtaga
@@ -10,24 +9,20 @@ info:
   classification:
     cwe-id: CWE-200
   tags: alfresco,tech,panel
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/alfresco/api/-default-/public/cmis/versions/1.1/atom"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - 'org\/alfresco\/api\/opencmis\/OpenCMIS.get'
-
       - type: word
         part: header
         words:
           - "application/json"
-
     extractors:
       - type: regex
         part: body

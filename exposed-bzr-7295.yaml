@@ -1,4 +1,5 @@
 id: exposed-bzr
+
 info:
   name: Exposed BZR Directory
   author: daffainfo
@@ -6,10 +7,12 @@ info:
   reference:
     - http://doc.bazaar.canonical.com/beta/en/user-reference/configuration-help.html
   tags: config,exposure
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/.bzr/branch/branch.conf"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -17,9 +20,11 @@ requests:
           - "parent_location"
           - "push_location"
         condition: or
+
       - type: status
         status:
           - 200
+
       - type: word
         part: header
         words:

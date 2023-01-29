@@ -1,5 +1,4 @@
 id: api-hubspot
-
 info:
   name: HubSpot API Test
   author: zzeitlin
@@ -7,14 +6,12 @@ info:
   reference:
     - https://legacydocs.hubspot.com/docs/methods/owners/get_owners
   tags: token-spray,hubspot
-
 self-contained: true
 requests:
   - method: GET
     path:
       - "https://api.hubapi.com/owners/v2/owners?hapikey={{token}}"
       - "https://api.hubapi.com/contacts/v1/lists/static?count=3&hapikey={{token}}"
-
     matchers-condition: or
     matchers:
       - type: word
@@ -23,7 +20,6 @@ requests:
           - '"portalId":'
           - '"ownerId":'
         condition: and
-
       - type: word
         part: body
         words:

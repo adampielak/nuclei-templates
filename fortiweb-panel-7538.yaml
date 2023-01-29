@@ -1,14 +1,17 @@
 id: fortiweb-login
+
 info:
   name: Fortinet FortiWeb Login Panel
   author: PR3R00T
   severity: info
   tags: panel
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /login HTTP/1.1
@@ -23,6 +26,7 @@ requests:
           - "main-fortiweb.css"
         condition: and
         part: body
+
       - type: status
         status:
           - 200

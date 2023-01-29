@@ -1,14 +1,17 @@
 id: airflow-debug
+
 info:
   name: Airflow Debug Trace
   author: pdteam
   severity: low
   tags: apache,airflow,fpd
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /admin/airflow/login HTTP/1.1
@@ -18,12 +21,14 @@ requests:
         Accept: */*
     matchers-condition: and
     matchers:
+
       - type: word
         part: body
         words:
           - "<h1> Ooops. </h1>"
           - "Traceback (most recent call last)"
         condition: and
+
       - type: status
         status:
           - 500

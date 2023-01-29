@@ -4,6 +4,7 @@ info:
   author: binaryfigments
   severity: info
   tags: panel
+
 requests:
   - method: GET
     path:

@@ -1,4 +1,5 @@
 id: elasticsearch
+
 info:
   name: ElasticSearch Information Disclosure
   reference:
@@ -7,25 +8,29 @@ info:
   author: Shine,c-sh0
   severity: low
   tags: elastic,unauth,elasticsearch
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/?pretty'
       - '{{BaseURL}}/_cat/indices?v'
       - '{{BaseURL}}/_all/_search'
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - '"You Know, for Search"'
           - '"took":'
           - 'status'
         condition: or
+
     extractors:
-      - type: regex
+      - type: regex 
         part: body
         group: 1
         regex:

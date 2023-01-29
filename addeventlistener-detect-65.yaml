@@ -1,4 +1,5 @@
 id: addeventlistener-detect
+
 info:
   name: DOM EventListener detection
   author: yavolo,dwisiswant0
@@ -6,10 +7,12 @@ info:
   reference:
     - https://portswigger.net/web-security/dom-based/controlling-the-web-message-source
   tags: xss,misc
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers:
       - type: regex
         part: body

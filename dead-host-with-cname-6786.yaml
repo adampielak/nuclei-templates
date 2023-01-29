@@ -1,9 +1,11 @@
 id: dead-host-with-cname
+
 info:
   name: dead-host-with-cname
   author: pdnuclei - projectdiscovery.io
   severity: info
   tags: dns
+
 dns:
   - name: "{{FQDN}}"
     type: A
@@ -15,6 +17,7 @@ dns:
       - type: word
         words:
           - "NXDOMAIN"
+
       - type: word
         words:
           - "IN\tCNAME"

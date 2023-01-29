@@ -1,10 +1,10 @@
-id: thinkcmf-detection
+id: thinkcmf-detection-2
 
 info:
   name: Detect ThinkCMF
   author: pikpikcu,daffainfo
   severity: info
-  tags: panel,thinkcmf,login,tech
+  tags: panel,thinkcmf,login
 
 requests:
   - method: GET

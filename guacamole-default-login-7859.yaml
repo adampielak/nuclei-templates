@@ -1,10 +1,12 @@
 id: guacamole-default-login
+
 info:
   name: Guacamole Default Login
   author: r3dg33k
   severity: high
   tags: guacamole,default-login
   reference: https://wiki.debian.org/Guacamole#:~:text=You%20can%20now%20access%20the,password%20are%20both%20%22guacadmin%22.
+
 requests:
   - raw:
       - |
@@ -15,12 +17,14 @@ requests:
         Referer: {{Hostname}}
 
         username={{username}}&password={{password}}
+
     payloads:
       username:
         - guacadmin
       password:
         - guacadmin
     attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: word
@@ -29,10 +33,12 @@ requests:
           - '"authToken"'
           - '"guacadmin"'
         condition: and
+
       - type: word
         words:
           - 'application/json'
         part: header
+
       - type: status
         status:
           - 200

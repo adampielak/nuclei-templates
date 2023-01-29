@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/shortcodes-ultimate/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/shortcodes-ultimate.txt
+      last_version: helpers/wordpress/plugins/shortcodes-ultimate.txt
 
     extractors:
       - type: regex

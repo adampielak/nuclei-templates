@@ -5,7 +5,7 @@ info:
   author: pdteam
   severity: high
   reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/36
+    - https://github.com/EdOverflow/can-i-take-over-xyz
   tags: takeover,aws,bucket
 
 requests:
@@ -15,10 +15,6 @@ requests:
 
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         words:
           - "The specified bucket does not exist"

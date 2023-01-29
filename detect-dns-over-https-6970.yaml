@@ -1,4 +1,5 @@
 id: detect-dns-over-https
+
 info:
   name: Detect DNS over HTTPS
   author: geeknik
@@ -7,12 +8,14 @@ info:
     - https://developers.cloudflare.com/1.1.1.1/dns-over-https/wireformat
   severity: info
   tags: dns,doh,misc
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/dns-query?dns=q80BAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB"
     headers:
       Accept: application/dns-message
+
     matchers-condition: and
     matchers:
       - type: status

@@ -1,4 +1,5 @@
 id: active-admin-exposure
+
 info:
   name: ActiveAdmin Admin Dasboard Exposure
   author: pdteam
@@ -9,6 +10,7 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,activeadmin
+
 requests:
   - method: GET
     path:

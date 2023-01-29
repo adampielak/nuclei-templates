@@ -1,16 +1,25 @@
-name: neo4j-browser
-priority: 3
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - neo4j://
-      - neo4j_version
-      - neo4j_edition
-    favicon_hash: []
+id: neo4j-browser
+
+info:
+  name: Exposed Neo4j Browser
+  author: DhiyaneshDK
+  severity: low
+  metadata:
+    shodan-query: http.title:"Neo4j Browser"
+  tags: neo4j,exposure,unauth
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/browser/'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>Neo4j Browser</title>'
+
+      - type: status
+        status:
+          - 200

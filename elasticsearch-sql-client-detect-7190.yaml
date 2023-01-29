@@ -5,16 +5,19 @@ info:
   severity: low
   reference: https://www.shodan.io/search?query=http.title%3A%22Elasticsearch-sql+client%22
   tags: elasticsearch,tech,sql
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>Elasticsearch-sql client</title>'
         part: body
+
       - type: status
         status:
           - 200

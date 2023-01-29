@@ -1,19 +1,16 @@
 id: apache-axis-detect
-
 info:
   name: apache-axis-detect
   author: dogasantos
   severity: info
   description: Axis and Axis2 detection
   tags: tech,axis2,middleware,apache
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/axis2/"
       - "{{BaseURL}}/axis/"
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -26,7 +23,6 @@ requests:
           - "installation"
           - "Admin"
         condition: and
-
       - type: status
         status:
           - 200

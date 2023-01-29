@@ -1,9 +1,11 @@
 id: Gogs-unauth
+
 info:
   name: Gogs 未授权访问
   author: str1am
   severity: medium
   tags: Gogs,unauth
+
 requests:
   - method: GET
     path:

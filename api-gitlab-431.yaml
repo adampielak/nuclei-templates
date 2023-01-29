@@ -1,5 +1,4 @@
 id: api-gitlab
-
 info:
   name: Gitlab API Test
   author: Adam Crosser
@@ -7,7 +6,6 @@ info:
   reference:
     - https://docs.gitlab.com/ee/api/personal_access_tokens.html
   tags: token-spray,gitlab
-
 self-contained: true
 requests:
   - method: GET
@@ -15,7 +13,6 @@ requests:
       - "https://gitlab.com/api/v4/personal_access_tokens"
     headers:
       PRIVATE-TOKEN: "{{token}}"
-
     matchers:
       - type: word
         part: body

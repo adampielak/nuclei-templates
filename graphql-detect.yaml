@@ -2,9 +2,9 @@ id: graphql-detect
 
 info:
   name: GraphQL API Detection
-  author: nkxxkn,elsfa7110,ofjaaah,exceed
+  author: NkxxkN,ELSFA7110,OFJAAAH
   severity: info
-  tags: tech,graphql
+  tags: tech,graphql,fuzz
 
 requests:
   - method: POST
@@ -17,7 +17,6 @@ requests:
       - "{{BaseURL}}/api/graphql/v1"
       - "{{BaseURL}}/explorer"
       - "{{BaseURL}}/express-graphql"
-      - "{{BaseURL}}/gql"
       - "{{BaseURL}}/graph"
       - "{{BaseURL}}/graph_cms"
       - "{{BaseURL}}/graphiql"

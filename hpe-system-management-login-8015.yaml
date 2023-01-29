@@ -1,14 +1,17 @@
 id: hpe-system-management-login
+
 info:
   name: HPE System Management Login
   author: divya_mudgal
   severity: info
   tags: hp,tech,panel
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /cpqlogin.htm HTTP/1.1
@@ -24,6 +27,7 @@ requests:
         words:
           - "HPE System Management Homepage"
           - "/proxy/ssllogin"
+
     extractors:
       - type: regex
         part: body

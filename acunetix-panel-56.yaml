@@ -1,4 +1,5 @@
 id: acunetix-panel-detect
+
 info:
   name: Acunetix Login Panel
   author: joanbono
@@ -9,10 +10,12 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/#/login"
+
     matchers-condition: and
     matchers:
       - type: word

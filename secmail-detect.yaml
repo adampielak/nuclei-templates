@@ -1,16 +1,11 @@
 id: secmail-detect
 
 info:
-  name: SecMail Login Panel - Detect
+  name: SecMail - secure email Detect
   author: johnk3r
   severity: info
-  description: SecMail login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: secmail
+  reference:
+    - https://www.shodan.io/search?query=secmail
   tags: secmail,panel
 
 requests:
@@ -28,5 +23,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/09

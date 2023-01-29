@@ -1,4 +1,5 @@
 id: drupal-jsonapi-user-listing
+
 info:
   name: Drupal JSON:API User Listing
   author: lixts
@@ -8,18 +9,22 @@ info:
   metadata:
     verified: true
   tags: drupal,exposure
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/jsonapi/user/user"
+
     matchers-condition: and
     matchers:
       - type: regex
         regex:
           - '\{"display_name":"([A-Sa-z0-9-_]+)"\}'
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

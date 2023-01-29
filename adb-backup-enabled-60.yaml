@@ -6,7 +6,8 @@ info:
   author: gaurang
   severity: low
   tags: android,file
-  reference: -https://adb-backup.com/
+  reference:
+    -https://adb-backup.com/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0

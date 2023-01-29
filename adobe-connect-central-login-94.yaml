@@ -1,14 +1,17 @@
 id: adobe-connect-central-login
+
 info:
   name: Adobe Connect Central Login
   author: dhiyaneshDk
   severity: info
   tags: adobe,panel
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /system/login HTTP/1.1
@@ -19,6 +22,7 @@ requests:
         words:
           - '<title>Adobe Connect Central Login</title>'
         part: body
+
       - type: status
         status:
           - 200

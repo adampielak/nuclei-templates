@@ -1,5 +1,4 @@
 id: argocd-detect
-
 info:
   name: Argo CD Login Panel
   author: Adam Crosser,daffainfo
@@ -8,19 +7,16 @@ info:
   metadata:
     shodan-query: http.title:"Argo CD"
   tags: panel,argocd,login,kubernetes
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>Argo CD</title>'
-
       - type: status
         status:
           - 200

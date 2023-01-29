@@ -2,8 +2,10 @@ id: hadoop-unauth
 info:
   name: hadoop unauth
   risk: High
+
 params:
   - root: "{{.BaseURL}}"
+
 requests:
   - method: GET
     redirect: false

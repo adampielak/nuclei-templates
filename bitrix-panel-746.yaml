@@ -1,5 +1,4 @@
 id: bitrix-login
-
 info:
   name: Bitrix Login Panel
   author: juicypotato1
@@ -10,12 +9,10 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/bitrix/admin/"
-
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -26,7 +23,6 @@ requests:
           - "/bitrix/js/main/"
         part: body
         condition: and
-
       - type: status
         status:
           - 200

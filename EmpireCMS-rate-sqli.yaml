@@ -1,9 +1,11 @@
 id: EmpireCMS-rate-sqli
+
 info:
   name: 帝国CMS(EmpireCMS)商品评分插件 rate.php SQL注入
   author: str1am
   severity: high
   tags: EmpireCMS,sqli
+
 requests:
   - method: GET
     path:

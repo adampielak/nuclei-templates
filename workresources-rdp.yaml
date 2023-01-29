@@ -22,3 +22,15 @@ requests:
       - type: status
         status:
           - 200
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>Error: Unable to display RD Web Access</title>'
+
+      - type: status
+        status:
+          - 200
+
+# Enhanced by md on 2022/10/04
