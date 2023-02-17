@@ -8,7 +8,11 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
+<<<<<<< HEAD
     fofa-dork: app="ACEmanager"
+=======
+    fofa-query: app="ACEmanager"
+>>>>>>> 5d36d276 (add new stuff)
   tags: panel,login,tech,acemanager
 
 requests:

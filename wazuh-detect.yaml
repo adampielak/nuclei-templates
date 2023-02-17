@@ -10,6 +10,7 @@ info:
     - https://github.com/wazuh/wazuh
 
 requests:
+<<<<<<< HEAD
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -23,6 +24,12 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         
+=======
+  - method: GET
+    path:
+      - "{{BaseURL}}/app/login"
+
+>>>>>>> 5d36d276 (add new stuff)
     matchers:
       - type: word
         part: body

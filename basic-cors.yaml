@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: basic-cors-misconfig
 
 info:
@@ -16,3 +17,27 @@ requests:
         words:
           - "Access-Control-Allow-Origin: https://evil.com"
         part: header
+=======
+id: basic-cors-misconfig
+
+info:
+  name: Basic CORS misconfiguration
+  author: nadino
+  severity: info
+  tags: cors
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    headers:
+      Origin: https://evil.com
+
+    matchers:
+      - type: word
+        words:
+          - "Access-Control-Allow-Origin: https://evil.com"
+          - "Access-Control-Allow-Credentials: true"
+        condition: and
+        part: header
+>>>>>>> 5d36d276 (add new stuff)

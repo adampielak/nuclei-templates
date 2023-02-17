@@ -8,6 +8,11 @@ info:
   reference:
     - https://www.acunetix.com/vulnerabilities/web/sap-icf-sap-public-info-sensitive-information-disclosure/
     - https://github.com/Jean-Francois-C/SAP-Security-Audit
+<<<<<<< HEAD
+=======
+  metadata:
+    shodan-query: http.favicon.hash:-266008933
+>>>>>>> 5d36d276 (add new stuff)
   tags: sap
 
 requests:

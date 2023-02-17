@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/taxonomy-terms-order/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/taxonomy-terms-order.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/taxonomy-terms-order.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

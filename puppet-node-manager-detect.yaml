@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: puppet-node-manager-detect
 
 info:
@@ -22,3 +23,29 @@ requests:
       - type: status
         status:
           - 200
+=======
+id: puppet-node-manager-detect
+
+info:
+  name: Puppet Node Manager
+  author: pussycat0x
+  severity: info
+  metadata:
+    fofa-query: 'app="puppet-Node-Manager"'
+  tags: node,tech
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>Puppet Node Manager</title>'
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 5d36d276 (add new stuff)

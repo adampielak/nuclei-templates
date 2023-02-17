@@ -1,6 +1,7 @@
 id: open-redirect
 
 info:
+<<<<<<< HEAD
   name: Open Redirect - Detection
   author: afaq,melbadry9,Elmahdi,pxmme1337,Regala_,andirrahmani1,geeknik
   severity: low
@@ -10,10 +11,17 @@ info:
     cvss-score: 6.1
     cwe-id: CWE-601
   tags: redirect,generic
+=======
+  name: Open Redirect Detection
+  author: princechaddha
+  severity: medium
+  tags: redirect,dast
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
     path:
+<<<<<<< HEAD
       - "{{RootURL}}/{{redirect}}"
 
     payloads:
@@ -109,12 +117,131 @@ requests:
         - 'cgi-bin/redirect.cgi?evil.com'
         - 'out?evil.com'
         - 'login?to=http://evil.com'
+=======
+      - "{{BaseURL}}"
+
+    payloads:
+      redirect:
+        - "evil.com"
+
+    fuzzing:
+      - part: query
+        mode: single
+        keys:
+          - AuthState
+          - URL
+          - _url
+          - callback
+          - checkout
+          - checkout_url
+          - content
+          - continue
+          - continueTo
+          - counturl
+          - data
+          - dest
+          - dest_url
+          - destination
+          - dir
+          - document
+          - domain
+          - done
+          - download
+          - feed
+          - file
+          - file_name
+          - file_url
+          - folder
+          - folder_url
+          - forward
+          - from_url
+          - go
+          - goto
+          - host
+          - html
+          - http
+          - https
+          - image
+          - image_src
+          - image_url
+          - imageurl
+          - img
+          - img_url
+          - include
+          - langTo
+          - load_file
+          - load_url
+          - login_to
+          - login_url
+          - logout
+          - media
+          - navigation
+          - next
+          - next_page
+          - open
+          - out
+          - page
+          - page_url
+          - pageurl
+          - path
+          - picture
+          - port
+          - proxy
+          - r
+          - r2
+          - redir
+          - redirect
+          - redirectUri
+          - redirectUrl
+          - redirect_to
+          - redirect_uri
+          - redirect_url
+          - reference
+          - referrer
+          - req
+          - request
+          - ret
+          - retUrl
+          - return
+          - returnTo
+          - return_path
+          - return_to
+          - return_url
+          - rt
+          - rurl
+          - show
+          - site
+          - source
+          - src
+          - target
+          - to
+          - u
+          - uri
+          - url
+          - val
+          - validate
+          - view
+          - window
+        fuzz:
+          - "https://{{redirect}}"
+
+      - part: query
+        mode: single
+        values:
+          - "https?://" # Replace HTTP URLs with alternatives
+        fuzz:
+          - "https://{{redirect}}"
+>>>>>>> 5d36d276 (add new stuff)
 
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: regex
+<<<<<<< HEAD
         part: location
+=======
+        part: header
+>>>>>>> 5d36d276 (add new stuff)
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)?(?:[a-zA-Z0-9\-_\.@]*)evil\.com\/?(\/|[^.].*)?$' # https://regex101.com/r/ZDYhFh/1
 
@@ -122,8 +249,12 @@ requests:
         status:
           - 301
           - 302
+<<<<<<< HEAD
           - 307
           - 308
         condition: or
 
 # Enhanced by mp on 2022/10/14
+=======
+          - 307
+>>>>>>> 5d36d276 (add new stuff)

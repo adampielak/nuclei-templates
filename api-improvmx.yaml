@@ -14,7 +14,12 @@ requests:
         GET https://api.improvmx.com/v3/account HTTP/1.1
         Authorization: Basic {{base64(':' + token)}}
         Host: api.improvmx.com
+<<<<<<< HEAD
     redirects: true
+=======
+
+    host-redirects: true
+>>>>>>> 5d36d276 (add new stuff)
     max-redirects: 1
     matchers:
       - type: word

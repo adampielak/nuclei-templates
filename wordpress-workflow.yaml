@@ -9,4 +9,8 @@ workflows:
 
   - template: technologies/wordpress-detect.yaml
     subtemplates:
+<<<<<<< HEAD
       - tags: wordpress
+=======
+      - tags: wordpress
+>>>>>>> 5d36d276 (add new stuff)

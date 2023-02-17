@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/imagify/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/imagify.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/imagify.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

@@ -2,8 +2,14 @@ id: phpinfo-files
 
 info:
   name: phpinfo Disclosure
+<<<<<<< HEAD
   author: bauthard
   severity: low
+=======
+  author: pdteam,daffainfo,meme-lord,dhiyaneshDK
+  severity: low
+  tags: config,exposure,phpinfo
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -20,9 +26,36 @@ requests:
       - "{{BaseURL}}/pinfo.php"
       - "{{BaseURL}}/phpversion.php"
       - "{{BaseURL}}/time.php"
+<<<<<<< HEAD
+=======
+      - "{{BaseURL}}/index.php"
+      - "{{BaseURL}}/temp.php"
+      - "{{BaseURL}}/old_phpinfo.php"
+      - "{{BaseURL}}/infos.php"
+      - "{{BaseURL}}/linusadmin-phpinfo.php"
+      - "{{BaseURL}}/php-info.php"
+      - "{{BaseURL}}/dashboard/phpinfo.php"
+
+    stop-at-first-match: true
+    matchers-condition: and
+>>>>>>> 5d36d276 (add new stuff)
     matchers:
       - type: word
         words:
           - "PHP Extension"
           - "PHP Version"
         condition: and
+<<<<<<< HEAD
+=======
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '>PHP Version <\/td><td class="v">([0-9.]+)'
+>>>>>>> 5d36d276 (add new stuff)

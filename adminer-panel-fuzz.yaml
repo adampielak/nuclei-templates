@@ -23,7 +23,11 @@ requests:
         Referer: {{BaseURL}}
 
     payloads:
+<<<<<<< HEAD
       path: helpers/wordlists/adminer-paths.txt
+=======
+      path: ../../../helpers/wordlists/adminer-paths.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     threads: 50
     stop-at-first-match: true

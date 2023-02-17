@@ -3,8 +3,18 @@ id: druid-console-exposure
 info:
   name: Alibaba Druid Console Exposure
   author: pdteam
+<<<<<<< HEAD
   severity: medium
   tags: panel
+=======
+  severity: info
+  description: Alibaba Druid panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: panel,alibaba,druid
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

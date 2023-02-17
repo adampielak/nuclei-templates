@@ -1,9 +1,20 @@
 id: zip-backup-files
 
 info:
+<<<<<<< HEAD
   name: Compressed Backup File
   author: toufik-airane,dwisiswant0,ffffffff0x
   severity: medium
+=======
+  name: Compressed Backup File - Detect
+  author: toufik-airane,dwisiswant0,ffffffff0x
+  severity: medium
+  description: Multiple compressed backup files were detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   tags: exposure,backup
 
 requests:
@@ -69,3 +80,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2023/02/08
+>>>>>>> 5d36d276 (add new stuff)

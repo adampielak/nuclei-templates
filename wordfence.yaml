@@ -1,7 +1,11 @@
 id: wordpress-wordfence
 
 info:
+<<<<<<< HEAD
   name: Wordfence Security – Firewall & Malware Scan Detection
+=======
+  name: Wordfence Security – Firewall, Malware Scan, and Login Security Detection
+>>>>>>> 5d36d276 (add new stuff)
   author: ricardomaia
   severity: info
   reference:

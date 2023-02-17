@@ -5,7 +5,11 @@ info:
   author: geeknik
   reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Via
   severity: info
+<<<<<<< HEAD
   tags: misc
+=======
+  tags: misc,generic
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

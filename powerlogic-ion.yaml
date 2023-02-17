@@ -1,12 +1,24 @@
 id: powerlogic-ion
 
 info:
-  name: PowerLogic ION Exposed
+  name: PowerLogic ION Panel - Detect
   author: dhiyaneshDK
+<<<<<<< HEAD
   severity: low
   reference:
     - https://www.exploit-db.com/ghdb/6810
   tags: panel
+=======
+  severity: info
+  description: PowerLogic ION panel was detected.
+  reference:
+    - https://www.exploit-db.com/ghdb/6810
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: panel,edb
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -21,3 +33,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2022/12/06

@@ -1,11 +1,22 @@
 id: saltstack-config-panel
 
 info:
+<<<<<<< HEAD
   name: SaltStack Config Panel
+=======
+  name: SaltStack Config Panel - Detect
+>>>>>>> 5d36d276 (add new stuff)
   author: pussycat0x
   severity: info
   description: |
     SaltStack config panel was detected.
+<<<<<<< HEAD
+=======
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     shodan-query: title:"SaltStack Config"
@@ -26,3 +37,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by cs 01/26/2023
+>>>>>>> 5d36d276 (add new stuff)

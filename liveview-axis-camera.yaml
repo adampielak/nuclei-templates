@@ -6,7 +6,11 @@ info:
   severity: info
   reference:
     - https://www.exploit-db.com/ghdb/6843
+<<<<<<< HEAD
   tags: iot,axis,network
+=======
+  tags: axis,network,edb,iot
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -14,7 +18,11 @@ requests:
       - '{{BaseURL}}/view/viewer_index.shtml'
       - '{{BaseURL}}/pics/logo_70x29px.gif'
 
+<<<<<<< HEAD
     redirects: true
+=======
+    host-redirects: true
+>>>>>>> 5d36d276 (add new stuff)
     max-redirects: 2
     stop-at-first-match: true
     matchers-condition: or

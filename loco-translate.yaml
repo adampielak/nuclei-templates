@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/loco-translate/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/loco-translate.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/loco-translate.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

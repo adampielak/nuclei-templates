@@ -2,7 +2,11 @@ id: zend-config-file
 
 info:
   name: Zend Configuration File
+<<<<<<< HEAD
   author: pdteam,geeknik
+=======
+  author: pdteam,geeknik,Akokonunes
+>>>>>>> 5d36d276 (add new stuff)
   severity: high
   tags: config,exposure,zend,php
 
@@ -26,10 +30,17 @@ requests:
     stop-at-first-match: true
     matchers-condition: and
     matchers:
+<<<<<<< HEAD
       - type: word
         words:
           - "resources.db.params.password"
           - "resources.db.params.username"
+=======
+      - type: regex
+        regex:
+          - "db.*(.password).*="
+          - "db.*(.username).*="
+>>>>>>> 5d36d276 (add new stuff)
         condition: and
 
       - type: word

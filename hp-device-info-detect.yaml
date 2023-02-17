@@ -1,7 +1,11 @@
 id: hp-device-info-detect
 
 info:
+<<<<<<< HEAD
   name: HP LaserJet
+=======
+  name: HP Device Info Detection
+>>>>>>> 5d36d276 (add new stuff)
   author: pussycat0x
   severity: low
   reference: https://www.exploit-db.com/ghdb/6905
@@ -21,4 +25,8 @@ requests:
 
       - type: status
         status:
+<<<<<<< HEAD
           - 200
+=======
+          - 200
+>>>>>>> 5d36d276 (add new stuff)

@@ -4,15 +4,23 @@ info:
   name: CouchDB Admin Party
   author: organiccrap
   severity: high
+<<<<<<< HEAD
   description: Requests made against CouchDB is done in the context of an admin user.
+=======
+  description: Requests made against CouchDB are done in the context of an admin user.
+>>>>>>> 5d36d276 (add new stuff)
   tags: couchdb
 
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/_users/_all_docs'
+<<<<<<< HEAD
     headers:
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

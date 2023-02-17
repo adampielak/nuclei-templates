@@ -1,11 +1,22 @@
 id: watchguard-panel
 
 info:
-  name: Watchguard Panel
+  name: Watchguard Login Panel - Detect
   author: ahmetpergamum
   severity: info
+<<<<<<< HEAD
   reference: https://www.exploit-db.com/ghdb/7008
   tags: panel
+=======
+  description: Watchguard login panel was detected.
+  reference:
+    - https://www.exploit-db.com/ghdb/7008
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: watchguard,edb,panel
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:
@@ -31,3 +42,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/01/25

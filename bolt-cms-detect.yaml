@@ -6,7 +6,11 @@ info:
   severity: info
   description: Detects bolt CMS
   tags: tech,bolt,cms
+<<<<<<< HEAD
   references:
+=======
+  reference:
+>>>>>>> 5d36d276 (add new stuff)
     - https://github.com/bolt/bolt
 
 requests:

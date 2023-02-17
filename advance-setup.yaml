@@ -10,7 +10,11 @@ info:
     - https://www.actiontec.com/dsl/
   classification:
     cwe-id: CWE-200
+<<<<<<< HEAD
   tags: panel,setup
+=======
+  tags: panel,setup,edb
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

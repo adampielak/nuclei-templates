@@ -10,7 +10,11 @@ info:
   metadata:
     verified: true
     shodan-query: http.component:"Adobe ColdFusion"
+<<<<<<< HEAD
   tags: adobe,coldfusion
+=======
+  tags: adobe,coldfusion,tech
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

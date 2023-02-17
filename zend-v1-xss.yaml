@@ -10,7 +10,11 @@ info:
     - https://twitter.com/c3l3si4n/status/1600035722148212737
   metadata:
     verified: true
+<<<<<<< HEAD
     google-dork: inurl:"/tests/Zend/Http/"
+=======
+    google-query: inurl:"/tests/Zend/Http/"
+>>>>>>> 5d36d276 (add new stuff)
   tags: zend,zendframework,xss
 
 requests:

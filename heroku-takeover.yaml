@@ -1,9 +1,14 @@
 id: heroku-takeover
 
 info:
-  name: heroku takeover detection
+  name: Heroku Takeover Detection
   author: 0xPrial,pdteam
   severity: high
+<<<<<<< HEAD
+=======
+  reference:
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/38
+>>>>>>> 5d36d276 (add new stuff)
   tags: takeover,heroku
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
 

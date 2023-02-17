@@ -11,14 +11,14 @@ requests:
     path:
       - "{{BaseURL}}"
 
-    redirects: true
+    host-redirects: true
     max-redirects: 3
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - '2022'
+          - '2023'
         negative: true
 
       - type: regex

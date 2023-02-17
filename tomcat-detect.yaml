@@ -14,6 +14,10 @@ requests:
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/{{randstr}}"
+<<<<<<< HEAD
+=======
+      - "{{BaseURL}}/docs/introduction.html"
+>>>>>>> 5d36d276 (add new stuff)
 
     stop-at-first-match: true
     matchers-condition: or
@@ -33,4 +37,8 @@ requests:
       - type: regex
         group: 1
         regex:
+<<<<<<< HEAD
           - '(?i)Apache Tomcat.*([0-9]\.[0-9]+\.[0-9]+)'
+=======
+          - '(?i)Apache Tomcat.*([0-9]\.[0-9]+\.[0-9]+)'
+>>>>>>> 5d36d276 (add new stuff)

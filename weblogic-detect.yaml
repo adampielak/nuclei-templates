@@ -4,6 +4,12 @@ info:
   name: Detect Weblogic
   author: bing0o
   severity: info
+<<<<<<< HEAD
+=======
+  metadata:
+    shodan-query: product:"Oracle Weblogic"
+  tags: tech,weblogic
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

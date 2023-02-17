@@ -3,7 +3,11 @@ id: apache-jmeter-dashboard
 info:
   name: Apache JMeter Dashboard Login Panel - Detect
   author: tess
+<<<<<<< HEAD
   severity: low
+=======
+  severity: info
+>>>>>>> 5d36d276 (add new stuff)
   description: Apache JMeter Dashboard login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N

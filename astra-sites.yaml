@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/astra-sites/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/astra-sites.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/astra-sites.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

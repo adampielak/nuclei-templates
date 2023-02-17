@@ -1,7 +1,11 @@
 id: s3-subtakeover
 
 info:
+<<<<<<< HEAD
   name: Subdomain takeovee AWS S3
+=======
+  name: Subdomain takeover AWS S3
+>>>>>>> 5d36d276 (add new stuff)
   author: manikanta a.k.a @secureitmania
   severity: high
 
@@ -11,7 +15,11 @@ info:
 requests:
   - method: GET
     path:
+<<<<<<< HEAD
       - '{{BaseURL}}/'
+=======
+      - '{{BaseURL}}'
+>>>>>>> 5d36d276 (add new stuff)
     redirects: false
     matchers-condition: and
     matchers:

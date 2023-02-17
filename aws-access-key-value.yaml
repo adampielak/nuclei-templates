@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: aws-access-key-value
 
 info:
@@ -16,3 +17,23 @@ requests:
         part: body
         regex:
           - "(A3T[A-Z0-9]|AKIA|AGPA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+=======
+id: aws-access-key-value
+
+info:
+  name: AWS Access Key ID Value
+  author: Swissky
+  severity: info
+  tags: exposure,token,aws,amazon
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - "(A3T[A-Z0-9]|AKIA|AGPA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+>>>>>>> 5d36d276 (add new stuff)

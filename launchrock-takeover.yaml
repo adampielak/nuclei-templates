@@ -1,9 +1,14 @@
 id: launchrock-takeover
 
 info:
-  name: launchrock takeover detection
+  name: Launchrock Takeover Detection
   author: pdteam
   severity: high
+<<<<<<< HEAD
+=======
+  reference:
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/74
+>>>>>>> 5d36d276 (add new stuff)
   tags: takeover
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
 

@@ -1,9 +1,20 @@
 id: neo4j-browser
 
 info:
+<<<<<<< HEAD
   name: Exposed Neo4j Browser
   author: DhiyaneshDK
   severity: low
+=======
+  name: Neo4j Browser - Detect
+  author: DhiyaneshDK
+  severity: info
+  description: The Neo4j Browser has been detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     shodan-query: http.title:"Neo4j Browser"
   tags: neo4j,exposure,unauth
@@ -23,3 +34,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by cs 01/26/2023
+>>>>>>> 5d36d276 (add new stuff)

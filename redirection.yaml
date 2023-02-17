@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/redirection/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/redirection.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/redirection.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

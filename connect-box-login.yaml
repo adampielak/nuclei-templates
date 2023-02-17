@@ -1,9 +1,20 @@
 id: connectbox-panel
 
 info:
+<<<<<<< HEAD
   name: Connect Box Login Panel Detect
   author: fabaff
   severity: info
+=======
+  name: Connect Box Login Panel - Detect
+  author: fabaff
+  severity: info
+  description: Connect Box login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     shodan-query: 'NET-DK/1.0'
@@ -31,3 +42,8 @@ requests:
       - type: status
         status:
           - 302
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2023/01/24
+>>>>>>> 5d36d276 (add new stuff)

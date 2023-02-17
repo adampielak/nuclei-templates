@@ -3,8 +3,17 @@ id: header-command-injection
 info:
   name: Header Command Injection
   author: geeknik
+<<<<<<< HEAD
   severity: high
   description: Fuzzing headers for command injection
+=======
+  severity: critical
+  description: Headers were tested for remote command injection vulnerabilities.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10.0
+    cwe-id: CWE-77
+>>>>>>> 5d36d276 (add new stuff)
   tags: fuzz,rce
 
 requests:
@@ -15,8 +24,8 @@ requests:
         §header§: §payload§
 
     payloads:
-      header: helpers/payloads/request-headers.txt
-      payload: helpers/payloads/command-injection.txt
+      header: ../../../helpers/payloads/request-headers.txt
+      payload: ../../../helpers/payloads/command-injection.txt
     attack: clusterbomb
 
     redirects: true

@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/one-click-demo-import/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/one-click-demo-import.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/one-click-demo-import.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

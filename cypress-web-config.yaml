@@ -1,9 +1,20 @@
 id: cypress-web-config
 
 info:
+<<<<<<< HEAD
   name: Cypress Oxygen Web Page Configuration
   author: tess
   severity: info
+=======
+  name: Cypress Oxygen Configuration Page - Detect
+  author: tess
+  severity: info
+  description: Cypress Oxygen configuration page was detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     shodan-query: http.title:"PendingInstallVZW - Web Page Configuration"
@@ -26,3 +37,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2023/02/09
+>>>>>>> 5d36d276 (add new stuff)

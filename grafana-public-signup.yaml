@@ -4,6 +4,11 @@ info:
   name: Grafana Public Signup
   author: pdteam
   severity: medium
+<<<<<<< HEAD
+=======
+  metadata:
+    shodan-query: title:"Grafana"
+>>>>>>> 5d36d276 (add new stuff)
   tags: grafana,intrusive
 
 requests:
@@ -15,7 +20,11 @@ requests:
         Origin: {{BaseURL}}
         Referer: {{BaseURL}}
 
+<<<<<<< HEAD
         {"username":"nuclei_{{randstr}}","password":"{{randstr_1}}"}
+=======
+        {"username":"{{randstr}}","password":"{{randstr_1}}"}
+>>>>>>> 5d36d276 (add new stuff)
 
     matchers-condition: and
     matchers:

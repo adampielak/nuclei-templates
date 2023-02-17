@@ -6,7 +6,11 @@ info:
   severity: info
   reference:
     - https://www.exploit-db.com/ghdb/6848
+<<<<<<< HEAD
   tags: iot
+=======
+  tags: iot,edb
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

@@ -12,6 +12,10 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/Thumbs.db"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: binary

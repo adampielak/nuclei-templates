@@ -1,11 +1,25 @@
 id: gsoap-lfi
 
 info:
+<<<<<<< HEAD
   name: gSOAP 2.8 - Directory Traversal
   author: 0x_Akoko
   severity: high
   reference: https://www.exploit-db.com/exploits/47653
   tags: gsoap,lfi
+=======
+  name: gSOAP 2.8 - Local File Inclusion
+  author: 0x_Akoko
+  description: gSOAP 2.8 is vulnerable to local file inclusion.
+  severity: high
+  reference:
+    - https://www.exploit-db.com/exploits/47653
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+  tags: edb,gsoap,lfi
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - raw:
@@ -26,3 +40,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by mp on 2022/07/27
+>>>>>>> 5d36d276 (add new stuff)

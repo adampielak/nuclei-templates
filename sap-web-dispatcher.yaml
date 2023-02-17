@@ -5,11 +5,19 @@ info:
   author: randomstr1ng
   severity: info
   description: Detection of SAP Web Dispatcher service
+<<<<<<< HEAD
   tags: sap,webserver,proxy
 
 requests:
   - method: GET
     redirects: true
+=======
+  tags: sap,webserver,proxy,tech
+
+requests:
+  - method: GET
+    host-redirects: true
+>>>>>>> 5d36d276 (add new stuff)
     max-redirects: 2
 
     path:

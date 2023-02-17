@@ -5,8 +5,14 @@ info:
   author: cyllective
   severity: info
   description: Detects Grav CMS
+<<<<<<< HEAD
   tags: tech,grav,cms
   reference: https://github.com/getgrav/grav
+=======
+  reference:
+    - https://github.com/getgrav/grav
+  tags: tech,grav,cms
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

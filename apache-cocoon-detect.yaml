@@ -1,4 +1,5 @@
 id: apache-cocoon-detect
+
 info:
   name: Apache Cocoon detect
   author: ffffffff0x
@@ -12,7 +13,12 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+<<<<<<< HEAD
     redirects: true
+=======
+
+    host-redirects: true
+>>>>>>> 5d36d276 (add new stuff)
     max-redirects: 2
     matchers:
       - type: word

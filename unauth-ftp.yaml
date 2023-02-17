@@ -4,8 +4,12 @@ info:
   name: FTP Anonymous Login
   author: C3l3si4n
   severity: medium
+<<<<<<< HEAD
   reference:
     - https://tools.ietf.org/html/rfc2577
+=======
+  reference: https://tools.ietf.org/html/rfc2577
+>>>>>>> 5d36d276 (add new stuff)
   tags: network,ftp
 
 network:
@@ -20,4 +24,8 @@ network:
       - type: word
         words:
           - "Anonymous access allowed,"
+<<<<<<< HEAD
         part: response
+=======
+        part: all
+>>>>>>> 5d36d276 (add new stuff)

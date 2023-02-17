@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/disable-gutenberg/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/disable-gutenberg.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/disable-gutenberg.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

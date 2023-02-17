@@ -2,7 +2,11 @@ id: server-status-localhost
 
 info:
   name: Server Status Disclosure
+<<<<<<< HEAD
   author: bauthard
+=======
+  author: pdteam,geeknik
+>>>>>>> 5d36d276 (add new stuff)
   severity: low
 
 requests:
@@ -11,11 +15,17 @@ requests:
     headers:
       X-Client-IP: "127.0.0.1"
       X-Remote-IP: "127.0.0.1"
+<<<<<<< HEAD
       X-Remote-Addr: "127.0.0.1"
       X-Forwarded-For: "127.0.0.1"
       X-Originating-IP: "127.0.0.1"
+=======
+      X-True-IP: "127.0.0.1"
+
+>>>>>>> 5d36d276 (add new stuff)
     path:
       - "{{BaseURL}}/server-status"
+
     matchers:
       - type: word
         words:

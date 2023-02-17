@@ -1,8 +1,13 @@
 id: wordpress-detect
 
 info:
+<<<<<<< HEAD
   name: WordPress Detection
   author: pdteam
+=======
+  name: WordPress Detect
+  author: pdteam,daffainfo,ricardomaia
+>>>>>>> 5d36d276 (add new stuff)
   severity: info
   metadata:
     shodan-query: http.component:"WordPress"
@@ -12,19 +17,34 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+<<<<<<< HEAD
 
     redirects: true
     max-redirects: 2
     matchers-condition: or
+=======
+      - "{{BaseURL}}/wp-admin/install.php"
+      - "{{BaseURL}}/feed/"
+      - "{{BaseURL}}/?feed=rss2" # alternative if /feed/ is blocked
+
+    stop-at-first-match: true
+    matchers-condition: and
+>>>>>>> 5d36d276 (add new stuff)
     matchers:
 
       - type: regex
         regex:
+          - '<generator>https?:\/\/wordpress\.org.*</generator>'
+          - 'wp-login.php'
+          - '\/wp-content/themes\/'
+          - '\/wp-includes\/'
+          - 'name="generator" content="wordpress'
           - '<link[^>]+s\d+\.wp\.com'
           - '<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\d.]+) -'
           - '<!--[^>]+WP-Super-Cache'
         condition: or
 
+<<<<<<< HEAD
       - type: word
         words:
           - 'wp-login.php'
@@ -33,9 +53,31 @@ requests:
           - 'name="generator" content="wordpress'
           - '<!-- performance optimized by w3 total cache. learn more: http://www.w3-edge.com/wordpress-plugins/'
         condition: or
+=======
+      - type: status
+        status:
+          - 200
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex
+        name: version_by_generator
         group: 1
         regex:
+<<<<<<< HEAD
           - 'content="WordPress ([0-9.]+)"'
+=======
+          - '(?m)https:\/\/wordpress.org\/\?v=([0-9.]+)'
+
+      - type: regex
+        name: version_by_js
+        group: 1
+        regex:
+          - 'wp-emoji-release\.min\.js\?ver=((\d+\.?)+)\b'
+
+      - type: regex
+        name: version_by_css
+        group: 1
+        regex:
+          - 'install\.min\.css\?ver=((\d+\.?)+)\b'
+>>>>>>> 5d36d276 (add new stuff)

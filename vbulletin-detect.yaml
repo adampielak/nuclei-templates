@@ -10,7 +10,11 @@ info:
   metadata:
     verified: true
     shodan-query: title:"Powered By vBulletin"
+<<<<<<< HEAD
     google-dork: intext:"Powered By vBulletin"
+=======
+    google-query: intext:"Powered By vBulletin"
+>>>>>>> 5d36d276 (add new stuff)
   tags: tech,vbulletin
 
 requests:

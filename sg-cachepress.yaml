@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/sg-cachepress/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/sg-cachepress.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/sg-cachepress.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/translatepress-multilingual/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/translatepress-multilingual.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/translatepress-multilingual.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

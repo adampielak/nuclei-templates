@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/wp-mail-smtp/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/wp-mail-smtp.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/wp-mail-smtp.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

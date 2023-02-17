@@ -1,10 +1,23 @@
 id: tectuus-scada-monitor
 
 info:
+<<<<<<< HEAD
   name: Tectuus SCADA Monitor
   reference: https://www.tectuus.mx/
   author: geeknik
   severity: info
+=======
+  name: Tectuus SCADA Monitor Panel - Detect
+  author: geeknik
+  severity: info
+  description: Tectuus SCADA Monitor panel was detected.
+  reference:
+    - https://www.tectuus.mx/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   tags: panel,tectuus,scada
 
 requests:
@@ -12,12 +25,16 @@ requests:
     path:
       - "{{BaseURL}}"
 
+<<<<<<< HEAD
     redirects: true
+=======
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
       - type: word
         words:
           - "<title>SCADmonitor</title>"
@@ -26,3 +43,12 @@ requests:
       - type: word
         words:
           - "SCADAmonitor y su logo son propiedad de tectuus®"
+=======
+
+      - type: word
+        words:
+          - "<title>SCADAmonitor</title>"
+        part: body
+
+# Enhanced by md on 2023/01/18
+>>>>>>> 5d36d276 (add new stuff)

@@ -1,9 +1,14 @@
 id: keycloak-json
+
 info:
-  name: Keycloak Json File
+  name: Keycloak JSON File
   author: oppsec
   severity: info
+<<<<<<< HEAD
   tags: exposure,keycloak,config
+=======
+  tags: exposure,keycloak,config,files
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

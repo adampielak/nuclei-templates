@@ -7,7 +7,11 @@ info:
   description: This template identifies the Sitefinity login page.
   reference:
     - https://www.exploit-db.com/ghdb/6722
+<<<<<<< HEAD
   tags: panel,sitefinity
+=======
+  tags: sitefinity,edb,panel
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

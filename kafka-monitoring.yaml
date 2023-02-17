@@ -1,10 +1,22 @@
 id: kafka-monitoring
 
 info:
+<<<<<<< HEAD
   name: Apache Kafka Monitor Exposure
   author: pdteam
   severity: low
   tags: panel,kafka
+=======
+  name: Apache Kafka Monitor Login Panel - Detect
+  author: pdteam
+  severity: info
+  description: Apache Kafka Monitor login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: panel,kafka,apache
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -15,4 +27,10 @@ requests:
       - type: word
         words:
           - '>KafkaMonitor</a>'
+<<<<<<< HEAD
           - '>Kafka Monitor GUI</h1>'
+=======
+          - '>Kafka Monitor GUI</h1>'
+
+# Enhanced by md on 2022/11/22
+>>>>>>> 5d36d276 (add new stuff)

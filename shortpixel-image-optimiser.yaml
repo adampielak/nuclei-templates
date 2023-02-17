@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/shortpixel-image-optimiser/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/shortpixel-image-optimiser.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/shortpixel-image-optimiser.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

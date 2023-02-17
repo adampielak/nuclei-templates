@@ -4,6 +4,7 @@ info:
   name: WordPress Simple Image Manipulator < 1.0 - Local File Inclusion
   author: dhiyaneshDK
   severity: high
+<<<<<<< HEAD
   description: |
     WordPress Simple Image Manipulator 1.0 is vulnerable to local file inclusion in ./simple-image-manipulator/controller/download.php  because no checks are made to authenticate users or sanitize input when determining file location.
   reference:
@@ -17,6 +18,12 @@ info:
     cve-id: CVE-2015-1000010
     cwe-id: CWE-22
   tags: packetstorm,wpscan,cve,cve2015,wordpress,wp-plugin,lfi,wp
+=======
+  description: In ./simple-image-manipulator/controller/download.php no checks are made to authenticate user or sanitize input when determining file location.
+  reference:
+    - https://packetstormsecurity.com/files/132962/WordPress-Simple-Image-Manipulator-1.0-File-Download.html
+  tags: wordpress,wp-plugin,lfi,wp
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

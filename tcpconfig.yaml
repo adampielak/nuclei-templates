@@ -6,7 +6,11 @@ info:
   severity: low
   reference:
     - https://www.exploit-db.com/ghdb/6782
+<<<<<<< HEAD
   tags: logs,config
+=======
+  tags: config,edb,logs
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

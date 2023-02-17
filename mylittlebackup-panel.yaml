@@ -1,6 +1,7 @@
 id: mylittlebackup-panel
 
 info:
+<<<<<<< HEAD
   name: MyLittleBackup Panel
   author: nullfuzz
   severity: info
@@ -8,6 +9,19 @@ info:
     myLittleBackup  is a third-party tool that you can use to manipulate Backup SQL databases.
   reference:
     - http://www.mylittlebackup.com/mlb/en/overview.aspx
+=======
+  name: myLittleBackup Panel - Detect
+  author: nullfuzz
+  severity: info
+  description: |
+    myLittleBackup panel was detected.
+  reference:
+    - http://www.mylittlebackup.com/mlb/en/overview.aspx
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     shodan-query: http.html:"myLittleBackup"
@@ -35,3 +49,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2023/01/24
+>>>>>>> 5d36d276 (add new stuff)

@@ -1,11 +1,23 @@
 id: phabricator-login
 info:
-  name: Phabricator Login
+  name: Phabricator Login Panel - Detect
   author: dhiyaneshDK
   severity: info
+<<<<<<< HEAD
   metadata:
     shodan-query: html:"phabricator-standard-page"
   tags: panel,phabricator
+=======
+  description: Phabricator login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    shodan-query: html:"phabricator-standard-page"
+  tags: panel,phabricator
+
+>>>>>>> 5d36d276 (add new stuff)
 requests:
   - method: GET
     path:
@@ -18,3 +30,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2022/12/05

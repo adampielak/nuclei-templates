@@ -1,4 +1,5 @@
 id: api-stripe
+
 info:
   name: Stripe API Test
   author: zzeitlin
@@ -6,6 +7,7 @@ info:
   reference:
     - https://stripe.com/docs/api/authentication
   tags: token-spray,stripe
+
 self-contained: true
 requests:
   - method: GET
@@ -13,6 +15,7 @@ requests:
       - "https://api.stripe.com/v1/charges"
     headers:
       Authorization: Basic {{base64(token + ':')}}
+
     matchers:
       - type: word
         part: body

@@ -1,10 +1,23 @@
 id: keycloak-openid-config
 
 info:
+<<<<<<< HEAD
   name: Keycloak openid-config
   author: rodnt
   severity: info
   reference: https://issues.jboss.org/browse/KEYCLOAK-571
+=======
+  name: Keycloak OpenID Configuration - Detect
+  author: rodnt
+  severity: info
+  description: Keycloak Openid configuration information was detected.
+  reference:
+    - https://issues.jboss.org/browse/KEYCLOAK-571
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   tags: keycloak,config
 
 requests:
@@ -26,4 +39,10 @@ requests:
           - 'token_endpoint'
           - 'userinfo_endpoint'
           - 'jwks_uri'
+<<<<<<< HEAD
         condition: and
+=======
+        condition: and
+
+# Enhanced by mp on 2023/02/05
+>>>>>>> 5d36d276 (add new stuff)

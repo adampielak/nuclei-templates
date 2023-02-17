@@ -1,11 +1,24 @@
 id: keycloak-xss
 
 info:
+<<<<<<< HEAD
   name: Keycloak <= 8.0 - Cross Site Scripting
   author: incogbyte
   severity: info
   reference:
     - https://cure53.de/pentest-report_keycloak.pdf
+=======
+  name: Keycloak <= 8.0 - Cross-Site Scripting
+  author: incogbyte
+  severity: info
+  description: Keycloak 8.0 and prior contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
+  reference:
+    - https://cure53.de/pentest-report_keycloak.pdf
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+>>>>>>> 5d36d276 (add new stuff)
   tags: keycloak,xss
 
 requests:
@@ -25,4 +38,10 @@ requests:
 
       - type: word
         words:
+<<<<<<< HEAD
           - 'Unrecognized field "<img onerror=confirm(1337) src/>"'
+=======
+          - 'Unrecognized field "<img onerror=confirm(1337) src/>"'
+
+# Enhanced by mp on 2022/09/23
+>>>>>>> 5d36d276 (add new stuff)

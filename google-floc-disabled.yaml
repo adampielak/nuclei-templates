@@ -3,10 +3,18 @@ id: google-floc-disabled
 info:
   name: Google FLoC Disabled
   author: geeknik
+<<<<<<< HEAD
   description: The detected website has decided to explicity exclude itself from Google FLoC tracking.
   reference: https://www.bleepingcomputer.com/news/security/github-disables-google-floc-user-tracking-on-its-website/
   severity: info
   tags: google,floc
+=======
+  severity: info
+  description: The detected website has decided to explicitly exclude itself from Google FLoC tracking.
+  reference:
+    - https://www.bleepingcomputer.com/news/security/github-disables-google-floc-user-tracking-on-its-website/
+  tags: google,floc,misc
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

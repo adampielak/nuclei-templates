@@ -6,9 +6,23 @@ info:
   severity: high
 
 requests:
+<<<<<<< HEAD
   - method: GET
     path:
       - "{{BaseURL}}/anything123456"
+=======
+  - raw:
+      - |
+        POST /admin/login/?next=/admin/ HTTP/1.1
+        Host: {{Hostname}}
+        Accept: */*
+        Content-Type: application/json;charset=UTF-8
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+        
+        {"test::"data"}
+
+    matchers-condition: or
+>>>>>>> 5d36d276 (add new stuff)
     matchers:
       - type: word
         words:

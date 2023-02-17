@@ -1,9 +1,16 @@
 id: wowza-streaming-engine
 
 info:
+<<<<<<< HEAD
   name: Wowza Streaming Engine
   author: dhiyaneshDK
   severity: info
+=======
+  name: Wowza Streaming Engine Manager Panel - Detect
+  author: dhiyaneshDK
+  severity: info
+  description: Wowza Streaming Engine Manager panel was detected.
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     shodan-query: http.title:"Manager" product:"Wowza Streaming Engine"
   tags: panel
@@ -21,3 +28,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2023/01/25
+>>>>>>> 5d36d276 (add new stuff)

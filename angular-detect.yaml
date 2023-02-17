@@ -9,7 +9,12 @@ info:
   metadata:
     verified: true
     shodan-query: html:"ng-version="
+<<<<<<< HEAD
   tags: technology,angular
+=======
+  tags: tech,angular
+
+>>>>>>> 5d36d276 (add new stuff)
 requests:
   - method: GET
     path:

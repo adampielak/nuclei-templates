@@ -12,7 +12,11 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-22
+<<<<<<< HEAD
   tags: iot,camera,disclosure
+=======
+  tags: iot,camera,disclosure,edb
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

@@ -13,7 +13,11 @@ info:
 requests:
   - raw:
       - |
+<<<<<<< HEAD
         GET / HTTP/1.1
+=======
+        GET  HTTP/1.1
+>>>>>>> 5d36d276 (add new stuff)
         Host: {{Hostname}}
         Origin: {{cors_origin}}
 
@@ -30,11 +34,18 @@ requests:
         - "http://{{tolower(rand_base(5))}}.{{RDN}}"          # Arbitrary subdomain over http
 
     stop-at-first-match: true
+<<<<<<< HEAD
     matchers-condition: or
+=======
+>>>>>>> 5d36d276 (add new stuff)
     matchers:
       - type: dsl
         name: arbitrary-origin
         dsl:
           - "contains(tolower(all_headers), 'access-control-allow-origin: {{cors_origin}}')"
           - "contains(tolower(all_headers), 'access-control-allow-credentials: true')"
+<<<<<<< HEAD
         condition: and
+=======
+        condition: and
+>>>>>>> 5d36d276 (add new stuff)

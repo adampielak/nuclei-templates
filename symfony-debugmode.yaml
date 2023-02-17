@@ -4,9 +4,14 @@ info:
   name: Symfony Debug Mode
   author: organiccrap,pdteam
   severity: high
+<<<<<<< HEAD
   description: A Symfony installations 'debug' interface is enabled, allowing the disclosure and possible execution of arbitrary code.
   reference:
     - https://github.com/synacktiv/eos
+=======
+  description: The remote Symfony installations appears to have left the 'debug' interface enabled, allowing the disclosure and possible execution of arbitrary code.
+  reference: https://github.com/synacktiv/eos
+>>>>>>> 5d36d276 (add new stuff)
   tags: symfony,debug
 
 requests:
@@ -27,6 +32,10 @@ requests:
       - type: word
         words:
           - 'debug mode</a> is enabled.'
+<<<<<<< HEAD
         part: body
 
 # Enhanced by mp on 2022/04/12
+=======
+        part: body
+>>>>>>> 5d36d276 (add new stuff)

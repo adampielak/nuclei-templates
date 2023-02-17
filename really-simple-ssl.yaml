@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/really-simple-ssl/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/really-simple-ssl.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/really-simple-ssl.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/ocean-extra/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/ocean-extra.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/ocean-extra.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

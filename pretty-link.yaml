@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/pretty-link/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/pretty-link.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/pretty-link.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

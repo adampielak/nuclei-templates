@@ -33,6 +33,10 @@ requests:
       - "{{BaseURL}}/dashboard/phpinfo.php"
       - "{{BaseURL}}/_profiler/phpinfo.php"
       - "{{BaseURL}}/_profiler/phpinfo"
+<<<<<<< HEAD
+=======
+      - "{{BaseURL}}/?phpinfo=1"
+>>>>>>> 5d36d276 (add new stuff)
 
     stop-at-first-match: true
     matchers-condition: and

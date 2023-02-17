@@ -5,10 +5,17 @@ info:
   author: bolli95
   severity: info
   tags: misc
+<<<<<<< HEAD
   reference: |
       - https://owasp.org/www-community/attacks/Reverse_Tabnabbing
       - https://www.youtube.com/watch?v=TMKZCHYmtD4
       - https://hackerone.com/reports/211065
+=======
+  reference:
+    - https://owasp.org/www-community/attacks/Reverse_Tabnabbing
+    - https://www.youtube.com/watch?v=TMKZCHYmtD4
+    - https://hackerone.com/reports/211065
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

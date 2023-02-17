@@ -1,9 +1,20 @@
 id: froxlor-database-backup
 
 info:
+<<<<<<< HEAD
   name: Froxlor Database Backup File Disclosure
   author: tess
   severity: medium
+=======
+  name: Froxlor Server Management Backup File - Detect
+  author: tess
+  severity: medium
+  description: Froxlor Server Management backup file was detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     shodan-query: title:"Froxlor Server Management Panel"
@@ -36,3 +47,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2023/02/08
+>>>>>>> 5d36d276 (add new stuff)

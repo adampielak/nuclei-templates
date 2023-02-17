@@ -8,12 +8,20 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/apache-mod_negotiation-filename-bruteforcing/
   severity: low
   tags: apache
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
 requests:
   - method: GET
     headers:
       Accept: "fake/value"
     path:
       - "{{BaseURL}}/index"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: status

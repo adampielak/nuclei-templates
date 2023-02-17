@@ -1,10 +1,16 @@
 id: odoo-database-manager
 
 info:
+<<<<<<< HEAD
   name: Odoo - Database Manager Discovery
   author: __Fazal,R3dg33k
   severity: high
   description: Odoo database manager was discovered.
+=======
+  name: Odoo-Database-Manager
+  author: __Fazal,R3dg33k
+  severity: high
+>>>>>>> 5d36d276 (add new stuff)
   tags: panel,odoo
 
 requests:
@@ -22,5 +28,8 @@ requests:
           - "<title>Odoo</title>"
           - "{ action: 'database_manager' }"
         condition: and
+<<<<<<< HEAD
 
 # Enhanced by mp on 2022/07/15
+=======
+>>>>>>> 5d36d276 (add new stuff)

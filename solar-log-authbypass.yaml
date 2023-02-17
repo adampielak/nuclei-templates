@@ -10,7 +10,11 @@ info:
     - https://www.exploit-db.com/exploits/49986
   classification:
     cwe-id: CWE-284
+<<<<<<< HEAD
   tags: solarlog,auth-bypass
+=======
+  tags: solarlog,auth-bypass,edb
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

@@ -3,15 +3,23 @@ id: firebase-config-exposure
 info:
   name: Firebase Config Exposure
   author: geeknik
+<<<<<<< HEAD
   severity: low
   reference:
     - https://github.com/firebase/firebaseui-web/blob/master/demo/public/sample-config.js
+=======
+  reference: https://github.com/firebase/firebaseui-web/blob/master/demo/public/sample-config.js
+  severity: high
+>>>>>>> 5d36d276 (add new stuff)
   tags: firebase,exposure,config
 
 requests:
   - method: GET
     path:
+<<<<<<< HEAD
       - "{{BaseURL}}"
+=======
+>>>>>>> 5d36d276 (add new stuff)
       - "{{BaseURL}}/public/config.js"
       - "{{BaseURL}}/config.js"
 

@@ -1,10 +1,23 @@
 id: thinkcmf-lfi
 
 info:
-  name: ThinkCMF LFI
+  name: ThinkCMF - Local File Inclusion
   author: pikpikcu
   severity: high
+<<<<<<< HEAD
   reference: https://www.freebuf.com/vuls/217586.html
+=======
+  description: ThinkCMF is vulnerable to local file inclusion.
+  reference:
+    - https://www.freebuf.com/vuls/217586.html
+  metadata:
+    win-payload: ../../../../../../../../../../../../../../../../windows/win.ini
+    unix-payload: ../../../../../../../../../../../../../../../../etc/passwd
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-22
+>>>>>>> 5d36d276 (add new stuff)
   tags: thinkcmf,lfi
 
 requests:
@@ -26,4 +39,10 @@ requests:
 
       - type: status
         status:
+<<<<<<< HEAD
           - 200
+=======
+          - 200
+
+# Enhanced by mp on 2022/08/05
+>>>>>>> 5d36d276 (add new stuff)

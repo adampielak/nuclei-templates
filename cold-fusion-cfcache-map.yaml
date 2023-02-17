@@ -2,10 +2,20 @@ id: cold-fusion-cfcache-map
 
 info:
   name: Discover Cold Fusion cfcache.map Files
+<<<<<<< HEAD
   reference: https://securiteam.com/windowsntfocus/5bp081f0ac/
   author: geeknik
   severity: low
   tags: exposure,coldfusion,adobe
+=======
+  author: geeknik
+  severity: low
+  reference:
+    - https://securiteam.com/windowsntfocus/5bp081f0ac/
+  metadata:
+    shodan-query: http.component:"Adobe ColdFusion"
+  tags: exposure,coldfusion,adobe,files
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

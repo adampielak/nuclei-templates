@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/disable-comments/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/disable-comments.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/disable-comments.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

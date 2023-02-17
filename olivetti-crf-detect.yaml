@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: olivetti-crf-detect
 
 info:
@@ -23,3 +24,30 @@ requests:
       - type: status
         status:
           - 200
+=======
+id: olivetti-crf-detect
+
+info:
+  name: Olivetti CRF Detect
+  author: pussycat0x
+  severity: info
+  metadata:
+    shodan-query: http.title:"Olivetti CRF"
+  tags: tech,olivetti
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<TITLE>Olivetti CRF</TITLE>"
+        part: body
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 5d36d276 (add new stuff)

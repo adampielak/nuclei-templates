@@ -1,11 +1,20 @@
 id: pingdom-takeover
 
 info:
+<<<<<<< HEAD
   name: pingdom takeover detection
   author: pdcommunity
   severity: high
   tags: takeover
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
+=======
+  name: Pingdom Takeover Detection
+  author: pdteam
+  severity: high
+  reference:
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/144
+  tags: takeover,pingdom
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

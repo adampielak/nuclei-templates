@@ -5,6 +5,11 @@ info:
   author: philippedelteil
   severity: info
   description: Some Jira instances allow to read the installed gadgets (sometimes it's also possible to read config xml file for some gadgets)
+<<<<<<< HEAD
+=======
+  metadata:
+    shodan-query: http.component:"Atlassian Jira"
+>>>>>>> 5d36d276 (add new stuff)
   tags: atlassian,jira
 
 requests:
@@ -12,7 +17,11 @@ requests:
     path:
       - "{{BaseURL}}/rest/config/1.0/directory"
 
+<<<<<<< HEAD
     redirects: true
+=======
+    host-redirects: true
+>>>>>>> 5d36d276 (add new stuff)
     max-redirects: 2
     matchers-condition: and
     matchers:

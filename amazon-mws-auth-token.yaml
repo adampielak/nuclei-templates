@@ -1,11 +1,23 @@
 id: amazon-mws-auth-token-value
 info:
   name: Amazon MWS Auth Token
+<<<<<<< HEAD
   author: gaurang
   severity: medium
 file:
   - extensions:
       - all
+=======
+  author: puzzlepeaches
+  severity: info
+  tags: exposure,token,aws,amazon,auth
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+>>>>>>> 5d36d276 (add new stuff)
     extractors:
       - type: regex
         regex:

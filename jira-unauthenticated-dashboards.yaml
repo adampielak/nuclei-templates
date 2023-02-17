@@ -7,6 +7,11 @@ info:
   name: Jira Unauthenticated Dashboards
   author: TechbrunchFR
   severity: info
+<<<<<<< HEAD
+=======
+  metadata:
+    shodan-query: http.component:"Atlassian Jira"
+>>>>>>> 5d36d276 (add new stuff)
   tags: atlassian,jira
 
 requests:

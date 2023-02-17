@@ -10,7 +10,11 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
+<<<<<<< HEAD
     shodan-query: http.title:"AxigenÂ WebAdmin"
+=======
+    shodan-query: http.title:"Axigen WebAdmin"
+>>>>>>> 5d36d276 (add new stuff)
   tags: axigen,panel
 
 requests:
@@ -22,7 +26,11 @@ requests:
     matchers:
       - type: word
         words:
+<<<<<<< HEAD
           - '<title>AxigenÂ WebAdmin</title>'
+=======
+          - '<title>Axigen WebAdmin</title>'
+>>>>>>> 5d36d276 (add new stuff)
 
       - type: status
         status:

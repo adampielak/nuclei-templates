@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: mailchimp-access-key-value
 
 info:
@@ -16,3 +17,23 @@ requests:
         part: body
         regex:
           - "[0-9a-f]{32}-us[0-9]{1,2}"
+=======
+id: mailchimp-access-key-value
+
+info:
+  name: Mailchimp API Value
+  author: puzzlepeaches
+  severity: info
+  tags: exposure,token,mailchimp
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - "[0-9a-f]{32}-us[0-9]{1,2}"
+>>>>>>> 5d36d276 (add new stuff)

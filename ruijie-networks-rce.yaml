@@ -7,11 +7,15 @@ info:
   severity: critical
   reference:
     - https://github.com/yumusb/EgGateWayGetShell_py/blob/main/eg.py
+<<<<<<< HEAD
     - https://www.ruijienetworks.com
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-77
+=======
+    - https://www.ruijienetworks.com # vendor homepage
+>>>>>>> 5d36d276 (add new stuff)
   tags: ruijie,rce,network
 
 requests:
@@ -32,7 +36,11 @@ requests:
     matchers:
       - type: regex
         regex:
+<<<<<<< HEAD
           - "root:.*:0:0:"
+=======
+          - "root:.*:0:0"
+>>>>>>> 5d36d276 (add new stuff)
           - "nobody:x:0:0:"
         part: body
 

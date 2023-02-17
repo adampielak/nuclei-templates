@@ -1,11 +1,21 @@
 id: symantec-pgp-global-directory
 
 info:
-  name: Symantec PGP Global Directory
+  name: Symantec PGP Global Directory Panel - Detect
   author: princechaddha
   severity: info
+<<<<<<< HEAD
   reference:
     - https://www.shodan.io/search?query=http.title%3A%22PGP+Global+Directory%22
+=======
+  description: Symantec PGP Global Directory panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    shodan-query: http.title:"PGP Global Directory"
+>>>>>>> 5d36d276 (add new stuff)
   tags: symantec,panel
 
 requests:
@@ -23,3 +33,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/01/18

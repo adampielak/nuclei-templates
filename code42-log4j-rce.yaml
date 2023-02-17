@@ -1,15 +1,27 @@
 id: code42-log4j-rce
 
 info:
+<<<<<<< HEAD
   name: Log4j Code42 RCE
+=======
+  name: Apache Code42 -  Remote Code Execution (Apache Log4j)
+>>>>>>> 5d36d276 (add new stuff)
   author: Adam Crosser
   severity: critical
   description: Remote code execution via log4j vulnerability
   reference:
     - https://support.code42.com/Terms_and_conditions/Code42_customer_support_resources/Code42_response_to_industry_security_incidents
   classification:
+<<<<<<< HEAD
     cve-id: CVE-2021-44228
   tags: jndi,log4j,rce,cve,cve2021,oast,code42
+=======
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cve-id: CVE-2021-44228
+    cwe-id: CWE-77
+  tags: jndi,log4j,rce,cve,cve2021,oast,code42,kev
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

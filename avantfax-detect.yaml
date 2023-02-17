@@ -22,3 +22,13 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '<p align="center">([0-9.]+)<\/p>'
+>>>>>>> 5d36d276 (add new stuff)

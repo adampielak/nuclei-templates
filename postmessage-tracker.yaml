@@ -4,8 +4,12 @@ info:
   name: Postmessage Tracker
   author: pdteam
   severity: info
+<<<<<<< HEAD
   reference:
     - https://github.com/vinothsparrow/iframe-broker/blob/main/static/script.js
+=======
+  reference: https://github.com/vinothsparrow/iframe-broker/blob/main/static/script.js
+>>>>>>> 5d36d276 (add new stuff)
   tags: headless,postmessage
 
 headless:
@@ -19,6 +23,7 @@ headless:
         args:
           hook: true
           code: |
+<<<<<<< HEAD
             () => {
               window.alerts = [];
 
@@ -45,6 +50,35 @@ headless:
                 return oldListener.apply(this, arguments);
               };
             }
+=======
+            (function() {window.alerts = [];
+
+            function logger(found) {
+            	window.alerts.push(found);
+            }
+
+            function getStackTrace () {
+              var stack;
+              try {
+                throw new Error('');
+              }
+              catch (error) {
+                stack = error.stack || '';
+              }
+              stack = stack.split('\n').map(function (line) { return line.trim(); });
+              return stack.splice(stack[0] == 'Error' ? 2 : 1);
+            }
+
+            var oldListener = Window.prototype.addEventListener;
+
+            Window.prototype.addEventListener = function(type, listener, useCapture) {
+              if(type === 'message') {
+                logger(getStackTrace());
+              }
+              return oldListener.apply(this, arguments);
+            };
+            })();
+>>>>>>> 5d36d276 (add new stuff)
       - args:
           url: "{{BaseURL}}"
         action: navigate
@@ -52,7 +86,11 @@ headless:
       - action: script
         name: alerts
         args:
+<<<<<<< HEAD
           code: window.alerts
+=======
+          code: "window.alerts"
+>>>>>>> 5d36d276 (add new stuff)
     matchers:
       - type: word
         part: alerts

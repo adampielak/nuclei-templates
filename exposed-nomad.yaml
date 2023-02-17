@@ -1,6 +1,7 @@
 id: exposed-nomad
 
 info:
+<<<<<<< HEAD
   name: Nomad - Exposed Jobs
   author: pdteam
   severity: medium
@@ -12,6 +13,13 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: nomad,devops,hashicorp,panel
+=======
+  name: Exposed Nomad Jobs
+  author: pdteam
+  severity: high
+  tags: nomad,devops,hashicorp,panel
+  reference: https://www.nomadproject.io/docs/internals/security
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -33,6 +41,10 @@ requests:
 
       - type: status
         status:
+<<<<<<< HEAD
           - 200
 
 # Enhanced by mp on 2022/07/15
+=======
+          - 200
+>>>>>>> 5d36d276 (add new stuff)

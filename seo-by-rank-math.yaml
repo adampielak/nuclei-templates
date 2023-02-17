@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/seo-by-rank-math/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/seo-by-rank-math.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/seo-by-rank-math.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

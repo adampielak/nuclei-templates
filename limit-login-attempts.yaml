@@ -9,7 +9,11 @@ info:
   metadata:
     plugin_namespace: limit-login-attempts
     wpscan: https://wpscan.com/plugin/limit-login-attempts
+<<<<<<< HEAD
   tags: tech,wordpress,wp-plugin,top-100,top-200
+=======
+  tags: tech,wordpress,wp-plugin,top-200
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -18,7 +22,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/limit-login-attempts/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/limit-login-attempts.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/limit-login-attempts.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

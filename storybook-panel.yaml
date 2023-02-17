@@ -1,12 +1,26 @@
 id: storybook-panel
 
 info:
+<<<<<<< HEAD
   name: Storybook Panel Detect
   author: kh4sh3i
   severity: info
   reference:
     - https://storybook.js.org/
     - https://github.com/storybookjs/storybook
+=======
+  name: Storybook Panel - Detect
+  author: kh4sh3i
+  severity: info
+  description: Storybook panel was detected.
+  reference:
+    - https://storybook.js.org/
+    - https://github.com/storybookjs/storybook
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     shodan-query: http.title:"storybook"
@@ -33,3 +47,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2023/01/18
+>>>>>>> 5d36d276 (add new stuff)

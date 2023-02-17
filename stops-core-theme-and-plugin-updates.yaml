@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/stops-core-theme-and-plugin-updates/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/stops-core-theme-and-plugin-updates.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/stops-core-theme-and-plugin-updates.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

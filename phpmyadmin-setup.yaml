@@ -2,9 +2,18 @@ id: phpmyadmin-setup
 
 info:
   name: Publicly Accessible Phpmyadmin Setup
+<<<<<<< HEAD
   author: sheikhrishad
   severity: medium
 
+=======
+  author: sheikhrishad,thevillagehacker,Kr1shna4garwal,ArjunChandarana
+  severity: medium
+  metadata:
+    verified: true
+    shodan-query: http.html:"phpMyAdmin"
+  tags: phpmyadmin,misconfig
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -17,13 +26,32 @@ requests:
       - "{{BaseURL}}/web/phpmyadmin/scripts/setup.php"
       - "{{BaseURL}}/xampp/phpmyadmin/scripts/setup.php"
       - "{{BaseURL}}/sysadmin/phpMyAdmin/scripts/setup.php"
+<<<<<<< HEAD
 
+=======
+      - "{{BaseURL}}/phpmyadmin/setup/index.php"
+      - "{{BaseURL}}/pma/setup/index.php"
+      - "{{BaseURL}}/phpmyadmin/setup/"
+      - "{{BaseURL}}/setup/index.php"
+
+    stop-at-first-match: true
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
           - "You want to configure phpMyAdmin using web interface"
+<<<<<<< HEAD
 
       - type: status
         status:
           - 200
+=======
+          - "<title>phpMyAdmin setup</title>"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 5d36d276 (add new stuff)

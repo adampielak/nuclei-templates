@@ -10,7 +10,11 @@ info:
   metadata:
     verified: true
     shodan-query: http.component:"Magento"
+<<<<<<< HEAD
   tags: magento
+=======
+  tags: magento,tech
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

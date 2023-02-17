@@ -17,6 +17,10 @@ requests:
         Host: {{Hostname}}
 
       - |+
+<<<<<<< HEAD
+=======
+        @tls-sni: {{Hostname}}
+>>>>>>> 5d36d276 (add new stuff)
         GET http://169.254.169.254/metadata/v1.json HTTP/1.1
         Host: {{Hostname}}
 

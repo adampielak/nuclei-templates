@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/classic-widgets/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/classic-widgets.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/classic-widgets.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

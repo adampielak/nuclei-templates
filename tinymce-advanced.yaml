@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/tinymce-advanced/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/tinymce-advanced.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/tinymce-advanced.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

@@ -5,7 +5,11 @@ info:
   author: pdteam
   severity: high
   reference:
+<<<<<<< HEAD
     - https://github.com/EdOverflow/can-i-take-over-xyz
+=======
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/158
+>>>>>>> 5d36d276 (add new stuff)
   tags: takeover
 
 requests:
@@ -15,6 +19,10 @@ requests:
 
     matchers-condition: and
     matchers:
+      - type: dsl
+        dsl:
+          - Host != ip
+
       - type: word
         words:
           - "<h1>Oops! We couldn&#8217;t find that page.</h1>"

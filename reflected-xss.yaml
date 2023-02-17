@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: Reflected-XSS
 
 info:
@@ -8,10 +9,23 @@ info:
   reference: 
       - https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)
   tags: xss,cross-site-scripting
+=======
+id: reflected-xss
+
+info:
+  name: Reflected Cross Site Scripting
+  author: pdteam
+  severity: medium
+  tags: xss,rxss,dast
+
+variables:
+  first: "{{rand_int(10000, 99999)}}"
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
     path:
+<<<<<<< HEAD
       - "{{BaseURL}}'><Svg Only=1 OnLoad=confirm('{{randstr}}')>"
       - "{{baseURL}}'</TITLE><SCRIPT>confirm('{{randstr}}')%3b</SCRIPT>"
       - "{{baseURL}}';confirm('{{randstr}}');//"
@@ -24,11 +38,28 @@ requests:
       - "{{baseURL}}'<style><img title=%22</style><img src onerror=confirm('{{randstr}}')>%22></style>"
       - "{{baseURL}}'<noscript><img title=%22</noscript><img src onerror=confirm('{{randstr}}')>%22></noscript>"
 
+=======
+      - "{{BaseURL}}"
+
+    payloads:
+      reflection:
+        - "'\"><{{first}}"
+
+    fuzzing:
+      - part: query
+        type: postfix
+        mode: single
+        fuzz:
+          - "{{reflection}}"
+
+    stop-at-first-match: true
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
+<<<<<<< HEAD
             - '{{randstr}}'
         condition: and
 
@@ -38,8 +69,15 @@ requests:
           - 500
           - 403
           - 301
+=======
+          - "{{reflection}}"
+>>>>>>> 5d36d276 (add new stuff)
 
       - type: word
         part: header
         words:
+<<<<<<< HEAD
           - "text/html"
+=======
+          - "text/html"
+>>>>>>> 5d36d276 (add new stuff)

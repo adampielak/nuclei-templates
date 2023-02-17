@@ -1,10 +1,21 @@
 id: wildfly-panel
 
 info:
+<<<<<<< HEAD
   name: WildFly Instance Detection Template
   author: righettod
   severity: info
   description: Try to detect the presence of a WildFly (ex-JBoss) instance via the login panel
+=======
+  name: WildFly Welcome Page - Tech Detect
+  author: righettod
+  severity: info
+  description: WildFly welcome page was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+>>>>>>> 5d36d276 (add new stuff)
   tags: panel,jboss,wildfly
 
 requests:
@@ -20,4 +31,10 @@ requests:
 
       - type: status
         status:
+<<<<<<< HEAD
           - 200
+=======
+          - 200
+
+# Enhanced by md on 2023/01/25
+>>>>>>> 5d36d276 (add new stuff)

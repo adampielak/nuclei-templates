@@ -3,8 +3,13 @@ id: aws-opensearch-login
 info:
   name: AWS OpenSearch Default Login
   author: Higor Melgaço (eremit4)
+<<<<<<< HEAD
   severity: medium
   description: Searches for the AWS OpenSearch login page
+=======
+  severity: info
+  description: AWS OpenSearch login page was detected.
+>>>>>>> 5d36d276 (add new stuff)
   reference:
     - https://aws.amazon.com/pt/blogs/opensource/introducing-opensearch/
   tags: panel,opensearch,aws

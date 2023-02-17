@@ -1,14 +1,23 @@
 id: openvpn-monitor
 info:
-  name: OpenVPN Monitor Disclosure
+  name: OpenVPN Monitor - Detect
   author: geeknik
+<<<<<<< HEAD
   severity: high
+=======
+  severity: info
+>>>>>>> 5d36d276 (add new stuff)
   description: openvpn-monitor was discovered. OpenVPN Monitor is a simple python program to generate html that displays the status of an OpenVPN server, including all its current connections.
   reference:
     - https://openvpn-monitor.openbytes.ie/
   classification:
+<<<<<<< HEAD
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
+=======
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+>>>>>>> 5d36d276 (add new stuff)
     cwe-id: CWE-200
   tags: openvpn,disclosure,panel
 requests:

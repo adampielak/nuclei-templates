@@ -1,11 +1,24 @@
 id: cisco-sendgrid
 
 info:
+<<<<<<< HEAD
   name: Cisco ServiceGrid
   author: dhiyaneshDK
   severity: info
   reference:
     - https://www.shodan.io/search?query=http.title%3A%22Cisco+ServiceGrid%22
+=======
+  name: Cisco ServiceGrid Login Panel - Detect
+  author: dhiyaneshDK
+  severity: info
+  description: Cisco ServiceGrid login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    shodan-query: http.title:"Cisco ServiceGrid"
+>>>>>>> 5d36d276 (add new stuff)
   tags: panel,cisco
 
 requests:
@@ -29,3 +42,8 @@ requests:
         group: 1
         regex:
           - '<div class="top\-margin">Version ([0-9.]+)<\/div>'
+<<<<<<< HEAD
+=======
+
+# Enhanced by md on 2022/11/09
+>>>>>>> 5d36d276 (add new stuff)

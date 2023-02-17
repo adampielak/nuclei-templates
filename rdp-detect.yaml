@@ -19,6 +19,10 @@ network:
     host:
       - "{{Host}}:3389"
       - "{{Hostname}}"
+<<<<<<< HEAD
+=======
+      - "{{Host}}:3389"
+>>>>>>> 5d36d276 (add new stuff)
 
     matchers:
       - type: word

@@ -4,7 +4,12 @@ info:
   name: PinPoint Unauth
   author: dhiyaneshDk
   severity: high
+<<<<<<< HEAD
   reference: https://github.com/pinpoint-apm/pinpoint
+=======
+  reference:
+    - https://github.com/pinpoint-apm/pinpoint
+>>>>>>> 5d36d276 (add new stuff)
   tags: pippoint,unauth
 
 requests:

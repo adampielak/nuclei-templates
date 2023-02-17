@@ -11,7 +11,11 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
+<<<<<<< HEAD
   tags: geowebserver,lfi
+=======
+  tags: packetstorm,geowebserver,lfi
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: kenesto-login
 info:
   name: Kenesto Login Detect
@@ -23,3 +24,31 @@ requests:
       - type: status
         status:
           - 200
+=======
+id: kenesto-login
+
+info:
+  name: Kenesto Login Detect
+  author: pussycat0x
+  severity: info
+  metadata:
+    fofa-query: 'app="kenesto"'
+  tags: login,tech,kenesto
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/Kenesto/Account/LogOn?ReturnUrl=%2fkenesto"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>Welcome To Kenesto&reg;</title>'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 5d36d276 (add new stuff)

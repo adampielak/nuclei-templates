@@ -10,7 +10,11 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+<<<<<<< HEAD
     redirects: true
+=======
+    host-redirects: true
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
 

@@ -2,7 +2,11 @@ id: fastly-takeover
 
 info:
   name: fastly takeover detection
+<<<<<<< HEAD
   author: pdteam
+=======
+  author: pdcommunity
+>>>>>>> 5d36d276 (add new stuff)
   severity: info
   tags: takeover
   reference: https://github.com/EdOverflow/can-i-take-over-xyz/issues/22

@@ -2,16 +2,27 @@ id: putty-private-key-disclosure
 
 info:
   name: Putty Private Key Disclosure
+<<<<<<< HEAD
   author: dhiyaneshDk
   severity: medium
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/putty-private-key-disclosure.json
+=======
+  author: DhiyaneshDk,geeknik
+  severity: medium
+  reference:
+    - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/putty-private-key-disclosure.json
+  metadata:
+    verified: true
+    github-query: filename:putty.ppk
+>>>>>>> 5d36d276 (add new stuff)
   tags: exposure,files
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/my.ppk"
+<<<<<<< HEAD
 
     matchers-condition: and
     matchers:
@@ -20,6 +31,24 @@ requests:
           - "PuTTY-User-Key-File"
           - "Encryption:"
         part: body
+=======
+      - "{{BaseURL}}/putty.ppk"
+      - "{{BaseURL}}/{{Hostname}}.ppk"
+      - "{{BaseURL}}/.ssh/putty.ppk"
+      - "{{BaseURL}}/.ssh/{{Hostname}}.ppk"
+      - "{{BaseURL}}/.putty/my.ppk"
+      - "{{BaseURL}}/.putty/putty.ppk"
+      - "{{BaseURL}}/.putty/{{Hostname}}.ppk"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "PuTTY-User-Key-File"
+          - "Encryption:"
+>>>>>>> 5d36d276 (add new stuff)
         condition: and
 
       - type: status

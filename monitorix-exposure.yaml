@@ -3,7 +3,11 @@ id: monitorix-exposure
 info:
   name: Monitorix Panel - Detect
   author: geeknik
+<<<<<<< HEAD
   severity: low
+=======
+  severity: info
+>>>>>>> 5d36d276 (add new stuff)
   description: Monitorix panel was detected.
   reference:
     - https://www.monitorix.org/

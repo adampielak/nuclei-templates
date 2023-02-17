@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/easy-google-fonts/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/easy-google-fonts.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/easy-google-fonts.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

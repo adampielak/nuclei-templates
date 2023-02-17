@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 id: dotclear-detect 1
+=======
+id: dotclear-detect
+>>>>>>> 5d36d276 (add new stuff)
 
 info:
   name: Dotclear Detect
@@ -7,6 +11,7 @@ info:
   tags: tech,dotclear
 
 requests:
+<<<<<<< HEAD
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -20,6 +25,13 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         
+=======
+  - method: GET
+    path:
+      - "{{BaseURL}}/dc2/admin/auth.php"
+      - "{{BaseURL}}/auth.php"
+
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
@@ -27,4 +39,8 @@ requests:
           - "<title>Dotclear</title>"
       - type: status
         status:
+<<<<<<< HEAD
           - 200
+=======
+          - 200
+>>>>>>> 5d36d276 (add new stuff)

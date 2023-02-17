@@ -1,18 +1,34 @@
 id: artica-web-proxy-detect
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
 info:
   name: Artica Web Proxy Detect
   author: dwisiswant0
   severity: info
+<<<<<<< HEAD
+=======
+  tags: tech,artica,proxy
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/fw.login.php"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "Welcome to the Artica Web Administration Interface"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
       - type: status
         status:
           - 200

@@ -6,7 +6,11 @@ info:
   severity: info
   reference:
     - https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
+<<<<<<< HEAD
   tags: exposure,generic
+=======
+  tags: exposure,generic,files
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

@@ -18,7 +18,11 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/svg-support/readme.txt"
 
     payloads:
+<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/svg-support.txt
+=======
+      last_version: ../../../helpers/wordpress/plugins/svg-support.txt
+>>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

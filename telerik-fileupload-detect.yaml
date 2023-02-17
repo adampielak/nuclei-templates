@@ -1,9 +1,15 @@
 id: telerik-fileupload-detect
 
 info:
-  name: Detect Telerik Web UI fileupload handler
+  name: Detect Telerik Web UI Fileupload Handler
   author: organiccrap
+<<<<<<< HEAD
   severity: low
+=======
+  severity: info
+  description: This template detects the Telerik Web UI fileupload handler.
+  tags: tech,telerik,fileupload
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -12,4 +18,10 @@ requests:
     matchers:
       - type: word
         words:
+<<<<<<< HEAD
           - "RadAsyncUpload handler is registered successfully"
+=======
+          - "RadAsyncUpload handler is registered succesfully"
+
+# Enhanced by cs on 2022/02/28
+>>>>>>> 5d36d276 (add new stuff)

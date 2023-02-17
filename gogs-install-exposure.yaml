@@ -4,7 +4,11 @@ info:
   name: Gogs (Go Git Service) - Install Exposure
   author: dhiyaneshDk
   severity: high
+<<<<<<< HEAD
   tags: gogs,exposure
+=======
+  tags: gogs,exposure,files
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET

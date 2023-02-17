@@ -1,8 +1,16 @@
 id: pi-hole-detect
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
 info:
   name: pi-hole detector
   author: geeknik
   severity: info
+<<<<<<< HEAD
+=======
+  tags: tech,pihole
+>>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - method: GET
@@ -14,6 +22,10 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
       - type: word
         words:
           - "Pi-hole"

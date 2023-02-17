@@ -1,9 +1,17 @@
 id: axis2-default-login
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
 info:
   name: Axis2 Default Login
   author: pikpikcu
   severity: high
   tags: axis,apache,default-login,axis2
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d36d276 (add new stuff)
 requests:
   - raw:
       - |
