@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: pictatic-api-key
 <<<<<<< HEAD
 =======
@@ -27,3 +28,21 @@ file:
         regex:
           - "sk_live_[0-9a-z]{32}"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: pictatic-api-key
+
+info:
+  name: Pictatic API Key
+  author: gaurang
+  severity: high
+  tags: token,file
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        regex:
+          - "sk_live_[0-9a-z]{32}"
+>>>>>>> 18ddf72b (add new stuff)

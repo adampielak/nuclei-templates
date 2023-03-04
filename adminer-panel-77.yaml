@@ -5,12 +5,10 @@ info:
   severity: info
   reference: https://blog.sorcery.ie/posts/adminer/
   tags: panel
-
   # <= 4.2.4 can have unauthenticated RCE via SQLite driver
   # <= 4.6.2 can have LFI via MySQL LOAD DATA LOCAL
   # Most versions have some kind of SSRF usability
   # Is generally handy if you find SQL creds
-
 requests:
   - method: GET
     path:
@@ -21,18 +19,14 @@ requests:
       - '{{BaseURL}}/mysql.php'
       - '{{BaseURL}}/sql.php'
       - '{{BaseURL}}/wp-content/plugins/adminer/adminer.php'
-
     matchers-condition: and
     matchers:
-
       - type: word
         words:
           - "Login - Adminer"
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body

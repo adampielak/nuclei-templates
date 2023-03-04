@@ -1,5 +1,6 @@
 id: javascript-env
 
+<<<<<<< HEAD
 info:
 <<<<<<< HEAD
   name: JavaScript Environment Config
@@ -14,16 +15,24 @@ info:
 >>>>>>> 5d36d276 (add new stuff)
   tags: javascript,config,exposure
 
+=======
+name: JavaScript Environment Config
+severity: low
+  
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
-    path:
-      - "{{BaseURL}}/env.js"
-      - "{{BaseURL}}/env.development.js"
-      - "{{BaseURL}}/env.production.js"
-      - "{{BaseURL}}/env.test.js"
-      - "{{BaseURL}}/env.dev.js"
-      - "{{BaseURL}}/env.prod.js"
+    paths:
+      - "HOSTNAME/env.js"
+      - "HOSTNAME/env.development.js"
+      - "HOSTNAME/env.production.js"
+      - "HOSTNAME/env.test.js"
+      - "HOSTNAME/env.dev.js"
+      - "HOSTNAME/env.prod.js"
+    patterns:
+      - "module.exports|const audience|const domain|NODE_ENV|LOG_LEVEL|TOKEN|KEY|PASSWORD|VERSION"
 
+<<<<<<< HEAD
     matchers-condition: and
     matchers:
 
@@ -63,3 +72,5 @@ requests:
 
 # Enhanced by md on 2023/02/09
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

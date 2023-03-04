@@ -10,12 +10,17 @@ info:
     - https://wpscan.com/vulnerability/b8415ed5-6fd0-42fe-9201-73686c1871c5
   metadata:
     verified: true
+<<<<<<< HEAD
     google-query: inurl:/wp-content/plugins/wp-analytify
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   tags: wp,wordpress,analytify,wpscan,wp-plugin,xss
+=======
+    google-dork: inurl:/wp-content/plugins/wp-analytify
+  tags: wp-plugin,xss,wp,wordpress,analytify
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

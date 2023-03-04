@@ -2,6 +2,7 @@ id: adiscon-loganalyzer
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Adiscon LogAnalyzer Detection
   author: geeknik
   severity: high
@@ -24,12 +25,28 @@ info:
     - https://loganalyzer.adiscon.com/
   tags: adiscon,loganalyzer,syslog,exposure,panel
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Detect exposed Adiscon LogAnalyzer
+  author: geeknik
+  severity: high
+  description: Adiscon LogAnalyzer is a web interface to syslog and other network event data. It provides easy browsing, analysis of realtime network events and reporting services.
+  reference: https://loganalyzer.adiscon.com/
+  tags: adiscon,loganalyzer,syslog,exposures
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -49,5 +66,3 @@ requests:
         part: header
         words:
           - 'text/html'
-
-# Enhanced by mp on 2022/03/20

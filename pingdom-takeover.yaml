@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: pingdom-takeover
 
 info:
@@ -26,3 +27,24 @@ requests:
         words:
           - Public Report Not Activated
           - This public report page has not been activated by the user
+=======
+id: pingdom-takeover
+
+info:
+  name: pingdom takeover detection
+  author: pdteam
+  severity: high
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - Public Report Not Activated
+          - This public report page has not been activated by the user
+>>>>>>> 18ddf72b (add new stuff)

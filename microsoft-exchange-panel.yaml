@@ -4,6 +4,7 @@ info:
   name: Microsoft Exchange Admin Center Login Panel - Detect
   author: r3dg33k
   severity: info
+<<<<<<< HEAD
   description: Microsoft Exchange Admin Center login panel was detected.
   reference:
     - https://docs.microsoft.com/en-us/answers/questions/58814/block-microsoft-exchange-server-2016-exchange-admi.html
@@ -12,12 +13,25 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: microsoft,panel,exchange
+=======
+  description: Publicly accessible Microsoft Exchange Server Control Panel
+  tags: microsoft,panel
+  reference: https://docs.microsoft.com/en-us/answers/questions/58814/block-microsoft-exchange-server-2016-exchange-admi.html
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/owa/auth/logon.aspx?replaceCurrent=1&url={{BaseURL}}/ecp"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /owa/auth/logon.aspx?replaceCurrent=1&url={{Scheme}}://{{Subdomains}}/ecp HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: status
@@ -26,6 +40,10 @@ requests:
 
       - type: word
         words:
+<<<<<<< HEAD
           - 'Exchange Admin Center'
 
 # Enhanced by md on 2022/11/28
+=======
+          - 'Exchange Admin Center'
+>>>>>>> 18ddf72b (add new stuff)

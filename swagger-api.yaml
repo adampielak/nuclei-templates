@@ -3,8 +3,9 @@ id: swagger-api
 info:
 <<<<<<< HEAD
   name: Public Swagger API
-  author: pdteam,c-sh0
+  author: pdteam
   severity: info
+<<<<<<< HEAD
 =======
   name: Public Swagger API - Detect
   author: pdteam,c-sh0
@@ -19,15 +20,13 @@ info:
   metadata:
     verified: true
     shodan-query: http.title:"swagger"
+=======
+>>>>>>> 18ddf72b (add new stuff)
   tags: exposure,api,swagger
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/swagger-ui/swagger-ui.js"
-      - "{{BaseURL}}/swagger/swagger-ui.js"
-      - "{{BaseURL}}/swagger-ui.js"
-      - "{{BaseURL}}/swagger/ui/swagger-ui.js"
       - "{{BaseURL}}/swagger/ui/index"
       - "{{BaseURL}}/swagger/index.html"
       - "{{BaseURL}}/swagger-ui.html"
@@ -41,7 +40,6 @@ requests:
       - "{{BaseURL}}/swagger/v1/swagger.json"
       - "{{BaseURL}}/swagger/v1/swagger.yaml"
       - "{{BaseURL}}/api/index.html"
-      - "{{BaseURL}}/api/doc"
       - "{{BaseURL}}/api/docs/"
       - "{{BaseURL}}/api/swagger.json"
       - "{{BaseURL}}/api/swagger.yaml"
@@ -55,7 +53,6 @@ requests:
       - "{{BaseURL}}/api/apidocs/swagger.json"
       - "{{BaseURL}}/api/apidocs/swagger.yaml"
       - "{{BaseURL}}/api/swagger-ui/api-docs"
-      - "{{BaseURL}}/api/doc.json"
       - "{{BaseURL}}/api/api-docs"
       - "{{BaseURL}}/api/apidocs"
       - "{{BaseURL}}/api/swagger"
@@ -73,11 +70,6 @@ requests:
       - "{{BaseURL}}/api/v1/swagger-ui/swagger.yaml"
       - "{{BaseURL}}/swagger-resources/restservices/v2/api-docs"
       - "{{BaseURL}}/api/swagger_doc.json"
-      - "{{BaseURL}}/docu"
-      - "{{BaseURL}}/docs"
-
-    headers:
-      Accept: text/html
 
     stop-at-first-match: true
     matchers-condition: and
@@ -88,14 +80,13 @@ requests:
           - "Swagger 2.0"
           - "\"swagger\":"
           - "Swagger UI"
-          - "loadSwaggerUI"
           - "**token**:"
-          - "id=\"swagger-ui"
         condition: or
 
       - type: status
         status:
           - 200
+<<<<<<< HEAD
 
     extractors:
       - type: regex
@@ -108,3 +99,5 @@ requests:
 
 # Enhanced by mp on 2023/02/05
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

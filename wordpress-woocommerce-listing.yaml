@@ -6,17 +6,31 @@ info:
   severity: info
 <<<<<<< HEAD
   description: Searches for sensitive directories present in the woocommerce wordpress plugin.
+<<<<<<< HEAD
 =======
   description: WordPress WooCommerce plugin sensitive directory searches were conducted.
 >>>>>>> 5d36d276 (add new stuff)
   reference:
     - https://www.exploit-db.com/ghdb/6192
   tags: edb,wordpress,listing,plugin,woocommerce
+=======
+  reference: https://www.exploit-db.com/ghdb/6192
+  tags: wordpress,listing
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/plugins/woocommerce/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /wp-content/plugins/woocommerce/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

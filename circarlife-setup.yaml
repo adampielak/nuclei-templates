@@ -2,12 +2,19 @@ id: circarlife-installer
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: CirCarLife - Admin Panel Access
 =======
   name: CirCarLife - Installer
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Exposed CirCarLife Setup Page
+>>>>>>> 18ddf72b (add new stuff)
   author: geeknik
+  description: CirCarLife is an internet-connected electric vehicle charging station
+  reference: https://circontrol.com/
   severity: critical
+<<<<<<< HEAD
   description: A CirCarLife admin panel was accessed. CirCarLife is an internet-connected electric vehicle charging station
   reference:
     - https://circontrol.com/
@@ -26,11 +33,20 @@ info:
     shodan-query: title:"- setup" html:"Modem setup"
   tags: scada,circontrol,circarlife,setup,exposure,panel,installer
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: scada,circontrorl,circarlife,setup,exposure,panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/html/setup.html"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /html/setup.html HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word
@@ -47,5 +63,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/05/23

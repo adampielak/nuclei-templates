@@ -5,8 +5,11 @@ info:
   author: 0x_Akoko
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference: https://graphiteapp.org/
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
   description: Graphite Browser login panel was detected.
   reference:
     - https://graphiteapp.org/
@@ -14,7 +17,10 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   metadata:
     shodan-query: http.title:"Graphite Browser"
   tags: graphite,panel

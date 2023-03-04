@@ -3681,13 +3681,17 @@ requests:
           - "js/pan/"
         condition: and
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
       - type: word
         name: sailsjs
         part: header
         words:
           - "X-Powered-By: Sails"
+<<<<<<< HEAD
 
       - type: word
         name: tengine
@@ -3707,3 +3711,5 @@ requests:
         words:
           - "uvicorn"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

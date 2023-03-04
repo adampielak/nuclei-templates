@@ -1,4 +1,5 @@
 id: cache-poisoning
+
 info:
   name: Cache Poisoning
   author: melbadry9,xelkomy
@@ -7,6 +8,7 @@ info:
     - https://blog.melbadry9.xyz/fuzzing/nuclei-cache-poisoning
     - https://portswigger.net/research/practical-web-cache-poisoning
   tags: cache,generic
+
 requests:
   - raw:
       - |
@@ -14,8 +16,10 @@ requests:
         X-Forwarded-Prefix: cache.example.com
         X-Forwarded-Host: cache.example.com
         X-Forwarded-For: cache.example.com
+
       - |
         GET /?mel=9 HTTP/1.1
+
     req-condition: true
     matchers:
       - type: dsl

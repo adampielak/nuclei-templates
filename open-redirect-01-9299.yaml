@@ -5,7 +5,6 @@ level: 2
 info:
   name: Open Redirect FUZZ on Param
   risk: Medium
-
 variables:
   - prefix: |
       http://
@@ -34,7 +33,6 @@ variables:
       checkout_url
       continue
       return_path
-
 payloads:
   - '{{.dest}}'
   - '/{{.dest}}'
@@ -60,7 +58,6 @@ payloads:
   - '/%5c{{.prefix}}{{.dest}}/%2f%2e%2e'
   - '/〱{{.prefix}}{{.dest}}/%2f%2e%2e'
   - '@{{.prefix}}{{.dest}}'
-
 requests:
   - generators:
       - Query("{{.payload}}", "{{.name}}")

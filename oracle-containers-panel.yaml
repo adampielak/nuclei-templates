@@ -1,4 +1,5 @@
 id: oracle-containers-panel
+
 info:
   name: Oracle Containers for J2EE 10g Panel - Detect
   author: dogasantos
@@ -9,10 +10,12 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: panel,oracle,containers
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -20,9 +23,11 @@ requests:
           - "Welcome to Oracle Containers for J2EE 10g"
           - "Administration Guide is included"
         condition: or
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         group: 1

@@ -1,16 +1,13 @@
 id: flink-exposure
-
 info:
   name: Apache Flink Exposure
   author: pdteam
   severity: low
   tags: panel
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers:
       - type: word
         words:

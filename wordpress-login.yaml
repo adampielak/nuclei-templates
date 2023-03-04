@@ -1,6 +1,7 @@
-id: wordpress-login
+id: wordpress-panel
 
 info:
+<<<<<<< HEAD
   name: WordPress Login Panel - Detect
   author: its0x08
   severity: info
@@ -16,14 +17,37 @@ requests:
     path:
       - "{{BaseURL}}/wp-login.php"
 
+=======
+  name: WordPress Panel
+  author: github.com/its0x08
+  severity: info
+  tags: panel
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /wp-login.php HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:
           - "WordPress</title>"
           - "Log In</title>"
           - '/wp-login.php?action=lostpassword">Lost your password?</a>'
+<<<<<<< HEAD
           - '<form name="loginform" id="loginform" action="{{BaseURL}}/wp-login.php" method="post">'
           - 'input type="password"'
+=======
+          - '<form name="loginform" id="loginform" action="https://{{Subdomains}}/wp-login.php" method="post">'
+          - '<form name="loginform" id="loginform" action="http://{{Subdomains}}/wp-login.php" method="post">'
+>>>>>>> 18ddf72b (add new stuff)
         condition: or
 
 # Enhanced by md on 2023/01/25

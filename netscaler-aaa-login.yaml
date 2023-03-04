@@ -5,6 +5,7 @@ info:
   author: dhiyaneshDk
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference:
     - https://www.exploit-db.com/ghdb/6898
   tags: panel,netscaler,login
@@ -18,15 +19,32 @@ info:
     cwe-id: CWE-200
   tags: panel,netscaler,login,edb
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference: https://www.exploit-db.com/ghdb/6898
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/logon/LogonPoint/tmindex.html'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /logon/LogonPoint/tmindex.html HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers:
       - type: word
         words:
           - "NetScaler AAA</title>"
+<<<<<<< HEAD
         condition: and
 
 # Enhanced by md on 2022/11/29
+=======
+        condition: and
+>>>>>>> 18ddf72b (add new stuff)

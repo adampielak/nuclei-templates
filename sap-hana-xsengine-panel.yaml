@@ -5,6 +5,7 @@ info:
   author: PR3R00T
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: SAP HANA XS Engine admin login panel was detected.
   classification:
@@ -19,6 +20,21 @@ requests:
     path:
       - "{{BaseURL}}/sap/hana/xs/formLogin/login.html"
     host-redirects: true
+=======
+  tags: panel
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /sap/hana/xs/formLogin/login.html HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

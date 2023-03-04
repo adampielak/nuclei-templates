@@ -4,6 +4,7 @@ info:
   name: Apache Tomcat Example Scripts - Detect
   author: Co0nan
 <<<<<<< HEAD
+<<<<<<< HEAD
   severity: low
 =======
   severity: info
@@ -14,6 +15,10 @@ info:
     cwe-id: CWE-200
   tags: apache,tomcat
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  severity: info
+  tags: apache,tomcat
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -21,13 +26,19 @@ requests:
       - "{{BaseURL}}/examples/servlets/index.html"
       - "{{BaseURL}}/examples/jsp/index.html"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
       - "{{BaseURL}}/examples/websocket/index.xhtml"
       - "{{BaseURL}}/..;/examples/servlets/index.html"
       - "{{BaseURL}}/..;/examples/jsp/index.html"
       - "{{BaseURL}}/..;/examples/websocket/index.xhtml"
 
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:
@@ -35,9 +46,14 @@ requests:
           - "JSP Samples"
           - "Servlets Examples"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           - "WebSocket Examples"
         condition: or
 
 # Enhanced by md on 2023/02/06
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "WebSocket Examples"
+        condition: or
+>>>>>>> 18ddf72b (add new stuff)

@@ -4,6 +4,7 @@ info:
   name: Fortinet FortiWeb Login Panel - Detect
   author: PR3R00T
   severity: info
+<<<<<<< HEAD
   description: Fortinet FortiWeb login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
@@ -16,6 +17,21 @@ requests:
     path:
       - "{{BaseURL}}/login"
 
+=======
+  tags: panel
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /login HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

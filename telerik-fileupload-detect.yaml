@@ -4,20 +4,35 @@ info:
   name: Detect Telerik Web UI Fileupload Handler
   author: organiccrap
 <<<<<<< HEAD
+<<<<<<< HEAD
   severity: low
 =======
   severity: info
   description: This template detects the Telerik Web UI fileupload handler.
   tags: tech,telerik,fileupload
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  severity: info
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Telerik.Web.UI.WebResource.axd?type=rau"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /Telerik.Web.UI.WebResource.axd?type=rau HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers:
       - type: word
         words:
+<<<<<<< HEAD
 <<<<<<< HEAD
           - "RadAsyncUpload handler is registered successfully"
 =======
@@ -25,3 +40,6 @@ requests:
 
 # Enhanced by cs on 2022/02/28
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "RadAsyncUpload handler is registered succesfully"
+>>>>>>> 18ddf72b (add new stuff)

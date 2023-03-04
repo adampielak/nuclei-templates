@@ -5,6 +5,7 @@ info:
   author: yavolo,dwisiswant0
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference:
     - https://portswigger.net/web-security/dom-based/controlling-the-web-message-source
 =======
@@ -16,7 +17,10 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   tags: xss,misc
+  reference: https://portswigger.net/web-security/dom-based/controlling-the-web-message-source
 
 requests:
   - method: GET

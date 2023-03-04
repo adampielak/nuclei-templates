@@ -15,9 +15,13 @@ requests:
       - "{{BaseURL}}"
       - "{{BaseURL}}/{{randstr}}"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       - "{{BaseURL}}/docs/introduction.html"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+      - "{{BaseURL}}/docs/introduction.html"
+>>>>>>> 18ddf72b (add new stuff)
 
     stop-at-first-match: true
     matchers-condition: or
@@ -38,7 +42,11 @@ requests:
         group: 1
         regex:
 <<<<<<< HEAD
+<<<<<<< HEAD
           - '(?i)Apache Tomcat.*([0-9]\.[0-9]+\.[0-9]+)'
 =======
           - '(?i)Apache Tomcat.*([0-9]\.[0-9]+\.[0-9]+)'
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - '(?i)Apache Tomcat.*([0-9]\.[0-9]+\.[0-9]+)'
+>>>>>>> 18ddf72b (add new stuff)

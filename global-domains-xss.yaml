@@ -4,6 +4,7 @@ info:
   name: Global Domains International - Cross-Site Scripting
   author: princechaddha
 <<<<<<< HEAD
+<<<<<<< HEAD
   severity: medium
   reference:
     - https://cxsecurity.com/issue/WLB-2018020247
@@ -14,13 +15,23 @@ info:
     Sites hosted by Global Domains International, Inc. have cross-site scripting and directory traversal vulnerabilities.
   reference:
     - https://cxsecurity.com/issue/WLB-2018020247
+=======
+  severity: high
+  description: |
+    Sites hosted by Global Domains International, Inc. have cross-site scripting and directory traversal vulnerabilities.
+  reference:
+    - https://cxsecurity.com/issue/WLB-2018020247
+>>>>>>> 18ddf72b (add new stuff)
     - https://packetstormsecurity.com/files/126545/Global-Domains-International-Cross-Site-Scripting-Traversal.html
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   tags: globaldomains,xss,packetstorm
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

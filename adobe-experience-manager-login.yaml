@@ -1,23 +1,22 @@
 id: adobe-experience-manager-login
 
 info:
-  name: Adobe Experience Manager Login Panel
+  name: Adobe-Experience-Manager
   author: dhiyaneshDK
   severity: info
-  description: An Adobe Experience Manager login panel was detected.
-  reference:
-    - https://business.adobe.com/products/experience-manager/adobe-experience-manager.html
-  classification:
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: http.title:"AEM Sign In"
-  tags: panel,aem,adobe
+  reference: https://www.shodan.io/search?query=http.title%3A%22AEM+Sign+In%22
+  tags: panel,aem
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/libs/granite/core/content/login.html'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /libs/granite/core/content/login.html HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word
@@ -27,5 +26,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/20

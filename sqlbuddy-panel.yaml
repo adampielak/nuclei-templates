@@ -2,13 +2,18 @@ id: sqlbuddy-panel
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: SQL Buddy Panel
+=======
+  name: SQL Buddy Login Panel - Detect
+>>>>>>> 18ddf72b (add new stuff)
   author: nullfuzz
   severity: info
   description: |
-    SQL Buddy  is a third-party tool that you can use to MySQL administration.
+    SQL Buddy login panel was detected.
   reference:
     - http://sqlbuddy.com/
+<<<<<<< HEAD
 =======
   name: SQL Buddy Login Panel - Detect
   author: nullfuzz
@@ -17,11 +22,16 @@ info:
     SQL Buddy login panel was detected.
   reference:
     - http://sqlbuddy.com/
+=======
+>>>>>>> 18ddf72b (add new stuff)
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   metadata:
     verified: true
     shodan-query: http.title:"SQL Buddy"
@@ -43,7 +53,12 @@ requests:
           - "contains(body, '<title>SQL Buddy')"
         condition: and
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Enhanced by md on 2023/01/24
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+# Enhanced by md on 2023/01/24
+>>>>>>> 18ddf72b (add new stuff)

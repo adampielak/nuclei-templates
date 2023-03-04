@@ -4,9 +4,13 @@ info:
   name: Apache ZooKeeper - Unauthenticated Access
   author: pdteam
   severity: high
+<<<<<<< HEAD
   description: Apache ZooKeeper was able to be accessed without any required authentication.
   reference:
     - https://zookeeper.apache.org/security.html
+=======
+  reference: https://zookeeper.apache.org/security.html
+>>>>>>> 18ddf72b (add new stuff)
   tags: network,zookeeper,unauth
 
 network:
@@ -15,12 +19,15 @@ network:
 
     host:
       - "{{Hostname}}"
-      - "{{Hostname}}:2181"
+      - "{{Host}}:2181"
     read-size: 2048
 
     matchers:
       - type: word
         words:
           - "zookeeper.version"
+<<<<<<< HEAD
 
 # Enhanced by mp on 2022/07/21
+=======
+>>>>>>> 18ddf72b (add new stuff)

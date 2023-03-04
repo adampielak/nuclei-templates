@@ -1,4 +1,5 @@
 id: apache-filename-enum
+
 info:
   name: Apache Filename Enumeration
   author: geeknik
@@ -10,16 +11,21 @@ info:
 <<<<<<< HEAD
   severity: low
   tags: apache,misconfig
+<<<<<<< HEAD
 =======
   tags: apache,misconfig,hackerone
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     headers:
       Accept: "fake/value"
     path:
       - "{{BaseURL}}/index"
+
     matchers-condition: and
     matchers:
       - type: status

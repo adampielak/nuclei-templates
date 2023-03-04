@@ -2,10 +2,8 @@ id: jupyter-ipython-unauth
 info:
   name: Jupyter ipython Unauth
   risk: Critical
-
 params:
   - root: '{{.BaseURL}}'
-
 requests:
   - method: GET
     redirect: false
@@ -16,6 +14,5 @@ requests:
     detections:
       - >-
         StatusCode() == 200 && StringSearch("body", "ipython/static/components") && StringSearch("response", "ipython/kernelspecs")
-
 references:
   - poc: "import os;os.popen('cat /etc/passwd').read()"

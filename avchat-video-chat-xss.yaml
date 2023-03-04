@@ -11,11 +11,15 @@ info:
     - https://wpscan.com/vulnerability/fce99c82-3958-4c17-88d3-6e8fa1a11e59
   metadata:
     verified: true
+<<<<<<< HEAD
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   tags: xss,,wp,wpscan,wordpress,wp-plugin
+=======
+  tags: wordpress,wp-plugin,xss,,wp
+>>>>>>> 18ddf72b (add new stuff)
 
 
 requests:

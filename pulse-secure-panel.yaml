@@ -5,6 +5,7 @@ info:
   author: bsysop
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: Pulse Secure VPN login panel was detected.
   classification:
@@ -13,25 +14,31 @@ info:
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,pulse,vpn
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/dana-na/auth/url_default/welcome.cgi"
-      - "{{BaseURL}}/dana-na/auth/url_2/welcome.cgi"
-      - "{{BaseURL}}/dana-na/auth/url_3/welcome.cgi"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    stop-at-first-match: true
+    raw:
+      - |
+        GET /dana-na/auth/url_default/welcome.cgi HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: or
     matchers:
       - type: word
-        part: header
         words:
           - "/dana-na/auth/welcome.cgi"
+        part: header
 
       - type: regex
-        part: body
         regex:
+<<<<<<< HEAD
 <<<<<<< HEAD
           - "(?i)/dana-na/css/ds(_[a-f0-9]{64})?.css"
 =======
@@ -39,3 +46,7 @@ requests:
 
 # Enhanced by md on 2022/12/06
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "(?i)/dana-na/css/ds(_[a-f0-9]{64})?.css"
+        part: body
+>>>>>>> 18ddf72b (add new stuff)

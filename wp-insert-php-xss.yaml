@@ -2,10 +2,14 @@ id: wp-insert-php-xss
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Woody Code Snippets < 2.4.6 - Cross-Site Scripting
 =======
   name: WordPress Woody Code Snippets <2.4.6 - Cross-Site Scripting
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: WordPress Woody Code Snippets <2.4.6 - Cross-Site Scripting
+>>>>>>> 18ddf72b (add new stuff)
   author: Akincibor,DhiyaneshDk
   severity: high
   description: WordPress Woody Code Snippets plugin before 2.4.6 contains a cross-site scripting vulnerability. It does not escape generated URLs before outputting them back in an attribute.

@@ -1,5 +1,4 @@
 id: ibm-security-access-manager
-
 info:
   name: Detects IBM Security Access Manager
   author: geeknik
@@ -7,13 +6,11 @@ info:
   description: IBM Security Access Manager is a complete authorization and network security policy management solution. It provides end-to-end protection of resources over geographically dispersed intranets and extranets.
   reference: https://www.ibm.com/docs/en/sva/9.0.7?topic=overview-introduction-security-access-manager
   tags: panel,ibm
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET / HTTP/1.1
@@ -27,12 +24,10 @@ requests:
         words:
           - "<title>IBM Security Access Manager</title>"
         part: body
-
       - type: word
         words:
           - "IBM Security Access Manager for Web"
         part: header
-
       - type: word
         words:
           - "/mga/sps/authsvc/policy/forgot_username"

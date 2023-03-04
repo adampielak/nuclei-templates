@@ -1,4 +1,5 @@
 id: airflow-admin-login-panel
+
 info:
   name: Apache Airflow Admin Login Panel
   author: pdteam
@@ -14,11 +15,13 @@ info:
     cvss-score: 8.3
     cve-id:
     cwe-id: CWE-522
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login/"
       - "{{BaseURL}}/admin/airflow/login"
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -27,6 +30,7 @@ requests:
           - "Airflow - Login"
           - "Sign In - Airflow"
         condition: or
+
       - type: status
         status:
           - 200

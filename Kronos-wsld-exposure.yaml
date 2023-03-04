@@ -9,7 +9,6 @@ requests:
       - "{{BaseURL}}/wfc/webservice/ReportConfigService?wsdl"
       - "{{BaseURL}}/wfc/XmlService"
       - "{{BaseURL}}/wfc/"
-
     matchers:
       - type: word
         words:

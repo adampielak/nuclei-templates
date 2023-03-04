@@ -5,8 +5,7 @@ info:
   author: dhiyaneshDK
 <<<<<<< HEAD
   severity: low
-  reference:
-    - https://www.exploit-db.com/ghdb/6810
+  reference: https://www.exploit-db.com/ghdb/6810
   tags: panel
 =======
   severity: info
@@ -21,10 +20,16 @@ info:
 >>>>>>> 5d36d276 (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

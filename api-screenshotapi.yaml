@@ -16,7 +16,10 @@ requests:
     path:
       - "https://shot.screenshotapi.net/screenshot?token={{token}}&url=https://example.com"
 
+<<<<<<< HEAD
     matchers-condition: and
+=======
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         part: body

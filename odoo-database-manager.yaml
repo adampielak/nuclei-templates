@@ -2,6 +2,7 @@ id: odoo-database-manager
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Odoo - Database Manager Discovery
   author: __Fazal,R3dg33k
   severity: high
@@ -11,13 +12,24 @@ info:
   author: __Fazal,R3dg33k
   severity: high
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Odoo-Database-Manager
+  author: __Fazal,R3dg33k
+  severity: high
+>>>>>>> 18ddf72b (add new stuff)
   tags: panel,odoo
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/web/database/manager'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /web/database/manager HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: status
@@ -29,7 +41,10 @@ requests:
           - "{ action: 'database_manager' }"
         condition: and
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # Enhanced by mp on 2022/07/15
 =======
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

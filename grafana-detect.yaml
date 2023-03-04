@@ -5,6 +5,7 @@ info:
   author: organiccrap
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: Grafana login panel was detected.
   classification:
@@ -15,16 +16,27 @@ info:
     shodan-query: title:"Grafana"
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,grafana
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /login HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers:
       - type: word
         words:
           - "<title>Grafana</title>"
         part: body
+<<<<<<< HEAD
     extractors:
       - type: regex
         part: body
@@ -36,3 +48,5 @@ requests:
 
 # Enhanced by md on 2022/11/16
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

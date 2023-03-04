@@ -1,4 +1,5 @@
 id: api-mojoauth
+
 info:
   name: MojoAuth API Test
   author: daffainfo
@@ -8,6 +9,7 @@ info:
     - https://mojoauth.com/docs/
     - https://github.com/daffainfo/all-about-apikey/tree/main/mojoauth
   tags: token-spray,mojoauth
+
 self-contained: true
 requests:
   - raw:
@@ -15,6 +17,7 @@ requests:
         POST https://api.mojoauth.com/token/jwks HTTP/1.1
         Host: api.mojoauth.com
         X-API-Key: {{token}}
+
     matchers:
       - type: word
         part: body

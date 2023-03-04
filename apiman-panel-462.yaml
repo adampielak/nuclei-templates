@@ -1,4 +1,5 @@
 id: apiman-panel
+
 info:
   name: Apiman Login Panel
   author: righettod
@@ -9,16 +10,19 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,apiman
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/apimanui/api-manager"
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "/auth/realms/apiman"
         part: header
+
       - type: status
         status:
           - 302

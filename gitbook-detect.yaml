@@ -8,7 +8,11 @@ info:
   reference: https://www.gitbook.com/
   metadata:
     verified: true
+<<<<<<< HEAD
     shodan-query: http.title:"gitbook"
+=======
+    shodan-dork: http.title:"gitbook"
+>>>>>>> 18ddf72b (add new stuff)
     fofa: app="Introduction-GitBook"
   tags: tech,gitbook
 

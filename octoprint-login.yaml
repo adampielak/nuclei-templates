@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: octoprint-panel
 
 info:
@@ -38,3 +39,28 @@ requests:
 
 # Enhanced by md on 2022/12/01
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: octoprint-panel
+
+info:
+  name: OctoPrint Login
+  author: affix
+  severity: info
+  tags: octoprint,panel
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/login/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>OctoPrint Login</title>'
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

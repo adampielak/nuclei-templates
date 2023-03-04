@@ -1,17 +1,14 @@
 id: ds-store-file
-
 info:
   name: Directory Listing via DS_Store
   author: 0w4ys
   severity: info
   tags: exposure
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /.DS_Store HTTP/1.1
@@ -23,12 +20,10 @@ requests:
     matchers:
       - type: word
         words:
-          - "\x00@\x00"
-
+          - "\0@\0"
       - type: status
         status:
           - 200
-
       - type: word
         words:
           - "Accept-Ranges: bytes"

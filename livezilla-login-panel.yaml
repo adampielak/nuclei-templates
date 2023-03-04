@@ -4,18 +4,28 @@ info:
   name: LiveZilla Login Panel - Detect
   author: __Fazal
   severity: info
+<<<<<<< HEAD
   description: LiveZilla login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: panel,livezilla,login
+=======
+  tags: panel,livezilla
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/mobile/index.php'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /mobile/index.php HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: status
@@ -24,6 +34,10 @@ requests:
 
       - type: word
         words:
+<<<<<<< HEAD
           - 'LiveZilla'
 
 # Enhanced by md on 2022/11/28
+=======
+          - 'LiveZilla'
+>>>>>>> 18ddf72b (add new stuff)

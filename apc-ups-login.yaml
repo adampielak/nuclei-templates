@@ -1,4 +1,5 @@
 id: apc-ups-login
+
 info:
   name: APC UPS Login - Detect
   author: droberson
@@ -14,16 +15,19 @@ info:
   metadata:
     shodan-query: title:"APC | Log On"
   tags: iot,panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/logon.htm"
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>APC | Log On</title>'
         part: body
+
       - type: status
         status:
           - 200

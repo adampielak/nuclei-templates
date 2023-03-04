@@ -3,8 +3,9 @@ id: manageengine-opmanager
 info:
 <<<<<<< HEAD
   name: ZOHO ManageEngine OpManager
-  author: dhiyaneshDK,daffainfo
+  author: dhiyaneshDK
   severity: info
+<<<<<<< HEAD
 =======
   name: ZOHO ManageEngine OpManager Panel - Detect
   author: dhiyaneshDK,daffainfo
@@ -19,22 +20,29 @@ info:
     - https://www.manageengine.com/
   metadata:
     shodan-query: http.title:"OpManager Plus"
+=======
+  reference: https://www.shodan.io/search?query=http.title%3A%22OpManager+Plus%22
+>>>>>>> 18ddf72b (add new stuff)
   tags: panel,zoho,manageengine
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
-          - "<div class='opmIconsHolder'>"
-          - "<div class='opmLoginFieldHolder'>"
-          - "<div class='opmIconsRight'>"
-        condition: and
+          - '<h2>OpManager Plus<span>'
 
       - type: status
         status:

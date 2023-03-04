@@ -14,10 +14,14 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: fastjson,rce,deserialization,oast
 =======
   tags: fastjson,rce,deserialization,oast,vulhub
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: fastjson,rce,deserialization,oast,vulhub
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - raw:

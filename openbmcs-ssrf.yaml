@@ -1,15 +1,20 @@
 id: openbmcs-ssrf
+
 info:
   name: OpenBMCS 2.4 - Server-Side Request Forgery /  Remote File Inclusion
   author: dhiyaneshDK
 <<<<<<< HEAD
   severity: high
-  description: Unauthenticated Server-Side Request Forgery (SSRF) and Remote File Include (RFI) vulnerability exists in OpenBMCS within its functionalities. The application parses user supplied data in the POST parameter 'ip' to query a server IP on port 81 by default. Since no validation is carried out on the parameter, an attacker can specify an external domain and force the application to make an HTTP request to an arbitrary destination host. This can be used by an external attacker for example to bypass firewalls and initiate a service and network enumeration on the internal network through the affected application, allows hijacking the current session of the user, execute cross-site scripting code or changing the look of the page and content modification on current display
+  description: Unauthenticated Server-Side Request Forgery (SSRF) and Remote File Include (RFI) vulnerability exists in OpenBMCS within its functionalities. The application parses user supplied data in the POST parameter
+    'ip' to query a server IP on port 81 by default. Since no validation is carried out on the parameter, an attacker can specify an external domain and force the application to make an HTTP request to an arbitrary
+    destination host. This can be used by an external attacker for example to bypass firewalls and initiate a service and network enumeration on the internal network through the affected application, allows hijacking
+    the current session of the user, execute cross-site scripting code or changing the look of the page and content modification on current display
   reference:
     - https://www.exploit-db.com/exploits/50670
   metadata:
     shodan-query: http.favicon.hash:1550906681
   tags: ssrf,oast,openbmcs
+<<<<<<< HEAD
 =======
   severity: medium
   description: OpenBMCS 2.4 is susceptible to unauthenticated server-side request forgery and remote file inclusion vulnerabilities within its functionalities. The application parses user supplied data in the POST parameter 'ip' to query a server IP on port 81 by default. Since no validation is carried out on the parameter, an attacker can specify an external domain and force the application to make an HTTP request to an arbitrary destination host.
@@ -25,6 +30,9 @@ info:
   tags: ssrf,oast,openbmcs,edb
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - raw:
       - |
@@ -33,12 +41,14 @@ requests:
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
         ip={{interactsh-url}}:80&argu=/
+
     matchers-condition: and
     matchers:
       - type: word
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "http"
+
       - type: status
         status:
           - 302

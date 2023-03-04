@@ -1,12 +1,10 @@
 id: dom-xss
-
 info:
   name: DOM XSS Sources & Sinks
   reference: https://portswigger.net/blog/introducing-dom-invader
   author: geeknik
   severity: info
   tags: dom,xss
-
 file:
   - extensions:
       - js
@@ -16,7 +14,6 @@ file:
       - cs
       - rb
       - py
-
     extractors:
       - type: regex
         name: sink

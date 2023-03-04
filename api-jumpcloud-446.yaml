@@ -1,10 +1,12 @@
 id: api-jumpcloud
+
 info:
   name: JumpCloud API Test
   author: zzeitlin
   severity: info
   reference: https://docs.jumpcloud.com/1.0/authentication-and-authorization/api-key
   tags: token-spray,jumpcloud
+
 self-contained: true
 requests:
   - method: GET
@@ -12,6 +14,7 @@ requests:
       - "https://console.jumpcloud.com/api/systems"
     headers:
       X-Api-Key: "{{token}}"
+
     matchers:
       - type: word
         part: body

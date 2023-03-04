@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: manageengine-adaudit
 
 info:
@@ -50,3 +51,28 @@ requests:
 
 # Enhanced by mp on 2023/01/29
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: zoho-manageengine-adaudit
+
+info:
+  name: ZOHO-ManageEngine-ADAudit
+  author: dhiyaneshDK
+  severity: info
+  reference: https://www.shodan.io/search?query=http.title%3A%22ManageEngine+-+ADManager+Plus%22
+  tags: panel,zoho
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>ManageEngine - ADManager Plus</title>'
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

@@ -1,4 +1,5 @@
 id: aws-redirect
+
 info:
   name: Subdomain takeover AWS S3
   author: manikanta a.k.a @secureitmania
@@ -6,10 +7,12 @@ info:
   reference:
     - https://link.medium.com/fgXKJHR9P7
   tags: aws,takeover
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     redirects: false
     matchers-condition: and
     matchers:

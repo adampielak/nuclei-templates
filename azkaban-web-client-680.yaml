@@ -1,4 +1,5 @@
 id: azkaban-web-client
+
 info:
   name: Azkaban Web Client
   author: dhiyaneshDK
@@ -11,10 +12,12 @@ info:
   metadata:
     shodan-query: http.title:"Azkaban Web Client"
   tags: panel,azkaban
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers-condition: and
     matchers:
       - type: word

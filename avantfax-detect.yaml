@@ -7,10 +7,19 @@ info:
   tags: tech,avantfax
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
 
@@ -23,7 +32,10 @@ requests:
         status:
           - 200
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
     extractors:
       - type: regex
@@ -31,4 +43,7 @@ requests:
         group: 1
         regex:
           - '<p align="center">([0-9.]+)<\/p>'
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

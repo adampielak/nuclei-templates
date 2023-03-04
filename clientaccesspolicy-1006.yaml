@@ -1,13 +1,16 @@
 id: clientaccesspolicy
+
 info:
   name: Silverlight cross-domain policy
   author: emadshanab
   severity: info
   tags: misc
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/clientaccesspolicy.xml"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -16,6 +19,7 @@ requests:
           - "<cross-domain-access>"
           - "domain uri="
         condition: and
+
       - type: status
         status:
           - 200

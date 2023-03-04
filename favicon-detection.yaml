@@ -13,13 +13,19 @@ info:
   tags: tech,favicon
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/favicon.ico"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    redirects: true
-    max-redirects: 2
-
+    raw:
+      - |
+        GET /favicon.ico HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers:
       - type: dsl
         name: proxmox
@@ -2526,23 +2532,34 @@ requests:
         dsl:
           - "status_code==200 && (\"983384876\" == mmh3(base64_py(body)))"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
       - type: dsl
         name: "Kaseya"
         dsl:
           - "status_code==200 && (\"-1445519482\" == mmh3(base64_py(body)))"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
       - type: dsl
         name: "OpenSNS"
         dsl:
           - "status_code==200 && (\"1167011145\" == mmh3(base64_py(body)))"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
       - type: dsl
         name: "SpamSniper"
@@ -2562,6 +2579,7 @@ requests:
       - type: dsl
         name: "KevinLAB"
         dsl:
+<<<<<<< HEAD
           - "status_code==200 && (\"-1650202746\" == mmh3(base64_py(body)))"
 
       - type: dsl
@@ -2569,3 +2587,6 @@ requests:
         dsl:
           - "status_code==200 && (\"762074255\" == mmh3(base64_py(body)))"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "status_code==200 && (\"-1650202746\" == mmh3(base64_py(body)))"
+>>>>>>> 18ddf72b (add new stuff)

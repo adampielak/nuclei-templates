@@ -1,17 +1,14 @@
 id: gitlab-detect
-
 info:
   name: Detect Gitlab
   author: ehsahil
   severity: info
   tags: panel
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /users/sign_in HTTP/1.1
@@ -23,7 +20,6 @@ requests:
         words:
           - 'GitLab'
           - 'https://about.gitlab.com'
-
       - type: status
         status:
           - 200

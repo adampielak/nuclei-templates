@@ -4,8 +4,8 @@ info:
 <<<<<<< HEAD
   name: WordPress Grimag Themes < 1.1.1 Open Redirection
   author: 0x_Akoko
-  severity: low
   description: The Grimag WordPress theme was affected by an Open Redirection security vulnerability.
+<<<<<<< HEAD
   reference:
     - https://wpscan.com/vulnerability/db319d4c-7de6-4d36-90e9-86de82e9c03a
 =======
@@ -22,16 +22,28 @@ info:
     cwe-id: CWE-601
 >>>>>>> 5d36d276 (add new stuff)
   tags: wp-theme,redirect,wpscan,wordpress
+=======
+  reference: https://wpscan.com/vulnerability/db319d4c-7de6-4d36-90e9-86de82e9c03a
+  severity: low
+  tags: wordpress,wp-theme,redirect
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/themes/Grimag/go.php?https://interact.sh"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /wp-content/themes/Grimag/go.php?https://example.com HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept: */*
     matchers:
       - type: regex
         regex:
-          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)example\.com.*$'
         part: header
 <<<<<<< HEAD
 =======

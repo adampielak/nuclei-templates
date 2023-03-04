@@ -5,6 +5,7 @@ info:
   author: pikpikcu
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: Alibaba Canal configuration information was detected.
 >>>>>>> 5d36d276 (add new stuff)
@@ -20,14 +21,26 @@ info:
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
   tags: config,exposure,alibaba
+=======
+  tags: config,exposure
+
+  # https://github.com/alibaba/canal/issues/632
+  # https://netty.io/wiki/reference-counted-objects.html
+  # https://my.oschina.net/u/4581879/blog/4753320
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/api/v1/canal/config/1/1"
-    headers:
-      Content-Type: application/json
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /api/v1/canal/config/1/1 HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+        Content-Type: application/json
     matchers-condition: and
     matchers:
       - type: status

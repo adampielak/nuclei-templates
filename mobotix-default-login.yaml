@@ -2,6 +2,7 @@ id: mobotix-default-credentials
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Mobotix Webcam Default Admin Credentials
   author: robotshell
   severity: high
@@ -12,6 +13,12 @@ info:
   severity: high
   description: Mobotix contains a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Mobotix - Default Login
+  author: robotshell
+  severity: high
+  description: Mobotix contains a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+>>>>>>> 18ddf72b (add new stuff)
   reference:
     - https://www.mobotix.com/sites/default/files/2020-01/mx_RM_CameraSoftwareManual_en_200131.pdf
   classification:
@@ -48,7 +55,12 @@ requests:
         status:
           - 200
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Enhanced by md on 2023/01/06
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+# Enhanced by md on 2023/01/06
+>>>>>>> 18ddf72b (add new stuff)

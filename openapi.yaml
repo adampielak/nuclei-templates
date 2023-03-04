@@ -1,6 +1,11 @@
 id: openapi
+
 info:
+<<<<<<< HEAD
   name: OpenAPI - Detect
+=======
+  name: OpenAPI
+>>>>>>> 18ddf72b (add new stuff)
   author: pdteam,ynnirc
   severity: info
   description: OpenAPI was detected.
@@ -11,14 +16,17 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: exposure,api
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/openapi.json"
+
     matchers-condition: and
     matchers:
       - type: word
         words:
+<<<<<<< HEAD
 <<<<<<< HEAD
           - application/openapi+json
         part: header
@@ -31,6 +39,11 @@ requests:
           - openapi
           - paths
         condition: and
+=======
+          - openapi
+          - paths
+        condition: and
+>>>>>>> 18ddf72b (add new stuff)
 
       - type: word
         part: header
@@ -39,7 +52,10 @@ requests:
           - application/json
         condition: or
 
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
       - type: status
         status:
           - 200

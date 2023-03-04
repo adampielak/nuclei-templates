@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: appspec-yml-disclosure
 
 info:
@@ -34,3 +35,33 @@ requests:
           - 200
 
 # Enhanced by md on 2023/02/08
+=======
+id: appspec-yml-disclosure
+
+info:
+  name: Appspec Yml Disclosure
+  author: dhiyaneshDk
+  severity: medium
+  reference: https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/appsec-yml-disclosure.json
+  tags: exposure,config
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/appspec.yml"
+      - "{{BaseURL}}/appspec.yaml"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "version:"
+          - "os:"
+          - "files:"
+        part: body
+        condition: and
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

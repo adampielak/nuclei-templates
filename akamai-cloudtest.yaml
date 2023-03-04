@@ -4,18 +4,18 @@ info:
   name: Akamai CloudTest Panel
   author: emadshanab
   severity: info
-  description: An Akamai CloudTest panel was discovered.
-  reference:
-    - https://techdocs.akamai.com/cloudtest/docs
-  classification:
-    cwe-id: CWE-200
   tags: panel,akamai
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/concerto/Login?goto=Central"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /concerto/Login?goto=Central HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word
@@ -27,5 +27,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/16

@@ -11,10 +11,14 @@ info:
     verified: true
     shodan-query: http.component:"Magento"
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: magento
 =======
   tags: magento,tech
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: magento,tech
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

@@ -1,17 +1,14 @@
 id: jkstatus-manager
-
 info:
   name: JK Status Manager
   author: pdteam
   severity: low
   tags: config
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /jkstatus/ HTTP/1.1

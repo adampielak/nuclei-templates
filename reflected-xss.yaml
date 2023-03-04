@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 id: Reflected-XSS
 
 info:
@@ -13,6 +14,11 @@ info:
 id: reflected-xss
 
 info:
+=======
+id: reflected-xss
+
+info:
+>>>>>>> 18ddf72b (add new stuff)
   name: Reflected Cross Site Scripting
   author: pdteam
   severity: medium
@@ -20,11 +26,15 @@ info:
 
 variables:
   first: "{{rand_int(10000, 99999)}}"
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
     path:
+<<<<<<< HEAD
 <<<<<<< HEAD
       - "{{BaseURL}}'><Svg Only=1 OnLoad=confirm('{{randstr}}')>"
       - "{{baseURL}}'</TITLE><SCRIPT>confirm('{{randstr}}')%3b</SCRIPT>"
@@ -41,6 +51,10 @@ requests:
 =======
       - "{{BaseURL}}"
 
+=======
+      - "{{BaseURL}}"
+
+>>>>>>> 18ddf72b (add new stuff)
     payloads:
       reflection:
         - "'\"><{{first}}"
@@ -53,12 +67,16 @@ requests:
           - "{{reflection}}"
 
     stop-at-first-match: true
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
+<<<<<<< HEAD
 <<<<<<< HEAD
             - '{{randstr}}'
         condition: and
@@ -72,12 +90,19 @@ requests:
 =======
           - "{{reflection}}"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "{{reflection}}"
+>>>>>>> 18ddf72b (add new stuff)
 
       - type: word
         part: header
         words:
 <<<<<<< HEAD
+<<<<<<< HEAD
           - "text/html"
 =======
           - "text/html"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "text/html"
+>>>>>>> 18ddf72b (add new stuff)

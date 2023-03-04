@@ -1,4 +1,5 @@
 id: atlassian-crowd-panel
+
 info:
   name: Atlassian Crowd Login Panel
   author: organiccrap
@@ -9,10 +10,12 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,atlassian
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/crowd/console/login.action'
+
     matchers:
       - type: word
         words:

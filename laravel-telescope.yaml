@@ -11,11 +11,22 @@ info:
   tags: laravel,disclosure,logs
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/telescope/requests"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+<<<<<<< HEAD
     host-redirects: true
+=======
+    raw:
+      - |
+        GET /telescope/requests HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

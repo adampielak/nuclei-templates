@@ -1,10 +1,12 @@
 id: api-visualstudio
+
 info:
   name: Visual Studio API Test
   author: zzeitlin
   severity: info
   reference: https://openapi.appcenter.ms/
   tags: token-spray,visualstudio,microsoft
+
 self-contained: true
 requests:
   - method: GET
@@ -13,6 +15,7 @@ requests:
     headers:
       Content-Type: application/json
       X-Api-Token: "{{token}}"
+
     matchers:
       - type: word
         part: body

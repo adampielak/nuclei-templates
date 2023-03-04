@@ -9,6 +9,7 @@ info:
     - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
     - https://github.com/laluka/jolokia-exploitation-toolkit
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
@@ -16,6 +17,9 @@ info:
     cwe-id: CWE-522
 >>>>>>> 5d36d276 (add new stuff)
   tags: jolokia,springboot,tomcat,lfi
+=======
+  tags: jolokia,lfi
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

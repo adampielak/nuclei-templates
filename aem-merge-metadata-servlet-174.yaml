@@ -1,4 +1,5 @@
 id: aem-merge-metadata-servlet
+
 info:
   name: AEM MergeMetadataServlet
   author: DhiyaneshDk
@@ -6,6 +7,7 @@ info:
   reference:
     - https://speakerdeck.com/0ang3el/aem-hacker-approaching-adobe-experience-manager-webapps-in-bug-bounty-programs?slide=91
   tags: aem
+
 requests:
   - method: GET
     path:
@@ -15,6 +17,7 @@ requests:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'assetPaths'

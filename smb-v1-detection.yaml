@@ -5,7 +5,12 @@ info:
   author: pussycat0x
   severity: low
   tags: network,windows,smb,service
+<<<<<<< HEAD
   reference: https://stealthbits.com/blog/what-is-smbv1-and-why-you-should-disable-it/
+=======
+  description: |
+    SMB (Server Message Block) is a network-layered protocol mainly used on Windows for sharing files, printers, and communication between network-attached computers. SMB related vulnerabilities can be levaraged to compromise large-scale systems.
+>>>>>>> 18ddf72b (add new stuff)
 
 network:
   - inputs:

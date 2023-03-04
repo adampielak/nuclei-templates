@@ -1,17 +1,14 @@
 id: exposed-hg
-
 info:
   name: Exposed HG Directory
   author: daffainfo
   severity: low
   tags: config,exposure
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /.hg/hgrc HTTP/1.1
@@ -24,7 +21,6 @@ requests:
           - "[paths]"
           - "default"
         condition: and
-
       - type: status
         status:
           - 200

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: amazon-mws-auth-token-value
 info:
   name: Amazon MWS Auth Token
@@ -22,3 +23,31 @@ requests:
       - type: regex
         regex:
           - "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+=======
+id: amazon-mws-auth-token
+
+info:
+  name: Amazon MWS Auth Token
+  author: puzzlepeaches
+  severity: info
+  tags: exposure,token,aws
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+>>>>>>> 18ddf72b (add new stuff)

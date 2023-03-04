@@ -1,5 +1,4 @@
 id: nextcloud-detect
-
 info:
   name: Nextcloud Detect
   author: skeltavik
@@ -8,14 +7,12 @@ info:
   reference:
     - https://nextcloud.com
   tags: tech,nextcloud,storage
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/login'
       - '{{BaseURL}}/nextcloud/index.php/login'
-
     stop-at-first-match: true
     redirects: true
     max-redirects: 2

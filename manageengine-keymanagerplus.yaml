@@ -5,6 +5,7 @@ info:
   author: righettod
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: ZOHO ManageEngine KeyManagerPlus panel was detected.
   classification:
@@ -14,6 +15,9 @@ info:
 >>>>>>> 5d36d276 (add new stuff)
   reference:
     - https://www.manageengine.com/key-manager/
+=======
+  reference: https://www.manageengine.com/key-manager/
+>>>>>>> 18ddf72b (add new stuff)
   tags: panel,zoho,manageengine
 
 requests:

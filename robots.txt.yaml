@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: robots-txt
 info:
   name: robots.txt file
@@ -28,3 +29,31 @@ requests:
       - type: dsl
         dsl:
           - "len(body)>=140 && status_code==200"
+=======
+id: robots-txt
+info:
+  name: robots.txt file
+  author: CasperGN
+  severity: info
+  tags: misc,generic
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/robots.txt"
+    matchers-condition: and
+    redirects: true
+    matchers:
+      - type: word
+        words:
+          - "Disallow:"
+
+      - type: word
+        words:
+          - text/plain
+        part: header
+
+      - type: dsl
+        dsl:
+          - "len(body)>=140 && status_code==200"
+>>>>>>> 18ddf72b (add new stuff)

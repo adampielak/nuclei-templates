@@ -1,9 +1,10 @@
-id: airflow-admin-login-panel
+id: airflow-panel
 
 info:
-  name: Apache Airflow Admin Login Panel
+  name: Airflow Admin login
   author: pdteam
   severity: info
+<<<<<<< HEAD
   description: An Apache Airflow admin login panel was discovered.
   reference:
     - https://airflow.apache.org/docs/apache-airflow/stable/security/webserver.html
@@ -20,24 +21,28 @@ info:
   metadata:
     shodan-query: title:"Sign In - Airflow"
   tags: panel,apache,airflow,admin
+=======
+  tags: panel,apache,airflow
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login/"
-      - "{{BaseURL}}/admin/airflow/login"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    stop-at-first-match: true
+    raw:
+      - |
+        GET /admin/airflow/login HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
+
       - type: word
+        part: body
         words:
           - "Airflow - Login"
-          - "Sign In - Airflow"
-        condition: or
 
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/21

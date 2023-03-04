@@ -1,12 +1,9 @@
 id: hikvision-detect
 
 info:
-  name: Hikvision Panel
-  author: pdteam,its0x08
+  name: Hikvision Detection
+  author: pdteam
   severity: info
-  metadata:
-    verified: true
-    shodan-query: http.favicon.hash:999357577
   tags: tech,hikvision
 
 requests:
@@ -14,22 +11,17 @@ requests:
     path:
       - "{{BaseURL}}/favicon.ico"
       - "{{BaseURL}}/doc/page/login.asp"
+      - "{{BaseURL}}/doc/script/common.js"
 
     stop-at-first-match: true
     matchers-condition: or
     matchers:
       - type: word
-        part: body
+        name: footer
         words:
           - "Hikvision Digital Technology"
-
-      - type: word
-        name: server
-        part: header
-        words:
-          - "Hikvision-Webs"
 
       - type: dsl
         name: favicon
         dsl:
-          - "'999357577' == mmh3(base64_py(body))"
+          - "status_code==200 && ('999357577' == mmh3(base64_py(body)))"

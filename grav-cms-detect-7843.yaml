@@ -1,5 +1,4 @@
 id: grav-cms-detect
-
 info:
   name: Grav CMS Detect
   author: cyllective
@@ -7,20 +6,16 @@ info:
   description: Detects Grav CMS
   tags: tech,grav,cms
   reference: https://github.com/getgrav/grav
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: or
     matchers:
-
       - type: word
         part: header
         words:
           - 'Set-Cookie: grav-site-'
-
       - type: word
         part: body
         words:

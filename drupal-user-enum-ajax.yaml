@@ -5,10 +5,15 @@ info:
   author: 0w4ys
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   metadata:
     shodan-query: http.component:"drupal"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  metadata:
+    shodan-query: http.component:"drupal"
+>>>>>>> 18ddf72b (add new stuff)
   tags: drupal
 
 requests:
@@ -19,6 +24,7 @@ requests:
       - "{{BaseURL}}/?q=admin/views/ajax/autocomplete/user/a"
       - "{{BaseURL}}/?q=views/ajax/autocomplete/user/a"
 <<<<<<< HEAD
+<<<<<<< HEAD
     headers:
       User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0"
 
@@ -26,6 +32,10 @@ requests:
 
     stop-at-first-match: true
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+    stop-at-first-match: true
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

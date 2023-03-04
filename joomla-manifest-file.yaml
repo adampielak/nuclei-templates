@@ -2,6 +2,7 @@ id: joomla-manifest-file
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Joomla! Manifest File Disclosure
   author: oppsec
   severity: info
@@ -10,6 +11,11 @@ info:
   author: oppsec
   severity: medium
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Joomla! Manifest File - Disclosure
+  author: oppsec
+  severity: medium
+>>>>>>> 18ddf72b (add new stuff)
   description: A Joomla! Manifest file was discovered. joomla.xml is a file which stores information about installed Joomla!, such as version, files, and paths.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N

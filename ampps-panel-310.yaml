@@ -1,4 +1,5 @@
 id: ampps-panel
+
 info:
   name: AMPPS Login Panel
   author: deFr0ggy
@@ -7,10 +8,12 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,ampps,login
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/ampps/index.php?act=login"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -22,9 +25,11 @@ requests:
           - '<title>Login</title>'
           - 'themes/default/images/ampps/favicon.ico'
         condition: and
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

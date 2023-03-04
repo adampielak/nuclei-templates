@@ -5,11 +5,15 @@ info:
   author: 0xPrial,pdteam
   severity: high
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/38
 >>>>>>> 5d36d276 (add new stuff)
   tags: takeover,heroku
+=======
+  tags: takeover
+>>>>>>> 18ddf72b (add new stuff)
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
 
 requests:

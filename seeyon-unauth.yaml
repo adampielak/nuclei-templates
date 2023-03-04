@@ -1,11 +1,9 @@
 id: seeyon-unauth
-
 info:
   name: Seeyon Unauthoried
   author: pikpikcu
   severity: low
   tags: seeyon,unauth
-
 requests:
   - raw:
       - |
@@ -30,9 +28,7 @@ requests:
         internal: true
         regex:
           - 'JSESSIONID=(.*)'
-
     matchers:
-
       - type: word
         words:
           - "当前已登录了一个用户，同一窗口中不能登录多个用户"

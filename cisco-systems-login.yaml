@@ -1,6 +1,7 @@
 id: cisco-systems-login
 
 info:
+<<<<<<< HEAD
   name: Cisco Systems Login Panel - Detect
   author: dhiyaneshDk,idealphase
   severity: info
@@ -12,23 +13,39 @@ info:
   metadata:
     shodan-query: http.title:"Cisco Systems Login"
     google-query: intitle:"Cisco Systems Login"
+=======
+  name: Cisco Systems Login
+  author: dhiyaneshDk
+  severity: info
+>>>>>>> 18ddf72b (add new stuff)
   tags: panel,cisco
+  metadata:
+    shodan-query: 'http.title:"Cisco Systems Login"'
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - "Cisco Systems Login"
+          - "<TITLE>Cisco Systems Login</TITLE>"
 
       - type: status
         status:
           - 200
+<<<<<<< HEAD
 
     extractors:
       - type: regex
@@ -37,3 +54,5 @@ requests:
           - '<script src="javascript\/translate\.js\?ver=(.+)"><\/script>'
 
 # Enhanced by md on 2022/11/10
+=======
+>>>>>>> 18ddf72b (add new stuff)

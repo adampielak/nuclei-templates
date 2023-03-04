@@ -1,5 +1,4 @@
 id: newsletter-manager-open-redirect
-
 info:
   name: Newsletter Manager < 1.5 - Unauthenticated Open Redirect
   author: akincibor
@@ -11,16 +10,18 @@ info:
   metadata:
     verified: true
   tags: wp-plugin,redirect,wordpress,wp,unauth
-
 requests:
   - method: GET
     path:
 <<<<<<< HEAD
       - "{{BaseURL}}/?wp_nlm=confirmation&appurl=aHR0cDovL2ludGVyYWN0LnNo"
+<<<<<<< HEAD
 =======
       - "{{BaseURL}}/?wp_nlm=confirmation&appurl=aHR0cDovL2F0dGFja2VyLmNvbQ=="
 >>>>>>> 5d36d276 (add new stuff)
 
+=======
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: regex
         part: header

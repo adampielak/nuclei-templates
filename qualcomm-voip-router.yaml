@@ -1,5 +1,6 @@
 id: qualcomm-voip-router
 
+<<<<<<< HEAD
 info:
   name: Qualcomm 4G LTE WiFi VoIP Router Panel - Detect
   author: pussycat0x
@@ -16,6 +17,15 @@ info:
     fofa-query: 'app="Qualcomm-4G-LTE-WiFi-VoIP-Router"'
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,qualcomm,iot,router,voip
+=======
+info:
+  name: Qualcomm 4G LTE WiFi VoIP-Router
+  author: pussycat0x
+  severity: info
+  metadata:
+    fofa-dork: 'app="Qualcomm-4G-LTE-WiFi-VoIP-Router"'
+  tags: panel,qualcomm,iot,router,voip
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -32,5 +42,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/12/06

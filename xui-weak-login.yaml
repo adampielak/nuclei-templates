@@ -2,6 +2,7 @@ id: xui-weak-login
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: X-UI Login Default Login
   author: dali
   severity: high
@@ -14,6 +15,13 @@ info:
   description: |
     X-UI contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: X-UI - Default Login
+  author: dali
+  severity: high
+  description: |
+    X-UI contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+>>>>>>> 18ddf72b (add new stuff)
   reference:
     - https://github.com/vaxilu/x-ui
     - https://seakfind.github.io/2021/10/10/X-UI/#:~:text=By%20default%2C%20the%20login%20user,the%20password%20is%20also%20admin%20.
@@ -55,7 +63,12 @@ requests:
         status:
           - 200
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Enhanced by md on 2023/01/09
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+# Enhanced by md on 2023/01/09
+>>>>>>> 18ddf72b (add new stuff)

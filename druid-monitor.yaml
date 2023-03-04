@@ -2,6 +2,7 @@ id: druid-monitor
 <<<<<<< HEAD
 info:
   name: Druid Monitor Unauthorized Access
+<<<<<<< HEAD
   author: 0h1in9e @ohlinge
 =======
 
@@ -9,14 +10,25 @@ info:
   name: Druid Monitor Unauthorized Access
   author: ohlinge
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  author: ohlinge
+>>>>>>> 18ddf72b (add new stuff)
   severity: high
   tags: druid,unauth
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/druid/index.html"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /druid/index.html HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

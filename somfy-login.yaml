@@ -5,6 +5,7 @@ info:
   author: DhiyaneshDK
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: Somfy login panel was detected.
   classification:
@@ -13,17 +14,26 @@ info:
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,login
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/m_login.htm'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /m_login.htm HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - Home motion by Somfy
+          - "Home motion by Somfy"
 
       - type: status
         status:

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: firebase-config-exposure
 
 info:
@@ -37,3 +38,34 @@ requests:
       - type: status
         status:
           - 200
+=======
+id: firebase-config-exposure
+
+info:
+  name: Firebase Config Exposure
+  author: geeknik
+  reference: https://github.com/firebase/firebaseui-web/blob/master/demo/public/sample-config.js
+  severity: high
+  tags: firebase,exposure,config
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/public/config.js"
+      - "{{BaseURL}}/config.js"
+
+    matchers-condition: and
+    matchers:
+
+      - type: word
+        words:
+          - "apiKey:"
+          - "authDomain:"
+          - "databaseURL:"
+          - "storageBucket:"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

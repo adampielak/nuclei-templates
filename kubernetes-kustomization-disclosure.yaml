@@ -6,6 +6,7 @@ info:
   severity: medium
 <<<<<<< HEAD
   reference: https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/kubernetes-kustomization-disclosure.json
+<<<<<<< HEAD
 =======
   description: Kubernetes Kustomize configuration was detected.
   reference:
@@ -16,12 +17,23 @@ info:
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
   tags: exposure,config,kubernetes
+=======
+  tags: exposure,config
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/kustomization.yml"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /kustomization.yml HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -34,9 +46,12 @@ requests:
           - "commonLabels:"
           - "Kustomization"
 
-      - type: dsl
-        dsl:
-          - "contains(tolower(all_headers), 'application/yaml')"
+      - type: word
+        part: body
+        condition: or
+        words:
+          - "yaml"
+          - "yml"
 
       - type: status
         status:

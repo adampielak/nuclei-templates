@@ -1,4 +1,5 @@
 id: api-coinranking
+
 info:
   name: Coinranking API Test
   author: daffainfo
@@ -8,6 +9,7 @@ info:
     - https://developers.coinranking.com/api/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/coinranking
   tags: token-spray,coinranking
+
 self-contained: true
 requests:
   - raw:
@@ -15,6 +17,7 @@ requests:
         GET https://api.coinranking.com/v2/exchanges HTTP/1.1
         Host: api.coinranking.com
         x-access-token: {{token}}
+
     matchers:
       - type: word
         part: body

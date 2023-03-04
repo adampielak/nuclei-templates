@@ -5,6 +5,7 @@ info:
   author: StreetOfHackerR007 (Rohit Soni)
   severity: medium
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: exposure,backup,php
 =======
   description: Multiple PHP sources were detected via backup files.
@@ -14,6 +15,9 @@ info:
     cwe-id: CWE-200
   tags: exposure,backup,php,disclosure
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: exposure,backup,php,disclosure
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -58,9 +62,13 @@ requests:
           - "bytes"
         part: header
 <<<<<<< HEAD
+<<<<<<< HEAD
         condition: or
 =======
         condition: or
 
 # Enhanced by md on 2023/02/08
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        condition: or
+>>>>>>> 18ddf72b (add new stuff)

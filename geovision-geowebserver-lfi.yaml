@@ -12,10 +12,14 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: geowebserver,lfi
 =======
   tags: packetstorm,geowebserver,lfi
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: packetstorm,geowebserver,lfi
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

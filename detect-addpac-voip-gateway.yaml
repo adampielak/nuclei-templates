@@ -3,8 +3,10 @@ id: detect-addpac-voip-gateway
 info:
 <<<<<<< HEAD
   name: Detect AddPac Technology GSM VoIP Gateway
+  reference: http://www.addpac.com/addpac_eng2/down.php?file=505_f16.pdf
   author: geeknik
   severity: info
+<<<<<<< HEAD
   description: |
     AddPac GSM Gateway solution provides GSM VoIP gateway function from 1 Port up to 80 Ports.
   reference:
@@ -22,6 +24,8 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   tags: network,addpac,apos,voip
 
 network:

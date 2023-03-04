@@ -1,17 +1,14 @@
 id: generic-tokens
-
 info:
   name: Generic Tokens
   author: nadino,geeknik
   severity: info
   tags: exposure,token
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET / HTTP/1.1
@@ -29,7 +26,6 @@ requests:
           - regex("SECRET[\\-|_|A-Z0-9]*(\'|\")?(:|=)(\'|\")?[\\-|_|A-Z0-9]{10}",replace(toupper(body),"",""))
           - regex("AUTHORIZATION[\\-|_|A-Z0-9]*(\'|\")?(:|=)(\'|\")?[\\-|_|A-Z0-9]{10}",replace(toupper(body),"",""))
           - regex("PASSWORD[\\-|_|A-Z0-9]*(\'|\")?(:|=)(\'|\")?[\\-|_|A-Z0-9]{10}",replace(toupper(body),"",""))
-
       - type: regex
         part: body
         regex:
@@ -38,7 +34,6 @@ requests:
           - '(?i)keys_(close|previous|next|zoom|play_pause)'
         condition: or
         negative: true
-
     extractors:
       - type: regex
         part: body

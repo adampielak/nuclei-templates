@@ -6,12 +6,18 @@ info:
   severity: info
   description: Detection of SAP NetWeaver ABAP Webserver (ICM/ICF)
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: sap,webserver
 =======
   metadata:
     shodan-query: http.favicon.hash:-266008933
   tags: sap,webserver,tech
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  metadata:
+    shodan-query: http.favicon.hash:-266008933
+  tags: sap,webserver,tech
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -19,10 +25,14 @@ requests:
       - "{{BaseURL}}"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     redirects: true
 =======
     host-redirects: true
 >>>>>>> 5d36d276 (add new stuff)
+=======
+    host-redirects: true
+>>>>>>> 18ddf72b (add new stuff)
     max-redirects: 2
     matchers:
       - type: regex

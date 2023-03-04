@@ -3,8 +3,9 @@ id: zimbra-web-client
 info:
 <<<<<<< HEAD
   name: Zimbra Web Client - Sign In
-  author: dhiyaneshDk,idealphase
+  author: dhiyaneshDk
   severity: info
+<<<<<<< HEAD
   description: Zimbra provides open source server and client software for messaging and collaboration.
 =======
   name: Zimbra Panel - Detect
@@ -19,16 +20,26 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/7409
     - https://www.zimbra.com/
+=======
+  reference: https://www.exploit-db.com/ghdb/7409
+>>>>>>> 18ddf72b (add new stuff)
   metadata:
-    verified: true
-    shodan-query: http.title:"Zimbra Web Client Sign In"
-  tags: edb,panel,zimbra
+    shodan-query: 'http.title:"Zimbra Web Client Sign In"'
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/zimbraAdmin/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /zimbraAdmin/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -39,6 +50,7 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
 
     extractors:
       - type: regex
@@ -51,3 +63,5 @@ requests:
 
 # Enhanced by mp on 2023/01/29
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

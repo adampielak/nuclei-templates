@@ -1,4 +1,5 @@
 id: alibaba-canal-info-leak
+
 info:
   name: Alibaba Canal Info Leak
   author: pikpikcu
@@ -8,12 +9,14 @@ info:
     - https://netty.io/wiki/reference-counted-objects.html
     - https://my.oschina.net/u/4581879/blog/4753320
   tags: config,exposure,alibaba
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/api/v1/canal/config/1/1"
     headers:
       Content-Type: application/json
+
     matchers-condition: and
     matchers:
       - type: status

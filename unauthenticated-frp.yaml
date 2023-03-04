@@ -1,6 +1,7 @@
 id: unauthenticated-frp
 
 info:
+<<<<<<< HEAD
   name: FRPS Dashboard - Detect
   author: pikpikcu
   severity: info
@@ -18,6 +19,25 @@ requests:
     path:
       - "{{BaseURL}}/static/"
 
+=======
+  name: Unauthenticated FRP
+  author: pikpikcu
+  severity: info
+  tags: frp,unauth,panel
+#  vendor: https://github.com/fatedier/frp/
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /static/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
 
@@ -29,5 +49,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
 
 # Enhanced by md on 2023/01/20
+=======
+>>>>>>> 18ddf72b (add new stuff)

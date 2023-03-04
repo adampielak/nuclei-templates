@@ -5,6 +5,7 @@ info:
   author: princechaddha
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: SkyCaiji admin panel was detected.
   classification:
@@ -13,12 +14,23 @@ info:
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,tech,skycaiji
+=======
+  tags: panel,tech
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/index.php?s=/admin/Index/index"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /index.php?s=/admin/Index/index HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
 

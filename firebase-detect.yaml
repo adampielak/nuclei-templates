@@ -4,15 +4,22 @@ info:
   name: firebase detect
   author: organiccrap
   severity: low
-  reference:
-    - http://ghostlulz.com/google-exposed-firebase-database/
-  tags: tech,firebase
+  # http://ghostlulz.com/google-exposed-firebase-database/
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/.settings/rules.json?auth=FIREBASE_SECRET"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /.settings/rules.json?auth=FIREBASE_SECRET HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers:
       - type: word
         words:

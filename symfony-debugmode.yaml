@@ -5,6 +5,7 @@ info:
   author: organiccrap,pdteam
   severity: high
 <<<<<<< HEAD
+<<<<<<< HEAD
   description: A Symfony installations 'debug' interface is enabled, allowing the disclosure and possible execution of arbitrary code.
   reference:
     - https://github.com/synacktiv/eos
@@ -12,13 +13,25 @@ info:
   description: The remote Symfony installations appears to have left the 'debug' interface enabled, allowing the disclosure and possible execution of arbitrary code.
   reference: https://github.com/synacktiv/eos
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  description: The remote Symfony installations appears to have left the 'debug' interface enabled, allowing the disclosure and possible execution of arbitrary code.
+  reference: https://github.com/synacktiv/eos
+>>>>>>> 18ddf72b (add new stuff)
   tags: symfony,debug
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: or
     matchers:
 
@@ -33,9 +46,13 @@ requests:
         words:
           - 'debug mode</a> is enabled.'
 <<<<<<< HEAD
+<<<<<<< HEAD
         part: body
 
 # Enhanced by mp on 2022/04/12
 =======
         part: body
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        part: body
+>>>>>>> 18ddf72b (add new stuff)

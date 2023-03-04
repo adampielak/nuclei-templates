@@ -1,10 +1,11 @@
 id: dedecms-openredirect
 
 info:
-  name: DedeCMS - Open Redirect
+  name: DedeCMS Open Redirect
   author: pikpikcu
 <<<<<<< HEAD
   severity: low
+<<<<<<< HEAD
 =======
   severity: medium
 >>>>>>> 5d36d276 (add new stuff)
@@ -18,22 +19,31 @@ info:
   metadata:
     verified: true
     shodan-query: http.html:"power by dedecms" || title:"dedecms"
+=======
+  reference: https://blog.csdn.net/ystyaoshengting/article/details/82734888
+>>>>>>> 18ddf72b (add new stuff)
   tags: dedecms,redirect
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/plus/download.php?open=1&link=aHR0cHM6Ly9pbnRlcmFjdC5zaA=="
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /plus/download.php?open=1&link=aHR0cHM6Ly9ldmlsLmNvbQo= HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - "Location: https://interact.sh"
+          - "Location: https://evil.com"
         part: header
 
       - type: status
         status:
           - 302
-
-# Enhanced by md on 2022/10/14

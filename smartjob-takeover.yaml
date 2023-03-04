@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: smartjob-takeover
 
 info:
@@ -19,3 +20,25 @@ requests:
           - Job Board Is Unavailable
           - This job board website is either expired
           - This job board website is either expired or its domain name is invalid.
+=======
+id: smartjob-takeover
+
+info:
+  name: smartjob takeover detection
+  author: pdteam
+  severity: high
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - Job Board Is Unavailable
+          - This job board website is either expired
+          - This job board website is either expired or its domain name is invalid.
+>>>>>>> 18ddf72b (add new stuff)

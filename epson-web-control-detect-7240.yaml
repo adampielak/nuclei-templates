@@ -5,13 +5,11 @@ info:
   severity: info
   reference: https://www.exploit-db.com/ghdb/6873
   tags: iot,printer,panel,unauth
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /cgi-bin/home HTTP/1.1
@@ -27,7 +25,6 @@ requests:
           - "Basic Control"
           - "Advanced"
         condition: and
-
       - type: status
         status:
           - 200

@@ -4,6 +4,7 @@ info:
   name: Zabbix Login Panel - Detect
   author: dhiyaneshDK
   severity: info
+<<<<<<< HEAD
   description: Zabbix login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
@@ -12,12 +13,22 @@ info:
   metadata:
     shodan-query: http.title:"zabbix-server"
   tags: panel,zabbix
+=======
+  reference: https://www.shodan.io/search?query=http.title%3A%22zabbix-server%3A+Zabbix%22
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

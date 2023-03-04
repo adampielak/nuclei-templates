@@ -5,6 +5,7 @@ info:
   author: pdteam
   severity: high
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   metadata:
     verified: true
@@ -17,12 +18,28 @@ requests:
     path:
       - "{{BaseURL}}/_profiler/empty/search/results?limit=10"
 <<<<<<< HEAD
+=======
+  tags: config,exposure
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /_profiler/empty/search/results?limit=10 HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:
           - "<title>Symfony Profiler</title>"
           - "symfony/profiler/"
         condition: and
+<<<<<<< HEAD
         part: body
 =======
       - "{{BaseURL}}/app_dev.php/_profiler/empty/search/results?limit=10"
@@ -34,3 +51,6 @@ requests:
         words:
           - "Symfony Profiler"
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        part: body
+>>>>>>> 18ddf72b (add new stuff)

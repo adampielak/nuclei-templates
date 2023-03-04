@@ -1,4 +1,5 @@
 id: cisco-sd-wan
+
 info:
   name: Cisco SD-WAN panel
   author: z3bd
@@ -6,15 +7,19 @@ info:
   reference:
     - https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-bufovulns-B5NrSHbj
   tags: panel,cisco
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login"
+
     matchers-condition: and
     matchers:
+
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - "SD-Wan Center"

@@ -1,5 +1,4 @@
 id: ganglia-xml-grid-monitor
-
 info:
   name: Ganglia XML Grid Monitor
   author: geeknik
@@ -7,16 +6,13 @@ info:
   reference: http://ganglia.info/
   severity: low
   tags: ganglia,network
-
 network:
   - inputs:
       - data: "\r\n"
-
     host:
       - "{{Hostname}}"
       - "{{Hostname}}:8649"
     read-size: 2048
-
     matchers:
       - type: word
         words:

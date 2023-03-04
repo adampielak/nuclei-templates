@@ -16,7 +16,7 @@ requests:
     path:
       - "{{BaseURL}}"
 
-    redirects: true
+    host-redirects: true
     max-redirects: 2
 
     matchers-condition: or
@@ -6316,7 +6316,9 @@ requests:
       - type: word
         name: jumpserver
         words:
-          - Jumpserver开源堡垒机
+          - JumpServer 开源堡垒机
+          - JumpServer Open Source Bastion Host
+        condition: or
 
       - type: word
         condition: and
@@ -10843,6 +10845,13 @@ requests:
           - "Server: sap web application server"
 
       - type: word
+        name: sap-web-application-server
+        words:
+          - "<title>Application Server Error</title>"
+          - "SAP logo"
+        condition: and
+
+      - type: word
         part: header
         name: sap-web-application-server
         words:
@@ -15075,7 +15084,10 @@ requests:
           - Powered by <a href='http://zzzcms.com'>ZZZcms</a>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
       - type: word
         name: bitwarden
         words:
@@ -15087,6 +15099,7 @@ requests:
         words:
           - "Server: OpenBSD httpd"
 
+<<<<<<< HEAD
       - type: word
         name: Hunchentoot
         part: header
@@ -15100,4 +15113,6 @@ requests:
           - <meta name="author" content="Michal Čihař" />
         condition: and
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 # Enhanced by cs on 2022/02/08

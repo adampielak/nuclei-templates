@@ -5,24 +5,39 @@ info:
   author: pdteam
   severity: low
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: Apache YARN ResourceManager panel was detected.
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,apache,yarn,exposure
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/cluster/cluster'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /cluster/cluster HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:
           - 'hadoop'
           - 'resourcemanager'
           - 'logged in as: dr.who'
+<<<<<<< HEAD
         condition: and
 <<<<<<< HEAD
 =======
 
 # Enhanced by md on 2023/01/26
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        condition: and
+>>>>>>> 18ddf72b (add new stuff)

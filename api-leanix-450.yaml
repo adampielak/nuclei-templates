@@ -1,10 +1,12 @@
 id: api-leanix
+
 info:
   name: LeanIX API Test
   author: dwisiswant0
   severity: info
   reference: https://docs.leanix.net/docs/rest-api
   tags: token-spray,leanix
+
 self-contained: true
 requests:
   - method: GET
@@ -13,6 +15,7 @@ requests:
       - "https://eu.leanix.net/services/integration-api/v1/examples/starterExample"
     headers:
       Authorization: Bearer {{token}}
+
     stop-at-first-match: true
     matchers:
       - type: word

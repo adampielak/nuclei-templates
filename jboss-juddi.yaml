@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 id: jboss-juddi
+<<<<<<< HEAD
 =======
 id: jboss-juddi-panel
 >>>>>>> 5d36d276 (add new stuff)
 
+=======
+>>>>>>> 18ddf72b (add new stuff)
 info:
   name: JBoss WS JUDDI Console Panel - Detect
   author: DhiyaneshDk
@@ -21,17 +24,19 @@ info:
     verified: true
 <<<<<<< HEAD
   tags: jboss,juddi
+<<<<<<< HEAD
 =======
     shodan-query: html:"JBoss WS"
   tags: panel,jboss,juddi
 >>>>>>> 5d36d276 (add new stuff)
 
+=======
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/juddi/"
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -39,12 +44,10 @@ requests:
         part: body
         words:
           - "JBoss JUDDI"
-
       - type: word
         part: header
         words:
           - "text/html"
-
       - type: status
         status:
           - 200

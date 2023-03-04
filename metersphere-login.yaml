@@ -5,6 +5,7 @@ info:
   author: pdteam
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference:
     - https://github.com/metersphere/metersphere
 =======
@@ -16,6 +17,9 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference: https://github.com/metersphere/metersphere
+>>>>>>> 18ddf72b (add new stuff)
   tags: panel,metersphere
 
 requests:

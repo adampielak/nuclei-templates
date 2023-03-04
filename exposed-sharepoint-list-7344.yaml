@@ -1,20 +1,17 @@
 id: exposed-sharepoint-list
-
 info:
   name: Exposed sharepoint list
   author: ELSFA7110
   severity: low
   reference: |
-        - https://hackerone.com/reports/761158
-        - https://hackerone.com/reports/300539
+    - https://hackerone.com/reports/761158
+    - https://hackerone.com/reports/300539
   tags: config,exposure,sharepoint
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /_vti_bin/lists.asmx?WSDL HTTP/1.1
@@ -28,7 +25,6 @@ requests:
           - "GetList"
         part: body
         condition: and
-
       - type: status
         status:
           - 200

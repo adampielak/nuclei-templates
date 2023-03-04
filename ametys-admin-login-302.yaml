@@ -1,4 +1,5 @@
 id: ametys-admin-login
+
 info:
   name: Ametys Admin Login Panel
   author: pathtaga
@@ -7,10 +8,12 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,ametys,cms
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/_admin/index.html'
+
     matchers-condition: and
     matchers:
       - type: word
@@ -18,9 +21,11 @@ requests:
           - 'Ametys - Log in'
           - '<span class="ametys-version">'
         condition: or
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

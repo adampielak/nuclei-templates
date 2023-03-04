@@ -2,6 +2,7 @@ id: coldfusion-debug-xss
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Adobe ColdFusion Debug Page XSS
   author: dhiyaneshDK
   severity: medium
@@ -10,6 +11,10 @@ info:
 =======
   name: Adobe ColdFusion - Cross-Site Scripting
   author: dhiyaneshDK
+=======
+  name: Adobe ColdFusion - Cross-Site Scripting
+  author: dhiyaneshDK
+>>>>>>> 18ddf72b (add new stuff)
   severity: high
   description: Adobe ColdFusion debug page contains a cross-site scripting vulnerability when the application is running on a remote host. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
   reference:
@@ -21,7 +26,10 @@ info:
   metadata:
     shodan-query: http.component:"Adobe ColdFusion"
   tags: adobe,coldfusion,xss
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -45,7 +53,12 @@ requests:
         status:
           - 200
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Enhanced by md on 2022/09/20
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+# Enhanced by md on 2022/09/20
+>>>>>>> 18ddf72b (add new stuff)

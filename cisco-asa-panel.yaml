@@ -7,16 +7,17 @@ info:
   tags: cisco,panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/+CSCOE+/logon.html"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    redirects: true
-    max-redirects: 2
+    raw:
+      - |
+        GET /+CSCOE+/logon.html HTTP/1.1
+        Host: {{Subdomains}}
     matchers:
       - type: word
-        part: body
         words:
-          - "/+CSCOU+/portal.css"
-          - "SSL VPN Service"
-        condition: or
+          - "<title>SSL VPN Service</title>"
+        part: body

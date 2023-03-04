@@ -2,13 +2,18 @@ id: nsicg-default-login
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Ns-icg Default Login
+=======
+  name: Netentsec NS-ICG - Default Login
+>>>>>>> 18ddf72b (add new stuff)
   author: pikpikcu
   severity: high
   description: |
-    There is a weak password vulnerability in NetentSec Internet Control Gateway ns-icg of Beijing NetentScience and Technology Co., Ltd., which allows attackers to successfully log in to the system and obtain sensitive information by exploiting this loophole.
+    Netentsec NS-ICG contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
   reference: |
     - https://www.cnvd.org.cn/flaw/show/CNVD-2016-08603
+<<<<<<< HEAD
 =======
   name: Netentsec NS-ICG - Default Login
   author: pikpikcu
@@ -17,11 +22,16 @@ info:
     Netentsec NS-ICG contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
   reference: |
     - https://www.cnvd.org.cn/flaw/show/CNVD-2016-08603
+=======
+>>>>>>> 18ddf72b (add new stuff)
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   metadata:
     verified: true
     fofa-query: "NS-ICG"
@@ -61,7 +71,12 @@ requests:
           - contains(body_2, "var loguser = \'ns25000")
         condition: and
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Enhanced by md on 2023/01/09
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+# Enhanced by md on 2023/01/09
+>>>>>>> 18ddf72b (add new stuff)

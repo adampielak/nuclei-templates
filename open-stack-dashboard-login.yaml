@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: open-stack-dashboard-login
 
 info:
@@ -46,3 +47,29 @@ requests:
 
 # Enhanced by md on 2022/12/01
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: open-stack-dashboard-login
+
+info:
+  name: OpenStack Dashboard
+  author: dhiyaneshDK,hackergautam
+  severity: info
+  reference: https://www.exploit-db.com/ghdb/6464
+  tags: panel,openstack
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/dashboard/auth/login/'
+      - '{{BaseURL}}/horizon/auth/login/?next=/horizon/'
+
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<title>Login - OpenStack Dashboard</title>"
+      - type: status
+        status:
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

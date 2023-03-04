@@ -1,4 +1,5 @@
 id: aem-querybuilder-json-servlet
+
 info:
   author: DhiyaneshDk
   name: AEM QueryBuilder Json Servlet
@@ -8,6 +9,8 @@ info:
     - https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/querybuilder-predicate-reference.html
     - https://github.com/thomashartm/burp-aem-scanner/blob/master/src/main/java/burp/actions/dispatcher/QueryBuilderExposed.java
   tags: aem,adobe
+
+
 requests:
   - method: GET
     path:
@@ -19,16 +22,19 @@ requests:
       - '{{BaseURL}}/bin/querybuilder.feed.servlet'
       - '{{BaseURL}}///bin///querybuilder.feed'
       - ' {{BaseURL}}///bin///querybuilder.feed.servlet'
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - "application/json"
         part: header
+
       - type: word
         words:
           - 'success'

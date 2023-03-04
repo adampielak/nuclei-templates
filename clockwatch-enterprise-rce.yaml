@@ -5,6 +5,7 @@ info:
   author: gy741
   severity: critical
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference:
     - https://blog.grimm-co.com/2021/07/old-dog-same-tricks.html
 =======
@@ -17,7 +18,10 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   tags: clockwatch,rce,network
+  reference: https://blog.grimm-co.com/2021/07/old-dog-same-tricks.html
 
 network:
   - inputs:

@@ -1,4 +1,5 @@
 id: contentkeeper-detect
+
 info:
   name: ContentKeeper Cloud Detection
   author: geeknik
@@ -7,20 +8,24 @@ info:
   reference:
     - https://www.contentkeeper.com/
   tags: contentkeeper,panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/ck/domenu.cgi"
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - "ContentKeeper Technologies</div>"
           - "ContentKeeper</span>.com"
         condition: and
+
       - type: word
         words:
           - "text/html"

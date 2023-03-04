@@ -12,6 +12,7 @@ info:
   tags: couchdb
 
 requests:
+<<<<<<< HEAD
   - method: GET
     path:
       - '{{BaseURL}}/_users/_all_docs'
@@ -21,17 +22,31 @@ requests:
 =======
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /_users/_all_docs HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - CouchDB/
-          - Erlang OTP/
+          - "CouchDB/"
+          - "Erlang OTP/"
         part: header
         condition: and
       - type: word
         words:
-          - total_rows
-          - offset
+          - "total_rows"
+          - "offset"
         part: body
         condition: and

@@ -1,14 +1,11 @@
 id: file-scheme
-
 info:
   name: File Scheme Enabled
   author: gaurang
   severity: info
-
 file:
   - extensions:
       - xml
-
     matchers:
       - type: word
         words:

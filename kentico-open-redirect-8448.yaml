@@ -1,5 +1,4 @@
 id: kentico-open-redirect
-
 info:
   name: Web application Kentico CMS 8.2 Open Redirection
   author: 0x_Akoko
@@ -7,12 +6,10 @@ info:
   reference: https://packetstormsecurity.com/files/133981/Kentico-CMS-8.2-Cross-Site-Scripting-Open-Redirect.html
   severity: low
   tags: odoo,redirect
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/CMSPages/GetDocLink.ashx?link=https://example.com/"
-
     matchers:
       - type: regex
         regex:

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 id: jolokia-list
 info:
   name: Jolokia - List
@@ -29,6 +30,9 @@ requests:
 =======
 id: jolokia-list
 
+=======
+id: jolokia-list
+>>>>>>> 18ddf72b (add new stuff)
 info:
   name: Jolokia - List
   author: pussycat0x
@@ -54,5 +58,9 @@ requests:
       - type: word
         part: body
         words:
+<<<<<<< HEAD
           - '"type":"list"'
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - '"type":"list"'
+>>>>>>> 18ddf72b (add new stuff)

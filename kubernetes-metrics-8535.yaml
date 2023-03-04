@@ -1,5 +1,4 @@
 id: kubernetes-metrics
-
 info:
   name: Detect Kubernetes Exposed Metrics
   author: pussycat0x
@@ -7,13 +6,11 @@ info:
   description: Information Disclosure of Garbage Collection
   tags: kubernetes,exposure,devops
   reference: https://kubernetes.io/docs/concepts/cluster-administration/system-metrics/#metrics-in-kubernetes
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /metrics HTTP/1.1
@@ -28,7 +25,6 @@ requests:
           - "HELP"
           - "TYPE"
           - "kube"
-
       - type: status
         status:
           - 200

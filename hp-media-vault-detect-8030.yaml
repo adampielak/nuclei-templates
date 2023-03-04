@@ -6,19 +6,16 @@ info:
   metadata:
     fofa-query: 'app="HP-Media-Vault-Media-Server"'
   tags: tech,hp
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "<title>HP Media Vault"
         part: body
-
       - type: status
         status:
           - 200

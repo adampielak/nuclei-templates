@@ -5,6 +5,7 @@ info:
   name: Lancom Router Panel
   author: __Fazal
   severity: info
+<<<<<<< HEAD
 =======
   name: Lancom Router Login Panel - Detect
   author: __Fazal,daffainfo
@@ -19,12 +20,21 @@ info:
     shodan-query: html:"LANCOM Systems GmbH"
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,lancom,router
+=======
+  tags: panel,lancom
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: status
@@ -34,7 +44,11 @@ requests:
 <<<<<<< HEAD
       - type: word
         words:
+<<<<<<< HEAD
           - "LANCOM 1790VA-4G"
 =======
 # Enhanced by md on 2022/11/28
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "LANCOM 1790VA-4G"
+>>>>>>> 18ddf72b (add new stuff)

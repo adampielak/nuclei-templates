@@ -10,5 +10,18 @@ requests:
     matchers:
       - type: word
         words:
+<<<<<<< HEAD
           - "log"
         part: body
+=======
+          - log
+
+      - type: status
+        status:
+          - 200
+          
+      - type: word
+        words:
+          - 'text/plain'
+        part: header
+>>>>>>> 18ddf72b (add new stuff)

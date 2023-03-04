@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: hatenablog-takeover
 
 info:
@@ -23,3 +24,23 @@ requests:
       - type: word
         words:
           - "404 Blog is not found"
+=======
+id: hatenablog-takeover
+
+info:
+  name: hatenablog takeover detection
+  author: pdteam
+  severity: high
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - 404 Blog is not found
+>>>>>>> 18ddf72b (add new stuff)

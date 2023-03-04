@@ -1,11 +1,9 @@
 id: jkstatus-manager
-
 info:
   name: JK Status Manager
   author: pdteam
   severity: low
   tags: config
-
 requests:
   - method: GET
     headers:

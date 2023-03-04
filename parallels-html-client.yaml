@@ -3,8 +3,9 @@ id: parallels-html-client
 info:
 <<<<<<< HEAD
   name: Parallels HTML5 Client
-  author: bauthard
+  author: pdteam
   severity: info
+<<<<<<< HEAD
 =======
   name: Parallels HTML5 Client Login Panel - Detect
   author: pdteam
@@ -16,11 +17,21 @@ info:
     cwe-id: CWE-200
   tags: panel
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/RASHTML5Gateway/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /RASHTML5Gateway/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:

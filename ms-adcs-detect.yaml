@@ -1,6 +1,7 @@
 id: ms-adcs-detect
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 info:
   name: MS Active Directory Certificate Services Detector
   author: divya_mudgal
@@ -40,6 +41,14 @@ info:
     cwe-id: CWE-200
   tags: microsoft,ad,panel
 
+=======
+info:
+  name: MS Active Directory Certificate Services Detector
+  author: divya_mudgal
+  severity: info
+  tags: microsoft,ad,panel
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
@@ -60,7 +69,11 @@ requests:
     extractors:
       - type: kval
         kval:
+<<<<<<< HEAD
           - location
 
 # Enhanced by md on 2022/11/29
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - location
+>>>>>>> 18ddf72b (add new stuff)

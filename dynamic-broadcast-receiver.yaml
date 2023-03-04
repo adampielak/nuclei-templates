@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: dynamic-registered-broadcast-receiver
 
 info:
@@ -13,4 +14,21 @@ file:
     matchers:
       - type: word
         words:
+=======
+id: dynamic-registered-broadcast-receiver
+
+info:
+  name: Dynamic Registered Broadcast Receiver
+  author: gaurang
+  severity: info
+  tags: android,file
+
+file:
+  - extensions:
+      - all
+
+    matchers:
+      - type: word
+        words:
+>>>>>>> 18ddf72b (add new stuff)
           - ";->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)"

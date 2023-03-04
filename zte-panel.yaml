@@ -3,8 +3,9 @@ id: zte-panel
 info:
 <<<<<<< HEAD
   name: ZTE Panel
-  author: its0x08,idealphase
+  author: github.com/its0x08
   severity: info
+<<<<<<< HEAD
   description: |
     ZTE Corporation is a global leader in telecommunications and information technology. Founded in 1985 and listed on both the Hong Kong and Shenzhen Stock Exchanges, the company has been committed to providing innovative technologies and integrated solutions for global operators, government and enterprise, and consumers from over 160 countries across the globe.ZTE Corporation is a global leader in telecommunications and information technology. Founded in 1985 and listed on both the Hong Kong and Shenzhen Stock Exchanges, the company has been committed to providing innovative technologies and integrated solutions for global operators, government and enterprise, and consumers from over 160 countries across the globe.
 =======
@@ -24,24 +25,32 @@ info:
     verified: true
     shodan-query: http.html:"ZTE Corporation"
   tags: panel,zte
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
-        part: body
         words:
           - "ZTE Corporation. All rights reserved. </div>"
           - '<form name="fLogin" id="fLogin" method="post"  onsubmit="return false;" action="">'
+        part: body
         condition: and
-
       - type: word
-        part: header
         words:
           - "Mini web server 1.0 ZTE corp 2005."
+<<<<<<< HEAD
 
     extractors:
       - type: regex
@@ -54,3 +63,6 @@ requests:
 
 # Enhanced by mp on 2023/01/29
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        part: header
+>>>>>>> 18ddf72b (add new stuff)

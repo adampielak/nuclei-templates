@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: lucee-login
 
 info:
@@ -47,3 +48,29 @@ requests:
 
 # Enhanced by md on 2022/11/28
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: lucee-login
+
+info:
+  name: Lucee Web/Server Administrator Login
+  author: dhiyaneshDK
+  severity: info
+  reference: https://www.shodan.io/search?query=http.title%3A%22Lucee%22
+  tags: panel,lucee
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/lucee/admin/web.cfm'
+      - '{{BaseURL}}/lucee/admin/server.cfm'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>Login - Lucee Web Administrator</title>'
+          - '<title>Login - Lucee Server Administrator</title>'
+      - type: status
+        status:
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

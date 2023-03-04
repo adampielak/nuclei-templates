@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: fastly-takeover
 
 info:
@@ -19,4 +20,23 @@ requests:
     matchers:
       - type: word
         words:
+=======
+id: fastly-takeover
+
+info:
+  name: fastly takeover detection
+  author: pdteam
+  severity: info
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz/issues/22
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+>>>>>>> 18ddf72b (add new stuff)
           - "Fastly error: unknown domain:"

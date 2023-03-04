@@ -1,9 +1,11 @@
 id: cockpit-detect
+
 info:
   name: Detect Agentejo Cockpit
   author: dwisiswant0
   severity: info
   tags: tech,cockpit
+
 requests:
   - method: GET
     path:

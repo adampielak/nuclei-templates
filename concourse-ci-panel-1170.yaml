@@ -1,4 +1,5 @@
 id: concourse-ci-panel
+
 info:
   name: Concourse CI Panel Detect
   author: praetorian-thendrickson
@@ -9,10 +10,12 @@ info:
   metadata:
     shodan-query: title:"Concourse"
   tags: panel,concourse,oss
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers:
       - type: word
         words:

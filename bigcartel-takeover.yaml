@@ -6,10 +6,14 @@ info:
   severity: high
   reference:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - https://github.com/EdOverflow/can-i-take-over-xyz
 =======
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/158
 >>>>>>> 5d36d276 (add new stuff)
+=======
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/158
+>>>>>>> 18ddf72b (add new stuff)
   tags: takeover
 
 requests:

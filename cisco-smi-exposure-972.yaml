@@ -1,4 +1,5 @@
 id: cisco-smi-exposure
+
 info:
   name: Cisco Smart Install Endpoints Exposure
   author: dwisiswant0
@@ -15,13 +16,16 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: network,cisco,smi,exposure
+
 network:
   - inputs:
       - data: "000000010000000100000004000000080000000100000000"
         type: hex
+
     host:
       - "{{Hostname}}"
       - "{{Host}}:4786"
+
     matchers:
       - type: word
         encoding: hex

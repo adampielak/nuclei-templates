@@ -1,10 +1,8 @@
 id: graphql-detect
-
 info:
   name: GraphQL API Detection
   author: NkxxkN,ELSFA7110
   severity: info
-
 requests:
   - method: POST
     path:
@@ -46,18 +44,14 @@ requests:
       - "{{BaseURL}}/api/cask/graphql-playground"
       - "{{BaseURL}}/altair"
       - "{{BaseURL}}/playground"
-
     headers:
       Content-Type: application/json
-
     body: '{"query":"query IntrospectionQuery{__schema {queryType { name }}}"}'
-
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: regex
         regex:
           - "__schema"

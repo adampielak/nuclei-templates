@@ -1,4 +1,5 @@
 id: aerohive-netconfig-ui
+
 info:
   name: Aerohive NetConfig UI
   author: pussycat0x
@@ -14,19 +15,23 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php5"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>Aerohive NetConfig UI</title>'
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

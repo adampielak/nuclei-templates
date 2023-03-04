@@ -1,4 +1,5 @@
 id: crush-ftp-detect
+
 info:
   name: Crush FTP
   author: pussycat0x
@@ -8,6 +9,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/WebInterface/login.html"
+
     redirects: true
     matchers-condition: and
     matchers:

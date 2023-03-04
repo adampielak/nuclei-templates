@@ -6,6 +6,7 @@ info:
   severity: info
 <<<<<<< HEAD
   reference: https://www.exploit-db.com/ghdb/6827
+<<<<<<< HEAD
 =======
   description: Pandora FMS Mobile Console login panel was detected.
   reference:
@@ -16,11 +17,21 @@ info:
     cwe-id: CWE-200
   tags: panel,edb
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/pandora_console/mobile/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /pandora_console/mobile/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

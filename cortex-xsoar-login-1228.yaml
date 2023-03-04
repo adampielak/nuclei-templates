@@ -1,4 +1,5 @@
 id: cortex-xsoar-login
+
 info:
   name: Cortex XSOAR Login Panel
   author: dhiyaneshDK
@@ -6,15 +7,18 @@ info:
   metadata:
     shodan-query: http.title:"Cortex XSOAR"
   tags: panel,soar,login
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/#/login'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>Cortex XSOAR</title>'
+
       - type: status
         status:
           - 200

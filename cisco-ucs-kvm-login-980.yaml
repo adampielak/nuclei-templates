@@ -1,4 +1,5 @@
 id: cisco-ucs-kvm-login
+
 info:
   name: Cisco UCS KVM Login
   author: idealphase
@@ -9,16 +10,19 @@ info:
   metadata:
     shodan-query: http.title:"Cisco UCS KVM Direct"
   tags: panel,cisco,ucs,kvm
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>Cisco UCS KVM Direct</title>'
+
       - type: status
         status:
           - 200

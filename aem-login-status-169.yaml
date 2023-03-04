@@ -1,4 +1,5 @@
 id: aem-login-status
+
 info:
   name: AEM Login Status
   author: DhiyaneshDk
@@ -8,18 +9,21 @@ info:
     - https://www.slideshare.net/0ang3el/hunting-for-security-bugs-in-aem-webapps-129262212
     - https://github.com/thomashartm/burp-aem-scanner/blob/master/src/main/java/burp/actions/dispatcher/LoginStatusServletExposed.java
   tags: aem,adobe
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/system/sling/loginstatus'
       - '{{BaseURL}}/system/sling/loginstatus.css'
       - '{{BaseURL}}///system///sling///loginstatus'
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'CREDENTIAL_CHALLENGE'

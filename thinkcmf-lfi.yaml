@@ -29,16 +29,15 @@ requests:
 
     matchers-condition: and
     matchers:
-
       - type: regex
         regex:
+          - "ThinkCMF"
           - "root:[x*]:0:0:"
-          - "\\[(font|extension|file)s\\]"
-          - 'ThinkCMF'
-        part: body
+          - "[extensions]"
 
       - type: status
         status:
+<<<<<<< HEAD
 <<<<<<< HEAD
           - 200
 =======
@@ -46,3 +45,6 @@ requests:
 
 # Enhanced by mp on 2022/08/05
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

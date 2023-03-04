@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: canny-takeover
 
 info:
@@ -19,3 +20,25 @@ requests:
           - 'Company Not Found'
           - 'There is no such company. Did you enter the right URL?'
         condition: and
+=======
+id: canny-takeover
+
+info:
+  name: canny takeover detection
+  author: pdteam
+  severity: high
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - 'Company Not Found'
+          - 'There is no such company. Did you enter the right URL?'
+        condition: and
+>>>>>>> 18ddf72b (add new stuff)

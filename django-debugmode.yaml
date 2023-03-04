@@ -1,16 +1,21 @@
-id : Django-DebugMode
+id: Django Debug Mode
 
 info:
-  name: Django Debug Mode True
-  author: GodfatherOrwa&JafarAlQudah1
-  severity: high
+  name: Django Debug Mode Information leakage
+  description: This template can be used to capture sensitive information from Django debug page.
+  author: rahulkadavil
+  severity: info
+  tags: exposure
 
 requests:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - method: GET
     path:
       - "{{BaseURL}}/anything123456"
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
   - raw:
       - |
         POST /admin/login/?next=/admin/ HTTP/1.1
@@ -21,12 +26,31 @@ requests:
         
         {"test::"data"}
 
+<<<<<<< HEAD
     matchers-condition: or
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+
+    matchers-condition: or
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:
           - "DEBUG = True"
           - "DEBUG=True."
-        part: body    
+          - "DB_NAME"
+          - "DB_USER"
+          - "DB_PASSWORD"
+          - "ADMIN_PASSWORD"
         condition: or  
+        part: body    
+        - type: status
+      - type: status
+        status:
+          - 200
+          - 500
+          - 403
+          - 404
+        condition: or 
+       

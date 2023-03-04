@@ -3,8 +3,9 @@ id: ansible-tower-exposure
 info:
 <<<<<<< HEAD
   name: Ansible Tower Exposure
-  author: pdteam,idealphase
+  author: pdteam
   severity: low
+<<<<<<< HEAD
 =======
   name: Ansible Tower - Detect
   author: pdteam,idealphase
@@ -25,24 +26,23 @@ info:
     google-query: intitle:"Ansible Tower"
     shodan-query: title:"Ansible Tower"
   tags: panel,ansible
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
     matchers:
       - type: word
         words:
           - "<title>Ansible Tower</title>"
-          - "ansible-bootstrap"
-        condition: or
-
-    extractors:
-      - type: regex
-        group: 1
-        part: body
-        regex:
-          - 'href="\/static\/assets\/favicon\.ico\?v=(.+)" \/>'
-
-# Enhanced by mp on 2022/03/16
+          - "ansible-main-menu"
+        condition: and

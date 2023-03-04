@@ -5,6 +5,7 @@ info:
   author: dhiyaneshDK
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: Zabbix panel was detected.
   classification:
@@ -14,13 +15,24 @@ info:
 >>>>>>> 5d36d276 (add new stuff)
   metadata:
     shodan-query: http.title:"Warning [refreshed every 30 sec.]"
+=======
+  reference: https://www.shodan.io/search?query=http.title%3A%22Warning+%5Brefreshed+every+30+sec.%5D%22
+>>>>>>> 18ddf72b (add new stuff)
   tags: zabbix,misconfig
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

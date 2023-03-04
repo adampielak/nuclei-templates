@@ -7,17 +7,30 @@ info:
   description: Detects bolt CMS
   tags: tech,bolt,cms
 <<<<<<< HEAD
+<<<<<<< HEAD
   references:
 =======
   reference:
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference:
+>>>>>>> 18ddf72b (add new stuff)
     - https://github.com/bolt/bolt
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/bolt/login"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /bolt/login HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers:
       - type: word
         part: body

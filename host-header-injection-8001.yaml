@@ -4,16 +4,12 @@ type: fuzz
 info:
   name: Host Header Injection
   risk: Medium
-
-
 variables:
   - head: |
       Host
   - dest: 'cvebase.com'
-
 payloads:
   - "{{.dest}}"
-
 requests:
   - method: GET
   - generators:

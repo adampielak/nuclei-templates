@@ -3,13 +3,19 @@ id: server-status-localhost
 info:
   name: Server Status Disclosure
 <<<<<<< HEAD
+<<<<<<< HEAD
   author: bauthard
 =======
   author: pdteam,geeknik
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  author: pdteam,geeknik
+>>>>>>> 18ddf72b (add new stuff)
   severity: low
+  tags: apache,debug
 
 requests:
+<<<<<<< HEAD
   - method: GET
     # Example of sending some headers to the servers
     headers:
@@ -26,6 +32,31 @@ requests:
     path:
       - "{{BaseURL}}/server-status"
 
+=======
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /server-status HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        Forwarded: 127.0.0.1
+        X-Client-IP: 127.0.0.1
+        X-Forwarded-By: 127.0.0.1
+        X-Forwarded-For: 127.0.0.1
+        X-Forwarded-For-IP: 127.0.0.1
+        X-Forwarded-Host: 127.0.0.1
+        X-Host: 127.0.0.1
+        X-Originating-IP: 127.0.0.1
+        X-Remote-Addr: 127.0.0.1
+        X-Remote-IP: 127.0.0.1
+        X-True-IP: 127.0.0.1
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

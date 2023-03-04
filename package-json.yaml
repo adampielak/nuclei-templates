@@ -1,5 +1,6 @@
 id: package-json
 
+<<<<<<< HEAD
 info:
 <<<<<<< HEAD
   name: npm package.json disclosure
@@ -19,12 +20,18 @@ info:
   tags: config,exposure
 >>>>>>> 5d36d276 (add new stuff)
 
+=======
+name: npm package.json disclosure
+severity: info
+  
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
-    path:
-      - "{{BaseURL}}/package.json"
-      - "{{BaseURL}}/package-lock.json"
+    paths:
+      - "HOSTNAME/package.json"
+      - "HOSTNAME/package-lock.json"
 
+<<<<<<< HEAD
     matchers-condition: and
     matchers:
       - type: word
@@ -47,3 +54,8 @@ requests:
 
 # Enhanced by mp on 2023/02/05
 >>>>>>> 5d36d276 (add new stuff)
+=======
+    patterns:
+      - "name"
+      - "version"
+>>>>>>> 18ddf72b (add new stuff)

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 id: raspberry-shake-config
 
 info:
@@ -28,6 +29,8 @@ requests:
         status:
           - 200
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
 id: raspberry-shake-config
 
 info:
@@ -56,4 +59,7 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

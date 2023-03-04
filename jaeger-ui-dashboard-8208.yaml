@@ -1,5 +1,4 @@
 id: jaeger-ui-dashboard
-
 info:
   name: Jaeger UI
   author: dhiyaneshDK
@@ -7,13 +6,11 @@ info:
   tags: misconfig
   metadata:
     shodan-query: 'http.title:"Jaeger UI"'
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /search HTTP/1.1
@@ -26,7 +23,6 @@ requests:
       - type: word
         words:
           - '<title>Jaeger UI</title>'
-
       - type: status
         status:
           - 200

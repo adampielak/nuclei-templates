@@ -1,17 +1,14 @@
 id: gitlab-user-enumeration
-
 info:
   name: Gitlab User enumeration
   author: pikpikcu
   severity: info
   tags: gitlab,enum
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         POST /api/graphql HTTP/1.1
@@ -20,7 +17,7 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         Content-Type: application/json
-        
+
         {
            "query":"{\nusers {\nedges {\n  node {\n    username\n    email\n    avatarUrl\n    }\n   }\n  }\n }"
         }
@@ -30,14 +27,12 @@ requests:
         words:
           - "application/json"
         part: header
-
       - type: word
         words:
           - avatarUrl
           - username
           - email
         condition: and
-
       - type: status
         status:
           - 200

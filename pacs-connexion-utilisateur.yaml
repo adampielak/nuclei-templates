@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: gxd5-pacs-connexion-utilisateur
 
 info:
@@ -38,3 +39,28 @@ requests:
 
 # Enhanced by md on 2022/12/05
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: gxd5-pacs-connexion-utilisateur
+
+info:
+  name: GXD5 Pacs Connexion utilisateur
+  author: dhiyaneshDK
+  severity: info
+  reference: https://www.shodan.io/search?query=http.title%3A%22GXD5+Pacs+Connexion+utilisateur%22
+  tags: panel,login
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>GXD5 Pacs Connexion utilisateur</title>'
+
+      - type: status
+        status:
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

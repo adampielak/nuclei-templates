@@ -1,4 +1,5 @@
 id: phoronix-panel
+
 info:
   name: Phoronix Test Suite Panel - Detect
   author: pikpikcu
@@ -11,18 +12,22 @@ info:
   metadata:
     shodan-query: http.title:"phoronix-test-suite"
   tags: panel,phoronix
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: regex
         regex:
           - '<title>Phoronix Test Suite (.*) - Phoromatic - Welcome</title>'
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

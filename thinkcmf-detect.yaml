@@ -1,9 +1,10 @@
-id: thinkcmf-detection-2
+id: thinkcmf-detection
 
 info:
   name: ThinkCMF Panel - Detect
   author: pikpikcu,daffainfo
   severity: info
+<<<<<<< HEAD
 <<<<<<< HEAD
   tags: panel,thinkcmf,login
 =======
@@ -14,6 +15,9 @@ info:
     cwe-id: CWE-200
   tags: panel,thinkcmf,login,tech
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: panel,thinkcmf,login,tech
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

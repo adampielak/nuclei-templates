@@ -1,8 +1,12 @@
 id: apache-druid-unauth
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
 info:
   name: Apache Druid Unauth
   author: DhiyaneshDk
@@ -12,19 +16,29 @@ info:
     shodan-query: title:"Apache Druid"
   tags: misconfig,druid,unauth,apache
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/unified-console.html'
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
+
       - type: word
         words:
           - '<title>Apache Druid</title>'
+<<<<<<< HEAD
 =======
 
     matchers-condition: and
@@ -35,6 +49,9 @@ requests:
           - '<title>Apache Druid</title>'
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
       - type: status
         status:
           - 200

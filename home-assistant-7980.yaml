@@ -1,11 +1,9 @@
 id: home-assistant
-
 info:
   name: Detect Home Assistant
   author: fabaff
   severity: info
   tags: tech,iot
-
 requests:
   - method: GET
     path:

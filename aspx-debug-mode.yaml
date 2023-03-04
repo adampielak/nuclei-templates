@@ -13,10 +13,15 @@ info:
   tags: debug
 
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         DEBUG /Foobar-debug.aspx HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         Command: stop-debug
 <<<<<<< HEAD
         User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
@@ -26,7 +31,6 @@ requests:
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 >>>>>>> 5d36d276 (add new stuff)
         Content-Length: 2
-
     matchers-condition: and
     matchers:
       - type: status

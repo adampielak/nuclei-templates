@@ -1,9 +1,10 @@
-id: CVE-2008-1059
+id: sniplets-lfi
 
 info:
-  name: WordPress Sniplets 1.1.2 - Local File Inclusion
+  name: Wordpress Plugin Sniplets 1.1.2 - LFI
   author: dhiyaneshDK
   severity: high
+<<<<<<< HEAD
 <<<<<<< HEAD
   description: |
     PHP remote file inclusion vulnerability in modules/syntax_highlight.php in the Sniplets 1.1.2 and 1.2.2 plugin for WordPress allows remote attackers to execute arbitrary PHP code via a URL in the libpath parameter.
@@ -23,6 +24,10 @@ info:
     - https://www.exploit-db.com/exploits/5194
   tags: wordpress,wp-plugin,lfi,wp
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference: https://www.exploit-db.com/exploits/5194
+  tags: wordpress,wp-plugin,lfi,wp
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -41,5 +46,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/07/29

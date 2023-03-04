@@ -1,5 +1,4 @@
 id: exposed-darcs
-
 info:
   name: Exposed Darcs Config
   author: daffainfo
@@ -7,18 +6,15 @@ info:
   reference:
     - http://darcs.net/Using/Configuration#sources
   tags: config,exposure
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/_darcs/prefs/binaries"
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "Binary file regexps"
-
       - type: status
         status:
           - 200

@@ -18,15 +18,23 @@ info:
   tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/zentao/index.php?mode=getconfig"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /zentao/index.php?mode=getconfig HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:
           - '"sessionName":"zentaosid"'
           - '{"version":"'
         part: body
+<<<<<<< HEAD
         condition: and
 
     extractors:
@@ -40,3 +48,6 @@ requests:
 
 # Enhanced by md on 2023/01/26
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        condition: and
+>>>>>>> 18ddf72b (add new stuff)

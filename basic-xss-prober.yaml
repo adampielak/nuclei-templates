@@ -10,16 +10,24 @@ info:
   description: A cross-site scripting vulnerability was discovered via generic testing. Manual testing is needed to verify exploitation.
 >>>>>>> 5d36d276 (add new stuff)
   severity: low
-  tags: xss,generic
+  tags: xss
 
   # Basic XSS prober
   # Manual testing needed for exploitation
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/%61%27%22%3e%3c%69%6e%6a%65%63%74%61%62%6c%65%3e"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /%61%27%22%3e%3c%69%6e%6a%65%63%74%61%62%6c%65%3e HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -34,9 +42,13 @@ requests:
 
       - type: status
         status:
+<<<<<<< HEAD
           - 200
 <<<<<<< HEAD
 =======
 
 # Enhanced by mp on 2022/09/22
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

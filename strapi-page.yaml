@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: strapi-page
 
 info:
@@ -37,3 +38,24 @@ requests:
 
 # Enhanced by mp on 2023/02/05
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: strapi-page
+
+info:
+  name: Strapi Page
+  author: dhiyaneshDk
+  severity: info
+  reference: https://www.shodan.io/search?query=http.title%3A%22Welcome+to+your+Strapi+app%22
+  tags: api,strapi
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers:
+      - type: word
+        words:
+          - '<title>Welcome to your Strapi app</title>'
+        condition: and
+>>>>>>> 18ddf72b (add new stuff)

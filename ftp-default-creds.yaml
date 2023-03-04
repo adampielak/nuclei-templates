@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 id: ftp-default-credentials
 
 info:
@@ -32,6 +33,8 @@ network:
       - type: word
         words:
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
 id: ftp-default-credentials
 
 info:
@@ -64,5 +67,8 @@ network:
     matchers:
       - type: word
         words:
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
           - "230"

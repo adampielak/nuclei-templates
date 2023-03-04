@@ -1,4 +1,5 @@
 id: buddy-panel
+
 info:
   name: Buddy Panel Detect
   author: thardt-praetorian
@@ -7,10 +8,12 @@ info:
   metadata:
     shodan-query: http.favicon.hash:-850502287
   tags: panel,buddy,cicd
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -21,6 +24,7 @@ requests:
           - '<meta name="application-name" content="Buddy">'
           - 'Buddy App'
         condition: or
+
       - type: status
         status:
           - 200

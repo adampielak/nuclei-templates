@@ -1,13 +1,10 @@
 id: aem-gql-servlet
-
 info:
   author: DhiyaneshDk
   name: AEM GQLServlet
   severity: low
   reference: https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/index.html?org/apache/jackrabbit/commons/query/GQL.html
   tags: aem
-
-
 requests:
   - method: GET
     path:
@@ -17,7 +14,6 @@ requests:
       - type: status
         status:
           - 200
-
       - type: word
         words:
           - 'excerpt'

@@ -4,21 +4,31 @@ info:
   name: Amcrest Login
   author: DhiyaneshDK
   severity: info
-  description: An Amcrest LDAP user login was discovered.
-  reference:
-    - https://www.exploit-db.com/ghdb/7273
-  classification:
-    cwe-id: CWE-200
+  reference: https://www.exploit-db.com/ghdb/7273
   metadata:
+<<<<<<< HEAD
     shodan-query: html:"amcrest"
     google-query: intext:"amcrest" "LDAP User"
   tags: panel,camera,amcrest,edb
+=======
+    shodan-dork: html:"amcrest"
+    google-dork: intext:"amcrest" "LDAP User"
+  tags: panel,camera
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -30,5 +40,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/16

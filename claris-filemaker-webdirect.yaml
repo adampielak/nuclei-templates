@@ -1,24 +1,22 @@
 id: claris-filemaker-webdirect
 
 info:
-  name: Claris FileMaker WebDirect Panel - Detect
+  name: Claris FileMaker WebDirect
   author: DhiyaneshDK
   severity: info
-  description: Claris FileMaker WebDirect panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  reference:
-    - https://www.exploit-db.com/ghdb/5669
+  reference: https://www.exploit-db.com/ghdb/5669
   metadata:
     verified: true
 <<<<<<< HEAD
     shodan-dork: title:"Claris FileMaker WebDirect"
+<<<<<<< HEAD
 =======
     shodan-query: title:"Claris FileMaker WebDirect"
 >>>>>>> 5d36d276 (add new stuff)
   tags: panel,edb
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -40,5 +38,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/10

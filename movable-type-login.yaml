@@ -5,6 +5,7 @@ info:
   author: dhiyaneshDk
   severity: info
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   description: Movable Type Pro login panel was detected.
   classification:
@@ -14,7 +15,11 @@ info:
 >>>>>>> 5d36d276 (add new stuff)
   metadata:
     shodan-query: title:"サインイン | Movable Type Pro"
+=======
+>>>>>>> 18ddf72b (add new stuff)
   tags: panel,movable
+  metadata:
+    shodan-query: 'title:"サインイン | Movable Type Pro"'
 
 requests:
   - method: GET

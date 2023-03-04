@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: tikiwiki-cms
 
 info:
@@ -37,3 +38,28 @@ requests:
 
 # Enhanced by md on 2023/01/18
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: tikiwiki-cms
+
+info:
+  name: Tiki Wiki CMS Groupware
+  author: chron0x
+  severity: info
+  tags: panel,tikiwiki
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/tiki-login_scr.php"
+      - "{{BaseURL}}/tiki-login.php"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "Tiki Wiki CMS Groupware"
+        part: body
+>>>>>>> 18ddf72b (add new stuff)

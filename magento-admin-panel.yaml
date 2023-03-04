@@ -3,8 +3,9 @@ id: magento-admin-panel
 info:
 <<<<<<< HEAD
   name: Exposed Magento Admin Panel
-  author: TechbrunchFR,ritikchaddha
+  author: TechbrunchFR
   severity: info
+<<<<<<< HEAD
   description: |
     As a security best practice, Magento recommends that you use a unique, custom Admin URL instead of the default admin or a common term such as backend. Although it will not directly protect your site
     from a determined bad actor, it can reduce exposure to scripts that try to gain unauthorized access.
@@ -26,25 +27,41 @@ info:
   metadata:
     verified: true
     shodan-query: http.component:"Magento"
+=======
+  description: As a security best practice, Magento recommends that you use a unique, custom Admin URL instead of the default admin or a common term such as backend. Although it will not directly protect your site from a determined bad actor, it can reduce exposure to scripts that try to gain unauthorized access.
+  reference: https://docs.magento.com/user-guide/stores/store-urls-custom-admin.html
+>>>>>>> 18ddf72b (add new stuff)
   tags: magento,panel
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/admin'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     redirects: true
 =======
     host-redirects: true
 >>>>>>> 5d36d276 (add new stuff)
     max-redirects: 2
+=======
+    raw:
+      - |
+        GET /admin HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 302
 
       - type: word
-        part: body
         words:
+<<<<<<< HEAD
           - "Magento"
           - "Admin Panel"
         condition: and
@@ -53,3 +70,7 @@ requests:
 
 # Enhanced by md on 2022/11/28
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - "/admin/index/index/key/"
+        part: header
+>>>>>>> 18ddf72b (add new stuff)

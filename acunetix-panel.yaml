@@ -1,21 +1,26 @@
 id: acunetix-panel-detect
 
 info:
-  name: Acunetix Login Panel
+  name: Acunetix Panel detector
   author: joanbono
   severity: info
-  description: An Acunetix login panel was detected.
-  reference:
-    - https://www.acunetix.com/
-  classification:
-    cwe-id: CWE-200
   tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/#/login"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
 
+    attack: sniper
+    threads: 100
+    raw:
+    - |+
+      GET /#/login HTTP/1.1
+      Host: {{Subdomains}}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+      Accept-Encoding: gzip, deflate
+      Accept: */*
+      
+    unsafe: true
     matchers-condition: and
     matchers:
       - type: word
@@ -26,5 +31,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/20

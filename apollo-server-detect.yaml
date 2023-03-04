@@ -8,10 +8,14 @@ info:
   reference:
     - https://github.com/apollographql/apollo-server
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: apollo,detect,graphql
 =======
   tags: apollo,detect,graphql,tech
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: apollo,detect,graphql,tech
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: POST

@@ -1,4 +1,5 @@
 id: arcgis-rest-api
+
 info:
   name: ArcGIS Exposed Docs
   author: Podalirius
@@ -12,15 +13,18 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/server/sdk/rest/index.html'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - 'ArcGIS REST API'
+
       - type: status
         status:
           - 200

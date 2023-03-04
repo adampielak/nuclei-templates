@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: readthedocs-takeover
 
 info:
@@ -17,3 +18,23 @@ requests:
       - type: word
         words:
           - unknown to Read the Docs
+=======
+id: readthedocs-takeover
+
+info:
+  name: readthedocs takeover detection
+  author: pdteam
+  severity: high
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - unknown to Read the Docs
+>>>>>>> 18ddf72b (add new stuff)

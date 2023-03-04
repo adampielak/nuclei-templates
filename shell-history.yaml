@@ -1,13 +1,18 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 id: shell-history
+=======
+id: shell-history
+>>>>>>> 18ddf72b (add new stuff)
 
 info:
   name: Shell History
   author: pentest_swissky,geeknik
   severity: low
   description: Discover history for bash, ksh, sh, and zsh
-  tags: config
+  tags: misconfig
 
+<<<<<<< HEAD
 requests:
   - method: GET
     redirects: true
@@ -60,6 +65,8 @@ info:
   description: Discover history for bash, ksh, sh, and zsh
   tags: misconfig
 
+=======
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     max-redirects: 1
@@ -101,4 +108,7 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

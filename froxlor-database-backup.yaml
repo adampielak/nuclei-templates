@@ -17,7 +17,7 @@ info:
 >>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
-    shodan-query: title:"Froxlor Server Management Panel"
+    shodan-dork: title:"Froxlor Server Management Panel"
   tags: froxlor,backup,exposure,disclosure
 
 requests:

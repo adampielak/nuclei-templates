@@ -4,13 +4,21 @@ info:
   name: Detect Graylog REST API
   author: PR3R00T
   severity: info
-  tags: tech,graylog
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/api/api-browser/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /api/api-browser/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
       - type: word
@@ -20,7 +28,6 @@ requests:
           - "REST API browser"
           - "swagger"
         condition: and
-
       - type: status
         status:
           - 200

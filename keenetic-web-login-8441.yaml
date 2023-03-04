@@ -1,5 +1,4 @@
 id: keenetic-web-login
-
 info:
   name: Keenetic Web Login
   author: dhiyaneshDK
@@ -7,12 +6,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6817
   tags: panel,keenetic
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/login#goto=%2Fdashboard'
-
     matchers-condition: and
     matchers:
       - type: word

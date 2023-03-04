@@ -1,10 +1,11 @@
 id: eatery-restaurant-open-redirect
 
 info:
-  name: WordPress Eatery 2.2 - Open Redirect
+  name: WordPress Attitude Themes 1.1.1 Open Redirection
   author: 0x_Akoko
 <<<<<<< HEAD
   severity: low
+<<<<<<< HEAD
 =======
   severity: medium
 >>>>>>> 5d36d276 (add new stuff)
@@ -17,16 +18,23 @@ info:
     cvss-score: 6.1
     cwe-id: CWE-601
   tags: wordpress,wp-theme,redirect,wp
+=======
+  reference: https://cxsecurity.com/issue/WLB-2020030183
+  tags: wordpress,wp-theme,redirect
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/themes/eatery/nav.php?-Menu-=https://interact.sh/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /wp-content/themes/eatery/nav.php?-Menu-=https://example.com/ HTTP/1.1
+        Host: {{Subdomains}}
     matchers:
       - type: regex
-        part: header
         regex:
-          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
-
-# Enhanced by md on 2022/10/18
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)example\.com.*$'
+        part: header

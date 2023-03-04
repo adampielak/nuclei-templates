@@ -1,5 +1,4 @@
 id: host-header-injection
-
 info:
   name: Host Header Injection
   author: princechaddha
@@ -10,15 +9,12 @@ info:
     - https://portswigger.net/web-security/host-header/exploiting
     - https://www.acunetix.com/blog/articles/automated-detection-of-host-header-attacks/
   tags: hostheader-injection,generic
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     headers:
       Host: "{{randstr}}.tld"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -26,7 +22,6 @@ requests:
           - '{{randstr}}.tld'
         part: body
         condition: and
-
       - type: status
         status:
           - 200

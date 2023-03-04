@@ -5,6 +5,7 @@ info:
   author: gy741
   severity: critical
 <<<<<<< HEAD
+<<<<<<< HEAD
   description: SAR2HTML could allow a remote attacker to execute arbitrary commands on the system, caused by a command injection flaw in the index.php script. By sending specially-crafted commands, an attacker could
     exploit this vulnerability to execute arbitrary commands on the system.
   reference:
@@ -15,12 +16,21 @@ info:
     SAR2HTML could allow a remote attacker to execute arbitrary commands on the system via a command injection flaw in the index.php script. By sending specially-crafted commands, an attacker could exploit this vulnerability to execute arbitrary commands on the system.
   reference:
     - https://www.exploit-db.com/exploits/49344
+=======
+  description: |
+    SAR2HTML could allow a remote attacker to execute arbitrary commands on the system via a command injection flaw in the index.php script. By sending specially-crafted commands, an attacker could exploit this vulnerability to execute arbitrary commands on the system.
+  reference:
+    - https://www.exploit-db.com/exploits/49344
+>>>>>>> 18ddf72b (add new stuff)
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: sar2html,rce,oast,edb
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - raw:

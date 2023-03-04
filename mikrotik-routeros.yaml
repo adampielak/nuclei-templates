@@ -5,6 +5,7 @@ info:
   name: MikroTik RouterOS Login
   author: gy741
   severity: info
+<<<<<<< HEAD
   reference:
     - https://systemweakness.com/routeros-user-with-just-ftp-policy-can-write-to-filesystem-cve-2021-27221-e3e45d780dfe
 =======
@@ -19,13 +20,22 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference: https://systemweakness.com/routeros-user-with-just-ftp-policy-can-write-to-filesystem-cve-2021-27221-e3e45d780dfe
+>>>>>>> 18ddf72b (add new stuff)
   tags: panel,login
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

@@ -12,20 +12,28 @@ info:
   tags: grafana,intrusive
 
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST /api/user/signup/step2 HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         content-type: application/json
-        Origin: {{BaseURL}}
-        Referer: {{BaseURL}}
+        Origin: {{Scheme}}://{{Subdomains}}
+        Referer: {{Scheme}}://{{Subdomains}}
 
 <<<<<<< HEAD
         {"username":"nuclei_{{randstr}}","password":"{{randstr_1}}"}
+<<<<<<< HEAD
 =======
         {"username":"{{randstr}}","password":"{{randstr_1}}"}
 >>>>>>> 5d36d276 (add new stuff)
 
+=======
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

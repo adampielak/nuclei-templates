@@ -1,4 +1,5 @@
 id: angular-detect
+
 info:
   name: Angular detect
   author: TechbrunchFR
@@ -11,20 +12,27 @@ info:
     shodan-query: html:"ng-version="
 <<<<<<< HEAD
   tags: technology,angular
+<<<<<<< HEAD
 =======
   tags: tech,angular
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
+
     matchers:
       - part: body
         type: word
         words:
           - "ng-version="
+
     extractors:
       - type: regex
         group: 1

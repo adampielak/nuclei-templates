@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: wishpond-takeover
 
 info:
@@ -19,3 +20,23 @@ requests:
           - https://www.wishpond.com/404?campaign=true
           - 'Oops! There isn’t a Wishpond Campaign published to this page.'
         condition: or
+=======
+id: wishpond-takeover
+
+info:
+  name: wishpond takeover detection
+  author: pdteam
+  severity: high
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - https://www.wishpond.com/404?campaign=true
+>>>>>>> 18ddf72b (add new stuff)

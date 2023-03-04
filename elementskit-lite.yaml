@@ -1,7 +1,7 @@
 id: wordpress-elementskit-lite
 
 info:
-  name: ElementsKit Elementor Addons and Templates Library Detection
+  name: ElementsKit Elementor addons Detection
   author: ricardomaia
   severity: info
   reference:
@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/elementskit-lite/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/elementskit-lite.txt
+      last_version: helpers/wordpress/plugins/elementskit-lite.txt
 
     extractors:
       - type: regex

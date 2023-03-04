@@ -1,4 +1,5 @@
 id: contacam
+
 info:
   name: ContaCam
   author: dhiyaneshDk
@@ -6,6 +7,7 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6831
   tags: iot
+
 requests:
   - method: GET
     path:

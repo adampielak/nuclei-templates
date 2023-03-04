@@ -1,8 +1,9 @@
 id: joomla-file-listing
 
 info:
-  name: Joomla! Database File List
+  name: Joomla database files listing
   author: iampritam
+<<<<<<< HEAD
   severity: medium
   description: A Joomla! database directory /libraries/joomla/database/ was found exposed and has directory indexing enabled.
   reference:
@@ -17,12 +18,26 @@ info:
 =======
   tags: exposure,joomla,listing,database,edb
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  severity: info
+  reference: https://www.exploit-db.com/ghdb/6377
+  description: Searches for the pattern /libraries/joomla/database/ on passed URLs.
+  tags: exposure,joomla,listing
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/libraries/joomla/database/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /libraries/joomla/database/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -34,5 +49,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by cs on 2022/04/11

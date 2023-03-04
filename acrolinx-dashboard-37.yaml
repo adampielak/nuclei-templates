@@ -1,5 +1,4 @@
 id: acrolinx-dashboard
-
 info:
   name: Acrolinx Dashboard
   author: ffffffff0x
@@ -9,12 +8,10 @@ info:
     shodan-query: http.title:"Acrolinx Dashboard"
     google-dork: inurl:"Acrolinx Dashboard"
   tags: acrolinx,panel
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/dashboard.html"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -23,7 +20,6 @@ requests:
           - '<title>Acrolinx Dashboard</title>'
           - 'Acrolinx</title>'
         condition: or
-
       - type: status
         status:
           - 200

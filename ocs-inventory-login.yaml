@@ -3,10 +3,14 @@ id: ocs-inventory-login
 info:
 <<<<<<< HEAD
   name: OCS Inventory Login Panel
+<<<<<<< HEAD
 =======
   name: OCS Inventory Login Panel - Detect
 >>>>>>> 5d36d276 (add new stuff)
   author: pikpikcu,ritikchaddha
+=======
+  author: pikpikcu
+>>>>>>> 18ddf72b (add new stuff)
   severity: info
   description: OCS Inventory login panel was detected.
   classification:
@@ -14,8 +18,6 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    verified: true
-    shodan-query: title:"OCS Inventory"
     fofa-query: title="OCS Inventory"
   tags: ocs-inventory,panel
 
@@ -23,10 +25,12 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-      - "{{BaseURL}}/ocsreports"
 
+<<<<<<< HEAD
     stop-at-first-match: true
 <<<<<<< HEAD
+=======
+>>>>>>> 18ddf72b (add new stuff)
     redirects: true
 =======
     host-redirects: true
@@ -37,7 +41,7 @@ requests:
       - type: word
         part: body
         words:
-          - '<title>OCS Inventory'
+          - '<title>OCS Inventory</title>'
 
       - type: status
         status:

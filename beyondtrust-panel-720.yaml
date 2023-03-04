@@ -1,4 +1,5 @@
 id: beyondtrust-panel
+
 info:
   name: BeyondTrust Login Panel
   author: r3dg33k,nuk3s3c
@@ -7,10 +8,12 @@ info:
   metadata:
     shodan-query: http.html:"BeyondInsight"
   tags: beyondtrust,pam,panel
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/WebConsole/'
+
     matchers:
       - type: word
         part: body

@@ -4,7 +4,6 @@ info:
   author: kophjager007
   description: The Integrated Dell Remote Access Controller (iDRAC) is designed for secure local and remote server management and helps IT administrators deploy, update and monitor Dell EMC PowerEdge servers.
   severity: info
-
 requests:
   - method: GET
     headers:
@@ -12,7 +11,6 @@ requests:
     path:
       - "{{BaseURL}}/sysmgmt/2015/bmc/info" # Firmware Version and other info (iDRAC9)
       # iDRAC9 has a different endpoint than 8 and below.
-
     matchers-condition: and
     matchers:
       - type: status
@@ -22,7 +20,6 @@ requests:
         part: all
         words:
           - "14G"
-
     extractors:
       - type: regex
         part: body

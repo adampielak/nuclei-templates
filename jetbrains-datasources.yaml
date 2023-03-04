@@ -4,6 +4,7 @@ info:
   name: Jetbrains IDE DataSources Config - Detect
   author: FlorianMaak
   severity: info
+<<<<<<< HEAD
   description: Jetbrains IDE DataSources configuration information was detected.
   reference: https://www.jetbrains.com
   classification:
@@ -11,12 +12,24 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: config,exposure,jetbrains
+=======
+  description: Contains uuid of datasource to retrieve via .idea/dataSources/{uuid}.xml to expose database structure.
+  tags: config,exposure
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/.idea/dataSources.xml"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /.idea/dataSources.xml HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

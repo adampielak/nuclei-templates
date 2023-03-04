@@ -1,4 +1,5 @@
 id: archibus-webcentral-panel
+
 info:
   name: Archibus Web Central Login - Panel Detect
   author: righettod,PJBorah,Hardik-Rathod
@@ -14,12 +15,17 @@ info:
     verified: true
     shodan-query: http.favicon.hash:889652940
   tags: panel,archibus
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/archibus/login.axvw'
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
     redirects: true
 =======
       - '{{BaseURL}}/archibus/schema/ab-core/views/sign-in/ab-sign-in.jsp'
@@ -33,11 +39,13 @@ requests:
       - type: word
         words:
           - "ARCHIBUS"
+
       - type: word
         words:
           - "Continue As a Guest"
           - "login"
         condition: or
+
       - type: status
         status:
           - 200

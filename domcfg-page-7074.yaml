@@ -5,13 +5,11 @@ info:
   severity: low
   reference: https://twitter.com/Wh11teW0lf/status/1295594085445709824
   tags: exposure
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /domcfg.nsf HTTP/1.1
@@ -27,7 +25,6 @@ requests:
           - Mapping
           - Mappings
         condition: and
-
       - type: status
         status:
           - 200

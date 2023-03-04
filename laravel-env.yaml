@@ -3,7 +3,7 @@ id: laravel-env
 info:
 <<<<<<< HEAD
   name: Laravel .env file
-  author: pxmme1337 & dwisiswant0 & geeknik & emenalf
+  author: pxmme1337 & dwisiswant0 & geeknik
   severity: medium
 =======
   name: Laravel - Sensitive Information Disclosure
@@ -33,6 +33,7 @@ requests:
       - "{{BaseURL}}/.env.prod.local"
       - "{{BaseURL}}/.env.production"
       - "{{BaseURL}}/.env.production.local"
+<<<<<<< HEAD
       - "{{BaseURL}}/.env.local"
       - "{{BaseURL}}/.env.example"
       - "{{BaseURL}}/.env.stage"
@@ -50,6 +51,8 @@ requests:
       - "{{BaseURL}}/api/.env"
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: regex

@@ -3,8 +3,9 @@ id: phpmyadmin-panel
 info:
 <<<<<<< HEAD
   name: phpMyAdmin Panel
-  author: bauthard
+  author: pdteam
   severity: info
+<<<<<<< HEAD
 =======
   name: phpMyAdmin Panel - Detect
   author: pdteam
@@ -18,6 +19,11 @@ info:
     shodan-query: http.title:phpMyAdmin
   tags: panel,phpmyadmin
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  metadata:
+    shodan-query: http.title:phpMyAdmin
+  tags: panel,phpmyadmin
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -33,12 +39,18 @@ requests:
       - "{{BaseURL}}/typo3/phpmyadmin/"
       - "{{BaseURL}}/web/phpmyadmin/"
       - "{{BaseURL}}/xampp/phpmyadmin/"
+      - "{{BaseURL}}/phpMyAdmin/"
+
+    stop-at-first-match: true
     matchers:
       - type: word
         words:
 <<<<<<< HEAD
+<<<<<<< HEAD
           - "<title>phpMyAdmin</title>"
 =======
+=======
+>>>>>>> 18ddf72b (add new stuff)
           - "<title>phpMyAdmin"
           - "pmahomme"
 
@@ -48,6 +60,9 @@ requests:
         group: 1
         regex:
           - 'v=([a-z0-9-._]+)'
+<<<<<<< HEAD
 
 # Enhanced by md on 2022/12/06
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

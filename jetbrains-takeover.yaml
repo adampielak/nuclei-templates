@@ -4,13 +4,17 @@ info:
   name: Jetbrains Takeover Detection
   author: pdteam
   severity: high
+<<<<<<< HEAD
   reference:
 <<<<<<< HEAD
     - https://github.com/EdOverflow/can-i-take-over-xyz
 =======
     - https://github.com/EdOverflow/can-i-take-over-xyz/pull/107
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   tags: takeover,jetbrains
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
 
 requests:
   - method: GET

@@ -10,14 +10,22 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    shodan-query: http.title:"Welcome to Sitecore"
+    shodan-query: 'http.title:"Welcome to Sitecore"'
   tags: panel,sitecore
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/sitecore/login/default.aspx'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /sitecore/login/default.aspx HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

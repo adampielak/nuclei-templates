@@ -4,18 +4,27 @@ info:
   name: Checkmarx WebClient Login Panel - Detect
   author: joanbono
   severity: info
+<<<<<<< HEAD
   description: Checkmarx WebClient login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: panel,checkmarx
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/cxwebclient/Login.aspx"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /cxwebclient/Login.aspx HTTP/1.1
+        Host: {{Subdomains}}
     matchers:
       - type: word
         words:

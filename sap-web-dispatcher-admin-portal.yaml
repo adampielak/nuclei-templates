@@ -6,6 +6,7 @@ info:
   severity: info
   description: Detection of SAP Web Dispatcher Admin Portal
 <<<<<<< HEAD
+<<<<<<< HEAD
   tags: sap,webserver,proxy
 
 requests:
@@ -20,6 +21,15 @@ requests:
   - method: GET
     host-redirects: true
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  metadata:
+    shodan-query: http.favicon.hash:-266008933
+  tags: sap,webserver,proxy,tech
+
+requests:
+  - method: GET
+    host-redirects: true
+>>>>>>> 18ddf72b (add new stuff)
     max-redirects: 2
 
     path:

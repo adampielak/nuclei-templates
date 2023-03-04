@@ -2,17 +2,21 @@ id: labtech-panel
 
 info:
   name: LabTech Web Portal
-  author: deFr0ggy
+  author: deFr0ggy, @github.com/deFr0ggy
   severity: info
   tags: panel,labtech
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/WCC2/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    redirects: true
-    max-redirects: 2
+    raw:
+      - |
+        GET /WCC2/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
       - type: word

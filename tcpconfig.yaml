@@ -4,6 +4,7 @@ info:
   name: TCP Config Information Exposed
   author: dhiyaneshDK
   severity: low
+<<<<<<< HEAD
   reference:
     - https://www.exploit-db.com/ghdb/6782
 <<<<<<< HEAD
@@ -11,12 +12,24 @@ info:
 =======
   tags: config,edb,logs
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference: https://www.exploit-db.com/ghdb/6782
+  tags: logs
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/tcpconfig.html"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /tcpconfig.html HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

@@ -9,11 +9,16 @@ info:
     shodan-query: http.html:"Apache Cocoon"
     fofa-query: app="APACHE-Cocoon"
   tags: apache,cocoon,tech
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
     redirects: true
 =======
 
@@ -25,6 +30,7 @@ requests:
         part: header
         words:
           - "X-Cocoon-Version"
+
     extractors:
       - type: regex
         part: header

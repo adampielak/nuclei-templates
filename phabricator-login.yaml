@@ -1,8 +1,10 @@
 id: phabricator-login
+
 info:
   name: Phabricator Login Panel - Detect
   author: dhiyaneshDK
   severity: info
+<<<<<<< HEAD
 <<<<<<< HEAD
   metadata:
     shodan-query: html:"phabricator-standard-page"
@@ -18,15 +20,24 @@ info:
   tags: panel,phabricator
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: panel,phabricator
+  metadata:
+    shodan-query: 'html:"phabricator-standard-page"'
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/auth/login/'
+
     matchers-condition: and
     matchers:
+
       - type: word
         words:
           - 'phabricator-standard-page'
+
       - type: status
         status:
           - 200

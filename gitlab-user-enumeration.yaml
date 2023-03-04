@@ -5,6 +5,7 @@ info:
   author: pikpikcu
   severity: info
   tags: gitlab,enum
+<<<<<<< HEAD
 
 
 requests:
@@ -19,6 +20,27 @@ requests:
         }
 
 
+=======
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        POST /api/graphql HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        Content-Type: application/json
+        
+        {
+           "query":"{\nusers {\nedges {\n  node {\n    username\n    email\n    avatarUrl\n    }\n   }\n  }\n }"
+        }
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

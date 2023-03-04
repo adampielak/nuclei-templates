@@ -4,15 +4,19 @@ info:
   name: Cisco Finesse Login
   author: dhiyaneshDK
   severity: info
-  reference:
-    - https://www.exploit-db.com/ghdb/6824
+  reference: https://www.exploit-db.com/ghdb/6824
   tags: panel,cisco
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/desktop/container/landing.jsp?locale=en_US'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /desktop/container/landing.jsp?locale=en_US HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word

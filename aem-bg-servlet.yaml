@@ -1,20 +1,25 @@
 id: aem-bg-servlet
 
 info:
-  name: AEM BG-Servlets
   author: DhiyaneshDk
+  name: AEM BG-Servlets
   severity: info
-  reference:
-    - https://www.slideshare.net/0ang3el/hunting-for-security-bugs-in-aem-webapps-129262212
-  metadata:
-    shodan-query: http.component:"Adobe Experience Manager"
+  reference: https://www.slideshare.net/0ang3el/hunting-for-security-bugs-in-aem-webapps-129262212
   tags: aem
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/system/bgservlets/test.css'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /system/bgservlets/test.css HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: status

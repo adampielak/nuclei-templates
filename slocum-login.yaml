@@ -1,6 +1,7 @@
 id: slocum-login
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 info:
   name: Slocum Fleet Mission Control Login
   author: pussycat0x
@@ -33,6 +34,19 @@ info:
     cwe-id: CWE-200
   tags: panel,tech,slocum
 
+=======
+info:
+  name: Slocum Fleet Mission Control Login Panel - Detect
+  author: pussycat0x
+  severity: info
+  description: Slocum Fleet Mission Control login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: panel,tech,slocum
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
@@ -49,4 +63,7 @@ requests:
           - 200
 
 # Enhanced by md on 2023/01/15
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)

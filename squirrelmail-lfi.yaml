@@ -5,8 +5,12 @@ info:
   author: dhiyaneshDk
   severity: high
 <<<<<<< HEAD
+<<<<<<< HEAD
   reference:
     - https://www.exploit-db.com/exploits/22793
+=======
+  reference: https://www.exploit-db.com/exploits/22793
+>>>>>>> 18ddf72b (add new stuff)
   tags: lfi,squirrelmail
 =======
   description: SquirrelMail 1.2.11 is vulnerable to local file inclusion.

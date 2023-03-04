@@ -1,9 +1,10 @@
-id: advanced-setup-login
+id: advance-setup-login
 
 info:
-  name: ActionTec Modem Advanced Setup Login Panel
+  name: Advance Setup Login
   author: dhiyaneshDK
   severity: info
+<<<<<<< HEAD
   description: An ActionTec Modem Advanced Setup login panel was detected.
   reference:
     - https://www.exploit-db.com/ghdb/6819
@@ -15,12 +16,21 @@ info:
 =======
   tags: panel,setup,edb
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  reference: https://www.exploit-db.com/ghdb/6819
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/cgi-bin/webcm?getpage=../html/login.html'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /cgi-bin/webcm?getpage=../html/login.html HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word
@@ -29,5 +39,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/20

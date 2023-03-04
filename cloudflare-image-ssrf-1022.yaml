@@ -1,4 +1,5 @@
 id: cloudflare-external-image-resize
+
 info:
   name: Cloudflare External Image Resizing Misconfiguration
   author: vavkamil
@@ -7,12 +8,14 @@ info:
   reference:
     - https://support.cloudflare.com/hc/en-us/articles/360028146432-Understanding-Cloudflare-Image-Resizing#12345684
   tags: cloudflare,misconfig,oast
+
 requests:
   - raw:
       - |
         GET /cdn-cgi/image/width/https://{{interactsh-url}} HTTP/1.1
         Host: {{Hostname}}
         Accept: */*
+
     matchers:
       - type: word
         part: interactsh_protocol

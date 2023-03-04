@@ -1,18 +1,15 @@
 id: exposed-mysql-initial
-
 info:
   name: Exposed mysql.initial
   author: ELSFA7110
   severity: info
   reference: https://hackerone.com/reports/1081817
   tags: config,exposure
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /mysql.initial.sql HTTP/1.1

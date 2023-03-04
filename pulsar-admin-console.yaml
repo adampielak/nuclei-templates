@@ -2,6 +2,7 @@ id: pulsar-admin-console
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Pulsar Admin Console - Detect
   author: ritikchaddha
   severity: info
@@ -9,12 +10,20 @@ info:
   name: Pulsar Admin Console Panel - Detect
   author: ritikchaddha
   severity: info
+=======
+  name: Pulsar Admin Console Panel - Detect
+  author: ritikchaddha
+  severity: info
+>>>>>>> 18ddf72b (add new stuff)
   description: Pulsar admin console panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   metadata:
     verified: true
     shodan-query: title:"Pulsar Admin Console"
@@ -36,7 +45,12 @@ requests:
         status:
           - 200
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Enhanced by mp on 2023/01/29
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+# Enhanced by mp on 2023/01/29
+>>>>>>> 18ddf72b (add new stuff)

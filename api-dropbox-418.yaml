@@ -1,10 +1,12 @@
 id: api-dropbox
+
 info:
   name: Dropbox API Test
   author: zzeitlin
   reference: https://www.dropbox.com/developers/documentation/http/documentation
   severity: info
   tags: token-spray,dropbox
+
 self-contained: true
 requests:
   - method: POST
@@ -12,6 +14,7 @@ requests:
       - "https://api.dropboxapi.com/2/users/get_current_account"
     headers:
       Authorization: Bearer {{token}}
+
     matchers:
       - type: word
         part: body

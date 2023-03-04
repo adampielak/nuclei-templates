@@ -5,6 +5,7 @@ info:
   author: pdteam
 <<<<<<< HEAD
   severity: info
+<<<<<<< HEAD
   reference:
     - https://jlajara.gitlab.io/web/2020/06/12/Dom_XSS_PostMessage.html
 =======
@@ -20,12 +21,25 @@ info:
     cwe-id: CWE-79
 >>>>>>> 5d36d276 (add new stuff)
   tags: xss,postmessage
+=======
+  reference: https://jlajara.gitlab.io/web/2020/06/12/Dom_XSS_PostMessage.html
+  tags: xss
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+    matchers-condition: and
     matchers:
       - type: regex
         regex:

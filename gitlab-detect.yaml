@@ -1,9 +1,10 @@
-id: Gitlab-Detect
+id: gitlab-detect
 
 info:
   name: Gitlab Login Panel - Detect
   author: ehsahil
   severity: info
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   description: Gitlab login panel was detected.
@@ -37,12 +38,35 @@ requests:
     matchers:
       - type: word
         words:
+=======
+  tags: panel
+
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /users/sign_in HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+>>>>>>> 18ddf72b (add new stuff)
           - 'GitLab'
           - 'https://about.gitlab.com'
 
       - type: status
         status:
+<<<<<<< HEAD
           - 200
 
 # Enhanced by md on 2022/11/15
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

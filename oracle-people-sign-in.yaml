@@ -1,8 +1,10 @@
 id: oracle-people-sign-in
+
 info:
   name: Oracle PeopleSoft Login Panel - Detect
   author: idealphase
   severity: info
+<<<<<<< HEAD
 <<<<<<< HEAD
   metadata:
     shodan-query: http.title:"Oracle PeopleSoft Sign-in"
@@ -18,11 +20,21 @@ info:
   tags: oracle,panel
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: oracle,panel
+  metadata:
+    shodan-query: http.title:"Oracle PeopleSoft Sign-in"
+
+>>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18ddf72b (add new stuff)
     redirects: true
 =======
 
@@ -37,11 +49,16 @@ requests:
           - '<title>Oracle PeopleSoft Sign-in</title>'
           - 'alt="Oracle PeopleSoft Sign-in" title="Oracle PeopleSoft Sign-in"'
         condition: or
+
       - type: status
         status:
+<<<<<<< HEAD
           - 200
 <<<<<<< HEAD
 =======
 
 # Enhanced by md on 2022/12/05
 >>>>>>> 5d36d276 (add new stuff)
+=======
+          - 200
+>>>>>>> 18ddf72b (add new stuff)

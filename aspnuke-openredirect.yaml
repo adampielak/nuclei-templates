@@ -14,10 +14,25 @@ info:
   tags: packetstorm,aspnuke,redirect
 
 requests:
+<<<<<<< HEAD
   - method: GET
     path:
       - "{{BaseURL}}/gotoURL.asp?url=interact.sh&id=43569"
 
+=======
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /gotoURL.asp?url=google.com&id=43569 HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: regex
         part: header

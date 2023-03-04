@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: uberflip-takeover
 
 info:
@@ -18,3 +19,23 @@ requests:
       - type: word
         words:
           - "Non-hub domain, The URL you've accessed does not provide a hub."
+=======
+id: uberflip-takeover
+
+info:
+  name: uberflip takeover detection
+  author: pdteam
+  severity: high
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        words:
+          - "Non-hub domain, The URL you've accessed does not provide a hub."
+>>>>>>> 18ddf72b (add new stuff)

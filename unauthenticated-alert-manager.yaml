@@ -1,10 +1,16 @@
 id: unauthenticated-alert-manager
 
 info:
+<<<<<<< HEAD
   name: Alert Manager - Unauthenticated Access
   author: dhiyaneshDK
   severity: high
   description: Alert Manager was able to be accessed with no authentication requirements in place.
+=======
+  name: Unauthenticated Alert Manager
+  author: dhiyaneshDK
+  severity: high
+>>>>>>> 18ddf72b (add new stuff)
   metadata:
     shodan-query: http.title:"Alertmanager"
   tags: unauth,alertmanager
@@ -23,5 +29,8 @@ requests:
       - type: status
         status:
           - 200
+<<<<<<< HEAD
 
 # Enhanced by mp on 2022/07/21
+=======
+>>>>>>> 18ddf72b (add new stuff)

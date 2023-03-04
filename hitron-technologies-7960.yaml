@@ -5,13 +5,11 @@ info:
   severity: info
   reference: https://www.exploit-db.com/ghdb/7062
   tags: router,panel
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /login.html HTTP/1.1
@@ -26,7 +24,6 @@ requests:
           - "hitron"
           - "$.hitron.languages.lang_init();"
         condition: and
-
       - type: status
         status:
           - 200

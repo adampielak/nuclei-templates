@@ -4,6 +4,7 @@ info:
   name: Traefik Dashboard Panel - Detect
   author: schniggie,StreetOfHackerR007
   severity: info
+<<<<<<< HEAD
   description: Traefik Dashboard panel was detected.
   metadata:
     verified: true
@@ -13,11 +14,21 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: panel,traefik
+=======
+  tags: panel
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/dashboard/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /dashboard/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: docker-compose-config
 
 info:
@@ -52,3 +53,25 @@ requests:
 
 # Enhanced by md on 2023/02/09
 >>>>>>> 5d36d276 (add new stuff)
+=======
+id: docker-compose-config
+
+name: docker-compose.yml exposure
+severity: medium
+
+requests:
+  - method: GET
+    redirects: true
+    paths:
+      - "HOSTNAME/docker-compose.yml"
+      - "HOSTNAME/docker-compose.prod.yml"
+      - "HOSTNAME/docker-compose.production.yml"
+      - "HOSTNAME/docker-compose.staging.yml"
+      - "HOSTNAME/docker-compose.dev.yml"
+      - "HOSTNAME/docker-compose-dev.yml"
+      - "HOSTNAME/docker-compose.override.yml"
+
+    patterns:
+      - '^version:'
+      - 'services:'
+>>>>>>> 18ddf72b (add new stuff)

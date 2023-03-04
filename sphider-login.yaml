@@ -2,11 +2,17 @@ id: sphider-login
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Sphider Admin Login
+=======
+  name: Sphider Admin Login Panel - Detect
+>>>>>>> 18ddf72b (add new stuff)
   author: dhiyaneshDK
   severity: info
+  description: Sphider admin login panel was detected.
   reference:
     - https://www.exploit-db.com/ghdb/6641
+<<<<<<< HEAD
   tags: panel
 =======
   name: Sphider Admin Login Panel - Detect
@@ -15,12 +21,17 @@ info:
   description: Sphider admin login panel was detected.
   reference:
     - https://www.exploit-db.com/ghdb/6641
+=======
+>>>>>>> 18ddf72b (add new stuff)
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: edb,panel
+<<<<<<< HEAD
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -39,7 +50,12 @@ requests:
         status:
           - 200
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Enhanced by md on 2023/01/14
 >>>>>>> 5d36d276 (add new stuff)
+=======
+
+# Enhanced by md on 2023/01/14
+>>>>>>> 18ddf72b (add new stuff)

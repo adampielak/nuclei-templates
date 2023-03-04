@@ -8,6 +8,7 @@ info:
   reference: https://github.com/prometheus/prometheus/wiki/Default-port-allocations
 
 requests:
+<<<<<<< HEAD
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -17,12 +18,25 @@ requests:
 =======
 
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+>>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
         words:
           - Exporter # Exporters have "Exporter" in the page title (e.g, Node Exporter, Bind Exporter and so on)
           - /metrics
+<<<<<<< HEAD
         condition: and
 <<<<<<< HEAD
 =======
@@ -35,3 +49,6 @@ requests:
         group: 1
         regex:
           - "<title>(.*?)</title>"
+=======
+        condition: and
+>>>>>>> 18ddf72b (add new stuff)

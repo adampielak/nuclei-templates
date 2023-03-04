@@ -2,10 +2,8 @@ id: kafdrop-xss
 info:
   name: KafDrop XSS
   risk: High
-
 params:
   - root: "{{.BaseURL}}"
-
 requests:
   - method: GET
     redirect: false
@@ -16,7 +14,6 @@ requests:
     detections:
       - >-
         StatusCode() == 500 && StringSearch("response", "Kafdrop") && StringSearch("response", "<img src=x onerror=alert(2)>")
-
 references:
   - author: j3ssie
   - repo: https://github.com/obsidiandynamics/kafdrop

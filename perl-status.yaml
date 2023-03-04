@@ -2,17 +2,28 @@ id: perl-status
 
 info:
   name: Apache mod_perl Status Page Exposure
-  author: pd-team
+  author: pdteam
   severity: medium
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   tags: config,exposure,apache,status
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  tags: config,exposure
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/perl-status'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /perl-status HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers:
       - type: word
         words:

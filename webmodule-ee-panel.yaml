@@ -14,6 +14,7 @@ info:
   metadata:
 <<<<<<< HEAD
     google-dork: intitle:"Webmodule" inurl:"/webmodule-ee/login.seam" "Version"
+    shodan-query: title:"Webmodule"
   tags: panel,webmodule-ee,login
 =======
     google-query: intitle:"Webmodule" inurl:"/webmodule-ee/login.seam" "Version"

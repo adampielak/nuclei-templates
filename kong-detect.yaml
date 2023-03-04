@@ -4,9 +4,9 @@ info:
   name: Detect Kong
 <<<<<<< HEAD
   author: geeknik
-  description: The Cloud-Native API Gateway
-  reference: https://github.com/Kong/kong
+  description: The Cloud-Native API Gateway - https://github.com/Kong/kong
   severity: info
+<<<<<<< HEAD
 =======
   author: geeknik,joshlarsen
   severity: info
@@ -15,12 +15,27 @@ info:
     - https://github.com/Kong/kong
 >>>>>>> 5d36d276 (add new stuff)
   tags: tech,kong
+=======
+>>>>>>> 18ddf72b (add new stuff)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+<<<<<<< HEAD
+=======
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
+    matchers-condition: and
+>>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         part: header

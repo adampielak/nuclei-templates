@@ -2,6 +2,7 @@ id: wp-code-snippets-xss
 
 info:
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: Code Snippets Wordpress Plugin - Cross-Site Scripting
   author: dhiyaneshDK
   severity: medium
@@ -21,6 +22,13 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
 >>>>>>> 5d36d276 (add new stuff)
+=======
+  name: Code Snippets Wordpress Plugin - XSS
+  author: dhiyaneshDK
+  severity: medium
+  description: A reflected Cross-Site Scripting (XSS) vulnerability has been found in the Code Snippets WordPress Plugin. By using this vulnerability an attacker can inject malicious JavaScript code into the application, which will execute within the browser of any logged-in admin who views the link
+  reference: https://www.securify.nl/en/advisory/cross-site-scripting-in-code-snippets-wordpress-plugin/
+>>>>>>> 18ddf72b (add new stuff)
   tags: wordpress,xss,wp-plugin,authenticated
 
 requests:
@@ -45,9 +53,6 @@ requests:
         part: body
         words:
           - '</script><script>alert(document.domain)</script>'
-          - 'toplevel_page_snippets'
-          - 'Search results in tag'
-        condition: and
 
       - type: word
         part: header

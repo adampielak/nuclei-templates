@@ -1,18 +1,15 @@
 id: joomla-config-dist-file
-
 info:
   name: Joomla Config Dist File
   author: oppsec
   severity: low
   description: configuration.php-dist is a file created by Joomla to save Joomla settings.
   tags: config,exposure
-
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         GET /configuration.php-dist HTTP/1.1
@@ -26,12 +23,10 @@ requests:
           - "JConfig"
           - "@package"
         condition: and
-
       - type: word
         words:
           - "text/plain"
         part: header
-
       - type: status
         status:
           - 200

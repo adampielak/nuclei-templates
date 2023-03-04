@@ -1,4 +1,5 @@
 id: atvise-login
+
 info:
   name: Atvise Login panel
   author: idealphase
@@ -10,16 +11,19 @@ info:
   metadata:
     google-dork: intitle:"atvise - next generation"
   tags: panel,atvise
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>atvise - next generation</title>'
+
       - type: status
         status:
           - 200

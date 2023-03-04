@@ -1,18 +1,15 @@
 id: github-gemfile-files
-
 info:
   name: Github Gemfiles
   author: hahwul
   severity: info
   description: Find github page files(Gemfile / Gemfile.lock)
   tags: github,exposure
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/Gemfile"
       - "{{BaseURL}}/Gemfile.lock"
-
     matchers-condition: or
     matchers:
       - type: dsl
@@ -22,7 +19,6 @@ requests:
           - 'contains(body, "gem")'
           - 'status_code == 200'
         condition: and
-
       - type: dsl
         dsl:
           - 'contains(body, "https://rubygems.org")'

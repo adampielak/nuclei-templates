@@ -1,4 +1,5 @@
 id: apache-apisix-panel
+
 info:
   name: Apache APISIX Login Panel
   author: pikpikcu
@@ -12,16 +13,19 @@ info:
     cvss-score: 0.0
     cve-id:
     cwe-id: CWE-200
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/user/login?redirect=%2F"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>Apache APISIX Dashboard</title>'
+
       - type: status
         status:
           - 200

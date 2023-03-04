@@ -1,14 +1,11 @@
 id: adb-backup-enabled
-
 info:
   name: ADB Backup Enabled
   author: gaurang
   severity: low
-
 file:
   - extensions:
       - all
-
     matchers:
       - type: word
         words:
