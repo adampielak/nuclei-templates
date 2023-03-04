@@ -30,12 +30,5 @@ requests:
           - contains(tolower(all_headers), 'x-goog-stored-content-encoding')
           - contains(tolower(all_headers), 'x-goog-stored-content-length')
           - contains(tolower(all_headers), 'x-guploader-uploadid')
-<<<<<<< HEAD
         part: header
-<<<<<<< HEAD
-=======
->>>>>>> 5d36d276 (add new stuff)
         condition: or
-=======
-        condition: or
->>>>>>> 18ddf72b (add new stuff)

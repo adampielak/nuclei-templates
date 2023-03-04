@@ -3,23 +3,12 @@ id: suspicious-sql-error-messages
 info:
   name: SQL - Error Messages
   author: geeknik
-<<<<<<< HEAD
   severity: high
-<<<<<<< HEAD
-  description: Detects SQL error messages that indicate probing for an injection attack
-=======
-  severity: critical
-=======
->>>>>>> 18ddf72b (add new stuff)
   description: SQL error messages that indicate probing for an injection attack were detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-89
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
   tags: file,logs,sql,error
 
 file:

@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-id: gemfury-takeover
-
-info:
-  name: Gemfury Takeover Detection
-  author: pdteam
-  severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/154
-  tags: takeover,gemfury
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        words:
-          - "404: This page could not be found."
-=======
 id: gemfury-takeover
 
 info:
@@ -37,4 +16,3 @@ requests:
       - type: word
         words:
           - "404: This page could not be found."
->>>>>>> 18ddf72b (add new stuff)

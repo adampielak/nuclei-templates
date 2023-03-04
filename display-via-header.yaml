@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-id: display-via-header
-
-info:
-  name: Display Via Header
-  author: geeknik
-  reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Via
-  severity: info
-<<<<<<< HEAD
-  tags: misc
-=======
-  tags: misc,generic
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    redirects: true
-    extractors:
-      - type: regex
-        part: header
-        regex:
-          - "Via:.*"
-=======
 id: display-via-header
 
 info:
@@ -44,4 +18,3 @@ requests:
         part: header
         regex:
           - "Via:.*"
->>>>>>> 18ddf72b (add new stuff)

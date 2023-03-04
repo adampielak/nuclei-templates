@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 id: webview-universal-access
 
 info:
@@ -14,21 +13,4 @@ file:
     matchers:
       - type: word
         words:
-=======
-id: webview-universal-access
-
-info:
-  name: Webview Universal Access enabled
-  author: gaurang
-  severity: medium
-  tags: android,file
-
-file:
-  - extensions:
-      - all
-
-    matchers:
-      - type: word
-        words:
->>>>>>> 5d36d276 (add new stuff)
           - "Landroid/webkit/WebSettings;->setAllowUniversalAccessFromFileURLs(Z)V"

@@ -4,19 +4,8 @@ info:
   name: Sitefinity Login
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-  description: This template identifies the Sitefinity login page.
-  reference:
-    - https://www.exploit-db.com/ghdb/6722
-<<<<<<< HEAD
-  tags: panel,sitefinity
-=======
-  tags: sitefinity,edb,panel
->>>>>>> 5d36d276 (add new stuff)
-=======
   reference: https://www.exploit-db.com/ghdb/6722
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

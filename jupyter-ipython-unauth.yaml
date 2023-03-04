@@ -1,23 +1,11 @@
 id: jupyter-ipython-unauth
 
 info:
-<<<<<<< HEAD
   name: Jupyter ipython Unauth
   author: pentest_swissky
   severity: critical
   description: Unauthenticated access to Jupyter instance
   tags: unauth
-=======
-  name: Jupyter ipython - Authorization Bypass
-  author: pentest_swissky
-  severity: critical
-  description: Jupyter was able to be accessed without authentication.
-  classification:
-    cvss-score: 10.0
-    cvss-metrics: AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cwe-id: CWE-288
-  tags: unauth,jupyter
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:
@@ -41,10 +29,4 @@ requests:
         words:
           - ipython/static/components
           - ipython/kernelspecs
-<<<<<<< HEAD
         part: body
-=======
-        part: body
-
-# Enhanced by mp on 2022/05/20
->>>>>>> 5d36d276 (add new stuff)

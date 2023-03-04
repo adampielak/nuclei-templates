@@ -1,20 +1,10 @@
 id: finereport-path-traversal
 
 info:
-<<<<<<< HEAD
-  name: FineReport 8.0 - Local File Inclusion
-=======
   name: Finereport 8.0 Path Traversal
->>>>>>> 18ddf72b (add new stuff)
   author: pikpikcu
-  severity: high
-  description: FIneReport  8.0 is vulnerable to local file inclusion.
-  reference:
-    - http://foreversong.cn/archives/1378
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
-    cwe-id: CWE-22
+  severity: medium
+  reference: http://foreversong.cn/archives/1378
   tags: finereport,lfi
 
 requests:
@@ -35,5 +25,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/07/27

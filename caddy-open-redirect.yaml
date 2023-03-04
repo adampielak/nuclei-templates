@@ -4,7 +4,6 @@ info:
   name: Caddy 2.4.6 Open Redirect
   author: dhiyaneshDK
   severity: medium
-<<<<<<< HEAD
   description: Caddy 2.4.6 contains an open redirect vulnerability via php_fastcgi. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
   reference:
     - https://github.com/caddyserver/caddy/issues/4502
@@ -12,24 +11,17 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
-=======
-  reference: https://github.com/caddyserver/caddy/issues/4502
->>>>>>> 5d36d276 (add new stuff)
   tags: redirect,caddy,server
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}//example.com/%2F..'
+      - '{{BaseURL}}//interact.sh/%2F..'
 
     matchers:
       - type: regex
         part: header
         regex:
-<<<<<<< HEAD
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh\/?(\/|[^.].*)?$' # https://regex101.com/r/ZDYhFh/1
 
 # Enhanced by md on 2022/10/14
-=======
-          - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)?(?:[a-zA-Z0-9\-_\.@]*)example\.com\/?(\/|[^.].*)?$' # https://regex101.com/r/ZDYhFh/1
->>>>>>> 5d36d276 (add new stuff)

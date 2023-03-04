@@ -1,22 +1,11 @@
 id: nginx-proxy-manager
 
 info:
-  name: Nginx Proxy Manager Login Panel - Detect
+  name: Nginx Proxy Manager
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-  description: Nginx Proxy Manager login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: http.title:"Nginx Proxy Manager"
-  tags: panel,nginx,proxy
-=======
   reference: https://www.shodan.io/search?query=http.title%3A%22Nginx+Proxy+Manager%22
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -45,5 +34,3 @@ requests:
         group: 1
         regex:
           - '"page" id="login" data\-version="([0-9.]+)">'
-
-# Enhanced by md on 2022/11/29

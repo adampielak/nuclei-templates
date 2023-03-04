@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/better-wp-security/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/better-wp-security.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/better-wp-security.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

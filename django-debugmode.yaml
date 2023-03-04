@@ -8,14 +8,6 @@ info:
   tags: exposure
 
 requests:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - method: GET
-    path:
-      - "{{BaseURL}}/anything123456"
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
   - raw:
       - |
         POST /admin/login/?next=/admin/ HTTP/1.1
@@ -26,14 +18,9 @@ requests:
         
         {"test::"data"}
 
-<<<<<<< HEAD
-    matchers-condition: or
->>>>>>> 5d36d276 (add new stuff)
-=======
 
 
     matchers-condition: or
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

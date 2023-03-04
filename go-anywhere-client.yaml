@@ -1,19 +1,10 @@
 id: go-anywhere-client
 
 info:
-  name: GoAnywhere Web Client Login Panel - Detect
+  name: GoAnywhere client login detection
   author: iamthefrogy
   severity: info
-<<<<<<< HEAD
-  description: GoAnywhere Web Client login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,goanywhere,login
-=======
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -21,25 +12,14 @@ requests:
     attack: sniper
     threads: 100
 
-<<<<<<< HEAD
-    host-redirects: true
-    max-redirects: 2
-=======
     raw:
       - |
         GET /webclient/Login.xhtml HTTP/1.1
         Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:
           - "Powered by GoAnywhere"
           - "GoAnywhere.com"
-<<<<<<< HEAD
         condition: or
-
-# Enhanced by md on 2022/11/16
-=======
-        condition: or
->>>>>>> 18ddf72b (add new stuff)

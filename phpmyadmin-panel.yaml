@@ -1,35 +1,18 @@
 id: phpmyadmin-panel
 
 info:
-<<<<<<< HEAD
   name: phpMyAdmin Panel
   author: pdteam
   severity: info
-<<<<<<< HEAD
-=======
-  name: phpMyAdmin Panel - Detect
-  author: pdteam
-  severity: info
-  description: phpMyAdmin panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
     shodan-query: http.title:phpMyAdmin
   tags: panel,phpmyadmin
->>>>>>> 5d36d276 (add new stuff)
-=======
-  metadata:
-    shodan-query: http.title:phpMyAdmin
-  tags: panel,phpmyadmin
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/phpmyadmin/"
-      - "{{BaseURL}}/admin/phpmyadmin/"
+      - "{{BaseURL}}/admin//phpmyadmin/"
       - "{{BaseURL}}/_phpmyadmin/"
       - "{{BaseURL}}/administrator/components/com_joommyadmin/phpmyadmin/"
       - "{{BaseURL}}/apache-default/phpmyadmin/"
@@ -45,12 +28,6 @@ requests:
     matchers:
       - type: word
         words:
-<<<<<<< HEAD
-<<<<<<< HEAD
-          - "<title>phpMyAdmin</title>"
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
           - "<title>phpMyAdmin"
           - "pmahomme"
 
@@ -60,9 +37,3 @@ requests:
         group: 1
         regex:
           - 'v=([a-z0-9-._]+)'
-<<<<<<< HEAD
-
-# Enhanced by md on 2022/12/06
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

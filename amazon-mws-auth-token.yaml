@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-id: amazon-mws-auth-token-value
-info:
-  name: Amazon MWS Auth Token
-<<<<<<< HEAD
-  author: gaurang
-  severity: medium
-file:
-  - extensions:
-      - all
-=======
-  author: puzzlepeaches
-  severity: info
-  tags: exposure,token,aws,amazon,auth
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
->>>>>>> 5d36d276 (add new stuff)
-    extractors:
-      - type: regex
-        regex:
-          - "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
-=======
 id: amazon-mws-auth-token
 
 info:
@@ -50,4 +24,3 @@ requests:
         part: body
         regex:
           - "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
->>>>>>> 18ddf72b (add new stuff)

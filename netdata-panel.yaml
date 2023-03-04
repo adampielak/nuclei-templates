@@ -3,7 +3,7 @@ id: netdata-panel
 info:
   name: Netdata Panel
   author: TechbrunchFR
-  severity: info
+  severity: low
   description: |
     Netdata is high-fidelity infrastructure monitoring and troubleshooting. Open-source, free, preconfigured, opinionated, and always real-time.
   metadata:

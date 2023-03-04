@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-id: pingdom-takeover
-
-info:
-<<<<<<< HEAD
-  name: pingdom takeover detection
-  author: pdcommunity
-  severity: high
-  tags: takeover
-  reference: https://github.com/EdOverflow/can-i-take-over-xyz
-=======
-  name: Pingdom Takeover Detection
-  author: pdteam
-  severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/144
-  tags: takeover,pingdom
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        words:
-          - Public Report Not Activated
-          - This public report page has not been activated by the user
-=======
 id: pingdom-takeover
 
 info:
@@ -47,4 +17,3 @@ requests:
         words:
           - Public Report Not Activated
           - This public report page has not been activated by the user
->>>>>>> 18ddf72b (add new stuff)

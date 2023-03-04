@@ -4,22 +4,8 @@ info:
   name: Advance Setup Login
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-  description: An ActionTec Modem Advanced Setup login panel was detected.
-  reference:
-    - https://www.exploit-db.com/ghdb/6819
-    - https://www.actiontec.com/dsl/
-  classification:
-    cwe-id: CWE-200
-<<<<<<< HEAD
-  tags: panel,setup
-=======
-  tags: panel,setup,edb
->>>>>>> 5d36d276 (add new stuff)
-=======
   reference: https://www.exploit-db.com/ghdb/6819
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

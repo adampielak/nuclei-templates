@@ -1,9 +1,8 @@
 id: openbmcs-ssrf
 
 info:
-  name: OpenBMCS 2.4 - Server-Side Request Forgery /  Remote File Inclusion
+  name: OpenBMCS 2.4 Unauthenticated SSRF / RFI
   author: dhiyaneshDK
-<<<<<<< HEAD
   severity: high
   description: Unauthenticated Server-Side Request Forgery (SSRF) and Remote File Include (RFI) vulnerability exists in OpenBMCS within its functionalities. The application parses user supplied data in the POST parameter
     'ip' to query a server IP on port 81 by default. Since no validation is carried out on the parameter, an attacker can specify an external domain and force the application to make an HTTP request to an arbitrary
@@ -14,25 +13,7 @@ info:
   metadata:
     shodan-query: http.favicon.hash:1550906681
   tags: ssrf,oast,openbmcs
-<<<<<<< HEAD
-=======
-  severity: medium
-  description: OpenBMCS 2.4 is susceptible to unauthenticated server-side request forgery and remote file inclusion vulnerabilities within its functionalities. The application parses user supplied data in the POST parameter 'ip' to query a server IP on port 81 by default. Since no validation is carried out on the parameter, an attacker can specify an external domain and force the application to make an HTTP request to an arbitrary destination host.
-  reference:
-    - https://www.exploit-db.com/exploits/50670
-    - https://securityforeveryone.com/tools/openbmcs-unauth-ssrf-rfi-vulnerability-scanner
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N
-    cvss-score: 6.8
-    cwe-id: CWE-918
-  metadata:
-    shodan-query: http.favicon.hash:1550906681
-  tags: ssrf,oast,openbmcs,edb
 
->>>>>>> 5d36d276 (add new stuff)
-=======
-
->>>>>>> 18ddf72b (add new stuff)
 requests:
   - raw:
       - |
@@ -52,5 +33,3 @@ requests:
       - type: status
         status:
           - 302
-
-# Enhanced by mp on 2022/09/15

@@ -1,14 +1,9 @@
 id: zeroshell-login
 
 info:
-  name: ZeroShell Panel - Detect
+  name: ZeroShell Login
   author: dhiyaneshDK
   severity: info
-  description: ZeroShell panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
     shodan-query: 'http.title:"ZeroShell"'
   tags: panel,zeroshell
@@ -34,10 +29,4 @@ requests:
 
       - type: status
         status:
-<<<<<<< HEAD
           - 200
-
-# Enhanced by mp on 2023/01/29
-=======
-          - 200
->>>>>>> 18ddf72b (add new stuff)

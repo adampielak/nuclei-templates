@@ -6,15 +6,9 @@ info:
   severity: info
   reference: https://www.exploit-db.com/ghdb/7273
   metadata:
-<<<<<<< HEAD
-    shodan-query: html:"amcrest"
-    google-query: intext:"amcrest" "LDAP User"
-  tags: panel,camera,amcrest,edb
-=======
     shodan-dork: html:"amcrest"
     google-dork: intext:"amcrest" "LDAP User"
   tags: panel,camera
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 id: webview-load-url
 
 info:
@@ -14,21 +13,4 @@ file:
     matchers:
       - type: word
         words:
-=======
-id: webview-load-url
-
-info:
-  name: Webview loadUrl usage
-  author: gaurang
-  severity: info
-  tags: android,file
-
-file:
-  - extensions:
-      - all
-
-    matchers:
-      - type: word
-        words:
->>>>>>> 5d36d276 (add new stuff)
           - "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V"

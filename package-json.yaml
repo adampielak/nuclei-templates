@@ -1,61 +1,14 @@
 id: package-json
 
-<<<<<<< HEAD
-info:
-<<<<<<< HEAD
-  name: npm package.json disclosure
-  author: geeknik & afaq
-  severity: info
-  description: All npm packages contain a file, usually in the project root, called package.json - this file holds various metadata relevant to the project.
-=======
-  name: npm Config - Detect
-  author: geeknik,afaq
-  severity: info
-  description: npm configuration information was detected. All npm packages contain a file, usually in the project root, called package.json - this file holds various metadata relevant to the project.
-  reference: https://www.npmjs.com
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
-  tags: config,exposure
->>>>>>> 5d36d276 (add new stuff)
-
-=======
 name: npm package.json disclosure
 severity: info
   
->>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     paths:
       - "HOSTNAME/package.json"
       - "HOSTNAME/package-lock.json"
 
-<<<<<<< HEAD
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "name"
-          - "version"
-        condition: and
-
-      - type: word
-        words:
-          - "application/json"
-        part: header
-
-      - type: status
-        status:
-<<<<<<< HEAD
-          - 200
-=======
-          - 200
-
-# Enhanced by mp on 2023/02/05
->>>>>>> 5d36d276 (add new stuff)
-=======
     patterns:
       - "name"
       - "version"
->>>>>>> 18ddf72b (add new stuff)

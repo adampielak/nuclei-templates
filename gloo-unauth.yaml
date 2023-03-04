@@ -7,15 +7,6 @@ info:
   tags: unauth,gloo
 
 requests:
-<<<<<<< HEAD
-  - method: GET
-    path:
-      - '{{BaseURL}}/fed.rpc.solo.io.GlooInstanceApi/ListClusterDetails'
-    headers:
-      Content-type: "application/grpc-web+proto"
-      Referer: "{{BaseURL}}/admin/"
-
-=======
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -28,7 +19,6 @@ requests:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Content-type: application/grpc-web+proto
         Referer: https://{{Hostname}}/admin/
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

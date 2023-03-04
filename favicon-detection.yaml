@@ -4,13 +4,12 @@ info:
   name: favicon-detection
   severity: info
   author: un-fmunozs
-  reference:
+  reference: |
     - https://twitter.com/brsn76945860/status/1171233054951501824
     - https://gist.github.com/yehgdotnet/b9dfc618108d2f05845c4d8e28c5fc6a
     - https://medium.com/@Asm0d3us/weaponizing-favicon-ico-for-bugbounties-osint-and-what-not-ace3c214e139
     - https://github.com/devanshbatham/FavFreak
     - https://github.com/sansatart/scrapts/blob/master/shodan-favicon-hashes.csv
-  tags: tech,favicon
 
 requests:
   - payloads:
@@ -2531,35 +2530,16 @@ requests:
         name: "One Identity Password Manager"
         dsl:
           - "status_code==200 && (\"983384876\" == mmh3(base64_py(body)))"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 5d36d276 (add new stuff)
-=======
-
->>>>>>> 18ddf72b (add new stuff)
       - type: dsl
         name: "Kaseya"
         dsl:
           - "status_code==200 && (\"-1445519482\" == mmh3(base64_py(body)))"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 5d36d276 (add new stuff)
-=======
-
->>>>>>> 18ddf72b (add new stuff)
       - type: dsl
         name: "OpenSNS"
         dsl:
           - "status_code==200 && (\"1167011145\" == mmh3(base64_py(body)))"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
 
       - type: dsl
         name: "SpamSniper"
@@ -2579,14 +2559,4 @@ requests:
       - type: dsl
         name: "KevinLAB"
         dsl:
-<<<<<<< HEAD
           - "status_code==200 && (\"-1650202746\" == mmh3(base64_py(body)))"
-
-      - type: dsl
-        name: "qdPM"
-        dsl:
-          - "status_code==200 && (\"762074255\" == mmh3(base64_py(body)))"
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - "status_code==200 && (\"-1650202746\" == mmh3(base64_py(body)))"
->>>>>>> 18ddf72b (add new stuff)

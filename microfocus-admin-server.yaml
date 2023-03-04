@@ -1,29 +1,14 @@
 id: microfocus-admin-server
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: Micro Focus Enterprise Server Administration
-  author: theabhinavgaur
-  severity: medium
-=======
-  name: Micro Focus Enterprise Server Admin Panel - Detect
-  author: theabhinavgaur
-  severity: info
-=======
   name: Micro Focus Enterprise Server Admin Panel - Detect
   author: theabhinavgaur
   severity: medium
->>>>>>> 18ddf72b (add new stuff)
   description: Micro Focus Enterprise Server Admin panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
   metadata:
     verified: true
     shodan-query: "Micro Focus DSD"
@@ -44,13 +29,5 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 # Enhanced by md on 2023/01/03
->>>>>>> 5d36d276 (add new stuff)
-=======
-
-# Enhanced by md on 2023/01/03
->>>>>>> 18ddf72b (add new stuff)

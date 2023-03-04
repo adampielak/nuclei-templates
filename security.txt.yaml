@@ -5,18 +5,12 @@ info:
   author: bad5ect0r
   severity: info
   description: The website defines a security policy.
-<<<<<<< HEAD
-  tags: misc,generic
-=======
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/.well-known/security.txt"
       - "{{BaseURL}}/security.txt"
-    redirects: true
-    max-redirects: 3
     matchers-condition: and
     matchers:
       - type: status

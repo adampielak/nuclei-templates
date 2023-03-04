@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/contact-form-cfdb7/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/contact-form-cfdb7.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/contact-form-cfdb7.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

@@ -1,17 +1,10 @@
 id: hasura-graphql-ssrf
-
 info:
   name: Hasura GraphQL Engine - SSRF Side Request Forgery
   author: princechaddha
   severity: high
-<<<<<<< HEAD
-  reference:
-    - https://cxsecurity.com/issue/WLB-2021040115
-  tags: hasura,ssrf,graphql
-=======
   reference: https://cxsecurity.com/issue/WLB-2021040115
   tags: hasura,ssrf
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

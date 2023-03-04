@@ -1,37 +1,3 @@
-<<<<<<< HEAD
-id: s3-subtakeover
-
-info:
-<<<<<<< HEAD
-  name: Subdomain takeovee AWS S3
-=======
-  name: Subdomain takeover AWS S3
->>>>>>> 5d36d276 (add new stuff)
-  author: manikanta a.k.a @secureitmania
-  severity: high
-
-  # Source:- https://link.medium.com/fgXKJHR9P7
-
-
-requests:
-  - method: GET
-    path:
-<<<<<<< HEAD
-      - '{{BaseURL}}/'
-=======
-      - '{{BaseURL}}'
->>>>>>> 5d36d276 (add new stuff)
-    redirects: false
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 307
-      - type: word
-        words:
-          - 'Location: https://aws.amazon.com/s3/'
-        part: header
-=======
 id: s3-subtakeover
 
 info:
@@ -56,4 +22,3 @@ requests:
         words:
           - 'Location: https://aws.amazon.com/s3/'
         part: header
->>>>>>> 18ddf72b (add new stuff)

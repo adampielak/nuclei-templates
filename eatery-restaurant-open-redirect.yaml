@@ -3,25 +3,9 @@ id: eatery-restaurant-open-redirect
 info:
   name: WordPress Attitude Themes 1.1.1 Open Redirection
   author: 0x_Akoko
-<<<<<<< HEAD
   severity: low
-<<<<<<< HEAD
-=======
-  severity: medium
->>>>>>> 5d36d276 (add new stuff)
-  description: |
-    WordPress Eatery theme 2.2 contains an open redirect vulnerability. The theme accepts a user-controlled input that specifies a link to an external site. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
-  reference:
-    - https://cxsecurity.com/issue/WLB-2020030183
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
-    cwe-id: CWE-601
-  tags: wordpress,wp-theme,redirect,wp
-=======
   reference: https://cxsecurity.com/issue/WLB-2020030183
   tags: wordpress,wp-theme,redirect
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

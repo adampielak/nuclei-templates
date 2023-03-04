@@ -4,19 +4,9 @@ info:
   name: WordPress Redirection Plugin Directory Listing
   author: dhiyaneshDk
   severity: info
-<<<<<<< HEAD
   description: Searches for sensitive directories present in the wordpress-redirection plugin.
-<<<<<<< HEAD
-=======
-  description: Searches for sensitive directories present in the redirection plugin.
->>>>>>> 5d36d276 (add new stuff)
-  reference:
-    - https://www.exploit-db.com/ghdb/6436
-  tags: wordpress,listing,plugin,edb
-=======
   reference: https://www.exploit-db.com/ghdb/6436
   tags: wordpress,listing
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

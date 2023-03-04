@@ -2,26 +2,6 @@ id: jolokia-instance
 
 info:
   name: Jolokia Version Disclosure
-<<<<<<< HEAD
-<<<<<<< HEAD
-  author: mavericknerd & dwisiswant0
-  severity: low
-=======
-  author: mavericknerd,dwisiswant0
-  severity: info
-  tags: tech,jolokia
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/jolokia/version'
-<<<<<<< HEAD
-      - '{{BaseURL}}:8080/jolokia/version'
-=======
-
->>>>>>> 5d36d276 (add new stuff)
-=======
   author: mavericknerd,dwisiswant0
   severity: info
 
@@ -39,7 +19,6 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
@@ -48,10 +27,6 @@ requests:
           - '"protocol":'
           - '"agent":'
         condition: and
-<<<<<<< HEAD
-=======
-
->>>>>>> 5d36d276 (add new stuff)
       - type: status
         status:
           - 200

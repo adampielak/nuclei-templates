@@ -1,26 +1,10 @@
 id: oracle-integrated-manager
 
 info:
-<<<<<<< HEAD
   name: Oracle(R) Integrated Lights Out Manager
   author: dhiyaneshDk
   severity: info
-<<<<<<< HEAD
-=======
-  name: Oracle Integrated Lights Out Manager Login Panel - Detect
-  author: dhiyaneshDk
-  severity: info
-  description: Oracle Integrated Lights Out Manager login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  metadata:
-    shodan-query: http.title:"Oracle(R) Integrated Lights Out Manager"
-=======
   reference: https://www.shodan.io/search?query=http.title%3A%22Oracle%28R%29+Integrated+Lights+Out+Manager%22&page=2
->>>>>>> 18ddf72b (add new stuff)
   tags: oracle,login,panel
 
 requests:
@@ -53,8 +37,3 @@ requests:
         group: 1
         regex:
           - 'id="hostname">([a-z0-9-]+)<\/span><\/td>'
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2022/12/02
->>>>>>> 5d36d276 (add new stuff)

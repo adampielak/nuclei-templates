@@ -1,35 +1,6 @@
 id: discourse-xss
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: Discourse CMS XSS
-  author: madrobot
-  severity: medium
-=======
-  name: Discourse - Cross-Site Scripting
-  author: madrobot
-  severity: high
-  description: Discourse contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
-  reference:
-    - https://www.cvedetails.com/vulnerability-list/vendor_id-20185/product_id-57316/opxss-1/Discourse-Discourse.html
-    - https://github.com/discourse/discourse/security/advisories/GHSA-xhmc-9jwm-wqph
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
-    cwe-id: CWE-79
-  tags: xss,discourse
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-<<<<<<< HEAD
-      - '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\"><svg/onload=alert(1337)>'
-=======
-      - '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(/xss/)%3E'
->>>>>>> 5d36d276 (add new stuff)
-=======
   name: Discourse CMS - XSS
   author: madrobot
   severity: medium
@@ -49,7 +20,6 @@ requests:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
         Accept: */*
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: status
@@ -58,26 +28,10 @@ requests:
 
       - type: word
         words:
-<<<<<<< HEAD
-<<<<<<< HEAD
-          - "<svg/onload=alert(1337)>"
-        part: body
-=======
-          - "<svg/onload=alert(/xss/)>"
-        part: body
-=======
           - "<svg/onload=alert(xss)>"
         part: body
->>>>>>> 18ddf72b (add new stuff)
 
       - type: word
         words:
           - "text/html"
-<<<<<<< HEAD
         part: header
-
-# Enhanced by md on 2022/09/20
->>>>>>> 5d36d276 (add new stuff)
-=======
-        part: header
->>>>>>> 18ddf72b (add new stuff)

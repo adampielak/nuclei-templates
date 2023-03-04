@@ -1,7 +1,6 @@
 id: webdav-enabled
 
 info:
-<<<<<<< HEAD
   name: WebDAV Enabled
   author: tess
   severity: info
@@ -11,21 +10,6 @@ info:
     If you are not using this extension, it's recommended to be disabled.
   reference:
     - https://www.acunetix.com/vulnerabilities/web/webdav-enabled/
-=======
-  name: WebDAV Protocol - Detect
-  author: tess
-  severity: info
-  description: |
-    WebDAV protocol was detected.
-  remediation: |
-    Recommended disabling if not currently in use.
-  reference:
-    - https://www.acunetix.com/vulnerabilities/web/webdav-enabled/
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: "true"
     shodan-query: "Ms-Author-Via: DAV"
@@ -52,8 +36,3 @@ requests:
         part: header
         words:
           - "Ms-Author-Via: DAV"
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2023/02/06
->>>>>>> 5d36d276 (add new stuff)

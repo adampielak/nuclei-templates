@@ -6,11 +6,7 @@ info:
   severity: medium
   metadata:
     verified: "true"
-<<<<<<< HEAD
     shodan-dork: http.title:"LDAP Account Manager"
-=======
-    shodan-query: http.title:"LDAP Account Manager"
->>>>>>> 5d36d276 (add new stuff)
   tags: ldap,misconfig,unauth
 
 requests:

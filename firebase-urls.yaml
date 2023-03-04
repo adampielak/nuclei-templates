@@ -8,19 +8,10 @@ info:
   tags: tech,firebase,google
 
 requests:
-<<<<<<< HEAD
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 1
-=======
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
->>>>>>> 18ddf72b (add new stuff)
 
     raw:
       - |

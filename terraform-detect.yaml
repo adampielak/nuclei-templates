@@ -2,12 +2,8 @@ id: terraform-detect
 info:
   name: Detect Terraform Provider
   author: geeknik
-  severity: info
-<<<<<<< HEAD
-=======
   description: Write Infrastructure as Code - https://www.terraform.io/
-  tags: tech,terraform
->>>>>>> 5d36d276 (add new stuff)
+  severity: info
 
 requests:
   - payloads:

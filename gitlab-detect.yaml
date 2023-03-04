@@ -1,44 +1,9 @@
 id: gitlab-detect
 
 info:
-  name: Gitlab Login Panel - Detect
+  name: Detect Gitlab
   author: ehsahil
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  description: Gitlab login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: http.title:"GitLab"
-  tags: panel,gitlab
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/users/sign_in"
-<<<<<<< HEAD
-      - "{{BaseURL}}/users/sign_up"
-      - "{{BaseURL}}/explore"
-    matchers:
-      - type: word
-        words:
-          - "GitLab"
-          - "Register for GitLab"
-          - "Explore GitLab"
-=======
-
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-=======
   tags: panel
 
 requests:
@@ -56,17 +21,9 @@ requests:
     matchers:
       - type: word
         words:
->>>>>>> 18ddf72b (add new stuff)
           - 'GitLab'
           - 'https://about.gitlab.com'
 
       - type: status
         status:
-<<<<<<< HEAD
           - 200
-
-# Enhanced by md on 2022/11/15
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - 200
->>>>>>> 18ddf72b (add new stuff)

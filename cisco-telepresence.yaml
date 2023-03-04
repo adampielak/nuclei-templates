@@ -1,24 +1,11 @@
 id: cisco-telepresence
 
 info:
-  name: Cisco TelePresence Login Panel - Detect
+  name: Cisco Telepresence
   author: dhiyaneshDk
   severity: info
-<<<<<<< HEAD
-  metadata:
-<<<<<<< HEAD
-=======
-  description: Cisco TelePresence login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
     verified: true
->>>>>>> 5d36d276 (add new stuff)
-=======
-    verified: true
->>>>>>> 18ddf72b (add new stuff)
     shodan-query: http.title:"Cisco Telepresence"
   tags: panel,cisco
 
@@ -27,11 +14,7 @@ requests:
     path:
       - "{{BaseURL}}/login.html"
 
-<<<<<<< HEAD
-    host-redirects: true
-=======
     redirects: true
->>>>>>> 18ddf72b (add new stuff)
     max-redirects: 2
     matchers-condition: and
     matchers:
@@ -43,5 +26,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/10

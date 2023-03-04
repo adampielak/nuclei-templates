@@ -1,28 +1,10 @@
 id: clearpass-policy-manager
 
 info:
-<<<<<<< HEAD
   name: ClearPass Policy Manager - Aruba Networks
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-  reference:
-    - https://www.shodan.io/search?query=http.title%3A%22ClearPass+Policy+Manager+-+Aruba+Networks%22
-=======
-  name: ClearPass Policy Manager Login Panel - Detect
-  author: dhiyaneshDK
-  severity: info
-  description: ClearPass Policy Manager login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: http.title:"ClearPass Policy Manager"
->>>>>>> 5d36d276 (add new stuff)
-=======
   reference: https://www.shodan.io/search?query=http.title%3A%22ClearPass+Policy+Manager+-+Aruba+Networks%22
->>>>>>> 18ddf72b (add new stuff)
   tags: panel,aruba
 
 requests:
@@ -47,8 +29,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2022/11/10
->>>>>>> 5d36d276 (add new stuff)

@@ -1,27 +1,11 @@
 id: exposed-mysql-initial
 
 info:
-  name: mysql.initial Config - Detect
+  name: Exposed mysql.initial
   author: ELSFA7110
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-  reference:
-    - https://hackerone.com/reports/1081817
-=======
-  description: mysql.initial configuration file was detected.
-  reference:
-    - https://hackerone.com/reports/1081817
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  tags: config,exposure,hackerone
-=======
   reference: https://hackerone.com/reports/1081817
   tags: config,exposure
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -45,5 +29,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2023/02/05

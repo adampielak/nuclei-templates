@@ -4,17 +4,8 @@ info:
   name: Panasonic Network Camera Management System
   author: dhiyaneshDk
   severity: medium
-<<<<<<< HEAD
   reference: https://www.exploit-db.com/ghdb/6487
-<<<<<<< HEAD
-=======
-  reference:
-    - https://www.exploit-db.com/ghdb/6487
-  tags: iot,camera,panasonic,edb
->>>>>>> 5d36d276 (add new stuff)
-=======
   tags: iot
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

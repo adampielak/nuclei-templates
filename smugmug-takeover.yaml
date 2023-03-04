@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-id: smugmug-takeover
-
-info:
-  name: Smugmug Takeover Detection
-  author: pdteam
-  severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/60
-  tags: takeover,smugmug
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        words:
-          - '{"text":"Page Not Found"'
-=======
 id: smugmug-takeover
 
 info:
@@ -37,4 +16,3 @@ requests:
       - type: word
         words:
           - '{"text":"Page Not Found"'
->>>>>>> 18ddf72b (add new stuff)

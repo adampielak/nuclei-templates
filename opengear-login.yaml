@@ -12,14 +12,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 5d36d276 (add new stuff)
-=======
-
->>>>>>> 18ddf72b (add new stuff)
     redirects: true
     max-redirects: 2
 

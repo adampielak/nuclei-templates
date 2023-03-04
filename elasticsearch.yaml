@@ -2,60 +2,21 @@ id: elasticsearch
 
 info:
   name: ElasticSearch Information Disclosure
-  author: Shine,c-sh0,geeknik
+  author: Shine
   severity: low
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  metadata:
-    verified: true
-    shodan-query: "ElasticSearch"
   tags: elastic,unauth,elasticsearch
->>>>>>> 5d36d276 (add new stuff)
-=======
-  tags: elastic,unauth,elasticsearch
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/?pretty'
       - '{{BaseURL}}/_cat/indices?v'
       - '{{BaseURL}}/_all/_search'
-<<<<<<< HEAD
-<<<<<<< HEAD
-      - '{{BaseURL}}:9200/_all/_search'
-=======
-      - "{{BaseURL}}/_cluster/health?pretty"
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '"took":'
-          - '"number" :'
-          - '"number_of_nodes"'
-        condition: or
-
-      - type: word
-        part: header
-        words:
-          - application/json
-          - application/vnd.api+json
-          - text/plain
-        condition: or
-
       - type: status
         status:
           - 200
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - '"number"\s:\s"([0-9.]+)"'

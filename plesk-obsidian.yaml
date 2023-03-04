@@ -4,18 +4,8 @@ info:
   name: Plesk Obsidian
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-  reference:
-    - https://www.exploit-db.com/ghdb/6951
-=======
-  reference: https://www.exploit-db.com/ghdb/6951
->>>>>>> 5d36d276 (add new stuff)
-  tags: panel,plesk
-=======
   reference: https://www.exploit-db.com/ghdb/6951
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

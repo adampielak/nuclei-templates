@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-id: tabnabbing-check
-
-info:
-  name: Reverse Tabnabbing
-  author: bolli95
-  severity: info
-  tags: misc
-<<<<<<< HEAD
-  reference: |
-      - https://owasp.org/www-community/attacks/Reverse_Tabnabbing
-      - https://www.youtube.com/watch?v=TMKZCHYmtD4
-      - https://hackerone.com/reports/211065
-=======
-  reference:
-    - https://owasp.org/www-community/attacks/Reverse_Tabnabbing
-    - https://www.youtube.com/watch?v=TMKZCHYmtD4
-    - https://hackerone.com/reports/211065
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - 'regex("<a[A-z0-9\/\"\&\=\%\#\.\:\_\@\\\$ ]*target\=\"_blank\"[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*>", replace_regex(replace_regex(body, "<a[A-z0-9\/\"\&\=\%\#\.\:\_\@\\\$ ]*target\=\"_blank\"[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*(rel=\"noopener noreferrer\"|rel=\"noreferrer noopener\"|rel=\"noreferrer\"|rel=\"noopener\")[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*>", ""), "<a[A-z0-9\/\"\&\=\%\#\.\:\_\@\\\$ ]*(rel=\"noopener noreferrer\"|rel=\"noreferrer noopener\"|rel=\"noreferrer\"|rel=\"noopener\")[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*target\=\"_blank\"[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*>", "")) || regex("window\.open\\([^,]+\\)", body)'
-      - type: dsl
-        dsl:
-=======
 id: tabnabbing-check
 
 info:
@@ -55,5 +22,4 @@ requests:
           - 'regex("<a[A-z0-9\/\"\&\=\%\#\.\:\_\@\\\$ ]*target\=\"_blank\"[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*>", replace_regex(replace_regex(body, "<a[A-z0-9\/\"\&\=\%\#\.\:\_\@\\\$ ]*target\=\"_blank\"[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*(rel=\"noopener noreferrer\"|rel=\"noreferrer noopener\"|rel=\"noreferrer\"|rel=\"noopener\")[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*>", ""), "<a[A-z0-9\/\"\&\=\%\#\.\:\_\@\\\$ ]*(rel=\"noopener noreferrer\"|rel=\"noreferrer noopener\"|rel=\"noreferrer\"|rel=\"noopener\")[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*target\=\"_blank\"[A-z0-9\/\"\&\%\=\#\.\:\_\@\\\$ ]*>", "")) || regex("window\.open\\([^,]+\\)", body)'
       - type: dsl
         dsl:
->>>>>>> 18ddf72b (add new stuff)
           - "!contains(tolower(all_headers), 'referrer-policy: no-referrer')"

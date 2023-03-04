@@ -4,24 +4,6 @@ info:
   name: WAF Detection
   author: dwisiswant0,lu4nx
   severity: info
-<<<<<<< HEAD
-  description: A web application firewall was detected.
-  reference:
-    - https://github.com/Ekultek/WhatWaf
-  classification:
-    cwe-id: CWE-200
-  tags: waf,tech,misc
-
-requests:
-  - raw:
-      - |
-        POST / HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/x-www-form-urlencoded
-
-        _=<script>alert(1)</script>
-
-=======
   reference: https://github.com/Ekultek/WhatWaf
 
 requests:
@@ -41,7 +23,6 @@ requests:
         Content-Length: 27
 
         _=<script>alert(1)</script>
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: regex
         name: instart
@@ -57,11 +38,7 @@ requests:
           - '(?i)perimeterx'
           - '(?i)(..)?client.perimeterx.*/[a-zA-Z]{8,15}/*.*.js'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: webknight
@@ -69,11 +46,7 @@ requests:
           - '(?i)\bwebknight'
           - '(?i)webknight'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: zscaler
@@ -81,11 +54,7 @@ requests:
           - '(?i)zscaler(.\d+(.\d+)?)?'
           - '(?i)zscaler'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: fortigate
@@ -101,33 +70,21 @@ requests:
           - '(?i)fortigate.hostname'
           - '(?i)the.page.cannot.be.displayed..please.contact.[^@]+@[^@]+\.[^@]+.for.additional.information'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: teros
         regex:
           - '(?i)st8(id|.wa|.wf)?.?(\d+|\w+)?'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: stricthttp
         regex:
           - '(?i)the.request.was.rejected.because.the.url.contained.a.potentially.malicious.string'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: stricthttp
@@ -135,11 +92,7 @@ requests:
           - '(?i)rejected.by.url.scan'
           - '(?i)/rejected.by.url.scan'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: shadowd
@@ -147,11 +100,7 @@ requests:
           - '(?i)<h\d>\d{3}.forbidden<.h\d>'
           - '(?i)request.forbidden.by.administrative.rules.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: bigip
@@ -162,22 +111,14 @@ requests:
           - '(?i)BigIP|BIG-IP|BIGIP'
           - '(?i)bigipserver'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: edgecast
         regex:
           - '(?i)\Aecdf'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: radware
@@ -186,11 +127,7 @@ requests:
           - '(?i).>unauthorized.activity.has.been.detected<.'
           - '(?i)with.the.following.case.number.in.its.subject:.\d+.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: varnish
@@ -200,11 +137,7 @@ requests:
           - '(?i)cachewall'
           - '(?i).>access.is.blocked.according.to.our.site.security.policy.<+'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: infosafe
@@ -214,11 +147,7 @@ requests:
           - '(?i)infosafe.\d.\d'
           - '(?i)var.infosafekey='
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: aliyundun
@@ -226,11 +155,7 @@ requests:
           - '(?i)error(s)?.aliyun(dun)?.(com|net)'
           - '(?i)http(s)?://(www.)?aliyun.(com|net)'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: ats
@@ -238,11 +163,7 @@ requests:
           - '(?i)(\()?apachetrafficserver((\/)?\d+(.\d+(.\d+)?)?)'
           - '(?i)ats((\/)?(\d+(.\d+(.\d+)?)?))?'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: malcare
@@ -251,31 +172,19 @@ requests:
           - '(?i).>login.protection<.+.><.+>powered.by<.+.>(<.+.>)?(.?malcare.-.pro|blogvault)?'
           - '(?i).>firewall<.+.><.+>powered.by<.+.>(<.+.>)?(.?malcare.-.pro|blogvault)?'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: wts
         regex:
           - '(?i)(<title>)?wts.wa(f)?(\w+(\w+(\w+)?)?)?'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: dw
         regex:
           - '(?i)dw.inj.check'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: denyall
@@ -283,11 +192,7 @@ requests:
           - '(?i)\Acondition.intercepted'
           - '(?i)\Asessioncookie='
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: yunsuo
@@ -295,21 +200,13 @@ requests:
           - '(?i)<img.class=.yunsuologo.'
           - '(?i)yunsuo.session'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: litespeed
         regex:
           - '(?i)litespeed.web.server'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: cloudfront
@@ -318,11 +215,7 @@ requests:
           - '(?i)cloudfront'
           - '(?i)x.amz.cf.id|nguardx'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: anyu
@@ -331,11 +224,7 @@ requests:
           - '(?i)anyu'
           - '(?i)anyu-?.the.green.channel'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: googlewebservices
@@ -344,11 +233,7 @@ requests:
           - '(?i)our.systems.have.detected.unusual.traffic'
           - '(?i)block(ed)?.by.g.cloud.security.policy.+'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: didiyun
@@ -356,51 +241,31 @@ requests:
           - '(?i)(http(s)?://)(sec-waf.|www.)?didi(static|yun)?.com(/static/cloudwafstatic)?'
           - '(?i)didiyun'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: blockdos
         regex:
           - '(?i)blockdos\.net'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: codeigniter
         regex:
           - '(?i)the.uri.you.submitted.has.disallowed.characters'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: stingray
         regex:
           - '(?i)\AX-Mapping-'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: west263
         regex:
           - '(?i)wt\d*cdn'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: aws
@@ -410,11 +275,7 @@ requests:
           - '(?i)x.amz.id.\d+'
           - '(?i)x.amz.request.id'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: yundun
@@ -424,11 +285,7 @@ requests:
           - '(?i)http(s)?.//(www\.)?(\w+.)?yundun(.com)?'
           - '(?i)<title>.403.forbidden:.access.is.denied.{0,2}<.{0,2}title>'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: barracuda
@@ -437,21 +294,13 @@ requests:
           - '(?i)(\A|\b)?barracuda.'
           - '(?i)barracuda.networks.{1,2}inc'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: dodenterpriseprotection
         regex:
           - '(?i)dod.enterprise.level.protection.system'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: secupress
@@ -459,21 +308,13 @@ requests:
           - '(?i)<h\d*>secupress<.'
           - '(?i)block.id.{1,2}bad.url.contents.<.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: aesecure
         regex:
           - '(?i)aesecure.denied.png'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: incapsula
@@ -482,11 +323,7 @@ requests:
           - '(?i)incapsula'
           - '(?i)incapsula.incident.id'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: nexusguard
@@ -494,11 +331,7 @@ requests:
           - '(?i)nexus.?guard'
           - '(?i)((http(s)?://)?speresources.)?nexusguard.com.wafpage'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: cloudflare
@@ -512,11 +345,7 @@ requests:
           - '(?i)ray.id'
           - '(?i)__cfduid'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: akamai
@@ -525,11 +354,7 @@ requests:
           - '(?i)akamaighost'
           - '(?i)ak.bmsc.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: webseal
@@ -537,21 +362,13 @@ requests:
           - '(?i)webseal.error.message.template'
           - '(?i)webseal.server.received.an.invalid.http.request'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: dotdefender
         regex:
           - '(?i)dotdefender.blocked.your.request'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: pk
@@ -560,11 +377,7 @@ requests:
           - '(?i).http(s)?.//([w]{3})?.kitnetwork.\w'
           - '(?i).>A.safety.critical.request.was.discovered.and.blocked.<.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: expressionengine
@@ -573,31 +386,19 @@ requests:
           - '(?i).>:.the.uri.you.submitted.has.disallowed.characters.<.'
           - '(?i)invalid.(get|post).data'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: comodo
         regex:
           - '(?i)protected.by.comodo.waf'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: ciscoacexml
         regex:
           - '(?i)ace.xml.gateway'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: barikode
@@ -605,11 +406,7 @@ requests:
           - '(?i).>barikode<.'
           - '(?i)<h\d{1}>forbidden.access<.h\d{1}>'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: watchguard
@@ -617,11 +414,7 @@ requests:
           - '(?i)(request.denied.by.)?watchguard.firewall'
           - '(?i)watchguard(.technologies(.inc)?)?'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: binarysec
@@ -630,11 +423,7 @@ requests:
           - '(?i)x.binarysec.nocache'
           - '(?i)binarysec'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: bekchy
@@ -642,11 +431,7 @@ requests:
           - '(?i)bekchy.(-.)?access.denied'
           - '(?i)(http(s)?://)(www.)?bekchy.com(/report)?'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: bitninja
@@ -655,11 +440,7 @@ requests:
           - '(?i)security.check.by.bitninja'
           - '(?i).>visitor.anti(\S)?robot.validation<.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: apachegeneric
@@ -670,11 +451,7 @@ requests:
           - '(?i)<address>apache/([\d+{1,2}](.[\d+]{1,2}(.[\d+]{1,3})?)?)?'
           - '(?i)<title>403 Forbidden</title>'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: greywizard
@@ -684,21 +461,13 @@ requests:
           - '(?i)(http(s)?.//)?(\w+.)?greywizard.com'
           - '(?i)grey.wizard'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: configserver
         regex:
           - '(?i).>the.firewall.on.this.server.is.blocking.your.connection.<+'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: viettel
@@ -707,11 +476,7 @@ requests:
           - '(?i)viettel.waf.system'
           - '(?i)(http(s).//)?cloudrity.com(.vn)?'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: safedog
@@ -719,21 +484,13 @@ requests:
           - '(?i)(http(s)?)?(://)?(www|404|bbs|\w+)?.safedog.\w'
           - '(?i)waf(.?\d+.?\d+)'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: baidu
         regex:
           - '(?i)yunjiasu.nginx'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: alertlogic
@@ -745,21 +502,13 @@ requests:
           - '(?i)reference.id.?'
           - '(?i)page.has.either.been.removed.{1,2}renamed'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: armor
         regex:
           - '(?i)blocked.by.website.protection.from.armour'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: dosarrest
@@ -767,11 +516,7 @@ requests:
           - '(?i)dosarrest'
           - '(?i)x.dis.request.id'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: paloalto
@@ -779,11 +524,7 @@ requests:
           - 'has.been.blocked.in.accordance.with.company.policy'
           - '.>Virus.Spyware.Download.Blocked<.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: aspgeneric
@@ -801,11 +542,7 @@ requests:
           - "(?i)<.+>server.error.in.'/'.application.+"
           - '(?i)\basp.net\b'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: powerful
@@ -813,11 +550,7 @@ requests:
           - '(?i)Powerful Firewall'
           - '(?i)http(s)?...tiny.cc.powerful.firewall'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: uewaf
@@ -825,11 +558,7 @@ requests:
           - '(?i)http(s)?.//ucloud'
           - '(?i)uewaf(.deny.pages)'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: janusec
@@ -837,11 +566,7 @@ requests:
           - '(?i)janusec'
           - '(?i)(http(s)?\W+(www.)?)?janusec.(com|net|org)'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: siteguard
@@ -849,11 +574,7 @@ requests:
           - '(?i)>Powered.by.SiteGuard.Lite<'
           - '(?i)refuse.to.browse'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: sonicwall
@@ -865,11 +586,7 @@ requests:
           - '(?i)SonicWALL'
           - '(?i).>policy.this.site.is.blocked<.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: jiasule
@@ -879,11 +596,7 @@ requests:
           - '(?i)notice.jiasule'
           - '(?i)(static|www|dynamic).jiasule.(com|net)'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: nginxgeneric
@@ -891,11 +604,7 @@ requests:
           - '(?i)nginx'
           - '(?i)you.do(not|n.t)?.have.permission.to.access.this.document'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: stackpath
@@ -903,21 +612,13 @@ requests:
           - '(?i)action.that.triggered.the.service.and.blocked'
           - '(?i)<h2>sorry,.you.have.been.blocked.?<.h2>'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: sabre
         regex:
           - '(?i)dxsupport@sabre.com'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: wordfence
@@ -926,11 +627,7 @@ requests:
           - '(?i)your.access.to.this.site.has.been.limited'
           - '(?i).>wordfence<.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: '360'
@@ -941,22 +638,14 @@ requests:
           - '(?i)360wzws'
           - '(?i)transfer.is.blocked'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: asm
         regex:
           - '(?i)the.requested.url.was.rejected..please.consult.with.your.administrator.'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: rsfirewall
@@ -966,11 +655,7 @@ requests:
           - '(?i)(\b)?rsfirewall(\b)?'
           - '(?i)rsfirewall'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: sucuri
@@ -980,41 +665,25 @@ requests:
           - '(?i)questions\?.+cloudproxy@sucuri\.net'
           - '(?i)http(s)?.\/\/(cdn|supportx.)?sucuri(.net|com)?'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: airlock
         regex:
           - '(?i)\Aal[.-]?(sess|lb)=?'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: xuanwudun
         regex:
           - '(?i)class=.(db)?waf.?(-row.)?>'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: chuangyudun
         regex:
           - '(?i)(http(s)?.//(www.)?)?365cyd.(com|net)'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: securesphere
@@ -1027,21 +696,13 @@ requests:
           - '(?i)page.cannot.be.displayed'
           - '(?i)contact.support.for.additional.information'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: anquanbao
         regex:
           - '(?i).aqb_cc.error.'
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: modsecurity
@@ -1053,11 +714,7 @@ requests:
           - '(?i)page.you.are.(accessing|trying)?.(to|is)?.(access)?.(is|to)?.(restricted)?'
           - '(?i)blocked.by.mod.security'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: modsecurityowasp
@@ -1065,11 +722,7 @@ requests:
           - '(?i)not.acceptable'
           - '(?i)additionally\S.a.406.not.acceptable'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: squid
@@ -1078,11 +731,7 @@ requests:
           - '(?i)Access control configuration prevents'
           - '(?i)X.Squid.Error'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: shieldsecurity
@@ -1091,36 +740,19 @@ requests:
           - '(?i)transgression(\(s\))?.against.this'
           - '(?i)url.{1,2}form.or.cookie.data.wasn.t.appropriate'
         condition: or
-<<<<<<< HEAD
-        part: response
-=======
         part: all
->>>>>>> 18ddf72b (add new stuff)
 
       - type: regex
         name: wallarm
         regex:
           - '(?i)nginix.wallarm'
-<<<<<<< HEAD
-        part: response
-
-      - type: regex
-        part: response
-=======
         part: all
 
       - type: regex
         part: all
->>>>>>> 18ddf72b (add new stuff)
         name: huaweicloud
         condition: and
         regex:
           - '(?)content="CloudWAF"'
           - 'Server: CloudWAF'
-<<<<<<< HEAD
           - 'Set-Cookie: HWWAFSESID='
-
-# Enhanced by mp on 2022/03/21
-=======
-          - 'Set-Cookie: HWWAFSESID='
->>>>>>> 18ddf72b (add new stuff)

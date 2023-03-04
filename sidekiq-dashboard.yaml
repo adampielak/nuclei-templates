@@ -1,29 +1,10 @@
 id: sidekiq-dashboard
 
 info:
-  name: Sidekiq Dashboard Panel - Detect
+  name: sidekiq-dashboard
   author: dhiyaneshDK
   severity: medium
-<<<<<<< HEAD
-<<<<<<< HEAD
-  reference:
-    - https://sidekiq.org
-    - https://github.com/mperham/sidekiq
-=======
-  description: Sidekiq Dashboard panel was detected.
-  reference:
-    - https://sidekiq.org
-    - https://github.com/mperham/sidekiq
-    - https://github.com/mperham/sidekiq/wiki/Monitoring
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  tags: unauth,panel,sidekiq
-=======
   tags: unauth
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -41,12 +22,10 @@ requests:
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
           - <title>Sidekiq</title>
+        part: body
 
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/18

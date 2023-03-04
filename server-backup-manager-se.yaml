@@ -1,25 +1,11 @@
 id: server-backup-manager-se
 
 info:
-<<<<<<< HEAD
   name: Server Backup Manager SE
   author: dhiyaneshDK
   severity: info
   reference: https://www.shodan.io/search?query=http.title%3A%22Server+Backup+Manager+SE%22
   tags: panel
-=======
-  name: Server Backup Manager SE Panel - Detect
-  author: dhiyaneshDK
-  severity: info
-  description: Server Backup Manager SE login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: http.title:"Server Backup Manager SE"
-  tags: panel,server,backup,manager
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:
@@ -36,22 +22,9 @@ requests:
         Accept: */*
     matchers-condition: and
     matchers:
-<<<<<<< HEAD
       - type: word
         words:
           - '<title>Server Backup Manager SE  </title>'
       - type: status
         status:
           - 200
-=======
-      - type: regex
-        part: body
-        regex:
-          - "<title>.*(Server Backup Manager SE).*</title>"
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by md on 2023/01/16
->>>>>>> 5d36d276 (add new stuff)

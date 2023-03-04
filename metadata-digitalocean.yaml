@@ -29,7 +29,6 @@ requests:
       - |+
         GET http://{{hostval}}/metadata/v1.json HTTP/1.1
         Host: {{hostval}}
-
     payloads:
       hostval:
         - aws.oast.online

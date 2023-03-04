@@ -1,11 +1,7 @@
 id: apache-solr-file-read
 
 info:
-<<<<<<< HEAD
   name: Apache Solr <= 8.8.1 - Local File Inclusion
-=======
-  name: Apache Solr <=8.8.1 - Local File Inclusion
->>>>>>> 5d36d276 (add new stuff)
   author: DhiyaneshDk,philippedelteil
   severity: high
   description: Apache Solr versions prior to and including 8.8.1 are vulnerable to local file inclusion.
@@ -61,8 +57,3 @@ requests:
         regex:
           - '"name"\:"(.*?)"'
         internal: true
-<<<<<<< HEAD
-=======
-
-# Enhanced by mp on 2023/01/15
->>>>>>> 5d36d276 (add new stuff)

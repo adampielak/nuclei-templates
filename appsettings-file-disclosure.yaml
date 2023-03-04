@@ -16,16 +16,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/appsettings.json"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      - "{{BaseURL}}/appsettings.Production.json"
 
-    stop-at-first-match: true
->>>>>>> 5d36d276 (add new stuff)
-=======
-
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

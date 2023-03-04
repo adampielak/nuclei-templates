@@ -6,15 +6,7 @@ info:
   severity: info
   reference:
     - https://developers.virustotal.com/reference
-<<<<<<< HEAD
-<<<<<<< HEAD
-    - https://github.com/daffainfo/all-about-apikey/blob/main/Anti-Malware/VirusTotal.md
-=======
     - https://github.com/daffainfo/all-about-apikey/blob/main/Anti%20Malware/VirusTotal.md
->>>>>>> 5d36d276 (add new stuff)
-=======
-    - https://github.com/daffainfo/all-about-apikey/blob/main/Anti%20Malware/VirusTotal.md
->>>>>>> 18ddf72b (add new stuff)
   tags: token-spray,virustotal
 
 self-contained: true
@@ -32,19 +24,7 @@ requests:
       - type: word
         part: body
         words:
-<<<<<<< HEAD
-<<<<<<< HEAD
-          - "'verbose_msg':"
-          - "'scan_date':"
-          - "'permalink':"
-=======
           - '"verbose_msg":'
           - '"scan_date":'
           - '"permalink":'
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - '"verbose_msg":'
-          - '"scan_date":'
-          - '"permalink":'
->>>>>>> 18ddf72b (add new stuff)
         condition: and

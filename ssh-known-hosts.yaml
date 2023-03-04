@@ -1,19 +1,8 @@
 id: ssh-known-hosts
 
-<<<<<<< HEAD
-info:
-  name: SSH Known Hosts
-  author: geeknik
-  severity: low
-  reference:
-    - https://datacadamia.com/ssh/known_hosts
-  tags: config,exposure,ssh
-
-=======
 name: SSH Known Hosts
 severity: low
   
->>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     paths:

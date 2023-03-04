@@ -13,15 +13,7 @@ requests:
     headers:
       Cookie: JSESSIONID={{randstr}};rememberMe=123;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    redirects: true
-=======
     host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
-=======
-    host-redirects: true
->>>>>>> 18ddf72b (add new stuff)
     max-redirects: 2
     matchers:
       - type: word

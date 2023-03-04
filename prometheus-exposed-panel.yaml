@@ -1,20 +1,9 @@
 id: prometheus-exposed-panel
 
 info:
-<<<<<<< HEAD
   name: Prometheus.io exposed panel
   author: organiccrap
   severity: low
-=======
-  name: Prometheus Panel - Detect
-  author: organiccrap
-  severity: info
-  description: Prometheus panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
   tags: panel,prometheus
 
 requests:
@@ -34,10 +23,4 @@ requests:
     matchers:
       - type: word
         words:
-<<<<<<< HEAD
           - '<title>Prometheus Time Series Collection and Processing Server</title>'
-=======
-          - '<title>Prometheus Time Series Collection and Processing Server</title>'
-
-# Enhanced by md on 2022/12/06
->>>>>>> 5d36d276 (add new stuff)

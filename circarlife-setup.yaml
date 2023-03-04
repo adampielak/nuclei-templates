@@ -1,41 +1,12 @@
-id: circarlife-installer
+id: circarlife-setup
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: CirCarLife - Admin Panel Access
-=======
-  name: CirCarLife - Installer
->>>>>>> 5d36d276 (add new stuff)
-=======
   name: Exposed CirCarLife Setup Page
->>>>>>> 18ddf72b (add new stuff)
   author: geeknik
   description: CirCarLife is an internet-connected electric vehicle charging station
   reference: https://circontrol.com/
   severity: critical
-<<<<<<< HEAD
-  description: A CirCarLife admin panel was accessed. CirCarLife is an internet-connected electric vehicle charging station
-  reference:
-    - https://circontrol.com/
-  classification:
-<<<<<<< HEAD
-    cvss-metrics: AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10.0
-    cwe-id: CWE-288
-  tags: scada,circontrol,circarlife,setup,exposure,panel
-=======
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
-    cvss-score: 9.4
-    cwe-id: CWE-284
-  metadata:
-    verified: true
-    shodan-query: title:"- setup" html:"Modem setup"
-  tags: scada,circontrol,circarlife,setup,exposure,panel,installer
->>>>>>> 5d36d276 (add new stuff)
-=======
   tags: scada,circontrorl,circarlife,setup,exposure,panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

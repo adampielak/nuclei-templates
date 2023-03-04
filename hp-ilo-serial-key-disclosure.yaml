@@ -1,28 +1,10 @@
 id: hp-ilo-serial-key-disclosure
 
 info:
-<<<<<<< HEAD
   name: HP ILO Serial Key Disclosure
   author: dhiyaneshDk
   severity: medium
-<<<<<<< HEAD
-  reference:
-    - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/hp-ilo-serial-key-disclosure.json
-=======
-  name: HP iLO Serial Key - Detect
-  author: dhiyaneshDk
-  severity: medium
-  description: HP iLO serial key was detected.
-  reference:
-    - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/hp-ilo-serial-key-disclosure.json
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-=======
   reference: https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/hp-ilo-serial-key-disclosure.json
->>>>>>> 18ddf72b (add new stuff)
   tags: exposure,config
 
 requests:
@@ -51,8 +33,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2023/02/09
->>>>>>> 5d36d276 (add new stuff)

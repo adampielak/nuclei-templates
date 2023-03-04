@@ -4,16 +4,7 @@ info:
   name: XenForo Login/Register
   author: dhiyaneshDk
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-  metadata:
-    shodan-query: http.title:"XenForo"
-=======
   reference: https://www.shodan.io/search?query=http.title%3A%22XenForo%22
->>>>>>> 5d36d276 (add new stuff)
-=======
-  reference: https://www.shodan.io/search?query=http.title%3A%22XenForo%22
->>>>>>> 18ddf72b (add new stuff)
   tags: panel
 
 requests:

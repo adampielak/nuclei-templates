@@ -3,17 +3,8 @@ id: aws-opensearch-login
 info:
   name: AWS OpenSearch Login - Detect
   author: Higor Melgaço (eremit4)
-<<<<<<< HEAD
   severity: medium
-<<<<<<< HEAD
-  description: Searches for the AWS OpenSearch login page
-=======
-  severity: info
   description: AWS OpenSearch login page was detected.
->>>>>>> 5d36d276 (add new stuff)
-=======
-  description: AWS OpenSearch login page was detected.
->>>>>>> 18ddf72b (add new stuff)
   reference:
     - https://aws.amazon.com/pt/blogs/opensource/introducing-opensearch/
   classification:

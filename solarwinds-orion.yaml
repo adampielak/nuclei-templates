@@ -1,19 +1,10 @@
 id: solarwinds-orion
 
 info:
-  name: SolarWinds Orion Login Panel - Detect
+  name: SolarWinds Orion Panel
   author: puzzlepeaches
   severity: info
-<<<<<<< HEAD
-  description: SolarWinds Orion login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,solarwinds
-=======
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -31,5 +22,3 @@ requests:
         words:
           - "SolarWinds Orion"
         part: body
-
-# Enhanced by md on 2023/01/15

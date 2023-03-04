@@ -1,29 +1,14 @@
 id: completeview-web-panel
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: CompleteView Web Client Panel
-  author: tess
-  severity: info
-=======
   name: CompleteView Panel - Detect
   author: tess
   severity: info
-=======
-  name: CompleteView Panel - Detect
-  author: tess
-  severity: info
->>>>>>> 18ddf72b (add new stuff)
   description: CompleteView panel was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
   metadata:
     verified: true
     shodan-query: http.title:"CompleteView Web Client"
@@ -44,13 +29,5 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 # Enhanced by mp on 2023/01/29
->>>>>>> 5d36d276 (add new stuff)
-=======
-
-# Enhanced by mp on 2023/01/29
->>>>>>> 18ddf72b (add new stuff)

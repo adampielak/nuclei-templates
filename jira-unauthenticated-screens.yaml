@@ -6,11 +6,6 @@ info:
   severity: info
   reference:
     - https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-screens/#api-rest-api-2-screens-get
-<<<<<<< HEAD
-=======
-  metadata:
-    shodan-query: http.component:"Atlassian Jira"
->>>>>>> 5d36d276 (add new stuff)
   tags: atlassian,jira
 
 requests:

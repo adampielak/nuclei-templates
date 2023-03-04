@@ -4,14 +4,7 @@ info:
   name: Apache mod_perl Status Page Exposure
   author: pdteam
   severity: medium
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  tags: config,exposure,apache,status
->>>>>>> 5d36d276 (add new stuff)
-=======
   tags: config,exposure
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

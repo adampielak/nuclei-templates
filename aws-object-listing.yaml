@@ -23,14 +23,14 @@ requests:
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
           - '<ListBucketResult xmlns='
+        part: body
 
       - type: word
-        part: header
         words:
           - application/xml
+        part: header
 
     extractors:
       - type: regex

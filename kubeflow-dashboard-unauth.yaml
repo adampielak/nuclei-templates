@@ -4,17 +4,8 @@ info:
   name: Kubeflow Unauth
   author: dhiyaneshDk
   severity: high
-<<<<<<< HEAD
-<<<<<<< HEAD
-  reference: https://github.com/kubeflow/kubeflow
-=======
   reference:
     - https://github.com/kubeflow/kubeflow
->>>>>>> 5d36d276 (add new stuff)
-=======
-  reference:
-    - https://github.com/kubeflow/kubeflow
->>>>>>> 18ddf72b (add new stuff)
   tags: kubeflow,unauth
 
 requests:

@@ -15,17 +15,8 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-<<<<<<< HEAD
-<<<<<<< HEAD
-    matchers-condition: and
-=======
 
     matchers-condition: or
->>>>>>> 5d36d276 (add new stuff)
-=======
-
-    matchers-condition: or
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         part: body
@@ -35,14 +26,6 @@ requests:
       - type: regex
         regex:
           - '<title>PbootCMS(.*)</title>'
-<<<<<<< HEAD
-<<<<<<< HEAD
-      - type: status
-        status:
-          - 200
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
 
     extractors:
       - type: regex
@@ -50,7 +33,3 @@ requests:
         group: 1
         regex:
           - 'title="(.*)正式发布">'
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

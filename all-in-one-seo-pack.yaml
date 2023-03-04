@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/all-in-one-seo-pack/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/all-in-one-seo-pack.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/all-in-one-seo-pack.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

@@ -7,15 +7,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.component:"Magento"
-<<<<<<< HEAD
-<<<<<<< HEAD
-  tags: magento,magmi,plugin
-=======
   tags: magento,magmi,plugin,tech
->>>>>>> 5d36d276 (add new stuff)
-=======
-  tags: magento,magmi,plugin,tech
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

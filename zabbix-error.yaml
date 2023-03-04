@@ -1,23 +1,10 @@
 id: zabbix-error
 
 info:
-  name: Zabbix Panel - Detect
+  name: Zabbix Error
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  description: Zabbix panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  metadata:
-    shodan-query: http.title:"Warning [refreshed every 30 sec.]"
-=======
   reference: https://www.shodan.io/search?query=http.title%3A%22Warning+%5Brefreshed+every+30+sec.%5D%22
->>>>>>> 18ddf72b (add new stuff)
   tags: zabbix,misconfig
 
 requests:
@@ -42,5 +29,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/02/06

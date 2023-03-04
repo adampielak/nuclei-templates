@@ -1,27 +1,12 @@
 id: pantheon-takeover
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: pantheon takeover detection
-  author: pdcommunity
-  severity: high
-=======
   name: Pantheon Takeover Detection
   author: pdteam
   severity: high
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/24
     - https://medium.com/bug-bounty/how-i-took-over-several-stanford-subdomains-also-let-me-explain-you-the-pain-to-report-it-d84b08704be8
->>>>>>> 5d36d276 (add new stuff)
-=======
-  name: Pantheon Takeover Detection
-  author: pdteam
-  severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/24
-    - https://medium.com/bug-bounty/how-i-took-over-several-stanford-subdomains-also-let-me-explain-you-the-pain-to-report-it-d84b08704be8
->>>>>>> 18ddf72b (add new stuff)
   tags: takeover
 
 requests:
@@ -38,10 +23,3 @@ requests:
       - type: word
         words:
           - "The gods are wise, but do not know of the site which you seek."
-<<<<<<< HEAD
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"apigee.io")'
-=======
->>>>>>> 18ddf72b (add new stuff)

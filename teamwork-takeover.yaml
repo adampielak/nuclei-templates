@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-id: teamwork-takeover
-
-info:
-  name: Teamwork Takeover Detection
-  author: pdteam
-  severity: high
-  tags: takeover,teamwork
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        words:
-          - "Oops - We didn't find your site."
-=======
 id: teamwork-takeover
 
 info:
@@ -35,4 +16,3 @@ requests:
       - type: word
         words:
           - Oops - We didn't find your site.
->>>>>>> 18ddf72b (add new stuff)

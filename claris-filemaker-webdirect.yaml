@@ -7,16 +7,8 @@ info:
   reference: https://www.exploit-db.com/ghdb/5669
   metadata:
     verified: true
-<<<<<<< HEAD
     shodan-dork: title:"Claris FileMaker WebDirect"
-<<<<<<< HEAD
-=======
-    shodan-query: title:"Claris FileMaker WebDirect"
->>>>>>> 5d36d276 (add new stuff)
-  tags: panel,edb
-=======
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET

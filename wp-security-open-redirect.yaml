@@ -2,7 +2,7 @@ id: wp-security-open-redirect
 info:
   name: All In One WP Security & Firewall <= 4.4.1 - Open Redirect & Hidden Login Page Exposure
   author: akincibor
-  severity: medium
+  severity: low
   description: |
     The All In One WP Security & Firewall plugin suffers from open redirect and exposure of the actual URL of the "hidden login page" feature.
   reference:

@@ -6,11 +6,7 @@ info:
   severity: info
   metadata:
     verified: "true"
-<<<<<<< HEAD
     shodan-dork: html:"DashRenderer"
-=======
-    shodan-query: html:"DashRenderer"
->>>>>>> 5d36d276 (add new stuff)
   tags: tech,dash
 
 requests:

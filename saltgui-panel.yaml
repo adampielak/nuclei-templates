@@ -1,20 +1,9 @@
 id: saltgui-panel
 
 info:
-<<<<<<< HEAD
   name: SaltGUI Panel Detect
   author: ritikchaddha
   severity: info
-=======
-  name: SaltGUI Login Panel - Detect
-  author: ritikchaddha
-  severity: info
-  description: SaltGUI login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
   tags: panel,saltgui
 
 requests:
@@ -35,8 +24,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2023/01/16
->>>>>>> 5d36d276 (add new stuff)

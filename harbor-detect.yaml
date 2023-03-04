@@ -4,35 +4,18 @@ info:
   name: Harbor Detect
   author: pikpikcu,daffainfo
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
   description: Harbor is an open source trusted cloud native registry project that stores, signs, and scans content.
   reference:
     - https://github.com/goharbor/harbor
   metadata:
     verified: true
     shodan-query: http.favicon.hash:657337228
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
   tags: tech,harbor
 
 requests:
   - method: GET
     path:
-<<<<<<< HEAD
-<<<<<<< HEAD
-      - '{{BaseURL}}'
-=======
       - '{{BaseURL}}/api/v2.0/systeminfo'
->>>>>>> 5d36d276 (add new stuff)
-=======
-      - '{{BaseURL}}/api/v2.0/systeminfo'
->>>>>>> 18ddf72b (add new stuff)
 
     matchers-condition: and
     matchers:

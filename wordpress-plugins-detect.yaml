@@ -13,11 +13,7 @@ requests:
         Host: {{Hostname}}
 
     payloads:
-<<<<<<< HEAD
       pluginSlug: helpers/wordlists/wordpress-plugins.txt
-=======
-      pluginSlug: ../../../helpers/wordlists/wordpress-plugins.txt
->>>>>>> 5d36d276 (add new stuff)
 
     threads: 50
     matchers-condition: and

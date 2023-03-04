@@ -5,11 +5,6 @@ info:
   author: philippedelteil
   severity: info
   description: Some Jira instances allow to read the installed gadgets (sometimes it's also possible to read config xml file for some gadgets)
-<<<<<<< HEAD
-=======
-  metadata:
-    shodan-query: http.component:"Atlassian Jira"
->>>>>>> 5d36d276 (add new stuff)
   tags: atlassian,jira
 
 requests:
@@ -18,21 +13,12 @@ requests:
     attack: sniper
     threads: 100
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    redirects: true
-=======
-    host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
-    max-redirects: 2
-=======
     raw:
       - |
         GET /rest/config/1.0/directory HTTP/1.1
         Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

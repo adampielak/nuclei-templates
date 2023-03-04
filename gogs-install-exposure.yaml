@@ -4,11 +4,7 @@ info:
   name: Gogs install exposure
   author: dhiyaneshDk
   severity: high
-<<<<<<< HEAD
   tags: gogs,exposure
-=======
-  tags: gogs,exposure,files
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

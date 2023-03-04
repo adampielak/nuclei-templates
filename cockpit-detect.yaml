@@ -4,10 +4,6 @@ info:
   name: Detect Agentejo Cockpit
   author: dwisiswant0
   severity: info
-<<<<<<< HEAD
-=======
-  tags: tech,cockpit
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

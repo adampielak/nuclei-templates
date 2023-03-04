@@ -1,28 +1,10 @@
 id: zimbra-web-client
 
 info:
-<<<<<<< HEAD
   name: Zimbra Web Client - Sign In
   author: dhiyaneshDk
   severity: info
-<<<<<<< HEAD
-  description: Zimbra provides open source server and client software for messaging and collaboration.
-=======
-  name: Zimbra Panel - Detect
-  author: dhiyaneshDk,idealphase
-  severity: info
-  description: Zimbra panel was detected. Zimbra provides open source server and client software for messaging and collaboration.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  reference:
-    - https://www.exploit-db.com/ghdb/7409
-    - https://www.zimbra.com/
-=======
   reference: https://www.exploit-db.com/ghdb/7409
->>>>>>> 18ddf72b (add new stuff)
   metadata:
     shodan-query: 'http.title:"Zimbra Web Client Sign In"'
   tags: panel
@@ -50,18 +32,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - 'AjxPackage\.setQueryString\("v=(.+)"\);'
-<<<<<<< HEAD
-=======
-
-# Enhanced by mp on 2023/01/29
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

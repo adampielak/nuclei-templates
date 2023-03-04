@@ -1,42 +1,3 @@
-<<<<<<< HEAD
-id: liferay-portal-detect
-<<<<<<< HEAD
-info:
-  name: Liferay Portal Detection
-  author: organiccrap & dwisiswant0
-  severity: info
-  # CVE-2020-7961: Liferay Portal Unauthenticated RCE
-  # https://github.com/mzer0one/CVE-2020-7961-POC
-=======
-
-info:
-  name: Liferay Portal Detection
-  author: organiccrap,dwisiswant0
-  severity: info
-  reference: https://github.com/mzer0one/CVE-2020-7961-POC # CVE-2020-7961: Liferay Portal Unauthenticated RCE
-  tags: tech,liferay
-
->>>>>>> 5d36d276 (add new stuff)
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/api/jsonws'
-      - '{{BaseURL}}/api/jsonws/invoke'
-<<<<<<< HEAD
-    headers:
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
-=======
-
->>>>>>> 5d36d276 (add new stuff)
-    matchers:
-      - type: word
-        words:
-          - <title>json-web-services-api</title>
-          - There are no services matching that phrase.
-          - Unable to deserialize object
-        condition: or
-        part: body
-=======
 id: liferay-portal-detect
 
 info:
@@ -60,4 +21,3 @@ requests:
           - Unable to deserialize object
         condition: or
         part: body
->>>>>>> 18ddf72b (add new stuff)

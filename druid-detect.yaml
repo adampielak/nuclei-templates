@@ -7,7 +7,6 @@ info:
   tags: tech,druid
 
 requests:
-<<<<<<< HEAD
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -21,12 +20,6 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         
-=======
-  - method: GET
-    path:
-      - "{{BaseURL}}/druid/login.html"
-
->>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
 

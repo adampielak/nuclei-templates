@@ -4,17 +4,8 @@ info:
   name: Insecure cross-domain.xml file
   author: Borna Nematzadeh,nadino
   severity: info
-<<<<<<< HEAD
-  reference:
-    - https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
-<<<<<<< HEAD
-=======
   reference: https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
->>>>>>> 18ddf72b (add new stuff)
   tags: exposure,generic
-=======
-  tags: exposure,generic,files
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

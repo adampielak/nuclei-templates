@@ -1,23 +1,12 @@
 id: microsoft-exchange-panel
 
 info:
-  name: Microsoft Exchange Admin Center Login Panel - Detect
+  name: Microsoft Exchange Control Panel
   author: r3dg33k
   severity: info
-<<<<<<< HEAD
-  description: Microsoft Exchange Admin Center login panel was detected.
-  reference:
-    - https://docs.microsoft.com/en-us/answers/questions/58814/block-microsoft-exchange-server-2016-exchange-admi.html
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: microsoft,panel,exchange
-=======
   description: Publicly accessible Microsoft Exchange Server Control Panel
   tags: microsoft,panel
   reference: https://docs.microsoft.com/en-us/answers/questions/58814/block-microsoft-exchange-server-2016-exchange-admi.html
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -40,10 +29,4 @@ requests:
 
       - type: word
         words:
-<<<<<<< HEAD
           - 'Exchange Admin Center'
-
-# Enhanced by md on 2022/11/28
-=======
-          - 'Exchange Admin Center'
->>>>>>> 18ddf72b (add new stuff)

@@ -2,16 +2,8 @@ id: gunicorn-detect
 info:
   name: Detect Gunicorn Server
   author: joanbono
-<<<<<<< HEAD
-  severity: info
-  description: Gunicorn Python WSGI HTTP Server for UNIX
-  reference:
-    - https://github.com/benoitc/gunicorn
-  tags: tech,gunicorn
-=======
   description: Gunicorn Python WSGI HTTP Server for UNIX - https://github.com/benoitc/gunicorn
   severity: info
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

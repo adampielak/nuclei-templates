@@ -2,15 +2,7 @@ id: webeditors
 
 info:
   name: Web Editors
-<<<<<<< HEAD
-<<<<<<< HEAD
-  author: pwnmachine
-=======
   author: princechaddha,bernardofsr
->>>>>>> 5d36d276 (add new stuff)
-=======
-  author: princechaddha,bernardofsr
->>>>>>> 18ddf72b (add new stuff)
   severity: info
   tags: panel,webeditors
 
@@ -26,14 +18,7 @@ requests:
       - "{{BaseURL}}/fck/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php"
       - "{{BaseURL}}/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellcheckder.php"
       - "{{BaseURL}}/ueditor/php/getRemoteImage.php"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 5d36d276 (add new stuff)
-=======
-
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

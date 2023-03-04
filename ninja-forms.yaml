@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/ninja-forms/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/ninja-forms.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/ninja-forms.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

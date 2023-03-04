@@ -14,10 +14,6 @@ requests:
     attack: sniper
     threads: 100
 
-<<<<<<< HEAD
-    host-redirects: true
-    max-redirects: 2
-=======
     raw:
       - |
         GET / HTTP/1.1
@@ -26,7 +22,6 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         part: header

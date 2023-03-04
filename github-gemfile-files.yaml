@@ -1,40 +1,3 @@
-<<<<<<< HEAD
-id: github-gemfile-files
-
-info:
-  name: Github Gemfiles
-  author: hahwul
-  severity: info
-  description: Find github page files(Gemfile / Gemfile.lock)
-<<<<<<< HEAD
-  tags: github,exposure
-=======
-  tags: github,exposure,files
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Gemfile"
-      - "{{BaseURL}}/Gemfile.lock"
-
-    matchers-condition: or
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains(body, "https://rubygems.org")'
-          - 'contains(body, "source")'
-          - 'contains(body, "gem")'
-          - 'status_code == 200'
-        condition: and
-
-      - type: dsl
-        dsl:
-          - 'contains(body, "https://rubygems.org")'
-          - 'contains(body, "remote")'
-          - 'contains(body, "specs")'
-          - 'status_code == 200'
-=======
 id: github-gemfile-files
 
 info:
@@ -66,5 +29,4 @@ requests:
           - 'contains(body, "remote")'
           - 'contains(body, "specs")'
           - 'status_code == 200'
->>>>>>> 18ddf72b (add new stuff)
         condition: and

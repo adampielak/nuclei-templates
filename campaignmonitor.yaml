@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 id: campaignmonitor-takeover
 
 info:
@@ -18,25 +17,4 @@ requests:
         words:
           - '<strong>Trying to access your account?</strong>'
           - 'or <a href="mailto:help@createsend.com'
-=======
-id: campaignmonitor-takeover
-
-info:
-  name: campaignmonitor takeover detection
-  author: pdteam
-  severity: high
-  tags: takeover
-  reference: https://github.com/EdOverflow/can-i-take-over-xyz
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        words:
-          - '<strong>Trying to access your account?</strong>'
-          - 'or <a href="mailto:help@createsend.com'
->>>>>>> 18ddf72b (add new stuff)
         condition: and

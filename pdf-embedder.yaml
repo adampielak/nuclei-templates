@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/pdf-embedder/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/pdf-embedder.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/pdf-embedder.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

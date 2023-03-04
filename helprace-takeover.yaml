@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-id: helprace-takeover
-
-info:
-  name: Helprace Takeover Detection
-  author: pdteam
-  severity: high
-<<<<<<< HEAD
-  tags: takeover
-  reference: https://github.com/EdOverflow/can-i-take-over-xyz
-=======
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/115
-  tags: takeover,helprace
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-
-      - type: word
-        words:
-          - "Alias not configured!"
-          - "Admin of this Helprace account needs to set up domain alias"
-=======
 id: helprace-takeover
 
 info:
@@ -46,4 +18,3 @@ requests:
         words:
           - "Alias not configured!"
           - "Admin of this Helprace account needs to set up domain alias"
->>>>>>> 18ddf72b (add new stuff)

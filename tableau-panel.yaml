@@ -1,7 +1,5 @@
 id: tableau-panel
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 info:
   name: Tableau Python Server Default Page Detect
   author: pussycat0x
@@ -25,48 +23,3 @@ requests:
       - type: status
         status:
           - 200
-=======
-info:
-  name: Tableau Python Server Panel - Detect
-  author: pussycat0x
-  severity: info
-  description: Tableau Python Server panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    fofa-query: 'app="Tableau-Python-Server"'
-  tags: tableau,panel,python
-
-=======
-info:
-  name: Tableau Python Server Default Page Detect
-  author: pussycat0x
-  severity: info
-  metadata:
-    fofa-dork: 'app="Tableau-Python-Server"'
-  tags: tableau,panel,python
-
->>>>>>> 18ddf72b (add new stuff)
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Tableau Python Server</title>'
-
-      - type: status
-        status:
-          - 200
-<<<<<<< HEAD
-
-# Enhanced by md on 2023/01/18
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

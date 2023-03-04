@@ -4,24 +4,9 @@ info:
   name: Ruijie Networks-EWEB Network Management System RCE
   author: pikpikcu
   severity: critical
-<<<<<<< HEAD
-  reference:
-    - https://github.com/yumusb/EgGateWayGetShell_py/blob/main/eg.py
-<<<<<<< HEAD
-    - https://www.ruijienetworks.com
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10.0
-    cwe-id: CWE-77
-=======
-    - https://www.ruijienetworks.com # vendor homepage
->>>>>>> 5d36d276 (add new stuff)
-  tags: ruijie,rce,network
-=======
   reference: https://github.com/yumusb/EgGateWayGetShell_py/blob/main/eg.py
 #  vendor: https://www.ruijienetworks.com
   tags: ruijie,rce
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -48,15 +33,7 @@ requests:
     matchers:
       - type: regex
         regex:
-<<<<<<< HEAD
-<<<<<<< HEAD
-          - "root:.*:0:0:"
-=======
           - "root:.*:0:0"
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - "root:.*:0:0"
->>>>>>> 18ddf72b (add new stuff)
           - "nobody:x:0:0:"
         part: body
 

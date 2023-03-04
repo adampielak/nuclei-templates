@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/tablepress/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/tablepress.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/tablepress.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

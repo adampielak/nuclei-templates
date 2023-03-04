@@ -1,22 +1,10 @@
 id: securenvoy-panel
 
 info:
-  name: SecurEnvoy Admin Login Panel - Detect
+  name: SecurEnvoy Admin Login
   author: 0xrod
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  description: SecurEnvoy admin login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  tags: panel,securenvoy
-=======
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -38,13 +26,4 @@ requests:
 
       - type: status
         status:
-<<<<<<< HEAD
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2023/01/09
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - 200
->>>>>>> 18ddf72b (add new stuff)

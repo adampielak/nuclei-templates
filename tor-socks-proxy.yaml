@@ -1,16 +1,8 @@
 id: tor-socks-proxy
-<<<<<<< HEAD
-=======
-
->>>>>>> 5d36d276 (add new stuff)
 info:
   name: Detect tor SOCKS proxy
   author: geeknik
   severity: info
-<<<<<<< HEAD
-=======
-  tags: tech,tor,proxy
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

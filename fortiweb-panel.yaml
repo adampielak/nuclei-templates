@@ -1,23 +1,9 @@
 id: fortiweb-login
 
 info:
-  name: Fortinet FortiWeb Login Panel - Detect
+  name: Fortinet FortiWeb Login Panel
   author: PR3R00T
   severity: info
-<<<<<<< HEAD
-  description: Fortinet FortiWeb login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,fortinet,fortiweb,login
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
-
-=======
   tags: panel
 
 requests:
@@ -31,19 +17,16 @@ requests:
         GET /login HTTP/1.1
         Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
           - "Please login"
           - "ftnt-fortinet-grid"
           - "main-fortiweb.css"
         condition: and
+        part: body
 
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/15

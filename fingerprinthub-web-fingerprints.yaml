@@ -716,15 +716,13 @@ requests:
           - axis2-web
 
       - type: word
+        part: header
+        name: apache-cocoon
+
+      - type: word
         name: apache-druid
         words:
           - content="Apache Druid console"
-
-      - type: word
-        part: header
-        name: apache-cocoon
-        words:
-          - "X-Cocoon-Version"
 
       - type: word
         name: apache-flink
@@ -789,8 +787,11 @@ requests:
         name: apache-kylin
         words:
           - <meta http-equiv="refresh" content="1;url=kylin">
+
+      - type: word
+        name: apache-kylin
+        words:
           - href="/kylin/"
-        condition: or
 
       - type: word
         name: apache-mesos
@@ -916,10 +917,10 @@ requests:
           - <td>管理apusic应用服务器</td>
 
       - type: word
-        part: server
+        part: header
         name: apusic
         words:
-          - "Apusic Application Server"
+          - "Server: apusic application server"
 
       - type: word
         name: arab-portal
@@ -12873,13 +12874,6 @@ requests:
           - welcome to nginx on ubuntu!
 
       - type: word
-        name: openeuler
-        words:
-          - <title>Test Page for the Apache HTTP Server on openEuler Linux</title>
-          - <title>Test Page for the Nginx HTTP Server on openEuler</title>
-        condition: or
-
-      - type: word
         name: ucap-search-
         words:
           - src="http://so.kaipuyun.cn?sitecode=
@@ -14392,6 +14386,13 @@ requests:
           - 神盾fs<sup>3</sup>文档安全共享系统v2.0</div>
 
       - type: word
+        condition: and
+        name: yapi
+        words:
+          - YApi
+          - 可视化接口管理平台
+
+      - type: word
         name: yearning
         words:
           - id=subnet
@@ -15083,11 +15084,6 @@ requests:
         words:
           - Powered by <a href='http://zzzcms.com'>ZZZcms</a>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
       - type: word
         name: bitwarden
         words:
@@ -15099,20 +15095,4 @@ requests:
         words:
           - "Server: OpenBSD httpd"
 
-<<<<<<< HEAD
-      - type: word
-        name: Hunchentoot
-        part: header
-        words:
-          - "Server: Hunchentoot"
-
-      - type: word
-        name: weblate
-        words:
-          - Weblate
-          - <meta name="author" content="Michal Čihař" />
-        condition: and
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
 # Enhanced by cs on 2022/02/08

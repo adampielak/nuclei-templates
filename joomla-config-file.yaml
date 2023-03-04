@@ -1,26 +1,11 @@
 id: joomla-config-dist-file
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: Joomla! Config Dist File
-  author: oppsec
-  severity: low
-  description: configuration.php-dist is a file created by Joomla! to save Joomla settings.
-=======
-  name: Joomla! Configuration File - Detect
-  author: oppsec
-  severity: low
-  description: Joomla! configuration.php-dist file was detected.
->>>>>>> 5d36d276 (add new stuff)
-  tags: config,exposure,joomla
-=======
   name: Joomla Config Dist File
   author: oppsec
   severity: low
   description: configuration.php-dist is a file created by Joomla to save Joomla settings.
   tags: config,exposure
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -50,5 +35,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/02/09

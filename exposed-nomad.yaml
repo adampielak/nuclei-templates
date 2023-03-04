@@ -1,26 +1,11 @@
 id: exposed-nomad
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: Nomad - Exposed Jobs
-=======
-  name: Exposed Nomad Jobs
->>>>>>> 18ddf72b (add new stuff)
-  author: pdteam
-  severity: high
-  tags: nomad,devops,hashicorp,panel
-<<<<<<< HEAD
-=======
   name: Exposed Nomad Jobs
   author: pdteam
   severity: high
   tags: nomad,devops,hashicorp,panel
   reference: https://www.nomadproject.io/docs/internals/security
->>>>>>> 5d36d276 (add new stuff)
-=======
-  reference: https://www.nomadproject.io/docs/internals/security
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -48,14 +33,4 @@ requests:
 
       - type: status
         status:
-<<<<<<< HEAD
-<<<<<<< HEAD
           - 200
-
-# Enhanced by mp on 2022/07/15
-=======
-          - 200
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - 200
->>>>>>> 18ddf72b (add new stuff)

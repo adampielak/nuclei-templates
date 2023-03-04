@@ -1,51 +1,3 @@
-<<<<<<< HEAD
-id: gitlab-public-snippets
-
-info:
-  name: GitLab public snippets
-  author: pdteam
-  severity: info
-<<<<<<< HEAD
-  tags: gitlab,exposure,misconfig
-  reference:
-    - https://gist.github.com/vysecurity/20311c29d879e0aba9dcffbe72a88b10
-    - https://twitter.com/intigriti/status/1375078783338876929
-=======
-  reference:
-    - https://gist.github.com/vysecurity/20311c29d879e0aba9dcffbe72a88b10
-    - https://twitter.com/intigriti/status/1375078783338876929
-  metadata:
-    shodan-query: http.title:"GitLab"
-  tags: gitlab,exposure,misconfig
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/explore/snippets"
-      - "{{BaseURL}}/-/snippets"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-<<<<<<< HEAD
-          - '<title>Snippets · Explore · GitLab</title>'
-=======
-          - '<title>Snippets Â· Explore Â· GitLab</title>'
->>>>>>> 5d36d276 (add new stuff)
-
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        negative: true
-        condition: or
-        words:
-          - "No snippets found"
-          - "Nothing here."
-=======
 id: gitlab-public-snippets
 info:
   name: GitLab public snippets
@@ -78,4 +30,3 @@ requests:
           - "Nothing here."
         negative: true
         part: body
->>>>>>> 18ddf72b (add new stuff)

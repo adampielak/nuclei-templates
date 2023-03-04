@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-id: canny-takeover
-
-info:
-  name: Canny Takeover Detection
-  author: pdteam
-  severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/114
-  tags: takeover
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        words:
-          - 'Company Not Found'
-          - 'There is no such company. Did you enter the right URL?'
-        condition: and
-=======
 id: canny-takeover
 
 info:
@@ -41,4 +18,3 @@ requests:
           - 'Company Not Found'
           - 'There is no such company. Did you enter the right URL?'
         condition: and
->>>>>>> 18ddf72b (add new stuff)

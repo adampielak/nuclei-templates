@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/amp/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/amp.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/amp.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

@@ -1,24 +1,15 @@
 id: web-config
-
 info:
   name: Web Config file
-  author: Yash Anand @yashanand155,DhiyaneshDK
+  author: Yash Anand @yashanand155
   severity: info
-  reference: https://github.com/imhunterand/ApachSAL/blob/main/assets/exploits.json
   tags: config,exposure
 
 requests:
-<<<<<<< HEAD
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-=======
-  - method: GET
-    path:
-      - '{{BaseURL}}/web.config'
-      - '{{BaseURL}}/../../web.config'
->>>>>>> 5d36d276 (add new stuff)
 
     raw:
       - |

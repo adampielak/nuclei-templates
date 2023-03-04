@@ -27,20 +27,12 @@ requests:
           - contains(tolower(all_headers), 'x-amz-bucket')
           - contains(tolower(all_headers), 'x-amz-request')
           - contains(tolower(all_headers), 'x-amz-id')
-<<<<<<< HEAD
           - contains(tolower(all_headers), 'AmazonS3')
         part: header
-=======
-          - contains(tolower(all_headers), 'amazons3')
->>>>>>> 5d36d276 (add new stuff)
         condition: or
 
       - type: dsl
         dsl:
           - contains(tolower(all_headers), 'x-guploader-uploadid')
-<<<<<<< HEAD
         part: header
         negative: true
-=======
-        negative: true
->>>>>>> 5d36d276 (add new stuff)

@@ -1,18 +1,8 @@
 id: wordpress-detect
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: WordPress Detection
-  author: pdteam
-=======
   name: WordPress Detect
   author: pdteam,daffainfo,ricardomaia
->>>>>>> 5d36d276 (add new stuff)
-=======
-  name: WordPress Detect
-  author: pdteam,daffainfo,ricardomaia
->>>>>>> 18ddf72b (add new stuff)
   severity: info
   metadata:
     verified: true
@@ -23,28 +13,12 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    redirects: true
-    max-redirects: 2
-    matchers-condition: or
-=======
       - "{{BaseURL}}/wp-admin/install.php"
       - "{{BaseURL}}/feed/"
       - "{{BaseURL}}/?feed=rss2" # alternative if /feed/ is blocked
 
     stop-at-first-match: true
     matchers-condition: and
->>>>>>> 5d36d276 (add new stuff)
-=======
-      - "{{BaseURL}}/wp-admin/install.php"
-      - "{{BaseURL}}/feed/"
-      - "{{BaseURL}}/?feed=rss2" # alternative if /feed/ is blocked
-
-    stop-at-first-match: true
-    matchers-condition: and
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: regex
         regex:
@@ -58,38 +32,15 @@ requests:
           - '<!--[^>]+WP-Super-Cache'
         condition: or
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      - type: word
-        words:
-          - 'wp-login.php'
-          - '/wp-content/themes/'
-          - '/wp-includes/'
-          - 'name="generator" content="wordpress'
-          - '<!-- performance optimized by w3 total cache. learn more: http://www.w3-edge.com/wordpress-plugins/'
-        condition: or
-=======
       - type: status
         status:
           - 200
->>>>>>> 5d36d276 (add new stuff)
-=======
-      - type: status
-        status:
-          - 200
->>>>>>> 18ddf72b (add new stuff)
 
     extractors:
       - type: regex
         name: version_by_generator
         group: 1
         regex:
-<<<<<<< HEAD
-<<<<<<< HEAD
-          - 'content="WordPress ([0-9.]+)"'
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
           - '(?m)https:\/\/wordpress.org\/\?v=([0-9.]+)'
 
       - type: regex
@@ -103,7 +54,3 @@ requests:
         group: 1
         regex:
           - 'install\.min\.css\?ver=((\d+\.?)+)\b'
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

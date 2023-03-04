@@ -1,20 +1,9 @@
 id: verizon-router-panel
 
 info:
-<<<<<<< HEAD
   name: Verizon Router
   author: theamanrawat
   severity: info
-=======
-  name: Verizon Router Panel - Detect
-  author: theamanrawat
-  severity: info
-  description: Verizon router panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     shodan-query: http.title:"Verizon Router"
@@ -35,8 +24,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2023/01/20
->>>>>>> 5d36d276 (add new stuff)

@@ -1,43 +1,19 @@
 id: kevinlab-bems-sqli
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: KevinLAB BEMS 1.0 Unauthenticated SQL Injection/Authentication Bypass
-  author: gy741
-  severity: high
-  description: The application suffers from an unauthenticated SQL Injection vulnerability. Input passed through 'input_id' POST parameter in '/http/index.php' is not properly sanitised before being returned to the user or used in SQL queries.
-=======
   name: KevinLAB BEMS 1.0 - SQL Injection
   author: gy741
   severity: critical
   description: KevinLAB BEMS 1.0 contains a SQL injection vulnerability. Input passed through input_id POST parameter in /http/index.php is not properly sanitized before being returned to the user or used in SQL queries. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
->>>>>>> 5d36d276 (add new stuff)
-=======
-  name: KevinLAB BEMS 1.0 - SQL Injection
-  author: gy741
-  severity: critical
-  description: KevinLAB BEMS 1.0 contains a SQL injection vulnerability. Input passed through input_id POST parameter in /http/index.php is not properly sanitized before being returned to the user or used in SQL queries. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
->>>>>>> 18ddf72b (add new stuff)
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5655.php
     - https://www.exploit-db.com/exploits/50146
     - https://packetstormsecurity.com/files/163572/
-<<<<<<< HEAD
-<<<<<<< HEAD
-  tags: kevinlab,sqli
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-89
   tags: kevinlab,sqli,edb,packetstorm
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - raw:
@@ -59,13 +35,5 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 # Enhanced by mp on 2022/09/28
->>>>>>> 5d36d276 (add new stuff)
-=======
-
-# Enhanced by mp on 2022/09/28
->>>>>>> 18ddf72b (add new stuff)

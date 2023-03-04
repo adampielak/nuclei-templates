@@ -1,19 +1,10 @@
 id: hikvision-info-leak
 
 info:
-  name: Hikvision Configuration File - Detect
+  name: Hikvision Info Leak
   author: pikpikcu
   severity: medium
-<<<<<<< HEAD
-  description: Hikvision configuration file was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
-  tags: exposure,config,hikvision
-=======
   tags: exposure,config
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -37,10 +28,4 @@ requests:
       - type: word
         words:
           - "text/xml"
-<<<<<<< HEAD
         part: header
-
-# Enhanced by md on 2023/02/09
-=======
-        part: header
->>>>>>> 18ddf72b (add new stuff)

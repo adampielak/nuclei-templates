@@ -1,28 +1,11 @@
 id: lutron-iot-default-login
 
 info:
-<<<<<<< HEAD
   name: Lutron IOT Device Default Login
   reference: https://www.lutron.com
   author: geeknik
   severity: high
-<<<<<<< HEAD
-=======
-  name: Lutron IOT Device Default Login Panel - Detect
-  author: geeknik
-  severity: high
-  description: Lutron IOT Device Default login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  reference:
-    - https://www.lutron.com
-  tags: iot,default-login,lutron,panel
-=======
   tags: iot,default-login,lutron
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -55,8 +38,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by mp on 2023/01/29
->>>>>>> 5d36d276 (add new stuff)

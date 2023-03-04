@@ -1,53 +1,3 @@
-<<<<<<< HEAD
-id: open-stack-dashboard-login
-
-info:
-<<<<<<< HEAD
-  name: OpenStack Dashboard
-  author: dhiyaneshDK,hackergautam
-  severity: info
-  reference:
-    - https://www.exploit-db.com/ghdb/6464
-  tags: panel,openstack
-=======
-  name: OpenStack Dashboard Login Panel - Detect
-  author: dhiyaneshDK,hackergautam
-  severity: info
-  description: OpenStack Dashboard login panel was detected.
-  reference:
-    - https://www.exploit-db.com/ghdb/6464
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,openstack,edb
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/dashboard/auth/login/'
-      - '{{BaseURL}}/horizon/auth/login/?next=/horizon/'
-
-<<<<<<< HEAD
-    redirects: true
-=======
-    host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "<title>Login - OpenStack Dashboard</title>"
-      - type: status
-        status:
-          - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2022/12/01
->>>>>>> 5d36d276 (add new stuff)
-=======
 id: open-stack-dashboard-login
 
 info:
@@ -72,4 +22,3 @@ requests:
       - type: status
         status:
           - 200
->>>>>>> 18ddf72b (add new stuff)

@@ -7,18 +7,7 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/39591
     - https://cxsecurity.com/issue/WLB-2016030120
-<<<<<<< HEAD
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
-    cwe-id: CWE-22
-<<<<<<< HEAD
-=======
->>>>>>> 18ddf72b (add new stuff)
   tags: wordpress,wp-plugin,lfi,rfi
-=======
-  tags: lfi,rfi,edb,wordpress,wp-plugin
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

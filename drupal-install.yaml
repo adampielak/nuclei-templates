@@ -4,26 +4,6 @@ info:
   name: Drupal Install
   author: NkxxkN
   severity: low
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  metadata:
-    shodan-query: http.component:"drupal"
-  tags: exposure,drupal
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install.php?profile=default"
-<<<<<<< HEAD
-    redirects: true
-=======
-
-    host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
-    max-redirects: 1
-=======
   tags: exposure
 
 requests:
@@ -39,7 +19,6 @@ requests:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
         Accept: */*
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

@@ -4,18 +4,8 @@ info:
   name: Live view AXIS Network Camera
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-  reference:
-    - https://www.exploit-db.com/ghdb/6843
-<<<<<<< HEAD
-  tags: iot,axis,network
-=======
-  tags: axis,network,edb,iot
->>>>>>> 5d36d276 (add new stuff)
-=======
   reference: https://www.exploit-db.com/ghdb/6843
   tags: iot
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -23,16 +13,6 @@ requests:
     attack: sniper
     threads: 100
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    redirects: true
-=======
-    host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
-    max-redirects: 2
-    stop-at-first-match: true
-    matchers-condition: or
-=======
     raw:
       - |
         GET /view/viewer_index.shtml HTTP/1.1
@@ -42,7 +22,6 @@ requests:
         Accept: */*
         
     matchers-condition: and
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

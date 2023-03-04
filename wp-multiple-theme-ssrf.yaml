@@ -3,24 +3,8 @@ id: wp-multiple-theme-ssrf
 info:
   name: WordPress Multiple Themes - Unauthenticated Function Injection
   author: madrobot
-<<<<<<< HEAD
   severity: high
-<<<<<<< HEAD
-=======
-  severity: critical
->>>>>>> 5d36d276 (add new stuff)
-  description: Fifteen WordPress themes are susceptible to code injection using a version of epsilon-framework, due to lack of capability and CSRF nonce checks in AJAX actions.
-  reference:
-    - https://www.exploit-db.com/exploits/49327
-    - https://wpscan.com/vulnerability/10417
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cwe-id: CWE-94
-  tags: wordpress,rce,ssrf,edb,wpscan
-=======
   tags: wordpress,rce,ssrf
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

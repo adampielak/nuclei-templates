@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 id: wamp-server-configuration
 
 info:
@@ -31,29 +30,3 @@ requests:
       - type: status
         status:
           - 200
-=======
-id: wamp-server-configuration
-
-info:
-  name: default-wamp-server-page
-  author: pussycat0x
-  severity: medium
-  description: Wamp default page will expose sensitive configuration and vhosts.
-  reference: https://www.exploit-db.com/ghdb/6891.
-  tags: wamp,exposure
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains(tolower(body), "wampserver")'
-
-      - type: status
-        status:
-          - 200
->>>>>>> 5d36d276 (add new stuff)

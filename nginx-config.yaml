@@ -1,22 +1,9 @@
 id: nginx-config
 
 info:
-<<<<<<< HEAD
   name: Nginx Config file disclosure
   author: sheikhrishad
   severity: info
-=======
-  name: Nginx Config - Detect
-  author: sheikhrishad,geeknik
-  severity: info
-  description: Nginx configuration information was detected.
-  reference:
-    - https://nginx.org/en/
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
   tags: config,exposure,nginx
 
 requests:
@@ -41,13 +28,4 @@ requests:
 
       - type: status
         status:
-<<<<<<< HEAD
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by mp on 2023/02/05
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - 200
->>>>>>> 18ddf72b (add new stuff)

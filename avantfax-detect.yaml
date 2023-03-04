@@ -31,11 +31,6 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
 
     extractors:
       - type: regex
@@ -43,7 +38,3 @@ requests:
         group: 1
         regex:
           - '<p align="center">([0-9.]+)<\/p>'
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

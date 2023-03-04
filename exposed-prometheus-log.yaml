@@ -7,7 +7,6 @@ info:
   tags: exposure,prometheus,logs
 
 requests:
-<<<<<<< HEAD
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -20,12 +19,6 @@ requests:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
         Accept: */*
-=======
-  - method: GET
-    path:
-      - "{{BaseURL}}/prometheus"
-
->>>>>>> 5d36d276 (add new stuff)
     matchers-condition: and
     matchers:
       - type: word

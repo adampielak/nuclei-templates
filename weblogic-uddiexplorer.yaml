@@ -1,22 +1,13 @@
 id: weblogic-uddiexplorer
 info:
-  name: Oracle WebLogic UDDI Explorer Panel - Detect
+  name: Oracle WebLogic UDDI Explorer
   author: pdteam
-  severity: info
+  severity: low
   description: |
-    Oracle WebLogic UDDI Explorer panel was detected.
+    Oracle WebLogic UDDI Explorer allows authorized users to access and modify information about the web services published in the private WebLogic Server UDDI registries.
   reference:
     - https://www.tenable.com/plugins/was/112421
-<<<<<<< HEAD
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,oracle,weblogic,tenable
-
-=======
   tags: panel,oracle,weblogic
->>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
@@ -30,8 +21,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-
-# Enhanced by md on 2023/01/25
-=======
->>>>>>> 18ddf72b (add new stuff)

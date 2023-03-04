@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 id: disable-pad-service
 
 info:
@@ -25,36 +23,4 @@ file:
 
       - type: word
         words:
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
-id: disable-pad-service
-
-info:
-  name: Disable PAD service
-  author: pussycat0x
-  severity: info
-  description: |
-      To reduce the risk of unauthorized access, organizations should implement a security policy restricting unnecessary services such as the 'PAD' service.
-  reference:
-    - http://www.cisco.com/en/US/docs/ios-xml/ios/wan/command/wan-s1.html#GUID-C5497B77-3FD4-4D2F-AB08-1317D5F5473B
-  tags: cisco,config-audit,cisco-switch,router
-
-file:
-  - extensions:
-      - conf
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "no service pad"
-        negative: true
-
-      - type: word
-        words:
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
           - "configure terminal"

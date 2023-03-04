@@ -3400,17 +3400,6 @@ requests:
           - "Set-Cookie: laravel_session="
         part: header
 
-<<<<<<< HEAD
-=======
-      - type: word
-        name: new_laravel
-        words:
-          - "Set-Cookie: {{DN}}_session="
-          - "Set-Cookie: XSRF-TOKEN="
-        condition: and
-        part: header
-
->>>>>>> 5d36d276 (add new stuff)
       - type: word
         name: express
         words:
@@ -3680,36 +3669,9 @@ requests:
           - "<!-- BEGIN PAN_FORM_CONTENT -->"
           - "js/pan/"
         condition: and
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 18ddf72b (add new stuff)
 
       - type: word
         name: sailsjs
         part: header
         words:
           - "X-Powered-By: Sails"
-<<<<<<< HEAD
-
-      - type: word
-        name: tengine
-        part: server
-        words:
-          - "Tengine"
-
-      - type: word
-        name: tornado
-        part: header
-        words:
-          - "TornadoServer/"
-
-      - type: word
-        name: uvicorn
-        part: server
-        words:
-          - "uvicorn"
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)

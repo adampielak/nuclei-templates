@@ -4,18 +4,8 @@ info:
   name: TCP Config Information Exposed
   author: dhiyaneshDK
   severity: low
-<<<<<<< HEAD
-  reference:
-    - https://www.exploit-db.com/ghdb/6782
-<<<<<<< HEAD
-  tags: logs,config
-=======
-  tags: config,edb,logs
->>>>>>> 5d36d276 (add new stuff)
-=======
   reference: https://www.exploit-db.com/ghdb/6782
   tags: logs
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:

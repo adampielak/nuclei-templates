@@ -1,20 +1,6 @@
 id: mylittlebackup-panel
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: MyLittleBackup Panel
-=======
-  name: myLittleBackup Panel - Detect
->>>>>>> 18ddf72b (add new stuff)
-  author: nullfuzz
-  severity: info
-  description: |
-    myLittleBackup panel was detected.
-  reference:
-    - http://www.mylittlebackup.com/mlb/en/overview.aspx
-<<<<<<< HEAD
-=======
   name: myLittleBackup Panel - Detect
   author: nullfuzz
   severity: info
@@ -22,16 +8,10 @@ info:
     myLittleBackup panel was detected.
   reference:
     - http://www.mylittlebackup.com/mlb/en/overview.aspx
-=======
->>>>>>> 18ddf72b (add new stuff)
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
   metadata:
     verified: true
     shodan-query: http.html:"myLittleBackup"
@@ -59,13 +39,5 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 # Enhanced by md on 2023/01/24
->>>>>>> 5d36d276 (add new stuff)
-=======
-
-# Enhanced by md on 2023/01/24
->>>>>>> 18ddf72b (add new stuff)

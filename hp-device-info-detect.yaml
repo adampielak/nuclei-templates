@@ -1,37 +1,3 @@
-<<<<<<< HEAD
-id: hp-device-info-detect
-
-info:
-<<<<<<< HEAD
-  name: HP LaserJet
-=======
-  name: HP Device Info Detection
->>>>>>> 5d36d276 (add new stuff)
-  author: pussycat0x
-  severity: low
-  reference: https://www.exploit-db.com/ghdb/6905
-  tags: iot,hp
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/hp/device/DeviceInformation/View"
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Device Information"
-          - "hp"
-        condition: and
-
-      - type: status
-        status:
-<<<<<<< HEAD
-          - 200
-=======
-          - 200
->>>>>>> 5d36d276 (add new stuff)
-=======
 id: hp-device-info-detect
 info:
   name: HP LaserJet
@@ -65,4 +31,3 @@ requests:
       - type: status
         status:
           - 200
->>>>>>> 18ddf72b (add new stuff)

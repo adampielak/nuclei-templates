@@ -1,50 +1,3 @@
-<<<<<<< HEAD
-id: hadoop-unauth
-<<<<<<< HEAD
-info:
-  name: hadoop unauth
-  risk: High
-
-params:
-  - root: "{{.BaseURL}}"
-
-requests:
-  - method: GET
-    redirect: false
-    url: >-
-      {{.root}}/ws/v1/cluster/info
-    headers:
-      - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
-    detections:
-      - >-
-        StatusCode() == 200 && StringSearch("response", "hadoopVersion") && StringSearch("response", "resourceManagerVersionBuiltOn")
-=======
-
-info:
-  name: Apache Hadoop Unauth
-  author: pdteam
-  severity: low
-  tags: apache,hadoop,unauth
-
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/ws/v1/cluster/info'
-      - '{{BaseURL}}/ws/v1/cluster/apps/new-application'
-
-    matchers-condition: or
-    matchers:
-      - type: word
-        words:
-          - 'hadoopVersion'
-          - 'resourceManagerVersionBuiltOn'
-        condition: and
-
-      - type: word
-        words:
-          - 'javax.ws.rs.WebApplicationException'
->>>>>>> 5d36d276 (add new stuff)
-=======
 id: hadoop-unauth
 
 info:
@@ -70,4 +23,3 @@ requests:
       - type: word
         words:
           - 'javax.ws.rs.WebApplicationException'
->>>>>>> 18ddf72b (add new stuff)

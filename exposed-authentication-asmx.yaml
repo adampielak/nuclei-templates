@@ -1,28 +1,11 @@
 id: exposed-authentication.asmx
 
 info:
-  name: Authentication.asmx - Detect
+  name: Exposed Authentication.asmx
   author: DhiyaneshDk
-<<<<<<< HEAD
   severity: low
-<<<<<<< HEAD
-  reference:
-    - https://www.exploit-db.com/ghdb/6604
-=======
-  severity: info
-  description: Authentication Web Service authentication.asmx file was detected.
-  reference:
-    - https://www.exploit-db.com/ghdb/6604
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  tags: config,exposure,edb
-=======
   reference: https://www.exploit-db.com/ghdb/6604
   tags: config,exposure
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -45,5 +28,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by cs on 2023/02/13

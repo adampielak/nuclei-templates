@@ -1,41 +1,3 @@
-<<<<<<< HEAD
-id: whm-login-detect
-
-info:
-  name: WHM Login Panel - Detect
-  author: pussycat0x
-  severity: info
-<<<<<<< HEAD
-  reference:
-    - https://www.exploit-db.com/ghdb/7128
-=======
-  description: WHM login panel was detected.
-  reference:
-    - https://www.exploit-db.com/ghdb/7128
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  tags: edb,whm,panel,login
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "<title>WHM Login</title>"
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by md on 2023/01/25
-=======
 id: whm-login-detect
 info:
   name: WHM Login Detect
@@ -66,4 +28,3 @@ requests:
       - type: status
         status:
           - 200
->>>>>>> 18ddf72b (add new stuff)

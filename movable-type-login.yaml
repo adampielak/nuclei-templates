@@ -1,22 +1,9 @@
 id: movable-type-login
 
 info:
-  name: Movable Type Pro Login Panel - Detect
+  name: Movable Type Pro
   author: dhiyaneshDk
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  description: Movable Type Pro login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  metadata:
-    shodan-query: title:"サインイン | Movable Type Pro"
-=======
->>>>>>> 18ddf72b (add new stuff)
   tags: panel,movable
   metadata:
     shodan-query: 'title:"サインイン | Movable Type Pro"'
@@ -38,5 +25,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/29

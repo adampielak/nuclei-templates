@@ -1,20 +1,10 @@
 id: samba-config
 
 info:
-  name: Samba Config - Detect
+  name: Samba config file disclosure
   author: sheikhrishad
   severity: info
-<<<<<<< HEAD
-  description: Samba configuration information was detected.
-  reference: https://www.samba.org/samba/docs/using_samba/ch06.html
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: config,exposure,smb,samba
-=======
   tags: config,exposure,smb
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -37,10 +27,4 @@ requests:
 
       - type: status
         status:
-<<<<<<< HEAD
           - 200
-
-# Enhanced by mp on 2023/02/05
-=======
-          - 200
->>>>>>> 18ddf72b (add new stuff)

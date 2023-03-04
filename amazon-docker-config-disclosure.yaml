@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 id: amazon-docker-config-disclosure
 
 info:
@@ -24,16 +23,3 @@ requests:
           - 'AWSEBDockerrunVersion'
           - 'containerDefinitions'
         condition: and
-=======
-id: amazon-docker-config-disclosure
-name: Dockerrun AWS Configuration Exposure
-severity: medium
-
-requests:
-  - method: GET
-    paths:
-      - HOSTNAME/Dockerrun.aws.json
-    patterns:
-      - 'AWSEBDockerrunVersion'
-      - 'containerDefinitions'
->>>>>>> 5d36d276 (add new stuff)

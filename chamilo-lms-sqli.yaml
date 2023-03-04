@@ -1,19 +1,8 @@
 id: chamilo-lms-sqli
 
 info:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  name: Chamilo LMS SQL Injection
-  author: undefl0w
-  severity: high
-  description: Finds sql injection in Chamilo version 1.11.14
-=======
   name: Chamilo 1.11.14 - SQL Injection
   author: undefl0w
-=======
-  name: Chamilo 1.11.14 - SQL Injection
-  author: undefl0w
->>>>>>> 18ddf72b (add new stuff)
   severity: critical
   description: Chamilo 1.1.14 contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
   reference: https://packetstormsecurity.com/files/162572/Chamilo-LMS-1.11.14-Remote-Code-Execution.html
@@ -21,10 +10,6 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-89
-<<<<<<< HEAD
->>>>>>> 5d36d276 (add new stuff)
-=======
->>>>>>> 18ddf72b (add new stuff)
   tags: chamilo,sqli
 
 requests:

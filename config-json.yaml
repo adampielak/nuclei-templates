@@ -1,20 +1,9 @@
 id: config-json
 
 info:
-<<<<<<< HEAD
   name: Config File Exposure
   author: geeknik
   severity: medium
-=======
-  name: Configuration File - Detect
-  author: geeknik
-  severity: medium
-  description: Multiple configuration files were detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
   metadata:
     verified: true
     github-query: filename:config.json
@@ -41,8 +30,3 @@ requests:
       - type: status
         status:
           - 200
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2023/02/08
->>>>>>> 5d36d276 (add new stuff)

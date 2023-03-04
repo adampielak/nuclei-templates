@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 id: brother-printer-detect
 
 info:
@@ -30,28 +29,4 @@ requests:
 
       - type: status
         status:
-=======
-id: brother-printer-detect
-
-info:
-  name: Brother Printer
-  author: pussycat0x
-  severity: low
-  reference: https://www.exploit-db.com/ghdb/6889
-  tags: iot,printer,tech
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/general/status.html"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Brother Industries"
-
-      - type: status
-        status:
->>>>>>> 5d36d276 (add new stuff)
           - 200

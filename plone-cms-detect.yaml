@@ -5,15 +5,9 @@ info:
   author: cyllective
   severity: info
   description: Detects Plone CMS
-<<<<<<< HEAD
   tags: tech,plone,cms
   reference:
     - https://github.com/plone/Products.CMFPlone
-=======
-  reference:
-    - https://github.com/plone/Products.CMFPlone
-  tags: tech,plone,cms
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

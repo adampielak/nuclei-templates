@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-id: CVE-2021-31195
-=======
-id: ms-exchange-server-reflected-xss
->>>>>>> 18ddf72b (add new stuff)
-
-info:
-  name: MS Exchange Server XSS
-  author: infosecsanyam
-  severity: medium
-  reference:
-    - https://www.shodan.io/search?query=http.title%3A%22Outlook%22
-    - https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html
-<<<<<<< HEAD
-    - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31195
-    - https://nvd.nist.gov/vuln/detail/CVE-2021-31195
-    - https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-31195
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
-    cvss-score: 8.8
-    cve-id: CVE-2021-31195
-    cwe-id: CWE-79
-  metadata:
-    shodan-query: http.title:"Outlook"
-=======
 id: ms-exchange-server-reflected-xss
 
 info:
@@ -33,11 +7,7 @@ info:
   reference:
     - https://www.shodan.io/search?query=http.title%3A%22Outlook%22
     - https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html
->>>>>>> 5d36d276 (add new stuff)
-  tags: microsoft,exchange,owa,xss
-=======
   tags: miscrsoft,exchange,owa,xss
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -67,13 +37,4 @@ requests:
       - type: word
         words:
           - "text/html"
-<<<<<<< HEAD
         part: header
-<<<<<<< HEAD
-
-# Enhanced by cs 09/23/2022
-=======
->>>>>>> 5d36d276 (add new stuff)
-=======
-        part: header
->>>>>>> 18ddf72b (add new stuff)

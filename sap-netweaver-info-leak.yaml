@@ -4,18 +4,7 @@ info:
   name: SAP NetWeaver ICM Info page leak
   author: randomstr1ng
   description: Detection of SAP NetWeaver ABAP Webserver /public/info page
-<<<<<<< HEAD
-  reference:
-    - https://www.acunetix.com/vulnerabilities/web/sap-icf-sap-public-info-sensitive-information-disclosure/
-    - https://github.com/Jean-Francois-C/SAP-Security-Audit
-<<<<<<< HEAD
-=======
-  metadata:
-    shodan-query: http.favicon.hash:-266008933
->>>>>>> 5d36d276 (add new stuff)
-=======
   severity: medium
->>>>>>> 18ddf72b (add new stuff)
   tags: sap
   reference: |
       - https://www.acunetix.com/vulnerabilities/web/sap-icf-sap-public-info-sensitive-information-disclosure/

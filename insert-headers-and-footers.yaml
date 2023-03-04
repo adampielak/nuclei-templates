@@ -18,11 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/insert-headers-and-footers/readme.txt"
 
     payloads:
-<<<<<<< HEAD
       last_version: helpers/wordpress/plugins/insert-headers-and-footers.txt
-=======
-      last_version: ../../../helpers/wordpress/plugins/insert-headers-and-footers.txt
->>>>>>> 5d36d276 (add new stuff)
 
     extractors:
       - type: regex

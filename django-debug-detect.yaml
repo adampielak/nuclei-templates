@@ -2,15 +2,7 @@ id: django-debug
 
 info:
   name: Django Debug Method Enabled
-<<<<<<< HEAD
-<<<<<<< HEAD
-  author: dhiyaneshDK & hackergautam
-=======
   author: dhiyaneshDK,hackergautam
->>>>>>> 5d36d276 (add new stuff)
-=======
-  author: dhiyaneshDK,hackergautam
->>>>>>> 18ddf72b (add new stuff)
   severity: medium
   tags: django,debug
 

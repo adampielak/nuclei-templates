@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-id: unauth-ftp
-
-info:
-  name: FTP Anonymous Login
-  author: C3l3si4n
-  severity: medium
-<<<<<<< HEAD
-  reference:
-    - https://tools.ietf.org/html/rfc2577
-=======
-  reference: https://tools.ietf.org/html/rfc2577
->>>>>>> 5d36d276 (add new stuff)
-  tags: network,ftp
-
-network:
-  - inputs:
-      - data: "USER anonymous\r\nPASS nuclei\r\n"
-
-    host:
-      - "{{Host}}:21"
-      - "{{Hostname}}"
-
-    matchers:
-      - type: word
-        words:
-          - "Anonymous access allowed,"
-<<<<<<< HEAD
-        part: response
-=======
-        part: all
->>>>>>> 5d36d276 (add new stuff)
-=======
 id: unauth-ftp
 
 info:
@@ -53,4 +20,3 @@ network:
         words:
           - "Anonymous access allowed,"
         part: all
->>>>>>> 18ddf72b (add new stuff)

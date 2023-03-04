@@ -1,21 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-id: Jaspersoft-detect
-=======
 id: jaspersoft-detect
->>>>>>> 5d36d276 (add new stuff)
-=======
-id: jaspersoft-detect
->>>>>>> 18ddf72b (add new stuff)
 
 info:
   name: Jaspersoft detected
   author: koti2
   severity: info
-<<<<<<< HEAD
-=======
-  tags: tech,jaspersoft
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

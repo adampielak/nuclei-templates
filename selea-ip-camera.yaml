@@ -1,27 +1,11 @@
 id: selea-ip-camera
-<<<<<<< HEAD
 info:
   name: Detect Selea Targa IP OCR-ANPR Camera
   author: geeknik
   description: Various version of the Selea Targa IP OCR-ANPR Camera are vulnerable to an Unauthenticated RTP/RTSP/M-JPEG Stream Disclosure flaw
   reference: https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5619.php
   severity: info
-<<<<<<< HEAD
-  tags: iot
-=======
-
-info:
-  name: Detect Selea Targa IP OCR-ANPR Camera
-  author: geeknik
-  severity: info
-  description: Various version of the Selea Targa IP OCR-ANPR Camera are vulnerable to an Unauthenticated RTP/RTSP/M-JPEG Stream Disclosure flaw
-  reference:
-    - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5619.php
   tags: iot,selea,targa
->>>>>>> 5d36d276 (add new stuff)
-=======
-  tags: iot,selea,targa
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -43,18 +27,9 @@ requests:
         part: header
         words:
           - "SeleaCPSHttpServer"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
           - "selea_httpd"
           - "HttpServer/0.1"
         condition: or
->>>>>>> 5d36d276 (add new stuff)
-=======
-          - "selea_httpd"
-          - "HttpServer/0.1"
-        condition: or
->>>>>>> 18ddf72b (add new stuff)
       - type: word
         part: body
         words:

@@ -1,27 +1,11 @@
 id: tracer-sc-login
 
 info:
-  name: Tracer SC Login Panel - Detect
+  name: Tracer SC login panel
   author: geeknik
   severity: info
-<<<<<<< HEAD
-<<<<<<< HEAD
-  reference:
-    - https://www.trane.com/commercial/north-america/us/en/products-systems/building-management---automation/building-automation-systems/tracer-sc-plus.html
-=======
-  description: Tracer SC login panel was detected.
-  reference:
-    - https://www.trane.com/commercial/north-america/us/en/products-systems/building-management---automation/building-automation-systems/tracer-sc-plus.html
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  tags: tracer,trane,iot,panel,login
-=======
   reference: https://www.trane.com/commercial/north-america/us/en/products-systems/building-management---automation/building-automation-systems/tracer-sc-plus.html
   tags: tracer,trane,iot,panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -50,5 +34,3 @@ requests:
         part: header
         words:
           - "text/html"
-
-# Enhanced by md on 2023/01/18

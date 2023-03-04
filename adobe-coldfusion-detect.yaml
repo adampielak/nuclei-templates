@@ -8,15 +8,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.component:"Adobe ColdFusion"
-<<<<<<< HEAD
-<<<<<<< HEAD
-  tags: adobe,coldfusion
-=======
   tags: adobe,coldfusion,tech
->>>>>>> 5d36d276 (add new stuff)
-=======
-  tags: adobe,coldfusion,tech
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - method: GET
@@ -28,15 +20,7 @@ requests:
       - "{{BaseURL}}/CFIDE/administrator/images/componentutilslogin.jpg"
       - "{{BaseURL}}/cfide/administrator/images/componentutilslogin.jpg"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    redirects: true
-=======
     host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
-=======
-    host-redirects: true
->>>>>>> 18ddf72b (add new stuff)
     stop-at-first-match: true
     max-redirects: 2
     matchers:

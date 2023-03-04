@@ -13,10 +13,6 @@ requests:
     attack: sniper
     threads: 100
 
-<<<<<<< HEAD
-    redirects: true
-    max-redirects: 2
-=======
     raw:
       - |
         GET / HTTP/1.1
@@ -26,7 +22,6 @@ requests:
         Accept: */*
         
     matchers-condition: and
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

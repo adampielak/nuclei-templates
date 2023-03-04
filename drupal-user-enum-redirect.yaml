@@ -1,61 +1,3 @@
-<<<<<<< HEAD
-id: drupal-user-enum-redirect
-
-info:
-<<<<<<< HEAD
-  name: Drupal User Enumration [Redirect]
-  author: 0w4ys
-  severity: info
-  tags: drupal
-=======
-  name: Drupal User Enumeration [Redirect]
-  author: 0w4ys
-  severity: info
-  metadata:
-    verified: true
-    shodan-query: http.component:"Drupal"
-  tags: drupal,misconfig
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/user/0"
-      - "{{BaseURL}}/user/1"
-      - "{{BaseURL}}/user/2"
-      - "{{BaseURL}}/user/3"
-<<<<<<< HEAD
-    headers:
-      User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0"
-=======
-
-    stop-at-first-match: true
->>>>>>> 5d36d276 (add new stuff)
-    matchers-condition: and
-    matchers:
-      - type: regex
-        regex:
-<<<<<<< HEAD
-          - '(?i)Location: http(s|):\/\/[\w\.\-]+(\/ar|\/en|)\/users\/\w+'
-        part: header
-      - type: status
-        status:
-          - 301
-=======
-          - '(?i)Location: https?:\/\/[\w\.\-]+[:\/\w-]*\/users\/\w+'
-        part: header
-
-      - type: status
-        status:
-          - 301
-
->>>>>>> 5d36d276 (add new stuff)
-    extractors:
-      - type: regex
-        part: header
-        regex:
-          - 'users\/\w+'
-=======
 id: drupal-user-enum-redirect
 
 info:
@@ -89,4 +31,3 @@ requests:
         part: header
         regex:
           - 'users\/\w+'
->>>>>>> 18ddf72b (add new stuff)

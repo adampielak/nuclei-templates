@@ -14,16 +14,8 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 18ddf72b (add new stuff)
     redirects: true
-=======
-
-    host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
     max-redirects: 2
     matchers:
       - type: word

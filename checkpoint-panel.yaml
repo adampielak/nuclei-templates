@@ -1,54 +1,3 @@
-<<<<<<< HEAD
-id: checkpoint-panel
-
-info:
-<<<<<<< HEAD
-  name: Checkpoint Panel
-  author: 0x240x23elu
-  severity: info
-=======
-  name: Checkpoint Login Panel - Detect
-  author: 0x240x23elu
-  severity: info
-  description: Checkpoint login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
->>>>>>> 5d36d276 (add new stuff)
-  tags: panel,checkpoint
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/sslvpn/Login/Login"
-      - "{{BaseURL}}/Login/Login"
-    matchers-condition: and
-<<<<<<< HEAD
-    redirects: true
-=======
-    host-redirects: true
->>>>>>> 5d36d276 (add new stuff)
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        part: body
-        words:
-          - "Check Point Software Technologies Ltd. All rights reserved."
-          - "/Login/images/CompanyLogo.png"
-        condition: and
-      - type: word
-        part: header
-        words:
-          - "text/html"
-<<<<<<< HEAD
-=======
-
-# Enhanced by md on 2022/11/02
->>>>>>> 5d36d276 (add new stuff)
-=======
 id: checkpoint-panel
 
 info:
@@ -78,4 +27,3 @@ requests:
         part: header
         words:
           - "text/html"
->>>>>>> 18ddf72b (add new stuff)

@@ -3,12 +3,7 @@ info:
   name: Public shellscripts
   author: panch0r3d
   severity: low
-<<<<<<< HEAD
-  tags: bash,exposure,files
-
-=======
   tags: bash,exposure
->>>>>>> 18ddf72b (add new stuff)
 requests:
   - method: GET
     path:
@@ -29,47 +24,21 @@ requests:
       - "{{BaseURL}}/wp-setup.sh"
       - "{{BaseURL}}/deploy.sh"
       - "{{BaseURL}}/aws.sh"
-<<<<<<< HEAD
-      - "{{BaseURL}}/reminder.sh"
-      - "{{BaseURL}}/mysqlbackup.sh"
-      - "{{BaseURL}}/dev2local.sh"
-      - "{{BaseURL}}/local2dev.sh"
-      - "{{BaseURL}}/local2prod.sh"
-      - "{{BaseURL}}/prod2local.sh"
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - ".*?bin.*?sh"
-          - ".*?bin.*?bash"
-        condition: or
-
-=======
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
->>>>>>> 18ddf72b (add new stuff)
       - type: word
-        part: header
         words:
           - "application/x-sh"
           - "text/plain"
           - "text/x-sh"
+        part: header
         condition: or
-<<<<<<< HEAD
-
-      - type: status
-        status:
-          - 200
-=======
       - type: regex
         regex:
           - ".*?bin.*?sh"
           - ".*?bin.*?bash"
         part: body
         condition: or
->>>>>>> 18ddf72b (add new stuff)

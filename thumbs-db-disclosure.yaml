@@ -8,15 +8,6 @@ info:
   tags: exposure,files
 
 requests:
-<<<<<<< HEAD
-  - method: GET
-    path:
-      - "{{BaseURL}}/Thumbs.db"
-<<<<<<< HEAD
-=======
-
->>>>>>> 5d36d276 (add new stuff)
-=======
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -29,7 +20,6 @@ requests:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
         Accept: */*
->>>>>>> 18ddf72b (add new stuff)
     matchers-condition: and
     matchers:
       - type: binary

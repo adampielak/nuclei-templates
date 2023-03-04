@@ -4,22 +4,8 @@ info:
   name: Detect Home Assistant
   author: fabaff
   severity: info
-<<<<<<< HEAD
-=======
-  tags: tech,iot
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
-<<<<<<< HEAD
-  - method: GET
-    path:
-<<<<<<< HEAD
-      - "{{BaseURL}}:8123/"
-      - "{{BaseURL}}/"
-=======
-      - "{{BaseURL}}"
->>>>>>> 5d36d276 (add new stuff)
-=======
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -33,7 +19,6 @@ requests:
         Accept-Encoding: gzip, deflate
         Accept: */*
         
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:

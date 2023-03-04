@@ -8,18 +8,7 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/46320
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5511.php
-<<<<<<< HEAD
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
-    cvss-score: 8.6
-    cwe-id: CWE-22
-<<<<<<< HEAD
-=======
->>>>>>> 18ddf72b (add new stuff)
   tags: iot,camera,disclosure
-=======
-  tags: iot,camera,disclosure,edb
->>>>>>> 5d36d276 (add new stuff)
 
 requests:
   - payloads:

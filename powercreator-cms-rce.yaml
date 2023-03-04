@@ -12,15 +12,7 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-77
-<<<<<<< HEAD
-<<<<<<< HEAD
-  tags: rce,powercreator,intrusive
-=======
   tags: rce,powercreator,intrusive,fileupload
->>>>>>> 5d36d276 (add new stuff)
-=======
-  tags: rce,powercreator,intrusive,fileupload
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - raw:

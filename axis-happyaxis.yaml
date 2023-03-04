@@ -1,40 +1,3 @@
-<<<<<<< HEAD
-id: axis-happyaxis
-
-info:
-  name: Axis Happyaxis Exposure
-  author: dogasantos
-  severity: info
-<<<<<<< HEAD
-  tags: axis,axis2,middleware,exposure,apache
-=======
-  tags: axis,axis2,middleware,exposure,apache,files
->>>>>>> 5d36d276 (add new stuff)
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/axis2/axis2-web/HappyAxis.jsp"
-      - "{{BaseURL}}/axis/happyaxis.jsp"
-      - "{{BaseURL}}/axis2-web/HappyAxis.jsp"
-      - "{{BaseURL}}/happyaxis.jsp"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Axis Happiness Page"
-          - "Axis2 Happiness Page"
-          - "Examining Application Server"
-          - "Examining Version Service"
-          - "Examining System Properties"
-        condition: or
-
-      - type: status
-        status:
-          - 200
-=======
 id: axis-happyaxis
 
 info:
@@ -66,4 +29,3 @@ requests:
       - type: status
         status:
           - 200
->>>>>>> 18ddf72b (add new stuff)

@@ -1,22 +1,11 @@
 id: zabbix-server-login
 
 info:
-  name: Zabbix Login Panel - Detect
+  name: Zabbix Login
   author: dhiyaneshDK
   severity: info
-<<<<<<< HEAD
-  description: Zabbix login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    shodan-query: http.title:"zabbix-server"
-  tags: panel,zabbix
-=======
   reference: https://www.shodan.io/search?query=http.title%3A%22zabbix-server%3A+Zabbix%22
   tags: panel
->>>>>>> 18ddf72b (add new stuff)
 
 requests:
   - payloads:
@@ -37,5 +26,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/26

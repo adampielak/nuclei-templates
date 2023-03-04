@@ -2,37 +2,11 @@ id: server-status-localhost
 
 info:
   name: Server Status Disclosure
-<<<<<<< HEAD
-<<<<<<< HEAD
-  author: bauthard
-=======
   author: pdteam,geeknik
->>>>>>> 5d36d276 (add new stuff)
-=======
-  author: pdteam,geeknik
->>>>>>> 18ddf72b (add new stuff)
   severity: low
   tags: apache,debug
 
 requests:
-<<<<<<< HEAD
-  - method: GET
-    # Example of sending some headers to the servers
-    headers:
-      X-Client-IP: "127.0.0.1"
-      X-Remote-IP: "127.0.0.1"
-<<<<<<< HEAD
-      X-Remote-Addr: "127.0.0.1"
-      X-Forwarded-For: "127.0.0.1"
-      X-Originating-IP: "127.0.0.1"
-=======
-      X-True-IP: "127.0.0.1"
-
->>>>>>> 5d36d276 (add new stuff)
-    path:
-      - "{{BaseURL}}/server-status"
-
-=======
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
@@ -56,7 +30,6 @@ requests:
         X-Remote-Addr: 127.0.0.1
         X-Remote-IP: 127.0.0.1
         X-True-IP: 127.0.0.1
->>>>>>> 18ddf72b (add new stuff)
     matchers:
       - type: word
         words:
