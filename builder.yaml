@@ -19,29 +19,36 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt install jq -y
+          sudo apt install gzip -y
           python -m pip install -r .github/scripts/requirements.txt
 
       - name: Check if update available
         id: update
         run: |
-          LOCAL="$(cat db.json | jq -r .version)"
+          LOCAL="$(cat VERSION)"
           REMOTE="$(python .github/scripts/builder.py get-latest)"
 
           [[ "${LOCAL}" != "${REMOTE}" ]] && STATUS="true" || STATUS="false"
+          [[ "${{ github.event_name }}" == "workflow_dispatch" ]] && STATUS="true"
+
           echo "::set-output name=available::$STATUS"
+          echo "${REMOTE}" > VERSION
 
       - name: Building & update database...
         if: steps.update.outputs.available == 'true'
         id: build
         run: |
-          python .github/scripts/builder.py 1>db.json
+          OUT="db.json"
+
+          python .github/scripts/builder.py 1>$OUT
+          gzip -cf $OUT > $OUT.gz
+
           echo "::set-output name=changes::$(git status -s | wc -l)"
 
       - name: Commit changes
         if: steps.build.outputs.changes > 0
         run: |
-          git config --local user.email "me@dw1.io"
+          git config --local user.email "dwisiswant0@users.noreply.github.com"
           git config --local user.name "Dwi Siswanto"
           git add .
           git commit -m "Update DB [$(date)] :robot:"

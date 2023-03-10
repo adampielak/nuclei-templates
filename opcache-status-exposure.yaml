@@ -1,14 +1,21 @@
 id: opcache-status-exposure
 
-name: OPcache Status Exposure
-severity: low
-  
+info:
+  name: OPcache Status Exposure
+  author: pdteam
+  severity: low
+  tags: config,exposure,status
+
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/opcache-status/"
-      - "HOSTNAME/php-opcache-status/"
-      - "HOSTNAME/opcache-status/opcache.php"
-    patterns:
-      - "<th>opcache_enabled</th>"
-      - "<th>opcache_hit_rate</th>"
+    path:
+      - "{{BaseURL}}/opcache-status/"
+      - "{{BaseURL}}/php-opcache-status/"
+      - "{{BaseURL}}/opcache-status/opcache.php"
+    matchers:
+      - type: word
+        words:
+          - "<th>opcache_enabled</th>"
+          - "<th>opcache_hit_rate</th>"
+        condition: and
+        part: body
