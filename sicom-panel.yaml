@@ -1,5 +1,4 @@
 id: sicom-mgrng-login
-
 info:
   name: Sicom MGRNG - Administrative Login Found
   author: sullo
@@ -11,7 +10,6 @@ info:
     cvss-score: 3.7
     cwe-id: CWE-668
   tags: sicom,mgrng,panel
-
 requests:
   - method: GET
     path:
@@ -21,7 +19,6 @@ requests:
       - type: status
         status:
           - 200
-
       - type: word
         part: body
         words:

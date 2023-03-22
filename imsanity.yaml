@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/imsanity/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/imsanity.txt
+      last_version: ../../../helpers/wordpress/plugins/imsanity.txt
 
     extractors:
       - type: regex

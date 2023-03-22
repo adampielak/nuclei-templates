@@ -1,5 +1,4 @@
 id: gradle-cache-node-detect
-
 info:
   name: Gradle Enterprise Build Cache Node Detect
   author: Adam Crosser
@@ -7,17 +6,14 @@ info:
   reference:
     - https://gradle.com
   tags: panel,gradle,cache
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers:
       - type: regex
         regex:
           - "<span>Gradle Enterprise Build Cache Node (.*)</span>"
-
     extractors:
       - type: regex
         part: body

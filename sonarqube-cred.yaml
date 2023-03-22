@@ -3,6 +3,7 @@ id: sonarqube-cred
 info:
   name: Sonarqube default credentials
   risk: High
+
 requests:
   - method: POST
     redirect: false

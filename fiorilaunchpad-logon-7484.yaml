@@ -1,5 +1,4 @@
 id: fiorilaunchpad-logon
-
 info:
   name: FioriLaunchpad Logon
   author: dhiyaneshDK
@@ -7,12 +6,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6793
   tags: panel
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?saml2=disabled'
-
     matchers-condition: and
     matchers:
       - type: word

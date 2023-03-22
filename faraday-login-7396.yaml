@@ -1,5 +1,4 @@
 id: faraday-login
-
 info:
   name: Faraday Login
   author: dhiyaneshDK
@@ -7,18 +6,15 @@ info:
   metadata:
     shodan-query: html:"faradayApp"
   tags: panel,faraday
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/#/login'
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - 'ng-app="faradayApp">'
-
       - type: status
         status:
           - 200

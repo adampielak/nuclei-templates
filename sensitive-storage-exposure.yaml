@@ -7,7 +7,7 @@ info:
   description: Searches for sensitive keys file,logs,debugbar,app.
   reference:
     - https://www.exploit-db.com/ghdb/6304
-  tags: expose,listing,config,logs,storage,edb,files
+  tags: expose,listing,config,logs,storage
 
 requests:
   - method: GET
@@ -18,7 +18,6 @@ requests:
       - "{{BaseURL}}/server/storage/"
       - "{{BaseURL}}/intikal/storage/"
       - "{{BaseURL}}/elocker_old/storage/"
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -28,7 +27,6 @@ requests:
           - "oauth-private.key"
           - "oauth-private.key"
         condition: and
-
       - type: status
         status:
           - 200

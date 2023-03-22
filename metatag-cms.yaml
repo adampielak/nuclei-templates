@@ -5,8 +5,7 @@ info:
   author: dadevel
   severity: info
   description: Generic CMS Detection using html meta generator tag
-  reference:
-    - https://www.w3schools.com/tags/att_meta_name.asp
+  reference: https://www.w3schools.com/tags/att_meta_name.asp
   tags: tech,cms
 
 requests:
@@ -14,7 +13,7 @@ requests:
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:

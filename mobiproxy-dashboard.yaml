@@ -6,8 +6,8 @@ info:
   severity: medium
   metadata:
     verified: true
-    shodan-dork: http.title:"MobiProxy"
-  tags: dashboard,exposure,mobiproxy
+    shodan-query: http.title:"MobiProxy"
+  tags: dashboard,exposure,mobiproxy,misconfig
 
 requests:
   - method: GET

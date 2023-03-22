@@ -1,4 +1,4 @@
-id: open-proxy-localhost
+id: open-proxy-http-portscan
 
 info:
   name: Open Proxy to Other Web Ports via Proxy's localhost Interface

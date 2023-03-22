@@ -1,7 +1,7 @@
 id: java-rmi-detect
 
 info:
-  name: Java RMI Protocol Detection
+  name: Detect Java RMI Protocol
   author: F1tz
   severity: info
   tags: network,rmi,java

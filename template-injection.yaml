@@ -4,12 +4,14 @@ type: fuzz
 info:
   name: Template Injection
   risk: High
+
 # origin: gonna come from Burp
 payloads:
-  - '${3*313373133731337}'
-  - '${{"{{"}}3*313373133731337{{"}}"}}'
-  - '<%= 3 * 313373133731337 %>'
-  - '#{ 3 * 313373133731337 }'
+    - '${3*313373133731337}'
+    - '${{"{{"}}3*313373133731337{{"}}"}}'
+    - '<%= 3 * 313373133731337 %>'
+    - '#{ 3 * 313373133731337 }'
+
 requests:
   - generators:
       - Query("{{.payload}}")
@@ -31,3 +33,4 @@ requests:
     detections:
       - >-
         StringSearch("response", "940119401194011") && (StringCount("response", "940119401194011") > StringCount("oresponse", "940119401194011"))
+

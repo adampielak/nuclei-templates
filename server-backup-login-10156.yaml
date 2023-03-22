@@ -1,5 +1,4 @@
 id: server-backup-login
-
 info:
   name: Server Backup Manager SE Login
   author: dhiyaneshDKi,pathtaga
@@ -7,12 +6,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6949
   tags: paneil,idera
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/login.zul'
-
     matchers-condition: and
     matchers:
       - type: word

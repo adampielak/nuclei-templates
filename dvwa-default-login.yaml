@@ -51,7 +51,7 @@ requests:
         kval:
           - PHPSESSID
 
-    host-redirects: true
+    redirects: true
     matchers:
       - type: word
         words:

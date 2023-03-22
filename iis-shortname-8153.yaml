@@ -1,5 +1,4 @@
 id: iis-shortname
-
 info:
   name: iis-shortname
   author: nodauf
@@ -9,7 +8,6 @@ info:
     - https://github.com/lijiejie/IIS_shortname_Scanner
     - https://www.exploit-db.com/exploits/19525
   tags: fuzz
-
 requests:
   - raw:
       - |
@@ -17,25 +15,21 @@ requests:
         Host: {{Hostname}}
         Origin: {{BaseURL}}
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
-
       - |
         GET /*~1*/a.aspx' HTTP/1.1
         Host: {{Hostname}}
         Origin: {{BaseURL}}
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
-
       - |
         OPTIONS /N0t4xist*~1*/a.aspx HTTP/1.1
         Host: {{Hostname}}
         Origin: {{BaseURL}}
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
-
       - |
         OPTIONS /*~1*/a.aspx' HTTP/1.1
         Host: {{Hostname}}
         Origin: {{BaseURL}}
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
-
     req-condition: true
     matchers:
       - type: dsl

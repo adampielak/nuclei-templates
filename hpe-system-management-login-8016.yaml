@@ -1,16 +1,13 @@
 id: hpe-system-management-login
-
 info:
   name: HPE System Management Login
   author: divya_mudgal
   severity: info
   tags: hpe,tech,panel
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/cpqlogin.htm"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -19,7 +16,6 @@ requests:
         words:
           - "HPE System Management Homepage"
           - "/proxy/ssllogin"
-
     extractors:
       - type: regex
         part: body

@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/limit-login-attempts-reloaded/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/limit-login-attempts-reloaded.txt
+      last_version: ../../../helpers/wordpress/plugins/limit-login-attempts-reloaded.txt
 
     extractors:
       - type: regex

@@ -1,5 +1,4 @@
 id: identity-services-engine
-
 info:
   name: Identity Services Engine
   author: dhiyaneshDK
@@ -7,13 +6,11 @@ info:
   metadata:
     shodan-query: http.title:"Identity Services Engine"
   tags: panel
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/admin/'
-
     matchers-condition: and
     matchers:
       - type: word
