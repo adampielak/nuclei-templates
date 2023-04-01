@@ -1,9 +1,14 @@
 id: zbiornik
 
 info:
-  name: Zbiornik
+  name: Zbiornik User Name Information - Detect
   author: dwisiswant0
+  description: Zbiornik user name information check was conducted.
   severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
   tags: osint,osint-porn,zbiornik
 
 self-contained: true
@@ -22,3 +27,5 @@ requests:
         part: body
         words:
           - "INFO"
+
+# Enhanced by cs 03/17/2023

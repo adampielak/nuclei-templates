@@ -1,4 +1,5 @@
 id: neo4j-browser
+
 info:
   name: Exposed Neo4j Browser
   author: DhiyaneshDK
@@ -6,16 +7,19 @@ info:
   metadata:
     shodan-query: http.title:"Neo4j Browser"
   tags: neo4j,exposure,unauth
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/browser/'
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>Neo4j Browser</title>'
+
       - type: status
         status:
           - 200

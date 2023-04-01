@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/creame-whatsapp-me/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/creame-whatsapp-me.txt
+      last_version: helpers/wordpress/plugins/creame-whatsapp-me.txt
 
     extractors:
       - type: regex

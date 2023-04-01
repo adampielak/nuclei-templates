@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/megamenu/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/megamenu.txt
+      last_version: helpers/wordpress/plugins/megamenu.txt
 
     extractors:
       - type: regex
