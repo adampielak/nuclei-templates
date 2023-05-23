@@ -14,8 +14,10 @@ info:
     - https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html
     - https://graphql.security
   tags: graphql
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - raw:
       - |
         POST /graphql HTTP/1.1

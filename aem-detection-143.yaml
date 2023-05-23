@@ -1,4 +1,5 @@
 id: aem-detection
+
 info:
   name: Favicon based AEM Detection
   severity: info
@@ -10,11 +11,13 @@ info:
     - https://medium.com/@Asm0d3us/weaponizing-favicon-ico-for-bugbounties-osint-and-what-not-ace3c214e139
     - https://github.com/devanshbatham/FavFreak
     - https://github.com/sansatart/scrapts/blob/master/shodan-favicon-hashes.csv
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /libs/granite/core/content/login/favicon.ico HTTP/1.1
@@ -22,6 +25,7 @@ requests:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept-Encoding: gzip, deflate
         Accept: */*
+        
     matchers-condition: and
     matchers:
       - type: dsl

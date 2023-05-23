@@ -1,14 +1,17 @@
 id: httpd-config
+
 info:
   name: Httpd Config file disclosure
   author: sheikhrishad
   severity: info
   tags: config,exposure,httpd
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /httpd.conf HTTP/1.1
@@ -21,6 +24,7 @@ requests:
           - "LoadModule"
           - "# LoadModule"
         condition: and
+
       - type: status
         status:
           - 200

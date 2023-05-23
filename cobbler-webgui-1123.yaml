@@ -1,4 +1,5 @@
 id: cobbler-webgui
+
 info:
   name: Cobbler WebGUI Detection
   author: c-sh0
@@ -7,17 +8,20 @@ info:
   metadata:
     shodan-query: http.title:"Cobbler Web Interface"
   tags: cobbler,webserver
+
 requests:
   - method: GET
     redirects: true
     max-redirects: 2
     path:
       - "{{BaseURL}}/cobbler_web"
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         part: body
         words:

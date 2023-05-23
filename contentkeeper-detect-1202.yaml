@@ -1,4 +1,5 @@
 id: contentkeeper-detect
+
 info:
   name: ContentKeeper Cloud Detection
   author: geeknik
@@ -6,11 +7,13 @@ info:
   description: ContentKeeper Cloud is the next evolution of cloud filtering that provides schools a seamless and secure way to enable safer and more effective hybrid learning.
   reference: https://www.contentkeeper.com/
   tags: contentkeeper,panel
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /cgi-bin/ck/domenu.cgi HTTP/1.1
@@ -23,11 +26,13 @@ requests:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - "ContentKeeper Technologies</div>"
           - "ContentKeeper</span>.com"
         condition: and
+
       - type: word
         words:
           - "text/html"

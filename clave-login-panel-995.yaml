@@ -1,14 +1,17 @@
 id: clave-login-panel
+
 info:
   name: Clave login panel
   author: __Fazal
   severity: info
   tags: panel,clave
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /admin.php HTTP/1.1
@@ -19,6 +22,7 @@ requests:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - "Clave"

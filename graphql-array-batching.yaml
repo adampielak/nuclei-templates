@@ -14,8 +14,10 @@ info:
   remediation: |
     Deactivate or limit Batching in your GraphQL engine.
   tags: graphql
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - raw:
       - |
         POST /graphql HTTP/1.1

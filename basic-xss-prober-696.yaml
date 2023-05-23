@@ -1,10 +1,13 @@
 id: basic-xss-prober
+
 info:
   name: Basic XSS Prober
   author: nadino
   severity: low
+
   # Basic XSS prober
   # Manual testing needed for exploitation
+
 requests:
   - method: GET
     path:

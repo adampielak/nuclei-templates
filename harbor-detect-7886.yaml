@@ -3,16 +3,19 @@ info:
   name: Harbor Detect
   author: pikpikcu
   severity: info
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "<title>Harbor</title>"
         part: body
+
       - type: status
         status:
           - 200

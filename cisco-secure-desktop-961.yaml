@@ -1,14 +1,17 @@
 id: cisco-secure-desktop
+
 info:
   name: Cisco Secure Desktop
   author: pdteam
   severity: info
   tags: cisco,panel
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /CACHE/sdesktop/install/start.htm HTTP/1.1
@@ -21,6 +24,7 @@ requests:
           - "WebLaunch"
         part: body
         condition: and
+
       - type: status
         status:
           - 200

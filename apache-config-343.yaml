@@ -1,14 +1,17 @@
 id: apache-config
+
 info:
   name: Apache Config file disclosure
   author: sheikhrishad
   severity: low
   tags: config,exposure,apache
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /apache.conf HTTP/1.1
@@ -22,6 +25,7 @@ requests:
           - '</Directory>'
         condition: and
         part: body
+
       - type: word
         words:
           - '<VirtualHost'

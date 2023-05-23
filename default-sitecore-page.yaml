@@ -9,11 +9,12 @@ info:
   reference: |
     https://www.sitecore.com/
   metadata:
+    max-request: 1
     verified: "true"
     shodan-query: http.title:"Welcome to Sitecore"
   tags: tech,sitecore,cms
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

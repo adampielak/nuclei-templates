@@ -3,6 +3,7 @@ id: php-debug-bar
 info:
   name: PHP Debug bar
   risk: High
+
 requests:
   - method: GET
     redirect: true
@@ -11,3 +12,4 @@ requests:
     detections:
       - >-
         StatusCode() == 200 && StringSearch("response", '{"id":"')
+

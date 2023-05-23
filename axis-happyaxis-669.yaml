@@ -1,9 +1,11 @@
 id: axis-happyaxis
+
 info:
   name: Axis Happyaxis Exposure
   author: dogasantos
   severity: info
   tags: axis,axis2,middleware,exposure,apache
+
 requests:
   - method: GET
     path:
@@ -11,6 +13,7 @@ requests:
       - "{{BaseURL}}/axis/happyaxis.jsp"
       - "{{BaseURL}}/axis2-web/HappyAxis.jsp"
       - "{{BaseURL}}/happyaxis.jsp"
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -22,6 +25,7 @@ requests:
           - "Examining Version Service"
           - "Examining System Properties"
         condition: or
+
       - type: status
         status:
           - 200

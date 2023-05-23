@@ -10,13 +10,16 @@ requests:
       - "{{BaseURL}}"
     matchers-condition: and
     matchers:
+
       - type: regex
         part: header
         regex:
           - "Apache+"
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: kval
         part: header

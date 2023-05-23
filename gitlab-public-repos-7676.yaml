@@ -1,17 +1,20 @@
 id: gitlab-public-repos
+
 info:
   name: GitLab public repositories
   author: ldionmarcil
   severity: info
   tags: gitlab
   reference: |
-    - https://twitter.com/ldionmarcil/status/1370052344562470922
-    - https://github.com/ldionmarcil/gitlab-unauth-parser
+      - https://twitter.com/ldionmarcil/status/1370052344562470922
+      - https://github.com/ldionmarcil/gitlab-unauth-parser
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /api/v4/projects HTTP/1.1
@@ -26,6 +29,7 @@ requests:
         part: header
         words:
           - "Set-Cookie: _gitlab_session="
+
       - type: word
         part: body
         words:

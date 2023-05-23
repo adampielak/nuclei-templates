@@ -1,14 +1,17 @@
 id: glpi-telemetry-disclosure
+
 info:
   name: GLPI Telemetry Disclosure
   author: dogasantos
   severity: info
   tags: glpi,exposure
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/ajax/telemetry.php"
       - "{{BaseURL}}/glpi/ajax/telemetry.php"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -16,6 +19,7 @@ requests:
           - '"uuid":'
           - '"glpi":'
         condition: and
+
       - type: status
         status:
           - 200

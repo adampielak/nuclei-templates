@@ -1,14 +1,17 @@
 id: drupal-install
+
 info:
   name: Drupal Install
   author: NkxxkN
   severity: low
   tags: exposure
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /install.php?profile=default HTTP/1.1

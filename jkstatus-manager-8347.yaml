@@ -1,8 +1,10 @@
 id: jkstatus-manager
+
 info:
   name: JK Status Manager
   author: bauthard
   severity: low
+
 requests:
   - method: GET
     headers:

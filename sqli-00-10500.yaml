@@ -3,6 +3,8 @@ type: fuzz
 info:
   name: SQL Injection on Parameter 01
   risk: High
+
+
 payloads:
   - >-
     '
@@ -28,6 +30,7 @@ payloads:
     %u2018
   - >-
     /*
+
 requests:
   - generators:
       - Query("[[.original]]{{.payload}}")

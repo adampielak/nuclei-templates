@@ -1,13 +1,16 @@
 id: dotcms-admin-panel
+
 info:
   name: dotAdmin Panel
   author: impramodsargar
   severity: info
   tags: panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/dotAdmin/"
+
     matchers-condition: and
     matchers:
       - type: word

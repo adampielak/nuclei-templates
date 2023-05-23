@@ -1,14 +1,9 @@
 id: ace-admin-dashboard
 
 info:
-  name: Ace Admin Dashboard - Detect
+  name: Ace Admin Dashboard Exposure
   author: tess
   severity: medium
-  description: Ace Admin dashboard page was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
   metadata:
     verified: true
     shodan-query: title:"Dashboard - Ace Admin"
@@ -25,7 +20,7 @@ requests:
         part: body
         words:
           - "Dashboard - Ace Admin"
-          - "overview & stats"
+          - "overview &amp; stats"
         condition: and
 
       - type: word
@@ -36,5 +31,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/03/08

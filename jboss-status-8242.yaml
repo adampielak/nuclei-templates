@@ -1,15 +1,18 @@
 id: jboss-web-console
+
 info:
   name: JBoss Management Console Server Information
   author: dhiyaneshDK
   severity: low
   reference: https://www.exploit-db.com/ghdb/5215
   tags: jboss,unauth
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /web-console/ServerInfo.jsp HTTP/1.1
@@ -24,6 +27,7 @@ requests:
           - "Application Server"
           - "Management Console"
         condition: and
+
       - type: status
         status:
           - 200

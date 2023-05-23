@@ -1,16 +1,20 @@
 id: basic-xss-prober
+
 info:
   name: Basic XSS Prober
   author: nadino,geeknik
   severity: low
   tags: xss
+
   # Basic XSS prober
   # Manual testing needed for exploitation
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /%61%27%22%3e%3c%69%6e%6a%65%63%74%61%62%6c%65%3e HTTP/1.1
@@ -24,10 +28,12 @@ requests:
         words:
           - "\"><injectable>"
         part: body
+
       - type: word
         words:
           - "text/html"
         part: header
+
       - type: status
         status:
           - 200

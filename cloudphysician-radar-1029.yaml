@@ -1,4 +1,5 @@
 id: cloudphysician-radar
+
 info:
   name: Cloudphysician RADAR
   author: dhiyaneshDK
@@ -7,11 +8,13 @@ info:
   tags: panel
   metadata:
     shodan-query: 'http.title:"Cloudphysician RADAR"'
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /login HTTP/1.1

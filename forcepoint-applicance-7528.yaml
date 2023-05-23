@@ -1,4 +1,5 @@
 id: forcepoint-applicance
+
 info:
   name: Forcepoint Appliance
   author: dhiyaneshDK
@@ -6,11 +7,13 @@ info:
   metadata:
     shodan-query: 'http.title:"Forcepoint Appliance"'
   tags: panel,forcepoint
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET / HTTP/1.1
@@ -23,6 +26,7 @@ requests:
       - type: word
         words:
           - '<title>Forcepoint Appliance</title>'
+
       - type: status
         status:
           - 200

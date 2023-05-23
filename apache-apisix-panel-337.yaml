@@ -1,4 +1,5 @@
 id: apache-apisix-panel
+
 info:
   name: Apache APISIX Panel detect
   author: pikpikcu
@@ -6,16 +7,19 @@ info:
   metadata:
     fofa-query: title="Apache APISIX Dashboard"
   tags: apache,apisix,panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/user/login?redirect=%2F"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>Apache APISIX Dashboard</title>'
+
       - type: status
         status:
           - 200

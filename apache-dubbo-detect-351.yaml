@@ -6,10 +6,12 @@ info:
   metadata:
     fofa-query: app="APACHE-dubbo"
   tags: apache,dubbo,tech
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers:
       - type: word
         part: header

@@ -10,8 +10,10 @@ info:
   classification:
     cwe-id: CWE-200
   tags: docs,arcgis,cms,panel
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/portal/portalhelp/en/'

@@ -1,16 +1,12 @@
 id: appsmith-web-login
 
 info:
-  name: Appsmith User Login - Panel Detect
+  name: Appsmith Web Log In Panel
   author: powerexploit
   severity: info
-  description: Appsmith user login panel was detected.
+  description: Appsmith is a low code, open-source developer tool to build internal applications quickly. You can drag and drop pre-built widgets to build UI on a grid-style canvas.
   reference:
     - https://www.appsmith.com
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
     verified: true
     shodan-query: http.title:"appsmith"
@@ -31,5 +27,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/10/31

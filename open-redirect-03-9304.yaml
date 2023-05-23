@@ -4,6 +4,7 @@ type: fuzz
 info:
   name: Open Redirect FUZZ on Path 01
   risk: low
+
 variables:
   - prefix: |
       http://
@@ -11,6 +12,7 @@ variables:
   - dest: |
       google.com
       example.com
+
 # origin: gonna come from Burp
 payloads:
   - '{{.dest}}'
@@ -37,6 +39,7 @@ payloads:
   - '/%5c{{.prefix}}{{.dest}}/%2f%2e%2e'
   - '/〱{{.prefix}}{{.dest}}/%2f%2e%2e'
   - '@{{.prefix}}{{.dest}}'
+
 requests:
   - generators:
       - Path("{{.payload}}", "*")

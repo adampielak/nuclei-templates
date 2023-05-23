@@ -1,4 +1,5 @@
 id: airflow-panel
+
 info:
   name: Airflow Admin login
   author: pdteam
@@ -6,11 +7,13 @@ info:
   tags: panel,apache,airflow
   metadata:
     shodan-query: title:"Sign In - Airflow"
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login/"
       - "{{BaseURL}}/admin/airflow/login"
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -19,6 +22,7 @@ requests:
           - "Airflow - Login"
           - "Sign In - Airflow"
         condition: or
+
       - type: status
         status:
           - 200

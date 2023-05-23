@@ -1,13 +1,16 @@
 id: go-anywhere-client
+
 info:
   name: GoAnywhere client login detection
   author: iamthefrogy
   severity: info
   tags: panel,goanywhere,login
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/webclient/Login.xhtml"
+
     redirects: true
     max-redirects: 2
     matchers:

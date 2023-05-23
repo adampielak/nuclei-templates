@@ -1,13 +1,16 @@
 id: github-enterprise-detect
+
 info:
   name: Detect Github Enterprise
   author: ehsahil
   severity: info
   tags: panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login"
+
     redirects: true
     max-redirects: 2
     matchers:

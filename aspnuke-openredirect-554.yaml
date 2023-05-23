@@ -1,9 +1,11 @@
 id: aspnuke-openredirect
+
 info:
   name: ASP-Nuke Open Redirect
   author: pdteam
   severity: low
   tags: aspnuke,redirect
+
 requests:
   - method: GET
     path:

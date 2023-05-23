@@ -10,8 +10,10 @@ info:
   classification:
     cwe-id: CWE-200
   tags: api,arcgis,cms
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/server/sdk/rest/index.html'

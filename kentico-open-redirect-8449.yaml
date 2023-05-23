@@ -2,11 +2,14 @@ id: kentico-open-redirect
 info:
   name: Kentico Open Redirect
   risk: Low
+
 params:
   - root: "{{.BaseURL}}"
   - dest: "bing.com"
+
 replicate:
   prefixes: 'kentico'
+
 requests:
   - method: GET
     url: >-
@@ -16,3 +19,4 @@ requests:
     detections:
       - >-
         (StatusCode() >= 300 && StatusCode() < 400) && (StringSearch("resHeaders", "Location: http://{{.dest}}") || StringSearch("resHeaders", "Location: https://{{.dest}}")
+

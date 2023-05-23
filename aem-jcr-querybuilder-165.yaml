@@ -1,9 +1,11 @@
 id: aem-jcr-querybuilder
+
 info:
   author: DhiyaneshDk
   name: Query JCR role via QueryBuilder Servlet
   severity: info
   tags: aem
+
 requests:
   - raw:
       - |
@@ -16,11 +18,13 @@ requests:
         Connection: close
         Upgrade-Insecure-Requests: 1
         Cache-Control: max-age=0
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - '"success":true'

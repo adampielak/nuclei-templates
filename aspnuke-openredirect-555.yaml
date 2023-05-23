@@ -1,14 +1,17 @@
 id: aspnuke-openredirect
+
 info:
   name: ASP-Nuke Open Redirect
   author: pdteam
   severity: low
   tags: aspnuke,redirect
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /gotoURL.asp?url=google.com&id=43569 HTTP/1.1

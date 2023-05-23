@@ -1,8 +1,10 @@
 id: bigip-config-utility
+
 info:
   name: BIG-IP Configuration Utility detected
   author: dwisiswant0
   severity: info
+
 requests:
   - method: GET
     path:

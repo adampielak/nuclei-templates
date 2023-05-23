@@ -3,7 +3,6 @@ id: Config file exposure
 info:
   name: Config file exposure
   description: This template can be used to detect config files containing sensitive information.
-  author: rahulkadavil
   severity: Low
   tags: exposure
 

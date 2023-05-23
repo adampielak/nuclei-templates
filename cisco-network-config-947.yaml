@@ -1,15 +1,18 @@
 id: cisco-network-config
+
 info:
   name: Cisco System Network Configuration Exposure
   author: DhiyaneshDk
   severity: low
   reference: https://www.exploit-db.com/ghdb/5430
   tags: config,exposure
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /CGI/Java/Serviceability?adapter=device.statistics.configuration HTTP/1.1
@@ -21,6 +24,7 @@ requests:
         words:
           - "Network Configuration"
         part: body
+
       - type: status
         status:
           - 200

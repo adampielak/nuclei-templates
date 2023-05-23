@@ -1,4 +1,5 @@
 id: bigbluebutton-detect
+
 info:
   name: BigBlueButton Detect
   author: pikpikcu
@@ -6,16 +7,19 @@ info:
   metadata:
     shodan-query: http.title:"BigBlueButton"
   tags: tech,bigbluebutton
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>BigBlueButton</title>"
+
       - type: status
         status:
           - 200

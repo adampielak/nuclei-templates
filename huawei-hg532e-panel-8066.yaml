@@ -1,4 +1,5 @@
 id: huawei-hg532e-panel
+
 info:
   name: Huawei HG532e Detection
   author: idealphase
@@ -10,16 +11,20 @@ info:
   metadata:
     shodan-query: http.html:"HG532e"
   tags: huawei,panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
+
       - type: word
         part: body
         words:
           - "<title>HG532e</title>"
+
       - type: status
         status:
           - 200

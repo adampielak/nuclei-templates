@@ -1,4 +1,5 @@
 id: attitude-theme-open-redirect
+
 info:
   name: WordPress Attitude Themes 1.1.1 Open Redirection
   author: 0x_Akoko
@@ -6,10 +7,12 @@ info:
   description: A vulnerability in WordPress Attitude Themes allows remote attackers to inject an arbitrary URL into the 'goto.php' endpoint which will redirect the victim to it.
   reference: https://cxsecurity.com/issue/WLB-2020030185
   tags: wordpress,wp-theme,redirect
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/themes/Attitude/go.php?https://example.com/"
+
     matchers:
       - type: regex
         regex:

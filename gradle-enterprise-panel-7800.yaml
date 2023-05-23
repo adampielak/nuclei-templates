@@ -1,13 +1,16 @@
 id: gradle-enterprise-panel
+
 info:
   name: Gradle Enterprise Panel Detect
   author: Adam Crosser
   severity: info
   tags: panel,gradle
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and

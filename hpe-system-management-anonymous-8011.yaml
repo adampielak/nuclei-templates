@@ -1,13 +1,16 @@
 id: hpe-system-management-anonymous-access
+
 info:
   name: HPE System Management Anonymous Access
   author: divya_mudgal
   severity: low
   tags: hp,unauth
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/chpstrt.php?chppath=Home"
+
     matchers-condition: and
     matchers:
       - type: word

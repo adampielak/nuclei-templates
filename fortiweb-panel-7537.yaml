@@ -1,9 +1,11 @@
 id: fortiweb-login
+
 info:
   name: Fortinet FortiWeb Login Panel
   author: PR3R00T
   severity: info
   tags: panel
+
 requests:
   - method: GET
     path:
@@ -17,6 +19,7 @@ requests:
           - "main-fortiweb.css"
         condition: and
         part: body
+
       - type: status
         status:
           - 200

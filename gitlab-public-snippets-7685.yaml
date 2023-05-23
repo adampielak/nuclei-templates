@@ -5,18 +5,21 @@ info:
   severity: info
   tags: gitlab
   reference: |
-    - https://gist.github.com/vysecurity/20311c29d879e0aba9dcffbe72a88b10
-    - https://twitter.com/intigriti/status/1375078783338876929
+        - https://gist.github.com/vysecurity/20311c29d879e0aba9dcffbe72a88b10
+        - https://twitter.com/intigriti/status/1375078783338876929
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/explore/snippets"
       - "{{BaseURL}}/-/snippets"
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>Snippets · Explore · GitLab</title>'
+
       - type: status
         status:
           - 200

@@ -4,6 +4,7 @@ info:
   author: yashanand155
   severity: low
   tags: panel,jmx
+
 requests:
   - method: GET
     path:

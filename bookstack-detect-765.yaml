@@ -1,4 +1,5 @@
 id: bookstack-detect
+
 info:
   name: BookStack detect
   author: cyllective
@@ -6,10 +7,12 @@ info:
   description: Detects BookStack
   tags: tech,bookstack
   reference: https://github.com/BookStackApp/BookStack
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -18,6 +21,7 @@ requests:
         words:
           - '<title>BookStack</title>'
           - '<span class="logo-text">BookStack</span>'
+
     extractors:
       - type: regex
         part: body

@@ -3,8 +3,10 @@ type: fuzz
 info:
   name: Random Fuzz on Param Basic
   risk: Info
+
 params:
   - length: '1000'
+
 origin:
   method: GET
   redirect: false
@@ -12,11 +14,11 @@ origin:
     - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
   url: >-
     {{.URL}}
+
 # variables:
-
 #   - prefix: |
-
 #       ..
+
 payloads:
   - >-
     '
@@ -44,6 +46,7 @@ payloads:
     %ff
   - >-
     °
+
 requests:
   - generators:
       - Query("{{.payload}}")

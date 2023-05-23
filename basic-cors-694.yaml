@@ -1,15 +1,18 @@
 id: basic-cors-misconfig
+
 info:
   name: Basic CORS misconfiguration
   author: nadino
   severity: info
   tags: cors
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
     headers:
       Origin: https://evil.com
+
     matchers:
       - type: word
         words:

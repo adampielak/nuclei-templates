@@ -1,14 +1,17 @@
 id: go-anywhere-client
+
 info:
   name: GoAnywhere client login detection
   author: iamthefrogy
   severity: info
   tags: panel
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /webclient/Login.xhtml HTTP/1.1

@@ -1,11 +1,14 @@
 id: aws-access-key
+
 info:
   name: AWS Access Key ID
   author: gaurang
   severity: low
+
 file:
   - extensions:
       - all
+
     extractors:
       - type: regex
         regex:

@@ -1,4 +1,5 @@
 id: apache-tomcat-snoop
+
 info:
   name: Apache Tomcat example page disclosure - snoop
   author: pdteam
@@ -6,11 +7,13 @@ info:
   description: The following example scripts that come with Apache Tomcat v4.x - v7.x and can be used by attackers to gain information about the system. These scripts are also known to be vulnerable to cross site scripting (XSS) injection.
   reference: https://www.rapid7.com/db/vulnerabilities/apache-tomcat-example-leaks
   tags: apache
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /examples/jsp/snp/snoop.jsp HTTP/1.1
@@ -23,6 +26,7 @@ requests:
       - type: word
         words:
           - 'Request URI: /examples/jsp/snp/snoop.jsp'
+
       - type: status
         status:
           - 200

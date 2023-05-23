@@ -4,6 +4,7 @@ info:
   author: Yash Anand @yashanand155
   severity: low
   tags: panel
+
 requests:
   - method: GET
     path:

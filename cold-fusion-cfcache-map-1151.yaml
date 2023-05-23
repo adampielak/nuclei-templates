@@ -1,15 +1,18 @@
 id: cold-fusion-cfcache-map
+
 info:
   name: Discover Cold Fusion cfcache.map Files
   reference: https://securiteam.com/windowsntfocus/5bp081f0ac/
   author: geeknik
   severity: low
   tags: exposure,coldfusion,adobe
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /cfcache.map HTTP/1.1
@@ -24,6 +27,7 @@ requests:
           - "Mapping="
           - "SourceTimeStamp="
         condition: and
+
       - type: status
         status:
           - 200

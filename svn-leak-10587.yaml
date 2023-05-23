@@ -3,13 +3,16 @@ info:
   name: SVN Leak Source
   risk: Medium
   confidence: Certain
+
 params:
   - root: '{{.BaseURL}}'
+
 variables:
   - svnfile: |
       .svn/entries
       .svn/all-wcprops
       CVS/Entries
+
 requests:
   - method: GET
     redirect: false

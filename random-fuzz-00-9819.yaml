@@ -4,8 +4,10 @@ level: 1
 info:
   name: Random Fuzz on Header Basic
   risk: Info
+
 params:
   - length: '1000'
+
 origin:
   method: GET
   redirect: false
@@ -13,8 +15,10 @@ origin:
     - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
   url: >-
     {{.BaseURL}}/%00
+
 variables:
   - head: File("{{.Resources}}/lite-headers.txt")
+
 payloads:
   - >-
     '
@@ -44,6 +48,7 @@ payloads:
     °
   - >-
     /////////
+
 requests:
   - generators:
       - Header("{{.payload}}", "{{.head}}")

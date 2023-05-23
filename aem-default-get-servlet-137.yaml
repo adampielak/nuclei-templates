@@ -5,6 +5,8 @@ info:
   severity: low
   reference: https://speakerdeck.com/0ang3el/hunting-for-security-bugs-in-aem-webapps?slide=43
   tags: aem
+
+
 requests:
   - method: GET
     path:
@@ -69,6 +71,7 @@ requests:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'jcr:createdBy'

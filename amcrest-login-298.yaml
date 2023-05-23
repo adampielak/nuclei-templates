@@ -1,4 +1,5 @@
 id: amcrest-login
+
 info:
   name: Amcrest Login
   author: DhiyaneshDK
@@ -8,11 +9,13 @@ info:
     shodan-dork: html:"amcrest"
     google-dork: intext:"amcrest" "LDAP User"
   tags: panel,camera
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET / HTTP/1.1
@@ -27,6 +30,7 @@ requests:
           - "Amcrest Technologies"
           - "LDAPUser"
         condition: and
+
       - type: status
         status:
           - 200

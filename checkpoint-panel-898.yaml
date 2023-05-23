@@ -1,9 +1,11 @@
 id: checkpoint-panel
+
 info:
   name: Checkpoint Panel
   author: 0x240x23elu
   severity: info
   tags: panel,checkpoint
+
 requests:
   - method: GET
     path:

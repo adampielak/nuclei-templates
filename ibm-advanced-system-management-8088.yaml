@@ -1,4 +1,5 @@
 id: ibm-advanced-system-management
+
 info:
   name: IBM Advanced System Management
   author: dhiyaneshDK
@@ -6,10 +7,12 @@ info:
   tags: panel
   metadata:
     shodan-query: 'http.title:"Advanced System Management"'
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/cgi-bin/cgi'
+
     matchers-condition: and
     matchers:
       - type: word

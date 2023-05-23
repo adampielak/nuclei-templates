@@ -1,8 +1,10 @@
 id: graphql
+
 info:
   name: GraphQL API
   author: NkxxkN
   severity: info
+
 requests:
   - method: POST
     path:

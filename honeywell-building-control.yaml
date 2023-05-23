@@ -4,11 +4,12 @@ info:
   name: Honeywell Building Control
   author: dhiyaneshDK
   severity: info
-  tags: panel,iot
   metadata:
-    shodan-query: 'html:"Honeywell Building Control"'
+    max-request: 1
+    shodan-query: html:"Honeywell Building Control"
+  tags: panel,iot
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

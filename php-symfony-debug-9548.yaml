@@ -2,8 +2,10 @@ id: php-symfony-debug
 info:
   name: Symfony Debug bar
   risk: High
+
 params:
   - root: '{{.BaseURL}}'
+
 requests:
   - method: GET
     redirect: false

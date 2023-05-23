@@ -13,8 +13,10 @@ info:
     - https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html
     - https://graphql.security/
   tags: graphql
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/graphql?query={__typename}"

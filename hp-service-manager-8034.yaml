@@ -1,4 +1,5 @@
 id: hp-service-manager
+
 info:
   name: HP Service Manager
   author: dhiyaneshDK
@@ -6,11 +7,13 @@ info:
   metadata:
     shodan-query: http.title:"HP Service Manager"
   tags: panel,hp,service
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/sm935/index.do'
       - '{{BaseURL}}/sm/ess.do'
+
     matchers-condition: and
     matchers:
       - type: regex

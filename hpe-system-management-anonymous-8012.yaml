@@ -1,14 +1,17 @@
 id: hpe-system-management-anonymous-access
+
 info:
   name: HPE System Management Anonymous Access
   author: divya_mudgal
   severity: low
   tags: hp,unauth
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /chpstrt.php?chppath=Home HTTP/1.1

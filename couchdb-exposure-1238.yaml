@@ -4,6 +4,7 @@ info:
   author: organiccrap
   severity: low
   tags: panel
+
 requests:
   - method: GET
     path:
@@ -18,6 +19,7 @@ requests:
           - Erlang OTP/
         part: header
         condition: and
+
       - type: status
         status:
           - 200

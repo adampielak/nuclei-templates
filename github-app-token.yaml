@@ -2,7 +2,7 @@ id: github-app-token
 
 info:
   name: Github App Token
-  author: tanq16,DhiyaneshDK
+  author: tanq16
   severity: medium
   tags: token,file,github
 
@@ -13,4 +13,4 @@ file:
     extractors:
       - type: regex
         regex:
-          - "\b((?:ghu|ghs)_[a-zA-Z0-9]{36})\b"
+          - "gh[us]_.{36}"

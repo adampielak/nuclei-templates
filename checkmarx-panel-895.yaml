@@ -1,9 +1,11 @@
 id: checkmarx-panel-detect
+
 info:
   name: Checkmarx WebClient detector
   author: joanbono
   severity: info
   tags: panel
+
 requests:
   - method: GET
     path:

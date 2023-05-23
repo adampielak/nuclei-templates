@@ -4,11 +4,13 @@ info:
   author: geeknik
   description: Cacti is a complete network graphing solution -- https://www.cacti.net/
   severity: info
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/cacti/"
+
     matchers-condition: and
     matchers:
       - type: status
@@ -20,10 +22,12 @@ requests:
           - "Login to Cacti"
           - "The Cacti Group"
         condition: and
+
       - type: regex
         part: header
         regex:
           - Cacti+
+
     extractors:
       - type: kval
         part: header
