@@ -1,9 +1,9 @@
 id: smashrun
 
 info:
-  name: SmashRun User Name Information - Detect
+  name: SmashRun
   author: dwisiswant0
-  description: SmashRun user name information check was conducted.
+  description: This OSINT template looks for information about a user name.
   severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
@@ -27,5 +27,3 @@ requests:
         part: body
         words:
           - "Miles run overall"
-
-# Enhanced by cs 03/17/2023

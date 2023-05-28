@@ -1,16 +1,11 @@
 id: gogs-panel
 
 info:
-  name: Gogs Login Panel - Detect
+  name: Gogs (Go Git Service) - Sign In Page
   author: DhiyaneshDk,daffainfo
-  severity: info
-  description: Gogs login panel was detected.
   reference:
     - https://gogs.io/
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
+  severity: info
   metadata:
     verified: true
     shodan-query: title:"Sign In - Gogs"
@@ -40,5 +35,3 @@ requests:
         group: 1
         regex:
           - 'Version: ([0-9.]+) Page:'
-
-# Enhanced by md on 2022/11/16

@@ -1,24 +1,38 @@
-id: openai-api-key
-
 info:
+  id: openai-api-key
   name: OpenAI API Key
-  author: DhiyaneshDK
-  severity: info
-  reference:
-    - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/openai.yml
-    - https://platform.openai.com/docs/api-reference
-    - https://platform.openai.com/docs/api-reference/authentication
-  metadata:
-    verified: "true"
-  tags: openai,token,exposure
+  author: twitter/drfabiocastro
+  description: Template to detect OpenAI API keys in code repositories.
+  severity: Low
+  classification:
+    country: any
+    tags:
+      - openai
+      - security
 
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  matcher-condition: or
 
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - "(sk-[a-zA-Z0-9]{48})"
+  requests:
+      method: GET
+      path: 
+        - "/"
+      description: Attempt to access the repository's main page
+
+  matchers:
+    - pattern: "OPENAI_API_KEY"
+      type: body
+      description: OpenAI API key found in source code
+    - pattern: "(sk-[a-zA-Z0-9]{48})"
+      type: body
+      description: OpenAI API key found in source code
+      
+  whitelist:
+    domains:
+      - openai.com
+    type: domain
+    description: Example whitelist for OpenAI.com
+    
+  response:
+    - status: 
+      - 200
+      description: Successful response from server

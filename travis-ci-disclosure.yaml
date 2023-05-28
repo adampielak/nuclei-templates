@@ -29,9 +29,8 @@ requests:
       - type: word
         part: body
         words:
-          - 'before_script:'
-          - 'jobs:'
-          - 'language:'
+          - 'secure:'
+          - 'env:'
         condition: and
 
       - type: word

@@ -3,15 +3,9 @@ id: slurm-hpc-dashboard
 info:
   name: Slurm HPC Dashboard - Detect
   author: ritikchaddha
-  severity: medium
+  severity: low
   description: |
-    Slurm HPC Dashboard was detected.
-  reference:
-    - https://grafana.com/grafana/dashboards/4323-slurm-dashboard/
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
-    cwe-id: CWE-200
+    It exposes the Slurm HPC dashboard to the unauth users.
   metadata:
     verified: true
     shodan-query: title:"Slurm HPC Dashboard"
@@ -33,5 +27,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by cs on 2023/03/17

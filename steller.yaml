@@ -1,9 +1,9 @@
 id: steller
 
 info:
-  name: Steller User Name Information - Detect
+  name: steller
   author: dwisiswant0
-  description: Steller user name information check was conducted.
+  description: This OSINT template looks for information about a user name.
   severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
@@ -27,5 +27,3 @@ requests:
         part: body
         words:
           - " on Steller</title>"
-
-# Enhanced by cs 03/17/2023

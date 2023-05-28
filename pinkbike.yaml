@@ -1,9 +1,9 @@
 id: pinkbike
 
 info:
-  name: PinkBike User Name Information - Detect
+  name: PinkBike
   author: dwisiswant0
-  description: PinkBike user name information check was conducted.
+  description: This OSINT template looks for information about a user name.
   severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
@@ -27,5 +27,3 @@ requests:
         part: body
         words:
           - "on Pinkbike</title>"
-
-# Enhanced by cs 03/17/2023

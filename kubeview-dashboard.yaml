@@ -1,15 +1,11 @@
 id: kubeview-dashboard
 
 info:
-  name: KubeView Dashboard - Detect
+  name: KubeView Dashboard Exposure
   author: ja1sh
-  severity: info
+  severity: low
   description: |
-    KubeView dashboard was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
+    An attacker can detect the public instance of a KubeView dashboard
   metadata:
     verified: "true"
     shodan-query: http.favicon.hash:-379154636
@@ -30,5 +26,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/03/07
