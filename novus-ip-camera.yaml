@@ -8,8 +8,8 @@ info:
     - https://www.exploit-db.com/ghdb/8002
   metadata:
     verified: true
-    google-query: intitle:"NoVus IP camera" -com
-  tags: camera,novus,edb,iot,panel
+    google-dork: intitle:"NoVus IP camera" -com
+  tags: iot,panel,camera,novus
 
 requests:
   - method: GET

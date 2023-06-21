@@ -25,7 +25,7 @@ requests:
         part: body
         regex:
           - 'Copyright [1-9]\d*'
-          - '© [1-9]\d*'
+          - 'Â© [1-9]\d*'
           - '&copy; [1-9]\d*'
           - '&#169; [1-9]\d*'
 
@@ -34,6 +34,6 @@ requests:
         part: body
         regex:
           - 'Copyright [1-9]\d*'
-          - '© [1-9]\d*'
+          - 'Â© [1-9]\d*'
           - '&copy; [1-9]\d*'
           - '&#169; [1-9]\d*'

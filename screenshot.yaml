@@ -8,7 +8,7 @@ info:
   tags: headless,screenshot
 
 variables:
-  file: "{{url_encode(BaseURL)}}"
+  file: "{{Hostname}}"
 
 headless:
   - steps:

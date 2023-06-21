@@ -8,16 +8,8 @@ fingerprint:
     request_headers: {}
     request_data: ''
     status_code: 0
-    headers: {}
+    headers:
+      server: apisix
     keyword:
-      - <title>apache apisix dashboard</title>
+      - '{"error_msg":"404 Route Not Found"}'
     favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword: []
-    favicon_hash:
-      - 6d07440dcda38480ac6fd8c32edf0102

@@ -12,11 +12,10 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     shodan-query: http.component:"Dynamicweb"
   tags: panel,dynamicweb
 
-http:
+requests:
   - raw:
       - |
         GET /Admin/Access/default.aspx HTTP/1.1

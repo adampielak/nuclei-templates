@@ -10,5 +10,5 @@ fingerprint:
     status_code: 0
     headers: {}
     keyword:
-      - https://www.adminer.org
+      - ://www.adminer.org/' target="_blank" rel="noreferrer
     favicon_hash: []

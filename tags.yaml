@@ -2,6 +2,8 @@
   - - 74cms
 adminer:
   - - adminer
+adobe-experience-manager:
+  - - aem
 adobe-magento:
   - - magento
 alibaba-fastjson:
@@ -15,6 +17,8 @@ apache-airflow:
 apache-ambari:
   - - ambari
 apache-apisix:
+  - - apisix
+apache-apisix-dashboard:
   - - apisix
 apache-axis2:
   - - axis
@@ -34,12 +38,18 @@ apache-guacamole:
 apache-hadoop:
   - - hadoop
 apache-http:
-  - - apache
-    - mod-proxy
+  - - mod-proxy
+  - - mod-jk
+    - apache
+apache-nifi:
+  - - nifi
 apache-ofbiz:
   - - ofbiz
     - apache
   - - ofbiz
+apache-ranger:
+  - - ranger
+    - apache
 apache-shiro:
   - - shiro
     - apache
@@ -47,15 +57,26 @@ apache-skywalking:
   - - skywalking
 apache-solr:
   - - solr
+apache-storm:
+  - - storm
+    - apache
 apache-struts:
   - - struts
+apache-superset:
+  - - superset
 apache-tomcat:
   - - tomcat
+apollo-adminservice:
+  - - apollo
+appwrite:
+  - - appwrite
 argocd:
   - - argocd
 atlassian-jira:
   - - jira
   - - atlassian
+avtech-video-web-server:
+  - - avtech
 bt-control-pane:
   - - bt
 bullwark:
@@ -65,6 +86,8 @@ cacti:
 caucho-resin:
   - - caucho
     - resin
+chamilo:
+  - - chamilo
 citrix-access-gateway:
   - - citrix
 coldfusion:
@@ -79,8 +102,14 @@ d-link:
   - - dlink
 dedecms:
   - - dedecms
+dell-idrac:
+  - - idrac
 django:
   - - django
+doccms:
+  - - doccms
+dolphinscheduler:
+  - - dolphinscheduler
 drupal:
   - - drupal
 duomicms:
@@ -120,8 +149,14 @@ fortinet-fortigate:
 fortinet-fortimail:
   - - fortimail
     - fortinet
+frp:
+  - - frp
 gate-one:
   - - gateone
+geoserver:
+  - - geoserver
+ghostcms:
+  - - ghostcms
 gitlab:
   - - gitlab
 glpi:
@@ -136,6 +171,8 @@ haproxy-report:
   - - haproxy
 harbor:
   - - harbor
+hfs:
+  - - hfs
 hjtcloud:
   - - huijietong
   - - hjtcloud
@@ -143,12 +180,16 @@ horde:
   - - horde
 ibm-websphere:
   - - websphere
+icinga:
+  - - icinga
 influxdata-influxdb:
   - - influxdb
 jamf-panel:
   - - jamf
 jboss:
   - - jboss
+jeecgboot:
+  - - jeecg
 jeecms:
   - - jeecms
 jeewms:
@@ -160,8 +201,16 @@ jenkins:
   - - jenkin
 jetty:
   - - jetty
+jfrog:
+  - - jfrog
 joomla:
   - - joomla
+jupyter-notebook:
+  - - jupyter
+jupyterhub:
+  - - jupyterhub
+kafka-center:
+  - - kafka
 kafka-manager:
   - - kafka
 kibana:
@@ -170,6 +219,8 @@ kindeditor:
   - - kindeditor
 kingdee:
   - - kingdee
+kkfileview:
+  - - kkFileView
 kubernetes:
   - - kubernetes
   - - k8
@@ -181,12 +232,27 @@ laravel-framework:
   - - laravel
 lighttpd:
   - - lighttpd
+lucee:
+  - - lucee
+maccms:
+  - - maccmsv10
+  - - maccms
+manageengine-admanager-plus:
+  - - admanager
+mcms:
+  - - mcms
+metersphere:
+  - - metersphere
+metinfo:
+  - - metinfo
 microsoft-exchange:
   - - exchange
 microsoft-sharepoint:
   - - sharepoint
 minio-browser:
   - - minio
+mlflow:
+  - - mlflow
 mongodb:
   - - mongodb
 moodle:
@@ -201,10 +267,14 @@ netsweeper:
   - - netsweeper
 nextcloud-product:
   - - nextcloud
+nextjs:
+  - - nextjs
 nexus-repository-manager:
   - - nexus
 nps:
   - - nps
+odoo:
+  - - odoo
 opencti:
   - - opencti
 openfire:
@@ -213,6 +283,8 @@ oracle-weblogic:
   - - weblogic
 panabit-gateway:
   - - panabit
+papercut:
+  - - papercut
 parallels-plesk-panel:
   - - plesk
 phpmyadmin:
@@ -223,8 +295,12 @@ portainer:
   - - portainer
 powercreator-cms:
   - - powercreator
+powerjob:
+  - - powerjob
 prometheus:
   - - prometheus
+pulsesecure-ssl-vpn:
+  - - pulsesecure
 qcubed-development-framework:
   - - qcubed
 qizhi-fortress-aircraft:
@@ -237,6 +313,10 @@ rconfig:
   - - rconfig
 roundcube-webmail:
   - - roundcube
+ruby-on-rails:
+  - - rails
+ruckus-wireless:
+  - - ruckus
 ruijie-router-nbr:
   - - ruijie
 ruoyi-system:
@@ -248,8 +328,12 @@ sangfor-edr:
   - - sangfor
 showdoc:
   - - showdoc
+sitecore:
+  - - sitecore
 siteserver:
   - - siteserver
+solarview-compact:
+  - - solarview
 solarwinds:
   - - solarwinds
 sonarqube:
@@ -274,6 +358,10 @@ sunlogin:
   - - sunflower
 swagger:
   - - swagger
+tableau:
+  - - tableau
+teslamate:
+  - - teslamate
 thinkadmin:
   - - thinkadmin
 thinkcmf:
@@ -288,11 +376,19 @@ tpshop:
   - - tpshop
 ueditor:
   - - ueditor
+umami:
+  - - umami
 vbulletin:
   - - vbulletin
+vmware-aria-operations-for-logs:
+  - - aria
+    - vmware
 vmware-horizon:
   - - horizon
     - vmware
+vmware-site-recovery-manager:
+  - - siterecovery
+  - - recovery
 vmware-vcenter:
   - - vmware-vcenter
   - - vcenter
@@ -308,14 +404,22 @@ websvn:
   - - websvn
 weiphp:
   - - weiphp
+werkzeug:
+  - - werkzeug
 wordpress:
   - - wordpress
+wso2-carbon-server:
+  - - wso2
 wuzhicms:
   - - wuzhicms
 xdcms:
   - - xdcms
+xdebug:
+  - - xdebug
 xiuno:
   - - xiuno
+xstream:
+  - - xstream
 xxl-job:
   - - xxljob
 yapi:
@@ -333,6 +437,8 @@ zabbix:
   - - zabbix
 zcms:
   - - zcms
+zeppelin:
+  - - zeppelin
 zimbra:
   - - zimbra
 zzcms:

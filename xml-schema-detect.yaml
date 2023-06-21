@@ -12,7 +12,7 @@ requests:
       - "{{BaseURL}}/schema"
 
     matchers-condition: and
-    host-redirects: true
+    redirects: true
     matchers:
       - type: word
         words:
