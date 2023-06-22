@@ -5,11 +5,12 @@ info:
   author: pussycat0x
   severity: info
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"AmpGuard wifi setup"
   tags: ampguard,iot,setup,wifi
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

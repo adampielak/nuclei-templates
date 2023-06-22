@@ -10,8 +10,10 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,router,edb
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/htmlcode/html/indexdefault.asp"

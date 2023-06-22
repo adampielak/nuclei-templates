@@ -8,11 +8,12 @@ info:
   reference:
     - https://enterprise.arcgis.com/en/
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"ArcGIS"
   tags: panel,arcgis,tokens,detect
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/arcgis/tokens/'

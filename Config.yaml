@@ -1,14 +1,28 @@
-blank_issues_enabled: false
+id: Identify Config issue in Android apk file
 
-contact_links:
-  - name: Ask an question / advise on using nuclei-templates
-    url: https://github.com/projectdiscovery/nuclei-templates/discussions/categories/q-a
-    about: Ask a question or request support for using nuclei-templates
+info:
+  name: Configuration issues in Android apk file
+  description: This template can be used to detect basic Configuration issues from the apk
+  author: rahulkadavil
+  severity: Medium
+  tags: Configuration issues
+  
+file:
+  - extensions:
+      - all
 
-  - name: Share idea / feature to discuss for nuclei-templates
-    url: https://github.com/projectdiscovery/nuclei-templates/discussions/categories/ideas
-    about: Share idea / feature to discuss for nuclei-templates
+    matchers:
+      - type: word
+        name: Debuggable
+        words:
+          - "android:debuggable=\"true\""
+      - type: word
+        name: Allow Backup
+        words: 
+          - "android:allowBackup=\"true\""
+      - type: word
+        name: Android exported enabled
+        words: 
+          - "android:exported=\"true\""    
 
-  - name: Connect with PD Team & Community (Discord)
-    url: https://discord.gg/projectdiscovery
-    about: Connect with PD Team & Community for direct communication
+          

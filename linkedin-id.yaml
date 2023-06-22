@@ -1,11 +1,14 @@
 id: linkedin-client-id
+
 info:
-  name: Linkedin Client ID
+  name: Linkedin Client ID 
   author: gaurang
   severity: low
+
 file:
   - extensions:
       - all
+
     extractors:
       - type: regex
         regex:

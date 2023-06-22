@@ -9,10 +9,11 @@ info:
     - https://crates.io/data-access
     - https://github.com/rust-lang/crates.io/blob/master/src/util/token.rs
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
   tags: crates,token,exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

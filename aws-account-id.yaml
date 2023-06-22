@@ -7,10 +7,11 @@ info:
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/aws.yml
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
   tags: aws,amazon,token,exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
