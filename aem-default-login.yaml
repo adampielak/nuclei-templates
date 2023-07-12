@@ -3,20 +3,10 @@ id: aem-default-login
 info:
   name: Adobe AEM Default Login
   author: random-robbie
-  severity: high
-  description: Adobe AEM default login credentials were discovered.
-  reference:
-    - https://experienceleague.adobe.com/docs/experience-manager-64/administering/security/security-checklist.html?lang=en
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
-    cvss-score: 8.3
-    cwe-id: CWE-522
-  metadata:
-    max-request: 8
-    shodan-query: http.component:"Adobe Experience Manager"
-  tags: aem,default-login,adobe
+  severity: critical
+  tags: aem,default-login
 
-http:
+requests:
   - raw:
       - |
         POST /libs/granite/core/content/login.html/j_security_check HTTP/1.1
@@ -34,20 +24,12 @@ http:
         - grios
         - replication-receiver
         - vgnadmin
-        - author
-        - anonymous
-        - jdoe@geometrixx.info
-        - aparker@geometrixx.info
 
       aem_pass:
         - admin
         - password
         - replication-receiver
         - vgnadmin
-        - author
-        - anonymous
-        - jdoe
-        - aparker
 
     stop-at-first-match: true
     matchers-condition: and
@@ -58,9 +40,7 @@ http:
 
       - type: word
         part: header
+        condition: and
         words:
           - login-token
           - crx.default
-        condition: and
-
-# Enhanced by mp on 2022/03/23

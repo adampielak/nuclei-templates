@@ -1,15 +1,12 @@
 id: clickhouse-unauth
 
 info:
-  name: ClickHouse - Unauthorized Access
+  name: Unauth ClickHouse Disclosure
   author: lu4nx
   severity: high
-  description: ClickHouse was able to be accessed with no required authentication in place.
-  tags: network,clickhouse,unauth
-  metadata:
-    max-request: 2
+  tags: network,clickhouse
 
-tcp:
+network:
   - inputs:
       # 0011436c69636b486f75736520636c69656e741508b1a9030007 is header
       # 64656661756c74 = default
@@ -18,14 +15,11 @@ tcp:
 
     host:
       - "{{Hostname}}"
-      - "{{Host}}:9000"
+      - "{{Hostname}}:9000"
 
     read-size: 100
+
     matchers:
       - type: word
         words:
           - "ClickHouse"
-          - "UTC"
-        condition: and
-
-# Enhanced by mp on 2022/07/20

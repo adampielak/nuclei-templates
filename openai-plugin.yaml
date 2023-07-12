@@ -9,10 +9,11 @@ info:
   reference:
     - https://platform.openai.com/docs/plugins/introduction
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
   tags: tech,openai,plugin
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.well-known/ai-plugin.json"

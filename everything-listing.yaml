@@ -9,11 +9,12 @@ info:
   reference:
     - https://www.voidtools.com/
   metadata:
+    max-request: 1
     verified: 'true'
     shodan-query: http.favicon.hash:-977323269
-  tags: exposure,everything,listing,voidtools
+  tags: exposure,everything,listing,voidtools,misconfig
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -5,10 +5,11 @@ info:
   author: idealphase
   severity: info
   metadata:
+    max-request: 1
     shodan-query: "If you find a bug in this Lighttpd package, or in Lighttpd itself"
   tags: tech,lighttpd
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

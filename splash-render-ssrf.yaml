@@ -8,12 +8,13 @@ info:
     - https://github.com/scrapinghub/splash
     - https://b1ngz.github.io/splash-ssrf-to-get-server-root-privilege/
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"Splash"
     hunter-query: web.title="Splash" && header="TwistedWeb"
   tags: splash,ssrf,oast,oss
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/render.html?url=https://oast.live"

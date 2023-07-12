@@ -1,10 +1,10 @@
-id: MinIO-default-login
+id: minio-default-login
 
 info:
-  name: MinIO 默认口令漏洞
-  author: Str1am
-  severity: high
-  tags: MinIO,login
+  name: Minio Default Login
+  author: pikpikcu
+  severity: medium
+  tags: default-login,minio
 
 requests:
   - raw:
@@ -12,18 +12,31 @@ requests:
         POST /minio/webrpc HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0
-        
-        {"id":1,"jsonrpc":"2.0","params":{"username":"minioadmin","password":"minioadmin"},"method":"Web.Login"}
+
+        {"id":1,"jsonrpc":"2.0","params":{"username":"{{username}}","password":"{{password}}"},"method":"Web.Login"}
+
+    payloads:
+      username:
+        - minioadmin
+      password:
+        - minioadmin
+    attack: pitchfork
 
     matchers-condition: and
     matchers:
+
+      - type: word
+        words:
+          - "Content-Type: application/json"
+        part: header
+
+      - type: word
+        words:
+          - 'uiVersion'
+          - 'token'
+        part: body
+        condition: and
+
       - type: status
         status:
           - 200
-      - type: word
-        words:
-          - "uiVersion"
-          - "token"
-        part: body
-        condition: and

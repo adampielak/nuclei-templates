@@ -1,15 +1,10 @@
 id: hmc-hybris-panel
 
 info:
-  name: Hybris Management Console Login Panel - Detect
+  name: SAP Hybris Management Console
   author: dogasantos
-  description: Hybris Management Console login panel was detected.
   severity: info
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,sap
+  tags: panel
 
 requests:
   - method: GET
@@ -22,5 +17,3 @@ requests:
         words:
           - "hybris Management Console"
         part: body
-
-# Enhanced by md on 2022/11/18

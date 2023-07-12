@@ -10,11 +10,12 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"Login - ESPHome"
   tags: panel,esphome,iot
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/login'
@@ -29,5 +30,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/24

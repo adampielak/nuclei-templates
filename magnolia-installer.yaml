@@ -7,11 +7,12 @@ info:
   reference:
     - https://www.magnolia-cms.com/
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"Magnolia Installation"
-  tags: magnolia,exposure,installer
+  tags: magnolia,exposure,installer,misconfig
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

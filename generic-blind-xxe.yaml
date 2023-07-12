@@ -4,7 +4,7 @@ info:
   name: Generic Blind XXE
   author: geeknik
   severity: high
-  tags: xxe,generic,blind
+  tags: xxe,generic
 
 requests:
   - raw:
