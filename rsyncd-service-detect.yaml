@@ -1,22 +1,16 @@
 id: rsyncd-service-detect
 
 info:
-  name: Rsyncd Service - Detect
+  name: rsyncd Service Detection
   author: vsh00t,geeknik
   severity: info
   description: |
-    Rsyncd service was detected.
+    Rsync is a fast and extraordinarily versatile file copying tool. It can copy locally, to/from another host over any remote shell, or to/from a remote rsync daemon.
   reference:
     - https://linux.die.net/man/1/rsync
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   tags: network,rsyncd
-  metadata:
-    max-request: 2
 
-tcp:
+network:
   - inputs:
       - data: "?\r\n"
 

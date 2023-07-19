@@ -8,10 +8,8 @@ info:
   classification:
     cwe-id: CWE-200
   tags: network,vnc,service
-  metadata:
-    max-request: 2
 
-tcp:
+network:
   - inputs:
       - data: "\r\n"
     host:
@@ -28,3 +26,5 @@ tcp:
         part: body
         regex:
           - "RFB ([0-9.]+)"
+
+# Enhanced by mp on 2022/04/20

@@ -1,7 +1,7 @@
 id: adobe-component-login
 
 info:
-  name: Adobe Component Browser Login
+  name: Adobe Component Brower Login
   author: dhiyaneshDK
   severity: info
   reference: https://www.exploit-db.com/ghdb/6846
@@ -11,7 +11,6 @@ requests:
   - method: GET
     path:
       - '{{BaseURL}}/CFIDE/componentutils/login.cfm'
-      - '{{BaseURL}}/cfide/componentutils/login.cfm'
 
     matchers-condition: and
     matchers:

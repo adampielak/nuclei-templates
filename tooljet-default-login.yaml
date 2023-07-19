@@ -1,17 +1,13 @@
 id: tooljet-default-login
 
 info:
-  name: ToolJet - Default Login
+  name: ToolJet Default Login Credential
   author: random-robbie
   severity: high
   description: |
-    ToolJet contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    toolJet is an open-source low-code framework to build and deploy custom internal tools. ToolJet can connect to your data sources such as databases ( PostgreSQL, MongoDB, MS SQL Server, Snowflake, , BigQuery, etc ), API/GraphQL endpoints, SaaS tools ( Airtable, Stripe, Google Sheets, etc ) and cloud object storage services ( AWS S3, Google Cloud Storage and Minio )
   reference:
     - https://docs.tooljet.com/docs/contributing-guide/setup/docker/
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
-    cvss-score: 8.3
-    cwe-id: CWE-522
   metadata:
     verified: true
     shodan-query: title:"tooljet"
@@ -50,5 +46,3 @@ requests:
       - type: status
         status:
           - 201
-
-# Enhanced by md on 2023/01/09

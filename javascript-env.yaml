@@ -1,10 +1,10 @@
 id: javascript-env
 
 info:
-  name: JavaScript Environment Configuration - Detect
+  name: JavaScript Environment Config
   author: pdp,geeknik
   severity: low
-  description: Multiple common JavaScript environment configuration files were detected.
+  description: Detects common JavaScript environment configuration files.
   tags: javascript,config,exposure
 
 requests:
@@ -50,5 +50,3 @@ requests:
           - "CSS TRANSITION SUPPORT"
         condition: or
         negative: true
-
-# Enhanced by md on 2023/02/09

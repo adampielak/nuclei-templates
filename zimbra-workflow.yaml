@@ -6,6 +6,6 @@ info:
   description: A simple workflow that runs all Zimbra related nuclei templates on a given target.
 
 workflows:
-  - template: http/exposed-panels/zimbra-web-client.yaml
+  - template: exposed-panels/zimbra-web-client.yaml
     subtemplates:
       - tags: zimbra
