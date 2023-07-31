@@ -5,12 +5,11 @@ info:
   author: geeknik
   severity: info
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"multipart/form-data" html:"file"
-  tags: exposure,upload,form,misc
+  tags: exposure,upload,form
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

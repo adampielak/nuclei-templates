@@ -8,12 +8,11 @@ info:
   reference:
     - https://networksdb.io/api/docs
   metadata:
-    max-request: 1
-    verified: true
+    verified: "true"
   tags: token-spray,networkdb
 
 self-contained: true
-http:
+requests:
   - raw:
       - |
         GET https://networksdb.io/api/key HTTP/2

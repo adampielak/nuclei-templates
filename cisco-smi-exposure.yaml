@@ -16,10 +16,8 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: network,cisco,smi,exposure
-  metadata:
-    max-request: 2
 
-tcp:
+network:
   - inputs:
       - data: "000000010000000100000004000000080000000100000000"
         type: hex
@@ -33,3 +31,5 @@ tcp:
         encoding: hex
         words:
           - "000000040000000000000003000000080000000100000000"
+
+# Enhanced by mp on 2022/03/30

@@ -1,35 +1,40 @@
-id: codeigniter-env
-
 info:
-  name: Codeigniter .env file
-  author: emenalf
-  severity: high
-  tags: config,exposure,codeigniter
+  id: codeigniter-env
+  name: Codeigniter .env File Discovery
+  author: twitter/drfabiocastro
+  description: Codeigniter is vulnerable to .env file discovery due to the default Apache configuration. An attacker can access the .env file and obtain sensitive information such as database credentials, API keys, and other secrets.
+  severity: High
+  classification:
+    country: any
+    tags:
+      - security
+      - codeigniter
 
-requests:
-  - method: GET
+  matcher-condition: or
+  requests:
+    method: GET
     path:
-      - "{{BaseURL}}/.env"
-      - "{{BaseURL}}/.env.dev.local"
-      - "{{BaseURL}}/.env.development.local"
-      - "{{BaseURL}}/.env.prod.local"
-      - "{{BaseURL}}/.env.production.local"
-      - "{{BaseURL}}/.env.local"
-      - "{{BaseURL}}/.env.example"
-      - "{{BaseURL}}/.env.stage"
-      - "{{BaseURL}}/.env.live"
-      - "{{BaseURL}}/.env_1"
-      - "{{BaseURL}}/.env.old"
-      - "{{BaseURL}}/.env_sample"
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        regex:
-          - "(?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD)"
-          - "(?m)^DB_(HOST|PASSWORD|DATABASE)"
-        condition: or
-
-      - type: status
-        status:
-          - 200
+      - "/.env.dev.local"
+      - "/.env.development.local"
+      - "/.env.prod.local"
+      - "/.env.production.local"
+      - "/.env.local"
+      - "/.env.example"
+      - "/.env.stage"
+      - "/.env.live"
+      - "/.env_1"
+      - "/.env.old"
+      - "/.env_sample"
+    description: Attempt to access Codeigniter .env files.
+    condition: or
+  matchers:
+    - pattern: "(?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD)"
+      type: body
+      description: APP_ configuration values found in the response body
+    - pattern: "(?m)^DB_(HOST|PASSWORD|DATABASE)"
+      type: body
+      description: DB_ configuration values found in the response body
+  response:
+    - status: 
+      - 200
+      description: Successful access to .env file(s).

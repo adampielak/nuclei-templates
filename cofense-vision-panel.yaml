@@ -12,11 +12,10 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     shodan-query: http.favicon.hash:739801466
   tags: panel,cofense,vision
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/login'
@@ -32,3 +31,5 @@ http:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2022/11/10

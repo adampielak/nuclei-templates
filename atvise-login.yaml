@@ -11,11 +11,10 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     google-query: intitle:"atvise - next generation"
   tags: panel,atvise,edb
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -30,3 +29,5 @@ http:
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2022/03/20

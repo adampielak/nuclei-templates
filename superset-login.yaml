@@ -1,35 +1,38 @@
-id: superset-login
-
 info:
-  name: Superset Login
-  author: DhiyaneshDk
-  severity: info
-  metadata:
-    verified: true
-    shodan-query: http.favicon.hash:1582430156
-  tags: panel,superset
+  id: superset-login
+  name: Apache Superset Login Page Detected
+  author: OpenAI
+  description: Template to detect login page on Apache Superset web application
+  severity: Medium
+  classification:
+    country: any
+    tags:
+      - apache
+      - superset
+      - web application
+      - authentication
+      - login
 
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-      - '{{BaseURL}}/login'
+  reference:
+    - https://superset.apache.org/
 
-    stop-at-first-match: true
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'alt="Superset"'
+  matcher-condition: or
 
-      - type: word
-        part: header
-        words:
-          - "text/html"
+  requests:
+      method: GET
+      path:
+        - "/superset/welcome/"
+        - "/login"
+        - "/account/login"
+      description: Attempt to access Apache Superset login page
+      condition: or
 
-      - type: status
-        status:
-          - 200
+  matchers:
+    - pattern: "Apache Superset"
+      type: body
+      description: Apache Superset header found in response
+
+  response:
+    - status:
+        - 200
+      description: Successful response status

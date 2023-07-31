@@ -14,11 +14,10 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
-    max-request: 2
     shodan-query: http.component:"Adobe Experience Manager"
-  tags: aem,xss,misconfig
+  tags: aem,xss
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/crx/de/setPreferences.jsp;%0A.html?language=en&keymap=<svg/onload=confirm(document.domain);>//a"
@@ -36,3 +35,5 @@ http:
       - type: status
         status:
           - 400
+
+# Enhanced by mp on 2022/09/15

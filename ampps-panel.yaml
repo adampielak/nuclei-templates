@@ -8,10 +8,8 @@ info:
   classification:
     cwe-id: CWE-200
   tags: panel,ampps,login
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/ampps/index.php?act=login"
@@ -38,3 +36,5 @@ http:
         group: 1
         regex:
           - 'mpps\.com">Powered By FREE ([A-Z 0-9.]+)<\/a>'
+
+# Enhanced by mp on 2022/03/16

@@ -13,9 +13,6 @@ info:
 
   matcher-condition: or
 
-  keywords:
-    - woocommerce
-
   requests:
       method: GET
       path:

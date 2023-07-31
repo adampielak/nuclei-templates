@@ -1,35 +1,27 @@
-id: hugo-detect
-
 info:
-  name: Hugo Detect
-  author: daffainfo
-  severity: info
-  description: Hugo is a fast and modern static site generator written in Go
-  metadata:
-    verified: true
-    shodan-query: http.html:'Hugo'
-  tags: tech,hugo
+  id: hugo-detect
+  name: Hugo Website Detection
+  author: OpenAI
+  description: Template to detect websites built with Hugo.
+  severity: Low
+  classification:
+    country: any
+    tags:
+      - hugo
+      - static-site-generator
+      - website
 
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  requests:
+      method: GET
+      path:
+        - "/"
+      description: Attempt to access a page on the website.
+      condition: and
 
-    redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<meta name=generator content="Hugo'
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        group: 1
-        regex:
-          - '(?m)<meta name=generator content="Hugo ([0-9.]+)">'
+  matchers:
+    - pattern: "poweredByHugo"
+      type: body
+      description: "Hugo powered website found in the response body"
+    - pattern: "<meta name=\"generator\" content=\"Hugo"
+      type: body
+      description: "Hugo powered website found in the response body"

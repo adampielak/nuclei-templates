@@ -1,7 +1,7 @@
 id: wordpress-ga-google-analytics
 
 info:
-  name: GA Google Analytics – Connect Google Analytics to WordPress Detection
+  name: GA Google Analytics Detection
   author: ricardomaia
   severity: info
   reference:

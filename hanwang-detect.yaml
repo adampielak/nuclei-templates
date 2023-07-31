@@ -5,11 +5,10 @@ info:
   author: ffffffff0x
   severity: info
   metadata:
-    max-request: 1
     fofa-query: 汉王人脸考勤管理系统
   tags: hanwang,tech
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
