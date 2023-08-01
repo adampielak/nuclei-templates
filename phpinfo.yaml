@@ -1,49 +1,28 @@
 id: phpinfo-files
 
-info:
-  name: phpinfo Disclosure
-  author: pdteam,daffainfo,meme-lord,dhiyaneshDK
-  severity: low
-  tags: config,exposure,phpinfo
-
+name: phpinfo Disclosure
+severity: low
+  
 requests:
   - method: GET
-    path:
-      - "{{BaseURL}}/php.php"
-      - "{{BaseURL}}/phpinfo.php"
-      - "{{BaseURL}}/info.php"
-      - "{{BaseURL}}/infophp.php"
-      - "{{BaseURL}}/php_info.php"
-      - "{{BaseURL}}/test.php"
-      - "{{BaseURL}}/i.php"
-      - "{{BaseURL}}/asdf.php"
-      - "{{BaseURL}}/pinfo.php"
-      - "{{BaseURL}}/phpversion.php"
-      - "{{BaseURL}}/time.php"
-      - "{{BaseURL}}/index.php"
-      - "{{BaseURL}}/temp.php"
-      - "{{BaseURL}}/old_phpinfo.php"
-      - "{{BaseURL}}/infos.php"
-      - "{{BaseURL}}/linusadmin-phpinfo.php"
-      - "{{BaseURL}}/php-info.php"
-      - "{{BaseURL}}/dashboard/phpinfo.php"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "PHP Extension"
-          - "PHP Version"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - '>PHP Version <\/td><td class="v">([0-9.]+)'
+    paths:
+      - "HOSTNAME/php.php"
+      - "HOSTNAME/phpinfo.php"
+      - "HOSTNAME/info.php"
+      - "HOSTNAME/infophp.php"
+      - "HOSTNAME/php_info.php"
+      - "HOSTNAME/test.php"
+      - "HOSTNAME/i.php"
+      - "HOSTNAME/asdf.php"
+      - "HOSTNAME/pinfo.php"
+      - "HOSTNAME/phpversion.php"
+      - "HOSTNAME/time.php"
+      - "HOSTNAME/index.php"
+      - "HOSTNAME/temp.php"
+      - "HOSTNAME/old_phpinfo.php"
+      - "HOSTNAME/infos.php"
+      - "HOSTNAME/linusadmin-phpinfo.php"
+      - "HOSTNAME/php-info.php"
+    patterns:
+      - "PHP Extension"
+      - "PHP Version"
