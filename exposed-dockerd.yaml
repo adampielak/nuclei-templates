@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     shodan-query: port:2375 product:"docker"
-  tags: network,docker,exposure
+  tags: network,docker
 
 network:
   - inputs:

@@ -4,17 +4,13 @@ info:
   name: Memcached stats disclosure
   author: pdteam
   severity: low
-<<<<<<< HEAD
   tags: network,memcached,misconfig
   description: |
     Memcached stats is used to return server statistics such as PID, version, connections, etc.
   metadata:
     max-request: 2
-=======
-  tags: network,memcached
->>>>>>> c3808e48 (add new)
 
-network:
+tcp:
   - inputs:
       - data: "stats\r\n\r\nquit\r\n"
 

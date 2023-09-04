@@ -1,22 +1,4 @@
 id: javascript-env
-<<<<<<< HEAD
-
-name: JavaScript Environment Config
-severity: low
-  
-requests:
-  - method: GET
-    paths:
-      - "HOSTNAME/env.js"
-      - "HOSTNAME/env.development.js"
-      - "HOSTNAME/env.production.js"
-      - "HOSTNAME/env.test.js"
-      - "HOSTNAME/env.dev.js"
-      - "HOSTNAME/env.prod.js"
-    patterns:
-      - "module.exports|const audience|const domain|NODE_ENV|LOG_LEVEL|TOKEN|KEY|PASSWORD|VERSION"
-
-=======
 
 info:
   name: JavaScript Environment Config
@@ -68,4 +50,3 @@ requests:
           - "CSS TRANSITION SUPPORT"
         condition: or
         negative: true
->>>>>>> c3808e48 (add new)
