@@ -11,18 +11,15 @@ info:
       - phrase
       - security
 
-  matcher-condition: or
-
   requests:
-      method: GET
-      path:
-        - "/proton_recovery_phrase.txt"
-        - "/proton_recovery.asc"
+    method: GET
+    path:
+      - "/proton_recovery_phrase.txt"
+      - "/proton_recovery.asc"
 
   matchers:
-    - pattern: '(?:\b[a-zA-Z]+\b\s+){11}\b[a-zA-Z]+\b'
+    - pattern: '(?i)^(?:(?:\b[a-zA-Z]+\b\s+){11}\b[a-zA-Z]+\b)$'
       type: body
-      description: Truffle configuration file found in the response body
 
   response:
     - status:

@@ -2,14 +2,14 @@ id: wordpress-detect
 
 info:
   name: WordPress Detect
-  author: pdteam,daffainfo,ricardomaia,topscoder
+  author: pdteam,daffainfo,ricardomaia
   severity: info
   metadata:
     verified: true
     shodan-query: http.component:"WordPress"
   tags: tech,wordpress,cms,wp
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -17,8 +17,6 @@ http:
       - "{{BaseURL}}/feed/"
       - "{{BaseURL}}/?feed=rss2" # alternative if /feed/ is blocked
 
-    redirects: true
-    max-redirects: 2
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -32,6 +30,7 @@ http:
           - '<link[^>]+s\d+\.wp\.com'
           - '<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\d.]+) -'
           - '<!--[^>]+WP-Super-Cache'
+        condition: or
 
       - type: status
         status:
@@ -55,5 +54,3 @@ http:
         group: 1
         regex:
           - 'install\.min\.css\?ver=((\d+\.?)+)\b'
-
-# Enhanced

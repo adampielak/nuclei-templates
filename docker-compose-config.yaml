@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: docker-compose-config
 
 name: docker-compose.yml exposure
@@ -18,3 +19,36 @@ requests:
     patterns:
       - '^version:'
       - 'services:'
+=======
+id: docker-compose-config
+
+info:
+  name: docker-compose.yml exposure
+  author: meme-lord,blckraven,geeknik
+  severity: medium
+  tags: config,exposure,devops
+
+requests:
+  - method: GET
+    host-redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/docker-compose.yml"
+      - "{{BaseURL}}/docker-compose.prod.yml"
+      - "{{BaseURL}}/docker-compose.production.yml"
+      - "{{BaseURL}}/docker-compose.staging.yml"
+      - "{{BaseURL}}/docker-compose.dev.yml"
+      - "{{BaseURL}}/docker-compose-dev.yml"
+      - "{{BaseURL}}/docker-compose.override.yml"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'regex("^version: ", body) && contains(body, "services:")'
+
+      - type: status
+        status:
+          - 200
+>>>>>>> c3808e48 (add new)

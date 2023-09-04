@@ -7,6 +7,6 @@ info:
 
 workflows:
 
-  - template: http/technologies/confluence-detect.yaml
+  - template: technologies/confluence-detect.yaml
     subtemplates:
       - tags: confluence

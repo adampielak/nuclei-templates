@@ -10,10 +10,11 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
+    max-request: 1
     shodan-query: http.title:"Aerohive NetConfig UI"
   tags: panel,tech,hiveos,aerohive
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/index.php5"
@@ -35,5 +36,3 @@ requests:
         group: 1
         regex:
           - 'version" align="right" valign="bottom">([0-9.a-z]+)<\/td>'
-
-# Enhanced by mp on 2022/03/21

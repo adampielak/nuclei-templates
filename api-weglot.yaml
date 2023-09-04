@@ -1,4 +1,5 @@
 id: api-weglot
+
 info:
   name: WeGlot API Test
   author: zzeitlin
@@ -6,6 +7,7 @@ info:
   reference:
     - https://developers.weglot.com/api/reference
   tags: token-spray,weglot
+
 self-contained: true
 requests:
   - method: POST
@@ -14,6 +16,7 @@ requests:
     headers:
       Content-Type: application/json
     body: "{\"l_from\":\"en\",\"l_to\":\"fr\",\"request_url\":\"https://www.website.com/\",\"words\":[{\"w\":\"This is a blue car\",\"t\":1},{\"w\":\"This is a black car\",\"t\":1}]}"
+
     matchers:
       - type: word
         part: body

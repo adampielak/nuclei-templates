@@ -12,10 +12,11 @@ info:
   reference:
     - http://www.avtech.com.tw
   metadata:
+    max-request: 1
     shodan-query: title:"login" product:"Avtech AVN801 network camera"
   tags: panel,avtech,iot,camera
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -32,5 +33,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/07/22

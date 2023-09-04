@@ -1,38 +1,42 @@
+id: superset-login
+
 info:
-  id: superset-login
-  name: Apache Superset Login Page Detected
-  author: OpenAI
-  description: Template to detect login page on Apache Superset web application
-  severity: Medium
+  name: Apache Superset Login Panel - Detect
+  author: DhiyaneshDk
+  severity: info
+  description: Apache Superset login panel was detected.
   classification:
-    country: any
-    tags:
-      - apache
-      - superset
-      - web application
-      - authentication
-      - login
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    shodan-query: http.favicon.hash:1582430156
+  tags: panel,superset
 
-  reference:
-    - https://superset.apache.org/
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+      - '{{BaseURL}}/login'
 
-  matcher-condition: or
+    stop-at-first-match: true
+    host-redirects: true
+    max-redirects: 2
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'alt="Superset"'
 
-  requests:
-      method: GET
-      path:
-        - "/superset/welcome/"
-        - "/login"
-        - "/account/login"
-      description: Attempt to access Apache Superset login page
-      condition: or
+      - type: word
+        part: header
+        words:
+          - "text/html"
 
-  matchers:
-    - pattern: "Apache Superset"
-      type: body
-      description: Apache Superset header found in response
+      - type: status
+        status:
+          - 200
 
-  response:
-    - status:
-        - 200
-      description: Successful response status
+# Enhanced by md on 2023/01/14

@@ -1,17 +1,22 @@
 id: exposed-zookeeper
 
 info:
-  name: Apache ZooKeeper - Unauthenticated Access
+  name: ZooKeeper Unauth Server
   author: pdteam
   severity: high
+<<<<<<< HEAD
   description: Apache ZooKeeper was able to be accessed without any required authentication.
   reference:
     - https://zookeeper.apache.org/security.html
   tags: network,zookeeper,unauth,exposure
   metadata:
     max-request: 2
+=======
+  reference: https://zookeeper.apache.org/security.html
+  tags: network,zookeeper,unauth
+>>>>>>> c3808e48 (add new)
 
-tcp:
+network:
   - inputs:
       - data: "envi\r\nquit\r\n"
 

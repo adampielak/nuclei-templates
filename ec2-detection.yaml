@@ -1,17 +1,11 @@
 id: ec2-detection
 
 info:
-  name: AWS EC2 Detection
+  name: AWS EC2 detection
   author: melbadry9
   severity: info
-  description: Amazon Elastic Compute Cloud (EC2) detected.
-  reference:
-    - https://blog.melbadry9.xyz/dangling-dns/aws/ddns-ec2-current-state
-  classification:
-    cwe-id: CWE-200
   tags: dns,ec2,aws
-  metadata:
-    max-request: 1
+  reference: https://blog.melbadry9.xyz/dangling-dns/aws/ddns-ec2-current-state
 
 dns:
   - name: "{{FQDN}}"

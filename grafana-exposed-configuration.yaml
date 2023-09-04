@@ -12,7 +12,7 @@ info:
       - configuration files
       - exposure
 
-  matcher-condition: or
+  matcher-condition: amd
 
   requests:
       method: GET

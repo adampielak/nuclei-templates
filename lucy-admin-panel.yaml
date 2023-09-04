@@ -5,12 +5,11 @@ info:
   author: ritikchaddha
   severity: info
   metadata:
-    max-request: 2
     verified: true
     shodan-query: html:'title="Lucy'
   tags: tech,lucy
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

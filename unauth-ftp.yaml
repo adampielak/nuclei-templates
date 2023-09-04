@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 id: unauth-ftp
 
 info:
@@ -24,3 +25,27 @@ network:
         words:
           - "Anonymous access allowed,"
         part: response
+=======
+id: unauth-ftp
+
+info:
+  name: FTP Anonymous Login
+  author: C3l3si4n
+  severity: medium
+  reference: https://tools.ietf.org/html/rfc2577
+  tags: network,ftp
+
+network:
+  - inputs:
+      - data: "USER anonymous\r\nPASS nuclei\r\n"
+
+    host:
+      - "{{Hostname}}"
+      - "{{Hostname}}:21"
+
+    matchers:
+      - type: word
+        words:
+          - "Anonymous access allowed,"
+        part: all
+>>>>>>> c3808e48 (add new)

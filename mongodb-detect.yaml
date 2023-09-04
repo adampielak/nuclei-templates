@@ -4,11 +4,16 @@ info:
   name: MongoDB Detection
   author: pdteam
   severity: info
+<<<<<<< HEAD
   reference:
     - https://github.com/orleven/Tentacle
   tags: network,mongodb
   description: |
     MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases.
+=======
+  reference: https://github.com/orleven/Tentacle
+  tags: network,mongodb
+>>>>>>> c3808e48 (add new)
 
 network:
   - inputs:
