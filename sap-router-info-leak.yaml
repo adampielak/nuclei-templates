@@ -8,11 +8,9 @@ info:
   reference:
     - https://securityforeveryone.com/tools/saprouter-routing-information-leakage-vulnerability-scanner
     - https://support.sap.com/en/tools/connectivity-tools/saprouter.html
-  tags: network,sap,misconfig
-  metadata:
-    max-request: 2
+  tags: network,sap
 
-tcp:
+network:
   - inputs:
       - data: 00000022524f555445525f41444d002802000000000000000000000000000000000000000000
         type: hex
@@ -28,3 +26,5 @@ tcp:
           - "Routtab"
           - "Working directory"
           - "SAProuter Connection Table"
+
+# Enhanced by mp on 2022/03/21

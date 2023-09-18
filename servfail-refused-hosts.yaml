@@ -9,8 +9,6 @@ info:
   classification:
     cwe-id: CWE-200
   tags: dns,takeover
-  metadata:
-    max-request: 1
 
 dns:
   - name: "{{FQDN}}"
@@ -21,3 +19,5 @@ dns:
         words:
           - "SERVFAIL"
           - "REFUSED"
+
+# Enhanced by mp on 2022/03/14

@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/malcare-security/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/malcare-security.txt
+      last_version: helpers/wordpress/plugins/malcare-security.txt
 
     extractors:
       - type: regex

@@ -1,27 +1,32 @@
 info:
-  id: grafana-api-key-exposure
-  name: Grafana API Key Exposure - Detect
+  id: application-setting-file-disclosure
+  name: Application Setting File Disclosure - Detect
   author: OpenAI
-  description: Template to detect Grafana API key exposure
+  description: Template to detect disclosure of application setting files
   severity: High
   classification:
     country: any
     tags:
-      - grafana
-      - api key
-      - security
-      - sensitive information
+      - application
+      - configuration
+
+  matcher-condition: or
 
   requests:
       method: GET
       path:
-        - "/api/auth/keys"
-        - "/api/auth/keys/"
-        - "/api/auth/keys/*"
+        - "/config.php"
+        - "/settings.ini"
+        - "/appsettings.json"
+        - "/appsettings.Production.json"
+      description: Attempt to retrieve application setting files
+      condition: and
 
   matchers:
-    - pattern: '\{\"id\":\d+,"name":"[a-zA-Z0-9]+","role":"[a-zA-Z]+","key":"[a-zA-Z0-9_-]+","createdAt":"[0-9TZ:-]+","updatedAt":"[0-9TZ:-]+\}'
+    - pattern: "DB_USERNAME"
+    - pattern: "ConnectionStrings"
       type: body
+      description: Application setting file containing sensitive database credentials
 
   response:
     - status:

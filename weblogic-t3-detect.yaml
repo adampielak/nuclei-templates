@@ -4,13 +4,11 @@ info:
   name: Weblogic T3 Protocol Detection
   author: F1tz,milo2012,wdahlenb
   severity: info
-  tags: network,weblogic,detect
+  tags: network,weblogic
   description: |
     T3 is the protocol used to transport information between WebLogic servers and other types of Java programs.
-  metadata:
-    max-request: 2
 
-tcp:
+network:
   - inputs:
       - data: "t3 12.2.1\nAS:255\nHL:19\nMS:10000000\nPU:t3://us-l-breens:7001\n\n"
     host:

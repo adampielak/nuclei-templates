@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/elementskit-lite/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/elementskit-lite.txt
+      last_version: helpers/wordpress/plugins/elementskit-lite.txt
 
     extractors:
       - type: regex

@@ -1,52 +1,37 @@
-id: javascript-env
-
 info:
-  name: JavaScript Environment Config
-  author: pdp,geeknik
-  severity: low
-  description: Detects common JavaScript environment configuration files.
-  tags: javascript,config,exposure
+  id: javascript-env
+  name: JavaScript Environment Variables - Detect
+  author: OpenAI
+  description: Template to detect exposed JavaScript environment variables
+  severity: Low
+  classification:
+    country: any
+    tags:
+      - javascript
+      - security
+      - environment variables
+      - exposure
 
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/env.js"
-      - "{{BaseURL}}/env.development.js"
-      - "{{BaseURL}}/env.production.js"
-      - "{{BaseURL}}/env.test.js"
-      - "{{BaseURL}}/env.dev.js"
-      - "{{BaseURL}}/env.prod.js"
+  matcher-condition: or
 
-    matchers-condition: and
-    matchers:
+  requests:
+      method: GET
+      path:
+        - "/env.js"
+        - "/env.development.js"
+        - "/env.production.js"
+        - "/env.test.js"
+        - "/env.dev.js"
+        - "/env.prod.js"
+      description: Example request to trigger detection
 
-      - type: status
-        status:
-          - 200
+  matchers:
+    - pattern: '\bprocess.env.\w+\b'
+    - pattern: "module.exports"
+      type: body
+      description: JavaScript environment variable found in response body
 
-      - type: dsl
-        dsl:
-          - "contains(tolower(all_headers), 'content-type: application/javascript')"
-
-      - type: word
-        part: body
-        words:
-          - "module.exports"
-          - "const audience"
-          - "const domain"
-          - "NODE_ENV"
-          - "LOG_LEVEL"
-          - "TOKEN"
-          - "KEY"
-          - "PASSWORD"
-          - "VERSION"
-        condition: or
-
-      - type: word
-        part: body
-        words:
-          - "Bootstrap"
-          - "jQuery"
-          - "CSS TRANSITION SUPPORT"
-        condition: or
-        negative: true
+  response:
+    - status:
+        - 200
+      description: Successful response status

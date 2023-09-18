@@ -6,6 +6,6 @@ info:
   description: A simple workflow that runs all SequoiaDB related nuclei templates on a given target.
 
 workflows:
-  - template: http/exposed-panels/sequoiadb-login.yaml
+  - template: exposed-panels/sequoiadb-login.yaml
     subtemplates:
-      - template: http/default-logins/sequoiadb/sequoiadb-default-login.yaml
+      - template: default-logins/sequoiadb/sequoiadb-default-login.yaml

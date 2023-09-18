@@ -4,13 +4,11 @@ info:
   name: SMTP Service Detection
   author: pussycat0x
   severity: info
-  tags: network,service,smtp,detect
+  tags: network,service,smtp
   description: |
     SMTP is part of the application layer of the TCP/IP protocol. Using a process called “store and forward,” SMTP moves your email on and across networks.
-  metadata:
-    max-request: 2
 
-tcp:
+network:
   - inputs:
       - data: "\r\n"
     host:

