@@ -1,10 +1,8 @@
 id: possibility-of-webshell
-
 info:
   name: Possibility of Webshell
   author: marcositu
   severity: info
-
 requests:
   - method: GET
     path:
@@ -781,12 +779,8 @@ requests:
       - "{{BaseURL}}/zip.func.php"
       - "{{BaseURL}}/ZoRBaCK Connect.php"
       - "{{BaseURL}}/ZyklonShell.php"
-
-
     matchers-condition: and
     matchers:
       - type: dsl
         dsl:
           - "len(body)>=140 && status_code==200"
-
-

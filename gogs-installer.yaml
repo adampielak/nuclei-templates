@@ -10,12 +10,11 @@ info:
     cvss-score: 9.4
     cwe-id: CWE-284
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.title:"Installation - Gogs"
   tags: misconfig,exposure,gogs,install
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/install'

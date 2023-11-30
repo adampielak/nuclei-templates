@@ -13,12 +13,11 @@ info:
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
-    max-request: 1
-    verified: true
+    verified: "true"
     shodan-query: http.favicon.hash:1469328760
   tags: xss,pmb,cms
 
-http:
+requests:
   - raw:
       - |
         POST /pmb/opac_css/index.php?lvl=search_result&search_type_asked=extended_search HTTP/1.1

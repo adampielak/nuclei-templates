@@ -8,12 +8,11 @@ info:
   reference:
     - https://enterprise.arcgis.com/en/
   metadata:
-    max-request: 1
-    verified: true
+    verified: "true"
     shodan-query: title:"ArcGIS"
   tags: panel,arcgis,rest,api,detect
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/arcgis/rest/services'

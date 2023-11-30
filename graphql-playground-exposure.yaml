@@ -12,7 +12,11 @@ info:
       - security
 
   matcher-condition: or
-  
+
+  keywords:
+    - graphql
+    - playground
+
   requests:
     method: GET
     path:

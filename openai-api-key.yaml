@@ -26,6 +26,12 @@ info:
       type: body
       description: OpenAI API key found in source code
       
+  whitelist:
+    domains:
+      - openai.com
+    type: domain
+    description: Example whitelist for OpenAI.com
+    
   response:
     - status: 
       - 200

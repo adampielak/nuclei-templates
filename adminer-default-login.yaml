@@ -1,7 +1,7 @@
 id: adminer-default-login
 
 info:
-  name: Adminer Default Login - Detect
+  name: Adminer - Default Login
   author: j4vaovo
   severity: high
   description: |
@@ -13,12 +13,11 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    max-request: 5
     verified: "true"
     shodan-query: http.title:adminer
   tags: default-login,adminer
 
-http:
+requests:
   - raw:
       - |
         POST /index.php HTTP/1.1
@@ -62,5 +61,3 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/04/20

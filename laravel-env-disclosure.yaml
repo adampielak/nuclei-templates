@@ -10,16 +10,13 @@ info:
       - security
       - laravel
       - disclosure
-
   matcher-condition: or
-  
   requests:
     method: GET
     path:
       - "/.env"
     description: Attempt to access Laravel sensitive data files.
     condition: or
-
   matchers:
     - pattern: "(?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD)"
       type: body

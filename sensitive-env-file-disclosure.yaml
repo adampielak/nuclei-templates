@@ -14,6 +14,9 @@ info:
   requests:
     method: GET
     path:
+      - "/.env"
+      - "/.env.*"
+      - ".env.local"
       - "/config/.env"
       - "/config/.env.*"
       - "/configs/.env"
@@ -28,9 +31,7 @@ info:
       - "/private/.env.*"
       - "/secrets/.env"
       - "/secrets/.env.*"
-      - "/env.$APP_ENV.local"
-      - "/.env.dist"
-      - ".env.live"
+      - "env.$APP_ENV.local"
     description: Attempt to access .env files
     condition: or
   matchers:

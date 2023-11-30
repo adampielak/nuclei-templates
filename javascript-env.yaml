@@ -1,37 +1,17 @@
-info:
-  id: javascript-env
-  name: JavaScript Environment Variables - Detect
-  author: OpenAI
-  description: Template to detect exposed JavaScript environment variables
-  severity: Low
-  classification:
-    country: any
-    tags:
-      - javascript
-      - security
-      - environment variables
-      - exposure
+id: javascript-env
 
-  matcher-condition: or
+name: JavaScript Environment Config
+severity: low
+  
+requests:
+  - method: GET
+    paths:
+      - "HOSTNAME/env.js"
+      - "HOSTNAME/env.development.js"
+      - "HOSTNAME/env.production.js"
+      - "HOSTNAME/env.test.js"
+      - "HOSTNAME/env.dev.js"
+      - "HOSTNAME/env.prod.js"
+    patterns:
+      - "module.exports|const audience|const domain|NODE_ENV|LOG_LEVEL|TOKEN|KEY|PASSWORD|VERSION"
 
-  requests:
-      method: GET
-      path:
-        - "/env.js"
-        - "/env.development.js"
-        - "/env.production.js"
-        - "/env.test.js"
-        - "/env.dev.js"
-        - "/env.prod.js"
-      description: Example request to trigger detection
-
-  matchers:
-    - pattern: '\bprocess.env.\w+\b'
-    - pattern: "module.exports"
-      type: body
-      description: JavaScript environment variable found in response body
-
-  response:
-    - status:
-        - 200
-      description: Successful response status

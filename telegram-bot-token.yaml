@@ -23,7 +23,18 @@ info:
     - pattern: "^[0-9]+:[a-zA-Z0-9_-]{35}$"
       type: body
       description: Telegram bot token found in source code
-      
+  
+  tlds:
+    - pattern: any
+      type: tld
+      description: Any top-level domain
+  
+  whitelist:
+    domains:
+      - telegram.org
+    type: domain
+    description: Example whitelist for Telegram.org
+
   response:
     - status: 
       - 200

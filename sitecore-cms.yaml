@@ -9,18 +9,16 @@ info:
   reference: |
     https://www.sitecore.com
   metadata:
-    max-request: 1
-    verified: true
+    verified: "true"
     shodan-query: title:"sitecore"
-  tags: cms,sitecore,tech
+  tags: cms,sitecore
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/-/media/doo-doo.ashx"
 
     host-redirects: true
-    matchers-condition: and
     matchers:
       - type: regex
         part: header
