@@ -4,23 +4,13 @@ info:
   name: Acunetix Panel detector
   author: joanbono
   severity: info
-  tags: panel
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-
-    attack: sniper
-    threads: 100
-    raw:
-    - |+
-      GET /#/login HTTP/1.1
-      Host: {{Subdomains}}
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-      Accept-Encoding: gzip, deflate
-      Accept: */*
-      
-    unsafe: true
+  - method: GET
+    path:
+      - "{{BaseURL}}/#/login"
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

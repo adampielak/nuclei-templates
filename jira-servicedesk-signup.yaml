@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.acunetix.com/vulnerabilities/web/atlassian-jira-servicedesk-misconfiguration/
   metadata:
+    max-request: 4
     shodan-query: http.component:"Atlassian Jira"
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -16,7 +17,7 @@ info:
     cwe-id: CWE-287
   tags: atlassian,servicedesk,jira,confluence
 
-requests:
+http:
   - raw:
       - |
         GET /servicedesk/customer/user/signup HTTP/1.1

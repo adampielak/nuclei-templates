@@ -11,7 +11,7 @@ info:
     wpscan: https://wpscan.com/plugin/contact-form-7
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
-requests:
+http:
   - method: GET
 
     path:
@@ -47,3 +47,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100dbf87ec7a10b124ff77849a306f9d12d862bf7a154e769f448365bf3b25d848402206c98a06e3d3ee29b1ac069162c3419d29125ad6558b954057a01240ff5e5f5cc:922c64590222798bb761d5b6d8e72950

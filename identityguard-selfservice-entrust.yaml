@@ -4,20 +4,17 @@ info:
   name: IdentityGuard Self-Service by Entrust
   author: nodauf
   severity: info
-  tags: panel
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/IdentityGuardSelfService/"
+      - "{{BaseURL}}/IdentityGuardSelfService/images/favicon.ico"
 
-    raw:
-      - |
-        GET /IdentityGuardSelfService/ HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+    req-condition: true
+    redirects: true
+    max-redirects: 2
     matchers:
-      - type: word
-        words:
-          - "IdentityGuard Self-Service"
+      - type: dsl
+        dsl:
+          - "contains(body_1,'IdentityGuard Self-Service') || (\"-1060264737\" == mmh3(base64_py(body_2)))"

@@ -2,6 +2,7 @@ name: apache-tomcat
 priority: 3
 nuclei_tags:
   - - tomcat
+    - apache
 fingerprint:
   - path: /
     request_method: get
@@ -65,6 +66,15 @@ fingerprint:
     status_code: 0
     headers:
       x-powered-by: Tomcat
+    keyword: []
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers:
+      Server: Apache-Coyote/
     keyword: []
     favicon_hash: []
   - path: /

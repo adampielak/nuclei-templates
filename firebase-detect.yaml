@@ -4,24 +4,21 @@ info:
   name: firebase detect
   author: organiccrap
   severity: low
-  # http://ghostlulz.com/google-exposed-firebase-database/
+  reference:
+    - http://ghostlulz.com/google-exposed-firebase-database/
+  metadata:
+    max-request: 1
+  tags: tech,firebase
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.settings/rules.json?auth=FIREBASE_SECRET"
 
-    raw:
-      - |
-        GET /.settings/rules.json?auth=FIREBASE_SECRET HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
     matchers:
       - type: word
         words:
           - "Could not parse auth token"
         part: body
+
+# digest: 4a0a00473045022100c2dec8c69638efcc2d55ad6cfde5419057614ea3c62e2c49ec01a2af86b8041f0220371d8d74d6d140046f47dae8f42a3a73541c770487702efa4e72fdfaa38857e2:922c64590222798bb761d5b6d8e72950

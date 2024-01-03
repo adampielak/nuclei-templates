@@ -1,23 +1,25 @@
-id: circarlife-setup
+id: circarlife-installer
 
 info:
-  name: Exposed CirCarLife Setup Page
+  name: CirCarLife - Installer
   author: geeknik
-  description: CirCarLife is an internet-connected electric vehicle charging station
-  reference: https://circontrol.com/
   severity: critical
-  tags: scada,circontrorl,circarlife,setup,exposure,panel
+  description: A CirCarLife admin panel was accessed. CirCarLife is an internet-connected electric vehicle charging station
+  reference:
+    - https://circontrol.com/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
+    cvss-score: 9.4
+    cwe-id: CWE-284
+  metadata:
+    verified: true
+    shodan-query: title:"- setup" html:"Modem setup"
+  tags: scada,circontrol,circarlife,setup,exposure,panel,installer
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /html/setup.html HTTP/1.1
-        Host: {{Subdomains}}
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/setup.html"
     matchers-condition: and
     matchers:
       - type: word
@@ -34,3 +36,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2022/05/23

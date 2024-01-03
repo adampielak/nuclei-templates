@@ -9,10 +9,11 @@ info:
     - https://www.exploit-db.com/exploits/50639
     - https://nvd.nist.gov/vuln/detail/CVE-2021-45420
   metadata:
+    max-request: 2
     google-query: inurl:"xweb500.cgi"
   tags: lfw,iot,dixell,xweb500,edb,fileupload,intrusive
 
-requests:
+http:
   - raw:
       - |
         POST /cgi-bin/logo_extra_upload.cgi HTTP/1.1
@@ -21,12 +22,12 @@ requests:
 
         {{randstr}}.txt
         dixell-xweb500-filewrite
-
       - |
         GET /logo/{{randstr}}.txt HTTP/1.1
         Host: {{Hostname}}
 
     req-condition: true
+
     matchers-condition: and
     matchers:
       - type: dsl
@@ -37,4 +38,4 @@ requests:
         status:
           - 200
 
-# Enhanced by mp on 2022/06/01
+# digest: 4b0a00483046022100922c7e8568f5e8c36bbc399db5a70ebf19b11d966b696e946d3c8d418a382f3e0221009bd9123e182363c0aee4c6ef3a183784052100eea41a0625812f67de1cec47ab:922c64590222798bb761d5b6d8e72950

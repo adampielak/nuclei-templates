@@ -11,14 +11,14 @@ info:
     wpscan: https://wpscan.com/plugin/duplicate-post
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
-requests:
+http:
   - method: GET
 
     path:
       - "{{BaseURL}}/wp-content/plugins/duplicate-post/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/duplicate-post.txt
+      last_version: helpers/wordpress/plugins/duplicate-post.txt
 
     extractors:
       - type: regex
@@ -47,3 +47,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 490a00463044022068d89ea1fb99e7e608bda1d5b849e98387ad1bdec3748b511f9a17a300f7d45402202cd71ea20029c6c07bf380a970dcf15be9db120f8a66f529aae74880aee5806b:922c64590222798bb761d5b6d8e72950

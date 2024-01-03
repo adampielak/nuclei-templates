@@ -1,25 +1,21 @@
 id: struts-problem-report
 
 info:
-  name: Apache Struts in Dev Mode
+  name: Apache Struts Dev Mode - Detect
   author: dhiyaneshDK
   severity: low
-  reference: https://www.exploit-db.com/ghdb/4278
-  tags: exposure,apache,struts,debug
+  description: Multiple Apache Struts applications were detected in dev-mode.
+  reference:
+    - https://www.exploit-db.com/ghdb/4278
+  tags: struts,debug,edb,exposure,apache
+  metadata:
+    max-request: 1
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -29,3 +25,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/03/07

@@ -9,17 +9,10 @@ info:
   tags: wordpress,wp-theme,redirect
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/themes/Grimag/go.php?https://example.com"
 
-    raw:
-      - |
-        GET /wp-content/themes/Grimag/go.php?https://example.com HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept: */*
     matchers:
       - type: regex
         regex:

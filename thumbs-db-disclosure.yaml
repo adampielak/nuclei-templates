@@ -4,22 +4,17 @@ info:
   name: Thumbs DB Disclosure
   author: dhiyaneshDk
   severity: info
-  reference: https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/thumbs-db-disclosure.json
+  reference:
+    - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/thumbs-db-disclosure.json
+  metadata:
+    max-request: 1
   tags: exposure,files
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/Thumbs.db"
 
-    raw:
-      - |
-        GET /Thumbs.db HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: binary
@@ -30,3 +25,5 @@ requests:
       - type: status
         status:
           - 200
+
+# digest: 4a0a0047304502201ddbf3de5e3dca8b341f78493febc3707fa81bea9a0e793c576d20e3a4e2d745022100ba5bf553ef7f88ff0338d7b19f6c3b51c51fdb709a0f9d4f8f886104740c4cda:922c64590222798bb761d5b6d8e72950

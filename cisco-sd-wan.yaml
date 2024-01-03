@@ -5,18 +5,13 @@ info:
   author: z3bd
   severity: info
   reference: https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-bufovulns-B5NrSHbj
-  tags: panel,cisco
+  tags: cisco
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/login"
 
-    raw:
-      - |
-        GET /login HTTP/1.1
-        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
 

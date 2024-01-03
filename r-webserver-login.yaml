@@ -1,24 +1,25 @@
 id: r-webserver-login
+
 info:
-  name: R WebServer Login
+  name: R WebServer Login Panel - Detect
   author: pussycat0x
   severity: info
-  reference: https://www.exploit-db.com/ghdb/7132
-  tags: panel
+  description: R WebServer login panel was detected.
+  reference:
+    - https://www.exploit-db.com/ghdb/7132
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: edb,panel,rwebserver
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -28,3 +29,5 @@ requests:
       - type: status
         status:
           - 200
+
+# digest: 490a00463044022065379692db243fa1d115f286378173a32b973de295c34e846b5c5ef0c3132dc50220658f791bd86e5cdfb9e31fdeb4d355ca18db17b33f97e7e6aa073bbbbdfda42a:922c64590222798bb761d5b6d8e72950

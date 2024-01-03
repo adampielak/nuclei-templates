@@ -5,8 +5,10 @@ info:
   author: that_juan_,dwisiswant0,wdahlenb
   severity: low
   tags: springboot,exposure
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/loggers"

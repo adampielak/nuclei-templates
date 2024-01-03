@@ -5,18 +5,13 @@ info:
   author: dhiyaneshDK
   severity: info
   reference: https://www.exploit-db.com/ghdb/3859
-  tags: panel,cisco
+  tags: cisco
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}/login.html'
 
-    raw:
-      - |
-        GET /login.html HTTP/1.1
-        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word

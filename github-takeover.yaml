@@ -1,11 +1,12 @@
 id: github-takeover
 
 info:
-  name: github takeover detection
-  author: pdteam
+  name: Github Takeover Detection
+  author: pdteam,th3r4id
   severity: high
+  reference:
+    - https://github.com/EdOverflow/can-i-take-over-xyz
   tags: takeover,github
-  reference: https://github.com/EdOverflow/can-i-take-over-xyz
 
 requests:
   - method: GET
@@ -14,10 +15,15 @@ requests:
 
     matchers-condition: and
     matchers:
+      - type: dsl
+        dsl:
+          - Host != ip
+
       - type: word
         words:
           - "There isn't a GitHub Pages site here."
           - "For root URLs (like http://example.com/) you must provide an index.html file"
+          - "For root URLs (like <code>http://example.com/</code>) you must provide an"
         condition: or
 
       - type: dsl
@@ -25,4 +31,4 @@ requests:
           - '!contains(host,"githubapp.com")'
           - '!contains(host,"github.com")'
           - '!contains(host,"github.io")'
-        condition: or
+        condition: and

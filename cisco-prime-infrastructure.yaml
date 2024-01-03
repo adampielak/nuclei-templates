@@ -1,34 +1,41 @@
-id: cisco-prime-infrastructure
-
-info:
-  name: Cisco Prime Infrastructure
-  author: dhiyaneshDk
-  severity: info
-  metadata:
-    shodan-query: 'http.title:"prime infrastructure"'
-  tags: panel,cisco
-
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /webacs/pages/common/login.jsp HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'productName = "Prime Infrastructure"'
-          - "Cisco&nbsp;"
-
-      - type: status
-        status:
-          - 200
+name: cisco-prime-infrastructure
+priority: 3
+nuclei_tags:
+  - []
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <div class="xwtproductname" >cisco prime infrastructure
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - /webacs/lib/xwt/themes/prime/prime-xwt.css
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - webacs/welcomeaction.do
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers:
+      Server: prime
+    keyword: []
+    favicon_hash: []

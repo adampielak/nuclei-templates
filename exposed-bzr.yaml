@@ -1,36 +1,12 @@
 id: exposed-bzr
 
-info:
-  name: Exposed BZR Directory
-  author: daffainfo
-  severity: low
-  reference: http://doc.bazaar.canonical.com/beta/en/user-reference/configuration-help.html
-  tags: config,exposure
+name: Exposed BZR Directory
+severity: low
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    paths:
+      - "HOSTNAME/.bzr/branch/branch.conf"
 
-    raw:
-      - |
-        GET /.bzr/branch/branch.conf HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "parent_location"
-          - "push_location"
-        condition: or
-
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        part: header
-        words:
-          - "text/plain"
+    patterns:
+      - "parent_location|push_location"

@@ -11,14 +11,14 @@ info:
     wpscan: https://wpscan.com/plugin/all-in-one-seo-pack
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
-requests:
+http:
   - method: GET
 
     path:
       - "{{BaseURL}}/wp-content/plugins/all-in-one-seo-pack/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/all-in-one-seo-pack.txt
+      last_version: helpers/wordpress/plugins/all-in-one-seo-pack.txt
 
     extractors:
       - type: regex
@@ -47,3 +47,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100f0fd18dbb68b9e0a91f12fa0c999648188dcf3a330309d36d36523c2c906d46e02207fe0df259d257b0c947f2dfd77524400b536dedbea6de2841dc27e4d9c385990:922c64590222798bb761d5b6d8e72950

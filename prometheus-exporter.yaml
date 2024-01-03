@@ -8,8 +8,10 @@ info:
   reference:
     - https://github.com/prometheus/prometheus/wiki/Default-port-allocations
   tags: prometheus
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
