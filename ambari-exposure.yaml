@@ -2,14 +2,20 @@ id: ambari-exposure
 
 info:
   name: Apache Ambari Exposure / Unauthenticated Access
-  author: pd-team
+  author: pdteam
   severity: medium
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
     matchers:
       - type: word
         words:

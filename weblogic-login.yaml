@@ -1,23 +1,26 @@
 id: weblogic-login
 
 info:
-  name: Oracle WebLogic Login Panel - Detect
-  author: bing0o,meme-lord
+  name: Weblogic Login Panel
+  author: bing0o
   severity: info
-  description: Oracle WebLogic login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
+  tags: panel,weblogic
   metadata:
     shodan-query: product:"Oracle Weblogic"
-  tags: panel,oracle,weblogic,login
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/console/login/LoginForm.jsp"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /console/login/LoginForm.jsp HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -27,11 +30,3 @@ requests:
       - type: status
         status:
           - 200
-
-    extractors:
-      - type: regex
-        group: 1
-        regex:
-          - 'WebLogic Server Version: (.*?)<'
-
-# Enhanced by md on 2023/01/25

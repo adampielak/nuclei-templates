@@ -7,13 +7,13 @@ info:
   reference:
     - https://wordpress.org/plugins/contact-form-7/
   metadata:
+    max-request: 1
     plugin_namespace: contact-form-7
     wpscan: https://wpscan.com/plugin/contact-form-7
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/contact-form-7/readme.txt"
 
@@ -47,4 +47,5 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100dbf87ec7a10b124ff77849a306f9d12d862bf7a154e769f448365bf3b25d848402206c98a06e3d3ee29b1ac069162c3419d29125ad6558b954057a01240ff5e5f5cc:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100f76beaab941f769703b859a8da0e63dbcde191a886e108cefa4cf9d64a0058a2022003a88bc6d047fbd92ee834364fe7d78f72533af82a163dcb81e70492c798d097:922c64590222798bb761d5b6d8e72950

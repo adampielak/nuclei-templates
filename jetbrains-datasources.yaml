@@ -7,12 +7,14 @@ info:
   description: Jetbrains IDE DataSources configuration information was detected.
   reference: https://www.jetbrains.com
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
-    cvss-score: 5.3
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
+  metadata:
+    max-request: 1
   tags: config,exposure,jetbrains
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.idea/dataSources.xml"
@@ -28,4 +30,4 @@ requests:
         status:
           - 200
 
-# Enhanced by mp on 2023/02/05
+# digest: 4a0a00473045022012b8589ee6d9f977c908eb3891aae07ac2dc8f1c8927380ff0ab61d23d204b2a02210084e58ca6a5885ec796b1fa1374b02ff2587d0a219ff00eb538faf365af7ec9ba:922c64590222798bb761d5b6d8e72950

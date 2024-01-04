@@ -7,11 +7,10 @@ info:
   reference:
     - https://blog.aquasec.com/python-ransomware-jupyter-notebook
   metadata:
-    max-request: 1
     shodan-query: title:"Home Page - Select or create a notebook"
   tags: jupyter,misconfig
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

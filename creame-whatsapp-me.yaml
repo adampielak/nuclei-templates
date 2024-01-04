@@ -7,13 +7,13 @@ info:
   reference:
     - https://wordpress.org/plugins/creame-whatsapp-me/
   metadata:
+    max-request: 1
     plugin_namespace: creame-whatsapp-me
     wpscan: https://wpscan.com/plugin/creame-whatsapp-me
   tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/creame-whatsapp-me/readme.txt"
 
@@ -47,4 +47,5 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402200de12f2abffb3fc398e120998ee43f095f3a4d4771fcacd499734683d4b6f31d02203be0c3d54e11d618e2c830a7b603abc974d34dad3345134b73566538fd97c327:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100b8343d7e418abecb0e252cdf3590ea4d1ec5525193e9d26544b52fbfe6316d3f02205fb62198422a30efe5d75eb54130cc8e64190fdf4399cff7d7090a2bb2158c53:922c64590222798bb761d5b6d8e72950

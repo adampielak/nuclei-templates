@@ -9,7 +9,7 @@ info:
     tags:
       - firebase
       - configuration
-      - sensitive information
+      - sensitive
 
   matcher-condition: and
 
@@ -36,16 +36,7 @@ info:
     - pattern: "project_id"
       type: body
       description: Firebase project ID found in the response body
-  tlds:
-    - pattern: .firebaseio.com
-      type: tld
-      description: Firebase domain name
-  whitelist:
-    domains:
-      - firebase.google.com
-      - firebaseio.com
-    type: domain
-    description: Example whitelist for firebase domains
+      
   response:
     - status: 
       - 200

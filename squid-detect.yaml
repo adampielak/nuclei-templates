@@ -1,8 +1,10 @@
 id: squid-detect
+
 info:
   name: Squid Proxy Page
-  author: notnotnotveg
-  severity: informative
+  author: h0tak88r
+  severity: info
+
 requests:
   - method: GET
     path:

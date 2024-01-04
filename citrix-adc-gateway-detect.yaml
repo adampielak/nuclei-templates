@@ -2,7 +2,7 @@ id: citrix-adc-gateway-panel
 info:
   name: Citrix ADC Gateway detect
   author: organiccrap
-  severity: info
+  severity: low
 requests:
   - method: GET
     path:

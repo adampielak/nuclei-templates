@@ -1,24 +1,26 @@
 id: pure-storage-login
 
 info:
-  name: Pure Storage Login Panel - Detect
+  name: Pure Storage Login
   author: dhiyaneshDK
   severity: info
-  description: Pure Storage login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
   metadata:
-    max-request: 1
-    shodan-query: http.title:"Pure Storage Login"
-  tags: panel,purestorage
+    shodan-query: 'http.title:"Pure Storage Login"'
+  tags: panel
 
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -28,5 +30,3 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100d24b176bc0f6e299a1546685d715f883ee304205ae646cbc43e439a831e4defa02202def8b2dac9de67ecaf199a8b19f61383664f189b17e86eab4102361c0c9d634:922c64590222798bb761d5b6d8e72950

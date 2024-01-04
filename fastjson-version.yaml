@@ -5,21 +5,25 @@ info:
   author: yuansec
   severity: info
   description: If the server returns an exception to the client,The fastjson version will be retrieved,Fastjson versions greater than 1.2.41,Contains the latest version(1.2.76).
-  reference:
-    - https://blog.csdn.net/caiqiiqi/article/details/107907489
-  metadata:
-    max-request: 1
+  reference: https://blog.csdn.net/caiqiiqi/article/details/107907489
   tags: fastjson,tech
 
-http:
-  - raw:
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST / HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
         Content-Type: application/json
 
         {"@type":"java.lang.AutoCloseable"
-
     matchers:
       - type: word
         words:
@@ -31,5 +35,3 @@ http:
         group: 1
         regex:
           - 'fastjson-version.*([0-9]\.[0-9]+\.[0-9]+)'
-
-# digest: 490a0046304402203c405f6363fa11bc2c5f82e49cb873dfbaf8e2f8b22f268418b5a8b56d2d9869022009643c9a17c919ee23ce9b74c3ecea88e253bfeeebb7dd3252f2271168c72a35:922c64590222798bb761d5b6d8e72950

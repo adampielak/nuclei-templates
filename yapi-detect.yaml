@@ -4,18 +4,25 @@ info:
   name: YApi Detect
   author: pikpikcu
   severity: info
-  metadata:
-    max-request: 1
-    shodan-query: http.title:"YApi"
   tags: tech,yapi
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
+
       - type: word
         part: body
         words:
@@ -24,5 +31,3 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100d065fd5b007edee8b857f54125c1ad7475fbf9817a640e334a022db8b8b4e13702201cf3269e3d0dd2ecc4a51d6dcda283dbeda97f867b5e6cbbef31dcaeb31861ab:922c64590222798bb761d5b6d8e72950

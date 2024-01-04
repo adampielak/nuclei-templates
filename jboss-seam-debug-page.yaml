@@ -4,13 +4,10 @@ info:
   name: Jboss Seam Debug Page Enabled
   author: dhiyaneshDK
   severity: medium
-  reference:
-    - https://github.com/jaeles-project/jaeles-signatures/blob/master/common/jboss-seam-debug-page.yaml
+  reference: https://github.com/jaeles-project/jaeles-signatures/blob/master/common/jboss-seam-debug-page.yaml
   tags: jboss,logs,exposure
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/debug.seam"

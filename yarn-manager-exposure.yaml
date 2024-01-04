@@ -1,16 +1,22 @@
 id: yarn-manager-exposure
 
 info:
-  name: Apache YARN ResourceManager Panel - Detect
+  name: Apache Yarn ResourceManager Exposure / Unauthenticated Access
   author: pdteam
   severity: low
-  description: Apache YARN ResourceManager panel was detected.
-  tags: panel,apache,yarn,exposure
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/cluster/cluster'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /cluster/cluster HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:
@@ -18,5 +24,3 @@ requests:
           - 'resourcemanager'
           - 'logged in as: dr.who'
         condition: and
-
-# Enhanced by md on 2023/01/26

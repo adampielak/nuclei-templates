@@ -3,20 +3,24 @@ id: sap-web-dispatcher-admin-portal
 info:
   name: SAP Web Dispatcher admin portal detection
   author: randomstr1ng
-  severity: info
   description: Detection of SAP Web Dispatcher Admin Portal
-  metadata:
-    shodan-query: http.favicon.hash:-266008933
-  tags: sap,webserver,proxy,tech
+  severity: info
+  tags: sap,webserver,proxy
 
 requests:
-  - method: GET
-    host-redirects: true
-    max-redirects: 2
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    path:
-      - "{{BaseURL}}/sap/wdisp/admin/public/default.html"
-
+    raw:
+      - |
+        GET /sap/wdisp/admin/public/default.html HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
       - type: word

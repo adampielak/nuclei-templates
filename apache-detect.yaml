@@ -1,21 +1,27 @@
-id: apache-detect
-
+id: apache-version-detect
 info:
-  name: Apache Detection
+  name: Apache Version
   author: philippedelteil
-  severity: info
   description: Some Apache servers have the version on the response header. The OpenSSL version can be also obtained
-  metadata:
-    max-request: 1
-  tags: tech,apache
+  severity: info
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
+
       - type: regex
         part: header
         regex:
@@ -30,5 +36,3 @@ http:
         part: header
         kval:
           - Server
-
-# digest: 490a0046304402202069dccff4a8a8756466e25c96daa1a0b9c82e04fd7631bce14bd37ecefa57ca022038415583aa1fb322a685f7693d71e3aa1b5d3541e450be615426a4d3c5bcfbd4:922c64590222798bb761d5b6d8e72950

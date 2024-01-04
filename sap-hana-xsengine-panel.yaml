@@ -1,25 +1,24 @@
 id: sap-hana-xsengine-panel
 
 info:
-  name: SAP HANA XS Engine Admin Login Panel - Detect
+  name: SAP HANA XSEngine Admin Panel
   author: PR3R00T
   severity: info
-  description: SAP HANA XS Engine admin login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,sap
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/sap/hana/xs/formLogin/login.html"
-    host-redirects: true
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /sap/hana/xs/formLogin/login.html HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:
           - "/sap/hana/xs/formLogin/images/sap.png"
         part: body
-
-# Enhanced by md on 2023/01/03

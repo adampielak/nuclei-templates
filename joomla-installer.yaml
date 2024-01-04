@@ -5,12 +5,11 @@ info:
   author: DhiyaneshDk
   severity: high
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"Joomla Web Installer"
   tags: misconfig,joomla,install
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/installation/index.php'

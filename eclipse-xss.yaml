@@ -1,4 +1,4 @@
-id: Eclipse XSS
+id: EclipseXSS
 
 info:
   name: Eclipse Reflected XSS vulnerability

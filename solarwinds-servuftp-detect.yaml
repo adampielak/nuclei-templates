@@ -1,20 +1,22 @@
 id: solarwinds-servuftp-detect
 
 info:
-  name: SolarWinds Serv-U File Server Panel - Detect
+  name: SolarWinds Serv-U FileServer
   author: johnk3r
   severity: info
-  description: SolarWinds Serv-U File Server panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   tags: solarwinds,panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
 
@@ -22,15 +24,6 @@ requests:
         part: header
         regex:
           - "Serv-U"
-
       - type: status
         status:
           - 200
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
-          - Server
-
-# Enhanced by md on 2023/01/15

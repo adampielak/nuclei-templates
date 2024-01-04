@@ -7,13 +7,13 @@ info:
   reference:
     - https://wordpress.org/plugins/black-studio-tinymce-widget/
   metadata:
+    max-request: 1
     plugin_namespace: black-studio-tinymce-widget
     wpscan: https://wpscan.com/plugin/black-studio-tinymce-widget
   tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/black-studio-tinymce-widget/readme.txt"
 
@@ -47,4 +47,5 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502210095aba8244a87d0ffdbbc1f921f0777dcb73e92953463d0fc6e483f99bf8209c502205d24eac97c9bc8d3865fbd4e58d07d55e01e86e691ebdcc16a9532f2ffa6bfed:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450221008a4f339815b601f8f035fae3f9817618ca977a28fb2737dbfa5b4ad32c2db508022079e6d25974962bf0a1f2f753b66efff8b64554099279d181b0f48f0c8f04e778:922c64590222798bb761d5b6d8e72950

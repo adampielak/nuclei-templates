@@ -1,21 +1,22 @@
 id: securenvoy-panel
 
 info:
-  name: SecurEnvoy Admin Login Panel - Detect
+  name: SecurEnvoy Admin Login
   author: 0xrod
   severity: info
-  description: SecurEnvoy admin login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,securenvoy
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/secadmin/"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /secadmin/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word
@@ -26,5 +27,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/09

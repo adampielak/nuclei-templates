@@ -1,23 +1,22 @@
 id: nagiosxi-default-login
 
 info:
-  name: Nagios XI Default Admin Login - Detect
+  name: NagiosXI -  Default Login
   author: ritikchaddha
   severity: critical
-  description: Nagios XI default admin login credentials were detected.
+  description: NagiosXI default admin credentials were discovered.
   reference:
     - https://nagiosxi.demos.nagios.com/nagiosxi/login.php?redirect=/nagiosxi/index.php%3f&noauth=1
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cwe-id: CWE-1391
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10.1
+    cwe-id: CWE-522
   metadata:
-    max-request: 6
     verified: "true"
     shodan-query: title:"Nagios XI"
   tags: nagios,nagiosxi,default-login
 
-http:
+requests:
   - raw:
       - |
         GET /nagiosxi/login.php HTTP/1.1
@@ -68,5 +67,3 @@ http:
         regex:
           - 'name="nsp" value="(.*)">'
         internal: true
-
-# Enhanced by cs on 2023/04/26

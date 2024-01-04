@@ -11,11 +11,10 @@ info:
   classification:
     cwe-id: CWE-798
   metadata:
-    max-request: 6
     shodan-query: http.title:"GitLab"
   tags: gitlab,default-login
 
-http:
+requests:
   - raw:
       - |
         POST /oauth/token HTTP/1.1

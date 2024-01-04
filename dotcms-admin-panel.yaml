@@ -1,27 +1,24 @@
 id: dotcms-admin-panel
 
 info:
-  name: dotAdmin Login Panel- Detect
+  name: dotAdmin Panel
   author: impramodsargar
   severity: info
-  description: dotAdmin login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  metadata:
-    max-request: 1
-  tags: panel,dotcms,cms
+  tags: panel
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/dotAdmin/"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /dotAdmin/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>dotCMS Content Management Platform</title>'
-
-# digest: 490a0046304402205d75c7d5c977c57b15c043fdbe2c7c3ec1dec8a1ac7d5fa46dc6d31169b4c5690220619ec76fc9c9d9b3004fa57cc211ca628d34361550c2c8d8139c35a709aefd4b:922c64590222798bb761d5b6d8e72950

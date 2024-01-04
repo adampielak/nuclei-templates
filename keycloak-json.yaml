@@ -1,7 +1,7 @@
 id: keycloak-json
 
 info:
-  name: Keycloak JSON File
+  name: Keycloak Json File
   author: oppsec
   severity: info
   tags: exposure,keycloak,config,files

@@ -4,19 +4,25 @@ info:
   name: Apache Airflow
   author: pdteam
   severity: info
-  metadata:
-    verified: true
-    max-request: 1
-    shodan-query: http.html:"Apache Airflow"
-  tags: tech,apache,airflow,intrusive
+  tags: tech,apache,airflow
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/{{randstr}}"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /{{randstr}} HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
+
       - type: word
         part: body
         words:
@@ -25,5 +31,3 @@ http:
       - type: status
         status:
           - 404
-
-# digest: 4b0a0048304602210090bc87e2b346dc271828d73439387b1b3025a6a7b967cef6a74fea8466ff74fe022100ed3f535da14e849368eec9d5eccba31a7dc7712627910bd2974c40c86828a04e:922c64590222798bb761d5b6d8e72950

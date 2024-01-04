@@ -4,17 +4,16 @@ info:
   name: Kafka Cruise Control UI
   author: dhiyaneshDK
   severity: medium
-  metadata:
-    max-request: 1
-    shodan-query: http.title:"Kafka Cruise Control UI"
   tags: kafka,misconfig
+  metadata:
+    shodan-query: http.title:"Kafka Cruise Control UI"
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word

@@ -12,10 +12,7 @@ info:
       - security
 
   matcher-condition: or
-
-  keywords:
-    - firebase
-
+  
   requests:
       method: GET
       path:

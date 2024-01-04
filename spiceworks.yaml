@@ -1,32 +1,29 @@
-name: spiceworks
-priority: 3
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - <meta name="author" content="spiceworks, inc." />
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - <link href="/stylesheets/general.css?
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - <h1><img alt="spiceworks" src="/images/logos/large.png
-    favicon_hash: []
+id: spiceworks
+
+info:
+  name: SpiceWorks
+  author: dwisiswant0
+  description: This OSINT template looks for information about a user name.
+  severity: info
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: osint,osint-tech,spiceworks
+
+self-contained: true
+requests:
+  - method: GET
+    path:
+      - "https://community.spiceworks.com/people/{{user}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "Portfolio of IT Projects - Spiceworks"

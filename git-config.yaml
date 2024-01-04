@@ -1,9 +1,16 @@
 id: git-config
-name: Git Config Exposure
-severity: medium
+
+info:
+  name: Git Config Disclosure
+  author: Ice3man
+  severity: medium
+  description: Searches for the pattern /.git/config on passed URLs.
+
 requests:
   - method: GET
-    paths: 
-      - "HOSTNAME/.git/config"
-    patterns:
-      - \[core\]
+    path:
+      - "{{BaseURL}}/.git/config"
+    matchers:
+      - type: word
+        words:
+          - "[core]"

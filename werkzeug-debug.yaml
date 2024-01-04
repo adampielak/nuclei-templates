@@ -1,8 +1,10 @@
-id: werkzeug-debug
+id: werkzeug-console
+
 info:
-  name: werkzeug-debug
-  author: notnotnotveg
-  severity: informative
+  name: werkzeug-console
+  author: h0tak88r
+  severity: info
+
 requests:
   - method: GET
     path:

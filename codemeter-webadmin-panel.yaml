@@ -1,23 +1,23 @@
 id: codemeter-webadmin-panel
 
 info:
-  name: CodeMeter - WebAdmin Panel Access
+  name: CodeMeter WebAdmin Panel
   author: Techryptic (@Tech)
-  severity: info
-  description: CodeMeter WebAdmin panel was accessed.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-668
-  metadata:
-    max-request: 1
+  severity: high
+  description: Panel on CodeMeter WebAdmin application.
   tags: codemeter,webadmin,panel
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
       - type: word
@@ -29,5 +29,3 @@ http:
         status:
           - 301
           - 302
-
-# digest: 4a0a0047304502202147a4b844be69fb1d2b5c0feb4f2e732f24ed9074bf76d858d7d6fca930fdc3022100e7b895ca6be81167d90ce63a6ba05e80c22e1315da46817af7f55f80b8087dcf:922c64590222798bb761d5b6d8e72950

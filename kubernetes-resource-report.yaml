@@ -6,14 +6,17 @@ info:
   severity: medium
   description: Information Disclosure of Kubernetes Resource Report
   tags: kubernetes,exposure
-  metadata:
-    max-request: 1
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word

@@ -1,8 +1,10 @@
-id: Clickhouse DB - Detect
+id: clickhous-db-detect
+
 info:
   name: Clickhouse DB - Detect
-  author: notnotnotveg
+  author: h0tak88r
   severity: informative
+
 requests:
   - method: GET
     path:
@@ -15,4 +17,4 @@ requests:
       - type: word
         words:
           - "clickhouse"
-        part: body
+        part: body	

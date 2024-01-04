@@ -1,5 +1,4 @@
 id: sap-spartacus-detect
-
 info:
   name: SAP Spartacus detect
   author: TechbrunchFR
@@ -10,12 +9,10 @@ info:
   metadata:
     verified: true
   tags: tech,sap,hybris,angular,spartacus
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers:
       - part: body
         type: word

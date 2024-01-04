@@ -5,6 +5,7 @@ info:
   author: pikpikcu
   severity: critical
   reference: https://github.com/yumusb/EgGateWayGetShell_py/blob/main/eg.py
+  vendor: https://www.ruijienetworks.com
   tags: ruijie,rce
 
 requests:

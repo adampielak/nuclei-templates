@@ -9,9 +9,6 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/remote/login"
-
-    redirects: true
-    max-redirects: 2
     matchers:
       - type: word
         words:

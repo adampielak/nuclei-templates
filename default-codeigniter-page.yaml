@@ -4,16 +4,23 @@ info:
   name: Default CodeIgniter Page
   author: dhiyaneshDK
   severity: info
-  metadata:
-    max-request: 1
-    shodan-query: http.title:"Welcome to CodeIgniter"
+  reference: https://www.shodan.io/search?query=http.title%3A%22Welcome+to+CodeIgniter%22
   tags: tech,codeigniter
 
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers-condition: and
     matchers:
       - type: regex
@@ -23,5 +30,3 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100f4e992a459c52b2e15d4e202219faf801f3d82e1c31c798c6a400d7f923c0ee502210096d6440219750e02b3176cbaf2e33f06598297f784355801a904c26295e486fa:922c64590222798bb761d5b6d8e72950

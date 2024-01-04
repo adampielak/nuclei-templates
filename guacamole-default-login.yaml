@@ -1,38 +1,27 @@
-id: guacamole-default-login
+id: guacamole-default-credentials
 
 info:
-  name: Guacamole Default Login
+  name: Guacamole Default Credentials
   author: r3dg33k
   severity: high
-  description: Guacamole default admin login credentials were detected.
-  reference:
-    - https://wiki.debian.org/Guacamole#:~:text=You%20can%20now%20access%20the,password%20are%20both%20%22guacadmin%22
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
-    cvss-score: 8.3
-    cwe-id: CWE-522
   tags: guacamole,default-login
-  metadata:
-    max-request: 1
+  reference: https://wiki.debian.org/Guacamole#:~:text=You%20can%20now%20access%20the,password%20are%20both%20%22guacadmin%22.
 
-http:
-  - raw:
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST /api/tokens HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         Content-Type: application/x-www-form-urlencoded
-        Origin: {{Hostname}}
-        Referer: {{Hostname}}
+        Origin: {{Scheme}}://{{Subdomains}}
+        Referer: {{Scheme}}://{{Subdomains}}
 
-        username={{username}}&password={{password}}
-
-    payloads:
-      username:
-        - guacadmin
-      password:
-        - guacadmin
-    attack: pitchfork
-
+        username=guacadmin&password=guacadmin
     matchers-condition: and
     matchers:
       - type: word
@@ -50,5 +39,3 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/10

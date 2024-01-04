@@ -7,13 +7,13 @@ info:
   reference:
     - https://wordpress.org/plugins/cookie-law-info/
   metadata:
+    max-request: 1
     plugin_namespace: cookie-law-info
     wpscan: https://wpscan.com/plugin/cookie-law-info
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/cookie-law-info/readme.txt"
 
@@ -47,4 +47,5 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402204cf75a726fe1a2f96ca75ee3615962159e9debd0a9440aef9a70539fe7eda8f00220555ee9b52b7ec0962c759d223a5dcd6175b61b0d4d763f0dbbf3730fb48313eb:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220374bcce4fb408a4f9c5779b8053a3a593d9b590d446408701403d1d50b1673da0220329022a978dca9efaf54bb07c1e48f2de39b6d2bc7e6870652c643177999fba3:922c64590222798bb761d5b6d8e72950

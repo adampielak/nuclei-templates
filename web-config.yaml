@@ -1,13 +1,22 @@
 id: web-config
+info:
+  name: Web Config file
+  author: Yash Anand @yashanand155
+  severity: info
 
-name: Web Config file
-severity: info
-  
 requests:
   - method: GET
-    paths:
-      - 'HOSTNAME/web.config'
+    path:
+      - '{{BaseURL}}/web.config'
 
-    patterns:
-      - <configuration>
-      - <system.webServer>
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - <configuration>
+          - <system.webServer>
+        condition: and
+
+      - type: status
+        status:
+          - 200

@@ -5,15 +5,22 @@ info:
   author: dhiyaneshDK
   severity: low
   metadata:
-    max-request: 1
-    shodan-query: http.title:"Welcome to Sitecore"
-  tags: debug,sitecore,misconfig
+    shodan-query: 'http.title:"Welcome to Sitecore"'
+  tags: debug,sitecore
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/sitecore/'"
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /sitecore/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -23,5 +30,3 @@ http:
       - type: status
         status:
           - 404
-
-# digest: 4b0a00483046022100e0d27a732d40ca81dff4d34416118142dff5de7a6f7171f3ba4184323a83e0bb022100db0891f1ea6c42d621426369e769fe68b2fe7a9a17374fa22004ccacf35a5a98:922c64590222798bb761d5b6d8e72950

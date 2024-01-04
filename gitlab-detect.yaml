@@ -1,4 +1,4 @@
-id: gitlab-detect
+id: Gitlab-Detect
 
 info:
   name: Detect Gitlab
@@ -11,9 +11,6 @@ requests:
       - "{{BaseURL}}/users/sign_in"
       - "{{BaseURL}}/users/sign_up"
       - "{{BaseURL}}/explore"
-
-    redirects: true
-    max-redirects: 2
     matchers:
       - type: word
         words:

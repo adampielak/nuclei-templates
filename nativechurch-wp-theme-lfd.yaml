@@ -2,7 +2,7 @@ id: nativechurch-wp-theme-lfd
 
 info:
   name: WordPress NativeChurch Theme Arbitrary File Download
-  author: imhunterand
+  author: 0x_Akoko
   severity: high
   tags: wordpress,wp-theme,lfi
   description: A LFD Bug In download.php File In NativeChurch Theme And Make Site Vulnerable.

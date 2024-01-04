@@ -1,7 +1,7 @@
 info:
   id: symfony-dump-errors
   name: Symfony Debugging Errors
-  author: Fábio Castro
+  author: Fabio Castro
   description: List of common regular expression patterns to detect debugging errors in HTTP request bodies.
   severity: High
   classification:
@@ -19,8 +19,8 @@ info:
     method: GET
     path:
       - "/"
-    description: Attempt to access the main page
-    condition: and
+    description: Attempt to retrieve PaperCut MF/NG management UI
+    condition: or
 
   matchers:
     - pattern: "sf-dump-key"

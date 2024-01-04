@@ -7,13 +7,13 @@ info:
   reference:
     - https://wordpress.org/plugins/duplicate-post/
   metadata:
+    max-request: 1
     plugin_namespace: duplicate-post
     wpscan: https://wpscan.com/plugin/duplicate-post
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/duplicate-post/readme.txt"
 
@@ -47,4 +47,5 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a00463044022068d89ea1fb99e7e608bda1d5b849e98387ad1bdec3748b511f9a17a300f7d45402202cd71ea20029c6c07bf380a970dcf15be9db120f8a66f529aae74880aee5806b:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402207ded338182f39b8c28f1ca134172d24fc846d05d914caf1362bb494dd50030f10220203f737b633815aab356e935dd31ba92a1df4a4eb12b9c127504e1f27de2dbcd:922c64590222798bb761d5b6d8e72950

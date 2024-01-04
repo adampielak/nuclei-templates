@@ -12,13 +12,12 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    max-request: 1
     shodan-query: title:"Apache APISIX Dashboard"
     fofa-query: title="Apache APISIX Dashboard"
     product: https://apisix.apache.org
   tags: apisix,apache,default-login
 
-http:
+requests:
   - raw:
       - |
         POST /apisix/admin/user/login HTTP/1.1

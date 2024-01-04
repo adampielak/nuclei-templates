@@ -6,7 +6,7 @@ info:
   severity: info
   reference:
     - https://www.exploit-db.com/ghdb/6496
-  tags: horizon,vmware,edb,panel
+  tags: panel,horizon,vmware
 
 requests:
   - method: GET
@@ -15,7 +15,7 @@ requests:
       - '{{BaseURL}}/portal/webclient/index.html'
 
     stop-at-first-match: true
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: regex

@@ -1,21 +1,24 @@
 id: skycaiji-admin-panel
 
 info:
-  name: SkyCaiji Admin Panel - Detect
+  name: SkyCaiji Admin Panel
   author: princechaddha
   severity: info
-  description: SkyCaiji admin panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: panel,tech,skycaiji
+  tags: panel,tech
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/index.php?s=/admin/Index/index"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /index.php?s=/admin/Index/index HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
 
@@ -36,5 +39,3 @@ requests:
         group: 1
         regex:
           - 'com">SkyCaiji<\/a> ([A-Z0-9.]+) 后台管理<\/p>'
-
-# Enhanced by md on 2023/01/15
