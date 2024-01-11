@@ -7,15 +7,10 @@ info:
   tags: adobe,panel
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/system/login"
 
-    raw:
-      - |
-        GET /system/login HTTP/1.1
-        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word

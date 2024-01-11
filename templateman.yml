@@ -6,14 +6,14 @@ on:
 jobs:
   templateman:
     runs-on: ubuntu-latest
-    if: github.repository == 'projectdiscovery/nuclei-templates'
+    if: github.repository == '0xKayala/Custom-Nuclei-Templates'
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v4
         with:
           go-version: 1.21.x
 
@@ -27,7 +27,7 @@ jobs:
       - name: Run TemplateMan
         id: tmc
         run: |
-          echo /home/runner/work/nuclei-templates/nuclei-templates | tmc -mr -e
+          echo /home/runner/work/custom-nuclei-templates/custom-nuclei-templates | tmc -mr -e
           git status -s | wc -l | xargs -I {} echo CHANGES={} >> $GITHUB_OUTPUT
 
       - name: Commit files

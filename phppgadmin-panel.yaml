@@ -1,26 +1,40 @@
 id: phppgadmin-panel
 
 info:
-  name: phpPgAdmin Panel
-  author: Ganofins
+  name: phpPgAdmin Login Panel - Detect
+  author: Ganofins,Nullfuzz
   severity: info
-  tags: panel
+  description: |
+    phpPgAdmin login ipanel was detected.
+  reference:
+    - https://docs.cpanel.net/cpanel/databases/phppgadmin/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    shodan-query: http.title:phpPgAdmin
+  tags: panel,phppgadmin
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/phppgadmin/"
 
-    raw:
-      - |
-        GET /phppgadmin/ HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+    matchers-condition: or
     matchers:
-      - type: word
-        words:
-          - "phpPgAdmin"
-          - "browser.php"
-          - "intro.php"
+      - type: dsl
+        dsl:
+          - "status_code == 200"
+          - "contains(body, 'intro.php') && contains(body, 'browser.php')"
         condition: and
+
+      - type: dsl
+        dsl:
+          - "status_code == 200"
+          - "contains(body, '<title>phpPgAdmin')"
+        condition: and
+
+# Enhanced by md on 2022/12/06

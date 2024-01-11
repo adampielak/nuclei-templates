@@ -1,25 +1,30 @@
 id: aem-querybuilder-json-servlet
 
 info:
-  author: DhiyaneshDk
   name: AEM QueryBuilder Json Servlet
+  author: DhiyaneshDk
   severity: info
-  reference: https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/querybuilder-predicate-reference.html
-  tags: aem
+  description: Sensitive information might be exposed via AEMs QueryBuilderServlet or QueryBuilderFeedServlet.
+  reference:
+    - https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/querybuilder-predicate-reference.html
+    - https://github.com/thomashartm/burp-aem-scanner/blob/master/src/main/java/burp/actions/dispatcher/QueryBuilderExposed.java
+  metadata:
+    shodan-query: http.component:"Adobe Experience Manager"
+  tags: aem,adobe
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}/bin/querybuilder.json'
+      - '{{BaseURL}}/bin/querybuilder.json.servlet'
+      - '{{BaseURL}}///bin///querybuilder.json'
+      - '{{BaseURL}}///bin///querybuilder.json.servlet'
+      - '{{BaseURL}}/bin/querybuilder.feed'
+      - '{{BaseURL}}/bin/querybuilder.feed.servlet'
+      - '{{BaseURL}}///bin///querybuilder.feed'
+      - ' {{BaseURL}}///bin///querybuilder.feed.servlet'
 
-    raw:
-      - |
-        GET /bin/querybuilder.json HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status

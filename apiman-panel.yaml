@@ -8,15 +8,10 @@ info:
   tags: panel,apiman
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/apimanui/api-manager"
 
-    raw:
-      - |
-        GET /apimanui/api-manager HTTP/1.1
-        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word

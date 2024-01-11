@@ -8,15 +8,10 @@ info:
   tags: panel,adobe
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}'
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word

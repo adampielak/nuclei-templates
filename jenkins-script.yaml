@@ -25,13 +25,8 @@ requests:
         part: body
         words:
           - "println(Jenkins.instance.pluginManager.plugins)"
-
-      - type: word
-        part: body
-        words:
-          - "Script Console"
           - "Scriptconsole"
-        condition: or
+        condition: and
 
       - type: status
         status:

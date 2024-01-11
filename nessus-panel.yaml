@@ -1,32 +1,37 @@
-id: nessus-panel-detect
+id: nessus-panel
 
 info:
-  name: Nessus Panel detector
-  author: joanbono
+  name: Tenable Nessus Panel - Detect
+  author: joanbono,tess
   severity: info
-  tags: panel
+  description: Tenable Nessus panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    shodan-query: title:"Nessus"
+  tags: panel,nessus
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/server/status"
 
-    raw:
-      - |
-        GET /server/status HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
-    matchers-condition: and
+    matchers-condition: or
     matchers:
       - type: word
-        words:
-          - '{"code":200,"progress":null,"status":"ready"}'
-        part: body
-      - type: word
+        part: header
         words:
           - 'NessusWWW'
-        part: header
-      - type: status
-        status:
-          - 200
+
+      - type: word
+        part: body
+        words:
+          - "<title>Nessus</title>"
+          - "window.location = '/unsupported6.html';"
+        condition: and
+
+# Enhanced by md on 2022/11/29

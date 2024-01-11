@@ -11,7 +11,7 @@ on:
 jobs:
   checksum:
     runs-on: ubuntu-latest
-    if: github.repository == 'projectdiscovery/nuclei-templates'
+    if: github.repository == '0xKayala/Custom-Nuclei-Templates'
     steps:
       - uses: actions/checkout@v4
         with: 
@@ -20,16 +20,16 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: 1.20.x
+          go-version: 1.21.x
 
       - name: install checksum generator
         run: |
-          go install -v github.com/projectdiscovery/nuclei/v2/cmd/generate-checksum@dev
+          go install -v github.com/projectdiscovery/nuclei/v3/cmd/generate-checksum@dev
 
       - name: generate checksum
         id: checksum
         run: |
-          generate-checksum /home/runner/work/nuclei-templates/nuclei-templates/ templates-checksum.txt
+          generate-checksum /home/runner/work/custom-nuclei-templates/custom-nuclei-templates/ templates-checksum.txt
           git status -s | wc -l | xargs -I {} echo CHANGES={} >> $GITHUB_OUTPUT
 
       - name: Commit files

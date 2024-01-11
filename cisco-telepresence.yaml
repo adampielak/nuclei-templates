@@ -1,33 +1,35 @@
 id: cisco-telepresence
 
 info:
-  name: Cisco Telepresence
+  name: Cisco TelePresence Login Panel - Detect
   author: dhiyaneshDk
   severity: info
-  tags: panel,cisco
+  description: Cisco TelePresence login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
   metadata:
-    shodan-query: 'http.title:"Cisco Telepresence"'
+    verified: true
+    shodan-query: http.title:"Cisco Telepresence"
+  tags: panel,cisco
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/login.html"
 
-    raw:
-      - |
-        GET /login.html HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
+    host-redirects: true
+    max-redirects: 2
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - "<title>Cisco TelePresence MCU - login:</title>"
+          - "Cisco TelePresence MCU - login:"
 
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2022/11/10

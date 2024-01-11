@@ -4,22 +4,17 @@ info:
   name: Apache Airflow
   author: pdteam
   severity: info
+  metadata:
+    verified: true
+    shodan-query: http.html:"Apache Airflow"
   tags: tech,apache,airflow
+  mongoid: 0000
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/{{randstr}}"
 
-    raw:
-      - |
-        GET /{{randstr}} HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
     matchers-condition: and
     matchers:
 

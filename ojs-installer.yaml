@@ -5,8 +5,8 @@ info:
   author: DhiyaneshDK
   severity: high
   metadata:
+    max-request: 1
     verified: true
-    max-request: 2
     shodan-query: http.favicon.hash:2099342476
   tags: misconfig,ojs,install,exposure
 
@@ -17,7 +17,6 @@ http:
       - '{{BaseURL}}/index.php/index/install'
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -28,5 +27,3 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100a73a5709ab5c8ffc95f1edb4434f2ef96a93e741785901596f6864bdcfa563d5022100f88c3bfbc5d5b8cce6a260f47f8100f4f58f0ab7ede9bbb5bcd59ae0bd789c0a:922c64590222798bb761d5b6d8e72950

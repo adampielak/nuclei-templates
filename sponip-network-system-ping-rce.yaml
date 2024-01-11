@@ -12,9 +12,11 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-77
-  tags: sponip,rce,oast,network
+  tags: sponip,rce,oast
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         POST /php/ping.php HTTP/1.1
@@ -29,5 +31,3 @@ requests:
         name: http
         words:
           - "http"
-
-# Enhanced by mp on 2022/05/30

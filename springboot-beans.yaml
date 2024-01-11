@@ -6,12 +6,16 @@ info:
   severity: low
   description: Displays a complete list of all the Spring beans in the application
   tags: springboot,exposure
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/beans"
       - "{{BaseURL}}/actuator/beans"
+
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

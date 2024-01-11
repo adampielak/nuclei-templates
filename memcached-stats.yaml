@@ -2,7 +2,7 @@ id: memcached-stats
 
 info:
   name: Memcached stats disclosure
-  author: pdteam
+  author: pd-team
   severity: low
   tags: network,memcached
 
@@ -11,8 +11,7 @@ network:
       - data: "stats\r\n\r\nquit\r\n"
 
     host:
-      - "{{Hostname}}"
-      - "{{Host}}:11211"
+      - "{{Hostname}}:11211"
     read-size: 2048
 
     matchers:

@@ -14,10 +14,11 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
+    max-request: 2
     shodan-query: title:"Grafana"
   tags: grafana,default-login
 
-requests:
+http:
   - raw:
       - |
         POST /login HTTP/1.1

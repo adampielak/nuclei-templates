@@ -1,7 +1,7 @@
-id: serverlet-xss
+id: Serverlet XSS  # WebLogic
 
 info:
-  author: "h0tak88r"
+  author: "pikpikcu"
   name: "WebLogic Servlet/2.5 JSP/2.1 XSS"
   severity: Medium
 

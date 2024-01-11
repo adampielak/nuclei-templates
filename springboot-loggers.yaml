@@ -5,13 +5,16 @@ info:
   author: that_juan_,dwisiswant0,wdahlenb
   severity: low
   tags: springboot,exposure
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/loggers"
       - "{{BaseURL}}/actuator/loggers"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
@@ -21,14 +24,14 @@ requests:
           - '"levels"'
         condition: and
 
-      - type: status
-        status:
-          - 200
-
       - type: word
+        part: header
         words:
           - "application/json"
           - "application/vnd.spring-boot.actuator"
           - "application/vnd.spring-boot.actuator.v1+json"
         condition: or
-        part: header
+
+      - type: status
+        status:
+          - 200

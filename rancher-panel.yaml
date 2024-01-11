@@ -1,33 +1,34 @@
 id: rancher-panel
 
 info:
-  name: Rancher Login Panel
-  author: princechaddha
+  name: Rancher Login Panel - Detect
+  author: princechaddha, idealphase
   severity: info
-  description: Rancher is a open-source multi-cluster orchestration platform, lets operations teams deploy, manage and secure enterprise Kubernetes.
-  reference: https://github.com/rancher/rancher
-  tags: panel,rancher,kubernetes,devops,cloud
+  description: Rancher login panel was detected.
+  reference:
+    - https://github.com/rancher/rancher
+    - https://rancher.com/
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    shodan-query: http.title:"Loading?"
+  tags: panel,rancher,kubernetes,devops,cloud,login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - "<title>Loading&hellip;</title>"
-          - "global-admin/config/environment"
+          - "<title>Loading?</title>"
+          - "ember-basic-dropdown-wormhole"
         condition: and
 
       - type: status
@@ -40,3 +41,5 @@ requests:
         group: 1
         regex:
           - '<!\-\- ([0-9. ]+)\-\->'
+
+# Enhanced by md on 2022/12/07
