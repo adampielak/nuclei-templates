@@ -2,7 +2,7 @@ id: wp-plugins-brandfolder-plugin-lfi
 
 info:
   name: Wordpress brandfolder plugin / RFI & LFI
-  author: 0x_Akoko
+  author: imhunterand
   severity: high
   tags: wordpress,wp-plugin,lfi,rfi
   reference:

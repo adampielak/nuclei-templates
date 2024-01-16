@@ -4,22 +4,18 @@ info:
   name: Clockwork Dashboard Exposure
   author: dhiyaneshDk
   severity: high
-  reference: https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/clockwork-dashboard-exposure.json
-  tags: exposure,unauth
+  description: Clockwork Dashboard is exposed.
+  reference:
+    - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/clockwork-dashboard-exposure.json
+  metadata:
+    max-request: 1
+  tags: exposure,unauth,misconfig
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/__clockwork/latest"
 
-    raw:
-      - |
-        GET /__clockwork/latest HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -36,3 +32,4 @@ requests:
         words:
           - "application/json"
         part: header
+# digest: 4a0a0047304502203a5e00e511f8c5e07b3226138aa5a200987ff379478ed205d50cc4efb37057bc022100c6904e2c0c287210ef34d2f2f14df7808c8c2ad43a57105b548786b1c28c6d54:922c64590222798bb761d5b6d8e72950

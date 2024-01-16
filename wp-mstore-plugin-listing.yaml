@@ -6,10 +6,11 @@ info:
   severity: low
   description: Searches for sensitive directories present in the mstore-api plugin.
   metadata:
+    max-request: 1
     google-query: inurl:/wp-content/plugins/mstore-api/
   tags: wordpress,listing,wp-plugin
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/mstore-api/"
