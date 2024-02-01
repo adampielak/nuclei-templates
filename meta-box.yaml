@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/meta-box/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/meta-box.txt
+      last_version: helpers/wordpress/plugins/meta-box.txt
 
     extractors:
       - type: regex

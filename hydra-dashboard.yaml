@@ -3,18 +3,19 @@ id: hydra-dashboard
 info:
   name: Hydra Router Dashboard - Detect
   author: tess
-  severity: low
+  severity: info
   description: Hydra router dashboard was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"Hydra Router Dashboard"
-  tags: panel,exposure,hydra
+  tags: panel,hydra
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

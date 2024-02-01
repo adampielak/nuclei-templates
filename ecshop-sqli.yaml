@@ -16,11 +16,12 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-89
   metadata:
+    max-request: 2
     verified: true
     fofa-query: app="ECShop"
   tags: sqli,php,ecshop
 
-requests:
+http:
   - raw:
       - |
         GET /user.php?act=login HTTP/1.1

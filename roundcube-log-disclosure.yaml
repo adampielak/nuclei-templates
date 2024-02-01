@@ -2,40 +2,33 @@ id: roundcube-log-disclosure
 
 info:
   name: Roundcube Log Disclosure
-  author: dhiyaneshDk,kazet
+  author: dhiyaneshDk
   severity: medium
-  description: Roundcube Log file was disclosed.
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/roundcube-log-disclosure.json
+  tags: exposure,logs
   metadata:
     max-request: 12
-  tags: exposure,logs
 
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/{{roundcube_path}}"
-
-    payloads:
-      roundcube_path:
-        - roundcube/logs/sendmail
-        - roundcube/logs/errors.log
-        - roundcube/logs/errors
-        - webmail/logs/sendmail
-        - webmail/logs/errors.log
-        - webmail/logs/errors
-        - mail/logs/sendmail
-        - mail/logs/errors.log
-        - mail/logs/errors
-        - logs/sendmail
-        - logs/errors.log
-        - logs/errors
-    max-size: 1000
+      - "{{BaseURL}}/roundcube/logs/sendmail"
+      - "{{BaseURL}}/roundcube/logs/errors.log"
+      - "{{BaseURL}}/roundcube/logs/errors"
+      - "{{BaseURL}}/webmail/logs/sendmail"
+      - "{{BaseURL}}/webmail/logs/errors.log"
+      - "{{BaseURL}}/webmail/logs/errors"
+      - "{{BaseURL}}/mail/logs/sendmail"
+      - "{{BaseURL}}/mail/logs/errors.log"
+      - "{{BaseURL}}/mail/logs/errors"
+      - "{{BaseURL}}/logs/sendmail"
+      - "{{BaseURL}}/logs/errors.log"
+      - "{{BaseURL}}/logs/errors"
 
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
           - "IMAP Error:"
           - "Message for"
@@ -44,13 +37,8 @@ http:
           - "PHP Error:"
           - "PHP Warning:"
         condition: or
+        part: body
 
       - type: status
         status:
           - 200
-
-    extractors:
-      - type: dsl
-        dsl:
-          - content_length
-# digest: 4a0a00473045022002319e5d254ede570e3c72f3b3a3bb99e6e13f1a94efd2d0a1081ca408d445d4022100cfb01c4191b36f6cc6aa5c621f73266283e141aeb944d6d161969d3e1af81a1e:922c64590222798bb761d5b6d8e72950

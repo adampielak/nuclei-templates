@@ -19,7 +19,7 @@ info:
     shodan-query: 'HTTP/1.0 401 Please Authenticate\r\nWWW-Authenticate: Basic realm="Please Login"'
   tags: default-login,goip,gsm
 
-requests:
+http:
   - raw:
       - |
         GET /default/en_US/status.html HTTP/1.1
@@ -37,10 +37,10 @@ requests:
         - admin
         - root
         - 1234
-
     host-redirects: true
     max-redirects: 2
     cookie-reuse: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -55,4 +55,5 @@ requests:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100846fb62945a4d017471e16c6d696f196a993cd229748b7b2f118b43562fb1030022100fbbad6093804effaaa955fceabf2cae38ef6a195420c62d807254bf358c6921c:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402200da9672f010a0eac63a38a3eb432ae493e34e10c62d4f79fbed9293167fe46b9022059e5d4d555e03bc74b31e487c90f33464a461e623e963534472ff048541265b7:922c64590222798bb761d5b6d8e72950

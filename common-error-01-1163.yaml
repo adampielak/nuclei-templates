@@ -4,6 +4,7 @@ level: 2
 info:
   name: Common case to trigger the error 02
   risk: Info
+
 variables:
   - head: |
       User-Agent
@@ -25,11 +26,15 @@ variables:
       %00
       ../
       /////////////////////////////
+
 payloads:
   - '{{.prefix}}{{.params}}'
+
 requests:
+
   - generators:
       - Header("{{.payload}}", "{{.head}}")
     detections:
       - >-
         StatusCode() < 300 && StatusCode() >= 500 && StatusCode() != OriginStatusCode() && !StringSearch("response", "Not found") && !StringSearch("response", "Request Rejected") && !StringSearch("response", "Not found") && Math.abs(ContentLength() - OriginContentLength()) > {{.length}} && CommonError()
+        

@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/maintenance/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/maintenance.txt
+      last_version: helpers/wordpress/plugins/maintenance.txt
 
     extractors:
       - type: regex

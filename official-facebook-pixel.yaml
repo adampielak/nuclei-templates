@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/official-facebook-pixel/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/official-facebook-pixel.txt
+      last_version: helpers/wordpress/plugins/official-facebook-pixel.txt
 
     extractors:
       - type: regex

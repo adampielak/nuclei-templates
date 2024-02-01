@@ -3,7 +3,7 @@ id: netdata-panel
 info:
   name: Netdata Panel - Detect
   author: TechbrunchFR
-  severity: info
+  severity: low
   description: |
     Netdata panel was detected.
   reference:
