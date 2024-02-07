@@ -1,22 +1,29 @@
 id: tomcat-exposed-docs
+
 info:
   name: Tomcat exposed docs
   author: Podalirius
   severity: info
+  metadata:
+    shodan-query: title:"Apache Tomcat"
   tags: version,tomcat,docs
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/docs/'
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - 'Apache Tomcat'
         condition: and
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

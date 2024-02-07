@@ -5,11 +5,10 @@ info:
   author: NkxxkN
   severity: low
   metadata:
-    max-request: 1
     shodan-query: http.component:"drupal"
   tags: exposure,drupal
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/install.php?profile=default"

