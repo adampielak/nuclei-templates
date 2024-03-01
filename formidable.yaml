@@ -1,19 +1,19 @@
 id: wordpress-formidable
 
 info:
-  name: Formidable Forms – Contact Form, Survey, Quiz, Payment, Calculator Form & Custom Form Builder Detection
+  name: Formidable Forms – Contact Form, Survey, Quiz, Calculator & Custom Form Builder Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/formidable/
   metadata:
-    max-request: 1
     plugin_namespace: formidable
     wpscan: https://wpscan.com/plugin/formidable
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/formidable/readme.txt"
 
@@ -47,5 +47,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-
-# digest: 4a0a00473045022100ad8f3fe15860695cb8faa7c4ef345a6270d32389f069ce915e6d9fb2223f514302206281a932844344d3237d70b0fb8039b59b1ddd9e5d6c63adbbdd7397a42cfdf0:922c64590222798bb761d5b6d8e72950

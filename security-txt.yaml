@@ -1,13 +1,19 @@
 id: security-txt
 
 info:
-  name: Security.txt File
-  author: bad5ect0r
+  name: security.txt File
+  author: bad5ect0r,noraj
   severity: info
-  description: The website defines a security policy.
+  description: File similar to robots.txt but intended to be read by humans wishing to contact a website’s owner about security issues. Often defines a security policy and contact details.
+  reference:
+    - https://securitytxt.org/
+    - https://community.turgensec.com/security-txt-progress-in-ethical-security-research/
+  metadata:
+    max-request: 2
+    shodan-query: http.securitytxt:contact http.status:200
   tags: misc,generic
 
-requests:
+http:
   - method: GET
     path:
       - "{{RootURL}}/.well-known/security.txt"

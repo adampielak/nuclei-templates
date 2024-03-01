@@ -5,10 +5,8 @@ info:
   author: dogasantos
   severity: info
   tags: glpi,exposure,status,files
-  metadata:
-    max-request: 3
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/status.php"

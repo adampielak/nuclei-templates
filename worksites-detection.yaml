@@ -10,8 +10,6 @@ info:
   classification:
     cwe-id: CWE-200
   tags: dns,service
-  metadata:
-    max-request: 1
 
 dns:
   - name: "{{FQDN}}"
@@ -22,4 +20,4 @@ dns:
         words:
           - "69.164.223.206"
 
-
+# Enhanced by mp on 2022/03/14
