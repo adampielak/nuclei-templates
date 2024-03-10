@@ -2,16 +2,14 @@ id: django-debug
 
 info:
   name: Django Debug Method Enabled
-  author: dhiyaneshDK,hackergautam
+  author: dhiyaneshDK
   severity: medium
   tags: django,debug
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
-      - "{{BaseURL}}/NON_EXISTING_PATH/"
+      - "{{BaseURL}}"
 
     matchers-condition: and
     matchers:
@@ -19,7 +17,6 @@ http:
         words:
           - URLconf defined
           - Page not found
-          - Django tried these URL patterns, in this order
         condition: and
 
       - type: status

@@ -11,6 +11,8 @@ info:
   classification:
     cwe-id: CWE-200
   tags: dns,dnssec
+  metadata:
+    max-request: 1
 
 dns:
   - name: "{{FQDN}}"
@@ -18,7 +20,6 @@ dns:
 
     matchers:
       - type: regex
+        part: answer
         regex:
-          - "IN\tDS\t(.+)"
-
-# Enhanced by mp on 2022/03/14
+          - "IN\tDS\\t(.+)$"

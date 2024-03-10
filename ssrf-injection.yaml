@@ -1,4 +1,4 @@
-id: header-injection
+id: ssrf-header-injection
 
 info:
   name: Header SSRF Injection

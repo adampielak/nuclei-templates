@@ -9,15 +9,14 @@ info:
     - https://wpscan.com/vulnerability/6ebafb52-e167-40bc-a86c-b9840b2b9b37
     - https://wordpress.org/plugins/woo-multi-currency
   metadata:
-    max-request: 2
     verified: true
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 5.4
-    cwe-id: CWE-80
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
   tags: wp-plugin,xss,wp,wordpress,authenticated,curcy,wpscan
 
-http:
+requests:
   - raw:
       - |
         POST /wp-login.php HTTP/1.1

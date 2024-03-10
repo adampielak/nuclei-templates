@@ -9,15 +9,14 @@ info:
     - https://wpscan.com/vulnerability/ea617acd-348a-4060-a8bf-08ab3b569577
     - https://wordpress.org/plugins/woocommerce-checkout-manager
   metadata:
-    max-request: 2
     verified: true
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 5.4
-    cwe-id: CWE-80
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
   tags: xss,wp,wordpress,authenticated,woocommerce,wpscan,wp-plugin
 
-http:
+requests:
   - raw:
       - |
         POST /wp-login.php HTTP/1.1

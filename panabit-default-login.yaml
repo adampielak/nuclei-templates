@@ -14,12 +14,11 @@ info:
     cvss-score: 9.8
     cwe-id: CWE-1391
   metadata:
-    max-request: 1
     verified: true
     fofa-query: app="Panabit-智能网关"
   tags: panabit,default-login
 
-http:
+requests:
   - raw:
       - |
         POST /login/userverify.cgi HTTP/1.1

@@ -12,12 +12,11 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"Portainer"
   tags: portainer,exposure,docker,devops,disclosure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/api/users/admin/check"
