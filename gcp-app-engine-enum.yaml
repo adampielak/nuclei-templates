@@ -8,7 +8,8 @@ info:
     Searches for App Engine Apps in GCP.
   metadata:
     verified: true
-  tags: cloud,cloud-enum,gcp
+    max-request: 1
+  tags: enum,cloud,cloud-enum,gcp
 
 self-contained: true
 
@@ -39,4 +40,4 @@ http:
           - "status_code==302"
           - contains(location, "login")
         condition: and
-# digest: 490a0046304402204edc5a3fc90ff80b8397219e37a716d5b582c9821dbb0edda2c52c585aa241ca022067b0c7178f7f345975f765bdd56afc967505028e459ed113c8fbd450a1dcb76a:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022049b2ab788a102342c3ee4b36d87315f145c3e963f1bd8389d1b2d9f90540f05402203bb1fa138a4e29c568c6bd421cb97c526e822c25fc952368295259787bc159d4:922c64590222798bb761d5b6d8e72950

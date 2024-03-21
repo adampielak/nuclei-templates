@@ -3,17 +3,20 @@ id: error-based-sql-injection
 info:
   name: Error based SQL injection
   author: geeknik
-  severity: high
-  description: Detects the possibility of SQL injection in 29 database engines. Inspired by https://github.com/sqlmapproject/sqlmap/blob/master/data/xml/errors.xml.
-  tags: sqli
+  severity: critical
+  description: A SQL injection vulnerability was identified based on an error message returned by the server.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cwe-id: CWE-89
+  metadata:
+    max-request: 1
+  tags: sqli,generic,error
 
-requests:
+http:
   - method: GET
     path:
-      - "{{BaseURL}}/') OR 1 = 1 -- ];"
-
-    # Nuclei's use of net/http here will automatically encode the payload, thus sending {{BaseURL}}/%27%29%20OR%201%20=%201%20--%20%5D; as the request
-    # In order to send an unencoded payload, you'll have to make use of the rawhttp library by crafting a raw HTTP request
+      - "{{BaseURL}}/'"
 
     matchers-condition: and
     matchers:
@@ -477,3 +480,4 @@ requests:
           - "SQ200: No table "
           - "Virtuoso S0002 Error"
           - "\\[(Virtuoso Driver|Virtuoso iODBC Driver)\\]\\[Virtuoso Server\\]"
+# digest: 4a0a0047304502202747aa1e6dea39e23e6100799bf4245c850a07895e151d189123dc27803dc2e5022100c8ebed9058d9d8dc5f249a93d40c1391ef22f5218d67cfa621679988285968dd:922c64590222798bb761d5b6d8e72950

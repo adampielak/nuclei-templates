@@ -8,7 +8,8 @@ info:
     Searches for Firebase Apps in GCP.
   metadata:
     verified: true
-  tags: cloud,cloud-enum,gcp
+    max-request: 1
+  tags: enum,cloud,cloud-enum,gcp
 
 self-contained: true
 
@@ -31,4 +32,4 @@ http:
         name: "Open GCP Firebase App"
         status:
           - 200
-# digest: 490a004630440220721a516d58d71b3c20990c97c22986fd212caafa366f2641bdb4fe9df0a53f9802205ecd4bfcda0808d5002e9d1194e0ec0f4d2b2f2140170c0df4ffb11372a6470f:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502202cb00f1926f91f36e3db3668c74866756cfda2081ea2a15ae99606c13542a8d3022100e57e4412254764ae84c84ff3fbf3932c79895e187f380a33749e25519df189f5:922c64590222798bb761d5b6d8e72950

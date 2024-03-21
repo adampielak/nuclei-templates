@@ -10,11 +10,10 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     shodan-query: http.title:"GitLab"
   tags: panel,gitlab
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/users/sign_in"
@@ -27,8 +26,9 @@ http:
         words:
           - 'GitLab'
           - 'https://about.gitlab.com'
-        condition: and
 
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2022/11/15

@@ -4,11 +4,14 @@ info:
   name: aws-ecs-container-agent-tasks
   author: dogasantos
   severity: info
-  tags: aws,docker,ec2
   description: Aws container metadata content
-  reference: https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/create_deploy_docker_ecstutorial.html#create_deploy_docker_ecstutorial_connect_inspect
+  reference:
+    - https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/create_deploy_docker_ecstutorial.html#create_deploy_docker_ecstutorial_connect_inspect
+  metadata:
+    max-request: 2
+  tags: miscellaneous,aws,docker,ec2,misc
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/v1/metadata"
@@ -23,3 +26,4 @@ requests:
       - type: status
         status:
           - 200
+# digest: 4a0a0047304502206df2a8a1e1c9d6fe6c535d01b915a7118513fbb40ca4e4c707db3234cb80edb2022100bcad3958b09b1e359fd489da62853da6246916b476abe4f8c7a73ad3abf6128a:922c64590222798bb761d5b6d8e72950

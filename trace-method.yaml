@@ -4,13 +4,11 @@ info:
   name: HTTP TRACE method enabled
   author: nodauf
   severity: info
-  reference:
-    - https://www.blackhillsinfosec.com/three-minutes-with-the-http-trace-method/
-  tags: misc,generic
-  metadata:
-    max-request: 2
 
-http:
+  # References:
+  # - https://www.blackhillsinfosec.com/three-minutes-with-the-http-trace-method/
+
+requests:
   - method: TRACE
     path:
       - "{{BaseURL}}"
@@ -18,9 +16,9 @@ http:
     matchers:
       - type: word
         name: trace-request
-        part: body
         words:
           - "TRACE / HTTP"
+        part: body
 
   - method: OPTIONS
     path:
@@ -29,6 +27,6 @@ http:
     matchers:
       - type: regex
         name: options-request
-        part: header
         regex:
           - "(?i)Allow: [A-Z,]*TRACE"
+        part: header

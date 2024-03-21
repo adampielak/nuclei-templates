@@ -8,11 +8,14 @@ info:
   reference:
     - https://enterprise.arcgis.com/en/
   metadata:
-    verified: "true"
+    vendor: esri
+    product: arcgis_server
+    verified: true
+    max-request: 1
     shodan-query: title:"ArcGIS"
-  tags: panel,arcgis,tokens,detect
+  tags: tech,arcgis,tokens,detect
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/arcgis/tokens/'
@@ -27,3 +30,4 @@ requests:
       - type: status
         status:
           - 200
+# digest: 4a0a00473045022064d73cdabe31276ef1cd2782d6906a8a7d2de90f8689fef69e29b855c98752df022100c07126b160bf84f7d071540bccecf623c5178cbc43ac1d87a7dac1cfc36f05d7:922c64590222798bb761d5b6d8e72950

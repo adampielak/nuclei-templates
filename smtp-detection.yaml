@@ -11,7 +11,7 @@ network:
       - data: "\r\n"
     host:
       - "{{Hostname}}"
-      - "{{Host}}:25"
+      - "{{Hostname}}:25"
     matchers:
       - type: word
         words:

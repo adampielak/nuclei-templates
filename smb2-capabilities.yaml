@@ -9,14 +9,16 @@ info:
   reference:
     - https://nmap.org/nsedoc/scripts/smb2-capabilities.html
   metadata:
-    shodan-query: "port:445"
+    max-request: 1
+    shodan-query: port:445
+  tags: js,network,smb,enum
 
 javascript:
   - code: |
       var m = require("nuclei/smb");
       var c = m.SMBClient();
       var response = c.ConnectSMBInfoMode(Host, Port);
-      to_json(response);
+      Export(response);
 
     args:
       Host: "{{Host}}"
@@ -27,4 +29,4 @@ javascript:
         part: response
         json:
           - '.Capabilities | with_entries(select(.value == true)) | keys'
-# digest: 490a0046304402201801f07d376da14aef19ab88b74c22c10d880c3aa6e3f09c816b6236ec4f0542022048f66d7bab25a03efda39948aef7d90363052ff9b2e59def720c7af27cd2a1e9:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210082593316ec1a97bfb79e418e795a360cea0a3b5f3032690a00396b29ca8870b60221009f704d5b96964ebc0886a54635f92283465fba72d126d285481f347403dfcb12:922c64590222798bb761d5b6d8e72950

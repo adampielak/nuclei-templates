@@ -1,14 +1,11 @@
 id: mongodb-detect
 
 info:
-  name: MongoDB Service Detection
-  author: pdteam
+  name: MongoDB Detection
+  author: pd-team
   severity: info
-  reference:
-    - https://github.com/orleven/Tentacle
+  reference: https://github.com/orleven/Tentacle
   tags: network,mongodb
-  description: |
-    MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases.
 
 network:
   - inputs:
@@ -16,8 +13,7 @@ network:
         type: hex
 
     host:
-      - "{{Hostname}}"
-      - "{{Host}}:27017"
+      - "{{Hostname}}:27017"
     read-size: 2048
 
     matchers:
