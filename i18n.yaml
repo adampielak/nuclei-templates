@@ -130,3 +130,23 @@ Obsolete:
   zh: 过时的
 Stable:
   zh: 稳定的
+Severity:
+  zh: 危害等级
+none:
+  zh: 置空
+low:
+  zh: 低危
+medium:
+  zh: 中危
+high:
+  zh: 高危
+critical:
+  zh: 严重
+Part:
+  zh: 分类
+application:
+  zh: 应用软件
+"operating system":
+  zh: 操作系统
+"hardware devices":
+  zh: 硬件设备
