@@ -11,8 +11,6 @@ info:
   classification:
     cwe-id: CWE-200
   tags: dns,cname
-  metadata:
-    max-request: 1
 
 dns:
   - name: "{{FQDN}}"
@@ -28,3 +26,5 @@ dns:
         group: 1
         regex:
           - "IN\tCNAME\t(.+)"
+
+# Enhanced by mp on 2022/03/13
