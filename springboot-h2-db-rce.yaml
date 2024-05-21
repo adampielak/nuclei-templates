@@ -15,10 +15,11 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   metadata:
+    max-request: 1
     shodan-query: http.favicon.hash:116323821
   tags: springboot,rce,jolokia
 
-requests:
+http:
   - raw:
       - |
         POST /actuator/env HTTP/1.1

