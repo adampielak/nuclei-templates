@@ -1,15 +1,12 @@
 id: wp-altair-listing
-
 info:
   name: Altair WordPress theme v4.8 - Directory Listing
   author: pussycat0x
   severity: info
   description: Searches for directories listing in the altair theme.
   tags: wordpress,listing,wp-theme
-  metadata:
-    max-request: 4
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/themes/altair/modules/"
