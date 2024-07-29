@@ -8,7 +8,7 @@ info:
   severity: critical
   tags: scada,circontrol,circarlife,setup,exposure,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/html/setup.html"

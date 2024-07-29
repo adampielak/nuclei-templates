@@ -1,11 +1,14 @@
 id: shopify-access-token
+
 info:
   name: Shopify Access Token
   author: gaurang
   severity: high
+
 file:
   - extensions:
       - all
+
     extractors:
       - type: regex
         regex:

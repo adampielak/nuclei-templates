@@ -3,7 +3,7 @@ info:
   name: Delivering blind xss payloads via headers   
   author: panch0r3d   
   severity: medium  
-requests: 
+http: 
   - method: GET     
     path: 
       - "{{BaseURL}}"     

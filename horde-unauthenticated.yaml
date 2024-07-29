@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: horde,unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/horde/admin/user.php"

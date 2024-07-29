@@ -5,7 +5,7 @@ info:
   author: geeknik
   severity: high
 
-requests:
+http:
   - raw:
       - |
         POST / HTTP/1.1

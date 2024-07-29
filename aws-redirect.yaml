@@ -7,7 +7,7 @@ info:
   reference: https://link.medium.com/fgXKJHR9P7
   tags: aws,takeover
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

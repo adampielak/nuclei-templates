@@ -5,7 +5,7 @@ info:
   author: h0tak88r
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/status/properties"
