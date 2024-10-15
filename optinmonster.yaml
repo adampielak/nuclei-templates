@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/optinmonster/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/optinmonster.txt
+      last_version: ../../../helpers/wordpress/plugins/optinmonster.txt
 
     extractors:
       - type: regex

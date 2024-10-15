@@ -1,15 +1,18 @@
 id: Fast API 3
+
 info:
   name: Fast API Page
   author: 0xAwali
   severity: info
   reference: https://www.google.com/search?q=intitle%3A%22FastAPI+-+Swagger+UI%22
   tags: api,fastapi
+
 requests:
   - payloads:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
+
     raw:
       - |
         GET /api/docs HTTP/1.1
