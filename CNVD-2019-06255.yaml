@@ -14,8 +14,6 @@ info:
     cwe-id: CWE-77
   remediation: Upgrade to CatfishCMS version 4.8.54 or later.
   tags: rce,cnvd,catfishcms,cnvd2019
-  metadata:
-    max-request: 1
 
 http:
   - method: GET
@@ -36,4 +34,4 @@ http:
           - 'USER'
         condition: and
 
-
+# Enhanced by cs on 2022/02/28

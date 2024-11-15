@@ -7,14 +7,14 @@ info:
   description: Davantis Video Analytics panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    verified: true
+    max-request: 1
     shodan-query: http.title:"Davantis"
+    verified: true
   tags: panel,davantis
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/index.html'
@@ -28,5 +28,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/09
+# digest: 490a00463044022062dbea54f4204fbfcc81bbb9b2801d96c631b5892f9d4c45e06c2ac12cb2e5e1022068e7b3212cd4a0f5fafe1ae80e5266e49946cba37e2b40d48456c9f17737c681:922c64590222798bb761d5b6d8e72950

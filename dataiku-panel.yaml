@@ -7,14 +7,14 @@ info:
   description: Dataiku panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    verified: true
+    max-request: 1
     shodan-query: title:"dataiku"
+    verified: true
   tags: panel,dataiku
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -29,5 +29,4 @@ requests:
         part: header
         words:
           - "text/html"
-
-# Enhanced by md on 2022/11/09
+# digest: 490a0046304402200628eddb62ad05dca3bb0da5c19dc6f5319a3af1ce2c53b53defbfe7a4b54b3a0220519be27ab5a3230eb8263e9b729ca3d9be39fa1d518258c329da94c30557369f:922c64590222798bb761d5b6d8e72950

