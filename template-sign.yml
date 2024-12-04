@@ -3,7 +3,7 @@ name: ☑️ Template Sign
 on:
   push:
     branches:
-      - main
+      - dev
     paths:
       - '**.yaml'
   workflow_dispatch:
@@ -11,41 +11,32 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.repository == 'OWASP/www-project-asvs-security-evaluation-templates-with-nuclei'
     steps:
       - uses: actions/checkout@v4
-        with: 
-          fetch-depth: 0
 
-      - name: Set up Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: 1.21.x
-
-      - name: nuclei install
-        run: go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@dev
-
-      - name: Template Sign
-        id: sign
-        run: |
-          nuclei -lfa -duc -sign -t /home/runner/work/nuclei-templates/nuclei-templates
-          nuclei -lfa -duc -t /home/runner/work/nuclei-templates/nuclei-templates
-          git status -s | wc -l | xargs -I {} echo CHANGES={} >> $GITHUB_OUTPUT
+      - uses: projectdiscovery/actions/setup/nuclei@v1
+      - run: nuclei -lfa -duc -sign -ud $GITHUB_WORKSPACE -t .
         env:
           NUCLEI_USER_CERTIFICATE: ${{ secrets.NUCLEI_USER_CERTIFICATE }}
           NUCLEI_USER_PRIVATE_KEY: ${{ secrets.NUCLEI_USER_PRIVATE_KEY }}
-          
-      - name: Commit files
-        if: steps.sign.outputs.CHANGES > 0
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add cves.json cves.json-checksum.txt
-          git commit -m "Auto Template Signing [$(date)] :robot:" -a
 
-      - name: Push changes
-        if: steps.sign.outputs.CHANGES > 0
+      # Set up GPG for automatic commit signing
+      - name: Set up GPG
         run: |
-          git pull --rebase
-          git push origin ${{ github.ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          git config --global user.name "Signing Bot"
+          git config --global user.email "github-actions@github.com"
+          git config --global commit.gpgSign true
+          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+
+      - uses: projectdiscovery/actions/setup/git@v1
+      - uses: projectdiscovery/actions/commit@v1
+        with:
+          files: '.'
+          message: 'chore: sign templates 🤖'
+      
+      - name: Push changes
+        run: |
+          git pull origin $GITHUB_REF --rebase
+          git push origin $GITHUB_REF

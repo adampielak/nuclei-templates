@@ -16,7 +16,7 @@ flow: http(1) && http(2)
 http:
   - method: GET
     path: 
-      - "{{BaseURL}}/{{rand_base(10)}}"
+      - "{{BaseURL}}/{{rand_base(10)}}/"
 
     matchers:
       - type: dsl
