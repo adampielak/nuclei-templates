@@ -12,10 +12,13 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+    cpe: cpe:2.3:a:netentsec:application_security_gateway:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: "NS-ICG"
+    product: application_security_gateway
+    vendor: netentsec
   tags: nsicg,default-login
 
 http:
@@ -39,8 +42,6 @@ http:
         - ns25000
       password:
         - ns25000
-    cookie-reuse: true
-    req-condition: true
     matchers:
       - type: dsl
         dsl:
@@ -49,5 +50,4 @@ http:
           - 'status_code_2 == 200'
           - contains(body_2, "var loguser = \'ns25000")
         condition: and
-
-# digest: 4a0a00473045022100f1d9aa28f4e8b208ba7badbb70926ea89f1fc14caf21f6a90499ead2cf64a70e022077400e76ab455d8d04ee8757e6380c30e9079fe9da3dda165f2f500b5a43f482:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502204fa9b0393f7b50842dde9575b9040f5c8ad2688f30eed43fbd7d247e87a81f95022100b82a4bba1fbc69117037181407c5eb65768baad9133f17af0f3dd511e309c813:922c64590222798bb761d5b6d8e72950

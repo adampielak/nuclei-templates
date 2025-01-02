@@ -1,23 +1,21 @@
-name: elasticsearch
-priority: 3
-nuclei_tags:
-  - - elasticsearch
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 200
-    headers: {}
-    keyword:
-      - '  "tagline" : "You Know, for Search"'
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 200
-    headers: {}
-    keyword: []
-    favicon_hash:
-      - 6177bfb75b498e0bb356223ed76ffe43
+id: elasticsearch
+info:
+  name: elasticsearch
+  author: cn-kali-team
+  tags: detect,tech,elasticsearch
+  severity: info
+  metadata:
+    fofa-query:
+    - index_not_found_exception
+    product: elasticsearch
+    vendor: elastic
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - index_not_found_exception
+    case-insensitive: true

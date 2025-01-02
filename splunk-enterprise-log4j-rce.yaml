@@ -13,9 +13,12 @@ info:
     cvss-score: 10
     cve-id: CVE-2021-44228
     cwe-id: CWE-77
+    cpe: cpe:2.3:a:splunk:splunk:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"Login - Splunk"
+    product: splunk
+    vendor: splunk
   tags: cve,cve2021,rce,jndi,log4j,splunk,oast,kev
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -45,20 +48,22 @@ http:
       - type: regex
         part: interactsh_request
         regex:
-
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
 
     extractors:
       - type: kval
         kval:
-
+          - interactsh_ip
 
       - type: regex
+        part: interactsh_request
         group: 2
         regex:
-        part: interactsh_request
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
 
       - type: regex
+        part: interactsh_request
         group: 1
         regex:
-        part: interactsh_request
-# digest: 4a0a00473045022100d5db89b935a8fafc3db2fc56c38abf53d78f9c578e65ade1c9674979eef53a6d02201deb8a759efbe552d5bbc5b003084a79e3bc16d6fe0e516a5f34c5dce433d420:922c64590222798bb761d5b6d8e72950
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
+# digest: 4a0a00473045022100c8318e12a3a82a05224f4bd7e645f3d0769d5b7606b0d9790d279270e3b910e202206c375c3bbf3d6cb93cdd97f512f6583f2ac9a35da80c6230553aa08837f82d81:922c64590222798bb761d5b6d8e72950

