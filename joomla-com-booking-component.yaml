@@ -33,6 +33,11 @@ http:
           - '"email":'
         condition: and
 
+      - type: regex
+        part: body
+        regex:
+          - '^{.*}$'
+
       - type: word
         part: header
         words:
@@ -42,4 +47,10 @@ http:
         status:
           - 200
 
-# digest: 4a0a004730450220201101df01d1b5a291f4b5acf1391eb2b92e20ebd5770d3f542a9eb51d30f718022100b92ff63a1cad5633e2d2dbf81eaaa44cf30cedac05164515bbf31d2eceae04e5:922c64590222798bb761d5b6d8e72950
+    extractors:
+      - type: json
+        name: keys
+        part: body
+        json:
+          - 'keys'
+# digest: 490a004630440220461e62d8b0b1a35edb99c47d36ea196289e8641d29a3dcd324dfadf9038728d2022005cf090713ca071291075b71ffcbe1bf95f195e5235dd280b0dd84a0cc97c615:922c64590222798bb761d5b6d8e72950

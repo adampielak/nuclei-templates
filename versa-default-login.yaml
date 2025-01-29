@@ -34,8 +34,6 @@ http:
         - Administrator
       pass:
         - versa123
-    cookie-reuse: true
-    req-condition: true
 
     matchers-condition: and
     matchers:
@@ -51,5 +49,4 @@ http:
           - "contains(tolower(header_2), '/login?error=true')"
           - "contains(tolower(header_2), '/login?tokenmissingerror=true')"
         negative: true
-
-# digest: 4b0a00483046022100999377e255e370d3cdce38ead81d80101c8093f98d45e60c5362f0ddfa9dd669022100868530f6c6b834c36963c522f0d16d4f28a949a8af9b49f54c5c0fa574671a4f:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022007873b2fe4230737bd70f8e223ba1151aedf52902bf762c2444686fcfcc0d213022027cb413c7e696484641e1a528d98c77b13969b93427cb150cf05b7ac739e5a98:922c64590222798bb761d5b6d8e72950

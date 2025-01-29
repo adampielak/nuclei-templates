@@ -10,10 +10,11 @@ info:
     - https://github.com/openethereum/openethereum
     - https://openethereum.github.io/
   metadata:
+    max-request: 1
     shodan-query: product:OpenEthereum
   tags: tech,openethereum,ethereum,web3,blockchain
 
-requests:
+http:
   - raw:
       - |
         POST / HTTP/1.1
@@ -27,7 +28,7 @@ requests:
       - type: dsl
         dsl:
           - 'status_code == 200'
-          - 'contains(all_headers, "application/json")'
+          - 'contains(header, "application/json")'
           - 'contains(body, "OpenEthereum")'
         condition: and
 
@@ -37,3 +38,4 @@ requests:
         group: 1
         regex:
           - '(v[0-9a-z-_.]+)'
+# digest: 4a0a00473045022100e9fc5cafa37f644f6d002f4df7721e807acd0fe9865338c49d65c60d7d80e59a02204f5196ef88d34402e68b0e30bba5d6fede1e89d62d59f60b3782a7ffa610569e:922c64590222798bb761d5b6d8e72950

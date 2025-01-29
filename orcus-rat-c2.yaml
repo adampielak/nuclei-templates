@@ -12,7 +12,7 @@ info:
     verified: "true"
     max-request: 1
     censys-query: 'services.tls.certificates.leaf_data.subject.common_name: {"Orcus Server", "OrcusServerCertificate"}'
-  tags: c2,ir,osint,malware,ssl,orcusrat
+  tags: c2,ssl,tls,ir,osint,malware,orcusrat
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:
@@ -27,4 +27,4 @@ ssl:
       - type: json
         json:
           - ".issuer_cn"
-# digest: 4b0a00483046022100949341b5b8eba40e2aec42e145d0d996d907ddab80b6a90225f1ab7bd430fa18022100b52df8a836805768f9fcdc627a8f9d0f16f2684735e0d9fbf0d0426759b18bc3:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210097830a18da4f7c38e59546f21f1e8d4689dc33fdd06cb4d95d3f1435a572a5d20220132649c18cd4d56cd7722f346240133743a20aa76e05614c45c095f1b660ed14:922c64590222798bb761d5b6d8e72950

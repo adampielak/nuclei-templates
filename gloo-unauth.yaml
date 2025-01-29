@@ -4,21 +4,20 @@ info:
   name: Unauthenticated Gloo UI
   author: dhiyaneshDk
   severity: high
+  description: Gloo UI is exposed to external users.
+  metadata:
+    max-request: 1
   tags: unauth,gloo
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/fed.rpc.solo.io.GlooInstanceApi/ListClusterDetails'
 
-    raw:
-      - |
-        GET /fed.rpc.solo.io.GlooInstanceApi/ListClusterDetails HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Content-type: application/grpc-web+proto
-        Referer: https://{{Hostname}}/admin/
+    headers:
+      Content-type: "application/grpc-web+proto"
+      Referer: "{{BaseURL}}/admin/"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -34,3 +33,4 @@ requests:
       - type: status
         status:
           - 200
+# digest: 4b0a00483046022100d0cb54dbbf25e0de22009bd1724db99c452d8a664e8640e525e7cb93885c118b022100a9c2d1432d0fab9df32e507d0b6641d6776a144eb120825d59f619577d4ffa72:922c64590222798bb761d5b6d8e72950

@@ -9,9 +9,9 @@ info:
   reference:
     - https://github.com/ledgerwatch/erigon
   metadata:
+    verified: true
     max-request: 1
     shodan-query: product:"Erigon"
-    verified: true
   tags: tech,erigon,ethereum,web3,blockchain
 
 http:
@@ -37,3 +37,4 @@ http:
         group: 1
         regex:
           - '(erigon/[0-9_.]+)'
+# digest: 490a0046304402206b86351e3733965a9501ca45543ad929ef713cd2d05962802bd1017063c718dd022018b5759b5290252eae78073eafbecb80c830bbbac167b27598b53274f4669cf0:922c64590222798bb761d5b6d8e72950

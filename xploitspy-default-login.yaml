@@ -24,7 +24,6 @@ http:
 
         username={{user}}&password={{pass}}&hostname={{Hostname}}
 
-    cookie-reuse: true
     attack: pitchfork
     payloads:
       user:
@@ -41,10 +40,10 @@ http:
         words:
           - "Change Password"
           - "Logout"
+          - "XploitSPY"
         condition: and
 
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022051299f637e239766fd113ec08d4d295cd7abc8aae3f429994237f46ea7c005c7022100d119a802acdb4376b35abc6b59fa4da1fca58fd0a9b4e696a5c4a9dae88d4836:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200fa015a42d80fb06c9165289ab3ad31bc3fb63a84de20e0250bfcb82dada73300221009c7c4878a4d862771a1b6c51e1e09746291fcbe0171652267e97473301c8a3be:922c64590222798bb761d5b6d8e72950

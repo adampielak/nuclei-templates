@@ -13,10 +13,8 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: wpscan,wordpress,wp-plugin,rce,intrusive,fileupload,python
-  metadata:
-    max-request: 3
 
-http:
+requests:
   - raw:
       - |
         POST /wp-content/plugins/simple-file-list/ee-upload-engine.php HTTP/1.1

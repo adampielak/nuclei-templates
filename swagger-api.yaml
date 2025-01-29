@@ -11,12 +11,11 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 53
     verified: true
     shodan-query: http.title:"swagger"
   tags: exposure,api,swagger
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/swagger-ui/swagger-ui.js"

