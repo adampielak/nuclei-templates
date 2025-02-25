@@ -1,10 +1,10 @@
 id: robots-txt
 
 info:
-  name: Detect Robots file
-  author: ayadim
+  name: robots.txt file
+  author: CasperGN,TheZakMan
   severity: info
-  tags: config,exposure
+  tags: misc,generic
 
 requests:
   - method: GET
@@ -12,19 +12,17 @@ requests:
       - "{{BaseURL}}/robots.txt"
 
     matchers-condition: and
+    redirects: true
     matchers:
       - type: word
         words:
-          - 'User-agent:'
-          - 'Disallow:'
-          - 'Allow:'
-        condition: or
+          - "Disallow:"
 
       - type: word
         part: header
         words:
           - text/plain
 
-      - type: status
-        status:
-          - 200
+      - type: dsl
+        dsl:
+          - "len(body)>=140 && status_code==200"

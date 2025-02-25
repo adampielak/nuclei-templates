@@ -1,4 +1,8 @@
-- package-ecosystem: github-actions
-  directory: /
+version: 2
+updates:
+- package-ecosystem: cargo
+  directory: "/"
   schedule:
-    interval: daily
+    interval: monthly
+    time: "07:00"
+  open-pull-requests-limit: 10

@@ -1,28 +1,34 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
-
-name: Go
+name: Build Go Project
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        go-version: [1.17]
+        os: [windows, macOS, ubuntu]
+        arch: [amd64, arm64]
+
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v2
       with:
-        go-version: 1.19
+        go-version: ${{ matrix.go-version }}
 
     - name: Build
-      run: go build -v ./...
+      run: GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build main.go
 
-    - name: Test
-      run: go test -v ./...
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: main-${{ matrix.os }}-${{ matrix.arch }}
+        path: ./main

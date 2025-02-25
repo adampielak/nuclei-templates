@@ -3,9 +3,7 @@ name: 🥳 New Template List
 on:
   push:
     branches:
-      - main
-    paths:
-      - '**.yaml'
+      - master
   workflow_dispatch:
 
 jobs:
