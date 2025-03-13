@@ -1,18 +1,16 @@
-id: ssh-unrestricted-nonwhitelist
+id: ssh-ip-whitelist
 
 info:
-  name: Unrestricted SSH Access from Non-Whitelisted IPs
+  name: Limit SSH Access by IP Address
   author: pussycat0x
-  severity: unknown
+  severity: info
   description: |
-    SSH access is not restricted to specific IP addresses, allowing connections from any source. This increases the risk of unauthorized access and brute-force attacks.
+    Only specified IP addresses will be able to connect via SSH, reducing the risk of unauthorized access and  it's Helps in mitigating brute-force attacks by limiting the attack surface
   remediation: |
-    Restrict SSH to specific IPs in /etc/ssh/sshd_config by setting ListenAddress <trusted-IP> and restarting the SSH service.
+    Change it to : ListenAddress 0.0.0.0
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.cyberciti.biz/tips/howto-openssh-sshd-listen-multiple-ip-address.html
-  metadata:
-    verified: true
   tags: audit,config,file,ssh
 
 file:
@@ -23,4 +21,3 @@ file:
       - type: word
         words:
           - "#ListenAddress"
-# digest: 4a0a00473045022100d7475cc7e29e1d4f19aaf3bd56796c488ff66671858e48291f49c5732e9bfb6f0220148f7bc80f28b20868bce57c28305bf64d6d6500eec6fbd3aa7b97b973efef7e:922c64590222798bb761d5b6d8e72950

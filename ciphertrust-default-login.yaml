@@ -30,10 +30,12 @@ http:
       password:
         - admin
     host-redirects: true
+    cookie-reuse: true
     matchers:
       - type: dsl
         dsl:
           - 'status_code_1 == 401'
           - 'contains(body_1,"code") && contains(body_1,"message\":\"Password change required")'
         condition: and
-# digest: 4a0a00473045022078d7d07f15ab47db5a4e779a40f3c5832459f5a16a04e6d30c7877e0b67e46d8022100ce7ef6807812e8c2d5b355e99bbc53bcb4b4535cafb5bd726086d964b8fb04d5:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502203aa175dcaef0f6565ed63348a0e702ff6e951e90ff29776fab12c65157473645022100ba64e19e42cae14e16c8d5493a64d6e9e22414215dd1166ae6eb8c4b32c01d42:922c64590222798bb761d5b6d8e72950
