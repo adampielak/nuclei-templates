@@ -1,7 +1,7 @@
 id: wordpress-otter-blocks
 
 info:
-  name: Otter – Gutenberg Blocks – Page Builder for Gutenberg Editor & FSE Detection
+  name: Otter Blocks – Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE Detection
   author: ricardomaia
   severity: info
   reference:
@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/otter-blocks/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/otter-blocks.txt
+      last_version: helpers/wordpress/plugins/otter-blocks.txt
 
     extractors:
       - type: regex

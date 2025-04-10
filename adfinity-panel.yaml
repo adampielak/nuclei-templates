@@ -1,0 +1,35 @@
+id: adfinity-panel
+
+info:
+  name: Adfinity Login Panel - Detect
+  author: righettod
+  severity: info
+  description: |
+    Adfinity products was detected.
+  reference:
+    - https://easi.net/en/solutions/adfinity
+  metadata:
+    max-request: 1
+    verified: true
+    shodan-query: http.html:"Adfinity"
+  tags: panel,adfinity,login
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/adfinity/login"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_any(to_lower(body), "adfinity web application", "adfinity web access", "csrf_adfinity_token")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '(?i)Version\s+Adfinity([0-9.]+)'
+# digest: 4a0a00473045022009591e00c6f2106139984fe32f9a802a50d941e14c7d7c526c6558772c8f53ca022100eed916450878654c793c6ec84aae86a25efab1095cf622971429dc8841af5399:922c64590222798bb761d5b6d8e72950

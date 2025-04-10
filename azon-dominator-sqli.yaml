@@ -2,7 +2,7 @@ id: azon-dominator-sqli
 
 info:
   name: Azon Dominator - SQL Injection
-  author: securityforeveryone
+  author: s4e-io
   severity: high
   description: |
     Azon Dominator software is vulnerable to a sql attack at /fetch_products.php.
@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: "Azon Dominator"
-  tags: azon,dominator,sqli
+  tags: time-based-sqli,azon,dominator,sqli
 
 http:
   - raw:
@@ -28,8 +28,8 @@ http:
     matchers:
       - type: dsl
         dsl:
-          - 'duration>=6'
-          - 'status_code==500'
+          - "duration>=6"
+          - "status_code==500"
           - 'contains_all(body, "id", "name", "save_lists.php")'
         condition: and
-# digest: 490a0046304402202ce1f0e22b85672b369795df066d967e2c595e6e8653e6ef08f900fea9abf5ea022078941fc73d22571802c7ba4a0f9011863bae207e5f54940d6bb4fc288dc2a4b3:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022002cb410ea3d9aa9814c8ac7bf9378f33c63652a14a227c9fc47a1fdc9094151402210093cdb96193381ba33b38fdb5e4feb8701ce84ad2f980f35bb569d9012b9b8f14:922c64590222798bb761d5b6d8e72950

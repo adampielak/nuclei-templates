@@ -11,10 +11,10 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
-    google-query: intitle:"Charger Management Console"
+    verified: true
     max-request: 1
     shodan-query: http.title:"Charger Management Console"
-    verified: true
+    google-query: intitle:"Charger Management Console"
   tags: panel,eko
 
 http:
@@ -32,4 +32,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202a38bb1641b94ba5a56768b6a10431b61484c5dcd22456026598e41b492f158b022100a6c5ae8431ad4a805c226687f4ec1ebe3c871a1dd5d671555c742e262af68ec8:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502203b77cb563afff50a2aba385720f06ed393c4286a60fea70b34091b1fa06b6759022100fa4aeecebf63a0548946a57e6157c202fd9cd91d255ea975a5dc2a71d468eff9:922c64590222798bb761d5b6d8e72950

@@ -7,13 +7,13 @@ info:
   description: Cisco ServiceGrid login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 1
     shodan-query: http.title:"Cisco ServiceGrid"
   tags: panel,cisco
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/pages/sdcall/Login.jsp'
@@ -34,5 +34,4 @@ requests:
         group: 1
         regex:
           - '<div class="top\-margin">Version ([0-9.]+)<\/div>'
-
-# Enhanced by md on 2022/11/09
+# digest: 490a0046304402205b47ec9268d9c3b0573173d7d9989d91d883e4c2aacc01d01746f85fce6dc969022076d73b878cf64d5c41090850ed80e2515c2664ff79e64d920a6592291bd7d5b8:922c64590222798bb761d5b6d8e72950

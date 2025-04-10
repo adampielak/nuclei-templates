@@ -5,14 +5,9 @@ info:
   tags: detect,tech,kkfileview
   severity: info
   metadata:
-    fofa-query:
-    - app="kkfileview"
-    - body="kkfileview"
     product: kkfileview
-    shodan-query:
-    - http.html:"kkfileview"
-    vendor: keking
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
@@ -20,5 +15,5 @@ http:
   matchers:
   - type: word
     words:
-    - kkfileview
+    - 'repo: ''kkfileview'''
     case-insensitive: true

@@ -4,7 +4,6 @@ info:
   name: 3rd party service checker
   author: pd-team
   severity: info
-  tags: dns
 
 dns:
   - name: "{{FQDN}}"

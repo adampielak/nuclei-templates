@@ -5,13 +5,9 @@ info:
   tags: detect,tech,listserv
   severity: info
   metadata:
-    fofa-query:
-    - body="listserv"
     product: listserv
-    shodan-query:
-    - http.html:"listserv"
-    vendor: lsoft
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
@@ -19,5 +15,6 @@ http:
   matchers:
   - type: word
     words:
-    - listserv
+    - <title>welcome to listserv
+    - powered by the listserv email list manager
     case-insensitive: true

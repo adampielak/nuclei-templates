@@ -1,21 +1,21 @@
-id: pc-duo-gw
+id: pc-duo
 info:
-  name: Vector PC-Duo Gateway Server
+  name: Vector PC-Duo
   author: nmap,cn-kali-team
-  tags: detect,tech,pc-duo-gw,service
+  tags: detect,tech,pc-duo,service
   severity: info
   metadata:
     info: 'Servername: $1'
     rarity: 8
 tcp:
-- name: pc-duo-gw
+- name: pc-duo
   inputs:
-  - data: \x20\x90\x80\x08\xff\0
+  - data: \0\x80\x80\x08\xff\0
   host:
   - '{{Hostname}}'
-  port: '2303'
+  port: '1505'
   extractors:
-  - name: pc-duo-gw
+  - name: pc-duo
     type: regex
     regex:
     - (?i)^.........(.*)\0

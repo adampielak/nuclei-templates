@@ -1,12 +1,25 @@
 id: cisco-network-config
 
-name: Cisco System Network Configuration Exposure
-severity: low
+info:
+  name: Cisco System Network Configuration Exposure
+  author: DhiyaneshDk
+  severity: low
+  reference:
+    - https://www.exploit-db.com/ghdb/5430
+  tags: exposure,cisco,edb,config
 
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/CGI/Java/Serviceability?adapter=device.statistics.configuration"
+    path:
+      - "{{BaseURL}}/CGI/Java/Serviceability?adapter=device.statistics.configuration"
 
-    patterns:
-      - "Network Configuration"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Network Configuration"
+        part: body
+
+      - type: status
+        status:
+          - 200

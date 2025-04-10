@@ -5,21 +5,15 @@ info:
   tags: detect,tech,mlflow
   severity: info
   metadata:
-    fofa-query:
-    - title="mlflow"
-    - app="mlflow"
-    google-query:
-    - intitle:"mlflow"
     product: mlflow
-    shodan-query:
-    - http.title:"mlflow"
-    vendor: lfprojects
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>mlflow.*?</title>
+  - type: word
+    words:
+    - <title>mlflow</title>
+    case-insensitive: true

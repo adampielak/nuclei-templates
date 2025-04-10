@@ -3,7 +3,7 @@ id: confluence-dashboard
 info:
   name: Confluence Dashboard Exposed
   author: tess
-  severity: low
+  severity: critical
   metadata:
     max-request: 1
     verified: true

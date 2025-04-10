@@ -5,17 +5,20 @@ info:
   tags: detect,tech,cgit
   severity: info
   metadata:
+    fofa-query:
+    - title="git repository browser"
+    google-query:
+    - intitle:"git repository browser"
     product: cgit
-    vendor: 00_unknown
-    verified: false
+    shodan-query:
+    - http.title:"git repository browser"
+    vendor: cgit_project
+    verified: true
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: word
-    words:
-    - <div id='cgit'>
-    - content='cgit
-    - href='/cgit.css'/>
-    case-insensitive: true
+  - type: regex
+    regex:
+    - (?mi)<title[^>]*>git repository browser.*?</title>

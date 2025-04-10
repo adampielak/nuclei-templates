@@ -7,11 +7,10 @@ info:
   reference:
     - https://github.com/danielmiessler/SecLists/blob/master/Usernames/Names/malenames-usa-top1000.txt
   metadata:
-    max-request: 100
     shodan-query: http.title:"GitLab"
   tags: gitlab,enum,misconfig,fuzz
 
-http:
+requests:
   - raw:
       - |
         GET /users/{{user}}/exists HTTP/1.1
@@ -20,11 +19,12 @@ http:
         Referer: {{BaseURL}}
 
     payloads:
-      user: helpers/wordlists/user-list.txt
-    stop-at-first-match: true
+      user: ../../../helpers/wordlists/user-list.txt
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
+
       - type: regex
         part: body
         regex:
@@ -38,4 +38,3 @@ http:
         part: header
         words:
           - "application/json"
-# digest: 490a0046304402205c9c86f3c046857119bb1a670b24f3214292931dc0fa8f3f2de2a774d270003f0220494fa1162786a29761083cf667b6d9634363502ffaa72629ab5c9ad4ac70494a:922c64590222798bb761d5b6d8e72950

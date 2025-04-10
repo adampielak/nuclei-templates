@@ -1,11 +1,17 @@
 id: amazon-docker-config-disclosure
-name: Dockerrun AWS Configuration Exposure
-severity: medium
+
+info:
+  name: Dockerrun AWS Configuration Exposure
+  author: pd-team
+  severity: medium
 
 requests:
   - method: GET
-    paths:
-      - HOSTNAME/Dockerrun.aws.json
-    patterns:
-      - 'AWSEBDockerrunVersion'
-      - 'containerDefinitions'
+    path:
+      - '{{BaseURL}}/Dockerrun.aws.json'
+    matchers:
+      - type: word
+        words:
+          - 'AWSEBDockerrunVersion'
+          - 'containerDefinitions'
+        condition: and

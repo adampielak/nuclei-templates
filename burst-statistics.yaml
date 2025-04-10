@@ -1,58 +1,49 @@
-id: burst-statistics
+id: wordpress-burst-statistics
 
 info:
-  name: >
-    Burst Statistics – Privacy-Friendly Analytics for WordPress 1.4.0 to 1.4.6.1 - Unauthenticated SQL Injection
-  author: topscoder
-  severity: low
-  description: >
-    
+  name: Burst Statistics – Privacy-Friendly Analytics for WordPress Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/30f8419c-c7b9-4c68-a845-26c0308d76f3?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    - https://wordpress.org/plugins/burst-statistics/
   metadata:
-    fofa-query: "wp-content/plugins/burst-statistics/"
-    google-query: inurl:"/wp-content/plugins/burst-statistics/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,burst-statistics,low
+    plugin_namespace: burst-statistics
+    wpscan: https://wpscan.com/plugin/burst-statistics
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/burst-statistics/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/burst-statistics.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "burst-statistics"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '>= 1.4.0', '<= 1.4.6.1')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4b0a00483046022100e396355e69417dbbd33026780da7d19207d767a34f997e3ceb51a44869f03b3b022100cb429d5ca5f914d5e5622333d5885143b30888ec68c086f12287dbe8592c615c:922c64590222798bb761d5b6d8e72950

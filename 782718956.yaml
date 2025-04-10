@@ -8,16 +8,16 @@ info:
     fallback:
     - get-request
     product: mongoose
-    rarity: 5
+    rarity: 4
     vendor: cesanta
     verified: true
 tcp:
-- name: rtsprequest
+- name: httpoptions
   inputs:
-  - data: OPTIONS / RTSP/1.0\r\n\r\n
+  - data: OPTIONS / HTTP/1.0\r\n\r\n
   host:
   - '{{Hostname}}'
-  port: 80,554,3052,3372,5000,7070,8080,10000
+  port: 2301,631,641,3128,5232,6000,8080,8888,9999,10000,10031,37435,49400,80-85
   extractors:
   - name: http
     type: regex

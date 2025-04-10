@@ -18,3 +18,7 @@ http:
   - type: regex
     regex:
     - (?mi)<title[^>]*>jupyterhub.*?</title>
+  - type: word
+    words:
+    - <title>jupyterhub</title>
+    case-insensitive: true

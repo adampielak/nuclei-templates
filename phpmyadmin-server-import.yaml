@@ -3,7 +3,7 @@ id: pma-server-import
 info:
   name: PhpMyAdmin Server Import Page - Detect
   author: Cristi vlad (@cristivlad25)
-  severity: high
+  severity: critical
   description: Multiple phpMyAdmin server import pages were detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
@@ -39,5 +39,3 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/03/10

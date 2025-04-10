@@ -9,7 +9,7 @@ info:
   metadata:
     plugin_namespace: backwpup
     wpscan: https://wpscan.com/plugin/backwpup
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-200
 
 requests:
   - method: GET
@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/backwpup/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/backwpup.txt
+      last_version: helpers/wordpress/plugins/backwpup.txt
 
     extractors:
       - type: regex

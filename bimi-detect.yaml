@@ -8,8 +8,9 @@ info:
     A BIMI record was detected
   reference:
     - https://postmarkapp.com/blog/what-the-heck-is-bimi
+  metadata:
+    max-request: 1
   tags: dns,bimi
-
 dns:
   - name: "{{FQDN}}"
     type: TXT
@@ -22,4 +23,4 @@ dns:
       - type: regex
         regex:
           - "v=BIMI1(.+)"
-# digest: 4a0a004730450221008445fc238e87f9342ce983f65c136755a858f4b59106a74fe0a685b7cbc0d9d20220723212d91ee35908c09375b9eef99966b5c4e47ca3d5dab26b2013f76ff5891e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100dd86248dfad45bc9deff5d9d954133de6557b655c4c0154d7dc2d4f4f1dba5bd02206b1ccea3dae23a554464eb7c3ade338681df7da737355b74504d3f79368106b9:922c64590222798bb761d5b6d8e72950

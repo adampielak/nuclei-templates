@@ -12,7 +12,7 @@ info:
     cwe-id: CWE-522
   tags: default-login
 
-requests:
+http:
   - raw:
       - |
         POST /ajax?sid= HTTP/1.1

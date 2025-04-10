@@ -1,19 +1,14 @@
-id: chamilo
-info:
-  name: chamilo
-  author: cn-kali-team
-  tags: detect,tech,chamilo
-  severity: info
-  metadata:
-    product: chamilo
-    vendor: chamilo
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - <meta name="generator" content="chamilo
-    case-insensitive: true
+name: chamilo
+priority: 3
+nuclei_tags:
+  - - chamilo
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <meta name="generator" content="Chamilo
+    favicon_hash: []

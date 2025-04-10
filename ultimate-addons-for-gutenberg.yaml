@@ -9,7 +9,7 @@ info:
   metadata:
     plugin_namespace: ultimate-addons-for-gutenberg
     wpscan: https://wpscan.com/plugin/ultimate-addons-for-gutenberg
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 requests:
   - method: GET
@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/ultimate-addons-for-gutenberg/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/ultimate-addons-for-gutenberg.txt
+      last_version: helpers/wordpress/plugins/ultimate-addons-for-gutenberg.txt
 
     extractors:
       - type: regex

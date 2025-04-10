@@ -8,7 +8,7 @@ info:
   severity: low
   tags: wp,wordpress,themes,redirect
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/themes/prostore/go.php?https://example.com/"

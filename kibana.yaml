@@ -5,20 +5,16 @@ info:
   tags: detect,tech,kibana
   severity: info
   metadata:
-    fofa-query:
-    - title="kibana"
-    google-query:
-    - intitle:"kibana"
     product: kibana
-    shodan-query:
-    - http.title:"kibana"
-    vendor: elastic
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>kibana.*?</title>
+  - type: word
+    words:
+    - 'kbn-name: kibana'
+    part: header
+    case-insensitive: true

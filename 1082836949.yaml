@@ -1,21 +1,20 @@
-id: nim
+id: printer
 info:
-  name: IBM AIX Network Installation Management
+  name: ''
   author: nmap,cn-kali-team
-  tags: detect,tech,nim,service
+  tags: detect,tech,printer,service
   severity: info
   metadata:
-    operating_system: AIX
-    rarity: 4
+    rarity: 6
 tcp:
-- name: rpccheck
+- name: lpdstring
   inputs:
-  - data: \x80\0\0\x28\x72\xFE\x1D\x13\0\0\0\0\0\0\0\x02\0\x01\x86\xA0\0\x01\x97\x7C\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+  - data: \x01default\n
   host:
   - '{{Hostname}}'
-  port: 81,111,199,514,544,710,711,1433,2049,4045,4999,7000,8307,8333,17007,38978,32750-32810
+  port: 515,2947,3333,32211,19350
   extractors:
-  - name: nim
+  - name: printer
     type: regex
     regex:
     - ^\0$

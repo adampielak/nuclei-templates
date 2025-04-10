@@ -1,25 +1,24 @@
-id: apache-guacamole
-info:
-  name: apache-guacamole
-  author: cn-kali-team
-  tags: detect,tech,apache-guacamole
-  severity: info
-  metadata:
-    product: apache-guacamole
-    vendor: 00_unknown
-    verified: false
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - guacamole - clientless remote desktop
-    - scripts/guac-ui.js
-    condition: and
-    case-insensitive: true
-  - type: word
-    words:
-    - images/guacamole-logo
-    case-insensitive: true
+name: apache-guacamole
+priority: 3
+nuclei_tags:
+  - - guacamole
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - images/guacamole-logo
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - guacamole - clientless remote desktop
+      - scripts/guac-ui.js
+    favicon_hash: []

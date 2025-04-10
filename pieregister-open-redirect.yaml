@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/pie-register/
   classification:
     cwe-id: CWE-601
-  tags: redirect,wp-plugin,pieregister,wpscan,wordpress
+  tags: wordpress,redirect,wp-plugin,pieregister
 
 requests:
   - method: GET

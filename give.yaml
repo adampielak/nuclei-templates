@@ -1,58 +1,49 @@
-id: give
+id: wordpress-give
 
 info:
-  name: >
-    GiveWP <= 3.3.1 - Reflected Cross-Site Scripting
-  author: topscoder
-  severity: medium
-  description: >
-    
+  name: Wordpress GiveWP Detection
+  author: mailler
+  severity: info
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d8bf1d64-8012-4588-9897-aa8bb0cacfb6?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    - https://wordpress.org/plugins/give/
   metadata:
-    fofa-query: "wp-content/plugins/give/"
-    google-query: inurl:"/wp-content/plugins/give/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,give,medium
+    plugin_namespace: give
+    wpscan: https://wpscan.com/plugin/give
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/give/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/give.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "give"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 3.3.1')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4b0a00483046022100a0fe9ebc528ec4394ea590e8b6b891e859b791b33f22793bcc74b394c4a2356c022100c89177877e023ce51d4f6e005b5bbefec60563bb644bc7bc1448634d9e3152bd:922c64590222798bb761d5b6d8e72950

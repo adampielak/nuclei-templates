@@ -13,7 +13,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: ssl:"P18055077"
-  tags: c2,ir,osint,malware,ssl,posh
+  tags: c2,ssl,tls,ir,osint,malware,posh
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:
@@ -26,4 +26,4 @@ ssl:
       - type: json
         json:
           - ".issuer_cn"
-# digest: 4a0a0047304502202f646b3b780f7621442b34ee3a5b40d24a75941e6e23b7d7fd9e12c12f9fbf0b0221008e69cd5af9d2629deb146f6ba1dbf33c56d5f79593298841e269ff902a16e4bf:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100bb4e1c7ecc0c3faa97b26995c6580f31c5b7de0ed128b85a42d7601c9c3b4f10022031edb908d9fd1fb537a03a4c3792f6b4701b62b72c36899f82b5c8dd520b59b5:922c64590222798bb761d5b6d8e72950

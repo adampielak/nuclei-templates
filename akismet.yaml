@@ -1,7 +1,7 @@
 id: wordpress-akismet
 
 info:
-  name: Akismet Spam Protection Detection
+  name: Akismet Anti-spam' Spam Protection Detection
   author: ricardomaia
   severity: info
   reference:
@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/akismet/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/akismet.txt
+      last_version: helpers/wordpress/plugins/akismet.txt
 
     extractors:
       - type: regex

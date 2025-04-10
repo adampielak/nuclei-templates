@@ -5,20 +5,17 @@ info:
   tags: detect,tech,casdoor
   severity: info
   metadata:
-    fofa-query:
-    - title="casdoor"
-    google-query:
-    - intitle:"casdoor"
     product: casdoor
-    shodan-query:
-    - http.title:"casdoor"
-    vendor: casbin
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>casdoor.*?</title>
+  - type: word
+    words:
+    - <title>casdoor
+    - casdoor/manifest.json
+    condition: and
+    case-insensitive: true

@@ -1,7 +1,7 @@
 id: wordpress-gdpr-cookie-compliance
 
 info:
-  name: GDPR Cookie Compliance (CCPA, DSGVO, Cookie Consent) Detection
+  name: GDPR Cookie Compliance – Cookie Banner, Cookie Consent, Cookie Notice – CCPA, DSGVO, RGPD Detection
   author: ricardomaia
   severity: info
   reference:
@@ -11,7 +11,7 @@ info:
     wpscan: https://wpscan.com/plugin/gdpr-cookie-compliance
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
 
     path:

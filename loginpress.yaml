@@ -1,7 +1,7 @@
 id: wordpress-loginpress
 
 info:
-  name: LoginPress | Custom Login Page Customizer Detection
+  name: LoginPress | wp-login Custom Login Page Customizer Detection
   author: ricardomaia
   severity: info
   reference:
@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/loginpress/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/loginpress.txt
+      last_version: helpers/wordpress/plugins/loginpress.txt
 
     extractors:
       - type: regex

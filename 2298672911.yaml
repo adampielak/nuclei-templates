@@ -7,16 +7,15 @@ info:
   metadata:
     operating_system: Windows
     product: dns
-    rarity: 4
+    rarity: 0
     vendor: microsoft
     verified: true
 tcp:
-- name: x11-probe
+- name: 'null'
   inputs:
-  - data: \x6C\0\x0B\0\0\0\0\0\0\0\0\0
+  - data: ''
   host:
   - '{{Hostname}}'
-  port: 80,443,497,1550,2002,5302,7000,7100,7101,7777,8000,6000-6020
   extractors:
   - name: domain
     type: regex
