@@ -10,8 +10,10 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: exposure,config,airflow,apache
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/airflow.cfg'

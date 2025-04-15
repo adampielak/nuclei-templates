@@ -12,7 +12,7 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-77
-  tags: devops,hackerone,jenkins,rce
+  tags: jenkins,rce,devops
 
 requests:
   - method: GET
@@ -25,13 +25,8 @@ requests:
         part: body
         words:
           - "println(Jenkins.instance.pluginManager.plugins)"
-
-      - type: word
-        part: body
-        words:
-          - "Script Console"
           - "Scriptconsole"
-        condition: or
+        condition: and
 
       - type: status
         status:

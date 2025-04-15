@@ -18,7 +18,7 @@ requests:
       - "{{BaseURL}}/wp-content/plugins/add-to-any/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/add-to-any.txt
+      last_version: ../../../helpers/wordpress/plugins/add-to-any.txt
 
     extractors:
       - type: regex

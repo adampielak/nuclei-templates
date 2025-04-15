@@ -6,18 +6,13 @@ info:
   severity: info
   metadata:
     product: jupyterhub
-    shodan-query:
-    - http.title:"jupyterhub"
-    vendor: jupyter
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>jupyterhub.*?</title>
   - type: word
     words:
     - <title>jupyterhub</title>

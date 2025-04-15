@@ -9,9 +9,8 @@ info:
     - icon_hash=-2032163853
     product: jorani
     shodan-query:
-    - title:"login - jorani"
     - http.favicon.hash:-2032163853
-    vendor: jorani_project
+    vendor: jorani
     verified: true
 http:
 - method: GET
@@ -21,6 +20,3 @@ http:
   - type: favicon
     hash:
     - '-2032163853'
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>login - jorani.*?</title>

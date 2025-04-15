@@ -8,8 +8,9 @@ info:
     An anydesk phishing website was detected
   reference:
     - https://anydesk.com
+  metadata:
+    max-request: 1
   tags: phishing,anydesk,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"anydesk.com")'
-# digest: 4a0a00473045022100a34733799a13f24e239cb58bcace7290427d423386d64ec17b3a7632557c6c1f022065affca2eba5219fd28a196d5b41eb693ea5757f25eade7bb8060c4f595d92ed:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100d29d41a290d2a60891db661ded01d095a686d3282dbef51cdb82bab2c7af02a702206cf65e51d545f428719147d4d12fbdc6b9bc02645c72762bbfd2646b01fa43d4:922c64590222798bb761d5b6d8e72950

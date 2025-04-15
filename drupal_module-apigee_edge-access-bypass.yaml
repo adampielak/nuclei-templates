@@ -4,9 +4,9 @@ info:
   name: drupal_module-apigee_edge-access-bypass
   author: me
   severity: medium
-  description: "The Apigee Edge module allows connecting a Drupal site to Apigee X / Edge in order to build a developer portal.  Previous module versions did not support entity query level access checking, which could have led to information disclosure or access bypass in various places."
+  description: "The Apigee Edge module allows connecting a Drupal site to Apigee X / Edge in order to build a developer portal. The developers (user) can view API keys for their respective Apps. The module discloses information by allowing attackers to view cached information of API Keys from the browser cache for a limited time frame after the user login on the same computer."
   reference:
-    - https://www.drupal.org/sa-contrib-2023-005
+    - https://www.drupal.org/sa-contrib-2022-045
   metadata:
     security-risk: "Moderately critical 13 ∕ 25 AC:None/A:User/CI:Some/II:None/E:Theoretical/TD:All"
     vulnerability: "access-bypass"
@@ -53,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-         - compare_versions(version, '<= 1.27.0 || >=2.0.0 <= 2.0.8')
+         - compare_versions(version, '<= 1.26.0 || >=2.0.0 <= 2.0.3')

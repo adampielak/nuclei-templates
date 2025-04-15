@@ -1,4 +1,5 @@
 id: api-vercel
+
 info:
   name: Vercel API Test
   author: dwisiswant0
@@ -6,6 +7,7 @@ info:
   reference:
     - https://vercel.com/docs/rest-api
   tags: token-spray,vercel
+
 self-contained: true
 requests:
   - method: GET
@@ -13,6 +15,7 @@ requests:
       - "https://api.vercel.com/www/user"
     headers:
       Authorization: Bearer {{token}}
+
     matchers:
       - type: word
         part: body

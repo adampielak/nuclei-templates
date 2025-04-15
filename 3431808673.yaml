@@ -1,19 +1,19 @@
 id: tftp
 info:
-  name: Plan 9 tftpd
+  name: Windows 2003 Server Deployment Service
   author: nmap,cn-kali-team
   tags: detect,tech,tftp,service
   severity: info
   metadata:
-    operating_system: Plan 9
-    rarity: 5
+    operating_system: Windows
+    rarity: 6
 tcp:
-- name: dnsstatus-request
+- name: xdmcp
   inputs:
-  - data: \0\0\x10\0\0\0\0\0\0\0\0\0
+  - data: \0\x01\0\x02\0\x01\0
   host:
   - '{{Hostname}}'
-  port: 53,69,135,1761,26198
+  port: '177'
   extractors:
   - name: tftp
     type: regex

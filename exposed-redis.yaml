@@ -1,25 +1,18 @@
 id: exposed-redis
 
 info:
-  name: Redis Server - Unauthenticated Access
-  author: pdteam
+  name: Redis Unauth Server
+  author: pd-team
   severity: high
-  description: Redis server without any required authentication was discovered.
-  reference:
-    - https://redis.io/topics/security
-  metadata:
-    max-request: 4
-  tags: network,redis,unauth
+  reference: https://redis.io/topics/security
+  tags: network,redis
 
-tcp:
+network:
   - inputs:
       - data: "info\r\nquit\r\n"
 
     host:
-      - "{{Hostname}}"
-      - "{{Host}}:6379"
-      - "tls://{Hostname}}"
-      - "tls://{{Host}}:6380"
+      - "{{Hostname}}:6379"
     read-size: 2048
 
     matchers-condition: and
@@ -31,6 +24,3 @@ tcp:
         negative: true
         words:
           - "redis_mode:sentinel"
-
-# Enhanced by mp on 2022/07/20
-# Enhanced by vibrio on 2023/05/11

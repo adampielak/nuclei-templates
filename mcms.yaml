@@ -5,19 +5,15 @@ info:
   tags: detect,tech,mcms
   severity: info
   metadata:
-    fofa-query:
-    - icon_hash="1464851260"
     product: mcms
-    shodan-query:
-    - http.favicon.hash:1464851260
-    - http.favicon.hash:"1464851260"
-    vendor: mingsoft
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: favicon
-    hash:
-    - '1464851260'
+  - type: word
+    words:
+    - /mcms/search.do" method=
+    case-insensitive: true

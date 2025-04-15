@@ -1,4 +1,5 @@
 id: api-zoomeye
+
 info:
   name: ZoomEye API Test
   author: 0ri2N
@@ -8,12 +9,17 @@ info:
   reference:
     - https://zoomeye.org
     - https://zoomeye.org/doc
-  tags: dns,scan,recon,zoomeye,token-spray
+  metadata:
+    max-request: 1
+  tags: recon,zoomeye,token-spray
+
 self-contained: true
-requests:
+
+http:
   - method: GET
     path:
       - https://api.zoomeye.org/resources-info
+
     headers:
       API-KEY: "{{token}}"
     matchers:
@@ -24,3 +30,4 @@ requests:
           - '"stats"'
           - '"user_info"'
         condition: and
+# digest: 4b0a00483046022100975fde020f983f44a3329df26e9cc11cb158ecc6994765ac24e12d2ec8bf3cff022100b242afab929884deb068f40d40f21c42cfc1f9efca07c52b1880eb363c388afe:922c64590222798bb761d5b6d8e72950

@@ -5,17 +5,9 @@ info:
   tags: detect,tech,glpi
   severity: info
   metadata:
-    fofa-query:
-    - icon_hash="-1474875778"
-    - title="glpi"
-    google-query:
-    - intitle:"glpi"
     product: glpi
-    shodan-query:
-    - http.favicon.hash:"-1474875778"
-    - http.title:"glpi"
-    vendor: glpi-project
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
@@ -23,7 +15,4 @@ http:
   matchers:
   - type: favicon
     hash:
-    - '-1474875778'
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>glpi.*?</title>
+    - c9339a2ecde0980f40ba22c2d237b94b

@@ -11,8 +11,7 @@ info:
     shodan-query:
     - http.html:"/_next/static"
     - cpe:"cpe:2.3:a:zeit:next.js"
-    - html:"/_next/static"
-    vendor: zeit
+    vendor: vercel
     verified: true
 http:
 - method: GET

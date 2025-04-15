@@ -14,8 +14,10 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: config,exposure,laravel
+  metadata:
+    max-request: 22
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.env"

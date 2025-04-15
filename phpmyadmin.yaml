@@ -1,41 +1,26 @@
-name: phpmyadmin
-priority: 3
-nuclei_tags:
-  - - phpmyadmin
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - href="phpmyadmin.css.php
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers:
-      Set-Cookie: phpmyadmin=
-    keyword: []
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers:
-      Set-Cookie: pma_lang=
-    keyword: []
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - pma_password
-    favicon_hash: []
+id: phpmyadmin
+info:
+  name: phpmyadmin
+  author: cn-kali-team
+  tags: detect,tech,phpmyadmin
+  severity: info
+  metadata:
+    product: phpmyadmin
+    vendor: phpmyadmin
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - href="phpmyadmin.css.php
+    - pma_password
+    case-insensitive: true
+  - type: word
+    words:
+    - 'set-cookie: phpmyadmin='
+    - 'set-cookie: pma_lang='
+    part: header
+    case-insensitive: true
