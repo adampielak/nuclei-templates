@@ -9,3 +9,4 @@ readme-update.yml
 !.gitignore
 !.yaml
 !.yml
+.script.zsh
