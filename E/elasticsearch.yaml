@@ -5,17 +5,18 @@ info:
   tags: detect,tech,elasticsearch
   severity: info
   metadata:
-    fofa-query:
-    - index_not_found_exception
     product: elasticsearch
-    vendor: elastic
+    vendor: elasticsearch
     verified: true
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
+  - type: favicon
+    hash:
+    - 6177bfb75b498e0bb356223ed76ffe43
   - type: word
     words:
-    - index_not_found_exception
+    - '  "tagline" : "you know, for search"'
     case-insensitive: true

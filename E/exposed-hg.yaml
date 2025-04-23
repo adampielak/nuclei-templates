@@ -1,12 +1,23 @@
 id: exposed-hg
 
-name: Exposed HG Directory
-severity: low
-  
+info:
+  name: Exposed HG Directory
+  author: daffainfo
+  severity: low
+
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/.hg/hgrc"
-    patterns:
-      - '\[paths\]'
-      - 'default'
+    path:
+      - "{{BaseURL}}/.hg/hgrc"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "[paths]"
+          - "default"
+        condition: and
+
+      - type: status
+        status:
+          - 200

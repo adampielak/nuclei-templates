@@ -1,25 +1,22 @@
-id: jfrog
+id: jfrog-login
+
 info:
-  name: jfrog
-  author: cn-kali-team
-  tags: detect,tech,jfrog
+  name: JFrog Login
+  author: dhiyaneshDK
   severity: info
-  metadata:
-    product: jfrog
-    vendor: jfrog
-    verified: true
+  reference: https://www.exploit-db.com/ghdb/6797
+  tags: panel,jfrog
+
 http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - <meta http-equiv="refresh" content="0;url=/artifactory">
-    - src=/ui/img/jfrog
-    case-insensitive: true
-  - type: word
-    words:
-    - 'location: /artifactory/'
-    part: header
-    case-insensitive: true
+  - method: GET
+    path:
+      - '{{BaseURL}}/ui/login/'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>JFrog</title>'
+      - type: status
+        status:
+          - 200

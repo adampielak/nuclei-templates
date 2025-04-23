@@ -1,32 +1,30 @@
-id: dir-listing
-
 info:
-  name: Directory listing enabled
-  author: _harleo,pentest_swissky,hczdmr
-  severity: info
-  reference:
-    - https://portswigger.net/kb/issues/00600100_directory-listing
-  tags: misc,generic
+  id: dir-listing
+  name: Directory Listing Enabled - Information Disclosure
+  author: OpenAI
+  description: Template to detect if directory listing is enabled on a web server
+  severity: Low
+  classification:
+    country: any
+    tags:
+      - security
+      - information disclosure
+      - directory listing
 
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  matcher-condition: and
 
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Directory listing for "
-          - "Index of /"
-          - "[To Parent Directory]"
-          - "Directory: /"
-        condition: or
-        case-insensitive: true
+  requests:
+      method: GET
+      path: 
+      - "/"
+      description: Attempt to access the root directory
 
-      - type: regex
-        part: body
-        regex:
-          - '\d{1,2}\/\d{1,2}\/\d{4}\s+\d+:\d+\s+[\sAPM]+(&lt;dir&gt;|\d+)\s+<[Aa]\s+[hH][rR][eE][fF]="\/'
-          - '\s+-\s+\/<\/(title|h1)>'
-        condition: and
+  matchers:
+    - pattern: "<title>Index of /</title>"
+      type: body
+      description: Directory listing page found in response body
+
+  response:
+    - status:
+        - 200
+      description: Successful response status

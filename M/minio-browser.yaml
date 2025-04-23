@@ -1,21 +1,32 @@
-id: minio-browser
-info:
-  name: minio-browser
-  author: cn-kali-team
-  tags: detect,tech,minio-browser
-  severity: info
-  metadata:
-    product: minio-browser
-    vendor: 00_unknown
-    verified: false
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - <title>minio browser</title>
-    - <title>minio console</title>
-    - href="/minio/loader.css"
-    case-insensitive: true
+name: minio-browser
+priority: 3
+nuclei_tags:
+  - - minio
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <title>MinIO Console</title>
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - href="/minio/loader.css"
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <title>MinIO Browser</title>
+    favicon_hash: []

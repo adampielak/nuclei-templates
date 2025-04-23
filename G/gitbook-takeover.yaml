@@ -4,6 +4,7 @@ info:
   name: gitbook takeover detection
   author: philippedelteil
   severity: high
+  description: gitbook takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/259
     - https://hackerone.com/reports/223625
@@ -27,4 +28,9 @@ http:
           - "If you need specifics, here's the error"
           - "Domain not found"
         condition: and
-# digest: 4a0a0047304502210093c822f99d160ec31ba2838b87867d7a86e8ce6c93909cf1f5b3d0d29ad55e7102200e20144da548d441f9e161effd7c5437cd20bd1ff64cccd714e9a17cc0aa1fe0:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: dsl
+        dsl:
+          - cname
+# digest: 4b0a00483046022100ca73d16ebf369c43c6466f33b20979680005f96220ac372b476dd132e1cbfe2b022100b0b201fa9dec925c18ceb200e2b734c4caa0a21d6c7d87cb1b9940c997a7b936:922c64590222798bb761d5b6d8e72950

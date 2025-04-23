@@ -7,14 +7,14 @@ info:
   description: Docebo eLearning login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    verified: true
     fofa-query: title="Docebo E-learning"
+    max-request: 1
+    verified: true
   tags: panel,docebo
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -29,5 +29,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/11
+# digest: 4a0a00473045022010bd0422bd48230d9f4b376bfd14fc999a6f290389c40d18d79c6e60d6d5ecc7022100ea449a06b2e0b39439d0e310f6b2233582a7a21589db52c6134fe148719018d3:922c64590222798bb761d5b6d8e72950

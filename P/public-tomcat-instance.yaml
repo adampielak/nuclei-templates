@@ -5,7 +5,7 @@ info:
   author: Ahmed Sherif
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/manager/html'

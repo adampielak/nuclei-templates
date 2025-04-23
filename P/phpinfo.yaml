@@ -1,21 +1,15 @@
-id: phpinfo
-info:
-  name: phpinfo
-  author: cn-kali-team
-  tags: detect,tech,phpinfo
-  severity: info
-  metadata:
-    product: phpinfo
-    vendor: 00_unknown
-    verified: false
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - <title>phpinfo
-    - virtual directory support
-    condition: and
-    case-insensitive: true
+name: phpinfo
+priority: 1
+nuclei_tags:
+  - []
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <title>phpinfo
+      - Virtual Directory Support
+    favicon_hash: []
