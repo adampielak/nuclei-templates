@@ -12,10 +12,10 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
-    google-query: intitle:"Aqua Cloud Native Security Platform"
+    verified: true
     max-request: 1
     shodan-query: http.title:"Aqua Enterprise" || http.title:"Aqua Cloud Native Security Platform"
-    verified: true
+    google-query: intitle:"Aqua Cloud Native Security Platform"
   tags: panel,aqua,aquasec
 
 http:
@@ -35,4 +35,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220593d2e3c0053ffb4805eb449e8128d62c48270b1f22b228bd3b55f66c19b5b3c0220671474cb61608750a9c4182d05be825663967cea331656a7048979a5a99a61c5:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100f718db1287e231b5bbaa26eafe91b68cfa098354705ed79cd4ae9cbe63ad6c96022013746106ee22caa4aab117e0a575efb7eecd532f6ef2ebd8bf49139e39a0ea0d:922c64590222798bb761d5b6d8e72950

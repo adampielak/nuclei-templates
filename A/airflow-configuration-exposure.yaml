@@ -1,10 +1,17 @@
 id: airflow-configuration-exposure
-name: Apache Airflow Configuration Exposure
-severity: medium
+
+info:
+  name: Apache Airflow Configuration Exposure
+  author: pd-team
+  severity: medium
+
 requests:
   - method: GET
-    paths: 
-      - HOSTNAME/airflow.cfg
-    patterns:
-      - '\[core\]'
-      - '\[api\]'
+    path:
+      - '{{BaseURL}}/airflow.cfg'
+    matchers:
+      - type: word
+        words:
+          - '[core]'
+          - '[api]'
+        condition: and

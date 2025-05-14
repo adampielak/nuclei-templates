@@ -9,21 +9,23 @@ info:
     - https://github.com/jgraph/drawio
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:diagrams:drawio:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    max-request: 1
+    product: drawio
     shodan-query: http.title:"Flowchart Maker"
-  tags: panel,drawio,oss
+    vendor: diagrams
+    verified: true
+  tags: panel,drawio,oss,diagrams
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
 
     matchers-condition: and
     matchers:
-
       - type: word
         part: body
         words:
@@ -32,5 +34,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/11
+# digest: 4a0a00473045022028012c9ed9aa191524ee962f7289a19da18537353af37d7c0c38a6015df3ef35022100c4cf24f3d62c62df742b4e14c4efdedce01db38d05b430d47daada8716c908f4:922c64590222798bb761d5b6d8e72950

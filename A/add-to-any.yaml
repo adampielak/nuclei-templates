@@ -11,9 +11,8 @@ info:
     wpscan: https://wpscan.com/plugin/add-to-any
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/add-to-any/readme.txt"
 
