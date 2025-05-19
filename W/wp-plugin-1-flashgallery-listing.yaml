@@ -7,8 +7,10 @@ info:
   description: Searches for sensitive directories present in the 1-flash-gallery plugin.
   reference: https://www.exploit-db.com/ghdb/6978
   tags: wordpress,listing
+  metadata:
+    max-request: 2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/1-flash-gallery/"

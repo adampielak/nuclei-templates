@@ -1,11 +1,9 @@
 id: header-sqli
-
 info:
   name: Request header based sqli
   author: panch0r3d (Thanks https://github.com/MR-pentestGuy for all of the Regexes)
   severity: high
-
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/"

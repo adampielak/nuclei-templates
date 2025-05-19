@@ -10,7 +10,7 @@ info:
     product: blogengine.net
     shodan-query:
     - http.html:"blogengine.net"
-    vendor: blogengine
+    vendor: dotnetblogengine
     verified: true
 http:
 - method: GET

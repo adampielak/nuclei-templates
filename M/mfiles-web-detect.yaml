@@ -12,11 +12,14 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:m-files:m-files:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 2
-    product: m-files
-    shodan-query: http.html:"M-Files Web"
-    vendor: m-files
     verified: true
+    max-request: 2
+    vendor: m-files
+    product: m-files
+    shodan-query:
+      - http.html:"M-Files Web"
+      - http.html:"m-files web"
+    fofa-query: body="m-files web"
   tags: panel,m-files
 
 http:
@@ -40,4 +43,4 @@ http:
           - 'M-Files user'
           - 'M-Files authentication'
         condition: or
-# digest: 490a0046304402203eb7625961552bf97738f16398dde9367647e09e29afbcb6d7ecd5a3d147c317022073b3a7d3a87ed06eedef9a3eb2cae45bfb3911cbd80b3ff53533e916809cf530:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ddbcc909b6b0878db05d6a40a5be62e4fd1ce07448f0fdc25d367bc12dde15ce022100ee768f7718f56bb609878d0664ad755c41bac9b83f615d23c45487585850e2da:922c64590222798bb761d5b6d8e72950

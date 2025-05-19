@@ -9,8 +9,7 @@ info:
     - https://docs.digitalocean.com/reference/api/
   metadata:
     verified: true
-  tags: keys,file,digitalocean,token
-
+  tags: digitalocean,file,token
 file:
   - extensions:
       - all
@@ -20,4 +19,5 @@ file:
         part: body
         regex:
           - (?i)\b(doo_v1_[a-f0-9]{64})\b
-# digest: 4a0a0047304502201524e2869315a2ef331c90c262f1128e3d58c8b9c2c7af04cb9d78944801ad1e022100cb30b3e74dfe5b18d44c182dda8400ac56d43cbc3b80b9705ebd6526bc14de87:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100858d2cff4b452e35180468a6695191f9d1ae08ca70b8ca90b7e28bdbec1fdbeb022100a3be26c4c317526ccadda313039c98db82cbfd3cb1597ae24a12609797fda9d1:922c64590222798bb761d5b6d8e72950

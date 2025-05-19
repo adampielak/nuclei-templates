@@ -1,58 +1,48 @@
-id: speedycache
+id: wordpress-speedycache
 
 info:
-  name: >
-    SpeedyCache <= 1.1.2 - Missing Authorization via speedycache_create_test_cache
-  author: topscoder
-  severity: medium
-  description: >
-    The SpeedyCache – Cache, Optimization, Performance plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the speedycache_create_test_cache function in all versions up to, and including, 1.1.2. This makes it possible for authenticated attackers with subscriber-level access or higher to create a sample cache.
+  name: SpeedyCache – Cache, Optimization, Performance Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ac7c0dde-5299-4938-beed-eb2fe227a812?source=api-prod
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
-    cvss-score: 4.3
-    cve-id: 
+    - https://wordpress.org/plugins/speedycache/
   metadata:
-    fofa-query: "wp-content/plugins/speedycache/"
-    google-query: inurl:"/wp-content/plugins/speedycache/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,speedycache,medium
+    plugin_namespace: speedycache
+    wpscan: https://wpscan.com/plugin/speedycache
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/speedycache/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/speedycache.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "speedycache"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 1.1.2')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'

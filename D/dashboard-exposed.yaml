@@ -1,8 +1,8 @@
-id: Dashboard-Exposed-by-passing-authentication
+id: Dashboard Exposed bypassing authentication
 info:
   name: Find Exposed dashboard
   author: Clark
-  severity: medium
+  severity: meduim
 requests:
   - method: GET
     path:

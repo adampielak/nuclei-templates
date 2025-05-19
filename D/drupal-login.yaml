@@ -1,31 +1,18 @@
 id: drupal-login
 
 info:
-  name: Drupal Login Panel - Detect
+  name: Drupal login
   author: pathtaga
   severity: info
-  description: Drupal login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cwe-id: CWE-200
-    cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
-  metadata:
-    max-request: 2
-    vendor: drupal
-    product: drupal
-    shodan-query:
-      - http.component:"drupal"
-      - cpe:"cpe:2.3:a:drupal:drupal"
   tags: panel,drupal
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/user/login"
 
     stop-at-first-match: true
-
     matchers-condition: or
     matchers:
       - type: regex
@@ -41,4 +28,3 @@ http:
           - '(?i)x-drupal'
           - "(?i)x-generator: drupal"
         condition: or
-# digest: 4a0a0047304502201ccc78febc8c374030ecf78f6a801c51426ad1f4f21f5e2f59e68812e46e117d022100fab307dc5c225eeb30ac63bde0cb807dcbcebb1acbbe480ccbeb78debe369801:922c64590222798bb761d5b6d8e72950

@@ -1,21 +1,18 @@
 id: disqus
 
 info:
-  name: Disqus User Name Information - Detect
+  name: Disqus
   author: dwisiswant0
+  description: This OSINT template looks for information about a user name.
   severity: info
-  description: Disqus user name information check was conducted.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
-  metadata:
-    max-request: 1
   tags: osint,osint-social,disqus
 
 self-contained: true
-
-http:
+requests:
   - method: GET
     path:
       - "https://disqus.com/by/{{user}}/"
@@ -30,4 +27,3 @@ http:
         part: body
         words:
           - "<title>Disqus Profile"
-# digest: 4b0a00483046022100d85290c8175078be96f11d56caa462447abfcf18f362a0f3fc258b5350e3b46e022100b4dc0b820c06014bc542345a8fdbd4503bde31c4ae9a4ec8c6ac6d02473464cb:922c64590222798bb761d5b6d8e72950

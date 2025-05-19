@@ -8,8 +8,9 @@ info:
     A kaspersky phishing website was detected
   reference:
     - https://kaspersky.co.uk
+  metadata:
+    max-request: 1
   tags: phishing,kaspersky,osint
-
 http:
   - method: GET
     path:
@@ -32,4 +33,4 @@ http:
         dsl:
           - '!contains(host,"kaspersky.co.uk")'
           - '!contains(host,"kaspersky.com")'
-# digest: 4a0a00473045022100f9a281d8c09c9024a2b6228e47d4c868f2016e705818e25dfdfc0d0258ee9f2d02200afd03dbbabdb800dd1a5c5087e0bd8e562f1f92387f4093e03333d783d7fa3d:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f6055762d7b7ae8bf406c14fa13c9e6feb5dec63f40a68c87bf01fca58b32ba7022100a9ec31288d52ed4bb3dc60e4277e30107d96ca36053eaf49e2fb81d89066d52c:922c64590222798bb761d5b6d8e72950

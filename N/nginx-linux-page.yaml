@@ -7,7 +7,6 @@ info:
   metadata:
     shodan-query: http.title:"Test Page for the Nginx HTTP Server on Amazon Linux"
   tags: tech,nginx,amazon
-  mongoid: 0000
 
 requests:
   - method: GET

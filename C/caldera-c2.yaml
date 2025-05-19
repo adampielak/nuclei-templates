@@ -9,13 +9,9 @@ info:
   reference:
     - https://github.com/mitre/caldera
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
-  classification:
-    cpe: cpe:2.3:a:mitre:caldera:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: mitre
-    product: caldera
     fofa-query: http.favicon.hash:-636718605
   tags: c2,ir,osint,caldera,panel
 
@@ -34,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100aa7018a419ddb3e45757e1bd08be0bde886ca71305331b2626123357d4dbd4f7022013a2ee4c1eac4439954f210f9bea2f58a1892d5653b700c639000ca2874da06f:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221008ff94687ae1b013643001b71a2043b8bb5aba89b88023d073e9bf9d2378b2dc402202bdb2ed3c0f17da110f0afeecbb6388d8938446c7503c7b8e104cbbd103276bd:922c64590222798bb761d5b6d8e72950

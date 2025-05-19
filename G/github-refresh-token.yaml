@@ -13,4 +13,4 @@ file:
     extractors:
       - type: regex
         regex:
-          - "ghr_.{76}"
+          - "ghr_.{36}"

@@ -9,13 +9,14 @@ info:
     shodan-query: http.html:"Apache Cocoon"
     fofa-query: app="APACHE-Cocoon"
   tags: apache,cocoon,tech
+  mongoid: 0000
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers:
       - type: word

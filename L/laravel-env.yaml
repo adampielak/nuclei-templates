@@ -1,22 +1,14 @@
-id: laravel-env
+id: laravel-env-1
 
 info:
   name: Laravel .env file
-  author: pxmme1337 & dwisiswant0 & geeknik & emenalf
+  author: pxmme1337 & dwisiswant0
   severity: medium
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/.env"
-      - "{{BaseURL}}/.env.dev.local"
-      - "{{BaseURL}}/.env.development.local"
-      - "{{BaseURL}}/.env.prod.local"
-      - "{{BaseURL}}/.env.production.local"
-      - "{{BaseURL}}/.env.local"
-      - "{{BaseURL}}/.env.example"
-      - "{{BaseURL}}/.env.stage"
-      - "{{BaseURL}}/.env.live"
     matchers-condition: and
     matchers:
       - type: regex

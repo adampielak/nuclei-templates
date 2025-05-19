@@ -4,10 +4,9 @@ info:
   name: Alchemy API Test
   author: daffainfo
   severity: info
-  description: Ethereum Node-as-a-Service Provider
   reference:
     - https://docs.alchemy.com/alchemy/
-    - https://github.com/daffainfo/all-about-apikey/tree/main/alchemy
+    - https://github.com/daffainfo/all-about-apikey/blob/main/Cryptocurrency/Alchemy.md
   tags: token-spray,alchemy
 
 self-contained: true

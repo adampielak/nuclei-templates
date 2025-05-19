@@ -1,4 +1,4 @@
-id: host-header-poisoning-1
+id: host-header-poisoning
 
 info:
   name: Basic Host Header Poisoning

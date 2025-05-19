@@ -9,10 +9,13 @@ info:
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:ollama:ollama:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: "Ollama is running"
-    zoomeye-query: app:"Ollama LLM"
+    zoomeye-query: app="Ollama"
+    product: ollama
+    vendor: ollama
   tags: panel,ollama,llm,detect
 
 http:
@@ -29,4 +32,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205a3966b2f1295470a45b147c2167434bbc4224ceaa7f65e9147a9fc26c2da047022100acf08ba2a673d8f2b4f54775116a2c9e095d2b12473a7a8e4cc1d315fb268012:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502206ae0005fc1b403051a608a4c2d4916af5390ba5ee28cf9d17e28d3b8ca6a5f5e022100f5f9b1a2e0c4851b8d9c5a9752e6d8b2afe07fd7d0181d6c7088c065ce285003:922c64590222798bb761d5b6d8e72950

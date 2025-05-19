@@ -14,4 +14,3 @@ file:
       - type: regex
         regex:
           - "ghp_.{36}"
-          - "github_pat_.{82}"

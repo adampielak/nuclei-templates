@@ -7,8 +7,10 @@ info:
   reference:
     - https://yii2-framework.readthedocs.io/en/stable/guide/tool-debugger/
   tags: yii,debug,exposure
+  metadata:
+    max-request: 5
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/debug/default/view.html"

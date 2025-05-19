@@ -8,8 +8,9 @@ info:
     A netflix phishing website was detected
   reference:
     - https://netflix.com
+  metadata:
+    max-request: 1
   tags: phishing,netflix,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"netflix.com")'
-# digest: 4b0a00483046022100e1d9f157222a9209b8894358af646fec318cb421963c37621a2e394b7a6c01ac0221009d2dd8c3a172823d75a316e1e5df0e95c1300680e325a08baced0a443f123929:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502205ae56239e046bb96016e7021921fb074c4f34c846129badf0a1417df55947f11022100b4090da2fe99ad6f2573d0175c022970777c1ab146783ab0fa34324cb2ecf1e6:922c64590222798bb761d5b6d8e72950

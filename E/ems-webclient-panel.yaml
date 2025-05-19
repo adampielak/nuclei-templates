@@ -1,16 +1,11 @@
 id: ems-webclient-panel
 
 info:
-  name: EMS Web Client Login Panel - Detect
+  name: EMS Web Client Panel Login
   author: pussycat0x,daffainfo
   severity: info
-  description: EMS Web Client login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
-    google-query: inurl:EMSWebClient/
+    google-dork: inurl:EMSWebClient/
   tags: panel,ems
 
 requests:
@@ -37,5 +32,3 @@ requests:
         group: 1
         regex:
           - 'Web Client Version (.*)</span>'
-
-# Enhanced by md on 2022/11/14

@@ -1,24 +1,29 @@
 id: wordpress
+
 info:
-  name: wordpress
-  author: cn-kali-team
-  tags: detect,tech,wordpress
+  name: WordPress
+  author: dwisiswant0
+  description: This OSINT template looks for information about a user name.
   severity: info
-  metadata:
-    product: wordpress
-    vendor: wordpress
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - /wp-content/themes/
-    - /wp-content/uploads/
-    - /wp-includes/
-    - <link rel='stylesheet' id='wp-block-library-css
-    - \/wp-admin\/admin-ajax.php","
-    - 'name="generator" content="wordpress '
-    case-insensitive: true
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  tags: osint,osint-blog,wordpress
+
+self-contained: true
+requests:
+  - method: GET
+    path:
+      - "https://profiles.wordpress.org/{{user}}/"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "user-member-since"

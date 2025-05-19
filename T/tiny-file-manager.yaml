@@ -1,5 +1,4 @@
 id: tiny-file-manager
-
 info:
   name: Tiny File Manager
   author: DhiyaneshDK
@@ -8,13 +7,11 @@ info:
     verified: true
     shodan-dork: title:"Tiny File Manager"
   tags: panel,filemanager
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:
@@ -22,7 +19,6 @@ requests:
         part: body
         words:
           - 'Tiny File Manager'
-
       - type: status
         status:
           - 200

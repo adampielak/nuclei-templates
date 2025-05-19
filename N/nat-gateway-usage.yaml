@@ -11,14 +11,15 @@ info:
     Replace NAT instances with Amazon Managed NAT Gateway to ensure high availability and scalability in your VPC network.
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
+  metadata:
+    max-request: 2
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
-
 variables:
   region: "us-east-1"
 
 flow: |
   code(1)
-  for(let VPCIds of template.vpcid){
+  for(let VPCIds of iterate(template.vpcid)){
     set("vpc", VPCIds)
     code(2)
   }
@@ -53,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'vpc + " VPC is not using Managed NAT Gateways"'
-# digest: 4a0a00473045022100c0877797c85620a3b1a36e36908c96c828bcd0dc31d1b46eadfbad0cb57887cb0220322e780cb1d41741e04ff1fa0dfd2d35efe10a367c625bf3dfa3ef63c1297eb8:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022033924463ca3a49819ef3a786daa7e1529d24ad878c48b4282bf78a07c0dfd8d9022100caad07d20ef7d1885a9a3c3b06ab5472afb05d075bda5dde5371c879a9633f46:922c64590222798bb761d5b6d8e72950

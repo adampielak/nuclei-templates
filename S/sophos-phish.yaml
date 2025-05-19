@@ -8,8 +8,9 @@ info:
     A sophos phishing website was detected
   reference:
     - https://sophos.com
+  metadata:
+    max-request: 1
   tags: phishing,sophos,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"sophos.com")'
-# digest: 4a0a0047304502207162a90fca1545b8c0f3ecc59b7a59cc1ec1f1b7471467c3bac17cd93374fb62022100e1c1540b7c5cdb4bad76f8586bc561b57d4d40fb4ef3ffd449ba741ee3fff700:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221008b39dbce347832e704df5c59459ffa086e4a93ee775f8fbe93205ae1443bf23b022033962eb1410c3380dba517d05988c8c4def862b80b59e3fc51fc2c0db31d04c3:922c64590222798bb761d5b6d8e72950

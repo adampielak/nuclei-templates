@@ -1,58 +1,48 @@
-id: blocksy-companion
+id: wordpress-blocksy-companion
 
 info:
-  name: >
-    Blocksy Companion <= 1.8.81 - Authenticated(Subscriber+) Sensitive Information Exposure via blocksy_posts shortcode
-  author: topscoder
-  severity: low
-  description: >
-    
+  name: Blocksy Companion Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d31aad1c-89d4-4f71-bfed-a795f7a4f209?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    - https://wordpress.org/plugins/blocksy-companion/
   metadata:
-    fofa-query: "wp-content/plugins/blocksy-companion/"
-    google-query: inurl:"/wp-content/plugins/blocksy-companion/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,blocksy-companion,low
+    plugin_namespace: blocksy-companion
+    wpscan: https://wpscan.com/plugin/blocksy-companion
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/blocksy-companion/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/blocksy-companion.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "blocksy-companion"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 1.8.81')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'

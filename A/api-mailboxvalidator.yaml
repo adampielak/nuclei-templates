@@ -4,10 +4,9 @@ info:
   name: MailboxValidator API Test
   author: daffainfo
   severity: info
-  description: Validate email address to improve deliverability
   reference:
     - https://www.mailboxvalidator.com/api-email-free
-    - https://github.com/daffainfo/all-about-apikey/tree/main/mailboxvalidator
+    - https://github.com/daffainfo/all-about-apikey/blob/main/Business/MailboxValidator.md
   tags: token-spray,mailboxvalidator
 
 self-contained: true

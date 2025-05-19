@@ -9,14 +9,11 @@ info:
     - https://www.exploit-db.com/ghdb/6793
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:sap:fiori_launchpad:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    vendor: sap
-    product: fiori_launchpad
-    google-query: sap/bc/ui5_ui5/ui2/ushell/shells/abap/fiorilaunchpad.html -site:sap.com
-  tags: panel,edb,sap
+  tags: panel,edb
 
 http:
   - method: GET
@@ -34,4 +31,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a72762a0c6511bb1d1ff03c559e657965a145f83a868465b1a5834e09d34c877022100d5ea894f8cf23b97111fb71eef5c4d7693648a2a165ef8b3600e070baac53a3b:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100fb5cf36c8de9357dc05827ab8dfb8bf4884375af6f5925f26889a79033ac1864022029f70ca0f4f065894812757f2b716a64efb6510b78fdee391b283d38bdbaef6f:922c64590222798bb761d5b6d8e72950

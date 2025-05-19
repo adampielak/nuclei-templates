@@ -1,24 +1,21 @@
-name: vmware-horizon
-priority: 1
-nuclei_tags:
-  - - horizon
-    - vmware
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - href='https://www.vmware.com/go/viewclients'
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - alt="vmware horizon">
-    favicon_hash: []
+id: vmware-horizon
+
+info:
+  name: VMware Horizon Login
+  author: dhiyaneshDK
+  severity: info
+  reference: https://www.exploit-db.com/ghdb/6496
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/portal/webclient/index.html'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>VMware Horizon</title>'
+      - type: status
+        status:
+          - 200

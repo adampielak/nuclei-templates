@@ -12,9 +12,9 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
+    verified: true
     max-request: 2
     shodan-query: http.favicon.hash:-2144699833
-    verified: true
   tags: panel,kasm,login,detect
 
 http:
@@ -45,4 +45,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220262afa3131fcb580eb411d03e3150dc510f0581552654aa7293a49f8854bd95c022100ae245d8d386f7895e356d93afe4379ef7d818edf0fe945d9561261d9503d7ce2:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022002ad873fdf8f60b4dc4a5f248af8e611c5cb4b39914479fae58e2802078221e60221008bb6577575386a9eba26703d6064a65344e9f502865dd1918bf260c642febfab:922c64590222798bb761d5b6d8e72950

@@ -4,6 +4,7 @@ info:
   name: Leadpages takeover detection
   author: philippedelteil
   severity: high
+  description: Leadpages takeover was detected.
   reference:
     - https://www.youtube.com/watch?v=HRFplefT46U
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/166
@@ -29,4 +30,9 @@ http:
           - "The page you’re looking for may have been moved"
           - "Double-check that you have the right web address and give it another go!"
         condition: or
-# digest: 4a0a00473045022030ff6b3efedbd2c14822201e04cfebb6639085b24cf85649e4a09889feee1a4f0221009d3379de248b0e51794bf7e447f471fc5dc8c9596cb483353609a3ca1fa79ed5:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: dsl
+        dsl:
+          - cname
+# digest: 490a004630440220670c11cc8ec0fc1ba4e78105121633be19237f4c3a65c23a1bf42ff1175163d90220249a12219ce3e956e7861bd4e888d76591592af2a0c631daaab9c72fc0a5cbe9:922c64590222798bb761d5b6d8e72950

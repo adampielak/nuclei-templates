@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.component:"Magento"
-  tags: magento,tech
+  tags: magento
 
 requests:
   - method: GET

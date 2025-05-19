@@ -7,14 +7,14 @@ info:
   metadata:
     info: IEN 116
     operating_system: Solaris
-    rarity: 3
+    rarity: 5
 tcp:
-- name: help
+- name: ntprequest
   inputs:
-  - data: help\r\n\r\n
+  - data: \xe3\x00\x04\xfa\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xc5\x4f\x23\x4b\x71\xb1\x52\xf3
   host:
   - '{{Hostname}}'
-  port: 7,13,37,42
+  port: 123,5353,9100
   extractors:
   - name: nameserver
     type: regex

@@ -39,6 +39,7 @@ http:
         - 1234
     host-redirects: true
     max-redirects: 2
+    cookie-reuse: true
 
     matchers-condition: and
     matchers:
@@ -49,8 +50,10 @@ http:
           - "Summary"
           - "Logout"
         condition: and
+        case-insensitive: true
 
       - type: status
         status:
           - 200
-# digest: 490a00463044022066e4d586e7849060bbdc9bb5df174185d1bef411797037030f996f5b3f740ede02207169913d45f63abd4409a25f41256168f5eb176ea7be72e8806b97b0ea4e22dd:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402200da9672f010a0eac63a38a3eb432ae493e34e10c62d4f79fbed9293167fe46b9022059e5d4d555e03bc74b31e487c90f33464a461e623e963534472ff048541265b7:922c64590222798bb761d5b6d8e72950

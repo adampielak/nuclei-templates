@@ -1,8 +1,8 @@
-id: cache-poisoning-2
+id: cache-poisoning    
 
 info:
   name: Cache Poisoning
-  author: nithissh
+  author:nithissh
   severity: low
 
 requests:

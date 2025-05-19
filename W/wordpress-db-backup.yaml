@@ -4,7 +4,9 @@ info:
   name: WordPress DB Backup
   author: dwisiswant0
   severity: medium
-  tags: wordpress-misc,wordpress,backups
+  tags: wordpress,backups
+  metadata:
+    max-request: 1
 
 http:
   - method: GET

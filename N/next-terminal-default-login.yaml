@@ -9,9 +9,9 @@ info:
   reference:
     - https://github.com/dushixiang/next-terminal
   metadata:
+    verified: true
     max-request: 1
     fofa-query: title="Next Terminal"
-    verified: true
   tags: default-login,next-terminal,next
 
 http:
@@ -43,4 +43,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022047000b6be585f125bb59e74eaa3738df10e5fedd6f7f79daf80c87bd334d0244022100aa08bbf3a773e10611aa8076f9ead21582e2b7e190382f247d48976fb5618328:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ab8fb5a72496f78c05abb38d13d6abbe40c4e3b90b5b55ca4c707b193bcc9d96022100a580ac43c03aa3ab4b566bf02901b1a15385ebb27325c26fa298484bf3be1257:922c64590222798bb761d5b6d8e72950

@@ -1,11 +1,23 @@
 id: exposed-metrics
 
-name: Exposed metrics
-severity: low
-  
+info:
+  name: Exposed metrics
+  author: dhiyaneshDK
+  severity: low
+  reference: https://hackerone.com/reports/1026196
+
 requests:
   - method: GET
-    paths:
-      - "HOSTNAME/metrics"
-    patterns:
-      - 'cpu_seconds_total'
+    path:
+      - "{{BaseURL}}/metrics"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'cpu_seconds_total'
+        condition: and
+
+      - type: status
+        status:
+          - 200
