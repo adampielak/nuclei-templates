@@ -4,6 +4,7 @@ info:
   name: Request header based sqli
   author: panch0r3d (Thanks https://github.com/MR-pentestGuy for all of the Regexes)
   severity: high
+  tags: sqli
 
 http:
   - method: GET
@@ -42,6 +43,7 @@ http:
           - "(sqlite3.OperationalError:|SQLite3.*?SQLException|org.sqlite.JDBC|Sqlite|SQLiteException|Warning.*?sybase_)"
           - "(Sybase message|Sybase.*?Server message|SybSQLException|Sybase.Data.AseClient|com.sybase.jdbc)"
         part: body
+
     extractors:
       - type: regex
         part: body

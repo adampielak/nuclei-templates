@@ -1,14 +1,23 @@
-name: mcms
-priority: 3
-nuclei_tags:
-  - - mcms
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 200
-    headers: {}
-    keyword:
-      - /mcms/search.do" method=
-    favicon_hash: []
+id: mcms
+info:
+  name: mcms
+  author: cn-kali-team
+  tags: detect,tech,mcms
+  severity: info
+  metadata:
+    fofa-query:
+    - icon_hash="1464851260"
+    product: mcms
+    shodan-query:
+    - http.favicon.hash:1464851260
+    - http.favicon.hash:"1464851260"
+    vendor: mingsoft
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: favicon
+    hash:
+    - '1464851260'

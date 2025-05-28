@@ -45,4 +45,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502210087bd959b3f19b4d1c4177b2a335d02f395a727dc20afbec5c3ff81c392a414600220698a3d99bbfbbc1741e8054fef7765b691caf0c434aa556cac3635a344740030:922c64590222798bb761d5b6d8e72950

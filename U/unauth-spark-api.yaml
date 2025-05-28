@@ -13,10 +13,8 @@ info:
     cwe-id: CWE-77
   remediation: Restrict access the exposed API ports.
   tags: spark,unauth
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/v1/submissions"

@@ -24,4 +24,4 @@ http:
           - 'status_code == 200'
           - 'contains_all(to_lower(body), "plateforme de signature", "esign-web")'
         condition: and
-# digest: 4b0a00483046022100fd538b95ac99329a31e9dd7ffae70c4f999cb779debf487a251f4cb30ba274ac022100c2393ebdb61f2225ef97df99f0e3ba9539b3d0b04dd91b118e3f5e898d92df47:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022002715c356826f85edb88d346cc3453b1fefdf3d7bc68bab083d7f46b0ec57e20022100844d6405e811bbd5251f5d47bac5a6a6f214e7f899e078503cfeaf4fb5d79eee:922c64590222798bb761d5b6d8e72950
