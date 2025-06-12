@@ -12,7 +12,7 @@ info:
     fofa-query: icon_hash="1983356674"
     vendor: Ivanti
     product: Endpoint Manager Mobile
-  tags: detect,ivanti,epmm
+  tags: detect,ivanti,epmm,release-date
 
 http:
   - method: GET
@@ -258,7 +258,7 @@ http:
           - status_code == 200 && last_modified=="Tue, 30 May 2023 16:04:52 GMT"
 
       - type: dsl
-        name: 11.10
+        name: "11.10"
         dsl:
           - status_code == 200 && last_modified=="Tue, 31 Oct 2023 10:59:24 GMT"
 
@@ -273,7 +273,7 @@ http:
           - status_code == 200 && last_modified=="Wed, 06 Nov 2024 03:22:08 GMT"
 
       - type: dsl
-        name: 12.4
+        name: "12.4"
         dsl:
           - status_code == 200 && last_modified=="Wed, 16 Aug 2023 16:31:24 GMT"
 

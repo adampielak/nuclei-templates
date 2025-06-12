@@ -20,13 +20,14 @@ info:
       - icon_hash="1123106483"
       - icon_hash="1431756848"
     vendor: TOPDesk
-  tags: tech,detect,topdesk
+  tags: detect,topdesk,release-date
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
 
+    matchers-condition: and
     matchers:
       - type: status
         status:
@@ -35,7 +36,7 @@ http:
       - type: word
         part: body
         words:
-          - "href=\"/tas/"
+          - 'href="/tas/'
           - "topdeskidploginforwardurl"
 
     extractors:
@@ -48,6 +49,5 @@ http:
         internal: true
 
       - type: dsl
-        name: extracted_date
         dsl:
-          - "date_time('%Y-%M-%D', extracted_unix_timestamp)"
+          - '"Release date: " + date_time("%Y-%M-%D", extracted_unix_timestamp)'

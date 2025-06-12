@@ -14,7 +14,7 @@ info:
       - "icon_hash=-1922044295"
     vendor: Mitel
     product: MiCollab
-  tags: detect,mitel,micollab
+  tags: detect,mitel,micollab,version
 
 http:
   - method: GET

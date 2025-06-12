@@ -1,24 +1,14 @@
-id: jupyterhub
-info:
-  name: jupyterhub
-  author: cn-kali-team
-  tags: detect,tech,jupyterhub
-  severity: info
-  metadata:
-    product: jupyterhub
-    shodan-query:
-    - http.title:"jupyterhub"
-    vendor: jupyter
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>jupyterhub.*?</title>
-  - type: word
-    words:
-    - <title>jupyterhub</title>
-    case-insensitive: true
+name: jupyterhub
+priority: 3
+nuclei_tags:
+ - - jupyterhub
+fingerprint:
+ - path: /
+   request_method: get
+   request_headers: {}
+   request_data: ''
+   status_code: 0
+   headers: {}
+   keyword:
+     - <title>JupyterHub</title>
+   favicon_hash: []

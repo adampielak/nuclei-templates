@@ -8,8 +8,10 @@ info:
   reference:
     - https://www.zhihuifly.com/t/topic/3345
   tags: zhiyuan,leak,disclosure,seeyon
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/yyoa/ext/https/getSessionList.jsp?cmd=getAll"

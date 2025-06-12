@@ -6,7 +6,9 @@ info:
   severity: info
   reference:
     - https://wordpress.org/support/article/resetting-your-password/#using-the-emergency-password-reset-script
-  tags: wordpress-misc,wordpress,info
+  tags: wordpress
+  metadata:
+    max-request: 1
 
 http:
   - method: GET
@@ -15,10 +17,6 @@ http:
 
     matchers-condition: and
     matchers:
-      - type: status
-        status:
-          - 200
-
       - type: word
         words:
           - "Your use of this script is at your sole risk"
@@ -26,3 +24,6 @@ http:
           - "Update Options"
         condition: and
         part: body
+      - type: status
+        status:
+          - 200

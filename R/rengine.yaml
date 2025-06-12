@@ -6,15 +6,14 @@ info:
   severity: info
   metadata:
     product: rengine
-    shodan-query:
-    - title:"rengine"
-    vendor: yogeshojha
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>rengine.*?</title>
+  - type: word
+    words:
+    - '>login to rengine.</h5>'
+    case-insensitive: true

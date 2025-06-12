@@ -9,8 +9,8 @@ info:
   metadata:
     max-request: 1
     shodan-query:
-      - "http.favicon.hash:-424232490"
-  tags: detect,version,vtt
+      - http.favicon.hash:-424232490
+  tags: detect,version,vtt,version
 
 http:
   - method: GET
@@ -22,7 +22,7 @@ http:
       - type: status
         status:
           - 200
-      
+
       - type: word
         part: body
         words:
