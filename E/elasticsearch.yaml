@@ -5,12 +5,11 @@ info:
   author: Shine,c-sh0,geeknik
   severity: low
   metadata:
-    max-request: 4
     verified: true
     shodan-query: "ElasticSearch"
   tags: elastic,unauth,elasticsearch
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/?pretty'

@@ -6,25 +6,40 @@ info:
   reference: https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
   tags: tech,graphql,ariadne
 
-requests:
+http:
   - method: POST
     path:
+      - "{{BaseURL}}/graphql"
+      - "{{BaseURL}}/api/graphql"
+      - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
-    body: 'query { __typename @abc }'
-
+    body: '{"query":"query { __typename @abc }"}'
     headers:
       Content-Type: application/json
     redirects: true
 
     matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "The query must be a string."
-        part: body
+      - type: status
+        status:
+          - 200
 
       - type: word
         words:
           - "Unknown directive '@abc'."
         part: body
+
+      - type: word
+        words:
+          - 'Content-Type: text/html'
+        part: header
         negative: true
+
+      - type: word
+        words:
+          - '<html'
+          - '<body'
+        part: body
+        condition: or
+        negative: true
+# digest: 4a0a00473045022056e7cc94852d03fdfb345fece20e0f8def1041f2fce9e8c66c43710c92a40a4b022100edbc905734d8c700b0ef8dd6b498ebfeffb6bd26ced513a427564f1003192795:922c64590222798bb761d5b6d8e72950

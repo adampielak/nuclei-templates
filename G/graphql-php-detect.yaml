@@ -6,29 +6,27 @@ info:
   reference: https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
   tags: tech,graphql,php
 
-requests:
+http:
   - method: POST
     path:
+      - "{{BaseURL}}/graphql"
+      - "{{BaseURL}}/api/graphql"
+      - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
-    body: 'query ! {__typename}'
-
+    body: '{"query":"query ! {__typename}"}'
     headers:
       Content-Type: application/json
     redirects: true
 
-  - method: POST
-    path:
-      - "{{BaseURL}}/"
-    body: 'query @deprecated {__typename}'
-
-    headers:
-      Content-Type: application/json
-    redirects: true
-
+    matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 200
+          - 400
+
       - type: word
         words:
-          - 'Syntax Error: Cannot parse the unexpected character "?".'
-          - 'Directive "deprecated" may not be used on "QUERY".'
+          - 'Syntax Error: Cannot parse the unexpected character "!".'
         part: body
-        condition: or
+# digest: 4b0a00483046022100bb4f0598cf293b2f91c1c8dd9ee8fc716f94f235e99af67f3fe2432fafe133940221009af6e0e02df0d95ab7768979a078fcada5d096d6d29c7013bc119fabd7d8761b:922c64590222798bb761d5b6d8e72950
