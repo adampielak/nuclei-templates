@@ -7,8 +7,8 @@ info:
   metadata:
     product: elfinder
     shodan-query:
-    - http.title:"elfinder"
-    vendor: studio-42
+    - title:"elfinder"
+    vendor: std42
     verified: true
 http:
 - method: GET

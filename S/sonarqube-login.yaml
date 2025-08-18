@@ -10,21 +10,16 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: panel,sonarqube
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/sessions/new"
 
-    matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
-          - "SonarQube"
+          - "<title>SonarQube</title>"
+        part: body
 
-      - type: status
-        status:
-          - 200
+# Enhanced by md on 2023/01/15

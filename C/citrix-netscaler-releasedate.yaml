@@ -1,11 +1,11 @@
 id: citrix-netscaler-releasedate
 
 info:
-  name: Citrix Netscaler - Release Date
+  name: Citrix Netscaler - Version
   severity: info
   author: darses
   description: |
-    Detects Citrix Netscaler release date from the favicon last-modified date. Note that some installs will return `:00:01 GMT` of `:00:02 GMT`, which is an unreliable release date. In that case, read the last-modified date from the gzipped file /vpn/js/rdx/core/lang/rdx_en.json.gz, as per the research buy Fox-IT. If the extracted release date does not match existing versions or the 00:01/00:02, you have may have found a honeypot.
+    Citrix Netscaler release date was detected. Note that some installs will return `:00:01 GMT` of `:00:02 GMT`, which is an unreliable release date. In that case, read the last-modified date from the gzipped file /vpn/js/rdx/core/lang/rdx_en.json.gz, as per the research buy Fox-IT. If the extracted release date does not match existing versions or the 00:01/00:02, you have may have found a honeypot.
   metadata:
     vendor: citrix
     product: netscaler

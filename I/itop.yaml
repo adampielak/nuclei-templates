@@ -20,4 +20,3 @@ http:
   - type: word
     words:
     - itop login
-    case-insensitive: true

@@ -6,7 +6,7 @@ info:
   severity: low
   # reference: @AEMSecurity
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/dispatcher/invalidate.cache"

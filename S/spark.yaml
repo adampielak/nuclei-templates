@@ -5,18 +5,9 @@ info:
   tags: detect,tech,spark
   severity: info
   metadata:
-    fofa-query:
-    - body="/apps/imt/html/"
-    - title="spark master at"
-    google-query:
-    - intitle:"spark master at"
     product: spark
-    shodan-query:
-    - title:"spark master at"
-    - http.html:"/apps/imt/html/"
-    - http.title:"spark master at"
-    vendor: apache
-    verified: true
+    vendor: 00_unknown
+    verified: false
 http:
 - method: GET
   path:
@@ -24,8 +15,5 @@ http:
   matchers:
   - type: word
     words:
-    - /apps/imt/html/
+    - serversparkversion
     case-insensitive: true
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>spark master at.*?</title>

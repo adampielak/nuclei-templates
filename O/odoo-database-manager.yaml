@@ -6,12 +6,11 @@ info:
   severity: critical
   description: Odoo database manager was discovered.
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"Odoo"
   tags: panel,odoo,backup
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/web/database/manager'

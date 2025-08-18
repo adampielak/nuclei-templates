@@ -22,4 +22,3 @@ http:
   - type: word
     words:
     - wp-content/plugins/download-manager/
-    case-insensitive: true

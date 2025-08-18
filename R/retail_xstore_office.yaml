@@ -18,4 +18,3 @@ http:
   - type: word
     words:
     - xstoremgwt
-    case-insensitive: true

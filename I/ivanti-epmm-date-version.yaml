@@ -1,7 +1,7 @@
 id: ivanti-epmm-date-version
 
 info:
-  name: Ivanti EPMM version
+  name: Ivanti EPMM - Version
   author: darses
   severity: info
   description: |
@@ -12,7 +12,7 @@ info:
     fofa-query: icon_hash="1983356674"
     vendor: Ivanti
     product: Endpoint Manager Mobile
-  tags: detect,ivanti,epmm,release-date
+  tags: detect,ivanti
 
 http:
   - method: GET

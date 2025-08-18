@@ -18,4 +18,3 @@ http:
   - type: word
     words:
     - kemp login screen
-    case-insensitive: true

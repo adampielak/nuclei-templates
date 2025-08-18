@@ -1,14 +1,17 @@
 id: struts-problem-report
 
 info:
-  name: Apache Struts in Dev Mode
+  name: Apache Struts Dev Mode - Detect
   author: dhiyaneshDK
   severity: low
+  description: Multiple Apache Struts applications were detected in dev-mode.
   reference:
     - https://www.exploit-db.com/ghdb/4278
   tags: struts,debug,edb,exposure,apache
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -22,3 +25,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/03/07

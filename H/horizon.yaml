@@ -1,20 +1,20 @@
-id: vmware-horizon
+id: horizon
 info:
-  name: vmware-horizon
+  name: horizon
   author: cn-kali-team
-  tags: detect,tech,vmware-horizon
+  tags: detect,tech,horizon
   severity: info
   metadata:
     product: horizon
-    vendor: vmware
+    shodan-query:
+    - title:"opennms web console"
+    vendor: opennms
     verified: true
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: word
-    words:
-    - alt="vmware horizon">
-    - href='https://www.vmware.com/go/viewclients'
-    case-insensitive: true
+  - type: regex
+    regex:
+    - (?mi)<title[^>]*>opennms web console.*?</title>

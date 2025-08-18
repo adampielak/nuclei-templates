@@ -1,27 +1,23 @@
-id: coldfusion
-info:
-  name: coldfusion
-  author: cn-kali-team
-  tags: detect,tech,coldfusion
-  severity: info
-  metadata:
-    fofa-query:
-    - app="adobe-coldfusion"
-    - title="coldfusion administrator login"
-    google-query:
-    - intitle:"coldfusion administrator login"
-    product: coldfusion
-    shodan-query:
-    - http.component:"adobe coldfusion"
-    - http.title:"coldfusion administrator login"
-    - cpe:"cpe:2.3:a:adobe:coldfusion"
-    vendor: adobe
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>coldfusion administrator login.*?</title>
+name: coldfusion
+priority: 2
+nuclei_tags:
+  - - coldfusion
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - /cfajax/
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <cfscript>
+    favicon_hash: []

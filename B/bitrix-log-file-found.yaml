@@ -30,9 +30,4 @@ http:
         part: header
         words:
           - "Last-Modified:"
-      - type: word
-        words:
-          - "<html"
-        part: body
-        negative: true
 
