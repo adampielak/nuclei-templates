@@ -26,7 +26,7 @@ info:
       - icon_hash="-1793549760"
       - icon_hash="1405455356"
     vendor: Mattermost
-  tags: detect,mattermost,version
+  tags: tech,detect,mattermost
 
 http:
   - method: GET

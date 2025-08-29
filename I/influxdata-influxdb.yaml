@@ -1,23 +1,20 @@
-name: influxdata-influxdb
-priority: 2
-nuclei_tags:
-  - - influxdb
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - class="influxdb-version"
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - influxdb
-    favicon_hash: []
+id: influxdata-influxdb
+info:
+  name: influxdata-influxdb
+  author: cn-kali-team
+  tags: detect,tech,influxdata-influxdb
+  severity: info
+  metadata:
+    product: influxdb
+    vendor: influxdata
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - class="influxdb-version"
+    - influxdb
+    case-insensitive: true

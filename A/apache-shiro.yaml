@@ -1,35 +1,27 @@
-name: apache-shiro
-priority: 3
-nuclei_tags:
-  - - shiro
-    - apache
-fingerprint:
-  - path: /
-    request_method: post
-    request_headers:
-      Cookie: rememberMe=admin;rememberMe-K=admin
-    request_data: ''
-    status_code: 0
-    headers:
-      Set-Cookie: rememberMe=deleteMe
-    keyword: []
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers:
-      Cookie: rememberMe=admin;rememberMe-K=admin
-    request_data: ''
-    status_code: 0
-    headers:
-      Set-Cookie: rememberMe=deleteMe
-    keyword: []
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - </i> shiro</li>
-    favicon_hash: []
+id: apache-shiro
+info:
+  name: apache-shiro
+  author: cn-kali-team
+  tags: detect,tech,apache-shiro
+  severity: info
+  metadata:
+    product: shiro
+    vendor: apache
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  headers:
+    Cookie: rememberMe=admin;rememberMe-K=admin
+  cookie-reuse: true
+  matchers:
+  - type: word
+    words:
+    - </i> shiro</li>
+    case-insensitive: true
+  - type: word
+    words:
+    - 'set-cookie: rememberme'
+    part: header
+    case-insensitive: true

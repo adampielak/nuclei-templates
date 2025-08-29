@@ -8,8 +8,9 @@ info:
     A Whatsapp phishing website was detected
   reference:
     - https://whatsapp.com
+  metadata:
+    max-request: 1
   tags: phishing,whatsapp,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"whatsapp.com")'
-# digest: 4a0a00473045022100c2013cd9693f4eb5a7a96b98c4546ace15f1baefa69133f362c3fec8d68208e702203387d234b036e1e558815345902c0691380c0a7bb5ec3348fb8f2fae4e7a03a1:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b9fd9b734bf47e6c9b63ab3f02e67942dc5fbc834d25bbd53751b9f20da315db02207db16f129eb0da14e37e770820d7eeb64336e52cb5e016a195fe5fca1197218a:922c64590222798bb761d5b6d8e72950

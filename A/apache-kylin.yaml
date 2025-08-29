@@ -1,23 +1,20 @@
-name: apache-kylin
-priority: 2
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 200
-    headers: {}
-    keyword:
-      - <meta http-equiv="refresh" content="1;url=kylin">
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - href="/kylin/"
-    favicon_hash: []
+id: apache-kylin
+info:
+  name: apache-kylin
+  author: cn-kali-team
+  tags: detect,tech,apache-kylin
+  severity: info
+  metadata:
+    product: kylin
+    vendor: apache
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - <meta http-equiv="refresh" content="1;url=kylin">
+    - href="/kylin/"
+    case-insensitive: true

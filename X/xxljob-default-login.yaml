@@ -12,12 +12,11 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    max-request: 2
     verified: true
     shodan-query: http.favicon.hash:1691956220
   tags: default-login,xxljob
 
-http:
+requests:
   - raw:
       - |
         POST /xxl-job-admin/login HTTP/1.1

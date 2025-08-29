@@ -1,14 +1,19 @@
-name: apache-unomi
-priority: 2
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - logo apache unomi
-    favicon_hash: []
+id: apache-unomi
+info:
+  name: apache-unomi
+  author: cn-kali-team
+  tags: detect,tech,apache-unomi
+  severity: info
+  metadata:
+    product: unomi
+    vendor: apache
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - logo apache unomi
+    case-insensitive: true

@@ -1,14 +1,19 @@
-name: apache-skywalking
-priority: 1
-nuclei_tags:
-  - - skywalking
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - sorry but SkyWalking doesn't work
-    favicon_hash: []
+id: apache-skywalking
+info:
+  name: apache-skywalking
+  author: cn-kali-team
+  tags: detect,tech,apache-skywalking
+  severity: info
+  metadata:
+    product: skywalking
+    vendor: apache
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - sorry but skywalking doesn't work
+    case-insensitive: true

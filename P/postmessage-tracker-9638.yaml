@@ -22,7 +22,7 @@ headless:
             (function() {window.alerts = [];
 
             function logger(found) {
-            	window.alerts.push(found);
+                window.alerts.push(found);
             }
 
             function getStackTrace () {

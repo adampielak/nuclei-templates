@@ -1,42 +1,26 @@
-name: atlassian-jira
-priority: 3
-nuclei_tags:
-  - - jira
-  - - atlassian
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers:
-      Location: /secure/SetupMode!default.jspa
-    keyword: []
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - jira.webresources
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - ams-build-number
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - com.atlassian.jira
-    favicon_hash: []
+id: atlassian-jira
+info:
+  name: atlassian-jira
+  author: cn-kali-team
+  tags: detect,tech,atlassian-jira
+  severity: info
+  metadata:
+    product: jira
+    vendor: atlassian
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - ams-build-number
+    - com.atlassian.jira
+    - jira.webresources
+    case-insensitive: true
+  - type: word
+    words:
+    - 'location: /secure/setupmode!default.jspa'
+    part: header
+    case-insensitive: true

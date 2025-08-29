@@ -22,7 +22,6 @@ http:
       - type: status
         status:
           - 200
-
       - type: word
         words:
           - "PulseSecure_Host_Checker"

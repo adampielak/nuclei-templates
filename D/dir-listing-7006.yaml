@@ -1,16 +1,17 @@
 id: dir-listing
 
 info:
-  name: Directory listing enabled
-  author: _harleo
-  severity: info
+  name: Directory Listing
+  author: Abu Hurayra
+  severity: low
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/"
+      - "{{BaseURL}}/"
     matchers:
       - type: word
         words:
-          - "Index of /"
-          - "[To Parent Directory]"
+          - "Index of"
+        part: body

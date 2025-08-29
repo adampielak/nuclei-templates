@@ -7,7 +7,7 @@ info:
   reference: https://www.exploit-db.com/ghdb/5215
   tags: jboss,unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/web-console/ServerInfo.jsp"

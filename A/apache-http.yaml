@@ -1,15 +1,20 @@
-name: apache-http
-priority: 3
-nuclei_tags:
-  - - apache
-    - mod-proxy
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers:
-      server: Apache
-    keyword: []
-    favicon_hash: []
+id: apache-http
+info:
+  name: apache-http
+  author: cn-kali-team
+  tags: detect,tech,apache-http
+  severity: info
+  metadata:
+    product: http_server
+    vendor: apache
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - 'server: apache'
+    part: header
+    case-insensitive: true

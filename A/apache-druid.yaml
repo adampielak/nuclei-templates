@@ -1,14 +1,19 @@
-name: apache-druid
-priority: 3
-nuclei_tags:
-  - - druid
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 200
-    headers: {}
-    keyword:
-      - content="Apache Druid console"
-    favicon_hash: []
+id: apache-druid
+info:
+  name: apache-druid
+  author: cn-kali-team
+  tags: detect,tech,apache-druid
+  severity: info
+  metadata:
+    product: druid
+    vendor: apache
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - content="apache druid console"
+    case-insensitive: true
