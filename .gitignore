@@ -10,3 +10,5 @@ readme-update.yml
 !.yaml
 !.yml
 .script.zsh
+O/organize-by-first-letter.zsh
+organize-by-first-letter.zsh
