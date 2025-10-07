@@ -1,0 +1,35 @@
+id: messenger-phish
+
+info:
+  name: messenger phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    A messenger phishing website was detected
+  reference:
+    - https://messenger.com
+  metadata:
+    max-request: 1
+  tags: phishing,messenger,osint
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'Hang out anytime, anywhere&#x2014;Messenger makes it easy and fun to stay close to your favorite people'
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"messenger.com")'
+# digest: 4a0a00473045022100cee75920b43a11b4de4ebc702b7ebe7be2819d22e345d5eab3fcaccde8b64f46022019b5d060fb5b0dc7df3a580e505c20fe4f1bc7797eb82fe53ad626dcb6bf2a00:922c64590222798bb761d5b6d8e72950

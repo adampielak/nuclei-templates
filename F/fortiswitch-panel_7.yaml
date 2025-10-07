@@ -1,0 +1,32 @@
+id: fortiswitch-panel
+
+info:
+  name: Fortiswitch Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Fortiswitch panel was detected.
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: fortinet
+    product: fortiswitch
+    fofa-query: app="FortiSwitch"
+  tags: login,panel,fortiswitch
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/login'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>FortiSwitch"
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a0047304502202b9b4d9c0a0cac7c0a23b8db53686c95c1fc51c80e08166586f53cf50e9ad9a1022100f88ddb5162f774eb9474dcd0453544a4f13138e46a6f0e3fedc2bd1817084c54:922c64590222798bb761d5b6d8e72950

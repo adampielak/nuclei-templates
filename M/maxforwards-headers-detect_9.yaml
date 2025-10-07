@@ -1,0 +1,34 @@
+id: maxforwards-headers-detect
+
+info:
+  name: Max-Forwards Header - Detect
+  author: righettod
+  severity: info
+  description: Max-Forwards response header is specified.
+  reference:
+    - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Max-Forwards
+    - https://http.dev/max-forwards
+    - https://twitter.com/irsdl/status/1337299267652825088
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: "Max-Forwards:"
+    fofa-query: header="max-forwards"
+  tags: miscellaneous,misc,max-forwards
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(to_lower(header), "max-forwards:")'
+
+    extractors:
+      - type: regex
+        part: header
+        regex:
+          - '(?i)max-forwards:\s+([0-9]+)'
+# digest: 4b0a004830460221008f93ce115ce738a343f20a2e66d31dbbcc815aeb04290675ab8e9a556ff0d7dc022100a4a38e16d54dd4a9c26d44a77b39c4e2865d8ebe935606f68025a9e95e0455ad:922c64590222798bb761d5b6d8e72950

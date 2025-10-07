@@ -1,0 +1,33 @@
+id: gladinet-centrestack-panel
+
+info:
+  name: CentreStack Login Panel - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Gladinet CentreStack login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"CentreStack"
+  tags: panel,centrestack,login,gladinet
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/portal/loginpage.aspx"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'CentreStack - Login'
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100b212db71b47469895f4d6b13f709388059eb437bdca48c8b4a8132313fcfeb17022100f77f90884db66fdfe1b5df1e2fcaa25e59063bcc4e5c7384143c1d4bac749bee:922c64590222798bb761d5b6d8e72950
