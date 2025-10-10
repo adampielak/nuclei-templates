@@ -1,0 +1,35 @@
+id: brave-phish
+
+info:
+  name: brave phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    A brave phishing website was detected
+  reference:
+    - https://brave.com
+  metadata:
+    max-request: 1
+  tags: phishing,brave,osint
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'Brave Browser Download | Brave'
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"brave.com")'
+# digest: 490a0046304402203efaf707853deedae2386330b6e8e14ff7f66f79b626c25f56109bf0ca05f206022077143623deb3093860ff233bc3057823b0c49bb71ed4774bb01691c0fa0e4a83:922c64590222798bb761d5b6d8e72950

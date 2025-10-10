@@ -1,0 +1,40 @@
+id: torrent-magnet-detect
+
+info:
+  name: Torrent Magnet - Detect
+  author: rxerium
+  severity: info
+  description: |
+    Detects magnet links present on a website, which are commonly used for torrenting.
+  reference:
+    - https://www.zdnet.com/article/what-is-torrenting-and-how-does-it-work/
+  metadata:
+    verified: true
+    max-request: 1
+  tags: torrent,website,detect,piracy,osint
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    max-redirects: 1
+    redirects: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "magnet:?xt=urn:btih:"
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        name: magnet-link
+        part: body
+        regex:
+          - "magnet:\\?xt=urn:btih:[a-zA-Z0-9]*[^\"'\\s<]*"
+# digest: 490a0046304402205cdd115434c354bcacde1fb55b151e25b84a7fcae781e181c1e4de7ba9d14ae702203a36e16543aa108ab23505537a292a7418f0fb3aa7fc399807bcf5dea2912ea1:922c64590222798bb761d5b6d8e72950

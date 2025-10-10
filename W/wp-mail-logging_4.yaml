@@ -1,0 +1,49 @@
+id: wordpress-wp-mail-logging
+
+info:
+  name: WP Mail Logging Detection
+  author: ricardomaia
+  severity: info
+  reference:
+    - https://wordpress.org/plugins/wp-mail-logging/
+  metadata:
+    plugin_namespace: wp-mail-logging
+    wpscan: https://wpscan.com/plugin/wp-mail-logging
+  tags: tech,wordpress,wp-plugin,top-200
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wp-mail-logging/readme.txt"
+
+    payloads:
+      last_version: helpers/wordpress/plugins/wp-mail-logging.txt
+
+    extractors:
+      - type: regex
+        part: body
+        internal: true
+        name: internal_detected_version
+        group: 1
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+
+      - type: regex
+        part: body
+        name: detected_version
+        group: 1
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: "outdated_version"
+        dsl:
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100af14b576a02d609f02fb412c0b9bc8d927a960d805a5f43dc6dc039c3dc60e7f02206485c27915ccbab77b5a18e9850ac69de397f790cb868a03d9cfd3bf82c0f28e:922c64590222798bb761d5b6d8e72950
