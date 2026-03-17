@@ -13,8 +13,10 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: exposure,api
+  metadata:
+    max-request: 8
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/application.wadl"

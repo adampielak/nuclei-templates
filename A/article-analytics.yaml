@@ -1,13 +1,14 @@
-id: article-analytics
+id: article-analytics-aab5e3d9fd736b2a52dc39e7f3216dd7
 
 info:
   name: >
     Article Analytics <= 1.0 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6abbdecd-782a-44a2-981a-ae6caa50dd6a?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/article-analytics/"
     google-query: inurl:"/wp-content/plugins/article-analytics/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,article-analytics,low
+  tags: cve,wordpress,wp-plugin,article-analytics,critical
 
 http:
   - method: GET

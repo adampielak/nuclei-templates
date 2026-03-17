@@ -1,4 +1,4 @@
-id: nps-computy
+id: nps-computy-7df04c58c04af1c3696a3acb5f082474
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/490b4ee5-dd99-42af-94af-b45cea27b287?source=api-scan
   classification:
     cvss-metrics: 

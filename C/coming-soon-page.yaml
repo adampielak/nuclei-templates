@@ -1,4 +1,4 @@
-id: coming-soon-page
+id: coming-soon-page-4288221cf3c353cfa9534f6da7b82da7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b83e971-7e97-47e3-81a5-ff357692bca2?source=api-scan
   classification:
     cvss-metrics: 

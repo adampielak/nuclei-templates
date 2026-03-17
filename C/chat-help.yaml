@@ -1,4 +1,4 @@
-id: chat-help
+id: chat-help-4e0b3f5938dbbcb7b6d25d649232d602
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/376c5091-7921-4470-acbf-44db53db38fc?source=api-scan
   classification:
     cvss-metrics: 

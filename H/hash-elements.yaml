@@ -1,14 +1,15 @@
-id: hash-elements
+id: hash-elements-af3a85220968d357a0b931aa85d349a0
 
 info:
   name: >
-    Hash Elements <= 1.3.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Hash Elements <= 1.3.8 - Authenticated (Contributor+) Stored Cross-Site Scripting via url Parameter in Multiple Widgets
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1a849338-8dd9-49d2-ab7c-29d4b729877b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9ba07137-f834-4f56-bcd5-0f6fde756681?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.3')
+          - compare_versions(version, '<= 1.3.8')

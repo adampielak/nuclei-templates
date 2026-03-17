@@ -1,4 +1,4 @@
-id: free-google-fonts
+id: free-google-fonts-a5dd1d7bdc9500defa7726433f7ba8d2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/94712f92-5045-420b-9d6d-59a4c031e998?source=api-scan
   classification:
     cvss-metrics: 

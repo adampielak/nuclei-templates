@@ -1,4 +1,4 @@
-id: networker
+id: networker-24a030649bbf6bb63a11d70fc4e5a83c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1c2b9858-eb0c-42bd-bc32-c58c0f809fc8?source=api-scan
   classification:
     cvss-metrics: 

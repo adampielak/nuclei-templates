@@ -1,4 +1,4 @@
-id: kjm-admin-notices
+id: kjm-admin-notices-dfc57f1213e2b7e874f572e9f7b347e6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fd3298dd-af80-481e-8d20-d33e7bb9bb85?source=api-scan
   classification:
     cvss-metrics: 

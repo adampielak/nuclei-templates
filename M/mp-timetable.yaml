@@ -1,23 +1,24 @@
-id: mp-timetable
+id: mp-timetable-c61c3b261f06f6930b719e393cb13c67
 
 info:
   name: >
-    Timetable and Event Schedule by MotoPress <= 2.4.11 - Authenticated (Contributor+) SQL Injection
+    Timetable and Event Schedule by MotoPress <= 2.3.8 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
-    
+    The Timetable and Event Schedule by MotoPress plugin for WordPress is vulnerable to authorization bypass due to a missing capability check on the wp_ajax_route_url() function called via a nopriv AJAX action in versions up to, and including, 2.3.8. This makes it possible for unauthenticated attackers to call that function and perform a wide variety of actions such as including random template, injecting malicious web scripts, and more.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9670bd32-34ce-48b1-82d9-62ab8869a89b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/988d7b33-f985-4d22-a2db-3922002fcecb?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    cvss-score: 7.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/mp-timetable/"
     google-query: inurl:"/wp-content/plugins/mp-timetable/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mp-timetable,low
+  tags: cve,wordpress,wp-plugin,mp-timetable,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.11')
+          - compare_versions(version, '<= 2.3.8')

@@ -10,12 +10,15 @@ info:
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 12
     shodan-query: "http.title:\"Oracle PeopleSoft Sign-in\""
     fofa-query: "title=\"Oracle PeopleSoft Sign-in\""
-  tags: oracle,peoplesoft,panel,login,detect
+    product: peoplesoft_enterprise_peopletools
+    vendor: oracle
+  tags: oracle,peoplesoft,panel,login,detect,discovery
 
 http:
   - method: GET
@@ -49,4 +52,4 @@ http:
         group: 1
         regex:
           - '(?i)\*\s+Copyright\s+\(c\)\s+([0-9,\s]+)\s+Oracle\s+and\/or\s+its\s+affiliates.'
-# digest: 490a004630440220617a04e0c33b683e725b018c3f43cca51e89363fa87385d261cab73be902830002203075fde8eed33be1fb80b694c5cc0d2abe5dfee80ba231a1b97d84014559d813:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100add435863839906b396b6d1cb29e1443ae5b8f19ce0724114e37476b68ff6f85022100d1570ca4d29820ee169ff3b869ed4a1b81af36be975f40c1a90f4d554ad56645:922c64590222798bb761d5b6d8e72950

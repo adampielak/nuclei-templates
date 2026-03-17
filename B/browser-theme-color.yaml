@@ -1,4 +1,4 @@
-id: browser-theme-color
+id: browser-theme-color-9dcd9cc7c77d3ee51d7780a5ba1f1690
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ef4c6f76-4d3e-4ab0-9e12-1df55a8edae5?source=api-scan
   classification:
     cvss-metrics: 

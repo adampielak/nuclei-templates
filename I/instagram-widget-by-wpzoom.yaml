@@ -1,4 +1,4 @@
-id: instagram-widget-by-wpzoom
+id: instagram-widget-by-wpzoom-4f1cd3280a37db5a30117a727a23ed21
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3a70510-51c8-49c3-933b-79e79dfb8611?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: contact-forms-builder
+id: contact-forms-builder-ecbfec7bd105f3af70406c4a017ed635
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/43ea0665-2c6e-4c78-8bc5-056f47f190ab?source=api-scan
   classification:
     cvss-metrics: 

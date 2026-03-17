@@ -1,11 +1,11 @@
 id: snmp
 info:
-  name: Fortinet SNMP service
+  name: Zebra GX430T label printer SNMP service
   author: nmap,cn-kali-team
   tags: detect,tech,snmp,service
   severity: info
   metadata:
-    device_type: firewall
+    device_type: printer
     rarity: 4
 tcp:
 - name: snmpv3-get-request
@@ -18,4 +18,4 @@ tcp:
   - name: snmp
     type: regex
     regex:
-    - (?i)^..\x02\x01\x030.\x02\x02Ji\x02.{3,4}\x04\x01.\x02\x01\x03\x04.{5,6}\x80\0\x30\x44
+    - (?i)^0\x82\0\x37\x02\x01\0\x04\x06public\xa2\x82\0\x28.{20}\x2b\x06\x01\x02\x01\x01\x05\0\x04\nZBR_SPICE0

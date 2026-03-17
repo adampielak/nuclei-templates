@@ -1,4 +1,4 @@
-id: microkids-related-posts
+id: microkids-related-posts-988f393540fb1686fdde4c4d60f736ca
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/308c9d72-4739-4fcd-8e04-b24edc19ec06?source=api-scan
   classification:
     cvss-metrics: 

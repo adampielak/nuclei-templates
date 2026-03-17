@@ -1,14 +1,15 @@
-id: constant-contact-forms-by-mailmunch
+id: constant-contact-forms-by-mailmunch-ec8e2ce0bc06e1e43acfdb3abb1da046
 
 info:
   name: >
-    Constant Contact Forms by MailMunch <= 2.0.10 - Cross-Site Request Forgery
+    Constant Contact Forms by MailMunch <= 2.0.11 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f8dcbd2-af51-4cc9-9962-53fe644985e1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a84bd9c8-97bd-4572-8bfa-5191d98c9523?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/constant-contact-forms-by-mailmunch/"
     google-query: inurl:"/wp-content/plugins/constant-contact-forms-by-mailmunch/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,constant-contact-forms-by-mailmunch,medium
+  tags: cve,wordpress,wp-plugin,constant-contact-forms-by-mailmunch,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.10')
+          - compare_versions(version, '<= 2.0.11')

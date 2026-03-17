@@ -1,16 +1,14 @@
-id: basic-request
+id: basic-ssl
 
 info:
-  name: Basic Request
+  name: Basic SSL Request
   author: pdteam
   severity: info
 
-websocket:
-  - address: '{{Scheme}}://{{Hostname}}'
-    inputs:
-      - data: hello
+ssl:
+  - address: "{{Host}}:{{Port}}"
+
     matchers:
-      - type: word
-        words:
-          - world
-        part: response
+      - type: dsl
+        dsl:
+          - "probe_status == true"

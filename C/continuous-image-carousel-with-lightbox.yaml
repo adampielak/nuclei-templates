@@ -1,4 +1,4 @@
-id: continuous-image-carousel-with-lightbox
+id: continuous-image-carousel-with-lightbox-222bfc56a6efcf5e85c102c0335de03b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b4651d8-dad7-4f6f-a47d-2095b9d2bdca?source=api-scan
   classification:
     cvss-metrics: 

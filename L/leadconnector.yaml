@@ -1,4 +1,4 @@
-id: leadconnector
+id: leadconnector-9c98926e7e9ad80f52cd0ff88b513b78
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/79e786ce-a3eb-40df-8dad-4c9c75243bec?source=api-scan
   classification:
     cvss-metrics: 

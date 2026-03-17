@@ -1,15 +1,15 @@
-id: homey-login-register-130819b9c95336da26cc08302ad19d94
+id: homey-login-register
 
 info:
   name: >
-    Homey Login Register <= 2.4.0 - Unauthenticated Privilege Escalation in homey_register
+    Homey Login Register <= 2.4.0 - Unauthenticated Privilege Escalation
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/67c4066f-b8bc-4cd0-ae47-844af23e003f?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/29cbcbc9-a2a3-4518-a430-969ca76f9bda?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

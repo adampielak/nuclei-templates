@@ -4,9 +4,9 @@ info:
   name: Filezilla
   author: amsda
   severity: medium
-  tags: exposure,files
+  tags: exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/filezilla.xml"

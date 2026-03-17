@@ -1,4 +1,4 @@
-id: classic-editor-and-classic-widgets
+id: classic-editor-and-classic-widgets-b34d9d44881a83ac3bb9a83f258f9899
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce2bef2f-fe28-48ea-8b83-052eebd31622?source=api-scan
   classification:
     cvss-metrics: 

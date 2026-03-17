@@ -1,4 +1,4 @@
-id: dssearchagent-wordpress-edition
+id: dssearchagent-wordpress-edition-535000e8b4ab17c2a9ffe3f0ecf0ab3f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0c7b4263-0c7b-4a1a-b168-88e6591c82bb?source=api-scan
   classification:
     cvss-metrics: 

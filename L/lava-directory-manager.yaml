@@ -1,4 +1,4 @@
-id: lava-directory-manager
+id: lava-directory-manager-1b71fa3d7aed34e774ba50996feaad40
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3d21ebb-52de-4b25-b9e9-5d6f3284cf94?source=api-scan
   classification:
     cvss-metrics: 

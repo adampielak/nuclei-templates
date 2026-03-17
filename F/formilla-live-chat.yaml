@@ -1,4 +1,4 @@
-id: formilla-live-chat
+id: formilla-live-chat-7c1cbbc10cfc3a49a63b15b1286e0909
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/044e110d-2435-41b8-8aec-917c329b944c?source=api-scan
   classification:
     cvss-metrics: 

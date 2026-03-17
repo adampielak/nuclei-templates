@@ -1,4 +1,4 @@
-id: custom-user-css
+id: custom-user-css-e609b5d534a19a81f187e16d5e6b3638
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b53ed24-2821-440f-9aba-69d75b7459a3?source=api-scan
   classification:
     cvss-metrics: 

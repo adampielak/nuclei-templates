@@ -1,4 +1,4 @@
-id: adsense-click-fraud-monitoring
+id: adsense-click-fraud-monitoring-b0234c3d8e300cb293f4c65af17b9553
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/974b3894-f4e2-49c7-ba92-eaa5be0b4298?source=api-scan
   classification:
     cvss-metrics: 

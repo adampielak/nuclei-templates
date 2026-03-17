@@ -6,18 +6,15 @@ info:
   severity: info
   metadata:
     verified: true
-    max-request: 2
+    max-request: 1
     shodan-query: product:"OpenSSH"
   tags: js,ssh,enum,network
-
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port);
-    code: |
+  - code: |
       var m = require("nuclei/ssh");
       var c = m.SSHClient();
       var response = c.ConnectSSHInfoMode(Host, Port);
-      Export(response);
+      to_json(response);
     args:
       Host: "{{Host}}"
       Port: "22"
@@ -26,4 +23,5 @@ javascript:
       - type: json
         json:
           - '.ServerID.Raw'
-# digest: 4a0a00473045022100f430d181ad11f89457cd243ee590bd9cdf1eeb722d2168ee0fb658989bc293bf02206cd1717181cc8b0bf8395717d2f51d6d7d66bc321c0dc581aebbadf214c9df97:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220150e7d5283c989e59522546a3bba666e5e870e8efb2a181f173a74e2ea96f6e6022047048a221b844566c2e234b8e28b0a85e515504f443bfefcfc4010b7a6ce96fb:922c64590222798bb761d5b6d8e72950

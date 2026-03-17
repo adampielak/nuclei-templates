@@ -1,4 +1,4 @@
-id: blixed
+id: blixed-f1f43ca41ccf14d8f46bbc8fda17c18c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/928584e5-7391-4442-820e-d5d5fc288572?source=api-scan
   classification:
     cvss-metrics: 

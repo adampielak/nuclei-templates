@@ -1,4 +1,4 @@
-id: import-external-images
+id: import-external-images-9273f54c8ffd0f68faff3d0f499be1c5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6785be1c-85d4-48f1-be15-275c71284b3e?source=api-scan
   classification:
     cvss-metrics: 

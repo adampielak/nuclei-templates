@@ -1,14 +1,15 @@
-id: maintenance-switch
+id: maintenance-switch-5ac2f92e99db40ee2a8fa1e07e57c52a
 
 info:
   name: >
-    Maintenance Switch <= 1.5.2 - Reflected Cross-Site Scripting
+    Maintenance Switch <= 1.5.2 - Cross-Site Request Forgery via 'admin_action_request'
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a81d3b09-b8dd-4697-ab43-c863e8d1e1d5?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6f14f19d-95b3-474b-a2ea-d846c85644cd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -1,14 +1,15 @@
-id: library-viewer
+id: library-viewer-b763b4fac265b393ce11f0636da63c04
 
 info:
   name: >
-    Library Viewer <= 2.0.6 - Open Redirect via 'redirect_to'
+    Library Viewer <= 2.0.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b12a7e57-a45f-407a-9dd9-843a628d73ac?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/82c08769-2bb6-4c87-b198-f18216b3e744?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

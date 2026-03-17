@@ -1,0 +1,40 @@
+id: bzconf-disclosure
+
+info:
+  name: bzconf Disclosure
+  author: rix4uni
+  severity: medium
+  description: description
+  reference:
+    - https://twitter.com/shaybt12/status/1625450658307383297
+  metadata:
+    google-query:
+      - inurl:"/bzconf"
+    shodan-query:
+      - http.html:'"apiServer":"https://api.bizzabo.com"'
+    fofa-query:
+      - body='"apiServer":"https://api.bizzabo.com"'
+  tags: bzconf,logs,exposure
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/bzconf"
+      - "{{BaseURL}}/bzconf/"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"env":"prod"'
+          - '"apiServer":"https://api.bizzabo.com"'
+          - '"dashboardUrl":"https://accounts.bizzabo.com"'
+          - 'https://api.bizzabo.com'
+
+      - type: status
+        status:
+          - 200
+          - 404

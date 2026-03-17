@@ -1,4 +1,4 @@
-id: dynamic-visibility-for-elementor
+id: dynamic-visibility-for-elementor-a736c63ec887d4c4f788049ff0554e43
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e704333-ad88-42c9-b632-babc9d54cb13?source=api-scan
   classification:
     cvss-metrics: 

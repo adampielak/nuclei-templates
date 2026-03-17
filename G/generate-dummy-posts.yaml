@@ -1,4 +1,4 @@
-id: generate-dummy-posts
+id: generate-dummy-posts-792d89a6602b2a2890ae0e7960fbd737
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6d797f36-f485-4049-83f0-01d0cb409a92?source=api-scan
   classification:
     cvss-metrics: 

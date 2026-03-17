@@ -1,14 +1,15 @@
-id: calendar-booking
+id: calendar-booking-830a27ef52874c6842aa01d3d38a46c5
 
 info:
   name: >
-    Scheduling Plugin – Online Booking for WordPress <= 3.5.10 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Scheduling Plugin – Online Booking for WordPress <= 3.5.10 - Missing Authorization to Unauthenticated Service Disconnection
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/71a0aa95-f2a9-4537-a8d1-d78336e36125?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/60e642f9-74ff-47f1-a49d-99c8fdb26f4a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/calendar-booking/"
     google-query: inurl:"/wp-content/plugins/calendar-booking/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,calendar-booking,low
+  tags: cve,wordpress,wp-plugin,calendar-booking,high
 
 http:
   - method: GET

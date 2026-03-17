@@ -1,14 +1,15 @@
-id: ads-by-datafeedrcom
+id: ads-by-datafeedrcom-ddf40469be424bbc721ffd0f0df0e537
 
 info:
   name: >
-    Ads by datafeedr.com <= 1.2.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Ads by datafeedr.com <= 1.1.3 - Unauthenticated (Limited) Remote Code Execution
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/61c71bbf-ddae-4f35-ac8d-9753fb3fb67f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5412fd87-49bc-445c-8d16-443e38933d1e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ads-by-datafeedrcom/"
     google-query: inurl:"/wp-content/plugins/ads-by-datafeedrcom/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ads-by-datafeedrcom,low
+  tags: cve,wordpress,wp-plugin,ads-by-datafeedrcom,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.0')
+          - compare_versions(version, '<= 1.1.3')

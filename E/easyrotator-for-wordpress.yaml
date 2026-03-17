@@ -1,4 +1,4 @@
-id: easyrotator-for-wordpress
+id: easyrotator-for-wordpress-0184078b79ad95363b9f16489d7e6821
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3041e28e-d965-4672-ab10-8b1f3d874f19?source=api-scan
   classification:
     cvss-metrics: 

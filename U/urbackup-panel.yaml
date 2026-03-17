@@ -4,11 +4,15 @@ info:
   name: UrBackup Panel - Detect
   author: DhiyaneshDk
   severity: info
+  classification:
+    cpe: cpe:2.3:a:urbackup:urbackup:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: urbackup
+    product: urbackup
     shodan-query: html:"UrBackup - Keeps your data safe"
-  tags: urbackup,panel,login,detect
+  tags: urbackup,panel,login,detect,discovery
 
 http:
   - method: GET
@@ -25,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e2438fa822bd78e1a3fb2db2967d18e37acc757dffb1d901158aad1ba59680be0220762d7f76021679cdeb4190c83c58634cc7ef989462735e610af58664e0bad1f6:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402206c134016330769296f3bae7aecd25a8fa1683531203eb08607ce1f58187aa340022043263043bec7ea1c59833a734576fdc419efac5add7b22e9804bbf36f6c638cf:922c64590222798bb761d5b6d8e72950

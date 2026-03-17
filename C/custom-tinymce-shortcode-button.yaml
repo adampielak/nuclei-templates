@@ -1,4 +1,4 @@
-id: custom-tinymce-shortcode-button
+id: custom-tinymce-shortcode-button-cc5c23d41845f75b201ae7bc35850c3a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f5bc5cc-fe96-48f6-b9c9-a2b9d83406b6?source=api-scan
   classification:
     cvss-metrics: 

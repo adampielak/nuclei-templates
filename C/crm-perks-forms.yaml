@@ -1,4 +1,4 @@
-id: crm-perks-forms
+id: crm-perks-forms-3c6615208d5c5e024e8f83beae362118
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ca954d68-18a5-47e2-af56-261c7a55b017?source=api-scan
   classification:
     cvss-metrics: 

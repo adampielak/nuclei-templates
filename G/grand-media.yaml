@@ -1,23 +1,24 @@
-id: grand-media
+id: grand-media-45bf29002ebba4c8ce0dfc7218bdc532
 
 info:
   name: >
-    Gmedia Photo Gallery < 0.9.4 - Reflected Cross-Site Scripting
+    Gmedia Photo Gallery <= 1.6.4 - Local File Inclusion
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
-    The Gmedia Photo Gallery plugin for WordPress is vulnerable to Reflected Cross-Site Scripting in versions up to, and including, 0.9.3 due to inclusion of a vulnerable version of jPlayer. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
+    The Gmedia Photo Gallery plugin for WordPress is vulnerable to Local File Inclusion in versions up to, and including, 1.6.4. This makes it possible for unauthenticated attackers to include and execute arbitrary files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where images and other “safe” file types can be uploaded and included. This is only exploitable if ALLOW_NO_EXT == true.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f787e299-21f8-4662-935a-ff1e25c7d275?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/adb4644c-6ef6-4899-b0f1-2629ffacd19c?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/grand-media/"
     google-query: inurl:"/wp-content/plugins/grand-media/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,grand-media,medium
+  tags: cve,wordpress,wp-plugin,grand-media,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.9.3')
+          - compare_versions(version, '< 1.6.5')

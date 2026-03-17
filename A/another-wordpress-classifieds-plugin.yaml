@@ -1,17 +1,18 @@
-id: another-wordpress-classifieds-plugin
+id: another-wordpress-classifieds-plugin-951b6f841760d0d01111e9425d229488
 
 info:
   name: >
-    AWP Classifieds <= 4.3.1 - Missing Authorization
+    WordPress Classifieds Plugin – Ad Directory & Listings by AWP Classifieds <= 3.3.1 - Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
-    
+    The WordPress Classifieds Plugin – Ad Directory & Listings by AWP Classifieds plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘error_message’ parameter in versions up to, and including, 3.3.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/782e954f-1fdf-49fa-97bc-60f8fb8c4ecd?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a52ed75b-07ce-46dc-8321-d10074ce0f61?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/another-wordpress-classifieds-plugin/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.3.1')
+          - compare_versions(version, '<= 3.3.1')

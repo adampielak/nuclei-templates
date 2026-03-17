@@ -1,4 +1,4 @@
-id: hungarian-pickup-points-for-woocommerce
+id: hungarian-pickup-points-for-woocommerce-5b847c6b71adc286ad70701c8d7df870
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/642a8e71-c267-41f5-bcf5-f5627be9038e?source=api-scan
   classification:
     cvss-metrics: 

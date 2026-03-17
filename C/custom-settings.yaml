@@ -1,4 +1,4 @@
-id: custom-settings
+id: custom-settings-92c0c196abbe4a6ff4b8694f2975dc49
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/23f7f4ad-f9d5-44b7-8354-5145b003fd20?source=api-scan
   classification:
     cvss-metrics: 

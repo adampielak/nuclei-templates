@@ -1,17 +1,18 @@
-id: emails-verification-for-woocommerce
+id: emails-verification-for-woocommerce-ab815c23d4ae60b14d1ad8cd68ccddc4
 
 info:
   name: >
-    Customer Email Verification for WooCommerce <= 2.7.4 - Email Verification and Authentication Bypass due to Insufficient Randomness
+    Email Verification for WooCommerce <= 1.8.1 - Authentication Bypass
   author: topscoder
   severity: critical
   description: >
-    
+    The Email Verification for WooCommerce plugin for WordPress is vulnerable to Authentication Bypass due to insufficient validation on the alg_wc_ev_activation_code value found in the verify() function which makes it possible for users to spoof email validation for any user, including administrators, that will auto-log them in as that user through wp_set_auth_cookie(). This affects versions up to, and including, 1.8.1. This makes it possible for unauthenticated attackers to log in as site administrators.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ebae4b18-5b5f-45c3-86e2-02eefd7abdb7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/85bd9922-3316-4fd0-b31e-c3ca5ab8a79d?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/emails-verification-for-woocommerce/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.7.4')
+          - compare_versions(version, '<= 1.8.1')

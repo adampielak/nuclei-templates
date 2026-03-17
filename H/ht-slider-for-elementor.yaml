@@ -1,4 +1,4 @@
-id: ht-slider-for-elementor
+id: ht-slider-for-elementor-016e0ecc308edcb3b21961c3902f31f8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/81258fcc-18cc-4614-a644-5cfb004d019b?source=api-scan
   classification:
     cvss-metrics: 

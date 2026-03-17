@@ -1,17 +1,18 @@
-id: folders
+id: folders-9d8f481baf9a9ff447351c5ea58fd5fb
 
 info:
   name: >
-    Folders Pro <= 3.0.2 - Authenticated (Subscriber+) Stored Cross-Site Scripting via User First Name and Last Name
+    Folders <= 2.9.2 - Authenticated (Author+) Arbitrary File Upload
   author: topscoder
   severity: low
   description: >
-    
+    The Folders plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the handle_folders_file_upload function in versions up to, and including, 2.9.2. This makes it possible for authors or higher to upload arbitrary files on the affected site's server which may make remote code execution possible.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/daa48b64-6f89-40be-a31f-31d1481dfc91?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/35afef52-350c-4b61-b9c0-3ae2572f81fb?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/folders/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.2')
+          - compare_versions(version, '< 2.9.3')

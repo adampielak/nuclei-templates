@@ -1,14 +1,15 @@
-id: kama-clic-counter
+id: kama-clic-counter-7bca561bed9a2ab9f8509dca3bb899f6
 
 info:
   name: >
-    Kama Click Counter <= 3.4.9 - Cross-Site Scripting
+    Kama Click Counter <= 4.0.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b6e45ae-650e-45eb-b781-5acec1ba2dde?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b65e3a9f-55b7-458c-81ef-0e29fc8733d9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/kama-clic-counter/"
     google-query: inurl:"/wp-content/plugins/kama-clic-counter/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,kama-clic-counter,high
+  tags: cve,wordpress,wp-plugin,kama-clic-counter,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.4.9')
+          - compare_versions(version, '<= 4.0.3')

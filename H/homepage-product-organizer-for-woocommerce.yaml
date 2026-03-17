@@ -1,4 +1,4 @@
-id: homepage-product-organizer-for-woocommerce
+id: homepage-product-organizer-for-woocommerce-a3eea5ba09261346f169c2cdd5b43f32
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5bd06e1e-505d-491e-a92b-61d390c97ea8?source=api-scan
   classification:
     cvss-metrics: 

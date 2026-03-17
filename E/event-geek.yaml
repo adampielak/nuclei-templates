@@ -1,4 +1,4 @@
-id: event-geek
+id: event-geek-8b860028305b5e8464e240effd251c7a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/961b2b60-2026-42fc-be55-e7023e8ef3df?source=api-scan
   classification:
     cvss-metrics: 

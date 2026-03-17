@@ -1,14 +1,15 @@
-id: frontend-dashboard
+id: frontend-dashboard-dfd940e9632387107ff72226cb0305de
 
 info:
   name: >
-    Frontend Dashboard <= 2.2.2 -
+    Frontend Dashboard 1.5.10 - 2.2.7 - Missing Authorization to Authenticated (Subscriber+) Account Takeover/Privilege Escalation via ajax_request Function
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2e96557-7341-4da9-81ca-2bd17a85559e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f3a10b5-b024-4b3f-af67-b7fcb997d368?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.2')
+          - compare_versions(version, '>= 1.5.10', '<= 2.2.7')

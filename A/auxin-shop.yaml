@@ -1,4 +1,4 @@
-id: auxin-shop
+id: auxin-shop-73b3278144ae687a0950408e692f512b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e11e4bab-f8a9-4ecb-b36e-09a55e47f1ae?source=api-scan
   classification:
     cvss-metrics: 

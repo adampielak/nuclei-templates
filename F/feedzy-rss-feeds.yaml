@@ -1,14 +1,15 @@
-id: feedzy-rss-feeds
+id: feedzy-rss-feeds-b4d607cd5d00cd63c8709e0c98896cc6
 
 info:
   name: >
-    RSS Aggregator by Feedzy – Feed to Post, Autoblogging, News & YouTube Video Feeds Aggregator <= 4.3.2 - Missing Authorization
+    RSS Aggregator by Feedzy – Feed to Post, Autoblogging, News & YouTube Video Feeds Aggregator <= 4.3.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode Error Message
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2cdf4e5-0a40-42ca-b5ac-78511fdd2b77?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7d25e85f-28f7-4cc5-9856-25cc5aaf1418?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/feedzy-rss-feeds/"
     google-query: inurl:"/wp-content/plugins/feedzy-rss-feeds/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,feedzy-rss-feeds,high
+  tags: cve,wordpress,wp-plugin,feedzy-rss-feeds,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.3.2')
+          - compare_versions(version, '<= 4.3.3')

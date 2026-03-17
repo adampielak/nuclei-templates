@@ -1,4 +1,4 @@
-id: first-order-discount-woocommerce
+id: first-order-discount-woocommerce-e0847cf1ff75e8aa1adfe5da8a79a702
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9d161a3-eb9f-447f-b2d2-b8b193678d20?source=api-scan
   classification:
     cvss-metrics: 

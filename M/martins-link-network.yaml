@@ -1,4 +1,4 @@
-id: martins-link-network
+id: martins-link-network-c017a75c5ba2a1888790c8d1fd900146
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/773b5a79-017a-4e16-b563-3aa2939fa179?source=api-scan
   classification:
     cvss-metrics: 

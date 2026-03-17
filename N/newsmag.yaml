@@ -1,14 +1,15 @@
-id: newsmag
+id: newsmag-f3f203d9ab101f9d04ccf12ec6b5d164
 
 info:
   name: >
-    Newsmag < 5.0 - Reflected Cross-Site Scripting
+    tagDiv Composer < 3.5 - Unauthorized Account Access and Privilege Escalation
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9918ffe1-5911-48d7-84ba-8e6568d6f50c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8347b4e-a5ba-49c5-9ae6-690a1a5c9aac?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/newsmag/"
     google-query: inurl:"/wp-content/themes/newsmag/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,newsmag,medium
+  tags: cve,wordpress,wp-theme,newsmag,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.0')
+          - compare_versions(version, '<= 5.2.1')

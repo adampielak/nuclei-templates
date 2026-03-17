@@ -1,4 +1,4 @@
-id: laybuy-gateway-for-woocommerce
+id: laybuy-gateway-for-woocommerce-04287c7ddc14f5be0bd79ac83a26e510
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4c91caaa-9bdd-4170-98f1-0d686d3ffcba?source=api-scan
   classification:
     cvss-metrics: 

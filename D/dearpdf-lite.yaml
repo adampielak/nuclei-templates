@@ -1,4 +1,4 @@
-id: dearpdf-lite
+id: dearpdf-lite-850deaffeb42f349a457d5d5ac5b0844
 
 info:
   name: >
@@ -8,7 +8,8 @@ info:
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/317b2035-e5c7-47a9-a76c-11157127b6c2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4b9aa41e-34bf-4bfb-a341-e101e3771f7a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

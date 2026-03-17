@@ -1,0 +1,44 @@
+id: open-redirect-domain
+
+info:
+  name: Open Redirect Parameter Detection Template
+  author: rix4uni
+  severity: low
+  description: An open redirect vulnerability was detected. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  reference:
+    - https://twitter.com/alone_breecher/status/1664627999608836097
+    - https://tools.intigriti.io/redirector/#
+    - https://medium.com/@mamunwhh/how-i-got-500-with-open-redirect-48fd80c82631
+  tags: redirect,open-redirect-domain
+
+requests:
+  - method: GET
+    path:
+      # basic payloads
+      - '{{BaseURL}}///evil.com'
+      - '{{BaseURL}}//evil.com'
+      - '{{BaseURL}}/////evil.com'
+      - '{{BaseURL}}.evil.com'
+      # Double Encoding
+      - '{{BaseURL}}%2f@evil.com'
+      - '{{BaseURL}}%252f@evil.com'
+      - '{{BaseURL}}%25252f@evil.com'
+      # Non-ASCII Characters
+      - '{{BaseURL}}?.evil.com'
+      - '{{BaseURL}}╱.evil.com'
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'evil.com'
+          - "Evil.Com - We get it...Daily."
+
+      - type: status
+        status:
+          - 301
+          - 302
+          - 303
+          - 307
+          - 308

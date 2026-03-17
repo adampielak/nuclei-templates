@@ -1,4 +1,4 @@
-id: admin-log
+id: admin-log-cd18207b6b12dcd4d7775707834d0f79
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/63af783b-5593-4f84-8a4b-e4a19d9c994c?source=api-scan
   classification:
     cvss-metrics: 

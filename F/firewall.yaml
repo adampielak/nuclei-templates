@@ -1,21 +1,22 @@
 id: firewall
 info:
-  name: ConfigServer Security & Firewall
-  author: nmap,cn-kali-team
-  tags: detect,tech,firewall,service
+  name: firewall
+  author: cn-kali-team
+  tags: detect,tech,firewall
   severity: info
   metadata:
-    hostname: $1
-    info: blocked
-    rarity: 0
-tcp:
-- name: 'null'
-  inputs:
-  - data: ''
-  host:
-  - '{{Hostname}}'
-  extractors:
-  - name: firewall
-    type: regex
+    fofa-query:
+    - title="sophos"
+    product: firewall
+    shodan-query:
+    - http.title:"sophos"
+    vendor: sophos
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: regex
     regex:
-    - ^Your connection to this server has been blocked in this server's firewall\.\r\nYou need to contact the server owner for further information\.\r\nYour blocked IP address is .*\r\nThis server's hostname is ([\w._-]+)\r\n$
+    - (?mi)<title[^>]*>sophos.*?</title>

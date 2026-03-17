@@ -4,7 +4,6 @@ info:
   name: Detect Private Key on STEM Audio Table
   author: gy741
   severity: high
-  description: Private Key on STEM audio table was detected.
   reference:
     - https://blog.grimm-co.com/2021/06/the-walls-have-ears.html
   metadata:
@@ -29,4 +28,5 @@ http:
       - type: dsl
         dsl:
           - '!contains(tolower(body), "<html")'
-# digest: 4b0a00483046022100bf2541b0b03249cccaf1c3ef0656b1a6642ad664ab5479527cc7213495241e07022100c693870180871ffacb16a25cadb639a6b53e4bab2355acbdc44024ff51dff4f6:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402201581884fea6e5c138a48d6ac4dde092d28786422db7565268a81772900770462022060ff595c4e18ef0d24047e0e3e32d7ac5279d26789c00bd38ef02012a5e20a18:922c64590222798bb761d5b6d8e72950

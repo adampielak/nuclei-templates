@@ -1,4 +1,4 @@
-id: flying-press
+id: flying-press-278e47bda8d4c3e208764d43f34bc69b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6d1d541b-7010-4dbf-9b1c-d59c84390065?source=api-scan
   classification:
     cvss-metrics: 

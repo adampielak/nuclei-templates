@@ -1,4 +1,4 @@
-id: easy-accordion-free
+id: easy-accordion-free-06fb1dd4734b894ee5c34611c427a201
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/88f2fa28-5bb2-4633-b2bc-27cc6a4e304c?source=api-scan
   classification:
     cvss-metrics: 

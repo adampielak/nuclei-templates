@@ -8,10 +8,11 @@ info:
   reference:
     - https://forum.archive.openwrt.org/viewtopic.php?id=16611
   metadata:
+    max-request: 1
     shodan-query: http.title:"OpenWrt - LuCI"
   tags: default-login,openwrt
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/luci"

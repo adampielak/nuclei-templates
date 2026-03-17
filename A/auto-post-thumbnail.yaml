@@ -1,4 +1,4 @@
-id: auto-post-thumbnail
+id: auto-post-thumbnail-d8452229dab0a9357e13f23703bfa0fe
 
 info:
   name: >
@@ -8,7 +8,8 @@ info:
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/309eb1df-728f-404d-a20d-a83a0ab8ed0c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc024183-0244-4ef9-9171-057ecd1c3e1d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

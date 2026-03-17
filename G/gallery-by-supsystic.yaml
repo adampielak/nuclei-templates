@@ -1,14 +1,15 @@
-id: gallery-by-supsystic
+id: gallery-by-supsystic-ea00bf246f79a2e6f14e61b846907b6c
 
 info:
   name: >
-    Photo Gallery by Supsystic <= 1.8.8 - Cross-Site Request Forgery
+    Photo Gallery by Supsystic <= 1.15.16 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b91f3db6-5331-48d4-9c79-9ecba0870be2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/185c9962-aa4a-4049-acdb-3f439c420c5a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/gallery-by-supsystic/"
     google-query: inurl:"/wp-content/plugins/gallery-by-supsystic/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,gallery-by-supsystic,medium
+  tags: cve,wordpress,wp-plugin,gallery-by-supsystic,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.8.6')
+          - compare_versions(version, '<= 1.15.16')

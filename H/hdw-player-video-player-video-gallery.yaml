@@ -1,14 +1,15 @@
-id: hdw-player-video-player-video-gallery
+id: hdw-player-video-player-video-gallery-4f489a6574549922e55b1e3647520eb2
 
 info:
   name: >
-    HDW Player Plugin (Video Player & Video Gallery) <= 5.0 - Cross-Site Scripting
+    HDW Player Plugin (Video Player & Video Gallery) <= 2.4.2 - Authenticated (Admin+) SQL Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/778aa2be-ffcb-4d28-9efe-c29c8d5391bd?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0a540897-694a-43d1-bdd8-5aeb07389a51?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/hdw-player-video-player-video-gallery/"
     google-query: inurl:"/wp-content/plugins/hdw-player-video-player-video-gallery/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,hdw-player-video-player-video-gallery,high
+  tags: cve,wordpress,wp-plugin,hdw-player-video-player-video-gallery,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.0')
+          - compare_versions(version, '<= 2.4.2')

@@ -1,23 +1,24 @@
-id: indeed-membership-pro
+id: indeed-membership-pro-d37c0187be48f6315a0b8912f2a110d6
 
 info:
   name: >
-    Indeed Membership Pro 7.3 - 8.6 - Authentication Bypass
+    Ultimate Membership Pro <= 8.6 - Cross-Site Request Forgery
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
-    The Ultimate Membership Pro plugin for WordPress is vulnerable to Authentication Bypass in versions between, and including, 7.3 to 8.6. This makes it possible for unauthenticated attackers to login as any user, including the site administrator with a default user ID of 1, via the username or user ID.
+    The Ultimate Membership Pro plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 8.6. This is due to missing or incorrect nonce validation on an unknown function. This makes it possible for unauthenticated attackers to create, modify, or delete user accounts, including accounts with administrative permissions, granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5341bbd-55bd-41ad-b5d1-d6b56c141277?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9ecaaa86-9de1-4b90-b6cf-885621cffb19?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/indeed-membership-pro/"
     google-query: inurl:"/wp-content/plugins/indeed-membership-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,indeed-membership-pro,critical
+  tags: cve,wordpress,wp-plugin,indeed-membership-pro,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>= 7.3', '< 8.6.1')
+          - compare_versions(version, '< 8.7')

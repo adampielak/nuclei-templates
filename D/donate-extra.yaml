@@ -1,4 +1,4 @@
-id: donate-extra
+id: donate-extra-1e7bbe461a2be25a1602ea33b01f153b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/93c940a5-1145-47ac-b55f-bf346719e584?source=api-scan
   classification:
     cvss-metrics: 

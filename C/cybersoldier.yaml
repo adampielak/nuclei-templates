@@ -1,4 +1,4 @@
-id: cybersoldier
+id: cybersoldier-0d4e2476f7a9f0dba7d4566f0c76ba66
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/606b9002-5f3a-49ef-9714-49eeac86f800?source=api-scan
   classification:
     cvss-metrics: 

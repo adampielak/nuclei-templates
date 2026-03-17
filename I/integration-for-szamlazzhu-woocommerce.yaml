@@ -1,4 +1,4 @@
-id: integration-for-szamlazzhu-woocommerce
+id: integration-for-szamlazzhu-woocommerce-df057dad7cc5a50aa74b199994c106b3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5eafb620-f5dd-4e60-b9a6-859832ae706c?source=api-scan
   classification:
     cvss-metrics: 

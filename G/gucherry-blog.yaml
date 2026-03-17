@@ -1,4 +1,4 @@
-id: gucherry-blog
+id: gucherry-blog-e13b070536bec06d15a834eb59d2fbcb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a01ed06-4b48-4958-9990-469bf43d3e00?source=api-scan
   classification:
     cvss-metrics: 

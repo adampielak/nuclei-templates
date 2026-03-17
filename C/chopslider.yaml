@@ -1,13 +1,14 @@
-id: chopslider
+id: chopslider-da029739b98ee3e2d7300d1ef54cfea8
 
 info:
   name: >
     Chop Slider 3 <= 3.4 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f1d26326-c5c5-4993-aadf-298759eb873d?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/chopslider/"
     google-query: inurl:"/wp-content/plugins/chopslider/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,chopslider,low
+  tags: cve,wordpress,wp-plugin,chopslider,critical
 
 http:
   - method: GET

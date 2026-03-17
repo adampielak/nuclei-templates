@@ -1,14 +1,15 @@
-id: commentluv
+id: commentluv-9bd8d97f614b8c7407368edeb91eefb1
 
 info:
   name: >
-    CommentLuv < 2.92.4 - Reflected Cross-Site Scripting
+    CommentLuv <= 3.0.4 - Server Side Request Forgery via do_click
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8a8be59-d4c1-4cce-b474-8d885b4d89c6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eeef2a59-47a1-4d8d-b815-8c74cc608e6c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/commentluv/"
     google-query: inurl:"/wp-content/plugins/commentluv/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,commentluv,medium
+  tags: cve,wordpress,wp-plugin,commentluv,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.92.4')
+          - compare_versions(version, '<= 3.0.4')

@@ -7,10 +7,8 @@ info:
   reference:
     - https://smaranchand.com.np/2020/04/misconfigured-wordpress-takeover-to-remote-code-execution/
   tags: wordpress,setup
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-admin/setup-config.php?step=1"

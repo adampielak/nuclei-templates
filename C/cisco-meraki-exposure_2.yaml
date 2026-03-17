@@ -9,11 +9,10 @@ info:
     - https://www.exploit-db.com/ghdb/6708
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,cisco,meraki,disclosure,edb
+  tags: panel,cisco,meraki,disclosure,edb,discovery
 
 http:
   - method: GET
@@ -31,5 +30,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a0046304402204f6afd2a65a1ea24c99f1f605fbbda0c3bdf46bee004afb75b486aab8d8f4a3c02200979284823885854635d505db79b71175978c4371c4c3bd6e01cbc0fb8f0d13c:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100a6244426e839c90136f46e3ce35644ae2fc819a34bb68546d4248afb8d9241cc02205eb17fb23756aaf0d1a555d0b163cc67d5ca354de3bba389f11e5fcf5f8a726a:922c64590222798bb761d5b6d8e72950

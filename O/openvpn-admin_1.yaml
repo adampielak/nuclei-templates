@@ -7,17 +7,14 @@ info:
   description: OpenVPN Admin login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:openvpn:openvpn:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 3
-    product: openvpn
-    shodan-query: http.title:"OpenVPN-Admin"
-    vendor: openvpn
     verified: true
+    shodan-query: http.title:"OpenVPN-Admin"
   tags: panel,openvpn,admin,config
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -25,7 +22,6 @@ http:
       - '{{BaseURL}}/index.php'
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -38,4 +34,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207ba7ead9dc2f42b8dc155d40015d7945340911c9dcc7fbca5a2829099d62fbc0022100d2d572641114098cd7b07b8938ce5f0559538d27012697e342f202bf10dbfacf:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2022/12/02

@@ -1,4 +1,4 @@
-id: drawit
+id: drawit-d96fc9f8c23c434f28fe36ba2b0b52dc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ddde9db5-3ed7-42f7-97c1-4ff9b9d1f627?source=api-scan
   classification:
     cvss-metrics: 

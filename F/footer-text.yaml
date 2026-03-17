@@ -1,4 +1,4 @@
-id: footer-text
+id: footer-text-a2cf3b06658e0a314c40be7e2401a4aa
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a12ccd08-ee29-4fb9-9075-cf71dc488ffc?source=api-scan
   classification:
     cvss-metrics: 

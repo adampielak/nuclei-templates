@@ -1,23 +1,36 @@
 id: cheatset-disclosure
 
 info:
-  name: cheatset Disclosure
-  author: SirBugs
-  severity: critical
-  description: This Template checks disclosing secret information via /cheatset
-  tags: config, secrets, leaks, cheatset, tokens, sql, tokens
+  name: Cheatset Disclosure
+  author: rix4uni
+  severity: high
+  reference:
+    - https://twitter.com/shaybt12/status/1667590908391354368
+  metadata:
+    fofa-query:
+      - "--apiserver-advertise-address"
+  tags: exposure,cheatset
 
-requests:
+http:
   - method: GET
     path:
-      - '{{BaseURL}}/cheatset'
+      - "{{BaseURL}}/cheatset"
+
+    stop-at-first-match: true
+    matchers-condition: and
     matchers:
       - type: word
         part: body
-        condition: or
         words:
-          - 'docker run'
-          - 'kubeadm init'
-          - 'kubeadm join'
-          - '--client-name'
-          - '--token'
+          - "--apiserver-advertise-address"
+          - "--apiserver-cert-extra-sans"
+          - "--discovery-token-ca-cert-hash"
+          - "kubeadm init --config config.yaml"
+          - "UI Login"
+          - "Zabbix Mysql:"
+          - "user: zabbix"
+          - "Zabbix UI:"
+        
+      - type: status
+        status:
+          - 200

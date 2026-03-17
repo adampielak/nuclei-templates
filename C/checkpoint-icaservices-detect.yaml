@@ -1,0 +1,44 @@
+id: checkpoint-icaservices-detect
+
+info:
+  name: Check Point Security Gateway - TemplateType
+  severity: info
+  author: darses
+  description: |
+    Check Point Security Gateway was detected.
+  classification:
+    cve-id: todo
+  metadata:
+    verified: true
+    max-requests: 1
+    vendor: checkpoint
+    product: security_gateway
+    shodan-query:
+      -
+    fofa-query:
+      -
+  reference:
+    - https://support.checkpoint.com/results/sk/sk34926
+  tags: checkpoint,detect
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/ICA_CRL0.crl"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Type: application/pkix-crl"
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        group: 1
+        regex:
+          - "(https?://[\\w\\d\\_\\.\\:]+)/ICA_CRL0.crl"

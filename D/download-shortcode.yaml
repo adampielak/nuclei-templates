@@ -1,4 +1,4 @@
-id: download-shortcode
+id: download-shortcode-5878390d4d60a58ae33b343407a6333e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5bae7516-e9dd-4c0c-b687-9cbe09b4c8bc?source=api-scan
   classification:
     cvss-metrics: 

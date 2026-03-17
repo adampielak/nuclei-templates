@@ -1,4 +1,4 @@
-id: edd-product-reviews
+id: edd-product-reviews-a4ef8999987d9a359664afaf050e20ff
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d88a7c35-fe98-48eb-960b-0e4f8fcab4cb?source=api-scan
   classification:
     cvss-metrics: 

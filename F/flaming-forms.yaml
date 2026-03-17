@@ -1,15 +1,15 @@
-id: flaming-forms
+id: flaming-forms-536dd8c3f394cecbf1da1bda922ffc55
 
 info:
   name: >
-    Flaming Forms <= 1.0.1 - Reflected Cross-Site Scripting
+    Flaming Forms <= 1.0.1 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c904391e-efa1-4fba-b6a5-b9b38822e194?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1d18b3ad-57ea-40cb-8a35-0ae31efc8973?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

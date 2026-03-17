@@ -1,15 +1,15 @@
-id: listingpro-plugin
+id: listingpro-plugin-1f41b6a47e1236d7d4858a9a47cccf64
 
 info:
   name: >
-    ListingPro Plugin <= 2.9.3 - Authenticated (Subscriber+) SQL Injection
+    ListingPro Plugin <= 2.9.3 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8b104666-a038-442f-8db8-78ccb64879a7?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/081f2603-229b-42f2-b5b1-f89d105a31d5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/listingpro-plugin/"
     google-query: inurl:"/wp-content/plugins/listingpro-plugin/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,listingpro-plugin,low
+  tags: cve,wordpress,wp-plugin,listingpro-plugin,critical
 
 http:
   - method: GET

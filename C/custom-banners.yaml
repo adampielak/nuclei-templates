@@ -1,4 +1,4 @@
-id: custom-banners
+id: custom-banners-4b639893743ebb7119cd2cf223087c21
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f4c086d-8209-4212-9d91-67238c1a9143?source=api-scan
   classification:
     cvss-metrics: 

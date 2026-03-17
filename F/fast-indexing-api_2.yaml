@@ -11,7 +11,7 @@ info:
     wpscan: https://wpscan.com/plugin/fast-indexing-api
   tags: tech,wordpress,wp-plugin,top-200
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/fast-indexing-api/readme.txt"
@@ -46,3 +46,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100f0543c3a32379bbf5acb4abb0cc9cb14ed40b2ab332dbd9a11f229b34642e7d402206f4b9510f71c906390292eb60788cfd26f6ac95b36b9feb8f5778af817b285bf:922c64590222798bb761d5b6d8e72950

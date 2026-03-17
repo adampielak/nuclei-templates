@@ -1,4 +1,4 @@
-id: newsletter-bulk-email
+id: newsletter-bulk-email-71ce6b18d7c02b289a851c226f50c292
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7c19095-3c21-440f-aa28-0117aea29d97?source=api-scan
   classification:
     cvss-metrics: 

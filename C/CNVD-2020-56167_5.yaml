@@ -10,7 +10,7 @@ info:
     - https://securityforeveryone.com/tools/ruijie-smartweb-default-password-scanner
   metadata:
     max-request: 1
-  tags: ruijie,default-login,cnvd,cnvd2020
+  tags: cnvd,cnvd2020,ruijie,default-login
 
 http:
   - method: POST
@@ -34,5 +34,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100ffbfb06f31d7e6fe54c37b624991573c67062006f92a636f79f757ce466c09e3022100fbeb7d9dfb087e6b5cef300abb1fbf75996d1a4f9d411f765034754db43ca62e:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022070fdf585155d153ccb869e80351f329e9ca5949886f237bb737acf2729170e5f02203cbfb4f11a40676b77d3e97bc117bb62f1bcfbe301a4aa49f28010fbcd97ac4c:922c64590222798bb761d5b6d8e72950

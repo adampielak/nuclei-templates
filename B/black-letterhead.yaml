@@ -1,4 +1,4 @@
-id: black-letterhead
+id: black-letterhead-ef6e75045ba037c0c6415c910b9cad2a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8617dc53-8994-4fab-a3df-27863ad3dd10?source=api-scan
   classification:
     cvss-metrics: 

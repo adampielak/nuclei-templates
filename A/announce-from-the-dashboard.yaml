@@ -1,14 +1,15 @@
-id: announce-from-the-dashboard
+id: announce-from-the-dashboard-73961218af7ffbb2bf38e4027b025ad8
 
 info:
   name: >
-    Announce from the Dashboard <= 1.5.2 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Announce from the Dashboard <= 1.5.1 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b0d1cf3b-5631-49bd-a7aa-86de2ee4b5b9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b75dce8-3e31-45e8-b193-5df3e4391e56?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.2')
+          - compare_versions(version, '<= 1.5.1')

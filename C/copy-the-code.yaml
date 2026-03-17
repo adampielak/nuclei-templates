@@ -1,4 +1,4 @@
-id: copy-the-code
+id: copy-the-code-1b6fa3541993192d40aa81681f8c7fe0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e834a211-ccc8-4a30-a15d-879ba34184e9?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: html5-soundcloud-player-with-playlist
+id: html5-soundcloud-player-with-playlist-4d1667fb6e30b2ac93e754f36234469e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/229235de-03c6-4560-b0ea-ab21fde256be?source=api-scan
   classification:
     cvss-metrics: 

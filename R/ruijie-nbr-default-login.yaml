@@ -5,12 +5,13 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    Ruijie NBR Series Routers Default Login username and password was discovered.
+    Ruijie NBR Series Routers default login credentials were discovered.
   metadata:
-    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)上层网络出现异常，请检查外网线路或联系ISP运营商协助排查"
     verified: true
+    max-request: 1
     fofa-query: body="上层网络出现异常，请检查外网线路或联系ISP运营商协助排查"
-  tags: default-login,ruijie-nbr
+  tags: default-login,ruijie-nbr,vuln
 
 http:
   - raw:
@@ -41,4 +42,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008ab8f2e652ad18b64e4aeb609d6a079714c753d19ffef9b13404bfdb20b85591022100ba89e068e5b2b07aa3da6ef03f22961e59942f8f728f9d94a267424c03f5f844:922c64590222798bb761d5b6d8e72950
+

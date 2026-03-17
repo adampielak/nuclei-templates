@@ -1,4 +1,4 @@
-id: buddyboss-media
+id: buddyboss-media-794752612993f73caae67523973ec768
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e485f089-689f-4f73-bb0d-eca6815388be?source=api-scan
   classification:
     cvss-metrics: 

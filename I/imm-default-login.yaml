@@ -13,21 +13,20 @@ info:
     cwe-id: CWE-798
     cpe: cpe:2.3:h:ibm:integrated_management_module:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: service["http.body"] matches "(?i)ibmdojo"
     verified: true
     max-request: 1
-    shodan-query: html:"ibmdojo"
-    fofa-query: "integrated management module"
-    product: integrated_management_module
     vendor: ibm
-  tags: imm,ibm,default-login
+  tags: imm,ibm,default-login,vuln
 
 http:
   - method: POST
     path:
       - "{{BaseURL}}/data/login"
-    body: "user=USERID&password=PASSW0RD"
 
+    body: "user=USERID&password=PASSW0RD"
     redirects: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -45,4 +44,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402205125aa84c813f2cec1e85949d596c5a5c93bdde29ec1df6d8d5a7af572788589022060a0e87a809a6fed2ca290bbe4fd1fe6e36af6fd934929d5e100f0dce9cfec38:922c64590222798bb761d5b6d8e72950
+

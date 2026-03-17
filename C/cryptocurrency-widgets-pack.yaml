@@ -1,4 +1,4 @@
-id: cryptocurrency-widgets-pack
+id: cryptocurrency-widgets-pack-3532e3ddc366fe96a91136bcc16ee751
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8064526f-edd3-43e4-9732-47b25ab256fe?source=api-scan
   classification:
     cvss-metrics: 

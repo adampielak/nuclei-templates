@@ -1,31 +1,86 @@
-id: apache-struts
-info:
-  name: apache-struts
-  author: cn-kali-team
-  tags: detect,tech,apache-struts
-  severity: info
-  metadata:
-    product: struts
-    vendor: apache
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - <form action="/login.action" method="post
-    - <form action="login.action" method="post
-    - ="struts.token.name"
-    - content="struts2 showcase for apache struts project"
-    - no result defined for action and result input
-    - struts problem report
-    - there is no action mapped for namespace
-    case-insensitive: true
-  - type: word
-    words:
-    - 'location: /index.action'
-    - 'location: /login.action'
-    part: header
-    case-insensitive: true
+name: apache-struts
+priority: 1
+nuclei_tags:
+  - - struts
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers:
+      Location: /index.action
+    keyword: []
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers:
+      Location: /login.action
+    keyword: []
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - ="struts.token.name"
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <form action="login.action" method="post
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <form action="/login.action" method="post
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - content="Struts2 Showcase for Apache Struts Project"
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - struts problem report
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - there is no action mapped for namespace
+    favicon_hash: []
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - no result defined for action and result input
+    favicon_hash: []

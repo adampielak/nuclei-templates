@@ -1,4 +1,4 @@
-id: bulk-resize-media
+id: bulk-resize-media-9e1541d38c8eaeed6eca5dee15217ad6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/605fbfb9-85d8-43ff-a738-ad1a8a9584c3?source=api-scan
   classification:
     cvss-metrics: 

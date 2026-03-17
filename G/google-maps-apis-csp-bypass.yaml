@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,google-maps-apis
+  tags: xss,csp-bypass,google-maps-apis,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "google_maps_apis_csp_xss == true"
-# digest: 4b0a00483046022100bd52b6d41d74569a3eb786d313b6479d7b87bb212c23caaebea4d430b510f7a00221009d84d2a28c913f6410b4fd572ea6d80a64631e7bfd114d107e1058440e0dffcb:922c64590222798bb761d5b6d8e72950
+

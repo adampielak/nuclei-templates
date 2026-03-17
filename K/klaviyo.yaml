@@ -1,14 +1,15 @@
-id: klaviyo
+id: klaviyo-d1b0322ae55fed6b2ed29b6f02477276
 
 info:
   name: >
-    Klaviyo <= 3.0.9 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Klaviyo <= 3.0.7 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/294de862-716c-4e17-a1cf-cade53207013?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d2b66f27-e4d2-4f6e-be96-b7f967a30885?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.9')
+          - compare_versions(version, '<= 3.0.7')

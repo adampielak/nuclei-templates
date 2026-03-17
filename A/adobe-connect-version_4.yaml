@@ -4,9 +4,11 @@ info:
   name: Adobe Connect Central Version
   author: dhiyaneshDk
   severity: info
-  tags: adobe
+  tags: adobe,misconfig
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/version.txt"

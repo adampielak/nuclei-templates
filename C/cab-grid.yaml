@@ -1,4 +1,4 @@
-id: cab-grid
+id: cab-grid-eff039829961c7ba0f1c9fe7df3bf4d5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e09c629b-9908-4548-b828-9e6140ff5670?source=api-scan
   classification:
     cvss-metrics: 

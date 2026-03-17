@@ -1,4 +1,4 @@
-id: almera
+id: almera-2b7c2678a5ca7a8adf754bb5d5dbfb57
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b606c7eb-39ce-40a0-b642-6f240f7c8c42?source=api-scan
   classification:
     cvss-metrics: 

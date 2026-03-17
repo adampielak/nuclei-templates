@@ -1,4 +1,4 @@
-id: astra-import-export
+id: astra-import-export-82fb3708cda32128d49bc25b681b848b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/194face3-36ac-4137-af9a-0b98f60e3afb?source=api-scan
   classification:
     cvss-metrics: 

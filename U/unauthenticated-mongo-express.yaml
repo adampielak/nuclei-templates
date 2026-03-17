@@ -1,30 +1,23 @@
-id: unauthenticated-mongo-express
+id: unauthenticated-mongo-express.yaml
 
 info:
-  name: Mongo Express - Unauthenticated Access
-  author: dhiyaneshDK,b0rn2r00t
+  name: Mongo Express Unauthenticated
+  author: dhiyaneshDK
   severity: high
-  description: Mongo Express was able to be access with no authentication requirements in place.
-  reference:
-    - https://www.exploit-db.com/ghdb/5684
-  tags: mongo,unauth,edb
+  reference: https://www.exploit-db.com/ghdb/5684
+  tags: mongo,unauth
 
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/mongo-express/'
-      - '{{BaseURL}}/db/admin/system.users'
 
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>Home - Mongo Express</title>'
-          - '<title>system.users - Mongo Express</title>'
-        condition: or
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/07/20

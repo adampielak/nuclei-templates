@@ -1,14 +1,15 @@
-id: advanced-text-widget
+id: advanced-text-widget-d622fa04c529beea630df28b163ee43d
 
 info:
   name: >
-    Advanced Text Widget <= 2.0.1 - Cross-Site Scripting
+    Advanced Text Widget  <= 2.1.2 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c5e011d3-bd0f-46cb-9fb1-af06bcb7e307?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f622e20-2f7e-44ed-8237-fbf25323d2ce?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/advanced-text-widget/"
     google-query: inurl:"/wp-content/plugins/advanced-text-widget/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,advanced-text-widget,high
+  tags: cve,wordpress,wp-plugin,advanced-text-widget,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.1')
+          - compare_versions(version, '<= 2.1.2')

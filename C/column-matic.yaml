@@ -1,4 +1,4 @@
-id: column-matic
+id: column-matic-3e58df33c4baff12f77b90d2db6caea8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9dc640c8-3740-4770-b729-fb45ecec2b45?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: navz-photo-gallery
+id: navz-photo-gallery-d363d7c0336c25954cce29162ead9d54
 
 info:
   name: >
-    ACF Photo Gallery Field <= 2.6 - Missing Authorization in apgf_update_donation
+    ACF Photo Gallery Field <= 1.9 - Authenticated (Subscriber+) Arbitrary Usermeta Update
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f557ddf1-cee3-498c-87bc-fa81bf574591?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/689511e0-1355-4fcb-8a72-d819abc8e9a3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/navz-photo-gallery/"
     google-query: inurl:"/wp-content/plugins/navz-photo-gallery/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,navz-photo-gallery,high
+  tags: cve,wordpress,wp-plugin,navz-photo-gallery,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6')
+          - compare_versions(version, '<= 1.9')

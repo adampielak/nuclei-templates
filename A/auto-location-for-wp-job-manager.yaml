@@ -1,4 +1,4 @@
-id: auto-location-for-wp-job-manager
+id: auto-location-for-wp-job-manager-259c491b86e236a159ce83ed8b168d72
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/19a70aa0-7075-4922-8feb-25b7fbe9da42?source=api-scan
   classification:
     cvss-metrics: 

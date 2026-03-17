@@ -1,4 +1,4 @@
-id: flightlog
+id: flightlog-db04202477bffccb3a5b1609499d476f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/60b16755-ac0e-4069-b21a-cca003fecbdc?source=api-scan
   classification:
     cvss-metrics: 

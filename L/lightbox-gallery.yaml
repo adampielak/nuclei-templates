@@ -1,4 +1,4 @@
-id: lightbox-gallery
+id: lightbox-gallery-be2b37d118ba359ab6897b2a043d196b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d8781ed1-6609-4965-9ba2-30e70eac1c1a?source=api-scan
   classification:
     cvss-metrics: 

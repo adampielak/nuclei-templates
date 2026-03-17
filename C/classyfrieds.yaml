@@ -1,4 +1,4 @@
-id: classyfrieds
+id: classyfrieds-60b39bc1ae38ed02921efcd4fe232910
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8185c7a4-3d8e-4a24-9746-536337afbcfe?source=api-scan
   classification:
     cvss-metrics: 

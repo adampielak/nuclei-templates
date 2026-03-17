@@ -1,4 +1,4 @@
-id: ap-pricing-tables-lite
+id: ap-pricing-tables-lite-110cd65e95e04b41ad18a371eab3632c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/95f9066c-e0dd-4909-a57b-c52070b135d1?source=api-scan
   classification:
     cvss-metrics: 

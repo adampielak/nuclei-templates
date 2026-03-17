@@ -1,4 +1,4 @@
-id: insecure-content-warning
+id: insecure-content-warning-6c90b20a33edd819f7562bd7a9738958
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/46fdd494-8073-4a68-a4ab-1f5767011f67?source=api-scan
   classification:
     cvss-metrics: 

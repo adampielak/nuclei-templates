@@ -52,4 +52,4 @@ code:
       - type: dsl
         dsl:
           - '"AWS CLI is properly configured for account \"" + account + "\" and all the necessary tools required are installed"'
-# digest: 4a0a00473045022052484996550fb7281548c8303d5073f5afe21282edd02f6b44327849754db470022100e00b95fbe7c0069c51b67f29380e776144f64464de6aa670a8bcf248722b0e69:922c64590222798bb761d5b6d8e72950
+

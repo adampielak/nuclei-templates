@@ -9,10 +9,11 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Advanced eMail Solution DEEPMail"})
+    verified: true
     max-request: 1
     shodan-query: http.title:"Advanced eMail Solution DEEPMail"
-    verified: true
-  tags: panel,deepmail,login,detect
+  tags: panel,deepmail,login,detect,discovery
 
 http:
   - method: GET
@@ -25,4 +26,4 @@ http:
           - 'contains(body, "Advanced eMail Solution DEEPMail</title>")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100b747b157d8f5dfbe6f8b2e623cbb0b57dd761db2685fc87f1b61f6d0b052b08702202f79c2e027021d50af274c9648dd35a381fdb80a480c0fdbef0afc37ba109a51:922c64590222798bb761d5b6d8e72950
+

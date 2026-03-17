@@ -9,9 +9,10 @@ info:
   reference:
     - https://www.barracuda.com/products/email-protection/message-archiver
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "1436966696" || any([service["http.body"], service["last.http.body"]], {# matches "/css/archiver.css"})
     max-request: 1
     shodan-query: http.favicon.hash:1436966696 http.html:"/css/archiver.css"
-  tags: barracuda,panel,login
+  tags: barracuda,panel,login,discovery
 
 http:
   - method: GET
@@ -30,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100aed217b18a8e0649510afdc8cb4a802acc3094444979c7afeaef238b333f60fb02205a3316dbe37389c30f792463d024280efc270c4c020093219275432ba67b1258:922c64590222798bb761d5b6d8e72950
+

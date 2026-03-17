@@ -1,14 +1,15 @@
-id: futurio-extra
+id: futurio-extra-6deeecee37081b3e0715c9b7a82c5983
 
 info:
   name: >
-    Futurio Extra <= 1.6.2 - Sensitive Information Disclosure
+    Futurio Extra <= 2.0.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Advanced Text Block Widget
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/460b5388-4862-475d-9557-f8da2d5a84f7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cbb3bd9b-ac1f-4488-931f-2ba37576df2d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.6.3')
+          - compare_versions(version, '<= 2.0.5')

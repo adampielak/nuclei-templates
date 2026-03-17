@@ -1,4 +1,4 @@
-id: dropbox-folder-share
+id: dropbox-folder-share-1b44f88954886b0a2e327b6380a762e9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d62bd2bd-db01-479f-89e4-8031d69a912f?source=api-scan
   classification:
     cvss-metrics: 

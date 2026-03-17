@@ -1,4 +1,4 @@
-id: gdpr-compliance-by-supsystic
+id: gdpr-compliance-by-supsystic-fd6d2638d815dbe42b783f1b0d9c8fbc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/158a63c1-1b2e-4fbf-ac86-43471ba8ebc2?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: new-royalslider
+id: new-royalslider-e589627bc7f2f6eea7ef1ba20408b67d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/60116e60-ebf3-4f32-b536-52ce2a9672df?source=api-scan
   classification:
     cvss-metrics: 

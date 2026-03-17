@@ -1,4 +1,4 @@
-id: easy2map-photos
+id: easy2map-photos-0476f1378d57512a5ac8a4f1b2b63f71
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/af7163da-79b3-45df-a33c-01367205bb6f?source=api-scan
   classification:
     cvss-metrics: 

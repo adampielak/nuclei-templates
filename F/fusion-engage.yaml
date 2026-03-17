@@ -1,23 +1,24 @@
-id: fusion-engage
+id: fusion-engage-8b1c2930bae23f34d7a0f9697e44aca4
 
 info:
-  name: "Fusion Engage <= 1.0.5 - Local File Inclusion"
+  name: >
+    Fusion Engage <= 1.0.5 - Local File Inclusion
   author: topscoder
-  severity: medium
-  description: "The Fusion Engage plugin for WordPress is vulnerable to Local File Inclusion in versions up to, and including, 1.0.5 via the 'video' parameter. This allows unauthenticated attackers to include and execute arbitrary files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where images and other “safe” file types can be uploaded and included."
+  severity: critical
+  description: >
+    The Fusion Engage plugin for WordPress is vulnerable to Local File Inclusion in versions up to, and including, 1.0.5 via the 'video' parameter. This allows unauthenticated attackers to include and execute arbitrary files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where images and other “safe” file types can be uploaded and included.
   reference:
-    - https://seclists.org/fulldisclosure/2015/Apr/27
-    - https://packetstormsecurity.com/files/131379/
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-fusion-engage-local-file-disclosure-1-0-5/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c342fe87-59f3-43e9-8694-cc2551650a91?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/fusion-engage/"
     google-query: inurl:"/wp-content/plugins/fusion-engage/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fusion-engage,medium
+  tags: cve,wordpress,wp-plugin,fusion-engage,critical
 
 http:
   - method: GET

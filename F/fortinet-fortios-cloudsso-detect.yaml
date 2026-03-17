@@ -1,0 +1,30 @@
+id: fortinet-fortios-cloudsso-detect
+
+info:
+  name: Fortinet FortiOS FortiCloud SSO - Detect
+  severity: info
+  author: darses
+  description: |
+    Fortinet FortiOS FortiCloud SSO function detected.
+  metadata:
+    verified: true
+    max-requests: 1
+    vendor: fortinet
+    product: fortios
+  tags: fortinet,fortios
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/saml/login-forticloud?host={{Hostname}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "fortinet.com/saml-idp"
+          - "SAMLRequest"
+
+      - type: status
+        status:
+          - 200

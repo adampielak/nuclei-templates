@@ -12,8 +12,10 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   tags: hongdian,default-login
+  metadata:
+    max-request: 4
 
-requests:
+http:
   - raw:
       - |
         GET / HTTP/1.1

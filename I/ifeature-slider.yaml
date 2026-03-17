@@ -1,4 +1,4 @@
-id: ifeature-slider
+id: ifeature-slider-6b8f5e6d0a719dcaee5906e7719c32ec
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c070b9c-5bed-4f9f-8d96-70958bf294cf?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: footer-putter
+id: footer-putter-33588d1936e8b23e35ef8dd9891297ba
 
 info:
   name: >
-    Footer Putter <= 6.1.3 - Reflected Cross-Site Scripting
+    Footer Putter <= 1.17 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/688353c9-e4e5-4717-9651-15d05248554f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ace46bae-5dfb-4cdf-bd9e-d68282be16d0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/footer-putter/"
     google-query: inurl:"/wp-content/plugins/footer-putter/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,footer-putter,medium
+  tags: cve,wordpress,wp-plugin,footer-putter,low
 
 http:
   - method: GET

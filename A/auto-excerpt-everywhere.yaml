@@ -1,4 +1,4 @@
-id: auto-excerpt-everywhere
+id: auto-excerpt-everywhere-51b0d0338ce0ff3009be37c36cbd4878
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/32647c44-389a-4a6d-a32b-e19a35bc2aeb?source=api-scan
   classification:
     cvss-metrics: 

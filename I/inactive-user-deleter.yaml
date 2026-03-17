@@ -1,4 +1,4 @@
-id: inactive-user-deleter
+id: inactive-user-deleter-fbd6bc3c2e318caacf5e6165d785a117
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f3c706f-fcce-4bcb-9773-ced011bf6407?source=api-scan
   classification:
     cvss-metrics: 

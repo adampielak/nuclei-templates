@@ -10,13 +10,12 @@ info:
   classification:
     cwe-id: CWE-200
   remediation: Ensure the approved and updated version is installed.
-  tags: exposure,files
+  tags: exposure
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/phpunit.xml"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -24,7 +23,6 @@ requests:
           - "<phpunit"
           - "</phpunit>"
         condition: and
-
       - type: status
         status:
           - 200

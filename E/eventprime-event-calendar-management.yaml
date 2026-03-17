@@ -1,17 +1,18 @@
-id: eventprime-event-calendar-management
+id: eventprime-event-calendar-management-70abe0d924c478ac3475ca57424b78cc
 
 info:
   name: >
-    EventPrime – Events Calendar, Bookings and Tickets <= 3.4.1 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Email Sending
+    EventPrime – Modern Events Calendar, Bookings and Tickets <= 3.3.2 - Authenticated(Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
-    
+    The EventPrime – Events Calendar, Bookings and Tickets plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's shortcode(s) in all versions up to, and including, 3.3.2 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers with contributor-level and above permissions to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/346049ca-1bc5-4e02-9f38-d1f64338709d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5124be64-6679-4dc5-8117-55c73ae91489?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/eventprime-event-calendar-management/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.4.3')
+          - compare_versions(version, '<= 3.3.2')

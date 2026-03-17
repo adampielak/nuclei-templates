@@ -1,14 +1,15 @@
-id: getwid
+id: getwid-f57a9bb09c6115f6da291aba1defee73
 
 info:
   name: >
-    Getwid – Gutenberg Blocks <= 2.0.4 - Captcha Bypass
+    Multiple Plugins <= (Various Versions) - Authenticated (Contributor+) Stored DOM-Based Cross-Site Scripting via FancyBox JavaScript Library
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d317f2c7-06f3-4875-9f9b-eb7f450aa2f4?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d99d4b9a-aa09-434d-91a8-7afaa0e8b5db?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.4')
+          - compare_versions(version, '<= 2.0.11')

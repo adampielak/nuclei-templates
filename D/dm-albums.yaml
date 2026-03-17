@@ -1,14 +1,15 @@
-id: dm-albums
+id: dm-albums-87a021dbc51f6a5b646a9210b96fd651
 
 info:
   name: >
-    SWFUpload <= 2.2.0.1 - Cross-Site Scripting
+    DM Albums <= 1.9.2 - Remote File Inclusion
   author: topscoder
-  severity: high
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d311aab4-fca8-4e83-83cf-c4b8350d7dd1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc83b0ff-7228-466a-b831-53cca252a3f3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/dm-albums/"
     google-query: inurl:"/wp-content/plugins/dm-albums/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,dm-albums,high
+  tags: cve,wordpress,wp-plugin,dm-albums,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= *')
+          - compare_versions(version, '<= 1.9.2')

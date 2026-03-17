@@ -1,4 +1,4 @@
-id: goolytics-simple-google-analytics
+id: goolytics-simple-google-analytics-80d5afe9caee511223cff7921391e5ae
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ccf2bd2a-6041-49ca-8ff9-d8541b2d2b73?source=api-scan
   classification:
     cvss-metrics: 

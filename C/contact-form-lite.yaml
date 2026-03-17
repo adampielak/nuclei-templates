@@ -1,14 +1,15 @@
-id: contact-form-lite
+id: contact-form-lite-ff87dfd87743a86bdb8078e44f3bc02c
 
 info:
   name: >
-    Contact Form Plugin <= 4.0.1 - Stored Cross-Site Scripting
+    Easy Contact Form Lite  <= 1.1.23 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/07f97b57-4258-4bd0-88f0-851e87dfd061?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/93427a3a-8cbe-4aa7-93e2-c6807bc3390c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/contact-form-lite/"
     google-query: inurl:"/wp-content/plugins/contact-form-lite/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,contact-form-lite,high
+  tags: cve,wordpress,wp-plugin,contact-form-lite,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.0.1')
+          - compare_versions(version, '<= 1.1.23')

@@ -1,18 +1,19 @@
-id: html5avmanager
+id: html5avmanager-81741c6ee4583bb67a945f67346f2401
 
 info:
-  name: "HTML5 AV Manager <= 0.2.7 - Arbitrary File Upload"
+  name: >
+    HTML5 AV Manager <= 0.2.7 - Arbitrary File Upload
   author: topscoder
   severity: critical
-  description: "The HTML5 AV Manager plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the custom.php file in versions up to, and including, 0.2.7. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
+  description: >
+    The HTML5 AV Manager plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the custom.php file in versions up to, and including, 0.2.7. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
   reference:
-    - https://wordpress.org/plugins/html5avmanager/#developers
-    - https://web.archive.org/web/20120610004313/http%3A//www.securityfocus.com/bid/53804
-    - https://www.exploit-db.com/exploits/18990
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/41a61c0f-fffb-4810-b44a-74cbc1192ecd?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/html5avmanager/"
     google-query: inurl:"/wp-content/plugins/html5avmanager/"

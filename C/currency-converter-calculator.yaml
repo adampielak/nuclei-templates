@@ -1,4 +1,4 @@
-id: currency-converter-calculator
+id: currency-converter-calculator-b9192166d62ab0d86ab7f145ffed2769
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9a423266-89e1-422d-b1e3-6368051eb2fe?source=api-scan
   classification:
     cvss-metrics: 

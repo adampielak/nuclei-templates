@@ -1,4 +1,4 @@
-id: ithemeland-bulk-posts-editing-lite
+id: ithemeland-bulk-posts-editing-lite-b7af0d70c48749c355dd85db200ddd2b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/683131a0-eec3-4251-b322-5c2088855687?source=api-scan
   classification:
     cvss-metrics: 

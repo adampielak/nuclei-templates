@@ -1,4 +1,4 @@
-id: mobile-app-builder-by-wappress
+id: mobile-app-builder-by-wappress-e3fab52d114aee57a9f4c91a11e00da3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/31d7c673-b625-4862-bc03-378ad663467c?source=api-scan
   classification:
     cvss-metrics: 

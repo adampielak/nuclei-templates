@@ -1,4 +1,4 @@
-id: jayj-quicktag
+id: jayj-quicktag-366869a40f4817ab10ef24fadbc9f402
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/585fc053-b54f-428e-9abc-9501508aef69?source=api-scan
   classification:
     cvss-metrics: 

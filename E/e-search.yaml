@@ -1,14 +1,15 @@
-id: e-search
+id: e-search-2b9ddff284be1a0e195b75d124bac692
 
 info:
   name: >
-    E Search <= 1.0 - Reflected Cross-Site Scripting
+    E-Search <= 1.0 - Reflected Cross-Site Scripting via title_az parameter
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/67e1f412-3b3d-4b36-b4ff-557c4790362a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2cae1194-2247-44bf-a1a0-0cb0068f56e0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

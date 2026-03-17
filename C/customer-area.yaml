@@ -1,14 +1,15 @@
-id: customer-area
+id: customer-area-a1b7931e1403e32124af7970c8bb08d2
 
 info:
   name: >
-    WP Customer Area <= 8.2.1 - Insecure Direct Object Reference to Address Modification
+    WP Customer Area <= 8.2.0 - Insecure Direct Object Reference to Account Address Disclosure
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/32713069-ea40-46ef-a789-9646eab2e651?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc0087a8-ec3a-4c16-8ce3-d346ae0ca58d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

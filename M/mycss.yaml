@@ -1,4 +1,4 @@
-id: mycss
+id: mycss-f48bdeb64cc05ea05b29f4ce247747b5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ecdfb19e-ef3a-4c5a-96a5-4c9ce3dca3a6?source=api-scan
   classification:
     cvss-metrics: 

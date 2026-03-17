@@ -1,4 +1,4 @@
-id: classified-listing-pro
+id: classified-listing-pro-2ba88182a44e9f497cd203cf952a1543
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bc491c2b-0ae2-4002-a745-435a183d8e01?source=api-scan
   classification:
     cvss-metrics: 

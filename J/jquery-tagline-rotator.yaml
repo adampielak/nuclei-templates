@@ -1,4 +1,4 @@
-id: jquery-tagline-rotator
+id: jquery-tagline-rotator-2ecd3cfa8442fb1d25735ed1f60de39f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bc9efc98-7815-4b9b-a180-71f1095c9b0a?source=api-scan
   classification:
     cvss-metrics: 

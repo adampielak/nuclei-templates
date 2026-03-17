@@ -1,4 +1,4 @@
-id: add-user-role
+id: add-user-role-21e7e28b1bd21b72344ed338d4838ea7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e15ca55b-b8e4-4f65-87a4-e13209cfea78?source=api-scan
   classification:
     cvss-metrics: 

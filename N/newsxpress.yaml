@@ -1,4 +1,4 @@
-id: newsxpress
+id: newsxpress-cfd622344c1bfb41fd0c742fc0e4f15c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cd5e9736-e4d9-4730-aaaf-2069a9633f02?source=api-scan
   classification:
     cvss-metrics: 

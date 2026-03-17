@@ -11,14 +11,13 @@ info:
     wpscan: https://wpscan.com/plugin/shortpixel-image-optimiser
   tags: tech,wordpress,wp-plugin,top-200
 
-requests:
+http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/shortpixel-image-optimiser/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/shortpixel-image-optimiser.txt
+      last_version: helpers/wordpress/plugins/shortpixel-image-optimiser.txt
 
     extractors:
       - type: regex
@@ -47,3 +46,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4b0a00483046022100e742202f7c554de923206cdcf67ad91bfcb60ef04bb26faf08b65f60fb79551f022100ab573cb7951a6751b8b9717e71d209bf1b6096eb0ae97a4ff9cf57d99c059244:922c64590222798bb761d5b6d8e72950

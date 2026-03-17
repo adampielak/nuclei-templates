@@ -1,4 +1,4 @@
-id: hashthemes-demo-importer
+id: hashthemes-demo-importer-f6026c07951b72ddec0a2890ba2fabf5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4ea2ed8b-b24a-4da2-9ee7-5a3a4a7a4280?source=api-scan
   classification:
     cvss-metrics: 

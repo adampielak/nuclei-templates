@@ -1,4 +1,4 @@
-id: find-my-blocks
+id: find-my-blocks-97fb557312d41b2fcde3c6f4fa01719b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e4a8a202-e44a-4874-9e7a-c8224edd8591?source=api-scan
   classification:
     cvss-metrics: 

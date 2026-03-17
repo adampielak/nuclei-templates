@@ -1,14 +1,15 @@
-id: libsyn-podcasting
+id: libsyn-podcasting-701d61ffbef2adde8f43fe6e20fc373c
 
 info:
   name: >
-    Libsyn Publisher Hub <= 1.4.4 - Unauthenticated Cross-Site Scripting
+    Libsyn Publisher Hub <= 1.4.4 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/56b3d629-014c-47b3-9726-4086e544011b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b581c4d-a95f-4922-95bb-15f24010ca34?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

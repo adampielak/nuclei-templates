@@ -1,4 +1,4 @@
-id: morpheus-slider
+id: morpheus-slider-0af2ccf688d5de57a87a735832522b55
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/29fee127-73f5-4cd5-9bfb-799f1c0a9f83?source=api-scan
   classification:
     cvss-metrics: 

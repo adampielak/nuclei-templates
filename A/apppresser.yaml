@@ -1,14 +1,15 @@
-id: apppresser
+id: apppresser-0d39571fcc6ff35900e0cc5116b3a739
 
 info:
   name: >
-    AppPresser <= 4.3.0 - Cross-Site Request Forgery via force_logging_off()
+    AppPresser <= 4.3.2 - Improper Missing Encryption Exception Handling to Authentication Bypass
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1417fad0-51a0-4091-8f7b-4e8925fd71a0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1498fdf-9d5e-4277-92be-469d6646864b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/apppresser/"
     google-query: inurl:"/wp-content/plugins/apppresser/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,apppresser,medium
+  tags: cve,wordpress,wp-plugin,apppresser,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.3.0')
+          - compare_versions(version, '<= 4.3.2')

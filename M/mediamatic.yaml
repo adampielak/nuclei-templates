@@ -1,4 +1,4 @@
-id: mediamatic
+id: mediamatic-23551990b400a7ef47ff2f9d2e69fa75
 
 info:
   name: >
@@ -8,7 +8,8 @@ info:
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d81ed8d9-4a7a-4b75-aab4-8e4dbd554f32?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad8dff1e-b9f8-4383-8efb-8bceaa8c86c6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

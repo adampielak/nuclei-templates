@@ -1,14 +1,15 @@
-id: nd-travel
+id: nd-travel-56a474e3276fcf1cfa3baee5b5204775
 
 info:
   name: >
-    Travel Management <= 1.6.1 - Open Redirect
+    Travel Management <= 2.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/af0eae51-fb94-4e2e-a9a6-8ba323bb3314?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a4b89902-5616-443f-b67d-bf3330308ef9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.1')
+          - compare_versions(version, '<= 2.0')

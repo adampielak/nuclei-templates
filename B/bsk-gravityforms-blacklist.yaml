@@ -1,4 +1,4 @@
-id: bsk-gravityforms-blacklist
+id: bsk-gravityforms-blacklist-ff30a93e41795b0968f9cfac0f33fe74
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4550681f-d115-4451-9839-7862b84714fe?source=api-scan
   classification:
     cvss-metrics: 

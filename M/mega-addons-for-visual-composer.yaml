@@ -1,14 +1,15 @@
-id: mega-addons-for-visual-composer
+id: mega-addons-for-visual-composer-e77c0f58340da96d96ed996076ee7c18
 
 info:
   name: >
-    Mega Addons For WPBakery Page Builder <= 4.2.7 - Cross-Site Request Forgery to Settings Update
+    Mega Addons For WPBakery Page Builder <= 4.2.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/33aed550-5a2d-4a0a-8199-f2dfd212be92?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a443b20e-1686-4519-890d-e6f1838fb05c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mega-addons-for-visual-composer/"
     google-query: inurl:"/wp-content/plugins/mega-addons-for-visual-composer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mega-addons-for-visual-composer,medium
+  tags: cve,wordpress,wp-plugin,mega-addons-for-visual-composer,low
 
 http:
   - method: GET

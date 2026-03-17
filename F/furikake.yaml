@@ -1,4 +1,4 @@
-id: furikake
+id: furikake-e6c2c4179bfb609fc18a52c22399067d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9083d875-ff86-4f18-ad63-368bcb269ad9?source=api-scan
   classification:
     cvss-metrics: 

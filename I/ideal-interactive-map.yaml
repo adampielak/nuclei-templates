@@ -1,4 +1,4 @@
-id: ideal-interactive-map
+id: ideal-interactive-map-e8477496fb5dfc9974b9b21f8d68d231
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/019c5e06-1345-4c8e-abb9-dc0ea5d55ef5?source=api-scan
   classification:
     cvss-metrics: 

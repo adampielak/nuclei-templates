@@ -1,4 +1,4 @@
-id: miniorange-otp-verification
+id: miniorange-otp-verification-145e9eb78efe5c3bf0d82d12511720a5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/62ea1427-0990-4645-aa1a-42da6fd3944f?source=api-scan
   classification:
     cvss-metrics: 

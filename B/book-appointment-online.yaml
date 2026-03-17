@@ -1,4 +1,4 @@
-id: book-appointment-online
+id: book-appointment-online-5cc3cef809464a1add432bf17ac30ce1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8b8b7ee8-4c11-4353-b664-761955d49b8c?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: meks-video-importer
+id: meks-video-importer-0f66a1b98cbe604ba6493b7017fa9db8
 
 info:
   name: >
-    Meks Smart Social Widget <= 1.6 - Cross-Site Request Forgery via meks_remove_notification
+    Meks Video Importer <= 1.0.11 - Missing Authorization to Authenticated (Subscriber+) API Keys Modification
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d0efe1d-69ad-483c-b200-38873f88433b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eaf9cc48-1ba6-4e9b-9f49-54f7747c26e0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/meks-video-importer/"
     google-query: inurl:"/wp-content/plugins/meks-video-importer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,meks-video-importer,medium
+  tags: cve,wordpress,wp-plugin,meks-video-importer,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.10')
+          - compare_versions(version, '<= 1.0.11')

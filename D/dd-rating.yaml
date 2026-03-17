@@ -1,4 +1,4 @@
-id: dd-rating
+id: dd-rating-abefceeefb99cff148ca67c77873866d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad62fd9b-fbd5-4e3d-b910-29143c6813b7?source=api-scan
   classification:
     cvss-metrics: 

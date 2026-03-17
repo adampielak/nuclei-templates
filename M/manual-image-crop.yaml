@@ -1,4 +1,4 @@
-id: manual-image-crop
+id: manual-image-crop-e33d2ae56bdf081d86cd0f3c5d65be20
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c195d62d-5f2f-4248-9a84-b551f532256b?source=api-scan
   classification:
     cvss-metrics: 

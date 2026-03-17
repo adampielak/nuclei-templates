@@ -1,14 +1,15 @@
-id: easy-student-results
+id: easy-student-results-dc4ee782fe2bf23d03968912f0c12fe1
 
 info:
   name: >
-    Easy Student Results <= 2.2.8 - Reflected Cross-Site Scripting
+    Easy Student Results <= 2.2.8 -  Missing Authorization to Sensitive Information Disclosure
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/da5ba18a-97ec-42c5-a7c4-ca38611c1fcd?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1efe450-d081-421e-95c3-f2d79c328a33?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/easy-student-results/"
     google-query: inurl:"/wp-content/plugins/easy-student-results/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,easy-student-results,medium
+  tags: cve,wordpress,wp-plugin,easy-student-results,high
 
 http:
   - method: GET

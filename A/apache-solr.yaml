@@ -1,20 +1,14 @@
-id: apache-solr
-info:
-  name: apache-solr
-  author: cn-kali-team
-  tags: detect,tech,apache-solr
-  severity: info
-  metadata:
-    product: solr
-    vendor: apache
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - 'location: /solr/'
-    part: header
-    case-insensitive: true
+name: apache-solr
+priority: 3
+nuclei_tags:
+  - - solr
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 302
+    headers:
+      Location: /solr/
+    keyword: []
+    favicon_hash: []

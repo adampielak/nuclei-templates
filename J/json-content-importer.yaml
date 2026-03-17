@@ -1,14 +1,15 @@
-id: json-content-importer
+id: json-content-importer-ae00888ff1f75f83b9a837169a62461a
 
 info:
   name: >
-    Get Use APIs – JSON Content Importer <= 1.5.3 - Reflected Cross-Site Scripting
+    JSON Content Importer <= 1.5.6 - Authenticated (Contributor+) Server-Side Request Forgery
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/777e2e60-46c3-496c-8263-f2e253014ba5?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc4e59ba-9732-4c0c-a89f-866f274661d9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/json-content-importer/"
     google-query: inurl:"/wp-content/plugins/json-content-importer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,json-content-importer,medium
+  tags: cve,wordpress,wp-plugin,json-content-importer,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.3')
+          - compare_versions(version, '<= 1.5.6')

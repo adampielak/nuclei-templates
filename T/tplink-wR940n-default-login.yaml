@@ -1,14 +1,17 @@
 id: tplink-wR940n-default-login
 
 info:
-  name: TP-Link Wireless N Router WR940N - Default-Login
+  name: TP-Link Wireless N Router WR940N - Default Login
   author: ritikchaddha
   severity: high
+  description: |
+    TP-Link Wireless N Router WR940N default login credentials were discovered.
   metadata:
+    runzero-match: service["http.body"] matches "/userRpm/"
     verified: true
     max-request: 1
     shodan-query: html:"/userRpm/"
-  tags: tplink,wR940n,default-login,misconfig
+  tags: tplink,wR940n,default-login,misconfig,vuln
 
 variables:
   username: "admin"
@@ -25,6 +28,7 @@ http:
 
     host-redirects: true
     max-redirects: 2
+
     matchers-condition: and
     matchers:
       - type: regex
@@ -41,4 +45,4 @@ http:
         part: header
         status:
           - 200
-# digest: 4b0a00483046022100bb65a0750d613202af478bb45b9de709df3a7927c729618ec64242f5a5eac058022100c4376d069fb69f34abdc0bb9b5d73bb57a2528ecb1ee4376d4fc23388ff0a3b5:922c64590222798bb761d5b6d8e72950
+

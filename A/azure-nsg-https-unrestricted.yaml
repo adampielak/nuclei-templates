@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'nsg + " has unrestricted access on TCP port 443"'
-# digest: 4b0a004830460221009b956e348b75fc6406c9045c0203668fa9b5d8e06c32dc544b055390e1ac604b0221008c6a3ce3d36edccd02530af58fbf142d0d94bf3dbbb62f41df897d6f63d57946:922c64590222798bb761d5b6d8e72950
+

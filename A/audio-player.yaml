@@ -1,4 +1,4 @@
-id: audio-player
+id: audio-player-a0f89d439ab5cd3c8add6949a7664a10
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7b70b152-eb65-4273-8063-37cfec7ecefb?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: easy-media-replace
+id: easy-media-replace-c26f63c0c506d8c286b1c91030005b12
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/abb4af63-37fe-49b7-8f70-ac9c7e47e939?source=api-scan
   classification:
     cvss-metrics: 

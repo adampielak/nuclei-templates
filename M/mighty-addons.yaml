@@ -1,4 +1,4 @@
-id: mighty-addons
+id: mighty-addons-40797c8b431452533b679c32812dc1a7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/484d8d14-049d-4fd5-adb8-ad9942bba794?source=api-scan
   classification:
     cvss-metrics: 

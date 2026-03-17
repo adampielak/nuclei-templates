@@ -55,4 +55,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " has logging disabled for read, write, and delete operations."'
-# digest: 4a0a00473045022100c394caed7f78a244e8a3df41a5a285ea8f3157716053bc038449ecc110b14165022044ae0c364a621cbbb58924b1625d20bb2d5e1c95151d4951f77f85955a55063e:922c64590222798bb761d5b6d8e72950
+

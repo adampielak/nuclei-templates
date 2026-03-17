@@ -1,4 +1,4 @@
-id: migrate-users
+id: migrate-users-04508faf4dd821231efacbbbebd7f9a1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1925082-eeee-4472-9721-c6205782d567?source=api-scan
   classification:
     cvss-metrics: 

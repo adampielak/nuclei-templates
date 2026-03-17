@@ -1,14 +1,15 @@
-id: advanced-quiz
+id: advanced-quiz-9d0b176c02cb95f85f5d5e776556c557
 
 info:
   name: >
-    Wp-Adv-Quiz <= 1.0.2 - Authenticated (Admin+) Stored Cross-Site Scripting via Quiz Title
+    Wp-Adv-Quiz <= 1.0.2 - Authenticated (Admin+) Stored Cross-Site Scripting via Quiz Question and Message
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9053995a-b1de-427f-b16d-31fa8cd026b2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2a5ae9f-b57c-4a71-b976-5975ad086c74?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.3')
+          - compare_versions(version, '<= 1.0.2')

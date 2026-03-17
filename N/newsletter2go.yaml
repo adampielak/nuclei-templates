@@ -1,14 +1,15 @@
-id: newsletter2go
+id: newsletter2go-1af92429698af8ad7e30337cdd706df5
 
 info:
   name: >
-    Newsletter2Go <= 4.0.13 - Authenticated(Subscriber+) Stored Cross-Site Scripting via style
+    Newsletter2Go <= 4.0.14 - Missing Authorization to Authenticated (Subscriber+) Style Reset
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/766ac399-7280-4186-8972-94da813da85e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/09b2d763-63ce-4cc7-aa04-589bb8697ce9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.0.13')
+          - compare_versions(version, '<= 4.0.14')

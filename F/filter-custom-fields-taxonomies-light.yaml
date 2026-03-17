@@ -1,14 +1,15 @@
-id: filter-custom-fields-taxonomies-light
+id: filter-custom-fields-taxonomies-light-9c7f8275b288e704d6725aa3c5308684
 
 info:
   name: >
-    Filter Custom Fields & Taxonomies Light <= 1.05 - Missing Authorization
+    Filter Custom Fields & Taxonomies Light <= 1.05 - Authenticated (Contributor+) PHP Object Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/880e5752-cc69-4c38-bd00-a3b8517e5fa6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/80f39182-9835-4bd5-b3cd-41fe20983e1e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/filter-custom-fields-taxonomies-light/"
     google-query: inurl:"/wp-content/plugins/filter-custom-fields-taxonomies-light/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,filter-custom-fields-taxonomies-light,high
+  tags: cve,wordpress,wp-plugin,filter-custom-fields-taxonomies-light,low
 
 http:
   - method: GET

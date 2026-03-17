@@ -1,14 +1,15 @@
-id: jsmol2wp
+id: jsmol2wp-d5be42322ff31dc7bf613195f697a548
 
 info:
   name: >
-    JSmol2WP <= 1.07 - Cross-Site Scripting
+    JSmol2WP <= 1.07 - Server-Side Request Forgery
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/adc7e02f-aa95-417f-8778-d9a75beeaf13?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2a06dc0d-f002-4f82-b380-0e329b022dc9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/jsmol2wp/"
     google-query: inurl:"/wp-content/plugins/jsmol2wp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jsmol2wp,high
+  tags: cve,wordpress,wp-plugin,jsmol2wp,low
 
 http:
   - method: GET

@@ -1,4 +1,4 @@
-id: make-paths-relative
+id: make-paths-relative-2c2b8ff7fd6789cebb0b13644a57cdac
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/85317781-7e77-4a78-af67-0a1dce39364c?source=api-scan
   classification:
     cvss-metrics: 

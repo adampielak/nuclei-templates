@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,unpkg-hyperscript
+  tags: xss,csp-bypass,unpkg-hyperscript,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "unpkg_hyperscript_csp_xss == true"
-# digest: 490a00463044022054324576dfe2379c8adbff21afbaa6f40dad13c87c83861a2dfc9ef2d9d5aa1802205726ddbb9d689b407d51009c5e4625fe32aff83d4f3157db1103ca1c806ac147:922c64590222798bb761d5b6d8e72950
+

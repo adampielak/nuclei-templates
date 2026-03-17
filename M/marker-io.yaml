@@ -1,17 +1,18 @@
-id: marker-io
+id: marker-io-f8d07f9f64a4cfa327e73e3e900bb6b8
 
 info:
   name: >
-    Marker.io  <= 1.1.8 - Cross-Site Request Forgery
+    Marker.io <= 1.1.6 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
-    
+    The Marker.io plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.1.6. This is due to missing nonce validation on the markerio_save_destination() and markerio_save_option() functions. This makes it possible for unauthenticated attackers to modify the plugins settings and save destinations via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8fa382bf-a501-44eb-8a39-7ceb5829378f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c49b3841-370b-42ed-9545-e69c2544642d?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/marker-io/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.8')
+          - compare_versions(version, '< 1.1.7')

@@ -1,4 +1,4 @@
-id: flexible-shipping-ups
+id: flexible-shipping-ups-b9c4d9a295ec61321ee829a8fb5a9f09
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d2183a22-fba5-48d2-a68a-6914f04fb902?source=api-scan
   classification:
     cvss-metrics: 

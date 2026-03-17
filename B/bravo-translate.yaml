@@ -1,4 +1,4 @@
-id: bravo-translate
+id: bravo-translate-9c066c83fe9715f580dad3ac46be1c1a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f256518c-9a3e-4e6e-8d49-d309e397c14d?source=api-scan
   classification:
     cvss-metrics: 

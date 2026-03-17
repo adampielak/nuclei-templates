@@ -1,13 +1,14 @@
-id: media-library-categories
+id: media-library-categories-dedf3adc3a5c8b13b873f4642a552be5
 
 info:
   name: >
     Media Library Categories <= 1.1.1 - Unauthenticated Multiple Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2766e8ee-ce19-40a9-8f53-d50ebe4f0ac9?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/media-library-categories/"
     google-query: inurl:"/wp-content/plugins/media-library-categories/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,media-library-categories,low
+  tags: cve,wordpress,wp-plugin,media-library-categories,high
 
 http:
   - method: GET

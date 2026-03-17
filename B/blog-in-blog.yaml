@@ -1,4 +1,4 @@
-id: blog-in-blog
+id: blog-in-blog-13ea281a9e694a945612c22e4e3a9f13
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c6a88c3-18b7-470f-8014-373ead66dcfa?source=api-scan
   classification:
     cvss-metrics: 

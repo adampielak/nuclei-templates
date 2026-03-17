@@ -1,4 +1,4 @@
-id: exportfeed-for-woocommerce-google-product-feed
+id: exportfeed-for-woocommerce-google-product-feed-50405efea68dd79411eb314373b4841b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/eee9e199-00c6-4640-bd7c-e1316e2bba51?source=api-scan
   classification:
     cvss-metrics: 

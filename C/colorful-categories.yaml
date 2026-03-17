@@ -1,4 +1,4 @@
-id: colorful-categories
+id: colorful-categories-9e88b8d30a9c6856401d06e290fa28d8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/62988723-4e58-4eb3-a483-127b23574a40?source=api-scan
   classification:
     cvss-metrics: 

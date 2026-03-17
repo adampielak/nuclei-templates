@@ -1,4 +1,4 @@
-id: comicbookmanagementsystemweeklypicks
+id: comicbookmanagementsystemweeklypicks-0f5c8320e798e6cafa6769f8fac1dd17
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7c387a20-47dd-42d9-bf22-a28c613c5bde?source=api-scan
   classification:
     cvss-metrics: 

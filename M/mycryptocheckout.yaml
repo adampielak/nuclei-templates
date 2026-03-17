@@ -1,4 +1,4 @@
-id: mycryptocheckout
+id: mycryptocheckout-4398ceae24fa619bcb07f63d2a653804
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7633b5cd-0e8f-4744-bfee-d6d54a44c143?source=api-scan
   classification:
     cvss-metrics: 

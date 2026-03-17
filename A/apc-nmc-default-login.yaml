@@ -9,18 +9,18 @@ info:
   reference:
     - https://www.apc.com/us/en/faqs/FA156047/
   classification:
-    cwe-id: CWE-522
-    cvss-score: 8.6
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
+    cvss-score: 8.6
+    cwe-id: CWE-522
     cpe: cpe:2.3:o:schneider-electric:network_management_card_firmware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
+    vendor: schneider-electric
+    product: apc-network-management-card
     shodan-query: title:"APC | Log On"
     fofa-query: title="APC | Log On"
-    product: apc-network-management-card
-    vendor: schneider-electric
-  tags: apc,default-login,iot,ups
+  tags: apc,default-login,iot,ups,vuln
 
 http:
   - raw:
@@ -55,4 +55,4 @@ http:
       - type: status
         status:
           - 303
-# digest: 4a0a004730450220368c5dd1ca533f7042d64b5f783de016c206152d7e8cefb9b4c7b23b06e5e0ae0221008d93ddf629d024aed6c19e0e27b6762366b7b4f8beb2f7f336d7d4085aece6c7:922c64590222798bb761d5b6d8e72950
+

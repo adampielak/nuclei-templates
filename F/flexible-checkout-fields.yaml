@@ -1,4 +1,4 @@
-id: flexible-checkout-fields
+id: flexible-checkout-fields-94f8bff1ffd2958af461c44a449b4aba
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fd12a952-2e99-41f7-b74c-55c2b7d8deed?source=api-scan
   classification:
     cvss-metrics: 

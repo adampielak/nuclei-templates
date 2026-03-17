@@ -1,4 +1,4 @@
-id: cpt-bootstrap-carousel
+id: cpt-bootstrap-carousel-2bccb9e5219a1bc7d99b8850f1e29af1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/44370988-3c55-490e-b428-da9cb6df1a4b?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: content_timeline
+id: content_timeline-a368705c26b4fad9ed81c34d1659c841
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c66d88a1-0936-40c4-adcf-ad79b9c57a80?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: mapsvg-lite-interactive-vector-maps
+id: mapsvg-lite-interactive-vector-maps-806d8762e3accf2d6fd697cc88f45297
 
 info:
   name: >
-    MapSVG Lite < 3.3.0 - Cross-Site Request Forgery
+    MapSVG Lite <= 8.5.34 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8073cc59-e5cc-4940-bce0-e501f0d959cc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5921b859-79de-48f9-a664-f2bc3ccec201?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mapsvg-lite-interactive-vector-maps/"
     google-query: inurl:"/wp-content/plugins/mapsvg-lite-interactive-vector-maps/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mapsvg-lite-interactive-vector-maps,medium
+  tags: cve,wordpress,wp-plugin,mapsvg-lite-interactive-vector-maps,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.3.0')
+          - compare_versions(version, '<= 8.5.34')

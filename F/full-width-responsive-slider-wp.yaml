@@ -1,4 +1,4 @@
-id: full-width-responsive-slider-wp
+id: full-width-responsive-slider-wp-1a729f5fc1c0c357bdb35a992d1bfa02
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb4bb127-360d-4f17-9da9-f7be17140ff3?source=api-scan
   classification:
     cvss-metrics: 

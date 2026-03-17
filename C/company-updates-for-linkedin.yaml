@@ -1,4 +1,4 @@
-id: company-updates-for-linkedin
+id: company-updates-for-linkedin-0a8105761ed325ab6b2ba6e557e5f108
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ce350cb-78ae-4d76-99a7-8a81d342a9c8?source=api-scan
   classification:
     cvss-metrics: 

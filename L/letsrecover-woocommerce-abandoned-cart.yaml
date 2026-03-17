@@ -1,14 +1,15 @@
-id: letsrecover-woocommerce-abandoned-cart
+id: letsrecover-woocommerce-abandoned-cart-fdbc8dce3a6dd8419dc7c5c3b97075c0
 
 info:
   name: >
-    LetsRecover <= 1.1.0 - Authenticated (Admin+) SQL Injection
+    LetsRecover <= 1.1.0 - Unauthenticated SQL Injection via AJAX action
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f9615a9-e001-4a1f-a675-21515b4ba97f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/916ada05-894e-4e61-ba0a-25b9a48461a1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/letsrecover-woocommerce-abandoned-cart/"
     google-query: inurl:"/wp-content/plugins/letsrecover-woocommerce-abandoned-cart/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,letsrecover-woocommerce-abandoned-cart,low
+  tags: cve,wordpress,wp-plugin,letsrecover-woocommerce-abandoned-cart,critical
 
 http:
   - method: GET

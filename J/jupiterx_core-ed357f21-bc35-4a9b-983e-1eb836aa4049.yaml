@@ -2,7 +2,7 @@ id: jupiterx_core-ed357f21-bc35-4a9b-983e-1eb836aa4049
 
 info:
   name: >
-    JupiterX Core <= 4.10.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    JupiterX Core <= 4.11.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.10.1')
+          - compare_versions(version, '<= 4.11.0')

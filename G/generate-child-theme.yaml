@@ -1,4 +1,4 @@
-id: generate-child-theme
+id: generate-child-theme-f78d8f0617440b55af6cc5103d9715cc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d67b1a6c-001d-452e-861c-0e5c7ab465dd?source=api-scan
   classification:
     cvss-metrics: 

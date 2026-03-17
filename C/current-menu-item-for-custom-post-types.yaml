@@ -1,4 +1,4 @@
-id: current-menu-item-for-custom-post-types
+id: current-menu-item-for-custom-post-types-910ca64fc8c03dfd0503f864d4601533
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d75f1475-fa81-4eed-87da-0a0fa48ac082?source=api-scan
   classification:
     cvss-metrics: 

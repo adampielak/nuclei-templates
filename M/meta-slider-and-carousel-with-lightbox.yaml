@@ -1,14 +1,15 @@
-id: meta-slider-and-carousel-with-lightbox
+id: meta-slider-and-carousel-with-lightbox-3c8e5d8874a45a8932ae325a06688373
 
 info:
   name: >
-    Meta Slider and Carousel with Lightbox <= 1.6.2 - Cross-Site Request Forgery
+    Meta slider and carousel with lightbox <= 2.0.1 - Authenticated (Author+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f5f59b16-b38a-451b-b220-044598872735?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/330e90a1-735c-48db-bf0f-95b7dacd1476?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/meta-slider-and-carousel-with-lightbox/"
     google-query: inurl:"/wp-content/plugins/meta-slider-and-carousel-with-lightbox/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,meta-slider-and-carousel-with-lightbox,medium
+  tags: cve,wordpress,wp-plugin,meta-slider-and-carousel-with-lightbox,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.2')
+          - compare_versions(version, '<= 2.0.1')

@@ -34,12 +34,6 @@ requests:
           - "Set-Cookie: admin"
         part: header
 
-      - type: word
-        words:
-          - "Set-Cookie: adminer_key"
-        part: header
-        negative: true
-
       - type: status
         status:
           - 200

@@ -1,14 +1,15 @@
-id: gmace
+id: gmace-7ef7e724eb581f2cfafd10fb8c3c24f7
 
 info:
   name: >
-    GMAce <= 1.5.2 - Cross-Site Request Forgery via gmace_manager_client
+    GMAce <= 1.5.2 - Cross-Site Request Forgery to Arbitrary File Modification (Creation/Overwrite/Deletion)
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c6e82b46-0b10-45fe-949e-dd94dd8656c0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/826b3913-9a37-4e15-80fd-b35cefb51af8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

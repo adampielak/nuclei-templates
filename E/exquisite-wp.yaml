@@ -1,4 +1,4 @@
-id: exquisite-wp
+id: exquisite-wp-57f84f0b6c6dfb09c712bb77fb66273e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/238dc80f-0d82-44e2-a950-321defb2361b?source=api-scan
   classification:
     cvss-metrics: 

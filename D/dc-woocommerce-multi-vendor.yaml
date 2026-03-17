@@ -1,23 +1,24 @@
-id: dc-woocommerce-multi-vendor
+id: dc-woocommerce-multi-vendor-4a89beb269f24b6006394c50bd2c68fe
 
 info:
   name: >
-    WC Marketplace <= 4.1.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    MultiVendorX <= 4.0.25 - Improper Authorization on REST Routes via 'save_settings_permission'
   author: topscoder
-  severity: low
+  severity: high
   description: >
-    
+    The MultiVendorX plugin for WordPress is vulnerable to unauthorized access of data, modification of data, and loss of data due to an improper capability check on the 'save_settings_permission' function for the REST routes instantiated by the 'mvx_rest_routes_react_module' function versions up to, and including, 4.0.25. This makes it possible for unauthenticated attackers to create, update, and delete vendors, retrieve sensitive information, and modify plugin settings.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4b42ba6a-b618-4633-9372-879c3253a956?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/afd9046c-5b6a-411e-8e66-ff1ba60d7f9d?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
+    cvss-score: 8.6
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/dc-woocommerce-multi-vendor/"
     google-query: inurl:"/wp-content/plugins/dc-woocommerce-multi-vendor/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,dc-woocommerce-multi-vendor,low
+  tags: cve,wordpress,wp-plugin,dc-woocommerce-multi-vendor,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.1.3')
+          - compare_versions(version, '< 4.0.26')

@@ -1,4 +1,4 @@
-id: ht-menu-lite
+id: ht-menu-lite-f11aba8d36aa6574388f4c6a3d09c5c2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/deb2544f-75ac-4d6c-bec7-9f35cfe0028d?source=api-scan
   classification:
     cvss-metrics: 

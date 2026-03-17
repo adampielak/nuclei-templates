@@ -1,4 +1,4 @@
-id: cwicly
+id: cwicly-d14658e8da50f4a594c82cdc56a3f638
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/21bcb740-6340-4ff7-815f-539175936ca1?source=api-scan
   classification:
     cvss-metrics: 

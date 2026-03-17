@@ -1,14 +1,15 @@
-id: modern-events-calendar-lite
+id: modern-events-calendar-lite-507f7ce9c47e75978f86423b621284f5
 
 info:
   name: >
-    Modern Events Calendar lite < 6.10.5 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Modern Events Calendar Lite <= 5.1.6 - Missing Authorization to Stored Cross-Site Scripting and Settings Update
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7465ca4-21e8-4935-b294-e7378b2b01a7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/86c04e9d-0bcd-4637-bd4a-aeb2e3f373ff?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/modern-events-calendar-lite/"
     google-query: inurl:"/wp-content/plugins/modern-events-calendar-lite/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,modern-events-calendar-lite,low
+  tags: cve,wordpress,wp-plugin,modern-events-calendar-lite,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 6.10.5')
+          - compare_versions(version, '< 5.1.7')

@@ -1,4 +1,4 @@
-id: aviary-image-editor-add-on-for-gravity-forms
+id: aviary-image-editor-add-on-for-gravity-forms-136b7abf4b2e7c7df78fb68e76a2b280
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/51d3c250-301c-4f91-9fe5-56879a65fde7?source=api-scan
   classification:
     cvss-metrics: 

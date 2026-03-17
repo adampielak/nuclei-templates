@@ -1,4 +1,4 @@
-id: fileorganizer
+id: fileorganizer-7bc8d0bd12af84611e3b51967c2247fa
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ffaefd79-57a7-43b8-af1c-e108567eba67?source=api-scan
   classification:
     cvss-metrics: 

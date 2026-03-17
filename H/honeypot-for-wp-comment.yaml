@@ -1,14 +1,15 @@
-id: honeypot-for-wp-comment
+id: honeypot-for-wp-comment-77fab4deb73456779a6791c5a05a8667
 
 info:
   name: >
-    Honeypot for WP Comment <= 2.2.3 - Reflected Cross-Site Scripting via page
+    Honeypot for WP Comment <= 2.2.3 - Directory Traversal to Unauthenticated Arbitrary File Deletion
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1441e68-5c41-4c90-ba99-1656af87a29d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6b0bb48-eb61-4236-a03f-19d5d2084a75?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/honeypot-for-wp-comment/"
     google-query: inurl:"/wp-content/plugins/honeypot-for-wp-comment/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,honeypot-for-wp-comment,medium
+  tags: cve,wordpress,wp-plugin,honeypot-for-wp-comment,low
 
 http:
   - method: GET

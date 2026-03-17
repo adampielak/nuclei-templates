@@ -1,14 +1,15 @@
-id: catalyst-connect-client-portal
+id: catalyst-connect-client-portal-81f896b88655c2029b3f9e63db64b46e
 
 info:
   name: >
-    Catalyst Connect Zoho CRM Client Portal <= 2.0.0 - Reflected Cross-Site Scripting
+    Catalyst Connect Zoho CRM Client Portal <= 2.0.0 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d63543f9-4865-444f-9a32-3b23e92b0bd4?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/88cea535-1042-4011-aee9-684d7661e193?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/catalyst-connect-client-portal/"
     google-query: inurl:"/wp-content/plugins/catalyst-connect-client-portal/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,catalyst-connect-client-portal,medium
+  tags: cve,wordpress,wp-plugin,catalyst-connect-client-portal,low
 
 http:
   - method: GET

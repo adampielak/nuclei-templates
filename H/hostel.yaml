@@ -1,14 +1,15 @@
-id: hostel
+id: hostel-7e03842bcc8b567a1156b043685ab403
 
 info:
   name: >
-    hostel <= 1.1.5.3 - Cross-Site Request Forgery
+    Hostel <= 1.1.5.1 - Authenticated (Administrator+) Stored Cross-Site Scripting via Manage Bookings
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6a8c5d9b-4535-4edb-a92e-a9b83a0d22c3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4865576-9929-4ce2-a220-935f1f3e0485?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/hostel/"
     google-query: inurl:"/wp-content/plugins/hostel/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,hostel,medium
+  tags: cve,wordpress,wp-plugin,hostel,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.5.3')
+          - compare_versions(version, '<= 1.1.5.1')

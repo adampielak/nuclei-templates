@@ -1,4 +1,4 @@
-id: full-site-editing
+id: full-site-editing-24836cca8d46e399082ff66df1b9f2f5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b54307fb-ecbc-4742-9deb-59dbb85b4a7c?source=api-scan
   classification:
     cvss-metrics: 

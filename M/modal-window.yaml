@@ -1,14 +1,15 @@
-id: modal-window
+id: modal-window-b4297a97da0c3ffb6b4810113c1e1d81
 
 info:
   name: >
-    Modal Window – create popup modal window <= 5.2.1 - Cross-Site Request Forgery to Remote Code Execution
+    Modal Window – create popup modal window <= 5.3.8 - Authenticated(Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a928247a-3eb5-4889-bd42-b0263f4cd140?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/745709f4-bb9c-41c4-ab60-d9fc18e406a8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/modal-window/"
     google-query: inurl:"/wp-content/plugins/modal-window/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,modal-window,medium
+  tags: cve,wordpress,wp-plugin,modal-window,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.2.2')
+          - compare_versions(version, '<= 5.3.8')

@@ -1,23 +1,24 @@
-id: event-monster
+id: event-monster-a3830e2f3f99473eafc2f5dd3664aa2a
 
 info:
   name: >
-    Event Monster – Event Management, Tickets Booking, Upcoming Event <= 1.1.20 - Cross-Site Request Forgery
+    Event Management Tickets Booking By Event Monster Plugin < 1.0.6 - Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: high
   description: >
-    
+    The Event Management Tickets Booking By Event Monster plugin for WordPress is vulnerable to Stored Cross-Site Scripting via several parameters in versions up to, and including, 1.0.5 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/018912c2-befc-403c-8e60-161580e84f55?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/baa063b7-8b79-4de3-84b1-6dec024fa395?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/event-monster/"
     google-query: inurl:"/wp-content/plugins/event-monster/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,event-monster,medium
+  tags: cve,wordpress,wp-plugin,event-monster,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.20')
+          - compare_versions(version, '< 1.0.6')

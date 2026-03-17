@@ -1,4 +1,4 @@
-id: admin-bar
+id: admin-bar-2a3f689fb747db3f96a3224240c83a70
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dfbf2556-0509-4d8a-8949-494c6bc82ea1?source=api-scan
   classification:
     cvss-metrics: 

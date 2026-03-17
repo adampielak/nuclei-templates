@@ -1,23 +1,24 @@
-id: mail-subscribe-list
+id: mail-subscribe-list-b8fcad975ad7c9d070c4b509539de7ea
 
 info:
   name: >
-    Mail Subscribe List <= 2.1.3 - Cross-Site Request Forgery
+    Mail Subscribe List <= 2.1.6 - Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
-    
+    The plugin Mail Subscribe List for WordPress is vulnerable to Stored Cross-Site Scripting via several parameters in versions up to, and including, 2.1.6 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d10a0372-1ab3-474e-8d5c-33f71fddfe06?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/75424878-5976-4dc6-8a09-8eb46a7425b8?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 5.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/mail-subscribe-list/"
     google-query: inurl:"/wp-content/plugins/mail-subscribe-list/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mail-subscribe-list,medium
+  tags: cve,wordpress,wp-plugin,mail-subscribe-list,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.1.4')
+          - compare_versions(version, '<= 2.1.6')

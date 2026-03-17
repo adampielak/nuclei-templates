@@ -1,13 +1,14 @@
-id: cbxpetition
+id: cbxpetition-a6a256e0d95086cbe37531a0dd01ef13
 
 info:
   name: >
     CBX Petition for WordPress <= 1.0.3 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f380786-7fd8-4a01-b491-63a2c6098a9e?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/cbxpetition/"
     google-query: inurl:"/wp-content/plugins/cbxpetition/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,cbxpetition,low
+  tags: cve,wordpress,wp-plugin,cbxpetition,critical
 
 http:
   - method: GET

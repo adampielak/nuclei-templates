@@ -10,13 +10,14 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:citrix:gateway:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)citrix gateway"})
     max-request: 2
     vendor: citrix
     product: gateway
     shodan-query: http.title:"citrix gateway"
     fofa-query: title="citrix gateway"
     google-query: intitle:"citrix gateway"
-  tags: panel,citrix
+  tags: panel,citrix,discovery
 
 http:
   - method: GET
@@ -28,4 +29,4 @@ http:
       - type: word
         words:
           - '_ctxstxt_CitrixCopyright'
-# digest: 4a0a0047304502201d1450932e76f0f0d84658787400f01becc5ea79a29820c208eee8a5ec485c8d0221008e51e85df2c6e88a115d3d69b3a4adc5238699e54b3e441606ff5cd4e8cfb184:922c64590222798bb761d5b6d8e72950
+

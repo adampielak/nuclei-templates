@@ -1,4 +1,5 @@
 id: vagrantfile-exposure
+
 info:
   name: Vagrantfile Exposure
   author: DhiyaneshDk
@@ -7,16 +8,19 @@ info:
     verified: true
     shodan-query: html:"Vagrantfile"
   tags: config,exposure,vagrant,oss
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/Vagrantfile"
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "./vagrant/config/vagrant-local.yml"
           - "./vagrant/config/vagrant-local.example.yml"
+
       - type: word
         part: header
         words:
@@ -24,6 +28,7 @@ requests:
           - "text/html"
         negative: true
         condition: or
+
       - type: status
         status:
           - 200

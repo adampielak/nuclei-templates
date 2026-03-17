@@ -1,4 +1,4 @@
-id: mobiloud-mobile-app-plugin
+id: mobiloud-mobile-app-plugin-931cb0a0c2d49a4fcb08eb9a70008663
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8edf0c-1e40-4aab-b704-b67e41214ce0?source=api-scan
   classification:
     cvss-metrics: 

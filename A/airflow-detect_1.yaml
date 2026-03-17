@@ -5,12 +5,12 @@ info:
   author: pdteam
   severity: info
   metadata:
+    max-request: 1
     verified: true
     shodan-query: http.html:"Apache Airflow"
   tags: tech,apache,airflow
-  mongoid: 0000
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/{{randstr}}"

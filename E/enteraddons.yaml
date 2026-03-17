@@ -1,14 +1,15 @@
-id: enteraddons
+id: enteraddons-53c628c39f01e3e961f4d97ea058c474
 
 info:
   name: >
-    Enter Addons – Ultimate Template Builder for Elementor <= 2.1.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Heading widget
+    Enter Addons – Ultimate Template Builder for Elementor <= 2.1.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Animation Title widget img tag
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/62a4dd6a-f970-483e-b1a8-d57f604b7b66?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/29cc82cb-f3fd-4de5-9731-7ceb1212b0f9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -1,4 +1,4 @@
-id: google-analytics-opt-out
+id: google-analytics-opt-out-cf17ebc6fd807b466b2fabc64c27a76e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a90ea845-9f7f-4a89-887d-cf4337f8471f?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: expand-maker
+id: expand-maker-0ecb51ab5cfdb59ec44bcd0feba658eb
 
 info:
   name: >
-    Read More & Accordion <= 3.2.6.1 - Authenticated (Administrator+) PHP Object Injection
+    Read More & Accordion <= 3.4.2 - Missing Authorization to Authenticated (Subscriber+) Arbitrary 'Read More' Post Deletion
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/73ab9f95-05cc-47fc-bfcb-1787f6f80789?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/65849267-8bb5-48fd-b95e-e89a1e744fe0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.2.6.1')
+          - compare_versions(version, '<= 3.4.2')

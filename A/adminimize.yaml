@@ -7,11 +7,12 @@ info:
   reference:
     - https://wordpress.org/plugins/adminimize/
   metadata:
+    max-request: 1
     plugin_namespace: adminimize
     wpscan: https://wpscan.com/plugin/adminimize
   tags: tech,wordpress,wp-plugin,top-200
 
-requests:
+http:
   - method: GET
 
     path:

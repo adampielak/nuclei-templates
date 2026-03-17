@@ -1,0 +1,15 @@
+id: URL
+
+info:
+  name: URL
+  author: Saud Aleanzi @Dmaral3noz
+  severity: info
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        regex:
+          - "(http|https)://[a-zA-Z0-9./?=_-]*"

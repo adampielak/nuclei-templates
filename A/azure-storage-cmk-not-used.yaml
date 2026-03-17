@@ -51,4 +51,4 @@ code:
       - type: dsl
         dsl:
           - '"Storage account " + name + " is not using CMKs for encryption"'
-# digest: 4b0a00483046022100da77e67ad93462bef304f54f2367ef2cd32d05e7ce99b37762f97f1efae8de860221008dfa2f250c5eb66d8cd45d1321c69bc74a83d604a11750d252cf9a5ee11e3925:922c64590222798bb761d5b6d8e72950
+

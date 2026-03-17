@@ -1,4 +1,4 @@
-id: edd-invoices
+id: edd-invoices-1ff8595ee13b1cd9c95cfe2a759f6cc2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8e83475e-03fc-47b8-b23c-a7b16641351b?source=api-scan
   classification:
     cvss-metrics: 

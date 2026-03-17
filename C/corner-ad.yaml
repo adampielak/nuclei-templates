@@ -1,17 +1,18 @@
-id: corner-ad
+id: corner-ad-7e2e98656c72daa05b3212f60762d47d
 
 info:
   name: >
-    Corner Ad <= 1.0.56 - Cross-Site Request Forgery
+    Corner Ad <= 1.0.53 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
-    
+    The Corner Ad plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘codepeople_promote_banner_plugin’ parameter in versions up to, and including, 1.0.53 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0a6c5e9a-754f-41c8-b27b-caa133b5070f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b85e9bf4-0006-402a-ae46-a02fa854d995?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/corner-ad/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.56')
+          - compare_versions(version, '<= 1.0.53')

@@ -1,4 +1,4 @@
-id: hero-banner-ultimate
+id: hero-banner-ultimate-4cffd7f7feb52d288750171bb6f638fc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8defdd2e-e191-498e-826a-b73c6b4f2f57?source=api-scan
   classification:
     cvss-metrics: 

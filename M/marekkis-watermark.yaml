@@ -1,14 +1,15 @@
-id: marekkis-watermark
+id: marekkis-watermark-ab1916e8831eb23a81714420f3e1ef07
 
 info:
   name: >
-    Marekkis Watermark-Plugin <= 0.9.4 - Cross-Site Scripting
+    Marekkis Watermark-Plugin <= 0.9.4 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e65cf73b-349b-4982-b6ec-a2c94d327d0a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/52e04362-2e14-4d50-867d-df9263fa1ac9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/marekkis-watermark/"
     google-query: inurl:"/wp-content/plugins/marekkis-watermark/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,marekkis-watermark,high
+  tags: cve,wordpress,wp-plugin,marekkis-watermark,medium
 
 http:
   - method: GET

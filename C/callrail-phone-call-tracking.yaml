@@ -1,4 +1,4 @@
-id: callrail-phone-call-tracking
+id: callrail-phone-call-tracking-43a6890d22ec0b25f0740d68a48daf39
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/35def866-7460-4cad-8d86-7b9e4905cbe4?source=api-scan
   classification:
     cvss-metrics: 

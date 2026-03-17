@@ -1,4 +1,4 @@
-id: business-pro
+id: business-pro-a25aefcd2e0f0ccaf697fdd15cfe4659
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6bb97b95-fa6a-4566-b448-b774bb732455?source=api-scan
   classification:
     cvss-metrics: 

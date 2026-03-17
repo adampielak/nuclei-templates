@@ -1,4 +1,4 @@
-id: coolclock
+id: coolclock-504bb1e0d911d55ee1f8d7c869da2bba
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5bb45de4-2c83-4c77-aec0-f28ade966468?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: findeo
+id: findeo-1e463be985879455bd6b29f96c9563d1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7cb81956-856a-49cc-a437-a2094d958b5d?source=api-scan
   classification:
     cvss-metrics: 

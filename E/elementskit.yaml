@@ -1,14 +1,15 @@
-id: elementskit
+id: elementskit-80eb1f25295763cda51810e1623889c3
 
 info:
   name: >
-    ElementsKit Pro <= 3.6.0 - Authenticated (Contributor+) Local File Inclusion via Price Menu, Hotspot, and Advanced Toggle Widgets
+    ElementsKit Elementor addons and Templates Library <= 3.6.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Motion Text and Table Widgets
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8ae0a47-cba5-468e-8d25-7b7176373b9c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2e718554-1096-4a16-968d-f00b65e1361d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.6.0')
+          - compare_versions(version, '<= 3.6.2')

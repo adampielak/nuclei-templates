@@ -1,4 +1,4 @@
-id: gallery-images-ape
+id: gallery-images-ape-e0e88853466236e31145e64941d4d0ef
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/78e35c10-2480-4b23-8f5c-a196ccdc71f2?source=api-scan
   classification:
     cvss-metrics: 

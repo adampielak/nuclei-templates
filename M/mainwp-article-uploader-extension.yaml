@@ -1,21 +1,24 @@
-id: mainwp-article-uploader-extension
+id: mainwp-article-uploader-extension-de707fa20dfe7a17c66cf56ad01d6294
 
 info:
-  name: "MainWP (Various extensions) - Missing Authorization to Arbitrary Page/Post Deletion"
+  name: >
+    MainWP (Various extensions) - Cross-Site Request Forgery
   author: topscoder
-  severity: high
-  description: "Several MainWP extensions for WordPress are vulnerable to authorization bypass due to a missing capability check. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to delete arbitrary posts and pages."
+  severity: medium
+  description: >
+    Several MainWP extensions for WordPress are vulnerable to Cross-Site Request Forgery due to missing or incorrect nonce validation. This makes it possible for unauthenticated attackers to invoke functions normally intended for higher-privileged users such as administrators via forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://patchstack.com/articles/multiple-vulnerabilities-affecting-mainwp-extensions/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb105ff0-5085-4813-81a6-b1f0798d576c?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H
-    cvss-score: 8.1
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/mainwp-article-uploader-extension/"
     google-query: inurl:"/wp-content/plugins/mainwp-article-uploader-extension/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mainwp-article-uploader-extension,high
+  tags: cve,wordpress,wp-plugin,mainwp-article-uploader-extension,medium
 
 http:
   - method: GET
@@ -53,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>= 4.0.2', '<= 4.0.2')
+          - compare_versions(version, '<= 4.0.2')

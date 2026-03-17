@@ -14,7 +14,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.favicon.hash:-1295577382
-  tags: panel,login,wildix,detect
+  tags: panel,login,wildix,detect,discovery
 
 http:
   - method: GET
@@ -29,4 +29,4 @@ http:
         part: server
         words:
           - "wildix"
-# digest: 4a0a004730450221009434b57c968649c2710a1e68e95d549f44b58434fd0e33f1841d150b4e41964902205816ff46c35cf1337305e6dc184479a765f301eaee15aa899a521fe0bdb63589:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022010f7fda2b1c71c89675b666829fc32a359c2d3aeeedd56d5957fe1bcb5bc02f502201b92f643404e06b1ff552b288fddd68c2223feebf34274666994333ce0e036e5:922c64590222798bb761d5b6d8e72950

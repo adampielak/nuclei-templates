@@ -6,7 +6,7 @@ info:
   severity: high
   metadata:
     shodan-dork: http.title:"Hp Officejet pro"
-  tags: hp,iot,unauth
+ 
 
 requests:
   - method: GET

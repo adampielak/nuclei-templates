@@ -1,15 +1,15 @@
-id: mas-addons-for-elementor
+id: mas-addons-for-elementor-0104853cc6567d8028753ff875dd5c70
 
 info:
   name: >
-    MAS Elementor <= 1.1.6 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    MAS Elementor <= 1.1.7 - Authenticated (Author+) Stored Cross-Site Scripting via SVG
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e481e81-f581-48f7-b699-0be85e099c84?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/01ccc7b8-3dd4-4b83-bd53-687f7479b214?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.6')
+          - compare_versions(version, '<= 1.1.7')

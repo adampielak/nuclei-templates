@@ -9,10 +9,11 @@ info:
   reference:
     - https://www.easyvista.com/
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Easyvista"})
     verified: true
     max-request: 1
     shodan-query: http.title:"Easyvista"
-  tags: panel,easyvista,login,detect
+  tags: panel,easyvista,login,detect,discovery
 
 http:
   - method: GET
@@ -33,4 +34,4 @@ http:
         regex:
           - '(?i)package:\s+"([a-z0-9._-]+)"'
           - '(?i)version&nbsp;:&nbsp;([a-z0-9._-]+)'
-# digest: 4a0a00473045022052e47362e3b841dd381ba6a5dd20919b3e77801661f393093efa0d5bf7f1ee2d022100e56ad57eaa686ac08191b755a54f2e34dc7d20ef8bb24a2054d0b2e1744bf57b:922c64590222798bb761d5b6d8e72950
+

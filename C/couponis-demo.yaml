@@ -1,4 +1,4 @@
-id: couponis-demo
+id: couponis-demo-050471e3fb1da226e48e74792c0937a3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4fd67a02-b0fb-4c4f-9564-c3ee0180e79c?source=api-scan
   classification:
     cvss-metrics: 

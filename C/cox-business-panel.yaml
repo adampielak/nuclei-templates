@@ -9,10 +9,11 @@ info:
   reference:
     - https://samcurry.net/hacking-millions-of-modems
   metadata:
+    runzero-match: service["http.body"] matches "(?i)Cox Business"
     verified: true
     max-request: 1
     shodan-query: html:"Cox Business"
-  tags: cox,gateway,login,panel
+  tags: cox,gateway,login,panel,discovery
 
 http:
   - method: GET
@@ -32,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cf56eeec534ccb47f6a69ba0a14c2f623d08e671db47df876451b3b03a10281f022100e00e4fd9b01a0ad8aa4923ac43a80f62e14a8e597e537f32031a6f96f634a7bc:922c64590222798bb761d5b6d8e72950
+

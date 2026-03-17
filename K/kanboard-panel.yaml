@@ -1,0 +1,39 @@
+id: kanboard-panel
+
+info:
+  name: Kanboard Panel - Detect
+  author: rix4uni
+  severity: info
+  description: Kanboard contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+  reference:
+    - https://twitter.com/0x_rood/status/1607068644634157059
+    - https://github.com/kanboard/kanboard
+    - https://docs.kanboard.org/v1/admin/installation/
+  metadata:
+    shodan-query:
+      - http.favicon.hash:2056442365
+    fofa-query:
+      - body='<form method="post" action="/?controller=AuthController&amp;action=check">'
+  tags: default-login,kanboard
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/?controller=AuthController&action=login"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'data-status-url="/?controller=UserAjaxController&amp;action=status"'
+          - 'data-login-url="/login"'
+          - "/?controller=AuthController&amp;action=login"
+          - 'data-keyboard-shortcut-url="/?controller=DocumentationController&amp;action=shortcuts"'
+          - '<form method="post" action="/?controller=AuthController&amp;action=check">'
+
+      - type: status
+        status:
+          - 200

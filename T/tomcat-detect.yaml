@@ -14,7 +14,6 @@ requests:
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/{{randstr}}"
-      - "{{BaseURL}}/docs/introduction.html"
 
     stop-at-first-match: true
     matchers-condition: or

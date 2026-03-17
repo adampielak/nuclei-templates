@@ -1,4 +1,4 @@
-id: media-usage
+id: media-usage-7f492684f09b7562dcce5292c34a799e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8290783-9eb5-4fae-8b00-e3b5a5a0ed35?source=api-scan
   classification:
     cvss-metrics: 

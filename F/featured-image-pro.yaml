@@ -1,4 +1,4 @@
-id: featured-image-pro
+id: featured-image-pro-33f0050dce1710ac47e7f4f1111f87f7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1efb9215-542b-46a1-b358-f3d27339a920?source=api-scan
   classification:
     cvss-metrics: 

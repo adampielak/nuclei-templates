@@ -1,14 +1,15 @@
-id: image-hover-effects-with-carousel
+id: image-hover-effects-with-carousel-e609d1c5e0ce817847ed76f3e4676476
 
 info:
   name: >
-    Image Hover Effects Plugin - Caption Hover with Carousel <= 2.8 - Unauthenticated Stored Cross Site Scripting
+    Image Hover Effects for Elementor with Lightbox and Flipbox <= 3.0.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via _id, oxi_addons_f_title_tag, and content_description_tag Parameters
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/19c2d455-ae47-49bd-9bb8-1f87b0c76c32?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6c384f05-96dd-47bb-822d-16212527091a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.8')
+          - compare_versions(version, '<= 3.0.2')

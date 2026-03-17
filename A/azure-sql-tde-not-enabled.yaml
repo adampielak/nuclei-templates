@@ -67,4 +67,4 @@ code:
       - type: dsl
         dsl:
           - 'serverId + " database " + databaseId + " has TDE disabled"'
-# digest: 4a0a004730450220047db714609f1a7668e36eb833ec8f8f0877d79cc64dacc972c5dc9428615a5c022100d7898b10e00ea726228cf623eeb6779b75786c992e270c7bae793e1524aa1bb0:922c64590222798bb761d5b6d8e72950
+

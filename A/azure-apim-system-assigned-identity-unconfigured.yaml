@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " does not have a system-assigned managed identity enabled"'
-# digest: 4b0a00483046022100f496c2598d8552c0f41009f2add575a7b33bbd99f36cdfe69b39e38992cb69a8022100b61dd7611417eeed2bc46c93477ff56f9c3b0340e93157ee76cd616857bdd699:922c64590222798bb761d5b6d8e72950
+

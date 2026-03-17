@@ -1,14 +1,15 @@
-id: armember
+id: armember-e23978dfacec5b8cfd7c8be3aa5f8f7c
 
 info:
   name: >
-    ARMember Premium <= 5.9.2 - Missing Authorization
+    ARMember Premium <= 6.7 - Cross-Site Request Forgery via multiple functions
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4363600-666a-4a75-a817-4af679ab400c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3e55591e-c1e9-4667-b04f-4956d2f37d51?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/armember/"
     google-query: inurl:"/wp-content/plugins/armember/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,armember,high
+  tags: cve,wordpress,wp-plugin,armember,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.9.2')
+          - compare_versions(version, '<= 6.7')

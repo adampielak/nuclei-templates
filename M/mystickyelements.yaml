@@ -1,14 +1,15 @@
-id: mystickyelements
+id: mystickyelements-dfbae1962deed7c1ea9c0134acce113b
 
 info:
   name: >
-    My Sticky Elements <= 2.0.8 - Authenticated (Admin+) SQL Injection
+    All-in-one Floating Contact Form <= 2.1.1 - Authenticated(Administrator+) Stored Cross-Site Scripting via plugin settings
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b1933a5-48f3-4707-8e3d-824b60ce2635?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/52538617-a1d1-40ed-8321-e39d06869398?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '2.0.8')
+          - compare_versions(version, '<= 2.1.1')

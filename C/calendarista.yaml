@@ -1,4 +1,4 @@
-id: calendarista
+id: calendarista-25b54c0b61d1f5bba455833c8a1cdda0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/381ea693-3e59-4ecb-a96b-4b58d47298c0?source=api-scan
   classification:
     cvss-metrics: 

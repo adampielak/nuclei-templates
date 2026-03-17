@@ -4,7 +4,6 @@ info:
   name: Confluence Dashboard Exposed
   author: tess
   severity: low
-  description: Confluence Dashboard is exposed.
   metadata:
     verified: true
     max-request: 1
@@ -37,4 +36,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100846aa86a7928261f09f88cb1bff6ebf109cd793ab68e1fc01a04f2f15487922b02207fd2379135d7036c197f0288c4d1dc38d697e590d0f6c9253acb932f265d4ddb:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502206d5fabfdab00ee4c9458e645a16c3e1120a4542effdfc8d67242d8cafb09a3c7022100c20c4db0b8f44de1c1f0db5d7e730279f6b4b66af1839facdcc937d7f79fdaf7:922c64590222798bb761d5b6d8e72950

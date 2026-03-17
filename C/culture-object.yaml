@@ -1,4 +1,4 @@
-id: culture-object
+id: culture-object-0f3b2808547ea6ac78ca3f52fd609768
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/04aa7307-03c6-42f9-8219-fb6002c85050?source=api-scan
   classification:
     cvss-metrics: 

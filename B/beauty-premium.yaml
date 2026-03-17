@@ -1,4 +1,4 @@
-id: beauty-premium
+id: beauty-premium-5daae5daa6880f8a3ebf5f7b2a3f1a04
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e06c7e0a-f972-430a-9f87-786e0c6e1a84?source=api-scan
   classification:
     cvss-metrics: 

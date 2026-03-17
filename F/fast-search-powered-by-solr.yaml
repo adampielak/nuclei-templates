@@ -1,14 +1,15 @@
-id: fast-search-powered-by-solr
+id: fast-search-powered-by-solr-567141b8d4c166072ebecab73e5df591
 
 info:
   name: >
-    Sunny Search <= 1.0.2 - Cross-Site Request Forgery to Settings Update
+    Sunny Search <= 1.0.2 - Authenticated (Administrator+) Stored Cross-Site Scripting via settings
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f1902e7-66e9-417f-97ba-4db766cf29f1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b977e3f8-46e7-4294-ab5c-e42e81c900e0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/fast-search-powered-by-solr/"
     google-query: inurl:"/wp-content/plugins/fast-search-powered-by-solr/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fast-search-powered-by-solr,medium
+  tags: cve,wordpress,wp-plugin,fast-search-powered-by-solr,low
 
 http:
   - method: GET

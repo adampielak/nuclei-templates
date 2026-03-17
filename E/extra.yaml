@@ -1,17 +1,18 @@
-id: extra
+id: extra-245f302dfe834231d4c5b2035c881af6
 
 info:
   name: >
-    ElegantThemes <= 1.2.3 - Privilege Escalation
+    Elegant Themes (Various Versions) - Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    
+    The Elegant Themes Divi Builder plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 2.17.2 in addition to the following themes: Divi <= 3.17.2 and Extra <= 2.17.2 due to insufficient input sanitization and output escaping in the post builder. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/18b5777c-d176-4214-81ac-b92188704196?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1295f1a0-1f5a-4707-96cc-c408a6819e87?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/themes/extra/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.3')
+          - compare_versions(version, '<= 2.17.2')

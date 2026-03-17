@@ -1,0 +1,31 @@
+id: phpmyadmin-detect
+
+info:
+  name: phpMyAdmin Detect
+  author: rix4uni
+  severity: info
+  metadata:
+    shodan-query:
+      - http.component:phpMyAdmin
+  tags: phpMyAdmin,tech
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    threads: 80
+
+    host-redirects: true
+    max-redirects: 2
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>phpMyAdmin</title>"
+          - "<title>phpMyAdmin </title>"
+
+      - type: status
+        status:
+          - 200

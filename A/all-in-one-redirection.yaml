@@ -1,4 +1,4 @@
-id: all-in-one-redirection
+id: all-in-one-redirection-40669ba7afc409a809558b70fb86dc5a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/360a022d-8530-48af-be34-77d6b4b5c19d?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: icon-widget
+id: icon-widget-222e170e853d55ae43f84b55c2436693
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/81c4dd54-a248-48a0-a407-ffd3162e0abe?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: mediavine-create
+id: mediavine-create-fa32f81d47f0482b51953006aebf3aa1
 
 info:
   name: >
-    Create by Mediavine <= 1.9.4 - Unauthenticated SQL Injection via 'id'
+    Create by Mediavine <= 1.9.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via Schema Meta Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fcc78fa6-a5f0-4f29-ae19-8e783698b19e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9d04d8c1-75c0-447c-a26a-c2724c0a6618?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.9.4')
+          - compare_versions(version, '<= 1.9.7')

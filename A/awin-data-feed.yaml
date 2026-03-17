@@ -1,4 +1,4 @@
-id: awin-data-feed
+id: awin-data-feed-47279c2a6965374409cdbd03140af9c6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cae284dd-34e0-4dc5-a954-b37935f3cfbc?source=api-scan
   classification:
     cvss-metrics: 

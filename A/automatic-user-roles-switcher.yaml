@@ -1,4 +1,4 @@
-id: automatic-user-roles-switcher
+id: automatic-user-roles-switcher-8b5505f4e63bd8c042be8593732ad583
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fd74bcec-df6f-4f82-8f88-6cb1adde35ed?source=api-scan
   classification:
     cvss-metrics: 

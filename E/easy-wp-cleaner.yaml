@@ -1,4 +1,4 @@
-id: easy-wp-cleaner
+id: easy-wp-cleaner-9ffb58a690d862c223bd3c325e57e9fa
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c4c2689d-be51-4907-b624-c85da39f545d?source=api-scan
   classification:
     cvss-metrics: 

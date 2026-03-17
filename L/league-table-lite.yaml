@@ -1,4 +1,4 @@
-id: league-table-lite
+id: league-table-lite-af8d68df13bb0193de6db1ddcd0bb693
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ef7ec175-cee5-4559-909d-ee689158d67c?source=api-scan
   classification:
     cvss-metrics: 

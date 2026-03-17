@@ -11,14 +11,13 @@ info:
     wpscan: https://wpscan.com/plugin/official-facebook-pixel
   tags: tech,wordpress,wp-plugin,top-200
 
-requests:
+http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/official-facebook-pixel/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/official-facebook-pixel.txt
+      last_version: helpers/wordpress/plugins/official-facebook-pixel.txt
 
     extractors:
       - type: regex
@@ -47,3 +46,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 490a00463044022033bacf2b877c2c25078afd21b5b455b7292b1af091185c90a9db77da4822d56702207098cd5616bd1535f5cdca748abf033f111e5ffffc89f3dd52a586e399dbcc61:922c64590222798bb761d5b6d8e72950

@@ -1,23 +1,24 @@
-id: buddypress
+id: buddypress-1750425a7384c087c0b55067a6007a81
 
 info:
-  name: "BuddyPress <= 9.0.0 - Information Disclosure via REST API"
+  name: >
+    BuddyPress <= 9.0.0 - SQL Injection
   author: topscoder
-  severity: high
-  description: "The BuddyPress plugin for WordPress is vulnerable to information disclosure via REST API in versions up to, and including 9.0.0. This is due to the plugin disclosing the activation key from responses of the create_item method in the BP REST API Signup controller. This makes it possible for non-privileged attackers to obtain administrator rights by exploiting an issue in the REST API members endpoint."
+  severity: critical
+  description: >
+    The BuddyPress plugin for WordPress is vulnerable to generic SQL Injection via the ‘BP_Notifications_Notification::get_order_by_sql()' and 'BP_Invitation::get_order_by_sql()’ parameters in versions up to, and including, 9.0.0 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthorized attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://buddypress.org/2021/08/buddypress-9-1-1-security-and-maintenance-release/
-    - https://plugins.trac.wordpress.org/changeset/2584542/
-    - https://wpscan.com/vulnerability/05306069-808e-4ac4-b5c1-8573817cde74
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/40765cfe-a60a-44dc-8cdb-f9c8e42654c3?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 8.8
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/buddypress/"
     google-query: inurl:"/wp-content/plugins/buddypress/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,buddypress,high
+  tags: cve,wordpress,wp-plugin,buddypress,critical
 
 http:
   - method: GET

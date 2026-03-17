@@ -1,4 +1,4 @@
-id: classipress
+id: classipress-bd7528cdfc786195d7d29fb7b0c09d30
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7af32d7b-3832-4192-bc31-b4ba1f419668?source=api-scan
   classification:
     cvss-metrics: 

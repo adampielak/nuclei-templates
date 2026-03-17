@@ -1,4 +1,4 @@
-id: easy-preloader
+id: easy-preloader-eeeb78aea3b75119294fe4ae12c00274
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/27f09e0e-ddd0-4440-9a58-a7fc60b49776?source=api-scan
   classification:
     cvss-metrics: 

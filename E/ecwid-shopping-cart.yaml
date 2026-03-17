@@ -1,23 +1,24 @@
-id: ecwid-shopping-cart
+id: ecwid-shopping-cart-15feeb67b050197f6931010c4c3a9da0
 
 info:
   name: >
-    Ecwid Ecommerce Shopping Cart <= 6.10.22 - Insufficient Access Control on Multiple AJAX Actions
+    Ecwid Ecommerce Shopping Cart <= 4.4.3 - Unauthenticated PHP Object injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
-    The Ecwid Ecommerce Shopping Cart plugin for WordPress is vulnerable to Insufficient Access Control on Multiple AJAX Actions in versions up to, and including, 6.10.22. This allows any authenticated user to perform multiple AJAX actions including creating product and category pages as well as changing, publishing, and unpublishing the storefront page.
+    The Ecwid Ecommerce Shopping Cart plugin for WordPress is vulnerable to PHP Object Injection in versions before 4.4.4 via deserialization of untrusted input from the vulnerable cookie parameter 'ecwid_oauth_state' in the _load_state function. This allows unauthenticated attackers to inject a PHP Object. No POP chain is present in the vulnerable plugin. If a POP chain is present via an additional plugin or theme installed on the target system, it could allow the attacker to delete arbitrary files, retrieve sensitive data, or execute code.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d8a12e1d-f46a-499e-bfd6-185d5b955071?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/af5a58d1-946a-451b-bc8b-a397345ae89a?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L
-    cvss-score: 5.4
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/ecwid-shopping-cart/"
     google-query: inurl:"/wp-content/plugins/ecwid-shopping-cart/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ecwid-shopping-cart,medium
+  tags: cve,wordpress,wp-plugin,ecwid-shopping-cart,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.10.22')
+          - compare_versions(version, '<= 4.4.3')

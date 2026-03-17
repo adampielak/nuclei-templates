@@ -1,14 +1,15 @@
-id: business-card-by-esterox-100
+id: business-card-by-esterox-100-c39c725dc95432ea90bacda54cfd3be4
 
 info:
   name: >
-    Business Card <= 1.0.0 - Cross-Site Request Forgery to Card Edit
+    Business Card <= 1.0.0 - Cross-Site Request Forgery to Arbitrary Card Deletion
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3bad1f8-0351-421e-ab00-015e15643f0f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/148ca1d5-c20d-40dc-b078-ecd76d4d6c0b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

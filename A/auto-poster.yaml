@@ -1,4 +1,4 @@
-id: auto-poster
+id: auto-poster-41d4e1e74ade5472bf1fb3e02c86bef6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/02b24735-0310-4b00-9acc-a05557238697?source=api-scan
   classification:
     cvss-metrics: 

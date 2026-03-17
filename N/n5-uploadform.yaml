@@ -1,4 +1,4 @@
-id: n5-uploadform
+id: n5-uploadform-275cc5187416715fb3f5d44f3820ae1a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/121afcc4-754c-4f4b-8b02-9b5a4a248041?source=api-scan
   classification:
     cvss-metrics: 

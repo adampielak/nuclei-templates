@@ -1,4 +1,4 @@
-id: artificial-intelligence
+id: artificial-intelligence-2ca61ba70ad363ffb4ff1cb54f965585
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/37cc54a9-a780-42b5-b64d-c47470f17db7?source=api-scan
   classification:
     cvss-metrics: 

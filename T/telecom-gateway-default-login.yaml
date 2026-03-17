@@ -22,7 +22,7 @@ requests:
       password:
         - admin
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:

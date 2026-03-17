@@ -1,4 +1,4 @@
-id: easy-call-now
+id: easy-call-now-ba41bb11b30564ffe3dda9954fd6cbc2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9bd8c4e5-ef53-47e8-8658-291509e9b987?source=api-scan
   classification:
     cvss-metrics: 

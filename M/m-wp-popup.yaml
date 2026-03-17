@@ -1,4 +1,4 @@
-id: m-wp-popup
+id: m-wp-popup-84ffc1ea95e778bc4dc88fe022f4d3f1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8844c230-162d-46c4-9b34-fc9d18b93f4f?source=api-scan
   classification:
     cvss-metrics: 

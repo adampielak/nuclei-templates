@@ -1,4 +1,4 @@
-id: bellows-accordion-menu
+id: bellows-accordion-menu-27618ddd64ae3ae79eb702e5dca5b5ab
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/50283a4f-ea59-488a-bab0-dd6bc5718556?source=api-scan
   classification:
     cvss-metrics: 

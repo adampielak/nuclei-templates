@@ -1,4 +1,4 @@
-id: all-in-one-schemaorg-rich-snippets
+id: all-in-one-schemaorg-rich-snippets-408cc57e7ce3b3d90460b9335c5f3253
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/23b018d3-3451-4ae8-b571-07e931ad23df?source=api-scan
   classification:
     cvss-metrics: 

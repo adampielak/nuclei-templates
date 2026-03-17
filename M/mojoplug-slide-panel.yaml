@@ -1,4 +1,4 @@
-id: mojoplug-slide-panel
+id: mojoplug-slide-panel-d32f7effda0aef321bad0ca166cffce5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/639a46b3-d19f-4ab4-995e-fd3de556b76e?source=api-scan
   classification:
     cvss-metrics: 

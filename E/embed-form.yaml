@@ -1,4 +1,4 @@
-id: embed-form
+id: embed-form-7e4e093838a1b6e13bce32b9bf22bc7d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/90c34a01-a0d1-4305-b74b-b5a568a42b13?source=api-scan
   classification:
     cvss-metrics: 

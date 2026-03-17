@@ -1,14 +1,15 @@
-id: essential-addons-elementor
+id: essential-addons-elementor-5e8369d0f519245aa4969d9c4a0a1f3c
 
 info:
   name: >
-    Essential Addons for Elementor Pro <= 5.4.8 - Reflected Cross-Site Scripting
+    Essential Addons for Elementor PRO – Best Elementor Templates, Widgets, Kits & WooCommerce Builders <= 5.8.14 - Authenticated (Contributor+) Stored Cross-Site Scripting via Team Member Carousel Widget
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f8f86293-a32f-49a6-8c8c-d37354ab040a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f7773b98-537f-4f4e-98d6-db61d2bffe8c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/essential-addons-elementor/"
     google-query: inurl:"/wp-content/plugins/essential-addons-elementor/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,essential-addons-elementor,medium
+  tags: cve,wordpress,wp-plugin,essential-addons-elementor,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.4.8')
+          - compare_versions(version, '<= 5.8.14')

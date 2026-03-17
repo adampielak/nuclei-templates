@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     shodan-query: html:"ng-version="
-  tags: tech,angular
+  tags: technology,angular
 
 requests:
   - method: GET

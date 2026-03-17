@@ -1,4 +1,4 @@
-id: linker
+id: linker-2fa174d9a5bb195f3e14c01afe357f20
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3fd620a3-5d9e-4bc3-b026-871610df7c2d?source=api-scan
   classification:
     cvss-metrics: 

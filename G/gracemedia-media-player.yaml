@@ -1,4 +1,4 @@
-id: gracemedia-media-player
+id: gracemedia-media-player-64ea0eeccf3559dee1e80fcbdba4b03b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c024c77-31a8-45b8-9fcb-7ba729bec32c?source=api-scan
   classification:
     cvss-metrics: 

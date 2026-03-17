@@ -1,14 +1,15 @@
-id: font-awesome-4-menus
+id: font-awesome-4-menus-d9c3695fd8e961b1ae4d7710c2d642ac
 
 info:
   name: >
-    Font Awesome 4 Menus <= 4.7.0 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Font Awesome 4 Menus <= 4.7.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f13a1c9-db26-4243-b8ee-f25eac51afa2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc59510c-6eaf-4526-8acb-c07e39923ad9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -1,14 +1,15 @@
-id: fastly
+id: fastly-41a04e9ce8a362bdb966edd65e79c6ea
 
 info:
   name: >
-    Fastly <= 0.97 - Reflected Cross-Site Scripting
+    Fastly <= 1.2.25 - Missing Authorization via AJAX actions
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0042d5ba-62de-404e-9516-67cae618f684?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/02490a4b-b2c0-4921-bbf2-678c44c96a5b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/fastly/"
     google-query: inurl:"/wp-content/plugins/fastly/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fastly,medium
+  tags: cve,wordpress,wp-plugin,fastly,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.97')
+          - compare_versions(version, '<= 1.2.25')

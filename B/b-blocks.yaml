@@ -1,15 +1,15 @@
-id: b-blocks-0b7060bcfcd5e30258b14e8249e64852
+id: b-blocks-61943e6a37695b5f494ce87a59436d82
 
 info:
   name: >
-    B Blocks - The ultimate block collection <= 2.0.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    B Blocks <= 2.0.6 - Missing Authorization to Unauthenticated Privilege Escalation via rgfr_registration Function
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b120d99e-5906-4c7f-b10a-1f915a8ff6d6?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ee3b389-60c9-4f8e-9428-a71a6d9b20aa?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/b-blocks/"
     google-query: inurl:"/wp-content/plugins/b-blocks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,b-blocks,low
+  tags: cve,wordpress,wp-plugin,b-blocks,high
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.0')
+          - compare_versions(version, '<= 2.0.6')

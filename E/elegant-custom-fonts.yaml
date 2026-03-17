@@ -1,4 +1,4 @@
-id: elegant-custom-fonts
+id: elegant-custom-fonts-1a0f7fee0dc7bffa631fa466e4052a53
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dadb6bf5-dbbd-4afb-8783-f6880dec2cbf?source=api-scan
   classification:
     cvss-metrics: 

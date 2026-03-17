@@ -1,4 +1,4 @@
-id: easy-popup-show
+id: easy-popup-show-f80a138aad4e11125341ab51d1a515db
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/28d622b3-e8a7-4a3b-9f0b-e344b085284d?source=api-scan
   classification:
     cvss-metrics: 

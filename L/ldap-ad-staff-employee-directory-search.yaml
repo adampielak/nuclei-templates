@@ -1,4 +1,4 @@
-id: ldap-ad-staff-employee-directory-search
+id: ldap-ad-staff-employee-directory-search-f75355479b6716c95914b5c62d3215e3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b1355e9f-fa3a-439a-a13f-49b10dd4473a?source=api-scan
   classification:
     cvss-metrics: 

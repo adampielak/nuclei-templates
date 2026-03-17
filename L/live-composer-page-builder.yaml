@@ -1,14 +1,15 @@
-id: live-composer-page-builder
+id: live-composer-page-builder-ecea8252f9b5b9a648e6e677e46585d0
 
 info:
   name: >
-    Page Builder: Live Composer <= 1.5.25 -  Authenticated (Author+) PHP Object Injection
+    Page Builder: Live Composer <= 1.5.22 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2a0f9f80-e338-4afd-9a4b-e421865c8b0b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a99f19a-7874-4f55-bbdd-db23182a0ece?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.28')
+          - compare_versions(version, '<= 1.5.22')

@@ -4,7 +4,6 @@ info:
   name: Launchrock Takeover Detection
   author: pdteam
   severity: high
-  description: Launchrock takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/74
   metadata:
@@ -26,8 +25,4 @@ http:
         words:
           - It looks like you may have taken a wrong turn somewhere. Don't worry...it happens to all of us.
 
-    extractors:
-      - type: dsl
-        dsl:
-          - cname
-# digest: 4a0a0047304502200bce85bac0541536f930a3a55e177d18ac70083db743339dc1dcba7f4e9c432c022100c688ff516b723e6974be9663c56fbaa30724a9c7bf091db5d2b9b398e57a41b5:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022070c3225667f6b4dc4b95046b85559fef650a810f5aaddfed07437126e6597668022100987547e285f9e8ccb065b386d570b3a74526e4a58390defad4394c8325a7f7dd:922c64590222798bb761d5b6d8e72950

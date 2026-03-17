@@ -1,15 +1,15 @@
-id: gutentor
+id: gutentor-59f3804b7aca6b2db9a4e39ef32f72f0
 
 info:
   name: >
-    Gutentor - Gutenberg Blocks - Page Builder for Gutenberg Editor <= 3.3.5 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Gutentor – Gutenberg Blocks – Page Builder for Gutenberg Editor <= 3.4.8 - Authenticated (Contributor+) Stored Cross-Site Scripting via Multiple Widgets
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c3b1ff70-7e37-4f74-bd72-ecda81d13d83?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0e9ec6af-fa51-4e14-abf6-450c1ca6f8d5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.3.5')
+          - compare_versions(version, '<= 3.4.8')

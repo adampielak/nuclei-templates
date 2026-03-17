@@ -1,4 +1,4 @@
-id: lifterlms-gateway-paypal
+id: lifterlms-gateway-paypal-33ddd0d0121f073c6d3c6363169a6e4d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6d063374-ecb2-41de-872d-18f94aac7e03?source=api-scan
   classification:
     cvss-metrics: 

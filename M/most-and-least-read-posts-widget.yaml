@@ -1,14 +1,15 @@
-id: most-and-least-read-posts-widget
+id: most-and-least-read-posts-widget-1bbc07a5b3b40e3635609a711e5b2afd
 
 info:
   name: >
-    Most And Least Read Posts Widget <=2.5.16 - Authenticated(Contributor+) SQL Injection via Widget settings
+    Most And Least Read Posts Widget <= 2.5.18 - Cross-Site Request Forgery via most_and_least_read_posts_options
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9fa55cc-c686-43e4-a028-dd2721d2db85?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5671d318-ca8c-4882-a522-f327e65a24f0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/most-and-least-read-posts-widget/"
     google-query: inurl:"/wp-content/plugins/most-and-least-read-posts-widget/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,most-and-least-read-posts-widget,low
+  tags: cve,wordpress,wp-plugin,most-and-least-read-posts-widget,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.5.17')
+          - compare_versions(version, '<= 2.5.18')

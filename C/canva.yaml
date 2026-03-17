@@ -1,4 +1,4 @@
-id: canva
+id: canva-5ab7759ad2c43426b2cecd992c08053c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ebebe75-155a-4097-95ec-f31c6047f19a?source=api-scan
   classification:
     cvss-metrics: 

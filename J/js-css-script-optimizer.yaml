@@ -1,4 +1,4 @@
-id: js-css-script-optimizer
+id: js-css-script-optimizer-137f403484d4acf21480db9b55924e66
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fb863896-5a5a-4c65-b2a5-0901de7961f2?source=api-scan
   classification:
     cvss-metrics: 

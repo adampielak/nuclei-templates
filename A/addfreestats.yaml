@@ -1,4 +1,4 @@
-id: addfreestats
+id: addfreestats-a0234599e4b37db8afa8a71695a9cafb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/16c70597-32a0-4771-877b-c57cf7550ee7?source=api-scan
   classification:
     cvss-metrics: 

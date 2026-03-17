@@ -1,14 +1,15 @@
-id: listingo
+id: listingo-ff739f1e72ad88249e0c19748063f298
 
 info:
   name: >
-    Listingo <= 3.2.5 - Unauthenticated Arbitrary File Upload
+    Listingo - Business Listing and Directory WordPress Theme <= 3.2.7 - Unauthenticated Arbitrary Shortcode Execution
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/62bc53ae-7cdb-491c-a315-5bf8fa80c27b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e4595a79-c7d0-4e37-b19b-9ae985c9d713?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/listingo/"
     google-query: inurl:"/wp-content/themes/listingo/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,listingo,critical
+  tags: cve,wordpress,wp-theme,listingo,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.2.5')
+          - compare_versions(version, '<= 3.2.7')

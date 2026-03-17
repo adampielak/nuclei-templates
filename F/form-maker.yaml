@@ -1,17 +1,18 @@
-id: form-maker
+id: form-maker-fcae17573b3ef2df348cb21b3e01c95a
 
 info:
   name: >
-    Form Maker by 10Web <= 1.12.21 - CSV Injection
+    Form Maker by 10Web <= 1.13.35 - SQL Injection
   author: topscoder
   severity: low
   description: >
-    
+    The Form Maker plugin for WordPress is vulnerable to generic SQL Injection via the 's' parameter in versions up to, and including, 1.13.35 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for authenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7317d716-39e0-40d6-92a8-e59bd8470e5d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9347dafb-1789-4855-b09e-2a1ef5f7f2c1?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 7.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/form-maker/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.12.22')
+          - compare_versions(version, '<= 1.13.35')

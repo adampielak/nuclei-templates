@@ -1,14 +1,15 @@
-id: conversational-forms
+id: conversational-forms-24e959d6d5381adcce2d744f25e4ef1e
 
 info:
   name: >
-    Conversational Forms for ChatBot <= 1.1.8 - Unauthenticated Arbitrary File Download
+    Conversational Forms for ChatBot <= 1.2.0 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/54db4d53-7c4f-47d9-811d-8282eaf2d074?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f2251c72-cc98-477e-bd4d-0e134b86acce?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.8')
+          - compare_versions(version, '<= 1.2.0')

@@ -50,4 +50,4 @@ code:
       - type: dsl
         dsl:
           - 'ids + " is configured with password-based SSH authentication, which is insecure"'
-# digest: 490a00463044022017e36206b7ec3f96ffd139db9b56bc8df0aaa1e96bbf7f67bd00454f0e0acde60220011594d97fff91043336d82ef7eef4315bddccdb72b371ad12b54a5bcb257841:922c64590222798bb761d5b6d8e72950
+

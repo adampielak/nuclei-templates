@@ -1,14 +1,15 @@
-id: calendarista-basic-edition
+id: calendarista-basic-edition-6440aaaeaf2f745e5044b6fc00ad3656
 
 info:
   name: >
-    Calendarista Basic Edition <= 3.0.5 - Missing Authorization
+    Calendarista Basic Edition <= 3.0.2 - Unauthenticated Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/15b831eb-ab28-4e42-940b-6943d836d230?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d4beb0b7-e287-43bd-b8d1-3aa65e268ead?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.5')
+          - compare_versions(version, '<= 3.0.2')

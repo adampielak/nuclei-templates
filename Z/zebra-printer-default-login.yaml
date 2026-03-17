@@ -1,16 +1,17 @@
 id: zebra-default-login
 
 info:
-  name: Zebra - Default Login
+  name: Zebra Printer - Default Login
   author: y0no
   severity: high
   description: |
-    Zebra default login credentials was discovered.
+    Zebra printer default login credentials were discovered.
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "Zebra"})
     verified: true
     max-request: 4
     shodan-query: title:"Zebra"
-  tags: zebra,default-login,misconfig,printer
+  tags: zebra,default-login,misconfig,printer,vuln
 
 http:
   - raw:
@@ -40,4 +41,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f6b0b812676b2193eb9ec107ee698fe6646ef4098580e22e3cc398991c6184b102207f709cc7c2fb30430f443fe86d0d23b58828a1ed45aa8d2df962459464b67971:922c64590222798bb761d5b6d8e72950
+

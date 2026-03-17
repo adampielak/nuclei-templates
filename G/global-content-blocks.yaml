@@ -1,4 +1,4 @@
-id: global-content-blocks
+id: global-content-blocks-7c7667df15dc874ec5054d09fe196419
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/28e74811-aae8-4276-abb1-cbe4fbcfd08b?source=api-scan
   classification:
     cvss-metrics: 

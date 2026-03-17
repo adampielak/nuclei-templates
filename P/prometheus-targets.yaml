@@ -10,10 +10,8 @@ info:
   reference:
     - https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/
   tags: prometheus
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/api/v1/targets"

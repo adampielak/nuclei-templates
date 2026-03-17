@@ -1,14 +1,15 @@
-id: meeting-scheduler-by-vcita
+id: meeting-scheduler-by-vcita-4cdae8691afad706d770724c4a36e255
 
 info:
   name: >
-    Online Booking & Scheduling Calendar for WordPress by vcita <= 4.4.0 - Missing Authorization on REST-API
+    Online Booking & Scheduling Calendar for WordPress by vcita <= 4.4.0 - Missing Authorization to Settings Update and Media Upload
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4855627a-de56-49ee-b0b0-01b9735d8557?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c99aab5-a995-44ae-bc14-09f73e6b22c5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

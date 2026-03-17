@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Cisco Prime License Manager"
-  tags: cisco,cisco-prime-license-manager,panel
+  tags: cisco,cisco-prime-license-manager,panel,discovery
 
 http:
   - method: GET
@@ -28,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204eccb322b3376095ed6e15fae49daa4b275661116504c8ed1e85f36f0e3ccd8e02202139fa8e1716bdcd144c64a6cb41de78f4b55fead876a22c6876e61370666a2d:922c64590222798bb761d5b6d8e72950
+

@@ -1,14 +1,15 @@
-id: multi-step-form
+id: multi-step-form-18edae1db5174cefb5ae321ba1d1b59c
 
 info:
   name: >
-    Multi Step Form <= 1.2.5 - Reflected Cross-Site Scripting
+    Multi Step Form <= 1.7.23 - Missing Authorization to Unauthenticated Limited File Upload
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/38de34cd-b985-4552-a260-53da2106a4af?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f0a31fee-ccc2-4c3b-b198-6cb750188113?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/multi-step-form/"
     google-query: inurl:"/wp-content/plugins/multi-step-form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,multi-step-form,medium
+  tags: cve,wordpress,wp-plugin,multi-step-form,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.6')
+          - compare_versions(version, '<= 1.7.23')

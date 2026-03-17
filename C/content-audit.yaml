@@ -1,4 +1,4 @@
-id: content-audit
+id: content-audit-2a5b3b23fd1e9ff9d15e5d1b1ef4453f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c801dfe6-a39f-4212-9cd7-71ef921c43ef?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: dethemekit-for-elementor
+id: dethemekit-for-elementor-a9cb5ac8e20450f9aa409b9cd540f889
 
 info:
   name: >
-    DethemeKit For Elementor <= 2.0.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    DethemeKit For Elementor <= 2.1.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via URL Parameter of the De Gallery Widget
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2132d5b4-583d-46c0-be5e-6664bee9cad2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9b2083f9-79d0-43f6-b7ae-a5817dc561b0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.2')
+          - compare_versions(version, '<= 2.1.5')

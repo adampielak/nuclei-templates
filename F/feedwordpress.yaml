@@ -1,23 +1,24 @@
-id: feedwordpress
+id: feedwordpress-1f785ddf2fe0ea8c68a450eeaec3fa44
 
 info:
   name: >
-    FeedWordPress <= 2022.0222 - Insecure Direct Object Referece
+    FeedWordPress < 2015.0426 - Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    
+    The FeedWordPress plugin for WordPress is vulnerable to Cross-Site Scripting via several parameters in versions before 2015.0426 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1ead46fd-5744-4fbb-9efd-980f9216abbc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9178920-d865-45d3-bfdf-b8ad207d4546?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/feedwordpress/"
     google-query: inurl:"/wp-content/plugins/feedwordpress/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,feedwordpress,low
+  tags: cve,wordpress,wp-plugin,feedwordpress,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2022.0222')
+          - compare_versions(version, '<= 2014.0805')

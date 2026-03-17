@@ -1,14 +1,15 @@
-id: anual-archive
+id: anual-archive-e3376d4b2f2bf202a6fcc995d3f8fb1c
 
 info:
   name: >
-    Annual Archive <= 1.6.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Annual Archive <= 1.5.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/20199c88-1800-4d18-a0ee-0219be77b429?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/58ae3a89-200b-475c-8d32-a24502eb95c6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.0')
+          - compare_versions(version, '<= 1.5.5')

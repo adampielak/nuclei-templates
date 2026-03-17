@@ -1,14 +1,15 @@
-id: bookly-responsive-appointment-booking-tool
+id: bookly-responsive-appointment-booking-tool-de257b8e7cf590c3b129d87c55f5b1ca
 
 info:
   name: >
-    Bookly <= 21.7 - Authenticated (Admin+) Stored Cross-Site Scripting
+    WordPress Online Booking and Scheduling Plugin – Bookly <= 23.2 - Authenticated (Subscriber+) Stored Cross-Site Scripting via Color Profile Parameter
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d4cdf774-c93b-4b94-85ba-aa56bf401873?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ad9fcd1-b3a3-4711-ad23-d27c3e2091f4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '21.7')
+          - compare_versions(version, '<= 23.2')

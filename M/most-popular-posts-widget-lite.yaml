@@ -1,4 +1,4 @@
-id: most-popular-posts-widget-lite
+id: most-popular-posts-widget-lite-2ac6f8b05d65d047f91eacfe0ee6dbdc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/788bf199-bf09-4076-b5f1-129b6287096a?source=api-scan
   classification:
     cvss-metrics: 

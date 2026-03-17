@@ -1,4 +1,4 @@
-id: contactme
+id: contactme-af3c3b83b1717af36432d9c9f6638bd4
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/904f8881-1513-43b7-a9cf-1b81d8493b12?source=api-scan
   classification:
     cvss-metrics: 

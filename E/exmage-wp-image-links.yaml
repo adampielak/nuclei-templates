@@ -1,4 +1,4 @@
-id: exmage-wp-image-links
+id: exmage-wp-image-links-8d79d83518fbf44f7d865eaecb121db1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0dd1ded1-8966-4247-ab75-17980f00f9b9?source=api-scan
   classification:
     cvss-metrics: 

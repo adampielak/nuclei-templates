@@ -1,4 +1,4 @@
-id: lgx-owl-carousel
+id: lgx-owl-carousel-9872c106c1448a9d92e26b97f4d6983e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/511957c0-e4c3-4a50-b604-3b604d52d32f?source=api-scan
   classification:
     cvss-metrics: 

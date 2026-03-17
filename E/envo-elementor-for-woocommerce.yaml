@@ -1,4 +1,4 @@
-id: envo-elementor-for-woocommerce
+id: envo-elementor-for-woocommerce-6ef08399a8d4914f769bd3119ca6cdfa
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cca71257-05dc-43d5-8de6-faf0a2feab2e?source=api-scan
   classification:
     cvss-metrics: 

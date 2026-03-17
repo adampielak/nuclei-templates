@@ -1,23 +1,24 @@
-id: citybook
+id: citybook-a3f73b76cde0c89b98f11be0b51794d1
 
 info:
   name: >
-    CTHthemes CityBook < 2.3.4, TownHub < 1.0.6, EasyBook < 1.2.2 Themes - Authenticated Post Deleition via IDOR
+    CityBook <= 2.4.3 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    
+    The CityBook plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the 'distance', 'address_lat', and 'address_lng' parameters in versions up to, and including, 2.4.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/08eb1d49-9928-43f8-97fc-14105e3a4a25?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/722d3a5e-40dc-4153-b8ce-4a94ae391896?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/themes/citybook/"
     google-query: inurl:"/wp-content/themes/citybook/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,citybook,low
+  tags: cve,wordpress,wp-theme,citybook,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.3.4')
+          - compare_versions(version, '<= 2.4.3')

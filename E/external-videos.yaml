@@ -1,4 +1,4 @@
-id: external-videos
+id: external-videos-700461ebc7ceb7fdc8d1ceb140d6b796
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/168e8512-d551-47f9-bc2b-c458180a6d13?source=api-scan
   classification:
     cvss-metrics: 

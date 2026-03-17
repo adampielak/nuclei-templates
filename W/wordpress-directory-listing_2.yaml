@@ -4,7 +4,9 @@ info:
   name: Wordpress directory listing
   author: Manas_Harsh
   severity: info
-  tags: wordpress-misc,wordpress
+  tags: wordpress
+  metadata:
+    max-request: 4
 
 http:
   - method: GET
@@ -13,11 +15,13 @@ http:
       - "{{BaseURL}}/wp-content/themes/"
       - "{{BaseURL}}/wp-content/plugins/"
       - "{{BaseURL}}/wp-includes/"
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
-          - Index of /
+          - "Index of /"

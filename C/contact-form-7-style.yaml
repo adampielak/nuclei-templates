@@ -1,14 +1,15 @@
-id: contact-form-7-style
+id: contact-form-7-style-ba8463f8475723d7b9fa15f84254b841
 
 info:
   name: >
-    Contact Form 7 Style <= 3.1.9 Cross-Site Request Forgery
+    Contact Form 7 Style <= 3.2 - Cross-Site Request Forgery Bypass
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c7b540b9-cdf1-40ea-b693-c237e76c0958?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2972cdaf-2d0a-4b55-b4f5-ccf01ff5352c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1.9')
+          - compare_versions(version, '<= 3.2')

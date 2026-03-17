@@ -1,4 +1,4 @@
-id: gd-mail-queue
+id: gd-mail-queue-847e5aba57f1c717cf5036fad64fd594
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b668f45-c7fb-481b-bc8e-115e5b7248c9?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: meks-easy-instagram-widget
+id: meks-easy-instagram-widget-d7cf08d050d4d9c295d6307e65c1ae52
 
 info:
   name: >
-    Meks Easy Photo Feed Widget < 1.2.4 - Authenticated Stored Cross-Site Scripting
+    Meks Smart Social Widget <= 1.6 - Cross-Site Request Forgery via meks_remove_notification
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/23a94578-f395-4ec1-8a08-52ca233cc832?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d0efe1d-69ad-483c-b200-38873f88433b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/meks-easy-instagram-widget/"
     google-query: inurl:"/wp-content/plugins/meks-easy-instagram-widget/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,meks-easy-instagram-widget,low
+  tags: cve,wordpress,wp-plugin,meks-easy-instagram-widget,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.4')
+          - compare_versions(version, '<= 1.2.7')

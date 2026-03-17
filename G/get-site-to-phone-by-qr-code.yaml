@@ -1,4 +1,4 @@
-id: get-site-to-phone-by-qr-code
+id: get-site-to-phone-by-qr-code-53f9f187ffc31e706ad6ef27544d8f05
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e10babc-fc65-46f9-8b88-95b00f66d01b?source=api-scan
   classification:
     cvss-metrics: 

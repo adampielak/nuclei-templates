@@ -1,4 +1,4 @@
-id: ko-fi-button
+id: ko-fi-button-9325aa24d072619f5651560e247384bb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa13426a-2d4e-4268-bc0d-e496bc9e6f33?source=api-scan
   classification:
     cvss-metrics: 

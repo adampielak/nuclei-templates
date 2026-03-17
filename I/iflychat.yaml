@@ -1,14 +1,15 @@
-id: iflychat
+id: iflychat-3f713aa4037e158f690e7d030d21864f
 
 info:
   name: >
-    iFlyChat – WordPress Chat <= 4.6.4 - Admin+ Stored Cross-Site Scripting
+    iFlyChat – WordPress Chat <= 4.7.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/81141b8c-9677-4267-9026-33267e3135f5?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/78797c97-a5b8-4d2d-acd2-ebd508f2f836?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/iflychat/"
     google-query: inurl:"/wp-content/plugins/iflychat/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,iflychat,high
+  tags: cve,wordpress,wp-plugin,iflychat,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 4.7.0')
+          - compare_versions(version, '<= 4.7.2')

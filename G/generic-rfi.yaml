@@ -1,17 +1,20 @@
-id: rfi-fuzz
+id: generic-rfi
 
 info:
-  name: Remote File Inclusion
+  name: Generic Remote File Inclusion
   author: m4lwhere
   severity: high
-  tags: rfi,dast,oast
   reference:
     - https://www.invicti.com/learn/remote-file-inclusion-rfi/
+  metadata:
+    max-request: 1
+  tags: rfi,dast,oast,vuln
 
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - pre-condition:
+      - type: dsl
+        dsl:
+          - 'method == "GET"'
 
     payloads:
       rfi:
@@ -29,3 +32,4 @@ http:
         part: body  # Confirms the PHP was executed
         words:
           - "NessusCodeExecTest"
+

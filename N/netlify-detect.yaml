@@ -1,0 +1,34 @@
+id: netlify-detect
+
+info:
+  name: Netlify Server Detect
+  author: rix4uni
+  severity: info
+  description: description
+  reference:
+    - https://twitter.com/bug_vs_me/status/1630423742936649733
+  metadata:
+    google-query:
+      - inurl:"netlify.app/admin"
+    shodan-query:
+      - "Server: Netlify"
+    fofa-query:
+      - server=="Netlify"
+  tags: netlify,detect,technologies
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - 'Server: Netlify'
+
+      - type: status
+        status:
+          - 200
+          - 404

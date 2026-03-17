@@ -1,4 +1,4 @@
-id: aweber-web-form-widget
+id: aweber-web-form-widget-c070ace57d729df423583eeb78a21210
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3ae3bca-d363-4c4b-809f-0625385bc9a6?source=api-scan
   classification:
     cvss-metrics: 

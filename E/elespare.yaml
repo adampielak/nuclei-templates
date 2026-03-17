@@ -1,14 +1,15 @@
-id: elespare
+id: elespare-952d6c04058db5be108bb5142ffdb0d4
 
 info:
   name: >
-    Elespare – Build Your Blog, News & Magazine Websites with Expert-Designed Template Kits. One Click Import: No Coding Skills Required! <= 2.1.2 - Missing Authorization to Subscriber+ Arbitrary Post Creation
+    Elespare – Blog, Magazine and Newspaper Addons for Elementor with Templates, Widgets, Kits, and Header/Footer Builder. One Click Import: No Coding Required! <= 3.1.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Horizontal Nav Menu Widget
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f94efa6-b88b-442d-8162-f03efa7f2f65?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/97a1ab2f-b531-46a7-ad51-a652fc078212?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/elespare/"
     google-query: inurl:"/wp-content/plugins/elespare/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,elespare,high
+  tags: cve,wordpress,wp-plugin,elespare,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.2')
+          - compare_versions(version, '<= 3.1.2')

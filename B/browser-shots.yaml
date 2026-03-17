@@ -1,4 +1,4 @@
-id: browser-shots
+id: browser-shots-377e321e2c8da9ff7ffb4de04791f6ac
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9fc1e720-46ba-4f57-8694-551936371e2c?source=api-scan
   classification:
     cvss-metrics: 

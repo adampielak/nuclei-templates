@@ -1,4 +1,4 @@
-id: multi-page-toolkit
+id: multi-page-toolkit-c483fb6e4058bc0805912d6527579c85
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5ba5ddf2-8ae2-4bfa-9f15-16425baea6e1?source=api-scan
   classification:
     cvss-metrics: 

@@ -6,7 +6,7 @@ info:
   severity: low
   reference:
     - https://www.exploit-db.com/ghdb/4278
-  tags: struts,debug,edb,exposure,apache
+  tags: exposure,apache,struts,debug
 
 requests:
   - method: GET

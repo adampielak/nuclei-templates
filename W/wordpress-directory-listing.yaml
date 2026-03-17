@@ -4,9 +4,9 @@ info:
   name: Wordpress directory listing
   author: Manas_Harsh
   severity: info
-  tags: wordpress-misc,wordpress
+  tags: wordpress
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/uploads/"

@@ -1,4 +1,4 @@
-id: eonet-manual-user-approve
+id: eonet-manual-user-approve-78af3358073a70e67373d1a1c75cd001
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b696e0b-d4e1-4a81-9204-929100ade073?source=api-scan
   classification:
     cvss-metrics: 

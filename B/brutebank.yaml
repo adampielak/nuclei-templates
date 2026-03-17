@@ -1,4 +1,4 @@
-id: brutebank
+id: brutebank-71542867984ceea6ffeb31fd93a0611a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ef0dc868-f617-408f-9333-ebfee4897701?source=api-scan
   classification:
     cvss-metrics: 

@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "wasabis3"
-  tags: takeover,wasabi,bucket
+  tags: takeover,wasabi,bucket,vuln
 
 http:
   - method: GET
@@ -40,5 +40,4 @@ http:
         regex:
           - '<li>BucketName: (.*?)</li>'
           - '<BucketName>(.*?)</BucketName>'
-
-# digest: 4a0a00473045022100e2b821a0a6fb249dc85272f68d968364090b7078f5673a7069013a5cacf6050002206335953232c0fb1b9ae2fa35d33369a114660f8a274a81e726699fee22d07e22:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220772d7db9d7eabfc470d8fcf910bf7e2b5a63b21483ab56dd1254dfcdd8e1b206022035a36011c42b3d39357246677a372c8acc949b8b74aaf03030a628beddefeb07:922c64590222798bb761d5b6d8e72950

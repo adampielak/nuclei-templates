@@ -56,4 +56,4 @@ code:
       - type: dsl
         dsl:
           - 'nsg + " does not have the correct alert configuration for Delete Network Security Group events"'
-# digest: 4a0a0047304502204e3355a4baf57150230afa270354d3bfedacc86d72d5b8ee14ad12085e8303e5022100fb9273c6cebbd6f54cacad733f3b5d3ba0c4fca378008912d9982f24a8fcb407:922c64590222798bb761d5b6d8e72950
+

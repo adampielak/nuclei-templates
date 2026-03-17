@@ -1,14 +1,15 @@
-id: infographic-and-list-builder-ilist
+id: infographic-and-list-builder-ilist-7a366a0db0115c6f8544084f103575ea
 
 info:
   name: >
-    Infographic Maker – iList <= 4.3.7 - SQL Injection
+    Infographic Maker iList <= 4.7.4 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Title Update
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad4878fb-dd0f-473b-9887-d993a89fedd2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4c8f1c29-b99d-4af0-9cc4-5d6179529ab4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/infographic-and-list-builder-ilist/"
     google-query: inurl:"/wp-content/plugins/infographic-and-list-builder-ilist/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,infographic-and-list-builder-ilist,critical
+  tags: cve,wordpress,wp-plugin,infographic-and-list-builder-ilist,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.3.7')
+          - compare_versions(version, '<= 4.7.4')

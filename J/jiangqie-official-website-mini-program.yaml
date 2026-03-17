@@ -1,14 +1,15 @@
-id: jiangqie-official-website-mini-program
+id: jiangqie-official-website-mini-program-90a045f7a1323b82f7d260c9a242ba49
 
 info:
   name: >
-    JiangQie Official Website Mini Program < 1.1.1 - SQL Injection
+    JiangQie Official Website Mini Program <= 1.8.2 - Authenticated (Administrator+) SQL Injection
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5572fea7-a8d5-457d-88fc-57051b35aa11?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ae360d3-bd38-40f5-ac0f-7cb4f685fcbe?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/jiangqie-official-website-mini-program/"
     google-query: inurl:"/wp-content/plugins/jiangqie-official-website-mini-program/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jiangqie-official-website-mini-program,critical
+  tags: cve,wordpress,wp-plugin,jiangqie-official-website-mini-program,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.1.1')
+          - compare_versions(version, '<= 1.8.2')

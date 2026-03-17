@@ -1,0 +1,41 @@
+id: f5-bigip-version
+
+info:
+  name: F5 BIG-IP - Version
+  severity: info
+  author: darses
+  description: |
+    F5 BIG-IP was detected.
+  metadata:
+    verified: false
+    max-requests: 1
+    vendor: f5
+    product: bigip
+    shodan-query:
+      - "F5-Login-Page: true"
+    fofa-query:
+      -
+  reference:
+    - http://example.com
+  tags: f5,bigip
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/tmui/tmui/login/css/login.css"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "/xui/common/css/fonts.css"
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: kval
+        part: header
+        kval:
+          - last_modified

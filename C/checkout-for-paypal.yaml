@@ -1,4 +1,4 @@
-id: checkout-for-paypal
+id: checkout-for-paypal-628c476d3536033000fc1b97975c6b54
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9e998fd-aae7-4e1e-8134-a28670a4704b?source=api-scan
   classification:
     cvss-metrics: 

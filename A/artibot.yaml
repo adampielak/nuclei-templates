@@ -1,4 +1,4 @@
-id: artibot
+id: artibot-18af0f18473e7d8b68397b02330cb94a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/450d0748-93d6-448a-97a2-06fc2f8065b3?source=api-scan
   classification:
     cvss-metrics: 

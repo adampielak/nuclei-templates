@@ -1,4 +1,4 @@
-id: buzzsprout-podcasting
+id: buzzsprout-podcasting-14de65fd687d2032387bcb1fa03c92c9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/be7f8b73-801d-46e8-81c1-8bb0bb576700?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: badgeos
+id: badgeos-e67888191234410e81bd739a3358457e
 
 info:
   name: >
-    BadgeOS <= 3.7.1.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    BadgeOS <= 3.7.1.6 - Authenticated (Subscriber+) Insecure Direct Object Reference to Arbitrary Post Title Overwrite
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/74a280e1-e4b6-4bd9-882b-d9f185332d61?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5dae8e82-e252-48d9-ae1f-62acfcd17e2b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

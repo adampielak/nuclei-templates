@@ -1,14 +1,15 @@
-id: mobile-events-manager
+id: mobile-events-manager-b733b4feda8607e721908d5aea78fa99
 
 info:
   name: >
-    Mobile Events Manager < 1.4.4 - Cross-Site Scripting
+    Mobile Events Manager <= 1.4.7 - Authenticated (Administrator+) CSV Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/60ea00e2-e33d-452d-969b-4022d6a00417?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/84683caa-8bc7-4adf-ad64-249f988047bf?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mobile-events-manager/"
     google-query: inurl:"/wp-content/plugins/mobile-events-manager/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mobile-events-manager,high
+  tags: cve,wordpress,wp-plugin,mobile-events-manager,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4.4')
+          - compare_versions(version, '<= 1.4.7')

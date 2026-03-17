@@ -1,4 +1,4 @@
-id: mailcwp
+id: mailcwp-9b222c6e92baafa2e1e6118251883201
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9bb430e6-0c30-4c23-874a-f91e25622857?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: editorial-calendar
+id: editorial-calendar-6590a2c32c8097bb35048af41a913c40
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3dac7b6-512d-4fd6-8294-f0b1c0a2efd7?source=api-scan
   classification:
     cvss-metrics: 

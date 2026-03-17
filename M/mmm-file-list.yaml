@@ -1,14 +1,15 @@
-id: mmm-file-list
+id: mmm-file-list-3ad7237c19fca5f9c03b1077a36df495
 
 info:
   name: >
-    Mmm Simple File List <= 2.3 - Authenticated (Subscriber+) Directory Traversal
+    Mmm Simple File List <= 2.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f33a13dc-ebff-4033-9b8d-10076b1c2d0d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c064227f-6332-40c8-9e96-337c608da832?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

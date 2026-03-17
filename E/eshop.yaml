@@ -1,23 +1,24 @@
-id: eshop
+id: eshop-ef32e6cb99c83efce67f607666bb3ecc
 
 info:
   name: >
-    eShop <= 6.3.14 - Multiple SQL Injections
+    eShop < 6.2.9 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
-    
+    The eshop plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘eshoptemplate’ GET parameter in versions up to, and including, 6.2.8 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa8f75dc-7ecd-498d-b41a-e788b4d4bcdd?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4838c2ad-87e0-4140-81bb-7d39d7a704dc?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+    cvss-score: 6.5
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/eshop/"
     google-query: inurl:"/wp-content/plugins/eshop/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,eshop,critical
+  tags: cve,wordpress,wp-plugin,eshop,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.3.14')
+          - compare_versions(version, '< 6.2.9')

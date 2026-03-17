@@ -1,4 +1,4 @@
-id: csv2wpec-coupon
+id: csv2wpec-coupon-7e9622e05298ee891f33b52f26c10d40
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/24a88f20-ddc4-4544-ac18-ed538ecfa1c7?source=api-scan
   classification:
     cvss-metrics: 

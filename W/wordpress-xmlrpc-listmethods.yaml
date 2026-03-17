@@ -3,9 +3,9 @@ info:
   name: Wordpress XML-RPC List System Methods
   author: 0ut0fb4nd
   severity: info
-  tags: wordpress-misc,wordpress
+  tags: wordpress
 
-http:
+requests:
   - method: POST
     path:
       - "{{BaseURL}}/xmlrpc.php"
@@ -17,7 +17,6 @@ http:
       - type: status
         status:
           - 200
-
       - type: word
         words:
           - "system.multicall"

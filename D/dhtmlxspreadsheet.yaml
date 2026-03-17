@@ -1,4 +1,4 @@
-id: dhtmlxspreadsheet
+id: dhtmlxspreadsheet-b5254cb0dceae9b052dd1e78db98bf8a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/97bff7aa-d304-4ccd-bfca-d3f18568df6c?source=api-scan
   classification:
     cvss-metrics: 

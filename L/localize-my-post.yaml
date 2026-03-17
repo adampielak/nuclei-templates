@@ -1,4 +1,4 @@
-id: localize-my-post
+id: localize-my-post-cb0c6358e21669d89b9b1b589cd17653
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3969e890-76e0-484a-ad16-6e2642e2ae53?source=api-scan
   classification:
     cvss-metrics: 

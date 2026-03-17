@@ -1,4 +1,4 @@
-id: clipr
+id: clipr-997512faccecf1b2d3469a345e345619
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/01def852-367b-4f64-9c5a-58dcc3478b2e?source=api-scan
   classification:
     cvss-metrics: 

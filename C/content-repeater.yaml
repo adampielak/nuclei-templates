@@ -1,4 +1,4 @@
-id: content-repeater
+id: content-repeater-511b2878e3e8431f16b4dfc8580ee273
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f9ad3a88-fcfd-45c5-a23d-ca544cad3ab2?source=api-scan
   classification:
     cvss-metrics: 

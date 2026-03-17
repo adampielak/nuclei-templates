@@ -1,14 +1,15 @@
-id: marmoset-viewer
+id: marmoset-viewer-c5e679e5a78b6e34170cd8b2ad1e1400
 
 info:
   name: >
-    Marmoset Viewer < 1.9.3 - Reflected Cross-Site Scripting
+    Marmoset Viewer <= 1.9.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/73d3f73f-5407-4acf-ac65-1f7eadbaa58f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1780e19e-5836-4601-a2e8-a758b245f14f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/marmoset-viewer/"
     google-query: inurl:"/wp-content/plugins/marmoset-viewer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,marmoset-viewer,medium
+  tags: cve,wordpress,wp-plugin,marmoset-viewer,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.9.3')
+          - compare_versions(version, '<= 1.9.3')

@@ -1,4 +1,4 @@
-id: admin-page-framework
+id: admin-page-framework-b038686537615c10430513687c381bf3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f20352f-386f-45ab-b719-8a70f5c11b02?source=api-scan
   classification:
     cvss-metrics: 

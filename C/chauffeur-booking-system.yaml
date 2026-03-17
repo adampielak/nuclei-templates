@@ -1,4 +1,4 @@
-id: chauffeur-booking-system
+id: chauffeur-booking-system-47b382c141e0bdf017dbc2d5f6a6abb1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4143febf-92b3-42e7-9499-9ea83d7727d9?source=api-scan
   classification:
     cvss-metrics: 

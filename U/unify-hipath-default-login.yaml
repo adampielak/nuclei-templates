@@ -5,7 +5,7 @@ info:
   author: FLX
   severity: high
   description: |
-    Default login credentials on the Unify HiPath Cordless IP admin center were discovered.
+    Unify HiPath Cordless IP default login credentials were discovered.
   impact: |
     An attacker could gain unauthorized access to the admin center and potentially change the configuration of the devices configured on the service.
   remediation: |
@@ -20,9 +20,8 @@ info:
   metadata:
     verified: true
     max-request: 2
-    product: hipath
     vendor: unify
-  tags: default-login,unify,hipath
+  tags: default-login,unify,hipath,vuln
 
 http:
   - method: GET
@@ -59,4 +58,4 @@ http:
           - "{\"success\":true"
           - "There is another user logged in"
         condition: or
-# digest: 490a0046304402205ff5d386c2425291e7d17be713e4bf8c7ca99aa46ad5a6356ecbb7c48a92faa202207cd88795900bf9cb77a539555b727188c5670d2aa53c1d4cd1adc988aa64f56a:922c64590222798bb761d5b6d8e72950
+

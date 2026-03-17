@@ -1,14 +1,15 @@
-id: baslider
+id: baslider-d2769d47b86c6f5f3189cf951f4ea324
 
 info:
   name: >
-    Image Slider by NextCode <= 1.1.2 - Cross-Site Request Forgery to Slide Deletion
+    Image Slider by NextCode <= 1.1.2 - Authenticated (Author+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce90db0c-d4ca-4b32-8a64-681642aaf032?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e340264-7cc0-4598-972f-aaa1fda2096b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/baslider/"
     google-query: inurl:"/wp-content/plugins/baslider/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,baslider,medium
+  tags: cve,wordpress,wp-plugin,baslider,low
 
 http:
   - method: GET

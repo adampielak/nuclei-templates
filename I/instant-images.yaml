@@ -1,14 +1,15 @@
-id: instant-images
+id: instant-images-2b4e9e575d28bd8f9f6ae0d6e1b59d6d
 
 info:
   name: >
-    Instant Images <= 6.1.0 - Authenticated (Author+) Arbitrary Options Update
+    Instant Images – One Click Unsplash, Pixabay and Pexels Uploads <= 4.4.0 - Authenticated Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/17941fbb-c5da-4f5c-a617-3792eb4ef395?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1b75da76-1a58-4f8e-9b4f-d2e40d09f9ea?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.1.0')
+          - compare_versions(version, '<= 4.4.0')

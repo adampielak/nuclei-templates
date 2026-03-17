@@ -5,7 +5,8 @@ info:
   author: tess
   severity: medium
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: http.title:"LDAP Account Manager"
   tags: ldap,misconfig,unauth
 

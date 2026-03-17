@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,youku-acs
+  tags: xss,csp-bypass,youku-acs,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "youku_acs_csp_xss == true"
-# digest: 4b0a00483046022100b9b2b21a90315f28e9071fe4e6d8835d9a28c7fc78aa23e43275572280d95608022100e06c7b999fa1dda478ebc10beb4fba652eb8fe6503e186a4c257c2d3719657bb:922c64590222798bb761d5b6d8e72950
+

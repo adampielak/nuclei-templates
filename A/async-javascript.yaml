@@ -1,17 +1,18 @@
-id: async-javascript
+id: async-javascript-b10f893ed9fb6d05a078b89d947164ef
 
 info:
   name: >
-    Async Javascript <= 2.20.12.09 - Authenticated (Admin+) Cross-Site Scripting
+    Async JavaScript <= 2.19.07.14 - Authenticated (Subscriber+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    
+    The Async JavaScript plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including,  2.19.07.14. This is due to missing authorization checks on the aj_steps AJAX aciton along with a lack on sanitization on the settings saved via the function. This makes it possible for authenticated attackers with subscriber level permissions and above to inject malicious web scripts into a page that execute whenever a user accesses that page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d0586453-76ec-4ec9-9965-780af7cb31ec?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b133888c-7673-4796-917c-486bff1b6b12?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/async-javascript/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.20.12.09')
+          - compare_versions(version, '< 2.20.02.27')

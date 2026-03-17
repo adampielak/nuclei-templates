@@ -1,4 +1,4 @@
-id: cc-coming-soon
+id: cc-coming-soon-f1ad2a97c540d4408e46c138c5e8cbb1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ae4ffe1-ecb6-4bde-8ac4-baeea82a0299?source=api-scan
   classification:
     cvss-metrics: 

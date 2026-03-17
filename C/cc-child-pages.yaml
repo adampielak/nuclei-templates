@@ -1,4 +1,4 @@
-id: cc-child-pages
+id: cc-child-pages-28e46c862da8567afb0aa192f792ecde
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/40a94a1e-da9e-4173-a21d-106d859c7f8c?source=api-scan
   classification:
     cvss-metrics: 

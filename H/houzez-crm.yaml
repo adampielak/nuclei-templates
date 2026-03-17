@@ -1,4 +1,4 @@
-id: houzez-crm
+id: houzez-crm-3ca1b066cb1415aacdb3198d062d0872
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/54c14f04-32ec-4d05-b47b-3ff5e70c4daf?source=api-scan
   classification:
     cvss-metrics: 

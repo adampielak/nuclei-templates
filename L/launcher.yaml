@@ -1,4 +1,4 @@
-id: launcher
+id: launcher-628108d707106cac0b9f9aa523e8dc61
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b2f4efa2-ddf6-46a7-9bde-aa1bcbbd2999?source=api-scan
   classification:
     cvss-metrics: 

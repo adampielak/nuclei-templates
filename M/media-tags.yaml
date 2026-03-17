@@ -1,4 +1,4 @@
-id: media-tags
+id: media-tags-27fde2f9a591c3fe04c76fa8a715509a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/56ce85d3-89f3-461a-8268-7d549e9c2baf?source=api-scan
   classification:
     cvss-metrics: 

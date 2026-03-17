@@ -1,15 +1,15 @@
-id: extensions-for-elementor
+id: extensions-for-elementor-204b6d228718e8f6901c0c14c64a0bb2
 
 info:
   name: >
-    Extensions for Elementor <= 2.0.30 - Authenticated (Contributor+) Stored Cross-Site Scripting via url Parameter
+    Extensions for Elementor <= 2.0.31 - Authenticated (Contributor+) Stored Cross-Site Scripting via EE Events and EE Flipbox Widget
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/63306df3-4972-426f-bfda-6af75a09971c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4322d9d6-13b6-4476-9eb5-fea4aff2e5ce?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.30')
+          - compare_versions(version, '<= 2.0.31')

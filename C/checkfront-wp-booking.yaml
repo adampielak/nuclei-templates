@@ -1,4 +1,4 @@
-id: checkfront-wp-booking
+id: checkfront-wp-booking-f5ed200020271e1932133991beb34d02
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fc5a8506-b191-4ab3-9c59-4f1150be6a38?source=api-scan
   classification:
     cvss-metrics: 

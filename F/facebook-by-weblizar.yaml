@@ -1,4 +1,4 @@
-id: facebook-by-weblizar
+id: facebook-by-weblizar-5f0cf300a16245f7f5c3b4c848d038d5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c5b6501-23c5-401b-815d-1729594e6a59?source=api-scan
   classification:
     cvss-metrics: 

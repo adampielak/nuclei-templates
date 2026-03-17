@@ -1,4 +1,4 @@
-id: decorator-woocommerce-email-customizer
+id: decorator-woocommerce-email-customizer-1b6872bc3020c2e44cc17121999eb5ba
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/db664d0a-a58d-4d8b-ae0a-074f32d8710c?source=api-scan
   classification:
     cvss-metrics: 

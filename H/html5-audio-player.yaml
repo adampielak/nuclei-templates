@@ -1,14 +1,15 @@
-id: html5-audio-player
+id: html5-audio-player-a8f4f474822fded9635b61da0bd36138
 
 info:
   name: >
-    Html5 Audio Player <= 2.1.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    HTML5 Audio Player- Best WordPress Audio Player Plugin <= 2.2.19 - Authenticated (Contributor+) Stored Cross-Site Scripting via Multiple Widgets
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d0059382-3e13-434a-a3d1-7892d14a371b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ca646202-b9e2-4272-b0e2-d39cd748fb8e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.11')
+          - compare_versions(version, '<= 2.2.19')

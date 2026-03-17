@@ -1,14 +1,15 @@
-id: hospital-management
+id: hospital-management-8a6c3d6774dd447c0f3f919d976578c1
 
 info:
   name: >
-    Mojoomla Hospital Management System for WordPress Theme < 22-05-2018 - SQL Injection
+    Hospital Management System <= 47.0(20-11-2023) - Authenticated (Subscriber+) Arbitrary File Upload
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f8f92355-e664-4aeb-9094-9c8aa49cd3e7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/82960f7a-db21-4e47-a375-473e0b843250?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/hospital-management/"
     google-query: inurl:"/wp-content/plugins/hospital-management/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,hospital-management,critical
+  tags: cve,wordpress,wp-plugin,hospital-management,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 08-03-2018')
+          - compare_versions(version, '<= 47.0(20-11-2023)')

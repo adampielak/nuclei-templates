@@ -1,4 +1,4 @@
-id: cf7-google-sheets-connector-pro
+id: cf7-google-sheets-connector-pro-b009f8e1a4175a937ca7ebb98c7e474d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1c6b2c4b-5ea5-471d-9114-d2b469b6c59b?source=api-scan
   classification:
     cvss-metrics: 

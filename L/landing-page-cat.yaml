@@ -1,14 +1,15 @@
-id: landing-page-cat
+id: landing-page-cat-1f05ec6c3aac3082691832baec38f20d
 
 info:
   name: >
-    Landing Page Cat – Coming Soon Page, Maintenance Page & Squeeze Pages <= 1.7.2 - Unauthenticated Information Exposure
+    Landing Page Cat – Coming Soon Page, Maintenance Page & Squeeze Pages <= 1.7.6 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7b34f50a-4d2d-49b8-86e4-0416c8be202b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9772aa85-15e6-4254-9e76-e5794d71084b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/landing-page-cat/"
     google-query: inurl:"/wp-content/plugins/landing-page-cat/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,landing-page-cat,low
+  tags: cve,wordpress,wp-plugin,landing-page-cat,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.7.2')
+          - compare_versions(version, '<= 1.7.6')

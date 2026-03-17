@@ -1,4 +1,4 @@
-id: jazzcash-woocommerce-gateway
+id: jazzcash-woocommerce-gateway-2b946216639ed77b4eb9e56a3219058b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e6809f7f-4495-4185-b439-820010afc305?source=api-scan
   classification:
     cvss-metrics: 

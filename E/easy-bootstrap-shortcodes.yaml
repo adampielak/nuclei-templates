@@ -1,4 +1,4 @@
-id: easy-bootstrap-shortcodes
+id: easy-bootstrap-shortcodes-3ccf743172d1c8b5b53745db9e05384f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6245d74b-89ad-4229-8c99-dbfeaa048400?source=api-scan
   classification:
     cvss-metrics: 

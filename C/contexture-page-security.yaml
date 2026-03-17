@@ -1,4 +1,4 @@
-id: contexture-page-security
+id: contexture-page-security-692c8ce4e3e7eb18ad66255640c57cbd
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ddbc76d0-23cd-4f49-939b-b8f19ff55d5c?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: media-alt-renamer
+id: media-alt-renamer-a0183f0e611140621fb2e0426ced2243
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7826a6ab-50c4-4fc0-b58d-74084172b4e5?source=api-scan
   classification:
     cvss-metrics: 

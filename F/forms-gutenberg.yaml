@@ -1,4 +1,4 @@
-id: forms-gutenberg
+id: forms-gutenberg-e260611481a73da51d4ff5eb4a947b15
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5964dd2a-e388-4454-89f6-aa71e1734d35?source=api-scan
   classification:
     cvss-metrics: 

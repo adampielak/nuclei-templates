@@ -1,4 +1,4 @@
-id: better-rss-widget
+id: better-rss-widget-4e532c481ea731b6badefa9149189701
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/12660e7a-51fc-42c5-8a09-49df1db51efb?source=api-scan
   classification:
     cvss-metrics: 

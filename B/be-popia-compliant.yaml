@@ -1,14 +1,15 @@
-id: be-popia-compliant
+id: be-popia-compliant-e7db2ed1f0010bc58d59a0937a3226a1
 
 info:
   name: >
-    Be POPIA Compliant <= 1.1.5 - Sensitive Information Exposure
+    Be POPIA Compliant <= 1.2.0 - Authenticated (Subscriber+) SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0fcdd6b5-a273-4916-a894-a753be0a7921?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eecd1497-c94e-4f67-8cc5-72afffe9fae2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.5')
+          - compare_versions(version, '<= 1.2.0')

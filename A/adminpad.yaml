@@ -1,4 +1,4 @@
-id: adminpad
+id: adminpad-024c994284cb4846e1f6626814560a64
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9d545fc-fed0-428a-bad5-a0d7d09c04a7?source=api-scan
   classification:
     cvss-metrics: 

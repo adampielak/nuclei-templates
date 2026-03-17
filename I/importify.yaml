@@ -1,4 +1,4 @@
-id: importify
+id: importify-0eff177b5501e4127fc98913d094b62e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/830ff660-0265-46e5-8d16-ecd03cdf9f52?source=api-scan
   classification:
     cvss-metrics: 

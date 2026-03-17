@@ -1,0 +1,29 @@
+id: Apache-ActiveMQ-detect
+
+info:
+  name: Apache ActiveMQ Detect
+  author: rix4uni
+  severity: info
+  metadata:
+    shodan-query:
+      - title:"Apache ActiveMQ"
+    fofa-query:
+      - http.title:"Apache ActiveMQ"
+  tags: tech,Apache,ActiveMQ
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<title>Apache ActiveMQ</title>"
+          - "<h2>Welcome to the Apache ActiveMQ!</h2>"
+
+      - type: status
+        status:
+          - 200

@@ -1,14 +1,15 @@
-id: motors-car-dealership-classified-listings
+id: motors-car-dealership-classified-listings-a993b051934f8da3fed311b0218807ea
 
 info:
   name: >
-    Motors – Car Dealer, Classifieds & Listing <= 1.4.0 - Stored Cross-Site Scripting
+    Motors – Car Dealer, Classifieds & Listing <= 1.4.57 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Post Deletion and Listing Template Creation
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1638145c-2bc8-45d4-904e-b1aba124a0e3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/04fd2d7a-fa75-4b9d-9514-5c24ca5ebc22?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/motors-car-dealership-classified-listings/"
     google-query: inurl:"/wp-content/plugins/motors-car-dealership-classified-listings/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,motors-car-dealership-classified-listings,high
+  tags: cve,wordpress,wp-plugin,motors-car-dealership-classified-listings,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4.1')
+          - compare_versions(version, '<= 1.4.57')

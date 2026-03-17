@@ -1,4 +1,4 @@
-id: htaccess
+id: htaccess-c5ed519f037f55b6121380a20c040472
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3a6eac3b-823a-4a26-acb7-339357c10a07?source=api-scan
   classification:
     cvss-metrics: 

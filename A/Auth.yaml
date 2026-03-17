@@ -3,9 +3,9 @@ id: Authorization
 info:
   name: Authorization
   author: lu3ky-13
-  severity: info
+  severity: critical
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -17,9 +17,8 @@ http:
           - 401
 
       - type: word
-        part: header
         words:
           - "Www-Authenticate:"
           - "Authorization:"
           - "Authorization: Basic"
-        condition: or
+        part: header

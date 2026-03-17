@@ -1,14 +1,15 @@
-id: ht-mega-for-elementor
+id: ht-mega-for-elementor-3481bd20645297393722e131c23bee18
 
 info:
   name: >
-    HT Mega – Absolute Addons for Elementor <= 2.2.0 - Missing Authorization to Privilege Escalation
+    HT Mega – Absolute Addons For Elementor <= 2.5.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Video Player Widget Settings
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/46f3cc62-c2d8-45af-bb92-c2040789cbc0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aac9569e-d33d-45b3-bd03-2e7f48536ae5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ht-mega-for-elementor/"
     google-query: inurl:"/wp-content/plugins/ht-mega-for-elementor/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ht-mega-for-elementor,high
+  tags: cve,wordpress,wp-plugin,ht-mega-for-elementor,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.2.1')
+          - compare_versions(version, '<= 2.5.5')

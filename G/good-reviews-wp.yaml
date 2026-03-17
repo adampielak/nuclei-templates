@@ -1,4 +1,4 @@
-id: good-reviews-wp
+id: good-reviews-wp-18cba3ad6aa39f7edc5c10bdc94e5545
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2fe44e46-dfbf-4286-889c-606280d62218?source=api-scan
   classification:
     cvss-metrics: 

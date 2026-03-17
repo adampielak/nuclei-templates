@@ -1,4 +1,5 @@
 id: hp-device-info-detect
+
 info:
   name: HP LaserJet
   author: pussycat0x
@@ -7,19 +8,9 @@ info:
   tags: iot,hp
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /hp/device/DeviceInformation/View HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
+  - method: GET
+    path:
+      - "{{BaseURL}}/hp/device/DeviceInformation/View"
     matchers-condition: and
     matchers:
       - type: word

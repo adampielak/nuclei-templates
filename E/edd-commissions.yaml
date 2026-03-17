@@ -1,4 +1,4 @@
-id: edd-commissions
+id: edd-commissions-6e5696f4b3c16659c35a6dc2819d10fa
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bf356066-fb25-4f6a-8600-91c7f1d098bf?source=api-scan
   classification:
     cvss-metrics: 

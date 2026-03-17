@@ -1,15 +1,15 @@
-id: google-website-translator
+id: google-website-translator-391bfee1d86a5e7e4e8418e0e036a1ae
 
 info:
   name: >
-    Prisna GWT - Google Website Translator <= 1.4.11 - Authenticated (Admin+) PHP Object Injection
+    Prisna GWT – Google Website Translator <= 1.4.13 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4183c3f7-7794-45f3-8fad-b87ffec3639c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/078e110d-2e57-4bcf-b3fb-a4bbf70ea362?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.11')
+          - compare_versions(version, '<= 1.4.13')

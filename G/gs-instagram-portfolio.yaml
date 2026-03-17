@@ -1,4 +1,4 @@
-id: gs-instagram-portfolio
+id: gs-instagram-portfolio-10533a0bf2c542bead2f5c0131bad801
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7770ab04-eb40-450e-ab8a-2a8e5d13d4a4?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: ai-twitter-feeds
+id: ai-twitter-feeds-16a0bcde87ee2bd3421d5d33f237c8f8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/84b6f093-afd4-401f-ba82-d5be10b0fff8?source=api-scan
   classification:
     cvss-metrics: 

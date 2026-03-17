@@ -1,4 +1,4 @@
-id: facebook-fan-page-widget
+id: facebook-fan-page-widget-3c8c9dc3b621d36e40ee85c29745f27c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b66ef488-0efe-43dd-8938-a1881ed2560a?source=api-scan
   classification:
     cvss-metrics: 

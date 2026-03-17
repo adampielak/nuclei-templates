@@ -1,4 +1,4 @@
-id: foursquare-checkins
+id: foursquare-checkins-e1e1a92249da54658e2d3da41734b08d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/32d80824-c420-40e8-8c07-fb17b1b50644?source=api-scan
   classification:
     cvss-metrics: 

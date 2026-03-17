@@ -8,11 +8,15 @@ info:
     Statamic is the flat-first, Laravel + Git powered CMS designed for building beautiful, easy to manage websites.
   reference:
     - https://github.com/statamic/cms
+  classification:
+    cpe: cpe:2.3:a:statamic:statamic:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: statamic
+    product: statamic
     shodan-query: "Statamic"
-  tags: tech,statamic,detect
+  tags: tech,statamic,detect,discovery
 
 http:
   - method: GET
@@ -26,4 +30,4 @@ http:
         part: header
         regex:
           - 'X-Powered-By:(.*)Statamic'
-# digest: 490a00463044022056716af6b1942e84b678041e3433d215c8a0a61e9a77d2a1ff039396493f930a02205a431e513f4372119b25a1342dc81e41ceeb4173526610df4a7d7e2db3af003d:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220074b6509af1112459ae44cf863dc29b8267d39ddd2e795e5933043e9cac59600022100dbcde84a0d9b1ec297e9db6095828a975514b46879520b0b2c123d5dd2fd1b1c:922c64590222798bb761d5b6d8e72950

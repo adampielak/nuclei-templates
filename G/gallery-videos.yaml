@@ -1,14 +1,15 @@
-id: gallery-videos
+id: gallery-videos-3ff175744c927034ff36b2d07fcbc5d1
 
 info:
   name: >
-    Video Gallery – YouTube Gallery <= 2.1.4 - Authenticated (Administrator+) SQL Injection
+    YouTube Gallery and Vimeo Gallery Plugin <= 2.4.2 - Authenticated (Administrator+) SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8382051-ae17-4719-94b5-3cfb0b5e82b1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f5524582-5aac-48b4-ad67-7c4829d63ed0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.4')
+          - compare_versions(version, '<= 2.4.2')

@@ -1,4 +1,4 @@
-id: comments-from-facebook
+id: comments-from-facebook-a4e79bbb9a43b1f84eff6beacf435c88
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e481c916-0789-4b04-a7f8-dbde554a5e8c?source=api-scan
   classification:
     cvss-metrics: 

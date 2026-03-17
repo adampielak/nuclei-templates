@@ -1,14 +1,15 @@
-id: ninja-gdpr-compliance
+id: ninja-gdpr-compliance-4a8179b4ab7e25214c189c7ef486b47b
 
 info:
   name: >
-    GDPR CCPA Compliance Support <= 2.3 - PHP Object Injection
+    GDPR CCPA Compliance & Cookie Consent Banner <= 2.7.0 - Missing Authorization to Settings Update and Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a2871261-3231-4a52-9a38-bb3caf461e7d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8f870a6-26a5-4f98-9bd6-12736c561265?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ninja-gdpr-compliance/"
     google-query: inurl:"/wp-content/plugins/ninja-gdpr-compliance/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ninja-gdpr-compliance,low
+  tags: cve,wordpress,wp-plugin,ninja-gdpr-compliance,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.3')
+          - compare_versions(version, '<= 2.7.0')

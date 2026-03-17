@@ -1,14 +1,15 @@
-id: lead-form-builder
+id: lead-form-builder-6ab575096f78c613af22908d4289fe12
 
 info:
   name: >
-    Contact Form & Lead Form Elementor Builder <= 1.6.3 - Unauthenticated Stored Cross-Site Scripting
+    Responsive Contact Form Builder & Lead Generation Plugin <= 1.9.1 - Authenticated (Subscriber+) Arbitrary Shortcode Execution
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/63f86449-144c-494f-85d8-ce7c8d7d65d3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/858d8641-7455-47c2-9639-480ce4ec3540?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.3')
+          - compare_versions(version, '<= 1.9.1')

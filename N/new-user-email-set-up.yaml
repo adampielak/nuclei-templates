@@ -1,4 +1,4 @@
-id: new-user-email-set-up
+id: new-user-email-set-up-2bb19c8766d27b3f0fc016f70a8c4056
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6c50568c-c0ec-43f9-bf06-7347f9cfc662?source=api-scan
   classification:
     cvss-metrics: 

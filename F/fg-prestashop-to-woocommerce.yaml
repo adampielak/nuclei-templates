@@ -1,23 +1,24 @@
-id: fg-prestashop-to-woocommerce
+id: fg-prestashop-to-woocommerce-1c31d35dd4e712b0a402b8654d0ca899
 
 info:
   name: >
-    FG PrestaShop to WooCommerce <= 4.45.1 - Unauthenticated Sensitive Information Disclosure
+    FG PrestaShop to WooCommerce Plugin <= 3.19.1 - Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
-    
+    The FG PrestaShop to WooCommerce plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ajax_importer() function in versions up to, and including, 3.19.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d9df6792-d208-44c9-b04b-00e86d76cbfa?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5e70f6f-fc83-4c89-a1d5-35f188e0fd90?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/fg-prestashop-to-woocommerce/"
     google-query: inurl:"/wp-content/plugins/fg-prestashop-to-woocommerce/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fg-prestashop-to-woocommerce,low
+  tags: cve,wordpress,wp-plugin,fg-prestashop-to-woocommerce,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.45.1')
+          - compare_versions(version, '<= 3.19.1')

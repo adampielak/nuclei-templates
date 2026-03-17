@@ -1,4 +1,4 @@
-id: cysteme-finder
+id: cysteme-finder-26efec3d5f998d75ea65d9ca39003f22
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0c3fe714-94c9-47ea-b073-a082e4713977?source=api-scan
   classification:
     cvss-metrics: 

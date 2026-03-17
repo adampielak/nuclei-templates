@@ -1,4 +1,4 @@
-id: media-library-helper
+id: media-library-helper-7c452443c905a19a3f2ff0751c931385
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc2356b2-e153-4e80-bfac-c25c15cdc259?source=api-scan
   classification:
     cvss-metrics: 

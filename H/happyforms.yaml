@@ -1,14 +1,15 @@
-id: happyforms
+id: happyforms-6b2082c22d5ef65ee27f560218b1d436
 
 info:
   name: >
-    Happyforms <= 1.25.9 - Reflected Cross-Site Scripting
+    Happyforms <= 1.21.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Blocks
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ff986a66-93f7-4926-8818-7af745c0166c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/72f1ffe1-d8af-4aa2-bc58-5f1cd4eaa856?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/happyforms/"
     google-query: inurl:"/wp-content/plugins/happyforms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,happyforms,medium
+  tags: cve,wordpress,wp-plugin,happyforms,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.25.9')
+          - compare_versions(version, '<= 1.21.1')

@@ -1,23 +1,24 @@
-id: learn-manager
+id: learn-manager-e543a9f0adb30448d469901a6ca1d62e
 
 info:
-  name: "WP LMS – Best WordPress LMS Plugin <= 1.1.4 - Cross-Site Request Forgery"
+  name: >
+    WP LMS – Best WordPress LMS Plugin <= 1.1.4 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
-  description: "The WP LMS – Best WordPress LMS Plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.1.4. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to create and edit user-related data via a forged request granted they can trick a site administrator into performing an action such as clicking on a link."
+  severity: medium
+  description: >
+    The WP LMS – Best WordPress LMS Plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.1.4. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to create and edit user-related data via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://ithemes.com/blog/wordpress-vulnerability-report-august-2021-part-2/
-    - https://wpscan.com/vulnerability/56031d26-4b15-47d7-9fa3-135299d591da
-    - https://plugins.trac.wordpress.org/changeset/2574606
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2defe79-137f-45a0-85a1-f61dce9afd28?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/learn-manager/"
     google-query: inurl:"/wp-content/plugins/learn-manager/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,learn-manager,high
+  tags: cve,wordpress,wp-plugin,learn-manager,medium
 
 http:
   - method: GET

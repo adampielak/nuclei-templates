@@ -1,4 +1,4 @@
-id: facebook-wall-and-social-integration
+id: facebook-wall-and-social-integration-739e4454fbb308c937ef75bb1786deff
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/86264c7d-d1a5-4f3a-872f-b27a94d796e3?source=api-scan
   classification:
     cvss-metrics: 

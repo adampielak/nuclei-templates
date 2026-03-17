@@ -1,4 +1,4 @@
-id: cpo-companion
+id: cpo-companion-a51b9ad34001eaf41609b5380b444301
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6e5a4ebe-5d01-4d5e-b62b-a264b61fc6ee?source=api-scan
   classification:
     cvss-metrics: 

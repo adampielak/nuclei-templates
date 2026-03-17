@@ -1,4 +1,4 @@
-id: easy-ad-manager
+id: easy-ad-manager-7f4b3ffa19e39534d9b290155a381384
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f7750f70-e79c-45fb-b792-ba6a4da59964?source=api-scan
   classification:
     cvss-metrics: 

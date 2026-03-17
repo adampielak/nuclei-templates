@@ -1,4 +1,4 @@
-id: google-adsense-and-hotel-booking
+id: google-adsense-and-hotel-booking-5a43be987dfd75d88062649836228a91
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/97416640-c076-4f5e-9119-adbca2fcc495?source=api-scan
   classification:
     cvss-metrics: 

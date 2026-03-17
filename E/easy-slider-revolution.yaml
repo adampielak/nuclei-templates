@@ -1,4 +1,4 @@
-id: easy-slider-revolution
+id: easy-slider-revolution-9151b2d5995efccf70c1cf3a47098e09
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/14a20f9c-cf5a-4d57-b723-ad29a12c8881?source=api-scan
   classification:
     cvss-metrics: 

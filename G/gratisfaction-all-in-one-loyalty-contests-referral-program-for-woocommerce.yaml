@@ -1,4 +1,4 @@
-id: gratisfaction-all-in-one-loyalty-contests-referral-program-for-woocommerce
+id: gratisfaction-all-in-one-loyalty-contests-referral-program-for-woocommerce-02c9318c107dbdb36f47600a527c3e5c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f2135ab-ef76-4539-81ad-51abc4e051ce?source=api-scan
   classification:
     cvss-metrics: 

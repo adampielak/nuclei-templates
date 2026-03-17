@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,fastly-storemapper
+  tags: xss,csp-bypass,fastly-storemapper,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "fastly_storemapper_csp_xss == true"
-# digest: 490a0046304402207291c5d7cd2276fab23aec0688aaa0c2464416f0bf15b28c0f16ff76ed713e4702200786b4ad573c08c87e1beb83cc3342e8b3372fb63e13402626cdb4ecb9dea9a9:922c64590222798bb761d5b6d8e72950
+

@@ -1,14 +1,15 @@
-id: angwp
+id: angwp-66a614b0d9d8260a106670e46aa57a48
 
 info:
   name: >
-    Adning Advertising <= 1.5.5 - Arbitrary File Upload
+    Adning Advertising <= 1.5.5 - Unauthenticated Arbitrary File Deletion via Path Traversal
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a263b74-e9ae-4fd2-be9b-9b8e9eee5982?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7506429-7f8a-45b5-b1b0-6fdb39599ee5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/angwp/"
     google-query: inurl:"/wp-content/plugins/angwp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,angwp,critical
+  tags: cve,wordpress,wp-plugin,angwp,low
 
 http:
   - method: GET

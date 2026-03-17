@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " has connection throttling disabled"'
-# digest: 4b0a00483046022100ab6d91fa46318129f1b571c113c8149e882eab80fe403024bea66ccbf74e41af022100c40dc6bef2134c8e1146942d8c36bdfb8795008412c46192e2dab3408b23c830:922c64590222798bb761d5b6d8e72950
+

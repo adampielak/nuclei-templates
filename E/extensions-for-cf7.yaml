@@ -1,14 +1,15 @@
-id: extensions-for-cf7
+id: extensions-for-cf7-ede8cd71e11404562636beb2e315e0f4
 
 info:
   name: >
-    Extensions For CF7 <= 2.0.8 - Cross-Site Request Forgery
+    Extensions For CF7 <= 3.2.0 - Authenticated (Admin+) Sever-Side Request Forgery
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/05144b8d-2dad-4a40-abe7-ecde837ec350?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c59a4802-ce4c-4f19-be7a-848862e1d3cf?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/extensions-for-cf7/"
     google-query: inurl:"/wp-content/plugins/extensions-for-cf7/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,extensions-for-cf7,medium
+  tags: cve,wordpress,wp-plugin,extensions-for-cf7,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.8')
+          - compare_versions(version, '<= 3.2.0')

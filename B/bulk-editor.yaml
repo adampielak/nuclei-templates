@@ -1,17 +1,18 @@
-id: bulk-editor
+id: bulk-editor-1460c4b5154c5df40d47e3acefcd0b64
 
 info:
   name: >
-    WOLF <= 1.0.7.1 - Cross-Site Request Forgery
+    WOLF <= 1.0.6 - Cross-Site Request Forgery via wpbe_update_page_field
   author: topscoder
   severity: medium
   description: >
-    
+    The WOLF plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.0.6. This is due to missing or incorrect nonce validation on the wpbe_update_page_field function. This makes it possible for unauthenticated attackers to invoke this function and update settings via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8b771d76-b79a-4ff2-9433-8d35734a4396?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a39ca182-981b-4636-acd5-4c8a269858dd?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/bulk-editor/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.7.1')
+          - compare_versions(version, '<= 1.0.6')

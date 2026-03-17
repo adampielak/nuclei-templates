@@ -1,4 +1,4 @@
-id: export-media-urls
+id: export-media-urls-714b8f87e80b917d408a0dd914ef6b78
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7b121abf-3842-43ac-a3dc-bde6d5e0b263?source=api-scan
   classification:
     cvss-metrics: 

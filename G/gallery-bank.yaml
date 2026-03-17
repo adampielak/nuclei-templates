@@ -1,23 +1,24 @@
-id: gallery-bank
+id: gallery-bank-557700c10a63ffdb215219e3880e3d4b
 
 info:
   name: >
-    Gallery Bank – WordPress Photo Gallery <= 3.0.101 - SQL Injection
+    Gallery Bank – WordPress Photo Gallery Plugin < 2.0.20 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
-    The Gallery Bank – WordPress Photo Gallery plugin for WordPress is vulnerable to generic SQL Injection via the ‘show_albums’ attribute in versions up to, and including, 3.0.101 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for authenticated attackers, with editor-level permissions and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
+    The Gallery Bank – WordPress Photo Gallery Plugin for WordPress is vulnerable to Multiple Reflected Cross-Site Scripting via the ‘album_id’ parameter in edit_album.php and the 'recordsArray' parameter in the album_gallery_bank_class.php file in versions before 2.0.20 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/13e7c4ab-7856-41a5-8cd9-4f8118af534d?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f4d41f7f-f0c6-4e50-bf5f-37ee25415f43?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 8.8
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/gallery-bank/"
     google-query: inurl:"/wp-content/plugins/gallery-bank/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,gallery-bank,high
+  tags: cve,wordpress,wp-plugin,gallery-bank,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.101')
+          - compare_versions(version, '< 2.0.20')

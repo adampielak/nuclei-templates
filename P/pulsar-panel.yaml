@@ -1,0 +1,31 @@
+id: pulsar-panel
+
+info:
+  name: Apache Pulsar Panel - Detect
+  author: rix4uni
+  severity: info
+  description: Apache Pulsar login panel was detected.
+  reference:
+    - https://streamnative.io/blog/streamnative-open-sourced-and-contributed-apache-pulsar-manager-to-asf#:~:text=Apache%20Pulsar%20Manager.-,Log%20in,(pulsar)%20to%20log%20in.
+    - https://twitter.com/fattselimi/status/1648415859453435904
+  metadata:
+    shodan-query:
+      - http.title:"Pulsar Admin UI"
+  tags: panel,apache,pulsar,login
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/#/login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Pulsar Admin UI</title>"
+        condition: or
+
+      - type: status
+        status:
+          - 200

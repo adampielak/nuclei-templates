@@ -1,14 +1,15 @@
-id: contact-forms
+id: contact-forms-f42f871bd700ba50fd593e8a1cecc106
 
 info:
   name: >
-    Cimatti Contact Forms <= 1.4.11 - Cross-Site Scripting
+    Contact Forms by Cimatti <= 1.5.4 - Reflected Cross-Site Scripting via 'form-field-id', 'edit-fid', 'id', 'name', 'type', 'description' Parameters
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/09952b56-a064-46f9-b037-be86cf6df781?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b512f9a9-6c83-416c-bacc-ee3bba8dfe29?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/contact-forms/"
     google-query: inurl:"/wp-content/plugins/contact-forms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,contact-forms,high
+  tags: cve,wordpress,wp-plugin,contact-forms,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4.12')
+          - compare_versions(version, '<= 1.5.4')

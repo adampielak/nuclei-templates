@@ -1,17 +1,18 @@
-id: affiliates-manager
+id: affiliates-manager-b90c55ce84fb5ec72bf4d396a8210eeb
 
 info:
   name: >
-    Affiliates Manager <= 2.9.31 - Cross-Site Request Forgery via multiple AJAX actions
+    Affiliates Manager <= 2.9.13 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
-    
+    The Affiliates Manager plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 2.9.13. This is due to missing or incorrect nonce validation on the process_individual_action function. This makes it possible for unauthenticated attackers to delete affiliates and commissions, via forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/756b5e3e-46fa-483e-945a-86166e79d989?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ddd37b7a-3ef8-4269-ba3b-665ae34bde26?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/affiliates-manager/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.9.31')
+          - compare_versions(version, '<= 2.9.13')

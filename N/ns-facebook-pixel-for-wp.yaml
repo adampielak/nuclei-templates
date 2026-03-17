@@ -1,4 +1,4 @@
-id: ns-facebook-pixel-for-wp
+id: ns-facebook-pixel-for-wp-10d3cb47c359c84b87c9d2d65f3a1de9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/771da808-8962-46a3-8519-85d9422583f6?source=api-scan
   classification:
     cvss-metrics: 

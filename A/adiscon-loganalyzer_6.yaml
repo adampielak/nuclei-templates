@@ -11,11 +11,8 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:adiscon:loganalyzer:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    vendor: adiscon
-    product: loganalyzer
   tags: adiscon,loganalyzer,syslog,exposure,panel
 
 http:
@@ -42,4 +39,5 @@ http:
         part: header
         words:
           - 'text/html'
-# digest: 4a0a004730450221009c9d50bd6c5b8cbd06d74df35368ca742927f209367622cc8a31ff8a534dceb90220274e662e9c332f366ebe8288c818cb537f1c2c9c3e947bb884c71e7018ccb1e4:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100b09f65d0d915c5eb69ea4eb56bf5f0633c446dfbdd2d305cb1a203f4b0c5b2c0022100c9e9783d8e7aaf2a9b5666558b3010195c05a9d2373a177b17ca83c58546f6a0:922c64590222798bb761d5b6d8e72950

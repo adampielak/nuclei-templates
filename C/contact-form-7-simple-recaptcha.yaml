@@ -1,4 +1,4 @@
-id: contact-form-7-simple-recaptcha
+id: contact-form-7-simple-recaptcha-510e6935a62a85a6b07ed62f21674a53
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d2236cd-dfed-42d0-a77f-4573e74a4781?source=api-scan
   classification:
     cvss-metrics: 

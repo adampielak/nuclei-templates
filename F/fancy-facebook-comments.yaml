@@ -1,14 +1,15 @@
-id: fancy-facebook-comments
+id: fancy-facebook-comments-11c1cecfa8fc37c46ac739dcadf4b0ec
 
 info:
   name: >
-    Fancy Comments WordPress <= 1.2.14 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    WordPress Fancy Comments <= 1.2.10 - Authenticated (Contributor+) Stored Cross Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/21597f22-2690-4a3d-965f-bc99326b7e64?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2508adc4-2a2f-4b6c-9b5a-da85d94226a0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.14')
+          - compare_versions(version, '<= 1.2.10')

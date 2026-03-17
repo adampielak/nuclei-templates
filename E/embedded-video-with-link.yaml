@@ -1,4 +1,4 @@
-id: embedded-video-with-link
+id: embedded-video-with-link-fdb2b7ec52f00d9b3c57924f7a69b278
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3dd8dac6-b969-498a-a1f8-2a00009ae1d8?source=api-scan
   classification:
     cvss-metrics: 

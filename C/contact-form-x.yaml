@@ -1,4 +1,4 @@
-id: contact-form-x
+id: contact-form-x-5f33070121e55f2d44c084a9b70b8149
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1b996e76-770f-41cc-9601-4e1a3e0127bf?source=api-scan
   classification:
     cvss-metrics: 

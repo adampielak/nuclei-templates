@@ -1,4 +1,4 @@
-id: ebook-download
+id: ebook-download-d67d01c5c0c605f816e3048a8b5c7336
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/07aee46a-a32d-4d31-9541-4e183299b09c?source=api-scan
   classification:
     cvss-metrics: 

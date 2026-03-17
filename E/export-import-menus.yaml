@@ -1,14 +1,15 @@
-id: export-import-menus
+id: export-import-menus-2ceb7ec42213ec58856f3c7507674477
 
 info:
   name: >
-    Export Import Menus <= 1.8.0 - Authenticated (Subscriber+) Arbitrary File Upload
+    Export Import Menus <= 1.9.1 - Missing Authorization to Unauthenticated Menu Export
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d74efb03-4a1c-4163-bd79-ef17975a609e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/08beb583-096d-453c-9690-b46e410afb1b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/export-import-menus/"
     google-query: inurl:"/wp-content/plugins/export-import-menus/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,export-import-menus,low
+  tags: cve,wordpress,wp-plugin,export-import-menus,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.8.0')
+          - compare_versions(version, '<= 1.9.1')

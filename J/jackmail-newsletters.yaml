@@ -1,4 +1,4 @@
-id: jackmail-newsletters
+id: jackmail-newsletters-28b86b4ad83472569c5800fbaba8bbf3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/084a209f-c67b-4df9-9f4b-c537ea065a50?source=api-scan
   classification:
     cvss-metrics: 

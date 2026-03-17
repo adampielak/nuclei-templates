@@ -1,4 +1,4 @@
-id: ipblocklist
+id: ipblocklist-ea66752df615d30476805875178c77c2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4372e6a4-3671-4110-bebb-85c1a97c5abb?source=api-scan
   classification:
     cvss-metrics: 

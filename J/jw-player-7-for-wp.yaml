@@ -1,4 +1,4 @@
-id: jw-player-7-for-wp
+id: jw-player-7-for-wp-a72ee1bb3a38c53e2100692356a3aef1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/52bd0d4d-4a08-417c-a426-6bd981f43120?source=api-scan
   classification:
     cvss-metrics: 

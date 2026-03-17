@@ -1,4 +1,4 @@
-id: broken-link-checker-for-youtube
+id: broken-link-checker-for-youtube-52dc6c03d9169dbf25e7219723609ed7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9993d84e-7337-4eda-af3c-039b6d8c8fe6?source=api-scan
   classification:
     cvss-metrics: 

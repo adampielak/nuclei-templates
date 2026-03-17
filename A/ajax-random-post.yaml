@@ -1,4 +1,4 @@
-id: ajax-random-post
+id: ajax-random-post-f1f14dd9c4bb3b1d46c4b6cca9ad2e77
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0bb13936-cbc0-4cba-bd62-ef6d9728a65a?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,23 +1,24 @@
-id: counter-box
+id: counter-box-a1dd6ae6e8e1a71d20bb3e8a660ea3b5
 
 info:
   name: >
-    Multiple Wow-Company Plugins (Various Versions) -- Reflected Cross-Site Scripting via 'page' parameter
+    Counter Box – WordPress plugin for countdown, timer, counter <= 1.2 - SQL Injection
   author: topscoder
-  severity: medium
+  severity: low
   description: >
-    
+    The Counter Box plugin for WordPress is vulnerable to time-based blind SQL Injection via the ‘s’ parameter in versions up to, and including, 1.2 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with administrator access, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a95af34-559c-4644-9941-7bd1551aba33?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c154cc4b-f0b9-4c3e-8e74-9bfa6de62d2f?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 7.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/counter-box/"
     google-query: inurl:"/wp-content/plugins/counter-box/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,counter-box,medium
+  tags: cve,wordpress,wp-plugin,counter-box,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.1')
+          - compare_versions(version, '<= 1.2')

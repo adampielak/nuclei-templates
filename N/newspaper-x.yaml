@@ -1,14 +1,15 @@
-id: newspaper-x
+id: newspaper-x-6b103802dc6e79ab184de7caf446bc92
 
 info:
   name: >
-    Epsilon Framework Themes (Various Versions) - Function Injection
+    Epsilon Framework Themes (Various Versions) - Unauthenticated Plugin Activation/Deactivation
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5b75c322-539d-44e9-8f26-5ff929874b67?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a9e4e989-8e55-4ea7-8f42-9f67cfab1168?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

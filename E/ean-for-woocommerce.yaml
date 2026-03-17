@@ -1,14 +1,15 @@
-id: ean-for-woocommerce
+id: ean-for-woocommerce-cf969a5dd27525aae9857d5cce828a64
 
 info:
   name: >
-    EAN for WooCommerce <= 4.9.2 - Insecure Direct Object Reference to Sensitve Information Exposure via Shortcode
+    EAN for WooCommerce <= 4.9.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via alg_wc_ean_product_meta Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/17b20df5-4adf-47ce-bddf-2ec0b9499de8?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d798406b-2b7f-4ca0-8d05-8aff4bf44dd8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

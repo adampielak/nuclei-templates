@@ -1,17 +1,18 @@
-id: intelly-related-posts
+id: intelly-related-posts-c70172b160946f4e939e2507da6d8601
 
 info:
   name: >
-    Inline Related Posts <= 3.5.0 - Information Exposure
+    Inline Related Posts <= 3.0.4 - Authenticated (Admin+) Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    
+    The Inline Related Posts plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 3.0.4 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with administrative capabilities, to inject arbitrary web scripts that execute in a victim's browser. This only affects multi-site installations, and installations where unfiltered_html has been disabled.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d9318d57-499b-4804-8f83-1e4a68c5790f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2505ffdd-d697-4c69-8f75-0bc4d09e1b1f?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 5.5
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/intelly-related-posts/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.5.0')
+          - compare_versions(version, '<= 3.0.4')

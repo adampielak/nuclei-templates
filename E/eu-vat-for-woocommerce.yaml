@@ -1,15 +1,15 @@
-id: eu-vat-for-woocommerce
+id: eu-vat-for-woocommerce-81576b79ba0db7424fe3a75fb79e94e2
 
 info:
   name: >
-    EU/UK VAT Manager for WooCommerce <= 2.12.10 - Reflected Cross-Site Scripting
+    Multiple Plugins by wpcodefactory <= Various Versions - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bf03a656-7a3b-4227-9493-88f522d7bc13?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a2b8d0f9-3fe1-4588-b81f-13d7db47afea?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/eu-vat-for-woocommerce/"
     google-query: inurl:"/wp-content/plugins/eu-vat-for-woocommerce/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,eu-vat-for-woocommerce,medium
+  tags: cve,wordpress,wp-plugin,eu-vat-for-woocommerce,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.12.10')
+          - compare_versions(version, '<= 4.4.2')

@@ -1,4 +1,4 @@
-id: idpay-contact-form-7
+id: idpay-contact-form-7-e3b0819e93c2e92645175f698a388c69
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cf3f82dc-3820-4c9d-adbb-ca0375078876?source=api-scan
   classification:
     cvss-metrics: 

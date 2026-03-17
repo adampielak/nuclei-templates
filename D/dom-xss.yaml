@@ -1,51 +1,46 @@
 id: dom-xss
 
 info:
-  name: DOM Cross Site Scripting
-  author: theamanrawat,AmirHossein Raeisi,dwisiswant0
-  severity: medium
-  description: |
-    Detects DOM-based Cross Site Scripting (XSS) vulnerabilities.
-  impact: |
-    Allows attackers to execute malicious scripts in the victim's browser.
-  remediation: |
-    Sanitize and validate user input to prevent script injection.
-  tags: xss,dom,dast,headless
+  name: DOM XSS Sources & Sinks
+  author: geeknik
+  severity: info
+  reference:
+    - Inspired by https://portswigger.net/blog/introducing-dom-invader
+  tags: xss,file
 
-variables:
-  num: "{{rand_int(10000, 99999)}}"
+file:
+  - extensions:
+      - js
+      - ts
+      - html
+      - php
+      - cs
+      - rb
+      - py
 
-headless:
-  - steps:
-      - action: navigate
-        args:
-          url: "{{BaseURL}}"
-
-      - action: waitdialog
-        name: reflected
-
-    payloads:
-      reflection:
-        - "'\"><script>alert({{num}})</script>"
-
-    fuzzing:
-      - part: query
-        type: postfix
-        mode: single
-        fuzz:
-          - "{{url_encode(reflection)}}"
-
-      - part: path
-        type: postfix
-        mode: single
-        fuzz:
-          - "{{reflection}}"
-
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - reflected == true
-          - reflected_message == num
-        condition: and
-# digest: 4a0a00473045022100ee6ce9a1a1571d06b368c39579f8371f3346ca6291c2faf59b579f471887a2d1022013ef7113fdaf3306f2fcdeaa0c2ebcaf1d66258a417a1f1a807c207ee6cf4316:922c64590222798bb761d5b6d8e72950
+    extractors:
+      - type: regex
+        name: sink
+        part: body
+        regex:
+          - 'jQuery(\.globalEval|\.\$|\.constructor|\.parseHTML|\.has|\.init|\.index|\.add|\.append|\.appendTo|\.after|\.insertAfter|\.before|\.insertBefore|\.html|\.prepend|\.prependTo|\.replaceWith|\.replaceAll|\.wrap|\.wrapALL|\.wrapInner|\.prop\.innerHTML|\.prop\.outerHTML|\.attr\.onclick|\.attr\.onmouseover|\.attr.onmousedown|\.attr\.onmouseup|\.attr\.onkeydown|\.attr\.onkeypress|\.attr\.onkeyup|\.attr\.href|\.attr\.src|\.attr\.data|\.attr\.action|\.attr\.formaction|\.prop\.href|\.prop\.src|\.prop\.data|\.prop\.action|\.prop\.formaction)'
+          - 'eval|Function|execScript|msSetImmediate|fetch(\.body)?|form\.action|websocket|RegExp|javascriptURL|createContextualFragment|webdatabase\.executeSql|JSON\.parse'
+          - 'fetch(\.body)?'
+          - 'history(\.pushState|\.replaceState)'
+          - '(session|local)Storage(\.setItem(\.name|\.value))'
+          - 'anchor(\.href|\.target)'
+          - 'button(\.formaction|\.value)'
+          - 'set(Timeout|Interval|Immediate)'
+          - 'script(\.src|\.textContent|\.innerText|\.innerHTML|\.appendChild|\.append)'
+          - 'document(\.write|\.writeln|\.implementation\.createHTMLDocument|\.domain|\.cookie|\.evaluate)'
+          - 'element(\.outerText|\.innerText|\.textContent|\.style\.cssText|\.innerHTML|\.outerHTML|\.insertAdjacentHTML|\.setAttribute(\.onclick|\.onmouseover|\.onmousedown|\.onmouseup|\.onkeydown|\.onkeypress|\.onkeyup|\.href|\.src|\.data|\.action|\.formaction))'
+          - 'location(\.href|\.replace|\.assign|\.pathname|\.protocol|\.host|\.hostname|\.hash|\.search)?'
+          - 'iframe(\.srcdoc|\.src)'
+          - 'xhr(\.open|\.send|\.setRequestHeader(\.name|\.value)?)'
+      - type: regex
+        name: source
+        part: body
+        regex:
+          - 'location(\.href|\.hash|\.search|\.pathname)?'
+          - 'window\.name'
+          - 'document(\.URL|\.referrer|\.documentURI|\.baseURI|\.cookie)'

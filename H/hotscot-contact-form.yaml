@@ -1,4 +1,4 @@
-id: hotscot-contact-form
+id: hotscot-contact-form-71c9bb1a8a075c7639bce6f0fa4d974d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad85b322-204a-4d74-8dde-38571fb68dd0?source=api-scan
   classification:
     cvss-metrics: 

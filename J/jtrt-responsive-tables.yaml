@@ -1,4 +1,4 @@
-id: jtrt-responsive-tables
+id: jtrt-responsive-tables-239e7b5092b110139474bcc4ada89a9b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/89ca9214-145e-43c6-a642-7c371f635332?source=api-scan
   classification:
     cvss-metrics: 

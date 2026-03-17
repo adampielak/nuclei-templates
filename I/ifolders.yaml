@@ -1,4 +1,4 @@
-id: ifolders
+id: ifolders-2287abf855f9dc39e9480d4dbe8088a2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1f957ce-7bb0-4701-8b2a-522211c408d8?source=api-scan
   classification:
     cvss-metrics: 

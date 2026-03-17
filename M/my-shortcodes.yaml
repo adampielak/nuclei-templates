@@ -1,4 +1,4 @@
-id: my-shortcodes
+id: my-shortcodes-9040480eeb1320dfb2018c0cf71234a5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7a931496-f130-4910-9116-6c2c4df760f5?source=api-scan
   classification:
     cvss-metrics: 

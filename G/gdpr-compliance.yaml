@@ -1,4 +1,4 @@
-id: gdpr-compliance
+id: gdpr-compliance-d9d56fbe73462979d8bdfcc3eec4adda
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b56076bd-4a15-4857-9443-b36eed66d5c2?source=api-scan
   classification:
     cvss-metrics: 

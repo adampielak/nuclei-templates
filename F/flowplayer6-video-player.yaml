@@ -1,4 +1,4 @@
-id: flowplayer6-video-player
+id: flowplayer6-video-player-297dc39937a347d2f9b7d6fcd92f372c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/21d0af22-ecce-4533-ba5d-46d6f49fff52?source=api-scan
   classification:
     cvss-metrics: 

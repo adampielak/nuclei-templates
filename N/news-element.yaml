@@ -1,15 +1,15 @@
-id: news-element
+id: news-element-88a6576b52e2643fd35351e7acb7ac7f
 
 info:
   name: >
-    News Element Elementor Blog Magazine <= 1.0.5 - Unauthenticated Local File Inlcusion
+    News Element Elementor Blog Magazine <= 1.0.7 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ec0d80f7-96fb-466d-9701-9751f71b926d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/23cdd891-bfa0-472c-b99f-5aac45202bc8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.5')
+          - compare_versions(version, '<= 1.0.7')

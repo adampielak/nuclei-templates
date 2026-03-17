@@ -1,4 +1,4 @@
-id: note-press
+id: note-press-250d89f298029fd44b82bd3f39f24958
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/521bcfd5-7bb2-4748-8440-9902181cbf7e?source=api-scan
   classification:
     cvss-metrics: 

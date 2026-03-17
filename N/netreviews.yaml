@@ -1,4 +1,4 @@
-id: netreviews
+id: netreviews-90e020327d1e2ec535063713d4bf6c24
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3044dbfc-e12d-47e0-a297-67ff0510eded?source=api-scan
   classification:
     cvss-metrics: 

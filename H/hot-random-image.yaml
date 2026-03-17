@@ -1,14 +1,15 @@
-id: hot-random-image
+id: hot-random-image-d3df1256476c4bb2bb2d2793dc4ea244
 
 info:
   name: >
-    Hot Random Image <= 1.8.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Hot Random Image <= 1.9.2 - Path Traversal to Authenticated (Contributor+) Limited Arbitrary Image Access via path Parameter
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8a27ec5-019b-4aa5-8317-1c832af3b7ca?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d6628232-0bd1-4194-8322-36084b1eb0f7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.8.1')
+          - compare_versions(version, '<= 1.9.2')

@@ -1,4 +1,4 @@
-id: delete-custom-fields
+id: delete-custom-fields-203c82d439e51250ba0db219fcc3db16
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c13ba1df-25fa-4cc8-9745-2d6f6168788a?source=api-scan
   classification:
     cvss-metrics: 

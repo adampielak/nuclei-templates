@@ -1,4 +1,4 @@
-id: gravity-file-ajax-upload-free
+id: gravity-file-ajax-upload-free-c741afeba607d04a91c7ec20302b3dd6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/38bcb908-1e6e-44be-9cf5-72dcfa4c4a4e?source=api-scan
   classification:
     cvss-metrics: 

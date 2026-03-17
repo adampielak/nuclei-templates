@@ -1,4 +1,4 @@
-id: dbox-slider-lite
+id: dbox-slider-lite-586ec0e258aacc454495dc60bd3b6dd6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb3aa518-ef12-4168-a524-ad36397f67cb?source=api-scan
   classification:
     cvss-metrics: 

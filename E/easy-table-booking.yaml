@@ -1,4 +1,4 @@
-id: easy-table-booking
+id: easy-table-booking-1b2a5ff1eea8557b5a36a4beb3932490
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1492440d-c6c8-46c0-bc88-c9e3f9933ad4?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: filter-gallery
+id: filter-gallery-e4f680cf366e7e40a8299e717bf6b023
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3cea044c-3117-4722-a696-5b7368d31d63?source=api-scan
   classification:
     cvss-metrics: 

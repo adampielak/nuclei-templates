@@ -1,4 +1,4 @@
-id: five-minute-webshop
+id: five-minute-webshop-7552fa5d1f3d06ebacccbdbb8bbb515e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/213b6dec-a64d-4597-a079-8fb82df9c8b4?source=api-scan
   classification:
     cvss-metrics: 

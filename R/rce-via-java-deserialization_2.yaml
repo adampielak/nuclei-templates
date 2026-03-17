@@ -3,10 +3,7 @@ info:
   name: Java Deserialization [RCE]
   author: uhnysh
   severity: critical
-  tags: java,rce
-
-  # This can only be used to detect the vuln, please make sure to run ysoserial over the URLs to verify.
-
+# This can only be used to detect the vuln, please make sure to run ysoserial over the URLs to verify.
 requests:
   - method: GET
     path:
@@ -19,4 +16,4 @@ requests:
         words:
           - "org.jboss.invocation.MarshalledValue"
           - "java.lang"
-        condition: and
+        condition: or

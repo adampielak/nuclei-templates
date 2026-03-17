@@ -10,10 +10,14 @@ info:
     - https://documentation.wazuh.com/current/user-manual/user-administration/password-management.html
     - https://wazuh.com
     - https://documentation.wazuh.com/current/deployment-options/docker/wazuh-container.html#single-node-deployment
+  classification:
+    cpe: cpe:2.3:a:wazuh:wazuh:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 6
-    shodan-query: title:"Wazuh"
+    max-request: 7
+    vendor: wazuh
+    product: wazuh
+    shodan-query: "title:\"Wazuh\""
   tags: wazuh,default-login
 
 http:
@@ -69,4 +73,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ab2051c304c035f5529f66430ea1105c4cf31c1d8f5ff87e994cf6f1061c1f7202204a9b106ace1ff87641cc961e9aa127bed0852ca04614f8d5ef2ed286a17d85bc:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100aca7bbbb749653943f26192c2bb39a5a83889241e8a6ac72e457b842238a89280221008901a5d5e1e7e5ecabf6f1cedea365ea8a26bd3d39e410a2e47fadfd02ac355f:922c64590222798bb761d5b6d8e72950

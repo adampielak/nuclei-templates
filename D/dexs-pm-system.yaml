@@ -1,4 +1,4 @@
-id: dexs-pm-system
+id: dexs-pm-system-f0982fd918eb9ba0d5bc8bd0faec3225
 
 info:
   name: >
@@ -6,12 +6,13 @@ info:
   author: topscoder
   severity: low
   description: >
-    
+    The Dexs PM System plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the ‘subject’ parameter in versions up to, and including, 1.0.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with subscriber-level privileges and above to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9985992-e64c-4292-9738-cd38fb44a6f0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9985992-e64c-4292-9738-cd38fb44a6f0?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/dexs-pm-system/"

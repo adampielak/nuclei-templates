@@ -1,21 +1,34 @@
-id: api-deviantart
+id: deviantart
 
 info:
-  name: DeviantArt API Test
-  author: zzeitlin
-  reference: https://www.deviantart.com/developers/authentication
+  name: DeviantArt User Name Information - Detect
+  author: dwisiswant0
   severity: info
-  tags: token-spray,deviantart
+  description: DeviantArt user name information check was conducted.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: osint,osint-images,deviantart
 
-requests:
-  - method: POST
+self-contained: true
+
+http:
+  - method: GET
     path:
-      - "https://www.deviantart.com/api/v1/oauth2/placebo"
-    body: "access_token={{token}}"
+      - "https://www.deviantart.com/{{user}}"
 
+    matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 200
+
       - type: word
         part: body
         words:
-          - '"status":"error"'
-        negative: true
+          - " | DeviantArt</title>"
+
+# digest: 4a0a00473045022055e663ceccd1bc985269110981dfe2f651ae7df14df37d1730c3eeb9f6425bed022100f2c2c00589f27977c1a1fa48ca3415dd9c91473c9ba5e6fb59932867293bb38b:922c64590222798bb761d5b6d8e72950

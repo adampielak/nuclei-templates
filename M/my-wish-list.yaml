@@ -1,4 +1,4 @@
-id: my-wish-list
+id: my-wish-list-7836462f3a09a65cd6d64d4b02991268
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d4bf80cd-8956-4143-afcb-995013554d56?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: batch-cat
+id: batch-cat-aec5f10302d35e7044c2bae9666508de
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2799ede9-1905-44b9-b731-ce5398d561b1?source=api-scan
   classification:
     cvss-metrics: 

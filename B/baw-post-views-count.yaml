@@ -1,4 +1,4 @@
-id: baw-post-views-count
+id: baw-post-views-count-1f1423fe07e3e5dc127b8184f9c5bf2b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/36c3107d-f125-4715-999e-8862e4103313?source=api-scan
   classification:
     cvss-metrics: 

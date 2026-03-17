@@ -1,4 +1,4 @@
-id: aikit-wordpress-ai-writing-assistant-using-gpt3
+id: aikit-wordpress-ai-writing-assistant-using-gpt3-de9a3f661e6677dab930d74bc6ad5a1e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d50d0e87-a4be-465b-8cc1-4b56201c9fc0?source=api-scan
   classification:
     cvss-metrics: 

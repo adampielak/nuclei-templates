@@ -1,14 +1,15 @@
-id: jetwidgets-for-elementor
+id: jetwidgets-for-elementor-a2fe4ce9d736fad42c3860a5c4e30ad0
 
 info:
   name: >
-    JetWidgets for Elementor <= 1.0.12 - Cross-Site Request Forgery to Settings Update
+    JetWidgets For Elementor <= 1.0.17 - Authenticated (Contributor+) Stored Cross-Site Scripting via layout_type and id Parameters
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8de3d3c7-bde2-4455-8d60-20307f0a53ee?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4457d15e-2c01-498d-b94a-a6e93adcf70c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/jetwidgets-for-elementor/"
     google-query: inurl:"/wp-content/plugins/jetwidgets-for-elementor/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jetwidgets-for-elementor,medium
+  tags: cve,wordpress,wp-plugin,jetwidgets-for-elementor,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.12')
+          - compare_versions(version, '<= 1.0.17')

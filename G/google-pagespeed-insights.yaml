@@ -1,4 +1,4 @@
-id: google-pagespeed-insights
+id: google-pagespeed-insights-e6fa10910c3fc20931cfeaf34a6801fb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8440240-f652-4372-9ed8-f3eb3b8336e0?source=api-scan
   classification:
     cvss-metrics: 

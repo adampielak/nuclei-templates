@@ -1,23 +1,24 @@
-id: constant-contact-forms
+id: constant-contact-forms-1ac93901d014460d44f5369c1f17c650
 
 info:
   name: >
-    Constant Contact Forms <= 1.14.0 - Missing Authorization via constant_contact_optin_ajax_handler
+    Constant Contact Forms <= 2.0.2 - Missing Authorization via constant_contact_privacy_ajax_handler
   author: topscoder
-  severity: high
+  severity: low
   description: >
-    
+    The Constant Contact Forms plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the constant_contact_privacy_ajax_handler function in versions up to, and including, 2.0.2. This makes it possible for authenticated attackers, with subscriber-level access and above, to modify the plugin's privacy agreement settings.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/85b6262c-2576-4177-a683-44464dba0978?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8a26695-4793-418b-9a23-6709fe79ea4f?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/constant-contact-forms/"
     google-query: inurl:"/wp-content/plugins/constant-contact-forms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,constant-contact-forms,high
+  tags: cve,wordpress,wp-plugin,constant-contact-forms,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.14.0')
+          - compare_versions(version, '<= 2.0.2')

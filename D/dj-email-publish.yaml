@@ -1,4 +1,4 @@
-id: dj-email-publish
+id: dj-email-publish-e72934cbc0a8e99c438645b652fb92aa
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3f18a07f-c7de-49ac-9a11-f9cbc48b125a?source=api-scan
   classification:
     cvss-metrics: 

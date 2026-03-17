@@ -8,9 +8,9 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"TitanNit Web Control"
-  tags: misconfig,titannit,webcontrol,exposure
+  tags: misconfig,titannit,webcontrol,exposure,vuln
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -27,4 +27,4 @@ requests:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008000902f0dd80d44d24d0aaa51dc88fb8ca6ea57bdbade552e272b651c9a0e2e02207dbc82cdb7f044cb3ec30f67daee04ba1b293f307cdf6a51b723b7d1720fed34:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022011e6e20f5ce39ba3540e16bb8e18ec89d2263fc447ba7a28361633e0c5a98f3d022100ab7f7e6305d5cde03798a876f615d460af024422023bf9b35a06baf52724bee7:922c64590222798bb761d5b6d8e72950

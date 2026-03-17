@@ -1,14 +1,15 @@
-id: advanced-product-labels-for-woocommerce
+id: advanced-product-labels-for-woocommerce-19adcca73d786cee2f536c49b2251d6a
 
 info:
   name: >
-    BeRocket Plugins <= (Various Versions) - Missing Authorization
+    Advanced Product Labels for WooCommerce <= 1.2.3.6 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8fc89c0-292d-47b4-90b3-79edf3a9e76d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ad806df-0a5c-4ef0-a335-2e34c9b62662?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/advanced-product-labels-for-woocommerce/"
     google-query: inurl:"/wp-content/plugins/advanced-product-labels-for-woocommerce/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,advanced-product-labels-for-woocommerce,high
+  tags: cve,wordpress,wp-plugin,advanced-product-labels-for-woocommerce,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.4')
+          - compare_versions(version, '< 1.2.3.7')

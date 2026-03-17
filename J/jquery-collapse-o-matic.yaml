@@ -1,14 +1,15 @@
-id: jquery-collapse-o-matic
+id: jquery-collapse-o-matic-4a52c57f7fa44174b5093e28192d1737
 
 info:
   name: >
-    Collapse-O-Matic <= 1.8.5.5 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Collapse-O-Matic <= 1.8.5.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa85abba-e13f-42cd-8f13-432ed375fb37?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ea23bcc2-ce71-4f16-85f3-11276deb659f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

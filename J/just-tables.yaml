@@ -1,4 +1,4 @@
-id: just-tables
+id: just-tables-d7cf7baf987330fde0c45e6de01a4231
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2b795d8-3cab-4d81-a016-b4498315ddf4?source=api-scan
   classification:
     cvss-metrics: 

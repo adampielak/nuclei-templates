@@ -12,8 +12,10 @@ info:
   remediation: To resolve this issue, perform a "remsys" and "addsys" with no other operations occurring (reference the appropriate SMI-S provider documentation) and specify the new password when re-adding the array.
     If there are issues performing the "addsys" operation, it is recommended to restart the management server on each SP.
   tags: dell,emc,ecom,default-login
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         GET / HTTP/1.1
@@ -22,9 +24,9 @@ requests:
 
     payloads:
       username:
-        - root
+        - admin
       password:
-        - calvin
+        - #1Password
     attack: pitchfork
 
     matchers-condition: and

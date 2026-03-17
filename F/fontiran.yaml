@@ -1,23 +1,24 @@
-id: fontiran
+id: fontiran-daf96b2d8827c45fd284000e2a2a4e22
 
 info:
   name: >
-    Fontiran <= 2.1 - Missing Authorization via fi_add_rule and fi_delete_webfont_php
+    Fontiran <= 2.1 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
-    
+    The Fontiran plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 2.1. This is due to missing or incorrect nonce validation on the fi_delete_webfont_php function. This makes it possible for unauthenticated attackers to update plugin settings via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/518b005d-5a5d-4fec-bb3a-1657af354ec9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/701bf711-d692-4eb1-8459-befa62264b97?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/fontiran/"
     google-query: inurl:"/wp-content/plugins/fontiran/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fontiran,high
+  tags: cve,wordpress,wp-plugin,fontiran,medium
 
 http:
   - method: GET

@@ -1,4 +1,4 @@
-id: marketing-performance
+id: marketing-performance-4a6bc760ac0a84c53b5789b02fb4224b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/29b53c80-68d5-4431-a49b-0d139c9403f2?source=api-scan
   classification:
     cvss-metrics: 

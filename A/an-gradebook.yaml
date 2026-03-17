@@ -1,14 +1,15 @@
-id: an-gradebook
+id: an-gradebook-3452006dbf36b206342c119e2952b83d
 
 info:
   name: >
-    AN_GradeBook <= 5.0.1 - Authenticated (Subscriber+) SQL Injection via 'id'
+    AN_GradeBook <= 5.0.1 - Authenticated(Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/60d59753-5b6b-4f3e-8faf-8053750ae05d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d574ed8b-2887-4a56-9fca-914148095ba1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

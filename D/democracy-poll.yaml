@@ -1,14 +1,15 @@
-id: democracy-poll
+id: democracy-poll-f94f4cbc12d01d8d6b756d14996ebcf7
 
 info:
   name: >
-    Democracy Poll < 5.4 - Cross-Site Scripting
+    Democracy Poll <= 5.3.6 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/56acae44-6f22-440c-bee1-4cd3831a99ec?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9567f63-9161-49a3-9b94-dd6dee5a5628?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/democracy-poll/"
     google-query: inurl:"/wp-content/plugins/democracy-poll/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,democracy-poll,high
+  tags: cve,wordpress,wp-plugin,democracy-poll,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.4')
+          - compare_versions(version, '<= 5.3.6')

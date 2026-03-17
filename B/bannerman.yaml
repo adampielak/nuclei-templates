@@ -1,4 +1,4 @@
-id: bannerman
+id: bannerman-5aaae39ffeadd2e0b0ca927bde88f093
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e608c75f-dd84-4921-ae61-2bfa5cd717a5?source=api-scan
   classification:
     cvss-metrics: 

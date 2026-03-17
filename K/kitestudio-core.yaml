@@ -1,4 +1,4 @@
-id: kitestudio-core
+id: kitestudio-core-48706a2c6b26f4ee8e8b57c16f68c226
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e6003a2a-dda5-4db4-8a0c-0d26d79529f2?source=api-scan
   classification:
     cvss-metrics: 

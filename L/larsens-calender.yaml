@@ -1,4 +1,4 @@
-id: larsens-calender
+id: larsens-calender-d1343321d9928fb89cb93902e6359f16
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6d5c17cb-98a9-45f0-b94f-02b48193949f?source=api-scan
   classification:
     cvss-metrics: 

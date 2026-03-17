@@ -1,4 +1,4 @@
-id: hd-quiz
+id: hd-quiz-eab7b33376bf2fa2708f8a9b22ab6083
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3abf6bd-bece-470e-93c7-ab9968171a3f?source=api-scan
   classification:
     cvss-metrics: 

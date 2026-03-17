@@ -1,4 +1,4 @@
-id: contractor-contact-form-website-to-workflow-tool
+id: contractor-contact-form-website-to-workflow-tool-22c7ec1c2fec29db73c7b59c585af2fb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/da4684b8-20f6-4dc1-8f29-d79f64ccb9d8?source=api-scan
   classification:
     cvss-metrics: 

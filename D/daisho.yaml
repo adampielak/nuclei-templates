@@ -1,17 +1,19 @@
-id: daisho
+id: daisho-4d34bf4a7dbbf92f2180f59b8a305ec9
 
 info:
-  name: "Daisho Theme <= 4.2 - Cross-Site Scripting"
+  name: >
+    Daisho Theme <= 4.2 - Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "TheDaisho Theme plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 4.2 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser."
+  description: >
+    TheDaisho Theme plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 4.2 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
   reference:
-    - https://jannefi.blogspot.com/2012/09/xss-vulnerability-in-multiple-premium.html
-    - https://docs.ikonize.com/daisho/changelog.html
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e4731811-23d7-4a8e-8db3-794077720545?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/daisho/"
     google-query: inurl:"/wp-content/themes/daisho/"

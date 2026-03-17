@@ -1,4 +1,4 @@
-id: nextend-twitter-connect
+id: nextend-twitter-connect-a60df2277fb606535a5dbe88b79012ca
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b0336d7-1c85-4379-80db-19b478ba5471?source=api-scan
   classification:
     cvss-metrics: 

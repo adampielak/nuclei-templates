@@ -1,14 +1,15 @@
-id: enhanced-e-commerce-for-woocommerce-store
+id: enhanced-e-commerce-for-woocommerce-store-ee81c613cd487b76266cd62a670b1fb1
 
 info:
   name: >
-    Conversios.io <= 6.5.3 - Reflected Cross-Site Scripting
+    Conversios – Google Analytics 4 (GA4), Meta Pixel & more Via Google Tag Manager For WooCommerce <= 7.0.7 - Authenticated (Subscriber+) SQL Injection
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6ad84e6e-5498-4bf1-b662-15b7628ceba2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7eb7d499-28ba-48ef-9798-b7c8cbb7aa3e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/enhanced-e-commerce-for-woocommerce-store/"
     google-query: inurl:"/wp-content/plugins/enhanced-e-commerce-for-woocommerce-store/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,enhanced-e-commerce-for-woocommerce-store,medium
+  tags: cve,wordpress,wp-plugin,enhanced-e-commerce-for-woocommerce-store,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.5.3')
+          - compare_versions(version, '<= 7.0.7')

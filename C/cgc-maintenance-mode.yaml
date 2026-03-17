@@ -1,14 +1,15 @@
-id: cgc-maintenance-mode
+id: cgc-maintenance-mode-d395c79f773ee5d70312487be14f72dc
 
 info:
   name: >
-    CGC Maintenance Mode <= 1.2 - IP Spoofing
+    CGC Maintenance Mode <= 1.2 - Sensitive Information Exposure
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1b05191b-4f4a-487a-9fbf-843a4787511e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1cd5fa89-ed3b-4ac1-9200-9f5eb26cb534?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

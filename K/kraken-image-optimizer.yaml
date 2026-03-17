@@ -1,4 +1,4 @@
-id: kraken-image-optimizer
+id: kraken-image-optimizer-6ef23fa13ec6553545f38dc8cfb600a1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2497837d-dec6-4a1d-be88-5c0e659eeb46?source=api-scan
   classification:
     cvss-metrics: 

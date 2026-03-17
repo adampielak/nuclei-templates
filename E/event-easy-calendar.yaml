@@ -1,17 +1,18 @@
-id: event-easy-calendar
+id: event-easy-calendar-ab40012c48b693f5d65fa51bb03b4ed2
 
 info:
   name: >
-    Event Easy Calendar <= 1.0.0 - Cross-Site Scripting
+    Event Easy Calendar <= 1.0.0 - Multiple Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
-    The Event Easy Calendar plugin for WordPress is vulnerable to Cross-Site Scripting via several parameters in versions up to, and including, 1.0.0due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
+    The Event Easy Calendar plugin for WordPress is vulnerable to Multiple Cross-Site Request Forgery in versions up to, and including, 1.0.0. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to perform administrative actions via a forged request granted they can trick a site administrator into performing an action such as clicking on a link. These actions include creating and updating customers, creating new services and coupons, changing settings, enabling reminders and auto approvals, deleting all bookings, modifying the PayPal recipient email address, and modifying cost of services.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7c911773-79f5-4d91-b0f9-a05bc17516b2?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a620810d-1b2a-4f2e-943c-aacc493f0c5b?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/event-easy-calendar/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.0')
+          - compare_versions(version, '<= 1.0')

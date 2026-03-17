@@ -1,4 +1,4 @@
-id: advanced-image-sitemap
+id: advanced-image-sitemap-2304f35e0ee8a00fb649b5fcbc8d5846
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f89ce1c-3f5e-43cb-9dd2-7ab5880d78d3?source=api-scan
   classification:
     cvss-metrics: 

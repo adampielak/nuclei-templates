@@ -1,4 +1,4 @@
-id: kwayy-html-sitemap
+id: kwayy-html-sitemap-9839d090257d90b377b4b13d79ce8f2c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e6001516-3d3c-48a9-92ae-a1d249d58cec?source=api-scan
   classification:
     cvss-metrics: 

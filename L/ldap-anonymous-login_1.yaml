@@ -24,7 +24,7 @@ tcp:
 
     host:
       - "{{Hostname}}"
-    port: 389
+      - "{{Host}}:389"
     read-size: 1024
 
     matchers:

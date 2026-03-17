@@ -2,7 +2,7 @@ id: instapage-8790bcca-a8c8-4b66-9ecc-47b7783cb224
 
 info:
   name: >
-    Instapage Plugin <= 3.5.12 - Cross-Site Request Forgery
+    Instapage Plugin <= 3.7.0 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.5.12')
+          - compare_versions(version, '<= 3.7.0')

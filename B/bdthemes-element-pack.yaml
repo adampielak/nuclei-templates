@@ -1,14 +1,15 @@
-id: bdthemes-element-pack
+id: bdthemes-element-pack-bba7d3dd412374795c59bde40984a63d
 
 info:
   name: >
-    Element Pack Pro <= 7.7.4 - Authenticated (Contributor+) Arbitrary File Read and PHAR Deserialization
+    Element Pack - Addon for Elementor Page Builder WordPress Plugin <= 7.9.0 - Authenticated(Contributor+) Stored Cross-Site Scripting via Wrapper Link URL
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/41395c95-230d-441a-a261-cd67b95b76e3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1903527e-d7d9-48a0-b59d-65ec5e14def2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 7.7.4')
+          - compare_versions(version, '<= 7.9.0')

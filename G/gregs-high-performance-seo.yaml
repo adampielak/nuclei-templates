@@ -1,4 +1,4 @@
-id: gregs-high-performance-seo
+id: gregs-high-performance-seo-55b11c41a6bcb53cab666ca8c607341b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b6250d0-8f5e-4283-8d16-0b2f467e1224?source=api-scan
   classification:
     cvss-metrics: 

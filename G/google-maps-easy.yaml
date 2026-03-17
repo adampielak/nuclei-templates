@@ -1,14 +1,15 @@
-id: google-maps-easy
+id: google-maps-easy-9e240ddb8f680335260b787da51bed74
 
 info:
   name: >
-    Easy Google Maps <= 1.11.11 - Cross-Site Request Forgery
+    Easy Google Maps <= 1.11.15 - Authenticated (Author+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5ca7b7c0-a94e-47ff-996d-4c7bbd62f0de?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4af9c623-1539-4afc-9dcd-3f97d29aa4f3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/google-maps-easy/"
     google-query: inurl:"/wp-content/plugins/google-maps-easy/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,google-maps-easy,medium
+  tags: cve,wordpress,wp-plugin,google-maps-easy,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.11.11')
+          - compare_versions(version, '<= 1.11.15')

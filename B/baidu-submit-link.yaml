@@ -1,4 +1,4 @@
-id: baidu-submit-link
+id: baidu-submit-link-924f5f9e5633a87bfee091805f0735b0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/72d18504-7b12-43f0-b2ea-40dbc25912c4?source=api-scan
   classification:
     cvss-metrics: 

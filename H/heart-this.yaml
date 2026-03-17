@@ -1,4 +1,4 @@
-id: heart-this
+id: heart-this-2ec72749dc880106b9f15f2f5c00138c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/133057a1-4cd5-4e46-9407-d01d80859991?source=api-scan
   classification:
     cvss-metrics: 

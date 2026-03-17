@@ -1,14 +1,15 @@
-id: enl-newsletter
+id: enl-newsletter-d02364ed3d2c545d68e591379fc23d47
 
 info:
   name: >
-    ENL Newsletter <= 1.0.1 - Cross-Site Request Forgery
+    ENL Newsletter <= 1.0.1 - Cross-Site Request Forgery to Campaign Deletion
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cfec4c31-ba09-4832-a095-4ca5f5192674?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/891a625e-8248-4d21-a796-bf0cff6fc253?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

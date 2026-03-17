@@ -1,4 +1,4 @@
-id: exportfeed-list-woocommerce-products-on-ebay-store
+id: exportfeed-list-woocommerce-products-on-ebay-store-62cfb37d95667d08b3525e2457c9dffc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/32179cca-2253-49c7-89f7-aa48bcfad716?source=api-scan
   classification:
     cvss-metrics: 

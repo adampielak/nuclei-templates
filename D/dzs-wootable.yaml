@@ -1,15 +1,15 @@
-id: dzs-wootable-64c8487dfc062abdc5959c38ea9baae8
+id: dzs-wootable-e73a03bcdd46bd1868ab491f65ea1a84
 
 info:
   name: >
-    WooCommerce Shop Page Builder <= 2.27.7 - Missing Authorization
+    WooCommerce Shop Page Builder <= 2.27.7 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b2438f64-2318-4345-99dd-f2266b2a5ca4?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1abc6ef-2488-4a99-886c-3194e47b22d0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/dzs-wootable/"
     google-query: inurl:"/wp-content/plugins/dzs-wootable/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,dzs-wootable,high
+  tags: cve,wordpress,wp-plugin,dzs-wootable,medium
 
 http:
   - method: GET

@@ -1,4 +1,4 @@
-id: lordicon-interactive-icons
+id: lordicon-interactive-icons-9a0b386b85f1f0ce3b3d9d6b3f668971
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/485b0f47-fb3c-49f5-8e27-c250879cb75f?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: kali-forms
+id: kali-forms-999daea3d1be6284d4b3613b0e0b671d
 
 info:
   name: >
-    Kali Forms <= 2.1.1 - Cross-Site Request Forgery
+    Contact Form builder with drag & drop for WordPress – Kali Forms <= 2.3.41 - Missing Authorization to Arbitrary Plugin Deactivation
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5bcf456-f991-4775-8c3e-a3c0212a5765?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7be75b0a-737d-4f0d-b024-e207af4573cd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/kali-forms/"
     google-query: inurl:"/wp-content/plugins/kali-forms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,kali-forms,medium
+  tags: cve,wordpress,wp-plugin,kali-forms,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.1.2')
+          - compare_versions(version, '<= 2.3.41')

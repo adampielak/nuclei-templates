@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     max-request: 1
-  tags: exposure,token,paypal
+  tags: exposure,token,paypal,vuln
 
 http:
   - method: GET
@@ -18,5 +18,4 @@ http:
         part: body
         regex:
           - 'access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}'
-
-# digest: 490a004630440220725fd2e52793ceeb248099d4b985fed9c79ca8445f10d435206448b38b9fe69302203f17b5975afde166ded2c8cb5eac67729e9a164a64c803a3f1d3d9a0a04ebcaa:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022059602adcdfa2a85a43f895892b5800b956521189c4f4690acf52bee3bd951c10022100c9ba70d0eac6072873678267a4311380e422cfc2ad355572ae53658b4f0e36e7:922c64590222798bb761d5b6d8e72950

@@ -1,4 +1,4 @@
-id: new-album-gallery
+id: new-album-gallery-04b69372e3f4e58213b9cecc46a2a6cf
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0f3df75e-cf2f-4076-b5ff-b8540408044a?source=api-scan
   classification:
     cvss-metrics: 

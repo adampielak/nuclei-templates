@@ -1,4 +1,4 @@
-id: campus-directory
+id: campus-directory-dd667ea282f440863c32f5db30e5518a
 
 info:
   name: >
@@ -6,12 +6,13 @@ info:
   author: topscoder
   severity: low
   description: >
-    
+    The Faculty Staff and Student Directory Plugin – Campus Directory plugin for WordPress is vulnerable to authenticated stored cross-site scripting via several parameters found in versions up to and including 1.7.4.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/438bbd0f-5204-4a71-9730-efa51d864832?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/438bbd0f-5204-4a71-9730-efa51d864832?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 5.5
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/campus-directory/"

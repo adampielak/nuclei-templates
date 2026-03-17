@@ -1,14 +1,15 @@
-id: mwp-herd-effect
+id: mwp-herd-effect-825844feae3c0993ba26ca24f6beb496
 
 info:
   name: >
-    Herd Effects <= 5.2 - Local File Inclusion
+    Multiple Wow-Company Plugins (Various Versions) -- Reflected Cross-Site Scripting via 'page' parameter
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8acb86fa-50b4-45b3-9bf8-ef65679b85ac?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a95af34-559c-4644-9941-7bd1551aba33?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mwp-herd-effect/"
     google-query: inurl:"/wp-content/plugins/mwp-herd-effect/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mwp-herd-effect,critical
+  tags: cve,wordpress,wp-plugin,mwp-herd-effect,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.2')
+          - compare_versions(version, '<= 5.2.1')

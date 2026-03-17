@@ -1,14 +1,15 @@
-id: bdthemes-element-pack-lite
+id: bdthemes-element-pack-lite-5db218e7872fd5f0199033234819df8d
 
 info:
   name: >
-    Element Pack Elementor Addons (Header Footer, Free Template Library, Grid, Carousel, Table, Parallax Animation, Register Form, Twitter Grid) <= 5.6.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Price List Widget
+    Element Pack Elementor Addons (Header Footer, Free Template Library, Grid, Carousel, Table, Parallax Animation, Register Form, Twitter Grid) <= 5.3.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'Custom Gallery' Widget
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2edfceaf-e719-4351-8f5c-2d7dd401c84e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a54c2a89-4297-48f5-bbff-e5c20c26a632?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.6.0')
+          - compare_versions(version, '<= 5.3.2')

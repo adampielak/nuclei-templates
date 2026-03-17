@@ -1,4 +1,4 @@
-id: amtythumb
+id: amtythumb-d77ba2ffc0322edd693924673a790166
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7dd45dc7-b37c-42f3-a4b5-c4564174148c?source=api-scan
   classification:
     cvss-metrics: 

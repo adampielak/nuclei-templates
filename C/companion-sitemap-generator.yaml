@@ -1,14 +1,15 @@
-id: companion-sitemap-generator
+id: companion-sitemap-generator-4a250ab8c94cb782214f7ebd60a04499
 
 info:
   name: >
-    Companion Sitemap Generator – HTML & XML <= 3.6.6 - Cross-Site Request Forgery and Local File Inclusion
+    Companion Sitemap Generator <= 4.5.1.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/01c1dd65-4cf9-487f-ae3f-9cfaea177385?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ccf0d482-b4a1-47a8-8741-0970531e9630?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/companion-sitemap-generator/"
     google-query: inurl:"/wp-content/plugins/companion-sitemap-generator/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,companion-sitemap-generator,medium
+  tags: cve,wordpress,wp-plugin,companion-sitemap-generator,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.6.6')
+          - compare_versions(version, '<= 4.5.1.1')

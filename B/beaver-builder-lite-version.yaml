@@ -1,17 +1,18 @@
-id: beaver-builder-lite-version
+id: beaver-builder-lite-version-a70986b4585607cf5e88f3fc31165f0c
 
 info:
   name: >
-    Beaver Builder – WordPress Page Builder <= 2.5.5.2 - Authenticated Stored Cross-Site Scripting via Caption - On Hover
+    Beaver Builder – WordPress Page Builder (Free & Pro) <= 1.7 - Authorization Bypass
   author: topscoder
   severity: low
   description: >
-    
+    The Beaver Builder – WordPress Page Builder plugin for WordPress is vulnerable to authorization bypass in versions up to, and including, 1.7 due to bypass in how the capability checking functionality works in the call_action() function. An attacker is able to supply '0' for the 'post_id' parameter which makes the check that a current user can edit the supplied post ID true. This makes it possible for authenticated attackers, with minimal permissions like a subscriber, to call any of the 40+ AJAX action available and perform many unauthorized actions.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/325dd035-db3d-49b4-a422-7c2c734bfd32?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cd88b116-0a6e-412b-8d43-024fdf36bcdf?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    cvss-score: 6.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/beaver-builder-lite-version/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.5.2')
+          - compare_versions(version, '<= 1.7')

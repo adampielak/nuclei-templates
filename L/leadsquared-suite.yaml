@@ -1,4 +1,4 @@
-id: leadsquared-suite
+id: leadsquared-suite-37f6b98dbf59a389b13b2999dfc0934a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ef1aafc2-e47b-49da-8a4e-9111209308c2?source=api-scan
   classification:
     cvss-metrics: 

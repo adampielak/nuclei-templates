@@ -1,13 +1,14 @@
-id: direct-checkout-for-woocommerce
+id: direct-checkout-for-woocommerce-a0be9705efabbbd7964b378ac4bd466d
 
 info:
   name: >
     Direct Checkout for WooCommerce – Skip Cart with Buy Buttons <= 1.2 - Cross-Site Request Forgery to Settings Update
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     The Direct Checkout for WooCommerce – Skip Cart with Buy Buttons plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.2. This is due to missing nonce validation on the save() function. This makes it possible for unauthenticated attackers to update the plugins settings via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/73e19ad5-97a9-4c0d-a350-eb556bf20772?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/direct-checkout-for-woocommerce/"
     google-query: inurl:"/wp-content/plugins/direct-checkout-for-woocommerce/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,direct-checkout-for-woocommerce,high
+  tags: cve,wordpress,wp-plugin,direct-checkout-for-woocommerce,medium
 
 http:
   - method: GET

@@ -4,13 +4,15 @@ info:
   name: IBM Decision Server Console - Default Login
   author: DhiyaneshDK
   severity: high
+  description: IBM Decision Server Console default login credentials were discovered.
   reference:
     - https://www.ibm.com/docs/en/odm/8.8.0?topic=center-overview-decision
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "Rule Execution Server"})
     verified: true
     max-request: 1
     shodan-query: "title:\"Rule Execution Server\""
-  tags: ibm,default-login,decision-server
+  tags: ibm,default-login,decision-server,vuln
 
 http:
   - raw:
@@ -23,7 +25,6 @@ http:
 
     host-redirects: true
     max-redirects: 3
-
     attack: pitchfork
     payloads:
       username:
@@ -44,4 +45,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202f0adcf88bbb6d79621406c0771b8124bcd21bed2b899115e67f05d8c14d944e022100d58f7106684ed8e6f5120f36a98b05bef337755c7af83082040673d45b32fe82:922c64590222798bb761d5b6d8e72950
+

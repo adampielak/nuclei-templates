@@ -1,14 +1,15 @@
-id: media-library-assistant
+id: media-library-assistant-e36edfd5df0b81d97c5d95784116cffd
 
 info:
   name: >
-    Media Library Assistant <= 3.11 - Authenticated (Author+) Stored Cross-Site Scripting
+    Media Library Assistant <= 3.23 - Reflected Cross-Site Scripting via smc_settings_tab, unattachfixit-action, and woofixit-action Parameters
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a1603dc9-7f5e-47e1-8a81-27bb4df1aa4f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/65f4e5e1-4c2e-4943-aa84-4caa61e14bc2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/media-library-assistant/"
     google-query: inurl:"/wp-content/plugins/media-library-assistant/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,media-library-assistant,low
+  tags: cve,wordpress,wp-plugin,media-library-assistant,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.11')
+          - compare_versions(version, '<= 3.23')

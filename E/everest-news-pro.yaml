@@ -1,4 +1,4 @@
-id: everest-news-pro
+id: everest-news-pro-e2d42241fa4ada80fce44c221ccd39d1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bb967453-59d6-4b03-8c75-1906b99bff80?source=api-scan
   classification:
     cvss-metrics: 

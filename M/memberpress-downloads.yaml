@@ -1,22 +1,24 @@
-id: memberpress-downloads
+id: memberpress-downloads-a81854db44c39fe6bed2ae829e76e985
 
 info:
-  name: "MemberPress Downloads <= 1.2.5 - Authenticated (Subscriber+) Arbitrary File Upload"
+  name: >
+    MemberPress Downloads <= 1.2.5 - Authenticated (Subscriber+) Arbitrary File Upload
   author: topscoder
-  severity: high
-  description: "The MemberPress Downloads plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation and missing capabilities checks on one of its AJAX endpoints in versions up to, and including, 1.2.5. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to upload arbitrary files on the affected site's server which may make remote code execution possible."
+  severity: low
+  description: >
+    The MemberPress Downloads plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation and missing capabilities checks on one of its AJAX endpoints in versions up to, and including, 1.2.5. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to upload arbitrary files on the affected site's server which may make remote code execution possible.
   reference:
-    - https://patchstack.com/database/vulnerability/memberpress-downloads/wordpress-memberpress-downloads-premium-plugin-1-2-4-authenticated-arbitrary-file-upload-vulnerability
-    - https://wpscan.com/vulnerability/a2008244-f713-44c5-a3ec-0c3b3e9edd6b
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/01aa00db-43e5-4c8a-a005-77a39ec89c94?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/memberpress-downloads/"
     google-query: inurl:"/wp-content/plugins/memberpress-downloads/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,memberpress-downloads,high
+  tags: cve,wordpress,wp-plugin,memberpress-downloads,low
 
 http:
   - method: GET

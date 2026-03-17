@@ -6,16 +6,12 @@ info:
   severity: low
   description: Sensitive environment variables may not be masked
   tags: springboot,exposure
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/configprops"
       - "{{BaseURL}}/actuator/configprops"
-
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

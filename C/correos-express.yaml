@@ -1,4 +1,4 @@
-id: correos-express
+id: correos-express-3bbdaaeb08f8c3aed35d7a1935876900
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7126e39a-f3aa-4815-b039-485995d6bba3?source=api-scan
   classification:
     cvss-metrics: 

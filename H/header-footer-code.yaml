@@ -1,15 +1,15 @@
-id: header-footer-code
+id: header-footer-code-afbd01983360416a12cb28f807e89a8d
 
 info:
   name: >
-    NinjaTeam Header Footer Custom Code < 1.2 - Authenticated (Admin+) Stored Cross-Site Scripting
+    NinjaTeam Header Footer Custom Code < 1.2 - Authenticated (Admin+) Stored Cross-Site Scripting via CSS Styles
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3256da87-0d37-4c8f-9bac-95e3017e35d5?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/521af15c-983c-49dc-a90b-b090281db78a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

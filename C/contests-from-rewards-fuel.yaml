@@ -1,4 +1,4 @@
-id: contests-from-rewards-fuel
+id: contests-from-rewards-fuel-252773ec90a4ee960a99e5efaa11841f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9eeec949-e440-4df3-8c26-db92498cada3?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: dans-gcal
+id: dans-gcal-e25fc5853faf0402044c30987a6d3e56
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cbca88e0-1563-43cb-adf4-4f89856a07d0?source=api-scan
   classification:
     cvss-metrics: 

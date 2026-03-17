@@ -1,4 +1,4 @@
-id: greeklish-permalink
+id: greeklish-permalink-17412ac575fad545557053514d8327fe
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3be0e82c-f9a8-42a5-9abb-24cc60e03944?source=api-scan
   classification:
     cvss-metrics: 

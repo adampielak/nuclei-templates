@@ -10,11 +10,12 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 2
     verified: true
     shodan-query: title:"SqWebMail"
   tags: webmail,sqwebmail,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/sqwebmail"

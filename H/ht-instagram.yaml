@@ -1,4 +1,4 @@
-id: ht-instagram
+id: ht-instagram-68297d10735521fb026451e880f587ad
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/95723482-a6c5-4e95-a88d-c50a88108715?source=api-scan
   classification:
     cvss-metrics: 

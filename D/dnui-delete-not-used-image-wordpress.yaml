@@ -1,4 +1,4 @@
-id: dnui-delete-not-used-image-wordpress
+id: dnui-delete-not-used-image-wordpress-13e22b849aa99ae43e63f4e97a648214
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/de5397c2-b23c-412a-b419-e36023daa989?source=api-scan
   classification:
     cvss-metrics: 

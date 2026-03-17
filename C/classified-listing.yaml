@@ -1,14 +1,15 @@
-id: classified-listing
+id: classified-listing-4f13524aa9e30ac6373e0dbd9053098b
 
 info:
   name: >
-    Classified Listing – Classified ads & Business Directory Plugin <= 3.0.4 - Missing Authorization
+    Classified Listing – Classified ads & Business Directory Plugin <= 3.0.10.3 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Attachment Deletion
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f5da4cdd-15c7-41a6-be2f-e31bd407ae05?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7113b1c-78dc-4648-b14a-52ff6668fd1d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/classified-listing/"
     google-query: inurl:"/wp-content/plugins/classified-listing/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,classified-listing,high
+  tags: cve,wordpress,wp-plugin,classified-listing,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.4')
+          - compare_versions(version, '<= 3.0.10.3')

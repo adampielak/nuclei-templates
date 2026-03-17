@@ -1,14 +1,15 @@
-id: helloprint
+id: helloprint-765f206ab584746a76a9a7cf4a5f0029
 
 info:
   name: >
-    Helloprint <= 1.4.6 - Reflected Cross-Site Scripting
+    Plug your WooCommerce into the largest catalog of customized print products from Helloprint <= 2.0.2 - Unauthenticated Arbitrary File Upload
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c7cdfa6a-1555-494f-9802-bf92b90e7d9a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0c6c26d5-d4a1-49d7-890a-71d31b7afa89?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/helloprint/"
     google-query: inurl:"/wp-content/plugins/helloprint/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,helloprint,medium
+  tags: cve,wordpress,wp-plugin,helloprint,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.6')
+          - compare_versions(version, '<= 2.0.2')

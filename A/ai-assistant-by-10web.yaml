@@ -1,4 +1,4 @@
-id: ai-assistant-by-10web
+id: ai-assistant-by-10web-fbe2b789ff7d3a0b8c6111e279109258
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/229245a5-468d-47b9-8f26-d23d593e91da?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: gestpay-for-woocommerce
+id: gestpay-for-woocommerce-3f3633c5070fee3ad7a916c13a33f162
 
 info:
   name: >
-    Gestpay for WooCommerce <= 20221130 - Cross-Site Request Forgery (CSRF) via ajax_delete_card
+    Gestpay for WooCommerce <= 20221130 - Cross-Site Request Forgery (CSRF) via ajax_unset_default_card
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7561a71a-c3f0-45f1-8230-2c17cbeff916?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/44b62b99-99eb-424b-a04a-9bbacf5fbbaa?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

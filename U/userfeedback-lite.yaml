@@ -1,58 +1,49 @@
-id: userfeedback-lite
+id: wordpress-userfeedback-lite
 
 info:
-  name: >
-    User Feedback <= 1.0.10 - Missing Authorization
-  author: topscoder
-  severity: high
-  description: >
-    
+  name: User Feedback – Create Interactive Feedback Form, User Surveys, and Polls in Seconds Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/63c7bb29-c8b2-49ee-8ac4-1046b61b7e6a?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    - https://wordpress.org/plugins/userfeedback-lite/
   metadata:
-    fofa-query: "wp-content/plugins/userfeedback-lite/"
-    google-query: inurl:"/wp-content/plugins/userfeedback-lite/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,userfeedback-lite,high
+    plugin_namespace: userfeedback-lite
+    wpscan: https://wpscan.com/plugin/userfeedback-lite
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/userfeedback-lite/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/userfeedback-lite.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "userfeedback-lite"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 1.0.10')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4b0a00483046022100e05e51d03dedbfe4e43f841a68052fb22b9bc585046cf21c549add4470565906022100e137750d942a883735ae53ec904f8ba73e6253450de33a4c24a8d144f1d94b90:922c64590222798bb761d5b6d8e72950

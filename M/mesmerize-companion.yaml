@@ -1,14 +1,15 @@
-id: mesmerize-companion
+id: mesmerize-companion-c42d9ca4525a34842cc41f3d5771cb41
 
 info:
   name: >
-    Mesmerize Companion <= 1.6.133 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    Mesmerize Companion <= 1.6.148 - Authenticated (Contributor+) Stored Cross-Site Scripting via mesmerize_contact_form Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3548241e-551e-427a-907c-50b4712b5e5b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/521bb5a3-0a0c-4693-a87d-fabb64f1ad4f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.133')
+          - compare_versions(version, '<= 1.6.148')

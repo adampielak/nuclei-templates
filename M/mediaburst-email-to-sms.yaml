@@ -1,4 +1,4 @@
-id: mediaburst-email-to-sms
+id: mediaburst-email-to-sms-1d9b921b54be23bdc5f265c1b61c61e8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/08fb51d6-30c1-4a48-b626-a8c6f203ac83?source=api-scan
   classification:
     cvss-metrics: 

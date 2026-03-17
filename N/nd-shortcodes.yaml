@@ -1,17 +1,18 @@
-id: nd-shortcodes
+id: nd-shortcodes-59ae582069dfefb7ecef9bedbd9caeab
 
 info:
   name: >
-    ND Shortcodes <= 6.9 - Authenticated (Subscriber+) Local File Inclusion
+    ND Shortcodes <= 6.5 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    
+    The ND Shortcodes plugin for WordPress is vulnerable to stored Cross-Site Scripting via multiple shortcodes. This makes it possible for authenticated attackers, with contributor-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9b9bd42f-cb24-483a-ae91-add4378067d9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/037882e8-4d66-47b9-8ca5-3fa3866b9125?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/nd-shortcodes/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.9')
+          - compare_versions(version, '<= 6.5')

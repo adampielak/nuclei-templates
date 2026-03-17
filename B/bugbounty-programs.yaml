@@ -1,0 +1,27 @@
+id: bugbounty-programs
+
+info:
+  name: bugbounty-programs
+  author: rix4uni
+  severity: info
+  tags: miscellaneous
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        regex:
+          - "scope|Eligible Targets|reward|bounty|monetary|compensation|we offer a monetary|We offer reward|monetary reward|eligible for a reward|we award a bounty|We offer monetary rewards"
+        condition: or
+
+    extractors:
+      - type: regex
+        regex:
+          - "scope|Eligible Targets|reward|bounty|monetary|compensation|we offer a monetary|We offer reward|monetary reward|eligible for a reward|we award a bounty|We offer monetary rewards"
+
+# echo "https://fintual.cl" | nuclei -duc -silent -nc -t bugbounty-programs.yaml | unew -el rewards.txt
+# cat output.txt | nuclei -duc -silent -nc -t bugbounty-programs.yaml | unew -el rewards.txt

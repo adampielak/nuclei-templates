@@ -1,17 +1,18 @@
-id: copy-or-move-comments
+id: copy-or-move-comments-718bce87aa7c808ce91cc99d5c7de047
 
 info:
   name: >
-    Copy Or Move Comments <= 5.0.4 - Authenticated (Subscriber+) SQL Injection
+    Copy or Move Comments < 1.0.1 - Cross-Site Scripting and SQL Injection
   author: topscoder
   severity: low
   description: >
-    
+    The Copy or Move Comments plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via several parameters in versions up to, and including, 1.0.0 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link. The plugin is also vulnerable to time-based blind SQL Injection via the ‘source_post’ and ‘target_post’ parameters due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for authenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2b020c3-0eb9-4ff1-b94e-e32452695b5d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb32a095-7d2b-4a57-9d91-f79fb3486f9a?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/copy-or-move-comments/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.0.4')
+          - compare_versions(version, '< 1.0.1')

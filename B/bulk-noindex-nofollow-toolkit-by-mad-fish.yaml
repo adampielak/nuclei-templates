@@ -1,14 +1,15 @@
-id: bulk-noindex-nofollow-toolkit-by-mad-fish
+id: bulk-noindex-nofollow-toolkit-by-mad-fish-778a7187e9af3e0b3a505db522bb4e42
 
 info:
   name: >
-    Bulk NoIndex & NoFollow Toolkit <= 1.42 - Reflected Cross-Site Scripting via 's'
+    Bulk NoIndex & NoFollow Toolkit <= 2.01 - Reflected Cross-Site Scripting via tab, order, and orderby
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0e4f6305-d003-478e-a8ef-0b254084f56f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/451d4ecd-f3d7-4029-8d39-85d2a7ed459c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.5')
+          - compare_versions(version, '<= 2.01')

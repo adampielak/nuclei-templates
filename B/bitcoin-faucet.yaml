@@ -1,4 +1,4 @@
-id: bitcoin-faucet
+id: bitcoin-faucet-f43f3ee76f431427a65c1678d8569231
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/30f7a858-6caf-44c3-8fc9-476e9fa86543?source=api-scan
   classification:
     cvss-metrics: 

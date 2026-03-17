@@ -1,4 +1,4 @@
-id: blue-memories
+id: blue-memories-f6d38e3439712c732c026805eb67bdf8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e292e704-4b98-4e95-ac25-29cedcf005c7?source=api-scan
   classification:
     cvss-metrics: 

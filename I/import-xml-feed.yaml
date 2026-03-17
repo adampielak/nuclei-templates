@@ -1,4 +1,4 @@
-id: import-xml-feed
+id: import-xml-feed-f922f0064323c06087b35072962cc51c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cecf1bcc-ed3e-430c-80d4-d940416eed9a?source=api-scan
   classification:
     cvss-metrics: 

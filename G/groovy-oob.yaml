@@ -12,7 +12,7 @@ info:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#groovy---command-execution
   metadata:
     verified: true
-  tags: ssti,dast,oast,oob,groovy
+  tags: ssti,dast,oast,oob,groovy,vuln
 
 http:
   - pre-condition:
@@ -43,4 +43,4 @@ http:
           - "contains(interactsh_protocol,'dns')"
           - "contains(interactsh_request,'srv')"
         condition: and
-# digest: 490a0046304402205ead8b6ab5843cf8f9dacbf9c9b30903379407d101cf23f135ee3412487d306e0220265dec49712207006d6488a7c29aa571781985047f146485cb74bd889382f80a:922c64590222798bb761d5b6d8e72950
+

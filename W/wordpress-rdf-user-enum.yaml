@@ -5,8 +5,10 @@ info:
   author: r3dg33k
   severity: info
   tags: wordpress,enum
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/feed/rdf'

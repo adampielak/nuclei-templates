@@ -1,15 +1,15 @@
-id: gold-addons-for-elementor
+id: gold-addons-for-elementor-7eaebe2336e04d77baf7d72493304929
 
 info:
   name: >
-    Gold Addons for Elementor <= 1.2.9 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Gold Addons for Elementor <= 1.3.2 - Missing Authorization to Authenticated (Subscriber+) License Activation/Deactivation
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/987dcb6e-0f58-484f-9e9d-5ac721c145ca?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8e103afe-3ae7-413f-92b2-0e4dd9436f3e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.9')
+          - compare_versions(version, '<= 1.3.2')

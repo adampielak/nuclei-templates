@@ -1,22 +1,24 @@
-id: link-library
+id: link-library-c4dc1225f5b95a01568ec0f239d3679d
 
 info:
-  name: "Link Library <= 5.8.10.6 - Reflected Cross-Site Scripting"
+  name: >
+    Link Library <= 5.9.13.26 – SQL Injection
   author: topscoder
-  severity: medium
-  description: "The Link Library plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘searchll’ parameter in versions up to, and including, 5.8.10.6 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  severity: low
+  description: >
+    The Link Library plugin for WordPress is vulnerable to generic SQL Injection via the "$_GET[‘linkid’]" parameter in versions up to, and including, 5.9.13.26 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for authenticated attackers, with administrative privileges and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://security.szurek.pl/en/link-library-58106-reflected-xss/
-    - https://plugins.trac.wordpress.org/changeset/1021289
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6755c415-427e-4572-908c-061ab8f7490a?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 7.2
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/link-library/"
     google-query: inurl:"/wp-content/plugins/link-library/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,link-library,medium
+  tags: cve,wordpress,wp-plugin,link-library,low
 
 http:
   - method: GET
@@ -54,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.8.10.6')
+          - compare_versions(version, '<= 5.9.13.26')

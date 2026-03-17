@@ -50,4 +50,4 @@ code:
       - type: dsl
         dsl:
           - 'vaultName + " does not allow trusted Microsoft services to bypass the firewall"'
-# digest: 4a0a00473045022100be9bafb76fe2fdbe8a3f75560809d6660b194208a7244b5d28e77a80c3eb6daa02200116a892799d1463defc884c12c32916ccab8dccfae2d52b512582e4af067daa:922c64590222798bb761d5b6d8e72950
+

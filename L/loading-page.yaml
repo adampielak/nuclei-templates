@@ -1,4 +1,4 @@
-id: loading-page
+id: loading-page-703919aaf3ac5207e458fe86bf1026b0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/97b10f88-1911-4416-a5cd-83b4c991e6c9?source=api-scan
   classification:
     cvss-metrics: 

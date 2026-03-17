@@ -1,4 +1,4 @@
-id: mass-delete-unused-tags
+id: mass-delete-unused-tags-3a5b162075a075bd9cce09734df3a960
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/abf4cfb9-745a-4b4f-8862-54ef561904d6?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: insert-pages
+id: insert-pages-79a5a5154efbe78f71ef7ce9cd96566b
 
 info:
   name: >
-    Insert Pages < 3.2.4 - Authenticated Directory Traversal
+    Insert Pages <= 3.7.4 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9efac984-21ef-4e02-8ead-bf4205ddb38d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a0336e35-eb3c-4613-b8a2-fac7b837eb6f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.2.4')
+          - compare_versions(version, '<= 3.7.4')

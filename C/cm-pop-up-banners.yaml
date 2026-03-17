@@ -1,17 +1,18 @@
-id: cm-pop-up-banners
+id: cm-pop-up-banners-c6881fe258c1fa0dd33dbf550460f630
 
 info:
   name: >
-    CM Pop-Up banners <= 1.5.10 - Authenticated (Subscriber+) SQL Injection via getStatistics
+    CM Pop-Up banners <= 1.4.10 - Authenticated Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    
+    The 'CM Pop-Up banners' plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 1.4.10 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ff29e160-993b-422c-b49b-a216db5a0765?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9b28209-498f-4319-be87-3f54c64d9ccd?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/cm-pop-up-banners/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.10')
+          - compare_versions(version, '<= 1.4.10')

@@ -1,4 +1,4 @@
-id: chatbot-chatgpt
+id: chatbot-chatgpt-06b4ba2a3a5a1e238895a753a8fa998d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7bc33a05-d462-492e-9ea5-cf37b887cc94?source=api-scan
   classification:
     cvss-metrics: 

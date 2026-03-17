@@ -1,4 +1,4 @@
-id: big-store
+id: big-store-1fe36405e0f0a6a4be8908918195d6af
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a1859dca-d771-470c-ae4a-48246977212c?source=api-scan
   classification:
     cvss-metrics: 

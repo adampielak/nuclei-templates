@@ -1,14 +1,15 @@
-id: faq-for-woocommerce
+id: faq-for-woocommerce-c68081814bb2c8d70836e584e4adc627
 
 info:
   name: >
-    Appsero <= 2.0.0 - Missing Authorization via handle_optin_optout
+    XPlainer – WooCommerce Product FAQ [WooCommerce Accordion FAQ Plugin] <= 1.6.4 - Missing Authorization to Authenticated (Subscriber+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/376c5091-7921-4470-acbf-44db53db38fc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c5a404de-ee26-44af-9e4f-f93694da7a77?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/faq-for-woocommerce/"
     google-query: inurl:"/wp-content/plugins/faq-for-woocommerce/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,faq-for-woocommerce,high
+  tags: cve,wordpress,wp-plugin,faq-for-woocommerce,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.0')
+          - compare_versions(version, '<= 1.6.4')

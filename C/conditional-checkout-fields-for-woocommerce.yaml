@@ -1,4 +1,4 @@
-id: conditional-checkout-fields-for-woocommerce
+id: conditional-checkout-fields-for-woocommerce-9c4c86d64059b3f7ee68c5a858ef6cf8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7fb0cb21-6645-4a28-a78c-d5dbeaddbf21?source=api-scan
   classification:
     cvss-metrics: 

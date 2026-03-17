@@ -1,23 +1,24 @@
-id: advance-menu-manager
+id: advance-menu-manager-1e6d801254d9ac2fc9416e674530fe3e
 
 info:
   name: >
-    Advance Menu Manager <= 3.0.6 - Cross-Site Request Forgery
+    Advance Menu Manager <= 3.0.6 - Missing Authorization
   author: topscoder
-  severity: medium
+  severity: low
   description: >
-    The Advance Menu Manager plugin for WordPress is vulnerable to Cross-Site Request Forgery in all versions up to, and including, 3.0.6. This is due to missing or incorrect nonce validation on the dsamm_action_ajax_for_delete_menu(), dsamm_amm_duplicate_menu(), and dsamm_action_ajax_for_create_menu() functions. This makes it possible for unauthenticated attackers to duplicate, modify, and create menus via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
+    The Advance Menu Manager plugin for WordPress is vulnerable to unauthorized modification of data due to missing capability checks on the dsamm_action_ajax_for_delete_menu(), dsamm_amm_duplicate_menu(), and dsamm_action_ajax_for_create_menu() functions in all versions up to, and including, 3.0.6. This makes it possible for authenticated attackers, with subscriber-level access and above, to delete, create, and duplicate menus. Please note version 3.0.7 did not introduce capability checks, however, it introduced nonce checks that prevent the missing authorization issue from being exploitable.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cf34af9d-4de7-498d-8065-c3cc6818b7c4?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/04ad816b-0ac0-44b5-928a-5bb3e36523b2?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
     cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/advance-menu-manager/"
     google-query: inurl:"/wp-content/plugins/advance-menu-manager/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,advance-menu-manager,medium
+  tags: cve,wordpress,wp-plugin,advance-menu-manager,low
 
 http:
   - method: GET

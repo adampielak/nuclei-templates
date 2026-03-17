@@ -1,4 +1,4 @@
-id: demo-my-wordpress
+id: demo-my-wordpress-da1053a0053825c4148d34756bacec76
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc57d762-1e26-4980-ac82-ba35bf252ef8?source=api-scan
   classification:
     cvss-metrics: 

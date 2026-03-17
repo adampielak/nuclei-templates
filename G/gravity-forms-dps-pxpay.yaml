@@ -1,4 +1,4 @@
-id: gravity-forms-dps-pxpay
+id: gravity-forms-dps-pxpay-dc6fdd47b30188fa018518ba346c5e82
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d33df4e4-6ac7-499a-9d43-d19e287f7689?source=api-scan
   classification:
     cvss-metrics: 

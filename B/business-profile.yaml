@@ -1,4 +1,4 @@
-id: business-profile
+id: business-profile-3ca98698d8689ac21eec5eb0ac5e2546
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0daeb94-1028-4163-af9d-0a6d7a00269f?source=api-scan
   classification:
     cvss-metrics: 

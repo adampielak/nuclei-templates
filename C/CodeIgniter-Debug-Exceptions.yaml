@@ -1,0 +1,33 @@
+id: CodeIgniter-Debug-Exceptions
+
+info:
+  name: CodeIgniter Debug Exceptions Disclosure
+  author: rix4uni
+  severity: medium
+  description: description
+  reference:
+    - https://twitter.com/shaybt12/status/1598990560852729858
+  metadata:
+    google-query:
+      - intitle:"ErrorException"
+    shodan-query:
+      - http.title:"ErrorException"
+    fofa-query:
+      - title=="ErrorException"
+  tags: ErrorException,CodeIgniter,debug,exposure
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "ErrorException"
+
+      - type: status
+        status:
+          - 500

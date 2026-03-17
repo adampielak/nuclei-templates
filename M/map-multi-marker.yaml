@@ -1,4 +1,4 @@
-id: map-multi-marker
+id: map-multi-marker-f4940b826dce5efcb456806be13fb22e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/577cf51e-3fcb-456c-9068-17fff4a71e94?source=api-scan
   classification:
     cvss-metrics: 

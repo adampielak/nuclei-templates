@@ -1,4 +1,4 @@
-id: admin-renamer-extended
+id: admin-renamer-extended-7ca9d6f59a1f1e3f8547ff76eb6662fc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9caf6a8-d7f6-4686-889a-79ba9cf911c4?source=api-scan
   classification:
     cvss-metrics: 

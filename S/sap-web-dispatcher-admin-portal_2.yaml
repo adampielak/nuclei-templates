@@ -7,11 +7,11 @@ info:
   description: Detection of SAP Web Dispatcher Admin Portal
   metadata:
     shodan-query: http.favicon.hash:-266008933
-  tags: sap,webserver,proxy,tech
+  tags: sap,webserver,proxy
 
 requests:
   - method: GET
-    host-redirects: true
+    redirects: true
     max-redirects: 2
 
     path:

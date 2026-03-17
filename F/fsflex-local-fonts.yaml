@@ -1,4 +1,4 @@
-id: fsflex-local-fonts
+id: fsflex-local-fonts-4d63216258d38e4e7c4eb55baa94fc0c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5744ed4-f150-48a6-9f5d-d49f9d4c8454?source=api-scan
   classification:
     cvss-metrics: 

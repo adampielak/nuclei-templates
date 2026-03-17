@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"keybase.txt"
-  tags: keybase,identity,well-known,pgp,discovery,osint,misc
+  tags: keybase,identity,well-known,pgp,discovery,osint,misc,vuln
 
 http:
   - method: GET
@@ -36,4 +36,4 @@ http:
         part: body
         regex:
           - "-----BEGIN PGP MESSAGE-----[\\s\\S]+?-----END PGP MESSAGE-----"
-# digest: 4a0a00473045022022e2314bc059dbce821ebc446ace84efced7d8849e545f10799f7f3c99b33c10022100a7edeeff713b3237f7386b4e78c070cc3ba12004ea4ab88e56c5e7ebb2d6c3dc:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402204e734b80360bff0efae9251a844d966ab40a9f959c242b145131ef9e78b83bd20220403ab7d2ee949253271b7c796e6f61e680f372051d4ce80d9f61f97524eb8f39:922c64590222798bb761d5b6d8e72950

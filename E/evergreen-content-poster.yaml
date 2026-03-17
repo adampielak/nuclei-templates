@@ -1,14 +1,15 @@
-id: evergreen-content-poster
+id: evergreen-content-poster-c596d67986cb5545dc3d4e0dd69d2a6d
 
 info:
   name: >
-    Evergreen Content Poster <= 1.4.2 - Missing Authorization
+    Evergreen Content Poster – Auto Post and Schedule Your Best Content to Social Media <= 1.4.4 - Missing Authorization to Unauthenticated Arbitrary Post Deletion
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/232e6464-bd6c-4086-989a-00b84056c431?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa07f48f-370f-4985-a6fc-a94ed5c59ed4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.2')
+          - compare_versions(version, '<= 1.4.4')

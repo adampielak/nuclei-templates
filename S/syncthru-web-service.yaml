@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     shodan-query: title:"SyncThru Web Service"
-  tags: edb,panel,syncthru,printer
+  tags: panel,syncthru,printer
 
 requests:
   - method: GET

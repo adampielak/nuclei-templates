@@ -4,7 +4,6 @@ info:
   name: AWS Bucket Takeover Detection
   author: pdteam,pwnhxl,zy9ard3
   severity: high
-  description: AWS Bucket takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/36
   metadata:
@@ -31,7 +30,6 @@ http:
       - type: dsl
         dsl:
           - contains(tolower(header), 'x-guploader-uploadid')
-          - contains(tolower(header), "aliyunoss")
         negative: true
 
       - type: word
@@ -71,7 +69,6 @@ http:
           - "oss-me-east-1.aliyuncs.com"
         negative: true
 
-
     extractors:
       - type: regex
         part: body
@@ -79,4 +76,5 @@ http:
         regex:
           - '<li>BucketName: (.*?)</li>'
           - '<BucketName>(.*?)</BucketName>'
-# digest: 4b0a00483046022100f9971da068265c7bdf27a98174406257097863d2f626d5766188ff816740fa63022100ebd12a06f36b24104a4b81b1fce912f186cdcd0fb008ae188105be7e4f31af0f:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220552d119ed4defe335fcb706a07cd57859f985baf36b33e4ae1427569f10fbf6a022049b852ee41be1c370327d28658a18e80d90306749e35f501d4ebe44440805b4e:922c64590222798bb761d5b6d8e72950

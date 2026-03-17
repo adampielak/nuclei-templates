@@ -1,14 +1,15 @@
-id: formcraft-form-builder
+id: formcraft-form-builder-92c58c772d6fa07820d89d6c31dfc26a
 
 info:
   name: >
-    FormCraft Basic <= 1.2.5 - Authenticated (Admin+) Stored Cross-Site Scripting
+    FormCraft <= 1.2.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via fcb shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c648fbb1-cc12-4334-b334-0f784542ab6d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cf17a817-6f61-43d5-9da2-58fbbef458d9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.6')
+          - compare_versions(version, '<= 1.2.9')

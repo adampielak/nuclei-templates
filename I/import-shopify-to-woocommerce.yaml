@@ -1,4 +1,4 @@
-id: import-shopify-to-woocommerce
+id: import-shopify-to-woocommerce-5deb9cef1a1765aac5362c5a9badb4e5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6bd92b9d-b4b7-4106-bee4-d12b0479d0c5?source=api-scan
   classification:
     cvss-metrics: 

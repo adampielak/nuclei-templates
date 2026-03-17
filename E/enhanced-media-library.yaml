@@ -1,4 +1,4 @@
-id: enhanced-media-library
+id: enhanced-media-library-20c6cf41109290a86b1e45c5df88639f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/15b30ecb-e3ce-4092-841b-3a1b2553596a?source=api-scan
   classification:
     cvss-metrics: 

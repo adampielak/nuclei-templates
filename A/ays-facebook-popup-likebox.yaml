@@ -1,23 +1,24 @@
-id: ays-facebook-popup-likebox
+id: ays-facebook-popup-likebox-c4ea0ff741022f86bfdb92678e54daea
 
 info:
   name: >
-    Popup Like box – Page Plugin < 3.5.3 - SQL Injection
+    Popup Like box – Page Plugin <= 3.5.2 - Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: high
   description: >
-    
+    The "Popup Like box – Page Plugin" plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via several parameters in versions up to, and including, 3.5.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1df74d3d-b7c9-4cf8-b1a7-d2b0b4f706d2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a713c7d3-06ce-4d65-9766-2b0331656ae6?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/ays-facebook-popup-likebox/"
     google-query: inurl:"/wp-content/plugins/ays-facebook-popup-likebox/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ays-facebook-popup-likebox,critical
+  tags: cve,wordpress,wp-plugin,ays-facebook-popup-likebox,high
 
 http:
   - method: GET

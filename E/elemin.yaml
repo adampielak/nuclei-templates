@@ -1,4 +1,4 @@
-id: elemin
+id: elemin-9a5e060d4782147979aba892c07d8060
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ea3ba0f5-6bc2-455c-b4e3-891ed6b2518c?source=api-scan
   classification:
     cvss-metrics: 

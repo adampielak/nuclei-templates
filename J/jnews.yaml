@@ -1,4 +1,4 @@
-id: jnews
+id: jnews-edf2392b68ac3fa89210511685b2df12
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/400d31ba-2cef-4558-8983-6689f7e4b93c?source=api-scan
   classification:
     cvss-metrics: 

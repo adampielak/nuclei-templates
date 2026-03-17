@@ -1,4 +1,4 @@
-id: click-to-call-or-chat-buttons
+id: click-to-call-or-chat-buttons-3d9feaec0ba9e475c3ff16812903492c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/92880588-a733-43df-adf6-74fe6291822d?source=api-scan
   classification:
     cvss-metrics: 

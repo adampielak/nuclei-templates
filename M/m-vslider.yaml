@@ -1,4 +1,4 @@
-id: m-vslider
+id: m-vslider-7cfec08cf42075f307718b451f61a774
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad6747da-394a-4f63-864d-bd52813fad69?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,23 +1,24 @@
-id: lws-tools
+id: lws-tools-c0c37c44e8a81a4f09a0d87d4fd54a49
 
 info:
   name: >
-    LWS Tools <= 2.3.1 - Cross-Site Request Forgery
+    LWS Plugins  <= (Various Versions) - Missing Authorization Checks
   author: topscoder
-  severity: medium
+  severity: low
   description: >
-    
+    Several LWS Plugins for WordPress are vulnerable to authorization bypass due to making admin settings pages available to users with read access (LWS Affiliation in versions up to, and including, 2.1; LWS Optimize in versions up to, and including, 1.5; LWS Tools in versions up to, and including, 2.1; LWS Cleaner in versions up to, and including, 2.0.3; LWS SMS in versions up to, and including, 2.1; LWS Hide Login in versions up to, and including, 2.0.2). This makes it possible for authenticated attackers, with subscriber-level permissions and above, to change plugin settings.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2dabb790-4f5e-447a-ad65-3f62ac7f6176?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dd02becd-77e5-46b9-acc9-dba6c5caba27?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/lws-tools/"
     google-query: inurl:"/wp-content/plugins/lws-tools/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,lws-tools,medium
+  tags: cve,wordpress,wp-plugin,lws-tools,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.3.1')
+          - compare_versions(version, '<= 2.1')

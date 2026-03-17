@@ -1,19 +1,19 @@
-id: cimy-user-manager
+id: cimy-user-manager-3d747e10757035378575aa37a3cefedd
 
 info:
-  name: "Cimy User Manager < 1.4.4 - Arbitrary File Read"
+  name: >
+    Cimy User Manager < 1.4.4 - Arbitrary File Read
   author: topscoder
   severity: high
-  description: "The Cimy User Manager plugin for WordPress is vulnerable to Directory Traversal in versions before 1.4.4 via the 'cimy_um_filename' parameter. This allows attackers to read the contents of arbitrary files on the server, which can contain sensitive information."
+  description: >
+    The Cimy User Manager plugin for WordPress is vulnerable to Directory Traversal in versions before 1.4.4 via the 'cimy_um_filename' parameter. This allows attackers to read the contents of arbitrary files on the server, which can contain sensitive information.
   reference:
-    - https://web.archive.org/web/20130119131019/http%3A//secunia.com/advisories/50834/
-    - https://web.archive.org/web/20121121010631/http%3A//ceriksen.com/2012/10/24/wordpress-cimy-user-manager-arbitrary-file-disclosure/
-    - https://wordpress.org/plugins/cimy-user-manager/#developers
-    - https://plugins.trac.wordpress.org/changeset/618894
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/469bf5c9-984e-4107-a8a2-da744a78b8b2?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/cimy-user-manager/"
     google-query: inurl:"/wp-content/plugins/cimy-user-manager/"

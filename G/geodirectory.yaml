@@ -1,17 +1,18 @@
-id: geodirectory
+id: geodirectory-aa9e1d499d3c90d9b163b7b97d18c1f8
 
 info:
   name: >
-    GeoDirectory <= 2.2.23 - Authenticated (Admin+) SQL Injection
+    GeoDirectory <= 2.3.28 - Authenticated (Administrator+) SQL Injection via orderby
   author: topscoder
   severity: low
   description: >
-    
+    The GeoDirectory plugin for WordPress is vulnerable to SQL Injection via the ‘orderby’ parameter in all versions up to, and including, 2.3.28 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for authenticated attackers, with administrator-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/81fa4987-d019-4d0c-a002-eceef956161e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3bcd61d4-4775-4297-b7f5-664991fcd6d2?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 7.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/geodirectory/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.23')
+          - compare_versions(version, '<= 2.3.28')

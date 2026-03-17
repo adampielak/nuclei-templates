@@ -1,4 +1,4 @@
-id: gd-security-headers
+id: gd-security-headers-a27e354b1988eadb47b7e152b65d406f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7ce32ecf-6995-4794-8559-2f84533ecf50?source=api-scan
   classification:
     cvss-metrics: 

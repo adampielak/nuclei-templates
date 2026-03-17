@@ -1,4 +1,4 @@
-id: cp-reservation-calendar
+id: cp-reservation-calendar-d02ee3faf26610e39a2c477ea6d03016
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f93ecf7-ba49-47f6-abe3-33e3bc6e7054?source=api-scan
   classification:
     cvss-metrics: 

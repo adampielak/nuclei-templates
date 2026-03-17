@@ -1,4 +1,4 @@
-id: indigitall-web-push-notifications
+id: indigitall-web-push-notifications-ad5e54498c16b11f59ef9ba51df1ea8d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/919d31a8-932e-438b-a039-89a24781524c?source=api-scan
   classification:
     cvss-metrics: 

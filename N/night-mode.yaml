@@ -1,4 +1,4 @@
-id: night-mode
+id: night-mode-a8313e8807bf1740071bb3ff5a06bec0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f1666371-9401-4b62-b44e-abc7fb4c6138?source=api-scan
   classification:
     cvss-metrics: 

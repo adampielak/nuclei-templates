@@ -1,4 +1,4 @@
-id: custom-field-bulk-editor
+id: custom-field-bulk-editor-7fff4301054bdc36c3f23e5d0173018b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8e127217-fd2a-4b8b-a6a5-85e246bc1289?source=api-scan
   classification:
     cvss-metrics: 

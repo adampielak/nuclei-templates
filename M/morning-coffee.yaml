@@ -1,4 +1,4 @@
-id: morning-coffee
+id: morning-coffee-19785cd94dba38832076a4a112d1ee52
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/84ef0f21-74af-4cb7-bab6-47c25df0522e?source=api-scan
   classification:
     cvss-metrics: 

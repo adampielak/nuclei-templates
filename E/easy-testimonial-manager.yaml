@@ -1,4 +1,4 @@
-id: easy-testimonial-manager
+id: easy-testimonial-manager-e53d2c7a9e67b166e2763053aedccbe0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e0426e9-f6d8-40aa-9ceb-a3e5515ac316?source=api-scan
   classification:
     cvss-metrics: 

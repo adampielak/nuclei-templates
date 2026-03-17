@@ -1,4 +1,4 @@
-id: cdnvote
+id: cdnvote-d3feccafca8f957dfd11e88c4a346635
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dac658b5-4253-4095-9fda-4d3cdc7f7e2e?source=api-scan
   classification:
     cvss-metrics: 

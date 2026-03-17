@@ -1,14 +1,15 @@
-id: ht-contactform
+id: ht-contactform-afb1cc42cbb9f597ffe8e3351b8549bf
 
 info:
   name: >
-    Contact Form 7 Widget For Elementor Page Builder & Gutenberg Blocks <= 1.1.5 - Cross-Site Request Forgery to Arbitrary Plugin Activation
+    HT Contact Form Widget For Elementor Page Builder & Gutenberg Blocks & Form Builder. <= 2.2.1 - Unauthenticated Arbitrary File Upload
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dfe6f49a-1dd1-46d9-8e15-a8a766917092?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f0cb666b-bfab-492f-a74e-11dc9b171136?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ht-contactform/"
     google-query: inurl:"/wp-content/plugins/ht-contactform/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ht-contactform,medium
+  tags: cve,wordpress,wp-plugin,ht-contactform,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.5')
+          - compare_versions(version, '<= 2.2.1')

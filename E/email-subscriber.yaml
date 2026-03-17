@@ -1,4 +1,4 @@
-id: email-subscriber
+id: email-subscriber-d848a99d064cc6dc52668b88c085b176
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d501415-39ab-4c2a-bcd3-fda97b7a3235?source=api-scan
   classification:
     cvss-metrics: 

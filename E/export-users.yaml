@@ -1,4 +1,4 @@
-id: export-users
+id: export-users-692a8b590e852115f37e497c34985a32
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa309da6-6552-43e4-aeea-f822493dd029?source=api-scan
   classification:
     cvss-metrics: 

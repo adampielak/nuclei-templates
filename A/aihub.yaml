@@ -1,15 +1,15 @@
-id: aihub-e5c0b40c5aae46d721e92f1cceef9d77
+id: aihub-7d65ff1ffdcddb5efa820b59c4c79412
 
 info:
   name: >
-    AI Hub - Startup & Technology WordPress Theme <= 1.3.3 - Unauthenticated Arbitrary File Upload
+    LiquidThemes Themes <= Various Versions - Missing Authorization to Authenticated (Subscriber+) All Plugins Deactivated
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f7e7b03-e709-44b6-8ff9-f2f0b3836629?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0099c700-e1af-4d97-a518-151a9139ea35?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/aihub/"
     google-query: inurl:"/wp-content/themes/aihub/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,aihub,critical
+  tags: cve,wordpress,wp-theme,aihub,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.3')
+          - compare_versions(version, '<= *')

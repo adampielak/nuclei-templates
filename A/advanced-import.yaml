@@ -1,4 +1,4 @@
-id: advanced-import
+id: advanced-import-3c7177f87bce21a6fe285535d6e85517
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f107496b-020b-4222-91f3-49caba1a39db?source=api-scan
   classification:
     cvss-metrics: 

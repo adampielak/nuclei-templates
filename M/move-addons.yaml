@@ -1,14 +1,15 @@
-id: move-addons
+id: move-addons-e750f1bb05d811fe0e3f213b39e81dbd
 
 info:
   name: >
-    Move Addons for Elementor <= 1.2.9 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Move Addons for Elementor <= 1.3.5 - Authenticated (Contributor+) Sensitive Information Exposure via Elementor Templates
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7b6af5a-ad44-4dd6-9ce1-6fcbd28f8ebe?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eafe73b4-b492-45c7-adca-d9a3042144b4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.9')
+          - compare_versions(version, '<= 1.3.5')

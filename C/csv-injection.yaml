@@ -6,7 +6,7 @@ info:
   severity: medium
   description: |
     A CSV injection detection template to identify and prevent CSV injection vulnerabilities by using various payloads that could be interpreted as formulas by spreadsheet applications.
-  tags: dast,csv,oast
+  tags: dast,csv,oast,vuln
 
 http:
   - pre-condition:
@@ -47,4 +47,4 @@ http:
           - "text/csv"
           - "application/csv"
           - "application/vnd.ms-excel"
-# digest: 4b0a00483046022100f7e75b232bba6a4cdf8750cda7e0a17af0e3f86b85e0052d201cb5b60fde787f022100ae2e75bfc5891ad76b304eb90525135d905cde216fc5236f73da1dd79a974321:922c64590222798bb761d5b6d8e72950
+

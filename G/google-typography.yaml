@@ -1,4 +1,4 @@
-id: google-typography
+id: google-typography-5d5e64882eab8f2ab1996d1df039c737
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3e00ae4-68a6-4835-8dd7-da5dc104feba?source=api-scan
   classification:
     cvss-metrics: 

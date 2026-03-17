@@ -1,15 +1,15 @@
-id: formlift
+id: formlift-cd2b0b327392914044c20d4c2c056730
 
 info:
   name: >
-    FormLift for Infusionsoft Web Forms <= 7.5.17 - Unauthenticated SQL Injection
+    FormLift for Infusionsoft Web Forms <= 7.5.19 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1429549-2e73-4db3-bc83-98c722a80903?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0315150d-451b-4a78-8657-793cf901068c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/formlift/"
     google-query: inurl:"/wp-content/plugins/formlift/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,formlift,critical
+  tags: cve,wordpress,wp-plugin,formlift,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 7.5.17')
+          - compare_versions(version, '<= 7.5.19')

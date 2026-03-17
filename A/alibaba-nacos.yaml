@@ -1,20 +1,14 @@
-id: alibaba-nacos
-info:
-  name: alibaba-nacos
-  author: cn-kali-team
-  tags: detect,tech,alibaba-nacos
-  severity: info
-  metadata:
-    product: nacos
-    vendor: alibaba
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  - '{{BaseURL}}/nacos/'
-  matchers:
-  - type: word
-    words:
-    - <title>nacos</title>
-    case-insensitive: true
+name: alibaba-nacos
+priority: 1
+nuclei_tags:
+  - - nacos
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - <title>Nacos</title>
+    favicon_hash: []

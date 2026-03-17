@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,zhike-help
+  tags: xss,csp-bypass,zhike-help,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "zhike_help_csp_xss == true"
-# digest: 490a0046304402206c6e4fb8781493ec0c4765595f2b1133316cc2e033b0a9d4b1df574b95680511022044a54aff1d014c34e8cccc38a6ffc764d6898b629592becd7d22730218fcc6a0:922c64590222798bb761d5b6d8e72950
+

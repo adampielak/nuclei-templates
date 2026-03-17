@@ -1,23 +1,24 @@
-id: curvo
+id: curvo-ba329380e918e5e03797f6c0fb6e7a24
 
 info:
-  name: "Curvo Theme (All Known Versions) - Cross-Site Request Forgery and Arbitrary File Upload"
+  name: >
+    Curvo Theme (All Known Versions) - Cross-Site Request Forgery and Arbitrary File Upload
   author: topscoder
-  severity: critical
-  description: "The Curvo Theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the upload-handler.php file in all known versions. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
+  severity: medium
+  description: >
+    The Curvo Theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the upload-handler.php file in all known versions. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
   reference:
-    - https://packetstormsecurity.com/files/123799/
-    - https://packetstormsecurity.com/files/123820/
-    - https://www.exploit-db.com/exploits/29211
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e8021ef2-e1ce-442a-965a-b2628fe48964?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/curvo/"
     google-query: inurl:"/wp-content/themes/curvo/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,curvo,critical
+  tags: cve,wordpress,wp-theme,curvo,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>0')
+          - compare_versions(version, '<= *')

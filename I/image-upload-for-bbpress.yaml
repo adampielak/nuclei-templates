@@ -1,4 +1,4 @@
-id: image-upload-for-bbpress
+id: image-upload-for-bbpress-2ec6c75eb2d99f471a016ea04782aea5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/86bd6ae1-e74d-4aab-98e1-3c47cb484fe9?source=api-scan
   classification:
     cvss-metrics: 

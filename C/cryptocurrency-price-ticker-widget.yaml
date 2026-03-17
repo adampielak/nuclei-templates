@@ -1,14 +1,15 @@
-id: cryptocurrency-price-ticker-widget
+id: cryptocurrency-price-ticker-widget-35dff091fec3206c52f38be593c508ff
 
 info:
   name: >
-    Cool Plugins (Various Versions) - Arbitrary Plugin Installation and Activation
+    Cryptocurrency Widgets – Price Ticker & Coins List 2.0 - 2.6.5 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f6f0fb78-ad6b-4a9e-ae1a-5793f3426379?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b0603621-4521-4eb0-b4dd-e2257c133cee?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/cryptocurrency-price-ticker-widget/"
     google-query: inurl:"/wp-content/plugins/cryptocurrency-price-ticker-widget/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,cryptocurrency-price-ticker-widget,low
+  tags: cve,wordpress,wp-plugin,cryptocurrency-price-ticker-widget,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4')
+          - compare_versions(version, '>= 2.0', '<= 2.6.5')

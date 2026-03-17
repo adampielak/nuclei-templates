@@ -1,14 +1,15 @@
-id: google-document-embedder
+id: google-document-embedder-cc26dd7aa82d1473192c522b64077faa
 
 info:
   name: >
-    Google Doc Embedder <= 2.5.18 - Cross-Site Scripting
+    Google Doc Embedder <= 2.6.4 - Authenticated (Contributor+) Blind Server Side Request Forgery
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2e80e6f-08e7-426b-9797-97483c3dc410?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/75e55138-b091-4113-89da-e1ca45fb99ea?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/google-document-embedder/"
     google-query: inurl:"/wp-content/plugins/google-document-embedder/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,google-document-embedder,high
+  tags: cve,wordpress,wp-plugin,google-document-embedder,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.5.19')
+          - compare_versions(version, '<= 2.6.4')

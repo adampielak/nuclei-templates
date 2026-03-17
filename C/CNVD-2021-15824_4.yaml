@@ -14,8 +14,10 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-79
   tags: empirecms,cnvd,cnvd2021,xss,domxss
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/e/ViewImg/index.html?url=javascript:alert(1)"

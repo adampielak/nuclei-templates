@@ -1,4 +1,4 @@
-id: don8
+id: don8-a7ff6c950fec57e9a71ac919aefe0d85
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a9b2b094-9a2d-4c73-be5f-b2a6f3da9233?source=api-scan
   classification:
     cvss-metrics: 

@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " does not have termination notifications enabled."'
-# digest: 4b0a00483046022100927c281002aa7b9e2c00d00e63c8e074deddad50548b0ae15b7a46203529703f022100bc9c7a7b81bb4f84c5d3a802f02c72464998d77fd45e804c99cfa118a5733f23:922c64590222798bb761d5b6d8e72950
+

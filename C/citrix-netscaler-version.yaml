@@ -20,10 +20,20 @@ http:
     path:
       - "{{BaseURL}}/logon/LogonPoint/workspaceUI.tar"
 
+    matchers-condition: and
     matchers:
+      # - type: word
+      #   part: header
+      #   words:
+      #     - "Content-Type: application/x-tar"
+
+      - type: status
+        status:
+          - 200
+
       - type: dsl
         dsl:
-          - status_code==200 && gzip_mtime(body) < 1755000000
+          - gzip_mtime(body) < 1755000000
 
     extractors:
       - type: dsl

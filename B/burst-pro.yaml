@@ -1,13 +1,14 @@
-id: burst-pro
+id: burst-pro-572fa8c231433c420ab958dc2819ba3e
 
 info:
   name: >
     Burst Statistics – Privacy-Friendly Analytics for WordPress 1.4.0 to 1.4.6.1 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/30f8419c-c7b9-4c68-a845-26c0308d76f3?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/burst-pro/"
     google-query: inurl:"/wp-content/plugins/burst-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,burst-pro,low
+  tags: cve,wordpress,wp-plugin,burst-pro,critical
 
 http:
   - method: GET

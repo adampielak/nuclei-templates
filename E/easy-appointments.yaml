@@ -1,14 +1,15 @@
-id: easy-appointments
+id: easy-appointments-c60e3505513097237ac323b992d35cfc
 
 info:
   name: >
-    Easy Appointments <= 3.11.18 - Insufficient Authorization
+    Easy Appointments <= 3.10.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0d8ac01-ac73-47ea-839b-edc820436f27?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3906c668-6a0a-4beb-8ed9-08f661ce82cf?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.11.18')
+          - compare_versions(version, '<= 3.10.7')

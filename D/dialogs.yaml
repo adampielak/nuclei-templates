@@ -1,17 +1,19 @@
-id: dialogs
+id: dialogs-264a6a30cec46467a0a832631c1e911f
 
 info:
-  name: "Dialogs <= 1.0.3 - Reflected Cross-Site Scripting"
+  name: >
+    Dialogs <= 1.0.3 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Dialogs plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘dialog_id’ parameter in versions up to, and including, 1.0.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Dialogs plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘dialog_id’ parameter in versions up to, and including, 1.0.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://codevigilant.com/disclosure/wp-plugin-dialogs-a3-cross-site-scripting-xss/
-    - https://wordpress.org/plugins/dialogs/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2d79ad4c-6b7e-4bf9-93af-76b8c3599d47?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/dialogs/"
     google-query: inurl:"/wp-content/plugins/dialogs/"

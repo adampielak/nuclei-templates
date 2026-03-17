@@ -1,4 +1,4 @@
-id: aesop-story-engine
+id: aesop-story-engine-e31527771cd55d6320600ae72080e216
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/93d8277f-3c5a-4024-a7c0-27ccb1a23cfc?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: ark-wysiwyg-comment-editor
+id: ark-wysiwyg-comment-editor-e807e4ca794a3200beda359e0fa4f596
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a1179bc-6f8d-4223-a80b-9834adc08d3b?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: my-account-page-editor
+id: my-account-page-editor-a530c04b4f421bec58b0b53849cce90f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f87b6987-8896-4edf-9b14-8582426adeb0?source=api-scan
   classification:
     cvss-metrics: 

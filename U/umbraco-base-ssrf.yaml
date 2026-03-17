@@ -14,7 +14,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.html:"Umbraco"
-  tags: oast,edb,ssrf,umbraco
+  tags: ssrf,umbraco,oast
 
 requests:
   - method: GET

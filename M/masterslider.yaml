@@ -1,14 +1,15 @@
-id: masterslider
+id: masterslider-c5ebf93bb1fa8648a19209f9e766560c
 
 info:
   name: >
-    Master Slider Pro <= 3.6.5 - Reflected Cross-Site Scripting
+    Master Slider Pro <= 3.6.5 - Unauthenticated PHP Object Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f77755a-9b28-4e31-8a01-42e96b5698bf?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/66749606-e76f-41fb-bcf1-c06681de2ee3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/masterslider/"
     google-query: inurl:"/wp-content/plugins/masterslider/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,masterslider,medium
+  tags: cve,wordpress,wp-plugin,masterslider,critical
 
 http:
   - method: GET

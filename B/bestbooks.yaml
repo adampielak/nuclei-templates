@@ -1,13 +1,14 @@
-id: bestbooks
+id: bestbooks-82b06f26f9c243275b430a42d2b28176
 
 info:
   name: >
     Bestbooks <= 2.6.3 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dd2d82f4-1493-4829-a4e9-adbb98301324?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/bestbooks/"
     google-query: inurl:"/wp-content/plugins/bestbooks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,bestbooks,low
+  tags: cve,wordpress,wp-plugin,bestbooks,critical
 
 http:
   - method: GET

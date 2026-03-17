@@ -1,17 +1,19 @@
-id: bulletproof-security
+id: bulletproof-security-6861dad15e61e5203544ce79e93f4474
 
 info:
   name: >
-    BulletProof Security < .52.5 - Cross-Site Scripting
+    BulletProof Security <= .53.2 - Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
-    
+    The BulletProof Security plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, .53.2 due to insufficient input sanitization and output escaping on the bulletproof_security_options_email[bps_send_email_cc]
+    and bulletproof_security_options_email[bps_send_email_bcc] parameters. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/171ee69a-d0d6-4d1e-b477-4d285be918f4?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eab98c41-f0f2-4953-b9b3-c08e1e92c03a?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/bulletproof-security/"
@@ -55,4 +57,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< .52.5')
+          - compare_versions(version, '<= .53.2')

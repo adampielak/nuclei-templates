@@ -8,17 +8,14 @@ info:
   reference: https://processwire.com/docs/security/admin/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:processwire:processwire:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
-    product: processwire
-    shodan-query: http.html:"processwire"
-    vendor: processwire
     verified: true
+    shodan-query: http.html:"processwire"
   tags: panel,processwire
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/processwire/"
@@ -33,4 +30,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206e74b6f2fc800dd735bdf2f20cb1f5ae1bf5c4e5aca94a44b2bcba8271faf1270221009f25cf9db109c8b299fddb8b39c33308839e6a6ba2b18217990b8b6a1527ed15:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2022/10/30

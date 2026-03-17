@@ -1,4 +1,4 @@
-id: advanced-post-block
+id: advanced-post-block-74e0cda25e477128038566ff25fdb01f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8fb6c221-d885-42b5-977c-39e8608e3e31?source=api-scan
   classification:
     cvss-metrics: 

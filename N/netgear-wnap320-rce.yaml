@@ -9,7 +9,7 @@ info:
     - https://github.com/nobodyatall648/Netgear-WNAP320-Firmware-Version-2.0.3-RCE
   tags: netgear,rce,oast,router
 
-http:
+requests:
   - raw:
       - |
         POST /boardDataWW.php HTTP/1.1

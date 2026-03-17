@@ -1,14 +1,15 @@
-id: bug-library
+id: bug-library-a1a19bb0f4e58cdfd42f7567e40b6fc8
 
 info:
   name: >
-    Bug Library <= 2.0.3 - Reflected Cross-Site Scripting
+    Bug Library <= 2.1.1 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ffe33097-66fc-45f1-bc08-93a2b2234501?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/78a464e0-f2d9-4916-aa93-d52a98757a91?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/bug-library/"
     google-query: inurl:"/wp-content/plugins/bug-library/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,bug-library,medium
+  tags: cve,wordpress,wp-plugin,bug-library,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.3')
+          - compare_versions(version, '<= 2.1.1')

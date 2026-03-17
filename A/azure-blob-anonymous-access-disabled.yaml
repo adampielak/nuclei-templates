@@ -51,4 +51,4 @@ code:
       - type: dsl
         dsl:
           - 'ids + " is not disabling anonymous blob access"'
-# digest: 4a0a004730450220568a8b05de8baf2554dd90fd84e356675359e794782f456e6f58ad4b5801af02022100a2f52ca38bc9f1a0cca7c7f5ca1cebfa18b63a5123d15eed4d5c19f75597b561:922c64590222798bb761d5b6d8e72950
+

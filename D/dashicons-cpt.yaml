@@ -1,4 +1,4 @@
-id: dashicons-cpt
+id: dashicons-cpt-76f8d1c9c47ed946dabd57705c08e738
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/22d58028-a12c-4d72-b275-ba37a58dc10d?source=api-scan
   classification:
     cvss-metrics: 

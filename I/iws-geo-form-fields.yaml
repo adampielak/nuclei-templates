@@ -1,4 +1,4 @@
-id: iws-geo-form-fields
+id: iws-geo-form-fields-783a2e75b03d6c89508c13903e08367b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b994bb62-436f-4edc-8891-281483428ac0?source=api-scan
   classification:
     cvss-metrics: 

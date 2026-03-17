@@ -1,17 +1,12 @@
 id: pagespeed-global-admin
 
 info:
-  name: Pagespeed Global Admin - Detect
+  name: Pagespeed Global Admin
   author: geeknik
-  severity: info
-  description: Pagespeed Global Admin panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
+  severity: low
   reference:
     - https://www.modpagespeed.com/
-  tags: pagespeed,panel
+  tags: pagespeed
 
 requests:
   - method: GET
@@ -37,5 +32,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by cs 01/26/2023

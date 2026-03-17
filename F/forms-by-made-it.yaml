@@ -1,14 +1,15 @@
-id: forms-by-made-it
+id: forms-by-made-it-5bf47a85d9451de08ca866ca33b7ca8a
 
 info:
   name: >
-    Forms <= 1.12.2 - Authenticated Stored Cross-Site Scripting
+    Forms <= 2.8.0 - Unauthenticated Arbitrary File Upload
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3424c187-cf71-41f0-abb8-f0e843750465?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/06dfc3da-6f61-433c-a1e1-48749b654fcd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/forms-by-made-it/"
     google-query: inurl:"/wp-content/plugins/forms-by-made-it/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,forms-by-made-it,low
+  tags: cve,wordpress,wp-plugin,forms-by-made-it,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.12.3')
+          - compare_versions(version, '<= 2.8.0')

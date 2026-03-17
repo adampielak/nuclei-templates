@@ -1,4 +1,4 @@
-id: disable-right-click-for-wp
+id: disable-right-click-for-wp-4447f52a007810d5d3b09535c299f9a8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/44e61ac0-f420-4603-a81f-031a22e01927?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: elastic-email-sender
+id: elastic-email-sender-2348736c84e5eeb1c533441598fb87e6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/106a604f-0bff-444e-9d76-f6508bcc0cea?source=api-scan
   classification:
     cvss-metrics: 

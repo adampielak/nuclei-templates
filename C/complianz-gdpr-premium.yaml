@@ -1,14 +1,15 @@
-id: complianz-gdpr-premium
+id: complianz-gdpr-premium-e4156f72c1747c7b6f8a8f87b62be8ce
 
 info:
   name: >
-    Complianz <= 6.4.5 (Premium <= 6.4.7) - Cross-Site Request Forgery
+    Complianz <= 6.4.4 (Premium <= 6.4.6.1)  - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/17ab4800-0afd-4c39-970a-bd8dcc6a8b93?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/47941722-acaf-4f72-a64d-d01dc5e84adf?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.4.7')
+          - compare_versions(version, '<= 6.4.6.1')

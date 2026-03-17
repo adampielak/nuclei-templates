@@ -1,14 +1,15 @@
-id: menu-icons
+id: menu-icons-980ccb583be1eb2448814608baa1bb60
 
 info:
   name: >
-    ThemeIsle SDK  <= Various Versions - Missing Authorization
+    Menu Icons by ThemeIsle <= 0.13.13 - Authenticated (Author+) Stored Cross-Site Scripting via SVG Upload
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6147582f-578a-47ad-b16c-65c37896783d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/90284576-6570-4e4c-8eb3-743bc402ea1b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/menu-icons/"
     google-query: inurl:"/wp-content/plugins/menu-icons/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,menu-icons,high
+  tags: cve,wordpress,wp-plugin,menu-icons,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.13.8')
+          - compare_versions(version, '<= 0.13.13')

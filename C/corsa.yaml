@@ -1,4 +1,4 @@
-id: corsa
+id: corsa-5442f55fd09b4654f4b406fb51d03448
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6d3089d3-8ea4-47f7-bbcd-3408a099ae94?source=api-scan
   classification:
     cvss-metrics: 

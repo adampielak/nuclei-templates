@@ -1,4 +1,4 @@
-id: decon-wp-sms
+id: decon-wp-sms-17d0e92e2b742bf4ba974f8caec96975
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3bd7b0e-aae3-4ac9-b092-3101da441e1e?source=api-scan
   classification:
     cvss-metrics: 

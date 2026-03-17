@@ -1,14 +1,15 @@
-id: gallery-album
+id: gallery-album-b87ab7a706f84346c6216824794a6504
 
 info:
   name: >
-    Gallery – Image and Video Gallery with Thumbnails <= 1.9.9 - Reflected Cross-Site Scripting
+    Gallery – Image and Video Gallery with Thumbnails <= 2.0.1 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2628b02e-5685-4e25-a786-4542ecbe874a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/091d306d-cce4-426e-a18f-38bdaa802264?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/gallery-album/"
     google-query: inurl:"/wp-content/plugins/gallery-album/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,gallery-album,medium
+  tags: cve,wordpress,wp-plugin,gallery-album,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.9.9')
+          - compare_versions(version, '<= 2.0.1')

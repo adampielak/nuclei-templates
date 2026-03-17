@@ -5,8 +5,10 @@ info:
   author: melbadry9
   severity: info
   tags: aws,s3,bucket,tech
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/%c0"

@@ -1,4 +1,4 @@
-id: contact-form-7-newsletter
+id: contact-form-7-newsletter-1b50c69279c32358d8e91a9e569928c3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1ecf2247-5861-4206-9329-f0389a35076b?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,17 +1,18 @@
-id: custom-post-types
+id: custom-post-types-4aee06ef9ec988fab6623615900fbb40
 
 info:
   name: >
-    Custom post types <= 5.0.2 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    Custom post types <= 4.0.12 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    
+    The Custom post types, Custom Fields & more plugin for WordPress is vulnerable to Stored Cross-Site Scripting via admin settings in all versions up to 5.0.0 (exclusive) due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with administrator-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This only affects multi-site installations and installations where unfiltered_html has been disabled.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/58ee5f31-7d10-4772-929c-98249a351342?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb94520e-a99d-4e34-b174-e01898de0978?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 4.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/custom-post-types/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.0.2')
+          - compare_versions(version, '< 5.0.0')

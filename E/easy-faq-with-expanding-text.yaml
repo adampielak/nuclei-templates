@@ -1,4 +1,4 @@
-id: easy-faq-with-expanding-text
+id: easy-faq-with-expanding-text-bcf45492aa2e3b2f2d1210f77fe7cbeb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b20e5257-1fb7-40b4-8ad8-798372b60972?source=api-scan
   classification:
     cvss-metrics: 

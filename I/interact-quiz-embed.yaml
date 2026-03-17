@@ -1,4 +1,4 @@
-id: interact-quiz-embed
+id: interact-quiz-embed-02130a90450f2fde7a680dff85e4bb28
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/69ba1a39-ddb0-4661-8104-d8bb71710e0c?source=api-scan
   classification:
     cvss-metrics: 

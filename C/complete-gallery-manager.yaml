@@ -1,4 +1,4 @@
-id: complete-gallery-manager
+id: complete-gallery-manager-95148803f2d7b5ec71e8e50dcc9765a2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/09c59fb5-8264-4277-a821-dbfee0900f64?source=api-scan
   classification:
     cvss-metrics: 

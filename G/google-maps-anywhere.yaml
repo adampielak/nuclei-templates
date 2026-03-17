@@ -1,4 +1,4 @@
-id: google-maps-anywhere
+id: google-maps-anywhere-e6b7faff42eb2db5018d20eec46e2863
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0dda8e76-22aa-400b-b4c1-b24e6e1141ac?source=api-scan
   classification:
     cvss-metrics: 

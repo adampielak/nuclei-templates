@@ -1,14 +1,15 @@
-id: contest-gallery-pro
+id: contest-gallery-pro-b62c240af7e3eef195c68bbc76d78369
 
 info:
   name: >
-    Contest Gallery <= 19.1.4.1 - Authenticated (Author+) SQL Injection via cg_option_id
+    Contest Gallery <= 19.1.4.1 - Authenticated (Author+) SQL Injection via cg_activate and cg_deactivate
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/213fde1b-13dc-442a-8f48-4b1074155a6f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d080f5b-6646-47ef-8ae7-8b94270f9f59?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

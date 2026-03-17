@@ -7,17 +7,14 @@ info:
   description: Plesk Obsidian login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:plesk:obsidian:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
-    product: obsidian
-    shodan-query: http.html:"Plesk Obsidian"
-    vendor: plesk
     verified: true
+    shodan-query: http.html:"Plesk Obsidian"
   tags: panel,plesk,login,edb
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/login_up.php'
@@ -37,4 +34,5 @@ http:
         group: 1
         regex:
           - '(?i)<title>([A-Za-z 0-9.]+)</title>'
-# digest: 4b0a00483046022100cc85a015d5f642b31fb2dbdbcf70526fb33e311aac22c469366005ccd84151aa022100a56af5a5ffb3c60cc9b6431bf3720c85d03fedc37331603f01f5612e7c8b6768:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2022/12/06

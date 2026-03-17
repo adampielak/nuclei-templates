@@ -1,4 +1,4 @@
-id: jcwp-youtube-channel-embed
+id: jcwp-youtube-channel-embed-a759e03a3140ab5da9f810ffbdb3a4c2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2cc5962f-4d3c-43ea-996b-a5bb3d0dccef?source=api-scan
   classification:
     cvss-metrics: 

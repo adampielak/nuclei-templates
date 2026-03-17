@@ -6,7 +6,7 @@ info:
   severity: info
   reference:
     - https://www.exploit-db.com/ghdb/6486
-  tags: panel,tuxedo,edb
+  tags: panel,tuxedo
 
 requests:
   - method: GET

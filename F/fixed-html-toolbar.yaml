@@ -1,4 +1,4 @@
-id: fixed-html-toolbar
+id: fixed-html-toolbar-688e769883c6381cbe36a6f381b8e02e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/31e11aff-056f-47c4-b5d1-c67af350585d?source=api-scan
   classification:
     cvss-metrics: 

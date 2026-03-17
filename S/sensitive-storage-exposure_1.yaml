@@ -9,7 +9,7 @@ info:
     - https://www.exploit-db.com/ghdb/6304
   tags: expose,listing,config,logs,storage,edb,files
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/storage/"

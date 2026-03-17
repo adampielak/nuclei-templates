@@ -1,4 +1,4 @@
-id: amty-thumb-recent-post
+id: amty-thumb-recent-post-7e9145e0a7fc4bfcfcf0031bf28a55b2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a29b18d4-7b9b-48c9-aea8-88f6a6fc4b29?source=api-scan
   classification:
     cvss-metrics: 

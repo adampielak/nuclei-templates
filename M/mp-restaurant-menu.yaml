@@ -1,14 +1,15 @@
-id: mp-restaurant-menu
+id: mp-restaurant-menu-1b14fa14742a14e9906c49d1da6ec2c9
 
 info:
   name: >
-    Restaurant Menu by MotoPress <= 2.4.1 - Admin+ Stored Cross Site Scripting
+    Restaurant Menu by MotoPress <= 2.4.4 - Authenticated (Contributor+) Local File Inclusion
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8cac4bde-8518-48ec-8cbd-4cdf6094b831?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/673eb0ec-89c2-4d36-91fb-c18a110fe6c4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.4.2')
+          - compare_versions(version, '<= 2.4.4')

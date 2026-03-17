@@ -1,4 +1,4 @@
-id: bulk-page-creator
+id: bulk-page-creator-ca9b042c394da0b9b6df1bde9c520bc8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fee18df2-75ea-416a-8aa6-139018016b9a?source=api-scan
   classification:
     cvss-metrics: 

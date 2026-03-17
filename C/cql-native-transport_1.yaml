@@ -10,7 +10,7 @@ info:
     max-request: 2
     verified: true
     shodan-query: "cassandra"
-  tags: network,cassandra,cql,detect
+  tags: network,cassandra,cql
 
 tcp:
   - inputs:
@@ -25,7 +25,7 @@ tcp:
 
     host:
       - "{{Hostname}}"
-    port: 9042
+      - "{{Host}}:9042"
 
     matchers:
       - type: word

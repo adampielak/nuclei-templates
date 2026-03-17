@@ -1,14 +1,15 @@
-id: mainwp-child-reports
+id: mainwp-child-reports-898b552483b72dc88be89942ca488be8
 
 info:
   name: >
-    MainWP Child Reports <= 2.1.1 - Cross-Site Request Forgery
+    MainWP Child Reports <= 2.2 - Cross-Site Request Forgery to Arbitrary Options Update
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2edd9774-753b-49a4-9f7b-281829a1030e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cdd7971c-6f1c-437a-832c-e2b2817a197e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.1')
+          - compare_versions(version, '<= 2.2')

@@ -1,17 +1,19 @@
-id: contentboxes
+id: contentboxes-f2f26c856858ff0ec16a2b637544e604
 
 info:
-  name: "Contentboxes <= 1.1 - Reflected Cross-Site Scripting"
+  name: >
+    Contentboxes <= 1.1 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Contentboxes plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘id’ parameter in versions up to, and including, 1.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Contentboxes plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘id’ parameter in versions up to, and including, 1.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://codevigilant.com/disclosure/wp-plugin-contentboxes-a3-cross-site-scripting-xss/
-    - https://wordpress.org/plugins/contentboxes/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9b1329b6-ae1f-4a46-8435-5023c5c130f5?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/contentboxes/"
     google-query: inurl:"/wp-content/plugins/contentboxes/"

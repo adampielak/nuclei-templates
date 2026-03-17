@@ -1,14 +1,15 @@
-id: admin-side-data-storage-for-contact-form-7
+id: admin-side-data-storage-for-contact-form-7-c4a735a61b1a6b4d1cb657ff63fb915a
 
 info:
   name: >
-    Admin side data storage for Contact Form 7 <= 1.1.2 - Stored Cross-Site Scripting
+    Admin side data storage for Contact Form 7 <= 1.1.1 - Missing Authorization to Unauthenticated Bookmark Status Alteration
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/172b2191-6595-47dd-bf2d-97dc3d17e5ca?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d74040d0-1fee-4906-af6f-a5d842c42fd4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.2')
+          - compare_versions(version, '<= 1.1.1')

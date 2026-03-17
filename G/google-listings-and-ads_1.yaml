@@ -1,7 +1,7 @@
 id: wordpress-google-listings-and-ads
 
 info:
-  name: Google Listings & Ads Detection
+  name: Google for WooCommerce Detection
   author: ricardomaia
   severity: info
   reference:
@@ -13,7 +13,6 @@ info:
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/google-listings-and-ads/readme.txt"
 
@@ -47,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a004730450220377ef818b804a9630f2efb32d3dd318c6f9e25c6de88355a2440e24b3c6ec13e022100dd2ecdd696a16d1a16588f727c0dfa5a6751695192d9a4ffbb10b47a17cb52c3:922c64590222798bb761d5b6d8e72950

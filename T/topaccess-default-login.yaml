@@ -1,16 +1,19 @@
 id: topaccess-default-login
 
 info:
-  name: Toshiba TopAccess - Default-Login
+  name: Toshiba TopAccess - Default Login
   author: ritikchaddha
   severity: high
+  description: |
+    Toshiba TopAccess default login credentials were discovered.
   reference:
     - https://business.toshiba.com/downloads/KB/f1Ulds/11646/KH-1020_TAG_EN_0002.pdf
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)topaccess"})
     verified: true
     max-request: 2
     shodan-query: title:"topaccess"
-  tags: topaccess,default-login,misconfig
+  tags: topaccess,default-login,misconfig,vuln
 
 variables:
   username: "admin"
@@ -21,7 +24,6 @@ http:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
-
       - |
         POST /contentwebserver HTTP/1.1
         Host: {{Hostname}}
@@ -32,6 +34,7 @@ http:
 
     host-redirects: true
     max-redirects: 2
+
     matchers-condition: and
     matchers:
       - type: word
@@ -57,4 +60,4 @@ http:
         kval:
           - 'session'
         internal: true
-# digest: 4a0a0047304502205979db2676cdaf726e2221dea399609c946803151781e20825dfcf2c9a631f6d022100c50abaca0aeeb2b7f41a0230cf12272cee686ddd53fea21b183aff3116912815:922c64590222798bb761d5b6d8e72950
+

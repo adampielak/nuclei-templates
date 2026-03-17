@@ -1,0 +1,50 @@
+id: git-config-files
+
+info:
+  name: Git Config File Detection Template
+  author: rix4uni
+  severity: medium
+  description: Searches for the pattern /.git/config on passed URLs.
+  reference: https://www.acunetix.com/vulnerabilities/web/git-repository-found/
+  metadata:
+    google-query:
+      - "index of /.git"
+      - intext:"index of /.git" "parent directory"
+  tags: git,config
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/.git'
+      - '{{BaseURL}}/.git/HEAD'
+      - '{{BaseURL}}/.git/ORIG_HEAD'
+      - '{{BaseURL}}/.git/description'
+      - '{{BaseURL}}/.git/config'
+      - '{{BaseURL}}/.git/COMMIT_EDITMSG'
+      - '{{BaseURL}}/.git/index'
+      - '{{BaseURL}}/.git/packed-refs'
+      - '{{BaseURL}}/.git/objects/info/packs'
+      - '{{BaseURL}}/.git/refs/heads/master'
+      - '{{BaseURL}}/.git/refs/heads/main'
+      - '{{BaseURL}}/.git/refs/remotes/origin/HEAD'
+      - '{{BaseURL}}/.git/refs/stash'
+      - '{{BaseURL}}/.git/logs/HEAD'
+      - '{{BaseURL}}/.git/logs/refs/stash'
+      - '{{BaseURL}}/.git/logs/refs/heads/master'
+      - '{{BaseURL}}/.git/logs/refs/heads/main'
+      - '{{BaseURL}}/.git/logs/refs/remotes/origin/HEAD'
+      - '{{BaseURL}}/.git/info/refs'
+      - '{{BaseURL}}/.git/info/exclude'
+
+    threads: 80
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "[core]"
+      - type: status
+        status:
+          - 200
+          - 301
+          - 302

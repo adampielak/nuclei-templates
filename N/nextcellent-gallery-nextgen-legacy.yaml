@@ -1,4 +1,4 @@
-id: nextcellent-gallery-nextgen-legacy
+id: nextcellent-gallery-nextgen-legacy-b2f3e0394ddce85ab096254c7ffb6dda
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d6286cda-c5b1-4923-bbf3-9f5b56973d23?source=api-scan
   classification:
     cvss-metrics: 

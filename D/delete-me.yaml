@@ -1,4 +1,4 @@
-id: delete-me
+id: delete-me-ddac60dbf2c4f9a72b962be48aab98a0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7a5123a7-8eb4-481e-88fe-6310be37a077?source=api-scan
   classification:
     cvss-metrics: 

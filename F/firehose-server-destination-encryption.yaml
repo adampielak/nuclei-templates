@@ -56,4 +56,4 @@ code:
       - type: dsl
         dsl:
           - '"Firehose Delivery Stream Destination " + delivery + " Encryption is Disabled"'
-# digest: 4a0a00473045022100ffd599cc03999ee32dc74725353120df19ea1200318f380ede42d30cb410ddb6022017ea31b05fa2066146fa33cca3d6e4304f106dd0db9141381e0bb98c017b9c68:922c64590222798bb761d5b6d8e72950
+

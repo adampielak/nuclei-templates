@@ -1,14 +1,15 @@
-id: event-list
+id: event-list-7c07e503639be4fdd6ec0c263fc56194
 
 info:
   name: >
-    Event List <= 0.7.9 - Unauthenticated Cross-Site Scripting
+    Event List < 0.8.7 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6153d71e-66c8-49d1-80d8-6a121883172d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/69693a9a-fc9e-49ea-8c41-438ee6af7ee8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.7.9')
+          - compare_versions(version, '<= 0.8.7')

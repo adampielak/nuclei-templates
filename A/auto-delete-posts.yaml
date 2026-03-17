@@ -1,4 +1,4 @@
-id: auto-delete-posts
+id: auto-delete-posts-00e7bd33aefbcf76771c94fc9a3a93da
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce3ff7f9-ccad-45c0-a278-f66fbb6263ee?source=api-scan
   classification:
     cvss-metrics: 

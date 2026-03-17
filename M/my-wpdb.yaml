@@ -1,4 +1,4 @@
-id: my-wpdb
+id: my-wpdb-5703847f211bc352f53f0869430708b1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e437ef90-5321-4543-a4ef-716b898315eb?source=api-scan
   classification:
     cvss-metrics: 

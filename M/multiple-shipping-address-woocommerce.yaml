@@ -1,4 +1,4 @@
-id: multiple-shipping-address-woocommerce
+id: multiple-shipping-address-woocommerce-417e743ffd02cf893828b9df7da12e30
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9502669-ddbb-40c3-9d98-95c862f47a9a?source=api-scan
   classification:
     cvss-metrics: 

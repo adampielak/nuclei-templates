@@ -6,9 +6,13 @@ info:
   severity: high
   description: |
     Esafenet electronic document security management system default  credentials were discovered.
+  classification:
+    cpe: cpe:2.3:a:esafenet:cdg:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 32
+    vendor: esafenet
+    product: cdg
     fofa-query: esafenet
   tags: esafenet,cdg,default-login
 
@@ -52,5 +56,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100e6e8037638c7053279429fb10ae4c9c6af87bb9bdbad0ffe087b547602459da902202536491397bc2e5c2c80d4d23ec7e65a7710ebf3e14aa5bc223315c1363deaa6:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022068cba10046c09e2a034a03b38b53eb8c48b520d9804570e752a173c07a6f68de022100c42248c90b2159982cca65e722a5b0f3deee60a58a6eee01f1f9f2ffa8eb6311:922c64590222798bb761d5b6d8e72950

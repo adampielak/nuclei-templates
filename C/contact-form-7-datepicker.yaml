@@ -1,4 +1,4 @@
-id: contact-form-7-datepicker
+id: contact-form-7-datepicker-cabca4e984e60b15e531c767c96e2c73
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a6da4cf6-4b3b-4015-9106-b2a4467f34f7?source=api-scan
   classification:
     cvss-metrics: 

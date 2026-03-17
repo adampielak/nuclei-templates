@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.html:"yeswiki"
-  tags: yeswiki,unauth,huntr,cve,cve2022,xss
+  tags: cve,cve2022,xss,yeswiki,unauth
 
 requests:
   - method: GET

@@ -1,4 +1,4 @@
-id: ftp-access
+id: ftp-access-9c71f0b07ba764916826973d20e9aa15
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0a1e0d55-2894-450b-afaf-134a13512403?source=api-scan
   classification:
     cvss-metrics: 

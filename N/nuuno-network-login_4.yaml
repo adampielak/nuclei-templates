@@ -12,8 +12,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6840
   tags: iot,panel,nuuo,edb
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

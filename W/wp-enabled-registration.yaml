@@ -5,10 +5,8 @@ info:
   author: Ratnadip Gajbhiye
   severity: info
   tags: wordpress
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/wp-login.php?action=register'

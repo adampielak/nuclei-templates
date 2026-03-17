@@ -1,15 +1,15 @@
-id: geotagged-media
+id: geotagged-media-813ff2d697650e3322a48a8187c37190
 
 info:
   name: >
-    Geotagged Media <= 0.3.0 - Reflected Cross-Site Scripting
+    Geotagged Media <= 0.3.0 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1cd9ebdc-8c97-47a5-9147-40684d74bddd?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bb302392-bde0-4c29-adae-649110d032a7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

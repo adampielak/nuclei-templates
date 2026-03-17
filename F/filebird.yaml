@@ -1,14 +1,15 @@
-id: filebird
+id: filebird-e159bd1c9a057a06ed1585f1613bdf95
 
 info:
   name: >
-    Filebird 4.7.3 - Unauthenticated SQL Injection
+    FileBird – WordPress Media Library Folders & File Manager <= 5.6.3 - Authenticated (Author+) Insecure Direct Object Reference
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2491d502-8087-4e95-b047-a3b196322d94?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/82cde234-ae87-438f-911e-bdd0e3ac1132?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '4.7.3')
+          - compare_versions(version, '<= 5.6.3')

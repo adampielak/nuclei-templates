@@ -1,4 +1,4 @@
-id: light-messages
+id: light-messages-c5d35ddd986ef5f6805a2f906ed47ef5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f49cafe0-2caf-4148-b7c9-1b78bbfba6e7?source=api-scan
   classification:
     cvss-metrics: 

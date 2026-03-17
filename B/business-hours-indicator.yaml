@@ -1,4 +1,4 @@
-id: business-hours-indicator
+id: business-hours-indicator-154ac695f6507bd97edeaca80ba8799f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9b38d892-6797-43ae-9f17-f8f90222911e?source=api-scan
   classification:
     cvss-metrics: 

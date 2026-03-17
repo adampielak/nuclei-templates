@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " does not have a backup retention period configured"'
-# digest: 490a00463044022057d177778b77e8212e836670e2156b5330cd2608fc66aa850a7a0a48c98422620220450ed59da03206da06e6a4669ceaf29660fa18b49b8306287cbd7a5b186a7bbf:922c64590222798bb761d5b6d8e72950
+

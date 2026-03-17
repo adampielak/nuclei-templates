@@ -1,4 +1,4 @@
-id: linkworth-wp-plugin
+id: linkworth-wp-plugin-2b87c8bd2f6b993ffd5f3697f3bb9158
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e0fd44d-e152-4883-a734-031f68e3ba97?source=api-scan
   classification:
     cvss-metrics: 

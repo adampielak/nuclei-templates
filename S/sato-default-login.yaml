@@ -5,12 +5,13 @@ info:
   author: y0no
   severity: high
   description: |
-    Sato using default credentials was discovered.
+    Sato default login credentials were discovered.
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "Sato"})
     verified: true
     max-request: 1
     shodan-query: title:"Sato"
-  tags: sato,default-login,printer
+  tags: sato,default-login,printer,vuln
 
 http:
   - raw:
@@ -23,7 +24,6 @@ http:
         group={{username}}&pw={{password}}
 
     attack: pitchfork
-
     payloads:
       username:
         - 'settings'
@@ -49,4 +49,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200f43a4032fab84d0fbda2b54a496cfc0f8f3b95d0aee80337fb770e7f55c8b4302210085ba3c0f7014df738d430c094bcbe8059b25200d4c4c08bbff3fb3a84b21579c:922c64590222798bb761d5b6d8e72950
+

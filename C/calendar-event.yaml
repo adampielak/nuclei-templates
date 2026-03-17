@@ -1,4 +1,4 @@
-id: calendar-event
+id: calendar-event-23624407b2b1f8934b4c7cd8c43e6d0c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b3e149dd-636e-47ce-9ade-e1ae337612da?source=api-scan
   classification:
     cvss-metrics: 

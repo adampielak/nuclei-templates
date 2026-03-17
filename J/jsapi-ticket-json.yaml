@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     google-query: intitle:"index of" "jsapi_ticket.json"
-  tags: exposure,jsapi,files
+  tags: exposure,jsapi
 
 requests:
   - method: GET

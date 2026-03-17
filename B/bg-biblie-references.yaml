@@ -1,4 +1,4 @@
-id: bg-biblie-references
+id: bg-biblie-references-6fade64a6d00cc173416a0867403195c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/29c97617-78b1-4798-99a6-488176070e4a?source=api-scan
   classification:
     cvss-metrics: 

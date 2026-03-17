@@ -1,4 +1,4 @@
-id: autolinks
+id: autolinks-d504daeb572a30d1a38358ebfbb33202
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1197d19-e49f-4d44-8efe-ef8d7e91bce0?source=api-scan
   classification:
     cvss-metrics: 

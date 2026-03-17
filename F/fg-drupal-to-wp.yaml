@@ -1,14 +1,15 @@
-id: fg-drupal-to-wp
+id: fg-drupal-to-wp-9ab38815a074599313efba67954d6794
 
 info:
   name: >
-    FG Drupal to WordPress <= 3.70.3 - Sensitive Information Exposure
+    FG Drupal to WordPress <= 3.67.0 - Cross-Site Request Forgery via ajax_importer
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/426554d8-e6dc-496f-adce-61a22880a4c2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7dc34ff1-1b7e-4974-907a-745911df5dc8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/fg-drupal-to-wp/"
     google-query: inurl:"/wp-content/plugins/fg-drupal-to-wp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fg-drupal-to-wp,low
+  tags: cve,wordpress,wp-plugin,fg-drupal-to-wp,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.70.3')
+          - compare_versions(version, '<= 3.67.0')

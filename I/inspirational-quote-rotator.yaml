@@ -1,4 +1,4 @@
-id: inspirational-quote-rotator
+id: inspirational-quote-rotator-64289bc20ae8d08e9dbe545e1838d3e5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/17e4376e-2b77-4c86-b962-ea4d7d8f534d?source=api-scan
   classification:
     cvss-metrics: 

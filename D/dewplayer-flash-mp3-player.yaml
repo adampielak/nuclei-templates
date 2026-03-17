@@ -1,23 +1,24 @@
-id: dewplayer-flash-mp3-player
+id: dewplayer-flash-mp3-player-d6b3f05f7510bc3cd811515996f33e69
 
 info:
   name: >
-    Dewplayer <= 1.2 - Cross-Site Scripting
+    Dewplayer <= 1.2 and Advanced Dewplayer < 1.5 - Content Spoofing/Injection
   author: topscoder
-  severity: medium
+  severity: high
   description: >
-    The Dewplayer plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 1.2 due to insufficient input sanitization and output escaping on the XML file supplied via the xml parameter. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
+    The Dewplayer plugin <= 1.2 and Advanced Dewplayer plugin < 1.5 for WordPress are vulnerable to Content Spoofing/Injection. This is due to lack of sanitization of the 'mp3', 'file', 'sound', and 'son' parameters in the dewplayer.swf file. This makes it possible for unauthenticated attackers to inject malicious content into legitimate content if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3e0f601-d445-4805-858a-8ad1ce9e62df?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/62687f24-4be2-49de-9a7d-265325b0f72b?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N
+    cvss-score: 8.6
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/dewplayer-flash-mp3-player/"
     google-query: inurl:"/wp-content/plugins/dewplayer-flash-mp3-player/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,dewplayer-flash-mp3-player,medium
+  tags: cve,wordpress,wp-plugin,dewplayer-flash-mp3-player,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2')
+          - compare_versions(version, '<= *')

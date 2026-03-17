@@ -1,4 +1,4 @@
-id: database-cleaner
+id: database-cleaner-61d9cee6f322c1342f57286bb0e8a5b3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4031f857-9712-4f4a-93e8-0b01f9a9c32d?source=api-scan
   classification:
     cvss-metrics: 

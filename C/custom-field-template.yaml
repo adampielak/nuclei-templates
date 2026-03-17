@@ -1,14 +1,15 @@
-id: custom-field-template
+id: custom-field-template-1a2e006265a136b31e24e16e6b577541
 
 info:
   name: >
-    Custom Field Template <= 2.5.7 - Authenticated (Administrator+) PHP Object Injection
+    Custom Field Template <= 2.6.1 - Authenticated(Constibutor+) Stored Cross-Site Scripting via Custom Field Name
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/22a5020a-ab81-43be-b160-082347a2a2d9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/637f07c6-68cd-4ac6-83fd-65dbaab882fc?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.7')
+          - compare_versions(version, '<= 2.6.1')

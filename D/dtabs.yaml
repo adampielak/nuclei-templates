@@ -1,4 +1,4 @@
-id: dtabs
+id: dtabs-c1d432d45f3fcf6d1504aa3216e1929e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b847d10d-254b-40e5-b5f9-1391834d63b4?source=api-scan
   classification:
     cvss-metrics: 

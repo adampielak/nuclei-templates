@@ -4,7 +4,6 @@ info:
   name: Jolokia - Searching MBeans
   author: pussycat0x
   severity: low
-  description: Unauth users can search Mbeans in Jolokia.
   reference:
     - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
     - https://github.com/laluka/jolokia-exploitation-toolkit
@@ -32,4 +31,5 @@ http:
           - '"type":"search"'
           - '"value":'
         condition: and
-# digest: 4b0a00483046022100b324db6468d10dfd9dfc4e09417146891e944ff826f75d5737e6b977e2736fbc022100b024343c25c0c5040baa3bf1f8b76c748a2868478c84193a177503bcc528bbb7:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502210089998bfbbb2d9476698775ce53552ab7171cb57535dc7cbf2c55a66f62ba84f402207d37f3ac6b99ea9a3577836489d05a8b9860e29b1e06ecc4a1c6dc10d490d9c0:922c64590222798bb761d5b6d8e72950

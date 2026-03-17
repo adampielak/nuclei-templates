@@ -7,7 +7,6 @@ info:
   metadata:
     shodan-query: http.title:"Apache2 Debian Default Page:"
   tags: tech,apache
-  mongoid: 0000
 
 requests:
   - method: GET

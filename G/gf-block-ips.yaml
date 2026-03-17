@@ -1,4 +1,4 @@
-id: gf-block-ips
+id: gf-block-ips-40bc86a48baaf5dcd7a0445349aa7762
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/19958187-7eb1-479e-bd36-d40974ae65ca?source=api-scan
   classification:
     cvss-metrics: 

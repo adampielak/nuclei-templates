@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,chartbeat-api
+  tags: xss,csp-bypass,chartbeat-api,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "chartbeat_api_csp_xss == true"
-# digest: 4a0a00473045022100ddb0a11f0a6c5df358cc2cdcc28d5e50a24cb08057ecef58be55a394a6dd414e02205b9480f96bdc601b13d9ab9a5fa45bf00f926befc73608e2bd64dcda1c59f5b8:922c64590222798bb761d5b6d8e72950
+

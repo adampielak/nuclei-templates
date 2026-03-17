@@ -1,14 +1,15 @@
-id: innovs-hr-manager
+id: innovs-hr-manager-eeacda1f73564a34e5312be2d5b3547e
 
 info:
   name: >
-    Innovs HR <= 1.0.3.4 - Reflected Cross-Site Scripting
+    Innovs HR – Complete Human Resource Management System for Your Business <= 1.0.3.4 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f43b5c02-fb10-48f1-9457-f67c5008fe5b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e806ca3b-daae-48a2-9923-315dbf86a9e5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

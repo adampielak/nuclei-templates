@@ -1,4 +1,4 @@
-id: ban-users
+id: ban-users-577363bdc084e759bd6a1dc11f3bca46
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/af6bd2db-47a4-4381-a881-d5f97a159f8d?source=api-scan
   classification:
     cvss-metrics: 

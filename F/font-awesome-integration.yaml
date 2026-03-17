@@ -1,4 +1,4 @@
-id: font-awesome-integration
+id: font-awesome-integration-a1f301943c7f63590cb2d355441ed094
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a2791f48-895f-4099-87ec-41aaac2494a2?source=api-scan
   classification:
     cvss-metrics: 

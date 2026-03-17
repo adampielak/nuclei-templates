@@ -1,4 +1,4 @@
-id: astra
+id: astra-f7cd3b6a734eb15f640ac6ad6de555f1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a97b3cf1-e7b7-41c6-8b7a-e06bda77f7f7?source=api-scan
   classification:
     cvss-metrics: 

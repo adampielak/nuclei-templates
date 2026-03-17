@@ -1,14 +1,15 @@
-id: microsoft-clarity
+id: microsoft-clarity-c9e8ed6bb46125ee841aef9ca94e2bd3
 
 info:
   name: >
-    Microsoft Clarity <= 0.3 - Authenticated Stored Cross-Site Scripting
+    Microsoft Clarity <= 0.9.3 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/da3070aa-fae8-465a-95e5-ae92dcd89f66?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2f4461b-1373-4d09-8430-14d1961e1644?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/microsoft-clarity/"
     google-query: inurl:"/wp-content/plugins/microsoft-clarity/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,microsoft-clarity,low
+  tags: cve,wordpress,wp-plugin,microsoft-clarity,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.3')
+          - compare_versions(version, '<= 0.9.3')

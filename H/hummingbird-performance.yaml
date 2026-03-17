@@ -1,4 +1,4 @@
-id: hummingbird-performance
+id: hummingbird-performance-67c4fcbf9696836879ccf2ec7679be61
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6119481-f399-4bba-a824-1d7346e7e155?source=api-scan
   classification:
     cvss-metrics: 

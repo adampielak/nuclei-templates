@@ -1,14 +1,15 @@
-id: countdown-wpdevart-extended
+id: countdown-wpdevart-extended-b74ba343622a98bf396ae10e9b9ed7c2
 
 info:
   name: >
-    Countdown and CountUp, WooCommerce Sales Timers <= 1.5.7 - Cross-Site Request Forgery to Stored Cross-Site Scripting
+    Countdown and CountUp, WooCommerce Sales Timer <= 1.8.2 - Authenticated (Administrator+) Stored Cross-Site Scripting via plugin settings
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bbf9a765-3718-4957-aa18-562654824fbf?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1ec113c-d11f-4b0b-8d4a-46d37687b3b2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/countdown-wpdevart-extended/"
     google-query: inurl:"/wp-content/plugins/countdown-wpdevart-extended/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,countdown-wpdevart-extended,medium
+  tags: cve,wordpress,wp-plugin,countdown-wpdevart-extended,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.7')
+          - compare_versions(version, '<= 1.8.2')

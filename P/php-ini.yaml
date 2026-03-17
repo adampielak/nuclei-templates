@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     shodan-query: php.ini
-  tags: config,exposure,files
+  tags: config,exposure
 
 requests:
   - method: GET

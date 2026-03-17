@@ -1,4 +1,4 @@
-id: myagileprivacy
+id: myagileprivacy-94096e5301ecdc69f2760802e3ed1a6a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/35c40c81-c7b4-4453-bd2f-7910fcb7f13e?source=api-scan
   classification:
     cvss-metrics: 

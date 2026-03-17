@@ -1,4 +1,4 @@
-id: lightbox-popup
+id: lightbox-popup-0c1d448202e20ee0502041576e9076b3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1063ecb4-a0a0-47d9-8629-f4f6a29bf5c9?source=api-scan
   classification:
     cvss-metrics: 

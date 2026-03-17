@@ -1,4 +1,4 @@
-id: g-auto-hyperlink
+id: g-auto-hyperlink-81316beb083410cec0526b34dd7f787b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/67aa489c-5c54-4163-bc32-5d3ac9ba4e33?source=api-scan
   classification:
     cvss-metrics: 

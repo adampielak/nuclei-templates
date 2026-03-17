@@ -1,4 +1,4 @@
-id: addon-library
+id: addon-library-4f0164b13393bf2d97f740d7635f30b9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/15cf34d8-256b-495e-9385-a5d526bfb335?source=api-scan
   classification:
     cvss-metrics: 

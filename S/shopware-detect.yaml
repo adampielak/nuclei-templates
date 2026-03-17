@@ -2,7 +2,7 @@ id: shopware-detect
 
 info:
   name: Shopware CMS detect
-  author: cyllective,pascalheidmann
+  author: cyllective
   severity: info
   description: Detects Shopware CMS
   reference:
@@ -29,7 +29,6 @@ requests:
           - 'Realised with Shopware'
           - 'Shopware Administration (c) shopware AG'
           - '<title>Shopware 5 - Backend (c) shopware AG</title>'
-          - 'Shopware.Application.start'
         condition: or
 
       - type: status

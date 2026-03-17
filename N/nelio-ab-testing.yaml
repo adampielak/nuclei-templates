@@ -1,14 +1,15 @@
-id: nelio-ab-testing
+id: nelio-ab-testing-d72b5e601d56aaa2024c459354858a51
 
 info:
   name: >
-    Nelio AB Testing < 4.5.9 - Server Side Request Forgery
+    Nelio AB Testing < 4.6.4 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b806e11-57ad-4976-9ece-419ad6581cc4?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/28333161-9c76-4108-9256-9ffa91eaf818?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/nelio-ab-testing/"
     google-query: inurl:"/wp-content/plugins/nelio-ab-testing/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,nelio-ab-testing,low
+  tags: cve,wordpress,wp-plugin,nelio-ab-testing,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.5.8')
+          - compare_versions(version, '< 4.6.4')

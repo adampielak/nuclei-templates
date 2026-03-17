@@ -4,14 +4,9 @@ info:
   name: Moodle Installation Exposure
   author: tess
   severity: high
-  description: Moodle is susceptible to the Installation page exposure due to misconfiguration.
-  classification:
-    cpe: cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: moodle
-    product: moodle
     shodan-query: title:"Installation Moodle"
   tags: misconfig,moodle,install,exposure
 
@@ -35,4 +30,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e68abfd6f9e5e04e1518a30990a76367edad9db7738c2ed2b4d0baab9c28945b0221008622f2e8ef25ed86c58c089174f987d7b2569cc2be9c42abd83595ffa5b67fb5:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022062b1e0eb321042413a0ea2713b44bf3871541d71265d12d3c099e36e1c51fbda0221009b60070fd196799dd08c185293e688c6fd86c465312d50bc1a099ac31560d02e:922c64590222798bb761d5b6d8e72950

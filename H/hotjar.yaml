@@ -1,4 +1,4 @@
-id: hotjar
+id: hotjar-e2cd37ab150e4001a55d0f6f68df7a44
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9c640bcb-b6bf-4865-b713-32ca846e4ed9?source=api-scan
   classification:
     cvss-metrics: 

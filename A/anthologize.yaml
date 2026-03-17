@@ -1,4 +1,4 @@
-id: anthologize
+id: anthologize-6ea9051c39599f8394ce159163bbf877
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7535b43-dcf0-4d00-833a-d9d86b2520d5?source=api-scan
   classification:
     cvss-metrics: 

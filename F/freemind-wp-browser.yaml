@@ -1,4 +1,4 @@
-id: freemind-wp-browser
+id: freemind-wp-browser-c46e64931f790598078c653ae12c9d8e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c5f3e34d-07fb-4e49-a4e2-f8e92301b35e?source=api-scan
   classification:
     cvss-metrics: 

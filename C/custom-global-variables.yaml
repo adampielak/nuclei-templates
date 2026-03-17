@@ -1,4 +1,4 @@
-id: custom-global-variables
+id: custom-global-variables-a927de5d3fdd10cca0a132c7756d31af
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ec6f2c0d-4d92-4982-995d-5d8a9866b888?source=api-scan
   classification:
     cvss-metrics: 

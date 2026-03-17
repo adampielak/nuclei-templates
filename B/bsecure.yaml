@@ -1,15 +1,15 @@
-id: bsecure-acde8d63cfed3329c39a660ed7153730
+id: bsecure-9f0d3245a0f5d9680607cf947aceae4c
 
 info:
   name: >
-    bSecure &#8211; Your Universal Checkout <= 1.7.9 - Unauthenticated SQL Injection
+    bSecure 1.3.7 - 1.7.9 - Missing Authorization to Unauthenticated Privilege Escalation via order_info REST Endpoint
   author: topscoder
-  severity: critical
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/811dc53c-a701-47fc-be06-bd668e34c99f?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f8f51029-0748-4943-b0ef-fc822b14614a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/bsecure/"
     google-query: inurl:"/wp-content/plugins/bsecure/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,bsecure,critical
+  tags: cve,wordpress,wp-plugin,bsecure,high
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.7.9')
+          - compare_versions(version, '>= 1.3.7', '<= 1.7.9')

@@ -1,4 +1,4 @@
-id: iframe
+id: iframe-2f64fe5f17f3ed6e33681d51a565c61a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3706deed-55f2-4dfb-bfed-7a14872cd15a?source=api-scan
   classification:
     cvss-metrics: 

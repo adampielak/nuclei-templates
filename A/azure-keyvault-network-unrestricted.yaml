@@ -51,4 +51,4 @@ code:
       - type: dsl
         dsl:
           - 'vaultName + " is configured to allow unrestricted Key Vault network access"'
-# digest: 490a0046304402202235e2154b8f07704fc4c2d1c908bfa81bed50c8e1e810045f98dfde26b1ecd6022079a2551d6e4708fab8d25470394d4e9389b3fa624f2840652adcfc7c8a779b3e:922c64590222798bb761d5b6d8e72950
+

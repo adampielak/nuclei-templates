@@ -1,4 +1,4 @@
-id: contact-form-7-skins
+id: contact-form-7-skins-b0f314e9bccc15e2a671813d1df436cc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b7df753a-5399-45ff-894f-8f35868fe072?source=api-scan
   classification:
     cvss-metrics: 

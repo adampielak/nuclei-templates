@@ -1,4 +1,4 @@
-id: directorypress
+id: directorypress-75c0a36cfd215ca1356e3d8b92614890
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/14acb770-9a32-4308-993d-a3d3dec91f78?source=api-scan
   classification:
     cvss-metrics: 

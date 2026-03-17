@@ -1,4 +1,4 @@
-id: bbp-move-topics
+id: bbp-move-topics-059da3f6bfad644a296ac0f78930b323
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/61bbd7fe-cacf-4390-b976-3b931fc84af3?source=api-scan
   classification:
     cvss-metrics: 

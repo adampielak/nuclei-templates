@@ -1,4 +1,4 @@
-id: additional-product-fields-for-woocommerce
+id: additional-product-fields-for-woocommerce-783267b19d4547eb98d4ac23fab700fb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d7c05856-fbee-498d-9e9f-f0a232df6d24?source=api-scan
   classification:
     cvss-metrics: 

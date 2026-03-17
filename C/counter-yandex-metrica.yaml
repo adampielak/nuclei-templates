@@ -1,4 +1,4 @@
-id: counter-yandex-metrica
+id: counter-yandex-metrica-c194310014d30316dbbe28440ddf1a9d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/173661aa-6895-41d6-8869-6abfd2eadf31?source=api-scan
   classification:
     cvss-metrics: 

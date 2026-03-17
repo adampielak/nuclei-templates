@@ -6,7 +6,7 @@ info:
   severity: low
   reference:
     - https://www.exploit-db.com/ghdb/752
-  tags: logs,status,edb
+  tags: logs,status
 
 requests:
   - method: GET

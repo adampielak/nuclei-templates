@@ -1,14 +1,15 @@
-id: miniorange-wp-as-saml-idp
+id: miniorange-wp-as-saml-idp-0249e2ef831cb98cb337dd7d6bb9b967
 
 info:
   name: >
-    Login using WordPress Users (WP as SAML IDP) <= 1.13.2 - Authenticated (Admin+) Cross-Site Scripting
+    Login using WordPress Users ( WP as SAML IDP ) <= 1.15.6 - Authenticated (Administrator+) SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4939b053-2d62-428e-84ff-0de3416466ef?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/220b0e71-8e80-4a29-982e-259a475835fe?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.13.3')
+          - compare_versions(version, '<= 1.15.6')

@@ -1,23 +1,24 @@
-id: custom-content-type-manager
+id: custom-content-type-manager-aa012da71a666adab5eb74f3984dbdfc
 
 info:
   name: >
-    Custom Content Type Manager <= 0.9.8.5 - Authenticated (Admin+) Remote Code Execution
+    Custom Content Type Manager 0.9.8.7 - 0.9.8.8 - Malicious Backdoor
   author: topscoder
-  severity: low
+  severity: critical
   description: >
-    
+    The Custom Content Type Manager plugin for WordPress was injected with a malicious backdoor in versions 0.9.8.7 to 0.9.8.8 that made it possible for attackers to gain access to the server to run code by installing malicious PHP files via the added auto-update.php file.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cdb483db-56f7-4d12-9022-46c829091cc1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f1b6fe67-cbd8-438f-8e06-d0f25eddc81a?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/custom-content-type-manager/"
     google-query: inurl:"/wp-content/plugins/custom-content-type-manager/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,custom-content-type-manager,low
+  tags: cve,wordpress,wp-plugin,custom-content-type-manager,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.9.8.5')
+          - compare_versions(version, '>= 0.9.8.7', '<= 0.9.8.8')

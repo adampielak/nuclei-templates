@@ -2,7 +2,7 @@ id: b1_accounting-4e479a3f-ef1a-4476-89e1-86d0f388f2c3
 
 info:
   name: >
-    B1.lt for WooCommerce <= 2.2.56 -  Missing Authorization to Authenticated (Subscriber+) Arbitrary SQL Injection
+    B1.lt for WooCommerce <= 2.2.57 -  Missing Authorization to Authenticated (Subscriber+) Arbitrary SQL Injection
   author: topscoder
   severity: low
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.56')
+          - compare_versions(version, '<= 2.2.57')

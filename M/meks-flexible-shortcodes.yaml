@@ -1,4 +1,4 @@
-id: meks-flexible-shortcodes
+id: meks-flexible-shortcodes-eef4547acab903786af2c8b25e44ff88
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b7d9200b-af1c-4cd2-9d34-eaff97d56967?source=api-scan
   classification:
     cvss-metrics: 

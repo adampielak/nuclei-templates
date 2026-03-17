@@ -1,4 +1,4 @@
-id: community-events
+id: community-events-39bbc7c86fcd96ef30f507a000bc2c19
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e2c40ea-5d0a-4f1c-99e8-ef0b54bbd20a?source=api-scan
   classification:
     cvss-metrics: 

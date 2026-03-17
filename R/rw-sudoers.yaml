@@ -5,7 +5,7 @@ info:
   author: daffainfo
   severity: high
   reference:
-    - https://book.hacktricks.xyz/linux-hardening/privilege-escalation#etc-sudoers-etc-sudoers.d
+    - https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html?highlight=%2Fetc%2Fsudoers#etcsudoers-etcsudoersd
   metadata:
     verified: true
     max-request: 2
@@ -42,4 +42,4 @@ code:
         words:
           - "Not readable and not writable"
         negative: true
-# digest: 490a004630440220058488f0abb109eeda0bb09699d34242875b4af49c51688db2197fd166f508e0022048ed2cfffb8b7b256a3eb1710ebf6a77dc391cc0d20314008b321708803f4881:922c64590222798bb761d5b6d8e72950
+

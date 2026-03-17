@@ -1,4 +1,4 @@
-id: no-bot-registration
+id: no-bot-registration-d88cfbb9c2ddd7b9857d90bc52e7d957
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cf2e8b6f-2bdb-46c4-84a0-9e196355dda9?source=api-scan
   classification:
     cvss-metrics: 

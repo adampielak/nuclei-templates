@@ -1,4 +1,4 @@
-id: ads-invalid-click-protection
+id: ads-invalid-click-protection-abb48009256f0cff9cecc8d66ca2d8ac
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f0fa8050-6318-4528-8dd4-a3ca5467cfaa?source=api-scan
   classification:
     cvss-metrics: 

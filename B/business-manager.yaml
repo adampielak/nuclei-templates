@@ -1,4 +1,4 @@
-id: business-manager
+id: business-manager-28a8b2d4482c32dc204368b907d715c9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/94cbd525-de3b-448a-b65b-21c63208b8b8?source=api-scan
   classification:
     cvss-metrics: 

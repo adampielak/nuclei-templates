@@ -1,4 +1,4 @@
-id: novelist
+id: novelist-2fcbba4f8d24450ee551bf33de17fc72
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b8f64ed-abf8-4a8b-b32f-75afeaccea5c?source=api-scan
   classification:
     cvss-metrics: 

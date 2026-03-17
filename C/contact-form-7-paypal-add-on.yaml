@@ -1,4 +1,4 @@
-id: contact-form-7-paypal-add-on
+id: contact-form-7-paypal-add-on-300e106676966a486b98e353420db12f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5276227-9bd4-4ad8-a6b7-ac7d05e8b056?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,17 +1,18 @@
-id: mailoptin
+id: mailoptin-b41d373f2d94cbe3392b246c02a9950f
 
 info:
   name: >
-    MailOptin <= 1.2.49.0 - Missing Authorization to Cache Deletion
+    Popup, Optin Form & Email Newsletters for Mailchimp, HubSpot, AWeber – MailOptin <= 1.2.35.1 - Authorization Bypass
   author: topscoder
   severity: high
   description: >
-    
+    The Popup, Optin Form & Email Newsletters for Mailchimp, HubSpot, AWeber – MailOptin plugin for WordPress is vulnerable to authorization bypass due to a missing capability check on the fetch_custom_fields and fetch_tags functions in versions up to, and including, 1.2.35.1. This makes it possible for unauthenticated attackers to read and edit Elementor custom fields and tags.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/197efd6a-b0f4-459d-b7e5-f8ff5b5e3003?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9bb9bab2-4f47-41ed-b42e-5272981927a8?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    cvss-score: 7.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/mailoptin/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.49.0')
+          - compare_versions(version, '<= 1.2.35.1')

@@ -1,23 +1,24 @@
-id: catch-web-tools
+id: catch-web-tools-7e509c5743e470c1816b86d61338d841
 
 info:
   name: >
-    CatchThemes Plugins (Various Versions) - Missing Authorization
+    Catch Web Tools <= 2.7.0 - Missing Authorization
   author: topscoder
-  severity: high
+  severity: medium
   description: >
-    
+    The Catch Web Tools plugin for WordPress is vulnerable to authorization bypass due to a missing capability check on the catchwebtools_catchids_switch AJAX action in versions up to, and including, 2.7.0. This makes it possible for subscriber-level attackers to active or deactivate catch IDs.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba5656b9-615d-4764-974a-301d3dd748e8?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/63bced7f-89ec-4c52-9e58-63ef2d311b31?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L
+    cvss-score: 5.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/catch-web-tools/"
     google-query: inurl:"/wp-content/plugins/catch-web-tools/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,catch-web-tools,high
+  tags: cve,wordpress,wp-plugin,catch-web-tools,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.7')
+          - compare_versions(version, '<= 2.7.0')

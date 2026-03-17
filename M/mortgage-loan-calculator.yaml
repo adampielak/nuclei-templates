@@ -1,14 +1,15 @@
-id: mortgage-loan-calculator
+id: mortgage-loan-calculator-6817ff65993cc7a61f07c8aa650c9d00
 
 info:
   name: >
-    Mortgage Calculator / Loan Calculator < 1.5.17 - Cross-Site Scripting
+    Mortgage Calculator / Loan Calculator <= 1.5.20 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c115da4f-02f1-40b6-ba47-337b279de3e0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1a8ca426-34cd-4c98-ae24-f3f31a7fcae5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mortgage-loan-calculator/"
     google-query: inurl:"/wp-content/plugins/mortgage-loan-calculator/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mortgage-loan-calculator,high
+  tags: cve,wordpress,wp-plugin,mortgage-loan-calculator,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.5.17')
+          - compare_versions(version, '<= 1.5.20')

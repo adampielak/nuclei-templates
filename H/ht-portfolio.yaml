@@ -1,4 +1,4 @@
-id: ht-portfolio
+id: ht-portfolio-5ce440315d4ad9cd0e7c1cc4dca712fd
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4ed63724-c21f-4b0e-b595-e824d3519b21?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: hercules-core
+id: hercules-core-b4c2b2587000dfffff6734ca0cb8c2d1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6428cf3c-a784-4e64-a6ef-041b3793ff67?source=api-scan
   classification:
     cvss-metrics: 

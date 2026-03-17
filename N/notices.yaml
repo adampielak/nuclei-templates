@@ -1,4 +1,4 @@
-id: notices
+id: notices-6ce7e3ac37b01b5ea81fb5439b3e30dd
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ccd7144-fde1-4ade-ac66-5ea14cdbc616?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: jet-blocks
+id: jet-blocks-1e5b822e2dac15f4ae96d50dd2d86fa1
 
 info:
   name: >
-    JetBlocks For Elementor <= 1.3.8 - Reflected Cross Site Scripting
+    Multiple Plugins by Crocoblock <= (Various Versions) - Missing Authorization to Unauthenticated Unauthorized Action
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2614ca26-6efc-49f5-8cee-5b078721acc1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7addc83b-cde5-4f91-b286-70db6f384a9f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/jet-blocks/"
     google-query: inurl:"/wp-content/plugins/jet-blocks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jet-blocks,low
+  tags: cve,wordpress,wp-plugin,jet-blocks,high
 
 http:
   - method: GET

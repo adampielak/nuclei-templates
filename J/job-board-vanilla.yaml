@@ -1,4 +1,4 @@
-id: job-board-vanilla
+id: job-board-vanilla-2205b08fd665244a7970a05f126a1097
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb290fa8-206e-44c6-9107-8a896225664c?source=api-scan
   classification:
     cvss-metrics: 

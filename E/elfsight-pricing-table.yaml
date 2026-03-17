@@ -1,15 +1,15 @@
-id: elfsight-pricing-table
+id: elfsight-pricing-table-d1ba58f5c28a03331b6c40a3debc9a74
 
 info:
   name: >
-    Pricing Table <= 2.0.1 - Missing Authorization
+    Pricing Table <= 2.0.1 - Cross-Site Request Forgery via ajax()
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa769d51-8718-42e9-9070-0b878442dbc7?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4cb3d2d4-256c-4128-9397-8b9c7be1b9c8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/elfsight-pricing-table/"
     google-query: inurl:"/wp-content/plugins/elfsight-pricing-table/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,elfsight-pricing-table,high
+  tags: cve,wordpress,wp-plugin,elfsight-pricing-table,medium
 
 http:
   - method: GET

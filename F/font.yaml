@@ -1,4 +1,4 @@
-id: font
+id: font-31e53f53af6c13ad8f9d722df5150f66
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba0de040-5906-4a67-9306-7e6e65cca78f?source=api-scan
   classification:
     cvss-metrics: 

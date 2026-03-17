@@ -1,4 +1,4 @@
-id: history-log-by-click5
+id: history-log-by-click5-11b6db790525c2992aa3934ee6e26310
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2881e144-a109-4034-afe8-2f72efd70360?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: envialosimple-email-marketing-y-newsletters-gratis
+id: envialosimple-email-marketing-y-newsletters-gratis-aaa9e9e0ffcf837ef34d34043c3fa0b6
 
 info:
   name: >
-    EnvíaloSimple <= 2.1 Unauthenticated PHP Object Injection
+    EnvíaloSimple: Email Marketing y Newsletters <= 2.3 - Cross-Site Request Forgery to Arbitrary File Upload
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/13245eab-9a72-44d7-bbcd-a0d3e2879814?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b39abc8-9281-4d58-a9ec-877c5bae805a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/envialosimple-email-marketing-y-newsletters-gratis/"
     google-query: inurl:"/wp-content/plugins/envialosimple-email-marketing-y-newsletters-gratis/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,envialosimple-email-marketing-y-newsletters-gratis,low
+  tags: cve,wordpress,wp-plugin,envialosimple-email-marketing-y-newsletters-gratis,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1')
+          - compare_versions(version, '<= 2.3')

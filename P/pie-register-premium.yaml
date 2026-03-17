@@ -1,15 +1,15 @@
-id: pie-register-premium-5a4a3f1807fa668916b557dc1f45ae15
+id: pie-register-premium-f8d177b5383a7e8fb350551532f7a5e8
 
 info:
   name: >
-    Pie Register Premium <= 3.8.3.2 - Authenticated (Subscriber+) Limited File Deletion
+    Pie Register Premium < 3.8.3.3 - Unauthenticated Arbitrary File Upload
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/09779cc3-96ea-4b50-b28c-c5690edf082f?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0491b8b3-014e-4ef2-b3b6-9570063fffc5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/pie-register-premium/"
     google-query: inurl:"/wp-content/plugins/pie-register-premium/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,pie-register-premium,low
+  tags: cve,wordpress,wp-plugin,pie-register-premium,critical
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.8.3.2')
+          - compare_versions(version, '< 3.8.3.3')

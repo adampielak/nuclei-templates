@@ -1,14 +1,15 @@
-id: doneren-met-mollie
+id: doneren-met-mollie-f99bbfc827552e7a757ba42a5a718e04
 
 info:
   name: >
-    Doneren met Mollie <= 2.8.4 - Information Disclosure
+    Doneren met Mollie <= 2.10.2 - Unauthenticated Reflected Cross-Site Scripting via search
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ed99a056-42c6-4540-950e-12f8b547b64d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f494ca7-3f2f-4535-92ff-1ed5c469bf45?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/doneren-met-mollie/"
     google-query: inurl:"/wp-content/plugins/doneren-met-mollie/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,doneren-met-mollie,low
+  tags: cve,wordpress,wp-plugin,doneren-met-mollie,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.8.4')
+          - compare_versions(version, '<= 2.10.2')

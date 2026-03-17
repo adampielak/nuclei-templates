@@ -1,4 +1,4 @@
-id: bookx
+id: bookx-5affa43bf6a3586e393859cf0e61918f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/424a30d7-4806-4274-8c5e-75dcc12e9f3c?source=api-scan
   classification:
     cvss-metrics: 

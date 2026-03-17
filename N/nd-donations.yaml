@@ -1,14 +1,15 @@
-id: nd-donations
+id: nd-donations-a7f5859abbdc51dc86077830c762833c
 
 info:
   name: >
-    Donations < 1.4 - Unauthenticated Arbitrary Options Change
+    Donations <= 1.8 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b7ca272-88ac-4002-b4ce-73ad5d0510ef?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/71df1c9a-b4fa-47c7-93c7-f2cb09fad3ab?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4')
+          - compare_versions(version, '<= 1.8')

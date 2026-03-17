@@ -1,15 +1,15 @@
-id: custom-post-widget
+id: custom-post-widget-09c4f75007b2f1d4a1a956fba5b1fe48
 
 info:
   name: >
-    Content Blocks (Custom Post Widget) <= 3.3.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Content Blocks (Custom Post Widget) <= 3.3.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via content_block Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b899d06f-a4e3-4cc5-a610-43372511b7da?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/16d8eab2-953a-46bf-a0f6-296bcea86305?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

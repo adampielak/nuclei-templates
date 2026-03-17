@@ -1,4 +1,4 @@
-id: captcha-bws
+id: captcha-bws-28e4197f1cc5788c184ad3ce8cf37f51
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d672fcb9-6607-477e-b168-546669886ea4?source=api-scan
   classification:
     cvss-metrics: 

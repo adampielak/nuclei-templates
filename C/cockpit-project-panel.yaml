@@ -10,10 +10,11 @@ info:
     - https://github.com/cockpit-project/cockpit
     - https://cockpit-project.org/
   metadata:
+    runzero-match: service["http.body"] matches "(?i)cockpit/static/login\\.css"
     max-request: 1
     verified: true
     shodan-query: http.html:"cockpit/static/login.css"
-  tags: panel,cockpit,login
+  tags: panel,cockpit,login,discovery
 
 http:
   - method: GET
@@ -47,4 +48,4 @@ http:
       - type: dsl
         dsl:
           - '"OS: " + os + " | Hostname: " + hostname'
-# digest: 4b0a004830460221009ff4012f1283c95c7e7f00643e57b28bf610d1fea37c2d6abf0287afc18d66d6022100fa08b8039ebb63502853e25663598d55b127ef201874c3e8adbc1af59e7e2244:922c64590222798bb761d5b6d8e72950
+

@@ -1,4 +1,4 @@
-id: easy-team-manager
+id: easy-team-manager-63ea3027c676737303de78e9d540f588
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2407d25-75da-4a04-8a39-04cb1711ae33?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,18 +1,19 @@
-id: g-web-shop
+id: g-web-shop-f220e8e5f70a520a131235b2de506bc9
 
 info:
-  name: "Zingiri Web Shop <= 2.2.3 - Remote Code Execution"
+  name: >
+    Zingiri Web Shop <= 2.2.3 - Remote Code Execution
   author: topscoder
   severity: critical
-  description: "The Zingiri Web Shop plugin for WordPress is vulnerable to Remote Code Execution in versions up to, and including, 2.2.3 via the 'selectedDocuments' parameter. This allows unauthenticated attackers to execute code on the server."
+  description: >
+    The Zingiri Web Shop plugin for WordPress is vulnerable to Remote Code Execution in versions up to, and including, 2.2.3 via the 'selectedDocuments' parameter. This allows unauthenticated attackers to execute code on the server.
   reference:
-    - https://www.securityfocus.com/bid/50700/
-    - https://wpscan.com/vulnerability/10b86afd-1b3e-4773-959e-288acdbab5ee
-    - https://web.archive.org/web/20130308035003/http%3A//downloads.securityfocus.com/vulnerabilities/exploits/50700.txt
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8247acc4-04dc-463a-906a-f6085116cf40?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/g-web-shop/"
     google-query: inurl:"/wp-content/plugins/g-web-shop/"

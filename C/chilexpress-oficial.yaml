@@ -1,4 +1,4 @@
-id: chilexpress-oficial
+id: chilexpress-oficial-0932261639768e36f912c56f3f9fb502
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0999a738-9fae-4043-99eb-ff222a7608fa?source=api-scan
   classification:
     cvss-metrics: 

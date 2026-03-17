@@ -6,8 +6,10 @@ info:
   severity: high
   description: Telecom Gateway default admin login credentials were successful.
   tags: default-login,telecom,gateway
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - raw:
       - |
         POST /manager/login.php HTTP/1.1

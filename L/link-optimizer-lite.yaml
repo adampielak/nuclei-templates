@@ -1,4 +1,4 @@
-id: link-optimizer-lite
+id: link-optimizer-lite-a0eebcde44b42d8055221f01c3753eb4
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ca64692b-b194-4ceb-975e-72e4041252f2?source=api-scan
   classification:
     cvss-metrics: 

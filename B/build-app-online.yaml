@@ -1,14 +1,15 @@
-id: build-app-online
+id: build-app-online-5de1f71687a33e4868fd277d07372578
 
 info:
   name: >
-    Build App Online <= 1.0.18 - Unauthenticated SQL Injection
+    Build App Online <= 1.0.19 - Missing Authorization Authenticated(Subscriber+) Arbitrary Options Update
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f15f85c6-0bba-4bbd-b097-d205b9e0a075?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3551218-e272-4c96-94fe-9db0aee0d4f4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.18')
+          - compare_versions(version, '<= 1.0.19')

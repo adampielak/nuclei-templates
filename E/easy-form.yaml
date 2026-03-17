@@ -1,23 +1,24 @@
-id: easy-form
+id: easy-form-3b770841531c11b4ac16629f94952e87
 
 info:
   name: >
-    Easy Form by AYS <= 1.2.0 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    Easy Form by AYS <= 1.3.8 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    
+    The Easy Form by AYS plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.3.8. This is due to missing nonce validation on the ays_form_sale_baner() function hooked via 'admin_notices'. This makes it possible for unauthenticated attackers to dismiss the sale banner via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/765b09ef-dd6d-4c4e-a381-7bb0dc8d6652?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ee595f48-b72f-4569-a248-7dbd0b9152ae?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/easy-form/"
     google-query: inurl:"/wp-content/plugins/easy-form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,easy-form,low
+  tags: cve,wordpress,wp-plugin,easy-form,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.0')
+          - compare_versions(version, '< 1.3.9')

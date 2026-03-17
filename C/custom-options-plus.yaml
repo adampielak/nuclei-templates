@@ -1,4 +1,4 @@
-id: custom-options-plus
+id: custom-options-plus-b5e95ae47ee5186b59a4060fc73d6cd9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/97c8858a-f05d-4159-b914-4e6ae9bf0d79?source=api-scan
   classification:
     cvss-metrics: 

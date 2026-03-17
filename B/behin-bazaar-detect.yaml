@@ -1,0 +1,29 @@
+id: behin-bazaar-detect
+
+info:
+  name: Behin Bazaar Detect
+  author: rix4uni
+  severity: info
+  description: description
+  reference:
+    - https://
+  metadata:
+    shodan-query:
+      - http.title:"Behin Bazaar"
+  tags: behin-bazaar,detect,technologies
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - <title>Behin Bazaar</title>
+          
+      - type: status
+        status:
+          - 200

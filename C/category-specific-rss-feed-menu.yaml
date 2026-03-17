@@ -1,14 +1,15 @@
-id: category-specific-rss-feed-menu
+id: category-specific-rss-feed-menu-c9a8466b6a1a90bf8ab632dde93bacb5
 
 info:
   name: >
-    Category Specific RSS feed Subscription <= 2.1 - Cross-Site Request Forgery
+    Category Specific RSS feed Subscription <= 2.2 - Authenticated (Administrator+) Stored Cross-Site Scripting via plugin settings
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ad5db8f-c3c2-4b76-abc6-3d95e0567ab0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9ac9c146-5065-46fc-b2ae-20b820a8016b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/category-specific-rss-feed-menu/"
     google-query: inurl:"/wp-content/plugins/category-specific-rss-feed-menu/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,category-specific-rss-feed-menu,medium
+  tags: cve,wordpress,wp-plugin,category-specific-rss-feed-menu,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.2')
+          - compare_versions(version, '<= 2.2')

@@ -1,13 +1,14 @@
-id: lana-email-logger
+id: lana-email-logger-da17d7c83edf1d180ef99d64b49e60f2
 
 info:
   name: >
     Lana Email Logger <= 1.0.2 - Unauthenticated Stored Cross-Site Scripting via Email Subject
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5f372bf-6b13-4ba7-8b8b-9d3b500e4420?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/lana-email-logger/"
     google-query: inurl:"/wp-content/plugins/lana-email-logger/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,lana-email-logger,low
+  tags: cve,wordpress,wp-plugin,lana-email-logger,high
 
 http:
   - method: GET

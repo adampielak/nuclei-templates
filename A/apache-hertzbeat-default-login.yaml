@@ -9,10 +9,11 @@ info:
   reference:
     - https://github.com/apache/hertzbeat
   metadata:
-    max-request: 4
+    runzero-match: any(each(service["html.titles"]), {# matches "HertzBeat"})
     verified: true
+    max-request: 4
     shodan-query: title:"HertzBeat"
-  tags: apache,hertzbeat,default-login
+  tags: apache,hertzbeat,default-login,vuln
 
 variables:
   password: hertzbeat
@@ -52,4 +53,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201d1f673e9773cd922b0e5818a8c1a81a13e75a9e5f73581ad1313c0c1f55083d0221008a7387d75d9f7cd8cd8f3e14a6bc90651c31365752ebbbc14f1f08e41a8198e9:922c64590222798bb761d5b6d8e72950
+

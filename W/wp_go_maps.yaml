@@ -8,7 +8,7 @@ info:
     fofa-query:
     - body="/wp-content/plugins/wp-google-maps"
     product: wp_go_maps
-    vendor: codecabin
+    vendor: wpgmaps
     verified: true
 http:
 - method: GET

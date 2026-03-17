@@ -1,15 +1,15 @@
-id: mail-boxes-etc
+id: mail-boxes-etc-71d376aec532bbddca8ea0b3599b4432
 
 info:
   name: >
-    MBE eShip <= 2.1.2 - Cross-Site Request Forgery
+    MBE eShip <= 2.1.2 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e1a492f6-8248-4a84-b163-7262b02563c2?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b0e340d7-72ad-4a48-8c7c-e5ca61108007?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

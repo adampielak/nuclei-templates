@@ -11,11 +11,12 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:processwire:processwire:*:*:*:*:*:*:*:*
   metadata:
+    verified: true
     max-request: 1
+    vendor: processwire
     product: processwire
     shodan-query: http.html:"processwire"
-    vendor: processwire
-    verified: true
+    fofa-query: body="processwire"
   tags: panel,processwire
 
 http:
@@ -33,4 +34,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206e74b6f2fc800dd735bdf2f20cb1f5ae1bf5c4e5aca94a44b2bcba8271faf1270221009f25cf9db109c8b299fddb8b39c33308839e6a6ba2b18217990b8b6a1527ed15:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ebcdbe4e8739fc35b962efa51c3aceef74f065c418b67bc331ae0cceca7f0dc002200a1d5103d5497df2ab853f88372047ccfa6f2165fe151ced1a73603409b85c63:922c64590222798bb761d5b6d8e72950

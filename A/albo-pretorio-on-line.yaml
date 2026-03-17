@@ -1,14 +1,15 @@
-id: albo-pretorio-on-line
+id: albo-pretorio-on-line-24d0b6cfba2bcee8223ab8636700074d
 
 info:
   name: >
-    Albo Pretorio Online <= 4.6 - Reflected Cross-Site Scripting via 'Errore'
+    Albo Pretorio Online <= 4.6.6 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad8f8c41-a3b9-4287-b6b2-489fb77b7553?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/92f8e3b7-a896-494b-96cd-6ecb8918ebd6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/albo-pretorio-on-line/"
     google-query: inurl:"/wp-content/plugins/albo-pretorio-on-line/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,albo-pretorio-on-line,medium
+  tags: cve,wordpress,wp-plugin,albo-pretorio-on-line,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.6')
+          - compare_versions(version, '<= 4.6.6')

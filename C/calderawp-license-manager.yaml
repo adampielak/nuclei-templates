@@ -1,4 +1,4 @@
-id: calderawp-license-manager
+id: calderawp-license-manager-32f546ae97fa9ffc08d1c35a76c307b4
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fecb12c5-8f8d-4f72-a349-c5df315b523e?source=api-scan
   classification:
     cvss-metrics: 

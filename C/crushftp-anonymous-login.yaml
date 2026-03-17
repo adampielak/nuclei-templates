@@ -1,20 +1,21 @@
 id: crushftp-anonymous-login
 
 info:
-  name: CrushFTP - Anonymous Login
+  name: CrushFTP Anonymous Login
   author: pussycat0x
   severity: high
   description: |
-    CrushFTP Anonymous login credentials were discovered.
+    CrushFTP anonymous login credentials were discovered.
   classification:
     cpe: cpe:2.3:a:crushftp:crushftp:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: service["http.body"] contains "CrushFTP" || service["http.head.server"] contains "CrushFTP" || any(each(service["favicon.ico.image.mmh3"]), {# == "-1022206565"})
     verified: true
     max-request: 2
     vendor: crushftp
     product: crushftp
     shodan-query: html:"CrushFTP"
-  tags: default-logins,anonymous,crushftp,default-login
+  tags: default-logins,anonymous,crushftp,default-login,vuln
 
 http:
   - raw:
@@ -48,4 +49,4 @@ http:
         group: 1
         regex:
           - 'currentAuth=([0-9a-zA-Z]+)'
-# digest: 490a00463044022074d36183e0fed2581fffd68efd0ff769a48df9462f1fba884799a00757a84b36022003256047913294fa0fcdbfcb975d860eccb1c1195e9e2fe06866bc6dd30c5e73:922c64590222798bb761d5b6d8e72950
+

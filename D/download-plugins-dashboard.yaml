@@ -1,14 +1,15 @@
-id: download-plugins-dashboard
+id: download-plugins-dashboard-decdf27e06d73ea0c2c681651a479037
 
 info:
   name: >
-    Download Plugins and Themes from Dashboard <= 1.5.0 - Unauthenticated Stored Cross-Site Scripting
+    Download Plugins and Themes from Dashboard <= 1.8.5 - Authenticated (Admin+) Arbitrary File Download
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ab8a13d5-911a-4c25-8d5a-391146971c0c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9adfc632-2e47-4fea-ad87-41840cdab225?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/download-plugins-dashboard/"
     google-query: inurl:"/wp-content/plugins/download-plugins-dashboard/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,download-plugins-dashboard,high
+  tags: cve,wordpress,wp-plugin,download-plugins-dashboard,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.6.0')
+          - compare_versions(version, '<= 1.8.5')

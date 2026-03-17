@@ -1,4 +1,4 @@
-id: edit-comments-xt
+id: edit-comments-xt-01754898b109bbcf5db6f156656de3e0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/00622a39-7230-4263-8e25-b0917df80191?source=api-scan
   classification:
     cvss-metrics: 

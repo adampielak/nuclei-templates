@@ -9,12 +9,13 @@ info:
   classification:
     cpe: cpe:2.3:a:freshrss:freshrss:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Freshrss"})
     verified: true
     max-request: 1
     vendor: freshrss
     product: freshrss
     shodan-query: title:"Freshrss"
-  tags: freshrss,panel,detect
+  tags: freshrss,panel,detect,discovery
 
 http:
   - method: GET
@@ -38,4 +39,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220061c1a7a12359afb3fa40fd60da5b99f85282ed7fb48b67170ede74286a0548e022100cefcde30a46869b8449968d3714c5368e6ddd3ddacccd0a4b8bd4e49804f78ca:922c64590222798bb761d5b6d8e72950
+

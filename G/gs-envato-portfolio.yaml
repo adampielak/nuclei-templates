@@ -1,4 +1,4 @@
-id: gs-envato-portfolio
+id: gs-envato-portfolio-9003b920a3965ed0e670fef367e07458
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f6816cb4-0fad-417a-a980-d35a734bce13?source=api-scan
   classification:
     cvss-metrics: 

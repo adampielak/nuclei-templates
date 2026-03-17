@@ -1,4 +1,4 @@
-id: freesia-empire
+id: freesia-empire-a76024d8fa0fd558c89bc2c622d2e2d6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c4a051e3-4489-4124-abf6-905b7ff7fd3c?source=api-scan
   classification:
     cvss-metrics: 

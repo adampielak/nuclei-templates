@@ -1,14 +1,15 @@
-id: fl3r-feelbox
+id: fl3r-feelbox-9da10855d6fa8eae2273e4de2d45c0a7
 
 info:
   name: >
-    FL3R FeelBox <= 8.1 - Cross-Site Request Forgery leading to Plugin Settings Reset
+    FL3R FeelBox <= 8.1 - Cross-Site Request Forgery leading to Stored Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7a830d58-14e8-4929-a0f8-08ee4efae340?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b0ab311f-26c1-4165-80bc-512348fcc0c0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -1,14 +1,15 @@
-id: jannah
+id: jannah-dd2f051c00bdfee6cc6d8802469bc3a7
 
 info:
   name: >
-    Jannah <= 5.4.4 - Reflected Cross-Site Scripting
+    Jannah - Newspaper Magazine News BuddyPress AMP < 5.4.4 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/40494f1e-d5df-4ed0-b107-aa52cb28bc0e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b04ea62-8e6b-4876-a9f8-7bc342e837f4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.4.5')
+          - compare_versions(version, '< 5.4.4')

@@ -1,13 +1,14 @@
-id: kd-coming-soon
+id: kd-coming-soon-2265a234dfded05f01d36b926bceb429
 
 info:
   name: >
     KD Coming Soon <= 1.7 - Unauthenticated PHP Object Injection via cetitle
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0f831d48-733a-4e79-8559-92b03b8d0356?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/kd-coming-soon/"
     google-query: inurl:"/wp-content/plugins/kd-coming-soon/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,kd-coming-soon,low
+  tags: cve,wordpress,wp-plugin,kd-coming-soon,critical
 
 http:
   - method: GET

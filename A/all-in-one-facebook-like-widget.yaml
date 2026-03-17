@@ -1,4 +1,4 @@
-id: all-in-one-facebook-like-widget
+id: all-in-one-facebook-like-widget-d7f3b00a721d7baa5ed3fb6964ca2926
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2e6fe647-d243-43ba-b619-d181560cb230?source=api-scan
   classification:
     cvss-metrics: 

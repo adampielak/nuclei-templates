@@ -1,0 +1,28 @@
+id: chef-automate-panel
+
+info:
+  name: Chef Automate Panel - Detect
+  author: rix4uni
+  severity: info
+  description: Multiple Chef Automate login page detected.
+  metadata:
+    shodan-query:
+      - http.favicon.hash:-276759139
+    fofa-query:
+      - title="Sign In - Chef Manage"
+  tags: default-login,misconfig,chef-automate
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/favicon.ico"
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code==200 && (\"-276759139\" == mmh3(base64_py(body)))"
+
+      - type: status
+        status:
+          - 200

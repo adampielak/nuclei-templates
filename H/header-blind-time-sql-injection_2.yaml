@@ -4,7 +4,7 @@ info:
   severity: high
   tags: blind-sqli
 
-id: header-sqli
+id: header-time-sqli
 
 requests:
   - method: GET

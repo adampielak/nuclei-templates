@@ -1,4 +1,4 @@
-id: lightbox-plus
+id: lightbox-plus-a692c0a8ff6a3679f2304f904c93e9b1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7dcd0c5a-757d-4256-ac0a-36620914bc45?source=api-scan
   classification:
     cvss-metrics: 

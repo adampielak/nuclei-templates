@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,ytimg-s
+  tags: xss,csp-bypass,ytimg-s,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "ytimg_s_csp_xss == true"
-# digest: 4b0a00483046022100e01daee740cee7abfaae4f81c964e66450618e82ba3e2932dcb5353c101c4783022100b536480cff4c03d714a8b1f9edf781443a5f50adc1e426b0b0c66c4719913c39:922c64590222798bb761d5b6d8e72950
+

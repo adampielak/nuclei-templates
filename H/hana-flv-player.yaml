@@ -1,4 +1,4 @@
-id: hana-flv-player
+id: hana-flv-player-7efa2a93c8c5a4eedc90aba0cfaa5f36
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/435e1af0-c4f4-42ae-b2b3-2d9ffc41c4b5?source=api-scan
   classification:
     cvss-metrics: 

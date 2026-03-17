@@ -1,17 +1,19 @@
-id: event-registration
+id: event-registration-5d925214edcb175c5048f577c9be1399
 
 info:
-  name: "Event Registration <= 6.02.02 - SQL Injection"
+  name: >
+    Event Registration <= 6.02.02 - PHP Object Injection
   author: topscoder
   severity: critical
-  description: "The Event Registration plugin for WordPress is vulnerable to generic SQL Injection via the ‘submitted_token’ and ‘qanda’ parameters in versions up to, and including, 6.02.02 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+  description: >
+    The Event Registration plugin for WordPress is vulnerable to PHP Object Injection in versions up to, and including, 6.02.02 via deserialization of untrusted input from the 'reg_form' or 'questions' parameter. This allows unauthenticated attackers to inject a PHP Object. No POP chain is present in the vulnerable plugin. If a POP chain is present via an additional plugin or theme installed on the target system, it could allow the attacker to delete arbitrary files, retrieve sensitive data, or execute code.
   reference:
-    - https://seclists.org/bugtraq/2016/May/34
-    - https://plugins.trac.wordpress.org/changeset/1394877
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2c5bb593-59b5-4760-8d54-14d7665c7e7f?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/event-registration/"
     google-query: inurl:"/wp-content/plugins/event-registration/"

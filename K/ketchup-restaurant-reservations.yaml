@@ -1,13 +1,14 @@
-id: ketchup-restaurant-reservations
+id: ketchup-restaurant-reservations-d17e16100988ebcee9ca166b65d86bf2
 
 info:
   name: >
     Ketchup Restaurant Reservations <= 1.0.0 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a4522102-5997-449e-81fe-446a5dac6e71?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ketchup-restaurant-reservations/"
     google-query: inurl:"/wp-content/plugins/ketchup-restaurant-reservations/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ketchup-restaurant-reservations,low
+  tags: cve,wordpress,wp-plugin,ketchup-restaurant-reservations,high
 
 http:
   - method: GET

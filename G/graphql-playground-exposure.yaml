@@ -1,16 +1,31 @@
-id: Graphql-Playground-Exposure
-
 info:
-  name: Graphql Playground Exposure
-  author: Kabilan S
-  severity: low
-  tags: panel
+  id: graphql-playground-exposure
+  name: GraphQL Playground Exposure
+  author: OpenAI
+  description: Template to detect if the GraphQL Playground is exposed and accessible.
+  severity: Info
+  classification:
+    country: any
+    tags:
+      - graphql
+      - playground
+      - security
 
-requests:
-  - method: GET
+  matcher-condition: or
+  
+  requests:
+    method: GET
     path:
-      - '{{BaseURL}}/api/pensieve/'
-    matchers:
-      - type: word
-        words:
-          - '<span class="title">GraphQL Playground</span>'
+      - "/graphql"
+      - "/playground"
+    description: Attempt to access the GraphQL Playground endpoint
+    condition: and
+
+  matchers:
+    - pattern: "GraphQL Playground"
+      type: body
+      description: The GraphQL Playground UI is displayed in the response body
+
+  response:
+    - status: 
+      - 200

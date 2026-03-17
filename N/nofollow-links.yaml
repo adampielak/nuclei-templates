@@ -1,4 +1,4 @@
-id: nofollow-links
+id: nofollow-links-ee0917a5c43c55b7c36f452f1dac4982
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba5b7e1f-7479-47bd-99ed-3d57eb209464?source=api-scan
   classification:
     cvss-metrics: 

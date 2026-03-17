@@ -1,4 +1,4 @@
-id: buddymeet
+id: buddymeet-3b9a490c0c548a208d3fcc0acd09839b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/75dafb36-7596-492f-a377-32315b1abe33?source=api-scan
   classification:
     cvss-metrics: 

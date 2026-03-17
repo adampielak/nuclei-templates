@@ -1,18 +1,18 @@
 id: app-manager-default-login
 
 info:
-  name: ManageEngine Applications Manager - Default Credentials
+  name: ManageEngine Applications Manager - Default Login
   author: 0midC13
   severity: high
   description: |
-    Default credentials grants administrative access to ManageEngine Applications Manager, which can be later escalated into a RCE via DB queries.
+    ManageEngine Applications Manager default login credentials were discovered.
   reference:
     - https://www.manageengine.com/products/applications_manager/
   metadata:
-    shodan-query: title:"Applications Manager Login Screen"
+    runzero-match: any(each(service["html.titles"]), {# matches "Applications Manager Login Screen"})
     verified: true
     max-request: 1
-  tags: default-login,manageengine,zoho
+  tags: default-login,manageengine,zoho,vuln
 
 variables:
   username: "admin"
@@ -24,7 +24,8 @@ http:
         GET /index.do HTTP/1.1
         Host: {{Hostname}}
 
-  - raw:
+  -
+    raw:
       - |
         POST /j_security_check HTTP/1.1
         Host: {{Hostname}}
@@ -34,7 +35,8 @@ http:
 
         clienttype=html&webstart=&j_username=admin&ScreenWidth=1280&ScreenHeight=709&username={{username}}&j_password={{password}}
 
-  - raw:
+  -
+    raw:
       - |
         GET /showresource.do?group=All&method=showResourceTypes&monitor_viewtype=categoryview HTTP/1.1
         Host: {{Hostname}}
@@ -48,4 +50,4 @@ http:
           - "Super Administrator"
           - "Add Application"
         condition: and
-# digest: 4b0a00483046022100dbbba72fef683ecf1b201589665d52b6db4dba0ee74ebde6e73a185f3f20b60c022100ebc65e5a6b5cd981b77bdd3c81b44150477969bb489a61326378f5140fc23f38:922c64590222798bb761d5b6d8e72950
+

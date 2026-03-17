@@ -1,4 +1,4 @@
-id: content-grabber
+id: content-grabber-9cd8c8d91245df8880525bdb80e2a804
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7cd3c84b-dacc-44e8-a236-bfc80e6dceba?source=api-scan
   classification:
     cvss-metrics: 

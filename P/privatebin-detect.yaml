@@ -8,19 +8,10 @@ info:
     PrivateBin was detected.
   reference:
     - https://privatebin.info/
-  classification:
-    cpe: cpe:2.3:a:privatebin:privatebin:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    vendor: privatebin
-    product: privatebin
-    shodan-query:
-      - title:"PrivateBin"
-      - http.favicon.hash:1358855492
-    fofa-query:
-      - title="PrivateBin"
-      - icon_hash="1358855492"
+    verified: true
+    shodan-query: title:"PrivateBin"
   tags: tech,privatebin,detect
 
 http:
@@ -30,6 +21,7 @@ http:
 
     redirects: true
     max-redirects: 2
+
     matchers:
       - type: dsl
         dsl:
@@ -43,4 +35,4 @@ http:
         group: 1
         regex:
           - 'privatebin\.[a-z]{2,3}\?([0-9.]+)'
-# digest: 4a0a00473045022041794da93bf42950f8ac3c5f3884d3c61b7e02cee84e589a84155cda8198a3e4022100f3d01873d7f15a345d1006bd784aec4c697b53ba19057f7347c3a5fae456ada6:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502207e7f69b925de97e067c23975a23bafc7e6ffa4d3a65f17c35dde4e941929a3c1022100c55e9d8562cff5a99fb2b8e406a8ee4ab9f89612fd201fe069b5c3282683e805:922c64590222798bb761d5b6d8e72950

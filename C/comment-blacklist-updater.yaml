@@ -1,4 +1,4 @@
-id: comment-blacklist-updater
+id: comment-blacklist-updater-781ee3008f29fecdd3888c03bbe81799
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fc7bab78-4ebb-4be9-8891-1ac0e3ed0af3?source=api-scan
   classification:
     cvss-metrics: 

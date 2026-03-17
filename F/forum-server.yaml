@@ -1,14 +1,15 @@
-id: forum-server
+id: forum-server-12fd3d8a60cd42833403afae186b4081
 
 info:
   name: >
-    WP Forum Server < 1.7.4 - SQL Injection
+    WP Forum Server <= 1.7.3 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d4a6c1e4-635f-4d4d-87a4-8eeded25f07f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/190106bd-05ac-4a8f-b7a5-a042092a5713?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/forum-server/"
     google-query: inurl:"/wp-content/plugins/forum-server/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,forum-server,critical
+  tags: cve,wordpress,wp-plugin,forum-server,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.7.4')
+          - compare_versions(version, '<= 1.7.3')

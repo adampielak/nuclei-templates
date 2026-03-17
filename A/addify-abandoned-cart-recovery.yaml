@@ -1,4 +1,4 @@
-id: addify-abandoned-cart-recovery
+id: addify-abandoned-cart-recovery-4a7e8b5b59d549e72ea5394d21cd6f96
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8065d25-2ded-4021-a53d-204242db0915?source=api-scan
   classification:
     cvss-metrics: 

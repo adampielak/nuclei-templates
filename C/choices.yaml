@@ -1,18 +1,19 @@
-id: choices
+id: choices-77cca9935c214ad13c2384caef0fd57d
 
 info:
-  name: "Choices (All Versions) - Reflected Cross-Site Scripting"
+  name: >
+    Choices (All Versions) - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Choices theme for WordPress is vulnerable to Reflected Cross-Site Scripting due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Choices theme for WordPress is vulnerable to Reflected Cross-Site Scripting due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://jannefi.blogspot.com/2012/10/xss-vulnerability-in-wp-themes-by-kriesi.html
-    - https://wpscan.com/vulnerability/383d2908-b35f-4617-850c-85e17a8b0bbf
-    - http://web.archive.org/web/20181208050719/https%3A//themeforest.net/item/choices-responsive-business-and-portfolio/2536338
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7921c896-dca4-460d-90dc-458eb0d82334?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/choices/"
     google-query: inurl:"/wp-content/themes/choices/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>0')
+          - compare_versions(version, '<= *')

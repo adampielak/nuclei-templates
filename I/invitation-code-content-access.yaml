@@ -1,4 +1,4 @@
-id: invitation-code-content-access
+id: invitation-code-content-access-4aafe7d4acbe65841e2042718ad9bb06
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3d0f705-2458-4cc6-8730-997314084f24?source=api-scan
   classification:
     cvss-metrics: 

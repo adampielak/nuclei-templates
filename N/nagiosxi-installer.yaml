@@ -4,14 +4,9 @@ info:
   name: Nagios XI Installer
   author: ritikchaddha
   severity: high
-  description: Nagios XI is susceptible to the Installation page exposure due to misconfiguration.
-  classification:
-    cpe: cpe:2.3:a:nagios:nagios_xi:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: nagios
-    product: nagios_xi
     shodan-query: title:"Nagios XI"
   tags: misconfig,exposure,install,nagiosxi
 
@@ -30,4 +25,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200375faa8a7c8846f9d70148bca017864f6acd5313ac215e3280d443965468e4f022100976f32a9193f468cb0da4b32d4af6e1cf4d00982a5d0432c0c7bdd24c1510656:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502203ecd0842cf012b71dacc48eed8cc05eb0046f409a6784d38f82a8e2ebf3568fa022100ba056be22e549342d261513a40c27ce9d6396427d0bb77c727b3dbb3feebd38c:922c64590222798bb761d5b6d8e72950

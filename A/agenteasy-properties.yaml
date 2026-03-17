@@ -1,4 +1,4 @@
-id: agenteasy-properties
+id: agenteasy-properties-a5fa9b1dc7a85d57314efe1983687fb0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1fe961c5-de2b-4494-9d89-6bcc7f6d8cd9?source=api-scan
   classification:
     cvss-metrics: 

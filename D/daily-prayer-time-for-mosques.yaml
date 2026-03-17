@@ -1,14 +1,15 @@
-id: daily-prayer-time-for-mosques
+id: daily-prayer-time-for-mosques-eb68759a96c8e7a893decb535f098b0a
 
 info:
   name: >
-    Daily Prayer Time <= 2021.08.09 - Stored Cross-Site Scripting
+    Daily Prayer Time <= 2023.10.13 - Authenticated (Contributor+) Stored Cross-Site Scripting via shortcode
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d62d0971-c4bc-40f7-80b4-a3d54ce4f3ac?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f0ccd265-2e64-4b23-a032-aaeb9941df34?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/daily-prayer-time-for-mosques/"
     google-query: inurl:"/wp-content/plugins/daily-prayer-time-for-mosques/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,daily-prayer-time-for-mosques,high
+  tags: cve,wordpress,wp-plugin,daily-prayer-time-for-mosques,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2021.08.10')
+          - compare_versions(version, '<= 2023.10.13')

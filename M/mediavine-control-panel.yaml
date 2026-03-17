@@ -1,4 +1,4 @@
-id: mediavine-control-panel
+id: mediavine-control-panel-c635bfd174639f61c365b808c8ca4593
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ac20b454-a5e5-4ff6-a5bf-9c3c339321d8?source=api-scan
   classification:
     cvss-metrics: 

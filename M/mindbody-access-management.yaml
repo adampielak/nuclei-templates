@@ -1,23 +1,24 @@
-id: mindbody-access-management
+id: mindbody-access-management-f0902ae183bfa1dcd40ad8e2894aa2a6
 
 info:
-  name: "MZ MBO Access <= 2.0.8 - Cross-Site Request Forgery"
+  name: >
+    MZ MBO Access <= 2.0.8 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
-  description: "The MZ MBO Access plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 2.0.8. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to perform multiple administrator-level actions via a forged request granted they can trick a site administrator into performing an action such as clicking on a link."
+  severity: medium
+  description: >
+    The MZ MBO Access plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 2.0.8. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to perform multiple administrator-level actions via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://ithemes.com/blog/wordpress-vulnerability-report-july-7-2021/
-    - https://wpscan.com/vulnerability/9eb46ab7-a71f-42fb-8ded-fca17c9bf8fd
-    - https://plugins.trac.wordpress.org/changeset/2508369
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d18c17f1-7b85-46d6-a92e-948be98adf87?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/mindbody-access-management/"
     google-query: inurl:"/wp-content/plugins/mindbody-access-management/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mindbody-access-management,high
+  tags: cve,wordpress,wp-plugin,mindbody-access-management,medium
 
 http:
   - method: GET

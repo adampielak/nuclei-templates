@@ -11,8 +11,10 @@ info:
   classification:
     cwe-id: CWE-284
   tags: solarlog,auth-bypass,edb
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/lan.html"

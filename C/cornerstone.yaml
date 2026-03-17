@@ -1,4 +1,4 @@
-id: cornerstone
+id: cornerstone-3b2bea6d51f5f10abb368f41e2b4e113
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c18a9b8-5041-4451-a3cc-91952c234d9c?source=api-scan
   classification:
     cvss-metrics: 

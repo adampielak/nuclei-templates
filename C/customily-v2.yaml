@@ -1,13 +1,14 @@
-id: customily-v2
+id: customily-v2-f3927d9f42f6ab4c1cf589053536356c
 
 info:
   name: >
     Customily Product Personalizer <= 1.23.3 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0f8aa38b-85c5-45a7-b5cd-9ecd43a3c340?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/customily-v2/"
     google-query: inurl:"/wp-content/plugins/customily-v2/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,customily-v2,low
+  tags: cve,wordpress,wp-plugin,customily-v2,high
 
 http:
   - method: GET

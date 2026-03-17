@@ -1,4 +1,4 @@
-id: html5-mp3-player-with-mp3-folder-feedburner-playlist
+id: html5-mp3-player-with-mp3-folder-feedburner-playlist-8184d8d92561017974e3799804b8964f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8b7321e8-153c-4586-8114-65583e06573e?source=api-scan
   classification:
     cvss-metrics: 

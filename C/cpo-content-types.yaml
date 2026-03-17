@@ -1,4 +1,4 @@
-id: cpo-content-types
+id: cpo-content-types-22412d639c60319e4ffe2db7cf347ff5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9d0b1e05-0e28-4cf5-a278-ea91b6c9d253?source=api-scan
   classification:
     cvss-metrics: 

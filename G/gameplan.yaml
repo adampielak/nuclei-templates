@@ -1,4 +1,4 @@
-id: gameplan
+id: gameplan-0cb351d9df9ae7ac414ada6d700a0c3c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7ac251c8-4ade-4391-aedd-f48b13045a31?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: gravitate-qa-tracker
+id: gravitate-qa-tracker-215d8b5197b6f7aeb2d3dbfbc8015b87
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7ef64118-b388-4260-930b-6a31992d4076?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: emag-marketplace-connector
+id: emag-marketplace-connector-e790b27324ae1b57a9761397286775ab
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ddc889bf-8062-4a2c-9d50-d1c76a3c3386?source=api-scan
   classification:
     cvss-metrics: 

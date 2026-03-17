@@ -5,25 +5,27 @@ info:
   author: dali
   severity: high
   description: |
-    X-UI contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    X-UI default login credentials were discovered.
   reference:
     - https://github.com/vaxilu/x-ui
     - https://seakfind.github.io/2021/10/10/X-UI/#:~:text=By%20default%2C%20the%20login%20user,the%20password%20is%20also%20admin%20.
   classification:
     cwe-id: CWE-798
+    cpe: cpe:2.3:a:vaxilu:x-ui:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "X-UI Login"})
     verified: true
     max-request: 2
-    fofa-query: title="X-UI Login"
-    shodan-query: title:"X-UI Login"
-  tags: x-ui,default-login
+    vendor: vaxilu
+  tags: x-ui,default-login,vuln
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}/login"
 
-  - method: POST
+  -
+    method: POST
     path:
       - "{{BaseURL}}/login"
 
@@ -31,7 +33,6 @@ http:
       content-type: application/x-www-form-urlencoded
 
     body: "username={{username}}&password={{password}}"
-
     attack: pitchfork
     payloads:
       username:
@@ -48,4 +49,4 @@ http:
           - "contains(http_2_header, 'application/json')"
           - "http_2_status_code == 200"
         condition: and
-# digest: 490a00463044021f4d76b49e02f27ca2bcbf6564481dba460a4c5dff556b17641349307a0b86ac022100ce475244644645c3aebbe048b946bf4b0e4f9dbe44be1516764a4150adedfcce:922c64590222798bb761d5b6d8e72950
+

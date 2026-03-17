@@ -1,4 +1,4 @@
-id: maz-loader
+id: maz-loader-2c4e8bcc9e71b393f4dd77053a46283a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5a580a7a-d477-47ba-a7c1-21d7312c53ba?source=api-scan
   classification:
     cvss-metrics: 

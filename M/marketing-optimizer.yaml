@@ -1,4 +1,4 @@
-id: marketing-optimizer
+id: marketing-optimizer-d70174ea02750a60b43b8f4e8c5e1b22
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b537637b-32c0-405e-94fa-c7c2d0c80658?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: interactive-world-maps
+id: interactive-world-maps-fcdf26721454bc7cbb87f06418e98ace
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c9295b82-27c1-4f35-b40c-1ac40ebe5d5e?source=api-scan
   classification:
     cvss-metrics: 

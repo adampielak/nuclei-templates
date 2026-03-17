@@ -1,4 +1,4 @@
-id: buddypress-extended-friendship-request
+id: buddypress-extended-friendship-request-a6e534aafedb0c90b44b89dfa20a25b8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0fa0b67b-edc8-4f91-bf67-167df63cf7bd?source=api-scan
   classification:
     cvss-metrics: 

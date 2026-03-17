@@ -1,4 +1,4 @@
-id: content-excel-importer
+id: content-excel-importer-a48b64cd6702a0c263e170091e6444de
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6a8cb8ef-a2e5-47ef-8d8c-759ed83a015b?source=api-scan
   classification:
     cvss-metrics: 

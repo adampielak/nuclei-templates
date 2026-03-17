@@ -18,10 +18,6 @@ http:
     - 极致cms建站系统
     part: header
     case-insensitive: true
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
   - type: favicon
     hash:
     - c7bfdd8a6b762a5220f7217552592115

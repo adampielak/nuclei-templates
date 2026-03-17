@@ -1,21 +1,15 @@
-id: apache-axis2
-info:
-  name: apache-axis2
-  author: cn-kali-team
-  tags: detect,tech,apache-axis2
-  severity: info
-  metadata:
-    product: axis2
-    vendor: apache
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - axis2-admin
-    - axis2-web
-    condition: and
-    case-insensitive: true
+name: apache-axis2
+priority: 1
+nuclei_tags:
+  - - axis
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - axis2-admin
+      - axis2-web
+    favicon_hash: []

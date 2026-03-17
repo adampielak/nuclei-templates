@@ -1,14 +1,15 @@
-id: fusion-builder
+id: fusion-builder-fde4dbc1536b247a205ddac8a2a684c9
 
 info:
   name: >
-    Fusion Builder <= 3.11.1 - Reflected Cross-Site Scripting via User Register Element
+    Avada | Website Builder For WordPress & eCommerce <= 3.11.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via fusion_button Shortcode
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b173523a-e79d-4d2d-af67-5372576df220?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7c23bd29-ba02-4c90-a631-5ce6294d7760?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/fusion-builder/"
     google-query: inurl:"/wp-content/plugins/fusion-builder/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fusion-builder,medium
+  tags: cve,wordpress,wp-plugin,fusion-builder,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.11.1')
+          - compare_versions(version, '<= 3.11.9')

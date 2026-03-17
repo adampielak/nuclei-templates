@@ -1,14 +1,15 @@
-id: microblog-poster
+id: microblog-poster-b54a9fb26bd095d830badc90588f59bd
 
 info:
   name: >
-    Microblog Poster < 1.6.2 - Authenticated Blind SQL Injection
+    Microblog Poster <= 2.1.6 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6fbf8a8f-56f7-42ae-bf96-30a2df6da378?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3931cfe6-13f7-4524-8895-d71918fd3ba3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/microblog-poster/"
     google-query: inurl:"/wp-content/plugins/microblog-poster/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,microblog-poster,low
+  tags: cve,wordpress,wp-plugin,microblog-poster,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.6.2')
+          - compare_versions(version, '<= 2.1.6')

@@ -1,14 +1,15 @@
-id: fluent-support
+id: fluent-support-5ab6bd7e0e22cfd379ff98fb9f257f54
 
 info:
   name: >
-    Fluent Support <= 1.7.6 - Authenticated(Administrator+) SQL Injection
+    Fluent Support – Helpdesk & Customer Support Ticket System <= 1.8.5 - Unauthenticated Sensitive Information Exposure Through Unprotected Directory
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8909dafa-3383-405e-a264-f0770e6714a4?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/17f40832-8ae5-443a-aa98-f0e61d1152cc?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.7.7')
+          - compare_versions(version, '<= 1.8.5')

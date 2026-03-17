@@ -1,4 +1,4 @@
-id: dreamgrow-scroll-triggered-box
+id: dreamgrow-scroll-triggered-box-748ff5aca05e4fda1f96b5ae1e069e3d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b92c3d68-2e3e-4500-8da9-f89373126445?source=api-scan
   classification:
     cvss-metrics: 

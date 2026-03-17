@@ -1,4 +1,4 @@
-id: edge
+id: edge-33e19d7ad5d6e091e277e76bad656147
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/526c45c8-7543-4384-af80-b3798857f79d?source=api-scan
   classification:
     cvss-metrics: 

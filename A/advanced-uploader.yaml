@@ -1,4 +1,4 @@
-id: advanced-uploader
+id: advanced-uploader-15dda530cdf47b9d8474a9af871b8645
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4137b8a6-532a-42fb-aa16-7d1de0e2f11f?source=api-scan
   classification:
     cvss-metrics: 

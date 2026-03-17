@@ -1,14 +1,15 @@
-id: imagerecycle-pdf-image-compression
+id: imagerecycle-pdf-image-compression-fda2c7d889a46f0c2fddcdff5162c7fc
 
 info:
   name: >
-    ImageRecycle pdf & image compression <= 3.1.10 - Reflected Cross-Site Scripting
+    ImageRecycle pdf & image compression <= 3.1.13 - Cross-Site Request Forgery to Settings Update in disableOptimization
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5eeae0eb-bc24-4a34-b393-e84831edaba6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b3900e4f-4ae4-4026-89df-b63bd869a763?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.1.11')
+          - compare_versions(version, '<= 3.1.13')

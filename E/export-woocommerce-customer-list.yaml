@@ -1,4 +1,4 @@
-id: export-woocommerce-customer-list
+id: export-woocommerce-customer-list-4d7d816fd98e82457089b35aebbd574c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cede7e6f-e3e8-479b-9c7b-91c390ed3936?source=api-scan
   classification:
     cvss-metrics: 

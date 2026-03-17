@@ -1,4 +1,4 @@
-id: flexible-custom-post-type
+id: flexible-custom-post-type-474cad5d543e968850edd0dc02072083
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cd8f5406-bbd2-44ab-9d98-3857216efc28?source=api-scan
   classification:
     cvss-metrics: 

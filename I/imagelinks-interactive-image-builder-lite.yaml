@@ -1,23 +1,24 @@
-id: imagelinks-interactive-image-builder-lite
+id: imagelinks-interactive-image-builder-lite-a8e8d56af13915fcb84429f1baec2a01
 
 info:
   name: >
-    ImageLinks <= 1.5.4 - Authenticated (Admin+) SQL Injection
+    ImageLinks Interactive Image Builder <= 1.5.2 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    
+    The ImageLinks Interactive Image Builder plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘page’ parameter in versions up to, and including, 1.5.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f678700-f266-4740-a98d-19f8e9734563?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/112564b7-bf3c-4c17-8113-e05ab75edf6a?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/imagelinks-interactive-image-builder-lite/"
     google-query: inurl:"/wp-content/plugins/imagelinks-interactive-image-builder-lite/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,imagelinks-interactive-image-builder-lite,low
+  tags: cve,wordpress,wp-plugin,imagelinks-interactive-image-builder-lite,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.4')
+          - compare_versions(version, '<= 1.5.2')

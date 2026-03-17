@@ -1,4 +1,4 @@
-id: change-uploaded-file-permissions
+id: change-uploaded-file-permissions-f2c9a39b10e325775f68bea24bea9c06
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7a61446-a5ef-44e4-bd64-9c2e844953fb?source=api-scan
   classification:
     cvss-metrics: 

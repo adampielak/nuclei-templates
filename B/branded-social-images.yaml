@@ -1,4 +1,4 @@
-id: branded-social-images
+id: branded-social-images-1a8db216c27e982144ac73f21aa9d75e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2cbc0b70-c8a4-4924-a67f-cea81ab19cdc?source=api-scan
   classification:
     cvss-metrics: 

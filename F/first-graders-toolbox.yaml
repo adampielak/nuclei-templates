@@ -1,4 +1,4 @@
-id: first-graders-toolbox
+id: first-graders-toolbox-a76131732ce9a44d0d96f6e6225597c2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7c98de6-7e76-48f3-aa79-57bf4f387428?source=api-scan
   classification:
     cvss-metrics: 

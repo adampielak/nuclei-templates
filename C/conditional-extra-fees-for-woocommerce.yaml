@@ -1,4 +1,4 @@
-id: conditional-extra-fees-for-woocommerce
+id: conditional-extra-fees-for-woocommerce-c616ab239303f71e5da16a0f577d8055
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/797840ba-5589-42d6-9d50-52bf8c131d6e?source=api-scan
   classification:
     cvss-metrics: 

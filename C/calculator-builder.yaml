@@ -1,4 +1,4 @@
-id: calculator-builder
+id: calculator-builder-825844feae3c0993ba26ca24f6beb496
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a95af34-559c-4644-9941-7bd1551aba33?source=api-scan
   classification:
     cvss-metrics: 

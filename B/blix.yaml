@@ -1,14 +1,15 @@
-id: blix
+id: blix-f1f43ca41ccf14d8f46bbc8fda17c18c
 
 info:
   name: >
-    Blix 0.9.1 and Blix 0.9.1 Rus - Cross-Site Scripting
+    Blix <= 0.9.1, Blixed <= 1.0, BlixKrieg <= 2.2 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/537b6f36-ae45-465a-b139-6753d50d8e10?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/928584e5-7391-4442-820e-d5d5fc288572?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/blix/"
     google-query: inurl:"/wp-content/themes/blix/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,blix,high
+  tags: cve,wordpress,wp-theme,blix,medium
 
 http:
   - method: GET

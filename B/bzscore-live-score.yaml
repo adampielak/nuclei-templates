@@ -1,4 +1,4 @@
-id: bzscore-live-score
+id: bzscore-live-score-ad005736d5a8127748f3c30faecb1c11
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/438a94c4-a7f2-4c08-960b-e18c19196169?source=api-scan
   classification:
     cvss-metrics: 

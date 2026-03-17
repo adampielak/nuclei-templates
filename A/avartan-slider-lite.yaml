@@ -1,4 +1,4 @@
-id: avartan-slider-lite
+id: avartan-slider-lite-a56daa181a96e4fd76593fcf4315d467
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e78116a6-5ce5-4567-95d4-2c19fc1b085a?source=api-scan
   classification:
     cvss-metrics: 

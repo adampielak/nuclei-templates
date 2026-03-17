@@ -1,4 +1,4 @@
-id: cubewp-framework
+id: cubewp-framework-deb8d0f8e8bfca2836ca766cf960938f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6bef7dcd-920b-4aee-b227-c7eec9fe73fc?source=api-scan
   classification:
     cvss-metrics: 

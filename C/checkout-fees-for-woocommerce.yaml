@@ -1,4 +1,4 @@
-id: checkout-fees-for-woocommerce
+id: checkout-fees-for-woocommerce-0568159c3e9a92139057e6650c2a74cf
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dbfe3f7d-d653-421b-a054-a4ab266866c3?source=api-scan
   classification:
     cvss-metrics: 

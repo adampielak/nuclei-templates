@@ -1,4 +1,4 @@
-id: bnfw
+id: bnfw-56e69150c8b24ca9c73e8006cca5ca32
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7ddabda2-1e27-4b87-b643-b0166112a890?source=api-scan
   classification:
     cvss-metrics: 

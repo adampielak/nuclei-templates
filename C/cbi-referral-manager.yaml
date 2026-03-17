@@ -1,4 +1,4 @@
-id: cbi-referral-manager
+id: cbi-referral-manager-61e01ca7d9166bfdf492f99d67a592e9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1bc9d02d-7916-4845-bb9d-f5eb2666b772?source=api-scan
   classification:
     cvss-metrics: 

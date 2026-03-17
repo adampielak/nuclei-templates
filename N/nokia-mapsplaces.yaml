@@ -1,4 +1,4 @@
-id: nokia-mapsplaces
+id: nokia-mapsplaces-1d1b2375feae752f9e92c5beee3771e2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/94337b59-6a88-467e-b487-b7b7e4f6f7a0?source=api-scan
   classification:
     cvss-metrics: 

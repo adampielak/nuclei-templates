@@ -52,4 +52,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " is not configured for recoverability with both Soft Delete and Do Not Purge enabled"'
-# digest: 4a0a0047304502201e5dff74fed01a29fd5740eddb132fc8216efab74f019ab6a87395787885386c022100ad324292574c0cd0cac7c41872517a5855c608ae76ddea1c57739c53b8794b9e:922c64590222798bb761d5b6d8e72950
+

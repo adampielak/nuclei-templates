@@ -1,14 +1,15 @@
-id: image-hover-effects-ultimate
+id: image-hover-effects-ultimate-8fb01a02e3b8bf7d819d4aa39e407a44
 
 info:
   name: >
-    Image Hover Effects Ultimate <= 9.7.0 - Reflected Cross-Site Scripting via effects
+    Image Hover Effects Ultimate 9.8.1 - 9.8.4 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4d902dfe-f16d-4795-9fcf-ee454b3d8c56?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f00cdef3-d733-4e85-8099-204ef76096b4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/image-hover-effects-ultimate/"
     google-query: inurl:"/wp-content/plugins/image-hover-effects-ultimate/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,image-hover-effects-ultimate,medium
+  tags: cve,wordpress,wp-plugin,image-hover-effects-ultimate,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 9.7.0')
+          - compare_versions(version, '>= 9.8.1', '<= 9.8.4')

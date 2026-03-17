@@ -1,4 +1,4 @@
-id: multimedial-images
+id: multimedial-images-f25429f853d4ab77da4e237330dbe17c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/539cd606-1884-48df-beae-f5686a4e2400?source=api-scan
   classification:
     cvss-metrics: 

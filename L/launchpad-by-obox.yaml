@@ -1,14 +1,15 @@
-id: launchpad-by-obox
+id: launchpad-by-obox-92e62b3c83aa23057e86ea07cc7b6047
 
 info:
   name: >
-    Launchpad <= 1.0.13 - Cross-Site Request Forgery
+    Launchpad – Coming Soon & Maintenance Mode Plugin <= 1.0.13 - Authenticated (Administrator+) Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/482bae65-5493-4de5-9d5f-479d0968cd4a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8721c4d-d89b-4e97-af01-20327013cfb6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/launchpad-by-obox/"
     google-query: inurl:"/wp-content/plugins/launchpad-by-obox/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,launchpad-by-obox,medium
+  tags: cve,wordpress,wp-plugin,launchpad-by-obox,low
 
 http:
   - method: GET

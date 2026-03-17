@@ -1,4 +1,4 @@
-id: infusionsoft-landing-pages
+id: infusionsoft-landing-pages-0195ff5ce2e8bbb162fd1605aea7d48f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/113f0cb7-a5eb-42d5-ad42-871c0381b617?source=api-scan
   classification:
     cvss-metrics: 

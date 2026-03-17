@@ -1,4 +1,4 @@
-id: ba-plus-before-after-image-slider-free
+id: ba-plus-before-after-image-slider-free-b69e3a2dc8e04c79e69a83a3deb4a1d5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ab6f54d-0358-4f0c-aba5-b4053e1a345d?source=api-scan
   classification:
     cvss-metrics: 

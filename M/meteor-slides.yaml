@@ -1,14 +1,15 @@
-id: meteor-slides
+id: meteor-slides-e32495d437f6450cc05ed4d3e5d66ffa
 
 info:
   name: >
-    Meteor Slides <= 1.5.6 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Meteor Slides <= 1.5.7 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/108e9578-e586-4ed8-b0b2-dc6c26bf530e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7922de94-986c-47c1-ab95-284734ef85d1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.6')
+          - compare_versions(version, '<= 1.5.7')

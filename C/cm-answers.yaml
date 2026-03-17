@@ -1,4 +1,4 @@
-id: cm-answers
+id: cm-answers-07fb2e4180c141343441b07b45399c93
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b23d276c-69c5-47e0-99bd-f20ff1d45904?source=api-scan
   classification:
     cvss-metrics: 

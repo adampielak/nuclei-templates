@@ -1,4 +1,4 @@
-id: generatepress-premium
+id: generatepress-premium-58b34f06f5937d79af0b17c9807d7413
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9dcd48b8-ec9e-44b4-b531-95940adbd100?source=api-scan
   classification:
     cvss-metrics: 

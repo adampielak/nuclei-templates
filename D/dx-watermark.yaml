@@ -1,4 +1,4 @@
-id: dx-watermark
+id: dx-watermark-3bef3aced10727d0ec75e98bd1b40fca
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/18a9953c-e3a0-46ee-9a53-984c411ce408?source=api-scan
   classification:
     cvss-metrics: 

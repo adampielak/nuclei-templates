@@ -1,4 +1,4 @@
-id: log-http-requests
+id: log-http-requests-70a307da18ec4484a5688c3cf31e7e41
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b12b0a2a-3c3c-4d9c-a404-c8f170638e31?source=api-scan
   classification:
     cvss-metrics: 

@@ -5,7 +5,7 @@ info:
   author: righettod,forgedhallpass,RezaSaeedi
   severity: low
   reference:
-    - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security
+    - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security
     - https://wiki.mozilla.org/Security/Server_Side_TLS
     - https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html
     - https://ssl-config.mozilla.org/#config=intermediate
@@ -45,4 +45,3 @@ ssl:
       - type: json
         json:
           - " .tls_version"
-# digest: 4b0a004830460221008abed7c5325a8518c05263575c8c5e574b1884952b2e75974d2be504961a7b9102210089b15b5102cc68184167d1a5270d4ff06a018de0eed03289ea71ba7fad0a50e8:236a7c23afe836fbe231d6e037cff444

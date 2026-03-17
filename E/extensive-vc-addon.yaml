@@ -1,4 +1,4 @@
-id: extensive-vc-addon
+id: extensive-vc-addon-0e78620225161ad18a3ee1ed967cbc08
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c85fa04e-477e-4ac9-b112-02b2ab18ca32?source=api-scan
   classification:
     cvss-metrics: 

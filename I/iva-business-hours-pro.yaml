@@ -1,4 +1,4 @@
-id: iva-business-hours-pro
+id: iva-business-hours-pro-d4d29007dd18d8c7d97cfa243985305a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/866f780e-46fa-407a-b777-951a328003dd?source=api-scan
   classification:
     cvss-metrics: 

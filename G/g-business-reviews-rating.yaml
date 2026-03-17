@@ -1,14 +1,15 @@
-id: g-business-reviews-rating
+id: g-business-reviews-rating-6a4946e1d4aff8dfa46d4b0da180df88
 
 info:
   name: >
-    Reviews and Rating – Google My Business <= 4.14 - Missing Authorization
+    Reviews and Rating – Google Reviews <= 5.2 - Authenticated (Author+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5494cac6-1b52-43a3-995d-fc2a150edfdb?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/71408e0b-aed8-4077-add2-7f3b249e85f5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/g-business-reviews-rating/"
     google-query: inurl:"/wp-content/plugins/g-business-reviews-rating/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,g-business-reviews-rating,high
+  tags: cve,wordpress,wp-plugin,g-business-reviews-rating,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '4.14')
+          - compare_versions(version, '<= 5.2')

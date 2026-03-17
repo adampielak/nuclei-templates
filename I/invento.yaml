@@ -1,4 +1,4 @@
-id: invento
+id: invento-5972185d21d7140df6bfca119c6627c1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/aaf38354-f95a-4bc5-a63e-3774eadf4fcb?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: html5-video-player
+id: html5-video-player-95cbe90bba0ea4f3f772b4d45085383d
 
 info:
   name: >
-    Html5 Video Player <= 2.5.18 - Authenticated (Admin+) Stored Cross-Site Scripting
+    HTML5 Video Player – mp4 Video Player Plugin and Block <= 2.5.35 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via heading Parameter
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0eb50d3f-9e01-4e3d-a3ed-8c3fec006be6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e0b26af2-d559-49bf-841a-1974360b3ad6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.18')
+          - compare_versions(version, '<= 2.5.35')

@@ -1,4 +1,4 @@
-id: html5-responsive-faq
+id: html5-responsive-faq-3789a8a1014b1ebab084d84a65b92e00
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/247a095b-0a92-4fee-85cf-c3041a061d62?source=api-scan
   classification:
     cvss-metrics: 

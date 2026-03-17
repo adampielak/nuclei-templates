@@ -1,4 +1,4 @@
-id: glass
+id: glass-b3268283daf190fd77277f208bd83ee4
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3f3448ad-61b3-4eac-a5ba-9bea41c85fd3?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: mihanpanel-lite
+id: mihanpanel-lite-37de7c8c83fbd2632ad91cb3e55a2040
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ef528553-4037-43e0-af2d-8324412147f3?source=api-scan
   classification:
     cvss-metrics: 

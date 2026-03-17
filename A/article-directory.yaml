@@ -1,4 +1,4 @@
-id: article-directory
+id: article-directory-45ef520e672bdd50a4b288c279d61899
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a219a232-5ff4-4855-8f29-437ed26b4f34?source=api-scan
   classification:
     cvss-metrics: 

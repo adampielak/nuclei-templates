@@ -1,14 +1,15 @@
-id: easyazon
+id: easyazon-a1f330ec9d352364f374a04d6341923c
 
 info:
   name: >
-    EasyAzon – Amazon Associates Affiliate <= 5.1.0 - Missing Authorization on AJAX actions
+    EasyAzon – Amazon Associates Affiliate Plugin <= 5.1.0 - Reflected Cross-Site Scripting via easyazon-cloaking-locale
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/91ba93de-4c5f-4611-8296-adfc85c8dd2b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d13454c-0c46-4b16-8e0e-bbfcf2338230?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/easyazon/"
     google-query: inurl:"/wp-content/plugins/easyazon/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,easyazon,high
+  tags: cve,wordpress,wp-plugin,easyazon,medium
 
 http:
   - method: GET

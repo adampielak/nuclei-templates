@@ -1,4 +1,4 @@
-id: contact-form-with-captcha
+id: contact-form-with-captcha-52a6fd10b788cf11cd1c231f3c8d382c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e30187da-c25d-4651-a32d-abdc6da53978?source=api-scan
   classification:
     cvss-metrics: 

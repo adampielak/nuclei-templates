@@ -1,14 +1,15 @@
-id: host-analyticsjs-local
+id: host-analyticsjs-local-c191c8984579cda7deffd9cb930be754
 
 info:
   name: >
-    CAOS <= 4.1.8 - Admin+ Arbitrary Folder Deletion via Path Traversal
+    CAOS | Host Google Analytics Locally <= 4.7.14 - Missing Authorization to Unauthenticated Plugin Settings Update
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5a6cda1f-8af9-44b1-98e2-619d29c28a88?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5ec1fd03-f865-4f58-b63b-e70c0c7e701d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/host-analyticsjs-local/"
     google-query: inurl:"/wp-content/plugins/host-analyticsjs-local/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,host-analyticsjs-local,low
+  tags: cve,wordpress,wp-plugin,host-analyticsjs-local,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.1.8')
+          - compare_versions(version, '<= 4.7.14')

@@ -1,4 +1,4 @@
-id: ni-purchase-orderpo-for-woocommerce
+id: ni-purchase-orderpo-for-woocommerce-d3a637fd2d20648c0d7b44bd37557752
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/67817d5a-2d7a-4b96-9c04-cd1ad9c90b29?source=api-scan
   classification:
     cvss-metrics: 

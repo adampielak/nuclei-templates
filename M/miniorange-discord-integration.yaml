@@ -1,4 +1,4 @@
-id: miniorange-discord-integration
+id: miniorange-discord-integration-22b601b41f27b57ac77589c204f5c33b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/19062e84-7ce5-400e-a404-2bb4286cc09e?source=api-scan
   classification:
     cvss-metrics: 

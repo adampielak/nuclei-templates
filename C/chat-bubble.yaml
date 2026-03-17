@@ -1,14 +1,15 @@
-id: chat-bubble
+id: chat-bubble-af896fdef4bc428f3e1549df6480b852
 
 info:
   name: >
-    Chat Bubble <= 2.2 - Unauthenticated Stored Cross-Site Scripting
+    Chat Bubble <= 2.3 - Cross-Site Request Forgery via cbb_submit_settings_data
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/61584724-fa1d-4823-af3d-d44501dc1f60?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/206261fa-58b6-4407-b8e1-2315836b6c88?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/chat-bubble/"
     google-query: inurl:"/wp-content/plugins/chat-bubble/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,chat-bubble,low
+  tags: cve,wordpress,wp-plugin,chat-bubble,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2')
+          - compare_versions(version, '<= 2.3')

@@ -1,4 +1,4 @@
-id: goodnews5
+id: goodnews5-8ed36f6d7d78831e7535c4c75cee15dc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/62e903c6-36f1-45cb-8164-23a8d1ca3966?source=api-scan
   classification:
     cvss-metrics: 

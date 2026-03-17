@@ -1,4 +1,4 @@
-id: blackhole-bad-bots
+id: blackhole-bad-bots-2a0be0f39e29dd968a0616ef1a372e06
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8447fa0-f994-4de3-b6e7-2fe61e06bed1?source=api-scan
   classification:
     cvss-metrics: 

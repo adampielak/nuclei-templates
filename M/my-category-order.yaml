@@ -1,23 +1,24 @@
-id: my-category-order
+id: my-category-order-9844815b5f258deb04e7820490a4381a
 
 info:
   name: >
-    my-category-order <= 2.8.7 - SQL Injection
+    My Category Order <= 4.3 - Cross-Site Request Forgery to Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: high
   description: >
-    
+    The My Category Order plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 4.3 due to missing nonce validation. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser granted they can trick a site's administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d97eb079-5b19-461c-8a80-d00ab45e2bff?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/758ccfd2-e984-46d9-9643-29299d64940e?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/my-category-order/"
     google-query: inurl:"/wp-content/plugins/my-category-order/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,my-category-order,critical
+  tags: cve,wordpress,wp-plugin,my-category-order,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.8.7')
+          - compare_versions(version, '<= 4.3')

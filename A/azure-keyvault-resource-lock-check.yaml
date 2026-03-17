@@ -56,4 +56,4 @@ code:
       - type: dsl
         dsl:
           - 'resource + " does not have the required resource lock level"'
-# digest: 4a0a00473045022100e283010257f00f5f623adbc1fe48ad2a8909c0b63b44c45e1694ad5a5be1efae022052992cfe6a58f8ef77af0200220aede9ea52f544fcc1f372f7a5b1b6f51e19a8:922c64590222798bb761d5b6d8e72950
+

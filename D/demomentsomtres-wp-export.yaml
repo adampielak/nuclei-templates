@@ -1,4 +1,4 @@
-id: demomentsomtres-wp-export
+id: demomentsomtres-wp-export-82b1cb4b73613c4071f9657da74961fc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a43ec32-ed48-4590-8fef-c4f460ffcabc?source=api-scan
   classification:
     cvss-metrics: 

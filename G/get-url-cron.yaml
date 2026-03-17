@@ -1,17 +1,19 @@
-id: get-url-cron
+id: get-url-cron-a85304caf5011756039be8ff60aaa8a1
 
 info:
-  name: "Get URL Cron <= 1.4.7 - Cross-Site Request Forgery via geturlcron_action_handle"
+  name: >
+    Get URL Cron <= 1.4.7 - Cross-Site Request Forgery via geturlcron_action_handle
   author: topscoder
   severity: medium
-  description: "The Get URL Cron plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.4.7. This is due to missing or incorrect nonce validation on the geturlcron_action_handle function called via an init hook. This makes it possible for unauthenticated attackers to modify many of the plugin's settings and create cron jobs, via a forged request granted they can trick a site administrator into performing an action such as clicking on a link."
+  description: >
+    The Get URL Cron plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.4.7. This is due to missing or incorrect nonce validation on the geturlcron_action_handle function called via an init hook. This makes it possible for unauthenticated attackers to modify many of the plugin's settings and create cron jobs, via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://plugins.trac.wordpress.org/browser/get-url-cron/tags/1.4.8/geturlcron.php#L780
-    - https://plugins.trac.wordpress.org/browser/get-url-cron/tags/1.4.7/geturlcron.php#L778
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/934b2767-eae4-4c2d-a635-2e6a27fd9f49?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
     cvss-score: 4.3
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/get-url-cron/"
     google-query: inurl:"/wp-content/plugins/get-url-cron/"

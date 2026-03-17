@@ -1,14 +1,15 @@
-id: gs-logo-slider
+id: gs-logo-slider-6788144065d375977e89ac972dbadb54
 
 info:
   name: >
-    GS Logo Slider <= 3.5.1 - Cross-Site Request Forgery
+    Logo Slider – Logo Showcase, Logo Carousel, Logo Gallery and Client Logo Presentation <= 3.6.8 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c89a8001-ab50-466c-aa51-62c0ff5f86dc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/233319cc-10fc-4a15-be35-df772e700639?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/gs-logo-slider/"
     google-query: inurl:"/wp-content/plugins/gs-logo-slider/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,gs-logo-slider,medium
+  tags: cve,wordpress,wp-plugin,gs-logo-slider,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.5.1')
+          - compare_versions(version, '<= 3.6.8')

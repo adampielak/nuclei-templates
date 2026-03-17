@@ -1,4 +1,4 @@
-id: google-map-shortcode
+id: google-map-shortcode-4063f1a8bf231c43ac949e121b68e58d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f6656e2-35f5-41d8-a330-7904c296ba29?source=api-scan
   classification:
     cvss-metrics: 

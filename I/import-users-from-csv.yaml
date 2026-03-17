@@ -1,4 +1,4 @@
-id: import-users-from-csv
+id: import-users-from-csv-f43e191b44b3b75480b699c2a8c0fa70
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/48421787-9dc1-48ea-892b-bb43b2a6c4da?source=api-scan
   classification:
     cvss-metrics: 

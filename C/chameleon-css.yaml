@@ -1,4 +1,4 @@
-id: chameleon-css
+id: chameleon-css-3726db4d685f3b9bf48ad4097d8a06be
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0363732-0a67-4a58-9b54-6315328c70ec?source=api-scan
   classification:
     cvss-metrics: 

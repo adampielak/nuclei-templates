@@ -1,4 +1,4 @@
-id: msync
+id: msync-6e92e3244d53189b59fa2728e59eb2ae
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f37ed0e-3e03-4f00-9967-16047beab1cf?source=api-scan
   classification:
     cvss-metrics: 

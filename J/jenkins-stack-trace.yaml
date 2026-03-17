@@ -1,20 +1,22 @@
-id: jenkins-stack-trace
+id: jenkins-stack-traces
 
 info:
   name: Detect Jenkins in Debug Mode with Stack Traces Enabled
-  author: Dheerajmadhukar
+  author: twitter.com/Dheerajmadhukar
   severity: low
   description: Module identified that the affected host is running an instance of Jenkins in debug mode, as a result stack traces are enabled.
-  reference:
-    - https://hackerone.com/reports/221833
-  metadata:
-    max-request: 1
-  tags: jenkins,hackerone
+  reference: https://hackerone.com/reports/221833
+  tags: jenkins
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/adjuncts/3a890183/"
+
+    headers:
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+      Accept-Language: en-US,en;q=0.9,hi;q=0.8
+      User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Mobile Safari/537.36
 
     matchers-condition: and
     matchers:
@@ -24,8 +26,6 @@ http:
           - "String index out of range"
         part: body
         condition: and
-
       - type: status
         status:
           - 500
-# digest: 4a0a00473045022100dd041469ac90a73e998bb16071bd0055d2eb5c03b287678e816b63c5cf35abb202205c3df37814d6a54378c3655ff396d170800f8e16263fb7c647bf106a8a6d357e:922c64590222798bb761d5b6d8e72950

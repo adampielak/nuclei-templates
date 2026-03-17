@@ -1,4 +1,4 @@
-id: ga-universal
+id: ga-universal-b304357ce04c8c3ea3cfe64d4a1c1354
 
 info:
   name: >
@@ -6,12 +6,13 @@ info:
   author: topscoder
   severity: medium
   description: >
-    
+    The GA Universal plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions before 1.0.1. This is due to missing or incorrect nonce validation in the ~/inc/screens/settings.php file. This makes it possible for unauthenticated attackers to manipulate plugin settings via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6e953bc0-a934-43fc-8147-4555dde069cc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6e953bc0-a934-43fc-8147-4555dde069cc?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/ga-universal/"

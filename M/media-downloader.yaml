@@ -1,4 +1,4 @@
-id: media-downloader
+id: media-downloader-2983e861e7079c3a1dc3234c57356874
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8d2dd5e4-558b-44fe-a47c-fb2b5639f39c?source=api-scan
   classification:
     cvss-metrics: 

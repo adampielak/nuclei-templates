@@ -1,4 +1,4 @@
-id: archives-calendar-widget
+id: archives-calendar-widget-3e4fb5da25a14a103f159a7f08301114
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ffd695b-33e3-49b6-ad3a-98b2a645f827?source=api-scan
   classification:
     cvss-metrics: 

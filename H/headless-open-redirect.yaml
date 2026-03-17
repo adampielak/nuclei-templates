@@ -11,7 +11,6 @@ info:
     cvss-score: 6.1
     cwe-id: CWE-601
   tags: redirect,generic,headless
-
 headless:
   - steps:
       - args:
@@ -21,6 +20,9 @@ headless:
       - action: waitload
     payloads:
       redirect:
+        - '%0a/oast.live/'
+        - '%0d/oast.live/'
+        - '%00/oast.live/'
         - '%09/oast.live/'
         - '%5C%5Coast.live/%252e%252e%252f'
         - '%5Coast.live'
@@ -65,7 +67,7 @@ headless:
         - '@oast.live'
         - '@https://oast.live'
         - '\/\/oast.live/'
-        - 'oast%E3%80%82live'
+        - 'evil%E3%80%82com'
         - 'oast.live'
         - 'oast.live/'
         - 'oast.live//'
@@ -109,14 +111,11 @@ headless:
         - 'cgi-bin/redirect.cgi?oast.live'
         - 'out?oast.live'
         - 'login?to=http://oast.live'
-        - '#/oast.live'
-        - '%0a/oast.live/'
-        - '%0d/oast.live/'
-        - '%00/oast.live/'
     stop-at-first-match: true
     matchers:
       - type: word
         part: body
         words:
           - "Interactsh Server"
-# digest: 4a0a00473045022100cffbc26f6b60faf848228f877bbd40ad8063a29480485fb56b1d3ef288c89198022002ba43e706f475a5a25a44d9a36a09623d80f4a404bcd5514060b88cc08d6c09:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100c7175ea919883a8343276bcad26eacb03ea1d11acf34766c0886ff7f2959d4c502200cc7004d3fb430c1d1f8a222eee39415cc643a244f09012a23d8078d5654bd38:922c64590222798bb761d5b6d8e72950

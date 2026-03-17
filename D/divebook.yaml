@@ -1,14 +1,15 @@
-id: divebook
+id: divebook-dd33599099f6e397c0750989318c2e71
 
 info:
   name: >
-    DiveBook <= 1.1.4 - Improper Access Control
+    DiveBook <= 1.1.4 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ebb76379-0cac-47c6-a0eb-34780bc837bc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e850aca1-72b3-4436-bc35-2d52c439a7b5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/divebook/"
     google-query: inurl:"/wp-content/plugins/divebook/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,divebook,low
+  tags: cve,wordpress,wp-plugin,divebook,medium
 
 http:
   - method: GET

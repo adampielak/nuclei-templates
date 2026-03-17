@@ -1,14 +1,15 @@
-id: frontend-uploader
+id: frontend-uploader-a84b1d04df90696648d0dd35d5e18413
 
 info:
   name: >
-    Frontend Uploader < 0.9.4 - Cross-Site Scripting
+    Frontend Uploader <= 1.3.2 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5a0974a5-cfed-4d4d-ae91-f74d9cd531e7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/770f3c25-effb-40ea-bd1c-7874c456ab0e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 0.9.4')
+          - compare_versions(version, '<= 1.3.2')

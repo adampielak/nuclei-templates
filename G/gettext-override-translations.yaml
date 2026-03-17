@@ -1,4 +1,4 @@
-id: gettext-override-translations
+id: gettext-override-translations-7d18748d3ca6312ba31dc1d6e2f752f2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6f782dd7-df49-4c3b-b6d9-de618ab32b87?source=api-scan
   classification:
     cvss-metrics: 

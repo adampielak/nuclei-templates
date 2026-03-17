@@ -67,4 +67,4 @@ code:
       - type: dsl
         dsl:
           - 'vaultName + " CMK " + keyId + " is not properly tagged as part of the app-tier resource"'
-# digest: 490a004630440220569cd95798e47c183ab44f75a846703ea0c3e9a6f9295809da50faa4bf400302022061aa5ba50dfd36eb233af955be3f2eb315207a2094c03cb7dac560acfd1a8c6b:922c64590222798bb761d5b6d8e72950
+

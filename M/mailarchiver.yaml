@@ -1,13 +1,14 @@
-id: mailarchiver
+id: mailarchiver-fb1d44fa9d2311ca1d681b7c702bc354
 
 info:
   name: >
     MailArchiver <= 2.10.1 - Unauthenticated Stored Cross-Site Scripting via Email Subject
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce330cae-c2f8-42f3-822b-ca24bf46e433?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mailarchiver/"
     google-query: inurl:"/wp-content/plugins/mailarchiver/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mailarchiver,low
+  tags: cve,wordpress,wp-plugin,mailarchiver,high
 
 http:
   - method: GET

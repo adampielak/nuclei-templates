@@ -1,4 +1,4 @@
-id: cimy-header-image-rotator
+id: cimy-header-image-rotator-58ef67c03339b2d7a4b4531f1477feda
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3cfec2b8-1df0-4f3f-b6cc-ed0adecaeb16?source=api-scan
   classification:
     cvss-metrics: 

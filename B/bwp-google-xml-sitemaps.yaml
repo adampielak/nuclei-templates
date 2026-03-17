@@ -1,4 +1,4 @@
-id: bwp-google-xml-sitemaps
+id: bwp-google-xml-sitemaps-b789bd36fd13df2696b89e73e738641b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b5675962-7d7f-46f4-b588-e46af212e9c8?source=api-scan
   classification:
     cvss-metrics: 

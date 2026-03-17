@@ -1,4 +1,4 @@
-id: aprils-super-functions-pack
+id: aprils-super-functions-pack-fb4f3b480a17ad0aabb63778fb968b2e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb3a7623-ced8-4738-8a95-a3eda7e86ec1?source=api-scan
   classification:
     cvss-metrics: 

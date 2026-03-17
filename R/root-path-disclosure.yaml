@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     max-request: 4
-  tags: misconfig,exposure,info-leak,listing,lfr
+  tags: misconfig,exposure,info-leak,listing,lfr,vuln
 
 http:
   - method: GET
@@ -35,4 +35,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009b4e9101d1f7d2ca2655255b58fa8200358289497f1a6093cb49884816de63b6022100f2a74c6c7829b157266e4cd4ddd96d1cffdc08ab963db579b0d18b3697d16919:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100cface6ef4dbf9b3956243f6375da0d1e2410283d03552ba3d82c79318bcd7842022100e8edb860c8280962a2af8a516da090c81fbcfb11a8dcb45d74045dadf1d811ea:922c64590222798bb761d5b6d8e72950

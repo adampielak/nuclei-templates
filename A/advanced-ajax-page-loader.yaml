@@ -1,14 +1,15 @@
-id: advanced-ajax-page-loader
+id: advanced-ajax-page-loader-73c51238dff4af1331aac9d91f9ae182
 
 info:
   name: >
-    Advanced AJAX Page Loader < 2.7.7 - Arbitrary File Upload
+    Advanced AJAX Page Loader <= 2.7.7 - Cross-Site Request Forgery to Arbitrary File Upload
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/953e10a1-df11-40d3-869c-2974a344630e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ccc75dee-1cf8-4fda-b2a1-f5d68e6c7887?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/advanced-ajax-page-loader/"
     google-query: inurl:"/wp-content/plugins/advanced-ajax-page-loader/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,advanced-ajax-page-loader,critical
+  tags: cve,wordpress,wp-plugin,advanced-ajax-page-loader,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.7.7')
+          - compare_versions(version, '<= 2.7.7')

@@ -1,14 +1,15 @@
-id: demon-image-annotation
+id: demon-image-annotation-dc93be2fc4a872129e75703d7b436aab
 
 info:
   name: >
-    demon image annotation <= 5.0 - Improper Input Restriction Validation
+    demon image annotation <= 4.7 - Cross-Site Request Forgery to Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ac5549ec-f931-4b13-b5f9-0d6f3e53aae4?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/052dce55-c02d-4e66-b500-bf6160a5b188?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/demon-image-annotation/"
     google-query: inurl:"/wp-content/plugins/demon-image-annotation/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,demon-image-annotation,low
+  tags: cve,wordpress,wp-plugin,demon-image-annotation,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.0')
+          - compare_versions(version, '>= 1.0', '<= 4.7')

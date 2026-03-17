@@ -1,17 +1,19 @@
-id: blogroll-fun
+id: blogroll-fun-590ff23ec09e3b545e34c3bb0f0ad281
 
 info:
-  name: "Blogroll Fun – Show Last Post and Last Update Time < 0.8.5 - Reflected Cross-Site Scripting"
+  name: >
+    Blogroll Fun – Show Last Post and Last Update Time < 0.8.5 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Blogroll Fun – Show Last Post and Last Update Time plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘k’ parameter in versions up to, and including, 0.8.4 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Blogroll Fun – Show Last Post and Last Update Time plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘k’ parameter in versions up to, and including, 0.8.4 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://codevigilant.com/disclosure/wp-plugin-blogroll-fun-a3-cross-site-scripting-xss/
-    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&new=833165%40blogroll-fun&old=833158%40blogroll-fun&sfp_email=&sfph_mail=
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b2fa832-ed1b-47e9-b9eb-049541530ab6?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/blogroll-fun/"
     google-query: inurl:"/wp-content/plugins/blogroll-fun/"

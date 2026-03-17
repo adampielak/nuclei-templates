@@ -1,14 +1,15 @@
-id: better-comments
+id: better-comments-f45f8a5f0c31c879cdfc1bb64ebd54c9
 
 info:
   name: >
-    Better Comments <= 1.5.5 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Better Comments <= 1.5.5 - Authenticated (Subscriber+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/78b79a03-f2d0-42bb-a6e9-298c6cdd2ffa?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4afbe34b-121e-41d2-ab12-c3d70a0d80d5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

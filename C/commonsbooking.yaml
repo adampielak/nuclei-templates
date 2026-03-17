@@ -1,13 +1,14 @@
-id: commonsbooking
+id: commonsbooking-2c2e09bd2d292826f84162519954c51f
 
 info:
   name: >
     CommonsBooking < 2.6.8 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a260c173-9d3f-4b2d-b443-86488bd26292?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/commonsbooking/"
     google-query: inurl:"/wp-content/plugins/commonsbooking/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,commonsbooking,low
+  tags: cve,wordpress,wp-plugin,commonsbooking,critical
 
 http:
   - method: GET

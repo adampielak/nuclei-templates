@@ -1,14 +1,15 @@
-id: nd-projects
+id: nd-projects-65563ac8f892c5065db84cc7a6fd2e0a
 
 info:
   name: >
-    Cost Calculator <= 1.8 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Cost Calculator <= 1.8 - Authenticated (Contributor+) Stored Cross Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/750be90d-dc12-4974-8921-75259d56c7b3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c5277e25-d923-4553-9371-192d4cf4389a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

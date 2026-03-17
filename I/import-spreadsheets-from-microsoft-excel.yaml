@@ -1,4 +1,4 @@
-id: import-spreadsheets-from-microsoft-excel
+id: import-spreadsheets-from-microsoft-excel-c5f2224d716a95ada4fb7b07748b9465
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d337e39c-3a3d-4465-bc40-77f0b27aeab2?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: diary-availability-calendar
+id: diary-availability-calendar-9054928f01b40038f0332bf539f30d5c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7e83cee-f2c6-4de0-8801-fb63398f98fc?source=api-scan
   classification:
     cvss-metrics: 

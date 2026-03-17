@@ -1,4 +1,4 @@
-id: autotitle-for-wordpress
+id: autotitle-for-wordpress-f2f6230fede3a555937886bb42634d5a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/062d906d-5a6e-4180-a2f2-18411334b9a1?source=api-scan
   classification:
     cvss-metrics: 

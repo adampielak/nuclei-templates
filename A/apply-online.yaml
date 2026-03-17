@@ -1,4 +1,4 @@
-id: apply-online
+id: apply-online-256007b74ee7fd33b96d5a169364c508
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5dbcc22-ab2e-4114-a7d7-bac01a5c5b3f?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: flexible-captcha
+id: flexible-captcha-7a27ef2eea426bb3c1a8c379b91ce3a3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/efbcac1c-854c-4521-848a-d403bc27328f?source=api-scan
   classification:
     cvss-metrics: 

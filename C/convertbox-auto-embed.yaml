@@ -1,4 +1,4 @@
-id: convertbox-auto-embed
+id: convertbox-auto-embed-e11487e924424879f0c82b45499a0bf4
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8a4e9b8-9794-48b7-8c53-cfad37ed530c?source=api-scan
   classification:
     cvss-metrics: 

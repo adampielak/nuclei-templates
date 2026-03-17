@@ -1,14 +1,15 @@
-id: mapsvg
+id: mapsvg-fcf29f72b3e3d0a06602f34cf92d9103
 
 info:
   name: >
-    MapSVG <= 6.2.19 - SQL Injection
+    MapSVG - All Kinds of Maps and Store Locator for WordPress <= 8.6.4 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1816a385-0b50-4f0d-848c-f583c247c8fc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ec77f96-c73a-44f7-afa2-673f68ee3582?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mapsvg/"
     google-query: inurl:"/wp-content/plugins/mapsvg/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mapsvg,critical
+  tags: cve,wordpress,wp-plugin,mapsvg,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 6.2.20')
+          - compare_versions(version, '<= 8.6.4')

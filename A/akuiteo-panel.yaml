@@ -9,10 +9,11 @@ info:
   reference:
     - https://www.akuiteo.com/en/
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Akuiteo"})
     verified: true
     max-request: 1
     shodan-query: title:"Akuiteo"
-  tags: panel,akuiteo,login,detect
+  tags: panel,akuiteo,login,detect,discovery
 
 http:
   - method: GET
@@ -37,4 +38,4 @@ http:
         group: 1
         regex:
           - '(?i)x-akuiteo-masterhash:\s+([0-9a-f]+)'
-# digest: 4b0a0048304602210082342d515ae288c4542039d14a59ef5abaf5ed7fe90e7881f6533ad86a5b2f6402210097f4a6ec2fc4088f9089d332e7d56185b916d83d853730d1232a9f43c7501c1e:922c64590222798bb761d5b6d8e72950
+

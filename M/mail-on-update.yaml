@@ -1,4 +1,4 @@
-id: mail-on-update
+id: mail-on-update-806bdc3fd64d48d16ed3401957ed4104
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/487d4175-97bf-4c65-9d7d-b83974e9fda9?source=api-scan
   classification:
     cvss-metrics: 

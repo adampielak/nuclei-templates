@@ -1,4 +1,4 @@
-id: nd-booking
+id: nd-booking-31159572c80e3452b7407fed210f9ca0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/eebc0318-8db3-44b4-ac04-d246db3a10ed?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,24 +1,18 @@
 id: readme-takeover
 
 info:
-  name: Readme Takeover Detection
-  author: pdteam
+  name: readme takeover detection
+  author: pdcommunity
   severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/41
-  tags: takeover,readme
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         words:
-          - 'Project doesnt exist... yet!'
+          - Project doesnt exist... yet!

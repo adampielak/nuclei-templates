@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'nsg + " has unrestricted access on TCP port 3306"'
-# digest: 4a0a00473045022100fb785cc5c71873be7e6adafdaff8d5af669c6fbcc4738792b55484cba46c1c460220484ce049336e8b81f53326151ed2d0b86429e93b9970f2373a389ad28da9038a:922c64590222798bb761d5b6d8e72950
+

@@ -1,4 +1,4 @@
-id: magic-action-box
+id: magic-action-box-6dc27e197e9e68c1fc5d77371861804c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce9b908b-1388-41fb-915c-e4e29eaf57ed?source=api-scan
   classification:
     cvss-metrics: 

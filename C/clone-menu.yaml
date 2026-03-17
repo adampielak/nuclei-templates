@@ -1,4 +1,4 @@
-id: clone-menu
+id: clone-menu-8f54fe588f9dbe5936608b4c13a2b5a7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0bbbefce-4451-410d-bc19-f489318dda4a?source=api-scan
   classification:
     cvss-metrics: 

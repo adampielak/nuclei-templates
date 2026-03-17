@@ -1,14 +1,15 @@
-id: blog-designer-for-post-and-widget
+id: blog-designer-for-post-and-widget-dbef3af21e91f8129a2a87aeafae3b8a
 
 info:
   name: >
-    Multiple WPOnlineSupport Plugins <= (Various Versions) - Missing Authorization to Notice Dismissal
+    Blog Designer - Post and Widget <= 2.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2931fda2-edc8-44ea-9fff-ae9d94aa01bf?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/64694d30-a780-4655-9a65-af1cfa542ccc?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/blog-designer-for-post-and-widget/"
     google-query: inurl:"/wp-content/plugins/blog-designer-for-post-and-widget/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,blog-designer-for-post-and-widget,high
+  tags: cve,wordpress,wp-plugin,blog-designer-for-post-and-widget,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.1')
+          - compare_versions(version, '<= 2.3')

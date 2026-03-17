@@ -4,7 +4,6 @@ info:
   name: Airee Takeover Detection
   author: pdteam
   severity: high
-  description: Airee takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/104
   metadata:
@@ -27,8 +26,4 @@ http:
         words:
           - 'Ошибка 402. Сервис Айри.рф не оплачен'
 
-    extractors:
-      - type: dsl
-        dsl:
-          - cname
-# digest: 4b0a00483046022100c06b2b858e376d323a45240f5cf19fca1054581df98e4f348013e14bd8308749022100fe3bee759f0bf0ebc3c6c2e4e902657ac85da8b3eadec9bfc6a6270ecee6d83b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502206bc39d108c5f38f1a868cdda50cfd6d42b450d17d02eda754d300c7d1426a61602210083231525cf7708aa349e9f2b500f66b72bc8e37bc4b8e97b1ce06312c719f236:922c64590222798bb761d5b6d8e72950

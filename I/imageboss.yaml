@@ -1,4 +1,4 @@
-id: imageboss
+id: imageboss-8526683b48634e5a04bea1afdba6872d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/993f6505-918c-45fd-8afa-4d567cc79e9e?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: image-hover-effects-ultimate-visual-composer
+id: image-hover-effects-ultimate-visual-composer-174c1ee2353ef112806c1aede8d39cb2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3a63dd48-d643-41d0-84c3-2f2dbbe577dd?source=api-scan
   classification:
     cvss-metrics: 

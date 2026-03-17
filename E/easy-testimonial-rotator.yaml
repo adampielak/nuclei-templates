@@ -1,14 +1,15 @@
-id: easy-testimonial-rotator
+id: easy-testimonial-rotator-5e8cb19622207db458c8c5f4fe8e3c5f
 
 info:
   name: >
-    Easy Testimonial Slider and Form <= 1.0.15 - Unauthenticated Reflected Cross-Site Scripting via search_term
+    Easy Testimonial Slider and Form <= 1.0.18 - Authenticated (Administrator+) Stored Cross-Site Scripting via settings
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a6b16ffe-1c65-49d3-9e30-407bc75d7d49?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/01da1829-e3f4-4246-ae3d-72377c4b232e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.15')
+          - compare_versions(version, '<= 1.0.18')

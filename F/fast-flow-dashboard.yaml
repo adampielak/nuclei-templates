@@ -1,23 +1,24 @@
-id: fast-flow-dashboard
+id: fast-flow-dashboard-1685ce426529b223d0750c5b921860e4
 
 info:
   name: >
-    Fast Flow <= 1.2.10 - Cross-Site Scripting
+    Fast Flow <= 1.2.11 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
-    
+    The Fast Flow WordPress plugin is vulnerable to reflected Cross-Site scripting in versions up to, and including, 1.2.11, via the 'p' parameter due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/39bbe18a-0212-4bfe-861f-2a213d67baec?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/370e816c-920a-4e53-a2f8-afe2806c9df3?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/fast-flow-dashboard/"
     google-query: inurl:"/wp-content/plugins/fast-flow-dashboard/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fast-flow-dashboard,high
+  tags: cve,wordpress,wp-plugin,fast-flow-dashboard,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.10')
+          - compare_versions(version, '<= 1.2.11')

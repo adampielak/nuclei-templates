@@ -10,10 +10,11 @@ info:
     - https://ackee.electerious.com/
     - https://docs.ackee.electerious.com/
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "-1495233116"
     verified: true
     max-request: 2
     shodan-query: http.favicon.hash:-1495233116
-  tags: panel,ackee,login,detect
+  tags: panel,ackee,login,detect,discovery
 
 http:
   - method: GET
@@ -28,4 +29,4 @@ http:
           - 'status_code==200 && contains(tolower(body), "<title>ackee")'
           - "status_code==200 && (\"-1495233116\" == mmh3(base64_py(body)))"
         condition: or
-# digest: 490a004630440220463c4ebd163b7568e809e00a8e774fe890c35c0e343f31d0a5730959962b1dd2022077cc101e338075a0ef617954b8e3704faf16648ef34f1d1dbef222dc6af4c32c:922c64590222798bb761d5b6d8e72950
+

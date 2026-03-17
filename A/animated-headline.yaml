@@ -1,4 +1,4 @@
-id: animated-headline
+id: animated-headline-73624a5a4697c5cdb2e0c5e64c174b73
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6f589b5d-9cdb-4521-bc60-c8f19d0ef982?source=api-scan
   classification:
     cvss-metrics: 

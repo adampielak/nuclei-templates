@@ -1,14 +1,15 @@
-id: imember360
+id: imember360-3a7c8cbf431d22beeec88805eb162ec2
 
 info:
   name: >
-    iMember360 3.8.012 - 3.9.001 - Remote Code Execution
+    iMember360 3.8.0.12 - 3.9.001 - Cross-Site Request Forgery
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/509097ae-5b20-4e91-9d82-cc6e3b64e518?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1621cd2-78d3-4429-862a-b425f5436f38?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/imember360/"
     google-query: inurl:"/wp-content/plugins/imember360/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,imember360,critical
+  tags: cve,wordpress,wp-plugin,imember360,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>= 3.8.012', '<= 3.9.001')
+          - compare_versions(version, '>= 3.8.012', '< 3.9.001')

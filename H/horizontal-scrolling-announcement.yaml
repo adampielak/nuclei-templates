@@ -1,14 +1,15 @@
-id: horizontal-scrolling-announcement
+id: horizontal-scrolling-announcement-511fec2eb4b4f7f1ead25aa67da09d7f
 
 info:
   name: >
-    Horizontal scrolling announcement <= 9.2 -  Authenticated (Subscriber+) SQL Injection via Shortcode
+    Horizontal scrolling announcement <= 9.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bf50922a-58a6-4ca4-80b7-cafb37b87216?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d4f60e8c-2745-4930-9101-914bd73c6e1c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

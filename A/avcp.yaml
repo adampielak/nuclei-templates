@@ -1,4 +1,4 @@
-id: avcp
+id: avcp-990507e9e50eece5d3987b4bab01ec77
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/101945f6-d709-4c99-8c80-def9dd2fa636?source=api-scan
   classification:
     cvss-metrics: 

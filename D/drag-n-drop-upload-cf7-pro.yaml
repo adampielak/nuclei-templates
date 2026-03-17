@@ -1,14 +1,15 @@
-id: drag-n-drop-upload-cf7-pro
+id: drag-n-drop-upload-cf7-pro-5f4f9781797328f58bfdc5d37a9af631
 
 info:
   name: >
-    Drag and Drop Multiple File Upload PRO <= 2.10.9 - Directory Traversal
+    Drag and Drop Multiple File Upload PRO - Contact Form 7 Standard <= 5.0.6.3 and <= 2.11.0 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1add47ea-6a7b-443a-b31d-3bb6c0d5d72d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/60ae8b8f-bc65-40df-b6ae-4ec8e328dbe5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/drag-n-drop-upload-cf7-pro/"
     google-query: inurl:"/wp-content/plugins/drag-n-drop-upload-cf7-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,drag-n-drop-upload-cf7-pro,low
+  tags: cve,wordpress,wp-plugin,drag-n-drop-upload-cf7-pro,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.10.9')
+          - compare_versions(version, '>= 5.0', '<= 5.0.6.3')

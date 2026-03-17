@@ -1,4 +1,4 @@
-id: advanced-flamingo
+id: advanced-flamingo-d9e1380bbbf082e2e41f4b3940d04ff0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9ce8ad5f-05e8-4279-915a-1c94559d4e56?source=api-scan
   classification:
     cvss-metrics: 

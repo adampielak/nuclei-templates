@@ -1,15 +1,15 @@
-id: leopard-wordpress-offload-media
+id: leopard-wordpress-offload-media-9c17da68fdae227d54ebf6f8caf803ed
 
 info:
   name: >
-    Leopard - WordPress offload media <= 2.0.36 - Authenticated (Subscriber+) Sensitive Information Exposure
+    Leopard - WordPress offload media <= 2.0.36 - Missing Authorization to Authenticated (Subscriber+) Settings Update
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/00aba7b3-4d4a-4aba-8e4e-2e8a928f6143?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/35b1fb1a-a12c-4938-a2d2-74e291db76ef?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

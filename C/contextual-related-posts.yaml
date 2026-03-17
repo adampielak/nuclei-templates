@@ -1,23 +1,24 @@
-id: contextual-related-posts
+id: contextual-related-posts-6314f0894ab36b72c4172ad9985dc0a1
 
 info:
   name: >
-    Contextual Related Posts <= 3.3.1 - Missing Authorization in crp_ajax_clearcache
+    Contextual Related Posts <= 2.9.3 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    The Contextual Related Posts plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the crp_ajax_clearcache function in versions up to, and including, 3.3.1. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to clear the Contextual Related Posts cache.
+    The Contextual Related Posts plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 2.9.3. This is due to missing or incorrect nonce validation on the crp_process_settings_export() or crp_process_settings_import() functions. This makes it possible for unauthenticated attackers to perform administrative actions and/or obtain unauthorized information via forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/37b5fcfd-654b-4151-9494-551799464c7c?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d93006ac-037f-4291-b945-afa38358a037?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
     cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/contextual-related-posts/"
     google-query: inurl:"/wp-content/plugins/contextual-related-posts/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,contextual-related-posts,low
+  tags: cve,wordpress,wp-plugin,contextual-related-posts,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.3.1')
+          - compare_versions(version, '<= 2.9.3')

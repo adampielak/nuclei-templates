@@ -1,4 +1,4 @@
-id: draw-attention
+id: draw-attention-7aa6fa21ae9117b3307abd7d76b9cd01
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/18530601-a294-448c-a1b2-c3995f9042ac?source=api-scan
   classification:
     cvss-metrics: 

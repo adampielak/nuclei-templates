@@ -4,11 +4,11 @@ info:
   name: ESXi System
   author: dhiyaneshDK
   severity: info
-  metadata:
-    shodan-query: html:"esxUiApp"
   tags: panel,esxi
+  metadata:
+    shodan-query: 'html:"esxUiApp"'
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/ui/#/login'

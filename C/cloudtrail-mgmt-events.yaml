@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - '"CloudTrail trail" + trail + " is not configured to capture management operations performed on your AWS cloud resources"'
-# digest: 4b0a00483046022100c23af41ffe65ebbf7f4ea184345be1af712eb20af947b75194e060e21952e352022100b20648518cb36f80a826bfe23d60bda79468590ec8a3a9a34a412a45213a72ea:922c64590222798bb761d5b6d8e72950
+

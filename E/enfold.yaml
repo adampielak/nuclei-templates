@@ -1,17 +1,19 @@
-id: enfold
+id: enfold-d6dc26ce94febf1684f86f997631dc23
 
 info:
-  name: "Enfold - Responsive Multi-Purpose Theme < 4.2.1 - Information Exposure"
+  name: >
+    Enfold - Responsive Multi-Purpose Theme < 4.2.1 - Information Exposure
   author: topscoder
   severity: medium
-  description: "The Enfold Theme for WordPress is vulnerable the information exposure in versions up to, and including, 4.2."
+  description: >
+    The Enfold Theme for WordPress is vulnerable the information exposure in versions up to, and including, 4.2.
   reference:
-    - https://kriesi.at/documentation/enfold/changelog/#toggle-id-6
-    - https://wpscan.com/vulnerability/3c9757f7-827a-4ae3-8233-84ea7ebf76e5
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0d6af3cd-1a92-428f-a51c-f01a3ba6ebae?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/enfold/"
     google-query: inurl:"/wp-content/themes/enfold/"

@@ -17,11 +17,17 @@ severity:
   - unknown
 
 type:
-  - dns
-  - ssl
-  - tcp
   - http
+  - tcp
   - javascript
+
+exclude-tags:
+  - tech
+  - dos
+  - fuzz
+  - creds-stuffing
+  - token-spray
+  - osint
 
 exclude-id:
   - CVE-2021-45967

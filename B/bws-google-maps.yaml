@@ -1,4 +1,4 @@
-id: bws-google-maps
+id: bws-google-maps-c51a1933655e8fb46abf4cfa140413c0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/419df0c4-1e78-47da-b28d-5ab1cb66729a?source=api-scan
   classification:
     cvss-metrics: 

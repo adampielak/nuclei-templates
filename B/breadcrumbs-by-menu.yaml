@@ -1,14 +1,15 @@
-id: breadcrumbs-by-menu
+id: breadcrumbs-by-menu-c18fd5f441340ab82c9f4d956306cd14
 
 info:
   name: >
-    Breadcrumbs by menu < 1.0.3 - Cross-Site Scripting
+    Breadcrumbs by menu <= 1.0.1 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0694b4f7-c28d-4456-8157-d20446790f3c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8d189baf-e0d4-4b23-91b8-0c802941b982?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/breadcrumbs-by-menu/"
     google-query: inurl:"/wp-content/plugins/breadcrumbs-by-menu/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,breadcrumbs-by-menu,high
+  tags: cve,wordpress,wp-plugin,breadcrumbs-by-menu,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.0.3')
+          - compare_versions(version, '<= 1.0.1')

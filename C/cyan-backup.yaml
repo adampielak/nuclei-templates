@@ -1,15 +1,15 @@
-id: cyan-backup-df04353a9387cf0e7fe90d6acac5c965
+id: cyan-backup
 
 info:
   name: >
-    CYAN Backup <= 2.5.2 - Authenticated (Admin+) Stored Cross-Site Scripting
+    CYAN Backup <= 2.5.3 - Authenticated (Admin+) Arbitrary File Download
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/59fa2539-c1df-4c01-b57f-b7b4bde8537f?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/77c125fd-a954-4523-b415-21bf9e835452?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.2')
+          - compare_versions(version, '<= 2.5.3')

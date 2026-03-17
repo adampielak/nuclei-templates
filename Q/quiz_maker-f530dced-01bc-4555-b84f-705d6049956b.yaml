@@ -2,7 +2,7 @@ id: quiz_maker-f530dced-01bc-4555-b84f-705d6049956b
 
 info:
   name: >
-    Quiz Maker <= 6.7.0.62 - Unauthenticated Sensitive Information Exposure
+    Quiz Maker <= 6.7.0.65 - Unauthenticated Sensitive Information Exposure
   author: topscoder
   severity: low
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.7.0.62')
+          - compare_versions(version, '<= 6.7.0.65')

@@ -1,4 +1,4 @@
-id: gamipress-vimeo-integration
+id: gamipress-vimeo-integration-3b99346859de1c4af82f838f2d3df162
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/73aebd68-4f36-4999-844c-f09b10462ef8?source=api-scan
   classification:
     cvss-metrics: 

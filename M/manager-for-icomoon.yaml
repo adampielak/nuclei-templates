@@ -1,14 +1,15 @@
-id: manager-for-icomoon
+id: manager-for-icomoon-fce1b6912dec65d8b680409b9aaa6c74
 
 info:
   name: >
-    Manager for Icomoon <= 2.0 - Unauthenticated Arbitrary File Upload via 'upload'
+    Manager for Icomoon <= 2.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/854ab1f3-5f7c-40a4-85a5-db4e20dc72cc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ef75bb4-febf-4009-a6b4-f0b40a4fc903?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/manager-for-icomoon/"
     google-query: inurl:"/wp-content/plugins/manager-for-icomoon/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,manager-for-icomoon,critical
+  tags: cve,wordpress,wp-plugin,manager-for-icomoon,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0')
+          - compare_versions(version, '<= 2.1')

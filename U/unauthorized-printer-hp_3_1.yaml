@@ -5,10 +5,10 @@ info:
   author: pussycat0x,r3naissance
   severity: high
   metadata:
-    shodan-query: http.title:"Hp Officejet pro"
+    shodan-dork: http.title:"Hp Officejet pro"
   tags: hp,iot,unauth
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

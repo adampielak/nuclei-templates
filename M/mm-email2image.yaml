@@ -1,14 +1,15 @@
-id: mm-email2image
+id: mm-email2image-688056930706a55dac417571b1e2ae5d
 
 info:
   name: >
-    MM-email2image <= 0.2.5 - Cross-Site Request Forgery to Stored Cross-Site Scripting
+    MM-email2image <= 0.2.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f0ee03c-8cf6-4372-b740-722fc1283ee3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7147cb69-294e-4270-bf8b-3a32a5552d1e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mm-email2image/"
     google-query: inurl:"/wp-content/plugins/mm-email2image/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mm-email2image,medium
+  tags: cve,wordpress,wp-plugin,mm-email2image,low
 
 http:
   - method: GET

@@ -1,4 +1,4 @@
-id: gs-woocommerce-products-slider
+id: gs-woocommerce-products-slider-40e429f2a997f5ab4138e41fb24dc3de
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ff129569-223d-4d38-9f3a-eb2596214d3a?source=api-scan
   classification:
     cvss-metrics: 

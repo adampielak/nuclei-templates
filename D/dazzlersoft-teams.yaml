@@ -1,4 +1,4 @@
-id: dazzlersoft-teams
+id: dazzlersoft-teams-7ea22c99212ca2cc6d1f519e22b0f45d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad88c661-601c-411f-9495-2c3b8a568c6b?source=api-scan
   classification:
     cvss-metrics: 

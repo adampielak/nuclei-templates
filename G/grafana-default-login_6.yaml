@@ -13,8 +13,12 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+    cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 2
     shodan-query: title:"Grafana"
+    product: grafana
+    vendor: grafana
   tags: grafana,default-login
 
 http:
@@ -42,16 +46,15 @@ http:
     matchers:
       - type: word
         words:
-          - "grafana_session"  # Login cookie
+          - "grafana_session" # Login cookie
         part: header
 
       - type: word
         part: body
         words:
-          - "Logged in"  # Logged in keyword
+          - "Logged in" # Logged in keyword
 
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/03/10
+# digest: 4a0a00473045022100fd6372f31ee1ef3d0eded62969e5f039d53ea191babb625ba0c3e23406dd1e94022069872e207ac91ae33f25b025ac176f0d14930b4a0899bfff400bfc05a17cb403:922c64590222798bb761d5b6d8e72950

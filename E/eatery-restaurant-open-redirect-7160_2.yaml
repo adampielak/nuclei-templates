@@ -1,4 +1,5 @@
 id: eatery-restaurant-open-redirect
+
 info:
   name: WordPress Attitude Themes 1.1.1 Open Redirection
   author: 0x_Akoko
@@ -7,12 +8,14 @@ info:
   reference:
     - https://cxsecurity.com/issue/WLB-2020030183
   tags: wordpress,wp-theme,redirect
+
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/wp-content/themes/eatery/nav.php?-Menu-=https://example.com/"
+      - "{{BaseURL}}/wp-content/themes/eatery/nav.php?-Menu-=https://interact.sh/"
+
     matchers:
       - type: regex
         regex:
-          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)example\.com.*$'
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
         part: header

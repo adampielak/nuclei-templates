@@ -1,24 +1,14 @@
-id: quixplorer
-info:
-  name: quixplorer
-  author: cn-kali-team
-  tags: detect,tech,quixplorer
-  severity: info
-  metadata:
-    fofa-query:
-    - title="my download server"
-    google-query:
-    - intitle:"my download server"
-    product: quixplorer
-    shodan-query:
-    - http.title:"my download server"
-    vendor: quixplorer_project
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>my download server.*?</title>
+name: quixplorer
+priority: 3
+nuclei_tags:
+  - []
+fingerprint:
+  - path: /
+    request_method: get
+    request_headers: {}
+    request_data: ''
+    status_code: 0
+    headers: {}
+    keyword:
+      - target="_blank">the quix project</a></small>
+    favicon_hash: []

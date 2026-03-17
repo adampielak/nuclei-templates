@@ -1,14 +1,10 @@
 id: strapi-documentation
 
 info:
-  name: Strapi CMS Documentation Login Panel - Detect
+  name: Strapi Documentation
   author: idealphase
   severity: info
-  description: Strapi CMS Documentation login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
+  description: Strapi CMS - documentation plugin from marketplace (Make the documentation endpoint private. By default, the access is public)
   tags: strapi,panel
 
 requests:
@@ -36,5 +32,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/14

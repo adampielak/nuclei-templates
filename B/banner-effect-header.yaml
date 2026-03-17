@@ -1,4 +1,4 @@
-id: banner-effect-header
+id: banner-effect-header-b23ea8253ff6e525b33aeb932b045736
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1fcd3eec-057a-44f9-a255-e6814a22471b?source=api-scan
   classification:
     cvss-metrics: 

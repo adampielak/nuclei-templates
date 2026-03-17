@@ -1,4 +1,4 @@
-id: cc-custom-taxonmy
+id: cc-custom-taxonmy-e1a87b41c75a473129f2984927e1b116
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/facfa21a-4136-4161-ac39-8b18948ec073?source=api-scan
   classification:
     cvss-metrics: 

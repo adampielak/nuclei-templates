@@ -1,23 +1,24 @@
-id: affiliatewp
+id: affiliatewp-c689b1c4c9ac70b3255a1d76bc070abd
 
 info:
   name: >
-    AffiliateWP <= 2.14.0 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Plugin Activation
+    AffiliateWP < 2.0.9.1 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    
+    The AffiliateWP plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘filter_from’ parameter in versions before 2.0.9.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eab422b8-8cf5-441e-a21f-6a0e1b7642b2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c884af7a-cd66-4f38-887d-a782ffb32219?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
+    cvss-score: 7.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/AffiliateWP/"
     google-query: inurl:"/wp-content/plugins/AffiliateWP/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,AffiliateWP,low
+  tags: cve,wordpress,wp-plugin,AffiliateWP,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '2.14.0')
+          - compare_versions(version, '< 2.0.9.1')

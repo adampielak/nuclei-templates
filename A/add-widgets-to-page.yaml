@@ -1,4 +1,4 @@
-id: add-widgets-to-page
+id: add-widgets-to-page-6dd76854df716f92f3713948d74c7196
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6af20a2c-065c-48d5-a95c-2883ceeb50c6?source=api-scan
   classification:
     cvss-metrics: 

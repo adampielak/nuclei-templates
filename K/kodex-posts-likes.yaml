@@ -1,14 +1,15 @@
-id: kodex-posts-likes
+id: kodex-posts-likes-589b29bb211a3485770601b8b46fa004
 
 info:
   name: >
-    Kodex Posts likes <= 2.4.3 - Cross-Site Request Forgery
+    Kodex Posts likes <= 2.5.0 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/77d56f61-7e45-405e-878d-fa3d53acede0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/076d1b28-bc43-4e70-995c-71b236e7f698?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/kodex-posts-likes/"
     google-query: inurl:"/wp-content/plugins/kodex-posts-likes/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,kodex-posts-likes,medium
+  tags: cve,wordpress,wp-plugin,kodex-posts-likes,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.3')
+          - compare_versions(version, '<= 2.5.0')

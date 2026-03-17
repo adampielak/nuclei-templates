@@ -9,19 +9,12 @@ info:
     - https://www.influxdata.com/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:influxdata:influxdb:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    vendor: influxdata
-    product: influxdb
-    shodan-query:
-      - http.title:"InfluxDB - Admin Interface"
-      - http.title:"influxdb - admin interface"
-      - influxdb
-    fofa-query: title="influxdb - admin interface"
-    google-query: intitle:"influxdb - admin interface"
-  tags: panel,influxdb,influxdata
+    shodan-query: http.title:"InfluxDB - Admin Interface"
+  tags: panel,influxdb
 
 http:
   - method: GET
@@ -44,4 +37,5 @@ http:
         group: 1
         regex:
           - '<b>InfluxDB<\/b> v([\d.]+)<\/p>'
-# digest: 4b0a00483046022100eadbfc29d9f40b015d38052f8b3e7bcf40f3186a569157d604e152cc1624a5f2022100b2a339364c871e5083426ba2da372b85ac35755e66023c59d977116413b2e2eb:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402205cde1366c06e13314e2d35c13d05b4c9b11e215c7d3296943df5fa8620e170f402203b656352d0a16983f5f68680c265246a41ad1bdd9fc414b302e98f03694a8412:922c64590222798bb761d5b6d8e72950

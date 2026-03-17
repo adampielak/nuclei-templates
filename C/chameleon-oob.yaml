@@ -9,7 +9,7 @@ info:
     - https://medium.com/@0xAwali/template-engines-injection-101-4f2fe59e5756
   metadata:
     verified: true
-  tags: ssti,dast,oast,oob
+  tags: ssti,dast,oast,oob,vuln
 
 http:
   - pre-condition:
@@ -37,4 +37,4 @@ http:
           - "contains(interactsh_protocol,'dns')"
           - "contains(interactsh_request,'srv')"
         condition: and
-# digest: 4a0a00473045022100f2d190c0663353f514bcd5044e28ad9a9dccbb7360ed054dba295e021cf608dd022073b0a3f0cdd8945800bbb341ce75f505ad961ea2a56a8ef21c8913bb70a28df9:922c64590222798bb761d5b6d8e72950
+

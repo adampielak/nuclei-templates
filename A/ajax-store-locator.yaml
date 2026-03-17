@@ -1,23 +1,24 @@
-id: ajax-store-locator
+id: ajax-store-locator-3ccbc70d4b2586add82cdfc793c58a7b
 
 info:
   name: >
-    Ajax Store Locator <= 1.2 - Arbitrary File Download
+    AJAX Store Locator <= 1.2 - SQL Injection
   author: topscoder
-  severity: high
+  severity: critical
   description: >
-    The Ajax Store Locator plugin for WordPress is vulnerable to Arbitrary File Download in versions up to, and including, 1.2 via the 'download_file' parameter in the 'sl_file_download.php' file. This makes it possible for unauthenticated attackers to download arbitrary files from the vulnerable service.
+    The AJAX Store Locator plugin for WordPress is vulnerable to SQL Injection via the ‘StoreLocation’ parameter in versions up to, and including, 1.2 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b40c89e5-d291-45b7-b84a-6fee75e5b7eb?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b456815-ffdf-41fb-b4a8-0f22fd059d34?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/ajax-store-locator/"
     google-query: inurl:"/wp-content/plugins/ajax-store-locator/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ajax-store-locator,high
+  tags: cve,wordpress,wp-plugin,ajax-store-locator,critical
 
 http:
   - method: GET

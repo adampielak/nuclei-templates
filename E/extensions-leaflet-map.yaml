@@ -1,4 +1,4 @@
-id: extensions-leaflet-map
+id: extensions-leaflet-map-9e9f1091fdf221f5b0806f4fb7a44a99
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8e332a52-071c-4725-99db-3cc10ee50230?source=api-scan
   classification:
     cvss-metrics: 

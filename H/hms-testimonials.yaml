@@ -1,14 +1,15 @@
-id: hms-testimonials
+id: hms-testimonials-da2749f9e810bfdb7c6ba1552a53d815
 
 info:
   name: >
-    HMS Testimonials < 2.0.11 - Cross-Site Scripting
+    HMS Testimonials <= 2.0.10 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b2d31521-5fe1-48ce-881c-4cacdbe08f21?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0406b7a0-517d-4462-9b65-d4f708cf364d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/hms-testimonials/"
     google-query: inurl:"/wp-content/plugins/hms-testimonials/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,hms-testimonials,high
+  tags: cve,wordpress,wp-plugin,hms-testimonials,medium
 
 http:
   - method: GET

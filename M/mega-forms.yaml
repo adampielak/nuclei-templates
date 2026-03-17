@@ -1,4 +1,4 @@
-id: mega-forms
+id: mega-forms-3372019bd108944dd23b81f73cfbb143
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d034c3cb-8089-47d6-839b-659bedab5ca1?source=api-scan
   classification:
     cvss-metrics: 

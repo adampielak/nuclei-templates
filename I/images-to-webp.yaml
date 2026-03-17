@@ -1,4 +1,4 @@
-id: images-to-webp
+id: images-to-webp-4676b91069d7f9d87a61d1804aeb67e6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/63ae3a9d-1e6b-4784-8429-04be2a89b6cb?source=api-scan
   classification:
     cvss-metrics: 

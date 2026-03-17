@@ -1,14 +1,15 @@
-id: hkdev-maintenance-mode
+id: hkdev-maintenance-mode-ca1cbfcd227ddfebd034edbcb724c453
 
 info:
   name: >
-    Maintenance Mode <= 3.0.1 - Information Exposure
+    Maintenance Mode by helderk <= 3.0.1 - Unauthenticated IP Spoofing
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/36def628-e09e-4da0-ab14-35aefcb67f73?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/17906039-0130-4e24-b932-1ba19d3d58ff?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

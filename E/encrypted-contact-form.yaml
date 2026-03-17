@@ -1,4 +1,4 @@
-id: encrypted-contact-form
+id: encrypted-contact-form-2ab3c6af6e6ef5058b27b20051d12894
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ac3a359c-bdcf-42c5-9e54-c704a358b561?source=api-scan
   classification:
     cvss-metrics: 

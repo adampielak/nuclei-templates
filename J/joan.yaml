@@ -1,24 +1,24 @@
-id: joan
+id: joan-585ff14c93b0c04bbd6f8473519676c9
 
 info:
-  name: "Jock on air now <= 5.6.2 - Unauthenticated Stored Cross-Site Scripting"
+  name: >
+    Jock on air now <= 5.6.1 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
-  description: "The Jock on air now plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin settings and 'show-time-curd' AJAX action in versions up to, and including, 5.6.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  severity: medium
+  description: >
+    The Jock on air now plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘$_SERVER['PHP_SELF']’ variable in versions up to, and including, 5.6.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://ithemes.com/blog/wordpress-vulnerability-report-august-2021-part-4/#ib-toc-anchor-2
-    - https://wpscan.com/vulnerability/c557ff04-31d5-4774-b101-1865a102bf16
-    - https://wordpress.org/plugins/joan/#developers
-    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=2583176%40joan&new=2583176%40joan&sfp_email=&sfph_mail=
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a401db3e-2cf2-4283-bfbe-d4a9587966e1?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/joan/"
     google-query: inurl:"/wp-content/plugins/joan/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,joan,high
+  tags: cve,wordpress,wp-plugin,joan,medium
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.6.2')
+          - compare_versions(version, '<= 5.6.1')

@@ -1,14 +1,15 @@
-id: cost-calculator-builder-pro
+id: cost-calculator-builder-pro-71086aeb1a10bf3da707caba10a13552
 
 info:
   name: >
-    Cost Calculator Builder Pro <= 3.1.67 - Unauthenticated Cross-Site Scripting via SVG Upload
+    Cost Calculator Builder Pro <= 3.1.72 - Authenticated (Subscriber+) Server-Side Request Forgery
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/526add70-4fcf-44d1-b4d8-4cc35652b1f0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c6840350-7ff4-4ec2-bf2b-94ce6f782537?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1.67')
+          - compare_versions(version, '<= 3.1.72')

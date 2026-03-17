@@ -1,23 +1,24 @@
-id: job-board
+id: job-board-dad120081fea8ddba32f281a9cea5f06
 
 info:
   name: >
-    Job Board by BestWebSoft <= 1.0.0 - Unauthenticated Stored Cross-Site Scripting
+    Job Board by BestWebSoft < 1.1.4 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    
+    The Job Board by BestWebSoft plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘category’ parameter in versions before 1.1.4 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fa2bb0c0-e412-4e78-a7b5-4517f1c15481?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/38ff10d3-d9ce-440b-b956-002803d49f54?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/job-board/"
     google-query: inurl:"/wp-content/plugins/job-board/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,job-board,low
+  tags: cve,wordpress,wp-plugin,job-board,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.0')
+          - compare_versions(version, '< 1.1.4')

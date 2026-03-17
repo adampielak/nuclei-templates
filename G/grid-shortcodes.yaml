@@ -1,4 +1,4 @@
-id: grid-shortcodes
+id: grid-shortcodes-2a005bb58002236e958faf88a6481383
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/722956ec-d2f5-42ad-bb95-776ad620d788?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: ideapush
+id: ideapush-48fed2662c577bb936f7cc9972f11b9f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3673a86c-1e11-45ad-8944-84a38aad53dd?source=api-scan
   classification:
     cvss-metrics: 

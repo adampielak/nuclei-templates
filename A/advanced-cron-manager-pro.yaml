@@ -1,4 +1,4 @@
-id: advanced-cron-manager-pro
+id: advanced-cron-manager-pro-d873e3d8f7e000f99881ecc55728c5e7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/935bf651-888e-4922-81fc-7e2e5a6fe3ba?source=api-scan
   classification:
     cvss-metrics: 

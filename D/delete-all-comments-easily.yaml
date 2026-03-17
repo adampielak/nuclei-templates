@@ -1,4 +1,4 @@
-id: delete-all-comments-easily
+id: delete-all-comments-easily-824825616405599890bbfe6634d04d6b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f562b4c-8934-45fd-b9a4-eeb3a6bcf609?source=api-scan
   classification:
     cvss-metrics: 

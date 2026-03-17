@@ -1,23 +1,24 @@
-id: mapsmarker
+id: mapsmarker-62ad40dcefc34f06a72a78b3347f05bd
 
 info:
   name: >
-    Leaflet Maps Marker Pro < 1.5.8 - Path Traversal
+    Leaflet Maps Marker (Google Maps, OpenStreetMap, Bing Maps) < 2.4 - SQL Injection
   author: topscoder
-  severity: high
+  severity: critical
   description: >
-    The Maps Marker Pro plugin for WordPress is vulnerable to Path Traversal in versions up to, and including, 1.5.7. This allows unauthenticated attackers to read the contents of arbitrary files on the server, which can contain sensitive information.
+    The Leaflet Maps Marker (Google Maps, OpenStreetMap, Bing Maps) plugin for WordPress is vulnerable to SQL Injection in versions up to, and including, 2.3.1 due to insufficient escaping on an unknown user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/875b15a1-c747-4a74-a77e-d541f92468a3?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/83b062c8-4884-4ffa-89e6-71140c99e422?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/mapsmarker/"
     google-query: inurl:"/wp-content/plugins/mapsmarker/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mapsmarker,high
+  tags: cve,wordpress,wp-plugin,mapsmarker,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.5.8')
+          - compare_versions(version, '< 2.4')

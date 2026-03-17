@@ -1,14 +1,15 @@
-id: foxyshop
+id: foxyshop-a759e03a3140ab5da9f810ffbdb3a4c2
 
 info:
   name: >
-    FoxyShop <= 4.8.1 - Reflected Cross-Site Scripting
+    PrettyPhoto Library (Multiple Plugins and Themes) <= 3.1.4 - DOM Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5af2f2a8-ab10-4623-abcd-234017424ab9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2cc5962f-4d3c-43ea-996b-a5bb3d0dccef?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/foxyshop/"
     google-query: inurl:"/wp-content/plugins/foxyshop/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,foxyshop,medium
+  tags: cve,wordpress,wp-plugin,foxyshop,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.8.1')
+          - compare_versions(version, '< 4.6.1')

@@ -50,4 +50,4 @@ code:
       - type: dsl
         dsl:
           - 'resource + " does not have Diagnostic Logs enabled"'
-# digest: 4a0a00473045022100cb806d8373c50bd7f414a8a5bedd40cc225e3ff000199e1914e1f523f66429dd02204cdad597f32b8032bfac50c437b172e749fececf64de99712155d54c88f7a045:922c64590222798bb761d5b6d8e72950
+

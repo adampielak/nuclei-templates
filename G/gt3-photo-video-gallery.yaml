@@ -1,14 +1,15 @@
-id: gt3-photo-video-gallery
+id: gt3-photo-video-gallery-b91f00c32f725c9093087d1088c1bc12
 
 info:
   name: >
-    Photo Gallery - GT3 Image Gallery & Gutenberg Block Gallery <= 2.7.7.21 - Authenticated (Author+) Cross-Site Scripting
+    Photo Gallery - GT3 Image Gallery & Gutenberg Block Gallery <= 2.7.7.25 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/06ef1f0c-fdcc-4aaf-9e48-19b5be52351d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bcf8fa7c-0d9e-41ef-af60-0c33328fc5cc?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.7.7.21')
+          - compare_versions(version, '<= 2.7.7.25')

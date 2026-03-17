@@ -1,4 +1,4 @@
-id: icons-for-features
+id: icons-for-features-4ecaa45ad5621aee443a80ba13c010f5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/35a0f4dd-7370-48da-a4ef-424c42da60e9?source=api-scan
   classification:
     cvss-metrics: 

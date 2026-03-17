@@ -1,4 +1,4 @@
-id: kanban
+id: kanban-08d6b6b1984b421ecaac78226846a4ea
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/071b5c32-b6ac-402a-af74-6ecd05279d93?source=api-scan
   classification:
     cvss-metrics: 

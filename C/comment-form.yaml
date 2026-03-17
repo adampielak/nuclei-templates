@@ -1,4 +1,4 @@
-id: comment-form
+id: comment-form-2f24f5470a4cf6105cb160c21311b17a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dd163f14-c638-4185-8e14-f3a03312ee42?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: edd-recurring-payments
+id: edd-recurring-payments-0bc78f5f682307bac20453fe36c3ef10
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f958ed28-0520-47c7-9b60-94e7c6504d20?source=api-scan
   classification:
     cvss-metrics: 

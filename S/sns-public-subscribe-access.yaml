@@ -65,4 +65,4 @@ code:
       - type: dsl
         dsl:
           - '"The SNS topic " + topicArn + " allows public subscription via Policy"'
-# digest: 4a0a004730450221008a967d8e5c9942beefab71caa02bdc0fd01121f2c88254d8a37296a941f8e02c02200d45a3425f5011f61061b5004635f3ad9407bcd88ae47fcda6afc63e883b432d:366f2a24c8eb519f6968bd8801c08ebe
+

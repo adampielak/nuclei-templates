@@ -1,13 +1,14 @@
-id: livefyre-comments
+id: livefyre-comments-766b2d79c0880dc5c99ea21ba083ba09
 
 info:
   name: >
     Livefyre Comments 3 <= 4.1.4 - Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     The Livefyre Comments 3 plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the ‘site_id’ and ‘secretkey’ parameters in versions up to, and including, 4.1.4 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7f51ae93-6880-4dc8-b183-424a8407f441?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/livefyre-comments/"
     google-query: inurl:"/wp-content/plugins/livefyre-comments/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,livefyre-comments,medium
+  tags: cve,wordpress,wp-plugin,livefyre-comments,low
 
 http:
   - method: GET

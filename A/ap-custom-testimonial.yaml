@@ -1,14 +1,15 @@
-id: ap-custom-testimonial
+id: ap-custom-testimonial-90984ed555b26ebce0d0639057dc5bb6
 
 info:
   name: >
-    AP Custom Testimonial <= 1.4.7 - SQL Injection
+    Testimonial WordPress Plugin < 1.4.7 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/225900ea-ab59-4864-a65b-583730d2703f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/171faddd-c60c-4d07-834e-d8149703513b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ap-custom-testimonial/"
     google-query: inurl:"/wp-content/plugins/ap-custom-testimonial/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ap-custom-testimonial,critical
+  tags: cve,wordpress,wp-plugin,ap-custom-testimonial,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.7')
+          - compare_versions(version, '< 1.4.7')

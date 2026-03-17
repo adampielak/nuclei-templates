@@ -1,4 +1,4 @@
-id: edd-free-downloads
+id: edd-free-downloads-7ed83221d545c8a4bd7062771df8850c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f203fb35-e217-4912-aa80-0bb6b3de1830?source=api-scan
   classification:
     cvss-metrics: 

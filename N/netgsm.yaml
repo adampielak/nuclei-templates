@@ -1,4 +1,4 @@
-id: netgsm
+id: netgsm-7f2ba0072dd7cc3e940390505a362e0c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3b07f91-c96a-49a5-8ffc-90f34d93aa91?source=api-scan
   classification:
     cvss-metrics: 

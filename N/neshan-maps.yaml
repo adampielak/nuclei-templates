@@ -1,4 +1,4 @@
-id: neshan-maps
+id: neshan-maps-0f83b85af6f78c790d2f724ac050f84f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ee7eb754-27f0-47b0-a82f-4781cfbb0fa6?source=api-scan
   classification:
     cvss-metrics: 

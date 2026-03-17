@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"CUPS (IPP)"
-  tags: cups,tech,detect
+  tags: cups,tech,detect,discovery
 
 http:
   - method: GET
@@ -40,4 +40,4 @@ http:
         name: version
         regex:
           - 'CUPS v([0-9.]+)>'
-# digest: 4b0a004830460221008106b0b31efbfd0a06e9e027bb54f3e6bdee6c72c4028c104b86aeec7f184da9022100c0af8b2d88e016f5c21f1014a2d27af4e8cf49abcf1997ae1d105c72863e79cb:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502205538cb5c63faa8303f206b5e0176b5ee2ce1d3ddd946a65270e67bdc3986fc8c02210091bc4656f5d69662a08a2901183558d250d5fbcfe02f4f9faafe3d01ea69f2b6:922c64590222798bb761d5b6d8e72950

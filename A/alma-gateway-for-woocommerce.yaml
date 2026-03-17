@@ -1,4 +1,4 @@
-id: alma-gateway-for-woocommerce
+id: alma-gateway-for-woocommerce-ccb17366a534a4b55a00c6ace0331954
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/044d7480-ccd7-4ce8-bb5d-367ba5d0217c?source=api-scan
   classification:
     cvss-metrics: 

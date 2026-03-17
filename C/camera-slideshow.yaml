@@ -1,4 +1,4 @@
-id: camera-slideshow
+id: camera-slideshow-8bdd87f1915a62c263241ffbc23d4b36
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6c568897-a8ff-4d3d-88b5-b7aeff454cf9?source=api-scan
   classification:
     cvss-metrics: 

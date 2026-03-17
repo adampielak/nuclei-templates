@@ -1,4 +1,4 @@
-id: google-analytics-top-posts-widget
+id: google-analytics-top-posts-widget-cb54e4843123dfb1f03fa4c29d51e0c9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4522480a-dfbf-4ff4-93c2-68b8cc15367c?source=api-scan
   classification:
     cvss-metrics: 

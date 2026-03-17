@@ -1,4 +1,4 @@
-id: font-awesome-more-icons
+id: font-awesome-more-icons-5fb7d7f3053d451ed564ec5c0dddd430
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/15947764-a070-4715-bd44-cb79b62ed59d?source=api-scan
   classification:
     cvss-metrics: 

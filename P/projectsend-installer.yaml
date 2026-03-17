@@ -8,16 +8,23 @@ info:
     Detects exposed ProjectSend installation page.
   reference:
     - https://www.projectsend.org/
+  classification:
+    cpe: cpe:2.3:a:projectsend:projectsend:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: projectsend
+    product: projectsend
     shodan-query: html:"ProjectSend setup"
-  tags: misconfig,install,exposure,projectsend
+  tags: misconfig,install,exposure,projectsend,vuln
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}/install/index.php"
+      - "{{BaseURL}}/install/make-config.php"
+
+    stop-at-first-match: true
 
     matchers-condition: and
     matchers:
@@ -29,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210082f7bdb68807817103398c614e50dd995b73a28d7e5245ea50c8fab55682148e022024f583421998cfd85a5caabde87e48a0ea71e20ff6b13cdbda7f693308975892:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100fbae1b85534945f6598e7a9d3bd33bfbfe2a2a0bf28c8d478ed0670e07b74515022100e28093d085de9e1c79b89b598e19553b4965776995b271bd77e86ed83201ba52:922c64590222798bb761d5b6d8e72950

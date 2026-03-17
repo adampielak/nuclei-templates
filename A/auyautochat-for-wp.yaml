@@ -1,13 +1,14 @@
-id: auyautochat-for-wp
+id: auyautochat-for-wp-d89ee336d97a71578b93bab9bb8bd8f8
 
 info:
   name: >
     Autochat Automatic Conversation <= 1.1.7 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9ad533d-4ec0-42a0-99fc-75fc59498c94?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/auyautochat-for-wp/"
     google-query: inurl:"/wp-content/plugins/auyautochat-for-wp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,auyautochat-for-wp,low
+  tags: cve,wordpress,wp-plugin,auyautochat-for-wp,high
 
 http:
   - method: GET

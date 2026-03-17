@@ -1,4 +1,4 @@
-id: metronet-tag-manager
+id: metronet-tag-manager-2a5463b93db13511c65e1493212e318e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9ead8f1-f2d7-4087-bb6c-de15bf8318a3?source=api-scan
   classification:
     cvss-metrics: 

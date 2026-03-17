@@ -1,4 +1,4 @@
-id: dvs-custom-notification
+id: dvs-custom-notification-2225b59d9a3de366aa9dd403751ce129
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/36d02d5f-d534-4567-9587-1f6e4b21ca90?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: multi-feed-reader
+id: multi-feed-reader-0950b64ef665bb5ffaf6d44b66cfe5f1
 
 info:
   name: >
-    Multi Feed Reader <= 2.2.3 - Authenticated SQL Injection
+    Multi Feed Reader <= 2.2.4 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/56f59303-cf82-4239-9e04-80a32f20d87c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dac1e554-2069-4588-a570-5dacc83e4532?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/multi-feed-reader/"
     google-query: inurl:"/wp-content/plugins/multi-feed-reader/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,multi-feed-reader,low
+  tags: cve,wordpress,wp-plugin,multi-feed-reader,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.3')
+          - compare_versions(version, '<= 2.2.4')

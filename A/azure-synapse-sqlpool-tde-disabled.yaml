@@ -67,4 +67,4 @@ code:
       - type: dsl
         dsl:
           - 'workspaceId + " " + sqlPoolId + " does not have TDE enabled"'
-# digest: 4b0a00483046022100d1bf8c0b94ccc83007bdf0bc346ec0c2b78e34e7ab1246ee4a1b3545faba924d022100a86dc75b0764b050974230a9391e772463a3c0ae6767d3a6e45f6bb66ae90b3b:922c64590222798bb761d5b6d8e72950
+

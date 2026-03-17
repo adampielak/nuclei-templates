@@ -1,17 +1,13 @@
 id: phppgadmin-panel
 
 info:
-  name: phpPgAdmin Login Panel - Detect
+  name: phpPgAdmin Panel
   author: Ganofins,Nullfuzz
   severity: info
   description: |
-    phpPgAdmin login ipanel was detected.
+    phpPgAdmin is a third-party tool that you can use to manipulate PostgreSQL databases.
   reference:
     - https://docs.cpanel.net/cpanel/databases/phppgadmin/
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
     verified: true
     shodan-query: http.title:phpPgAdmin
@@ -36,5 +32,3 @@ requests:
           - "status_code == 200"
           - "contains(body, '<title>phpPgAdmin')"
         condition: and
-
-# Enhanced by md on 2022/12/06

@@ -1,4 +1,4 @@
-id: lets-box
+id: lets-box-3895a941d302a032efa55494d4744b20
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/59926d18-215e-4de3-acf2-19870026a13f?source=api-scan
   classification:
     cvss-metrics: 

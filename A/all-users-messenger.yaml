@@ -1,4 +1,4 @@
-id: all-users-messenger
+id: all-users-messenger-da70b439419a93f9aff5949ceefb8dfc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2d23541e-bb1c-4fcf-836b-28522a39b018?source=api-scan
   classification:
     cvss-metrics: 

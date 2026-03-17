@@ -1,4 +1,4 @@
-id: custom-base-terms
+id: custom-base-terms-fbdec47f963e428e317226f33b9e2696
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e6292935-a67e-4b59-9b3c-0b71365193b7?source=api-scan
   classification:
     cvss-metrics: 

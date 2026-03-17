@@ -1,14 +1,15 @@
-id: imagemagick-engine
+id: imagemagick-engine-fff61ec7a2a527b86bfc4ad3631993a2
 
 info:
   name: >
-    ImageMagick Engine <= 1.7.5 - Cross-Site Request Forgery to PHAR Deserialization
+    ImageMagick Engine <= 1.7.5 - Cross-Site Request Forgery to Remote Command Execution
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a2ca2f0-1d4a-4614-86ba-a46e765f4a9f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b1f17a83-1df0-44fe-bd86-243cff6ec91b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

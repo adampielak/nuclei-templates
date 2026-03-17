@@ -1,14 +1,15 @@
-id: crony
+id: crony-93395a0d08d3716d997b4dcaff2f1a49
 
 info:
   name: >
-    Crony Cronjob Manager <= 0.5.0 - Cross-Site Request Forgery
+    Crony Cronjob Manager < 0.4.7 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/29b81e96-d950-405a-abcb-c457e104b86b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b86ff40d-45dd-4cb6-9a4e-16aaf1d35196?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.5.0')
+          - compare_versions(version, '< 0.4.7')

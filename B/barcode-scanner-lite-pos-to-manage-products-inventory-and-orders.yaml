@@ -1,14 +1,15 @@
-id: barcode-scanner-lite-pos-to-manage-products-inventory-and-orders
+id: barcode-scanner-lite-pos-to-manage-products-inventory-and-orders-e6efcba01aadf482a1300acfb3685931
 
 info:
   name: >
-    Barcode Scanner with Inventory & Order Manager <= 1.5.3 - Unauthenticated Privilege Escalation
+    Barcode Scanner with Inventory & Order Manager <= 1.5.1 - Unauthenticated Arbitrary File Upload via uploadFile
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dffaf909-72f5-466f-8dd0-d46a81402caf?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/34439db4-1b66-4ccb-bf84-fddef6bc1f88?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/barcode-scanner-lite-pos-to-manage-products-inventory-and-orders/"
     google-query: inurl:"/wp-content/plugins/barcode-scanner-lite-pos-to-manage-products-inventory-and-orders/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,barcode-scanner-lite-pos-to-manage-products-inventory-and-orders,low
+  tags: cve,wordpress,wp-plugin,barcode-scanner-lite-pos-to-manage-products-inventory-and-orders,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.3')
+          - compare_versions(version, '<= 1.5.1')

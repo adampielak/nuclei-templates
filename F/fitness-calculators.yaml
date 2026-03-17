@@ -1,4 +1,4 @@
-id: fitness-calculators
+id: fitness-calculators-aa9d04758603466bb3ddf0c294f731cb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/aafbdd50-c78b-4aad-a3e2-f1339d698e77?source=api-scan
   classification:
     cvss-metrics: 

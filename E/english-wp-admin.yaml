@@ -1,4 +1,4 @@
-id: english-wp-admin
+id: english-wp-admin-1be71793df056db5cf0828f5f271bdd1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1bd007fd-eee9-4c3c-b509-63e180e3fd28?source=api-scan
   classification:
     cvss-metrics: 

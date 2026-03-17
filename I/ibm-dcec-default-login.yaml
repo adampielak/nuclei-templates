@@ -4,13 +4,15 @@ info:
   name: IBM Decision Center Enterprise Console - Default Login
   author: DhiyaneshDK
   severity: high
+  description: IBM Decision Center Enterprise Console default login credentials were discovered.
   reference:
     - https://www.ibm.com/docs/en/odm/8.5.1?topic=console-tutorial-getting-started-decision-center-enterprise
   metadata:
+    runzero-match: service["http.body"] matches "Decision Center Enterprise console"
     verified: true
     max-request: 1
     shodan-query: "html=\"Decision Center Enterprise console\""
-  tags: ibm,default-login,decision-center
+  tags: ibm,default-login,decision-center,vuln
 
 http:
   - raw:
@@ -23,7 +25,6 @@ http:
 
     host-redirects: true
     max-redirects: 3
-
     attack: pitchfork
     payloads:
       username:
@@ -43,4 +44,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202c439ffea872d81ee2a7f9ab8a913a2443c46a6ac5bc07ded744be1eab9eacd502204f3f2a6786315c4dfb2ff65ea82eb2c6df1587478d850a133449675d27b5c45a:922c64590222798bb761d5b6d8e72950
+

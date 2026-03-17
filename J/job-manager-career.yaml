@@ -1,14 +1,15 @@
-id: job-manager-career
+id: job-manager-career-2364e268abd41e2ddfcb80f9eb1f1fbe
 
 info:
   name: >
-    Job Manager & Career <= 1.4.3 - Sensitive Information Exposure
+    Job Manager & Career – Manage job board listings, and recruitments <= 1.4.4 - Cross-Site Request Forgery to PHP Object Injection
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c66bc0b1-c157-4c05-ae9d-0927863c6b95?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8558cd96-3b2a-4282-950b-6d9753698291?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/job-manager-career/"
     google-query: inurl:"/wp-content/plugins/job-manager-career/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,job-manager-career,low
+  tags: cve,wordpress,wp-plugin,job-manager-career,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.3')
+          - compare_versions(version, '<= 1.4.4')

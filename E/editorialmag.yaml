@@ -1,4 +1,4 @@
-id: editorialmag
+id: editorialmag-3bb6d7f8c1ce41332e68bc8cb1fb99e2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5fd470bb-d791-45dc-a743-6f03fc75f00c?source=api-scan
   classification:
     cvss-metrics: 

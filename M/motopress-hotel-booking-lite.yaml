@@ -1,4 +1,4 @@
-id: motopress-hotel-booking-lite
+id: motopress-hotel-booking-lite-94f0b9337341925f1259d0bf44dcd850
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8de25651-4119-4806-91e4-4ea213086bfb?source=api-scan
   classification:
     cvss-metrics: 

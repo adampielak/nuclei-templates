@@ -1,14 +1,15 @@
-id: igniteup
+id: igniteup-a0e275d50146d4314f89ae9bb09718ab
 
 info:
   name: >
-    IgniteUp – Coming Soon and Maintenance Mode <= 3.4 - Unauthenticated Arbitrary File Deletion
+    IgniteUp – Coming Soon and Maintenance Mode <= 3.4.1 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a1a4186-216e-4ed1-860c-fe345ac6e62a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8e33d72d-00d4-45c8-98d2-0a0a73d13b35?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.4.1')
+          - compare_versions(version, '<= 3.4.1')

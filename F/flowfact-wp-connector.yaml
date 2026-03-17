@@ -1,4 +1,4 @@
-id: flowfact-wp-connector
+id: flowfact-wp-connector-7f542fd528896a28debfaef0c9914d08
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4b61b5b-e5e8-41d4-bf37-d9427a204ea6?source=api-scan
   classification:
     cvss-metrics: 

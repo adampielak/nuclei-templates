@@ -1,14 +1,15 @@
-id: flower-delivery-by-florist-one
+id: flower-delivery-by-florist-one-cf8b4f2335afd4245708c8c380f9401e
 
 info:
   name: >
-    Flower Delivery by Florist One <= 3.5.8 - (Admin+) Stored Cross-Site Scripting
+    Flower Delivery by Florist One <= 3.9 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0ba19a2-0a30-4346-88a2-d1166ab13388?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/93efae1f-1e4a-48ee-8a69-558c38925250?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/flower-delivery-by-florist-one/"
     google-query: inurl:"/wp-content/plugins/flower-delivery-by-florist-one/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,flower-delivery-by-florist-one,high
+  tags: cve,wordpress,wp-plugin,flower-delivery-by-florist-one,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.5.8')
+          - compare_versions(version, '<= 3.9')

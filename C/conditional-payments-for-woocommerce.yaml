@@ -1,4 +1,4 @@
-id: conditional-payments-for-woocommerce
+id: conditional-payments-for-woocommerce-345b7b1ac93d5ec3fb23f313d561134c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/db15295f-505f-4a0a-bb3a-3ff6daf73008?source=api-scan
   classification:
     cvss-metrics: 

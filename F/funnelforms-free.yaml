@@ -1,14 +1,15 @@
-id: funnelforms-free
+id: funnelforms-free-d673e9b78beed9be045c9fddcda8387c
 
 info:
   name: >
-    Funnelforms Free <= 3.3.9 - Unauthenticated Stored Cross-Site Scripting
+    Interactive Contact Form and Multi Step Form Builder with Drag & Drop Editor – Funnelforms Free <= 3.7.3.2 - Missing Authorization to Unauthenticated Arbitrary Media Deletion
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ebcbf872-1420-4a57-a4b4-8a52ba74e0a1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5cd0e015-abf2-4905-8b42-46b685be2c74?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.4')
+          - compare_versions(version, '<= 3.7.3.2')

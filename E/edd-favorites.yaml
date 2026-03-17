@@ -1,4 +1,4 @@
-id: edd-favorites
+id: edd-favorites-74e7c7baaf5c19c32e0b3e920729d73c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/33836cee-c3f6-4c49-9acb-7c8f00839fdd?source=api-scan
   classification:
     cvss-metrics: 

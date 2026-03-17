@@ -1,4 +1,4 @@
-id: booking-activities
+id: booking-activities-71ff8d57f07f11fe77e1ae9336fd3db1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/45873654-bf0d-4538-b07c-56ed8db3bafb?source=api-scan
   classification:
     cvss-metrics: 

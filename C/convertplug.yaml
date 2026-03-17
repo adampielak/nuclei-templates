@@ -1,23 +1,24 @@
-id: convertplug
+id: convertplug-64ed2c18e817486386eb7cd02d55f3f0
 
 info:
   name: >
-    ConvertPlus <= 3.4.4 - Unauthorized Account Creation
+    ConvertPlug <= 3.4.2 - Unauthenticated Administrator Creation
   author: topscoder
-  severity: low
+  severity: critical
   description: >
-    
+    The ConvertPlug plugin for WordPress is vulnerable to Unauthenticated Administrator Creation in versions up to, and including, 3.4.2. This is due to insufficient validation on role selection during user registeration. This makes it possible for unauthenticated attackers to register as administrators on vulnerable sites.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1836b1e-6c37-4a07-ac29-687d2eebd3ec?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/268b77b9-af1d-41c8-9f24-99b60eb04cc4?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/convertplug/"
     google-query: inurl:"/wp-content/plugins/convertplug/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,convertplug,low
+  tags: cve,wordpress,wp-plugin,convertplug,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.4.4')
+          - compare_versions(version, '< 3.4.3')

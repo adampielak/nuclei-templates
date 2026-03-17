@@ -1,4 +1,4 @@
-id: kadence-starter-templates
+id: kadence-starter-templates-24f7c8c7de03b7134e666894031f8170
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/72eda38d-34e9-4a0e-a760-a9b991e590de?source=api-scan
   classification:
     cvss-metrics: 

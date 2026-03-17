@@ -1,14 +1,15 @@
-id: fat-rat-collect
+id: fat-rat-collect-6dc02f34c2e6b2c53bab489e327fdf3b
 
 info:
   name: >
-    Fat Rat Collect <= 2.6.0 - Missing Authorization
+    Fat Rat Collect <= 2.7.3 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/279cebb5-4be4-485a-92c7-e0bcc961f93e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/664d265b-7b35-4c61-b48b-d051b7fb5ebd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/fat-rat-collect/"
     google-query: inurl:"/wp-content/plugins/fat-rat-collect/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fat-rat-collect,high
+  tags: cve,wordpress,wp-plugin,fat-rat-collect,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6.0')
+          - compare_versions(version, '<= 2.7.3')

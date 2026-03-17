@@ -1,0 +1,30 @@
+id: barracuda-detect
+
+info:
+  name: Barracuda Server Detect
+  author: rix4uni
+  severity: info
+  description: description
+  reference:
+    - https://
+  metadata:
+    shodan-query:
+      - http.favicon.hash:1436966696
+      - http.title:"Barracuda-Spam-Firewall"
+  tags: barracuda,detect,technologies
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - 'Server: BarracudaHTTP'
+          
+      - type: status
+        status:
+          - 200

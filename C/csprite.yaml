@@ -1,4 +1,4 @@
-id: csprite
+id: csprite-a076f9d8632bc618856f6100bbea778c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f5da3a4f-7084-4ba9-89c9-5a480efc7eca?source=api-scan
   classification:
     cvss-metrics: 

@@ -8,7 +8,7 @@ info:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:
     verified: true
-  tags: xss,csp-bypass,youtube-api
+  tags: xss,csp-bypass,youtube-api,vuln
 
 flow: http(1) && headless(1)
 
@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "youtube_api_csp_xss == true"
-# digest: 4a0a00473045022100b09bd32ffb433f938c8241de7752ea1a3a65f4e64b6e37996cdff2a76189a5cd022027a324cd04c1b627a16334954c6ae17d826e8b81fb0736c9f3fb60ef570cb824:922c64590222798bb761d5b6d8e72950
+

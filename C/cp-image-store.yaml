@@ -1,20 +1,19 @@
-id: cp-image-store
+id: cp-image-store-dae1d7e933e140b02c520fb508263cd5
 
 info:
-  name: "CP Image Store with Slideshow < 1.0.6 - Arbitrary File Download"
+  name: >
+    CP Image Store with Slideshow < 1.0.7 - Arbitrary File Download
   author: topscoder
   severity: high
-  description: "The CP Image Store with Slideshow plugin for WordPress is vulnerable to Directory Traversal in versions before 1.0.6 via the cpis_download_file function. This allows unauthenticated attackers to download arbitrary files from the server, which can contain sensitive information."
+  description: >
+    The CP Image Store with Slideshow plugin for WordPress is vulnerable to an Arbitrary File Download in versions up to, and including, 1.0.6. This is due to insufficient path validation on the 'f' parameter. This makes it possible for unauthenticated attackers to obtain Purchase IDs, and potentially use the IDs to exploit an arbitrary file download vulnerability found in the plugin before 1.0.6.
   reference:
-    - https://github.com/espreto/wpsploit/blob/master/modules/auxiliary/scanner/http/wp_cp_image_storage_file_read.rb
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-cp-image-store-with-slideshow-arbitrary-file-download-1-0-5/
-    - https://www.exploit-db.com/exploits/37559
-    - https://wordpress.org/plugins/cp-image-store/#developers
-    - https://plugins.trac.wordpress.org/changeset/1196184
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d49bd587-26fc-48fb-86aa-a043a5938d43?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/cp-image-store/"
     google-query: inurl:"/wp-content/plugins/cp-image-store/"
@@ -57,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.0.6')
+          - compare_versions(version, '< 1.0.7')

@@ -1,14 +1,15 @@
-id: coming-soon-by-supsystic
+id: coming-soon-by-supsystic-a7116434ee8f9f172edbdbb8500a9ef8
 
 info:
   name: >
-    Coming Soon by Supsystic <= 1.7.10 - Cross Site Request Forgery
+    Coming Soon by Supsystic <= 1.7.5 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/29e49f76-9769-41c9-aeed-9e2857ebbd25?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/48ebeb6a-c585-4ddc-92ab-144f66193991?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/coming-soon-by-supsystic/"
     google-query: inurl:"/wp-content/plugins/coming-soon-by-supsystic/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,coming-soon-by-supsystic,low
+  tags: cve,wordpress,wp-plugin,coming-soon-by-supsystic,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.7.10')
+          - compare_versions(version, '<= 1.7.5')

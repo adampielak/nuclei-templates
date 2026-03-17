@@ -1,14 +1,15 @@
-id: event-post
+id: event-post-12a19d0523d91d302e58f735caa56444
 
 info:
   name: >
-    Event post <= 5.9.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via shortcode
+    Event Post <= 5.9.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via events_cal Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6a92b96b-ecbc-4414-8e42-04b5c3a02131?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3ae1c32-18a7-4109-a7ea-dfd18fa3a8e2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.9.0')
+          - compare_versions(version, '<= 5.9.6')

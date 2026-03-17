@@ -1,4 +1,4 @@
-id: elegant-grunge
+id: elegant-grunge-2ec1049709304358eb972f77381ca337
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/94dd90ef-d801-4fd6-ade7-e1e7ad2e5fec?source=api-scan
   classification:
     cvss-metrics: 

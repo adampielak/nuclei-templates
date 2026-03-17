@@ -1,14 +1,15 @@
-id: imageseo
+id: imageseo-36c8810f505dc21661691bfe727fdea6
 
 info:
   name: >
-    Optimize images ALT Text <= 2.0.7 - Cross-Site Request Forgery
+    Optimize Images ALT Text (alt tag) & names for SEO using AI <= 3.1.1 - Unauthenticated Full Path Disclosure
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9b09338c-a28f-4950-b0c1-98ab85e58c0a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a11083dd-7a5f-483b-a854-2697ddc54262?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/imageseo/"
     google-query: inurl:"/wp-content/plugins/imageseo/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,imageseo,medium
+  tags: cve,wordpress,wp-plugin,imageseo,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.7')
+          - compare_versions(version, '<= 3.1.1')

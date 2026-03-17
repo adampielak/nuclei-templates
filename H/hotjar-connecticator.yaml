@@ -1,4 +1,4 @@
-id: hotjar-connecticator
+id: hotjar-connecticator-fe4c9a56f1f9f04d5e4717879050e5f8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9bbcd280-25c3-4bc3-88bf-d109cfd1e855?source=api-scan
   classification:
     cvss-metrics: 

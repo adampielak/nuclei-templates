@@ -1,4 +1,4 @@
-id: amr-ical-events-list
+id: amr-ical-events-list-79f8d987b4bea1a528f8215f9b8ae142
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a4531261-d76e-4419-b915-749c72830608?source=api-scan
   classification:
     cvss-metrics: 

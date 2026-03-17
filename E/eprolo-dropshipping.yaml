@@ -1,4 +1,4 @@
-id: eprolo-dropshipping
+id: eprolo-dropshipping-1b79774a92954a45cd2bc5695d909dd6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/77f12178-dc92-41fe-a289-222e83f72a27?source=api-scan
   classification:
     cvss-metrics: 

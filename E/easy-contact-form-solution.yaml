@@ -1,4 +1,4 @@
-id: easy-contact-form-solution
+id: easy-contact-form-solution-ec0e56a9f2c9855742023ce9a191a4a5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/02b9a40a-2fb6-4d75-b4b4-a83b95df90e1?source=api-scan
   classification:
     cvss-metrics: 

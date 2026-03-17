@@ -1,4 +1,4 @@
-id: cardoza-ajax-search
+id: cardoza-ajax-search-3fee688b9283108b8ce285eedf2ca99f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/73aa7b26-dbdf-4859-8fb9-f71dc734bb87?source=api-scan
   classification:
     cvss-metrics: 

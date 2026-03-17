@@ -1,4 +1,4 @@
-id: disable-update-notifications
+id: disable-update-notifications-8ee51f427b6ac5677236482a75c41622
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/658ba848-fbfe-4cee-b997-77bc4cae53dc?source=api-scan
   classification:
     cvss-metrics: 
