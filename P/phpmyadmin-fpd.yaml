@@ -7,6 +7,7 @@ info:
   description: |
     Detected potential Full Path Disclosure (FPD) via directly accessible phpMyAdmin files that may throw PHP errors revealing filesystem paths when error display is enabled.
   metadata:
+    runzero-match: service["product"] contains "phpMyAdmin:phpMyAdmin"
     verified: true
     max-request: 1
     shodan-query: html:"phpmyadmin"
@@ -59,4 +60,4 @@ http:
           - 'contains(body, "phpmyadmin")'
           - 'contains_any(body, "Fatal error", "require_once", "Error")'
         condition: and
-# digest: 4b0a00483046022100fab26143dee7bd3a7720412de1cf3e8328832d063206599348b87f992139cae5022100900a6b1642514fa35a9a5d02ffb31e1a8979f4b1e34f3ffc295dfeef586f7921:922c64590222798bb761d5b6d8e72950
+

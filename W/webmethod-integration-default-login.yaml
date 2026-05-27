@@ -1,70 +1,63 @@
 id: webmethod-integration-default-login
-
 info:
-  name: WebMethod Integration Server - Default Login
+  name: WebMethod Integration Server Default Login
   author: ChristianPoeschl,OleWagner,usdAG
   severity: high
-  description: WebMethod Integration Server default login credentials were discovered.
   reference:
     - https://documentation.softwareag.com/
   classification:
     cpe: cpe:2.3:a:softwareag:webmethods:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: service["favicon.ico.image.mmh3"] == "-234335289"
-    verified: true
     max-request: 5
+    product: webmethods
+    shodan-query: http.favicon.hash:-234335289
     vendor: softwareag
-  tags: default-login,webmethod,vuln
+    verified: true
+  tags: default-login,vuln,webmethod
 flow: http(1) && http(2)
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/invoke/pub.file/getFile"
-
-    matchers:
-      - type: dsl
+  - matchers:
+      - condition: and
         dsl:
           - status_code == 403 || status_code == 401
           - contains(to_lower(header), 'integration server')
-        condition: and
         internal: true
-
-  - method: GET
+        type: dsl
+    method: GET
     path:
-      - "{{BaseURL}}/invoke/pub.file/getFile"
-
-    headers:
-      Authorization: "{{base64(username + ':' + password)}}"
-      Cookie: ssnid=
+      - '{{BaseURL}}/invoke/pub.file/getFile'
+  - attack: pitchfork
     cookie-reuse: false
-    threads: 10
-    attack: pitchfork
+    headers:
+      Authorization: '{{base64(username + '':'' + password)}}'
+      Cookie: ssnid=
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - com.wm.app.b2b.server
+          - No filename supplied
+      - condition: and
+        negative: true
+        type: word
+        words:
+          - com.wm.app.b2b.server.AccessException
+          - Invalid credentials
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/invoke/pub.file/getFile'
     payloads:
-      username:
-        - Administrator
-        - Developer
-        - Replicator
-        - SAPUser
       password:
         - manage
         - isdev
         - iscopy
         - 22101999
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - com.wm.app.b2b.server
-          - No filename supplied
-        condition: and
-
-      - type: word
-        words:
-          - com.wm.app.b2b.server.AccessException
-          - Invalid credentials
-        negative: true
-        condition: and
-
+      username:
+        - Administrator
+        - Developer
+        - Replicator
+        - SAPUser
+    threads: 10

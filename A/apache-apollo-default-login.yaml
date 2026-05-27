@@ -1,26 +1,39 @@
 id: apache-apollo-default-login
-
 info:
-  name: Apache Apollo Default Credentials
+  name: Apache Apollo - Default Login
   author: ritikchaddha
   severity: high
-  description: Apache Apollo default login credentials were discovered.
   classification:
     cpe: cpe:2.3:a:apache:activemq_apollo:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Apache Apollo"})
-    verified: true
     max-request: 1
-    vendor: apache
     product: activemq_apollo
     shodan-query: title:"Apache Apollo"
+    vendor: apache
+    verified: true
   tags: apache,apollo,default-login,misconfig,vuln
 variables:
-  username: admin
   password: admin
-
+  username: admin
 http:
-  - raw:
+  - matchers:
+      - part: body_1
+        regex:
+          - ^\s*true\s*$
+        type: regex
+      - condition: and
+        part: body_2
+        type: word
+        words:
+          - '<strong>Log Details:'
+          - Store Status
+          - Logout</a>
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    raw:
       - |
         POST /api/json/session/signin HTTP/1.1
         Host: {{Hostname}}
@@ -30,23 +43,3 @@ http:
       - |
         GET /console/index.html HTTP/1.1
         Host: {{Hostname}}
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: body_1
-        regex:
-          - ^\s*true\s*$
-
-      - type: word
-        part: body_2
-        words:
-          - '<strong>Log Details:'
-          - Store Status
-          - Logout</a>
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

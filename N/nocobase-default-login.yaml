@@ -5,13 +5,12 @@ info:
   author: Fur1na, icarot
   severity: high
   description: |
-    NocoBase default login credentials were discovered.
+    NocoBase default login was discovered.
   reference:
     - https://www.nocobase.com/
     - https://github.com/nocobase/nocobase
     - https://docs.nocobase.com/welcome/getting-started/installation/docker-compose
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "'NOCOBASE_'"})
     verified: true
     max-request: 2
     zoomeye-query: app="NocoBase"
@@ -55,4 +54,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4b0a00483046022100f8333ad6116c640f723006e64babe39e8f2d77f6d3b57e65b9c8084e7dc13b8b022100dcc0135ba542cbacbe03f9e17cb24c39a9e836d0a8b765a784b220511f4e7e07:922c64590222798bb761d5b6d8e72950

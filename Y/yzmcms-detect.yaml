@@ -4,7 +4,7 @@ info:
   name: YzmCMS Detect
   author: pikpikcu
   severity: info
-  tags: yzmcms,tech
+ 
 
 requests:
   - method: GET

@@ -23,5 +23,11 @@ http:
         words:
           - "APP_KEY="
           - "DB_CONNECTION="
-          - "KEY"
-          - "database"
+          - "DB_PASSWORD="
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+        negative: true

@@ -1,5 +1,4 @@
 id: jwk-json-leak
-
 info:
   name: JSON Web Key File - Exposure
   author: Mohsen Yaghoubi
@@ -9,40 +8,38 @@ info:
   reference:
     - https://portswigger.net/web-security/jwt/algorithm-confusion
   classification:
+    cwe-id:
+      - CWE-540
     cpe: cpe:2.3:a:jwt_project:jwt:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    vendor: jwt_project
     product: jwt
     shodan-query: html:"jwks.json"
-  tags: exposure,token,generic,vuln
-
+    vendor: jwt_project
+    verified: true
+  tags: exposure,generic,token,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/.well-known/jwks.json"
-      - "{{BaseURL}}/.well-known/jwks"
-      - "{{BaseURL}}/.well-known/openid-configuration/jwks.json"
-      - "{{BaseURL}}/.well-known/openid-configuration/jwks"
-      - "{{BaseURL}}/jwks.json"
-      - "{{BaseURL}}/jwks"
-
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
+  - matchers:
+      - part: body
+        type: word
         words:
           - '"kty":'
-
-      - type: word
-        part: content_type
+      - part: content_type
+        type: word
         words:
-          - 'application/json'
-
-      - type: status
-        status:
+          - application/json
+      - status:
           - 200
-# digest: 4b0a00483046022100f4a2789458bb6c0d898ae7c9bb58bdcba58034c4bedb3f6ad5a59148b366c4ad022100ac6f1604c88d921cc62943a25af54d9c6b539a7c32e32f912fd58fb671e07066:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100910139f36f138cdf289bc798b8d9b24b8a8a300f21db218591ad3b75448d68ad0220638d5593ca2d3211a9a29d179b4ab5fc8d2506620533e03a8b12cd85a57d227a:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/.well-known/jwks.json'
+      - '{{BaseURL}}/.well-known/jwks'
+      - '{{BaseURL}}/.well-known/openid-configuration/jwks.json'
+      - '{{BaseURL}}/.well-known/openid-configuration/jwks'
+      - '{{BaseURL}}/jwks.json'
+      - '{{BaseURL}}/jwks'
+    stop-at-first-match: true

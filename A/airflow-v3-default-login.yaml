@@ -1,5 +1,4 @@
 id: airflow-v3-default-login
-
 info:
   name: Apache Airflow v3 Default Login
   author: pdteam
@@ -14,16 +13,38 @@ info:
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Airflow"})
     max-request: 2
+    product: airflow
     shodan-query: title:"Airflow"
-  tags: airflow,default-login,apache,vuln
-
+    vendor: apache
+  tags: airflow,apache,default-login,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    extractors:
+      - group: 1
+        internal: true
+        name: csrf_token
+        regex:
+          - type="hidden" value="(.*?)">
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - contains(body_1, "Airflow") && status_code_2 == 302
+          - contains(body_2, "You should be redirected automatically")
+          - contains(header_2, "session=")
+          - '!contains(location_2, "/login")'
+        type: dsl
+    matchers-condition: and
+    payloads:
+      password:
+        - airflow
+      username:
+        - airflow
+    raw:
       - |
         GET /auth/login/ HTTP/1.1
         Host: {{Hostname}}
         Origin: {{BaseURL}}
-
       - |
         POST /auth/login/ HTTP/1.1
         Host: {{Hostname}}
@@ -32,29 +53,3 @@ http:
         Referer: {{BaseURL}}/auth/login
 
         username={{username}}&password={{password}}&_csrf_token={{csrf_token}}
-
-    attack: pitchfork
-    payloads:
-      username:
-        - airflow
-      password:
-        - airflow
-
-    extractors:
-      - type: regex
-        name: csrf_token
-        group: 1
-        internal: true
-        regex:
-          - type="hidden" value="(.*?)">
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains(body_1, "Airflow") && status_code_2 == 302'
-          - 'contains(body_2, "You should be redirected automatically")'
-          - 'contains(header_2, "session=")'
-          - '!contains(location_2, "/login")'
-        condition: and
-

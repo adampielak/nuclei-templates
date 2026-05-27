@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.index-education.com/fr/presentation-hyperplanning.php
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)HYPERPLANNING"})
     max-request: 1
     shodan-query: http.title:"HYPERPLANNING"
   tags: panel,hyperplanning,login,detect,discovery
@@ -33,4 +34,4 @@ http:
         group: 1
         regex:
           - '(?i)Server:\s+HYPERPLANNING\s+([0-9.\s\-]+)'
-# digest: 4a0a00473045022100c0742845d7e4c83228dfaf722bf38d06027cbdbfdf06beefac199daa66ae416802207eb759a8d75aeef5296eff74c03db4f171c4b95a9affae3f9628f2a1db44480b:922c64590222798bb761d5b6d8e72950
+

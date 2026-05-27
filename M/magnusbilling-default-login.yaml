@@ -1,41 +1,35 @@
 id: magnusbilling-default-login
-
 info:
   name: MagnusBilling - Default Login
   author: DhiyaneshDk
   severity: high
   description: |
-    MagnusBilling default admin credentials were discovered.
+    MagnusBilling installs with a default administrative account using the credentials root / magnus. If unchanged, these credentials grant full access to the system, allowing attackers to manage billing data, modify configurations, and potentially execute arbitrary code or commands via exposed interfaces.
   impact: |
     An unauthenticated attacker can gain full administrative control over the MagnusBilling platform, leading to compromise of billing systems, data leakage, and potential pivoting into internal infrastructure.
   metadata:
     runzero-match: service["http.body"] matches "MagnusBilling"
-    verified: true
     max-request: 1
     shodan-query: html:"MagnusBilling"
-  tags: mbilling,default-login,vuln
-
+    verified: true
+  tags: default-login,mbilling,vuln
 variables:
-  username: "root"
-  password: "9F4CA770B638615AC5C3E0D2DA16B77C80C2F2C6"   # magnus
-
+  password: 9F4CA770B638615AC5C3E0D2DA16B77C80C2F2C6
+  username: root
 http:
-  - raw:
+  - matchers:
+      - part: body
+        type: word
+        words:
+          - '"success":"root"'
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    raw:
       - |
         POST /mbilling/index.php/authentication/login HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
         user={{username}}&password={{password}}&key=
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"success":"root"'
-
-      - type: status
-        status:
-          - 200
-

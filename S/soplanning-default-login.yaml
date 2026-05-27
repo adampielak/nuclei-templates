@@ -1,51 +1,47 @@
 id: soplanning-default-login
-
 info:
   name: SOPlanning - Default Login
   author: s4e-io
   severity: high
   description: |
-    SOPlanning default login credentials were discovered.
+    SOPlanning contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
   reference:
     - https://www.soplanning.org/en/
   metadata:
     runzero-match: service["http.body"] matches "(?i)soplanning"
-    verified: true
-    max-request: 1
-    vendor: soplanning
-    product: soplanning
-    shodan-query: http.html:"soplanning"
     fofa-query: body="soplanning"
-  tags: soplanning,default-login,vuln
-
+    max-request: 1
+    product: soplanning
+    shodan-query:
+      - html:"soplanning"
+      - http.html:"soplanning"
+    vendor: soplanning
+    verified: true
+  tags: default-login,soplanning,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    host-redirects: true
+    matchers:
+      - condition: and
+        type: word
+        words:
+          - title="Logout"
+          - title="Modify my profile"
+          - Settings
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    payloads:
+      password:
+        - admin
+      username:
+        - admin
+    raw:
       - |
         POST /process/login.php HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         login={{username}}&password={{password}}
-
-    attack: pitchfork
-    payloads:
-      username:
-        - admin
-      password:
-        - admin
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'title="Logout"'
-          - 'title="Modify my profile"'
-          - "Settings"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

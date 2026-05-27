@@ -1,5 +1,4 @@
 id: apache-streampark-detect
-
 info:
   name: Apache Streampark - Detect
   author: icarot
@@ -9,27 +8,23 @@ info:
   reference:
     - https://github.com/apache/streampark
   classification:
-    cpe: cpe:2.3:a:apache:streampark:*:*:*:*:*:*:*
+    cpe: cpe:2.3:a:apache:streampark:*:*:*:*:*:*:*,cpe:2.3:a:apache:streampark:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    vendor: apache
     product: streampark
     shodan-query: title:"Apache StreamPark"
-  tags: tech,apache,streampark,detect,discovery
-
+    vendor: apache
+  tags: apache,detect,discovery,streampark,tech
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
+        type: word
         words:
-          - '<title>Apache StreamPark</title>'
-        condition: and
-
-      - type: status
-        status:
+          - <title>Apache StreamPark</title>
+      - status:
           - 200
-# digest: 4b0a00483046022100a7af42ad5acc7760a3c52a499f6bdd25f183f4b0ec5b8640ed0820d49af554990221009abb6920973c3a45da60996c1b0bd6c92d65374333d0db817aa62db3edeec3c2:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/'

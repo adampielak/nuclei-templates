@@ -1,48 +1,38 @@
 id: tplink-wR940n-default-login
-
 info:
-  name: TP-Link Wireless N Router WR940N - Default Login
+  name: TP-Link Wireless N Router WR940N - Default-Login
   author: ritikchaddha
   severity: high
-  description: |
-    TP-Link Wireless N Router WR940N default login credentials were discovered.
   metadata:
     runzero-match: service["http.body"] matches "/userRpm/"
-    verified: true
     max-request: 1
     shodan-query: html:"/userRpm/"
-  tags: tplink,wR940n,default-login,misconfig,vuln
-
+    verified: true
+  tags: default-login,misconfig,tplink,vuln,wR940n
 variables:
-  username: "admin"
-  password: "admin"
-  en_pass: "{{md5(password)}}"
-  cookie: "{{base64(username + ':' + en_pass)}}"
-
+  cookie: '{{base64(username + '':'' + en_pass)}}'
+  en_pass: '{{md5(password)}}'
+  password: admin
+  username: admin
 http:
-  - raw:
+  - host-redirects: true
+    matchers:
+      - part: body
+        regex:
+          - location\.href(.*)\/([A-Z]+)\/userRpm\/Index\.htm";
+        type: regex
+      - part: header
+        type: word
+        words:
+          - text/html
+      - part: header
+        status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    raw:
       - |
         GET /userRpm/LoginRpm.htm?Save=Save HTTP/1.1
         Host: {{Hostname}}
         Cookie: JS=true; Authorization=Basic {{cookie}}
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - 'location\.href(.*)\/([A-Z]+)\/userRpm\/Index\.htm";'
-
-      - type: word
-        part: header
-        words:
-          - text/html
-
-      - type: status
-        part: header
-        status:
-          - 200
-

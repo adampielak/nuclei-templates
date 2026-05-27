@@ -28,4 +28,4 @@ http:
           - '"first_name:"'
           - '"username"'
         condition: and
-# digest: 4a0a0047304502202fed930fc55d264078cacbf34544d29b048fe1b0fec3d5dcfe6a70eadea4c683022100e4a8b113345add58ca0c67f3da806eaa49e23dd51d16ffe68e2029de36ad3ce7:922c64590222798bb761d5b6d8e72950
+

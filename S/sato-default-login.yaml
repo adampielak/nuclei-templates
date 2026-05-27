@@ -1,20 +1,41 @@
 id: sato-default-login
-
 info:
   name: Sato - Default Login
   author: y0no
   severity: high
   description: |
-    Sato default login credentials were discovered.
+    Sato using default credentials was discovered.
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Sato"})
-    verified: true
     max-request: 1
     shodan-query: title:"Sato"
-  tags: sato,default-login,printer,vuln
-
+    verified: true
+  tags: default-login,printer,sato,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '"r":0'
+          - groups":["user
+      - part: content_type
+        type: word
+        words:
+          - application/json
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - "0310"
+        - "6677"
+      username:
+        - settings
+        - service
+    raw:
       - |
         POST /WebConfig/lua/auth.lua HTTP/1.1
         Host: {{Hostname}}
@@ -22,31 +43,3 @@ http:
         Referer: {{BaseURL}}
 
         group={{username}}&pw={{password}}
-
-    attack: pitchfork
-    payloads:
-      username:
-        - 'settings'
-        - 'service'
-      password:
-        - '0310'
-        - '6677'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"r":0'
-          - 'groups":["user'
-        condition: and
-
-      - type: word
-        part: content_type
-        words:
-          - 'application/json'
-
-      - type: status
-        status:
-          - 200
-

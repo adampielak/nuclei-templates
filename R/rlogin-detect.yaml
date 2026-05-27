@@ -37,4 +37,4 @@ javascript:
           - "success == true"
           - contains(response, "rlogin")
         condition: and
-# digest: 4a0a0047304502206da157df0767d7c44129a39db7e5dd834bfb473fa31813e05139d1976b591d4f022100ed92af1ad65c9529f40479c25946c3284677883abaca33395995cdd98125f53a:922c64590222798bb761d5b6d8e72950
+

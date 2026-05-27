@@ -1,5 +1,4 @@
 id: mbilling-panel
-
 info:
   name: MagnusBilling - Login Panel
   author: DhiyaneshDK
@@ -7,26 +6,23 @@ info:
   description: |
     Identified an exposed MagnusBilling login panel.
   metadata:
+    runzero-match: service["http.body"] matches "(?i)MagnusBilling"
+    max-request: 1
     shodan-query: html:"MagnusBilling"
     verified: true
-    max-request: 1
-  tags: mbilling,login,panel,magnusbilling,discovery
-
+  tags: discovery,login,magnusbilling,mbilling,panel
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/mbilling/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - 'MagnusBilling'
-          - 'Voip System'
-        condition: and
-
-      - type: status
-        status:
+          - MagnusBilling
+          - Voip System
+      - status:
           - 200
-# digest: 4a0a0047304502200763a4b53ca73608f8bb673e0d5aee0963258d99bdf31aa7b19fdd1d5a6cd9fc0221008d51dbb288d2f7a7f8186ff964f355e0dd25727ceddc00b059bf2beb87cb9899:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/mbilling/'

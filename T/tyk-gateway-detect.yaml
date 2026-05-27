@@ -38,4 +38,4 @@ http:
         part: body
         regex:
           - "\"version\":\"([^\"]*)\""
-# digest: 4a0a004730450220507c421ba38e391b181ac3ba0491f48abd5d249c0018b6fd987afb7705de60bb0221008e10a4e4a65a252f482d35d16e407a4fddb3d958e1f9bbad9afbbe31f8605bd9:922c64590222798bb761d5b6d8e72950
+

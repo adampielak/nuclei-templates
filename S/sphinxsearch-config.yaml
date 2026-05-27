@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 7
-  tags: sphinx,sphinxsearch,exposure,config
+  tags: sphinx,sphinxsearch,exposure,config,vuln
 
 http:
   - method: GET
@@ -26,6 +26,7 @@ http:
       - "{{BaseURL}}/sphinxsearch/sphinx.conf"
 
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -39,4 +40,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202c5da2de0218938f606215884c5d06d4df9d871fd713ae605be69a28f8751ab502203d0afa6d4621b7c3bf58071143df4bebb21d0edb887395d4eca6c7c7c8b7e386:922c64590222798bb761d5b6d8e72950
+

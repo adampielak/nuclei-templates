@@ -1,48 +1,42 @@
 id: softether-vpn-default-login
-
 info:
   name: SoftEther VPN Admin Console - Default Login
   author: bhutch
   severity: high
   description: |
-    SoftEther VPN Admin Console default login credentials were discovered.
+    The administrative password for the SoftEther VPN Server is blank.
   reference:
     - https://www.softether.org/4-docs/1-manual/3._SoftEther_VPN_Server_Manual/3.3_VPN_Server_Administration#Administration_Authority_for_the_Entire_SoftEther_VPN_Server
   classification:
     cpe: cpe:2.3:a:softether:vpn:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "SoftEther VPN Server"})
-    verified: true
     max-request: 1
-    vendor: softether
     product: vpn
     shodan-query: title:"SoftEther VPN Server"
-  tags: misconfig,vpn,softether,default-login,vuln
-
+    vendor: softether
+    verified: true
+  tags: default-login,misconfig,softether,vpn,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Create new Virtual Hub
+          - Toggle navigation
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - null
+      username:
+        - administrator
+    raw:
       - |
         GET /admin/default/ HTTP/1.1
         Host: {{Hostname}}
         Authorization: Basic {{base64(username + ':' + password)}}
-
-    attack: pitchfork
-    payloads:
-      username:
-        - administrator
-      password:
-        - null
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Create new Virtual Hub'
-          - 'Toggle navigation'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

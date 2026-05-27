@@ -1,47 +1,40 @@
 id: ibm-dcbc-default-login
-
 info:
   name: IBM Decision Center Business Console - Default Login
   author: DhiyaneshDK
   severity: high
-  description: IBM Decision Center Business Console default login credentials were discovered.
   reference:
     - https://www.ibm.com/docs/en/odm/8.0.1?topic=users-tutorial-getting-started-decision-center-business-console
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Decision Center \\| Business Console"})
-    verified: true
     max-request: 1
-    shodan-query: "title=\"Decision Center | Business Console\""
-  tags: ibm,default-login,decision-center,vuln
-
+    shodan-query: title="Decision Center | Business Console"
+    verified: true
+  tags: decision-center,default-login,ibm,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    host-redirects: true
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - 'userName: ''odmAdmin'''
+          - Log out
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 3
+    payloads:
+      password:
+        - odmAdmin
+      username:
+        - odmAdmin
+    raw:
       - |
         POST /decisioncenter/j_security_check HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         j_username={{username}}&j_password={{password}}
-
-    host-redirects: true
-    max-redirects: 3
-    attack: pitchfork
-    payloads:
-      username:
-        - odmAdmin
-      password:
-        - odmAdmin
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "userName: 'odmAdmin'"
-          - "Log out"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

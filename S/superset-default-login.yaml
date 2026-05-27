@@ -5,7 +5,7 @@ info:
   author: dhiyaneshDK
   severity: high
   reference: https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/apache-superset-default-credentials.json
-  tags: apache, default-login
+ 
 
 requests:
   - raw:

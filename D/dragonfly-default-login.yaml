@@ -1,46 +1,39 @@
 id: dragonfly-default-login
-
 info:
   name: Dragonfly - Default Login
   author: DhiyaneshDK
   severity: high
   description: |
-    Dragonfly default login credentials were discovered.
+    Dragonfly was using the default username, and the password was discovered.
   metadata:
     runzero-match: service["http.body"] matches "(?i)logo-dragonfly\\.png"
-    verified: true
-    max-request: 1
     fofa-query: body="logo-dragonfly.png"
-  tags: dragonfly,default-login,vuln
-
+    max-request: 1
+    verified: true
+  tags: default-login,dragonfly,vuln
 variables:
-  username: "root"
-  password: "dragonfly"
-
+  password: dragonfly
+  username: root
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '"token":'
+          - '{"expire":'
+      - part: content_type
+        type: word
+        words:
+          - application/json
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    raw:
       - |
         POST /api/v1/users/signin HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json;charset=UTF-8
 
         {"name":"{{username}}","password":"{{password}}"}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"token":'
-          - '{"expire":'
-        condition: and
-
-      - type: word
-        part: content_type
-        words:
-          - "application/json"
-
-      - type: status
-        status:
-          - 200
-

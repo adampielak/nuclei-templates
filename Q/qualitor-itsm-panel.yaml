@@ -1,5 +1,4 @@
 id: qualitor-itsm-panel
-
 info:
   name: Qualitor ITSM - Detect
   author: johnk3r
@@ -11,26 +10,22 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "-1217039701"
     max-request: 1
     shodan-query: http.favicon.hash:"-1217039701"
-  tags: panel,qualitor,discovery
-
+  tags: discovery,panel,qualitor
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    redirects: true
-    max-redirects: 1
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
+  - matchers:
+      - part: body
+        type: word
         words:
-          - "<title>Qualitor Web</title>"
-
-      - type: status
-        status:
+          - <title>Qualitor Web</title>
+      - status:
           - 200
-# digest: 4a0a00473045022100ffbf7bbad2fb9776740678e258799294aa7b38619d93cccfab28733c11b97b9902207eb6473fc004c08bf33a2cd750e591bbb393a2a09aec1b26b62e1543d735e122:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    max-redirects: 1
+    method: GET
+    path:
+      - '{{BaseURL}}'
+    redirects: true

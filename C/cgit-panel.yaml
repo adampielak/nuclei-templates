@@ -1,5 +1,4 @@
 id: cgit-panel
-
 info:
   name: CGIT - Detect
   author: tess,righettod
@@ -13,31 +12,29 @@ info:
     cpe: cpe:2.3:a:cgit_project:cgit:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "(?i)git repository browser"})
-    verified: true
-    max-request: 1
-    vendor: cgit_project
-    product: cgit
-    shodan-query: http.title:"git repository browser"
     fofa-query: title="git repository browser"
     google-query: intitle:"git repository browser"
-  tags: panel,git,cgit_project,discovery
-
+    max-request: 1
+    product: cgit
+    shodan-query:
+      - http.title:"Git repository browser"
+      - http.title:"git repository browser"
+    vendor: cgit_project
+    verified: true
+  tags: cgit_project,discovery,git,panel
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(to_lower(body), "git repository browser", "cgit")'
-        condition: and
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 1
         part: body
-        group: 1
         regex:
-          - '(?i)<meta\s+name=.?generator.?\s+content=.?([a-z0-9\s.]+).?'
-
+          - (?i)<meta\s+name=.?generator.?\s+content=.?([a-z0-9\s.]+).?
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_all(to_lower(body), "git repository browser", "cgit")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}'

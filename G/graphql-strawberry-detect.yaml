@@ -1,4 +1,5 @@
 id: graphql-strawberry-detect
+
 info:
   name: Graphql Strawberry Detect
   author: princechaddha
@@ -14,7 +15,9 @@ http:
       - "{{BaseURL}}/api/graphql"
       - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
+
     body: '{"query":"query @deprecated { __typename }"}'
+
     headers:
       Content-Type: application/json
     redirects: true
@@ -30,4 +33,4 @@ http:
         words:
           - "Directive '@deprecated' may not be used on query."
         part: body
-# digest: 490a004630440220406d1178b55874403766fff75a62bbdb90351c87a173778ee6ddf15d548bb2d602201ad82b478cf9d37141aa0d21767f484bc384edaf8e83a01732a9adc533fbd01c:922c64590222798bb761d5b6d8e72950
+

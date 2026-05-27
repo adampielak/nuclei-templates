@@ -24,6 +24,7 @@ http:
         GET /cgi-bin/get?system.access_level HTTP/1.1
         Host: {{Hostname}}
 
+    matchers-condition: and
     matchers:
       - type: status
         status:

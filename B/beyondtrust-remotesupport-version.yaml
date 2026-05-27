@@ -57,4 +57,4 @@ http:
           - '"Version: " + version'
           - '"Timestamp: " + extracted_unix_timestamp'
           - '"Release Date: " + date_time("%Y-%M-%D", extracted_unix_timestamp)'
-# digest: 4a0a004730450221008d91c7e68bdc13081f872c119932c4d8254867afd114d2c435e4cbbc84884a5c02204dff9244899dacf465660d4419f52079a2eec4a6b9d160fde95bdd3662345479:922c64590222798bb761d5b6d8e72950
+

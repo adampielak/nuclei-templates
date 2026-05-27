@@ -13,7 +13,6 @@ info:
 
 variables:
   user_email: "test@example.com"
-
 flow: http(1) && http(2)
 
 http:
@@ -23,7 +22,6 @@ http:
 
     redirects: true
     max-redirects: 3
-
     matchers:
       - type: word
         words:
@@ -47,7 +45,6 @@ http:
 
     body: |
       app_id={{intercom_app_id}}&user_data={"email":"{{user_email}}"}
-
     matchers:
       - type: status
         status:
@@ -57,4 +54,4 @@ http:
       - type: dsl
         dsl:
           - Input
-# digest: 4b0a00483046022100f22b59730698973f763149193ceed8b88c9eb74758bd353e31dae9f2befd54180221009a70fb307c93c17bfeb18811c39277e3f13989613e264608d751aff483854a56:922c64590222798bb761d5b6d8e72950
+

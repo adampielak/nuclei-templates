@@ -6,18 +6,17 @@ info:
   severity: info
   metadata:
     fofa-query:
-    - app="majordomosl"
-    - icon_hash=1903390397
+    - body="templates/application.html"
     product: majordomo
     shodan-query:
-    - http.favicon.hash:1903390397
-    vendor: mjdm
+    - http.html:"templates/application.html"
+    vendor: sergejey
     verified: true
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: favicon
-    hash:
-    - '1903390397'
+  - type: word
+    words:
+    - templates/application.html

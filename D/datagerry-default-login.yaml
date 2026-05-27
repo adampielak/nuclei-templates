@@ -1,48 +1,40 @@
 id: datagerry-default-login
-
 info:
-  name: Datagerry Default Credentials
+  name: Datagerry - Default Login
   author: gy741
   severity: high
-  description: Datagerry default login credentials were discovered.
+  description: |
+    Datagerry was using default username and password was discovered.
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "(?i)datagerry"})
-    verified: true
     max-request: 1
-    vendor: becon
-    product: datagerry
     shodan-query: http.title:"datagerry"
+    verified: true
   tags: datagerry,default-login,vuln
-
 variables:
-  username: admin
   password: admin
-
+  username: admin
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '"token":'
+          - '"token_issued_at":'
+          - '"token_expire":'
+      - part: content_type
+        type: word
+        words:
+          - application/json
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    raw:
       - |
         POST /rest/auth/login HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
         {"user_name":"{{username}}","password":"{{password}}"}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"token":'
-          - '"token_issued_at":'
-          - '"token_expire":'
-        condition: and
-
-      - type: word
-        part: content_type
-        words:
-          - application/json
-
-      - type: status
-        status:
-          - 200
-

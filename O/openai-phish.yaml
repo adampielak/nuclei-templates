@@ -10,7 +10,7 @@ info:
     - https://openai.com
   metadata:
     max-request: 1
-  tags: phishing,openai,osint
+  tags: phishing,openai,osint,discovery,ai
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"openai.com")'
-# digest: 4a0a00473045022100e7d3194ee6894c996476df596c34f855496271dbeac1580718bd26aad7a5170e02202c43b5b969a9afce00511ff79ccf4f84ad7943b8699f6694dc920c79e7e978e8:922c64590222798bb761d5b6d8e72950
+

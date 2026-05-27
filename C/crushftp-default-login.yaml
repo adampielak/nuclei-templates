@@ -1,23 +1,46 @@
 id: crushftp-default-login
-
 info:
-  name: CrushFTP Default Credentials
+  name: CrushFTP - Default Login
   author: pussycat0x
   severity: high
-  description: CrushFTP default login credentials were discovered.
+  description: |
+    CrushFTP default login credentials were discovered.
   classification:
     cpe: cpe:2.3:a:crushftp:crushftp:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: service["http.body"] contains "CrushFTP" || service["http.head.server"] contains "CrushFTP" || any(each(service["favicon.ico.image.mmh3"]), {# == "-1022206565"})
-    verified: true
     max-request: 2
-    vendor: crushftp
     product: crushftp
     shodan-query: html:"CrushFTP"
-  tags: default-login,crushftp,vuln
-
+    vendor: crushftp
+    verified: true
+  tags: crushftp,default-login,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    extractors:
+      - group: 1
+        internal: true
+        name: auth
+        part: header_2
+        regex:
+          - currentAuth=([0-9a-zA-Z]+)
+        type: regex
+    matchers:
+      - part: body_2
+        type: word
+        words:
+          - <response>success</response>
+      - part: header_2
+        type: word
+        words:
+          - text/xml
+    matchers-condition: and
+    payloads:
+      password:
+        - crushadmin
+      username:
+        - crushadmin
+    raw:
       - |
         GET /WebInterface/ HTTP/1.1
         Host: {{Hostname}}
@@ -28,33 +51,4 @@ http:
         Referer: {{RootURL}}/WebInterface/login.html
 
         command=login&username={{username}}&password={{password}}&encoded=true&language=en&random=0.34712915617878926
-
-    attack: pitchfork
-    payloads:
-      username:
-        - crushadmin
-      password:
-        - crushadmin
     stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body_2
-        words:
-          - <response>success</response>
-
-      - type: word
-        part: header_2
-        words:
-          - text/xml
-
-    extractors:
-      - type: regex
-        name: auth
-        internal: true
-        part: header_2
-        group: 1
-        regex:
-          - 'currentAuth=([0-9a-zA-Z]+)'
-

@@ -9,6 +9,7 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "-1148190371" || service["favicon.ico.image.mmh3"] == "-1068289244" || any(each(service["html.titles"]), {# matches "(?i)\\| OPNsense"}) || service["http.head.server"] matches "OPNsense"
     max-request: 1
     verified: true
     vendor: opnsense
@@ -36,4 +37,4 @@ http:
           - 'contains(body, "| OPNsense</title>")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022042b63572a3d538f22457af1be7d1b3e2afcf62577c89463ffc5e3e229572da17022100e14326b119cbad2f6383c4995475d0f2818ceee7a55490869cbccc579d3a9811:922c64590222798bb761d5b6d8e72950
+

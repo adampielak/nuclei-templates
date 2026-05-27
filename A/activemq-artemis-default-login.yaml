@@ -1,46 +1,53 @@
 id: activemq-artemis-default-login
-
 info:
   name: Apache ActiveMQ Artemis Console Default Login
   author: pdteam
   severity: high
-  description: Apache ActiveMQ Artemis console default login credentials were discovered.
+  description: |
+    Detected Apache ActiveMQ Artemis console default login credentials were discovered.
   reference:
     - https://activemq.apache.org/components/artemis/documentation/latest/management-console.html
   metadata:
     runzero-match: any(each(service["html.titles"]), {# contains "ActiveMQ Artemis Console"})
     max-request: 2
-    vendor: apache
     product: activemq
     shodan-query: title:"ActiveMQ Artemis Console"
-  tags: apache,activemq,artemis,default-login,vuln
-
+    vendor: apache
+  tags: activemq,apache,artemis,default-login,vuln
 http:
-  - method: POST
-    path:
-      - '{{BaseURL}}/console/auth/login'
-
-    headers:
-      Content-Type: application/json
-
+  - attack: pitchfork
     body: '{"username":"{{username}}","password":"{{password}}"}'
-    stop-at-first-match: true
-    payloads:
-      username:
-        - artemis
-      password:
-        - artemis
-    attack: pitchfork
-    matchers:
-      - type: word
-        words:
-          - '{"credentials"'
-
     extractors:
-      - type: regex
+      - group: 0
         name: credential
         part: body
-        group: 0
         regex:
           - '{"credentials":.*}'
-
+        type: regex
+    headers:
+      Content-Type: application/json
+      X-Requested-With: XMLHttpRequest
+    matchers:
+      - dsl:
+          - contains(content_type, "application/json")
+        type: dsl
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '{"credentials"'
+          - '"principals":['
+          - org.apache.activemq
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/console/auth/login'
+    payloads:
+      password:
+        - artemis
+      username:
+        - artemis
+    stop-at-first-match: true

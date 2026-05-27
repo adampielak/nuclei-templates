@@ -10,7 +10,7 @@ info:
     - https://steampowered.com
   metadata:
     max-request: 1
-  tags: phishing,steam,osint
+  tags: phishing,steam,osint,discovery
 http:
   - method: GET
     path:
@@ -25,7 +25,6 @@ http:
         words:
           - 'Welcome to Steam'
           - 'Steam is the ultimate destination for playing, discussing, and creating games.'
-        condition: and
 
 
       - type: status
@@ -35,4 +34,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"steampowered.com")'
-# digest: 4a0a00473045022100e9de57678a1cb6c31536bfe4d6fed48240b71dd8f16104aa249d716e77f4c66c0220275846dbea63bbc984b768bc9fcdb303cdc5689a736f8c250707c392dc928246:922c64590222798bb761d5b6d8e72950
+

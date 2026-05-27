@@ -37,4 +37,4 @@ http:
         name: version
         regex:
           - "version = ([0-9.x-]+)"
-# digest: 4a0a0047304502207db1807d80e278ebaacda54d26498263d1a1ac3753c3af3afdb0d98333737339022100844a100b17e5e85d0400d3d8ff15f574c1ff860dcbb5854e1f760ed5a3dcf486:922c64590222798bb761d5b6d8e72950
+

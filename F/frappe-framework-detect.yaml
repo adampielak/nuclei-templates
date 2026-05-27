@@ -11,8 +11,8 @@ info:
     - https://docs.frappe.io/framework/user/en/introduction
     - https://github.com/frappe/frappe
   metadata:
-    max-request: 1
     verified: true
+    max-request: 1
     shodan-query: http.html:"window.frappe"
   tags: panel,frappe,detect,discovery
 
@@ -31,4 +31,4 @@ http:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "frappe.csrf_token", "frappe.boot", "frappe-web.bundle")'
         condition: and
-# digest: 4b0a00483046022100a8bdd1860c9d6970d241f7cff8a2399bbcdd5bcb7239c3217ff41848bc5f508f022100ffcb3b0273792eddb35b2a4e85f4057f129cf2d19659a3af9e328402fc4f2bab:922c64590222798bb761d5b6d8e72950
+

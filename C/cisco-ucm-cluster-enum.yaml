@@ -9,6 +9,7 @@ info:
   reference:
     - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#servers
   metadata:
+    runzero-match: service["product"] contains "Cisco:Unified Communications Manager"
     verified: true
     product: unified_communications_manager
     vendor: cisco
@@ -49,4 +50,4 @@ http:
         name: cluster_nodes
         xpath:
           - "/servers/server"
-# digest: 4a0a0047304502204268423ab81f1e93393178449d72c3ea4b4af431a829eb17115e3e7211269ffa02210082ad194e71f2ecc609f1b70396a44150a0bcd3a1e2c02440f7640091b8350a09:922c64590222798bb761d5b6d8e72950
+

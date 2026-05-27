@@ -1,20 +1,24 @@
 id: osasi-default-login
-
 info:
   name: OSASI PLC - Default Login
   author: biero-el-corridor
   severity: high
   description: |
-    OSASI PLC web interface default login credentials were discovered.
+    Detected OSASI PLC web interface accessible with default credentials, potentially allowing unauthorized administrative access to industrial control systems.
   metadata:
     runzero-match: service["favicon.ico.image.mmh3"] == "-268676052"
-    verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-268676052
-  tags: osasi,plc,default-login,vuln
-
+    verified: true
+  tags: default-login,osasi,plc,vuln
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        dsl:
+          - contains(location, '/genbas/')
+          - contains(set_cookie, 'CAKEPHP=')
+        type: dsl
+    raw:
       - |
         POST /users/login HTTP/1.1
         Host: {{Hostname}}
@@ -23,11 +27,3 @@ http:
         Referer: {{RootURL}}/users/login
 
         _method=POST&data[User][loginid]=1234&data[User][passwd]=1234
-
-    matchers:
-      - type: dsl
-        dsl:
-          - "contains(location, '/genbas/')"
-          - "contains(set_cookie, 'CAKEPHP=')"
-        condition: and
-

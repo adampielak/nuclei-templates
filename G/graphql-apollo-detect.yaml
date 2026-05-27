@@ -1,4 +1,5 @@
 id: graphql-apollo-detect
+
 info:
   name: Graphql Apollo Detect
   author: princechaddha
@@ -14,7 +15,9 @@ http:
       - "{{BaseURL}}/api/graphql"
       - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
+
     body: '{"query":"query @skip {__typename}"}'
+
     headers:
       Content-Type: application/json
     redirects: true
@@ -43,4 +46,4 @@ http:
         part: body
         condition: or
         negative: true
-# digest: 4a0a00473045022100b7f6082bae42aa175132ebc8b08e106849e20c4c66c581d3f624cc9d357f321f022038aebd86230dd34714907a6adaec0a024549ab0d07e2bb7931927774be025493:922c64590222798bb761d5b6d8e72950
+

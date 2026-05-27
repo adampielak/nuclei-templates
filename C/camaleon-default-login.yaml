@@ -1,48 +1,42 @@
 id: camaleon-default-login
-
 info:
-  name: Camaleon CMS Default Credentials
+  name: Camaleon CMS - Default Login
   author: DhiyaneshDK
   severity: high
-  description: Camaleon CMS default login credentials were discovered.
+  description: |
+    Camaleon CMS default login credentials was discovered.
   metadata:
     runzero-match: service["http.body"] matches "(?i)camaleon_cms"
-    vendor: tuzitio
     product: camaleon_cms
     shodan-query: html:"camaleon_cms"
+    vendor: tuzitio
   tags: camaleon,default-login,vuln
-
 variables:
-  username: admin
   password: admin123
+  username: admin
 flow: http(1) && http(2)
-
 http:
-  - raw:
+  - extractors:
+      - group: 1
+        internal: true
+        name: nonce
+        part: body
+        regex:
+          - name="authenticity_token" value="(.*?)"
+        type: regex
+    raw:
       - |
         GET /admin/login HTTP/1.1
         Host: {{Hostname}}
-
-    extractors:
-      - type: regex
-        part: body
-        internal: true
-        name: nonce
-        group: 1
-        regex:
-          - name="authenticity_token" value="(.*?)"
-
-  - raw:
+  - matchers:
+      - dsl:
+          - contains(location,"/admin/dashboard")
+        type: dsl
+    matchers-condition: and
+    raw:
       - |
         POST /admin/login HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         authenticity_token={{nonce}}&user%5Busername%5D={{username}}&user%5Bpassword%5D={{password}}
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains(location,"/admin/dashboard")'
-

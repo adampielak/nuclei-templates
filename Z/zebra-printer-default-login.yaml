@@ -1,44 +1,38 @@
 id: zebra-default-login
-
 info:
-  name: Zebra Printer - Default Login
+  name: Zebra - Default Login
   author: y0no
   severity: high
   description: |
-    Zebra printer default login credentials were discovered.
+    Zebra default login credentials was discovered.
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Zebra"})
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "Zebra"}) || service["http.body"] matches "Zebra Technologies"
     max-request: 4
     shodan-query: title:"Zebra"
-  tags: zebra,default-login,misconfig,printer,vuln
-
+    verified: true
+  tags: default-login,misconfig,printer,vuln,zebra
 http:
-  - raw:
+  - attack: pitchfork
+    matchers:
+      - part: body
+        type: word
+        words:
+          - '>Access Granted. This IP Address now'
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - ""
+        - 1234
+      username:
+        - 1234
+        - admin
+    raw:
       - |
         POST /authorize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         0={{username}}&1={{password}}
-
-    attack: pitchfork
-    payloads:
-      username:
-        - 1234
-        - admin
-      password:
-        - ''
-        - 1234
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - ">Access Granted. This IP Address now"
-
-      - type: status
-        status:
-          - 200
-

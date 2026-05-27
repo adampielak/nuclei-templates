@@ -1,31 +1,27 @@
 id: app-manager-default-login
-
 info:
-  name: ManageEngine Applications Manager - Default Login
+  name: ManageEngine Applications Manager - Default Credentials
   author: 0midC13
   severity: high
   description: |
-    ManageEngine Applications Manager default login credentials were discovered.
+    Default credentials grants administrative access to ManageEngine Applications Manager, which can be later escalated into a RCE via DB queries.
   reference:
     - https://www.manageengine.com/products/applications_manager/
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Applications Manager Login Screen"})
-    verified: true
     max-request: 1
-  tags: default-login,manageengine,zoho,vuln
-
+    shodan-query: title:"Applications Manager Login Screen"
+    verified: true
+  tags: default-login,manageengine,vuln,zoho
 variables:
-  username: "admin"
-  password: "admin"
-
+  password: admin
+  username: admin
 http:
   - raw:
       - |
         GET /index.do HTTP/1.1
         Host: {{Hostname}}
-
-  -
-    raw:
+  - raw:
       - |
         POST /j_security_check HTTP/1.1
         Host: {{Hostname}}
@@ -34,20 +30,16 @@ http:
         Referer: {{RootURL}}/index.do
 
         clienttype=html&webstart=&j_username=admin&ScreenWidth=1280&ScreenHeight=709&username={{username}}&j_password={{password}}
-
-  -
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Super Administrator
+          - Add Application
+    matchers-condition: and
     raw:
       - |
         GET /showresource.do?group=All&method=showResourceTypes&monitor_viewtype=categoryview HTTP/1.1
         Host: {{Hostname}}
         Referer: {{RootURL}}/j_security_check
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Super Administrator"
-          - "Add Application"
-        condition: and
-

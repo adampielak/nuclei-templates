@@ -1,5 +1,4 @@
 id: google-adk-api-exposed
-
 info:
   name: Google ADK API Exposure
   author: princechaddha
@@ -10,23 +9,21 @@ info:
     - https://google.github.io/adk-docs/
     - https://github.com/google/adk-samples
   metadata:
+    max-request: 1
     verified: true
-  tags: adk,exposure,google,ai,agent,api,devops,discovery
-
+  tags: adk,agent,ai,api,devops,discovery,exposure,google
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '","userId":"{{randstr}}"'
+          - '{"id":"'
+    raw:
       - |
         POST /apps/my_sample_agent/users/{{randstr}}/sessions/s_123 HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
         {"state": {"key1": "value1", "key2": 42}}
-
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '","userId":"{{randstr}}"'
-          - '{"id":"'
-        condition: and
-

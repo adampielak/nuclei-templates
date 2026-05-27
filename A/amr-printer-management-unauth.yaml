@@ -7,6 +7,7 @@ info:
   description: |
     Unauthorized access to the AMR Printer Management dashboard was possible, potentially exposing sensitive printer configuration and management interfaces without proper authentication.
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AMR Printer Management"})
     max-request: 1
     verified: true
     shodan-query: title:"AMR Printer Management"
@@ -33,4 +34,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203732ac7385ffdb3c702cc8de2e005fa8fd54e45fabb2cea61515f520de3d3e10022035e363f3029e5ac17854611d398913463aee18e4c72b6435a95aef3502d679c8:922c64590222798bb761d5b6d8e72950
+

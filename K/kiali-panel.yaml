@@ -11,6 +11,7 @@ info:
   classification:
     cpe: cpe:2.3:a:kiali:kiali:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Kiali"})
     verified: true
     max-request: 2
     vendor: kiali
@@ -40,4 +41,4 @@ http:
         group: 1
         regex:
           - '(?i)"Kiali version":\s*"([a-z0-9.]+)"'
-# digest: 4b0a00483046022100d88c077a41139785d941e015bf300b54b331587f1fda9971d706b3a47fe0cd85022100ffdee3601269fc719fd49b285f9733a2f14e1a55851f7b28b25da95b90223938:922c64590222798bb761d5b6d8e72950
+

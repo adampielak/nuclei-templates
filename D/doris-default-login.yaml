@@ -1,47 +1,41 @@
 id: doris-default-login
-
 info:
-  name: Apache Doris Default Credentials
+  name: Apache Doris - Default Login
   author: icarot
   severity: high
-  description: Apache Doris default login credentials were discovered.
+  description: |
+    Tests if Apache Doris Panel, it is an easy-to-use, high performance and unified analytics database, is using the default password on root/admin user accounts.
   metadata:
     runzero-match: service["favicon.ico.image.mmh3"] == "24048806"
-    verified: true
+    fofa-query: icon_hash=24048806
     max-request: 2
-    vendor: apache
     product: doris
     shodan-query: http.favicon.hash:"24048806"
-    fofa-query: icon_hash=24048806
+    vendor: apache
+    verified: true
   tags: apache,default-login,doris,vuln
-
 http:
-  - raw:
+  - matchers:
+      - part: body
+        type: word
+        words:
+          - msg":"Login success!"
+      - part: content_type
+        type: word
+        words:
+          - application/json
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      basicAuth:
+        - YWRtaW46
+        - cm9vdDo=
+    raw:
       - |
         POST /rest/v1/login HTTP/1.1
         Host: {{Hostname}}
         Authorization: Basic {{basicAuth}}
         Content-Type: application/json; charset=utf-8
-
-    payloads:
-      basicAuth:
-        - YWRtaW46
-        - cm9vdDo=
     stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - msg":"Login success!"
-
-      - type: word
-        part: content_type
-        words:
-          - application/json
-
-      - type: status
-        status:
-          - 200
-

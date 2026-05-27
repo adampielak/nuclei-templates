@@ -1,22 +1,27 @@
 id: caprover-default-login
-
 info:
-  name: Caprover Default Credentials
+  name: Caprover - Default Login
   author: ritikchaddha
   severity: high
-  description: Caprover default login credentials were discovered.
+  description: |
+    Caprover defaultl login has been detected.
   metadata:
     runzero-match: service["favicon.ico.image.mmh3"] == "988422585"
-    verified: true
     max-request: 1
     shodan-query: http.favicon.hash:988422585
+    verified: true
   tags: caprover,default-login,misconfig,vuln
-
 variables:
   password: captain42
-
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        dsl:
+          - contains_all(body, "status\":100", "Login succeeded", "token\":")
+          - contains(header, "application/json")
+          - status_code == 200
+        type: dsl
+    raw:
       - |
         POST /api/v2/login HTTP/1.1
         Host: {{Hostname}}
@@ -24,12 +29,3 @@ http:
         x-namespace: captain
 
         {"password":"{{password}}"}
-
-    matchers:
-      - type: dsl
-        dsl:
-          - contains_all(body, "status\":100", "Login succeeded", "token\":")
-          - contains(header, "application/json")
-          - status_code == 200
-        condition: and
-

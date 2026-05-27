@@ -12,9 +12,9 @@ info:
   metadata:
     verified: true
     max-request: 1
-    shodan-query: "Max-Forwards:"
+    shodan-query: 'Max-Forwards:'
     fofa-query: header="max-forwards"
-  tags: miscellaneous,misc,max-forwards
+  tags: miscellaneous,misc,max-forwards,vuln
 
 http:
   - method: GET
@@ -31,4 +31,4 @@ http:
         part: header
         regex:
           - '(?i)max-forwards:\s+([0-9]+)'
-# digest: 4b0a00483046022100cb27d76c9918cf6ec6f9979f99f0cdd1bb1f28d4bcf282b5c49d8b3738a06eb4022100b7508374923d181443b67625f964def4c0b178770a2eee006ed36d10b0741ed5:922c64590222798bb761d5b6d8e72950
+

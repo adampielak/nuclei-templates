@@ -1,23 +1,36 @@
 id: cloudstack-default-login
-
 info:
-  name: Apache CloudStack Default Credentials
+  name: Apache CloudStack - Default Login
   author: DhiyaneshDK
   severity: high
-  description: Apache CloudStack default login credentials were discovered.
+  description: |
+    CloudStack instance discovered using weak default credentials, allows the attacker to gain admin privilege.
   classification:
     cpe: cpe:2.3:a:apache:cloudstack:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Apache CloudStack"})
-    verified: true
     max-request: 1
-    vendor: apache
     product: cloudstack
     shodan-query: http.title:"Apache CloudStack"
-  tags: default-login,apache,cloudstack,vuln
-
+    vendor: apache
+    verified: true
+  tags: apache,cloudstack,default-login,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    host-redirects: true
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(content_type, 'application/json')
+          - contains_all(body, 'sessionkey','domainid','userid')
+        type: dsl
+    payloads:
+      password:
+        - password
+      username:
+        - admin
+    raw:
       - |
         POST /client/api/ HTTP/1.1
         Host: {{Hostname}}
@@ -25,19 +38,3 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         command=login&username={{username}}&password={{password}}&domain=%2F&response=json
-
-    attack: pitchfork
-    payloads:
-      username:
-        - admin
-      password:
-        - password
-    host-redirects: true
-    matchers:
-      - type: dsl
-        dsl:
-          - status_code == 200
-          - contains(content_type, 'application/json')
-          - contains_all(body, 'sessionkey','domainid','userid')
-        condition: and
-

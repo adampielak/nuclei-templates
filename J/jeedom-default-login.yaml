@@ -1,27 +1,39 @@
 id: jeedom-default-login
-
 info:
   name: Jeedom - Default Login
   author: ritikchaddha
   severity: high
   description: |
-    Jeedom default login credentials were discovered.
+    Jeedom default login has been detected.
   classification:
     cpe: cpe:2.3:a:jeedom:jeedom:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "Jeedom"})
-    verified: true
     max-request: 2
-    vendor: jeedom
     product: jeedom
     shodan-query: title:"Jeedom"
-  tags: jeedom,default-login,misconfig,vuln
+    vendor: jeedom
+    verified: true
+  tags: default-login,jeedom,misconfig,vuln
 variables:
-  username: admin
   password: admin
-
+  username: admin
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        part: body_1
+        type: word
+        words:
+          - state":"ok
+          - 'result":'
+      - condition: and
+        part: body_2
+        type: word
+        words:
+          - logout=1
+          - Plugins</span>
+    matchers-condition: and
+    raw:
       - |
         POST /core/ajax/user.ajax.php HTTP/1.1
         Host: {{Hostname}}
@@ -31,20 +43,3 @@ http:
       - |
         GET /index.php?v=d&p=dashboard HTTP/1.1
         Host: {{Hostname}}
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body_1
-        words:
-          - 'state":"ok'
-          - 'result":'
-        condition: and
-
-      - type: word
-        part: body_2
-        words:
-          - "logout=1"
-          - "Plugins</span>"
-        condition: and
-

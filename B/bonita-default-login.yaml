@@ -1,43 +1,37 @@
 id: bonita-default-login
-
 info:
-  name: Bonita Default Credentials
+  name: Bonita - Default Login
   author: DhiyaneshDk
   severity: high
-  description: Bonita default login credentials were discovered.
+  description: |
+    Bonita login was using default credentials which can led to gain super administrator access.
   metadata:
     runzero-match: service["favicon.ico.image.mmh3"] == "-1197926023"
-    verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1197926023
+    verified: true
   tags: bonita,default-login,misconfig,vuln
-
 variables:
-  username: install
   password: install
-
+  username: install
 http:
-  - raw:
+  - host-redirects: true
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Layout Without Menu
+          - bonitasoft.ui.services
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 4
+    raw:
       - |
         POST /bonita/loginservice?redirect=true&redirectUrl=%2Fbonita%2Fapps%2FappDirectoryBonita HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         username={{username}}&password={{password}}&_l=en
-
-    host-redirects: true
-    max-redirects: 4
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - Layout Without Menu
-          - bonitasoft.ui.services
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

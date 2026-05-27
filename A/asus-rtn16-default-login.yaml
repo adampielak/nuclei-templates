@@ -1,47 +1,42 @@
 id: asus-rtn16-default-login
-
 info:
-  name: ASUS RT-N16 Default Credentials
+  name: ASUS RT-N16 - Default Login
   author: ritikchaddha
   severity: high
-  description: ASUS RT-N16 default login credentials were discovered.
+  description: |
+    ASUS RT-N16 contains a default login vulnerability. Default admin login password 'admin' was found.
   classification:
     cpe: cpe:2.3:h:asus:rt-n16:*:*:*:*:*:*:*:*
   metadata:
     runzero-match: any(each(service["http.head.wwwAuthentications"]), {# contains 'realm="RT-N16'})
-    verified: true
     max-request: 1
-    vendor: asus
     product: rt-n16
-    shodan-query: "RT-N16"
-  tags: default-login,asus,rt-n16,vuln
-
+    shodan-query: RT-N16
+    vendor: asus
+    verified: true
+  tags: asus,default-login,rt-n16,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
+  - attack: pitchfork
     headers:
-      Authorization: "Basic {{base64(username + ':' + password)}}"
-
-    attack: pitchfork
-    payloads:
-      username:
-        - admin
-      password:
-        - admin
-
-    matchers-condition: and
+      Authorization: Basic {{base64(username + ':' + password)}}
     matchers:
-      - type: word
+      - condition: and
         part: body
+        type: word
         words:
           - ASUS
           - RT-N16
           - System Status
           - Network Map
-        condition: and
-
-      - type: status
-        status:
+      - status:
           - 200
-
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/'
+    payloads:
+      password:
+        - admin
+      username:
+        - admin
