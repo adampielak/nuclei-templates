@@ -9,7 +9,7 @@ info:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:
     max-request: 1
-  tags: login-check,docker,creds-stuffing
+  tags: creds-stuffing,login-check,cloud,docker,vuln
 
 self-contained: true
 
@@ -49,5 +49,4 @@ http:
         dsl:
           - username
           - password
-
-# digest: 4a0a004730450221008337f3f8e11bd6f26f819e592a06da3ecd5a695ea90d62408ee2cc671e323d7302207d2810aa02641442adacfef0db8b1d13a5159ee7883e2ed65c9e949346a7ef4b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100a08cdc34053dcfc6972d083f651b031cd1682c4e0357a58afc645c4edca7323c02205748fa41cebaca373843b0e5999c4206d92eff4112ae858430abeb370311a35c:922c64590222798bb761d5b6d8e72950

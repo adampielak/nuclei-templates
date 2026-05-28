@@ -1,29 +1,26 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - AriaNg Debug Console
+    - '''Downloading'''
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: ariang-debug-console
-
 info:
-  name: AriaNg Debug Console - Exposure
   author: DhiyaneshDk
-  severity: medium
-  description: |
-    Detects the presence of AriaNg Debug Console exposure
+  description: 'Detects the presence of AriaNg Debug Console exposure
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"Ariang"
+    verified: true
+  name: AriaNg Debug Console - Exposure
+  severity: medium
   tags: exposure,ariang,debug,console,misconfig,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "AriaNg Debug Console"
-          - "'Downloading'"
-        condition: and
-

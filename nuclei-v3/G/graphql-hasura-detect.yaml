@@ -1,11 +1,9 @@
 id: graphql-hasura-detect
-
 info:
   name: Graphql Hasura Detect
   author: princechaddha
   severity: info
-  reference:
-    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  reference: https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
   tags: tech,graphql,hasura
 
 http:
@@ -15,9 +13,7 @@ http:
       - "{{BaseURL}}/api/graphql"
       - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
-
     body: '{"query":"query {aa}"}'
-
     headers:
       Content-Type: application/json
     redirects: true
@@ -46,4 +42,4 @@ http:
         part: body
         condition: or
         negative: true
-
+# digest: 4a0a00473045022034def6328487731efa0a0eac64e0680455ec35ea07d0ae7eea87c9e7b701c1a7022100c18fa5a771f6ae8d53e5dc0e6a3d1bd540355a6a2312413a4659b0baa27c1a44:922c64590222798bb761d5b6d8e72950

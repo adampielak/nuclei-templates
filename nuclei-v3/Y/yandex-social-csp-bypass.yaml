@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "yandex_social_csp_xss == true"
-
+# digest: 4a0a00473045022100c5e6f2f6d463742e963cfc33dda41383f6c8ae0fa9bb74f5b34c0eb0ee15e7eb022048733199a68abb94e8ebecea882ecabe07a6769aab628651b57fa505c439866d:922c64590222798bb761d5b6d8e72950

@@ -2,7 +2,7 @@ id: quickcal-515a5dfd-c064-47d2-b347-e4f417bb260a
 
 info:
   name: >
-    QuickCal <= 1.0.13 - Cross-Site Request Forgery to Privilege Escalation
+    QuickCal <= 1.0.15 - Cross-Site Request Forgery to Privilege Escalation
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.13')
+          - compare_versions(version, '<= 1.0.15')

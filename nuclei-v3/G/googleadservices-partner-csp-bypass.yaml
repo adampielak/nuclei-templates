@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "googleadservices_partner_csp_xss == true"
-
+# digest: 4a0a00473045022100f9af375259611d62dcd63501b3e721acc1bdd8f00d18ca862c49b379b8c143570220040622e7096b1a339cf4d2998e0979e80ea89b3b5c818dc3f79132a169447f44:922c64590222798bb761d5b6d8e72950

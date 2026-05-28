@@ -1,37 +1,32 @@
-id: azure-website-enum
-
-info:
-  name: Azure Websites - Cloud Enumeration
-  author: initstring
-  severity: info
-  description: |
-    Searches for Azure websites that are registered and responding.
-  metadata:
-    verified: true
-    max-request: 1
-  tags: cloud,azure
-
-self-contained: true
-
-variables:
-  BaseDNS: "azurewebsites.net"
-
 http:
-  - raw:
-      - |
-        GET https://{{wordlist}}.{{BaseDNS}} HTTP/1.1
-        Host: {{wordlist}}.{{BaseDNS}}
+- attack: batteringram
+  matchers:
+  - condition: or
+    name: Available Azure Website
+    status:
+    - 200
+    - 302
+    type: status
+  raw:
+  - 'GET https://{{wordlist}}.{{BaseDNS}} HTTP/1.1
 
-    redirects: false
+    Host: {{wordlist}}.{{BaseDNS}}
 
-    attack: batteringram
-    threads: 10
+    '
+  redirects: false
+  threads: 10
+id: azure-website-enum
+info:
+  author: initstring
+  description: 'Searches for Azure websites that are registered and responding.
 
-    matchers:
-      - type: status
-        name: "Available Azure Website"
-        status:
-          - 200
-          - 302
-        condition: or
-# digest: 4a0a0047304502204e87fb6ea9b294616dce1e74e429d8a83672921a242d1b3421a0c553eba83894022100bf53c3468808e2316f9194022db3618093873de428109de1984d0664f6bc89ee:922c64590222798bb761d5b6d8e72950
+    '
+  metadata:
+    max-request: 1
+    verified: true
+  name: Azure Websites - Cloud Enumeration
+  severity: info
+  tags: cloud,enum,azure,discovery
+self-contained: true
+variables:
+  BaseDNS: azurewebsites.net

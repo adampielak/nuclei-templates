@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "googleapis_blogger_csp_xss == true"
-
+# digest: 490a0046304402200d22582e4efbeb7027a57d71d752767fd700bfad21cb92b4b553ddb37045ad1b0220415a91a62084e0192d76167483375349dff6db21b65f6418563a2ffed12ffac6:922c64590222798bb761d5b6d8e72950

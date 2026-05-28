@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "fastly_storemapper_csp_xss == true"
-
+# digest: 490a0046304402201f764aa73a839422580ff0a11e2ab521ac540ed306a9f63748e69b7ffbd8562402200bdd2eabaaf55282667c404c78e8c77262c4cef7cd4b0f76ed10684f170d7808:922c64590222798bb761d5b6d8e72950

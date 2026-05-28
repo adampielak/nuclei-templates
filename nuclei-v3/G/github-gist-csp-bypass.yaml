@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "github_gist_csp_xss == true"
-
+# digest: 4b0a00483046022100b3fb8e6539b2cf934022da9b84e4c85bdbf9178491e5ccd7269f8d50eed651d0022100b2d6ff94845833cf514dffc450b592cedd706f4c338676c122322a7cd4eded72:922c64590222798bb761d5b6d8e72950

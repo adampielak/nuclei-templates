@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "skype_config_csp_xss == true"
-
+# digest: 4a0a00473045022100dc59de64ea7e73d710968e497d4a74927e05d3b6abd2e0c4f54d751847b65753022038cd76609b34f51e8b7b176e5e2a03a54d8ade400ceeffd6f7e7c33a8a3d744c:922c64590222798bb761d5b6d8e72950

@@ -9,7 +9,6 @@ info:
   reference:
     - https://github.com/diced/zipline
   metadata:
-    runzero-match: service["http.body"] matches "(?i)Zipline"
     verified: true
     max-request: 1
     vendor: diced
@@ -34,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4b0a00483046022100ed7410ec5a93576792ca7f477ec0e57858ad642c7f313862308b610cb3fdea3302210085bdaec4e08abb1abac1530b6e70d696543c58c091f3d0aa8415fbf9d2875689:922c64590222798bb761d5b6d8e72950

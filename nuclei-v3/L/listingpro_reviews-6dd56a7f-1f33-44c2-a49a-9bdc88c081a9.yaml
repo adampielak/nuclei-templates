@@ -2,7 +2,7 @@ id: listingpro_reviews-6dd56a7f-1f33-44c2-a49a-9bdc88c081a9
 
 info:
   name: >
-    ListingPro Reviews <= 1.7 - Reflected Cross-Site Scripting
+    ListingPro Reviews < 2.9.11 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.7')
+          - compare_versions(version, '< 2.9.11')

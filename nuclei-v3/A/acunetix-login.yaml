@@ -1,41 +1,37 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <title>Acunetix</title>
+    - assets/images/invicti-acunetix-logo.svg
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/#/login'
 id: acunetix-login
-
 info:
-  name: Acunetix Login Panel - Detect
   author: tess
-  severity: info
-  description: Acunetix login panel was detected.
   classification:
+    cpe: cpe:2.3:a:acunetix:web_vulnerability_scanner:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+  description: Acunetix login panel was detected.
   metadata:
     max-request: 1
-    verified: true
+    product: web_vulnerability_scanner
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Acunetix"})
     shodan-query: title:"Acunetix"
-  tags: panel,acunetix
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/#/login'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Acunetix</title>"
-          - "assets/images/invicti-acunetix-logo.svg"
-        condition: or
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by md on 2022/11/09
+    vendor: acunetix
+    verified: true
+  name: Acunetix Login Panel - Detect
+  severity: info
+  tags: acunetix,discovery,panel

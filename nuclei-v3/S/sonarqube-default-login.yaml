@@ -12,11 +12,14 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+    cpe: cpe:2.3:a:sonarsource:sonarqube:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     shodan-query: title:"Sonarqube"
-  tags: default-login,sonarqube
+    product: sonarqube
+    vendor: sonarsource
+  tags: default-login,sonarqube,vuln
 
 http:
   - raw:
@@ -42,5 +45,4 @@ http:
           - 'len(body) == 0'
           - 'contains(set_cookie, "JWT-SESSION=")'
         condition: and
-
-# digest: 4a0a00473045022077edf6820dfd26aac85996847279e5da97963efc5ae5cec2463343fdf448de37022100bed8e020e6481ac781a01e0bb0e7f1d6d457e424d8abf1665d09ac6f618e095e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200a65810e89e9508525b1ba6671ae821ba5e054d96d4c04f552c6bbaf5b73e8b4022100a1fa806e1cd64d43e0c384f6f5cd0de6c0fb765fab50b4f55d4b1733450f8185:922c64590222798bb761d5b6d8e72950

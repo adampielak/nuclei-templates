@@ -1,31 +1,24 @@
-id: aem-forms-panel
-
-info:
-  name: Adobe Experience Manager Forms - Panel
-  author: darses
-  severity: info
-  description: |
-    Adobe Experience Manager Forms was discovered.
-  metadata:
-    verified: true
-    max-request: 1
-    vendor: adobe
-    product: experience_manager_forms
-  tags: panel,login,adobe,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/lc/libs/livecycle/core/content/login.html"
+- matchers:
+  - status:
+    - 200
+    type: status
+  - type: word
+    words:
+    - <title>Adobe Experience Manager forms</title>
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/lc/libs/livecycle/core/content/login.html'
+id: aem-forms-panel
+info:
+  author: darses
+  description: 'Adobe Experience Manager Forms was detected.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "<title>Adobe Experience Manager forms</title>"
-        case-insensitive: true
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    product: experience_manager_forms
+    vendor: adobe
+  name: Adobe Experience Manager Forms - Panel
+  severity: info
+  tags: detect,panel,adobe

@@ -1,33 +1,30 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - <title>Apache Kyuubi Dashboard
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/ui/'
 id: apache-kyuubi-detect
-
 info:
-  name: Apache Kyuubi - Detect
   author: icarot
-  severity: info
-  description: |
-    Detects a Apache Kyuubi server, a distributed and multi-tenant gateway to provide serverless SQL on data warehouses and lakehouses.
-  reference:
-    - https://github.com/apache/kyuubi/
   classification:
     cpe: cpe:2.3:a:apache:kyuubi:*:*:*:*:*:*:*:*
+  description: 'Detects a Apache Kyuubi server, a distributed and multi-tenant gateway
+    to provide serverless SQL on data warehouses and lakehouses.
+
+    '
   metadata:
     max-request: 1
-    vendor: apache
     product: kyuubi
+    vendor: apache
+  name: Apache Kyuubi - Detect
+  reference:
+  - https://github.com/apache/kyuubi/
+  severity: info
   tags: tech,kyuubi,apache,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/ui/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Apache Kyuubi Dashboard'
-
-      - type: status
-        status:
-          - 200
-

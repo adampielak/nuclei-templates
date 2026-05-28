@@ -1,4 +1,5 @@
 id: marimo-proxy-abuse
+
 info:
   name: Marimo > 0.9.20 - Proxy Abuse
   author: ritikchaddha
@@ -17,17 +18,19 @@ info:
     cvss-score: 6.5
     cwe-id: CWE-400
   metadata:
+    verified: true
     max-request: 1
+    vendor: marimo-team
     product: marimo
     shodan-query: http.favicon.hash:-1864630356
-    vendor: marimo-team
-    verified: true
   tags: cve,cve2026,marimo,proxy-abuse
+
 http:
   - raw:
       - |
         GET /mpl/1234 HTTP/1.1
         Host: {{Hostname}}
+
     matchers-condition: and
     matchers:
       - type: word
@@ -36,11 +39,13 @@ http:
           - 'Connection refused"}'
           - 'detail":'
         condition: and
+
       - type: word
         part: content_type
         words:
           - 'application/json'
+
       - type: status
         status:
           - 500
-        # digest: 4a0a00473045022100932b9823f1892e37b4b8a4d63afb58be83e2be3e12980a9b99c35f79875c8f0402205d9fe23944340399cb2fdb563d0d207110613837128dba07b4b5eae551ca64ef:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100932b9823f1892e37b4b8a4d63afb58be83e2be3e12980a9b99c35f79875c8f0402205d9fe23944340399cb2fdb563d0d207110613837128dba07b4b5eae551ca64ef:922c64590222798bb761d5b6d8e72950

@@ -51,4 +51,4 @@ code:
         part: code_2_response
         words:
           - "[VULNERABLE]"
-
+# digest: 4b0a00483046022100aaf438d9d1df7bb250887b6732f0c1238fd0baa0b46cdd3bfcb9294e178624dd0221008dc264a278dc80cdb7f50423f878c08b49b46e0c097519dadeddf0642e74072f:922c64590222798bb761d5b6d8e72950

@@ -7,7 +7,6 @@ info:
   classification:
     cpe: cpe:2.3:a:zohocorp:manageengine_netflow_analyzer:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["http.body"] matches "(?i)Login - Netflow Analyzer"
     verified: true
     max-request: 1
     vendor: zohocorp
@@ -31,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 490a00463044022017eb5dc4bdac68e22383a087c927fba97bf59d3bea91a1a964d3f150825258cc0220658e668627cb81d58c0a881e9b1cbc34bdf84e956522210663ef3d84a6a96bb9:922c64590222798bb761d5b6d8e72950

@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - <title>Shape Your Future On Your Terms | BigCommerce
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"bigcommerce.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: bigcommerce-phish
-
 info:
-  name: BigCommerce phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A BigCommerce phishing website was detected
-  reference:
-    - https://bigcommerce.com
+  description: 'A BigCommerce phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: BigCommerce phishing Detection
+  reference:
+  - https://bigcommerce.com
+  severity: info
   tags: phishing,bigcommerce,ecommerce,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Shape Your Future On Your Terms | BigCommerce'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"bigcommerce.com")'
-

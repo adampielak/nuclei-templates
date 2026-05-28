@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - 'Airtable: AI App Building for Enterprise - Airtable'
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"airtable.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: airtable-phish
-
 info:
-  name: Airtable phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Airtable phishing website was detected
-  reference:
-    - https://airtable.com
+  description: 'A Airtable phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Airtable phishing Detection
+  reference:
+  - https://airtable.com
+  severity: info
   tags: phishing,airtable,productivity,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Airtable: AI App Building for Enterprise - Airtable'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"airtable.com")'
-

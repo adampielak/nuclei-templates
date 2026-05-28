@@ -1,4 +1,5 @@
 id: astrbot-default-login
+
 info:
   name: AstrBot - Default Login
   author: theamanrawat
@@ -13,19 +14,21 @@ info:
     cwe-id:
       - CWE-798
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AstrBot"})
-    fofa-query: body="<title>AstrBot"
+    verified: true
     max-request: 2
+    vendor: soulter
     product: astrbot
     shodan-query: html:"<title>AstrBot"
-    vendor: soulter
-    verified: true
-  tags: astrbot,default-login
+    fofa-query: body="<title>AstrBot"
+  tags: astrbot, default-login
+
 flow: http(1) && http(2)
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -33,10 +36,12 @@ http:
         words:
           - "<title>AstrBot"
         internal: true
+
       - type: status
         status:
           - 200
         internal: true
+
   - raw:
       - |
         POST /api/auth/login HTTP/1.1
@@ -44,19 +49,22 @@ http:
         Content-Type: application/json
 
         {"username":"{{username}}","password":"{{password}}"}
+
     attack: pitchfork
     payloads:
       username:
         - astrbot
       password:
         - 77b90590a8945a7d36c963981a307dc9
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '"token"'
+
       - type: status
         status:
           - 200
-        # digest: 4b0a00483046022100a47b1fc2f035826fd2bc41b6e47055c5f5e668aef47e749ff75c54579a573d67022100f934a28de7f74f5accfedcae131935cc5f4eb9d1e4da4719b466c0e0867e0949:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a47b1fc2f035826fd2bc41b6e47055c5f5e668aef47e749ff75c54579a573d67022100f934a28de7f74f5accfedcae131935cc5f4eb9d1e4da4719b466c0e0867e0949:922c64590222798bb761d5b6d8e72950

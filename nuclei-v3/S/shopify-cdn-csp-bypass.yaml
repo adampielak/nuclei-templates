@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "shopify_cdn_csp_xss == true"
-
+# digest: 4b0a00483046022100d3cbcdbb1de365cc5631ddc3a412e8f566eb158a022356310bc74934e4cfacce022100d43d9174bba9fa6d978d6c9c589e5a7c3b9aa80a8ac4b44dcd048191f6b0d1b7:922c64590222798bb761d5b6d8e72950

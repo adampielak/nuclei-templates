@@ -1,39 +1,37 @@
-id: bloofoxcms-login-panel
-
-info:
-  name: bloofoxCMS Login Panel - Detect
-  author: theamanrawat
-  severity: info
-  metadata:
-    verified: "true"
-    max-request: 2
-    fofa-query: "Powered by bloofoxCMS"
-  tags: panel,bloofox,cms
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/admin/index.php"
-
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "bloofoxCMS - Home"
-          - "E-Mail / Username"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
-
-# digest: 4a0a00473045022036e243fa093638370fe7d26332fdc2625023ea542b52baec349a69e2c89c26ee022100e1896d6f0bd1cb13d8856bb424712a18bf2f18b0b881086f5b91f77e5edb1bd1:922c64590222798bb761d5b6d8e72950
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - bloofoxCMS - Home
+    - E-Mail / Username
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/admin/index.php'
+  stop-at-first-match: true
+id: bloofoxcms-login-panel
+info:
+  author: theamanrawat
+  classification:
+    cpe: cpe:2.3:a:bloofox:bloofoxcms:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query:
+    - Powered by bloofoxCMS
+    - powered by bloofoxcms
+    max-request: 2
+    product: bloofoxcms
+    vendor: bloofox
+    verified: 'true'
+  name: bloofoxCMS Login Panel - Detect
+  severity: info
+  tags: panel,bloofox,cms,discovery

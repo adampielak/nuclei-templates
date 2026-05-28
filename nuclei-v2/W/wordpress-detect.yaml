@@ -27,7 +27,6 @@ requests:
 
       - type: word
         words:
-          - 'wp-login.php'
           - '/wp-content/themes/'
           - '/wp-includes/'
           - 'name="generator" content="wordpress'

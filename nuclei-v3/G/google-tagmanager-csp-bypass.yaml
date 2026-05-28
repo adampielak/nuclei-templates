@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "google_tagmanager_csp_xss == true"
-
+# digest: 4b0a00483046022100e3401a7ae57a6a3bf911c2ac0a3f8297404850d91061ac1f7368d9f9b6d0a4d6022100e36bec990a87345d4558616a422e595abe5b915cda696e44e79ba43895c9b69a:922c64590222798bb761d5b6d8e72950

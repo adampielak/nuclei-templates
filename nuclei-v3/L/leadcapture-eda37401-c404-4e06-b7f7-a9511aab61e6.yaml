@@ -2,7 +2,7 @@ id: leadcapture-eda37401-c404-4e06-b7f7-a9511aab61e6
 
 info:
   name: >
-    WP Lead Capturing Pages <= 2.3 - Missing Authorization to Arbitrary Content Deletion
+    WP Lead Capturing Pages < 2.6 - Missing Authorization to Arbitrary Content Deletion
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.3')
+          - compare_versions(version, '< 2.6')

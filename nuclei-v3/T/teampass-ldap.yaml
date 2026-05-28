@@ -1,4 +1,5 @@
 id: teampass-ldap
+
 info:
   name: Teampass LDAP Debug Config - Detect
   author: josecosta
@@ -11,32 +12,34 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:teampass:teampass:*:*:*:*:*:*:*:*
   metadata:
-    fofa-query: app="TEAMPASS"
-    max-request: 1
-    product: teampass
-    vendor: teampass
     verified: true
-  tags: exposure,ldap,logs,teampass,vuln
+    max-request: 1
+    fofa-query: app="TEAMPASS"
+  tags: exposure,teampass,ldap,logs
+
 http:
-  - matchers:
-      - condition: and
-        part: header
-        type: word
-        words:
-          - base_dn
-          - search_base
-          - bind_dn
-          - bind_passwd
-      - part: header
-        type: word
-        words:
-          - text/plain
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}/files/ldap.debug.txt'
+      - "{{BaseURL}}/files/ldap.debug.txt"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - 'base_dn'
+          - 'search_base'
+          - 'bind_dn'
+          - 'bind_passwd'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'text/plain'
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100cc9dacf83710a499518c3ad31e93aebfd7835d781afe8c22cc9e3e791367ba57022100c3948eaaea634d939df179384273a28e60053cd005cc31545f8bd748050cffb4:922c64590222798bb761d5b6d8e72950

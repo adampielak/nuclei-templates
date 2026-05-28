@@ -1,33 +1,27 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - is_followed_by_me
+  matchers-condition: and
+  method: GET
+  path:
+  - https://curiouscat.live/api/v2.1/profile?username={{user}}
 id: curiouscat
-
 info:
-  name: Curiouscat User Name Information - Detect
   author: dwisiswant0
-  description: Curiouscat user name information check was conducted.
-  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
-  tags: osint,osint-social,curiouscat
+  description: Curiouscat user name information check was conducted.
   metadata:
     max-request: 1
-
+  name: Curiouscat User Name Information - Detect
+  severity: info
+  tags: osint,osint-social,curiouscat,discovery
 self-contained: true
-http:
-  - method: GET
-    path:
-      - "https://curiouscat.live/api/v2.1/profile?username={{user}}"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        part: body
-        words:
-          - "is_followed_by_me"
-
-# Enhanced by cs 03/17/2023

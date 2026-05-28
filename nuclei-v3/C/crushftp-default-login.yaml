@@ -1,4 +1,5 @@
 id: crushftp-default-login
+
 info:
   name: CrushFTP - Default Login
   author: pussycat0x
@@ -8,39 +9,15 @@ info:
   classification:
     cpe: cpe:2.3:a:crushftp:crushftp:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["http.body"] contains "CrushFTP" || service["http.head.server"] contains "CrushFTP" || any(each(service["favicon.ico.image.mmh3"]), {# == "-1022206565"})
+    verified: true
     max-request: 2
+    vendor: crushftp
     product: crushftp
     shodan-query: html:"CrushFTP"
-    vendor: crushftp
-    verified: true
-  tags: crushftp,default-login,vuln
+  tags: default-login,crushftp,vuln
+
 http:
-  - attack: pitchfork
-    extractors:
-      - group: 1
-        internal: true
-        name: auth
-        part: header_2
-        regex:
-          - currentAuth=([0-9a-zA-Z]+)
-        type: regex
-    matchers:
-      - part: body_2
-        type: word
-        words:
-          - <response>success</response>
-      - part: header_2
-        type: word
-        words:
-          - text/xml
-    matchers-condition: and
-    payloads:
-      password:
-        - crushadmin
-      username:
-        - crushadmin
-    raw:
+  - raw:
       - |
         GET /WebInterface/ HTTP/1.1
         Host: {{Hostname}}
@@ -51,4 +28,33 @@ http:
         Referer: {{RootURL}}/WebInterface/login.html
 
         command=login&username={{username}}&password={{password}}&encoded=true&language=en&random=0.34712915617878926
+
+    attack: pitchfork
+    payloads:
+      username:
+        - crushadmin
+      password:
+        - crushadmin
     stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body_2
+        words:
+          - "<response>success</response>"
+
+      - type: word
+        part: header_2
+        words:
+          - "text/xml"
+
+    extractors:
+      - type: regex
+        name: auth
+        internal: true
+        part: header_2
+        group: 1
+        regex:
+          - 'currentAuth=([0-9a-zA-Z]+)'
+# digest: 4b0a00483046022100b7fc9f1cf93c2450ca47ac0f65da59abcdce642eebc9baf3897938568e20b64b022100ba9cc8ca3850d04a4296d7fef2c37c5d15b8c0534935ae563b214b5952b35ee2:922c64590222798bb761d5b6d8e72950

@@ -1,29 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '# HELP'
+    - collectd_
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
 id: collectd-exporter-metrics
-
 info:
-  name: Collectd Exporter Metrics
   author: DhiyaneshDk
-  severity: low
+  description: Collectd Exporter Metrics is exposed.
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Collectd Exporter"
-  tags: collectd,exposure,debug
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/metrics"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "# HELP"
-          - "collectd_"
-        condition: and
-
-      - type: status
-        status:
-          - 200
+    verified: true
+  name: Collectd Exporter Metrics
+  severity: low
+  tags: collectd,exposure,debug,misconfig,vuln

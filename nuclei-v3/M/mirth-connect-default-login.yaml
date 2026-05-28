@@ -1,4 +1,5 @@
 id: mirth-connect-default-login
+
 info:
   name: Mirth Connect - Default Admin Credentials
   author: 0x_Akoko
@@ -13,18 +14,20 @@ info:
     cvss-score: 9.8
     cwe-id: CWE-798
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Mirth Connect"})
-    fofa-query: 'title="Mirth Connect"'
+    verified: true
     max-request: 2
+    vendor: nextgen
     product: mirth-connect
     shodan-query: 'http.title:"Mirth Connect"'
-    vendor: nextgen
-    verified: true
-  tags: default-login,healthcare,mirth,misconfig
+    fofa-query: 'title="Mirth Connect"'
+  tags: mirth,default-login,misconfig,healthcare
+
 variables:
   username: "admin"
   password: "admin"
+
 flow: http(1) && http(2)
+
 http:
   - raw:
       - |
@@ -34,6 +37,7 @@ http:
         X-Requested-With: XMLHttpRequest
 
         username={{username}}&password={{password}}
+
     matchers:
       - type: dsl
         internal: true
@@ -42,12 +46,15 @@ http:
           - 'contains(content_type, "application/xml")'
           - 'contains_all(to_lower(body), "loginstatus", "success")'
         condition: and
+
     cookie-reuse: true
+
   - raw:
       - |
         GET /api/users/current HTTP/1.1
         Host: {{Hostname}}
         X-Requested-With: XMLHttpRequest
+
     matchers:
       - type: dsl
         dsl:
@@ -55,4 +62,4 @@ http:
           - 'contains(content_type, "application/xml")'
           - 'contains_all(to_lower(body), "<username>", "admin")'
         condition: and
-        # digest: 4a0a0047304502207651fa5ec89eeb4ebd8e179f46b0a51656104ee20d148f7b46fc51859f0296c4022100932a44137b1d50bed9bfb2bd114ccb4156ab2e36362551dc7bfa3d234c7e7997:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502207651fa5ec89eeb4ebd8e179f46b0a51656104ee20d148f7b46fc51859f0296c4022100932a44137b1d50bed9bfb2bd114ccb4156ab2e36362551dc7bfa3d234c7e7997:922c64590222798bb761d5b6d8e72950

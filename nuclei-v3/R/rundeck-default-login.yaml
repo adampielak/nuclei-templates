@@ -1,4 +1,5 @@
 id: rundeck-default-login
+
 info:
   name: Rundeck - Default Login
   author: karkis3c
@@ -11,29 +12,18 @@ info:
   classification:
     cpe: cpe:2.3:a:pagerduty:rundeck:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Rundeck - Login"})
-    fofa-query: app="Rundeck-Login"
-    max-request: 2
-    product: rundeck
-    vendor: pagerduty
     verified: true
+    max-request: 2
+    vendor: pagerduty
+    product: rundeck
+    fofa-query: app="Rundeck-Login"
   tags: default-login,rundeck,vuln
 variables:
-  password: admin
   username: admin
+  password: admin
+
 http:
-  - matchers:
-      - condition: and
-        part: body_2
-        type: word
-        words:
-          - /user/logout
-          - Hi admin
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    raw:
+  - raw:
       - |
         POST /j_security_check HTTP/1.1
         Host: {{Hostname}}
@@ -43,3 +33,17 @@ http:
       - |
         GET /menu/home HTTP/1.1
         Host: {{Hostname}}
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body_2
+        words:
+          - "/user/logout"
+          - "Hi admin"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022079e9aa06e1aa9a61f093c339749cb4179c8620c1e6f79ff239704ba7755665130221008312d183887bb5bd94368ec1538303bed63358f1dd6a0bcf6493f936f0e0a143:922c64590222798bb761d5b6d8e72950

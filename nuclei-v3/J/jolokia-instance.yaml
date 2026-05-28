@@ -1,0 +1,32 @@
+# gap: jolokia-instance
+id: jolokia-instance
+
+info:
+  name: Jolokia JMX Agent Version Disclosure
+  author: TyrusRC
+  severity: low
+  description: |
+    Detects an exposed Jolokia JMX-HTTP bridge endpoint that returns agent
+    metadata including timestamp, protocol version, and agent version without
+    authentication. Jolokia access can lead to JMX MBean enumeration and
+    potential remote code execution.
+  reference:
+    - https://github.com/pikpikcu/Nuclei-Templates/blob/master/files/jolokia.yaml
+  tags: custom,jolokia,jmx,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/jolokia/version"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "timestamp"
+          - "protocol"
+          - "agent"
+        condition: and

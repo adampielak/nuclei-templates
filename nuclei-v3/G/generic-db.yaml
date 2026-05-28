@@ -43,7 +43,7 @@ info:
     cvss-score: 7.5
   metadata:
     max-request: 89
-  tags: files,database,exposure,sqlite,sqlite3,fuzz,sqli,vuln
+  tags: files,database,exposure,sqlite,sqlite3,fuzz,sqli
 
 http:
   - method: GET
@@ -151,4 +151,4 @@ http:
           - '!contains(body, "<html")'
           - 'status_code == 200'
         condition: and
-
+# digest: 4b0a00483046022100f094dd02ac14c745a4599de093a7ba9af0884618b0383cae87bae08119ebb249022100c5c778a3fd42ab30045ad05fce20cd995d76619d2d4e251240e6e47563837778:922c64590222798bb761d5b6d8e72950

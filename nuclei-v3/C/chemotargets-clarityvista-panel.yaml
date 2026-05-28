@@ -1,29 +1,26 @@
-id: chemotargets-clarityvista-panel
-
-info:
-  name: Chemotargets Clarity Vista Login Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-    Chemotargets Clarity Vista login panel was detected.
-  reference:
-    - https://chemotargets.com/clarityvista/
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ClarityVista"})
-    verified: true
-    max-request: 1
-    shodan-query: http.title:"ClarityVista"
-  tags: panel,chemotargets,login,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "<title>clarityvista", "content=\"clarity pharmacovigilance")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/login'
+id: chemotargets-clarityvista-panel
+info:
+  author: righettod
+  description: 'Chemotargets Clarity Vista login panel was detected.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "<title>clarityvista", "content=\"clarity pharmacovigilance")'
-        condition: and
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ClarityVista"})
+    shodan-query: http.title:"ClarityVista"
+    verified: true
+  name: Chemotargets Clarity Vista Login Panel - Detect
+  reference:
+  - https://chemotargets.com/clarityvista/
+  severity: info
+  tags: panel,chemotargets,login,detect,discovery

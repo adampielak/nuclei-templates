@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "hatenaapis_bookmark_csp_xss == true"
-
+# digest: 4b0a00483046022100a14ec884e06e0ce77b343bf305fb939a689bd26d2f5b048bd65351f89f2f05bb0221008e4810533407487c7d6b4dec3fd729e6916140e5df87184e430c2a3cf0f55f7d:922c64590222798bb761d5b6d8e72950

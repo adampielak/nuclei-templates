@@ -9,7 +9,6 @@ info:
   reference:
     - https://github.com/danny-avila/LibreChat
   metadata:
-    runzero-match: service["product"] contains "LibreChat:LibreChat"
     fofa-query: app="LibreChat"
   tags: panel,librechat,discovery
 
@@ -30,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4b0a00483046022100f5c9e0cf66da088056fcd8c6e934b6c4cfcade56e03fc2063a3a34e6ea907358022100838b710cd4b73fdbfafe2b2f5c2adc30f640c4a28862601ba6f719140b842e32:922c64590222798bb761d5b6d8e72950

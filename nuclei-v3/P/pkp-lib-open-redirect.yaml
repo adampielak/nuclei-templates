@@ -27,4 +27,4 @@ http:
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)?(?:[a-zA-Z0-9\-_\.@]*){{Hostname}}@?(?:[a-zA-Z0-9\-_\.@]*)oast\.me\/?(\/|[^.].*)?$'
-
+# digest: 4b0a00483046022100cfbe05c4773a175d3ff4fab8c3d78d5ea39deeadfe6a31b6c764c15288c56a22022100a09f24027d57e14b8d1f8ac53ab368175541f2297ecc5a47d2030eda1c9d0b54:922c64590222798bb761d5b6d8e72950

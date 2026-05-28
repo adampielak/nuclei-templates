@@ -1,0 +1,31 @@
+# gap: nats-http-monitoring-exposed
+id: nats-http-monitoring-exposed
+
+info:
+  name: NATS HTTP Monitoring Interface Exposed
+  author: TyrusRC
+  severity: medium
+  description: |
+    Detects an exposed NATS HTTP monitoring interface at /varz that returns
+    server metadata including server_id, version, and active connection counts
+    without authentication. This information aids targeted attacks against the
+    NATS messaging infrastructure.
+  reference:
+    - https://hacktricks.wiki/en/network-services-pentesting/4222-pentesting-nats.html
+  tags: custom,nats,exposure,monitoring
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/varz"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "server_id"
+          - "version"
+        condition: and

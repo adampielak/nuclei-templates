@@ -1,0 +1,38 @@
+id: openclaw-sessions-exposed
+
+info:
+  name: OpenClaw Sessions Data Exposed
+  author: lobster-guard
+  severity: medium
+  description: Detects if session data is accessible without proper auth — conversation history exposure
+  tags: openclaw,sessions,data,exposure
+  remediation: Require authentication for session API endpoints. Restrict /__openclaw/a2ui/api/ and /__openclaw__/a2ui/api/ to authenticated users.
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    max-request: 2
+    verified: false
+    product: openclaw
+    vendor: openclaw
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/__openclaw/a2ui/api/sessions/list"
+      - "{{BaseURL}}/__openclaw__/a2ui/api/sessions/list"
+    headers:
+      Content-Type: "application/json"
+    body: '{}'
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "sessionId"
+          - "agentId"
+          - "transcript"
+          - "sessions"
+        condition: or

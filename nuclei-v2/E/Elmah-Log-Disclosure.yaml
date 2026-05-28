@@ -1,24 +1,20 @@
 id: Elmah-Log-Disclosure
-
 info:
-  name: Elmah Log Disclosure
   author: Excis3
-  severity: Critical
   description: Unauthenticated exposure of logs.
+  name: Elmah Log Disclosure
+  severity: Critical
   tags: log
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/elmah.axd"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Error log for"
-          
-      - type: status
-        status:
-          - 200
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Error log for
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/elmah.axd'

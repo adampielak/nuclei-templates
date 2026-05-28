@@ -1,35 +1,35 @@
+http:
+- matchers:
+  - case-insensitive: true
+    part: body
+    type: word
+    words:
+    - Ampache Update
+  - negative: true
+    part: body
+    type: word
+    words:
+    - No Update Needed
+    - No updates needed
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/update.php'
 id: ampache-update-exposure
-
 info:
-  name: Ampache Update Page Exposure
   author: ritikchaddha
-  severity: low
+  classification:
+    cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
+  description: Ampache update page is exposed.
   metadata:
     max-request: 1
-    verified: true
+    product: ampache
     shodan-query: http.html:"Ampache Update"
-  tags: misconfig,ampache,exposure
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/update.php"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Ampache Update"
-        case-insensitive: true
-
-      - type: word
-        part: body
-        words:
-          - "No Update Needed"
-          - "No updates needed"
-        negative: true
-
-      - type: status
-        status:
-          - 200
+    vendor: ampache
+    verified: true
+  name: Ampache Update Page Exposure
+  severity: low
+  tags: misconfig,ampache,exposure,vuln

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - betterdocs-pro
+  - dsl:
+    - compare_versions(version, '<= 3.7.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/betterdocs-pro/readme.txt'
+  redirects: true
+id: betterdocs_pro-5c0f02ad-f5f1-42b1-8116-e391aaa85430
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/betterdocs-pro/
+    google-query: inurl:"/wp-content/plugins/betterdocs-pro/"
+    shodan-query: http.html:"wp-content/plugins/betterdocs-pro/"
+  name: 'BetterDocs Pro <= 3.7.0 - Unauthenticated SQL Injection via Encyclopedia
+    ''limit'' Parameter
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c0f02ad-f5f1-42b1-8116-e391aaa85430?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,betterdocs-pro,critical,candidate

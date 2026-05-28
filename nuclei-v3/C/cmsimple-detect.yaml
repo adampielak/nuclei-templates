@@ -1,44 +1,40 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?i)content=["']CMSimple ([0-9.]+)
+    type: regex
+  matchers:
+  - part: body
+    regex:
+    - (?i)content=["']CMSimple(?:["'\s>])
+    type: regex
+  - condition: or
+    part: body
+    type: word
+    words:
+    - cmsimpleLocatorElement
+    - Welcome_to_CMSimple
+    - templates/__cmsimple_
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: cmsimple-detect
-
 info:
-  name: CMSimple - Detect
   author: Shivam Kamboj
-  severity: info
-  description: |
-    Detects the presence of CMSimple, a simple content management system that requires no database (flat-file).
-  reference:
-    - https://www.cmsimple.org/
+  description: 'Detects the presence of CMSimple, a simple content management system
+    that requires no database (flat-file).
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"CMSimple"
+    verified: true
+  name: CMSimple - Detect
+  reference:
+  - https://www.cmsimple.org/
+  severity: info
   tags: tech,cmsimple,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: or
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - '(?i)content=["'']CMSimple(?:["''\s>])'
-
-      - type: word
-        part: body
-        words:
-          - "cmsimpleLocatorElement"
-          - "Welcome_to_CMSimple"
-          - "templates/__cmsimple_"
-        condition: or
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - '(?i)content=["'']CMSimple ([0-9.]+)'
-

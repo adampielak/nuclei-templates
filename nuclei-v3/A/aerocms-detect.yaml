@@ -1,28 +1,28 @@
-id: aerocms-detect
-
-info:
-  name: AeroCMS Detect
-  author: pikpikcu
-  severity: info
-  metadata:
-    max-request: 1
-    verified: true
-    fofa-query: "AeroCMS"
-    shodan-query: title:"AeroCMS"
-  tags: tech,aerocms
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - 'content="(.*)AeroCMS(.*)'
-
-      - type: status
-        status:
-          - 200
+- matchers:
+  - part: body
+    regex:
+    - content="(.*)AeroCMS(.*)
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: aerocms-detect
+info:
+  author: pikpikcu
+  classification:
+    cpe: cpe:2.3:a:aerocms_project:aerocms:*:*:*:*:*:*:*:*
+  metadata:
+    fofa-query: AeroCMS
+    max-request: 1
+    product: aerocms
+    shodan-query: title:"AeroCMS"
+    vendor: aerocms_project
+    verified: true
+  name: AeroCMS Detect
+  severity: info
+  tags: tech,aerocms,discovery

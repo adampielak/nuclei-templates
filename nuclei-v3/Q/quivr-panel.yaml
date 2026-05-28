@@ -25,4 +25,4 @@ http:
           - 'contains_any(body, "<title>Quivr - Get a Second Brain", "data-sentry-component=\"QuivrLogo\"")'
           - 'status_code == 200'
         condition: and
-
+# digest: 4a0a00473045022046ce7151cb1c737aeeeef44ff520366593355fcaf2655c0921fa14eb553fafe8022100eb271f189875524d4c2d9c7b9353fa8ffed8e126768a20539a0aee0a40e701ed:922c64590222798bb761d5b6d8e72950

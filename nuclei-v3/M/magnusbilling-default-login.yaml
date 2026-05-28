@@ -1,4 +1,5 @@
 id: magnusbilling-default-login
+
 info:
   name: MagnusBilling - Default Login
   author: DhiyaneshDk
@@ -8,28 +9,32 @@ info:
   impact: |
     An unauthenticated attacker can gain full administrative control over the MagnusBilling platform, leading to compromise of billing systems, data leakage, and potential pivoting into internal infrastructure.
   metadata:
-    runzero-match: service["http.body"] matches "MagnusBilling"
+    verified: true
     max-request: 1
     shodan-query: html:"MagnusBilling"
-    verified: true
-  tags: default-login,mbilling,vuln
+  tags: mbilling,default-login,vuln
+
 variables:
-  password: 9F4CA770B638615AC5C3E0D2DA16B77C80C2F2C6
-  username: root
+  username: "root"
+  password: "9F4CA770B638615AC5C3E0D2DA16B77C80C2F2C6"   # magnus
+
 http:
-  - matchers:
-      - part: body
-        type: word
-        words:
-          - '"success":"root"'
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    raw:
+  - raw:
       - |
         POST /mbilling/index.php/authentication/login HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
         user={{username}}&password={{password}}&key=
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"success":"root"'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022033fd0b1fed1ce2bf606d6dcd49da469baa4c7a6f13bf9d615504c8de2c9b464202210090d2dfcb3a93c558823426efa277835f9bc76413f9a43117b53270c0e647e7b3:922c64590222798bb761d5b6d8e72950

@@ -1,36 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Bitdefender - Global Leader in Cybersecurity Software
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"bitdefender.com")'
+    - '!contains(host,"bitdefender.co.uk")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: bitdefender-phish
-
 info:
-  name: bitdefender phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A bitdefender phishing website was detected
-  reference:
-    - https://bitdefender.com
+  description: 'A bitdefender phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: bitdefender phishing Detection
+  reference:
+  - https://bitdefender.com
+  severity: info
   tags: phishing,bitdefender,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Bitdefender - Global Leader in Cybersecurity Software'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"bitdefender.com")'
-          - '!contains(host,"bitdefender.co.uk")'
-

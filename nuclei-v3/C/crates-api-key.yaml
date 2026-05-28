@@ -1,25 +1,26 @@
+http:
+- extractors:
+  - part: body
+    regex:
+    - \bcio[a-zA-Z0-9]{32}\b
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: crates-api-key
-
 info:
-  name: Crates.io API Key
   author: DhiyaneshDK
-  severity: info
-  reference:
-    - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/crates.io.yml
-    - https://crates.io/data-access
-    - https://github.com/rust-lang/crates.io/blob/master/src/util/token.rs
+  classification:
+    cwe-id:
+    - CWE-522
+    - CWE-540
   metadata:
     max-request: 1
     verified: true
-  tags: crates,token,exposure
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - '\bcio[a-zA-Z0-9]{32}\b'
+  name: Crates.io API Key
+  reference:
+  - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/crates.io.yml
+  - https://crates.io/data-access
+  - https://github.com/rust-lang/crates.io/blob/master/src/util/token.rs
+  severity: info
+  tags: crates,exposure,token,vuln

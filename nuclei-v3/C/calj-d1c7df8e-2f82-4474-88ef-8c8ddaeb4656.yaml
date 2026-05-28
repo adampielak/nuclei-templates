@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - calj
+  - dsl:
+    - compare_versions(version, '<= 1.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/calj/readme.txt'
+  redirects: true
+id: calj-d1c7df8e-2f82-4474-88ef-8c8ddaeb4656
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/calj/
+    google-query: inurl:"/wp-content/plugins/calj/"
+    shodan-query: http.html:"wp-content/plugins/calj/"
+  name: 'CalJ <= 1.5 - Authenticated (Subscriber+) Arbitrary Settings Modification
+    via ''save-obtained-key'' Action
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1c7df8e-2f82-4474-88ef-8c8ddaeb4656?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,calj,low,candidate

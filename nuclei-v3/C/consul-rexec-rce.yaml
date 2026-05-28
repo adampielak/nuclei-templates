@@ -1,0 +1,29 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - '"EnableRemoteScriptChecks":true'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  raw:
+  - 'GET /v1/agent/self  HTTP/1.1
+
+    Host: {{Hostname}}
+
+    '
+id: consul-rexec-rce
+info:
+  author: SleepingBag945
+  description: 'Under a specific configuration, a malicious attacker can remotely
+    execute commands on the Consul server without authorization by sending a carefully
+    constructed HTTP request.
+
+    '
+  metadata:
+    fofa-query: protocol="consul(http)"
+  name: Consul Rexec RCE
+  severity: critical
+  tags: rce

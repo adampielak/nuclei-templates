@@ -9,11 +9,15 @@ info:
   reference:
     - https://packetstormsecurity.com/files/174236/DoorGets-CMS-7.0-Information-Disclosure.html
     - https://sourceforge.net/projects/doorgets-cms/files/latest/download?source=directory
+  classification:
+    cpe: cpe:2.3:a:doorgets:doorgets:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    google-dork: "Powered with doorGets ™"
-  tags: doorgets,cms,packetstorm,disclosure
+    vendor: doorgets
+    product: doorgets
+    google-query: "Powered with doorGets ™"
+  tags: doorgets,cms,packetstorm,disclosure,vuln
 
 http:
   - method: GET
@@ -37,5 +41,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502202ad64893b270a582a3f566b9c39a9eac244dbb36154b1022029daf94a8eed140022100c1f18277a38a4586d0eca6b19ecf107b2b968da7302dde1006420089330d0c8c:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c9184fe2c3e89f6479a95b6e8e723d869bd4026a193a0641db1aa69d5c0ad1ed022100c63dcaa1b53d88e54a4acfcca52643a9f35a6cbd4194df4e7df6fba6b35f5187:922c64590222798bb761d5b6d8e72950

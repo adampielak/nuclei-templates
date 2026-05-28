@@ -1,39 +1,36 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Busybox Repository Browser
+    - index</a>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: busybox-repository-browser
-
 info:
-  name: Busybox Repository Browser - Detect
   author: ritikchaddha
-  severity: info
-  description: |
-    Busybox Repository Browser was detected.
-  reference:
-    - https://github.com/mirror/busybox
   classification:
     cpe: cpe:2.3:a:busybox:busybox:*:*:*:*:*:*:*:*
+  description: 'Busybox Repository Browser was detected.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Busybox Repository Browser"})
-    verified: true
-    max-request: 1
-    vendor: busybox
-    product: busybox
     fofa-query: title="Busybox Repository Browser"
+    max-request: 1
+    product: busybox
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Busybox Repository
+      Browser"})
+    vendor: busybox
+    verified: true
+  name: Busybox Repository Browser - Detect
+  reference:
+  - https://github.com/mirror/busybox
+  severity: info
   tags: detect,busybox,oss,panel,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Busybox Repository Browser"
-          - "index</a>"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

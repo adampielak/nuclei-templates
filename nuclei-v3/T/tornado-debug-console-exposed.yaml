@@ -1,0 +1,30 @@
+# gap: tornado-debug-console-exposed
+id: tornado-debug-console-exposed
+
+info:
+  name: Tornado Debug Console / Traceback Exposed
+  author: TyrusRC
+  severity: high
+  description: |
+    Detects Tornado web applications running with debug-mode tracebacks
+    enabled. Forcing an unhandled error returns a Python stack trace that
+    references tornado.web frames. Verbose tracebacks leak source paths,
+    library versions, and template internals, and in misconfigured
+    deployments may expose interactive debugging endpoints.
+  reference:
+    - https://www.tornadoweb.org/en/stable/web.html#application-configuration
+    - https://hacktricks.wiki/en/network-services-pentesting/pentesting-web/werkzeug.html
+  tags: custom,exposure,tornado,python,debug
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/nonexistent-path-fnaP9"
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        condition: and
+        words:
+          - "Traceback (most recent call last)"
+          - "tornado.web"

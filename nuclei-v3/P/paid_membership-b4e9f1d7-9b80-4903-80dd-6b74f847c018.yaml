@@ -2,7 +2,7 @@ id: paid_membership-b4e9f1d7-9b80-4903-80dd-6b74f847c018
 
 info:
   name: >
-    MicroPayments <= 3.2.3 - Reflected Cross-Site Scripting
+    MicroPayments <= 3.2.4 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.2.3')
+          - compare_versions(version, '<= 3.2.4')

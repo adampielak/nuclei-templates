@@ -2,7 +2,7 @@ id: affs-1a385af7-4094-4a1e-9f1f-6291698f71af
 
 info:
   name: >
-    SUMO Affiliates Pro <= 10.7.0 - Unauthenticated Arbitrary File Upload
+    SUMO Affiliates Pro < 11.1.0 - Unauthenticated Arbitrary File Upload
   author: topscoder
   severity: critical
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 10.7.0')
+          - compare_versions(version, '< 11.1.0')

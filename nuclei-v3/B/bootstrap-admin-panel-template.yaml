@@ -1,37 +1,34 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Dashboard - Bootstrap Admin Template
+    - Bootstrap Responsive Admin Template
+  - part: body
+    type: word
+    words:
+    - Bootstrap Admin Template
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: bootstrap-admin-panel-template
-
 info:
-  name: Bootstrap Admin Panel Template Panel - Detect
   author: tess
-  severity: info
-  description: Bootstrap Admin Panel Template panel was detected.
   classification:
+    cpe: cpe:2.3:a:teamworktec:responsive_bootstrap_admin_template:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
+  description: Bootstrap Admin Panel Template panel was detected.
   metadata:
     max-request: 1
-    verified: true
+    product: responsive_bootstrap_admin_template
     shodan-query: title:"Dashboard - Bootstrap Admin Template"
-  tags: bootstrap,panel,misconfig,exposure
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: or
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Dashboard - Bootstrap Admin Template"
-          - "Bootstrap Responsive Admin Template"
-        condition: and
-
-      - type: word
-        part: body
-        words:
-          - "Bootstrap Admin Template"
-
-# Enhanced by mp on 2023/01/29
+    vendor: teamworktec
+    verified: true
+  name: Bootstrap Admin Panel Template Panel - Detect
+  severity: info
+  tags: bootstrap,exposure,misconfig,panel,vuln

@@ -2,7 +2,7 @@ id: edd_recount_earnings-34a46c3a-22f9-4f61-844b-dd03c5208be7
 
 info:
   name: >
-    Easy Digital Downloads – Recount Earnings <= 1.0.2 - Cross-Site Scripting
+    Easy Digital Downloads – Recount Earnings < 2.3.7 - Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.2')
+          - compare_versions(version, '< 2.3.7')

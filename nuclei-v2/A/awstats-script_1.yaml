@@ -1,28 +1,32 @@
-id: awstats-script
-
+id: awstats-script 1
 info:
-  name: AWStats script
   author: sheikhrishad
+  name: AWStats script
   severity: info
-
+  tags: config,exposure
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/awstats.pl"
-      - "{{BaseURL}}/logs/awstats.pl"
-      - "{{BaseURL}}/webstats/awstats.pl"
+- attack: sniper
+  matchers:
+  - type: word
+    words:
+    - Do not remove this line
+  - part: header
+    type: word
+    words:
+    - application/x-perl
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /awstats.pl HTTP/1.1
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Do not remove this line"
+    Host: {{Subdomains}}
 
-      - type: word
-        words:
-          - "application/x-perl"
-        part: header
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101
+    Firefox/55
 
-      - type: status
-        status:
-          - 200
+    '
+  threads: 100

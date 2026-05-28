@@ -15,10 +15,13 @@ info:
     cvss-score: 9.8
     cve-id: CVE-2020-21224
     cwe-id: CWE-88
+    cpe: cpe:2.3:a:inspur:clusterengine:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     fofa-query: title="TSCEV4.0"
-  tags: inspur,clusterengine,rce
+    product: clusterengine
+    vendor: inspur
+  tags: inspur,clusterengine,rce,vuln
 
 http:
   - raw:
@@ -43,5 +46,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502204bafaad59f66af2a7831f41dac2426fb662cea1115b0668b7bc4e888fe155aef022100aacf719c2701d8fcbce498fecfa68f8f3bccd333d535f20ca15b622643c2865b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200a3724b31ca4494000b434ea17fdfd7e7bc0c757af26853ab016a6d38f5aa6c10221009dde0bc507826fb22ea5658e232d7731cb36cfd48eed6996d1e454f9dba05681:922c64590222798bb761d5b6d8e72950

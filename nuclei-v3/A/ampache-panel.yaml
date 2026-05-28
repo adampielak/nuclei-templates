@@ -1,46 +1,47 @@
-id: ampache-panel
-
-info:
-  name: Ampache Login Panel - Detect
-  author: ritikchaddha
-  severity: info
-  description: Ampache login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    max-request: 3
-    verified: true
-    shodan-query: http.title:"For the Love of Music"
-  tags: panel,ampache
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/login.php"
-      - "{{BaseURL}}/public/login.php"
-
-    host-redirects: true
-    max-redirects: 2
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Ampache :: For the Love of Music"
-        case-insensitive: true
-
-      - type: word
-        part: body
-        words:
-          - "Music - Installation"
-        negative: true
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by md on 2022/11/09
+- host-redirects: true
+  matchers:
+  - case-insensitive: true
+    part: body
+    type: word
+    words:
+    - 'Ampache :: For the Love of Music'
+  - negative: true
+    part: body
+    type: word
+    words:
+    - Music - Installation
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/login.php'
+  - '{{BaseURL}}/public/login.php'
+  stop-at-first-match: true
+id: ampache-panel
+info:
+  author: ritikchaddha
+  classification:
+    cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  description: Ampache login panel was detected.
+  metadata:
+    fofa-query: title="for the love of music"
+    google-query: intitle:"for the love of music"
+    max-request: 3
+    product: ampache
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)for the love
+      of music"})
+    shodan-query:
+    - http.title:"For the Love of Music"
+    - http.title:"for the love of music"
+    vendor: ampache
+    verified: true
+  name: Ampache Login Panel - Detect
+  severity: info
+  tags: ampache,discovery,panel

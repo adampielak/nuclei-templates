@@ -1,53 +1,61 @@
 id: activemq-artemis-default-login
+
 info:
   name: Apache ActiveMQ Artemis Console Default Login
   author: pdteam
   severity: high
   description: |
-    Detected Apache ActiveMQ Artemis console default login credentials were discovered.
+   Detected Apache ActiveMQ Artemis console default login credentials were discovered.
   reference:
     - https://activemq.apache.org/components/artemis/documentation/latest/management-console.html
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# contains "ActiveMQ Artemis Console"})
     max-request: 2
+    vendor: apache
     product: activemq
     shodan-query: title:"ActiveMQ Artemis Console"
-    vendor: apache
-  tags: activemq,apache,artemis,default-login,vuln
+  tags: apache,activemq,artemis,default-login,vuln
+
 http:
-  - attack: pitchfork
-    body: '{"username":"{{username}}","password":"{{password}}"}'
-    extractors:
-      - group: 0
-        name: credential
-        part: body
-        regex:
-          - '{"credentials":.*}'
-        type: regex
+  - method: POST
+    path:
+      - '{{BaseURL}}/console/auth/login'
     headers:
       Content-Type: application/json
       X-Requested-With: XMLHttpRequest
+    body: |-
+      {"username":"{{username}}","password":"{{password}}"}
+
+    stop-at-first-match: true
+    payloads:
+      username:
+        - artemis
+      password:
+        - artemis
+    attack: pitchfork
+
+    matchers-condition: and
     matchers:
-      - dsl:
-          - contains(content_type, "application/json")
-        type: dsl
-      - condition: and
+      - type: dsl
+        dsl:
+          - 'contains(content_type, "application/json")'
+
+      - type: word
         part: body
-        type: word
         words:
           - '{"credentials"'
           - '"principals":['
-          - org.apache.activemq
-      - status:
+          - 'org.apache.activemq'
+        condition: and
+
+      - type: status
+        status:
           - 200
-        type: status
-    matchers-condition: and
-    method: POST
-    path:
-      - '{{BaseURL}}/console/auth/login'
-    payloads:
-      password:
-        - artemis
-      username:
-        - artemis
-    stop-at-first-match: true
+
+    extractors:
+      - type: regex
+        name: credential
+        part: body
+        group: 0
+        regex:
+          - '{"credentials":.*}'
+# digest: 4a0a0047304502202bcfb2355b7ea94bfb42f9a22a6ced3db19ebb131375dfd6339d8f3a51b5cb79022100cfa9d6955d6f51948e3d2488be44e0bf112ac9017cd056688f8a8aea10ba7b4a:922c64590222798bb761d5b6d8e72950

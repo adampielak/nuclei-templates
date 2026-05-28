@@ -1,11 +1,9 @@
 id: graphql-graphene-detect
-
 info:
   name: Graphql Graphene Detect
   author: princechaddha
   severity: info
-  reference:
-    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  reference: https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
   tags: tech,graphql,graphene
 
 http:
@@ -15,9 +13,7 @@ http:
       - "{{BaseURL}}/api/graphql"
       - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
-
     body: '{"query":"aaa"}'
-
     headers:
       Content-Type: application/json
     redirects: true
@@ -46,4 +42,4 @@ http:
         part: body
         condition: or
         negative: true
-
+# digest: 4b0a00483046022100cfedc8914504329c5940588979e79680b82373d22d5cd14b2c897dd4b58c6d0d022100e135d129b6482641d84f7b391555edeed98380e4cd0af4ca75f50665a84d9eb1:922c64590222798bb761d5b6d8e72950

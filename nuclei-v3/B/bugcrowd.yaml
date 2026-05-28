@@ -1,33 +1,27 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - s researcher profile on Bugcrowd
+  matchers-condition: and
+  method: GET
+  path:
+  - https://bugcrowd.com/{{user}}
 id: bugcrowd
-
 info:
-  name: Bugcrowd User Name Information - Detect
   author: dwisiswant0
-  description: Bugcrowd user name information check was conducted.
-  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
-  tags: osint,osint-tech,bugcrowd
+  description: Bugcrowd user name information check was conducted.
   metadata:
     max-request: 1
-
+  name: Bugcrowd User Name Information - Detect
+  severity: info
+  tags: osint,osint-tech,bugcrowd,discovery
 self-contained: true
-http:
-  - method: GET
-    path:
-      - "https://bugcrowd.com/{{user}}"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        part: body
-        words:
-          - "s researcher profile on Bugcrowd"
-
-# Enhanced by cs 03/17/2023

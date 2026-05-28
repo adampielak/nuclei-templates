@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'bucket + " Bucket associated with ActionTrail trail is publicly accessible"'
-
+# digest: 4b0a004830460221009ad0983bbbc67aceaeefae2e0f2f98390937e979ed51482d79b61c41c11d662602210098b877f52c1cf1cc3273194270ad3d4dbdd9f07b50237fb110adcce97771bb0c:41987585204b393149694b2205534b1a

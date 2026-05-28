@@ -61,4 +61,4 @@ code:
       - type: dsl
         dsl:
           - '"VPC endpoints for " + vpc + "are exposed."'
-
+# digest: 4a0a0047304502206b7f7ad65cafa7d576fe2fca2e7b7ea38dee4b9bdb02d18bfc4965cbe280ee5e022100f3b46231f12106be78517b440b8a0e42706cdbc9c0486736fe4578f364ec05a9:922c64590222798bb761d5b6d8e72950

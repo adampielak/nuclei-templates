@@ -1,38 +1,35 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - module.exports = {
+    - 'presets: ['
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/babel.config.js'
 id: babel-config-exposure
-
 info:
-  name: Babel Configuration - Detect
   author: DhiyaneshDK
-  severity: info
-  description: Babel configuration information was detected.
-  reference:
-    - https://babeljs.io/docs/en/configuration
   classification:
+    cpe: cpe:2.3:a:pocoo:babel:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
+  description: Babel configuration information was detected.
   metadata:
     max-request: 1
-    verified: true
+    product: babel
     shodan-query: html:"babel.config.js"
-  tags: exposure,config,file
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/babel.config.js'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'module.exports = {'
-          - 'presets: ['
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by mp on 2023/02/05
+    vendor: pocoo
+    verified: true
+  name: Babel Configuration - Detect
+  reference:
+  - https://babeljs.io/docs/en/configuration
+  severity: info
+  tags: config,exposure,file,vuln

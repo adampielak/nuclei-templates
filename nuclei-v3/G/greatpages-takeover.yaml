@@ -1,4 +1,5 @@
 id: greatpages-takeover
+
 info:
   name: GreatPages - Takeover Detection
   author: juliosmelo
@@ -8,23 +9,28 @@ info:
   reference:
     - https://greatpages.com.br
   metadata:
+    verified: true
     fofa-query: cname="cname.greatpages.com.br"
     max-request: 1
-    verified: true
-  tags: greatpages,takeover,vuln
+  tags: takeover,greatpages,vuln
+
 http:
-  - extractors:
-      - dsl:
-          - cname
-        type: dsl
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
     matchers:
-      - dsl:
+      - type: dsl
+        dsl:
           - Host != ip
-        type: dsl
+
       - type: word
         words:
-          - Página não encontrada (Erro 404)
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}'
+          - "Página não encontrada (Erro 404)"
+
+    extractors:
+      - type: dsl
+        dsl:
+          - cname
+# digest: 4b0a00483046022100e6b2f0c75f0836778125bb768a0a05256bf5f6e845322aa72ff0b6f8fc16dce6022100cb43d52337eecf2487d7fc7a06f059bb7466fabe143b51ba1f56257eded4e802:922c64590222798bb761d5b6d8e72950

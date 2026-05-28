@@ -1,31 +1,26 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Your Azure Function App is up and running.</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: default-azure-function-app
-
 info:
-  name: Azure Function App - Default Page
   author: dhiyaneshDk
-  severity: info
   classification:
     cpe: cpe:2.3:a:microsoft:azure:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    vendor: microsoft
     product: azure
     shodan-query: html:"Your Azure Function App is up and running"
+    vendor: microsoft
+  name: Azure Function App - Default Page
+  severity: info
   tags: tech,azure,microsoft,discovery
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Your Azure Function App is up and running.</title>"
-
-      - type: status
-        status:
-          - 200
-

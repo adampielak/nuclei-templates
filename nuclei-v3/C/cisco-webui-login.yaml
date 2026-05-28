@@ -1,38 +1,33 @@
-id: cisco-webui-login
-
-info:
-  name: Cisco Web UI Login - Detect
-  author: drewvravick
-  severity: info
-  description: |
-    Detects the presence of Cisco Web UI login panels
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)webui-centerpanel"
-    verified: true
-    max-request: 1
-    shodan-query: html:"webui-centerpanel"
-    fofa-query: body="webui-centerpanel"
-  tags: webui,cisco,login,panel,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/webui/"
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Cisco Systems
+    - webui-centerpanel
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/webui/'
+  redirects: true
+  stop-at-first-match: true
+id: cisco-webui-login
+info:
+  author: drewvravick
+  description: 'Detects the presence of Cisco Web UI login panels
 
-    redirects: true
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Cisco Systems"
-          - "webui-centerpanel"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    fofa-query: body="webui-centerpanel"
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)webui-centerpanel"
+    shodan-query: html:"webui-centerpanel"
+    verified: true
+  name: Cisco Web UI Login - Detect
+  severity: info
+  tags: webui,cisco,login,panel,detect,discovery

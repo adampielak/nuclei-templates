@@ -10,11 +10,15 @@ info:
     - https://github.com/alibaba/nacos/issues/4593
     - https://nacos.io/en-us/docs/auth.html
     - https://zhuanlan.zhihu.com/p/602021283
+  classification:
+    cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: alibaba
+    product: nacos
     fofa-query: app="NACOS"
-  tags: nacos,auth-bypass
+  tags: nacos,auth-bypass,vuln
 
 http:
   - method: GET
@@ -45,5 +49,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502202b019d11f851ba086249eb599d33d954df8b7d187cd300f88ab2639133156576022100c194e804a32b976dafd47deb537e3152e22a552fdda4628fcdf29fa49fbfa67f:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f5347a9a9c1c0e755fea8bbe7f36c5cfadde3b78314e3cf9c9c16dc631157545022100bdde6548528729a5ab46b97f2eeab50c57ed98710cc57b8478624a8fc5702b0f:922c64590222798bb761d5b6d8e72950

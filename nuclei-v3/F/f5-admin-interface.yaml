@@ -7,7 +7,6 @@ info:
   description: |
     Detects F5 Admin Interfaces.
   metadata:
-    runzero-match: service["http.body"] matches "(?i)BIG-IP Configuration Utility"
     verified: true
     max-request: 1
     shodan-query: html:"BIG-IP Configuration Utility"
@@ -40,4 +39,4 @@ http:
         group: 1
         regex:
           - 'Copyright\s+([0-9\-]+),'
-
+# digest: 490a0046304402203545d9e890a0659cbea3cd8388770b229272129fa620c46129d5bd19c8287c2502203731ff5d6cb921eb32c965747e497ef11e1805883cfdf3f6ff8614d795d3d28e:922c64590222798bb761d5b6d8e72950

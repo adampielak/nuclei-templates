@@ -21,6 +21,7 @@ info:
 variables:
   badsecretkey: 'ThisIsAlmostCertainlyNotIt'
   uri_part: '_fragment?_path=what%3D-1%26_controller%3Dphpinfo'
+
 flow: http(1) && http(2)
 
 http:
@@ -63,4 +64,4 @@ http:
           - "contains(body, 'PHP License')"
           - "contains(body, 'symfony')"
         condition: and
-
+# digest: 4b0a00483046022100a81790ceafa2e58399de488690a3f9ba2fd0eb2659f43029a3019ad4c02d09e6022100f1453a5d8c737edc24b70bd83dd59a7cc1b14a5e05d8c7c8d6b99afb7c99ab6d:922c64590222798bb761d5b6d8e72950

@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - <title>Performance Muscle Car Parts & Accessories | AmericanMuscle
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"americanmuscle.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: americanmuscle-phish
-
 info:
-  name: AmericanMuscle phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    An AmericanMuscle phishing website was detected
-  reference:
-    - https://americanmuscle.com
+  description: 'An AmericanMuscle phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: AmericanMuscle phishing Detection
+  reference:
+  - https://americanmuscle.com
+  severity: info
   tags: phishing,americanmuscle,ecommerce,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Performance Muscle Car Parts & Accessories | AmericanMuscle'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"americanmuscle.com")'
-

@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - copy-delete-posts
+  - dsl:
+    - compare_versions(version, '< 1.2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/copy-delete-posts/readme.txt'
+  redirects: true
 id: copy-delete-posts-fa33a5c28fc922b1e69596c2131d9d3f
-
 info:
-  name: >
-    Duplicate Post WordPress Plugin <= 1.1.9 - SQL Injection
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7a0b40b-560a-4f2a-ad6d-6b2284fd5f25?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/copy-delete-posts/"
+    fofa-query: wp-content/plugins/copy-delete-posts/
     google-query: inurl:"/wp-content/plugins/copy-delete-posts/"
     shodan-query: 'vuln:'
+  name: 'Duplicate Post WordPress Plugin <= 1.1.9 - SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7a0b40b-560a-4f2a-ad6d-6b2284fd5f25?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-plugin,copy-delete-posts,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/copy-delete-posts/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "copy-delete-posts"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '< 1.2.0')

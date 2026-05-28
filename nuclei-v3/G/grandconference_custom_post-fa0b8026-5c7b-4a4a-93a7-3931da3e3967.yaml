@@ -2,7 +2,7 @@ id: grandconference_custom_post-fa0b8026-5c7b-4a4a-93a7-3931da3e3967
 
 info:
   name: >
-    Grand Conference Theme Custom Post Type <= 2.6.3 - Missing Authorization
+    Grand Conference Theme Custom Post Type < 2.6.4 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6.3')
+          - compare_versions(version, '< 2.6.4')

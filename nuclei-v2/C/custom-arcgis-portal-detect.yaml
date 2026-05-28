@@ -1,16 +1,14 @@
 id: custom-arcgis-portal-detect
-
 info:
-        name: custom-arcgis-portal-detect
-        author: 0xParthJ
-        severity: low
-        tags: panel
-
+  author: 0xParthJ
+  name: custom-arcgis-portal-detect
+  severity: low
+  tags: panel
 requests:
-         - method: GET
-           path:
-                   - "{{BaseURL}}/portal/sharing/rest/content/features/analyze"
-           matchers:
-                   - type: word
-                     words:
-                             - "<title>Analyze Item </title>"
+- matchers:
+  - type: word
+    words:
+    - <title>Analyze Item </title>
+  method: GET
+  path:
+  - '{{BaseURL}}/portal/sharing/rest/content/features/analyze'

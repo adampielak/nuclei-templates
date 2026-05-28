@@ -1,0 +1,47 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - all-in-one-wp-migration-unlimited-extension
+  - dsl:
+    - compare_versions(version, '<= 2.83')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/all-in-one-wp-migration-unlimited-extension/readme.txt'
+  redirects: true
+id: all_in_one_wp_migration_unlimited_extension-a8a31080-c124-49be-b9d1-7bc5abe7cbda
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/all-in-one-wp-migration-unlimited-extension/
+    google-query: inurl:"/wp-content/plugins/all-in-one-wp-migration-unlimited-extension/"
+    shodan-query: http.html:"wp-content/plugins/all-in-one-wp-migration-unlimited-extension/"
+  name: 'All-in-One WP Migration Unlimited Extension <= 2.83 - Missing Authorization
+    to Authenticated (Subscriber+) Arbitrary Backup Schedule Creation and Backup File
+    Download
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8a31080-c124-49be-b9d1-7bc5abe7cbda?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,all-in-one-wp-migration-unlimited-extension,low,candidate

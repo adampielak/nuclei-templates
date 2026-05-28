@@ -13,12 +13,15 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-89
+    cpe: cpe:2.3:a:easycorp:zentao:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"zentao"
     fofa-query: "Zentao"
-  tags: cnvd,cnvd2022,zentao,sqli
+    product: zentao
+    vendor: easycorp
+  tags: cnvd,cnvd2022,zentao,sqli,vuln
 variables:
   num: "999999999"
 
@@ -37,5 +40,4 @@ http:
         part: body
         words:
           - 'c8c605999f3d8352d7bb792cf3fdb25'
-
-# digest: 4a0a00473045022009572d4885de4de6ef2312a58a67d6c67fefd27b962fa80a8e3864193987c66f022100e190d2836fe344522dc84ded60b1213a62631baac598ca6dd444edfff9ec535c:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402202b8684a23c291483bfcc1de11a37c0c25a89aa5241c00d097d1bcccc60da44e4022030982064c6e065d8c671e6f28ca1d2d17237a134a9b5124d2d930d37a8ec7094:922c64590222798bb761d5b6d8e72950

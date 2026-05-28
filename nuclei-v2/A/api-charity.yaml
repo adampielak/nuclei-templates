@@ -4,10 +4,9 @@ info:
   name: Charity Search API Test
   author: daffainfo
   severity: info
-  description: Non-profit charity data
   reference:
     - http://charityapi.orghunter.com/
-    - https://github.com/daffainfo/all-about-apikey/tree/main/charity-search
+    - https://github.com/daffainfo/all-about-apikey/blob/main/Business/Charity%20Search.md
   tags: token-spray,charity,search
 
 self-contained: true

@@ -9,7 +9,6 @@ info:
   reference:
     - https://opensearch.org/docs/latest/dashboards/index/
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)OpenSearch"})
     verified: true
     max-request: 1
     shodan-query: title:"OpenSearch"
@@ -28,4 +27,4 @@ http:
           - "OpenSearch Dashboard"
           - "login"
         condition: and
-
+# digest: 490a0046304402205d32260069f896ba3df5778884e7da00af0dc4c88b8ba8025d8d3e12a3186df5022025aea1ea077e06cd88a15342c6feccf44adf1ccc7882e898e1adfd84dc855966:922c64590222798bb761d5b6d8e72950

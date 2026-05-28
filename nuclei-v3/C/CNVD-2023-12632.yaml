@@ -10,15 +10,14 @@ info:
     - https://www.zhihu.com/tardis/zm/art/625931869?source_id=1003
     - https://blog.csdn.net/qq_50854662/article/details/129992329
   metadata:
-    max-request: 1
     verified: true
-    fofa-query: app="泛微-协同商务系统"
+    max-request: 1
     shodan-query: 'ecology_JSessionid'
-  tags: cnvd,cnvd2023,ecology,sqli
+    fofa-query: app="泛微-协同商务系统"
+  tags: cnvd,cnvd2023,ecology,sqli,vuln
 
 # a' union select 1,''+(SELECT md5(9999999))+'
 # URL encoded 3 times
-
 http:
   - raw:
       - |
@@ -41,3 +40,4 @@ http:
       - type: status
         status:
           - 200
+# digest: 490a004630440220460bfc72db3f15271177e24c7f7dd8b05a1582f119f78aec1c8571995e06ec760220775db6a5743c58f8f9cd1445bbe8803819182017bf4b0b09b0297c50f8cf032b:922c64590222798bb761d5b6d8e72950

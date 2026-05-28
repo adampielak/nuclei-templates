@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "ring_csp_xss == true"
-
+# digest: 4a0a00473045022100c39accf7ce0c6ebe71b11accf3103a8d07bd05749a590af8ee11ed97e18c1f1d02200c9df5d0fb283babf57e2c5bf7cd1f85920573d27797f9ec6a7048671e2093e2:922c64590222798bb761d5b6d8e72950

@@ -1,28 +1,24 @@
-id: attu-detect
-
-info:
-  name: Attu - Detect
-  author: s4e-io
-  severity: info
-  description: Attu was detected.
-  reference:
-    - https://github.com/zilliztech/attu
-  metadata:
-    verified: true
-    max-request: 1
-    fofa-query: title="Attu"
-  tags: tech,vector-database,attu,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Attu</title>'
-          - 'content="Attu'
-        condition: or
-
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <title>Attu</title>
+    - content="Attu
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: attu-detect
+info:
+  author: s4e-io
+  description: Attu was detected.
+  metadata:
+    fofa-query: title="Attu"
+    max-request: 1
+    verified: true
+  name: Attu - Detect
+  reference:
+  - https://github.com/zilliztech/attu
+  severity: info
+  tags: tech,vector-database,attu,detect,discovery

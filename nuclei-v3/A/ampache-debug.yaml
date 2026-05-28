@@ -1,31 +1,27 @@
+http:
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - Ampache Debug
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/test.php?action=config'
+  stop-at-first-match: true
 id: ampache-debug
-
 info:
-  name: Ampache Debug Page
   author: ritikchaddha
-  severity: info
   metadata:
     max-request: 2
-    verified: true
     shodan-query: http.title:"Ampache -- Debug Page"
-  tags: misconfig,ampache,debug
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-      - '{{BaseURL}}/test.php?action=config'
-
-    stop-at-first-match: true
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Ampache Debug"
-
-      - type: status
-        status:
-          - 200
+    verified: true
+  name: Ampache Debug Page
+  severity: medium
+  tags: debug,php

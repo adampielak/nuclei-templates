@@ -1,38 +1,33 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - Anthropic
+    - <title>Home \ Anthropic
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"anthropic.com")'
+    - '!contains(host,"claude.ai")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: anthropic-phish
-
 info:
-  name: Anthropic phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Anthropic phishing website was detected
-  reference:
-    - https://anthropic.com
+  description: 'A Anthropic phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Anthropic phishing Detection
+  reference:
+  - https://anthropic.com
+  severity: info
   tags: phishing,anthropic,claude,ai,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Anthropic'
-          - '<title>Home \ Anthropic'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"anthropic.com")'
-          - '!contains(host,"claude.ai")'
-

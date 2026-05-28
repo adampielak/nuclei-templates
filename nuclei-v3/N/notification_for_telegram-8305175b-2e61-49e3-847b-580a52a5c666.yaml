@@ -2,7 +2,7 @@ id: notification_for_telegram-8305175b-2e61-49e3-847b-580a52a5c666
 
 info:
   name: >
-    Notification for Telegram <= 3.4.7 - Missing Authorization
+    Notification for Telegram <= 3.5.1 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.4.7')
+          - compare_versions(version, '<= 3.5.1')

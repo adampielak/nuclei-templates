@@ -1,37 +1,32 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - Discover
+    - <title>Discover - Personal Banking, Credit Cards &amp; Loans
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"discover.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: discover-phish
-
 info:
-  name: Discover phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Discover phishing website was detected
-  reference:
-    - https://discover.com
+  description: 'A Discover phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Discover phishing Detection
+  reference:
+  - https://discover.com
+  severity: info
   tags: phishing,discover,credit-card,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Discover'
-          - '<title>Discover - Personal Banking, Credit Cards &amp; Loans'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"discover.com")'
-

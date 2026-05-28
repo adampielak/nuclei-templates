@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "yastat_angular_csp_xss == true"
-
+# digest: 490a0046304402202c92bd535c1f747a70fa64d89aa5da84c18434e561e0ec40ea3bde96a880568002202b3bdfe1752c71ef38e78f9afccdcb04033c9493e0aeb2f5c14ad637b2dbe7fa:922c64590222798bb761d5b6d8e72950

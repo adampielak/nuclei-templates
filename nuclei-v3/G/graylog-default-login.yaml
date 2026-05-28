@@ -1,4 +1,5 @@
 id: graylog-default-login
+
 info:
   name: Graylog - Default Login
   author: 0x_Akoko,0xBassia
@@ -11,57 +12,45 @@ info:
     Change the default root_password_sha2 in the Graylog server.conf configuration file. Use a strong, unique password for the admin account.
   reference:
     - https://go2docs.graylog.org/current/setting_up_graylog/rest_api.html
-    - https://archivedocs.graylog.org/en/2.5/pages/installation/virtual_machine_appliances.html
-    - https://docs.graylog.org/docs/authentication
     - https://docs.graylog.org/docs/server-conf
+    - https://docs.graylog.org/docs/authentication
+    - https://archivedocs.graylog.org/en/2.5/pages/installation/virtual_machine_appliances.html
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
     cvss-score: 9.1
-    cwe-id:
-      - CWE-798
+    cwe-id: CWE-798
   metadata:
-    runzero-match: service["product"] contains "Graylog:Graylog"
-    fofa-query: app="Graylog" || title="Graylog Web Interface"
-    max-request: 2
-    product: graylog
-    shodan-query: title:"Graylog Web Interface"
-    vendor: graylog
     verified: true
+    max-request: 2
+    vendor: graylog
+    product: graylog
+    shodan-query: 'title:"Graylog Web Interface"'
+    fofa-query: 'app="Graylog" || title="Graylog Web Interface"'
   tags: default-login,graylog,logging
+
 variables:
-  password: admin
-  username: admin
+  username: "admin"
+  password: "admin"
+
 flow: http(1) && http(2)
+
 http:
-  - matchers:
-      - condition: and
-        dsl:
-          - status_code == 200
-          - contains(content_type, "application/json")
-          - contains_all(body, "\"cluster_id\"", "\"node_id\"", "\"version\"")
-        internal: true
-        type: dsl
-    raw:
+  - raw:
       - |
         GET /api/ HTTP/1.1
         Host: {{Hostname}}
         Accept: application/json
-  - extractors:
-      - name: session_id
-        part: body
-        regex:
-          - '"session_id"\s*:\s*"([^"]+)"'
-        # digest: 4a0a00473045022100e00306b41b81eea00c263b49f012117e604bb7537173fb5fac66eec0538a801402205d8125a741df7c9b3d9558186a257f48dd04d8a1e5f7e89364cb10478d576de1:922c64590222798bb761d5b6d8e72950
 
-        type: regex
     matchers:
-      - condition: and
+      - type: dsl
+        internal: true
         dsl:
-          - status_code == 200
-          - contains(content_type, "application/json")
-          - contains_all(body, "\"session_id\"", "\"valid_until\"")
-        type: dsl
-    raw:
+          - 'status_code == 200'
+          - 'contains(content_type, "application/json")'
+          - 'contains_all(body, "\"cluster_id\"", "\"node_id\"", "\"version\"")'
+        condition: and
+
+  - raw:
       - |
         POST /api/system/sessions HTTP/1.1
         Host: {{Hostname}}
@@ -70,3 +59,19 @@ http:
         X-Requested-By: nuclei
 
         {"username":"{{username}}","password":"{{password}}","host":""}
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(content_type, "application/json")'
+          - 'contains_all(body, "\"session_id\"", "\"valid_until\"")'
+        condition: and
+
+    extractors:
+      - type: regex
+        name: session_id
+        part: body
+        regex:
+          - '"session_id"\s*:\s*"([^"]+)"'
+# digest: 4a0a00473045022100e00306b41b81eea00c263b49f012117e604bb7537173fb5fac66eec0538a801402205d8125a741df7c9b3d9558186a257f48dd04d8a1e5f7e89364cb10478d576de1:922c64590222798bb761d5b6d8e72950

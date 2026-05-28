@@ -1,32 +1,28 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Password again
+    - Coolify
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/register'
 id: coolify-register-account
-
 info:
-  name: Coolify Register User Account - Enabled
   author: DhiyaneshDk
-  severity: medium
-  description: |
-    Exposed Coolify user register page.
+  description: 'Exposed Coolify user register page.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"Coolify" html:"register"
+    verified: true
+  name: Coolify Register User Account - Enabled
+  severity: medium
   tags: coolify,register,misconfig,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/register"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Password again'
-          - 'Coolify'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

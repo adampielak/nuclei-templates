@@ -11,16 +11,19 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+    cpe: cpe:2.3:a:datahub_project:datahub:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
     verified: true
+    max-request: 1
     shodan-query: http.title:"DataHub"
-  tags: datahub,default-login
+    product: datahub
+    vendor: datahub_project
+  tags: datahub,default-login,vuln
 
 http:
   - raw:
       - |
-        POST /logIn HTTP/2
+        POST /logIn HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
@@ -43,5 +46,4 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/06
+# digest: 4a0a00473045022100930d8de43ad9fdf1a9a7a95bb9d82033cf3d10ddc15bc263c5255b14e84746c002203480e487d96fc4500685788466a9921f52def11afdbd8788ac47602551063537:922c64590222798bb761d5b6d8e72950

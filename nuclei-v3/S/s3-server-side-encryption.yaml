@@ -48,4 +48,4 @@ code:
       - type: dsl
         dsl:
           - '"The S3 bucket " + bucket +" is not encrypted at rest"'
-
+# digest: 4b0a004830460221008d54485138a57d80518489a9e5691f926a8765f6f0dc9f30a52b2c49c9267029022100d1a778b27521d4b0d555051125edbafb190fb416d292d93afee189f7c6d25f1b:922c64590222798bb761d5b6d8e72950

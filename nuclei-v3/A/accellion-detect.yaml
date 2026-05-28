@@ -1,32 +1,28 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - /cfadmin/img/accellion-logo.png
+    - secured by accellion
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/cfadmin/'
 id: accellion-detect
-
 info:
-  name: Accellion - Detect
   author: rxerium
-  severity: info
-  description: |
-    Dectection of Accellion File Transfer Appliance.
+  description: 'Dectection of Accellion File Transfer Appliance.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"/cfadmin/img/"
+    verified: true
+  name: Accellion - Detect
+  severity: info
   tags: accellion,tech,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/cfadmin/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '/cfadmin/img/accellion-logo.png'
-          - 'secured by accellion'
-        condition: or
-
-      - type: status
-        status:
-          - 200
-

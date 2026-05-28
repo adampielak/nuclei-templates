@@ -1,33 +1,27 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - '| BiggerPockets</title>'
+  matchers-condition: and
+  method: GET
+  path:
+  - https://www.biggerpockets.com/users/{{user}}
 id: biggerpockets
-
 info:
-  name: BiggerPockets User Name Information - Detect
   author: dwisiswant0
-  description: BiggerPockets user name information check was conducted.
-  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
-  tags: osint,osint-finance,biggerpockets
+  description: BiggerPockets user name information check was conducted.
   metadata:
     max-request: 1
-
+  name: BiggerPockets User Name Information - Detect
+  severity: info
+  tags: osint,osint-finance,biggerpockets,discovery
 self-contained: true
-http:
-  - method: GET
-    path:
-      - "https://www.biggerpockets.com/users/{{user}}"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        part: body
-        words:
-          - "| BiggerPockets</title>"
-
-# Enhanced by cs 03/17/2023

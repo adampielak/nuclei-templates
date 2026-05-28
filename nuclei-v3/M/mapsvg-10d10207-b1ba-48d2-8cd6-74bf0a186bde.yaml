@@ -2,7 +2,7 @@ id: mapsvg-10d10207-b1ba-48d2-8cd6-74bf0a186bde
 
 info:
   name: >
-    MapSVG <= 8.5.31 - Missing Authorization
+    MapSVG <= 8.6.13 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 8.5.31')
+          - compare_versions(version, '< 8.6.13')

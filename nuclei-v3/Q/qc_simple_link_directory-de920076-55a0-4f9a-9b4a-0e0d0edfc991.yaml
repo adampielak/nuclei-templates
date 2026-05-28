@@ -2,7 +2,7 @@ id: qc_simple_link_directory-de920076-55a0-4f9a-9b4a-0e0d0edfc991
 
 info:
   name: >
-    Simple Link Directory Pro <= 14.7.3 - Missing Authorization
+    Simple Link Directory Pro < 14.8.1 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 14.7.3')
+          - compare_versions(version, '< 14.8.1')

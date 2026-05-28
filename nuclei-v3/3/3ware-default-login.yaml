@@ -1,41 +1,47 @@
+http:
+- attack: pitchfork
+  matchers:
+  - part: body
+    type: word
+    words:
+    - now logged in
+  - part: set_cookie
+    type: word
+    words:
+    - TDMUSER=
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    password:
+    - 3ware
+    username:
+    - a
+  raw:
+  - 'POST /login.html HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Type: application/x-www-form-urlencoded
+
+
+    whopwd={{username}}&thepwd={{password}}
+
+    '
 id: 3ware-default-login
 info:
-  name: 3ware Controller 3DM2 - Default Login
   author: ritikchaddha
-  severity: high
-  description: |
-    The default password for logging in to the 3DM2 web interface of a 3ware controller is "3ware" for both the Administrator and User accounts.
-  reference:
-    - https://www.thomas-krenn.com/en/wiki/3ware_Controller_3DM2_Password
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)3ware"})
-    max-request: 1
-    shodan-query: title:"3ware"
-  tags: 3dm2,3ware,default-login,vuln
-http:
-  - attack: pitchfork
-    matchers:
-      - part: body
-        type: word
-        words:
-          - now logged in
-      - part: set_cookie
-        type: word
-        words:
-          - TDMUSER=
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    payloads:
-      password:
-        - 3ware
-      username:
-        - a
-    raw:
-      - |
-        POST /login.html HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/x-www-form-urlencoded
+  description: 'The default password for logging in to the 3DM2 web interface of a
+    3ware controller is "3ware" for both the Administrator and User accounts.
 
-        whopwd={{username}}&thepwd={{password}}
+    '
+  metadata:
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)3ware"})
+    shodan-query: title:"3ware"
+  name: 3ware Controller 3DM2 - Default Login
+  reference:
+  - https://www.thomas-krenn.com/en/wiki/3ware_Controller_3DM2_Password
+  severity: high
+  tags: 3dm2,3ware,default-login,vuln

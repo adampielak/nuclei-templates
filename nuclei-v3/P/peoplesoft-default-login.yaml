@@ -12,11 +12,14 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+    cpe: cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 200
     verified: true
+    max-request: 200
     shodan-query: title:"Oracle PeopleSoft Sign-in"
-  tags: default-login,peoplesoft,oracle,fuzz
+    product: peoplesoft_enterprise_peopletools
+    vendor: oracle
+  tags: default-login,peoplesoft,oracle,fuzz,vuln
 
 http:
   - method: POST
@@ -43,9 +46,9 @@ http:
       - "{{BaseURL}}/psp/ihprd/?&cmd=login&languageCd=ENG"
 
     body: "timezoneOffset=360&ptmode=f&ptlangcd=ENG&ptinstalledlang=ENG&userid={{username}}&pwd={{password}}&ptlangsel=ENG"
+
     headers:
       Content-Type: application/x-www-form-urlencoded
-
     attack: pitchfork
     payloads:
       username:
@@ -70,8 +73,8 @@ http:
         - PSPY
         - HHR_JPM
         - HHR_CMP
-
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -82,5 +85,4 @@ http:
       - type: status
         status:
           - 302
-
-# Enhanced by md on 2023/01/09
+# digest: 4a0a004730450220546317e66828cfc84d464d8dbb3cc7519005eb01a10e07246e00ab397de259b1022100caf35fcff072066b4b03123a9b423c7efcbd748e3f51454bf93aa039f40be516:922c64590222798bb761d5b6d8e72950

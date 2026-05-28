@@ -1,23 +1,19 @@
+file:
+- extensions:
+  - all
+  extractors:
+  - part: body
+    regex:
+    - (?i)(?:bitbucket)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{32})(?:['|\"|\n|\r|\s|\x60|;]|$)
+    type: regex
 id: bitbucket-client-id
-
 info:
-  name: BitBucket Client ID
   author: DhiyaneshDK
-  severity: info
-  reference:
-    - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-id.yaml
-    - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-id.go
   metadata:
     verified: true
-  tags: bitbucket,file,token
-
-file:
-  - extensions:
-      - all
-
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - (?i)(?:bitbucket)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{32})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 4a0a00473045022100e6046ec5dfe733833770588e314968b35e04375bc7340c24d8aca97ca93f358d0220026ca893ed0ddc8c9a60f35a1d31d247cfdc17cdf612943ca848fefd3181f917:922c64590222798bb761d5b6d8e72950
+  name: BitBucket Client ID
+  reference:
+  - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-id.yaml
+  - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-id.go
+  severity: info
+  tags: file,keys,bitbucket,token

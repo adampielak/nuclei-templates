@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "elastic_info_csp_xss == true"
-
+# digest: 4a0a0047304502202256227d020a6ee7a7b1c10d033a6ca3e0742d74b4292e8a60e6919955edef570221008125c03bf10e5acdd8236abfa0b9b38d2d8d37e0e77dbcfe3da283d4e707bc30:922c64590222798bb761d5b6d8e72950

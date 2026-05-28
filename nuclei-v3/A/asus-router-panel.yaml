@@ -1,35 +1,31 @@
+http:
+- matchers:
+  - condition: or
+    type: word
+    words:
+    - <title>ASUS Login</title>
+    - Sign in with your ASUS router account
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/Main_Login.asp'
 id: asus-router-panel
-
 info:
-  name: Asus Router Login Panel - Detect
   author: arafatansari
-  severity: info
-  description: Asus router login panel was detected.
   classification:
+    cpe: cpe:2.3:h:asus:rt-n53:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+  description: Asus router login panel was detected.
   metadata:
     max-request: 1
-    verified: true
+    product: rt-n53
     shodan-query: 'Server: httpd/2.0 port:8080'
-  tags: panel,asus,router,iot
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Main_Login.asp"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>ASUS Login</title>'
-          - 'Sign in with your ASUS router account'
-        condition: or
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by md on 2022/12/05
+    vendor: asus
+    verified: true
+  name: Asus Router Login Panel - Detect
+  severity: info
+  tags: asus,discovery,iot,panel,router

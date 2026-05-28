@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "doubleclick_securepubads_csp_xss == true"
-
+# digest: 490a0046304402201f945fd503663026af4ec7a35644b5068fe61c9ddef54675bd1f65ef5587d73c02205f6f4760a05dd5f58356f5a29b70fee058ef20821b7a648d4145c8110a52f18b:922c64590222798bb761d5b6d8e72950

@@ -9,7 +9,6 @@ info:
   reference:
     - https://www.veritas.com/
   metadata:
-    runzero-match: service["http.body"] matches "(?i)Veritas NetBackup OpsCenter Analytics"
     verified: true
     max-request: 1
     shodan-query: html:"Veritas NetBackup OpsCenter Analytics"
@@ -30,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 490a004630440220370a29798b8658f3d23aa91a92ad82947ec534c0b85e5633226343d42424890b0220091bc5829e1f1acb1bf1e1aff5a42fb3379a5740dcc6dd1ba6bee2ab7462ffdd:922c64590222798bb761d5b6d8e72950

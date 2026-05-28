@@ -61,4 +61,4 @@ code:
       - type: dsl
         dsl:
           - '"Exposed Docker socket via a volume in the " + pod + " pod of " + namespace + " namespace"'
-
+# digest: 490a004630440220118723a85165514f59da64d85df3822f05a47ab5fc3e1e2a01ea0d06cb8d58110220147f70004616c4ee4b84fc2137e253c00a1908207be5e1cfb70b86cb586e0ba3:9e2dfd48464943e7ca3816f5f86e5507

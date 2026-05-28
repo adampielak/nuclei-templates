@@ -1,25 +1,22 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - '@cloudflare/speedtest'
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: cloudflare-speedtest
-
 info:
-  name: Cloudflare Speedtest - Detect
   author: DhiyaneshDk
-  severity: info
-  description: |
-    Detected the exposed default page of the Cloudflare Speedtest service.
+  description: 'Detected the exposed default page of the Cloudflare Speedtest service.
+
+    '
   metadata:
     max-request: 1
-    verified: true
     shodan-query: html:"cloudflare/speedtest"
+    verified: true
+  name: Cloudflare Speedtest - Detect
+  severity: info
   tags: tech,cloudflare,speedtest,discovery
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers:
-      - type: word
-        words:
-          - "@cloudflare/speedtest"
-        part: body
-

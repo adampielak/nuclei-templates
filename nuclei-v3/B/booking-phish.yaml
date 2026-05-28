@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Booking.com | Official site | The best hotels, flights, car rentals & accommodations
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"booking.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: booking-phish
-
 info:
-  name: booking phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A booking phishing website was detected
-  reference:
-    - https://booking.com
+  description: 'A booking phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: booking phishing Detection
+  reference:
+  - https://booking.com
+  severity: info
   tags: phishing,booking,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Booking.com | Official site | The best hotels, flights, car rentals & accommodations'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"booking.com")'
-

@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "gstatic_recaptcha_csp_xss == true"
-
+# digest: 4a0a00473045022053e48d885662675efef81f8f6bd9678f13dc953f42c2bda4d1241a6f2671f415022100cfb20a9ff345935240ec301f202e136e5756172cb79f6c87ab95658ccf7537fd:922c64590222798bb761d5b6d8e72950

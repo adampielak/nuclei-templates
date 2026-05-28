@@ -67,4 +67,4 @@ javascript:
       - type: regex
         regex:
           - 'Server Name:\s*\S+\s+Version:\s*[0-9]+\.[0-9]+\.[0-9]+'
-
+# digest: 4b0a00483046022100f4b2355abeb66fd444bfc52c05740495eef9d688c412254e7831ad67feb5d92b02210094e3c489d66705b385e3cc8a81eb77aa5151257a38e8874743074b7e273bb3c9:922c64590222798bb761d5b6d8e72950

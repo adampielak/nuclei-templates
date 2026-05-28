@@ -1,37 +1,33 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - Binance
+    - "Binance: The World\u2019s Most Trusted Cryptocurrency Exchange to Buy, Trade\
+      \ &amp; Invest in Crypto"
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"binance.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: binance-phish
-
 info:
-  name: Binance phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Binance phishing website was detected
-  reference:
-    - https://binance.com
+  description: 'A Binance phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Binance phishing Detection
+  reference:
+  - https://binance.com
+  severity: info
   tags: phishing,binance,crypto,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Binance'
-          - 'Binance: The World’s Most Trusted Cryptocurrency Exchange to Buy, Trade &amp; Invest in Crypto'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"binance.com")'
-

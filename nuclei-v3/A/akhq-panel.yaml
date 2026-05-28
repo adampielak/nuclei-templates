@@ -1,34 +1,30 @@
-id: akhq-panel
-
-info:
-  name: AKHQ Panel - Detect
-  author: DhiyaneshDK
-  severity: info
-  description: |
-    AKHQ Panel was discovered.
-  metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "855432563"
-    verified: true
-    max-request: 1
-    shodan-query: http.favicon.hash:855432563
-    fofa-query: body="AKHQ_PREFIX_UI"
-  tags: akhq,panel,login,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/ui/login"
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <title>AKHQ</title>
+    - AKHQ_PREFIX_UI
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/ui/login'
+id: akhq-panel
+info:
+  author: DhiyaneshDK
+  description: 'AKHQ Panel was discovered.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>AKHQ</title>"
-          - "AKHQ_PREFIX_UI"
-        condition: or
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    fofa-query: body="AKHQ_PREFIX_UI"
+    max-request: 1
+    runzero-match: service["favicon.ico.image.mmh3"] == "855432563"
+    shodan-query: http.favicon.hash:855432563
+    verified: true
+  name: AKHQ Panel - Detect
+  severity: info
+  tags: akhq,panel,login,detect,discovery

@@ -2,7 +2,7 @@ id: dzs_videogallery-5b989e3e-bfa7-47f5-83ba-24f47034e143
 
 info:
   name: >
-    DZS Video Gallery <= 12.25 - Reflected Cross-Site Scripting
+    DZS Video Gallery <= 12.39 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 12.25')
+          - compare_versions(version, '<= 12.39')

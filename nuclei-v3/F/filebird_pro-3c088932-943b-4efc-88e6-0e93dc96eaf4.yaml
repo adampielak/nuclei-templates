@@ -2,7 +2,7 @@ id: filebird_pro-3c088932-943b-4efc-88e6-0e93dc96eaf4
 
 info:
   name: >
-    FileBird Pro <= 6.4.9 - Missing Authorization
+    FileBird Pro <= 6.5.1 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.4.9')
+          - compare_versions(version, '<= 6.5.1')

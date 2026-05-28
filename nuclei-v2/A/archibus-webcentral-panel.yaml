@@ -16,7 +16,6 @@ requests:
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/archibus/login.axvw'
-      - '{{BaseURL}}/archibus/schema/ab-core/views/sign-in/ab-sign-in.jsp'
 
     redirects: true
     max-redirects: 2

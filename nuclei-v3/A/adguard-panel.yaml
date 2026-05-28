@@ -1,38 +1,33 @@
+http:
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - AdGuard Home</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: adguard-panel
-
 info:
-  name: AdGuard Panel - Detect
   author: ritikchaddha
-  severity: info
-  description: |
-    AdGuard panel has been detected.
   classification:
     cpe: cpe:2.3:a:adguard:adguard:*:*:*:*:*:*:*:*
+  description: 'AdGuard panel has been detected.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AdGuard Home"})
-    verified: true
-    max-request: 1
-    vendor: adguard
-    product: adguard
     fofa-query: title="AdGuard Home"
+    max-request: 1
+    product: adguard
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AdGuard Home"})
+    vendor: adguard
+    verified: true
+  name: AdGuard Panel - Detect
+  severity: info
   tags: adguard,panel,login,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'AdGuard Home</title>'
-
-      - type: status
-        status:
-          - 200
-

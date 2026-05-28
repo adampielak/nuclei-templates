@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - b-blocks
+  - dsl:
+    - compare_versions(version, '< 2.0.30')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/b-blocks/readme.txt'
+  redirects: true
+id: b_blocks-78c3c57f-9e52-42c4-9e94-806fe5fb75f9
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/b-blocks/
+    google-query: inurl:"/wp-content/plugins/b-blocks/"
+    shodan-query: http.html:"wp-content/plugins/b-blocks/"
+  name: "bBlocks \u2013 Essential Gutenberg Blocks & Patterns Collection < 2.0.30\
+    \ - Missing Authorization\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/78c3c57f-9e52-42c4-9e94-806fe5fb75f9?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,b-blocks,high,candidate

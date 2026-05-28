@@ -1,4 +1,5 @@
 id: klog-server-default-login
+
 info:
   name: KLog Server - Default Login
   author: s4e-io
@@ -8,33 +9,38 @@ info:
   reference:
     - https://www.klogserver.com/
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "KLog Server"})
     max-request: 2
-    product: klog_server
     vendor: klogserver
+    product: klog_server
   tags: default-login,klog-server,vuln
+
 http:
-  - attack: pitchfork
-    host-redirects: true
-    matchers:
-      - condition: and
-        dsl:
-          - contains_all(body, "<title>KLog Server", "ADMIN", "Dashboard")
-          - status_code == 200
-        type: dsl
-    max-redirects: 3
-    payloads:
-      password:
-        - admin
-      username:
-        - admin
-    raw:
+  - raw:
       - |
         POST /actions/entree.php HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         user={{username}}&pswd={{password}}&action=login
+
       - |
         GET /index.php HTTP/1.1
         Host: {{Hostname}}
+
+    attack: pitchfork
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+
+    host-redirects: true
+    max-redirects: 3
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains_all(body, "<title>KLog Server", "ADMIN", "Dashboard")'
+          - 'status_code == 200'
+        condition: and
+# digest: 4b0a00483046022100e4ed7381abc3a6c484e65737558efec02de32cd48319287e0c18669833fb8348022100ce00f4802ac6b214a1f2fb15f6c3b7ff85fd0000aed34d00b3a918c5f6ae5a3a:922c64590222798bb761d5b6d8e72950

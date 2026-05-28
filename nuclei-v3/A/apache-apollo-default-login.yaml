@@ -1,4 +1,5 @@
 id: apache-apollo-default-login
+
 info:
   name: Apache Apollo - Default Login
   author: ritikchaddha
@@ -6,34 +7,18 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:activemq_apollo:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Apache Apollo"})
+    verified: true
     max-request: 1
+    vendor: apache
     product: activemq_apollo
     shodan-query: title:"Apache Apollo"
-    vendor: apache
-    verified: true
   tags: apache,apollo,default-login,misconfig,vuln
 variables:
-  password: admin
-  username: admin
+  username: 'admin'
+  password: 'admin'
+
 http:
-  - matchers:
-      - part: body_1
-        regex:
-          - ^\s*true\s*$
-        type: regex
-      - condition: and
-        part: body_2
-        type: word
-        words:
-          - '<strong>Log Details:'
-          - Store Status
-          - Logout</a>
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    raw:
+  - raw:
       - |
         POST /api/json/session/signin HTTP/1.1
         Host: {{Hostname}}
@@ -43,3 +28,23 @@ http:
       - |
         GET /console/index.html HTTP/1.1
         Host: {{Hostname}}
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body_1
+        regex:
+          - '^\s*true\s*$'
+
+      - type: word
+        part: body_2
+        words:
+          - '<strong>Log Details:'
+          - 'Store Status'
+          - 'Logout</a>'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100db819a177c16db07e25fc3f5762ce9dfa4c60e3a7029735f40e5f68ccb1c032502206d0d6b689d6136401372180aa94f09bbcd7cd275207a8d2a369bb5cbd9134849:922c64590222798bb761d5b6d8e72950

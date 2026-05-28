@@ -1,30 +1,26 @@
-id: bonita-portal-panel
-
-info:
-  name: Bonita Portal Login - Detect
-  author: DhiyaneshDK
-  severity: info
-  description: |
-    Detects the presence of Bonita Portal login page.
-  metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-1197926023"
-    verified: true
-    max-request: 1
-    shodan-query: http.favicon.hash:-1197926023
-  tags: bonita,login,panel,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/bonita/login.jsp"
+- matchers:
+  - type: word
+    words:
+    - Bonita Portal
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/bonita/login.jsp'
+id: bonita-portal-panel
+info:
+  author: DhiyaneshDK
+  description: 'Detects the presence of Bonita Portal login page.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Bonita Portal"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["favicon.ico.image.mmh3"] == "-1197926023"
+    shodan-query: http.favicon.hash:-1197926023
+    verified: true
+  name: Bonita Portal Login - Detect
+  severity: info
+  tags: bonita,login,panel,discovery

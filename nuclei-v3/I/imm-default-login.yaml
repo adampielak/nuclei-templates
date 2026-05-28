@@ -1,4 +1,5 @@
 id: imm-default-login
+
 info:
   name: Integrated Management Module - Default Login
   author: jpg0mez
@@ -12,32 +13,36 @@ info:
     cwe-id: CWE-798
     cpe: cpe:2.3:h:ibm:integrated_management_module:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["http.body"] matches "(?i)ibmdojo"
-    fofa-query: integrated management module
-    max-request: 1
-    product: integrated_management_module
-    shodan-query: html:"ibmdojo"
-    vendor: ibm
     verified: true
-  tags: default-login,ibm,imm,vuln
+    max-request: 1
+    shodan-query: html:"ibmdojo"
+    fofa-query: "integrated management module"
+    product: integrated_management_module
+    vendor: ibm
+  tags: imm,ibm,default-login,vuln
+
 http:
-  - body: user=USERID&password=PASSW0RD
-    matchers:
-      - condition: or
-        type: word
-        words:
-          - <authResult>0</authResult>
-          - authResult":"0
-      - condition: and
-        type: word
-        words:
-          - index-console.php
-          - home.php
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: POST
+  - method: POST
     path:
-      - '{{BaseURL}}/data/login'
+      - "{{BaseURL}}/data/login"
+    body: "user=USERID&password=PASSW0RD"
+
     redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<authResult>0</authResult>"
+          - 'authResult":"0'
+        condition: or
+
+      - type: word
+        words:
+          - "index-console.php"
+          - "home.php"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 490a0046304402204d6176119d41a6754260c44a11f4d9502e30faa06b43615e8403460aec02ba1302204e35aca456c3a9899181ee3b103f4b2ed1aa9506bcd22d0721f8785dab6045f7:922c64590222798bb761d5b6d8e72950

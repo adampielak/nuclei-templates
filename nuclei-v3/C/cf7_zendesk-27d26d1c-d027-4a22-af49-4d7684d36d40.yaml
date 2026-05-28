@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - cf7-zendesk
+  - dsl:
+    - compare_versions(version, '<= 1.1.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/cf7-zendesk/readme.txt'
+  redirects: true
+id: cf7_zendesk-27d26d1c-d027-4a22-af49-4d7684d36d40
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/cf7-zendesk/
+    google-query: inurl:"/wp-content/plugins/cf7-zendesk/"
+    shodan-query: http.html:"wp-content/plugins/cf7-zendesk/"
+  name: 'WP Zendesk for Contact Form 7, WPForms, Elementor, Formidable and Ninja Forms
+    <= 1.1.5 - Unauthenticated Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/27d26d1c-d027-4a22-af49-4d7684d36d40?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,cf7-zendesk,high,candidate

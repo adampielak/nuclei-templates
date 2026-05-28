@@ -1,4 +1,5 @@
 id: fuji-xerox-default-login
+
 info:
   name: Fuji Xerox ApeosPort - Default Login
   author: Morgan Robertson
@@ -10,28 +11,32 @@ info:
   classification:
     cpe: cpe:2.3:h:fujixerox:apeosport-v_c3375:*:*:*:*:*:*:*:*
   metadata:
-    fofa-query: '"prop.htm" && "docucentre"'
-    max-request: 1
-    product: apeosport-v_c3375
-    vendor: fujixerox
     verified: true
+    max-request: 1
+    vendor: fujixerox
+    product: apeosport-v_c3375
+    fofa-query: '"prop.htm" && "docucentre"'
   tags: default-login,fuji,fuji-xerox,printer,vuln
+
 http:
-  - matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - Configuration Overview
-          - Description
-          - System Administrator Settings
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    raw:
+  - raw:
       - |
         GET /prop.htm HTTP/1.1
         Host: {{Hostname}}
         Authorization: Basic MTExMTE6eC1hZG1pbg==
         Connection: close
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Configuration Overview"
+          - "Description"
+          - "System Administrator Settings"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100c2169b8d9d14410f518cdc073bb3655e0e70eff1d878d29ecab0886f1aa5027502210095e780859ce69c60303602b28103bc65164b9c5be8cfd48b63adcb1f2b4c9351:922c64590222798bb761d5b6d8e72950

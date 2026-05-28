@@ -1,25 +1,24 @@
-name: confluence
-priority: 3
-nuclei_tags:
-  - - confluence
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 302
-    headers:
-      Location: /login.action?os_destination=
-      X-Confluence-Request-Time: '*'
-    keyword: []
-    favicon_hash: []
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers: {}
-    keyword:
-      - id="com-atlassian-confluence
-      - name="confluence-base-url"
-    favicon_hash: []
+id: confluence
+info:
+  name: confluence
+  author: cn-kali-team
+  tags: detect,tech,confluence
+  severity: info
+  metadata:
+    fofa-query:
+    - app="atlassian-confluence"
+    - icon_hash="-305179312"
+    product: confluence
+    shodan-query:
+    - http.component:"atlassian confluence"
+    - cpe:"cpe:2.3:a:atlassian:confluence"
+    vendor: atlassian
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: favicon
+    hash:
+    - '-305179312'

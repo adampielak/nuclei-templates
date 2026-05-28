@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "youku_acs_csp_xss == true"
-
+# digest: 4a0a0047304502201e20b18134f9127f66f3241fe8a5d2e50215f744031bd7d05e1b07ec34cc68f7022100f1bb15d6af227573eb6fbcdc32bc8375b6d8b3389476b0625d7e14d363712be2:922c64590222798bb761d5b6d8e72950

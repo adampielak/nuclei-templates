@@ -10,7 +10,6 @@ info:
     - https://www.keycloak.org/docs/latest/server_admin/index.html
     - https://www.keycloak.org/docs/latest/securing_apps/index.html
   metadata:
-    runzero-match: service["product"] contains "RedHat:Keycloak"
     verified: true
     max-request: 4
     shodan-query: app:"Keycloak"
@@ -44,4 +43,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a0047304502206fb3fa3d3b4be546a46a16b3b617a4194e35b79694ac90887713f3995c9ae0a3022100be2091d351a379d5e4aa0e4936d07630f9e7875943e7aa6736cfe87ac8118459:922c64590222798bb761d5b6d8e72950

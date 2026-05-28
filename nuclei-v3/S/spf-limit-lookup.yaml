@@ -32,4 +32,4 @@ dns:
       - type: dsl
         dsl:
           - len(spf_record_limit)>10
-
+# digest: 490a004630440220282ebc2f71637eb1a86c805b3a9ce3320f92c3166786c7443b1c0d956679e7ae02200d9d68abcbd794755dbf09da5c3e9ddb2d5705df94b360f9431249bc9e8f9bef:922c64590222798bb761d5b6d8e72950

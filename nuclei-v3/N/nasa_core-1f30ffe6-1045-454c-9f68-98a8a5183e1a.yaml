@@ -2,7 +2,7 @@ id: nasa_core-1f30ffe6-1045-454c-9f68-98a8a5183e1a
 
 info:
   name: >
-    Nasa Core <= 6.3.2 - Reflected Cross-Site Scripting
+    Nasa Core < 6.4.4. - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.3.2')
+          - compare_versions(version, '< 6.4.4')

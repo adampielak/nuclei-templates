@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - blue-memories
+  - dsl:
+    - compare_versions(version, '<= 1.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/blue-memories/style.css'
+  redirects: true
 id: blue-memories-f6d38e3439712c732c026805eb67bdf8
-
 info:
-  name: >
-    Blue Memories <= 1.5 - Cross-Site Scripting
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e292e704-4b98-4e95-ac25-29cedcf005c7?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/blue-memories/"
+    fofa-query: wp-content/themes/blue-memories/
     google-query: inurl:"/wp-content/themes/blue-memories/"
     shodan-query: 'vuln:'
+  name: 'Blue Memories <= 1.5 - Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e292e704-4b98-4e95-ac25-29cedcf005c7?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-theme,blue-memories,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/blue-memories/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "blue-memories"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.5')

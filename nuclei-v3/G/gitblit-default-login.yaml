@@ -11,7 +11,6 @@ info:
   classification:
     cpe: cpe:2.3:a:gitblit:gitblit:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Gitblit"})
     verified: true
     max-request: 1
     vendor: gitblit
@@ -51,4 +50,4 @@ http:
       - type: dsl
         dsl:
           - "len(body) == 0"
-
+# digest: 490a0046304402206087d032fcb9a67f97f8a37e0880a35fd6ff2131ea698e4317b919425ad1fc8c022030d8a0f451312584a3265db38615bbde29bb1b2e0b381b31ef73a86f5394cccf:922c64590222798bb761d5b6d8e72950

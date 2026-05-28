@@ -13,7 +13,6 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:vmware:workspace_one_uem:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "321909464" || service["http.body"] matches "(?i)Self-Service Portal"
     verified: true
     max-request: 1
     vendor: vmware
@@ -37,4 +36,4 @@ http:
           - "AirWatch"
         condition: and
         case-insensitive: true
-
+# digest: 490a0046304402201d63deb5f72baaaa3322e42c7017e5cf8f448f058a902aa51c954c3528b73ccf02207678dfebdb9ef095ffe57de7324d4a304fd1ace61cd67cb7d5c7e5167a0467e0:922c64590222798bb761d5b6d8e72950

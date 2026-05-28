@@ -16,12 +16,10 @@ requests:
     matchers-condition: and
     matchers:
       - type: word
-        part: body
         words:
-          - "Not Found - Request ID:"
-        case-insensitive: true
+          - "Not found - Request ID:"
 
       - type: word
-        part: header
         words:
           - "Netlify"
+        part: header

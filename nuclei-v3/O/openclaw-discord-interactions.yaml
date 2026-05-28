@@ -1,0 +1,38 @@
+id: openclaw-discord-interactions
+
+info:
+  name: OpenClaw Discord Interactions Endpoint
+  author: lobster-guard
+  severity: medium
+  description: |
+    Detects exposed Discord interactions endpoint that accepts unsigned requests.
+    Without Ed25519 signature verification, attackers can forge Discord interactions
+    to trigger agent commands.
+  tags: openclaw,discord,channel
+  remediation: Enable Discord signature verification in OpenClaw channel config. Set discord.verify_signature=true.
+  classification:
+    cwe-id: CWE-345
+  metadata:
+    max-request: 1
+    verified: false
+    product: openclaw
+    vendor: openclaw
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/channels/discord/webhook"
+      - "{{BaseURL}}/api/discord/interactions"
+    headers:
+      Content-Type: "application/json"
+    body: '{"type":1}'
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 201
+      - type: regex
+        part: body
+        regex:
+          - '"type"\s*:\s*1'

@@ -2,7 +2,7 @@ id: conditional_checkout_fields_for_woocommerce-7fb0cb21-6645-4a28-a78c-d5dbeadd
 
 info:
   name: >
-    Conditional Checkout Fields & Edit Checkout Fields for WooCommerce <= 1.2.1 - Missing Authorization
+    Conditional Checkout Fields & Edit Checkout Fields for WooCommerce <= 1.2.3 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.1')
+          - compare_versions(version, '<= 1.2.3')

@@ -1,30 +1,26 @@
 id: apollo-panel
-
 info:
-  name: Apollo Panel - Detect
   author: rix4uni
-  severity: info
   description: An Apollo default login was discovered.
-  reference:
-    - https://github.com/apolloconfig/apollo
-    - https://twitter.com/m359ah/status/1610226772104052742
   metadata:
     shodan-query: http.favicon.hash:11794165
+  name: Apollo Panel - Detect
+  reference:
+  - https://github.com/apolloconfig/apollo
+  - https://twitter.com/m359ah/status/1610226772104052742
+  severity: info
   tags: apollo,default-login
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/signin"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>{{ 'Common.Title' | translate }}</title>"
-        condition: or
-
-      - type: status
-        status:
-          - 200
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <title>{{ 'Common.Title' | translate }}</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/signin'

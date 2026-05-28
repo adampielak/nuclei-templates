@@ -12,25 +12,26 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+    cpe: cpe:2.3:a:tinyfilemanager_project:tinyfilemanager:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 3
     verified: true
+    max-request: 3
     shodan-query: html:"Tiny File Manager"
-  tags: default-login,tiny,filemanager
+    product: tinyfilemanager
+    vendor: tinyfilemanager_project
+  tags: default-login,tiny,filemanager,vuln
 
 http:
   - raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
-
       - |
         POST / HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         fm_usr={{user}}&fm_pwd={{pass}}&token={{token}}
-
       - |
         GET /?p= HTTP/1.1
         Host: {{Hostname}}
@@ -41,11 +42,10 @@ http:
         - admin
       pass:
         - admin@123
-
     skip-variables-check: true
     host-redirects: true
     max-redirects: 2
-    cookie-reuse: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -66,5 +66,4 @@ http:
         regex:
           - '([a-f0-9]{64})'
         internal: true
-
-# Enhanced by md on 2023/01/09
+# digest: 4a0a00473045022030caa45ee44e5f9068b7be963a6d66d45d71b9b520efeaf89d0bba36e8340e78022100cc7c8ce845b6537b1c576c6fb645e8a5c81b206b33f1b15da10ebcba152c513b:922c64590222798bb761d5b6d8e72950

@@ -1,57 +1,54 @@
-id: adminer-panel-detect
-
-info:
-  name: Adminer Login Panel - Detect
-  author: random_robbie,meme-lord
-  severity: info
-  description: Adminer login panel was detected.
-  reference:
-    - https://blog.sorcery.ie/posts/adminer/
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: fuzz,adminer,login
-
-  # <= 4.2.4 can have unauthenticated RCE via SQLite driver
-  # <= 4.6.2 can have LFI via MySQL LOAD DATA LOCAL
-  # Most versions have some kind of SSRF usability
-  # Is generally handy if you find SQL creds
-  metadata:
-    max-request: 741
-
 http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - <span class="version">([0-9.]+)
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(body, "System<td>")
+    - contains_any(body, "- Adminer</title>>", "Adminer</a>")
+    type: dsl
+  payloads:
+    path: helpers/wordlists/adminer-paths.txt
+  raw:
+  - 'GET {{path}} HTTP/1.1
 
-  - raw:
-      - |
-        GET {{path}} HTTP/1.1
-        Host: {{Hostname}}
-        Accept: application/json, text/plain, */*
-        Referer: {{BaseURL}}
+    Host: {{Hostname}}
 
-    payloads:
-      path: helpers/wordlists/adminer-paths.txt
+    Accept: application/json, text/plain, */*
 
-    threads: 50
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
+    Referer: {{BaseURL}}
 
-      - type: word
-        condition: and
-        words:
-          - "- Adminer</title>"
-          - "partial(verifyVersion"
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - '<span class="version">([0-9.]+)'
-
-# Enhanced by md on 2023/03/08
+    '
+  stop-at-first-match: true
+  threads: 50
+id: adminer-panel-detect
+info:
+  author: random_robbie,meme-lord
+  classification:
+    cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  description: Adminer login panel was detected.
+  metadata:
+    fofa-query:
+    - title="login - adminer"
+    - app="adminer" && body="4.7.8"
+    google-query: intitle:"login - adminer"
+    hunter-query: app.name="adminer"&&web.body="4.7.8"
+    max-request: 741
+    product: adminer
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)login - adminer"})
+    shodan-query:
+    - cpe:"cpe:2.3:a:adminer:adminer"
+    - http.title:"login - adminer"
+    vendor: adminer
+  name: Adminer Login Panel - Detect
+  reference:
+  - https://blog.sorcery.ie/posts/adminer/
+  severity: info
+  tags: adminer,discovery,fuzz,login,panel,sqli

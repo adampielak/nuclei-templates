@@ -1,4 +1,5 @@
 id: polycom-hdx-web-exposure
+
 info:
   name: Polycom HDX - Web Interface Exposure
   author: 0x_Akoko
@@ -13,21 +14,21 @@ info:
     cvss-score: 6.5
     cwe-id: CWE-200
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Polycom HDX"})
-    fofa-query: title="Polycom" && body="HDX"
+    verified: true
     max-request: 1
     shodan-query: http.title:"Polycom HDX"
-    verified: true
-  tags: exposure,hdx,iot,polycom,video-conferencing
-http:
-  - matchers:
-      - condition: and
-        # digest: 4b0a00483046022100fc508c9d18ea6c78e01e3693776e07bc644eca6eb6ad91c9b52e95a5a95ce49502210088ffd7af62a11656bc5778127de058743e0c76ee161231635cd8a00d31f7a923:922c64590222798bb761d5b6d8e72950
+    fofa-query: title="Polycom" && body="HDX"
+  tags: polycom,hdx,iot,exposure,video-conferencing
 
-        dsl:
-          - status_code == 200
-          - contains_any(body, "Polycom", "u_keepalive.htm", "u_status.xml")
-        type: dsl
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/'
+      - "{{BaseURL}}/"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_all(body, "Polycom", "u_keepalive.htm", "u_status.xml", "contentFrame")'
+        condition: and
+# digest: 4a0a0047304502201d8b7cb20edb987dac93cbba7a58994d099561d40685dd25d3e9932d9424a3ae022100810f6f3a4dff59ec6f36c388cf0502975d2cdc4134e3254e31a9bf9b1033c96b:922c64590222798bb761d5b6d8e72950

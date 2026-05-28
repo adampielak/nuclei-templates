@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Amazon Web Services Sign-In
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"amazon.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: amazon-web-services-phish
-
 info:
-  name: amazon web services phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    An amazon-web-services phishing website was detected
-  reference:
-    - https://signin.aws.amazon.com
+  description: 'An amazon-web-services phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: amazon web services phishing Detection
+  reference:
+  - https://signin.aws.amazon.com
+  severity: info
   tags: phishing,amazon-web-services,aws,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Amazon Web Services Sign-In'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"amazon.com")'
-

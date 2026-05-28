@@ -1,33 +1,20 @@
 id: tumblr
-
 info:
-  name: Tumblr User Name Information - Detect
-  author: dwisiswant0
-  description: Tumblr user name information check was conducted.
+  name: tumblr
+  author: cn-kali-team
+  tags: detect,tech,tumblr
   severity: info
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  tags: osint,osint-images,tumblr
   metadata:
-    max-request: 1
-
-self-contained: true
+    product: tumblr
+    vendor: 00_unknown
+    verified: false
 http:
-  - method: GET
-    path:
-      - "https://{{user}}.tumblr.com"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        part: body
-        words:
-          - "avatar"
-
-# Enhanced by cs 03/17/2023
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - <!-- begin tumblr code --><iframe src="http://assets.tumblr.com/iframe.html
+    - <meta name="tumblr-theme" content=
+    case-insensitive: true

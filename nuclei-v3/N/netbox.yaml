@@ -1,14 +1,25 @@
-name: netbox
-priority: 2
-nuclei_tags:
-  - []
-fingerprint:
-  - path: /
-    request_method: get
-    request_headers: {}
-    request_data: ''
-    status_code: 0
-    headers:
-      Server: netbox
-    keyword: []
-    favicon_hash: []
+id: netbox
+info:
+  name: netbox
+  author: cn-kali-team
+  tags: detect,tech,netbox
+  severity: info
+  metadata:
+    fofa-query:
+    - title="netbox" || body="netbox-community"
+    product: netbox
+    shodan-query:
+    - http.title:"netbox"
+    vendor: netbox-community
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - netbox-community
+  - type: regex
+    regex:
+    - (?mi)<title[^>]*>netbox.*?</title>

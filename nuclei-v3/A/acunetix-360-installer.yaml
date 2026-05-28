@@ -1,34 +1,31 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Acunetix 360 - Installation Wizard
+    - License
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/wizard/database/'
 id: acunetix-360-installer
-
 info:
-  name: Acunetix 360 Installer
   author: pussycat0x
-  severity: info
+  description: Acunetix 360 is susceptible to the Installation page exposure due to
+    misconfiguration.
   metadata:
     max-request: 1
-    verified: true
     shodan-query: http.favicon.hash:-347188002
-  tags: misconfig,exposure,install,acunetix
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wizard/database/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Acunetix 360 - Installation Wizard"
-          - "License"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
+    verified: true
+  name: Acunetix 360 Installer
+  severity: info
+  tags: misconfig,exposure,install,acunetix,vuln

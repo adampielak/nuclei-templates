@@ -2,7 +2,7 @@ id: mapsvg-ffd438ea-ddc2-4d97-b187-4cd54b6f638d
 
 info:
   name: >
-    MapSVG <= 8.5.34 - Authenticated (Contributor+) Privilege Esclation
+    MapSVG < 8.6.13 - Authenticated (Contributor+) Privilege Esclation
   author: topscoder
   severity: low
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 8.5.34')
+          - compare_versions(version, '< 8.6.13')

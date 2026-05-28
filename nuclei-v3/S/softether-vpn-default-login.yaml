@@ -1,4 +1,5 @@
 id: softether-vpn-default-login
+
 info:
   name: SoftEther VPN Admin Console - Default Login
   author: bhutch
@@ -10,33 +11,37 @@ info:
   classification:
     cpe: cpe:2.3:a:softether:vpn:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "SoftEther VPN Server"})
+    verified: true
     max-request: 1
+    vendor: softether
     product: vpn
     shodan-query: title:"SoftEther VPN Server"
-    vendor: softether
-    verified: true
-  tags: default-login,misconfig,softether,vpn,vuln
+  tags: misconfig,vpn,softether,default-login,vuln
+
 http:
-  - attack: pitchfork
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - Create new Virtual Hub
-          - Toggle navigation
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    payloads:
-      password:
-        - null
-      username:
-        - administrator
-    raw:
+  - raw:
       - |
         GET /admin/default/ HTTP/1.1
         Host: {{Hostname}}
         Authorization: Basic {{base64(username + ':' + password)}}
+
+    attack: pitchfork
+    payloads:
+      username:
+        - administrator
+      password:
+        - null
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Create new Virtual Hub'
+          - 'Toggle navigation'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100990e59c318854eee3312b27b572e38b5f12402244f5e0e33f55bd53fd5baff4e022100a2e7965f543fafda2da3a9b42e44794d900ffa72770cdce6ad48022eaeb4b0bf:922c64590222798bb761d5b6d8e72950

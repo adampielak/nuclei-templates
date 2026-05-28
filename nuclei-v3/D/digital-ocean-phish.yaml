@@ -1,38 +1,32 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - DigitalOcean | Cloud Infrastructure for Developers
+    - DigitalOcean
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"digitalocean.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: digital-ocean-phish
-
 info:
-  name: digital ocean phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A digital-ocean phishing website was detected
-  reference:
-    - https://digitalocean.com
+  description: 'A digital-ocean phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: digital ocean phishing Detection
+  reference:
+  - https://digitalocean.com
+  severity: info
   tags: phishing,digital-ocean,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'DigitalOcean | Cloud Infrastructure for Developers'
-          - 'DigitalOcean'
-        condition: and
-
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"digitalocean.com")'
-

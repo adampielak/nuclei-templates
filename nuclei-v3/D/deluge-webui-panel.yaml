@@ -1,41 +1,47 @@
-id: deluge-webui-panel
-
-info:
-  name: Deluge WebUI Login Panel - Detect
-  author: tess
-  severity: info
-  description: Deluge WebUI login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
-  metadata:
-    max-request: 1
-    verified: true
-    shodan-query: title:"Deluge WebUI"
-  tags: panel,deluge
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Deluge WebUI"
-          - "author: 'Deluge Team"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - text/html
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by md on 2022/11/11
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - 'version: ''([0-9.]+)'','
+    type: regex
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Deluge WebUI
+    - 'author: ''Deluge Team'
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: deluge-webui-panel
+info:
+  author: tess
+  classification:
+    cpe: cpe:2.3:a:deluge-torrent:deluge:*:*:*:*:*:*:*:*
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  description: Deluge WebUI login panel was detected.
+  metadata:
+    fofa-query: title="deluge webui"
+    google-query: intitle:"deluge webui"
+    max-request: 1
+    product: deluge
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)deluge webui"})
+    shodan-query:
+    - title:"Deluge WebUI"
+    - http.title:"deluge webui"
+    vendor: deluge-torrent
+    verified: true
+  name: Deluge WebUI Login Panel - Detect
+  severity: info
+  tags: deluge,deluge-torrent,discovery,panel

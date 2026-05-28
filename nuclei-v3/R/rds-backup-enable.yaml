@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - '"Automated backups are not enabled for " + db + " RDS database instance"'
-
+# digest: 490a004630440220268da23a706ca9cdb3255c733067470a672223cb5e38b2630a9a1dcc0679f5d10220714233c214952bbedd861c5dcd55086a08fbe70db5dd9a8951847e58a9addfed:922c64590222798bb761d5b6d8e72950

@@ -1,31 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - _dash-config
+    - DashRenderer
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: dash-panel-detect
-
 info:
-  name: Dash Panel Detect
   author: tess
-  severity: info
+  classification:
+    cpe: cpe:2.3:a:dash:dash_core:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    verified: true
+    product: dash_core
     shodan-query: html:"DashRenderer"
-  tags: tech,dash
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '_dash-config'
-          - 'DashRenderer'
-        condition: and
-
-      - type: status
-        status:
-          - 200
+    vendor: dash
+    verified: true
+  name: Dash Panel Detect
+  severity: info
+  tags: tech,dash,discovery

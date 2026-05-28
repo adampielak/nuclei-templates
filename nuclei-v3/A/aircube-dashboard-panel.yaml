@@ -1,34 +1,31 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - AirCube Dashboard
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: aircube-dashboard-panel
-
 info:
-  name: airCube Dashboard Login Panel - Detect
   author: theamanrawat
-  severity: info
-  description: airCube Dashboard login panel was detected.
   classification:
+    cpe: cpe:2.3:h:ui:aircube:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+  description: airCube Dashboard login panel was detected.
   metadata:
     max-request: 1
-    verified: true
+    product: aircube
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AirCube Dashboard"})
     shodan-query: http.title:"AirCube Dashboard"
-  tags: panel,aircube
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'AirCube Dashboard'
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by md on 2023/01/03
+    vendor: ui
+    verified: true
+  name: airCube Dashboard Login Panel - Detect
+  severity: info
+  tags: aircube,discovery,panel

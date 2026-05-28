@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - coachify
+  - dsl:
+    - compare_versions(version, '<= 1.1.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/coachify/style.css'
+  redirects: true
+id: coachify-40725a33-353e-443a-b1f1-ac7c3e4a1323
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/coachify/
+    google-query: inurl:"/wp-content/themes/coachify/"
+    shodan-query: http.html:"wp-content/themes/coachify/"
+  name: 'Coachify <= 1.1.5 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/40725a33-353e-443a-b1f1-ac7c3e4a1323?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-theme,coachify,high,candidate

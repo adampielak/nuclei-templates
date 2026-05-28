@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - auto-repair
+  - dsl:
+    - compare_versions(version, '<= 22.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/auto-repair/style.css'
+  redirects: true
+id: auto_repair-3537ea8b-554b-4e41-902c-1d41b46deb1b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/auto-repair/
+    google-query: inurl:"/wp-content/themes/auto-repair/"
+    shodan-query: http.html:"wp-content/themes/auto-repair/"
+  name: 'Auto Repair <= 22.6 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3537ea8b-554b-4e41-902c-1d41b46deb1b?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-theme,auto-repair,medium,candidate

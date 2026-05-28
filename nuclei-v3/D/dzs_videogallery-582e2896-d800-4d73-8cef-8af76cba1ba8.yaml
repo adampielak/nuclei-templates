@@ -2,11 +2,11 @@ id: dzs_videogallery-582e2896-d800-4d73-8cef-8af76cba1ba8
 
 info:
   name: >
-    DZS Video Gallery <= 3.1.3 - Limited Local File Inclusion
+    DZS Video Gallery < 7.95 - Limited Local File Inclusion
   author: topscoder
   severity: critical
   description: >
-    The DZS Video Gallery plugin for WordPress is vulnerable to remote/local file inclusion in versions up to, and including, 3.1.3. This can allow unauthenticated attackers to retrieve local and remote files with a .swf extension.
+    The DZS Video Gallery plugin for WordPress is vulnerable to remote/local file inclusion in versions up to, and excluding, 7.95. This can allow unauthenticated attackers to retrieve local and remote files with a .swf extension.
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/582e2896-d800-4d73-8cef-8af76cba1ba8?source=api-prod
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1.3')
+          - compare_versions(version, '< 7.95')

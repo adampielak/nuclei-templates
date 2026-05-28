@@ -2,7 +2,7 @@ id: listingpro_reviews-642e2c46-9e42-4c00-bb91-a43497094e12
 
 info:
   name: >
-    ListingPro Reviews <= 1.6 - Missing Authorization
+    ListingPro Reviews < 2.9.11 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6')
+          - compare_versions(version, '< 2.9.11')

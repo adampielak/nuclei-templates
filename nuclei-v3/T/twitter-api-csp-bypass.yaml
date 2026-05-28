@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "twitter_api_csp_xss == true"
-
+# digest: 4a0a00473045022100dfd64e6ab938750db04790aa73eacaeb7570972d575f74d418a2873b30a3e19002205c60ad14aa2bd6ff05967cbd9ea2ef5463e3866d127f3b0f49321df15c3041ea:922c64590222798bb761d5b6d8e72950

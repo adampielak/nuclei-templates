@@ -1,33 +1,29 @@
-id: dependency-track-panel
-
-info:
-  name: Dependency-Track Login - Panel
-  author: Th3l0newolf
-  severity: info
-  description: |
-    Dependency Track login panel was discovered.
-  reference:
-    - https://docs.dependencytrack.org
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)Dependency-Track"
-    verified: true
-    max-request: 1
-    shodan-query: html:"Dependency-Track"
-  tags: panel,login,dependency,track,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login?redirect=%2Fdashboard"
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Dependency-Track</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login?redirect=%2Fdashboard'
+id: dependency-track-panel
+info:
+  author: Th3l0newolf
+  description: 'Dependency Track login panel was discovered.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Dependency-Track</title>"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)Dependency-Track"
+    shodan-query: html:"Dependency-Track"
+    verified: true
+  name: Dependency-Track Login - Panel
+  reference:
+  - https://docs.dependencytrack.org
+  severity: info
+  tags: panel,login,dependency,track,discovery

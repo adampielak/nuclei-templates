@@ -1,34 +1,30 @@
-id: agent-zero-detect
-
-info:
-  name: Agent-Zero Application - Detect
-  author: 0x_Akoko
-  severity: info
-  description: |
-    Detected Agent-Zero AI agent framework installation.
-  reference:
-    - https://github.com/agent0ai/agent-zero
-  metadata:
-    verified: true
-    max-request: 1
-  tags: agent-zero,detect,tech,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - v([0-9]+\.[0-9]+\.[0-9]+(?:\.[0-9]+)?)
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(body, "Agent Zero") && contains(body, "a0version")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: agent-zero-detect
+info:
+  author: 0x_Akoko
+  description: 'Detected Agent-Zero AI agent framework installation.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains(body, "Agent Zero") && contains(body, "a0version")'
-        condition: and
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - 'v([0-9]+\.[0-9]+\.[0-9]+(?:\.[0-9]+)?)'
-
+    '
+  metadata:
+    max-request: 1
+    verified: true
+  name: Agent-Zero Application - Detect
+  reference:
+  - https://github.com/agent0ai/agent-zero
+  severity: info
+  tags: agent-zero,detect,tech,discovery

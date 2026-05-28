@@ -37,4 +37,4 @@ code:
         part: response
         regex:
           - "^\\S+\\s+\\S+\\s+(?!root|.*EXPECTED_USER=)"
-
+# digest: 490a0046304402200d1c1eb3e56074bf3daf7445e93706d95501decf32ee59f9d155f9d07f56d988022070e34135003e30cdd8a2aea1d25fef4df3cb8b9e354d0511a38a1dace28b16b0:922c64590222798bb761d5b6d8e72950

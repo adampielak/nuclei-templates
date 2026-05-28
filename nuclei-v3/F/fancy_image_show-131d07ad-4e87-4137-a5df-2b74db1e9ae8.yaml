@@ -1,0 +1,51 @@
+id: fancy_image_show-131d07ad-4e87-4137-a5df-2b74db1e9ae8
+
+info:
+  name: >
+    Fancy Image Show <= 9.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode Attributes
+  author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/131d07ad-4e87-4137-a5df-2b74db1e9ae8?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/fancy-image-show/"
+    google-query: inurl:"/wp-content/plugins/fancy-image-show/"
+    shodan-query: 'http.html:"wp-content/plugins/fancy-image-show/"'
+  tags: cve,wordpress,wp-plugin,fancy-image-show,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/fancy-image-show/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "fancy-image-show"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 9.1')

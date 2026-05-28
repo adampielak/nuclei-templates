@@ -1,38 +1,34 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Setup | Cal.com
+    - Minimum 15 characters long</li>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/auth/setup'
 id: call-com-installer
-
 info:
-  name: Call.com Setup Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed Call.com  Setup page.
-  reference:
-    - https://cal.com/
   classification:
     cpe: cpe:2.3:a:cal:cal.com:*:*:*:*:*:*:*:*
+  description: 'Detects exposed Call.com  Setup page.
+
+    '
   metadata:
-    verified: true
-    max-request: 1
-    vendor: cal
-    product: cal.com
     fofa-query: body="Setup | Cal.com"
+    max-request: 1
+    product: cal.com
+    vendor: cal
+    verified: true
+  name: Call.com Setup Page - Exposure
+  reference:
+  - https://cal.com/
+  severity: high
   tags: misconfig,install,exposure,cal,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/auth/setup"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Setup | Cal.com"
-          - "Minimum 15 characters long</li>"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

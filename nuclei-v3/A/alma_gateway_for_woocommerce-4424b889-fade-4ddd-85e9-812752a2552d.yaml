@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - alma-gateway-for-woocommerce
+  - dsl:
+    - compare_versions(version, '<= 5.16.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/alma-gateway-for-woocommerce/readme.txt'
+  redirects: true
+id: alma_gateway_for_woocommerce-4424b889-fade-4ddd-85e9-812752a2552d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/alma-gateway-for-woocommerce/
+    google-query: inurl:"/wp-content/plugins/alma-gateway-for-woocommerce/"
+    shodan-query: http.html:"wp-content/plugins/alma-gateway-for-woocommerce/"
+  name: 'Alma <= 5.16.1 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4424b889-fade-4ddd-85e9-812752a2552d?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,alma-gateway-for-woocommerce,high,candidate

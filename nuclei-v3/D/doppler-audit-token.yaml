@@ -1,4 +1,5 @@
 id: doppler-audit-token
+
 info:
   name: Doppler Audit Token
   author: DhiyaneshDK
@@ -7,22 +8,19 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/doppler.yml
     - https://docs.doppler.com/reference/api
     - https://docs.doppler.com/reference/auth-token-formats
-  classification:
-    cwe-id:
-      - CWE-522
-      - CWE-540
   metadata:
-    max-request: 1
     verified: true
-  tags: doppler,exposure,tokens,vuln
+    max-request: 1
+  tags: doppler,exposure,tokens
+
 http:
-  - extractors:
-      - part: body
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    extractors:
+      - type: regex
+        part: body
         regex:
           - \b(dp\.audit\.[a-zA-Z0-9]{40,44})\b
-        # digest: 4a0a0047304502210098f04e385e73783a0e402e5514a43a326a52bfb2037d52bef4db4bde4c25079d0220153a3a898b98dc04282cb3c12ccc7d824a90b3149e64b4ade0d0c757fd3674a4:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    method: GET
-    path:
-      - '{{BaseURL}}'
+# digest: 4a0a00473045022100adeb3710057d868afc3560616ca583dfa3651edb5f0a96945a6adf5e2d73df9a02203ac349ec227ee42bad540ae0ac0254fe970c5ad6502bd612ac7f6ec2b81ca216:922c64590222798bb761d5b6d8e72950

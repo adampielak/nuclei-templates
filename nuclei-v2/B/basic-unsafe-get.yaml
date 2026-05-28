@@ -1,18 +1,18 @@
 id: basic-unsafe-get
-
 info:
-  name: Basic Unsafe GET Request with CLI SNI
   author: pdteam
+  name: Basic Unsafe GET Request with CLI SNI
   severity: info
-
 requests:
-  - raw:
-      - |+
-        GET / HTTP/1.1
-        Host: {{Hostname}}
+- matchers:
+  - type: word
+    words:
+    - test-ok
+  raw:
+  - 'GET / HTTP/1.1
 
-    unsafe: true
-    matchers:
-      - type: word
-        words:
-          - "test-ok"
+    Host: {{Hostname}}
+
+
+    '
+  unsafe: true

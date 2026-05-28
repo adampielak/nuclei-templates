@@ -2,11 +2,11 @@ id: o2s_gallery-f20b79cd-4393-4c96-ac78-139ac7c11144
 
 info:
   name: >
-    o2s gallery (All Versions) - Reflected Cross-Site Scripting
+    o2s gallery <= 1.0 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
-    The o2s gallery plugin for WordPress is vulnerable to Cross-Site Scripting due to insufficient input sanitization and output escaping on the button_text parameter. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser.
+    The o2s gallery plugin for WordPress is vulnerable to Cross-Site Scripting in all versions up to, and including, 1.0 due to insufficient input sanitization and output escaping on the button_text parameter. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser.
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f20b79cd-4393-4c96-ac78-139ac7c11144?source=api-prod
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= *')
+          - compare_versions(version, '<= 1.0')

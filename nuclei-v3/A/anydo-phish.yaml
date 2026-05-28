@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - <title>A simple to do list for you and your team
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"any.do")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: anydo-phish
-
 info:
-  name: Any.do phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Any.do phishing website was detected
-  reference:
-    - https://any.do
+  description: 'A Any.do phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Any.do phishing Detection
+  reference:
+  - https://any.do
+  severity: info
   tags: phishing,anydo,productivity,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>A simple to do list for you and your team'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"any.do")'
-

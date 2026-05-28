@@ -1,4 +1,5 @@
 id: infinispan-default-login
+
 info:
   name: Infinispan - Default Admin Login
   author: DhiyanesDk
@@ -9,23 +10,26 @@ info:
     - https://infinispan.org/docs/stable/titles/security/security.html
     - https://infinispan.org/
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "647951307"
     max-request: 2
+    verified: true
+    vendor: redhat
     product: infinispan
     shodan-query: http.favicon.hash:647951307
-    vendor: redhat
-    verified: true
-  tags: config,default-login,infinispan,redhat
+  tags: default-login,infinispan,redhat,config
+
+flow: http(1) && http(2)
+
 variables:
   username: "admin"
   password: "password"
-flow: http(1) && http(2)
+
 http:
   - raw:
       - |
         GET /rest/v2/cache-managers/default HTTP/1.1
         Host: {{Hostname}}
         Accept: application/json
+
     matchers:
       - type: dsl
         dsl:
@@ -33,6 +37,7 @@ http:
           - 'contains(tolower(header_1), "digest realm=")'
         condition: and
         internal: true
+
     extractors:
       - type: regex
         name: realm
@@ -41,6 +46,7 @@ http:
         regex:
           - 'realm="([^"]+)"'
         internal: true
+
       - type: regex
         name: nonce
         part: header
@@ -48,16 +54,18 @@ http:
         regex:
           - 'nonce="([^"]+)"'
         internal: true
+
   - raw:
       - |
         GET /rest/v2/cache-managers/default HTTP/1.1
         Host: {{Hostname}}
         Accept: application/json
         Authorization: Digest username="{{username}}", realm="{{realm}}", nonce="{{nonce}}", uri="/rest/v2/cache-managers/default", qop=auth, nc=00000001, cnonce="0a4f113b", response="{{md5(concat(md5(concat(username,":",realm,":",password)),":",nonce,":00000001:0a4f113b:auth:",md5("GET:/rest/v2/cache-managers/default")))}}", algorithm=MD5
+
     matchers:
       - type: dsl
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "\"name\"", "\"cache_manager_status\"")'
         condition: and
-        # digest: 4b0a00483046022100afa7f6ccdbb8f26f5da99d449c9ee0cdc0e5246a464961bcd6e29d60affa621c022100984d6b7cb6800f661ec1e5334810ded837a213e8687063e76858a7e5ffc1e019:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100afa7f6ccdbb8f26f5da99d449c9ee0cdc0e5246a464961bcd6e29d60affa621c022100984d6b7cb6800f661ec1e5334810ded837a213e8687063e76858a7e5ffc1e019:922c64590222798bb761d5b6d8e72950

@@ -1,0 +1,37 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - case-insensitive: true
+    part: body
+    type: word
+    words:
+    - admin
+    - login
+    - dashboard
+    - control panel
+  - condition: or
+    part: body
+    type: word
+    words:
+    - password
+    - username
+    - sign in
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/admin'
+  - '{{BaseURL}}/login'
+  - '{{BaseURL}}/wp-admin'
+  - '{{BaseURL}}/admin-panel'
+  - '{{BaseURL}}/dashboard'
+  - '{{BaseURL}}/controlpanel'
+  stop-at-first-match: true
+id: admin-panel-exposure
+info:
+  author: dark legende
+  description: Identifies accessible admin or login panels that may indicate misconfiguration.
+  name: Detect Exposed Admin Panels
+  severity: medium
+  tags: misconfig, exposure, bugbounty

@@ -29,4 +29,4 @@ http:
           - 'contains_all(body, "$", ":")'
           - 'contains(server, "Router Web")'
         condition: and
-
+# digest: 490a0046304402206ab5669df7c7fa8c70170fde9a787e8c098a18c456269dfd024a407a24b7ce2402206061a80576481cb57d3af98e6532e82b45002e922e7984aad77fb8efe3221408:922c64590222798bb761d5b6d8e72950

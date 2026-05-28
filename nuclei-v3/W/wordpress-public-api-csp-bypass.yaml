@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "wordpress_public_api_csp_xss == true"
-
+# digest: 4a0a0047304502207bbfcb212a4b1b38611e5a3a11128719649ffe3d8428f3f75a2089e0c1aade8e022100ab0c7c78300d7ed1a1e0fc0be2afdf9a3a16330fcc549092b10e84d223b572f9:922c64590222798bb761d5b6d8e72950

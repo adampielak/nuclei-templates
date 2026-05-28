@@ -2,7 +2,7 @@ id: arscode_ninja_popups-7977fbfd-9864-4883-955e-3d5646763b1b
 
 info:
   name: >
-    Ninja Popups <= 4.7.5 - Open Redirect
+    Ninja Popups <= 4.7.7 - Open Redirect
   author: topscoder
   severity: low
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.7.5')
+          - compare_versions(version, '<= 4.7.7')

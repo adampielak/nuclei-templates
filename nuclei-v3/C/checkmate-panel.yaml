@@ -1,32 +1,28 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Checkmate</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login'
 id: checkmate-panel
-
 info:
-  name: Checkmate Login Panel - Detect
   author: theamanrawat
-  severity: info
-  description: |
-    Checkmate administrative login page was found.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-668
+  description: 'Checkmate administrative login page was found.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "^Checkmate$" })
     max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "^Checkmate$" })
+  name: Checkmate Login Panel - Detect
+  severity: info
   tags: checkmate,panel,discovery,login
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Checkmate</title>'
-
-      - type: status
-        status:
-          - 200
-

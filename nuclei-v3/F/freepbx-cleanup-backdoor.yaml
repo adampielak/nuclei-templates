@@ -7,7 +7,6 @@ info:
   description: |
     FreePBX backdoor cleanup script used in 0-day exploitation of CVE-2025-57819 was detected.
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)FreePBX"}) || service["favicon.ico.image.mmh3"] == "-1908328911" || service["favicon.ico.image.mmh3"] == "1574423538"
     verified: true
     max-request: 1
     vendor: sangoma
@@ -48,4 +47,4 @@ http:
         part: header
         kval:
           - last_modified
-
+# digest: 4a0a00473045022100de3350c93cd22d8299a2f634f47abd366191321dc47d1e00ed97b1845e93051102206aa9e50539fc41b323c9b1cc9be32636d1e7060956c04d4ed7af931c341b37df:922c64590222798bb761d5b6d8e72950

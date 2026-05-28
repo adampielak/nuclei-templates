@@ -9,7 +9,6 @@ info:
   reference:
     - https://kemptechnologies.com/
   metadata:
-    runzero-match: service["http.body"] matches "(?i)Kemp Login Screen"
     verified: true
     max-request: 1
     shodan-query: html:"Kemp Login Screen"
@@ -33,4 +32,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a004730450220112817cf18d1a2bf295a67b4f3e92cc2e9150ed05b51b5a0dece3cd4df6a8ad702210086af4b657f6c02e860b9eda2a0540bc11e456bd7c6cc7d9c78dbd6b39d123b26:922c64590222798bb761d5b6d8e72950

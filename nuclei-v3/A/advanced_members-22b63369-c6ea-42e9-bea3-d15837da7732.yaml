@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - advanced-members
+  - dsl:
+    - compare_versions(version, '<= 1.2.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/advanced-members/readme.txt'
+  redirects: true
+id: advanced_members-22b63369-c6ea-42e9-bea3-d15837da7732
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/advanced-members/
+    google-query: inurl:"/wp-content/plugins/advanced-members/"
+    shodan-query: http.html:"wp-content/plugins/advanced-members/"
+  name: 'Advanced Members for ACF <= 1.2.5 - Authenticated (Subscriber+) Arbitrary
+    File Deletion via Path Traversal
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/22b63369-c6ea-42e9-bea3-d15837da7732?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,advanced-members,low,candidate

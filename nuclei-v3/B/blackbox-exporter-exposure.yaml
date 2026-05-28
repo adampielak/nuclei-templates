@@ -1,28 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - contains_all(body, "Blackbox Exporter","Recent Probes")
+    - status_code == 200
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: blackbox-exporter-exposure
-
 info:
-  name: Blackbox Exporter - Exposure
   author: DhiyaneshDk
-  severity: high
-  description: |
-    Blackbox Exporter was detected and appeared to be accessible without authentication.
   classification:
     cwe-id: CWE-200
+  description: 'Blackbox Exporter was detected and appeared to be accessible without
+    authentication.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: title:"Blackbox Exporter"
+    verified: true
+  name: Blackbox Exporter - Exposure
+  severity: high
   tags: blackbox,misconfig,unauth,exporter,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains_all(body, "Blackbox Exporter","Recent Probes")'
-          - 'status_code == 200'
-        condition: and
-

@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - digiproveblog
+  - dsl:
+    - compare_versions(version, '<= 4.16')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/digiproveblog/readme.txt'
+  redirects: true
 id: digiproveblog-7e2b99f1024ab4cc6ebefd9a40edce57
-
 info:
-  name: >
-    Copyright Proof <= 4.16 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/487a6c5e-226b-4b30-a402-bd5132d17ea8?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/digiproveblog/"
+    fofa-query: wp-content/plugins/digiproveblog/
     google-query: inurl:"/wp-content/plugins/digiproveblog/"
     shodan-query: 'vuln:'
+  name: 'Copyright Proof <= 4.16 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/487a6c5e-226b-4b30-a402-bd5132d17ea8?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-plugin,digiproveblog,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/digiproveblog/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "digiproveblog"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 4.16')

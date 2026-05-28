@@ -1,0 +1,32 @@
+id: cacti-weathermap-file-write 2
+info:
+  author: pikpikcu
+  name: Cacti Weathermap File Write
+  reference: https://www.freebuf.com/articles/system/125177.html
+  severity: medium
+requests:
+- attack: sniper
+  matchers:
+  - part: body
+    type: word
+    words:
+    - TITLE 46ea1712d4b13b55b3f680cc5b8b54e8
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /plugins/weathermap/configs/poc.conf HTTP/1.1
+
+    Host: {{Subdomains}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+
+    Accept-Encoding: gzip, deflate
+
+    Accept: */*
+
+    '
+  threads: 100

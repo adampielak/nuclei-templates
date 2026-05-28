@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-798
   metadata:
     max-request: 2
-  tags: glpi,default-login
+  tags: glpi,default-login,vuln
 
 http:
   - raw:
@@ -58,7 +58,6 @@ http:
         group: 1
         regex:
           - "type=\"password\" name=\"([0-9a-z]+)\" id=\"login_password\" required=\"required\""
-    cookie-reuse: true
 
     matchers-condition: and
     matchers:
@@ -69,5 +68,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a004630440220125956e745edb925d07e2a1319619cb494cfac9090c521488dcef657947278f80220116b11961c08ae4b04defa77838f741b46e67163e8f75b314bad626f19dc8d8f:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502201558489c6cf1b97723bdaf8bd837817f6fef433570cfdd5f0316c91d1fe8bf89022100864342826cbcf2ab960b4a67135d79636296579a501dcd3dba9f53d762ae2909:922c64590222798bb761d5b6d8e72950

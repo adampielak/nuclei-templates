@@ -2,7 +2,7 @@ id: image_map_pro-88d0d6b7-f33f-4c7b-9006-d54578fbe003
 
 info:
   name: >
-    Image Map Pro <= 5.5.0 - Cross-Site Request Forgery
+    Image Map Pro < 5.6.9 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.5.0')
+          - compare_versions(version, '< 5.6.9')

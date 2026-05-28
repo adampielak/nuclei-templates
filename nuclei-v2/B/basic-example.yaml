@@ -1,21 +1,16 @@
 id: basic-example
-
 info:
-  name: Test HTTP Template
   author: pdteam
+  name: Test HTTP Template
   severity: info
-
-variables:
- a1: "{{to_lower(rand_base(5))}}"
-
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/?x={{a1}}"
-      - "{{BaseURL}}/?x={{a1}}"
-
-    extractors:
-      - type: dsl
-        dsl:
-          - a1
+- extractors:
+  - dsl:
+    - a1
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/?x={{a1}}'
+  - '{{BaseURL}}/?x={{a1}}'
+variables:
+  a1: '{{to_lower(rand_base(5))}}'

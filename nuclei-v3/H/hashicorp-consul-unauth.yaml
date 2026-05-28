@@ -1,5 +1,4 @@
 id: hashicorp-consul-unauth
-
 info:
   name: Hashicorp Consul API Unauthenticated
   author: pussycat0x
@@ -32,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a00473045022100c4c57faf6b8b19423490d9cec2f89c48adccbce0561dbf6bdb7c1c094f3c781f02206c98e37f5cde8cffa9f24f4f8aebcfe5d019eb36a24bf4b14384beade4b15859:922c64590222798bb761d5b6d8e72950

@@ -2,7 +2,7 @@ id: meks_video_importer-bbb19be3-8783-4474-a258-285e3b90f1e0
 
 info:
   name: >
-    Meks Video Importer <= 1.0.11 - Missing Authorization
+    Meks Video Importer <= 1.0.12 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.11')
+          - compare_versions(version, '<= 1.0.12')
