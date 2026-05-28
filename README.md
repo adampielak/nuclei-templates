@@ -1,32 +1,71 @@
 # nuclei-templates
 
-Curated nuclei templates aggregated via [cent](https://github.com/xm1k3/cent) and sorted by first-letter buckets (A-Z / 0-9 / misc).
+A curated mirror of community-contributed [nuclei](https://github.com/projectdiscovery/nuclei)
+and [xray](https://github.com/chaitin/xray) templates, aggregated via
+[cent](https://github.com/xm1k3/cent) from many upstream repositories and
+re-published here for convenient consumption.
 
-## Last sync
+## Credits
 
-- Date: 2026-05-27 19:43 UTC
-- Templates added/updated this run: **248014**
-- Junk files removed this run: **0**
-- Total templates in repo: **937975**
+Every template in this repository was written by someone else. Huge thanks to
+all upstream authors — the original `author:` field is preserved in each YAML.
+The contributing repositories are listed in `cent.yaml` upstream. If you find
+your work here and want it removed, open an issue and it will be dropped on
+the next sync.
+
+Special thanks to [@serialstream0](https://github.com/serialstream0) for
+reporting hardcoded OOB callback URLs (including ones embedded in hex-encoded
+payloads) — those templates have been sanitized or removed, and the sync
+pipeline now scrubs the same patterns on every run so they cannot reappear
+from upstream.
 
 ## Layout
 
+Templates are split by engine and version so users do not get compatibility
+warnings from nuclei when loading the wrong dialect:
+
 ```
-A/  apache-*, atlassian-*, ...
-B/  ...
-C/  CVE-*, cisco-*, ...
-...
-Z/
-0/ 1/ ... 9/
-misc/   non-alphanumeric leading char
+nuclei-v3/   # nuclei v3+ templates (top-level: http, code, javascript, flow, dns, ...)
+nuclei-v2/   # legacy nuclei v2 templates (top-level: requests). Loadable by nuclei v3
+             # but emits deprecation warnings.
+xray/        # xray-poc dialect (top-level: rules). NOT compatible with nuclei.
 ```
 
-## Pipeline
+Each tree is sharded by leading character of the filename (`A/`, `B/`, ..., `0/`, `1/`, `misc/`)
+to keep directory sizes manageable.
 
-1. `cent -p /root/cent-nuclei-templates --config /root/.cent.yaml -C`
-2. Collect `*.yaml`/`*.yml` into `/root/bnuck/`
-3. Sort by first letter into bucket dirs in this repo
-4. Drop junk: LICENSE LICENSE.libyaml NOTICE README.md go.mod xss-disable-mustache-escape.YAML yaml.png yamlint.sh yamllint-github-action-2.1.0
-5. Commit & push to GitHub
+## Usage
 
-Automated by `remote-sync.sh` (OOM-guarded, swap fallback).
+```bash
+# Run only modern nuclei templates against a target
+nuclei -t nuclei-v3/ -u https://target
+
+# Include legacy v2 as well
+nuclei -t nuclei-v3/ -t nuclei-v2/ -u https://target
+
+# xray templates must be loaded by xray, not nuclei
+xray webscan --plugins phantasm --poc 'xray/**/*.yaml' --url https://target
+```
+
+## Caveats
+
+- A subset of templates (≈13.5k under `nuclei-v2/`) reference a hardcoded
+  wordlist path `/home/mahmoud/Wordlist/AllSubdomains.txt` for subdomain
+  fuzzing. Replace with your own wordlist before running, or skip them.
+- OOB callback URLs have been rewritten to nuclei's built-in
+  `{{interactsh-url}}` placeholder so payloads do not leak data to
+  third-party collaborator instances.
+
+## Don't be evil
+
+These templates are for **authorized** security testing only — your own
+infrastructure, scope explicitly granted by the asset owner, CTFs, or bug
+bounty programs where you are within scope. Running them against systems you
+do not own or have permission to test is illegal in most jurisdictions and
+unkind everywhere. Respect rate limits. Respect humans on the other end.
+
+## Sync
+
+This mirror is regenerated automatically. See
+[`Scripts/nuclei-templates-sync`](https://github.com/adampielak/Scripts/tree/master/nuclei-templates-sync)
+for the pipeline.
