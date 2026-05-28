@@ -1,12 +1,5 @@
 *.sh
 *.service
 *.timer
-remote-sync*
-ssd-sync*
-launcher*
-nuclei-sync*
-oneshot*
-boost*
-followup*
 stage/
 cent-nuclei-templates/
