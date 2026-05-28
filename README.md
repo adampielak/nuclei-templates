@@ -66,6 +66,4 @@ unkind everywhere. Respect rate limits. Respect humans on the other end.
 
 ## Sync
 
-This mirror is regenerated automatically. See
-[`Scripts/nuclei-templates-sync`](https://github.com/adampielak/Scripts/tree/master/nuclei-templates-sync)
-for the pipeline.
+This mirror is regenerated automatically.
