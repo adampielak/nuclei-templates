@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - skillate
+  - dsl:
+    - compare_versions(version, '<= 1.2.10')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/skillate/style.css'
+  redirects: true
+id: skillate-485cf8c9-493b-441f-a741-fccb09250052
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/skillate/
+    google-query: inurl:"/wp-content/themes/skillate/"
+    shodan-query: http.html:"wp-content/themes/skillate/"
+  name: 'Skillate <= 1.2.10 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/485cf8c9-493b-441f-a741-fccb09250052?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-theme,skillate,medium,candidate

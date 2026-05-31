@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wp-mail-log
+  - dsl:
+    - compare_versions(version, '<= 1.1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wp-mail-log/readme.txt'
+  redirects: true
 id: wp-mail-log-f5bd17b9703291e1eacd98f9790f47b8
-
 info:
-  name: >
-    WP Mail Log <= 1.1.1 - Unauthenticated Stored Cross-Site Scripting via Email
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/86ee1acb-6f0c-40e6-80a0-fc93b61c1602?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/wp-mail-log/"
+    fofa-query: wp-content/plugins/wp-mail-log/
     google-query: inurl:"/wp-content/plugins/wp-mail-log/"
     shodan-query: 'vuln:'
+  name: 'WP Mail Log <= 1.1.1 - Unauthenticated Stored Cross-Site Scripting via Email
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/86ee1acb-6f0c-40e6-80a0-fc93b61c1602?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,wp-mail-log,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/wp-mail-log/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wp-mail-log"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.1.1')

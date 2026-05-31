@@ -19,17 +19,14 @@ id: biotime-panel
 info:
   author: robotshell
   classification:
-    cpe: cpe:2.3:a:zkteco:biotime:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: BioTime Web login panel was detected.
   metadata:
     max-request: 2
-    product: biotime
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)BioTime"})
     shodan-query: http.title:"BioTime"
-    vendor: zkteco
     verified: true
   name: BioTime Web Login Panel - Detect
   severity: info
-  tags: biotime,discovery,panel
+  tags: panel,biotime

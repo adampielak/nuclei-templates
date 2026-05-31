@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - powerpress
+  - dsl:
+    - compare_versions(version, '<= 8.3.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/powerpress/readme.txt'
+  redirects: true
 id: powerpress-5263bbbcb9d0d896113c9f6bce7ffeb1
-
 info:
-  name: >
-    PowerPress <= 8.3.7 - Arbitrary File Upload
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc987edf-5a68-4baf-947c-e623c85ec659?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/powerpress/"
+    fofa-query: wp-content/plugins/powerpress/
     google-query: inurl:"/wp-content/plugins/powerpress/"
     shodan-query: 'vuln:'
+  name: 'PowerPress <= 8.3.7 - Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc987edf-5a68-4baf-947c-e623c85ec659?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-plugin,powerpress,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/powerpress/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "powerpress"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 8.3.7')

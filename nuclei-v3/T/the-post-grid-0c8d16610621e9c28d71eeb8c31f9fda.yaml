@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - the-post-grid
+  - dsl:
+    - compare_versions(version, '<= 7.7.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/the-post-grid/readme.txt'
+  redirects: true
 id: the-post-grid-0c8d16610621e9c28d71eeb8c31f9fda
-
 info:
-  name: >
-    The Post Grid <= 7.7.4 - Missing Authorization via save_block_css
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7beba4f-7704-4b98-9391-de85f86219aa?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/the-post-grid/"
+    fofa-query: wp-content/plugins/the-post-grid/
     google-query: inurl:"/wp-content/plugins/the-post-grid/"
     shodan-query: 'vuln:'
+  name: 'The Post Grid <= 7.7.4 - Missing Authorization via save_block_css
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7beba4f-7704-4b98-9391-de85f86219aa?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,the-post-grid,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/the-post-grid/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "the-post-grid"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 7.7.4')

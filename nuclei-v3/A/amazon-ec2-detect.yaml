@@ -16,4 +16,4 @@ info:
     verified: true
   name: Amazon EC2 Server Detect
   severity: info
-  tags: aws,amazon,cloud
+  tags: tech,aws,ec2,amazon

@@ -28,11 +28,10 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Cryptobox"})
     shodan-query: title:"Cryptobox"
     verified: true
   name: Cryptobox Panel - Detect
   reference:
   - https://www.ercom.com/solutions/cryptobox-presentation
   severity: info
-  tags: panel,cryptobox,login,detect,discovery
+  tags: panel,cryptobox,login,detect

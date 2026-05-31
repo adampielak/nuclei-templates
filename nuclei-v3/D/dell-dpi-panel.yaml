@@ -25,4 +25,4 @@ info:
     max-request: 1
   name: Dell DPI Remote Power Management - Detect
   severity: info
-  tags: tech,dell,dpi,rpm,discovery
+  tags: tech,dell,dpi,rpm

@@ -20,4 +20,4 @@ info:
   reference:
   - https://docs.aws.amazon.com/cognito/latest/developerguide/developer-authenticated-identities.html
   severity: info
-  tags: aws,cognito,default,tech,discovery
+  tags: aws,cognito,default,tech

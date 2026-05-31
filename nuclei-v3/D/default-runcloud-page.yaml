@@ -20,4 +20,4 @@ info:
     verified: true
   name: RunCloud Default Page
   severity: info
-  tags: tech,runcloud,default-page,discovery
+  tags: tech,runcloud,default-page

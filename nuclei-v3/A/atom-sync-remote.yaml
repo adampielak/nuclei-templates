@@ -35,4 +35,4 @@ info:
     verified: true
   name: Atom Synchronization Exposure
   severity: high
-  tags: atom,exposure,config,files,vuln
+  tags: atom,exposure,config,files

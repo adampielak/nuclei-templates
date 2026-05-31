@@ -1,6 +1,7 @@
 http:
 - matchers:
-  - part: body
+  - condition: or
+    part: body
     type: word
     words:
     - "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"

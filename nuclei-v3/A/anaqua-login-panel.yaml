@@ -17,16 +17,15 @@ info:
   author: Ep1cSage
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   description: 'Checks for the presence of Anaqua login page
 
     '
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Anaqua User Sign
-      On"})
     shodan-query: title:"Anaqua User Sign On""
     verified: true
   name: Anaqua Login - Panel
   severity: info
-  tags: anaqua,login,panel,discovery
+  tags: anaqua,login,panel

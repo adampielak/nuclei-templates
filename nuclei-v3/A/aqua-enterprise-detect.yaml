@@ -27,7 +27,6 @@ info:
     shodan-query: http.favicon.hash:-1261322577
     verified: true
   name: Aqua Enterprise Detect
-  reference:
-  - https://www.aquasec.com/
+  reference: https://www.aquasec.com/
   severity: info
-  tags: tech,aqua,discovery
+  tags: tech,aqua

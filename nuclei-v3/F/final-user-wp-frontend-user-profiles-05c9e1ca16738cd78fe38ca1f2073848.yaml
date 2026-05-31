@@ -1,59 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - final-user-wp-frontend-user-profiles
+  - dsl:
+    - compare_versions(version, '< 1.2.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/final-user-wp-frontend-user-profiles/readme.txt'
+  redirects: true
 id: final-user-wp-frontend-user-profiles-05c9e1ca16738cd78fe38ca1f2073848
-
 info:
-  name: >
-    Multiple E-plugins (Various Versions) - Authenticated (Subscriber+) Privilege Escalation
   author: topscoder
-  severity: low
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/629d4809-1dd2-4b67-8d8d-9c55f5240f94?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/final-user-wp-frontend-user-profiles/"
+    fofa-query: wp-content/plugins/final-user-wp-frontend-user-profiles/
     google-query: inurl:"/wp-content/plugins/final-user-wp-frontend-user-profiles/"
     shodan-query: 'vuln:'
+  name: 'Multiple E-plugins (Various Versions) - Authenticated (Subscriber+) Privilege
+    Escalation
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/629d4809-1dd2-4b67-8d8d-9c55f5240f94?source=api-scan
+  severity: low
   tags: cve,wordpress,wp-plugin,final-user-wp-frontend-user-profiles,low
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/final-user-wp-frontend-user-profiles/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "final-user-wp-frontend-user-profiles"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '< 1.2.2')

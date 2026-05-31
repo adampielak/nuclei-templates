@@ -34,4 +34,4 @@ info:
     verified: true
   name: Auth.json File - Disclosure
   severity: high
-  tags: devops,exposure,files,auth,config,vuln
+  tags: devops,exposure,files,auth,config

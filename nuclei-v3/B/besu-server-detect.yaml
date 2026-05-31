@@ -40,4 +40,4 @@ info:
   - https://besu.hyperledger.org/
   - https://besu.hyperledger.org/public-networks/how-to/use-besu-api#service-ports
   severity: info
-  tags: tech,besu,ethereum,web3,blockchain,discovery
+  tags: tech,besu,ethereum,web3,blockchain

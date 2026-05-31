@@ -1,6 +1,5 @@
 id: Config file exposure
 info:
-  author: rahulkadavil
   description: This template can be used to detect config files containing sensitive
     information.
   name: Config file exposure

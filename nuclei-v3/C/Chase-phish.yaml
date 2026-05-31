@@ -21,10 +21,8 @@ info:
   description: 'A Chase phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: Chase phishing Detection
   reference:
   - https://chase.com
   severity: info
-  tags: phishing,Chase,osint,discovery
+  tags: phishing,Chase,osint

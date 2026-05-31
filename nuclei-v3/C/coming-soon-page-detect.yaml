@@ -26,4 +26,4 @@ info:
     verified: true
   name: Coming Soon Page Detect
   severity: info
-  tags: tech,default-page,discovery
+  tags: tech,default-page

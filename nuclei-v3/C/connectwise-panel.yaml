@@ -23,21 +23,15 @@ id: connectwise-panel
 info:
   author: johnk3r
   classification:
-    cpe: cpe:2.3:a:connectwise:screenconnect:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
-    fofa-query:
-    - app="screenconnect-remote-support-software"
-    - icon_hash=-82958153
-    hunter-query: app.name="connectwise screenconnect software"
     max-request: 1
     product: screenconnect
-    runzero-match: service["favicon.ico.image.mmh3"] == "-82958153"
     shodan-query: http.favicon.hash:-82958153
     vendor: connectwise
     verified: true
-    zoomeye-query: app="screenconnect remote management software"
   name: ConnectWise Control Remote Support Software Panel - Detect
   severity: info
-  tags: connectwise,detect,discovery,panel,screenconnect
+  tags: screenconnect,panel,connectwise,detect

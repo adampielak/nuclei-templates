@@ -14,8 +14,6 @@ http:
 id: cmseasy-crossall-sqli
 info:
   author: SleepingBag945
-  classification:
-    cpe: cpe:2.3:a:cmseasy:cmseasy:*:*:*:*:*:*:*:*
   description: 'CmsEasy crossall_act.php SQL Injection Vulnerability. CmsEasy has
     a SQL injection vulnerability. Any SQL command can be executed by encrypting the
     SQL statement in the file service.php.
@@ -24,12 +22,10 @@ info:
   metadata:
     fofa-query: app="CmsEasy"
     max-request: 1
-    product: cmseasy
-    vendor: cmseasy
     verified: true
   name: CmsEasy crossall_act - SQL Injection
   reference:
   - https://cn-sec.com/archives/1580677.html
   - https://github.com/GREENHAT7/pxplan/blob/e2fc04893ca95e177021ddf61cc2134ecc120a8e/goby_pocs/CmsEasy_crossall_act.php_SQL_injection_vulnerability.json#L28
   severity: high
-  tags: cmseasy,sqli,vuln
+  tags: cmseasy,sqli

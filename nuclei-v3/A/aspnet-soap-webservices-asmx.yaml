@@ -34,4 +34,4 @@ info:
   reference:
   - https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/write-web-service
   severity: info
-  tags: config,exposure,asmx,soap,discovery
+  tags: config,exposure,asmx,soap

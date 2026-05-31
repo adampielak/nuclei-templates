@@ -16,7 +16,7 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N
     cvss-score: 4.3
-    cwe-id: CWE-79,CWE-80
+    cwe-id: CWE-79
   description: 'Dlink DSR-250 and Netgear Prosafe are vulnerable to reflected cross
     site scripting endpoint scgi-bin/platform.cgi in parameter SSLVPN.
 
@@ -29,4 +29,4 @@ info:
   reference:
   - https://www.encripto.no/forskning/whitepapers/Netgear_prosafe_advisory_june_2015.pdf
   severity: medium
-  tags: dlink,dsr250,netgear,vuln,xss
+  tags: xss,dlink,dsr250,netgear

@@ -7,7 +7,6 @@ http:
     - 'host:'
     - 'name:'
     - 'pass:'
-    - 'adapter:'
   - status:
     - 200
     type: status
@@ -21,19 +20,16 @@ id: cakephp-config
 info:
   author: DhiyaneshDk
   classification:
-    cpe: cpe:2.3:a:cakephp:cakephp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   description: CakePHP configuration file was detected.
   metadata:
     max-request: 2
-    product: cakephp
     shodan-query: html:"phinx.yml"
-    vendor: cakephp
     verified: true
   name: CakePHP Configuration File - Detect
   reference:
   - https://book.cakephp.org/phinx/0/en/configuration.html
   severity: medium
-  tags: config,exposure,files,vuln
+  tags: files,exposure,config

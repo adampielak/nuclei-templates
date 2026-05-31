@@ -1,51 +1,44 @@
-id: wp_whydonate-3c6f30bb-dec0-4776-b255-bb88c9d003c2
-
-info:
-  name: >
-    WhyDonate – FREE Donate button – Crowdfunding – Fundraising <= 4.0.15 - Missing Authorization to Unauthenticated wp_wdplugin_style Rww Deletion
-  author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c6f30bb-dec0-4776-b255-bb88c9d003c2?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/wp-whydonate/"
-    google-query: inurl:"/wp-content/plugins/wp-whydonate/"
-    shodan-query: 'http.html:"wp-content/plugins/wp-whydonate/"'
-  tags: cve,wordpress,wp-plugin,wp-whydonate,high,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/wp-whydonate/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wp-whydonate"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 4.0.15')
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wp-whydonate
+  - dsl:
+    - compare_versions(version, '<= 4.0.15')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wp-whydonate/readme.txt'
+  redirects: true
+id: wp_whydonate-3c6f30bb-dec0-4776-b255-bb88c9d003c2
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wp-whydonate/
+    google-query: inurl:"/wp-content/plugins/wp-whydonate/"
+    shodan-query: http.html:"wp-content/plugins/wp-whydonate/"
+  name: "WhyDonate \u2013 FREE Donate button \u2013 Crowdfunding \u2013 Fundraising\
+    \ <= 4.0.15 - Missing Authorization to Unauthenticated wp_wdplugin_style Rww Deletion\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c6f30bb-dec0-4776-b255-bb88c9d003c2?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,wp-whydonate,high,candidate

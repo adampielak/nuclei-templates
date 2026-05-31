@@ -2,12 +2,7 @@ dns:
 - extractors:
   - group: 1
     regex:
-    - "IN\tTXT\t(.+DMARC.+)"
-    type: regex
-  matchers:
-  - part: answer
-    regex:
-    - "IN\tTXT\\t(.+DMARC.+)$"
+    - "IN\tTXT\t(.+)"
     type: regex
   name: _dmarc.{{FQDN}}
   type: TXT
@@ -16,7 +11,7 @@ info:
   author: juliosmelo
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: 'DNS DMARC information was detected.
 
@@ -28,4 +23,4 @@ info:
   - https://dmarc.org/
   - https://dmarc.org/wiki/FAQ#Why_is_DMARC_important.3F
   severity: info
-  tags: dns,dmarc,discovery
+  tags: dns,dmarc

@@ -1,59 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - mainwp-seo-extension
+  - dsl:
+    - compare_versions(version, '<= 4.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/mainwp-seo-extension/readme.txt'
+  redirects: true
 id: mainwp-seo-extension-03dadbc6659a1f787020cd52f8bf6c32
-
 info:
-  name: >
-    MainWP WordPress SEO Extension <= 4.0.1 - Missing Authorization to Arbitrary Plugin Activation
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f9150e6b-2233-4fdb-95b7-1a5a8c083cad?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/mainwp-seo-extension/"
+    fofa-query: wp-content/plugins/mainwp-seo-extension/
     google-query: inurl:"/wp-content/plugins/mainwp-seo-extension/"
     shodan-query: 'vuln:'
+  name: 'MainWP WordPress SEO Extension <= 4.0.1 - Missing Authorization to Arbitrary
+    Plugin Activation
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f9150e6b-2233-4fdb-95b7-1a5a8c083cad?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,mainwp-seo-extension,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/mainwp-seo-extension/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "mainwp-seo-extension"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 4.0.1')

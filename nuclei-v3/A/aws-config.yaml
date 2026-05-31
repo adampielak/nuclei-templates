@@ -28,4 +28,4 @@ info:
     verified: true
   name: AWS Configuration - Detect
   severity: medium
-  tags: config,exposure,aws,credential,vuln
+  tags: config,exposure,aws,credential

@@ -29,7 +29,7 @@ info:
     verified: true
   name: AWS S3 Buckets - Cloud Enumeration
   severity: info
-  tags: cloud,enum,cloud-enum,aws,discovery
+  tags: cloud,cloud-enum,aws
 self-contained: true
 variables:
   BaseDNS: s3.amazonaws.com

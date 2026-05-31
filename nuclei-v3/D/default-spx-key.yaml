@@ -53,4 +53,4 @@ info:
 
     '
   severity: high
-  tags: spx-php,debug,misconfig,spx,vuln
+  tags: spx-php,debug,misconfig,spx

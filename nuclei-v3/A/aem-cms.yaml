@@ -1,25 +1,19 @@
 http:
 - matchers:
-  - condition: or
-    part: body
+  - part: body
     type: word
     words:
     - Welcome to Adobe Experience Manager
-    - /content/dam/
-    - /etc/clientlibs/
-  max-redirects: 4
+  max-redirects: 2
   method: GET
   path:
-  - '{{BaseURL}}/libs/granite/core/content/login.html'
-  - '{{BaseURL}}/..;/libs/granite/core/content/login.html'
-  - '{{BaseURL}}/%2e/libs/granite/core/content/login.html'
-  - '{{BaseURL}}/'
+  - '{{BaseURL}}'
   redirects: true
-  stop-at-first-match: true
 id: aem-cms
 info:
-  author: reewardius
-  name: AEM CMS Finder
-  reference: https://realm3ter.medium.com/aem-bug-in-adobe-416763d3ad04
+  author: Swissky
+  metadata:
+    max-request: 1
+  name: AEM Finder
   severity: info
-  tags: aem
+  tags: aem,tech

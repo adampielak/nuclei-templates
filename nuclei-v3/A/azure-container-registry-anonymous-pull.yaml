@@ -27,3 +27,14 @@ http:
         part: body
         words:
           - "repositories"
+
+    extractors:
+      - type: regex
+        part: body
+        name: repository-names
+        regex:
+          - '"([a-z0-9][a-z0-9._/-]*[a-z0-9])"'
+        group: 1
+      - type: dsl
+        dsl:
+          - '"ACR endpoint: " + host'

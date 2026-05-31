@@ -1,0 +1,32 @@
+id: spark-webui-unauth.yaml
+info:
+  author: princechaddha
+  name: Unauthenticated Spark WebUI
+  reference: https://github.com/vulhub/vulhub/tree/master/spark/unacc
+  severity: medium
+  tags: spark,unauth
+requests:
+- attack: sniper
+  matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <title>Spark Master at spark://
+    - <strong>URL:</strong>
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET / HTTP/1.1
+
+    Host: {{Subdomains}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+    like Gecko) Chrome/87.0.4280.88 Safari/537.36
+
+    '
+  threads: 100

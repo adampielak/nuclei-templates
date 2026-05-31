@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - jw-player-7-for-wp
+  - dsl:
+    - compare_versions(version, '<= 2.3.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/jw-player-7-for-wp/readme.txt'
+  redirects: true
 id: jw-player-7-for-wp-a72ee1bb3a38c53e2100692356a3aef1
-
 info:
-  name: >
-    JW Player for WordPress <= 2.3.3 - Missing Authorization
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/52bd0d4d-4a08-417c-a426-6bd981f43120?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/jw-player-7-for-wp/"
+    fofa-query: wp-content/plugins/jw-player-7-for-wp/
     google-query: inurl:"/wp-content/plugins/jw-player-7-for-wp/"
     shodan-query: 'vuln:'
+  name: 'JW Player for WordPress <= 2.3.3 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/52bd0d4d-4a08-417c-a426-6bd981f43120?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,jw-player-7-for-wp,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/jw-player-7-for-wp/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "jw-player-7-for-wp"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.3.3')

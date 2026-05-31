@@ -14,16 +14,12 @@ http:
 id: brightsign-dsdws-ssrf
 info:
   author: 0x_Akoko
-  classification:
-    cwe-id:
-    - CWE-918
   description: Unauthenticated Server-Side Request Forgery (SSRF) vulnerability exists
     in the BrightSign digital signage media player affecting the Diagnostic Web Server
     (DWS). The application parses user supplied data in the 'url' GET parameter to
     construct a diagnostics request to the Download Speed Test service.
   metadata:
     max-request: 1
-    runzero-review: REJECT/2025-11-07/uses interactsh
     shodan-query: title:"BrightSign"
     verified: true
   name: BrightSign Digital Signage Diagnostic Web Server 8.2.26 Unauthenticated -
@@ -32,4 +28,4 @@ info:
   - https://brightsign.zendesk.com/hc/en-us/articles/360056180694-Regarding-Advisory-ID-ZSL-2020-5595
   - https://www.zeroscience.mk/codes/brightsign_ssrf.txt
   severity: medium
-  tags: brightsign,ssrf,unauth,vuln
+  tags: ssrf,brightsign,unauth

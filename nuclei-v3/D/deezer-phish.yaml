@@ -21,10 +21,8 @@ info:
   description: 'A deezer phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: deezer phishing Detection
   reference:
   - https://deezer.com
   severity: info
-  tags: phishing,deezer,osint,discovery
+  tags: phishing,deezer,osint

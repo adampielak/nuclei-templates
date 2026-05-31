@@ -21,23 +21,14 @@ http:
 id: arcgis-api-service
 info:
   author: HeeresS
-  classification:
-    cpe: cpe:2.3:a:esri:arcgis_server:*:*:*:*:*:*:*:*
   description: Check for the existence of the "/arcgis/rest/services" path on an ArcGIS
     server.
   metadata:
-    fofa-query: title="arcgis"
-    google-query: intitle:"arcgis"
     max-request: 1
-    product: arcgis_server
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)arcgis"})
-    shodan-query:
-    - title:"ArcGIS"
-    - http.title:"arcgis"
-    vendor: esri
+    shodan-query: title:"ArcGIS"
     verified: true
   name: ArcGIS REST Services Directory - Detect
   reference:
   - https://enterprise.arcgis.com/en/
   severity: info
-  tags: api,arcgis,detect,discovery,esri,panel,rest
+  tags: panel,arcgis,rest,api,detect

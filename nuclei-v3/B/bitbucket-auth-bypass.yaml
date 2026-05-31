@@ -16,8 +16,6 @@ http:
 id: bitbucket-auth-bypass
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:atlassian:bitbucket_data_center:*:*:*:*:*:*:*:*
   description: 'There is a permission bypass vulnerability through %20, which allows
     arbitrary users to obtain sensitive data
 
@@ -25,12 +23,10 @@ info:
   metadata:
     fofa-query: title="Log in - Bitbucket"
     max-request: 1
-    product: bitbucket_data_center
     shodan-query: title:"Log in - Bitbucket"
-    vendor: atlassian
     verified: true
   name: Bitbucket Server > 4.8 - Authentication Bypass
   reference:
   - https://github.com/Threekiii/Awesome-POC/blob/master/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/Atlassian%20Bitbucket%20%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E.md
   severity: critical
-  tags: misconfig,atlassian,bitbucket,auth-bypass,vuln
+  tags: misconfig,atlassian,bitbucket,auth-bypass

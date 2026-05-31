@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - easy-set-favicon
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/easy-set-favicon/readme.txt'
+  redirects: true
 id: easy-set-favicon-cd265eedeaef7dbc17fe04f8ffa41e3d
-
 info:
-  name: >
-    Easy Set Favicon <= 1.1 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/825af974-dccd-4409-8f22-fa70240b0c66?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/easy-set-favicon/"
+    fofa-query: wp-content/plugins/easy-set-favicon/
     google-query: inurl:"/wp-content/plugins/easy-set-favicon/"
     shodan-query: 'vuln:'
+  name: 'Easy Set Favicon <= 1.1 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/825af974-dccd-4409-8f22-fa70240b0c66?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-plugin,easy-set-favicon,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/easy-set-favicon/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "easy-set-favicon"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.1')

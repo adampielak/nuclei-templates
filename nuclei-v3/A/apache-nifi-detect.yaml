@@ -28,4 +28,4 @@ info:
     max-request: 7
   name: Apache NiFi detect
   severity: info
-  tags: tech,apache,nifi,discovery
+  tags: tech,apache,nifi

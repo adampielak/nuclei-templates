@@ -15,17 +15,14 @@ id: aircube-dashboard-panel
 info:
   author: theamanrawat
   classification:
-    cpe: cpe:2.3:h:ui:aircube:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: airCube Dashboard login panel was detected.
   metadata:
     max-request: 1
-    product: aircube
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AirCube Dashboard"})
     shodan-query: http.title:"AirCube Dashboard"
-    vendor: ui
     verified: true
   name: airCube Dashboard Login Panel - Detect
   severity: info
-  tags: aircube,discovery,panel
+  tags: panel,aircube

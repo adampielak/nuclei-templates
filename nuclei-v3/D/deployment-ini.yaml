@@ -42,4 +42,4 @@ info:
 
     '
   severity: medium
-  tags: config,exposure,dg,vuln
+  tags: config,exposure,dg

@@ -31,3 +31,27 @@ http:
         part: body
         regex:
           - '"tasks"\s*:\s*\['
+
+    extractors:
+      - type: regex
+        part: body
+        name: task-ids
+        regex:
+          - '"id"\s*:\s*"([^"]+)"'
+        group: 1
+      - type: regex
+        part: body
+        name: task-types
+        regex:
+          - '"type"\s*:\s*"(stream|batch)"'
+        group: 1
+      - type: regex
+        part: body
+        name: task-status
+        regex:
+          - '"status"\s*:\s*"(enabled|disabled)"'
+        group: 1
+      - type: kval
+        part: header
+        kval:
+          - "X-Kapacitor-Version"

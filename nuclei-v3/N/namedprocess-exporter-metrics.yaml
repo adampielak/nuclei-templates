@@ -1,29 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - namedprocess
+    - '# HELP'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
 id: namedprocess-exporter-metrics
-
 info:
-  name: Named Process Exporter
   author: DhiyaneshDk
-  severity: low
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Named Process Exporter"
+    verified: true
+  name: Named Process Exporter
+  severity: low
   tags: namedprocess,exposure,debug
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/metrics"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "namedprocess"
-          - "# HELP"
-        condition: and
-
-      - type: status
-        status:
-          - 200

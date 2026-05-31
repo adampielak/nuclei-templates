@@ -18,24 +18,11 @@ info:
   author: johnk3r
   description: WS_FTP Ad Hoc panel was detected.
   metadata:
-    censys-query: services.http.request.uri="*/thinclient/wtm/public/index.html"
-    fofa-query:
-    - title="ws_ftp server web transfer"
-    - title="ad hoc transfer"
-    google-query:
-    - intitle:"ws_ftp server web transfer"
-    - intitle:"ad hoc transfer"
     max-request: 1
     product: ws_ftp
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ad hoc transfer"})
-      || any(each(service["html.titles"]), {# matches "(?i)ws_ftp server web transfer"})
-    shodan-query:
-    - http.title:"Ad Hoc Transfer"
-    - ws_ftp port:22
-    - http.title:"ad hoc transfer"
-    - http.title:"ws_ftp server web transfer"
+    shodan-query: http.title:"Ad Hoc Transfer"
     vendor: progress
     verified: true
   name: WS-FTP Ad Hoc Transfer Panel - Detect
   severity: info
-  tags: ad-hoc,detect,discovery,login,panel,progress,wsftp
+  tags: panel,wsftp,ad-hoc,detect,login,progress

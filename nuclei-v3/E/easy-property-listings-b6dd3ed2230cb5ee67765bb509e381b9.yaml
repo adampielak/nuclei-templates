@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - easy-property-listings
+  - dsl:
+    - compare_versions(version, '<= 3.3.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/easy-property-listings/readme.txt'
+  redirects: true
 id: easy-property-listings-b6dd3ed2230cb5ee67765bb509e381b9
-
 info:
-  name: >
-    Easy Property Listings <= 3.3.3 - Cross-Site Scripting
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8af7c85-977f-41aa-acbe-293dfa913577?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/easy-property-listings/"
+    fofa-query: wp-content/plugins/easy-property-listings/
     google-query: inurl:"/wp-content/plugins/easy-property-listings/"
     shodan-query: 'vuln:'
+  name: 'Easy Property Listings <= 3.3.3 - Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8af7c85-977f-41aa-acbe-293dfa913577?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,easy-property-listings,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/easy-property-listings/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "easy-property-listings"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 3.3.3')

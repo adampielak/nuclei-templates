@@ -23,4 +23,4 @@ info:
   reference:
   - https://github.com/ansible/awx
   severity: info
-  tags: tech,ansible,awx,discovery
+  tags: tech,ansible,awx

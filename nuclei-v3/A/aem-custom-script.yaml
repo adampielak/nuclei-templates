@@ -30,17 +30,13 @@ http:
 id: aem-custom-script
 info:
   author: DhiyaneshDK
-  classification:
-    cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
-    product: experience_manager
     shodan-query:
     - http.title:"AEM Sign In"
     - http.component:"Adobe Experience Manager"
-    vendor: adobe
   name: Adobe AEM Custom Scripts Exposure
   reference:
   - https://www.slideshare.net/0ang3el/hacking-aem-sites
   severity: unknown
-  tags: misconfig,aem,adobe,vuln
+  tags: misconfig,aem,adobe

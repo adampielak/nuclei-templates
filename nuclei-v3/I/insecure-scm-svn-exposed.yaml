@@ -34,3 +34,17 @@ http:
           - "(?m)^(dir|file)$"
           - "svn://|https?://[^\\s]+"
         condition: or
+
+    extractors:
+      - type: regex
+        part: body
+        name: svn-repo-url
+        regex:
+          - '(svn(?:\+ssh)?://[^\s\x00-\x1f]+|https?://[^\s\x00-\x1f]+/svn/[^\s\x00-\x1f]+)'
+        group: 1
+      - type: regex
+        part: body
+        name: svn-uuid
+        regex:
+          - '([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})'
+        group: 1

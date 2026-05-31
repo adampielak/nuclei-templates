@@ -1,6 +1,5 @@
 id: Open Redirect
 info:
-  author: rahulkadavil
   description: This template can be used to detect Open Redirect vulnerability in
     the host.
   name: Open Redirect Issues
@@ -34,8 +33,3 @@ requests:
   - '{{BaseURL}}/?flow=http://evil.com'
   - '{{BaseURL}}/?out=http://evil.com'
   - '{{BaseURL}}/?login=http://evil.com'
-  - '{{BaseURL}}/?reach=http://evil.com'
-  - '{{BaseURL}}/?route=http://evil.com'
-  - '{{BaseURL}}/?reroute=http://evil.com'
-  - '{{BaseURL}}/?domain=http://evil.com'
-  - '{{BaseURL}}/?Location=http://evil.com'

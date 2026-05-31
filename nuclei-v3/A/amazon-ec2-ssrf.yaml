@@ -35,15 +35,11 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
     cvss-score: 9.3
-    cwe-id: CWE-441,CWE-918
-  description: SSRF vulnerability exists in Amazon EC2, or Amazon Elastic Compute
-    Cloud which is a web service provided by Amazon Web Services (AWS) that offers
-    resizable compute capacity in the cloud.
+    cwe-id: CWE-441
   metadata:
     max-request: 2
-    runzero-match: service["http.head.server"] matches "EC2ws"
     shodan-query: 'Server: EC2ws'
     verified: true
   name: Amazon EC2 - Server-side request forgery (SSRF)
   severity: critical
-  tags: amazon,aws,ec2,ssrf,vuln
+  tags: aws,ec2,ssrf,amazon

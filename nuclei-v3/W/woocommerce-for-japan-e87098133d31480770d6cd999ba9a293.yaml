@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - woocommerce-for-japan
+  - dsl:
+    - compare_versions(version, '<= 2.6.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/woocommerce-for-japan/readme.txt'
+  redirects: true
 id: woocommerce-for-japan-e87098133d31480770d6cd999ba9a293
-
 info:
-  name: >
-    Japanized For WooCommerce <= 2.6.4 - Missing Authorization
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0fc675e8-8ba1-40b0-829e-7a48d5eb586d?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/woocommerce-for-japan/"
+    fofa-query: wp-content/plugins/woocommerce-for-japan/
     google-query: inurl:"/wp-content/plugins/woocommerce-for-japan/"
     shodan-query: 'vuln:'
+  name: 'Japanized For WooCommerce <= 2.6.4 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0fc675e8-8ba1-40b0-829e-7a48d5eb586d?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,woocommerce-for-japan,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/woocommerce-for-japan/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "woocommerce-for-japan"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.6.4')

@@ -10,10 +10,6 @@ http:
 id: confluent-accesstoken
 info:
   author: DhiyaneshDK
-  classification:
-    cwe-id:
-    - CWE-522
-    - CWE-540
   metadata:
     max-request: 1
     verified: true
@@ -22,4 +18,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/confluent-access-token.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/confluent-access-token.go
   severity: info
-  tags: confluent,exposure,tokens,vuln
+  tags: confluent,exposure,tokens

@@ -17,10 +17,6 @@ http:
 id: crawlab-lfi
 info:
   author: pussycat0x
-  classification:
-    cwe-id:
-    - CWE-23
-    - CWE-73
   description: Crawlab is vulnerable to arbitrary file read.
   metadata:
     fofa-query: title="Crawlab"
@@ -30,4 +26,4 @@ info:
   reference:
   - https://github.com/Threekiii/Awesome-POC/blob/master/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/Crawlab%20file%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.md
   severity: high
-  tags: crawlab,lfi,vuln
+  tags: crawlab,lfi

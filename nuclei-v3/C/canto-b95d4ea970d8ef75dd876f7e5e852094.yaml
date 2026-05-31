@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - canto
+  - dsl:
+    - compare_versions(version, '<= 3.0.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/canto/readme.txt'
+  redirects: true
 id: canto-b95d4ea970d8ef75dd876f7e5e852094
-
 info:
-  name: >
-    Canto <= 3.0.6 - Remote File Inclusion to Code Execution
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa080b36-01ce-496a-9938-9715f0131e29?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/canto/"
+    fofa-query: wp-content/plugins/canto/
     google-query: inurl:"/wp-content/plugins/canto/"
     shodan-query: 'vuln:'
+  name: 'Canto <= 3.0.6 - Remote File Inclusion to Code Execution
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa080b36-01ce-496a-9938-9715f0131e29?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-plugin,canto,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/canto/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "canto"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 3.0.6')

@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - vertical-scroll-recent-post
+  - dsl:
+    - compare_versions(version, '<= 14.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/vertical-scroll-recent-post/readme.txt'
+  redirects: true
 id: vertical-scroll-recent-post-d7e1943e949c2fbcf7b0d431de7d579d
-
 info:
-  name: >
-    Vertical scroll recent post <= 14.0 - Cross-Site Request Forgery via vsrp_admin_options
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/307bbfe6-8a57-461d-aa7d-bce962da4239?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/vertical-scroll-recent-post/"
+    fofa-query: wp-content/plugins/vertical-scroll-recent-post/
     google-query: inurl:"/wp-content/plugins/vertical-scroll-recent-post/"
     shodan-query: 'vuln:'
+  name: 'Vertical scroll recent post <= 14.0 - Cross-Site Request Forgery via vsrp_admin_options
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/307bbfe6-8a57-461d-aa7d-bce962da4239?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-plugin,vertical-scroll-recent-post,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/vertical-scroll-recent-post/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "vertical-scroll-recent-post"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 14.0')

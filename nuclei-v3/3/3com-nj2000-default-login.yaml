@@ -34,11 +34,10 @@ info:
   metadata:
     fofa-query: body="NJ2000"
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "ManageEngine Password"})
     shodan-query: http.title:"ManageEngine Password"
     verified: true
   name: 3COM NJ2000 - Default Login
   reference:
   - https://www.manualslib.com/manual/204158/3com-Intellijack-Nj2000.html?page=12
   severity: high
-  tags: 3com,default-login,nj2000,vuln
+  tags: default-login,3com,nj2000

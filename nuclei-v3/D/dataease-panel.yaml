@@ -14,23 +14,15 @@ http:
 id: dataease-panel
 info:
   author: DhiyaneshDK
-  classification:
-    cpe: cpe:2.3:a:dataease:dataease:*:*:*:*:*:*:*:*
   description: 'Dataease Login Panel is discovered
 
     '
   metadata:
-    fofa-query: body="dataease"
     max-request: 1
-    product: dataease
-    runzero-match: service["http.body"] matches "(?i)dataease"
-    shodan-query:
-    - html:"Dataease"
-    - http.html:"dataease"
-    vendor: dataease
+    shodan-query: html:"Dataease"
     verified: true
   name: Dataease - Login Panel
   reference:
   - https://github.com/dataease/dataease
   severity: info
-  tags: dataease,discovery,login,panel
+  tags: login,panel,dataease

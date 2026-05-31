@@ -13,7 +13,7 @@ info:
     vendor: cowrie
   name: Cowrie SSH Honeypot - Detect
   severity: info
-  tags: cowrie,twisted,ssh,honeypot,ir,cti,network,tcp,discovery
+  tags: cowrie,twisted,ssh,honeypot,ir,cti,network
 tcp:
 - host:
   - '{{Hostname}}'

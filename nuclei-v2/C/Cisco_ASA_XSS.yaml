@@ -1,6 +1,6 @@
 id: Cisco ASA XSS
 info:
-  author: nithissh
+  author: shifacyclewala & hackergautam
   name: Cisco ASA XSS with vulnerable parameter SAMLResponse
   severity: medium
   tags: xss,cisco

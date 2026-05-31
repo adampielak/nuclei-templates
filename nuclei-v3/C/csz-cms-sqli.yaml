@@ -18,9 +18,6 @@ http:
 id: csz-cms-sqli
 info:
   author: r3Y3r53
-  classification:
-    cwe-id:
-    - CWE-89
   description: 'CSZ CMS version 1.3.0 suffers from multiple remote blind SQL injection
     vulnerabilities.
 
@@ -32,4 +29,4 @@ info:
   reference:
   - https://packetstormsecurity.com/files/167028/CSZ-CMS-1.3.0-SQL-Injection.html
   severity: high
-  tags: cms,csz,packetstorm,sqli,time-based-sqli,vuln
+  tags: packetstorm,sqli,csz,cms

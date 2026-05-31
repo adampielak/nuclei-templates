@@ -1,5 +1,6 @@
 http:
 - attack: pitchfork
+  cookie-reuse: true
   extractors:
   - group: 1
     internal: true
@@ -41,11 +42,9 @@ id: datadog-login-check
 info:
   author: parthmalhotra,pdresearch
   description: Checks for a valid datadog account.
-  metadata:
-    max-request: 2
   name: Datadog Login Check
   reference:
   - https://owasp.org/www-community/attacks/Credential_stuffing
   severity: critical
-  tags: cloud,creds-stuffing,login-check,datadog,vuln
+  tags: login-check,datadog,creds-stuffing
 self-contained: true

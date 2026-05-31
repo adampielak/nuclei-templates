@@ -21,10 +21,8 @@ info:
   description: 'An american express phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: american-express phishing Detection
   reference:
   - https://www.americanexpress.com
   severity: info
-  tags: phishing,american-express,osint,discovery
+  tags: phishing,american-express,osint

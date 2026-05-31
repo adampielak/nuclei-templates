@@ -33,5 +33,5 @@ info:
   reference:
   - https://platform.openai.com/docs/api-reference
   severity: info
-  tags: token-spray,openai,ai
+  tags: token-spray,openai
 self-contained: true

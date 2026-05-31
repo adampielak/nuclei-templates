@@ -26,4 +26,4 @@ info:
   reference:
   - https://bruteratel.com/
   severity: info
-  tags: c2,bruteratel,c4,panel,vuln
+  tags: c2,bruteratel,c4,panel

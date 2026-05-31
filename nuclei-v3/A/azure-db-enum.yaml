@@ -20,7 +20,7 @@ info:
     verified: true
   name: Azure Databases - Cloud Enumeration
   severity: info
-  tags: cloud,enum,cloud-enum,azure,dns,discovery
+  tags: cloud,cloud-enum,azure
 self-contained: true
 variables:
   BaseDNS: database.windows.net

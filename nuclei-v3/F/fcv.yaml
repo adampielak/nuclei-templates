@@ -1,33 +1,28 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - "\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430 \u043F\u0440\u043E\u0444\u0456\
+      \u043B\u044E"
+  matchers-condition: and
+  method: GET
+  path:
+  - https://fcv.if.ua/index.php/component/comprofiler/userprofile/{{user}}/
 id: fcv
-
 info:
-  name: Fcv User Name Information - Detect
   author: dwisiswant0
-  description: Fcv user name information check was conducted.
-  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
-  tags: osint,osint-hobby,fcv
+  description: Fcv user name information check was conducted.
   metadata:
     max-request: 1
-
+  name: Fcv User Name Information - Detect
+  severity: info
+  tags: osint,osint-hobby,fcv
 self-contained: true
-http:
-  - method: GET
-    path:
-      - "https://fcv.if.ua/index.php/component/comprofiler/userprofile/{{user}}/"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        part: body
-        words:
-          - "сторінка профілю"
-
-# Enhanced by cs 03/17/2023

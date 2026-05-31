@@ -1,31 +1,28 @@
-id: docker-compose-config
-
+id: docker-compose-config 1
 info:
-  name: docker-compose.yml exposure
   author: meme-lord,blckraven,geeknik
+  name: docker-compose.yml exposure
   severity: medium
   tags: config,exposure,devops
-
 requests:
-  - method: GET
-    host-redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/docker-compose.yml"
-      - "{{BaseURL}}/docker-compose.prod.yml"
-      - "{{BaseURL}}/docker-compose.production.yml"
-      - "{{BaseURL}}/docker-compose.staging.yml"
-      - "{{BaseURL}}/docker-compose.dev.yml"
-      - "{{BaseURL}}/docker-compose-dev.yml"
-      - "{{BaseURL}}/docker-compose.override.yml"
+- attack: sniper
+  matchers:
+  - dsl:
+    - 'regex("^version: ", body) && contains(body, "services:")'
+    type: dsl
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /docker-compose.yml HTTP/1.1
 
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - 'regex("^version: ", body) && contains(body, "services:")'
+    Host: {{Subdomains}}
 
-      - type: status
-        status:
-          - 200
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101
+    Firefox/55
+
+    '
+  threads: 100

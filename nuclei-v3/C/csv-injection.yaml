@@ -3,15 +3,20 @@ http:
   - fuzz:
     - '{{csv_fuzz}}'
     mode: multiple
-    part: request
+    part: query
     type: replace
   matchers:
-  - condition: and
-    dsl:
-    - contains(interactsh_protocol, "http") || contains(interactsh_protocol, "dns")
-    - contains(header, "csv") || contains(header, "excel") || contains(header, "spreadsheet")
-    name: oob-interaction
-    type: dsl
+  - part: interactsh_protocol
+    type: word
+    words:
+    - http
+  - part: header
+    type: word
+    words:
+    - text/csv
+    - application/csv
+    - application/vnd.ms-excel
+  matchers-condition: and
   payloads:
     csv_fuzz:
     - class.module.classLoader.resources.context.configFile=http://{{interactsh-url}}
@@ -26,9 +31,8 @@ http:
     - =IMAGE("https://{{interactsh-url}}/images/srpr/logo3w.png")
   pre-condition:
   - dsl:
-    - method != "OPTIONS"
+    - method == "GET"
     type: dsl
-  stop-at-first-match: true
 id: csv-injection
 info:
   author: DhiyaneshDK,ritikchaddha
@@ -39,4 +43,4 @@ info:
     '
   name: CSV Injection Detection
   severity: medium
-  tags: csv,dast,full
+  tags: dast,csv,oast,vuln

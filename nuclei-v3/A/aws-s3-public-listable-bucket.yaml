@@ -29,3 +29,23 @@ http:
         part: body
         words:
           - "<ListBucketResult xmlns"
+
+    extractors:
+      - type: regex
+        part: body
+        name: bucket-name
+        regex:
+          - '<Name>([^<]+)</Name>'
+        group: 1
+      - type: regex
+        part: body
+        name: object-keys
+        regex:
+          - '<Key>([^<]+)</Key>'
+        group: 1
+      - type: regex
+        part: body
+        name: object-sizes
+        regex:
+          - '<Size>([0-9]+)</Size>'
+        group: 1

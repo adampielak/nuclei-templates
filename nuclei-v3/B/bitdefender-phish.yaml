@@ -22,10 +22,8 @@ info:
   description: 'A bitdefender phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: bitdefender phishing Detection
   reference:
   - https://bitdefender.com
   severity: info
-  tags: phishing,bitdefender,osint,discovery
+  tags: phishing,bitdefender,osint

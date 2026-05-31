@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - vikinger
+  - dsl:
+    - compare_versions(version, '<= 1.9.32')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/vikinger/style.css'
+  redirects: true
+id: vikinger-22d8f1db-1b7e-4b68-a381-01f51dd34b2b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/vikinger/
+    google-query: inurl:"/wp-content/themes/vikinger/"
+    shodan-query: http.html:"wp-content/themes/vikinger/"
+  name: 'Vikinger <= 1.9.32 - Authenticated (Subscriber+) Arbitrary File Deletion
+    via vikinger_delete_activity_media_ajax Function
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/22d8f1db-1b7e-4b68-a381-01f51dd34b2b?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-theme,vikinger,low,candidate

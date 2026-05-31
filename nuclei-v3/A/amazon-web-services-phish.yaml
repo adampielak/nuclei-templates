@@ -21,10 +21,8 @@ info:
   description: 'An amazon-web-services phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: amazon web services phishing Detection
   reference:
   - https://signin.aws.amazon.com
   severity: info
-  tags: phishing,amazon-web-services,aws,osint,discovery
+  tags: phishing,amazon-web-services,aws,osint

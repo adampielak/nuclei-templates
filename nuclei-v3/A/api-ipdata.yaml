@@ -1,29 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"ip":'
+    - '"name":'
+    - '"asn":'
+    - '"route":'
+    - '"time_zone":'
+  method: GET
+  path:
+  - https://api.ipdata.co/?api-key={{token}}
 id: api-ipdata
-
 info:
-  name: IP Data API Test
   author: 0xpugazh
-  severity: info
-  reference:
-    - https://docs.ipdata.co/docs
   metadata:
     max-request: 1
     verified: true
+  name: IP Data API Test
+  reference:
+  - https://docs.ipdata.co/docs
+  severity: info
   tags: token-spray,ipdata
-
 self-contained: true
-http:
-  - method: GET
-    path:
-      - "https://api.ipdata.co/?api-key={{token}}"
-
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"ip":'
-          - '"name":'
-          - '"asn":'
-          - '"route":'
-          - '"time_zone":'
-        condition: and

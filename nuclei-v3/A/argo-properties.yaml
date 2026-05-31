@@ -1,58 +1,34 @@
 http:
 - matchers:
-  - condition: or
-    part: body
-    regex:
-    - ((?i)db_pass|db|db_user|db_port|db_host|host|url|database)=
-    - ((?i)password|user|port|pwd|pass|debug|path|secret)=
-    - ((?i)password|user|port|pwd|pass|debug|path|secret)
-    - ((?i)db_pass|db|db_user|db_port|db_host|host|url|database)
-    type: regex
-  - condition: or
-    part: header
-    type: word
-    words:
-    - text/plain
-    - bytes
-  - condition: and
-    part: body
+  - part: body
     type: word
     words:
     - argo.database.host
+    - argo.database.name
     - argo.database.user
-  - negative: true
-    part: header
-    type: word
-    words:
-    - text/html
-  - condition: or
-    status:
+    - argo.database.password
+    - argo.portal.name
+    - argo.portal.promotionNumber
+    - argo.keystore
+    - argo.keystore.pass
+    - argo.tracker.path
+    - argo.tracker.backofficepath
+    - argo.temp.absolutepath
+    - argo.hssi.xmlrpc.url
+    - argo.hssi.remoteloginurl
+    - argo.hssi.remoteloginurl.bc
+  - status:
     - 200
-    - 206
     type: status
   matchers-condition: and
   method: GET
   path:
   - '{{BaseURL}}/WEB-INF/classes/argo.properties'
-  - '{{BaseURL}}/..;/WEB-INF/classes/argo.properties'
-  - '{{BaseURL}}/%2e/WEB-INF/classes/argo.properties'
-  - '{{BaseURL}}/WEB-INF/classes/argo.properties.bak'
-  - '{{BaseURL}}/argo.properties'
-  - '{{BaseURL}}///argo.properties'
-  - '{{BaseURL}}/argo.properties~'
-  - '{{BaseURL}}/%2e%2e%2f/argo.properties'
-  - '{{BaseURL}}/..%3B/argo.properties'
-  - '{{BaseURL}}/argo.properties.bak'
-  - '{{BaseURL}}/../argo.properties'
-  - '{{BaseURL}}/;/argo.properties'
-  - '{{BaseURL}}/..;/argo.properties'
-  - '{{BaseURL}}/%2e/argo.properties'
-  stop-at-first-match: true
 id: argo-properties
 info:
-  author: reewardius
-  name: Argo Properties Exposure
+  author: rix4uni
+  name: argo Properties Exposure
   reference:
-  - https://twitter.com/ynsmroztas/status/1657842876406013955/photo/2
+  - https://twitter.com/ynsmroztas/status/1657842876406013955
   severity: high
-  tags: java,generic
+  tags: exposure,argo,properties

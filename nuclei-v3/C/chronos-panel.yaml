@@ -30,11 +30,10 @@ info:
   metadata:
     fofa-query: body="chronoslogin.js"
     max-request: 1
-    runzero-match: service["http.body"] matches "(?i)chronoslogin\\.js"
     shodan-query: http.html:"chronoslogin.js"
     verified: true
   name: Chronos Panel - Detect
   reference:
   - https://www.asys.fr/chronos
   severity: info
-  tags: panel,chronos,login,detect,discovery
+  tags: panel,chronos,login,detect

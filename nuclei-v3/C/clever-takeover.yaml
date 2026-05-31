@@ -1,9 +1,5 @@
 http:
-- extractors:
-  - dsl:
-    - cname
-    type: dsl
-  matchers:
+- matchers:
   - dsl:
     - Host != ip
     type: dsl
@@ -27,4 +23,4 @@ info:
   reference:
   - https://supras.io/new-subdomain-takeover-case-clever-cloud/
   severity: high
-  tags: takeover,vuln
+  tags: takeover

@@ -24,7 +24,7 @@ http:
   - https://www.onyphe.io/api/v2/user
 id: api-onyphe
 info:
-  author: 0xpugal
+  author: 0xpugazh
   description: Cyber Defense Search Engine and Attack Surface Management
   metadata:
     max-request: 1

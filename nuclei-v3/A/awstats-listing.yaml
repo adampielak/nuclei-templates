@@ -21,4 +21,4 @@ info:
     max-request: 1
   name: AWStats Listing
   severity: low
-  tags: misconfig,aws,exposure,amazon,awstats,oss,vuln
+  tags: misconfig,aws,exposure,amazon,awstats,oss

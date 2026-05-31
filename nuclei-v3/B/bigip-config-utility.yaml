@@ -15,7 +15,7 @@ http:
     part: header
     type: word
     words:
-    - 'Www-Authenticate: Basic realm'
+    - 'WWW-Authenticate: Basic realm'
     - Enterprise Manager
   - part: body
     type: word
@@ -31,4 +31,4 @@ info:
     max-request: 3
   name: BIG-IP Configuration Utility detected
   severity: info
-  tags: tech,bigip,discovery
+  tags: tech,bigip

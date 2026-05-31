@@ -24,11 +24,10 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)CleanWeb"})
     shodan-query: http.title:"CleanWeb"
     verified: true
   name: CleanWeb Login Panel - Detect
   reference:
   - https://tentelemed.com/
   severity: info
-  tags: panel,cleanweb,login,detect,discovery
+  tags: panel,cleanweb,login,detect

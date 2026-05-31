@@ -30,7 +30,6 @@ http:
 id: config-properties
 info:
   author: j4vaovo,DhiyaneshDK
-  description: Config Properties were exposed.
   metadata:
     max-request: 3
     verified: true
@@ -38,4 +37,4 @@ info:
   reference:
   - https://twitter.com/win3zz/status/1657624974851702784/photo/1
   severity: high
-  tags: exposure,config,properties,vuln
+  tags: exposure,config,properties

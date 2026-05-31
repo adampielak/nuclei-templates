@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - veda
+  - dsl:
+    - compare_versions(version, '<= 4.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/veda/style.css'
+  redirects: true
+id: veda-d0966138-b28b-4c03-a2cf-b51c5f478276
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/veda/
+    google-query: inurl:"/wp-content/themes/veda/"
+    shodan-query: http.html:"wp-content/themes/veda/"
+  name: 'VEDA - MultiPurpose WordPress Theme <= 4.2 - Authenticated (Subscriber+)
+    PHP Object Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d0966138-b28b-4c03-a2cf-b51c5f478276?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-theme,veda,low,candidate

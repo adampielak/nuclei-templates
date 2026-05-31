@@ -17,22 +17,17 @@ http:
 id: changedetection-panel
 info:
   author: rxerium
-  classification:
-    cpe: cpe:2.3:a:changedetection:changedetection:*:*:*:*:*:*:*:*
   description: 'Change Detection is an open-source service which allows you to detect
     changes on websites
 
     '
   metadata:
     max-request: 1
-    product: changedetection
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Change Detection"})
     shodan-query: title:"Change Detection"
-    vendor: changedetection
     verified: true
   name: Changedetection.io Panel - Detect
   reference:
   - https://github.com/dgtlmoon/changedetection.io
   - https://changedetection.io/
   severity: info
-  tags: panel,changedetection,detect,discovery
+  tags: panel,changedetection,detect

@@ -36,4 +36,4 @@ info:
   reference:
   - https://developer.atlassian.com/cloud/jira/platform/connect-app-descriptor/
   severity: info
-  tags: atlassian,tech,jira,discovery
+  tags: atlassian,tech,jira

@@ -1,6 +1,6 @@
 id: Mpsec-ISG1000-File-Read
 info:
-  author: nithissh
+  author: hacktifycs
   description: An adversary can perform a File Read on the Server and read sensitive
     files
   name: Mpsec ISG1000 File Read

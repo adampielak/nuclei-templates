@@ -10,10 +10,6 @@ http:
 id: dependency-track-api
 info:
   author: DhiyaneshDK
-  classification:
-    cwe-id:
-    - CWE-522
-    - CWE-540
   metadata:
     max-request: 1
     verified: true
@@ -23,4 +19,4 @@ info:
   - https://docs.dependencytrack.org/integrations/rest-api/
   - https://docs.dependencytrack.org/getting-started/configuration/
   severity: info
-  tags: dependency,exposure,tokens,vuln
+  tags: dependency,exposure,tokens

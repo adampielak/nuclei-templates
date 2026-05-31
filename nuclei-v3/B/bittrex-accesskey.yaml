@@ -10,10 +10,6 @@ http:
 id: bittrex-accesskey
 info:
   author: DhiyaneshDK
-  classification:
-    cwe-id:
-    - CWE-522
-    - CWE-540
   metadata:
     max-request: 1
     verified: true
@@ -22,4 +18,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bittrex-access-key.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bittrex-access-key.go
   severity: info
-  tags: accesskey,bittrex,exposure,tokens,vuln
+  tags: bittrex,exposure,tokens,accesskey

@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - job-portal
+  - dsl:
+    - compare_versions(version, '<= 0.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/job-portal/readme.txt'
+  redirects: true
 id: job-portal-6269812afe93b8cccb1f77df7d9154e0
-
 info:
-  name: >
-    job-portal <= 0.0.1 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
-  severity: low
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bcd12bf2-0fbe-4c9e-b6f7-43c10798eadc?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/job-portal/"
+    fofa-query: wp-content/plugins/job-portal/
     google-query: inurl:"/wp-content/plugins/job-portal/"
     shodan-query: 'vuln:'
+  name: 'job-portal <= 0.0.1 - Authenticated (Admin+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/bcd12bf2-0fbe-4c9e-b6f7-43c10798eadc?source=api-scan
+  severity: low
   tags: cve,wordpress,wp-plugin,job-portal,low
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/job-portal/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "job-portal"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 0.0.1')

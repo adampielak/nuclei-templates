@@ -29,4 +29,4 @@ info:
     verified: true
   name: cAdvisor - Detect
   severity: medium
-  tags: exposure,misconfig,dashboard,vuln
+  tags: exposure,misconfig,dashboard

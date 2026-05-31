@@ -7,11 +7,14 @@ http:
     type: regex
   matchers:
   - condition: and
-    dsl:
-    - status_code == 200
-    - contains(body, "System<td>")
-    - contains_any(body, "- Adminer</title>>", "Adminer</a>")
-    type: dsl
+    type: word
+    words:
+    - '- Adminer</title>'
+    - partial(verifyVersion
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
   payloads:
     path: helpers/wordlists/adminer-paths.txt
   raw:
@@ -30,25 +33,14 @@ id: adminer-panel-detect
 info:
   author: random_robbie,meme-lord
   classification:
-    cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Adminer login panel was detected.
   metadata:
-    fofa-query:
-    - title="login - adminer"
-    - app="adminer" && body="4.7.8"
-    google-query: intitle:"login - adminer"
-    hunter-query: app.name="adminer"&&web.body="4.7.8"
     max-request: 741
-    product: adminer
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)login - adminer"})
-    shodan-query:
-    - cpe:"cpe:2.3:a:adminer:adminer"
-    - http.title:"login - adminer"
-    vendor: adminer
   name: Adminer Login Panel - Detect
   reference:
   - https://blog.sorcery.ie/posts/adminer/
   severity: info
-  tags: adminer,discovery,fuzz,login,panel,sqli
+  tags: fuzz,adminer,login

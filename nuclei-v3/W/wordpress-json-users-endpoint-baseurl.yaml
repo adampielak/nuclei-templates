@@ -1,0 +1,99 @@
+http:
+- matchers:
+  - status:
+    - 200
+    - 300
+    type: status
+  raw:
+  - "GET /wp-config.php/ HTTP/1.1\nHost: {{Hostname}}\nAccept-Encoding: gzip, deflate\n\
+    \n  \n"
+  - 'GET /xmlrpc.php/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET /functions.php/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - "GET /wp-settings.php/ HTTP/1.1\nHost: {{Hostname}}\nAccept-Encoding: gzip, deflate\n\
+    \n  \n"
+  - 'GET /phpmyadmin/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET /wp-admin/admin-ajax.php/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - "GET /wp-includes/load.php/ HTTP/1.1\nHost: {{Hostname}}\nAccept-Encoding: gzip,\
+    \ deflate\n\n  \n"
+  - 'GET /wp-content/uploads/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET /wp-content/debug.log HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - "GET /.htaccess/ HTTP/1.1\nHost: {{Hostname}}\nAccept-Encoding: gzip, deflate\n\
+    \n  \n"
+  - 'GET /license.txt/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET /readme.html/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET /wp-activate.php/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET /wp-cron.php/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET wp-includes/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+id: wordpress-json-users-endpoint-baseurl
+info:
+  author: v3l4r10
+  description: Checks if the WordPress REST API /wp-json/wp/v2/users/ endpoint responds
+    when appended to the base URL. (403 Bypasses added)
+  name: WordPress JSON Users Endpoint (Base URL)
+  severity: low

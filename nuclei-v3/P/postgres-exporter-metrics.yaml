@@ -1,29 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - postgres
+    - '# HELP'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
 id: postgres-exporter-metrics
-
 info:
-  name: Postgres Exporter Metrics
   author: DhiyaneshDk
-  severity: low
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Postgres exporter"
+    verified: true
+  name: Postgres Exporter Metrics
+  severity: low
   tags: postgres,exposure,debug
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/metrics"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "postgres"
-          - "# HELP"
-        condition: and
-
-      - type: status
-        status:
-          - 200

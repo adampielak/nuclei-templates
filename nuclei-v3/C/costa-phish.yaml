@@ -21,10 +21,8 @@ info:
   description: 'A costa phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: costa phishing Detection
   reference:
   - https://costa.co.uk
   severity: info
-  tags: phishing,costa,osint,discovery
+  tags: phishing,costa,osint

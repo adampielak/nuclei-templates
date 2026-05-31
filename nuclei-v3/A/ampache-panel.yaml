@@ -26,22 +26,14 @@ id: ampache-panel
 info:
   author: ritikchaddha
   classification:
-    cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Ampache login panel was detected.
   metadata:
-    fofa-query: title="for the love of music"
-    google-query: intitle:"for the love of music"
     max-request: 3
-    product: ampache
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)for the love
-      of music"})
-    shodan-query:
-    - http.title:"For the Love of Music"
-    - http.title:"for the love of music"
-    vendor: ampache
+    shodan-query: http.title:"For the Love of Music"
     verified: true
   name: Ampache Login Panel - Detect
   severity: info
-  tags: ampache,discovery,panel
+  tags: panel,ampache

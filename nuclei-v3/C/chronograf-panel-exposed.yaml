@@ -30,3 +30,17 @@ http:
           - "<title>Chronograf"
           - "/chronograf/v1/"
         condition: or
+
+    extractors:
+      - type: regex
+        part: body
+        name: chronograf-version
+        regex:
+          - 'chronograf[/v\s]+([0-9]+\.[0-9]+(\.[0-9]+)?)'
+        group: 1
+      - type: kval
+        part: header
+        kval:
+          - "X-Chronograf-Version"
+          - "X-Influxdb-Version"
+          - "Server"

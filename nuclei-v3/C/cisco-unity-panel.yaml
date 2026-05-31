@@ -20,18 +20,13 @@ http:
 id: cisco-unity-panel
 info:
   author: HeeresS
-  classification:
-    cpe: cpe:2.3:a:cisco:unity_connection:*:*:*:*:*:*:*:*
   description: 'A Cisco Unity Connection instance was detected.
 
     '
   metadata:
     max-request: 2
-    product: unity_connection
-    runzero-match: service["http.body"] matches "(?i)Cisco Unity Connection"
     shodan-query: html:"Cisco Unity Connection"
-    vendor: cisco
     verified: true
   name: Cisco Unity Connection Panel - Detect
   severity: info
-  tags: panel,cisco,unity,login,detect,discovery
+  tags: panel,cisco,unity,login,detect

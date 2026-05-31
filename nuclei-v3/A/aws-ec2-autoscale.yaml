@@ -18,11 +18,10 @@ info:
   author: DhiyaneshDk
   metadata:
     max-request: 1
-    runzero-match: service["http.body"] matches "(?i)AWS EC2 Auto Scaling Lab"
     shodan-query: html:"AWS EC2 Auto Scaling Lab"
     verified: true
   name: AWS EC2 Auto Scaling Lab
   reference:
   - https://www.facebook.com/photo/?fbid=620605120110011&set=a.467014098802448
   severity: info
-  tags: exposure,ec2,aws,amazon,panel,discovery
+  tags: exposure,ec2,aws,amazon,panel

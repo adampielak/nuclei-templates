@@ -1,51 +1,45 @@
-id: wpspeed-9e932f7a-7012-499c-922f-29ed567d4bc4
-
-info:
-  name: >
-    WPSpeed <= 2.6.5 - Cross-Site Request Forgery
-  author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e932f7a-7012-499c-922f-29ed567d4bc4?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/wpspeed/"
-    google-query: inurl:"/wp-content/plugins/wpspeed/"
-    shodan-query: 'http.html:"wp-content/plugins/wpspeed/"'
-  tags: cve,wordpress,wp-plugin,wpspeed,medium,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/wpspeed/readme.txt"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wpspeed
+  - dsl:
+    - compare_versions(version, '<= 2.6.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wpspeed/readme.txt'
+  redirects: true
+id: wpspeed-9e932f7a-7012-499c-922f-29ed567d4bc4
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wpspeed/
+    google-query: inurl:"/wp-content/plugins/wpspeed/"
+    shodan-query: http.html:"wp-content/plugins/wpspeed/"
+  name: 'WPSpeed <= 2.6.5 - Cross-Site Request Forgery
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wpspeed"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.6.5')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e932f7a-7012-499c-922f-29ed567d4bc4?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,wpspeed,medium,candidate

@@ -2,12 +2,12 @@ http:
 - matchers:
   - condition: or
     part: body
-    regex:
+    type: word
+    words:
     - collibra.url
     - collibra.port
     - collibra.user
     - collibra.password
-    type: regex
   - condition: or
     part: header
     type: word
@@ -32,6 +32,7 @@ http:
 id: collibra-properties
 info:
   author: 0xPugazh
+  description: Detected exposed Collibra Properties.
   metadata:
     max-request: 3
     verified: true
@@ -39,4 +40,4 @@ info:
   reference:
   - https://twitter.com/shaybt12/status/1662431219223605254
   severity: high
-  tags: exposure,config,properties
+  tags: exposure,config,collibra-properties,collibra

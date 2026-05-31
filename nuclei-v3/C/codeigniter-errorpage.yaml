@@ -24,16 +24,12 @@ http:
 id: codeigniter-errorpage
 info:
   author: j4vaovo
-  classification:
-    cpe: cpe:2.3:a:codeigniter:codeigniter:*:*:*:*:*:*:*:*
   description: CodeIgniter error debug are enabled.
   metadata:
     fofa-query: title="ErrorException"
     max-request: 1
-    product: codeigniter
     shodan-query: title:"Error" html:"CodeIgniter"
-    vendor: codeigniter
     verified: true
   name: CodeIgniter - Error Page
   severity: low
-  tags: codeigniter,misconfig,error,vuln
+  tags: codeigniter,misconfig,error

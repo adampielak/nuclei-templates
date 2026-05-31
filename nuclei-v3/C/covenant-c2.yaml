@@ -24,7 +24,8 @@ info:
     shodan-query: "ssl:\u201DCovenant\u201D http.component:\u201DBlazor\u201D"
     verified: true
   name: Covenant C2 - Detect
-  reference:
-  - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
+  reference: 'https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
+
+    '
   severity: info
-  tags: c2,ir,osint,covenant,panel,vuln
+  tags: c2,ir,osint,covenant

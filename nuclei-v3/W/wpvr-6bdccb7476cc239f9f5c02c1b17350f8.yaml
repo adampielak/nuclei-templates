@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wpvr
+  - dsl:
+    - compare_versions(version, '<= 8.3.14')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wpvr/readme.txt'
+  redirects: true
 id: wpvr-6bdccb7476cc239f9f5c02c1b17350f8
-
 info:
-  name: >
-    WP VR <= 8.3.14 - Missing Authorization to Plugin Version Downgrade
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/34fcc835-593f-435b-ad00-07ca0cb649fa?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/wpvr/"
+    fofa-query: wp-content/plugins/wpvr/
     google-query: inurl:"/wp-content/plugins/wpvr/"
     shodan-query: 'vuln:'
+  name: 'WP VR <= 8.3.14 - Missing Authorization to Plugin Version Downgrade
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/34fcc835-593f-435b-ad00-07ca0cb649fa?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,wpvr,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/wpvr/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wpvr"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 8.3.14')

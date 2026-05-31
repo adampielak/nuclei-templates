@@ -22,11 +22,10 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: service["favicon.ico.image.mmh3"] == "-839356603"
     shodan-query: http.favicon.hash:"-839356603"
     verified: true
   name: Apigee Login Panel - Detect
   reference:
   - https://cloud.google.com/apigee?hl=en
   severity: info
-  tags: panel,apigee,login,discovery
+  tags: panel,apigee,login

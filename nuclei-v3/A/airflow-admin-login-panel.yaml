@@ -18,30 +18,15 @@ id: airflow-admin-login-panel
 info:
   author: pdteam
   classification:
-    cpe: cpe:2.3:a:apache:airflow:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-668
   description: An Apache Airflow admin login panel was discovered.
   metadata:
-    fofa-query:
-    - apache airflow
-    - title="airflow - dags" || http.html:"apache airflow"
-    - title="sign in - airflow"
-    google-query:
-    - intitle:"airflow - dags" || http.html:"apache airflow"
-    - intitle:"sign in - airflow"
     max-request: 2
-    product: airflow
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)sign in - airflow"})
-      || any(each(service["html.titles"]), {# matches "(?i)airflow - dags"})
-    shodan-query:
-    - title:"Sign In - Airflow"
-    - http.title:"airflow - dags" || http.html:"apache airflow"
-    - http.title:"sign in - airflow"
-    - product:"redis"
-    vendor: apache
+    shodan-query: title:"Sign In - Airflow"
   name: Apache Airflow Admin Login Panel
   reference:
   - https://airflow.apache.org/docs/apache-airflow/stable/security/webserver.html
   severity: info
-  tags: admin,airflow,apache,discovery,panel
+  tags: panel,apache,airflow,admin

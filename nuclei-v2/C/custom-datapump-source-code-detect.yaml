@@ -13,4 +13,4 @@ requests:
     - info
   method: GET
   path:
-  - '{{BaseURL}}/connect/datapump/api-docs/service.json'
+  - '{{BaseURL}}/connect/results/api-docs/service.json'

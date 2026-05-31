@@ -22,10 +22,9 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: service["favicon.ico.image.mmh3"] == "1198579728"
     shodan-query: http.favicon.hash:1198579728
   name: DbGate Web Client Management - Panel Detect
   reference:
   - https://github.com/dbgate/dbgate
   severity: info
-  tags: panel,dbgate,oss,discovery
+  tags: panel,dbgate,oss

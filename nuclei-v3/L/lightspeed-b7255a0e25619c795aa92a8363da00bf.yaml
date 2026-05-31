@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - lightspeed
+  - dsl:
+    - compare_versions(version, '<= 1.1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/lightspeed/style.css'
+  redirects: true
 id: lightspeed-b7255a0e25619c795aa92a8363da00bf
-
 info:
-  name: >
-    Lightspeed <= 1.1.2 - Arbitrary File Upload
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/89620065-b961-49c9-a662-bee300b5da72?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/lightspeed/"
+    fofa-query: wp-content/themes/lightspeed/
     google-query: inurl:"/wp-content/themes/lightspeed/"
     shodan-query: 'vuln:'
+  name: 'Lightspeed <= 1.1.2 - Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/89620065-b961-49c9-a662-bee300b5da72?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-theme,lightspeed,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/lightspeed/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "lightspeed"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.1.2')

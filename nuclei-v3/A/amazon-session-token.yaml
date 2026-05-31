@@ -9,15 +9,10 @@ file:
 id: amazon-session-token
 info:
   author: DhiyaneshDK
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  description: Amazon session token was detected.
   metadata:
     verified: true
-  name: Amazon Session Token - Detect
+  name: Amazon Session Token
   reference:
   - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/aws.yml
   severity: info
-  tags: file,keys,aws,amazon,token,session
+  tags: aws,amazon,token,file,session

@@ -18,4 +18,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/adobe-client-id.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/adobe-client-id.go
   severity: info
-  tags: adobe,exposure,tokens,vuln
+  tags: adobe,exposure,tokens

@@ -10,4 +10,3 @@ info:
   author: gaurang
   name: Cloudinary Basic Auth
   severity: high
-  tags: token,file

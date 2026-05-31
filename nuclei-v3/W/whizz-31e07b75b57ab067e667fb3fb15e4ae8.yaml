@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - whizz
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/whizz/readme.txt'
+  redirects: true
 id: whizz-31e07b75b57ab067e667fb3fb15e4ae8
-
 info:
-  name: >
-    WHIZZ < 1.1.1 - Cross-Site Request Forgery
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3abac0a1-a696-48b1-88d9-d0b102c82ac3?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/whizz/"
+    fofa-query: wp-content/plugins/whizz/
     google-query: inurl:"/wp-content/plugins/whizz/"
     shodan-query: 'vuln:'
+  name: 'WHIZZ < 1.1.1 - Cross-Site Request Forgery
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3abac0a1-a696-48b1-88d9-d0b102c82ac3?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-plugin,whizz,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/whizz/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "whizz"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.1')

@@ -33,3 +33,21 @@ http:
         part: body
         words:
           - "NamespaceList"
+
+    extractors:
+      - type: regex
+        part: body
+        name: namespace-names
+        regex:
+          - '"name"\s*:\s*"([a-z0-9-]+)"'
+        group: 1
+      - type: regex
+        part: body
+        name: resource-version
+        regex:
+          - '"resourceVersion"\s*:\s*"([0-9]+)"'
+        group: 1
+      - type: kval
+        part: header
+        kval:
+          - "Audit-Id"

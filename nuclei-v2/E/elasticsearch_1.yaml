@@ -1,40 +1,31 @@
-id: elasticsearch
+id: elasticsearch 1
 info:
+  author: Shine
   name: ElasticSearch Information Disclosure
-  author:
-  - l0ne1y
-  description: |
-    Elasticsearch 敏感信息泄漏漏洞
-    Elasticsearch 是一个基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。
-    Elasticsearch 存在敏感信息泄漏漏洞，攻击者可利用此漏洞从而获取相关敏感信息。
   severity: low
-  remediation: |-
-    官方修复方案：
-    升级到官方最新版本：
-    https://www.elastic.co/cn/
-
-    临时修复方案：
-    去除页面、cookie或缓存中涉及的敏感信息或删除泄露信息页面
+  tags: elastic,unauth
 requests:
-- matchers:
+- attack: sniper
+  matchers:
   - type: word
-    condition: or
     words:
     - '"took":'
-    - '"number" :'
-  - type: status
-    status:
+  - status:
     - 200
-  extractors:
-  - type: regex
-    regex:
-    - '"number"\s:\s"([0-9.]+)"'
-    group: 1
-    part: body
+    type: status
   matchers-condition: and
-  path:
-  - '{{BaseURL}}/?pretty'
-  - '{{BaseURL}}/_cat/indices?v'
-  - '{{BaseURL}}/_all/_search'
-  method: GET
-  stop-at-first-match: true
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /_cat/indices?v HTTP/1.1
+
+    Host: {{Subdomains}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+
+    Accept-Encoding: gzip, deflate
+
+    Accept: */*
+
+    '
+  threads: 100

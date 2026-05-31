@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - roisin
+  - dsl:
+    - compare_versions(version, '<= 1.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/roisin/style.css'
+  redirects: true
+id: roisin-5f48d58f-8797-46a9-97fa-7db13db31cca
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/roisin/
+    google-query: inurl:"/wp-content/themes/roisin/"
+    shodan-query: http.html:"wp-content/themes/roisin/"
+  name: 'Roisin - Flower Shop and Florist WordPress Theme <= 1.4 - Unauthenticated
+    PHP Object Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/5f48d58f-8797-46a9-97fa-7db13db31cca?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,roisin,critical,candidate

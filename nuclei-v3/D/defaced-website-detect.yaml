@@ -21,4 +21,4 @@ info:
     verified: 'true'
   name: Defaced Website - Detection
   severity: info
-  tags: miscellaneous,defacement,misc,vuln
+  tags: defacement,misc

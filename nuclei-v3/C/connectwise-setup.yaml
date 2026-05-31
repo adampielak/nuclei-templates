@@ -16,14 +16,10 @@ http:
 id: connectwise-setup
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:connectwise:control:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: control
     shodan-query: html:"ContentPanel SetupWizard"
-    vendor: connectwise
     verified: true
   name: ConnectWise Setup Wizard - Exposure
   severity: high
-  tags: misconfig,exposure,install,connectwise,vuln
+  tags: misconfig,exposure,install,connectwise

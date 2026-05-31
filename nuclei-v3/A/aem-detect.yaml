@@ -11,13 +11,9 @@ http:
 id: aem-detect
 info:
   author: shifacyclewala,hackergautam
-  classification:
-    cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: experience_manager
     shodan-query: http.component:"Adobe Experience Manager"
-    vendor: adobe
   name: Favicon based AEM Detection
   reference:
   - https://twitter.com/brsn76945860/status/1171233054951501824
@@ -26,4 +22,4 @@ info:
   - https://github.com/devanshbatham/FavFreak
   - https://github.com/sansatart/scrapts/blob/master/shodan-favicon-hashes.csv
   severity: info
-  tags: aem,favicon,tech,adobe,discovery
+  tags: aem,favicon,tech,adobe

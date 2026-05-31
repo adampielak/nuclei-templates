@@ -31,4 +31,4 @@ info:
   - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameter-files
   - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-use-template-reference?tabs=CLI
   severity: medium
-  tags: azure,exposure,files,vuln
+  tags: azure,exposure,files

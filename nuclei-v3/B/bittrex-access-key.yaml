@@ -16,4 +16,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bittrex-access-key.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bittrex-access-key.go
   severity: info
-  tags: file,keys,bittrex,token
+  tags: bittrex,file,token

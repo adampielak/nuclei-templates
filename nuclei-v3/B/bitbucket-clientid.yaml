@@ -18,4 +18,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-id.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-id.go
   severity: info
-  tags: bitbucket,exposure,tokens,clientid,vuln
+  tags: bitbucket,exposure,tokens,clientid

@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - xstore
+  - dsl:
+    - compare_versions(version, '<= 9.3.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/xstore/style.css'
+  redirects: true
 id: xstore-07ffe99b071db0c8a3ae5b4f2902f7e9
-
 info:
-  name: >
-    XStore <= 9.3.5 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9fb4c58d-321d-453f-92b9-ae409541911b?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/xstore/"
+    fofa-query: wp-content/themes/xstore/
     google-query: inurl:"/wp-content/themes/xstore/"
     shodan-query: 'vuln:'
+  name: 'XStore <= 9.3.5 - Unauthenticated Local File Inclusion
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9fb4c58d-321d-453f-92b9-ae409541911b?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-theme,xstore,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/xstore/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "xstore"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 9.3.5')

@@ -21,7 +21,6 @@ id: burp-collaborator-detect
 info:
   author: lum8rjack
   classification:
-    cpe: cpe:2.3:a:portswigger:burp_suite:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -30,12 +29,10 @@ info:
     '
   metadata:
     max-request: 1
-    product: burp_suite
     shodan-query: 'Server: Burp Collaborator'
-    vendor: portswigger
     verified: true
   name: Burp Collaborator Server - Detect
   reference:
   - https://portswigger.net/burp/documentation/collaborator
   severity: info
-  tags: burp,detect,discovery,tech
+  tags: burp,tech,detect

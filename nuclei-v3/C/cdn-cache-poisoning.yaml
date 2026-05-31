@@ -34,6 +34,6 @@ info:
   reference:
   - https://portswigger.net/web-security/web-cache-poisoning
   severity: unknown
-  tags: cache,aws,poisoning,cdn,misconfig,vuln
+  tags: cache,aws,poisoning,cdn
 variables:
   string: '{{to_lower(rand_base(8))}}={{to_lower(rand_base(8))}}'

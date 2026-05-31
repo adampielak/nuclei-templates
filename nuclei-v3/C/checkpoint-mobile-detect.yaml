@@ -17,19 +17,15 @@ http:
 id: checkpoint-mobile-detect
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:checkpoint:mobile_access_portal_agent:*:*:*:*:*:*:*:*
   description: 'Check Point Mobile SSL VPN was detected.
 
     '
   metadata:
     max-request: 1
-    product: mobile_access_portal_agent
     shodan-query: http.html:"Check Point Mobile"
-    vendor: checkpoint
     verified: true
   name: Check Point Mobile SSL VPN - Detect
   reference:
   - https://www.checkpoint.com/quantum/remote-access-vpn/
   severity: info
-  tags: panel,checkpoint,detect,discovery
+  tags: panel,checkpoint,detect

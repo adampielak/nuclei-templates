@@ -1,11 +1,5 @@
 http:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - 'version: ''([0-9.]+)'','
-    type: regex
-  matchers:
+- matchers:
   - condition: and
     part: body
     type: word
@@ -27,21 +21,14 @@ id: deluge-webui-panel
 info:
   author: tess
   classification:
-    cpe: cpe:2.3:a:deluge-torrent:deluge:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Deluge WebUI login panel was detected.
   metadata:
-    fofa-query: title="deluge webui"
-    google-query: intitle:"deluge webui"
     max-request: 1
-    product: deluge
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)deluge webui"})
-    shodan-query:
-    - title:"Deluge WebUI"
-    - http.title:"deluge webui"
-    vendor: deluge-torrent
+    shodan-query: title:"Deluge WebUI"
     verified: true
   name: Deluge WebUI Login Panel - Detect
   severity: info
-  tags: deluge,deluge-torrent,discovery,panel
+  tags: panel,deluge

@@ -16,16 +16,11 @@ http:
 id: acti-panel
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:o:acti:camera_firmware:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: "app=\"ACTi-\u89C6\u9891\u76D1\u63A7\""
     max-request: 1
-    product: camera_firmware
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Web Configurator"})
     shodan-query: title:"Web Configurator" html:"ACTi"
-    vendor: acti
     verified: true
   name: ACTi Video Monitoring Panel - Detection
   severity: info
-  tags: acti,panel,login,detect,discovery
+  tags: acti,panel,login,detect

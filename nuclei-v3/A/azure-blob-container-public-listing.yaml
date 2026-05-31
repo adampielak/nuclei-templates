@@ -27,3 +27,23 @@ http:
         part: body
         words:
           - "<EnumerationResults"
+
+    extractors:
+      - type: regex
+        part: body
+        name: container-url
+        regex:
+          - '<EnumerationResults\s+(?:ServiceEndpoint="[^"]+"\s+ContainerName="[^"]+"|ContainerName="[^"]+")'
+        group: 0
+      - type: regex
+        part: body
+        name: blob-names
+        regex:
+          - '<Name>([^<]+)</Name>'
+        group: 1
+      - type: regex
+        part: body
+        name: blob-content-types
+        regex:
+          - '<Content-Type>([^<]+)</Content-Type>'
+        group: 1

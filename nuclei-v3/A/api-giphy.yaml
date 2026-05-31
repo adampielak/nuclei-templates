@@ -1,25 +1,22 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"data":'
+    - '"type":"gif"'
+  method: GET
+  path:
+  - https://api.giphy.com/v1/gifs/trending?api_key={{token}}
 id: api-giphy
-
 info:
-  name: Giphy API Test
   author: geeknik
-  severity: info
-  reference:
-    - https://developers.giphy.com/branch/master/docs/api/
-  tags: token-spray,giphy
   metadata:
     max-request: 1
-
+  name: Giphy API Test
+  reference:
+  - https://developers.giphy.com/branch/master/docs/api/
+  severity: info
+  tags: token-spray,giphy
 self-contained: true
-http:
-  - method: GET
-    path:
-      - "https://api.giphy.com/v1/gifs/trending?api_key={{token}}"
-
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"data":'
-          - '"type":"gif"'
-        condition: and

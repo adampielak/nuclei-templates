@@ -32,4 +32,4 @@ info:
   reference:
   - https://www.deos-ag.com/
   severity: high
-  tags: openv500,disclosure,panel,vuln
+  tags: openv500,disclosure,panel

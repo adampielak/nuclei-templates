@@ -14,7 +14,7 @@ info:
   reference:
   - https://jhadiary.wordpress.com/2016/05/18/beanstalk-helping-commands/
   severity: info
-  tags: network,beanstalk,detect,enum,tcp,discovery
+  tags: network,beanstalk,detect,enum
 tcp:
 - extractors:
   - name: stats
@@ -22,15 +22,12 @@ tcp:
     - '([a-z-A-Z: 0-9]+)'
     type: regex
   host:
-  - '{{Hostname}}'
+  - '{{Host}}:11300'
   inputs:
   - data: "stats\r\n"
     read: 8
   matchers:
-  - condition: and
-    part: raw
+  - part: raw
     type: word
     words:
-    - cmd-release
-    - cmd-peek
-  port: 11300
+    - OK

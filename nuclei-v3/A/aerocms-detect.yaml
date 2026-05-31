@@ -14,15 +14,11 @@ http:
 id: aerocms-detect
 info:
   author: pikpikcu
-  classification:
-    cpe: cpe:2.3:a:aerocms_project:aerocms:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: AeroCMS
     max-request: 1
-    product: aerocms
     shodan-query: title:"AeroCMS"
-    vendor: aerocms_project
     verified: true
   name: AeroCMS Detect
   severity: info
-  tags: tech,aerocms,discovery
+  tags: tech,aerocms

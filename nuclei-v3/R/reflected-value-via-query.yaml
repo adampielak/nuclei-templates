@@ -1,0 +1,65 @@
+http:
+- attack: batteringram
+  extractors:
+  - name: plaintext
+    part: body
+    regex:
+    - bcresearcher111
+    type: regex
+  - name: urlencode
+    part: body
+    regex:
+    - bcresearcher222
+    type: regex
+  - name: base64encode
+    part: body
+    regex:
+    - bcresearcher333
+    type: regex
+  - name: htmlencode
+    part: body
+    regex:
+    - bcresearcher444
+    type: regex
+  fuzzing:
+  - fuzz:
+    - '{{payload}}'
+    part: query
+  headers:
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101
+      Firefox/122.0
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - bcresearcher111
+    - bcresearcher222
+    - bcresearcher333
+    - bcresearcher444
+  - negative: true
+    part: header
+    type: word
+    words:
+    - 'Content-type: application/json'
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  payloads:
+    payload:
+    - bcresearcher111
+    - '%62%63%72%65%73%65%61%72%63%68%65%72%32%32%32'
+    - YmNyZXNlYXJjaGVyMzMz
+    - '&#98;&#99;&#114;&#101;&#115;&#101;&#97;&#114;&#99;&#104;&#101;&#114;&#52;&#52;&#52;'
+  stop-at-first-match: true
+id: reflected-value-via-query
+info:
+  author: kaks3c
+  description: 'This template tests for reflected values in query parameters by sending
+    different encoded payloads and matching the responses.
+
+    '
+  name: Check reflected-values in response body.
+  severity: low
+  tags: xss,low,fuzz

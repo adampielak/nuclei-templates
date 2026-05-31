@@ -1,0 +1,26 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '{[\d\D]*"version":"([0-9\.]+)"'
+    type: regex
+  matchers:
+  - part: body
+    regex:
+    - '{"installed":(?:true|false),"maintenance":(?:true|false),"version":"[0-9\.]*","versionstring":"[a-z-A-Z0-9\.]*","edition":"[\d\D]*"}'
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}/status.php'
+id: owncloud-status-page
+info:
+  author: myztique
+  metadata:
+    max-request: 1
+    shodan-query: http.html:"owncloud"
+    verified: true
+  name: Owncloud StatusPage detection
+  severity: info
+  tags: tech,owncloud,status

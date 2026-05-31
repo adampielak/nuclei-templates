@@ -21,10 +21,8 @@ info:
   description: 'An avg phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: avg phishing Detection
   reference:
   - https://avg.com
   severity: info
-  tags: phishing,avg,osint,discovery
+  tags: phishing,avg,osint

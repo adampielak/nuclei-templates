@@ -1,5 +1,6 @@
 http:
-- extractors:
+- cookie-reuse: true
+  extractors:
   - group: 1
     internal: true
     name: masterToken
@@ -62,7 +63,7 @@ info:
   author: forgedhallpass
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: OWASP CSRFGuard 3.x and 4.x were checked for whether token-per-page
     support is enabled based on default configuration.
@@ -72,4 +73,4 @@ info:
   reference:
   - https://github.com/OWASP/www-project-csrfguard
   severity: info
-  tags: tech,csrfguard,owasp,discovery
+  tags: tech,csrfguard,owasp

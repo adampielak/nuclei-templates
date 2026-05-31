@@ -13,7 +13,7 @@ info:
   reference:
   - https://blog.sekoia.io/hunting-and-detecting-cobalt-strike/
   severity: info
-  tags: jarm,network,c2,ir,osint,cti,cobalt-strike,tcp,vuln
+  tags: jarm,network,c2,ir,osint,cti,cobalt-strike
 tcp:
 - host:
   - '{{Hostname}}'

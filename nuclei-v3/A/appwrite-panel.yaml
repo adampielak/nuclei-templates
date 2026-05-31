@@ -12,24 +12,14 @@ id: appwrite-panel
 info:
   author: ritikchaddha
   classification:
-    cpe: cpe:2.3:a:appwrite:appwrite:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Appwrite login panel was detected.
   metadata:
-    fofa-query:
-    - icon_hash=-633108100
-    - title="sign in - appwrite"
-    google-query: intitle:"sign in - appwrite"
     max-request: 2
-    product: appwrite
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)sign in - appwrite"})
-      || service["favicon.ico.image.mmh3"] == "-633108100"
-    shodan-query:
-    - http.favicon.hash:-633108100
-    - http.title:"sign in - appwrite"
-    vendor: appwrite
+    shodan-query: http.favicon.hash:-633108100
     verified: true
   name: Appwrite Login Panel - Detect
   severity: info
-  tags: appwrite,detect,discovery,panel
+  tags: panel,appwrite,detect

@@ -18,8 +18,7 @@ info:
   description: An AlienVault USM login panel was detected.
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AlienVault USM"})
     shodan-query: http.title:"AlienVault USM"
   name: AlienVault USM Login Panel
   severity: info
-  tags: panel,alienvault,discovery
+  tags: panel,alienvault

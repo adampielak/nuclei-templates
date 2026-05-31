@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - oceanic
+  - dsl:
+    - compare_versions(version, '<= 1.0.48')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/oceanic/style.css'
+  redirects: true
 id: oceanic-8149143ec61fb3725556b3b88931e843
-
 info:
-  name: >
-    Oceanic <= 1.0.48 - Cross-Site Request Forgery
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5678794d-244f-45d1-9049-fea01ba45989?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/oceanic/"
+    fofa-query: wp-content/themes/oceanic/
     google-query: inurl:"/wp-content/themes/oceanic/"
     shodan-query: 'vuln:'
+  name: 'Oceanic <= 1.0.48 - Cross-Site Request Forgery
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/5678794d-244f-45d1-9049-fea01ba45989?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-theme,oceanic,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/oceanic/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "oceanic"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.0.48')

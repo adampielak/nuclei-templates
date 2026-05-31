@@ -12,7 +12,7 @@ http:
   - https://api.zerobounce.net/v2/getapiusage?api_key={{token}}&start_date=2018-01-01&end_date=2019-12-12
 id: api-zerobounce
 info:
-  author: 0xpugal
+  author: 0xpugazh
   metadata:
     max-request: 1
     verified: true

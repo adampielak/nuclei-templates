@@ -28,4 +28,4 @@ info:
   reference:
   - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5566269380103557/
   severity: info
-  tags: misconfig,aws,x-ray,amazon,vuln
+  tags: misconfig,aws,x-ray,amazon

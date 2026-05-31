@@ -19,15 +19,11 @@ http:
 id: chamilo-installer
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:chamilo:chamilo:*:*:*:*:*:*:*:*
   description: Chamilo is susceptible to the Installation page exposure due to misconfiguration.
   metadata:
     max-request: 2
-    product: chamilo
     shodan-query: title:"Chamilo has not been installed"
-    vendor: chamilo
     verified: true
   name: Chamilo Installer Exposure
   severity: high
-  tags: misconfig,chamilo,install,exposure,vuln
+  tags: misconfig,chamilo,install,exposure

@@ -21,10 +21,8 @@ info:
   description: 'A disneyplus phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: disneyplus phishing Detection
   reference:
   - https://disneyplus.com
   severity: info
-  tags: phishing,disneyplus,osint,discovery
+  tags: phishing,disneyplus,osint

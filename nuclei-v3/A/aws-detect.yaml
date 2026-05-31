@@ -105,4 +105,4 @@ info:
   reference:
   - https://github.com/6mile/cloud-headers
   severity: info
-  tags: tech,aws,amazon,alb,cloudfront,codebuild,gateway,xray,captcha,dynamodb,kms,discovery
+  tags: tech,aws,amazon,alb,cloudfront,codebuild,gateway,xray,captcha,dynamodb,kms

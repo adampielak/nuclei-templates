@@ -21,10 +21,8 @@ info:
   description: 'An avast phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: avast phishing Detection
   reference:
   - https://avast.com
   severity: info
-  tags: phishing,avast,osint,discovery
+  tags: phishing,avast,osint

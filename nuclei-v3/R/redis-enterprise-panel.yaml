@@ -1,29 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Enterprise-Class Redis for Developers
+    - cm/config/environment
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/#/login'
 id: redis-enterprise-panel
-
 info:
-  name: Redis Enterprise - Detect
   author: tess
-  severity: info
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Enterprise-Class Redis for Developers"
+    verified: true
+  name: Redis Enterprise - Detect
+  severity: info
   tags: panel,redis,enterprise
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/#/login"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Enterprise-Class Redis for Developers'
-          - 'cm/config/environment'
-        condition: and
-
-      - type: status
-        status:
-          - 200

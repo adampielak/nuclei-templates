@@ -40,9 +40,7 @@ info:
   metadata:
     fofa-query: app="CAIMORE-Gateway"
     max-request: 1
-    runzero-match: any(each(service["http.head.wwwAuthentications"]), {# matches '(?i)realm="CaiMore
-      Gateway'})
     verified: true
   name: CAIMORE Gateway  Default Login - Detect
   severity: high
-  tags: ciamore-gateway,default-login,vuln
+  tags: ciamore-gateway,default-login

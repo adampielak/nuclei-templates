@@ -22,16 +22,11 @@ http:
 id: discuz-panel
 info:
   author: ritikchaddha
-  classification:
-    cpe: cpe:2.3:a:comsenz:discuz\\!:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: title="Discuz!"
     max-request: 1
-    product: discuz\\!
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Discuz!"})
     shodan-query: title:"Discuz!"
-    vendor: comsenz
     verified: true
   name: Discuz Panel - Detection
   severity: info
-  tags: panel,discuz,detect,login,discovery
+  tags: panel,discuz,detect,login

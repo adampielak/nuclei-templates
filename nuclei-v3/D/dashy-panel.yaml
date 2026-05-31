@@ -18,18 +18,12 @@ http:
 id: dashy-panel
 info:
   author: ritikchaddha
-  classification:
-    cpe: cpe:2.3:a:dashy:dashy:*:*:*:*:*:*:*:*
   metadata:
-    fofa-query: icon_hash=-1013024216
     max-request: 1
-    product: dashy
-    runzero-match: service["favicon.ico.image.mmh3"] == "-1013024216"
     shodan-query: http.favicon.hash:-1013024216
-    vendor: dashy
     verified: true
   name: Dashy Panel - Detect
   reference:
   - https://dashy.to/
   severity: info
-  tags: dashy,detect,discovery,panel
+  tags: panel,dashy,detect

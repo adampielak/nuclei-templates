@@ -34,11 +34,9 @@ id: avnil-pdf-generator-check
 info:
   author: parthmalhotra,pdresearch
   description: Checks for a valid avnil pdf generator account.
-  metadata:
-    max-request: 1
   name: useanvil.com Login Check
   reference:
   - https://owasp.org/www-community/attacks/Credential_stuffing
   severity: critical
-  tags: cloud,creds-stuffing,login-check,avnil-pdf,vuln
+  tags: login-check,avnil-pdf,creds-stuffing
 self-contained: true

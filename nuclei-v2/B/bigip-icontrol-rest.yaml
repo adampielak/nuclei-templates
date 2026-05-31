@@ -1,6 +1,9 @@
 id: bigip-icontrol-rest
 info:
   author: MrCl0wnLab
+  classification:
+    cve-id: CVE-2022-1388
+    cwe-id: CWE-306
   description: 'Undisclosed requests may bypass iControl REST authentication.
 
     '
@@ -12,17 +15,19 @@ info:
   - https://support.f5.com/csp/article/K23605346
   - https://clouddocs.f5.com/products/big-iq/mgmt-api/v5.4/ApiReferences/bigiq_api_ref/r_auth_login.html
   severity: info
-  tags: panel,bigip,f5
+  tags: cve,cve2022,bigip,f5icontrol
 requests:
-- matchers:
+- headers:
+    User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+  matchers:
   - part: body
     type: word
     words:
     - resterrorresponse
+    - message
   - status:
     - 401
     type: status
-  matchers-condition: and
   method: GET
   path:
   - '{{BaseURL}}/mgmt/shared/authn/login'

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - unlimhost
+  - dsl:
+    - compare_versions(version, '<= 1.2.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/unlimhost/style.css'
+  redirects: true
+id: unlimhost-dd658a45-6fd7-4d4e-8a0e-7091accdb3ad
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/unlimhost/
+    google-query: inurl:"/wp-content/themes/unlimhost/"
+    shodan-query: http.html:"wp-content/themes/unlimhost/"
+  name: 'UnlimHost <= 1.2.3 - Unauthenticated Local File Inclusion
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/dd658a45-6fd7-4d4e-8a0e-7091accdb3ad?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,unlimhost,critical,candidate

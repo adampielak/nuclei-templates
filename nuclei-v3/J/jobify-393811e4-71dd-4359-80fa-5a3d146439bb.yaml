@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - jobify
+  - dsl:
+    - compare_versions(version, '<= 4.2.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/jobify/style.css'
+  redirects: true
+id: jobify-393811e4-71dd-4359-80fa-5a3d146439bb
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/jobify/
+    google-query: inurl:"/wp-content/themes/jobify/"
+    shodan-query: http.html:"wp-content/themes/jobify/"
+  name: 'Jobify - Job Board WordPress Theme <= 4.2.7 - Missing Authorization to Unauthenticated
+    Server-Side Request Forgery, Arbitrary Image Upload, and Image Generation
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/393811e4-71dd-4359-80fa-5a3d146439bb?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-theme,jobify,high,candidate

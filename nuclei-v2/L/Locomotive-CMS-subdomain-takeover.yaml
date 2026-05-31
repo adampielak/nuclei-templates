@@ -1,6 +1,6 @@
 id: Locomotive-CMS-subdomain-takeover
 info:
-  author: nithissh
+  author: hacktifycs
   description: An adversary can perform a full subdomain-takeover on locomotive CMS.
   name: Locomotive
   reference: unknown

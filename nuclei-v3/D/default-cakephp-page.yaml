@@ -22,14 +22,10 @@ http:
 id: default-cakephp-page
 info:
   author: DhiyaneshDK
-  classification:
-    cpe: cpe:2.3:a:cakephp:cakephp:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: cakephp
     shodan-query: html:"Welcome to CakePHP"
-    vendor: cakephp
     verified: true
   name: CakePHP Default Page
   severity: info
-  tags: tech,cakephp,default-page,discovery
+  tags: tech,cakephp,default-page

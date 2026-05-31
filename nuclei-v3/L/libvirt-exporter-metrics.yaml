@@ -1,29 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '# HELP'
+    - libvirt_
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
 id: libvirt-exporter-metrics
-
 info:
-  name: Libvirt Exporter Metrics
   author: DhiyaneshDk
-  severity: low
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Libvirt"
+    verified: true
+  name: Libvirt Exporter Metrics
+  severity: low
   tags: libvirt,exposure,debug
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/metrics"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "# HELP"
-          - "libvirt_"
-        condition: and
-
-      - type: status
-        status:
-          - 200

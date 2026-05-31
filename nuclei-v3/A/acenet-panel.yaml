@@ -18,8 +18,7 @@ info:
   metadata:
     fofa-query: body="Login @ Reporter"
     max-request: 1
-    runzero-match: service["favicon.ico.image.mmh3"] == "-1595726841"
     shodan-query: http.favicon.hash:-1595726841
   name: AceNet AceReporter Report Panel - Detect
   severity: info
-  tags: panel,login,acenet,acereporter,discovery
+  tags: panel,login,acenet,acereporter

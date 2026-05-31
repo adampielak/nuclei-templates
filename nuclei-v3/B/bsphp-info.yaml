@@ -1,13 +1,12 @@
 http:
 - matchers:
   - condition: and
-    part: body
     type: word
     words:
     - '{"data":'
     - '"id"'
     - '"user"'
-  - part: content_type
+  - part: header
     type: word
     words:
     - application/json
@@ -31,4 +30,4 @@ info:
   - https://github.com/Threekiii/Awesome-POC/blob/master/CMS%E6%BC%8F%E6%B4%9E/BSPHP%20index.php%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%20%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E.md
   - https://github.com/bigblackhat/oFx/blob/main/poc/BSPHP/Info_Disclosure/poc.py
   severity: low
-  tags: bsphp,info,disclosure,vuln
+  tags: bsphp,info,disclosure

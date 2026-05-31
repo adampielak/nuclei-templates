@@ -21,10 +21,8 @@ info:
   description: 'A chrome phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: chrome phishing Detection
   reference:
   - https://www.google.com/intl/en_uk/chrome/
   severity: info
-  tags: phishing,chrome,osint,discovery
+  tags: phishing,chrome,osint

@@ -14,11 +14,10 @@ http:
 id: ampguard-wifi-setup
 info:
   author: pussycat0x
-  description: AmpGuard wifi setup panel detected.
   metadata:
     max-request: 1
     shodan-query: title:"AmpGuard wifi setup"
     verified: true
   name: AmpGuard Wifi Setup
   severity: info
-  tags: ampguard,iot,setup,wifi,discovery
+  tags: ampguard,iot,setup,wifi

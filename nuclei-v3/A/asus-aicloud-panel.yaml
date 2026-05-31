@@ -19,11 +19,10 @@ info:
   description: ASUS AiCloud Panel was detected.
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)AiCloud"})
     shodan-query: title:"AiCloud"
     verified: 'true'
   name: ASUS AiCloud Panel - Detect
   reference:
   - https://www.asus.com/in/content/aicloud/
   severity: info
-  tags: panel,asus,aicloud,detect,discovery
+  tags: panel,asus,aicloud,detect

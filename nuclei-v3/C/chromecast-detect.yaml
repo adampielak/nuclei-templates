@@ -19,20 +19,15 @@ http:
 id: chromecast-detect
 info:
   author: LucianNitescu
-  classification:
-    cpe: cpe:2.3:h:google:chromecast:*:*:*:*:*:*:*:*
   description: 'Searches for Google Chromecast via their eureka_info route.
 
     '
   metadata:
-    max-request: 1
-    product: chromecast
     shodan-query: Chromecast
-    vendor: google
     verified: true
   name: Google Chromecast - Detect
   reference:
   - https://github.com/thewhiteh4t/killcast/blob/ee81cfa03c963d47d3335770fcea2ca48bddeabf/killcast.py#L100C25-L100C43
   - https://rithvikvibhu.github.io/GHLocalApi/#section/Google-Home-Local-API/Authentication
   severity: info
-  tags: google,chromecast,detect,discovery
+  tags: google,chromecast,detect

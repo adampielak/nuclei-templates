@@ -17,4 +17,4 @@ info:
   - https://azure.microsoft.com/en-us/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/
   - https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string
   severity: info
-  tags: file,keys,azure,token
+  tags: azure,file,token

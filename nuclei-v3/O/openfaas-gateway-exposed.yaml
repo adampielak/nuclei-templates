@@ -46,3 +46,23 @@ http:
         part: body
         regex:
           - "^\\s*\\["
+
+    extractors:
+      - type: regex
+        part: body
+        name: function-names
+        regex:
+          - '"name"\s*:\s*"([^"]+)"'
+        group: 1
+      - type: regex
+        part: body
+        name: function-images
+        regex:
+          - '"image"\s*:\s*"([^"]+)"'
+        group: 1
+      - type: regex
+        part: body
+        name: function-replicas
+        regex:
+          - '"replicas"\s*:\s*([0-9]+)'
+        group: 1

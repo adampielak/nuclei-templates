@@ -18,4 +18,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/asana-client-id.go
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/asana-client-id.yaml
   severity: info
-  tags: asana,exposure,tokens,secret,vuln
+  tags: asana,exposure,tokens,secret

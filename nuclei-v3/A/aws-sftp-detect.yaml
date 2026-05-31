@@ -15,7 +15,7 @@ info:
   reference:
   - https://aws.amazon.com/pt/about-aws/whats-new/2018/11/aws-transfer-for-sftp-fully-managed-sftp-for-s3/
   severity: info
-  tags: network,ssh,detect,aws,sftp,detection,tcp,discovery
+  tags: network,ssh,detect,aws,sftp
 tcp:
 - extractors:
   - regex:

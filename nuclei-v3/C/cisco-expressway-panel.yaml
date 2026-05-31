@@ -17,20 +17,15 @@ http:
 id: cisco-expressway-panel
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:cisco:expressway_software:*:*:*:*:*:*:*:*
   description: 'CISCO Expressway login panel was detected.
 
     '
   metadata:
     max-request: 1
-    product: expressway_software
-    runzero-match: service["http.body"] matches "(?i)Cisco Expressway"
     shodan-query: html:"Cisco Expressway"
-    vendor: cisco
     verified: true
   name: CISCO Expressway Login Panel - Detect
   reference:
   - https://www.cisco.com/c/en/us/products/unified-communications/expressway-series/index.html
   severity: info
-  tags: panel,cisco,login,detect,discovery
+  tags: panel,cisco,login,detect

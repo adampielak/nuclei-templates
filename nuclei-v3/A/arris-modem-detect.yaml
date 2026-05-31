@@ -15,20 +15,14 @@ id: arris-modem-detect
 info:
   author: gy741
   classification:
-    cpe: cpe:2.3:h:commscope:dg3450:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: ARRIS Touchstone Telephony Modem status panel was detected.
   metadata:
-    fofa-query: body="phy.htm"
     max-request: 1
-    product: dg3450
-    runzero-match: service["http.body"] matches "(?i)phy\\.htm"
-    shodan-query:
-    - html:"phy.htm"
-    - http.html:"phy.htm"
-    vendor: commscope
+    shodan-query: html:"phy.htm"
     verified: true
   name: ARRIS Touchstone Telephony Modem - Panel Detect
   severity: info
-  tags: arris,commscope,discovery,panel
+  tags: panel,arris

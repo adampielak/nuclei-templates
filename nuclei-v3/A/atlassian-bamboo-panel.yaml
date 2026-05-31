@@ -25,20 +25,15 @@ http:
 id: atlassian-bamboo-panel
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*
   description: 'Atlassian Bamboo login panel was detected.
 
     '
   metadata:
     max-request: 1
-    product: bamboo
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Bamboo"})
     shodan-query: http.title:"Bamboo"
-    vendor: atlassian
     verified: true
   name: Atlassian Bamboo Login Panel - Detect
   reference:
   - https://www.atlassian.com/software/bamboo
   severity: info
-  tags: panel,bamboo,login,detect,discovery
+  tags: panel,bamboo,login,detect

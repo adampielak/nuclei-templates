@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - googleanalytics
+  - dsl:
+    - compare_versions(version, '<= 3.1.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/googleanalytics/readme.txt'
+  redirects: true
 id: googleanalytics-39f809804045d5c2fd8605474104750c
-
 info:
-  name: >
-    ShareThis Dashboard for Google Analytics <= 3.1.4 - Missing Authorization
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e343489-4969-4a16-9741-34de93c8b06e?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/googleanalytics/"
+    fofa-query: wp-content/plugins/googleanalytics/
     google-query: inurl:"/wp-content/plugins/googleanalytics/"
     shodan-query: 'vuln:'
+  name: 'ShareThis Dashboard for Google Analytics <= 3.1.4 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e343489-4969-4a16-9741-34de93c8b06e?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,googleanalytics,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/googleanalytics/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "googleanalytics"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 3.1.4')

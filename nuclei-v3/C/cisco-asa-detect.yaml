@@ -32,4 +32,4 @@ info:
     max-request: 1
   name: Cisco ASA - Detect
   severity: info
-  tags: tech,cisco,detect,discovery
+  tags: tech,cisco,detect

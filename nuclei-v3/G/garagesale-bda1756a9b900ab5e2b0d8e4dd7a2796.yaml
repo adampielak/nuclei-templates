@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - garagesale
+  - dsl:
+    - compare_versions(version, '< 1.2.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/garagesale/readme.txt'
+  redirects: true
 id: garagesale-bda1756a9b900ab5e2b0d8e4dd7a2796
-
 info:
-  name: >
-    GarageSale < 1.2.3 - Cross-Site Scripting
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1ed7ed0-5bcd-42ca-ab56-70ebd3d3c63a?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/garagesale/"
+    fofa-query: wp-content/plugins/garagesale/
     google-query: inurl:"/wp-content/plugins/garagesale/"
     shodan-query: 'vuln:'
+  name: 'GarageSale < 1.2.3 - Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d1ed7ed0-5bcd-42ca-ab56-70ebd3d3c63a?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,garagesale,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/garagesale/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "garagesale"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '< 1.2.3')

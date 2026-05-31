@@ -16,21 +16,14 @@ http:
 id: arcserve-panel
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:arcserve:udp:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: icon_hash="-1889244460"
     max-request: 1
-    product: udp
-    runzero-match: service["favicon.ico.image.mmh3"] == "-1889244460"
-    shodan-query:
-    - http.favicon.hash:-1889244460
-    - http.favicon.hash:"-1889244460"
-    vendor: arcserve
+    shodan-query: http.favicon.hash:-1889244460
     verified: true
   name: ArcServe Panel - Detect
   reference:
   - https://twitter.com/HunterMapping/status/1674267368359444480
   - https://github.com/mdsecactivebreach/CVE-2023-26258-ArcServe
   severity: info
-  tags: arcserve,detect,discovery,login,panel
+  tags: panel,login,arcserve,detect

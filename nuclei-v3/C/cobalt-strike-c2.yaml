@@ -8,12 +8,11 @@ info:
   metadata:
     max-request: 1
     shodan-query: ssl.cert.serial:146473198
-    verified: 'true'
   name: Cobalt Strike C2 - Detect
   reference:
   - https://blog.sekoia.io/hunting-and-detecting-cobalt-strike/
   severity: info
-  tags: c2,ssl,tls,ir,osint,malware,panel,cobalt-strike,discovery
+  tags: ssl,c2,ir,osint
 ssl:
 - address: '{{Host}}:{{Port}}'
   extractors:

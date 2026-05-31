@@ -10,10 +10,6 @@ http:
 id: algolia-api-key
 info:
   author: DhiyaneshDK
-  classification:
-    cwe-id:
-    - CWE-522
-    - CWE-540
   metadata:
     max-request: 1
     verified: true
@@ -22,4 +18,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/algolia-api-key.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/algolia-api-key.go
   severity: info
-  tags: algolia,exposure,tokens,vuln
+  tags: algolia,exposure,tokens

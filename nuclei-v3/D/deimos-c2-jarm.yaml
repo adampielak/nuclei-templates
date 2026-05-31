@@ -14,7 +14,7 @@ info:
   - https://github.com/cedowens/C2-JARM
   - https://twitter.com/MichalKoczwara/status/1551632627387473920
   severity: info
-  tags: jarm,c2,ir,osint,cti,deimos,network,tcp,vuln
+  tags: jarm,c2,ir,osint,cti,deimos,network
 tcp:
 - host:
   - '{{Hostname}}'

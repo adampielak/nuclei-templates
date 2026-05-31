@@ -10,11 +10,13 @@ info:
   metadata:
     censys-query: 'services.tls.certificates.leaf_data.subject.common_name: "BitRAT"'
     max-request: 1
-    verified: true
+    verified: 'true'
   name: Bitrat C2 - Detect
-  reference: https://github.com/thehappydinoa/awesome-censys-queries#bitrat--
+  reference: 'https://github.com/thehappydinoa/awesome-censys-queries#bitrat--
+
+    '
   severity: info
-  tags: ssl,tls,c2,ir,osint,malware,bitrat,discovery
+  tags: ssl,tls,c2,ir,osint,malware,bitrat
 ssl:
 - address: '{{Host}}:{{Port}}'
   extractors:

@@ -15,19 +15,15 @@ file:
 id: configure-dns-server
 info:
   author: pussycat0x
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  description: 'DNS is recommended to be configured over TLS. This prevents intermediate
-    parties and potential attackers from viewing the content of DNS queries and can
-    also assure that DNS is being provided by the expected DNS servers.
+  description: 'The purpose DNs server is to perform the resolution of system hostnames
+    to Internet Protocol (IP) addresses.
 
     '
   metadata:
     verified: true
-  name: DNS Server Not Implemented - Detect
-  reference:
-  - https://docs.netgate.com/pfsense/en/latest/recipes/dns-over-tls.html
+  name: Configure DNS Server
+  reference: 'https://docs.netgate.com/pfsense/en/latest/recipes/dns-over-tls.html
+
+    '
   severity: info
   tags: firewall,config,audit,pfsense,file

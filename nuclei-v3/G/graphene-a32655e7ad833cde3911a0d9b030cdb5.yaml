@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - graphene
+  - dsl:
+    - compare_versions(version, '<= 2.9.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/graphene/style.css'
+  redirects: true
 id: graphene-a32655e7ad833cde3911a0d9b030cdb5
-
 info:
-  name: >
-    Graphene <= 2.9.2 - Missing Authorization
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2f19051-fe80-469c-a514-ec3a848a4015?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/graphene/"
+    fofa-query: wp-content/themes/graphene/
     google-query: inurl:"/wp-content/themes/graphene/"
     shodan-query: 'vuln:'
+  name: 'Graphene <= 2.9.2 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2f19051-fe80-469c-a514-ec3a848a4015?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-theme,graphene,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/graphene/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "graphene"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.9.2')

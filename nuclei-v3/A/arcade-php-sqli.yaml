@@ -1,6 +1,5 @@
 http:
-- host-redirects: true
-  matchers:
+- matchers:
   - part: body
     type: word
     words:
@@ -9,16 +8,12 @@ http:
     - 200
     type: status
   matchers-condition: and
-  max-redirects: 3
   method: GET
   path:
   - '{{BaseURL}}/arcade.php?act=Arcade&do=stats&comment=a&s_id=1'''
 id: arcade-php-sqli
 info:
   author: MaStErChO
-  classification:
-    cwe-id:
-    - CWE-89
   description: 'The arcade.php script is vulnerable to SQL injection. By exploiting
     this vulnerability, an attacker can manipulate the SQL queries executed by the
     script, potentially gaining unauthorized access to the database.
@@ -32,4 +27,4 @@ info:
   - https://www.exploit-db.com/exploits/29604
   - https://github.com/OWASP/vbscan/
   severity: high
-  tags: arcade,php,sqli,vbulletin,vuln
+  tags: arcade,php,vbulletin,sqli

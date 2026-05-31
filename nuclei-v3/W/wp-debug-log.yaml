@@ -1,0 +1,27 @@
+http:
+- matchers:
+  - condition: or
+    part: header
+    type: word
+    words:
+    - octet-stream
+    - text/plain
+  - part: body
+    regex:
+    - '[[0-9]{2}-[a-zA-Z]{3}-[0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} [A-Z]{3}] PHP'
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/debug.log'
+id: wp-debug-log
+info:
+  author: geraldino2,dwisiswant0
+  metadata:
+    max-request: 1
+  name: WordPress debug log
+  severity: low
+  tags: wordpress,log

@@ -14,14 +14,10 @@ http:
 id: default-apache-shiro
 info:
   author: DhiyaneshDK
-  classification:
-    cpe: cpe:2.3:a:apache:shiro:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: shiro
     shodan-query: title:"Apache Shiro Quickstart"
-    vendor: apache
     verified: true
   name: Apache Shiro Default Page
   severity: info
-  tags: tech,apache,shiro,discovery
+  tags: tech,apache,shiro

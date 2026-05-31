@@ -1,23 +1,24 @@
 http:
 - matchers:
+  - dsl:
+    - Host != ip
+    type: dsl
   - condition: and
     type: word
     words:
-    - Email Newsletter Software
-    - css.createsend1.com
-  max-redirects: 1
+    - <strong>Trying to access your account?</strong>
+    - or <a href="mailto:help@createsend.com
+  matchers-condition: and
   method: GET
   path:
   - '{{BaseURL}}'
-  redirects: true
 id: campaignmonitor-takeover
 info:
   author: pdteam
-  description: CampaignMonitor takeover was detected.
   metadata:
     max-request: 1
   name: CampaignMonitor Takeover Detection
   reference:
   - https://github.com/EdOverflow/can-i-take-over-xyz/issues/275
   severity: high
-  tags: takeover,campaignmonitor,vuln
+  tags: takeover,campaignmonitor

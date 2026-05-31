@@ -1,34 +1,29 @@
+http:
+- extractors:
+  - group: 1
+    part: header
+    regex:
+    - 'X-Powered-By: PHP/([0-9.]+)'
+    type: regex
+  matchers:
+  - part: header
+    type: word
+    words:
+    - PHP
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: php-detect
-
 info:
-  name: PHP Detect
   author: y0no
-  severity: info
   metadata:
     max-request: 1
+    shodan-query: 'X-Powered-By: PHP'
     verified: true
-    shodan-query: "X-Powered-By: PHP"
+  name: PHP Detect
+  severity: info
   tags: tech,php
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: header
-        words:
-          - "PHP"
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        part: header
-        group: 1
-        regex:
-          - "X-Powered-By: PHP/([0-9.]+)"

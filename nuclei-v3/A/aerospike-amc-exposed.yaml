@@ -36,3 +36,17 @@ http:
           - "<title>AMC - Aerospike"
           - "amccontroller.js"
         condition: or
+
+    extractors:
+      - type: regex
+        part: body
+        name: amc-version
+        regex:
+          - '(?i)AMC[\s/v]+([0-9]+\.[0-9]+(\.[0-9]+)?)'
+          - 'aerospike[\s/v-]+([0-9]+\.[0-9]+(\.[0-9]+)?)'
+        group: 1
+      - type: kval
+        part: header
+        kval:
+          - "Server"
+          - "X-Aerospike-Version"

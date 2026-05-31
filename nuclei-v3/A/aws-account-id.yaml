@@ -15,6 +15,6 @@ info:
     verified: true
   name: AWS Account ID
   reference:
-  - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/aws.yml
+  - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/aws.yml
   severity: info
-  tags: aws,amazon,token,exposure,vuln
+  tags: aws,amazon,token,exposure

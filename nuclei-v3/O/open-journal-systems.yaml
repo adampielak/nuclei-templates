@@ -1,39 +1,36 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?i).*<meta.name="generator".content="Open.Journal.Systems.([\d.|\d]+)
+    type: regex
+  host-redirects: true
+  matchers:
+  - regex:
+    - (?i).*<meta.name="generator".content="Open.Journal.Systems.*>
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: open-journal-systems
-
 info:
-  name: Open Journal Systems Detect
   author: ricardomaia
-  severity: info
-  description: Open Journal Systems, also known as OJS, is a free software for the management of peer-reviewed academic journals, created by the Public Knowledge Project.
-  reference:
-    - https://pkp.sfu.ca/ojs/
+  description: Open Journal Systems, also known as OJS, is a free software for the
+    management of peer-reviewed academic journals, created by the Public Knowledge
+    Project.
   metadata:
     max-request: 1
-    verified: true
     shodan-query: html:"Open Journal Systems"
+    verified: true
+  name: Open Journal Systems Detect
+  reference:
+  - https://pkp.sfu.ca/ojs/
+  severity: info
   tags: tech,ojs
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: regex
-        regex:
-          - '(?i).*<meta.name="generator".content="Open.Journal.Systems.*>'
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - '(?i).*<meta.name="generator".content="Open.Journal.Systems.([\d.|\d]+)'

@@ -6,12 +6,12 @@ info:
 
     '
   metadata:
-    max-request: 1
+    max-request: 2
     shodan-query: port:3310 product:"ClamAV"
     verified: true
   name: ClamAV Server Detect
   severity: info
-  tags: network,clamav,detect,detection,tcp,discovery
+  tags: network,clamav
 tcp:
 - extractors:
   - regex:
@@ -19,10 +19,10 @@ tcp:
     type: regex
   host:
   - '{{Hostname}}'
+  - '{{Host}}:3310'
   inputs:
   - data: VERSION
   matchers:
   - regex:
     - ClamAV ([0-9.]+)
     type: regex
-  port: 3310

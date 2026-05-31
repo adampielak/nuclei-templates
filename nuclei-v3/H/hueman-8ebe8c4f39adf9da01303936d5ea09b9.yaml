@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - hueman
+  - dsl:
+    - compare_versions(version, '<= 3.6.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/hueman/style.css'
+  redirects: true
 id: hueman-8ebe8c4f39adf9da01303936d5ea09b9
-
 info:
-  name: >
-    Hueman <= 3.6.3 - Cross-Site Request Forgery Bypass
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d54b4dc9-8590-433c-873a-efb49e2e79cd?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/hueman/"
+    fofa-query: wp-content/themes/hueman/
     google-query: inurl:"/wp-content/themes/hueman/"
     shodan-query: 'vuln:'
+  name: 'Hueman <= 3.6.3 - Cross-Site Request Forgery Bypass
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d54b4dc9-8590-433c-873a-efb49e2e79cd?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-theme,hueman,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/hueman/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "hueman"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 3.6.3')

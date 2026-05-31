@@ -1,32 +1,28 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '[versions]'
+    - '[libraries]'
+    - '[bundles]'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/gradle/libs.versions.toml'
+  - '{{BaseURL}}/libs.versions.toml'
+  stop-at-first-match: true
 id: gradle-libs
-
 info:
-  name: Gradle Library Version Disclosure
   author: DhiyaneshDK
-  severity: info
   metadata:
+    github-query: filename:libs.versions.toml
     max-request: 2
     verified: true
-    github-query: filename:libs.versions.toml
+  name: Gradle Library Version Disclosure
+  severity: info
   tags: file,gradle
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/gradle/libs.versions.toml'
-      - '{{BaseURL}}/libs.versions.toml'
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "[versions]"
-          - "[libraries]"
-          - "[bundles]"
-        condition: and
-
-      - type: status
-        status:
-          - 200

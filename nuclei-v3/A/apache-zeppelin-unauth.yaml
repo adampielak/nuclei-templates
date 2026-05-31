@@ -21,7 +21,6 @@ id: apache-zeppelin-unauth
 info:
   author: j4vaovo
   classification:
-    cpe: cpe:2.3:a:apache:zeppelin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
     cvss-score: 8.6
     cwe-id: CWE-285
@@ -31,13 +30,11 @@ info:
     '
   metadata:
     fofa-query: title="Zeppelin"
-    max-request: 1
-    product: zeppelin
     shodan-query: title:"Zeppelin"
-    vendor: apache
     verified: true
   name: Apache Zeppelin - Unauthenticated Access
-  reference:
-  - https://www.adminxe.com/2172.html
+  reference: '- https://www.adminxe.com/2172.html
+
+    '
   severity: high
-  tags: misconfig,apache,zeppelin,unauth,vuln
+  tags: misconfig,apache,zeppelin,unauth

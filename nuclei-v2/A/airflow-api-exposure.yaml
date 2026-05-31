@@ -3,6 +3,7 @@ info:
   author: pd-team
   name: Apache Airflow API Exposure / Unauthenticated Access
   severity: medium
+  tags: apache,airflow,unauth
 requests:
 - matchers:
   - condition: and

@@ -14,20 +14,16 @@ http:
 id: caldera-c2
 info:
   author: pussycat0x
-  classification:
-    cpe: cpe:2.3:a:mitre:caldera:*:*:*:*:*:*:*:*
   description: "MITRE Caldera\u2122 is a cyber security platform designed to easily\
     \ automate adversary emulation, assist manual red-teams, and automate incident\
     \ response.\n"
   metadata:
     fofa-query: http.favicon.hash:-636718605
     max-request: 1
-    product: caldera
-    vendor: mitre
     verified: true
   name: Caldera C2 - Detect
   reference:
   - https://github.com/mitre/caldera
   - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   severity: info
-  tags: c2,ir,osint,caldera,panel,vuln
+  tags: c2,ir,osint,caldera,panel

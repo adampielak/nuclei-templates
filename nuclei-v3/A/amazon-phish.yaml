@@ -40,10 +40,8 @@ info:
   description: 'An amazon phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: Amazon phishing Detection
   reference:
   - https://amazon.com
   severity: info
-  tags: phishing,amazon,osint,discovery
+  tags: phishing,amazon,osint

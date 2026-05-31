@@ -20,9 +20,6 @@ http:
 id: copyparty-xss
 info:
   author: theamanrawat
-  classification:
-    cwe-id:
-    - CWE-80
   description: 'Copyparty is a portable file server. Versions prior to 1.8.6 are subject
     to a reflected cross-site scripting (XSS) Attack. The vulnerability in the application''s
     web interface could allow an attacker to execute malicious javascript code by
@@ -38,4 +35,4 @@ info:
   - https://github.com/9001/copyparty/security/advisories/GHSA-cw7j-v52w-fp5r
   remediation: Upgrade to the latest version to mitigate this vulnerability.
   severity: medium
-  tags: copyparty,vuln,xss
+  tags: copyparty,xss

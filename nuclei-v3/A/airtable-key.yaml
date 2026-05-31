@@ -16,4 +16,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/airtable-api-key.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/airtable-api-key.go
   severity: info
-  tags: keys,file,airtable,token
+  tags: airtable,file,token

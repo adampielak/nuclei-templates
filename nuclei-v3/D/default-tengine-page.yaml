@@ -16,14 +16,10 @@ http:
 id: default-tengine-page
 info:
   author: pussycat0x
-  classification:
-    cpe: cpe:2.3:a:alibaba:tengine:*:*:*:*:nginx:*:*:*
   metadata:
     max-request: 1
-    product: tengine
     shodan-query: http.title:"Welcome to tengine"
-    vendor: alibaba
     verified: true
   name: Tengine Default Page
   severity: info
-  tags: tech,tengine,default-page,discovery
+  tags: tech,tengine,default-page

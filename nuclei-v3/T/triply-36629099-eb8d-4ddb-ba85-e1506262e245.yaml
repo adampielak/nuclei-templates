@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - triply
+  - dsl:
+    - compare_versions(version, '<= 2.4.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/triply/style.css'
+  redirects: true
+id: triply-36629099-eb8d-4ddb-ba85-e1506262e245
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/triply/
+    google-query: inurl:"/wp-content/themes/triply/"
+    shodan-query: http.html:"wp-content/themes/triply/"
+  name: 'Triply <= 2.4.7 - Authenticated (Contributor+) Local File Inclusion
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/36629099-eb8d-4ddb-ba85-e1506262e245?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-theme,triply,low,candidate

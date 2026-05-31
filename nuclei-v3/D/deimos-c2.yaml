@@ -25,7 +25,8 @@ info:
     shodan-query: http.html_hash:-14029177
     verified: true
   name: Deimos C2 - Detect
-  reference:
-  - https://twitter.com/MichalKoczwara/status/1551632627387473920
+  reference: 'https://twitter.com/MichalKoczwara/status/1551632627387473920
+
+    '
   severity: info
-  tags: c2,ir,osint,deimosc2,panel,vuln
+  tags: c2,ir,osint,deimosc2

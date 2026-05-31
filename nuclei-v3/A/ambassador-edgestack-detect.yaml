@@ -27,4 +27,4 @@ info:
     verified: true
   name: Ambassador Edge Stack - Detect
   severity: info
-  tags: tech,ambassador,gateway,discovery
+  tags: tech,ambassador,gateway

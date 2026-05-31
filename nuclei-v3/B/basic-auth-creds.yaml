@@ -10,3 +10,4 @@ info:
   author: gaurang
   name: Basic Auth Credentials
   severity: high
+  tags: token,file,auth

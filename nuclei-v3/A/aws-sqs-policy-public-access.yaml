@@ -45,3 +45,20 @@ http:
         words:
           - "<ReceiveMessageResult"
           - "<RequestId"
+
+    extractors:
+      - type: regex
+        part: body
+        name: request-id
+        regex:
+          - '<RequestId>([a-f0-9-]+)</RequestId>'
+        group: 1
+      - type: regex
+        part: body
+        name: message-bodies
+        regex:
+          - '<Body>([^<]+)</Body>'
+        group: 1
+      - type: dsl
+        dsl:
+          - '"SQS queue URL: " + host + path'

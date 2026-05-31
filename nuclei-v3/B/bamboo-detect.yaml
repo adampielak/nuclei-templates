@@ -18,18 +18,15 @@ http:
 id: bamboo-detect
 info:
   author: bhutch
-  classification:
-    cpe: cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*
   description: 'Detect the presence of Bamboo, a CI/CD tool.
 
     '
   metadata:
     category: devops
     max-request: 1
-    product: bamboo
     shodan-query: http.favicon.hash:-1379982221
     vendor: atlassian
     verified: true
   name: Bamboo - Detection
   severity: info
-  tags: tech,bamboo,atlassian,detect,cicd,discovery
+  tags: tech,bamboo,atlassian,detect,cicd

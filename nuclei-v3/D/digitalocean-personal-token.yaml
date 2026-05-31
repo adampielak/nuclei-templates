@@ -16,4 +16,4 @@ info:
   - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/rules/digitalocean.yml
   - https://docs.digitalocean.com/reference/api/
   severity: info
-  tags: keys,file,digitalocean,token
+  tags: digitalocean,file,token

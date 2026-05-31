@@ -29,4 +29,4 @@ info:
     verified: true
   name: db.xml File - Detect
   severity: medium
-  tags: misconfig,db,files,exposure,vuln
+  tags: misconfig,db,files,exposure

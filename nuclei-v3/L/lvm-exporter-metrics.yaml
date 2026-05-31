@@ -1,32 +1,27 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - '# HELP'
+  - part: body
+    type: word
+    words:
+    - lvm_
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
 id: lvm-exporter-metrics
-
 info:
-  name: LVM Exporter Metrics
   author: DhiyaneshDk
-  severity: low
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"LVM Exporter"
+    verified: true
+  name: LVM Exporter Metrics
+  severity: low
   tags: lvm,exposure,debug
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/metrics"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "# HELP"
-
-      - type: word
-        part: body
-        words:
-          - "lvm_"
-
-      - type: status
-        status:
-          - 200

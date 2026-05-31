@@ -6,15 +6,16 @@ info:
 
     '
   metadata:
-    max-request: 1
+    max-request: 2
     shodan-query: product:"Cisco fingerd"
     verified: true
   name: Cisco Finger Daemon Detection
   severity: low
-  tags: network,finger,detect,cisco,detection,tcp,discovery
+  tags: network,finger
 tcp:
 - host:
   - '{{Hostname}}'
+  - '{{Host}}:79'
   inputs:
   - data: '
 
@@ -27,4 +28,3 @@ tcp:
     - Interface
     - Mode
     - User
-  port: 79

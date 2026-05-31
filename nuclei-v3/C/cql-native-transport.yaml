@@ -7,12 +7,12 @@ info:
 
     '
   metadata:
-    max-request: 1
+    max-request: 2
     shodan-query: cassandra
     verified: true
   name: CQL Native Transport Detect
   severity: info
-  tags: network,cassandra,cql,detect,detection,tcp,discovery
+  tags: network,cassandra,cql
 tcp:
 - extractors:
   - regex:
@@ -20,6 +20,7 @@ tcp:
     type: regex
   host:
   - '{{Hostname}}'
+  - '{{Host}}:9042'
   inputs:
   - data: /n
   - data: /n
@@ -33,4 +34,3 @@ tcp:
   - type: word
     words:
     - valid or unsupported protocol
-  port: 9042

@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - brizy
-  - dsl:
-    - compare_versions(version, '< 1.0.114')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/brizy/readme.txt'
-  redirects: true
 id: brizy-009a37a3bb5c1f1e61217cdc62e93933
+
 info:
+  name: >
+    Brizy - Page Builder < 1.0.114 - Missing Authorization to Settings Update
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba98a282-39ee-4a84-b988-ecfc0c4cd297?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/brizy/
+    fofa-query: "wp-content/plugins/brizy/"
     google-query: inurl:"/wp-content/plugins/brizy/"
     shodan-query: 'vuln:'
-  name: 'Brizy - Page Builder < 1.0.114 - Missing Authorization to Settings Update
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba98a282-39ee-4a84-b988-ecfc0c4cd297?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,brizy,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/brizy/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "brizy"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 1.0.114')

@@ -1,34 +1,29 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Matomo
+    - Installation status
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: matomo-installer
-
 info:
-  name: Matomo Installer Exposure
   author: DhiyaneshDk
-  severity: high
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Matomo"
+    verified: true
+  name: Matomo Installer Exposure
+  severity: high
   tags: misconfig,matomo,install
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Matomo"
-          - "Installation status"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200

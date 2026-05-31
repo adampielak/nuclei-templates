@@ -18,7 +18,7 @@ info:
   author: tess
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Cypress Oxygen configuration page was detected.
   metadata:
@@ -27,4 +27,4 @@ info:
     verified: true
   name: Cypress Oxygen Configuration Page - Detect
   severity: info
-  tags: exposure,cypress,pendinginstallvzw,config,vuln
+  tags: exposure,cypress,pendinginstallvzw,config

@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - lana-downloads-manager
+  - dsl:
+    - compare_versions(version, '<= 1.7.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/lana-downloads-manager/readme.txt'
+  redirects: true
 id: lana-downloads-manager-83f4ccd618216137814a604537269f5d
-
 info:
-  name: >
-    Lana Downloads Manager <= 1.7.1 - Authenticated Arbitrary File Download
   author: topscoder
-  severity: low
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9abae49f-b396-4684-8dd5-0b5593069861?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/lana-downloads-manager/"
+    fofa-query: wp-content/plugins/lana-downloads-manager/
     google-query: inurl:"/wp-content/plugins/lana-downloads-manager/"
     shodan-query: 'vuln:'
+  name: 'Lana Downloads Manager <= 1.7.1 - Authenticated Arbitrary File Download
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9abae49f-b396-4684-8dd5-0b5593069861?source=api-scan
+  severity: low
   tags: cve,wordpress,wp-plugin,lana-downloads-manager,low
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/lana-downloads-manager/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "lana-downloads-manager"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.7.1')

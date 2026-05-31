@@ -21,10 +21,8 @@ info:
   description: 'A booking phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: booking phishing Detection
   reference:
   - https://booking.com
   severity: info
-  tags: phishing,booking,osint,discovery
+  tags: phishing,booking,osint

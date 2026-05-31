@@ -10,10 +10,6 @@ http:
 id: databricks-token
 info:
   author: DhiyaneshDK
-  classification:
-    cwe-id:
-    - CWE-522
-    - CWE-540
   metadata:
     max-request: 1
     verified: true
@@ -21,6 +17,5 @@ info:
   reference:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/databricks-api-token.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/databricks-api-token.go
-  - https://docs.databricks.com/en/dev-tools/auth/pat.html
   severity: info
-  tags: databricks,exposure,tokens,vuln
+  tags: databricks,exposure,tokens

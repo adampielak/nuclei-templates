@@ -1,35 +1,23 @@
 http:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - '"productVersion":\s*"([0-9.]+)"'
-    type: regex
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_any(to_lower(body), "axway api manager login", "vordel/apiportal/app-login")
-    type: dsl
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Axway API Manager Login</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
   method: GET
   path:
-  - '{{BaseURL}}/api/portal/v1.4/appinfo'
   - '{{BaseURL}}'
-  stop-at-first-match: true
 id: axway-api-manager-panel
 info:
-  author: johnk3r,righettod
-  description: Axway API Manager panel was detected.
+  author: johnk3r
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Axway API Manager
-      Login"})
-    shodan-query: http.title:"Axway API Manager Login"
+    shoda-query: http.title:"Axway API Manager Login"
     verified: true
   name: Axway API Manager Panel - Detect
-  reference:
-  - https://docs.axway.com/bundle/axway-open-docs/page/docs/index.html
-  - https://www.postman.com/api-evangelist/axway/api/06c40de2-3954-4c68-ae10-a7eded330b05
-  - https://www.postman.com/api-evangelist/axway/api/ce2ac156-4353-46b9-b148-944ab7721ed6
   severity: info
-  tags: panel,axway,detect,login,discovery
+  tags: panel,axway,detect

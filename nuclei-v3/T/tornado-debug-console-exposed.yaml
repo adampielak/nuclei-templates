@@ -19,12 +19,30 @@ info:
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/nonexistent-path-fnaP9"
+      - "{{BaseURL}}/nuclei-{{rand_text_alpha(10)}}"
     matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 500
+          - 404
       - type: word
         part: body
         condition: and
         words:
           - "Traceback (most recent call last)"
           - "tornado.web"
+
+    extractors:
+      - type: regex
+        part: body
+        name: python-frame
+        regex:
+          - 'File "([^"]+)", line ([0-9]+), in (\w+)'
+        group: 1
+      - type: regex
+        part: body
+        name: tornado-version
+        regex:
+          - 'tornado[/\.]([0-9]+\.[0-9]+(\.[0-9]+)?)'
+        group: 1

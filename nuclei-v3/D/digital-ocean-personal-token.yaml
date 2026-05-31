@@ -10,10 +10,6 @@ http:
 id: digital-ocean-personal-token
 info:
   author: DhiyaneshDK
-  classification:
-    cwe-id:
-    - CWE-522
-    - CWE-540
   metadata:
     max-request: 1
     verified: true
@@ -22,4 +18,4 @@ info:
   - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/rules/digitalocean.yml
   - https://docs.digitalocean.com/reference/api/
   severity: info
-  tags: digitalocean,exposure,token,vuln
+  tags: digitalocean,exposure,token

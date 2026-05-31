@@ -33,4 +33,4 @@ info:
   reference:
   - https://bun.sh/docs/install/lockfile
   severity: info
-  tags: exposure,files,node,npm,bun,vuln
+  tags: exposure,files,node,npm,bun

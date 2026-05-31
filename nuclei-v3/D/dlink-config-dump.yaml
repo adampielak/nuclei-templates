@@ -35,4 +35,4 @@ info:
   - https://www.exploit-db.com/exploits/51556
   - https://www.dropbox.com/s/eqz0ntlzqp5472l/DAP-1325.mp4?dl=0
   severity: critical
-  tags: misconfig,config,dump,dlink,auth-bypass,disclosure,vuln
+  tags: misconfig,config,dump,dlink,auth-bypass,disclosure

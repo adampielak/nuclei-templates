@@ -1,59 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - simplemodal-contact-form-smcf
+  - dsl:
+    - compare_versions(version, '<= 1.2.9')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/simplemodal-contact-form-smcf/readme.txt'
+  redirects: true
 id: simplemodal-contact-form-smcf-2c341a2c30ed1e1ef97ac351c554b348
-
 info:
-  name: >
-    SimpleModal Contact Form (SMCF) <= 1.2.9 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: low
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d8c19868-49c2-4ee2-883a-93549e65d41a?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/simplemodal-contact-form-smcf/"
+    fofa-query: wp-content/plugins/simplemodal-contact-form-smcf/
     google-query: inurl:"/wp-content/plugins/simplemodal-contact-form-smcf/"
     shodan-query: 'vuln:'
+  name: 'SimpleModal Contact Form (SMCF) <= 1.2.9 - Authenticated (Administrator+)
+    Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d8c19868-49c2-4ee2-883a-93549e65d41a?source=api-scan
+  severity: low
   tags: cve,wordpress,wp-plugin,simplemodal-contact-form-smcf,low
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/simplemodal-contact-form-smcf/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "simplemodal-contact-form-smcf"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.2.9')

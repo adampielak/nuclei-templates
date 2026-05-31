@@ -8,18 +8,10 @@ http:
   - dsl:
     - contains(tolower(header), "x-aspnet-version")
     type: dsl
-  - negative: true
-    part: header
-    regex:
-    - (?i)^X-AspNet-Version:\s*$
-    type: regex
-  matchers-condition: and
   max-redirects: 3
   method: GET
   path:
   - '{{BaseURL}}'
-  - '{{BaseURL}}/%3f'
-  stop-at-first-match: true
 id: aspnet-version-detect
 info:
   author: lucky0x0d,PulseSecurity.co.nz
@@ -36,4 +28,4 @@ info:
     verified: true
   name: AspNet Version Disclosure - Detect
   severity: info
-  tags: tech,detect,aspnet,discovery
+  tags: tech,detect,aspnet

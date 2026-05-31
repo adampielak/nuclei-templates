@@ -18,8 +18,8 @@ id: afterlogic-webmail-login
 info:
   author: johnk3r
   classification:
-    cpe: cpe:2.3:a:afterlogic:aurora:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   description: AfterLogic WebMail Login panel was detected.
   metadata:
@@ -29,4 +29,4 @@ info:
     vendor: afterlogic
   name: AfterLogic WebMail Login Panel - Detect
   severity: info
-  tags: afterlogic,detect,discovery,login,panel
+  tags: panel,afterlogic,login,detect

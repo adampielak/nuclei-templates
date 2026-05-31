@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - zermatt
+  - dsl:
+    - compare_versions(version, '<= 1.6.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/zermatt/style.css'
+  redirects: true
+id: zermatt-8dee7376-0177-4b9d-88f6-d2df054aca65
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/zermatt/
+    google-query: inurl:"/wp-content/themes/zermatt/"
+    shodan-query: http.html:"wp-content/themes/zermatt/"
+  name: 'Zermatt <= 1.6.1 - Unauthenticated PHP Object Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/8dee7376-0177-4b9d-88f6-d2df054aca65?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,zermatt,critical,candidate

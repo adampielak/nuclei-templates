@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wordpress-simple-shout-box
+  - dsl:
+    - compare_versions(version, '<= 2.0.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wordpress-simple-shout-box/readme.txt'
+  redirects: true
 id: wordpress-simple-shout-box-00d3608fe68329f546f97ee4d4ae6805
-
 info:
-  name: >
-    WordPress Shout Box Widget <= 2.0.2 - SQL Injection
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2d10f043-df2c-4e81-bd99-e478a2dca0cf?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/wordpress-simple-shout-box/"
+    fofa-query: wp-content/plugins/wordpress-simple-shout-box/
     google-query: inurl:"/wp-content/plugins/wordpress-simple-shout-box/"
     shodan-query: 'vuln:'
+  name: 'WordPress Shout Box Widget <= 2.0.2 - SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/2d10f043-df2c-4e81-bd99-e478a2dca0cf?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-plugin,wordpress-simple-shout-box,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/wordpress-simple-shout-box/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wordpress-simple-shout-box"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.0.2')

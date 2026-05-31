@@ -15,20 +15,14 @@ id: darktrace-threat-visualizer
 info:
   author: DhiyaneshDK
   classification:
-    cpe: cpe:2.3:a:darktrace:threat_visualizer:*:*:*:*:android:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Darktrace Threat Visualizer login panel was detected.
   metadata:
-    fofa-query: body="darktrace threat visualizer"
     max-request: 1
-    product: threat_visualizer
-    runzero-match: service["http.body"] matches "(?i)darktrace threat visualizer"
-    shodan-query:
-    - html:"Darktrace Threat Visualizer"
-    - http.html:"darktrace threat visualizer"
-    vendor: darktrace
+    shodan-query: html:"Darktrace Threat Visualizer"
     verified: true
   name: Darktrace Threat Visualizer Login Panel - Detect
   severity: info
-  tags: darktrace,discovery,panel
+  tags: panel,darktrace

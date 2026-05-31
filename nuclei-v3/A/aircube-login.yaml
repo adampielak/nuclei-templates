@@ -15,17 +15,14 @@ id: aircube-login
 info:
   author: DhiyaneshDk
   classification:
-    cpe: cpe:2.3:h:ui:aircube:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: airCube login panel was detected.
   metadata:
     max-request: 1
-    product: aircube
-    runzero-match: service["favicon.ico.image.mmh3"] == "1249285083"
     shodan-query: http.favicon.hash:1249285083
-    vendor: ui
     verified: true
   name: airCube Login - Detect
   severity: info
-  tags: aircube,discovery,panel,ubiquiti
+  tags: panel,aircube,ubiquiti

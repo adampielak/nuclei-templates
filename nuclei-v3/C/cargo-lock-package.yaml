@@ -24,4 +24,4 @@ info:
   reference:
   - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
   severity: info
-  tags: exposure,files,cargo,vuln
+  tags: exposure,files,cargo

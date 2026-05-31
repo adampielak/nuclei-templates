@@ -11,10 +11,11 @@ info:
     shodan-query: "ssl:\u201DCovenant\u201D http.component:\u201DBlazor\u201D"
     verified: 'true'
   name: Covenant C2 SSL - Detect
-  reference:
-  - https://twitter.com/MichalKoczwara/status/1548685058403360770
+  reference: 'https://twitter.com/MichalKoczwara/status/1548685058403360770
+
+    '
   severity: info
-  tags: ssl,tls,c2,ir,osint,malware,covenant,discovery
+  tags: c2,ir,osint,malware,ssl,covenant
 ssl:
 - address: '{{Host}}:{{Port}}'
   extractors:

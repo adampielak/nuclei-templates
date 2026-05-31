@@ -1,0 +1,38 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>FastCGI echo</title>
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/fcgi-bin/echo'
+id: fastcgi-echo
+info:
+  author: powerexploit
+  description: 'FastCGI echo endpoint script was detected, which lists several kinds
+    of sensitive information such as port numbers, server software versions, port
+    numbers, and IP addresses.
+
+    '
+  metadata:
+    google-query: inurl:fcgi-bin/echo
+    max-request: 1
+    verified: true
+  name: FastCGI Echo Endpoint Script - Detect
+  reference:
+  - https://www.exploit-db.com/ghdb/183
+  - https://www.integrigy.com/oracle-application-server-fastcgi-echo-vulnerability-reports
+  remediation: Remove or disable FastCGI module delivered with the Apache httpd server
+    which is incorporated into the Oracle Application Server.FastCGI echo programs
+    (echo and echo2).
+  severity: info
+  tags: exposure,logs,oracle,fastcgi,edb

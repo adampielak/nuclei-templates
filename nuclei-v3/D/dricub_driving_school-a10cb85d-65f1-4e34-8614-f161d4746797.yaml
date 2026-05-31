@@ -1,51 +1,45 @@
-id: dricub_driving_school-a10cb85d-65f1-4e34-8614-f161d4746797
-
-info:
-  name: >
-    DriCub <= 2.9 - Missing Authorization
-  author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a10cb85d-65f1-4e34-8614-f161d4746797?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/themes/dricub-driving-school/"
-    google-query: inurl:"/wp-content/themes/dricub-driving-school/"
-    shodan-query: 'http.html:"wp-content/themes/dricub-driving-school/"'
-  tags: cve,wordpress,wp-theme,dricub-driving-school,high,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/dricub-driving-school/style.css"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - dricub-driving-school
+  - dsl:
+    - compare_versions(version, '<= 2.9')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/dricub-driving-school/style.css'
+  redirects: true
+id: dricub_driving_school-a10cb85d-65f1-4e34-8614-f161d4746797
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/dricub-driving-school/
+    google-query: inurl:"/wp-content/themes/dricub-driving-school/"
+    shodan-query: http.html:"wp-content/themes/dricub-driving-school/"
+  name: 'DriCub <= 2.9 - Missing Authorization
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "dricub-driving-school"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.9')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a10cb85d-65f1-4e34-8614-f161d4746797?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-theme,dricub-driving-school,high,candidate

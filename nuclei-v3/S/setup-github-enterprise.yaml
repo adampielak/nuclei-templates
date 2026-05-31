@@ -1,29 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Setup GitHub Enterprise
+    - Install GitHub Enterprise
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/setup/start'
 id: setup-github-enterprise
-
 info:
-  name: Setup GitHub Enterprise - Detect
   author: tess
-  severity: unknown
   metadata:
     max-request: 1
-    verified: true
     shodan-query: http.favicon.hash:-1373456171
+    verified: true
+  name: Setup GitHub Enterprise - Detect
+  severity: unknown
   tags: panel,exposure,setup,github
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/setup/start'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Setup GitHub Enterprise"
-          - "Install GitHub Enterprise"
-        condition: and
-
-      - type: status
-        status:
-          - 200

@@ -24,4 +24,4 @@ info:
   reference:
   - https://www.acunetix.com/
   severity: info
-  tags: panel,discovery
+  tags: panel

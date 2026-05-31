@@ -20,15 +20,10 @@ http:
 id: codemeter-webadmin
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:wibu:codemeter:*:*:*:*:*:*:*:*
-  description: CodeMeter Webadmin Dashboard is exposed.
   metadata:
     max-request: 1
-    product: codemeter
     shodan-query: html:"CodeMeter"
-    vendor: wibu
     verified: true
   name: CodeMeter Webadmin Dashboard
   severity: low
-  tags: misconfig,exposure,codemeter,vuln
+  tags: misconfig,exposure,codemeter

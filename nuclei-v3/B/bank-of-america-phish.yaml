@@ -21,10 +21,8 @@ info:
   description: 'A Bank Of America phishing website was detected
 
     '
-  metadata:
-    max-request: 1
   name: Bank Of America phishing Detection
   reference:
   - https://bankofamerica.com
   severity: info
-  tags: phishing,BankOfAmerica,osint,discovery
+  tags: phishing,BankOfAmerica,osint

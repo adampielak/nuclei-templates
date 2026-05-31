@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - eldon
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/eldon/style.css'
+  redirects: true
+id: eldon-6fad3590-86ab-4737-840e-bdf72612c779
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/eldon/
+    google-query: inurl:"/wp-content/themes/eldon/"
+    shodan-query: http.html:"wp-content/themes/eldon/"
+  name: 'Eldon <= 1.0 - Unauthenticated Local File Inclusion
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/6fad3590-86ab-4737-840e-bdf72612c779?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,eldon,critical,candidate

@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - arforms-form-builder
-  - dsl:
-    - compare_versions(version, '<= 1.5.6')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/arforms-form-builder/readme.txt'
-  redirects: true
 id: arforms-form-builder-4b95e20f85b6d887a80ece047ad78b6a
+
 info:
+  name: >
+    ARForms Form Builder <= 1.5.6 - Unauthenticated Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ee7b30f-9d06-421c-af30-f20b774d389e?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/arforms-form-builder/
+    fofa-query: "wp-content/plugins/arforms-form-builder/"
     google-query: inurl:"/wp-content/plugins/arforms-form-builder/"
     shodan-query: 'vuln:'
-  name: 'ARForms Form Builder <= 1.5.6 - Unauthenticated Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ee7b30f-9d06-421c-af30-f20b774d389e?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,arforms-form-builder,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/arforms-form-builder/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "arforms-form-builder"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.5.6')

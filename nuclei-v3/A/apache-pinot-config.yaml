@@ -35,4 +35,4 @@ info:
     verified: true
   name: Apache Pinot - Exposure
   severity: medium
-  tags: config,exposure,pinot,apache,vuln
+  tags: config,exposure,pinot,apache

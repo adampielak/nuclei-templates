@@ -48,6 +48,6 @@ info:
   reference:
   - https://dl.dell.com/manuals/all-products/esuprt_ser_stor_net/esuprt_rack_infrastructure/dell-metered-pdu_user%27s%20guide3_en-us.pdf
   severity: medium
-  tags: default-login,dell,dpi,rpm,vuln
+  tags: dell,dpi,rpm,default-login
 variables:
   str: '{{to_lower(rand_text_alpha(5))}}'

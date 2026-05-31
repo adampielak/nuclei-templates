@@ -16,4 +16,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/databricks-api-token.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/databricks-api-token.go
   severity: info
-  tags: file,keys,databricks,token
+  tags: databricks,file,token

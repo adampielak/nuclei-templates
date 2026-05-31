@@ -25,10 +25,6 @@ http:
 id: cache-poisoning-xss
 info:
   author: melbadry9,xelkomy,akincibor
-  classification:
-    cwe-id:
-    - CWE-80
-  description: Cache Poisoning leads to Stored XSS.
   metadata:
     max-request: 2
   name: Cache Poisoning - Stored XSS
@@ -37,7 +33,7 @@ info:
   - https://portswigger.net/research/practical-web-cache-poisoning
   - https://portswigger.net/web-security/web-cache-poisoning
   severity: high
-  tags: cache,generic,vuln,xss
+  tags: cache,generic,xss
 variables:
   cache_header: '{{to_lower(rand_base(6))}}'
   cache_key: '{{to_lower(rand_base(6))}}'

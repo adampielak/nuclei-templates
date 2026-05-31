@@ -14,14 +14,10 @@ http:
 id: connectwise-control-detect
 info:
   author: pikpikcu
-  classification:
-    cpe: cpe:2.3:a:connectwise:control:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: control
     shodan-query: title="ConnectWise Control Remote Support Software"
-    vendor: connectwise
     verified: true
   name: ConnectWise Control  Detect
   severity: info
-  tags: tech,connectwise,discovery
+  tags: tech,connectwise

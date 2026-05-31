@@ -15,6 +15,7 @@ http:
   path:
   - '{{BaseURL}}'
   - '{{BaseURL}}/{{paths}}/'
+  - '{{paths}}.{{BaseURL}}/'
   payloads:
     paths:
     - db
@@ -28,11 +29,10 @@ info:
   author: MaStErCho
   metadata:
     max-request: 15
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)COMPALEX"})
     shodan-query: title:"COMPALEX"
     verified: true
   name: Compalex Panel - Detect
   reference:
   - http://compalex.net/
   severity: medium
-  tags: tech,php,compalex,sql,panel,discovery
+  tags: tech,php,compalex,sql

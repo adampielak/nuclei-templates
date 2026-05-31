@@ -1,59 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - simple-staff-list
+  - dsl:
+    - compare_versions(version, '<= 2.2.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/simple-staff-list/readme.txt'
+  redirects: true
 id: simple-staff-list-8a53bc17af4fa5defb94d205bdc32b1e
-
 info:
-  name: >
-    Simple Staff List <= 2.2.4 - Missing Authorization via ajax_flush_rewrite_rules and staff_member_export
   author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ef8bf84-768f-4ef1-8037-4e51ccc20c83?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/simple-staff-list/"
+    fofa-query: wp-content/plugins/simple-staff-list/
     google-query: inurl:"/wp-content/plugins/simple-staff-list/"
     shodan-query: 'vuln:'
+  name: 'Simple Staff List <= 2.2.4 - Missing Authorization via ajax_flush_rewrite_rules
+    and staff_member_export
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ef8bf84-768f-4ef1-8037-4e51ccc20c83?source=api-scan
+  severity: high
   tags: cve,wordpress,wp-plugin,simple-staff-list,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/simple-staff-list/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "simple-staff-list"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.2.4')

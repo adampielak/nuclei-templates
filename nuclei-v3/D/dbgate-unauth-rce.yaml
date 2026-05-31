@@ -23,20 +23,16 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cwe-id:
-    - CWE-78
-    - CWE-94
   description: 'DbGate Web Client Management is suspectible to an unauthenticated
     remote code execution vulnerability.
 
     '
   metadata:
     max-request: 1
-    runzero-review: REJECT/2025-11-07/uses interactsh
     shodan-query: http.favicon.hash:1198579728
   name: DbGate Web Client - Unauthenticated Remote Command Execution
   reference:
   - https://github.com/dbgate/dbgate
   - https://dbgate.org/docs/env-variables.html
   severity: critical
-  tags: dbgate,electron,http,oast,oss,rce,vuln
+  tags: http,rce,oast,electron,dbgate,oss

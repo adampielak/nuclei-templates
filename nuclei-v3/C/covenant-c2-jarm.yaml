@@ -13,7 +13,7 @@ info:
   - https://github.com/cedowens/C2-JARM
   - https://twitter.com/MichalKoczwara/status/1548685058403360770
   severity: info
-  tags: jarm,network,c2,ir,osint,cti,covenant,tcp,vuln
+  tags: jarm,network,c2,ir,osint,cti,covenant
 tcp:
 - host:
   - '{{Hostname}}'

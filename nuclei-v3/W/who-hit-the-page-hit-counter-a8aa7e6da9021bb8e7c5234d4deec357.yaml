@@ -1,59 +1,50 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - who-hit-the-page-hit-counter
+  - dsl:
+    - compare_versions(version, '<= 1.4.14.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/who-hit-the-page-hit-counter/readme.txt'
+  redirects: true
 id: who-hit-the-page-hit-counter-a8aa7e6da9021bb8e7c5234d4deec357
-
 info:
-  name: >
-    Who Hit The Page – Hit Counter <= 1.4.14.3 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/714d7811-0425-4833-a7b2-a408799181e4?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/who-hit-the-page-hit-counter/"
+    fofa-query: wp-content/plugins/who-hit-the-page-hit-counter/
     google-query: inurl:"/wp-content/plugins/who-hit-the-page-hit-counter/"
     shodan-query: 'vuln:'
+  name: "Who Hit The Page \u2013 Hit Counter <= 1.4.14.3 - Reflected Cross-Site Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/714d7811-0425-4833-a7b2-a408799181e4?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-plugin,who-hit-the-page-hit-counter,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/who-hit-the-page-hit-counter/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "who-hit-the-page-hit-counter"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.4.14.3')

@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - web3-authentication
+  - dsl:
+    - compare_versions(version, '<= 2.8.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/web3-authentication/readme.txt'
+  redirects: true
 id: web3-authentication-1e11e30ee0e1d20c48c7c5d6db4be9a6
-
 info:
-  name: >
-    Web3 <= 2.8.0 - Authentication Bypass
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/079d60c1-a15a-4d3e-b295-8c1e024b74ef?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/web3-authentication/"
+    fofa-query: wp-content/plugins/web3-authentication/
     google-query: inurl:"/wp-content/plugins/web3-authentication/"
     shodan-query: 'vuln:'
+  name: 'Web3 <= 2.8.0 - Authentication Bypass
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/079d60c1-a15a-4d3e-b295-8c1e024b74ef?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-plugin,web3-authentication,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/web3-authentication/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "web3-authentication"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.8.0')

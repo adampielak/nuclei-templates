@@ -16,7 +16,7 @@ info:
   - https://www.acunetix.com/vulnerabilities/network/vulnerability/bgp-detection/
   - https://www.tenable.com/plugins/nessus/11907
   severity: info
-  tags: network,bgp,detect,detection,tcp,discovery
+  tags: network,bgp,detect
 tcp:
 - host:
   - '{{Hostname}}'

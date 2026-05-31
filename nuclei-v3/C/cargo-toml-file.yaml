@@ -16,16 +16,12 @@ http:
 id: cargo-toml-file
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:rust-lang:cargo:*:*:*:*:rust:*:*:*
   metadata:
     max-request: 1
-    product: cargo
     shodan-query: html:"Cargo.toml"
-    vendor: rust-lang
     verified: true
   name: Cargo TOML File Disclosure
   reference:
   - https://doc.rust-lang.org/cargo/reference/manifest.html
   severity: info
-  tags: exposure,files,cargo,vuln
+  tags: exposure,files,cargo

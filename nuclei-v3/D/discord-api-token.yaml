@@ -16,4 +16,4 @@ info:
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/discord-api-token.yaml
   - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/discord-api-token.go
   severity: info
-  tags: file,keys,discord,token
+  tags: discord,file,token

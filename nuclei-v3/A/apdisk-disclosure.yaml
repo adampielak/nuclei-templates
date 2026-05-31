@@ -27,4 +27,4 @@ info:
   reference:
   - https://discussions.apple.com/thread/250354761
   severity: low
-  tags: exposure,files,apdisk,vuln
+  tags: exposure,files,apdisk

@@ -14,17 +14,13 @@ http:
 id: clipbucket-installer
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:clip-bucket:clipbucket:*:*:*:*:*:*:*:*
   description: ClipBucket is susceptible to the Installation page exposure due to
     misconfiguration.
   metadata:
     fofa-query: icon_hash="538583492"
     max-request: 1
-    product: clipbucket
     shodan-query: http.favicon.hash:538583492
-    vendor: clip-bucket
     verified: true
   name: ClipBucket Installer - Exposure
   severity: high
-  tags: misconfig,clipbucket,install,exposure,vuln
+  tags: misconfig,clipbucket,install,exposure

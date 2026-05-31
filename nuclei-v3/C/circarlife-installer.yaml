@@ -22,7 +22,6 @@ id: circarlife-installer
 info:
   author: geeknik
   classification:
-    cpe: cpe:2.3:h:circontrol:circarlife:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
     cvss-score: 9.4
     cwe-id: CWE-284
@@ -30,12 +29,10 @@ info:
     electric vehicle charging station
   metadata:
     max-request: 1
-    product: circarlife
     shodan-query: title:"- setup" html:"Modem setup"
-    vendor: circontrol
     verified: true
   name: CirCarLife - Installer
   reference:
   - https://circontrol.com/
   severity: critical
-  tags: circarlife,circontrol,exposure,installer,misconfig,panel,scada,setup,vuln
+  tags: scada,circontrol,circarlife,setup,exposure,panel,installer

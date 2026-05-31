@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - echelon
+  - dsl:
+    - compare_versions(version, '<= *')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/echelon/style.css'
+  redirects: true
 id: echelon-8e06df25f0b1c76fe214de260c04a3a8
-
 info:
-  name: >
-    Echelon (All Versions) -  Arbitrary File Upload
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ca7b2ab-bc01-4fd7-9cee-7cdc5a62177d?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/echelon/"
+    fofa-query: wp-content/themes/echelon/
     google-query: inurl:"/wp-content/themes/echelon/"
     shodan-query: 'vuln:'
+  name: 'Echelon (All Versions) -  Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ca7b2ab-bc01-4fd7-9cee-7cdc5a62177d?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-theme,echelon,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/echelon/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "echelon"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= *')

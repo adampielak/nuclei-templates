@@ -1,18 +1,18 @@
 id: activemq-openwire-transport-detect
 info:
-  author: pussycat0x,ret2src
+  author: pussycat0x
   description: 'OpenWire is the native protocol that Apache ActiveMQ uses. It is designed
     for performance and size on the wire - sacrificing some ease of implementation
     with higher performance and reduced network bandwidth as a priority.
 
     '
   metadata:
-    max-request: 1
+    max-request: 2
     shodan-query: product:"ActiveMQ OpenWire transport"
     verified: true
   name: ActiveMQ OpenWire Transport Detection
   severity: info
-  tags: network,activemq,detect,openwire,detection,tcp,discovery
+  tags: network,activemq
 tcp:
 - extractors:
   - regex:
@@ -20,6 +20,7 @@ tcp:
     type: regex
   host:
   - '{{Hostname}}'
+  - '{{Host}}:61616'
   inputs:
   - data: VERSION
   matchers:
@@ -27,4 +28,3 @@ tcp:
     words:
     - ActiveMQ
   matchers-condition: and
-  port: 61616,6835

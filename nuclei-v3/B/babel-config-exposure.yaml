@@ -17,19 +17,16 @@ id: babel-config-exposure
 info:
   author: DhiyaneshDK
   classification:
-    cpe: cpe:2.3:a:pocoo:babel:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Babel configuration information was detected.
   metadata:
     max-request: 1
-    product: babel
     shodan-query: html:"babel.config.js"
-    vendor: pocoo
     verified: true
   name: Babel Configuration - Detect
   reference:
   - https://babeljs.io/docs/en/configuration
   severity: info
-  tags: config,exposure,file,vuln
+  tags: exposure,config,file

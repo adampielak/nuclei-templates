@@ -21,17 +21,14 @@ id: acunetix-login
 info:
   author: tess
   classification:
-    cpe: cpe:2.3:a:acunetix:web_vulnerability_scanner:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Acunetix login panel was detected.
   metadata:
     max-request: 1
-    product: web_vulnerability_scanner
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Acunetix"})
     shodan-query: title:"Acunetix"
-    vendor: acunetix
     verified: true
   name: Acunetix Login Panel - Detect
   severity: info
-  tags: acunetix,discovery,panel
+  tags: panel,acunetix

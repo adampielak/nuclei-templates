@@ -16,23 +16,11 @@ http:
 id: cloudpanel-login
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:mgt-commerce:cloudpanel:*:*:*:*:*:*:*:*
   metadata:
-    fofa-query:
-    - icon_hash="151132309"
-    - title="cloudpanel"
-    google-query: intitle:"cloudpanel"
+    fofa-query: icon_hash="151132309"
     max-request: 1
-    product: cloudpanel
-    runzero-match: service["favicon.ico.image.mmh3"] == "151132309" || any(each(service["html.titles"]),
-      {# matches "(?i)cloudpanel"})
-    shodan-query:
-    - http.favicon.hash:151132309
-    - http.title:"cloudpanel"
-    - http.favicon.hash:"151132309"
-    vendor: mgt-commerce
+    shodan-query: http.favicon.hash:151132309
     verified: true
   name: CloudPanel Login - Detect
   severity: info
-  tags: cloudpanel,detect,discovery,login,mgt-commerce,panel
+  tags: panel,login,cloudpanel,detect

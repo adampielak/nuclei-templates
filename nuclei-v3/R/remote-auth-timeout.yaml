@@ -1,23 +1,24 @@
+file:
+- extensions:
+  - conf
+  matchers:
+  - negative: true
+    type: word
+    words:
+    - set remoteauthtimeout
+  - condition: or
+    type: word
+    words:
+    - config system
+    - config router
+    - config firewall
+  matchers-condition: and
 id: remote-auth-timeout
 info:
-  name: Remote Authentication timeout not set
   author: pussycat0x
-  severity: info
-  description: Lack of Inactivity Timeout gives the unauthorized user to act within that threshold if the administrator is away from the computer.
+  description: Lack of Inactivity Timeout gives the unauthorized user to act within
+    that threshold if the administrator is away from the computer.
+  name: Remote Authentication timeout not set
   reference: https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
+  severity: info
   tags: fortigate,config,audit,firewall
-file:
-  - extensions:
-      - conf
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "set remoteauthtimeout"
-        negative: true
-      - type: word
-        words:
-          - "config system"
-          - "config router"
-          - "config firewall"
-        condition: or

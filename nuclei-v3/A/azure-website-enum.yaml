@@ -26,7 +26,7 @@ info:
     verified: true
   name: Azure Websites - Cloud Enumeration
   severity: info
-  tags: cloud,enum,azure,discovery
+  tags: cloud,enum,azure
 self-contained: true
 variables:
   BaseDNS: azurewebsites.net

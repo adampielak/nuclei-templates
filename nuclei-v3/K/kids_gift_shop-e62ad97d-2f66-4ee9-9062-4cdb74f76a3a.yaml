@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - kids-gift-shop
+  - dsl:
+    - compare_versions(version, '<= 0.5.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/kids-gift-shop/style.css'
+  redirects: true
+id: kids_gift_shop-e62ad97d-2f66-4ee9-9062-4cdb74f76a3a
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/kids-gift-shop/
+    google-query: inurl:"/wp-content/themes/kids-gift-shop/"
+    shodan-query: http.html:"wp-content/themes/kids-gift-shop/"
+  name: 'Kids Gift Shop <= 0.5.4 - Authenticated (Subscriber+) Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e62ad97d-2f66-4ee9-9062-4cdb74f76a3a?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-theme,kids-gift-shop,low,candidate

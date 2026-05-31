@@ -1,17 +1,12 @@
 http:
 - matchers:
-  - condition: or
-    part: body
-    type: word
+  - type: word
     words:
     - <title>CrushFTP WebInterface</title>
-    - <title>CrushFTP - Login</title>
-    - src="/WebInterface/Resources/js/crushftp.customize.js"
-  - part: header
-    type: word
-    words:
-    - 'Server: CrushFTP HTTP Server'
-  matchers-condition: or
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
   method: GET
   path:
   - '{{BaseURL}}/WebInterface/login.html'
@@ -19,21 +14,14 @@ id: crushftp-login
 info:
   author: dhiyaneshDK
   classification:
-    cpe: cpe:2.3:a:crushftp:crushftp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: CrushFTP WebInterface login panel was detected.
   metadata:
-    fofa-query: body="crushftp"
     max-request: 1
-    product: crushftp
-    runzero-match: service["http.body"] matches "(?i)crushftp" || any(each(service["favicon.ico.image.mmh3"]),
-      {# == "-1022206565"})
-    shodan-query: http.html:"crushftp"
-    vendor: crushftp
-    verified: true
-  name: CrushFTP WebInterface Panel - Detect
+  name: CrushFTP WebInterface Login Panel - Detect
   reference:
   - https://www.exploit-db.com/ghdb/6591
   severity: info
-  tags: panel,edb,crushftp,detect,discovery
+  tags: panel,edb

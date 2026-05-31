@@ -21,14 +21,11 @@ info:
 
     '
   metadata:
-    fofa-query: body="corebos"
     max-request: 1
-    product: corebos
     shodan-query: http.html:"corebos"
-    vendor: corebos
     verified: true
   name: CoreBos - .htaccess File Exposure
   reference:
   - https://huntr.dev/bounties/5b0fe6e3-4ca1-44ae-8875-d7e6c065432e/
   severity: info
-  tags: exposure,corebos,huntr,misconfig,vuln
+  tags: exposure,corebos,huntr,misconfig

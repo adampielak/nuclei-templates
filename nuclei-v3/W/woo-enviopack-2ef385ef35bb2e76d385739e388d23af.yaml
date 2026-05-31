@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - woo-enviopack
+  - dsl:
+    - compare_versions(version, '<= 1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/woo-enviopack/readme.txt'
+  redirects: true
 id: woo-enviopack-2ef385ef35bb2e76d385739e388d23af
-
 info:
-  name: >
-    WooCommerce EnvioPack <= 1.2 Reflected Cross-Site Scripting
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/da81c849-fc85-4794-a79f-fcc3ef6a3bbc?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/woo-enviopack/"
+    fofa-query: wp-content/plugins/woo-enviopack/
     google-query: inurl:"/wp-content/plugins/woo-enviopack/"
     shodan-query: 'vuln:'
+  name: 'WooCommerce EnvioPack <= 1.2 Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/da81c849-fc85-4794-a79f-fcc3ef6a3bbc?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-plugin,woo-enviopack,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/woo-enviopack/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "woo-enviopack"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.2')

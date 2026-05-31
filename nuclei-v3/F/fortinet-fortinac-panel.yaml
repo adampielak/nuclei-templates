@@ -1,42 +1,35 @@
+http:
+- extractors:
+  - part: body
+    regex:
+    - '"version":"([0-9.]+)"'
+    type: regex
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - FortiNAC
+    - '"product":'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/WelcomeActions.jsp?action=ajaxGetWelcomeViewInfo'
 id: fortinet-fortinac-panel
-
 info:
-  name: Fortinet FortiNAC Login Panel - Detect
   author: johnk3r
-  severity: info
-  description: Fortinet FortiNAC login panel was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
+  description: Fortinet FortiNAC login panel was detected.
   metadata:
     max-request: 1
-    verified: true
     shodan-query: http.title:"Fortinac"
+    verified: true
+  name: Fortinet FortiNAC Login Panel - Detect
+  severity: info
   tags: panel,fortinet,fortinac,login
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/WelcomeActions.jsp?action=ajaxGetWelcomeViewInfo'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'FortiNAC'
-          - '"product":'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - '"version":"([0-9.]+)"'
-
-# Enhanced by md on 2023/04/25

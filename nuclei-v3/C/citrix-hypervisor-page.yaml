@@ -22,14 +22,10 @@ http:
 id: citrix-hypervisor-page
 info:
   author: pussycat0x
-  classification:
-    cpe: cpe:2.3:o:citrix:hypervisor:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: hypervisor
     shodan-query: http.title:"Welcome to Citrix Hypervisor"
-    vendor: citrix
     verified: true
   name: Citrix Hypervisor Page Detection
   severity: info
-  tags: tech,citrix,default-page,discovery
+  tags: tech,citrix,default-page

@@ -13,8 +13,6 @@ http:
 id: authelia-panel
 info:
   author: rxerium
-  classification:
-    cpe: cpe:2.3:a:authelia:authelia:*:*:*:*:*:*:*:*
   description: 'Authelia is an open-source authentication and authorisation service
     providing two-factor authentication and single sign-on (SSO) for applications
     via a web portal.
@@ -22,14 +20,11 @@ info:
     '
   metadata:
     max-request: 1
-    product: authelia
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Login - Authelia"})
     shodan-query: title:"Login - Authelia"
-    vendor: authelia
     verified: true
   name: Authelia Panel - Detect
   reference:
   - https://github.com/authelia/authelia
   - https://www.authelia.com/
   severity: info
-  tags: login,panel,authelia,discovery
+  tags: login,panel,authelia

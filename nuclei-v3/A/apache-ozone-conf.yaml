@@ -32,4 +32,4 @@ info:
     vendor: apache
   name: Apache Ozone - Exposure
   severity: info
-  tags: tech,ozone,apache,detect,vuln
+  tags: tech,ozone,apache,detect

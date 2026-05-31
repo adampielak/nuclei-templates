@@ -21,4 +21,4 @@ info:
     verified: true
   name: Apple HttpServer Detect
   severity: info
-  tags: tech,apple,httpserver,discovery
+  tags: tech,apple,httpserver

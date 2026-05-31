@@ -17,9 +17,6 @@ http:
 id: aspcms-commentlist-sqli
 info:
   author: SleepingBag945
-  classification:
-    cwe-id:
-    - CWE-89
   description: 'An SQL injection vulnerability has been identified in the commentList.asp
     file of AspCMS. Exploiting this vulnerability, an attacker can illicitly acquire
     the administrator''s MD5 password.
@@ -33,4 +30,4 @@ info:
   reference:
   - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/cms/AspCMS/AspCMS%20commentList.asp%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   severity: high
-  tags: aspcms,sqli,unauth,vuln
+  tags: aspcms,sqli,unauth

@@ -28,9 +28,8 @@ info:
   metadata:
     fofa-query: "app=\"AVTECH-\u89C6\u9891\u76D1\u63A7\""
     max-request: 2
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)login\" product:\"Avtech"})
     shodan-query: title:"login" product:"Avtech"
     verified: true
   name: AVTECH Video Surveillance Product - Authentication Bypass
   severity: high
-  tags: exposure,avtech,auth-bypass,password,vuln
+  tags: exposure,avtech,auth-bypass,password

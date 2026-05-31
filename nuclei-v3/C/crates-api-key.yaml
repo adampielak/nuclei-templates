@@ -10,17 +10,13 @@ http:
 id: crates-api-key
 info:
   author: DhiyaneshDK
-  classification:
-    cwe-id:
-    - CWE-522
-    - CWE-540
   metadata:
     max-request: 1
     verified: true
   name: Crates.io API Key
   reference:
-  - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/crates.io.yml
+  - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/crates.io.yml
   - https://crates.io/data-access
   - https://github.com/rust-lang/crates.io/blob/master/src/util/token.rs
   severity: info
-  tags: crates,exposure,token,vuln
+  tags: crates,token,exposure

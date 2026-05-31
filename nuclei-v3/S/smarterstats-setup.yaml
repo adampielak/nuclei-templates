@@ -1,36 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - SmarterStats - SmarterStats
+    - Create System Administrator
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/Admin/frmWelcome.aspx'
 id: smarterstats-setup
-
 info:
-  name: SmarterStats Setup Exposure
   author: tess
-  severity: high
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Welcome to SmarterStats!"
+    verified: true
+  name: SmarterStats Setup Exposure
+  severity: high
   tags: misconfig,smarterstats,exposure
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/Admin/frmWelcome.aspx'
-
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "SmarterStats - SmarterStats"
-          - "Create System Administrator"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200

@@ -1,28 +1,24 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - device_info
+    - syslog
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/webui/device_info/device_info'
 id: loytec-device
-
 info:
-  name: Loytec Device Info Detection
   author: pussycat0x
-  severity: info
   metadata:
     max-request: 1
+    shodan-query: loytec
     verified: true
-    shodan-query: "loytec"
+  name: Loytec Device Info Detection
+  severity: info
   tags: iot,loytec
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/webui/device_info/device_info"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'device_info'
-          - 'syslog'
-        condition: and
-
-      - type: status
-        status:
-          - 200

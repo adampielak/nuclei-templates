@@ -20,7 +20,7 @@ info:
     verified: true
   name: Azure Virtual Machines - Cloud Enumeration
   severity: info
-  tags: cloud,cloud-enum,azure,fuzz,enum,dns,discovery
+  tags: cloud,cloud-enum,azure,brute-force,enum
 self-contained: true
 variables:
   BaseDNS: cloudapp.azure.com

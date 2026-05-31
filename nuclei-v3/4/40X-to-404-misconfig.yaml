@@ -1,5 +1,10 @@
 http:
 - attack: pitchfork
+  extractors:
+  - dsl:
+    - '"[HIT - FUZZ THIS] " + BaseURL + " | ffuf -u " + BaseURL + "/FUZZ -w bbFuzzing.txt
+      -ac -mc 200"'
+    type: dsl
   matchers:
   - condition: and
     dsl:
@@ -11,7 +16,6 @@ http:
   path:
   - '{{BaseURL}}'
   - '{{BaseURL}}/test'
-  stop-at-first-match: true
 id: 40X-to-404-misconfig
 info:
   author: reewardius

@@ -14,7 +14,7 @@ info:
     vendor: dionaea
   name: Dionaea SMB Honeypot - Detect
   severity: info
-  tags: dionaea,smb,honeypot,ir,cti,network,tcp,discovery
+  tags: dionaea,smb,honeypot,ir,cti,network
 tcp:
 - host:
   - '{{Hostname}}'

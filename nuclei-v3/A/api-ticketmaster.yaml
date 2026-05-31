@@ -1,27 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"id"'
+    - '"name"'
+    - '"type"'
+    - '"images"'
+  method: GET
+  path:
+  - https://app.ticketmaster.com/discovery/v2/events.json?apikey={{token}}
 id: api-ticketmaster
-
 info:
-  name: Ticket Master API Test
   author: 0xpugazh
-  severity: info
-  reference:
-    - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
   metadata:
     max-request: 1
     verified: true
+  name: Ticket Master API Test
+  reference:
+  - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+  severity: info
   tags: token-spray,ticketmaster
-
 self-contained: true
-http:
-  - method: GET
-    path:
-      - "https://app.ticketmaster.com/discovery/v2/events.json?apikey={{token}}"
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"id"'
-          - '"name"'
-          - '"type"'
-          - '"images"'
-        condition: and

@@ -1,59 +1,53 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ts-webfonts-for-conoha
+  - dsl:
+    - compare_versions(version, '<= 2.0.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/ts-webfonts-for-conoha/readme.txt'
+  redirects: true
 id: ts-webfonts-for-conoha-a3c1ad54e781d8c7bfbcbe242ff5de31
-
 info:
-  name: >
-    TypeSquare Webfonts for ConoHa <= 2.0.3 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: low
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/80e9aa1f-166f-47df-bc50-c7dd55c6e7cc?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/ts-webfonts-for-conoha/"
+    fofa-query: wp-content/plugins/ts-webfonts-for-conoha/
     google-query: inurl:"/wp-content/plugins/ts-webfonts-for-conoha/"
     shodan-query: 'vuln:'
+  name: 'TypeSquare Webfonts for ConoHa <= 2.0.3 - Authenticated (Administrator+)
+    Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/80e9aa1f-166f-47df-bc50-c7dd55c6e7cc?source=api-scan
+  severity: low
   tags: cve,wordpress,wp-plugin,ts-webfonts-for-conoha,low
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/ts-webfonts-for-conoha/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "ts-webfonts-for-conoha"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.0.3')

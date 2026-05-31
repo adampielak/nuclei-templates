@@ -1,0 +1,14 @@
+id: ssl-issuer
+info:
+  author: Lingtren
+  metadata:
+    max-request: 1
+  name: Detect SSL Certificate Issuer
+  severity: info
+  tags: ssl
+ssl:
+- address: '{{Host}}:{{Port}}'
+  extractors:
+  - json:
+    - ' .issuer_org[]'
+    type: json

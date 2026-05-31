@@ -1,0 +1,18 @@
+id: http-sts
+info:
+  author: Arqsz
+  description: Extract X-Frame-Options header if possible
+  name: HTTP X-Frame-Options extraction
+  severity: info
+  tags: misconfig,headers,remote,basic
+requests:
+- extractors:
+  - part: all_headers
+    regex:
+    - '(?i)X-Frame-Options: .*'
+    type: regex
+  host-redirects: true
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}'

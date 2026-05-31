@@ -24,4 +24,4 @@ info:
   - https://twitter.com/WhiteOakSec/status/1667197552461004800
   - https://www.whiteoaksecurity.com/blog/sony-bravia-remote-code-execution-disclosure/
   severity: medium
-  tags: misconfig,exposure,bravia,sony,vuln
+  tags: misconfig,exposure,bravia,sony

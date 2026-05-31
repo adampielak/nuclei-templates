@@ -23,4 +23,4 @@ info:
   - https://www.exploit-db.com/ghdb/6819
   - https://www.actiontec.com/dsl/
   severity: info
-  tags: panel,setup,edb,discovery
+  tags: panel,setup,edb

@@ -1,0 +1,34 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '[tool.black]'
+    - exclude =
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '[tool.poetry]'
+    - name =
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}/pyproject.toml'
+id: pyproject-toml
+info:
+  author: DhiyaneshDK
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  description: pyproject.toml configuration was detected.
+  metadata:
+    max-request: 1
+    shodan-query: html:"pyproject.toml"
+    verified: true
+  name: pyproject.toml Configuration - Detect
+  reference: https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/
+  severity: info
+  tags: exposure,pyproject,pip,devops,cicd

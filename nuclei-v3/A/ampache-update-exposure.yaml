@@ -21,15 +21,10 @@ http:
 id: ampache-update-exposure
 info:
   author: ritikchaddha
-  classification:
-    cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
-  description: Ampache update page is exposed.
   metadata:
     max-request: 1
-    product: ampache
     shodan-query: http.html:"Ampache Update"
-    vendor: ampache
     verified: true
   name: Ampache Update Page Exposure
   severity: low
-  tags: misconfig,ampache,exposure,vuln
+  tags: misconfig,ampache,exposure

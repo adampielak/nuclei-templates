@@ -18,14 +18,10 @@ http:
 id: dash-panel-detect
 info:
   author: tess
-  classification:
-    cpe: cpe:2.3:a:dash:dash_core:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: dash_core
     shodan-query: html:"DashRenderer"
-    vendor: dash
     verified: true
   name: Dash Panel Detect
   severity: info
-  tags: tech,dash,discovery
+  tags: tech,dash

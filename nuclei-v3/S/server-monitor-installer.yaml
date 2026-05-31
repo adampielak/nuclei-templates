@@ -1,35 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <title>SERVER MONITOR - Install</title>
+    - PHP Server Monitor - Install
+    - install.php?action=config
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install.php'
 id: server-monitor-installer
-
 info:
-  name: Server Monitor Installer
   author: tess
-  severity: high
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"SERVER MONITOR - Install"
+    verified: true
+  name: Server Monitor Installer
+  severity: high
   tags: misconfig,monitor,exposure,install
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/install.php'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>SERVER MONITOR - Install</title>"
-          - "PHP Server Monitor - Install"
-          - "install.php?action=config"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200

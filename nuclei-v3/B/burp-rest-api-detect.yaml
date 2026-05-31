@@ -24,4 +24,4 @@ info:
   reference:
   - https://portswigger.net/burp/documentation/enterprise/api-reference
   severity: info
-  tags: burp,tech,discovery
+  tags: burp,tech

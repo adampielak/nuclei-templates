@@ -14,16 +14,12 @@ http:
 id: casaos-detection
 info:
   author: pdteam
-  classification:
-    cpe: cpe:2.3:o:icewhale:casaos:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: body="/CasaOS-UI/public/index.html"
     max-request: 1
-    product: casaos
     shodan-query: http.html:"/CasaOS-UI/public/index.html"
-    vendor: icewhale
   name: CasaOS Detection
   reference:
   - https://github.com/IceWhaleTech/CasaOS
   severity: info
-  tags: casaos,tech,oss,discovery
+  tags: casaos,tech,oss

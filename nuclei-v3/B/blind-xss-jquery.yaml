@@ -18,4 +18,4 @@ info:
   author: reewardius
   name: blind-xss-jquery
   severity: high
-  tags: blind-xss,fuzzing-req-header,dast,full
+  tags: blind-xss,generic

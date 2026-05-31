@@ -22,11 +22,10 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: service["favicon.ico.image.mmh3"] == "1017650009"
     shodan-query: http.favicon.hash:1017650009
     verified: true
   name: Bynder Login Panel - Detect
   reference:
   - https://www.bynder.com/en/
   severity: info
-  tags: panel,bynder,login,detect,discovery
+  tags: panel,bynder,login,detect

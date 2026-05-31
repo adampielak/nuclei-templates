@@ -21,18 +21,14 @@ id: connectbox-panel
 info:
   author: fabaff
   classification:
-    cpe: cpe:2.3:o:upc:connect_box_eurodocsis_firmware:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: Connect Box login panel was detected.
   metadata:
     max-request: 1
-    product: connect_box_eurodocsis_firmware
-    shodan-query:
-    - NET-DK/1.0
-    - net-dk/1.0
-    vendor: upc
+    shodan-query: NET-DK/1.0
     verified: true
   name: Connect Box Login Panel - Detect
   severity: info
-  tags: panel,connectbox,iot,upc,discovery
+  tags: panel,connectbox,iot

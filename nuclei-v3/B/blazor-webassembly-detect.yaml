@@ -37,4 +37,4 @@ info:
   - https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
   - https://github.com/righettod/burp-piper-custom-scripts/issues/1
   severity: info
-  tags: blazor,webassembly,detect,discovery
+  tags: blazor,webassembly,detect

@@ -20,19 +20,15 @@ http:
 id: clickhouse-unauth-api
 info:
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:clickhouse:clickhouse:*:*:*:*:*:*:*:*
   description: Clickhouse API Database is exposed.
   metadata:
     fofa-query: X-ClickHouse-Summary
     max-request: 1
-    product: clickhouse
     shodan-query: X-ClickHouse-Summary
-    vendor: clickhouse
     verified: true
   name: ClickHouse API Database Interface - Improper Authorization
   reference:
   - https://github.com/luck-ying/Library-POC/blob/master/ClickHouse%E6%95%B0%E6%8D%AE%E5%BA%93/ClickHouse%E6%95%B0%E6%8D%AE%E5%BA%93%208123%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE.py
   - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/redteam/vulnerability/unauthorized/ClickHouse%208123%E7%AB%AF%E5%8F%A3.md?plain=1
   severity: high
-  tags: misconfig,clickhouse,unauth,disclosure,vuln
+  tags: clickhouse,unauth,disclosure

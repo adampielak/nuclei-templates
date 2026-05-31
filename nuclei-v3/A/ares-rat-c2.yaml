@@ -27,4 +27,4 @@ info:
   reference:
   - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   severity: info
-  tags: c2,ir,osint,ares,panel,rat,vuln
+  tags: c2,ir,osint,ares,panel,rat

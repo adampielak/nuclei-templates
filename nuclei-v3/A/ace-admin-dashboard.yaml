@@ -31,4 +31,4 @@ info:
     verified: true
   name: Ace Admin Dashboard - Detect
   severity: medium
-  tags: misconfig,exposure,aceadmin,discovery
+  tags: misconfig,exposure,aceadmin

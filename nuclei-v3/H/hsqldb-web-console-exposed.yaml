@@ -32,3 +32,16 @@ http:
           - "HSQL Database Engine"
           - "HyperSQL"
         condition: or
+
+    extractors:
+      - type: regex
+        part: body
+        name: hsqldb-version
+        regex:
+          - '(?i)HSQL(?:DB)?\s+(?:Database Engine|version)[^<\d]*([0-9]+\.[0-9]+(\.[0-9]+)?)'
+          - 'HyperSQL\s+(?:version|v)?\s*([0-9]+\.[0-9]+(\.[0-9]+)?)'
+        group: 1
+      - type: kval
+        part: header
+        kval:
+          - "Server"

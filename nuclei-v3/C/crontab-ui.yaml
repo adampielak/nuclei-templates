@@ -16,11 +16,10 @@ info:
   author: DhiyaneshDk
   metadata:
     max-request: 1
-    runzero-match: service["http.body"] matches "(?i)Crontab UI"
     shodan-query: html:"Crontab UI"
     verified: true
   name: Crontab UI - Dashboard Exposure
   reference:
   - https://www.facebook.com/photo/?fbid=629288492575007&set=a.467014098802448
   severity: high
-  tags: exposure,crontab,ui,panel,discovery
+  tags: exposure,crontab,ui,panel

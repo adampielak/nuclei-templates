@@ -27,14 +27,10 @@ http:
 id: 4D-detect
 info:
   author: righettod
-  classification:
-    cpe: cpe:2.3:a:4d:4d:*:*:*:*:*:*:*:*
   description: 4D technology was detected.
   metadata:
     max-request: 1
-    product: 4d
     shodan-query: http.html:"4DACTION/"
-    vendor: 4d
     verified: true
   name: 4D Detection
   reference:
@@ -42,4 +38,4 @@ info:
   - https://doc.4d.com/4Dv18/4D/18.4/URLs-and-Form-Actions.300-5232844.en.html
   - https://doc.4d.com/4Dv18/4D/18.4/Information-about-the-Web-Site.300-5232828.en.html
   severity: info
-  tags: 4D,detect,tech,discovery
+  tags: 4D,detect,tech

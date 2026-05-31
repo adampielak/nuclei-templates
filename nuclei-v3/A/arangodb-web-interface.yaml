@@ -13,25 +13,15 @@ http:
 id: arangodb-web-interface
 info:
   author: pussycat0x
-  classification:
-    cpe: cpe:2.3:a:arangodb:arangodb:*:*:*:*:*:*:*:*
   description: 'ArangoDB Web Interface was detected.
 
     '
   metadata:
-    fofa-query: title="arangodb web interface"
-    google-query: intitle:"arangodb web interface"
     max-request: 1
-    product: arangodb
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)arangodb web
-      interface"})
-    shodan-query:
-    - http.title:"ArangoDB Web Interface"
-    - http.title:"arangodb web interface"
-    vendor: arangodb
+    shodan-query: http.title:"ArangoDB Web Interface"
     verified: 'true'
   name: ArangoDB Web Interface - Detect
   reference:
   - https://www.arangodb.com/docs/stable/
   severity: info
-  tags: arangodb,discovery,login,panel
+  tags: panel,arangodb,login

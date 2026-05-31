@@ -45,7 +45,7 @@ info:
     cve-id: CVE-2021-44228
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
-    cwe-id: CWE-502,CWE-77
+    cwe-id: CWE-77
   description: 'Cisco BroadWorks is susceptible to Log4j JNDI remote code execution.
     Cisco BroadWorks is an enterprise-grade calling and collaboration platform delivering
     unmatched performance, security and scale.
@@ -54,12 +54,11 @@ info:
   metadata:
     fofa-query: Cisco BroadWorks
     max-request: 1
-    runzero-review: REJECT/2025-11-07/uses interactsh
   name: Cisco BroadWorks - Remote Code Execution (Apache Log4j)
   reference:
   - https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd
   severity: critical
-  tags: cisco,cve,cve2021,jndi,kev,log4j,oast,rce,vuln
+  tags: cve,cve2021,rce,jndi,log4j,cisco,oast,kev
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'

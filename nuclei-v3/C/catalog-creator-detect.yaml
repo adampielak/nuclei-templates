@@ -23,7 +23,7 @@ info:
   author: ritikchaddha
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
   description: CATALOGcreator Page login panel detected.
   metadata:
@@ -32,4 +32,4 @@ info:
     verified: true
   name: CATALOGcreator Page Login Panel - Detect
   severity: info
-  tags: tech,catalogcreater,panel,discovery
+  tags: tech,catalogcreater,panel

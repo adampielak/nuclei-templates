@@ -30,4 +30,4 @@ info:
   reference:
   - https://investors.celebrus.com/
   severity: info
-  tags: tech,celebrus,detect,discovery
+  tags: tech,celebrus,detect

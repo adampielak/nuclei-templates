@@ -22,4 +22,4 @@ info:
     verified: true
   name: Cube-105 - Exposed Installation
   severity: high
-  tags: misconfig,cube,cube105,install,vuln
+  tags: misconfig,cube,cube105,install

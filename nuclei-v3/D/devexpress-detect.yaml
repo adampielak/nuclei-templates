@@ -12,20 +12,9 @@ http:
 id: devexpress-detect
 info:
   author: CravateRouge
-  classification:
-    cpe: cpe:2.3:a:devexpress:devexpress_components:*:*:*:*:*:*:*:*
-  description: 'Detect DevExpress based on the existence of its HTTP handler for serving
-    images, scripts, and other resources to the client side.
-
-    '
   metadata:
     max-request: 1
-    product: devexpress_components
     shodan-query: html:"DXR.axd"
-    vendor: devexpress
-  name: DevExpress - Detect
-  reference:
-  - https://github.com/DevExpress/aspnet-security-bestpractices/blob/master/SecurityBestPractices.WebForms/README.md#53-information-exposure-through-source-code
-  - https://supportcenter.devexpress.com/ticket/details/q311748/dxr-axd-what-is-it-and-how-to-disable-it
+  name: DevExpress Detect
   severity: info
-  tags: devexpress,iis,microsoft,asp,tech,discovery
+  tags: devexpress,iis,microsoft,asp,tech

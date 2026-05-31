@@ -24,4 +24,4 @@ info:
     verified: true
   name: Businesso Installer Exposure
   severity: high
-  tags: misconfig,businesso,install,exposure,vuln
+  tags: misconfig,businesso,install,exposure

@@ -401,4 +401,4 @@ info:
   - https://www.defacer.net
   - https://www.radware.com/security/threat-advisories-and-attack-reports/hacktivism-unveiled-april-2023
   severity: info
-  tags: misc,defacement,spam,hacktivism,fuzz,miscellaneous,vuln
+  tags: misc,defacement,spam,hacktivism,brute-force

@@ -1,45 +1,38 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - "QuestDB \xB7 Console"
+    - Server rejected file due to unsupported file format.
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: questdb-console
-
 info:
-  name: QuestDB Console - Detect
   author: tess
-  severity: medium
-  description: QuestDB console was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
-  reference:
-    - https://questdb.io/docs/develop/web-console/
+  description: QuestDB console was detected.
   metadata:
     max-request: 1
+    shodan-query: "title:\"QuestDB \xB7 Console\""
     verified: true
-    shodan-query: title:"QuestDB · Console"
+  name: QuestDB Console - Detect
+  reference:
+  - https://questdb.io/docs/develop/web-console/
+  severity: medium
   tags: misconfig,questdb,exposure
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "QuestDB · Console"
-          - "Server rejected file due to unsupported file format."
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
-
-# Enhanced by cs on 2023/03/10

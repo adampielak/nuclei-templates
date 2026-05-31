@@ -20,4 +20,4 @@ info:
     verified: true
   name: Default Apache Miracle Linux Web Server Page
   severity: info
-  tags: tech,default-page,apache,miracle,discovery
+  tags: tech,default-page,apache,miracle

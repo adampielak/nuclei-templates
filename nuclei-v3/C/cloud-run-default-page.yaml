@@ -23,4 +23,4 @@ info:
   reference:
   - https://cloud.google.com/run/docs/overview/what-is-cloud-run
   severity: info
-  tags: tech,cloudrun,google,discovery
+  tags: tech,cloudrun,google

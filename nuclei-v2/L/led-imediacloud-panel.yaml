@@ -1,26 +1,22 @@
 id: led-imediacloud-panel
-
 info:
-  name: LEDiMediaCloud Panel Detect
   author: ritikchaddha
-  severity: info
   metadata:
-    verified: true
     shodan-query: http.html:"LEDiMediaCloud"
+    verified: true
+  name: LEDiMediaCloud Panel Detect
+  severity: info
   tags: panel,led,mediacloud
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'LEDiMediaCloud'
-
-      - type: status
-        status:
-          - 200
+- matchers:
+  - part: body
+    type: word
+    words:
+    - LEDiMediaCloud
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login'

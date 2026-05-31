@@ -18,4 +18,4 @@ info:
   author: MrW0l05zyn
   name: Android manifest backup enabled
   severity: low
-  tags: android,file
+  tags: file,android,manifest
