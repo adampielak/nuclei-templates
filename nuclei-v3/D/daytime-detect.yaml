@@ -15,7 +15,7 @@ info:
   - https://github.com/CiscoCXSecurity/udp-proto-scanner
   - https://www.rfc-editor.org/rfc/rfc867
   severity: info
-  tags: daytime,legacy,network,js,udp
+  tags: daytime,js,legacy,network,udp
 javascript:
 - args:
     Host: '{{Host}}'

@@ -22,6 +22,8 @@ info:
   metadata:
     max-request: 1
     product: chatbot-ui
+    runzero-review: REJECTED/2026-05-28/Name too generic and no unique characteristics
+      found to accurately detect this.
     shodan-query: http.title:"Chatbot UI"
     vendor: mckaywrigley
     verified: true
@@ -29,4 +31,4 @@ info:
   reference:
   - https://github.com/mckaywrigley/chatbot-ui
   severity: info
-  tags: panel,chatbot-ui,llm,ai,detect,discovery
+  tags: ai,chatbot-ui,detect,discovery,llm,panel

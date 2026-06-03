@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: Metaflow UI
+    runzero-match: any(each(service["html.titles"]), {# matches "^Metaflow UI"})
     shodan-query: http.title:"Metaflow UI"
     vendor: Netflix
     verified: true
@@ -40,4 +41,4 @@ info:
   - https://github.com/Netflix/metaflow-ui
   - https://metaflow.org
   severity: info
-  tags: panel,metaflow,netflix,mlops,ai,detect,discovery
+  tags: ai,detect,discovery,metaflow,mlops,netflix,panel

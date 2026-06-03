@@ -27,6 +27,7 @@ info:
   metadata:
     max-request: 1
     product: fronius-inverter
+    runzero-match: any(each(service["html.titles"]), {# matches "^Fronius Inverter"})
     shodan-query: http.title:"Fronius Inverter"
     vendor: Fronius
     verified: true
@@ -34,4 +35,4 @@ info:
   reference:
   - https://www.fronius.com/en/solar-energy/private-customers/products-solutions/solar-inverters
   severity: info
-  tags: panel,fronius,ics,scada,solar,discovery
+  tags: discovery,fronius,ics,panel,scada,solar

@@ -17,7 +17,7 @@ info:
   - https://hacktricks.wiki/en/network-services-pentesting/ipsec-ike-vpn-pentesting.html
   - https://www.iana.org/assignments/ikev2-parameters
   severity: info
-  tags: js,network,udp,ikev2,ipsec,vpn,ike,enum
+  tags: enum,ike,ikev2,ipsec,js,network,udp,vpn
 javascript:
 - args:
     Host: '{{Host}}'

@@ -60,4 +60,4 @@ info:
 
     '
   severity: medium
-  tags: laravel,sanctum,csrf,misconfig,cors
+  tags: cors,csrf,laravel,misconfig,sanctum

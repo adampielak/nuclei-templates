@@ -31,6 +31,8 @@ info:
   metadata:
     max-request: 1
     product: prostar-mppt
+    runzero-match: any(each(service["html.titles"]), {# matches "^Prostar MPPT - Live
+      Data"})
     shodan-query: http.title:"Prostar MPPT - Live Data"
     vendor: morningstar
     verified: true
@@ -38,4 +40,4 @@ info:
   reference:
   - https://www.morningstarcorp.com/products/prostar-mppt/
   severity: info
-  tags: tech,panel,morningstar,ics,solar,energy,scada,detect
+  tags: detect,energy,ics,morningstar,panel,scada,solar,tech

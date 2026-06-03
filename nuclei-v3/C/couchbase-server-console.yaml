@@ -26,8 +26,9 @@ info:
     '
   metadata:
     max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "^Couchbase Console"})
     shodan-query: html:"Couchbase Console"
     verified: true
   name: Couchbase Server Console - Detect
   severity: info
-  tags: panel,login,couchbase,console,detect
+  tags: console,couchbase,detect,login,panel

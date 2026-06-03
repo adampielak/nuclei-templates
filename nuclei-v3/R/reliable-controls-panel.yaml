@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: mach-system
+    runzero-match: any(each(service["html.titles"]), {# matches "Reliable Controls"})
     shodan-query: http.title:"Reliable Controls"
     vendor: Reliable Controls
     verified: true
@@ -39,4 +40,4 @@ info:
   reference:
   - https://reliablecontrols.com/products/mach-prowebsys/
   severity: info
-  tags: panel,ics,bms,bacnet,building-automation,reliable-controls,mach-pro,discovery
+  tags: bacnet,bms,building-automation,discovery,ics,mach-pro,panel,reliable-controls

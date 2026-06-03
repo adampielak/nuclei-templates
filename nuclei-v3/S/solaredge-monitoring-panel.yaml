@@ -24,6 +24,7 @@ info:
   metadata:
     max-request: 1
     product: solaredge-telematics
+    runzero-match: any(each(service["html.titles"]), {# matches "^SolarEdge"})
     shodan-query: http.title:"SolarEdge"
     vendor: SolarEdge
     verified: true
@@ -31,4 +32,4 @@ info:
   reference:
   - https://www.solaredge.com/
   severity: info
-  tags: panel,solaredge,ics,solar,discovery
+  tags: discovery,ics,panel,solar,solaredge

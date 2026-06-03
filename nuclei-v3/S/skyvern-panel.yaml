@@ -25,6 +25,7 @@ info:
   metadata:
     max-request: 1
     product: skyvern
+    runzero-match: any(each(service["html.titles"]), {# matches "Skyvern"})
     shodan-query: http.title:"Skyvern"
     vendor: skyvern-ai
     verified: true
@@ -33,4 +34,4 @@ info:
   - https://github.com/Skyvern-AI/skyvern
   - https://skyvern.com
   severity: info
-  tags: panel,skyvern,llm,ai,agents,automation,detect,discovery
+  tags: agents,ai,automation,detect,discovery,llm,panel,skyvern

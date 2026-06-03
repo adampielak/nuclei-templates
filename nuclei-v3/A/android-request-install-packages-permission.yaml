@@ -18,4 +18,4 @@ info:
   reference:
   - https://developer.android.com/reference/android/Manifest.permission#REQUEST_INSTALL_PACKAGES
   severity: medium
-  tags: file,android,permission,manifest
+  tags: android,file,manifest,permission

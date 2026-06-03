@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - zem-stl-viewer
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/zem-stl-viewer/readme.txt'
+  redirects: true
+id: zem_stl_viewer-07e415f9-42f1-4c80-a023-38f460f634d3
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/zem-stl-viewer/
+    google-query: inurl:"/wp-content/plugins/zem-stl-viewer/"
+    shodan-query: http.html:"wp-content/plugins/zem-stl-viewer/"
+  name: 'ZeM STL <= 1.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    via Shortcode Attributes
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/07e415f9-42f1-4c80-a023-38f460f634d3?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,zem-stl-viewer,low,candidate

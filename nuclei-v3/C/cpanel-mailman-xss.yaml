@@ -32,4 +32,4 @@ info:
   reference:
   - https://blog.voorivex.team/two-cpanel-zero-day-vulnerabilities
   severity: medium
-  tags: xss,cpanel,mailman,vuln
+  tags: cpanel,mailman,vuln,xss

@@ -31,4 +31,4 @@ info:
     verified: true
   name: librechat - Config Exposure
   severity: low
-  tags: librechat,config,exposure
+  tags: config,exposure,librechat

@@ -36,4 +36,4 @@ info:
 
     '
   severity: medium
-  tags: laravel,debugbar,misconfig,exposure
+  tags: debugbar,exposure,laravel,misconfig

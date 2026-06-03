@@ -31,6 +31,7 @@ info:
   metadata:
     max-request: 1
     product: proficy-webspace
+    runzero-match: service["http.body"] matches "(?i)Proficy WebSpace"
     shodan-query: http.title:"Proficy WebSpace"
     vendor: GE
     verified: true
@@ -38,4 +39,4 @@ info:
   reference:
   - https://www.ge.com/digital/applications/hmi-scada/proficy-webspace
   severity: info
-  tags: panel,scada,hmi,ics,ge,proficy,webspace,ifix,cimplicity,discovery
+  tags: cimplicity,discovery,ge,hmi,ics,ifix,panel,proficy,scada,webspace

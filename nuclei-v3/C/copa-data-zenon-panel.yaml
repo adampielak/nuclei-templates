@@ -28,6 +28,7 @@ info:
   metadata:
     max-request: 1
     product: zenon
+    runzero-match: service["http.body"] matches "(?i)zenon Web Server"
     shodan-query: 'http.title:"COPA-DATA :: zenon"'
     vendor: COPA-DATA
     verified: true
@@ -36,4 +37,4 @@ info:
   - https://www.copadata.com/en/products/zenon-software-platform/zenon-supervisor/
   - https://www.copadata.com/en/support-services/knowledge-base-documents/zenon-web-server/
   severity: info
-  tags: panel,scada,hmi,ics,copa-data,zenon,discovery
+  tags: copa-data,discovery,hmi,ics,panel,scada,zenon

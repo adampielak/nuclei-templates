@@ -30,6 +30,7 @@ info:
   metadata:
     max-request: 1
     product: solar-log
+    runzero-match: any(each(service["html.titles"]), {# matches "Solar-Log"})
     shodan-query: http.title:"Solar-Log"
     vendor: Solar-Log
     verified: true
@@ -37,4 +38,4 @@ info:
   reference:
   - https://www.solar-log.com/
   severity: info
-  tags: panel,solar-log,solar,energy,ics,monitoring,ot,discovery
+  tags: discovery,energy,ics,monitoring,ot,panel,solar,solar-log

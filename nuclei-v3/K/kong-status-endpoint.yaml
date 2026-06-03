@@ -65,4 +65,4 @@ info:
   reference:
   - https://docs.konghq.com/gateway/latest/production/monitoring/status-api/
   severity: info
-  tags: kong,misconfig,exposure,api-gateway,konghq
+  tags: api-gateway,exposure,kong,konghq,misconfig

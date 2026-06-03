@@ -26,6 +26,7 @@ info:
   metadata:
     max-request: 2
     product: tac-vista
+    runzero-match: any(each(service["html.titles"]), {# matches "TAC Vista Webstation"})
     shodan-query: http.title:"TAC Vista"
     vendor: Schneider Electric
     verified: true
@@ -33,4 +34,4 @@ info:
   reference:
   - https://www.se.com/
   severity: info
-  tags: panel,schneider,tac,vista,ics,bms,discovery
+  tags: bms,discovery,ics,panel,schneider,tac,vista

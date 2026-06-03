@@ -46,4 +46,4 @@ info:
 
     '
   severity: medium
-  tags: laravel,ignition,logs,exposure
+  tags: exposure,ignition,laravel,logs

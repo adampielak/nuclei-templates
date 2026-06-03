@@ -27,6 +27,7 @@ info:
   metadata:
     max-request: 1
     product: phoenix
+    runzero-match: service["http.body"] matches `(?i)Arize Phoenix`
     shodan-query: http.title:"Phoenix" port:6006 http.html:"arize"
     vendor: Arize-ai
     verified: true
@@ -35,4 +36,4 @@ info:
   - https://github.com/Arize-ai/phoenix
   - https://phoenix.arize.com
   severity: info
-  tags: panel,arize,phoenix,llm,ai,observability,detect,discovery
+  tags: ai,arize,detect,discovery,llm,observability,panel,phoenix

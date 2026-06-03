@@ -24,6 +24,8 @@ info:
   metadata:
     max-request: 1
     product: fastgpt
+    runzero-match: "service[\"http.body\"] matches \"(?i)FastGPT \u662F\u4E00\u4E2A\
+      \""
     shodan-query: http.title:"FastGPT"
     vendor: labring
     verified: true
@@ -32,4 +34,4 @@ info:
   - https://github.com/labring/FastGPT
   - https://fastgpt.in
   severity: info
-  tags: panel,fastgpt,llm,ai,rag,detect,discovery
+  tags: ai,detect,discovery,fastgpt,llm,panel,rag

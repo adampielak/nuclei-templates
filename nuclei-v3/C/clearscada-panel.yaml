@@ -30,6 +30,7 @@ info:
   metadata:
     max-request: 1
     product: clearscada
+    runzero-match: service["http.body"] matches `(?:ClearSCADA|Geo SCADA Expert) Home`
     shodan-query: http.title:"ClearSCADA"
     vendor: Schneider Electric
     verified: true
@@ -38,4 +39,4 @@ info:
   - https://www.se.com/ww/en/work/products/product-launch/scada/
   - https://www.se.com/us/en/faqs/FA298792/
   severity: info
-  tags: panel,ics,scada,schneider,clearscada,discovery
+  tags: clearscada,discovery,ics,panel,scada,schneider

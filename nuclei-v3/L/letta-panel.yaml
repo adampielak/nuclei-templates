@@ -23,6 +23,7 @@ info:
   metadata:
     max-request: 1
     product: Letta
+    runzero-match: any(each(service["html.titles"]), {# matches "^Letta$"})
     shodan-query: http.title:"Letta"
     vendor: Letta AI
     verified: true
@@ -31,4 +32,4 @@ info:
   - https://github.com/letta-ai/letta
   - https://www.letta.com
   severity: info
-  tags: panel,letta,memgpt,llm,ai,detect,discovery
+  tags: ai,detect,discovery,letta,llm,memgpt,panel

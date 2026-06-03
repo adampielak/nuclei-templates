@@ -24,6 +24,7 @@ info:
   metadata:
     max-request: 1
     product: aveva-intouch-access-anywhere
+    runzero-match: service["http.body"] matches "(?i)InTouch Access Anywhere Server"
     shodan-query: http.html:"InTouch Access Anywhere"
     vendor: AVEVA
     verified: true
@@ -32,4 +33,4 @@ info:
   - https://www.aveva.com/en/products/intouch-hmi/
   - https://www.aveva.com/en/products/intouch-access-anywhere/
   severity: info
-  tags: panel,ics,scada,aveva,intouch,hmi,discovery
+  tags: aveva,discovery,hmi,ics,intouch,panel,scada

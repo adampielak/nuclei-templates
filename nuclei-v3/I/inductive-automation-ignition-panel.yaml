@@ -33,6 +33,7 @@ info:
   metadata:
     max-request: 1
     product: ignition
+    runzero-match: any(each(service["html.titles"]), {# matches "^Ignition Gateway"})
     shodan-query: http.title:"Ignition Gateway"
     vendor: Inductive Automation
     verified: true
@@ -41,4 +42,4 @@ info:
   - https://inductiveautomation.com/ignition/
   - https://docs.inductiveautomation.com/docs/8.1/ignition-gateway-interface
   severity: info
-  tags: panel,scada,hmi,ics,ignition,inductive-automation,opc-ua,discovery
+  tags: discovery,hmi,ics,ignition,inductive-automation,opc-ua,panel,scada

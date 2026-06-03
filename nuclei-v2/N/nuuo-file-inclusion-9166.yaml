@@ -5,12 +5,10 @@ info:
   severity: high
   reference: https://www.exploit-db.com/exploits/40211
   tags: nuuo,lfi
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/css_parser.php?css=css_parser.php"
-
     matchers-condition: and
     matchers:
       - type: word

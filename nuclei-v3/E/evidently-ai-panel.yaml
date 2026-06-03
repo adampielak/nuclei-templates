@@ -23,6 +23,7 @@ info:
   metadata:
     max-request: 1
     product: evidently
+    runzero-match: any(each(service["html.titles"]), {# matches "Evidently"})
     shodan-query: http.title:"Evidently"
     vendor: evidently-ai
     verified: true
@@ -31,4 +32,4 @@ info:
   - https://github.com/evidentlyai/evidently
   - https://www.evidentlyai.com
   severity: info
-  tags: panel,evidently,ai,ml,monitoring,observability,detect,discovery
+  tags: ai,detect,discovery,evidently,ml,monitoring,observability,panel

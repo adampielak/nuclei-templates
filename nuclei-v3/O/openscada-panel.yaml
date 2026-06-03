@@ -29,6 +29,7 @@ info:
   metadata:
     max-request: 1
     product: openscada
+    runzero-match: any(each(service["html.titles"]), {# matches "^OpenSCADA"})
     shodan-query: http.title:"OpenSCADA" port:10002
     vendor: OpenSCADA
     verified: true
@@ -37,4 +38,4 @@ info:
   - https://oscada.org
   - https://sourceforge.net/projects/oscada/
   severity: info
-  tags: panel,ics,scada,openscada,discovery
+  tags: discovery,ics,openscada,panel,scada

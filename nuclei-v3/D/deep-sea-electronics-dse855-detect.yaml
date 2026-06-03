@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: dse855
+    runzero-match: any(each(service["html.titles"]), {# matches "DSE 855"})
     shodan-query: http.title:"DSE 855"
     vendor: deep-sea-electronics
     verified: true
@@ -39,4 +40,4 @@ info:
   reference:
   - https://www.deepseaelectronics.com/products/auto-mains-failure-modules/855.html
   severity: info
-  tags: tech,panel,dse,ics,generator,energy,scada,detect
+  tags: detect,dse,energy,generator,ics,panel,scada,tech

@@ -25,6 +25,7 @@ info:
   metadata:
     max-request: 1
     product: lmstudio
+    runzero-match: any(each(service["html.titles"]), {# matches "LM Studio Chat"})
     shodan-query: http.title:"LM Studio Chat"
     vendor: lmstudio
     verified: true
@@ -32,4 +33,4 @@ info:
   reference:
   - https://lmstudio.ai
   severity: info
-  tags: panel,lmstudio,llm,ai,detect,discovery
+  tags: ai,detect,discovery,llm,lmstudio,panel

@@ -22,8 +22,9 @@ info:
     '
   metadata:
     max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "^nMon"})
     shodan-query: title:"nMon"
     verified: true
   name: nMon Panel - Detect
   severity: info
-  tags: panel,login,nmon,detect
+  tags: detect,login,nmon,panel

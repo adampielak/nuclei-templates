@@ -27,6 +27,7 @@ info:
   metadata:
     max-request: 1
     product: shinelink
+    runzero-match: any(each(service["html.titles"]), {# matches "Growatt Shinelink"})
     shodan-query: http.title:"Growatt Shinelink"
     vendor: Growatt
     verified: true
@@ -34,4 +35,4 @@ info:
   reference:
   - https://www.ginverter.com/en/product/monitor/shinelink-x.html
   severity: info
-  tags: panel,growatt,ics,scada,solar,discovery
+  tags: discovery,growatt,ics,panel,scada,solar

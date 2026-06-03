@@ -27,6 +27,7 @@ info:
   metadata:
     max-request: 1
     product: fronius-datalogger-web
+    runzero-match: service["http.body"] matches `(?i)Fronius Datalogger Web`
     shodan-query: http.title:"Fronius Datalogger Web"
     vendor: Fronius
     verified: true
@@ -34,4 +35,4 @@ info:
   reference:
   - https://www.fronius.com/en/solar-energy/installers-partners/technical-data/all-products/system-monitoring/hardware/fronius-datamanager-2-0
   severity: info
-  tags: panel,fronius,ics,scada,solar,discovery
+  tags: discovery,fronius,ics,panel,scada,solar

@@ -31,6 +31,9 @@ info:
   metadata:
     max-request: 1
     product: cogent-datahub
+    runzero-match: any(each(service["html.titles"]), {# matches "^DataHub Web Server"})
+      || service["http.body"] matches "(?i)You have successfully configured the DataHub
+      to run as a web server"
     shodan-query: http.title:"DataHub Web Server"
     vendor: Cogent Real-Time Systems
     verified: true
@@ -39,4 +42,4 @@ info:
   - https://www.cogentdatahub.com/products/datahub/
   - https://www.opcdatahub.com/
   severity: info
-  tags: panel,cogent,datahub,opc,scada,ics,ot,discovery
+  tags: cogent,datahub,discovery,ics,opc,ot,panel,scada

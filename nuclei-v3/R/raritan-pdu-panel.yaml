@@ -25,6 +25,7 @@ info:
   metadata:
     max-request: 1
     product: pdu
+    runzero-match: service["http.body"] matches `(?i)Raritan PDU`
     shodan-query: http.html:"Raritan" http.html:"PDU"
     vendor: Raritan
     verified: true
@@ -32,4 +33,4 @@ info:
   reference:
   - https://www.raritan.com/
   severity: info
-  tags: panel,raritan,pdu,ics,power,discovery
+  tags: discovery,ics,panel,pdu,power,raritan

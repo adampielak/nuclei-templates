@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: promotic
+    runzero-match: any(each(service["html.titles"]), {# matches "PROMOTIC"})
     shodan-query: http.title:"PROMOTIC"
     vendor: MicroSys
     verified: true
@@ -39,4 +40,4 @@ info:
   reference:
   - https://www.microsys.cz/en/products/promotic/
   severity: info
-  tags: panel,microsys,promotic,scada,ics,ot,discovery
+  tags: discovery,ics,microsys,ot,panel,promotic,scada

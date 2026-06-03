@@ -31,6 +31,7 @@ info:
   metadata:
     max-request: 1
     product: mate3s
+    runzero-match: any(each(service["html.titles"]), {# matches "Outback Power"})
     shodan-query: http.title:"Outback Power"
     vendor: outback-power
     verified: true
@@ -38,4 +39,4 @@ info:
   reference:
   - https://www.outbackpower.com/outback-products/communications/detail/mate3s
   severity: info
-  tags: tech,panel,outback,ics,solar,energy,scada,detect
+  tags: detect,energy,ics,outback,panel,scada,solar,tech

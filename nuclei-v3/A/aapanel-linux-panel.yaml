@@ -24,9 +24,10 @@ info:
     fofa-query: title="aaPanel Linux panel"
     max-request: 2
     product: aapanel
+    runzero-match: service["http.body"] matches "(?i)aaPanel Linux panel"
     shodan-query: html:"aaPanel Linux panel"
     vendor: aapanel
     verified: true
   name: aaPanel Linux Panel - Detect
   severity: info
-  tags: panel,aapanel,linux,detect
+  tags: aapanel,detect,linux,panel

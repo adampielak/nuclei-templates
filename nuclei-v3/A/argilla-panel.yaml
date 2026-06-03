@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: Argilla
+    runzero-match: any(each(service["html.titles"]), {# matches "^Argilla"})
     shodan-query: http.title:"Argilla"
     vendor: Argilla
     verified: true
@@ -40,4 +41,4 @@ info:
   - https://github.com/argilla-io/argilla
   - https://argilla.io
   severity: info
-  tags: panel,argilla,llm,ai,data-labelling,detect,discovery
+  tags: ai,argilla,data-labelling,detect,discovery,llm,panel

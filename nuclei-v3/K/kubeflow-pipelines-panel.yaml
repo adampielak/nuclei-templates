@@ -31,6 +31,7 @@ info:
   metadata:
     max-request: 1
     product: Kubeflow Pipelines
+    runzero-match: any(each(service["html.titles"]), {# matches "^Kubeflow Pipelines"})
     shodan-query: http.title:"Kubeflow Pipelines"
     vendor: Kubeflow
     verified: true
@@ -39,4 +40,4 @@ info:
   - https://github.com/kubeflow/pipelines
   - https://www.kubeflow.org
   severity: info
-  tags: panel,kubeflow,kubernetes,mlops,ai,detect,discovery
+  tags: ai,detect,discovery,kubeflow,kubernetes,mlops,panel

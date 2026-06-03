@@ -1,25 +1,23 @@
-file:
-- extensions:
-  - conf
-  matchers:
-  - negative: true
-    type: word
-    words:
-    - set admin-maintainer
-  - condition: or
-    type: word
-    words:
-    - config system
-    - config router
-    - config firewall
-  matchers-condition: and
 id: maintainer-account
 info:
-  author: pussycat0x
-  description: If the FortiGate is compromised and Password is not recoverable. A
-    maintainer account can be used by an administrator with physical access to log
-    into CLI..
   name: Maintainer Account Not Implemented
-  reference: https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
+  author: pussycat0x
   severity: info
-  tags: audit,config,file,firewall,fortigate
+  description: If the FortiGate is compromised and Password is not recoverable. A maintainer account can be used by an administrator with physical access to log into CLI..
+  reference: https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
+  tags: fortigate,config,audit,firewall
+file:
+  - extensions:
+      - conf
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "set admin-maintainer"
+        negative: true
+      - type: word
+        words:
+          - "config system"
+          - "config router"
+          - "config firewall"
+        condition: or

@@ -26,6 +26,7 @@ info:
   metadata:
     max-request: 2
     product: pi-vision
+    runzero-match: any(each(service["html.titles"]), {# matches "^PI Vision"})
     shodan-query: http.title:"PI Vision"
     vendor: OSIsoft
     verified: true
@@ -34,4 +35,4 @@ info:
   - https://www.aveva.com/en/products/pi-vision/
   - https://docs.aveva.com/bundle/pi-vision/
   severity: info
-  tags: panel,scada,historian,ics,osisoft,aveva,pi-vision,pi-system,energy,discovery
+  tags: aveva,discovery,energy,historian,ics,osisoft,panel,pi-system,pi-vision,scada

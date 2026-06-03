@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: webvisu
+    runzero-match: service["http.body"] matches "(?i)WEBVISU LOGIN"
     shodan-query: html:"WEBVISU LOGIN"
     vendor: CODESYS
     verified: true
@@ -39,4 +40,4 @@ info:
   reference:
   - https://www.codesys.com/products/codesys-runtime/web-visualization.html
   severity: info
-  tags: panel,ics,scada,codesys,webvisu,discovery
+  tags: codesys,discovery,ics,panel,scada,webvisu

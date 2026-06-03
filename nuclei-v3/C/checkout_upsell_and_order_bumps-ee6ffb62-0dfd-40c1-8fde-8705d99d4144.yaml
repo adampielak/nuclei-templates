@@ -15,7 +15,7 @@ http:
     words:
     - checkout-upsell-and-order-bumps
   - dsl:
-    - compare_versions(version, '<= 2.2.3')
+    - compare_versions(version, '<= 2.2.5')
     type: dsl
   matchers-condition: and
   max-redirects: 3
@@ -35,7 +35,7 @@ info:
     fofa-query: wp-content/plugins/checkout-upsell-and-order-bumps/
     google-query: inurl:"/wp-content/plugins/checkout-upsell-and-order-bumps/"
     shodan-query: http.html:"wp-content/plugins/checkout-upsell-and-order-bumps/"
-  name: 'UpsellWP <= 2.2.3 - Missing Authorization
+  name: 'UpsellWP <= 2.2.5 - Missing Authorization
 
     '
   reference:

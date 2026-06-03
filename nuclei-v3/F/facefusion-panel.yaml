@@ -25,6 +25,7 @@ info:
   metadata:
     max-request: 1
     product: facefusion
+    runzero-match: any(each(service["html.titles"]), {# matches "FaceFusion"})
     shodan-query: http.title:"FaceFusion"
     vendor: facefusion
     verified: true
@@ -33,4 +34,4 @@ info:
   - https://github.com/facefusion/facefusion
   - https://facefusion.io
   severity: info
-  tags: panel,facefusion,ai,face-swap,deepfake,detect,discovery
+  tags: ai,deepfake,detect,discovery,face-swap,facefusion,panel

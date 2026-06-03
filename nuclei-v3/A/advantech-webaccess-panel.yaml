@@ -28,6 +28,8 @@ info:
     fofa-query: title="Advantech WebAccess" || body="broadWeb"
     max-request: 1
     product: webaccess_scada
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Advantech WebAccess"})
+      and service["favicon.ico.image.mmh3"] == "2047556588"
     shodan-query: http.title:"Advantech WebAccess"
     vendor: advantech
     verified: true
@@ -36,4 +38,4 @@ info:
   - https://www.advantech.com/en-us/products/webaccess-scada/sub_a7b4308c-a3d0-446c-8f03-0d098d4b2c31
   - https://www.cisa.gov/news-events/ics-advisories/icsa-23-150-01
   severity: info
-  tags: panel,ics,scada,hmi,advantech,webaccess,discovery
+  tags: advantech,discovery,hmi,ics,panel,scada,webaccess

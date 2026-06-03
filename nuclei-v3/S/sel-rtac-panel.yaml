@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 2
     product: sel-rtac
+    runzero-match: any(each(service["html.titles"]), {# matches "^SEL-RTAC"})
     shodan-query: http.title:"SEL-RTAC"
     vendor: Schweitzer Engineering Laboratories
     verified: true
@@ -40,4 +41,4 @@ info:
   - https://selinc.com/products/3530/
   - https://selinc.com/products/3555/
   severity: info
-  tags: panel,scada,ics,sel,rtac,schweitzer,energy,utilities,discovery
+  tags: discovery,energy,ics,panel,rtac,scada,schweitzer,sel,utilities

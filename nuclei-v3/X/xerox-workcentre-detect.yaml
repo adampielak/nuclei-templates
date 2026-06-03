@@ -1,29 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - XEROX WORKCENTRE
+    - /header.php?tab=status
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/index.dhtml'
 id: xerox-workcentre-detect
-
 info:
-  name: Xerox Workcentre Detect
   author: pussycat0x
-  severity: info
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"XEROX WORKCENTRE"
+    verified: true
+  name: Xerox Workcentre Detect
+  severity: info
   tags: tech,xerox,workcentre
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/index.dhtml"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "XEROX WORKCENTRE"
-          - "/header.php?tab=status"
-        condition: and
-
-      - type: status
-        status:
-          - 200

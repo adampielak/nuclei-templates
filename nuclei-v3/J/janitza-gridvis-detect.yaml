@@ -30,6 +30,7 @@ info:
   metadata:
     max-request: 1
     product: gridvis
+    runzero-match: any(each(service["html.titles"]), {# matches "^GridVis"})
     shodan-query: http.title:"GridVis"
     vendor: janitza
     verified: true
@@ -37,4 +38,4 @@ info:
   reference:
   - https://www.janitza.com/gridvis.html
   severity: info
-  tags: tech,panel,janitza,ics,energy,scada,detect
+  tags: detect,energy,ics,janitza,panel,scada,tech

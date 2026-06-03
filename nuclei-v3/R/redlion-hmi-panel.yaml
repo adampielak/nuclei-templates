@@ -24,6 +24,7 @@ info:
   metadata:
     max-request: 1
     product: hmi
+    runzero-match: service["http.body"] matches `(?i)www\.redlion\.net`
     shodan-query: http.html:"Red Lion"
     vendor: Red Lion Controls
     verified: true
@@ -31,4 +32,4 @@ info:
   reference:
   - https://www.redlion.net/
   severity: info
-  tags: panel,redlion,hmi,ics,discovery
+  tags: discovery,hmi,ics,panel,redlion

@@ -1,0 +1,29 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - <title>Login - Tableau Services Manager</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: tableau-service-manager
+info:
+  author: DhiyaneshDk
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  description: Tableau Services Manager login panel was detected.
+  metadata:
+    max-request: 1
+    shodan-query: title:"Login - Tableau Services Manager"
+    verified: true
+  name: Tableau Services Manager Login Panel - Detect
+  reference:
+  - https://help.tableau.com/current/server/en-us/sign_in_tsm.htm
+  severity: info
+  tags: panel,tableau

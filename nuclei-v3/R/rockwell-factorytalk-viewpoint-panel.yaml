@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: factorytalk-viewpoint
+    runzero-match: service["http.body"] matches "FactoryTalk ViewPoint"
     shodan-query: http.title:"FactoryTalk ViewPoint"
     vendor: Rockwell Automation
     verified: true
@@ -39,4 +40,4 @@ info:
   reference:
   - https://www.rockwellautomation.com/en-us/products/software/factorytalk/operationsuite/view/factorytalk-viewpoint.html
   severity: info
-  tags: panel,ics,scada,rockwell,factorytalk,discovery
+  tags: discovery,factorytalk,ics,panel,rockwell,scada

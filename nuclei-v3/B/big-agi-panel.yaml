@@ -26,6 +26,7 @@ info:
   metadata:
     max-request: 1
     product: big-agi
+    runzero-match: any(each(service["html.titles"]), {# matches "big-AGI"})
     shodan-query: http.title:"big-AGI"
     vendor: big-agi
     verified: true
@@ -34,4 +35,4 @@ info:
   - https://github.com/enricoros/big-AGI
   - https://big-agi.com
   severity: info
-  tags: panel,big-agi,llm,ai,chat,detect,discovery
+  tags: ai,big-agi,chat,detect,discovery,llm,panel

@@ -28,6 +28,8 @@ info:
   metadata:
     max-request: 1
     product: solar-inverter
+    runzero-match: service["favicon.ico.image.mmh3"] == "-890342445" || any(each(service["html.titles"]),
+      {# matches "KACO new energy"})
     shodan-query: http.title:"KACO new energy"
     vendor: kaco
     verified: true
@@ -35,4 +37,4 @@ info:
   reference:
   - https://kaco-newenergy.com/
   severity: info
-  tags: tech,panel,kaco,ics,solar,energy,inverter,detect
+  tags: detect,energy,ics,inverter,kaco,panel,solar,tech

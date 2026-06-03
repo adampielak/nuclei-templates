@@ -26,4 +26,4 @@ info:
   - https://opendcim.org
   - https://github.com/opendcim/openDCIM
   severity: info
-  tags: tech,opendcim,dcim,detect
+  tags: dcim,detect,opendcim,tech

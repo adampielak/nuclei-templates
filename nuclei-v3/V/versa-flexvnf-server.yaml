@@ -1,39 +1,36 @@
+http:
+- extractors:
+  - kval:
+    - Server
+    part: header
+    type: kval
+  host-redirects: true
+  matchers:
+  - condition: and
+    part: header
+    type: word
+    words:
+    - 'Server: Versa'
+    - FlexVNF
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/&?=?'
 id: versa-flexvnf-server
-
 info:
-  name: Versa FlexVNF Server
   author: c-sh0
-  severity: info
-  description: |
-    Versa FlexVNF Server Detection (magic request params exposes Server signature/version)
-  reference:
-    - https://versa-networks.com/products/components/
-  tags: tech,versa,flexvnf
+  description: 'Versa FlexVNF Server Detection (magic request params exposes Server
+    signature/version)
+
+    '
   metadata:
     max-request: 1
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/&?=?"
-
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: header
-        words:
-          - "Server: Versa"
-          - "FlexVNF"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
-          - Server
+  name: Versa FlexVNF Server
+  reference:
+  - https://versa-networks.com/products/components/
+  severity: info
+  tags: tech,versa,flexvnf

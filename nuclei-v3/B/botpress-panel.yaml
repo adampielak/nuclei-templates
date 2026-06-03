@@ -25,6 +25,7 @@ info:
   metadata:
     max-request: 1
     product: botpress
+    runzero-match: service["http.body"] matches "(?i)@botpress/ui-admin"
     shodan-query: http.html:"@botpress/ui-admin"
     vendor: botpress
     verified: true
@@ -33,4 +34,4 @@ info:
   - https://github.com/botpress/botpress
   - https://botpress.com/
   severity: info
-  tags: panel,botpress,chatbot,ai,detect,discovery
+  tags: ai,botpress,chatbot,detect,discovery,panel

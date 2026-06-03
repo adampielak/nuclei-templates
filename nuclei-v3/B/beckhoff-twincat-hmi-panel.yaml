@@ -31,6 +31,8 @@ info:
   metadata:
     max-request: 1
     product: twincat-hmi
+    runzero-match: service["http.body"] matches "(?i)TwinCAT" && service["http.body"]
+      matches "(?i)Beckhoff"
     shodan-query: http.html:"TwinCAT" http.html:"Beckhoff"
     vendor: Beckhoff
     verified: true
@@ -39,4 +41,4 @@ info:
   - https://www.beckhoff.com/en-en/products/automation/twincat/te2xxx-twincat-3-target/te2000.html
   - https://infosys.beckhoff.com/english.php?content=../content/1033/te2000_tc3_hmi_engineering/index.html
   severity: info
-  tags: panel,scada,ics,beckhoff,twincat,hmi,plc,automation,discovery
+  tags: automation,beckhoff,discovery,hmi,ics,panel,plc,scada,twincat

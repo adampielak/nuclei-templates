@@ -38,4 +38,4 @@ info:
 
     '
   severity: medium
-  tags: laravel,clockwork,misconfig,exposure
+  tags: clockwork,exposure,laravel,misconfig

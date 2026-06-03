@@ -26,6 +26,7 @@ info:
   metadata:
     max-request: 1
     product: digi-router
+    runzero-match: any(each(service["html.titles"]), {# matches "Digi Router"})
     shodan-query: http.title:"Digi Router"
     vendor: Digi International
     verified: true
@@ -33,4 +34,4 @@ info:
   reference:
   - https://www.digi.com/products/networking/cellular-routers
   severity: info
-  tags: panel,ics,digi,router,industrial,discovery
+  tags: digi,discovery,ics,industrial,panel,router

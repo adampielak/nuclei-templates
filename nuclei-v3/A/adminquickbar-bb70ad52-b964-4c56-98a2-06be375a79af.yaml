@@ -1,45 +1,51 @@
-http:
-- extractors:
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - (?mi)Stable tag:\s*([0-9.]+)
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - adminquickbar
-  - dsl:
-    - compare_versions(version, '<= 1.9.3')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/adminquickbar/readme.txt'
-  redirects: true
 id: adminquickbar-bb70ad52-b964-4c56-98a2-06be375a79af
-info:
-  author: topscoder
-  classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
-  metadata:
-    fofa-query: wp-content/plugins/adminquickbar/
-    google-query: inurl:"/wp-content/plugins/adminquickbar/"
-    shodan-query: http.html:"wp-content/plugins/adminquickbar/"
-  name: 'AdminQuickbar <= 1.9.3 - Cross-Site Request Forgery to Settings Update
 
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/bb70ad52-b964-4c56-98a2-06be375a79af?source=api-scan
+info:
+  name: >
+    AdminQuickbar <= 1.9.3 - Cross-Site Request Forgery to Settings Update
+  author: topscoder
   severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bb70ad52-b964-4c56-98a2-06be375a79af?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/adminquickbar/"
+    google-query: inurl:"/wp-content/plugins/adminquickbar/"
+    shodan-query: 'http.html:"wp-content/plugins/adminquickbar/"'
   tags: cve,wordpress,wp-plugin,adminquickbar,medium,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/adminquickbar/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "adminquickbar"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.9.3')

@@ -31,6 +31,7 @@ info:
   metadata:
     max-request: 1
     product: fuxa
+    runzero-match: service["http.body"] matches `(?i)powered by (?:frangoteam|<span><b>frango</b>team</span>)`
     shodan-query: http.title:"FUXA"
     vendor: frangoteam
     verified: true
@@ -38,4 +39,4 @@ info:
   reference:
   - https://github.com/frangoteam/FUXA
   severity: info
-  tags: panel,scada,hmi,ics,fuxa,open-source,nodejs,modbus,opc-ua,discovery
+  tags: discovery,fuxa,hmi,ics,modbus,nodejs,opc-ua,open-source,panel,scada

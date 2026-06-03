@@ -27,6 +27,7 @@ info:
   metadata:
     max-request: 1
     product: marimo
+    runzero-match: any(each(service["html.titles"]), {# matches "marimo"})
     shodan-query: http.title:"marimo"
     vendor: marimo-team
     verified: true
@@ -35,4 +36,4 @@ info:
   - https://github.com/marimo-team/marimo
   - https://marimo.io
   severity: info
-  tags: panel,marimo,notebook,python,ai,detect,discovery
+  tags: ai,detect,discovery,marimo,notebook,panel,python

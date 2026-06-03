@@ -25,6 +25,7 @@ info:
   metadata:
     max-request: 1
     product: cognita
+    runzero-match: any(each(service["html.titles"]), {# matches "Sign in to Cognita"})
     shodan-query: http.title:"Cognita"
     vendor: truefoundry
     verified: true
@@ -33,4 +34,4 @@ info:
   - https://github.com/truefoundry/cognita
   - https://truefoundry.com/cognita
   severity: info
-  tags: panel,cognita,llm,ai,rag,detect,discovery
+  tags: ai,cognita,detect,discovery,llm,panel,rag

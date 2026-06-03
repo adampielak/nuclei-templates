@@ -32,6 +32,7 @@ info:
   metadata:
     max-request: 1
     product: thingworx
+    runzero-match: any(each(service["html.titles"]), {# matches "^Thingworx"})
     shodan-query: http.title:"Thingworx"
     vendor: PTC
     verified: true
@@ -39,4 +40,4 @@ info:
   reference:
   - https://www.ptc.com/en/products/thingworx
   severity: info
-  tags: panel,ics,iot,ptc,thingworx,discovery
+  tags: discovery,ics,iot,panel,ptc,thingworx

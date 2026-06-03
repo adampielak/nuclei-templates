@@ -1,25 +1,21 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Ulanzi Clock</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: ulanzi-clock
-
 info:
-  name: Ulanzi Clock Detect
   author: fabaff
-  severity: info
-  tags: panel,ulanzi,iot
   metadata:
     max-request: 1
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Ulanzi Clock</title>'
-
-      - type: status
-        status:
-          - 200
+  name: Ulanzi Clock Detect
+  severity: info
+  tags: panel,ulanzi,iot

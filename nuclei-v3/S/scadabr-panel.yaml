@@ -31,6 +31,7 @@ info:
   metadata:
     max-request: 1
     product: scadabr
+    runzero-match: service["http.body"] matches "(?i)ScadaBR Software"
     shodan-query: http.title:"ScadaBR"
     vendor: ScadaBR
     verified: true
@@ -39,4 +40,4 @@ info:
   - https://www.scadabr.com.br/
   - https://github.com/ScadaBR/ScadaBR
   severity: info
-  tags: panel,scada,ics,scadabr,mango,open-source,latin-america,discovery
+  tags: discovery,ics,latin-america,mango,open-source,panel,scada,scadabr

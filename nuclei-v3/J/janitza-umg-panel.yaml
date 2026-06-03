@@ -26,6 +26,7 @@ info:
   metadata:
     max-request: 1
     product: umg
+    runzero-match: service["http.body"] matches "(?i)Janitza UMG"
     shodan-query: http.title:"Janitza"
     vendor: Janitza
     verified: true
@@ -33,4 +34,4 @@ info:
   reference:
   - https://www.janitza.de/energy-analyzers.html
   severity: info
-  tags: panel,ics,janitza,power-meter,energy,discovery
+  tags: discovery,energy,ics,janitza,panel,power-meter

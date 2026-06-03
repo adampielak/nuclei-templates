@@ -23,6 +23,7 @@ info:
   metadata:
     max-request: 1
     product: polynote
+    runzero-match: any(each(service["html.titles"]), {# matches "^Polynote"})
     shodan-query: http.title:"Polynote"
     vendor: polynote
     verified: true
@@ -31,4 +32,4 @@ info:
   - https://github.com/polynote/polynote
   - https://polynote.org
   severity: info
-  tags: panel,polynote,notebook,scala,python,detect,discovery
+  tags: detect,discovery,notebook,panel,polynote,python,scala

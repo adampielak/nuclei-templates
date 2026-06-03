@@ -24,8 +24,9 @@ info:
     '
   metadata:
     max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "^Splunk MCP Server"})
     shodan-query: html:"Splunk MCP Server"
     verified: true
   name: Splunk MCP Server IDE Login - Detect
   severity: info
-  tags: panel,login,splunk,mcp,ide,discovery
+  tags: discovery,ide,login,mcp,panel,splunk

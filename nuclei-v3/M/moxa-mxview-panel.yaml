@@ -31,6 +31,8 @@ info:
   metadata:
     max-request: 1
     product: mxview
+    runzero-match: any(each(service["html.titles"]), {# matches "MXview One Central
+      Manager"})
     shodan-query: http.title:"MXview One Central Manager"
     vendor: Moxa
     verified: true
@@ -38,4 +40,4 @@ info:
   reference:
   - https://www.moxa.com/en/products/industrial-network-infrastructure/network-management-software/mxview-series/
   severity: info
-  tags: panel,ics,ot,networking,moxa,mxview,industrial-ethernet,discovery
+  tags: discovery,ics,industrial-ethernet,moxa,mxview,networking,ot,panel

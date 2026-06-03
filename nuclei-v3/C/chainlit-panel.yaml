@@ -29,6 +29,7 @@ info:
   metadata:
     max-request: 1
     product: chainlit
+    runzero-match: service["http.body"] matches `(?i)content\s*=\s*"https://github.com/Chainlit/chainlit"`
     shodan-query: http.html:"chainlit"
     vendor: chainlit
     verified: true
@@ -37,4 +38,4 @@ info:
   - https://github.com/Chainlit/chainlit
   - https://chainlit.io/
   severity: info
-  tags: panel,chainlit,llm,ai,chatbot,detect,discovery
+  tags: ai,chainlit,chatbot,detect,discovery,llm,panel

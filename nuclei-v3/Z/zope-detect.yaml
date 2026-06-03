@@ -1,28 +1,24 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Zope QuickStart</title>
+  - part: server
+    type: word
+    words:
+    - Zope/
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: zope-detect
-
 info:
-  name: Zope Quick Start Detect
   author: pikpikcu
-  severity: info
   metadata:
     max-request: 1
-    verified: true
     shodan-query: http.title:"Zope QuickStart"
+    verified: true
+  name: Zope Quick Start Detect
+  severity: info
   tags: tech,zope
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: or
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Zope QuickStart</title>"
-
-      - type: word
-        part: server
-        words:
-          - "Zope/"

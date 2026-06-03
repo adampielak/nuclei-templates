@@ -1,27 +1,23 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - 'Veriz0wn : OSINT'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: veriz0wn-osint
-
 info:
-  name: Veriz0wn OSINT - Detect
   author: pussycat0x
-  severity: info
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Veriz0wn"
+    verified: true
+  name: Veriz0wn OSINT - Detect
+  severity: info
   tags: veriz0wn,panel
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Veriz0wn : OSINT"
-
-      - type: status
-        status:
-          - 200

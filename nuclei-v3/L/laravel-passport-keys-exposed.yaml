@@ -41,4 +41,4 @@ info:
 
     '
   severity: high
-  tags: laravel,passport,oauth,exposure,keys
+  tags: exposure,keys,laravel,oauth,passport

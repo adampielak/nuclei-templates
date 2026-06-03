@@ -27,6 +27,7 @@ info:
   metadata:
     max-request: 1
     product: mlflow
+    runzero-match: any(each(service["html.titles"]), {# matches "MLflow"})
     shodan-query: http.title:"MLflow"
     vendor: databricks
     verified: true
@@ -35,4 +36,4 @@ info:
   - https://github.com/mlflow/mlflow
   - https://mlflow.org
   severity: info
-  tags: panel,mlflow,ml,ai,mlops,detect,discovery
+  tags: ai,detect,discovery,ml,mlflow,mlops,panel

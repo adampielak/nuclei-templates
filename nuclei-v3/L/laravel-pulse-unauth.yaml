@@ -40,4 +40,4 @@ info:
 
     '
   severity: medium
-  tags: laravel,pulse,monitoring,misconfig,unauth
+  tags: laravel,misconfig,monitoring,pulse,unauth

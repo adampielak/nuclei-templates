@@ -30,6 +30,7 @@ info:
   metadata:
     max-request: 1
     product: emoncms
+    runzero-match: any(each(service["html.titles"]), {# matches "^Emoncms - user login"})
     shodan-query: http.title:"Emoncms - user login"
     vendor: OpenEnergyMonitor
     verified: true
@@ -38,4 +39,4 @@ info:
   - https://emoncms.org/
   - https://github.com/emoncms/emoncms
   severity: info
-  tags: panel,emoncms,energy,iot,ics,monitoring,discovery
+  tags: discovery,emoncms,energy,ics,iot,monitoring,panel

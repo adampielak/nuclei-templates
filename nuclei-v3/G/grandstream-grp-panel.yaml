@@ -29,9 +29,10 @@ info:
     '
   metadata:
     max-request: 1
+    runzero-match: service["http.body"] matches "(?i)tl\\.account\\.ucm\\.js"
     shodan-query: tl.account.ucm.js
     vendor: grandstream
     verified: true
   name: Grandstream GRP Panel - Detect
   severity: info
-  tags: panel,grandstream,grp,iot,detect
+  tags: detect,grandstream,grp,iot,panel

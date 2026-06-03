@@ -62,4 +62,4 @@ info:
 
     '
   severity: high
-  tags: puppetdb,misconfig,exposure,unauth,dashboard
+  tags: dashboard,exposure,misconfig,puppetdb,unauth

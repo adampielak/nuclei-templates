@@ -42,4 +42,4 @@ info:
 
     '
   severity: high
-  tags: laravel,nova,admin,unauth,exposure
+  tags: admin,exposure,laravel,nova,unauth

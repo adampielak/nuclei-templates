@@ -20,6 +20,7 @@ info:
   metadata:
     max-request: 1
     product: aveva-edge
+    runzero-match: service["http.body"] matches `content\s*=\s*"AVEVA Edge"`
     shodan-query: http.html:"Aveva Edge"
     vendor: AVEVA
     verified: true
@@ -27,4 +28,4 @@ info:
   reference:
   - https://www.aveva.com/
   severity: info
-  tags: panel,aveva,edge,scada,ics,discovery
+  tags: aveva,discovery,edge,ics,panel,scada

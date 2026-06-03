@@ -23,6 +23,8 @@ info:
   metadata:
     max-request: 1
     product: serge
+    runzero-match: any(each(service["html.titles"]), {# matches "Serge - Powered by
+      LLaMa"})
     shodan-query: http.title:"Serge" port:8008
     vendor: serge-chat
     verified: true
@@ -31,4 +33,4 @@ info:
   - https://github.com/serge-chat/serge
   - https://serge.chat
   severity: info
-  tags: panel,serge,llm,ai,chat,detect,discovery
+  tags: ai,chat,detect,discovery,llm,panel,serge
