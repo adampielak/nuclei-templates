@@ -3,7 +3,7 @@ id: phpmyadmin-default-login
 info:
   name: phpMyAdmin - Default Login
   author: Natto97
-  severity: critical
+  severity: high
   description: phpMyAdmin contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
   reference:
     - https://www.phpmyadmin.net
@@ -12,7 +12,6 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    max-request: 16
     verified: true
     shodan-query: http.title:phpMyAdmin
   tags: default-login,phpmyadmin
@@ -71,7 +70,9 @@ http:
     matchers:
       - type: dsl
         dsl:
-          - contains(header_2, "phpMyAdmin=") && contains(header_2, "pmaUser-1=")
+          - contains(all_headers_2, "phpMyAdmin=") && contains(all_headers_2, "pmaUser-1=")
           - status_code_2 == 302
-          - contains(header_2, 'index.php?collation_connection=utf8mb4_unicode_ci') || contains(header_2, '/index.php?route=/&route=%2F')
+          - contains(all_headers_2, 'index.php?collation_connection=utf8mb4_unicode_ci') || contains(all_headers_2, '/index.php?route=/&route=%2F')
         condition: and
+
+# Enhanced by md on 2023/01/09
