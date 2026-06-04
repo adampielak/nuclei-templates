@@ -1,29 +1,34 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - HELP haproxy_
-  - condition: or
-    part: body
-    type: word
-    words:
-    - haproxy_exporter
-    - haproxy_backend
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/metrics'
 id: haproxy-exporter-metrics
+
 info:
+  name: Detect Haproxy Exporter
   author: pussycat0x
+  severity: low
   metadata:
     max-request: 1
-    shodan-query: title:"haproxy exporter"
     verified: true
-  name: Detect Haproxy Exporter
-  severity: low
+    shodan-query: title:"haproxy exporter"
   tags: haproxy,exposure,debug
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/metrics"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "HELP haproxy_"
+
+      - type: word
+        part: body
+        words:
+          - "haproxy_exporter"
+          - "haproxy_backend"
+        condition: or
+
+      - type: status
+        status:
+          - 200

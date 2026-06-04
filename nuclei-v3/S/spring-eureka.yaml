@@ -1,26 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Eureka
-    - Toggle navigation
-    - Last 1000 since startup
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: spring-eureka
+
 info:
+  name: Spring Eureka Exposure
   author: tess
+  severity: low
   metadata:
     max-request: 1
-    shodan-query: title:"Eureka"
     verified: true
-  name: Spring Eureka Exposure
-  severity: low
+    shodan-query: title:"Eureka"
   tags: misconfig,springboot,exposure,eureka
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Eureka'
+          - 'Toggle navigation'
+          - 'Last 1000 since startup'
+        condition: and
+
+      - type: status
+        status:
+          - 200

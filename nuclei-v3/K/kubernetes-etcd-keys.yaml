@@ -1,27 +1,31 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - BEGIN RSA PRIVATE KEY
-    - END RSA PRIVATE KEY
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/apiserver-etcd-client.key'
 id: kubernetes-etcd-keys
+
 info:
+  name: Kubernetes etcd Keys Exposure
   author: Hardik-Solanki
+  severity: medium
+  reference:
+    - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
   metadata:
-    github-query: filename:apiserver-etcd-client.key
     max-request: 1
     verified: true
-  name: Kubernetes etcd Keys Exposure
-  reference:
-  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
-  severity: medium
+    github-query: filename:apiserver-etcd-client.key
   tags: files,exposure,kubernetes,k8s
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/apiserver-etcd-client.key"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'BEGIN RSA PRIVATE KEY'
+          - 'END RSA PRIVATE KEY'
+        condition: and
+
+      - type: status
+        status:
+          - 200
