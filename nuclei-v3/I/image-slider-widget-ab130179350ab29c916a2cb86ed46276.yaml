@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - image-slider-widget
-  - dsl:
-    - compare_versions(version, '<= 1.1.119')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/image-slider-widget/readme.txt'
-  redirects: true
 id: image-slider-widget-ab130179350ab29c916a2cb86ed46276
+
 info:
+  name: >
+    Image Slider <= 1.1.119 - Subscriber+ SQL Injection
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/005234f9-8ae2-455a-8dcd-5d29a6051270?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/image-slider-widget/
+    fofa-query: "wp-content/plugins/image-slider-widget/"
     google-query: inurl:"/wp-content/plugins/image-slider-widget/"
     shodan-query: 'vuln:'
-  name: 'Image Slider <= 1.1.119 - Subscriber+ SQL Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/005234f9-8ae2-455a-8dcd-5d29a6051270?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,image-slider-widget,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/image-slider-widget/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "image-slider-widget"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.1.119')

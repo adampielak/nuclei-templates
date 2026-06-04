@@ -1,30 +1,26 @@
 id: moveit-detect
-
 info:
-  name: Moveit Detect
   author: rix4uni
-  severity: info
   description: description
-  reference:
-    - https://
   metadata:
-    shodan-query:
-      - http.favicon.hash:989289239
     fofa-query:
-      - app="Progress-MOVEit"
+    - app="Progress-MOVEit"
+    shodan-query:
+    - http.favicon.hash:989289239
+  name: Moveit Detect
+  reference:
+  - https://
+  severity: info
   tags: default-login,misconfig,moveit
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/favicon.ico"
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - "status_code==200 && (\"989289239\" == mmh3(base64_py(body)))"
-
-      - type: status
-        status:
-          - 200
+- matchers:
+  - dsl:
+    - status_code==200 && ("989289239" == mmh3(base64_py(body)))
+    type: dsl
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/favicon.ico'

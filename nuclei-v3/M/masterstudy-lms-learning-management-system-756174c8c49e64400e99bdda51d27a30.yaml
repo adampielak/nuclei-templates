@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - masterstudy-lms-learning-management-system
-  - dsl:
-    - compare_versions(version, '<= 3.3.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/masterstudy-lms-learning-management-system/readme.txt'
-  redirects: true
 id: masterstudy-lms-learning-management-system-756174c8c49e64400e99bdda51d27a30
+
 info:
+  name: >
+    MasterStudy LMS <= 3.3.0 - Unauthenticated Local File Inclusion via modal
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d68a2b60-ee89-4231-b256-214eba418244?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/masterstudy-lms-learning-management-system/
+    fofa-query: "wp-content/plugins/masterstudy-lms-learning-management-system/"
     google-query: inurl:"/wp-content/plugins/masterstudy-lms-learning-management-system/"
     shodan-query: 'vuln:'
-  name: 'MasterStudy LMS <= 3.3.0 - Unauthenticated Local File Inclusion via modal
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d68a2b60-ee89-4231-b256-214eba418244?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,masterstudy-lms-learning-management-system,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/masterstudy-lms-learning-management-system/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "masterstudy-lms-learning-management-system"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.3.0')

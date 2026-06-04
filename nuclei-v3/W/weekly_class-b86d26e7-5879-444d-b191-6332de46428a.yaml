@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - weekly-class
+  - dsl:
+    - compare_versions(version, '<= 2.7.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/weekly-class/readme.txt'
+  redirects: true
+id: weekly_class-b86d26e7-5879-444d-b191-6332de46428a
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/weekly-class/
+    google-query: inurl:"/wp-content/plugins/weekly-class/"
+    shodan-query: http.html:"wp-content/plugins/weekly-class/"
+  name: 'Events Schedule - WordPress Events Calendar <= 2.7.2 - Authenticated (Subscriber+)
+    SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/b86d26e7-5879-444d-b191-6332de46428a?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,weekly-class,low,candidate

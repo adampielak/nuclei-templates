@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - imagerecycle-pdf-image-compression
-  - dsl:
-    - compare_versions(version, '<= 3.1.13')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/imagerecycle-pdf-image-compression/readme.txt'
-  redirects: true
 id: imagerecycle-pdf-image-compression-b487998110f94fc33da2327be3584e2f
+
 info:
+  name: >
+    ImageRecycle pdf & image compression <= 3.1.13 - Missing Authorization to Settings Update in enableOptimization
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/175dd04d-ce06-45a0-8cfe-14498e2f9198?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/imagerecycle-pdf-image-compression/
+    fofa-query: "wp-content/plugins/imagerecycle-pdf-image-compression/"
     google-query: inurl:"/wp-content/plugins/imagerecycle-pdf-image-compression/"
     shodan-query: 'vuln:'
-  name: 'ImageRecycle pdf & image compression <= 3.1.13 - Missing Authorization to
-    Settings Update in enableOptimization
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/175dd04d-ce06-45a0-8cfe-14498e2f9198?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,imagerecycle-pdf-image-compression,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/imagerecycle-pdf-image-compression/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "imagerecycle-pdf-image-compression"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.1.13')
