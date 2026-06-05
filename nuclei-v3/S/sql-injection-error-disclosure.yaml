@@ -54,10 +54,10 @@ http:
         regex:
           # MySQL / MariaDB
           - 'You have an error in your SQL syntax'
-          - 'mysql_fetch_(array|assoc|object|row)'
-          - 'mysqli?_(query|fetch|num_rows|real_escape_string)'
+          - '(?i)(warning|fatal|notice|error)[^<\r\n]{0,40}mysql_fetch_(array|assoc|object|row)'
+          - '(?i)(warning|fatal|notice|error)[^<\r\n]{0,40}mysqli?_(query|fetch|num_rows|real_escape_string)'
           - 'MariaDB server version'
-          - 'Warning.*mysqli?_'
+          - '(?i)Warning.{0,40}mysqli?_'
           # PostgreSQL
           - 'PostgreSQL.{0,30}ERROR'
           - 'syntax error at or near'

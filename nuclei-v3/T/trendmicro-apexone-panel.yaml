@@ -4,8 +4,8 @@ http:
     part: body
     type: word
     words:
-    - officescan
     - Trend Micro
+    - TMlogonEncrypted
   - status:
     - 200
     type: status
@@ -13,9 +13,11 @@ http:
   method: GET
   path:
   - '{{BaseURL}}/officescan/console/html/cgi/cgiChkMasterPwd.exe'
+  - '{{BaseURL}}/SMB/console/html/cgi/cgiChkMasterPwd.exe'
+  stop-at-first-match: true
 id: trendmicro-apexone-panel
 info:
-  author: johnk3r
+  author: johnk3r,s4e-io
   classification:
     cwe-id: CWE-200
   description: Trend Micro Apex One login panel was detected.
@@ -26,4 +28,4 @@ info:
     verified: true
   name: Trend Micro Apex One Login Panel - Detect
   severity: info
-  tags: panel,trendmicro,login,detect,discovery
+  tags: detect,discovery,login,panel,trendmicro

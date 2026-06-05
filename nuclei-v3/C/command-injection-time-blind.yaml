@@ -88,5 +88,5 @@ http:
     extractors:
       - type: dsl
         dsl:
-          - '"Baseline duration: " + sprintf("%.2fs", duration_1)'
-          - '"Payload durations (sleep variants): " + sprintf("%.2fs / %.2fs / %.2fs / %.2fs", duration_2, duration_3, duration_4, duration_5)'
+          - '"Baseline duration (s): " + duration_1'
+          - '"Payload durations (s) — semicolon/backtick/dollar-paren/pipe: " + duration_2 + " / " + duration_3 + " / " + duration_4 + " / " + duration_5'

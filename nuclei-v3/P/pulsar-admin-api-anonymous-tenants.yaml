@@ -57,13 +57,13 @@ http:
           - '^\s*\[("[a-zA-Z0-9_\-./]+"|{"[a-zA-Z0-9_-]+"\s*:)'
       - type: word
         part: body
+        # Pulsar-specific markers only; generic tenant names ("public", "pulsar")
+        # and lone "standalone" excluded — they collide with many other products.
         words:
-          - '"public"'
-          - '"pulsar"'
           - '"brokerVersion"'
           - '"webServiceUrl"'
-          - '"serviceUrl"'
-          - 'standalone'
+          - '"webServiceUrlTls"'
+          - '"brokerServiceUrl"'
         condition: or
 
     extractors:

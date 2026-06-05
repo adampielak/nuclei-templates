@@ -38,9 +38,13 @@ http:
         negative: true
         words:
           - "x-frame-options"
-      - type: word
+      # CSP frame-ancestors must be ABSENT or PERMISSIVE (wildcard) to fire.
+      # A restrictive policy (e.g. frame-ancestors 'self' or https://example.com)
+      # blocks framing and should suppress the finding. A permissive policy
+      # (frame-ancestors *) does not actually protect against clickjacking and
+      # must still trigger.
+      - type: regex
         part: header
-        case-insensitive: true
         negative: true
-        words:
-          - "frame-ancestors"
+        regex:
+          - "(?i)frame-ancestors\\s+[^*;\r\n]*(?:'self'|'none'|https?://[^\\s;]+)"

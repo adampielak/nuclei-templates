@@ -19,19 +19,34 @@ info:
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/"
+      # The official ScyllaDB monitoring stack provisions Grafana with
+      # ScyllaDB-prefixed folders/dashboards. Probing these paths avoids
+      # firing on any Grafana that merely mentions ScyllaDB in docs/comments.
+      - "{{BaseURL}}/dashboards/f/scylla-folder/scylla"
+      - "{{BaseURL}}/api/dashboards/uid/scylla-overview"
+      - "{{BaseURL}}/api/search?folderIds=&query=scylla"
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-      - type: word
+      - type: regex
         part: body
-        case-insensitive: true
-        words:
-          - "scylladb"
-      - type: word
+        # Grafana dashboard JSON / search response carrying ScyllaDB titles.
+        regex:
+          - '(?i)"(title|name|uid)"\s*:\s*"[^"]*scylla[^"]*"'
+          - '(?i)<title>[^<]*ScyllaDB[^<]*</title>'
+        condition: or
+
+    extractors:
+      - type: regex
         part: body
-        case-insensitive: true
-        words:
-          - "grafana"
+        name: scylla-dashboards
+        regex:
+          - '(?i)"title"\s*:\s*"([^"]*scylla[^"]*)"'
+        group: 1
+      - type: kval
+        part: header
+        kval:
+          - "X-Grafana-Org-Id"

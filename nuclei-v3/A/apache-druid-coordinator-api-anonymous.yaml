@@ -46,18 +46,17 @@ http:
       - type: status
         status:
           - 200
-      - type: word
-        part: header
-        words:
-          - "application/json"
-          - "text/plain"
-        condition: or
       - type: regex
         part: body
+        # /cluster returns object with Druid-specific service-type keys;
+        # /datasources returns a JSON array of strings (may be empty []);
+        # /leader returns a plain URL ending in :8081 (default coordinator port).
         regex:
-          # /cluster returns object with coordinator/broker/historical keys;
-          # /datasources returns ["ds1","ds2"]; /leader returns plain URL.
-          - '"(coordinator|broker|historical|middleManager|overlord)"\s*:|^\s*\[("[a-zA-Z0-9_\-]+"(\s*,)?)+\]|^https?://[^\s]+:8081'
+          - '"(coordinator|broker|historical|middleManager|overlord)"\s*:\s*\['
+          - '"currType"\s*:\s*"(coordinator|broker|historical|middleManager|overlord)"'
+          - '^\s*\[\s*("[a-zA-Z0-9_\-./]+"(\s*,\s*"[a-zA-Z0-9_\-./]+")*\s*)?\]\s*$'
+          - '^\s*https?://[^\s:]+:8081/?\s*$'
+        condition: or
 
     extractors:
       - type: regex
@@ -70,5 +69,5 @@ http:
         part: body
         name: datasource-names
         regex:
-          - '"([a-zA-Z0-9_\-]+)"'
-        group: 1
+          - '"(currType|serverType)"\s*:\s*"([^"]+)"'
+        group: 2

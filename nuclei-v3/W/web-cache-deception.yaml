@@ -57,7 +57,6 @@ http:
           - "@charset"
       - type: regex
         part: header
-        case-insensitive: true
         condition: or
         regex:
           - '(?i)cache-control:[^\r\n]*\bpublic\b'

@@ -65,8 +65,12 @@ http:
           - "application/json"
       - type: word
         part: body
+        # clusterName alone collides with ScyllaDB/Cassandra/ClickHouse responses;
+        # require Pinot-specific co-occurrence (helixVersion or zkServers).
         words:
           - '"clusterName"'
+          - '"helixVersion"'
+        condition: and
 
     extractors:
       - type: regex
@@ -74,6 +78,12 @@ http:
         name: pinot-cluster-name
         regex:
           - '"clusterName"\s*:\s*"([^"]+)"'
+        group: 1
+      - type: regex
+        part: body
+        name: pinot-helix-version
+        regex:
+          - '"helixVersion"\s*:\s*"([^"]+)"'
         group: 1
       - type: regex
         part: body

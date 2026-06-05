@@ -47,5 +47,6 @@ http:
           - 308
       - type: word
         part: header
+        case-insensitive: true
         words:
-          - "Location: https://attacker.example.com"
+          - "location: https://attacker.example.com"

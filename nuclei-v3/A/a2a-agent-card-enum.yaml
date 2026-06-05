@@ -27,4 +27,4 @@ info:
   - https://huggingface.co/blog/1bo/a2a-protocol-explained
   - https://github.com/google/A2A
   severity: info
-  tags: enum,a2a,google,ai,agent,discovery
+  tags: a2a,agent,ai,discovery,enum,google
