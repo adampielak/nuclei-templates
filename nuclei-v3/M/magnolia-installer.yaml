@@ -1,30 +1,41 @@
-http:
-- matchers:
-  - condition: and
-    type: word
-    words:
-    - Magnolia Installation
-    - Welcome to Magnolia
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: magnolia-installer
+
 info:
-  author: pussycat0x
-  metadata:
-    max-request: 1
-    shodan-query: title:"Magnolia Installation"
-    verified: true
   name: Magnolia CMS Installer
-  reference:
-  - https://www.magnolia-cms.com/
+  author: pussycat0x
   severity: info
-  tags: magnolia,exposure,installer
+  description: Magnolia CMS is susceptible to the Installation page exposure due to misconfiguration.
+  reference:
+    - https://www.magnolia-cms.com/
+  classification:
+    cpe: cpe:2.3:a:magnolia-cms:magnolia_cms:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: magnolia-cms
+    product: magnolia_cms
+    shodan-query: title:"Magnolia Installation"
+  tags: magnolia,exposure,installer,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Magnolia Installation"
+          - "Welcome to Magnolia"
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'text/html'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a004730450220798a2e1060e7ffbc4c2c0037efd375ce6173184fd3c38e44af23143ae015df6c022100edc7733328d4e1713ac65ef946ef17b0d7fa2b5e706641ceb85c58492b9d56a4:922c64590222798bb761d5b6d8e72950

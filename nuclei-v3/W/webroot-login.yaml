@@ -1,28 +1,35 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>Webroot - Login</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/Login'
 id: webroot-login
+
 info:
+  name: Webroot Login Panel - Detect
   author: DhiyaneshDK
+  severity: info
+  description: Webroot login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
-  description: Webroot login panel was detected.
+    cpe: cpe:2.3:a:webroot:secureanywhere:*:*:*:*:*:*:*:*
   metadata:
+    verified: true
     max-request: 1
     shodan-query: title:"Webroot - Login"
-    verified: true
-  name: Webroot Login Panel - Detect
-  severity: info
-  tags: panel,webroot
+    product: secureanywhere
+    vendor: webroot
+  tags: panel,webroot,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/Login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>Webroot - Login</title>'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100912b342b7eef81a037a6b0b2949abe1d34d949fdbee2353cfdc312a1267fe5530220640cec54378eadb35a3b63e2570c4728ead7e8dffb476147674b7f29ad824577:922c64590222798bb761d5b6d8e72950

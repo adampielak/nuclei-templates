@@ -1,31 +1,41 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Hospital Management System
-    - Doctors Login
-    - Admin Login
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/index.html'
 id: hospital-management-panel
+
 info:
+  name: Hospital Management System Login Panel - Detect
   author: arafatansari
+  severity: info
+  description: Hospital Management System login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
-  description: Hospital Management System login panel was detected.
+    cpe: cpe:2.3:a:hospital_management_system_project:hospital_management_system:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
-    shodan-query: http.html:"Hospital Management System"
     verified: true
-  name: Hospital Management System Login Panel - Detect
-  severity: info
-  tags: panel,hms,cms
+    max-request: 1
+    vendor: hospital_management_system_project
+    product: hospital_management_system
+    shodan-query:
+      - http.html:"Hospital Management System"
+      - http.html:"hospital management system"
+    fofa-query: body="hospital management system"
+  tags: panel,hms,cms,hospital_management_system_project,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/index.html"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Hospital Management System'
+          - 'Doctors Login'
+          - 'Admin Login'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a0047304502202eb4e49ac277c2356cd830d323839fec2715b7ad54cc5f2863979803e70e722d022100c3c2abc7409f8b66101bcacec9a1380f93d45bebe811acbbb5ba46274f49fd8d:922c64590222798bb761d5b6d8e72950

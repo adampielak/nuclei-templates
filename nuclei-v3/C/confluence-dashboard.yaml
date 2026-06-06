@@ -1,32 +1,40 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Dashboard - Confluence
-    - title="Spaces">
-    - Atlassian Confluence
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: confluence-dashboard
+
 info:
+  name: Confluence Dashboard Exposed
   author: tess
+  severity: low
+  description: Confluence Dashboard is exposed.
   metadata:
+    verified: true
     max-request: 1
     shodan-query: title:"Dashboard - Confluence"
-    verified: true
-  name: Confluence Dashboard Exposed
-  severity: critical
-  tags: misconfig,exposure,confluence,atlassian
+  tags: misconfig,exposure,confluence,atlassian,discovery
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Dashboard - Confluence'
+          - 'title="Spaces">'
+          - 'Atlassian Confluence'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'text/html'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100fe42233bee6cdc149d8dcf764f55fe3a2b074afe7728ea405c842f82ba2200ac02200fd8861c7954bf83f0f6b4a977f0d362e97b9078fde73bb8b0107b368abeb48f:922c64590222798bb761d5b6d8e72950

@@ -7,13 +7,23 @@ info:
   description: OpenVPN Server Router Management Panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:openvpn:openvpn:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
     verified: true
-    shodan-query: http.html:"Router Management - Server OpenVPN"
-  tags: panel,openvpn,router
+    max-request: 1
+    vendor: openvpn
+    product: openvpn
+    shodan-query:
+      - http.html:"Router Management - Server OpenVPN"
+      - http.html:"router management - server openvpn"
+      - http.title:"openvpn-admin"
+      - cpe:"cpe:2.3:a:openvpn:openvpn"
+    fofa-query:
+      - body="router management - server openvpn"
+      - title="openvpn-admin"
+    google-query: intitle:"openvpn-admin"
+  tags: panel,openvpn,router,discovery
 
 http:
   - method: GET
@@ -30,5 +40,4 @@ http:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/12/02
+# digest: 490a00463044022025605704a7a1dd5d397c92934c45c61f2f4ceeb10dfed028fa679e79a6209c23022027fa2750fdfb9e420a57b71b4791c9ce5e19968a361c15552ec9fa3668ffb3ad:922c64590222798bb761d5b6d8e72950

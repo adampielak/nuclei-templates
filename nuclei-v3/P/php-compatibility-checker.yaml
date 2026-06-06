@@ -7,13 +7,13 @@ info:
   reference:
     - https://wordpress.org/plugins/php-compatibility-checker/
   metadata:
+    max-request: 1
     plugin_namespace: php-compatibility-checker
     wpscan: https://wpscan.com/plugin/php-compatibility-checker
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/php-compatibility-checker/readme.txt"
 
@@ -47,3 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a004730450220015306854d0f6e0b1653788869ae7ad4758e4179c91ca5cde386f86136d1a9b3022100bdcb11e22f335add5eee063b5e1ae23e337a2929028ea730d0023f6a1e9b44d2:922c64590222798bb761d5b6d8e72950

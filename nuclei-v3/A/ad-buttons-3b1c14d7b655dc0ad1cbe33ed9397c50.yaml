@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - ad-buttons
-  - dsl:
-    - compare_versions(version, '< 2.3.2')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/ad-buttons/readme.txt'
-  redirects: true
 id: ad-buttons-3b1c14d7b655dc0ad1cbe33ed9397c50
+
 info:
+  name: >
+    Ad Buttons <= 2.3.1 - Cross-Site Request Forgery to Cross-Site Scripting
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5f36574-b4d0-4b67-baea-f5ef5e6618d1?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/ad-buttons/
+    fofa-query: "wp-content/plugins/ad-buttons/"
     google-query: inurl:"/wp-content/plugins/ad-buttons/"
     shodan-query: 'vuln:'
-  name: 'Ad Buttons <= 2.3.1 - Cross-Site Request Forgery to Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5f36574-b4d0-4b67-baea-f5ef5e6618d1?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,ad-buttons,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/ad-buttons/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "ad-buttons"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 2.3.2')

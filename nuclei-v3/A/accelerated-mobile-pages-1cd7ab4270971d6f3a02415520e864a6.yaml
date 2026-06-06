@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - accelerated-mobile-pages
-  - dsl:
-    - compare_versions(version, '<= 0.9.97.20')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/accelerated-mobile-pages/readme.txt'
-  redirects: true
 id: accelerated-mobile-pages-1cd7ab4270971d6f3a02415520e864a6
+
 info:
+  name: >
+    AMP for WP <= 0.9.97.20 - Stored Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/64a833df-1cb8-40a1-9a8f-c53dcf50c877?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/accelerated-mobile-pages/
+    fofa-query: "wp-content/plugins/accelerated-mobile-pages/"
     google-query: inurl:"/wp-content/plugins/accelerated-mobile-pages/"
     shodan-query: 'vuln:'
-  name: 'AMP for WP <= 0.9.97.20 - Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/64a833df-1cb8-40a1-9a8f-c53dcf50c877?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,accelerated-mobile-pages,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/accelerated-mobile-pages/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "accelerated-mobile-pages"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 0.9.97.20')

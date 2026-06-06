@@ -6,11 +6,15 @@ info:
   severity: info
   reference:
     - https://www.openhab.org/
+  classification:
+    cpe: cpe:2.3:a:openhab:openhab_web_interface:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
     verified: true
+    max-request: 1
+    vendor: openhab
+    product: openhab_web_interface
     shodan-query: http.title:"openHAB"
-  tags: tech,iot,openhab
+  tags: tech,iot,openhab,discovery
 
 http:
   - method: GET
@@ -19,6 +23,7 @@ http:
 
     host-redirects: true
     max-redirects: 2
+
     matchers-condition: and
     matchers:
       - type: word
@@ -29,3 +34,4 @@ http:
       - type: status
         status:
           - 200
+# digest: 4b0a00483046022100cfcecb0707c4a9ae0ff8bd2e32e4660d527e616604e4dff8a30da40625cc30f5022100b28aec7cfeb39bdae3513b93c253335b8ccf4217797be05e01898531e73defb4:922c64590222798bb761d5b6d8e72950

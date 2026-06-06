@@ -1,30 +1,33 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - "- \u0442\u0440\u0435\u0439\u0434\u0438\u043D\u0433 \u0444\u043E\u0440\u0435\
-      \u043A\u0441 \u0444\u044C\u044E\u0447\u0435\u0440\u0441\u044B \u0430\u043A\u0446\
-      \u0438\u0438 \u0444\u043E\u043D\u0434\u043E\u0432\u044B\u0439 \u0440\u044B\u043D\
-      \u043E\u043A "
-  matchers-condition: and
-  method: GET
-  path:
-  - https://hamaha.net/{{user}}
 id: hamaha
+
 info:
+  name: Hamaha User Name Information - Detect
   author: dwisiswant0
+  severity: info
+  description: Hamaha user name information check was conducted.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
-  description: Hamaha user name information check was conducted.
   metadata:
     max-request: 1
-  name: Hamaha User Name Information - Detect
-  severity: info
-  tags: osint,osint-finance,hamaha
+  tags: osint,osint-finance,hamaha,discovery
+
 self-contained: true
+
+http:
+  - method: GET
+    path:
+      - "https://hamaha.net/{{user}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "- трейдинг форекс фьючерсы акции фондовый рынок "
+# digest: 490a0046304402204001c7a3500bf833c4fc29ad4a5e1592a969101958a74a1c02469f9e3ff4ef9f022032ac0cfe7473c038b0a9cd6746199a0011f135cf3c3ac0d8c192a340e085dbfd:922c64590222798bb761d5b6d8e72950

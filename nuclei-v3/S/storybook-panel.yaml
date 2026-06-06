@@ -1,37 +1,42 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - <title>Storybook</title>
-    - storybook-
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/?path=/settings/about'
-  stop-at-first-match: true
 id: storybook-panel
+
 info:
+  name: Storybook Panel - Detect
   author: kh4sh3i
+  severity: info
+  description: Storybook panel was detected.
+  reference:
+    - https://storybook.js.org/
+    - https://github.com/storybookjs/storybook
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
-  description: Storybook panel was detected.
   metadata:
+    verified: true
     max-request: 2
     shodan-query: http.title:"storybook"
-    verified: true
-  name: Storybook Panel - Detect
-  reference:
-  - https://storybook.js.org/
-  - https://github.com/storybookjs/storybook
-  severity: info
-  tags: panel,storybook,workshop
+  tags: panel,storybook,workshop,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/?path=/settings/about"
+
+    stop-at-first-match: true
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>Storybook</title>'
+          - 'storybook-'
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 490a00463044022100fdccb2c05990d3374dac713334764a416eed8f997b7de7e814c4f7e488162aca021f589aa963f5bbe52325c3b5dca453cceb134202f4eaa8dd22b9a846c1fc6526:922c64590222798bb761d5b6d8e72950

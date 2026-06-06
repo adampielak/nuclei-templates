@@ -1,27 +1,33 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - "\u3055\u3093\u306B\u30E1\u30C3\u30BB\u30FC\u30B8\u3092\u304A\u304F\u308B"
-  matchers-condition: and
-  method: GET
-  path:
-  - https://marshmallow-qa.com/{{user}}
 id: marshmallow
+
 info:
+  name: Marshmallow User Name Information - Detect
   author: dwisiswant0
+  severity: info
+  description: Marshmallow user name information check was conducted.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
-  description: Marshmallow user name information check was conducted.
   metadata:
     max-request: 1
-  name: Marshmallow User Name Information - Detect
-  severity: info
-  tags: osint,osint-social,marshmallow
+  tags: osint,osint-social,marshmallow,discovery
+
 self-contained: true
+
+http:
+  - method: GET
+    path:
+      - "https://marshmallow-qa.com/{{user}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "さんにメッセージをおくる"
+# digest: 4a0a00473045022100fb5a18fbec153589971d54f22d93bce3126844aada482c6341d0950de08359bd02206fe3dd34850a2e3d2a7f3518edadc553a93780fb20504c8ab480b8d82e5ab3db:922c64590222798bb761d5b6d8e72950

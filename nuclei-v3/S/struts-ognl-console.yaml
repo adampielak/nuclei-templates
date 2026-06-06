@@ -1,40 +1,37 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - Welcome to the OGNL console!
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/struts/webconsole.html?debug=console'
-  - '{{BaseURL}}/sdp/struts/webconsole.html?debug=console'
-  - '{{BaseURL}}/webconsole.html?debug=console'
-  - '{{BaseURL}}/..;/webconsole.html?debug=console'
-  - '{{BaseURL}}/struts/webconsole.html'
-  - '{{BaseURL}}/..;/struts/webconsole.html'
-  - '{{BaseURL}}/..;/struts/webconsole.html?debug=console'
-  - '{{BaseURL}}/admin/struts/webconsole.html?debug=console'
-  - '{{BaseURL}}/api/struts/webconsole.html?debug=console'
-  - '{{BaseURL}}/admin/..;/struts/webconsole.html?debug=console'
-  stop-at-first-match: true
 id: struts-ognl-console
-info:
-  author: DhiyaneshDK
-  description: 'This development console allows the evaluation of OGNL expressions
-    that could lead to Remote Command Execution
 
-    '
-  metadata:
-    shodan-query: html:"Struts Problem Report"
-    verified: 'true'
+info:
   name: Apache Struts - OGNL Console
-  reference:
-  - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/ApacheStrutsWebConsole.java
-  - https://medium.com/@yousefmoh15/how-i-got-rce-in-one-of-bugcrowds-public-programs-5725c8dc46ce
+  author: DhiyaneshDK
+  severity: unknown
+  description: |
+    This development console allows the evaluation of OGNL expressions that could lead to Remote Command Execution
   remediation: Restrict access to the struts console on the production server
-  severity: high
-  tags: java,apache,generic
+  reference:
+    - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/ApacheStrutsWebConsole.java
+  classification:
+    cpe: cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: apache
+    product: struts
+    shodan-query: html:"Struts Problem Report"
+  tags: apache,struts,ognl,panel,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/struts/webconsole.html?debug=console'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Welcome to the OGNL console!'
+
+      - type: status
+        status:
+          - 200
+# digest: 490a00463044022015099dde4b0b11dd5aa31a6668d53aedcd0a768c9c8c5a0a254761e5b3b5d024022075246148e0af5bb289b4e9b9293ec26dde9ed438f200a415eb1152fffadb7bf2:922c64590222798bb761d5b6d8e72950

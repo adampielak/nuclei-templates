@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - all-in-one-wp-migration-dropbox-extension
-  - dsl:
-    - compare_versions(version, '<= 3.75')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/all-in-one-wp-migration-dropbox-extension/readme.txt'
-  redirects: true
 id: all-in-one-wp-migration-dropbox-extension-1bca30bfa530491005d273161772bbf9
+
 info:
+  name: >
+    Multiple ServMask Plugins <= (Various Versions) - Missing Authorization to Access Token Update
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/86bb44f0-142d-4c4e-8fc5-a50526118130?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/all-in-one-wp-migration-dropbox-extension/
+    fofa-query: "wp-content/plugins/all-in-one-wp-migration-dropbox-extension/"
     google-query: inurl:"/wp-content/plugins/all-in-one-wp-migration-dropbox-extension/"
     shodan-query: 'vuln:'
-  name: 'Multiple ServMask Plugins <= (Various Versions) - Missing Authorization to
-    Access Token Update
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/86bb44f0-142d-4c4e-8fc5-a50526118130?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,all-in-one-wp-migration-dropbox-extension,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/all-in-one-wp-migration-dropbox-extension/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "all-in-one-wp-migration-dropbox-extension"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.75')

@@ -1,51 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - contact-form-7-paypal-add-on
-  - dsl:
-    - compare_versions(version, '<= 2.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/contact-form-7-paypal-add-on/readme.txt'
-  redirects: true
 id: contact-form-7-paypal-add-on-f1b361e30c3719184d7ac5054998d8c7
+
 info:
+  name: >
+    Contact Form 7 – PayPal & Stripe Add-on <= 2.0 - Reflected Cross-Site Scripting
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/99be8703-b462-4589-9918-76c0ebbb3bcf?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/contact-form-7-paypal-add-on/
+    fofa-query: "wp-content/plugins/contact-form-7-paypal-add-on/"
     google-query: inurl:"/wp-content/plugins/contact-form-7-paypal-add-on/"
     shodan-query: 'vuln:'
-  name: "Contact Form 7 \u2013 PayPal & Stripe Add-on <= 2.0 - Reflected Cross-Site\
-    \ Scripting\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/99be8703-b462-4589-9918-76c0ebbb3bcf?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,contact-form-7-paypal-add-on,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/contact-form-7-paypal-add-on/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "contact-form-7-paypal-add-on"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.0')

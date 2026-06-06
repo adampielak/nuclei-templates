@@ -1,28 +1,35 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>airCube</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: aircube-login
+
 info:
+  name: airCube Login - Detect
   author: DhiyaneshDk
+  severity: info
+  description: airCube login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
-  description: airCube login panel was detected.
+    cpe: cpe:2.3:h:ui:aircube:*:*:*:*:*:*:*:*
   metadata:
+    verified: true
     max-request: 1
     shodan-query: http.favicon.hash:1249285083
-    verified: true
-  name: airCube Login - Detect
-  severity: info
-  tags: panel,aircube,ubiquiti
+    product: aircube
+    vendor: ui
+  tags: panel,aircube,ubiquiti,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>airCube</title>'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100fb67151770046a5ed9a065e017186fea4d3dcc321d4ddf3f6928ac00fabd1ea6022014cb570f59e57e423ab5c5f35b545ebb82f4130137c0b68ec0dcb2ae323d33e4:922c64590222798bb761d5b6d8e72950

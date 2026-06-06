@@ -1,26 +1,31 @@
-http:
-- matchers:
-  - part: body
-    regex:
-    - ^(?:FROM(?:CACHE)?|RUN|ADD|WORKDIR|ENV|EXPOSE|\#)\s+[ -~]+
-    type: regex
-  - status:
-    - 200
-    type: status
-  - negative: true
-    part: header
-    type: word
-    words:
-    - text/html
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/dockerfile'
-  - '{{BaseURL}}/Dockerfile'
 id: dockerfile-disclosure
+
 info:
-  author: morgenm
-  description: Searches for exposed Dockerfiles.
   name: Dockerfile File Detection
+  author: morgenm
   severity: medium
+  description: Searches for exposed Dockerfiles.
   tags: exposure,config
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/dockerfile"
+      - "{{BaseURL}}/Dockerfile"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        regex:
+          - '^(?:FROM(?:CACHE)?|RUN|ADD|WORKDIR|ENV|EXPOSE|\#)\s+[ -~]+'
+        part: body
+
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+        negative: true
