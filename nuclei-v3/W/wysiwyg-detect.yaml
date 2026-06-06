@@ -1,31 +1,27 @@
+headless:
+- matchers:
+  - condition: or
+    part: body
+    regex:
+    - <.*cke_toolbar.*>
+    - <.*ck-editor.*>
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  steps:
+  - action: navigate
+    args:
+      url: '{{BaseURL}}'
+  - action: waitload
 id: wysiwyg-detect
-
 info:
-  name: WYSIWYG rich text editor detection
   author: otterly
-  severity: info
-  description: Detect multiple possible WYSIWYG rich text editors for potential XSS vulnerabilities.
+  description: Detect multiple possible WYSIWYG rich text editors for potential XSS
+    vulnerabilities.
   metadata:
     max-request: 1
+  name: WYSIWYG rich text editor detection
+  severity: info
   tags: tech,wysiwyg,detect,headless
-
-headless:
-  - steps:
-    - action: navigate
-      args:
-        url: "{{BaseURL}}"
-
-    - action: waitload
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - "<.*cke_toolbar.*>"
-          - "<.*ck-editor.*>"
-        condition: or
-
-      - type: status
-        status:
-          - 200
