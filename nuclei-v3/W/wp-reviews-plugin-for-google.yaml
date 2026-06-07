@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/wp-reviews-plugin-for-google/
   metadata:
+    max-request: 1
     plugin_namespace: wp-reviews-plugin-for-google
     wpscan: https://wpscan.com/plugin/wp-reviews-plugin-for-google
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100915c5a55344351edf849272b5d63b6bf3fc78a81538a138c090e0ca7dad33a00022100d61074c67abab896fc64a65fee9d43d149d10806c432c17373bdce42cb6e2760:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201a893a5b01e4280d8c497182f4c0b55fc896528d33e2c77717d2bde0bc454dc402204c20db52be14dc41ce256080a31b841ae40e2fc5a7bf14548d4c0559825d9bdc:922c64590222798bb761d5b6d8e72950

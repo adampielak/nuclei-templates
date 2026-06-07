@@ -4,16 +4,11 @@ info:
   name: Atlassian JIRA Setup - Installer
   author: ritikchaddha
   severity: high
-  description: Atlassian JIRA is susceptible to the Installation page exposure due to misconfiguration.
-  classification:
-    cpe: cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
-    vendor: atlassian
-    product: jira
     shodan-query: title:"JIRA - JIRA setup"
-  tags: misconfig,jira,atlassian,installer,vuln
+  tags: misconfig,jira,atlassian,installer
 
 http:
   - method: GET
@@ -38,4 +33,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204ac4ee6fed7732c94e2d610822d322aca0faaef89d4916c933f7bb6d320d9cbf02201b35f355ee5df029ebd92e139ec31073499e30fa20d1b5825d9b4cdd81c04401:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402205709cb1768d530533c3f846fe10f6c3c1abfe464d16ddda66326ce718e76270c02201ab3e9cbf9162ba9061776411442ef4f40b4033a15d351cfef41ecf47185537f:922c64590222798bb761d5b6d8e72950

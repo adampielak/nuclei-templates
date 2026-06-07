@@ -1,72 +1,50 @@
-id: empirec2-default-login
-
-info:
-  name: Empire C2 / Starkiller Interface - Default Login
-  author: clem9669,parzival
-  severity: high
-  description: |
-    Empire C2 / Starkiller Default Administrator Credentials Discovered.
-  reference:
-    - https://github.com/BC-SECURITY/Empire
-    - https://github.com/BC-SECURITY/empire-docs/blob/main/restful-api/README.md
-  metadata:
-    verified: true
-    max-request: 2
-  tags: default-login,empire,c2,intrusive,vuln
-
 http:
-  - raw:
-      - |
-        POST /token HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryoZwyedGcQU4FrcFV
-        Accept: application/json, text/plain, */*
+- attack: pitchfork
+  matchers:
+  - part: body
+    regex:
+    - '{"token":".*"}'
+    type: regex
+  - part: header
+    type: word
+    words:
+    - application/json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    pass:
+    - password123
+    user:
+    - empireadmin
+  raw:
+  - 'POST /api/admin/login HTTP/1.1
 
-        ------WebKitFormBoundaryoZwyedGcQU4FrcFV
-        Content-Disposition: form-data; name="username"
+    Host: {{Hostname}}
 
-        {{username}}
-        ------WebKitFormBoundaryoZwyedGcQU4FrcFV
-        Content-Disposition: form-data; name="password"
+    Content-Type: application/json
 
-        {{password}}
-        ------WebKitFormBoundaryoZwyedGcQU4FrcFV--
-      - |
-        POST /api/admin/login HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/json
 
-        {"username":"{{user}}","password":"{{pass}}"}
+    {"username":"{{user}}","password":"{{pass}}"}
 
-    attack: pitchfork
-    payloads:
-      username:
-        - empireadmin
-      password:
-        - password123
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'access_token'
-          - '{"token":".*"}'
-        condition: or
-
-      - type: word
-        part: body
-        words:
-          - '"code":1001'
-        negative: true
-
-      - type: word
-        part: content_type
-        words:
-          - application/json
-
-      - type: status
-        status:
-          - 200
-# digest: 4a0a004730450220452d7baca81d93014099ae6d27dba13bd39f75911a563fe493fa231501a023100221009c0f25711237f8141e61b9a5f2e5e5463b09bf69b48146bd2c340407d52f6626:922c64590222798bb761d5b6d8e72950
+    '
+id: empirec2-default-login
+info:
+  author: clem9669
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  description: Empire C2 contains a default admin login vulnerability. An attacker
+    can obtain access to user accounts and access sensitive information, modify data,
+    and/or execute unauthorized operations.
+  metadata:
+    max-request: 1
+    verified: true
+  name: Empire C2 Default Admin Login - Detect
+  reference:
+  - https://github.com/BC-SECURITY/Empire
+  - https://bc-security.gitbook.io/empire-wiki/quickstart/configuration/server
+  severity: high
+  tags: default-login,empire
