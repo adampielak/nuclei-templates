@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-441
 requests:
   - raw:
-      - |+
+      - |
         GET http://{{hostval}}/dynamic/instance-identity/document HTTP/1.1
         Host: {{hostval}}
     payloads:

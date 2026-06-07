@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/official-facebook-pixel/
   metadata:
+    max-request: 1
     plugin_namespace: official-facebook-pixel
     wpscan: https://wpscan.com/plugin/official-facebook-pixel
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100d1c9b086408a43b8630b26363881e90e053583950397cfa09c145365173e3f82022100c0a44871d7c73a4cd1e418431cc24b71a72aeb9e5b7a29a7477b0655f1f79ff2:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100d9caf240326ed0b090e038e93310b29c1473c6f0b351de901d1339b7673b63c7022044820af2e78248ce424cf59addaaed3ddb5ca9c7e30e80bad465bfae58c65c8a:922c64590222798bb761d5b6d8e72950

@@ -43,7 +43,7 @@ info:
     '
   metadata:
     max-request: 2
-    runzero-review: REJECT/2026-01-21/uses interactsh
+    runzero-match: service["http.body"] matches "EktronClientManager"
     shodan-query: http.html:"EktronClientManager"
     verified: false
   name: Ektron CMS Blogs xmlrpc.aspx - XML External Entity Injection

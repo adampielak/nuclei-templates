@@ -1,32 +1,36 @@
-http:
-- matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - TorchServe APIs"
-    - '"apiDescription"'
-    - 'operationId":'
-  - part: content_type
-    type: word
-    words:
-    - application/json
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/api-description'
 id: torchserve-detect
-info:
-  author: DhiyaneshDk
-  description: 'Detects the presence of TorchServe APIs.
 
-    '
-  metadata:
-    fofa-query: body="Requested method is not allowed, please refer to API document"
-    max-request: 1
-    product: torchserve
-    vendor: pytorch
-    verified: true
+info:
   name: TorchServe API Description - Detect
+  author: DhiyaneshDk
   severity: info
+  description: |
+    Detects the presence of TorchServe APIs.
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: pytorch
+    product: torchserve
+    fofa-query: body="Requested method is not allowed, please refer to API document"
   tags: tech,pytorch,api,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api-description"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'TorchServe APIs"'
+          - '"apiDescription"'
+          - 'operationId":'
+        condition: or
+
+      - type: word
+        part: content_type
+        words:
+          - "application/json"
+

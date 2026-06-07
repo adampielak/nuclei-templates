@@ -29,7 +29,7 @@ info:
     '
   metadata:
     fofa-query: title="Dkron"
-    runzero-review: REJECT/2025-11-07/uses interactsh
+    runzero-match: any(each(service["html.titles"]), {# matches "Dkron"})
     shodan-query: title:"Dkron"
     verified: true
   name: Dkron - Unauthenticated Remote Command Execution

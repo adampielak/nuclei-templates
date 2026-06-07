@@ -1,40 +1,38 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - <title>Lighter</title>
-    - /lighter/favicon.svg
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/lighter/api'
 id: sparklighter-detect
 info:
+  name: Spark Lighter Detection
   author: icarot
+  severity: info
+  description: |
+    Detects a Spark Lighter server, a REST API for Apache Spark on K8S or YARN.
   classification:
     cpe: cpe:2.3:a:apache:spark:*:*:*:*:*:*:*:*
-  description: 'Detects a Spark Lighter server, a REST API for Apache Spark on K8S
-    or YARN.
-
-    '
   metadata:
     category: productivity
     fofa-query:
-    - title="spark master at"
-    - body="/apps/imt/html/"
+      - title="spark master at"
+      - body="/apps/imt/html/"
     google-query: intitle:"spark master at"
     max-request: 1
     product: spark
     shodan-query:
-    - http.html:"/apps/imt/html/"
-    - http.title:"spark master at"
+      - http.html:"/apps/imt/html/"
+      - http.title:"spark master at"
     vendor: apache
     verified: true
-  name: Spark Lighter Detection
-  severity: info
   tags: apache,detect,discovery,lighter,spark,tech
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - <title>Lighter</title>
+          - /lighter/favicon.svg
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/lighter/api'

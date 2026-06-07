@@ -1,28 +1,32 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>SearXNG</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: searxng-detect
-info:
-  author: rxerium
-  description: 'A SearXNG search engine was detected.
 
-    '
+info:
+  name: SearXNG - Detect
+  author: rxerium
+  severity: info
+  description: |
+    A SearXNG search engine was detected.
+  reference:
+    - https://github.com/searxng/searxng
   metadata:
     max-request: 1
-    shodan-query: http.title:SearXNG
     verified: true
-  name: SearXNG - Detect
-  reference:
-  - https://github.com/searxng/searxng
-  severity: info
+    shodan-query: http.title:SearXNG
   tags: searxng,search-engine,tech,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>SearXNG</title>"
+
+      - type: status
+        status:
+          - 200
+

@@ -1,27 +1,30 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - contains(body, "LoLLMS WebUI - Welcome")
-    - status_code == 200
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: lollms-webui-detect
-info:
-  author: s4e-io
-  description: 'An instance running LoLLMS WebUI was detected.
 
-    '
-  metadata:
-    fofa-query: LoLLMS WebUI - Welcome
-    max-request: 1
-    verified: true
+info:
   name: LoLLMS WebUI - Detect
-  reference:
-  - https://github.com/ParisNeo/lollms-webui
-  - https://lollms.com
+  author: s4e-io
   severity: info
+  description: |
+    An instance running LoLLMS WebUI was detected.
+  reference:
+    - https://github.com/ParisNeo/lollms-webui
+    - https://lollms.com
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: "LoLLMS WebUI - Welcome"
   tags: lollms-webui,tech,detect,discovery,ai
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "LoLLMS WebUI - Welcome")'
+          - 'status_code == 200'
+        condition: and
+

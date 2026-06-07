@@ -1,20 +1,13 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "alt=\"LocalAI Logo\"", "<title>LocalAI")
-    - status_code == 200
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: localai-detect
 info:
+  name: LocalAI - Detect
   author: s4e-io
-  description: 'An instance running LocalAI was detected.
-
-    '
+  severity: info
+  description: |
+    An instance running LocalAI was detected.
+  reference:
+    - https://github.com/mudler/LocalAI
+    - https://localai.io/
   metadata:
     fofa-query: LocalAI API
     max-request: 1
@@ -22,9 +15,15 @@ info:
     shodan-query: http.favicon.hash:-976853304
     vendor: mudler
     verified: true
-  name: LocalAI - Detect
-  reference:
-  - https://github.com/mudler/LocalAI
-  - https://localai.io/
-  severity: info
   tags: detect,discovery,localai,tech
+http:
+  - host-redirects: true
+    matchers:
+      - condition: and
+        dsl:
+          - contains_all(body, "alt=\"LocalAI Logo\"", "<title>LocalAI")
+          - status_code == 200
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}'

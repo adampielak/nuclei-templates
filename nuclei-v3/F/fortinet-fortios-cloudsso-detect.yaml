@@ -1,27 +1,30 @@
-http:
-- matchers:
-  - type: word
-    words:
-    - fortinet.com/saml-idp
-    - SAMLRequest
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/saml/login-forticloud?host={{Hostname}}'
 id: fortinet-fortios-cloudsso-detect
-info:
-  author: darses
-  description: 'Fortinet FortiOS FortiCloud SSO function detected.
 
-    '
-  metadata:
-    max-requests: 1
-    product: fortios
-    vendor: fortinet
-    verified: true
+info:
   name: Fortinet FortiOS FortiCloud SSO - Detect
   severity: info
+  author: darses
+  description: |
+    Fortinet FortiOS FortiCloud SSO function detected.
+  metadata:
+    verified: true
+    max-requests: 1
+    vendor: fortinet
+    product: fortios
   tags: fortinet,fortios
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/saml/login-forticloud?host={{Hostname}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "fortinet.com/saml-idp"
+          - "SAMLRequest"
+
+      - type: status
+        status:
+          - 200

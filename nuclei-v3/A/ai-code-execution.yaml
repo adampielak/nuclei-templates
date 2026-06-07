@@ -36,7 +36,6 @@ info:
     '
   metadata:
     max-request: 8
-    runzero-review: REJECT/2025-12-09/uses interactsh
   name: AI Code Execution Detection
   severity: high
   tags: ai,rce,oast,dast
