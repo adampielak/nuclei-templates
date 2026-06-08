@@ -1,28 +1,31 @@
 id: metasploit-c2
-
 info:
-  name: Metasploit C2 - Detect
   author: pussycat0x
-  severity: info
-  description: |
-    A Metasploit Framework is a powerful tool that provides a universal interface to work with vulnerability exploit code. It has to exploit code for a wide range of vulnerabilities that impact web servers, OSes, network equipment, and everything in between. Metasploit which serves as both exploitation and C2 frameworks.
-  reference: |
-    https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
+  description: 'A Metasploit Framework is a powerful tool that provides a universal
+    interface to work with vulnerability exploit code. It has to exploit code for
+    a wide range of vulnerabilities that impact web servers, OSes, network equipment,
+    and everything in between. Metasploit which serves as both exploitation and C2
+    frameworks.
+
+    '
   metadata:
-    verified: "true"
     max-request: 1
     shodan-query: ssl:"MetasploitSelfSignedCA"
-  tags: c2,ir,osint,malware,ssl,metasploit
-ssl:
-  - address: "{{Host}}:{{Port}}"
-    matchers:
-      - type: word
-        part: issuer_cn
-        words:
-          - "MetasploitSelfSignedCA"
+    verified: true
+  name: Detect SSL Certificate Issuer
+  reference: 'https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
 
-    extractors:
-      - type: json
-        json:
-          - " .issuer_cn"
-# digest: 490a0046304402206c0156c7bb5c6215746d3264c0b9d7f0e3cfb0d8b1bc6ed28937267994af94e8022059a857171b73f4f8984838e5d5bcd72ab927f16c38cb27d15181eab48f1dfcc0:922c64590222798bb761d5b6d8e72950
+    '
+  severity: info
+  tags: c2,ir,osint,metasploit
+ssl:
+- address: '{{Host}}:{{Port}}'
+  extractors:
+  - json:
+    - ' .issuer_cn'
+    type: json
+  matchers:
+  - part: issuer_cn
+    type: word
+    words:
+    - MetasploitSelfSignedCA

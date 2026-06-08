@@ -1,58 +1,56 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - fruitful
+  - dsl:
+    - compare_versions(version, '< 3.8.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/fruitful/style.css'
+  redirects: true
 id: fruitful-018ac6fe17e1f7369ac344b4e390b42f
-
 info:
-  name: "Fruitful < 3.8.1 - Reflected Cross-Site Scripting"
   author: topscoder
-  severity: high
-  description: "The Fruitful theme for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘author’ parameter in versions before 3.8.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
-  reference:
-    - https://github.com/Fruitfulcode/Fruitful/issues/58
-    - https://packetstormsecurity.com/files/156390/
-    - https://wpscan.com/vulnerability/10085
   classification:
+    cve-id: null
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
     cvss-score: 7.1
-    cve-id:
+  description: "The Fruitful theme for WordPress is vulnerable to Reflected Cross-Site\
+    \ Scripting via the \u2018author\u2019 parameter in versions before 3.8.1 due\
+    \ to insufficient input sanitization and output escaping. This makes it possible\
+    \ for unauthenticated attackers to inject arbitrary web scripts in pages that\
+    \ execute if they can successfully trick a user into performing an action such\
+    \ as clicking on a link."
   metadata:
-    fofa-query: "wp-content/themes/fruitful/"
+    fofa-query: wp-content/themes/fruitful/
     google-query: inurl:"/wp-content/themes/fruitful/"
     shodan-query: 'vuln:'
+  name: Fruitful < 3.8.1 - Reflected Cross-Site Scripting
+  reference:
+  - https://github.com/Fruitfulcode/Fruitful/issues/58
+  - https://packetstormsecurity.com/files/156390/
+  - https://wpscan.com/vulnerability/10085
+  severity: high
   tags: cve,wordpress,wp-theme,fruitful,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/fruitful/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "fruitful"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '< 3.8.1')

@@ -1,26 +1,22 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - content="SLiMS
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: slims-cms-detect
-
 info:
-  name: Slims CMS - Detect
   author: nblirwn
-  severity: info
   description: Detects Senayan Library Management System (SLiMS) CMS
-  reference:
-    - https://github.com/slims
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:'content="SLiMS'
+    verified: true
+  name: Slims CMS - Detect
+  reference:
+  - https://github.com/slims
+  severity: info
   tags: tech,slims,cms,senayan,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'content="SLiMS'
-

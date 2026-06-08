@@ -1,36 +1,32 @@
+http:
+- matchers:
+  - case-insensitive: true
+    condition: and
+    part: body
+    type: word
+    words:
+    - <discovery
+    - <contractRef
+  - part: content_type
+    type: word
+    words:
+    - text/xml
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/_vti_bin/spdisco.aspx'
 id: sharepoint-web-services-discovery
-
 info:
-  name: Microsoft SharePoint - Web Services Discovery
   author: 0x_Akoko
-  severity: info
-  description: |
-    Detected exposed SharePoint web services via /_vti_bin/spdisco.aspx endpoint
+  description: 'Detected exposed SharePoint web services via /_vti_bin/spdisco.aspx
+    endpoint
+
+    '
   metadata:
     max-request: 1
+  name: Microsoft SharePoint - Web Services Discovery
+  severity: info
   tags: sharepoint,iis,microsoft,tech,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/_vti_bin/spdisco.aspx"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<discovery"
-          - "<contractRef"
-        condition: and
-        case-insensitive: true
-
-      - type: word
-        part: content_type
-        words:
-          - text/xml
-
-      - type: status
-        status:
-          - 200
-

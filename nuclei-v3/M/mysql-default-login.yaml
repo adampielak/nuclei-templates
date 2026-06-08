@@ -1,52 +1,52 @@
 id: mysql-default-login
-
 info:
-  name: MySQL - Default Login
   author: DhiyaneshDk,pussycat0x,ritikchaddha
-  severity: high
-  description: |
-    A MySQL service was accessed with easily guessed credentials.
+  description: 'A MySQL service was accessed with easily guessed credentials.
+
+    '
   metadata:
-    verified: true
     max-request: 21
-    shodan-query: "port:3306"
+    shodan-query: port:3306
+    verified: true
+  name: MySQL - Default Login
+  severity: high
   tags: js,mysql,default-login,network,fuzz
-
 javascript:
-  - pre-condition: |
-      var m = require("nuclei/mysql");
-      var c = m.MySQLClient();
-      c.IsMySQL(Host, Port);
+- args:
+    Host: '{{Host}}'
+    Pass: '{{passwords}}'
+    Port: '3306'
+    User: '{{usernames}}'
+  attack: clusterbomb
+  code: 'var m = require("nuclei/mysql");
 
-    code: |
-      var m = require("nuclei/mysql");
-      var c = m.MySQLClient();
-      c.Connect(Host,Port,Username,Password)
+    var c = m.MySQLClient();
 
-    args:
-      Host: "{{Host}}"
-      Port: "3306"
-      User: "{{usernames}}"
-      Pass: "{{passwords}}"
+    c.Connect(Host,Port,Username,Password)
 
-    payloads:
-      usernames:
-        - root
-        - admin
-        - mysql
-        - test
-      passwords:
-        - root
-        - admin
-        - mysql
-        - test
-        -
-    attack: clusterbomb
+    '
+  matchers:
+  - condition: and
+    dsl:
+    - response == true
+    - success == true
+    type: dsl
+  payloads:
+    passwords:
+    - root
+    - admin
+    - mysql
+    - test
+    - null
+    usernames:
+    - root
+    - admin
+    - mysql
+    - test
+  pre-condition: 'var m = require("nuclei/mysql");
 
-    matchers:
-      - type: dsl
-        dsl:
-          - "response == true"
-          - "success == true"
-        condition: and
-# digest: 4a0a004730450220733725a3093b270900d6688f205629ca6477122f4f7d69f53792848fee2c5b56022100e1bc0a82d4775f448f3ba233a51ec6c9d5730b3336a0bd4add33052537f6a8a7:922c64590222798bb761d5b6d8e72950
+    var c = m.MySQLClient();
+
+    c.IsMySQL(Host, Port);
+
+    '
