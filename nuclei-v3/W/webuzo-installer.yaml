@@ -1,29 +1,40 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Webuzo Installer
-    - Webuzo Initial Setup
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/install.php'
 id: webuzo-installer
+
 info:
-  author: DhiyaneshDk
-  metadata:
-    max-request: 1
-    shodan-query: title:"Webuzo Installer"
-    verified: true
   name: Webuzo Installer
+  author: DhiyaneshDk
   severity: high
-  tags: misconfig,webuzo,install,exposure
+  description: Webuzo is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:softaculous:webuzo:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: softaculous
+    product: webuzo
+    shodan-query: title:"Webuzo Installer"
+  tags: misconfig,webuzo,install,exposure,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/install.php'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Webuzo Installer'
+          - 'Webuzo Initial Setup'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'text/html'
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a004830460221008ed534639aeccb9efc1650a38514510e75e585365247d3992804cfdb8a9cf85e022100ed9a96438b43f31387f1f231a841655bad12a682f08bb4b194a27694e0b5d622:922c64590222798bb761d5b6d8e72950

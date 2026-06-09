@@ -1,27 +1,33 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - '''s profile'
-  matchers-condition: and
-  method: GET
-  path:
-  - https://hubski.com/user/{{user}}
 id: hubski
+
 info:
+  name: Hubski User Name Information - Detect
   author: dwisiswant0
+  severity: info
+  description: Hubski user name information check was conducted.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
-  description: Hubski user name information check was conducted.
   metadata:
     max-request: 1
-  name: Hubski User Name Information - Detect
-  severity: info
-  tags: osint,osint-social,hubski
+  tags: osint,osint-social,hubski,discovery
+
 self-contained: true
+
+http:
+  - method: GET
+    path:
+      - "https://hubski.com/user/{{user}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "'s profile"
+# digest: 4b0a00483046022100a6b80b34759158a32440b120babd601eaa9fc894cfe9abef511d79c942746a25022100e17d0db0f2fcd86fbc5847723337e745e3b36de875043a2f98bdf01b270ebe5d:922c64590222798bb761d5b6d8e72950

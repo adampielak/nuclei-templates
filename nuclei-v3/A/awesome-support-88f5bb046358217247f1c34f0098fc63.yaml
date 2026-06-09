@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - awesome-support
-  - dsl:
-    - compare_versions(version, '<= 6.1.4')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/awesome-support/readme.txt'
-  redirects: true
 id: awesome-support-88f5bb046358217247f1c34f0098fc63
+
 info:
+  name: >
+    Awesome Support <= 6.1.4 - Missing Authorization via wpas_edit_reply_ajax()
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4dec91d7-19cf-480d-871c-427cd1e691a6?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/awesome-support/
+    fofa-query: "wp-content/plugins/awesome-support/"
     google-query: inurl:"/wp-content/plugins/awesome-support/"
     shodan-query: 'vuln:'
-  name: 'Awesome Support <= 6.1.4 - Missing Authorization via wpas_edit_reply_ajax()
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4dec91d7-19cf-480d-871c-427cd1e691a6?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,awesome-support,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/awesome-support/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "awesome-support"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 6.1.4')

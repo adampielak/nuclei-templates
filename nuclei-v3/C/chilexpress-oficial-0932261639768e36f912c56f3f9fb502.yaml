@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - chilexpress-oficial
-  - dsl:
-    - compare_versions(version, '<= 1.2.9')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/chilexpress-oficial/readme.txt'
-  redirects: true
 id: chilexpress-oficial-0932261639768e36f912c56f3f9fb502
+
 info:
+  name: >
+    Chilexpress woo oficial <= 1.2.9 - Reflected Cross-Site Scripting
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0999a738-9fae-4043-99eb-ff222a7608fa?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/chilexpress-oficial/
+    fofa-query: "wp-content/plugins/chilexpress-oficial/"
     google-query: inurl:"/wp-content/plugins/chilexpress-oficial/"
     shodan-query: 'vuln:'
-  name: 'Chilexpress woo oficial <= 1.2.9 - Reflected Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0999a738-9fae-4043-99eb-ff222a7608fa?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,chilexpress-oficial,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/chilexpress-oficial/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "chilexpress-oficial"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.2.9')

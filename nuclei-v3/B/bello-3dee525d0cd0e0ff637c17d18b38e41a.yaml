@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - bello
-  - dsl:
-    - compare_versions(version, '< 1.6.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/bello/style.css'
-  redirects: true
 id: bello-3dee525d0cd0e0ff637c17d18b38e41a
+
 info:
+  name: >
+    Bello - Directory & Listing <= 1.5.9 - Unauthenticated SQL Injection
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1fa39169-1cba-43ce-aa29-adf7ce09ce75?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/themes/bello/
+    fofa-query: "wp-content/themes/bello/"
     google-query: inurl:"/wp-content/themes/bello/"
     shodan-query: 'vuln:'
-  name: 'Bello - Directory & Listing <= 1.5.9 - Unauthenticated SQL Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1fa39169-1cba-43ce-aa29-adf7ce09ce75?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-theme,bello,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/bello/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "bello"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 1.6.0')

@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - ad-injection
-  - dsl:
-    - compare_versions(version, '<= 1.2.0.19')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/ad-injection/readme.txt'
-  redirects: true
 id: ad-injection-77dd310da778b3699853e87aae645af9
+
 info:
+  name: >
+    Ad Injection <= 1.2.0.19 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a07ca145-9349-4961-9e66-4c59ea9b5069?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/ad-injection/
+    fofa-query: "wp-content/plugins/ad-injection/"
     google-query: inurl:"/wp-content/plugins/ad-injection/"
     shodan-query: 'vuln:'
-  name: 'Ad Injection <= 1.2.0.19 - Authenticated (Admin+) Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a07ca145-9349-4961-9e66-4c59ea9b5069?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,ad-injection,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/ad-injection/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "ad-injection"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.2.0.19')

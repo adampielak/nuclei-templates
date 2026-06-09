@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"V2X Control"
-  tags: misconfig,exposure,v2x,control
+  tags: misconfig,exposure,v2x,control,vuln
 
 http:
   - method: GET
@@ -30,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100dbb20c1c679aff2ed5be37b4b7b5a99e54a65688a07879f26319e20e2013299102205402a4671dc9fdd574e81c13d41dd0922a824e6d46c756452aa978e316ef8f30:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220411c65b622bcf4295982f22e7983aa766c9f8b6167a24a8796c08c06f665b76302205e13160d2df36328944b088dd2e1d7e972ecc51676e49cb4a1943af574a1df44:922c64590222798bb761d5b6d8e72950

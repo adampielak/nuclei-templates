@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - classima
-  - dsl:
-    - compare_versions(version, '< 2.1.11')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/classima/style.css'
-  redirects: true
 id: classima-96030500fe2554ea1cda13e31e7a5e40
+
 info:
+  name: >
+    Classima < 2.1.11 - Reflected Cross-Site Scripting
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4cfee2e2-3486-4be8-954f-6d7f9b6d54ec?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/themes/classima/
+    fofa-query: "wp-content/themes/classima/"
     google-query: inurl:"/wp-content/themes/classima/"
     shodan-query: 'vuln:'
-  name: 'Classima < 2.1.11 - Reflected Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4cfee2e2-3486-4be8-954f-6d7f9b6d54ec?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-theme,classima,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/classima/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "classima"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 2.1.11')

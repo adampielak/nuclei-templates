@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - blog-posts-and-category-for-elementor
-  - dsl:
-    - compare_versions(version, '<= 1.0.3')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/blog-posts-and-category-for-elementor/readme.txt'
-  redirects: true
 id: blog-posts-and-category-for-elementor-db67e3e7b90cd58f1370273dfe3a109d
+
 info:
+  name: >
+    Blog, Posts and Category Filter for Elementor <= 1.0.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post and Category Filter Widget
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a24c2d7d-8df8-4a3a-a538-09e11ebc6dd5?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/blog-posts-and-category-for-elementor/
+    fofa-query: "wp-content/plugins/blog-posts-and-category-for-elementor/"
     google-query: inurl:"/wp-content/plugins/blog-posts-and-category-for-elementor/"
     shodan-query: 'vuln:'
-  name: 'Blog, Posts and Category Filter for Elementor <= 1.0.3 - Authenticated (Contributor+)
-    Stored Cross-Site Scripting via Post and Category Filter Widget
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a24c2d7d-8df8-4a3a-a538-09e11ebc6dd5?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,blog-posts-and-category-for-elementor,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/blog-posts-and-category-for-elementor/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "blog-posts-and-category-for-elementor"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0.3')

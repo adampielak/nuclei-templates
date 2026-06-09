@@ -4,16 +4,19 @@ info:
   name: Home Assistant Panel
   author: fabaff,daffainfo,lum8rjack
   severity: info
-  reference: https://www.home-assistant.io/
+  reference:
+    - https://www.home-assistant.io/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:home-assistant:home-assistant:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Home Assistant"
-  tags: panel,iot,homeassistant
+    product: home-assistant
+    vendor: home-assistant
+  tags: panel,iot,homeassistant,discovery
 
 http:
   - method: GET
@@ -30,5 +33,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100874104f457cdccbfee502d6206a63e06ddae606045551e8753aae421bb2e6874022100b86accb1fee0e900c37791c8388d23880b6bcf372173db9c0fa9d127980dedb0:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022066e0c4a90ee88262fb9b279329d09bbffe108c303373d1be3c27b0b0242fef6602210096beda02f64450281d4f27575beed5ba59747d140939c7d98fb015a73fbfcf74:922c64590222798bb761d5b6d8e72950

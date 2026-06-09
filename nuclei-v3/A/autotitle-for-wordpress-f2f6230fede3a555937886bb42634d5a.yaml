@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - autotitle-for-wordpress
-  - dsl:
-    - compare_versions(version, '<= 1.0.3')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/autotitle-for-wordpress/readme.txt'
-  redirects: true
 id: autotitle-for-wordpress-f2f6230fede3a555937886bb42634d5a
+
 info:
+  name: >
+    Autotitle for WordPress <= 1.0.3 - Cross-Site Request Forgery to Settings Update and Stored Cross-Site Scripting
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/062d906d-5a6e-4180-a2f2-18411334b9a1?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/autotitle-for-wordpress/
+    fofa-query: "wp-content/plugins/autotitle-for-wordpress/"
     google-query: inurl:"/wp-content/plugins/autotitle-for-wordpress/"
     shodan-query: 'vuln:'
-  name: 'Autotitle for WordPress <= 1.0.3 - Cross-Site Request Forgery to Settings
-    Update and Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/062d906d-5a6e-4180-a2f2-18411334b9a1?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,autotitle-for-wordpress,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/autotitle-for-wordpress/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "autotitle-for-wordpress"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0.3')

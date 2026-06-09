@@ -1,33 +1,36 @@
-http:
-- matchers:
-  - type: word
-    words:
-    - Matching policy not found while trying to process Assertion
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/saml/login'
 id: citrix-netscaler-saml
-info:
-  author: darses
-  classification:
-    cve-id: todo
-  description: 'Detected Citrix Netscaler with SAML SP or IDP enabled.
 
-    '
-  metadata:
-    fofa-query:
-    - icon_hash="1418494345"
-    max-requests: 1
-    product: netscaler
-    shodan-query:
-    - http.favicon.hash:1418494345
-    - product:"Citrix Netscaler"
-    vendor: citrix
-    verified: false
+info:
   name: Citrix Netscaler - SAML
   severity: info
+  author: darses
+  description: |
+    Detected Citrix Netscaler with SAML SP or IDP enabled.
+  classification:
+    cve-id: todo
+  metadata:
+    verified: false
+    max-requests: 1
+    vendor: citrix
+    product: netscaler
+    shodan-query:
+      - http.favicon.hash:1418494345
+      - product:"Citrix Netscaler"
+    fofa-query:
+      - icon_hash="1418494345"
   tags: detect,citrix,netscaler
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/saml/login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Matching policy not found while trying to process Assertion"
+
+      - type: status
+        status:
+          - 200

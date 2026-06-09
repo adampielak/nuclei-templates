@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: c2,rhadamanthys,stealer,panel
+  tags: c2,rhadamanthys,stealer,panel,vuln
 
 http:
   - method: GET
@@ -29,5 +29,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a00463044022058c0be8153d5d79b10702c1aabe4dccf03e18422bebdc3147a74f809a88b892002201f5d727149212fc2c3f70afcf7281355fbe6b09f1af935b20849289d8d2da270:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402207d96563c0799950c1aa2d45edc3e907ed2bd7ac77a642768836d538f91f8be4f022063a6e784e35350dc96c21d4ee24c9991f50c39479b94a30087cf9d7b8207b093:922c64590222798bb761d5b6d8e72950
