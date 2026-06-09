@@ -1,27 +1,17 @@
-id: key-cloak-admin-panel 2
+id: key-cloak-admin-panel
+
 info:
-  author: incogbyte,righettod
   name: Keycloak Admin Panel
-  severity: info
-  tags: panel
+  author: incogbyte
+  severity: low
+
 requests:
-- attack: sniper
-  matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - <a href="http://www.keycloak.org">
-    - keycloak
-  payloads:
-    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-  raw:
-  - 'GET /auth/admin HTTP/1.1
+  - method: GET
+    path:
+      - "{{BaseURL}}/auth/admin/master/console/"
 
-    Host: {{Subdomains}}
-
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101
-    Firefox/55
-
-    '
-  threads: 100
+    matchers:
+      - type: word
+        words:
+          - "<a href=\"http://www.keycloak.org\">"
+        part: body

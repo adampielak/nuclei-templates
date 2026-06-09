@@ -1,46 +1,51 @@
-http:
-- extractors:
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - (?mi)Stable tag:\s*([0-9.]+)
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - digital-license-manager
-  - dsl:
-    - compare_versions(version, '<= 1.7.3')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/digital-license-manager/readme.txt'
-  redirects: true
 id: digital_license_manager-a266e003-3a0a-4832-a88b-60c2a26b387c
-info:
-  author: topscoder
-  classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
-  metadata:
-    fofa-query: wp-content/plugins/digital-license-manager/
-    google-query: inurl:"/wp-content/plugins/digital-license-manager/"
-    shodan-query: http.html:"wp-content/plugins/digital-license-manager/"
-  name: 'Digital License Manager <= 1.7.3 - Reflected Cross-Site Scripting via remove_query_arg
-    Function
 
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a266e003-3a0a-4832-a88b-60c2a26b387c?source=api-scan
+info:
+  name: >
+    Digital License Manager <= 1.7.3 - Reflected Cross-Site Scripting via remove_query_arg Function
+  author: topscoder
   severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a266e003-3a0a-4832-a88b-60c2a26b387c?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/digital-license-manager/"
+    google-query: inurl:"/wp-content/plugins/digital-license-manager/"
+    shodan-query: 'http.html:"wp-content/plugins/digital-license-manager/"'
   tags: cve,wordpress,wp-plugin,digital-license-manager,medium,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/digital-license-manager/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "digital-license-manager"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.7.3')
