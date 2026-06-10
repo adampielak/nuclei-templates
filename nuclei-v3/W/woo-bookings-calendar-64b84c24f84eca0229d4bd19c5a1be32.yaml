@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - woo-bookings-calendar
-  - dsl:
-    - compare_versions(version, '<= 1.0.36')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/woo-bookings-calendar/readme.txt'
-  redirects: true
 id: woo-bookings-calendar-64b84c24f84eca0229d4bd19c5a1be32
+
 info:
+  name: >
+    WooCommerce Bookings Calendar <= 1.0.36 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6aff1ea6-c6d2-4195-899b-3a038b73a7f0?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/woo-bookings-calendar/
+    fofa-query: "wp-content/plugins/woo-bookings-calendar/"
     google-query: inurl:"/wp-content/plugins/woo-bookings-calendar/"
     shodan-query: 'vuln:'
-  name: 'WooCommerce Bookings Calendar <= 1.0.36 - Authenticated (Contributor+) Stored
-    Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/6aff1ea6-c6d2-4195-899b-3a038b73a7f0?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,woo-bookings-calendar,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/woo-bookings-calendar/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "woo-bookings-calendar"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0.36')

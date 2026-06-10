@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - awesome-contact-form7-for-elementor
-  - dsl:
-    - compare_versions(version, '<= 2.9')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/awesome-contact-form7-for-elementor/readme.txt'
-  redirects: true
 id: awesome-contact-form7-for-elementor-393407b3b02ce14b0efd564db0f86620
+
 info:
+  name: >
+    Awesome Contact Form7 for Elementor <= 2.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via AEP Contact Form 7 Widget
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0687e101-3c96-4c9b-941a-1b0fed2f76e2?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/awesome-contact-form7-for-elementor/
+    fofa-query: "wp-content/plugins/awesome-contact-form7-for-elementor/"
     google-query: inurl:"/wp-content/plugins/awesome-contact-form7-for-elementor/"
     shodan-query: 'vuln:'
-  name: 'Awesome Contact Form7 for Elementor <= 2.9 - Authenticated (Contributor+)
-    Stored Cross-Site Scripting via AEP Contact Form 7 Widget
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0687e101-3c96-4c9b-941a-1b0fed2f76e2?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,awesome-contact-form7-for-elementor,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/awesome-contact-form7-for-elementor/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "awesome-contact-form7-for-elementor"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.9')

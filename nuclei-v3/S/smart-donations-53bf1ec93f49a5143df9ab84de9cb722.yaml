@@ -1,51 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - smart-donations
-  - dsl:
-    - compare_versions(version, '<= 4.0.12')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/smart-donations/readme.txt'
-  redirects: true
 id: smart-donations-53bf1ec93f49a5143df9ab84de9cb722
+
 info:
+  name: >
+    Donations Made Easy – Smart Donations <= 4.0.12 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/799975aa-44fe-48dc-8ac9-469c89a03c67?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/smart-donations/
+    fofa-query: "wp-content/plugins/smart-donations/"
     google-query: inurl:"/wp-content/plugins/smart-donations/"
     shodan-query: 'vuln:'
-  name: "Donations Made Easy \u2013 Smart Donations <= 4.0.12 - Unauthenticated Stored\
-    \ Cross-Site Scripting\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/799975aa-44fe-48dc-8ac9-469c89a03c67?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,smart-donations,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/smart-donations/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "smart-donations"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 4.0.12')

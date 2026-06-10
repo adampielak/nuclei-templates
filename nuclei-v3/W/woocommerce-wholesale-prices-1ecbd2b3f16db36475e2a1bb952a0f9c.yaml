@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - woocommerce-wholesale-prices
-  - dsl:
-    - compare_versions(version, '<= 2.1.5')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/woocommerce-wholesale-prices/readme.txt'
-  redirects: true
 id: woocommerce-wholesale-prices-1ecbd2b3f16db36475e2a1bb952a0f9c
+
 info:
+  name: >
+    Wholesale Suite <= 2.1.5 - Missing Authorization to Plugin Settings Change
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f713f2f8-545a-4f54-a028-8422c0942a63?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/woocommerce-wholesale-prices/
+    fofa-query: "wp-content/plugins/woocommerce-wholesale-prices/"
     google-query: inurl:"/wp-content/plugins/woocommerce-wholesale-prices/"
     shodan-query: 'vuln:'
-  name: 'Wholesale Suite <= 2.1.5 - Missing Authorization to Plugin Settings Change
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f713f2f8-545a-4f54-a028-8422c0942a63?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,woocommerce-wholesale-prices,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/woocommerce-wholesale-prices/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "woocommerce-wholesale-prices"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.1.5')

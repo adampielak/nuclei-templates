@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - login-attempts-limit-wp
-  - dsl:
-    - compare_versions(version, '<= 2.1')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/login-attempts-limit-wp/readme.txt'
-  redirects: true
 id: login-attempts-limit-wp-a27b928af3555fe96c9110a0c596251e
+
 info:
+  name: >
+    LOGIN AND REGISTRATION ATTEMPTS LIMIT <= 2.1 - Cross-Site Request Forgery
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/257052f4-2b0a-4604-befd-651dc338b3d5?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/login-attempts-limit-wp/
+    fofa-query: "wp-content/plugins/login-attempts-limit-wp/"
     google-query: inurl:"/wp-content/plugins/login-attempts-limit-wp/"
     shodan-query: 'vuln:'
-  name: 'LOGIN AND REGISTRATION ATTEMPTS LIMIT <= 2.1 - Cross-Site Request Forgery
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/257052f4-2b0a-4604-befd-651dc338b3d5?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,login-attempts-limit-wp,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/login-attempts-limit-wp/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "login-attempts-limit-wp"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.1')

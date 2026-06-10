@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - fluentforms-pdf
-  - dsl:
-    - compare_versions(version, '<= 1.1.7')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/fluentforms-pdf/readme.txt'
-  redirects: true
 id: fluentforms-pdf-f2f5e792a1f1e3ea22f7d8eb1b99485e
+
 info:
+  name: >
+    PDF Generator For Fluent Forms <= 1.1.7 - Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6675c48-43d4-4394-a4a3-f753bdaa5c4e?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/fluentforms-pdf/
+    fofa-query: "wp-content/plugins/fluentforms-pdf/"
     google-query: inurl:"/wp-content/plugins/fluentforms-pdf/"
     shodan-query: 'vuln:'
-  name: 'PDF Generator For Fluent Forms <= 1.1.7 - Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6675c48-43d4-4394-a4a3-f753bdaa5c4e?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,fluentforms-pdf,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/fluentforms-pdf/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "fluentforms-pdf"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.1.7')

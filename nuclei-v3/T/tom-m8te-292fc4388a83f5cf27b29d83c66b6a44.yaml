@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - tom-m8te
-  - dsl:
-    - compare_versions(version, '<= *')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/tom-m8te/readme.txt'
-  redirects: true
 id: tom-m8te-292fc4388a83f5cf27b29d83c66b6a44
+
 info:
+  name: >
+    Tom M8te <= 1.5.3 - Directory Traversal
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3c3c740-8ebe-44b2-a0ba-6beffe970cf1?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/tom-m8te/
+    fofa-query: "wp-content/plugins/tom-m8te/"
     google-query: inurl:"/wp-content/plugins/tom-m8te/"
     shodan-query: 'vuln:'
-  name: 'Tom M8te <= 1.5.3 - Directory Traversal
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3c3c740-8ebe-44b2-a0ba-6beffe970cf1?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,tom-m8te,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/tom-m8te/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "tom-m8te"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= *')

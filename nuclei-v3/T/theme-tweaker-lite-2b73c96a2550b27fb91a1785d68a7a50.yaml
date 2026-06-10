@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - theme-tweaker-lite
-  - dsl:
-    - compare_versions(version, '<= 5.20')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/theme-tweaker-lite/readme.txt'
-  redirects: true
 id: theme-tweaker-lite-2b73c96a2550b27fb91a1785d68a7a50
+
 info:
+  name: >
+    Theme Tweaker <= 5.20 - Cross-Site Request Forgery
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7dd67111-514f-4f7d-8cdd-7b10ea718530?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/theme-tweaker-lite/
+    fofa-query: "wp-content/plugins/theme-tweaker-lite/"
     google-query: inurl:"/wp-content/plugins/theme-tweaker-lite/"
     shodan-query: 'vuln:'
-  name: 'Theme Tweaker <= 5.20 - Cross-Site Request Forgery
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7dd67111-514f-4f7d-8cdd-7b10ea718530?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,theme-tweaker-lite,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/theme-tweaker-lite/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "theme-tweaker-lite"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 5.20')

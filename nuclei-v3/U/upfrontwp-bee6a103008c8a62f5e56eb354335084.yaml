@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - upfrontwp
-  - dsl:
-    - compare_versions(version, '<= 1.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/upfrontwp/style.css'
-  redirects: true
 id: upfrontwp-bee6a103008c8a62f5e56eb354335084
+
 info:
+  name: >
+    Upfrontwp <= 1.0 - Authenticated (Subscriber+) Stored Cross-Site Scripting
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/83ac0dfc-88cd-48f0-9914-2258d5dfe834?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/themes/upfrontwp/
+    fofa-query: "wp-content/themes/upfrontwp/"
     google-query: inurl:"/wp-content/themes/upfrontwp/"
     shodan-query: 'vuln:'
-  name: 'Upfrontwp <= 1.0 - Authenticated (Subscriber+) Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/83ac0dfc-88cd-48f0-9914-2258d5dfe834?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-theme,upfrontwp,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/upfrontwp/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "upfrontwp"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0')

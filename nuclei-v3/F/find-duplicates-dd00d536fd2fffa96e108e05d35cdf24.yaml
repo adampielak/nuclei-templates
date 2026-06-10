@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - find-duplicates
-  - dsl:
-    - compare_versions(version, '<= 1.4.6')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/find-duplicates/readme.txt'
-  redirects: true
 id: find-duplicates-dd00d536fd2fffa96e108e05d35cdf24
+
 info:
+  name: >
+    Find Duplicates <= 1.4.6 - Authenticated (Subscriber+) SQL Injection
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/466eec4a-8aac-4b0d-ba18-9667aa70de5a?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/find-duplicates/
+    fofa-query: "wp-content/plugins/find-duplicates/"
     google-query: inurl:"/wp-content/plugins/find-duplicates/"
     shodan-query: 'vuln:'
-  name: 'Find Duplicates <= 1.4.6 - Authenticated (Subscriber+) SQL Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/466eec4a-8aac-4b0d-ba18-9667aa70de5a?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,find-duplicates,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/find-duplicates/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "find-duplicates"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.4.6')

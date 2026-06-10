@@ -1,30 +1,37 @@
-id: lucee-login 2
+id: lucee-login
+
 info:
-  author: dhiyaneshDK
-  name: Lucee Web/Server Administrator Login
-  reference: https://www.shodan.io/search?query=http.title%3A%22Lucee%22
+  name: Lucee Web and Lucee Server Admin Login Panel - Detect
+  author: dhiyaneshDK,unp4ck
   severity: info
+  description: Lucee admin login panels were detected in both Web and Server tabs.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  metadata:
+    shodan-query: http.title:"Lucee"
   tags: panel,lucee
+
 requests:
-- attack: sniper
-  matchers:
-  - type: word
-    words:
-    - <title>Login - Lucee Web Administrator</title>
-    - <title>Login - Lucee Server Administrator</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  payloads:
-    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-  raw:
-  - 'GET /lucee/admin/server.cfm HTTP/1.1
+  - method: GET
+    path:
+      - '{{BaseURL}}/lucee/admin/web.cfm'
+      - '{{BaseURL}}/lucee/admin/server.cfm'
 
-    Host: {{Subdomains}}
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>Login - Lucee Web Administrator</title>'
+          - '<title>Login - Lucee Server Administrator</title>'
+          - "lucee-admin-search-input"
+          - "lucee-docs-search-input"
+          - "server-lucee-small.png.cfm"
+        condition: or
 
-    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-    (KHTML, like Gecko)
+      - type: status
+        status:
+          - 200
 
-    '
-  threads: 100
+# Enhanced by md on 2022/11/28

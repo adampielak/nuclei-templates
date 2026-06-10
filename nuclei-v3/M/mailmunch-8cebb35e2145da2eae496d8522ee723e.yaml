@@ -1,50 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - mailmunch
-  - dsl:
-    - compare_versions(version, '<= 3.1.2')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/mailmunch/readme.txt'
-  redirects: true
 id: mailmunch-8cebb35e2145da2eae496d8522ee723e
+
 info:
+  name: >
+    MailMunch – Grow your Email List <= 3.1.2 - Cross-Site Request Forgery
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f6409626-c8cb-412c-aff3-cbb2da212e5d?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/mailmunch/
+    fofa-query: "wp-content/plugins/mailmunch/"
     google-query: inurl:"/wp-content/plugins/mailmunch/"
     shodan-query: 'vuln:'
-  name: "MailMunch \u2013 Grow your Email List <= 3.1.2 - Cross-Site Request Forgery\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f6409626-c8cb-412c-aff3-cbb2da212e5d?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,mailmunch,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/mailmunch/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "mailmunch"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.1.2')

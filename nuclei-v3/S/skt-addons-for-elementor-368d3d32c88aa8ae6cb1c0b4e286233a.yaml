@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - skt-addons-for-elementor
-  - dsl:
-    - compare_versions(version, '<= 2.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/skt-addons-for-elementor/readme.txt'
-  redirects: true
 id: skt-addons-for-elementor-368d3d32c88aa8ae6cb1c0b4e286233a
+
 info:
+  name: >
+    SKT Addons for Elementor <= 2.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Age Gate and Creative Slider Widgets
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc8d63ee-4929-4940-bc6a-931524e20272?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/skt-addons-for-elementor/
+    fofa-query: "wp-content/plugins/skt-addons-for-elementor/"
     google-query: inurl:"/wp-content/plugins/skt-addons-for-elementor/"
     shodan-query: 'vuln:'
-  name: 'SKT Addons for Elementor <= 2.0 - Authenticated (Contributor+) Stored Cross-Site
-    Scripting via Age Gate and Creative Slider Widgets
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc8d63ee-4929-4940-bc6a-931524e20272?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,skt-addons-for-elementor,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/skt-addons-for-elementor/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "skt-addons-for-elementor"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.0')

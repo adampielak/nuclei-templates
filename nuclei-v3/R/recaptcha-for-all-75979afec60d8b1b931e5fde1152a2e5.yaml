@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - recaptcha-for-all
-  - dsl:
-    - compare_versions(version, '<= 1.22')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/recaptcha-for-all/readme.txt'
-  redirects: true
 id: recaptcha-for-all-75979afec60d8b1b931e5fde1152a2e5
+
 info:
+  name: >
+    reCAPTCHA for all <= 1.22 - Missing Authorization via recaptcha_for_all_image_select
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/66585943-cb70-4296-af66-5b786d1bafb9?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/recaptcha-for-all/
+    fofa-query: "wp-content/plugins/recaptcha-for-all/"
     google-query: inurl:"/wp-content/plugins/recaptcha-for-all/"
     shodan-query: 'vuln:'
-  name: 'reCAPTCHA for all <= 1.22 - Missing Authorization via recaptcha_for_all_image_select
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/66585943-cb70-4296-af66-5b786d1bafb9?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,recaptcha-for-all,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/recaptcha-for-all/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "recaptcha-for-all"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.22')

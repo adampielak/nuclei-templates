@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - newsxpress
-  - dsl:
-    - compare_versions(version, '<= 1.0.7')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/newsxpress/style.css'
-  redirects: true
 id: newsxpress-cfd622344c1bfb41fd0c742fc0e4f15c
+
 info:
+  name: >
+    NewsXpress <= 1.0.7 - Cross-Site Request Forgery to Notice Dismissal
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cd5e9736-e4d9-4730-aaaf-2069a9633f02?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/themes/newsxpress/
+    fofa-query: "wp-content/themes/newsxpress/"
     google-query: inurl:"/wp-content/themes/newsxpress/"
     shodan-query: 'vuln:'
-  name: 'NewsXpress <= 1.0.7 - Cross-Site Request Forgery to Notice Dismissal
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/cd5e9736-e4d9-4730-aaaf-2069a9633f02?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-theme,newsxpress,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/newsxpress/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "newsxpress"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0.7')

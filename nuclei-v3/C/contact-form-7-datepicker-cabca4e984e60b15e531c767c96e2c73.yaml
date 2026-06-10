@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - contact-form-7-datepicker
-  - dsl:
-    - compare_versions(version, '<= 2.6.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/contact-form-7-datepicker/readme.txt'
-  redirects: true
 id: contact-form-7-datepicker-cabca4e984e60b15e531c767c96e2c73
+
 info:
+  name: >
+    Contact Form 7 Datepicker <= 2.6.0 - Authenticated Stored Cross-Site Scripting
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a6da4cf6-4b3b-4015-9106-b2a4467f34f7?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/contact-form-7-datepicker/
+    fofa-query: "wp-content/plugins/contact-form-7-datepicker/"
     google-query: inurl:"/wp-content/plugins/contact-form-7-datepicker/"
     shodan-query: 'vuln:'
-  name: 'Contact Form 7 Datepicker <= 2.6.0 - Authenticated Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a6da4cf6-4b3b-4015-9106-b2a4467f34f7?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,contact-form-7-datepicker,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/contact-form-7-datepicker/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "contact-form-7-datepicker"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.6.0')

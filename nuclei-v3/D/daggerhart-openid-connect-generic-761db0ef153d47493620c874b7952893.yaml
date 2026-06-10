@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - daggerhart-openid-connect-generic
-  - dsl:
-    - compare_versions(version, '>= 3.8.0', '< 3.8.2')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/daggerhart-openid-connect-generic/readme.txt'
-  redirects: true
 id: daggerhart-openid-connect-generic-761db0ef153d47493620c874b7952893
+
 info:
+  name: >
+    OpenID Connect Generic Client 3.8.0-3.8.1 - Reflected Cross-Site Scripting
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2f94d61-a3ec-4e25-bbd0-651b553b9c7c?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/daggerhart-openid-connect-generic/
+    fofa-query: "wp-content/plugins/daggerhart-openid-connect-generic/"
     google-query: inurl:"/wp-content/plugins/daggerhart-openid-connect-generic/"
     shodan-query: 'vuln:'
-  name: 'OpenID Connect Generic Client 3.8.0-3.8.1 - Reflected Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2f94d61-a3ec-4e25-bbd0-651b553b9c7c?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,daggerhart-openid-connect-generic,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/daggerhart-openid-connect-generic/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "daggerhart-openid-connect-generic"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '>= 3.8.0', '< 3.8.2')

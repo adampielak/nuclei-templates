@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - royal-slider
-  - dsl:
-    - compare_versions(version, '< 3.2.7')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/royal-slider/readme.txt'
-  redirects: true
 id: royal-slider-b1e104606e917b13d3c81a7d2d1eae78
+
 info:
+  name: >
+    Royal Slider Plugin < 3.2.7 - Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/66a65270-182b-44b1-968b-4fc2d8de1ea6?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/royal-slider/
+    fofa-query: "wp-content/plugins/royal-slider/"
     google-query: inurl:"/wp-content/plugins/royal-slider/"
     shodan-query: 'vuln:'
-  name: 'Royal Slider Plugin < 3.2.7 - Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/66a65270-182b-44b1-968b-4fc2d8de1ea6?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,royal-slider,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/royal-slider/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "royal-slider"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 3.2.7')

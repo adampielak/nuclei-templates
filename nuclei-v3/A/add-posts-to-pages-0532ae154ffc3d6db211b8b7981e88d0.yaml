@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - add-posts-to-pages
-  - dsl:
-    - compare_versions(version, '<= 1.4.1')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/add-posts-to-pages/readme.txt'
-  redirects: true
 id: add-posts-to-pages-0532ae154ffc3d6db211b8b7981e88d0
+
 info:
+  name: >
+    Add Posts to Pages <= 1.4.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/139b081d-17b1-4e1f-9d22-cf3f9de123f5?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/add-posts-to-pages/
+    fofa-query: "wp-content/plugins/add-posts-to-pages/"
     google-query: inurl:"/wp-content/plugins/add-posts-to-pages/"
     shodan-query: 'vuln:'
-  name: 'Add Posts to Pages <= 1.4.1 - Authenticated (Contributor+) Stored Cross-Site
-    Scripting via Shortcode
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/139b081d-17b1-4e1f-9d22-cf3f9de123f5?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,add-posts-to-pages,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/add-posts-to-pages/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "add-posts-to-pages"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.4.1')

@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - rename-media-files
-  - dsl:
-    - compare_versions(version, '<= 1.0.1')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/rename-media-files/readme.txt'
-  redirects: true
 id: rename-media-files-a51d83897337c427fbe2cd08d1f310c6
+
 info:
+  name: >
+    Rename Media Files <= 1.0.1 - Authenticated (Contributor+) Remote Code Execution
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c22c2c17-c9c5-46eb-877a-a49ccf1a74ef?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/rename-media-files/
+    fofa-query: "wp-content/plugins/rename-media-files/"
     google-query: inurl:"/wp-content/plugins/rename-media-files/"
     shodan-query: 'vuln:'
-  name: 'Rename Media Files <= 1.0.1 - Authenticated (Contributor+) Remote Code Execution
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c22c2c17-c9c5-46eb-877a-a49ccf1a74ef?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,rename-media-files,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/rename-media-files/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "rename-media-files"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0.1')

@@ -1,51 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - hash-form
-  - dsl:
-    - compare_versions(version, '<= 1.1.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/hash-form/readme.txt'
-  redirects: true
 id: hash-form-e07ac784b5cbacd2f4f7f1f0360366dc
+
 info:
+  name: >
+    Hash Form – Drag & Drop Form Builder <= 1.1.0 - Unauthenticated Arbitrary File Upload to Remote Code Execution
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eef9e2fa-d8f0-42bf-95ac-ee4cafff0b14?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/hash-form/
+    fofa-query: "wp-content/plugins/hash-form/"
     google-query: inurl:"/wp-content/plugins/hash-form/"
     shodan-query: 'vuln:'
-  name: "Hash Form \u2013 Drag & Drop Form Builder <= 1.1.0 - Unauthenticated Arbitrary\
-    \ File Upload to Remote Code Execution\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/eef9e2fa-d8f0-42bf-95ac-ee4cafff0b14?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,hash-form,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/hash-form/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "hash-form"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.1.0')

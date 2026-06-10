@@ -1,50 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - streamcast
-  - dsl:
-    - compare_versions(version, '< 2.1.1')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/streamcast/readme.txt'
-  redirects: true
 id: streamcast-b6a71d304548b0ded457254b9af92e24
+
 info:
+  name: >
+    StreamCast – Radio Player for WordPress <= 2.1.0 - Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5e7b29aa-9dff-420b-8f3e-2beca0b19593?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/streamcast/
+    fofa-query: "wp-content/plugins/streamcast/"
     google-query: inurl:"/wp-content/plugins/streamcast/"
     shodan-query: 'vuln:'
-  name: "StreamCast \u2013 Radio Player for WordPress <= 2.1.0 - Cross-Site Scripting\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/5e7b29aa-9dff-420b-8f3e-2beca0b19593?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,streamcast,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/streamcast/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "streamcast"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 2.1.1')

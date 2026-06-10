@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - buddypress-media
-  - dsl:
-    - compare_versions(version, '<= 3.7.18')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/buddypress-media/readme.txt'
-  redirects: true
 id: buddypress-media-93b904195e318c5a8d92a66ba4fe3cfb
+
 info:
+  name: >
+    rtMedia for WordPress, BuddyPress and bbPress < 3.7.19 - Local File Inclusion
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1814ad55-0807-4def-b584-6dbbc5d6eb72?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/buddypress-media/
+    fofa-query: "wp-content/plugins/buddypress-media/"
     google-query: inurl:"/wp-content/plugins/buddypress-media/"
     shodan-query: 'vuln:'
-  name: 'rtMedia for WordPress, BuddyPress and bbPress < 3.7.19 - Local File Inclusion
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1814ad55-0807-4def-b584-6dbbc5d6eb72?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,buddypress-media,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/buddypress-media/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "buddypress-media"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.7.18')

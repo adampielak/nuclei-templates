@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - rss-includes-pages
-  - dsl:
-    - compare_versions(version, '< 3.7')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/rss-includes-pages/readme.txt'
-  redirects: true
 id: rss-includes-pages-65db39b697a6c06037fb6e4114879974
+
 info:
+  name: >
+    RSS Includes Pages <= 3.6 - Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb5c08ea-1321-42f8-aea2-49661396311b?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/rss-includes-pages/
+    fofa-query: "wp-content/plugins/rss-includes-pages/"
     google-query: inurl:"/wp-content/plugins/rss-includes-pages/"
     shodan-query: 'vuln:'
-  name: 'RSS Includes Pages <= 3.6 - Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb5c08ea-1321-42f8-aea2-49661396311b?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,rss-includes-pages,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/rss-includes-pages/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "rss-includes-pages"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 3.7')

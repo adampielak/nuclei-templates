@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - jetapo-with-woocommerce
-  - dsl:
-    - compare_versions(version, '<= 1.0.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/jetapo-with-woocommerce/style.css'
-  redirects: true
 id: jetapo-with-woocommerce-840acc9d9d2c08066d09024bf485df9a
+
 info:
+  name: >
+    Jetapo | Jobboard WordPress Theme and Jetapo | Jobboard WordPress Theme with WooCommerce < 1.1 - Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/86f95721-ff77-4137-adba-61d74373ee06?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/themes/jetapo-with-woocommerce/
+    fofa-query: "wp-content/themes/jetapo-with-woocommerce/"
     google-query: inurl:"/wp-content/themes/jetapo-with-woocommerce/"
     shodan-query: 'vuln:'
-  name: 'Jetapo | Jobboard WordPress Theme and Jetapo | Jobboard WordPress Theme with
-    WooCommerce < 1.1 - Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/86f95721-ff77-4137-adba-61d74373ee06?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-theme,jetapo-with-woocommerce,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/jetapo-with-woocommerce/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "jetapo-with-woocommerce"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.0.0')

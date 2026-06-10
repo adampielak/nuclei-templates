@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - pie-register
-  - dsl:
-    - compare_versions(version, '>= 2.0.14', '<= 2.0.15')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/pie-register/readme.txt'
-  redirects: true
 id: pie-register-1e2d1b7026d2269694eb54e49db13853
+
 info:
+  name: >
+    Registration Forms – User Profile, Custom Registration Form, Login Form, Invitation-Based Registrations for WordPress  2.0.14 - 2.0.15 - Authentication Bypass
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/053bb01c-9e87-4836-ae1c-567272b21118?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/pie-register/
+    fofa-query: "wp-content/plugins/pie-register/"
     google-query: inurl:"/wp-content/plugins/pie-register/"
     shodan-query: 'vuln:'
-  name: "Registration Forms \u2013 User Profile, Custom Registration Form, Login Form,\
-    \ Invitation-Based Registrations for WordPress  2.0.14 - 2.0.15 - Authentication\
-    \ Bypass\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/053bb01c-9e87-4836-ae1c-567272b21118?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,pie-register,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/pie-register/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "pie-register"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '>= 2.0.14', '<= 2.0.15')

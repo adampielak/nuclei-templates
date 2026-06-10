@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - stop-spammer-registrations-plugin
-  - dsl:
-    - compare_versions(version, '<= 2022.5')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/stop-spammer-registrations-plugin/readme.txt'
-  redirects: true
 id: stop-spammer-registrations-plugin-2ef00b02498e15461ed7e4fd11511e35
+
 info:
+  name: >
+    Stop Spammers Security <= 2022.5 - Unauthenticated PHP Object Injection
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6065ad75-1685-4f1d-9ba9-d4c8ec840521?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/stop-spammer-registrations-plugin/
+    fofa-query: "wp-content/plugins/stop-spammer-registrations-plugin/"
     google-query: inurl:"/wp-content/plugins/stop-spammer-registrations-plugin/"
     shodan-query: 'vuln:'
-  name: 'Stop Spammers Security <= 2022.5 - Unauthenticated PHP Object Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/6065ad75-1685-4f1d-9ba9-d4c8ec840521?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,stop-spammer-registrations-plugin,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/stop-spammer-registrations-plugin/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "stop-spammer-registrations-plugin"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2022.5')

@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - super-interactive-maps
-  - dsl:
-    - compare_versions(version, '< 2.2')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/super-interactive-maps/readme.txt'
-  redirects: true
 id: super-interactive-maps-20df72e7dcad9a2610e8b6f51d35d78d
+
 info:
+  name: >
+    Super Store Finder <= 6.4, Super Interactive Maps <= 2.1 - SQL Injection
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/25971f3f-4816-416c-9de9-feb6326fe948?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/super-interactive-maps/
+    fofa-query: "wp-content/plugins/super-interactive-maps/"
     google-query: inurl:"/wp-content/plugins/super-interactive-maps/"
     shodan-query: 'vuln:'
-  name: 'Super Store Finder <= 6.4, Super Interactive Maps <= 2.1 - SQL Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/25971f3f-4816-416c-9de9-feb6326fe948?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,super-interactive-maps,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/super-interactive-maps/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "super-interactive-maps"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 2.2')

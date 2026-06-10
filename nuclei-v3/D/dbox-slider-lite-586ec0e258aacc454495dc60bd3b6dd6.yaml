@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - dbox-slider-lite
-  - dsl:
-    - compare_versions(version, '<= 1.2.2')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/dbox-slider-lite/readme.txt'
-  redirects: true
 id: dbox-slider-lite-586ec0e258aacc454495dc60bd3b6dd6
+
 info:
+  name: >
+    Dbox 3D Slider Lite <= 1.2.2 - SQL Injection
   author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb3aa518-ef12-4168-a524-ad36397f67cb?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/dbox-slider-lite/
+    fofa-query: "wp-content/plugins/dbox-slider-lite/"
     google-query: inurl:"/wp-content/plugins/dbox-slider-lite/"
     shodan-query: 'vuln:'
-  name: 'Dbox 3D Slider Lite <= 1.2.2 - SQL Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb3aa518-ef12-4168-a524-ad36397f67cb?source=api-scan
-  severity: critical
   tags: cve,wordpress,wp-plugin,dbox-slider-lite,critical
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/dbox-slider-lite/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "dbox-slider-lite"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.2.2')

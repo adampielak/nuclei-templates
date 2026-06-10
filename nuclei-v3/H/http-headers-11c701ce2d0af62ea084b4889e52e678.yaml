@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - http-headers
-  - dsl:
-    - compare_versions(version, '<= 1.18.8')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/http-headers/readme.txt'
-  redirects: true
 id: http-headers-11c701ce2d0af62ea084b4889e52e678
+
 info:
+  name: >
+    HTTP Headers <= 1.18.8 - Authenticated(Administrator+) SQL Injection
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ea6b79c-2a09-4a6e-9b4b-a81f96e3bc12?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/http-headers/
+    fofa-query: "wp-content/plugins/http-headers/"
     google-query: inurl:"/wp-content/plugins/http-headers/"
     shodan-query: 'vuln:'
-  name: 'HTTP Headers <= 1.18.8 - Authenticated(Administrator+) SQL Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ea6b79c-2a09-4a6e-9b4b-a81f96e3bc12?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,http-headers,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/http-headers/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "http-headers"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.18.8')

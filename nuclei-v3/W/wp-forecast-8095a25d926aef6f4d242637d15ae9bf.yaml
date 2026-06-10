@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - wp-forecast
-  - dsl:
-    - compare_versions(version, '<= 7.5')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wp-forecast/readme.txt'
-  redirects: true
 id: wp-forecast-8095a25d926aef6f4d242637d15ae9bf
+
 info:
+  name: >
+    wp-forecast <= 7.5 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0551a2ca-b920-4a60-9c16-0bb14fd63a23?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/wp-forecast/
+    fofa-query: "wp-content/plugins/wp-forecast/"
     google-query: inurl:"/wp-content/plugins/wp-forecast/"
     shodan-query: 'vuln:'
-  name: 'wp-forecast <= 7.5 - Authenticated (Administrator+) Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0551a2ca-b920-4a60-9c16-0bb14fd63a23?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,wp-forecast,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wp-forecast/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "wp-forecast"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 7.5')

@@ -1,44 +1,51 @@
-http:
-- extractors:
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - (?mi)Stable tag:\s*([0-9.]+)
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - baiduseo
-  - dsl:
-    - compare_versions(version, '<= 2.0.6')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/baiduseo/readme.txt'
-  redirects: true
 id: baiduseo-70361501-8adc-499a-91d2-cf91fab5934a
+
 info:
+  name: >
+    百度站长SEO合集(支持百度/神马/Bing/头条推送) <= 2.0.6 - Unauthenticated Arbitrary File Upload
   author: topscoder
-  classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
-  metadata:
-    fofa-query: wp-content/plugins/baiduseo/
-    google-query: inurl:"/wp-content/plugins/baiduseo/"
-    shodan-query: http.html:"wp-content/plugins/baiduseo/"
-  name: "\u767E\u5EA6\u7AD9\u957FSEO\u5408\u96C6(\u652F\u6301\u767E\u5EA6/\u795E\u9A6C\
-    /Bing/\u5934\u6761\u63A8\u9001) <= 2.0.6 - Unauthenticated Arbitrary File Upload\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/70361501-8adc-499a-91d2-cf91fab5934a?source=api-scan
   severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/70361501-8adc-499a-91d2-cf91fab5934a?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/baiduseo/"
+    google-query: inurl:"/wp-content/plugins/baiduseo/"
+    shodan-query: 'http.html:"wp-content/plugins/baiduseo/"'
   tags: cve,wordpress,wp-plugin,baiduseo,critical,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/baiduseo/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "baiduseo"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.0.6')
