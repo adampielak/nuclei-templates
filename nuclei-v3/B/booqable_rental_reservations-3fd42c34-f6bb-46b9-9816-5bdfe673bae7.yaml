@@ -15,7 +15,7 @@ http:
     words:
     - booqable-rental-reservations
   - dsl:
-    - compare_versions(version, '<= 2.4.20')
+    - compare_versions(version, '<= 2.4.25')
     type: dsl
   matchers-condition: and
   max-redirects: 3
@@ -35,7 +35,7 @@ info:
     fofa-query: wp-content/plugins/booqable-rental-reservations/
     google-query: inurl:"/wp-content/plugins/booqable-rental-reservations/"
     shodan-query: http.html:"wp-content/plugins/booqable-rental-reservations/"
-  name: 'Booqable Rental <= 2.4.20 - Cross-Site Request Forgery
+  name: 'Booqable Rental <= 2.4.25 - Cross-Site Request Forgery
 
     '
   reference:

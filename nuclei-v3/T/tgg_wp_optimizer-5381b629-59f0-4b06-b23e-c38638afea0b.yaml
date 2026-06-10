@@ -15,7 +15,7 @@ http:
     words:
     - tgg-wp-optimizer
   - dsl:
-    - compare_versions(version, '<= 1.22')
+    - compare_versions(version, '<= 1.21')
     type: dsl
   matchers-condition: and
   max-redirects: 3
@@ -35,7 +35,7 @@ info:
     fofa-query: wp-content/plugins/tgg-wp-optimizer/
     google-query: inurl:"/wp-content/plugins/tgg-wp-optimizer/"
     shodan-query: http.html:"wp-content/plugins/tgg-wp-optimizer/"
-  name: 'TGG WP Optimizer <= 1.22 - Authenticated (Administrator+) Stored Cross-Site
+  name: 'TGG WP Optimizer <= 1.21 - Authenticated (Administrator+) Stored Cross-Site
     Scripting
 
     '

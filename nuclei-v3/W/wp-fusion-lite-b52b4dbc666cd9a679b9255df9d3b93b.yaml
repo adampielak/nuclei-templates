@@ -1,50 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - wp-fusion-lite
-  - dsl:
-    - compare_versions(version, '<= 3.37.18')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wp-fusion-lite/readme.txt'
-  redirects: true
 id: wp-fusion-lite-b52b4dbc666cd9a679b9255df9d3b93b
+
 info:
+  name: >
+    WP Fusion Lite <= 3.37.18 – Cross-Site Request Forgery to Data Deletion
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a539a4e-f4df-46c7-83c2-9f189f081405?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/wp-fusion-lite/
+    fofa-query: "wp-content/plugins/wp-fusion-lite/"
     google-query: inurl:"/wp-content/plugins/wp-fusion-lite/"
     shodan-query: 'vuln:'
-  name: "WP Fusion Lite <= 3.37.18 \u2013 Cross-Site Request Forgery to Data Deletion\n"
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a539a4e-f4df-46c7-83c2-9f189f081405?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,wp-fusion-lite,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wp-fusion-lite/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "wp-fusion-lite"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.37.18')

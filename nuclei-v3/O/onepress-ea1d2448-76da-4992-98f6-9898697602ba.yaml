@@ -15,7 +15,7 @@ http:
     words:
     - onepress
   - dsl:
-    - compare_versions(version, '<= 2.3.11')
+    - compare_versions(version, '<= 2.3.14')
     type: dsl
   matchers-condition: and
   max-redirects: 3
@@ -35,7 +35,7 @@ info:
     fofa-query: wp-content/themes/onepress/
     google-query: inurl:"/wp-content/themes/onepress/"
     shodan-query: http.html:"wp-content/themes/onepress/"
-  name: 'OnePress <= 2.3.11 - Missing Authorization
+  name: 'OnePress <= 2.3.14 - Missing Authorization
 
     '
   reference:

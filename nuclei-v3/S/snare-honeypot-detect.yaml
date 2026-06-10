@@ -1,39 +1,36 @@
-id: snare-honeypot-detect
-
-info:
-  name: Snare Honeypot - Detect
-  author: UnaPibaGeek
-  severity: info
-  description: |
-    Snare honeypot has been identified.
-    The response to an incorrect HTTP version reveals a possible setup of the Snare web application honeypot.
-  metadata:
-    verified: true
-    max-request: 1
-    vendor: snare
-    product: http
-    shodan-query:
-      - '"Python/3.10 aiohttp/3.8.3" && Bad status'
-      - '"python/3.10 aiohttp/3.8.3" && bad status'
-  tags: snare,honeypot,ir,cti,discovery
-
 http:
-  - raw:
-      - |
-        GET / HTTP/1337
-        Host: {{Hostname}}
+- matchers:
+  - part: header
+    type: word
+    words:
+    - Python/3.10 aiohttp/3.8.3
+  - part: body
+    type: word
+    words:
+    - Bad status line 'Expected dot'
+  matchers-condition: and
+  raw:
+  - 'GET / HTTP/1337
 
-    unsafe: true
+    Host: {{Hostname}}
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: header
-        words:
-          - "Python/3.10 aiohttp/3.8.3"
+    '
+  unsafe: true
+id: snare-honeypot-detect
+info:
+  author: UnaPibaGeek
+  description: 'Snare honeypot has been identified.
 
-      - type: word
-        part: body
-        words:
-          - "Bad status line 'Expected dot'"
-# digest: 4a0a00473045022020341de2950b2008c05499b8e6ad9da3e0a42950f460e7e83c1bb2a0493c6f31022100b0b7c7bd1a5f5b29de1ff00fddc3975e87ea0e9e2345d37a8f6a9d0e5c82345b:922c64590222798bb761d5b6d8e72950
+    The response to an incorrect HTTP version reveals a possible setup of the Snare
+    web application honeypot.
+
+    '
+  metadata:
+    max-request: 1
+    product: http
+    shodan-query: '"Python/3.10 aiohttp/3.8.3" && Bad status'
+    vendor: snare
+    verified: true
+  name: Snare Honeypot - Detect
+  severity: info
+  tags: snare,honeypot,ir,cti

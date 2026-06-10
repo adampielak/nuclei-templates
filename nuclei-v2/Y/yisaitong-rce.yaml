@@ -1,24 +1,22 @@
 id: yisaitong-rce
-
 info:
-  name: 亿赛通rce
   author: Str1am
+  name: "\u4EBF\u8D5B\u901Arce"
   severity: critical
   tags: yisaitong,rce
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/solr/admin/cores"
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        words:
-          - "instanceDir"
-          - "initFailures"
-          - "directory"
-        part: body
-        condition: and
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - instanceDir
+    - initFailures
+    - directory
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/solr/admin/cores'

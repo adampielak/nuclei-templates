@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - happyforms
-  - dsl:
-    - compare_versions(version, '<= 1.25.10')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/happyforms/readme.txt'
-  redirects: true
 id: happyforms-c4055ba29f08db13e68925f374ba81ef
+
 info:
+  name: >
+    Happyforms <= 1.25.10 - Missing Authorization
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0578c49e-f820-42dd-bd53-f4a281843e69?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/happyforms/
+    fofa-query: "wp-content/plugins/happyforms/"
     google-query: inurl:"/wp-content/plugins/happyforms/"
     shodan-query: 'vuln:'
-  name: 'Happyforms <= 1.25.10 - Missing Authorization
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0578c49e-f820-42dd-bd53-f4a281843e69?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,happyforms,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/happyforms/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "happyforms"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.25.10')

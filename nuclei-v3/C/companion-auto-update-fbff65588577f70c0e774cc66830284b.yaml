@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - companion-auto-update
+  - dsl:
+    - compare_versions(version, '< 3.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/companion-auto-update/readme.txt'
+  redirects: true
 id: companion-auto-update-fbff65588577f70c0e774cc66830284b
-
 info:
-  name: >
-    Companion Auto Update <= 3.2.0 - Local File Inclusion
   author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7f3e583-a486-4e25-bc40-e437cf5b3ebd?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/companion-auto-update/"
+    fofa-query: wp-content/plugins/companion-auto-update/
     google-query: inurl:"/wp-content/plugins/companion-auto-update/"
     shodan-query: 'vuln:'
+  name: 'Companion Auto Update <= 3.2.0 - Local File Inclusion
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7f3e583-a486-4e25-bc40-e437cf5b3ebd?source=api-scan
+  severity: critical
   tags: cve,wordpress,wp-plugin,companion-auto-update,critical
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/companion-auto-update/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "companion-auto-update"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '< 3.2.1')
