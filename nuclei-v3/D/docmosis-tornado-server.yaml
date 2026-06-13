@@ -16,6 +16,7 @@ http:
 id: docmosis-tornado-server
 info:
   author: tess
+  description: Docmosis Tornado Server is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Docmosis Tornado"

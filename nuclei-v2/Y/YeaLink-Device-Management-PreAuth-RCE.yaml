@@ -1,6 +1,6 @@
 id: YeaLink-Device-Management-PreAuth-RCE
 info:
-  author: shifacyclewala, hackergautam
+  author: nithissh
   description: A malicious actor can trigger Un authenticated Remote Code Execution
   name: YeaLink DM PreAuth RCE
   reference: unknown

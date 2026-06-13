@@ -20,15 +20,17 @@ id: influxdb-panel
 info:
   author: pikpikcu,idealphase
   classification:
+    cpe: cpe:2.3:a:influxdata:influxdb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: InfluxDB admin interface panel was detected.
   metadata:
     max-request: 1
+    product: influxdb
     shodan-query: http.title:"InfluxDB - Admin Interface"
+    vendor: influxdata
   name: InfluxDB Admin Interface Panel - Detect
   reference:
   - https://www.influxdata.com/
   severity: info
-  tags: panel,influxdb
+  tags: panel,influxdb,influxdata

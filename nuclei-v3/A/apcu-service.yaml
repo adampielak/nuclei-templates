@@ -14,8 +14,9 @@ http:
 id: apcu-service
 info:
   author: koti2
+  description: APCu service is vulnerable to information leakage.
   metadata:
     max-request: 2
   name: APCu service information leakage
   severity: low
-  tags: config,service,apcu
+  tags: config,service,apcu,misconfig

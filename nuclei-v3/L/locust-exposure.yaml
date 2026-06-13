@@ -1,9 +1,9 @@
 http:
 - matchers:
   - part: body
-    type: word
-    words:
-    - <title>Locust</title>
+    regex:
+    - '<title>Locust(?: for.+)?</title>'
+    type: regex
   - condition: or
     part: body
     type: word
@@ -19,7 +19,8 @@ http:
   - '{{BaseURL}}'
 id: locust-exposure
 info:
-  author: DhiyaneshDK
+  author: DhiyaneshDK,bhutch
+  description: Locust is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Locust"

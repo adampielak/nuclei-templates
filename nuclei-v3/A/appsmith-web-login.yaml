@@ -15,13 +15,15 @@ id: appsmith-web-login
 info:
   author: powerexploit
   classification:
+    cpe: cpe:2.3:a:appsmith:appsmith:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: Appsmith user login panel was detected.
   metadata:
     max-request: 1
+    product: appsmith
     shodan-query: http.title:"appsmith"
+    vendor: appsmith
     verified: true
   name: Appsmith User Login - Panel Detect
   reference:

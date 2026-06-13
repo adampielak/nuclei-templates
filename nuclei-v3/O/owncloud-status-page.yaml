@@ -1,22 +1,22 @@
 http:
 - extractors:
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '{[\d\D]*"version":"([0-9\.]+)"'
-    type: regex
+  - json:
+    - .version
+    type: json
   matchers:
-  - part: body
-    regex:
-    - '{"installed":(?:true|false),"maintenance":(?:true|false),"version":"[0-9\.]*","versionstring":"[a-z-A-Z0-9\.]*","edition":"[\d\D]*"}'
-    type: regex
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"versionstring":'
+    - '"installed":'
+    - '"edition":'
   method: GET
   path:
   - '{{BaseURL}}/status.php'
 id: owncloud-status-page
 info:
-  author: myztique
+  author: myztique,invisiblethreat
   metadata:
     max-request: 1
     shodan-query: http.html:"owncloud"

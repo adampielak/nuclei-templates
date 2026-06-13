@@ -15,5 +15,3 @@ requests:
   method: GET
   path:
   - '{{BaseURL}}'
-  - '{{BaseURL}}:8081'
-  - '{{BaseURL}}:9001'

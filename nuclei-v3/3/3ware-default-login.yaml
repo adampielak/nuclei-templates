@@ -38,10 +38,9 @@ info:
     '
   metadata:
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)3ware"})
     shodan-query: title:"3ware"
   name: 3ware Controller 3DM2 - Default Login
   reference:
   - https://www.thomas-krenn.com/en/wiki/3ware_Controller_3DM2_Password
   severity: high
-  tags: 3dm2,3ware,default-login,vuln
+  tags: default-login,3ware,3dm2

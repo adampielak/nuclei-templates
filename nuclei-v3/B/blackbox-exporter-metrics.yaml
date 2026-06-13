@@ -22,4 +22,4 @@ info:
     verified: true
   name: Blackbox Exporter Metrics Exposed
   severity: info
-  tags: blackbox,exposure,debug
+  tags: blackbox,exposure,debug,misconfig

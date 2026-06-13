@@ -1,23 +1,58 @@
-id: argo-properties-exposed
-
-info:
-  name: Argo Properties Exposed
-  author: dk4trin
-  severity: high
-  tags: argo,exposure,dk4trin
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/WEB-INF/classes/argo.properties"
-      - "{{BaseURL}}/classes/argo.properties"
-      - "{{BaseURL}}/argo.properties"
-      - "{{BaseURL}}/WEB-INF/argo.properties"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "argo.database"
-          - "argo.database.host"
+- matchers:
+  - condition: or
+    part: body
+    regex:
+    - ((?i)db_pass|db|db_user|db_port|db_host|host|url|database)=
+    - ((?i)password|user|port|pwd|pass|debug|path|secret)=
+    - ((?i)password|user|port|pwd|pass|debug|path|secret)
+    - ((?i)db_pass|db|db_user|db_port|db_host|host|url|database)
+    type: regex
+  - condition: or
+    part: header
+    type: word
+    words:
+    - text/plain
+    - bytes
+  - condition: and
+    part: body
+    type: word
+    words:
+    - argo.database.host
+    - argo.database.user
+  - negative: true
+    part: header
+    type: word
+    words:
+    - text/html
+  - condition: or
+    status:
+    - 200
+    - 206
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/WEB-INF/classes/argo.properties'
+  - '{{BaseURL}}/..;/WEB-INF/classes/argo.properties'
+  - '{{BaseURL}}/%2e/WEB-INF/classes/argo.properties'
+  - '{{BaseURL}}/WEB-INF/classes/argo.properties.bak'
+  - '{{BaseURL}}/argo.properties'
+  - '{{BaseURL}}///argo.properties'
+  - '{{BaseURL}}/argo.properties~'
+  - '{{BaseURL}}/%2e%2e%2f/argo.properties'
+  - '{{BaseURL}}/..%3B/argo.properties'
+  - '{{BaseURL}}/argo.properties.bak'
+  - '{{BaseURL}}/../argo.properties'
+  - '{{BaseURL}}/;/argo.properties'
+  - '{{BaseURL}}/..;/argo.properties'
+  - '{{BaseURL}}/%2e/argo.properties'
+  stop-at-first-match: true
+id: argo-properties
+info:
+  author: reewardius
+  name: Argo Properties Exposure
+  reference:
+  - https://twitter.com/ynsmroztas/status/1657842876406013955/photo/2
+  severity: high
+  tags: java,generic

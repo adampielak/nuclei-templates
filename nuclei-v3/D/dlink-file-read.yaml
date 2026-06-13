@@ -26,4 +26,4 @@ info:
   reference:
   - https://suid.ch/research/DAP-2020_Preauth_RCE_Chain.html
   severity: high
-  tags: dlink,lfi
+  tags: dlink,lfi,misconfig

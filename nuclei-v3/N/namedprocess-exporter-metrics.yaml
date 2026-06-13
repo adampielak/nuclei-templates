@@ -16,10 +16,11 @@ http:
 id: namedprocess-exporter-metrics
 info:
   author: DhiyaneshDk
+  description: Named process exporter is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Named Process Exporter"
     verified: true
   name: Named Process Exporter
   severity: low
-  tags: namedprocess,exposure,debug
+  tags: namedprocess,exposure,debug,misconfig

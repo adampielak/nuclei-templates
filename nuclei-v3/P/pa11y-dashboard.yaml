@@ -20,6 +20,7 @@ http:
 id: pa11y-dashboard
 info:
   author: tess
+  description: Pa11y Dashboard is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Pa11y Dashboard"

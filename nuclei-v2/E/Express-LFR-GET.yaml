@@ -1,6 +1,6 @@
 id: Express-LFR-GET
 info:
-  author: mors_3_c
+  author: nithissh
   name: LFR  in Express via GET
   severity: medium
 requests:

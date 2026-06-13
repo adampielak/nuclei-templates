@@ -16,6 +16,7 @@ http:
 id: go-mod-disclosure
 info:
   author: DhiyaneshDk
+  description: go.mod internal file is exposed.
   metadata:
     max-request: 1
     shodan-query: html:"go.mod"

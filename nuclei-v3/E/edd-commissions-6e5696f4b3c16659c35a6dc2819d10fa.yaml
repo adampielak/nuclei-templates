@@ -1,59 +1,51 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - edd-commissions
+  - dsl:
+    - compare_versions(version, '<= 3.1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/edd-commissions/readme.txt'
+  redirects: true
 id: edd-commissions-6e5696f4b3c16659c35a6dc2819d10fa
-
 info:
-  name: >
-    Easy Digital Downloads – Commissions <= 3.1.2 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bf356066-fb25-4f6a-8600-91c7f1d098bf?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/plugins/edd-commissions/"
+    fofa-query: wp-content/plugins/edd-commissions/
     google-query: inurl:"/wp-content/plugins/edd-commissions/"
     shodan-query: 'vuln:'
+  name: "Easy Digital Downloads \u2013 Commissions <= 3.1.2 - Reflected Cross-Site\
+    \ Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/bf356066-fb25-4f6a-8600-91c7f1d098bf?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-plugin,edd-commissions,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/edd-commissions/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "edd-commissions"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 3.1.2')

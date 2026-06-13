@@ -20,10 +20,11 @@ http:
 id: express-stack-trace
 info:
   author: DhiyaneshDk
+  description: Express Stack trace is exposed.
   metadata:
     max-request: 1
     shodan-query: html:"Welcome to Express"
     verified: true
   name: Express Stack Trace
   severity: low
-  tags: misconfig,express
+  tags: misconfig,express,intrusive

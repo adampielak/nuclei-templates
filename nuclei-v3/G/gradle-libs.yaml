@@ -25,4 +25,4 @@ info:
     verified: true
   name: Gradle Library Version Disclosure
   severity: info
-  tags: file,gradle
+  tags: file,gradle,exposure

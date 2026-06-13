@@ -1,6 +1,6 @@
 id: login-field
 info:
-  author: foulenzer
+  author: nithissh
   description: Searches Response body for input-tag and id= or name=
   name: Login Field Detection Template
   severity: info
@@ -27,7 +27,7 @@ requests:
     type: status
   - type: word
     words:
-    - '<input '
+    - <input
   matchers-condition: and
   max-redirects: 1
   method: GET

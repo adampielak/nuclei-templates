@@ -20,6 +20,7 @@ http:
 id: phpmemcached-admin-panel
 info:
   author: tess
+  description: phpMemcachedAdmin Panel is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"phpMemcachedAdmin"

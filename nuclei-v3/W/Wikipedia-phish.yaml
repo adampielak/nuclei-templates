@@ -21,6 +21,8 @@ info:
   description: 'A Wikipedia phishing website was detected
 
     '
+  metadata:
+    max-request: 1
   name: Wikipedia phishing Detection
   reference:
   - https://wikipedia.com

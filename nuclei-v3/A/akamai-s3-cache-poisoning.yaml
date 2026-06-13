@@ -69,6 +69,6 @@ info:
   - https://web.archive.org/web/20230101082612/https://spyclub.tech/2022/12/14/unusual-cache-poisoning-akamai-s3/
   - https://owasp.org/www-community/attacks/Cache_Poisoning
   severity: high
-  tags: cache,poisoning,generic,xss,akamai,s3
+  tags: cache,poisoning,xss,akamai,s3,misconfig
 variables:
   rand: '{{rand_base(5)}}'

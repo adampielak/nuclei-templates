@@ -1,8 +1,10 @@
 http:
 - matchers:
-  - type: word
+  - condition: or
+    type: word
     words:
     - <title>CrushFTP WebInterface</title>
+    - <title>CrushFTP - Login</title>
   - status:
     - 200
     type: status
@@ -15,13 +17,16 @@ info:
   author: dhiyaneshDK
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: CrushFTP WebInterface login panel was detected.
   metadata:
     max-request: 1
-  name: CrushFTP WebInterface Login Panel - Detect
+    product: crushftp
+    vendor: crushftp
+    verified: true
+  name: CrushFTP WebInterface Panel - Detect
   reference:
   - https://www.exploit-db.com/ghdb/6591
   severity: info
-  tags: panel,edb
+  tags: panel,edb,crushftp,detect

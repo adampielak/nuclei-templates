@@ -17,10 +17,12 @@ info:
   description: Check for the existence of the ArcGIS Token Service on an ArcGIS server.
   metadata:
     max-request: 1
+    product: arcgis_server
     shodan-query: title:"ArcGIS"
+    vendor: esri
     verified: true
   name: ArcGIS Token Service - Detect
   reference:
   - https://enterprise.arcgis.com/en/
   severity: info
-  tags: panel,arcgis,tokens,detect
+  tags: tech,arcgis,tokens,detect

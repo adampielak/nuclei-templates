@@ -27,4 +27,4 @@ info:
   reference:
   - https://mcloudcorp.com/
   severity: critical
-  tags: panel,mcloud,exposure
+  tags: panel,mcloud,exposure,misconfig

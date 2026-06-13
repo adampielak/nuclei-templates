@@ -27,4 +27,4 @@ info:
   name: Mlflow - Unauthenticated Access
   remediation: Add User Authentication
   severity: high
-  tags: unauth,mlflow,oss
+  tags: unauth,mlflow,oss,misconfig

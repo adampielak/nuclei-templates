@@ -47,10 +47,9 @@ info:
     '
   metadata:
     fofa-query: title="3COM"
-    max-request: 2
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)3COM"})
+    max-request: 1
   name: 3Com Wireless 8760 Dual Radio - Default Login
   reference:
   - https://www.speedguide.net/routers/3com-wl-546-3com-wireless-8760-dual-radio-11abg-1256
   severity: high
-  tags: 3com,default-login,vuln
+  tags: default-login,3com

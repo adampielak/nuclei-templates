@@ -23,8 +23,8 @@ id: pega-web-panel
 info:
   author: powerexploit,righettod
   classification:
+    cpe: cpe:2.3:a:pega:platform:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: 'Pega Infinity login panel was detected.
 
@@ -32,7 +32,9 @@ info:
   metadata:
     google-query: inurl:"/prweb/PRAuth/app/default"
     max-request: 2
+    product: platform
     shodan-query: title:"Pega Platform"
+    vendor: pega
     verified: true
   name: Pega Infinity Login Panel - Detect
   reference:

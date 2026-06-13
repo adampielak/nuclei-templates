@@ -3,7 +3,7 @@ http:
   - condition: and
     type: word
     words:
-    - Powered by Gitea Version
+    - Powered by Gitea
     - Register -
   - negative: true
     part: body

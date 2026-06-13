@@ -18,6 +18,7 @@ http:
 id: ec2-instance-information
 info:
   author: DhiyaneshDk
+  description: EC2 Instance information is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"EC2 Instance Information"

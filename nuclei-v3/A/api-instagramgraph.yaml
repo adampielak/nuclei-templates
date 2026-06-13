@@ -19,5 +19,5 @@ info:
   reference:
   - https://developers.facebook.com/docs/instagram-api/getting-started
   severity: info
-  tags: token-spray,instagram,graph
+  tags: token-spray,instagram,graph,facebook
 self-contained: true

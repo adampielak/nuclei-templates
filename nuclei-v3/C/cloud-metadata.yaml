@@ -22,6 +22,7 @@ http:
 id: cloud-metadata
 info:
   author: DhiyaneshDk
+  description: GCP/AWS Metadata is exposed.
   metadata:
     max-request: 1
     shodan-query: html:"instance_metadata"

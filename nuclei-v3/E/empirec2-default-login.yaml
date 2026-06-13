@@ -1,10 +1,12 @@
 http:
 - attack: pitchfork
   matchers:
-  - part: body
-    regex:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - access_token
     - '{"token":".*"}'
-    type: regex
   - part: header
     type: word
     words:
@@ -14,11 +16,37 @@ http:
     type: status
   matchers-condition: and
   payloads:
-    pass:
+    password:
     - password123
-    user:
+    username:
     - empireadmin
   raw:
+  - 'POST /token HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryoZwyedGcQU4FrcFV
+
+    Accept: application/json, text/plain, */*
+
+
+    ------WebKitFormBoundaryoZwyedGcQU4FrcFV
+
+    Content-Disposition: form-data; name="username"
+
+
+    {{username}}
+
+    ------WebKitFormBoundaryoZwyedGcQU4FrcFV
+
+    Content-Disposition: form-data; name="password"
+
+
+    {{password}}
+
+    ------WebKitFormBoundaryoZwyedGcQU4FrcFV--
+
+    '
   - 'POST /api/admin/login HTTP/1.1
 
     Host: {{Hostname}}
@@ -29,22 +57,19 @@ http:
     {"username":"{{user}}","password":"{{pass}}"}
 
     '
+  stop-at-first-match: true
 id: empirec2-default-login
 info:
-  author: clem9669
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
-    cvss-score: 8.3
-    cwe-id: CWE-522
-  description: Empire C2 contains a default admin login vulnerability. An attacker
-    can obtain access to user accounts and access sensitive information, modify data,
-    and/or execute unauthorized operations.
+  author: clem9669,parzival
+  description: 'Empire C2 / Starkiller Default Administrator Credentials Discovered.
+
+    '
   metadata:
-    max-request: 1
+    max-request: 2
     verified: true
-  name: Empire C2 Default Admin Login - Detect
+  name: Empire C2 / Starkiller Interface - Default Login
   reference:
   - https://github.com/BC-SECURITY/Empire
-  - https://bc-security.gitbook.io/empire-wiki/quickstart/configuration/server
+  - https://github.com/BC-SECURITY/empire-docs/blob/main/restful-api/README.md
   severity: high
-  tags: default-login,empire
+  tags: default-login,empire,c2,intrusive

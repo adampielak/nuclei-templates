@@ -13,6 +13,7 @@ http:
 id: lazy-file-manager
 info:
   author: amsda
+  description: lfm.php file in exposed in Lazy File Manager.
   metadata:
     max-request: 1
   name: Lazy File Manager

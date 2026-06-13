@@ -13,12 +13,16 @@ http:
 id: arangodb-web-interface
 info:
   author: pussycat0x
+  classification:
+    cpe: cpe:2.3:a:arangodb:arangodb:*:*:*:*:*:*:*:*
   description: 'ArangoDB Web Interface was detected.
 
     '
   metadata:
     max-request: 1
+    product: arangodb
     shodan-query: http.title:"ArangoDB Web Interface"
+    vendor: arangodb
     verified: 'true'
   name: ArangoDB Web Interface - Detect
   reference:

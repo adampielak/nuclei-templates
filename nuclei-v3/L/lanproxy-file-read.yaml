@@ -34,4 +34,4 @@ info:
     verified: 'true'
   name: CVE-2021-3019  LanProxy - Arbitrary File Read
   severity: high
-  tags: lanproxy,file-read,cve,lfi
+  tags: lfi,lfr

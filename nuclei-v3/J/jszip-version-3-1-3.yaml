@@ -54,4 +54,4 @@ info:
 
     '
   severity: high
-  tags: js,jszip,outdated,version,howden,snykroweb
+  tags: js,jszip,outdated,version

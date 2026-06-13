@@ -18,10 +18,11 @@ http:
 id: lvm-exporter-metrics
 info:
   author: DhiyaneshDk
+  description: LVM Exporter Metrics is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"LVM Exporter"
     verified: true
   name: LVM Exporter Metrics
   severity: low
-  tags: lvm,exposure,debug
+  tags: lvm,exposure,debug,misconfig

@@ -22,12 +22,14 @@ info:
   author: megamansec
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: Lenovo Fan Power Controller login panel was detected.
   metadata:
     max-request: 2
+    product: fan_power_controller
     shodan-query: http.html:"Fan and Power Controller"
+    vendor: lenovo
     verified: true
   name: Lenovo Fan Power Controller Login Panel - Detect
   severity: info

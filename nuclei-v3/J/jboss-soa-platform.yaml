@@ -15,14 +15,16 @@ id: jboss-soa-platform
 info:
   author: ritikchaddha
   classification:
+    cpe: cpe:2.3:a:redhat:jboss_soa_platform:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: JBoss SOA Platform login panel was detected.
   metadata:
     max-request: 1
+    product: jboss_soa_platform
     shodan-query: http.title:"Welcome to the JBoss SOA Platform"
+    vendor: redhat
     verified: true
   name: JBoss SOA Platform Login Panel - Detect
   severity: info
-  tags: panel,jboss,soa
+  tags: panel,jboss,soa,redhat

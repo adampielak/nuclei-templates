@@ -21,6 +21,7 @@ http:
 id: pcdn-cache-node
 info:
   author: DhiyaneshDk
+  description: PCDN Cache Node dataset is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"PCDN Cache Node Dataset"

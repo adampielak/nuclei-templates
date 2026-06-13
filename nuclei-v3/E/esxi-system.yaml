@@ -14,13 +14,15 @@ id: esxi-system
 info:
   author: dhiyaneshDK
   classification:
+    cpe: cpe:2.3:o:vmware:esxi:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: ESXi System login panel was detected.
   metadata:
     max-request: 1
+    product: esxi
     shodan-query: html:"esxUiApp"
+    vendor: vmware
   name: ESXi System Login Panel - Detect
   severity: info
-  tags: panel,esxi
+  tags: panel,esxi,vmware

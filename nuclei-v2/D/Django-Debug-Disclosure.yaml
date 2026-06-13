@@ -1,6 +1,6 @@
 id: Django-Debug-Disclosure
 info:
-  author: Hacktify Cyber Security (@hacktifycs)
+  author: nithissh
   description: Attacker can view the config file which contains the username and password
   name: Django Debug Configuration Disclosure
   reference: '- null

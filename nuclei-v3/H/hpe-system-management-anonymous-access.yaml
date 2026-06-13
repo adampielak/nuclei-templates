@@ -13,8 +13,9 @@ http:
 id: hpe-system-management-anonymous-access
 info:
   author: divya_mudgal
+  description: HPE system management anonymous access is enabled.
   metadata:
     max-request: 1
   name: HPE System Management Anonymous Access
   severity: low
-  tags: hp,unauth
+  tags: hp,unauth,misconfig

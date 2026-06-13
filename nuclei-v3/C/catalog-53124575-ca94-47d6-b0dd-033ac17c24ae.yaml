@@ -1,51 +1,45 @@
-id: catalog-53124575-ca94-47d6-b0dd-033ac17c24ae
-
-info:
-  name: >
-    SpiderCatalog <= 1.7.3 - Authenticated (Admin+) SQL Injection
-  author: topscoder
-  severity: low
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/53124575-ca94-47d6-b0dd-033ac17c24ae?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/catalog/"
-    google-query: inurl:"/wp-content/plugins/catalog/"
-    shodan-query: 'http.html:"wp-content/plugins/catalog/"'
-  tags: cve,wordpress,wp-plugin,catalog,low,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/catalog/readme.txt"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - catalog
+  - dsl:
+    - compare_versions(version, '<= 1.7.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/catalog/readme.txt'
+  redirects: true
+id: catalog-53124575-ca94-47d6-b0dd-033ac17c24ae
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/catalog/
+    google-query: inurl:"/wp-content/plugins/catalog/"
+    shodan-query: http.html:"wp-content/plugins/catalog/"
+  name: 'SpiderCatalog <= 1.7.3 - Authenticated (Admin+) SQL Injection
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "catalog"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.7.3')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/53124575-ca94-47d6-b0dd-033ac17c24ae?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,catalog,low,candidate

@@ -16,10 +16,11 @@ http:
 id: postgres-exporter-metrics
 info:
   author: DhiyaneshDk
+  description: Postgres Exporter Metrics is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Postgres exporter"
     verified: true
   name: Postgres Exporter Metrics
   severity: low
-  tags: postgres,exposure,debug
+  tags: postgres,exposure,debug,misconfig

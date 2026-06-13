@@ -15,10 +15,8 @@ info:
   description: 'A BIMI record was detected
 
     '
-  metadata:
-    max-request: 1
   name: BIMI Record - Detection
   reference:
   - https://postmarkapp.com/blog/what-the-heck-is-bimi
   severity: info
-  tags: dns,bimi,discovery
+  tags: dns,bimi

@@ -35,4 +35,4 @@ info:
   reference:
   - https://circontrol.com/
   severity: critical
-  tags: scada,circontrol,circarlife,setup,exposure,panel,installer
+  tags: scada,circontrol,circarlife,setup,exposure,panel,installer,misconfig

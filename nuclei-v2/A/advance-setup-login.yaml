@@ -6,8 +6,7 @@ info:
   severity: info
   tags: panel
 requests:
-- attack: sniper
-  matchers:
+- matchers:
   - type: word
     words:
     - <title>Advanced Setup - Security - Admin User Name &amp; Password</title>
@@ -15,12 +14,6 @@ requests:
     - 200
     type: status
   matchers-condition: and
-  payloads:
-    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-  raw:
-  - 'GET /cgi-bin/webcm?getpage=../html/login.html HTTP/1.1
-
-    Host: {{Subdomains}}
-
-    '
-  threads: 100
+  method: GET
+  path:
+  - '{{BaseURL}}/cgi-bin/webcm?getpage=../html/login.html'

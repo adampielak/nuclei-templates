@@ -27,4 +27,4 @@ info:
     verified: true
   name: PHP CLI Server Stack Trace
   severity: info
-  tags: misconfig,phpcli
+  tags: misconfig,phpcli,intrusive

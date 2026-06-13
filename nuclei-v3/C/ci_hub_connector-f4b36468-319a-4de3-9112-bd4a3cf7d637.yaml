@@ -1,51 +1,46 @@
-id: ci_hub_connector-f4b36468-319a-4de3-9112-bd4a3cf7d637
-
-info:
-  name: >
-    CI HUB Connector <= 1.2.106 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'id' Shortcode Attribute
-  author: topscoder
-  severity: low
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f4b36468-319a-4de3-9112-bd4a3cf7d637?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/ci-hub-connector/"
-    google-query: inurl:"/wp-content/plugins/ci-hub-connector/"
-    shodan-query: 'http.html:"wp-content/plugins/ci-hub-connector/"'
-  tags: cve,wordpress,wp-plugin,ci-hub-connector,low,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/ci-hub-connector/readme.txt"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ci-hub-connector
+  - dsl:
+    - compare_versions(version, '<= 1.2.106')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/ci-hub-connector/readme.txt'
+  redirects: true
+id: ci_hub_connector-f4b36468-319a-4de3-9112-bd4a3cf7d637
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/ci-hub-connector/
+    google-query: inurl:"/wp-content/plugins/ci-hub-connector/"
+    shodan-query: http.html:"wp-content/plugins/ci-hub-connector/"
+  name: 'CI HUB Connector <= 1.2.106 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting via ''id'' Shortcode Attribute
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "ci-hub-connector"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.2.106')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f4b36468-319a-4de3-9112-bd4a3cf7d637?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,ci-hub-connector,low,candidate

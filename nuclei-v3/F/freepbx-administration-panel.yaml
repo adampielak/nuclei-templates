@@ -22,14 +22,16 @@ id: freepbx-administration-panel
 info:
   author: tess
   classification:
+    cpe: cpe:2.3:a:sangoma:freepbx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: FreePBX admin panel was detected.
   metadata:
     max-request: 1
+    product: freepbx
     shodan-query: http.title:"FreePBX Administration"
+    vendor: sangoma
     verified: true
   name: FreePBX Admin Panel - Detect
   severity: info
-  tags: freepbx,panel
+  tags: freepbx,panel,sangoma

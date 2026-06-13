@@ -22,7 +22,7 @@ info:
   author: DhiyaneshDk
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: 'The jUDDI (Java Universal Description, Discovery and Integration)
     Registry is a core component of the JBoss Enterprise SOA Platform. It is the product''s
@@ -33,7 +33,9 @@ info:
     '
   metadata:
     max-request: 2
+    product: jboss_enterprise_web_platform
     shodan-query: html:"JBoss WS"
+    vendor: redhat
     verified: true
   name: JBoss WS JUDDI Console Panel - Detect
   reference:

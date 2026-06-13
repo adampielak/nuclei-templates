@@ -28,6 +28,7 @@ http:
 id: aem-dump-contentnode
 info:
   author: DhiyaneshDK
+  description: Node Properties are exposed in AEM Dump.
   metadata:
     max-request: 2
     shodan-query:

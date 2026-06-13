@@ -16,6 +16,7 @@ http:
 id: pqube-power-analyzers
 info:
   author: pussycat0x
+  description: PQube 3 Power Analyzer panel was detected.
   metadata:
     max-request: 1
     shodan-query: title:"PQube 3"

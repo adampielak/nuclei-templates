@@ -32,7 +32,7 @@ info:
     verified: true
   name: "ONLYOFFICE / \u04207-\u041E\u0444\u0438\u0441 v12.5.2 - Cross-Site Scripting"
   reference:
-  - BDU:2023-00142 (temp)
+  - https://bdu.fstec.ru/vul/2024-04635
   remediation: Upgrade to the latest version to mitigate this vulnerability.
   severity: high
   tags: "ONLYOFFICE,\u04207-\u041E\u0444\u0438\u0441,xss"

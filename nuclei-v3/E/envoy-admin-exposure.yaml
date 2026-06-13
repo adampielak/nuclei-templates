@@ -17,6 +17,7 @@ http:
 id: envoy-admin-exposure
 info:
   author: DhiyaneshDk
+  description: Envoy Admin page exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Envoy Admin"

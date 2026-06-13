@@ -4,16 +4,11 @@ http:
     name: version
     part: body
     regex:
-    - (?i)<version>(.*)</version>
+    - <version>(.*?)</version>
     - (?i)Joomla_([\d.|\d]+)_version_history
     type: regex
   host-redirects: true
   matchers:
-  - condition: or
-    regex:
-    - (?i)<meta.name="generator".content="(Joomla!).*/>
-    - (?i)Joomla_([\d.|\d]+)_version_history
-    type: regex
   - condition: and
     part: body
     type: word
@@ -21,22 +16,27 @@ http:
     - <version>
     - <creationDate>
     - </metafile>
+  - condition: or
+    regex:
+    - (?i)<meta.name="generator".content="(Joomla!).*/>
+    - (?i)Joomla_([\d.|\d]+)_version_history
+    - FILES_JOOMLA_XML_DESCRIPTION
+    type: regex
   matchers-condition: or
   max-redirects: 2
-  method: null
+  method: GET
   path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/language/en-GB/en-GB.xml'
   - '{{BaseURL}}/administrator/manifests/files/joomla.xml'
+  - '{{BaseURL}}/language/en-GB/en-GB.xml'
   - '{{BaseURL}}/README.txt'
   - '{{BaseURL}}/modules/custom.xml'
+  - '{{BaseURL}}'
   stop-at-first-match: true
 id: joomla-detect
 info:
   author: ricardomaia
-  description: 'Joomla, also spelled Joomla! (with an exclamation mark) and sometimes
-    abbreviated as J!, is a free and open-source content management system (CMS) for
-    publishing web content on websites.
+  description: 'Joomla! is a free and open-source content management system (CMS)
+    for publishing content on websites.
 
     '
   metadata:

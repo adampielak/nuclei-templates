@@ -18,12 +18,14 @@ info:
   author: makyotox,daffainfo
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: MantisBT login panel was detected.
   metadata:
     max-request: 1
+    product: mantisbt
     shodan-query: http.favicon.hash:662709064
+    vendor: mantisbt
     verified: true
   name: MantisBT Login Panel - Detect
   reference:

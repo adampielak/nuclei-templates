@@ -98,16 +98,14 @@ javascript:
   extractors:
   - name: transforms
     regex:
-    - PROBE:[^\n]+
+    - PROBE:[^:]+:accepted:[^\n]+
     type: regex
   matchers:
   - dsl:
     - success == true
     type: dsl
-  - condition: or
-    type: word
+  - type: word
     words:
-    - 'PROBE:'
     - ':accepted:'
   matchers-condition: and
   pre-condition: 'isUDPPortOpen(Host, Port);

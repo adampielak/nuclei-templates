@@ -3,6 +3,7 @@ info:
   author: Ice3man
   name: Google OAuth Access Key Disclosure
   severity: info
+  tags: exposure,token,google
 requests:
 - extractors:
   - part: body

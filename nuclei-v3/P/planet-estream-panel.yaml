@@ -19,14 +19,16 @@ id: planet-estream-panel
 info:
   author: arafatansari
   classification:
+    cpe: cpe:2.3:a:planetestream:planet_estream:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: Planet eStream login panel was detected.
   metadata:
     max-request: 1
+    product: planet_estream
     shodan-query: title:"Login - Planet eStream"
+    vendor: planetestream
     verified: true
   name: Planet eStream Login Panel - Detect
   severity: info
-  tags: panel,planet,estream
+  tags: panel,planet,estream,planetestream

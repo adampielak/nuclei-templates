@@ -17,6 +17,7 @@ http:
 id: espeasy-mega-exposure
 info:
   author: ritikchaddha
+  description: ESPEasy Mega Panel is exposed.
   metadata:
     max-request: 1
     shodan-query: http.html:"ESP Easy Mega"

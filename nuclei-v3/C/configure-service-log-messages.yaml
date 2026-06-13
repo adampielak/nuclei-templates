@@ -22,4 +22,4 @@ info:
   reference:
   - https://www.cisco.com/E-Learning/bulk/public/tac/cim/cib/using_cisco_ios_software/cmdrefs/service_timestamps.htm
   severity: info
-  tags: cisco,config-audit,cisco-switch,file,router
+  tags: cisco,config-audit,cisco-switch,router

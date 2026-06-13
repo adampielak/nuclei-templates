@@ -13,4 +13,4 @@ requests:
     - info
   method: GET
   path:
-  - '{{BaseURL}}/connect/results/api-docs/service.json'
+  - '{{BaseURL}}/alert-engine/api-docs/service.json'

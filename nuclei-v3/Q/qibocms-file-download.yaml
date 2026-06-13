@@ -20,6 +20,7 @@ http:
 id: qibocms-file-download
 info:
   author: theabhinavgaur
+  description: Qibocms is vulnerable to arbitrary file download vulnerability.
   metadata:
     max-request: 1
     verified: true

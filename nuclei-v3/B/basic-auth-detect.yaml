@@ -1,21 +1,28 @@
 http:
-- matchers:
+- extractors:
+  - group: 1
+    part: header
+    regex:
+    - '(?i)www-authenticate: (basic.*)\r\n'
+    type: regex
+  matchers:
+  - part: header
+    regex:
+    - '(?i)www-authenticate: basic'
+    type: regex
   - status:
     - 401
     type: status
-  - part: header
-    type: word
-    words:
-    - 'Www-Authenticate:'
   matchers-condition: and
   method: GET
   path:
   - '{{BaseURL}}'
 id: basic-auth-detect
 info:
-  author: w4cky_
+  author: w4cky_,bhutch
   metadata:
     max-request: 1
+    shodan-query: 'www-authenticate:'
   name: Basic Auth Detection
   severity: info
-  tags: tech,basic-auth
+  tags: tech,basic,auth

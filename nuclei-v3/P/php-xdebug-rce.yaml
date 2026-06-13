@@ -40,4 +40,4 @@ info:
   - https://paper.seebug.org/397/
   - https://github.com/D3Ext/XDEBUG-Exploit
   severity: high
-  tags: oast,rce,vulhub,php,debug,xdebug
+  tags: oast,rce,vulhub,php,debug,xdebug,intrusive

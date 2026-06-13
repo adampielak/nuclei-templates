@@ -15,16 +15,18 @@ id: jboss-jbpm-admin
 info:
   author: DhiyaneshDK
   classification:
+    cpe: cpe:2.3:a:redhat:jbpm:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: JBoss jBPM Administration Console login panel was detected.
   metadata:
     max-request: 1
+    product: jbpm
     shodan-query: html:"JBossWS"
+    vendor: redhat
     verified: true
   name: JBoss jBPM Administration Console Login Panel - Detect
   reference:
   - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/JBossjBPMAdminConsole.java
   severity: info
-  tags: jboss,panel,login
+  tags: jboss,panel,login,redhat

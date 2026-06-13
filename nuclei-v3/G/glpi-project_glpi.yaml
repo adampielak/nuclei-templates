@@ -28,17 +28,19 @@ id: glpi-project_glpi
 info:
   author: dogasantos,daffainfo,ricardomaia,dhiyaneshDk
   classification:
+    cpe: cpe:2.3:a:glpi-project:glpi:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: GLPI panel was detected.
   metadata:
     max-request: 3
+    product: glpi
     shodan-query: http.title:"GLPI"
+    vendor: glpi-project
     verified: true
   name: GLPI Panel - Detect
   reference:
   - https://glpi-project.org/
   - https://www.exploit-db.com/ghdb/7002
   severity: info
-  tags: glpi,edb,panel
+  tags: glpi,edb,panel,glpi-project

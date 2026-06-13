@@ -24,6 +24,8 @@ info:
     tools into a single, intuitive interface.
   metadata:
     max-request: 1
+    product: bitrix24
+    vendor: bitrix
   name: Bitrix Login Panel
   severity: info
   tags: panel,bitrix,login

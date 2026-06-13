@@ -9,6 +9,19 @@ http:
     - kubeadm join
     - --client-name
     - --token
+  - condition: or
+    part: header
+    type: word
+    words:
+    - text/plain
+    - bytes
+    - octet-stream
+  - condition: or
+    status:
+    - 200
+    - 206
+    type: status
+  matchers-condition: and
   method: GET
   path:
   - '{{BaseURL}}/cheatset'
@@ -18,4 +31,4 @@ info:
   description: This Template checks disclosing secret information via /cheatset
   name: cheatset Disclosure
   severity: critical
-  tags: config, secrets, leaks, cheatset, tokens, sql, tokens
+  tags: config,exposed,bounty,cloud

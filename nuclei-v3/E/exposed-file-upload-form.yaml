@@ -24,4 +24,4 @@ info:
     verified: true
   name: Exposed File Upload Form
   severity: info
-  tags: exposure,upload,form
+  tags: miscellaneous,exposure,upload,form,misc,generic

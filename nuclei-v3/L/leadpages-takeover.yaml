@@ -16,6 +16,7 @@ http:
 id: leadpages-takeover
 info:
   author: philippedelteil
+  description: Leadpages takeover was detected.
   metadata:
     max-request: 1
   name: Leadpages takeover detection

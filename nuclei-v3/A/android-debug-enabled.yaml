@@ -10,3 +10,4 @@ info:
   author: gaurang
   name: Android Debug Enabled
   severity: low
+  tags: android,file

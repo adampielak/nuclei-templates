@@ -14,6 +14,7 @@ http:
 id: ampguard-wifi-setup
 info:
   author: pussycat0x
+  description: AmpGuard wifi setup panel detected.
   metadata:
     max-request: 1
     shodan-query: title:"AmpGuard wifi setup"

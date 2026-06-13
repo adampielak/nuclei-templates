@@ -21,6 +21,8 @@ info:
   description: 'A best buy phishing website was detected
 
     '
+  metadata:
+    max-request: 1
   name: best buy phishing Detection
   reference:
   - https://bestbuy.com

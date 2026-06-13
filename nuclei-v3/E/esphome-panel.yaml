@@ -15,13 +15,15 @@ id: esphome-panel
 info:
   author: fabaff
   classification:
+    cpe: cpe:2.3:a:esphome:esphome:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: ESPHome login panel was detected.
   metadata:
     max-request: 1
+    product: esphome
     shodan-query: title:"Login - ESPHome"
+    vendor: esphome
     verified: true
   name: ESPHome Login Panel - Detect
   severity: info

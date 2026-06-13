@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - 2-click-socialmedia-buttons
-  - dsl:
-    - compare_versions(version, '< 0.34')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/2-click-socialmedia-buttons/readme.txt'
-  redirects: true
 id: 2-click-socialmedia-buttons-8a4d515bde9dc9fd34a1fc9671e6f198
+
 info:
+  name: >
+    2 Click Social Media Buttons < 0.34 - Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/82da75f4-f036-40e0-ae4c-5011d6a39df4?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/2-click-socialmedia-buttons/
+    fofa-query: "wp-content/plugins/2-click-socialmedia-buttons/"
     google-query: inurl:"/wp-content/plugins/2-click-socialmedia-buttons/"
     shodan-query: 'vuln:'
-  name: '2 Click Social Media Buttons < 0.34 - Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/82da75f4-f036-40e0-ae4c-5011d6a39df4?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,2-click-socialmedia-buttons,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/2-click-socialmedia-buttons/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "2-click-socialmedia-buttons"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 0.34')

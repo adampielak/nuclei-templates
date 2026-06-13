@@ -28,4 +28,4 @@ info:
   reference:
   - https://hackerone.com/reports/764731
   severity: medium
-  tags: prometheus,misconfig,grafana
+  tags: prometheus,grafana,cloud

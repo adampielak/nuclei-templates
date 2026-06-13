@@ -20,6 +20,7 @@ http:
 id: global-traffic-statistics
 info:
   author: tess
+  description: Global Traffic Statistics page is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Global Traffic Statistics"

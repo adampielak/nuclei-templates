@@ -1,59 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - empowerwp
+  - dsl:
+    - compare_versions(version, '<= 1.0.21')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/empowerwp/style.css'
+  redirects: true
 id: empowerwp-e011f0fe3c18de1eb10e2fd479a3ee1d
-
 info:
-  name: >
-    EmpowerWP <= 1.0.21 - Cross-Site Request Forgery to Notice Dismissal
   author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a533ddd4-cf89-4bf9-981e-2fdd4ff4d414?source=api-scan
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
   metadata:
-    fofa-query: "wp-content/themes/empowerwp/"
+    fofa-query: wp-content/themes/empowerwp/
     google-query: inurl:"/wp-content/themes/empowerwp/"
     shodan-query: 'vuln:'
+  name: 'EmpowerWP <= 1.0.21 - Cross-Site Request Forgery to Notice Dismissal
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a533ddd4-cf89-4bf9-981e-2fdd4ff4d414?source=api-scan
+  severity: medium
   tags: cve,wordpress,wp-theme,empowerwp,medium
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/empowerwp/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "empowerwp"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.0.21')

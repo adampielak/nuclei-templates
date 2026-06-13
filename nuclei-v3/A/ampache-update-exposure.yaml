@@ -21,6 +21,7 @@ http:
 id: ampache-update-exposure
 info:
   author: ritikchaddha
+  description: Ampache update page is exposed.
   metadata:
     max-request: 1
     shodan-query: http.html:"Ampache Update"

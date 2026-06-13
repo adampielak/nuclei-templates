@@ -8,11 +8,11 @@ http:
     - '"uri":'
   method: GET
   path:
-  - /__clockwork/latest
+  - '{{BaseURL}}/__clockwork/latest'
 id: check-clockwork-latest
 info:
   author: SirBugs
   name: Check for /__clockwork/latest
   reference: https://example.com/reference
   severity: info
-  tags: leaks, information, clockwork, latest
+  tags: generic

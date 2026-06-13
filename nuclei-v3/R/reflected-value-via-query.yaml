@@ -4,22 +4,22 @@ http:
   - name: plaintext
     part: body
     regex:
-    - bcresearcher111
+    - thed4rksh4dow1337
     type: regex
   - name: urlencode
     part: body
     regex:
-    - bcresearcher222
+    - thed4rksh4dow222
     type: regex
   - name: base64encode
     part: body
     regex:
-    - bcresearcher333
+    - thed4rksh4dow333
     type: regex
   - name: htmlencode
     part: body
     regex:
-    - bcresearcher444
+    - thed4rksh4dow444
     type: regex
   fuzzing:
   - fuzz:
@@ -33,10 +33,10 @@ http:
     part: body
     type: word
     words:
-    - bcresearcher111
-    - bcresearcher222
-    - bcresearcher333
-    - bcresearcher444
+    - thed4rksh4dow1337
+    - thed4rksh4dow222
+    - thed4rksh4dow333
+    - thed4rksh4dow444
   - negative: true
     part: header
     type: word
@@ -48,14 +48,14 @@ http:
   - '{{BaseURL}}'
   payloads:
     payload:
-    - bcresearcher111
-    - '%62%63%72%65%73%65%61%72%63%68%65%72%32%32%32'
-    - YmNyZXNlYXJjaGVyMzMz
-    - '&#98;&#99;&#114;&#101;&#115;&#101;&#97;&#114;&#99;&#104;&#101;&#114;&#52;&#52;&#52;'
+    - thed4rksh4dow1337
+    - '%74%68%65%64%34%72%6B%73%68%34%64%6F%77%32%32%32'
+    - dGhlZDRya3NoNGRvdzMzMw==
+    - '&#116;&#104;&#101;&#100;&#52;&#114;&#107;&#115;&#104;&#52;&#100;&#111;&#119;&#52;&#52;&#52;'
   stop-at-first-match: true
 id: reflected-value-via-query
 info:
-  author: kaks3c
+  author: D4rk Sh4dow
   description: 'This template tests for reflected values in query parameters by sending
     different encoded payloads and matching the responses.
 

@@ -15,7 +15,7 @@ info:
   author: wa1tf0rme
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: OpenCPU panel was detected.
   metadata:
@@ -24,4 +24,4 @@ info:
   reference:
   - https://github.com/opencpu/opencpu/
   severity: info
-  tags: opencpu,oss
+  tags: panel,opencpu,oss

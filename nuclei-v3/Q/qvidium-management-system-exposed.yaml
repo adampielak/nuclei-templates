@@ -22,6 +22,7 @@ http:
 id: qvidium-management-system-exposed
 info:
   author: tess
+  description: QVidium Management System is Exposed.
   metadata:
     max-request: 1
     shodan-query: html:"QVidium Management"

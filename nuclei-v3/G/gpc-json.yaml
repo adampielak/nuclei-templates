@@ -32,4 +32,4 @@ info:
     verified: true
   name: Global Privacy Control (GPC) File Disclosure
   severity: info
-  tags: misc,generic,gpc
+  tags: miscellaneous,misc,generic,gpc

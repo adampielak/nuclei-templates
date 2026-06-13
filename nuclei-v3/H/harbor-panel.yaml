@@ -17,16 +17,18 @@ id: harbor-panel
 info:
   author: daffainfo
   classification:
+    cpe: cpe:2.3:a:linuxfoundation:harbor:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: Harbor login panel was detected.
   metadata:
     max-request: 1
+    product: harbor
     shodan-query: http.favicon.hash:657337228
+    vendor: linuxfoundation
     verified: true
   name: Harbor Login Panel - Detect
   reference:
   - https://github.com/goharbor/harbor
   severity: info
-  tags: panel,harbor
+  tags: panel,harbor,linuxfoundation

@@ -6,7 +6,7 @@ http:
     - zone-id
   payloads:
     hostval:
-    - alibaba.interact.sh
+    - alibaba.oast.pro
     - 100.100.100.200
   raw:
   - 'GET http://{{hostval}}/dynamic/instance-identity/document HTTP/1.1

@@ -26,5 +26,5 @@ info:
   - https://developers.google.com/books/docs/overview
   - https://github.com/daffainfo/all-about-apikey/tree/main/google-safe-browsing
   severity: info
-  tags: token-spray,google,books
+  tags: token-spray,google,safebrowsing
 self-contained: true

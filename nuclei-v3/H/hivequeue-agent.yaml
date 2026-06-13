@@ -18,6 +18,7 @@ http:
 id: hivequeue-agent
 info:
   author: DhiyaneshDk
+  description: HiveQueue Agent is exposed.
   metadata:
     max-request: 1
     shodan-query: http.title:"HiveQueue"

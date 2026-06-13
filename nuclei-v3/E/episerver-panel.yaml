@@ -1,7 +1,8 @@
 http:
 - matchers:
-  - regex:
-    - Util.*%2fepiserver%2fcms
+  - part: header
+    regex:
+    - Util.*%2(f|F)episerver%2(f|F)cms
     type: regex
   - status:
     - 302
@@ -15,7 +16,6 @@ info:
   author: "William S\xF6derberg @ WithSecure"
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: Episerver login panel was detected.
   metadata:

@@ -3,7 +3,7 @@ http:
   - part: body
     type: word
     words:
-    - Oracle HTTP Server 12c
+    - <title>Oracle HTTP Server 12c</title>
   - part: header
     type: word
     words:
@@ -17,7 +17,7 @@ http:
   - '{{BaseURL}}'
 id: oracle-httpserver12c
 info:
-  author: tess
+  author: tess,dhiyaneshDK
   metadata:
     max-request: 1
     shodan-query: http.html:"Oracle HTTP Server"

@@ -15,7 +15,7 @@ http:
     part: header
     type: word
     words:
-    - 'WWW-Authenticate: Basic realm'
+    - 'Www-Authenticate: Basic realm'
     - Enterprise Manager
   - part: body
     type: word

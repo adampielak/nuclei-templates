@@ -11,3 +11,4 @@ info:
   author: gaurang
   name: Insecure Provider Path
   severity: medium
+  tags: android,file

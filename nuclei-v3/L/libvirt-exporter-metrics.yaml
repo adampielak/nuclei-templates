@@ -16,10 +16,11 @@ http:
 id: libvirt-exporter-metrics
 info:
   author: DhiyaneshDk
+  description: Libvirt Exporter is leaking metrics.
   metadata:
     max-request: 1
     shodan-query: title:"Libvirt"
     verified: true
   name: Libvirt Exporter Metrics
   severity: low
-  tags: libvirt,exposure,debug
+  tags: libvirt,exposure,debug,misconfig

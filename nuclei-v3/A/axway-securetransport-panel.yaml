@@ -28,14 +28,16 @@ info:
   author: righettod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: 'AXWAY SecureTransport login panel was detected.
 
     '
   metadata:
     max-request: 1
+    product: securetransport
     shodan-query: http.title:"SecureTransport" || http.favicon.hash:1330269434
+    vendor: axway
     verified: true
   name: Axway SecureTransport Login Panel - Detect
   reference:

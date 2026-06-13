@@ -18,13 +18,15 @@ id: fortiadc-panel
 info:
   author: DhiyaneshDk
   classification:
+    cpe: cpe:2.3:a:fortinet:fortiadc:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: FortiADC login panel was detected.
   metadata:
     max-request: 1
+    product: fortiadc
     shodan-query: title:"FortiADC"
+    vendor: fortinet
     verified: true
   name: FortiADC Login Panel - Detect
   reference:

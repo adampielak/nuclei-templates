@@ -9,6 +9,7 @@ http:
 id: meteor-takeover
 info:
   author: rivalsec
+  description: Meteor takeover was detected.
   metadata:
     max-request: 1
   name: Meteor subdomain takeover

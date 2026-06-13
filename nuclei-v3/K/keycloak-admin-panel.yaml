@@ -9,6 +9,7 @@ http:
     - alt="Keycloak
     - kc-form-buttons
     - /keycloak/img/favicon.ico
+    - /admin/keycloak/
   - status:
     - 200
     type: status
@@ -24,14 +25,16 @@ id: keycloak-admin-panel
 info:
   author: incogbyte,righettod,daffainfo
   classification:
+    cpe: cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: Keycloak admin login panel was detected.
   metadata:
     max-request: 3
+    product: keycloak
     shodan-query: http.favicon.hash:-1105083093
+    vendor: redhat
     verified: true
   name: Keycloak Admin Login Panel - Detect
   severity: info
-  tags: panel,keycloak
+  tags: panel,keycloak,redhat

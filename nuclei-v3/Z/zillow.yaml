@@ -1,27 +1,33 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - '- Real Estate Agent'
-  matchers-condition: and
-  method: GET
-  path:
-  - https://www.zillow.com/profile/{{user}}/
 id: zillow
+
 info:
+  name: Zillow User Name Information - Detect
   author: dwisiswant0
+  severity: info
+  description: Zillow user name information check was conducted.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
-  description: Zillow user name information check was conducted.
   metadata:
     max-request: 1
-  name: Zillow User Name Information - Detect
-  severity: info
-  tags: osint,osint-shopping,zillow
+  tags: osint,osint-shopping,zillow,discovery
+
 self-contained: true
+
+http:
+  - method: GET
+    path:
+      - "https://www.zillow.com/profile/{{user}}/"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "- Real Estate Agent"
+# digest: 4b0a00483046022100fe5ec7dbd2dbe4ad0bdf476a08f2bc37c7ec7602d8a31bb39154ceaf915dd7b6022100d6e2b5e138c86dcca71831eb2f33ac12ac1a38c257270b9586396145db8dd3bc:922c64590222798bb761d5b6d8e72950

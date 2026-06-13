@@ -39,4 +39,5 @@ info:
   - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
   - https://projects.webappsec.org/w/page/13246925/Fingerprinting
   severity: low
-  tags: headers, information, discloser, server, x-powered-by, apache, iis, nginx
+  tags: rootshell, headers, information, discloser, server, x-powered-by, apache,
+    iis, nginx

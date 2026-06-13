@@ -1,6 +1,6 @@
 id: TG8-Firewall-PreAuth-RCE
 info:
-  author: shifacyclewala, hackergautam
+  author: nithissh
   description: A malicious actor can trigger Un authenticated Remote Code Execution
   name: TG8 Firewall PreAuth RCE
   reference: unknown

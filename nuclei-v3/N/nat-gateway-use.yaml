@@ -27,8 +27,8 @@ code:
     "Name=state,Values=available" --query ''NatGateways''
 
     '
-flow: "code(1)\nfor(let VPCIds of iterate(template.vpcid)){\n  set(\"vpc\", VPCIds)\n\
-  \  code(2)\n}\n"
+flow: "code(1)\nfor(let VPCIds of template.vpcid){\n  set(\"vpc\", VPCIds)\n  code(2)\n\
+  }\n"
 id: nat-gateway-use
 info:
   author: princechaddha
@@ -40,8 +40,6 @@ info:
     potential bandwidth bottlenecks.
 
     '
-  metadata:
-    max-request: 2
   name: Managed NAT Gateway Usage
   reference:
   - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html

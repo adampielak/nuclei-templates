@@ -44,4 +44,4 @@ info:
   reference:
   - https://blog.projectdiscovery.io/php-http-server-source-disclosure/
   severity: high
-  tags: php,phpcli,diclosure
+  tags: php,phpcli,diclosure,misconfig
