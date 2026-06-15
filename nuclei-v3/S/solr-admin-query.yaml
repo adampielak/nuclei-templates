@@ -22,4 +22,4 @@ info:
   reference:
   - https://www.exploit-db.com/ghdb/5856
   severity: high
-  tags: solr,unauth,edb
+  tags: solr,unauth,edb,misconfig

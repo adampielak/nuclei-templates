@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/breeze/
   metadata:
+    max-request: 1
     plugin_namespace: breeze
     wpscan: https://wpscan.com/plugin/breeze
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022048a488570e6493eea7fe5103afe8c1c277df2dd9cf05c7fff700382a357e44d4022100acc4fee60dfd15bf62518a20e30e9980068baebffb855b36533799407fe4c621:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402205874e6472bc7403a5a6e1e50aa61fba0f7ad98ba87d7cb81fd10e67b90a42bae02203df3cc2f018761a4299d51e720cf2a9759c79beccdfce0db6d9b025ff13bd5a8:922c64590222798bb761d5b6d8e72950

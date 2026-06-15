@@ -22,6 +22,7 @@ http:
 id: smarterstats-setup
 info:
   author: tess
+  description: SmarterStats Setup is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Welcome to SmarterStats!"

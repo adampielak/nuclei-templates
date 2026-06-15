@@ -4,14 +4,10 @@ info:
   name: Lighttpd Placeholder Page
   author: idealphase
   severity: info
-  classification:
-    cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    vendor: lighttpd
-    product: lighttpd
     shodan-query: "If you find a bug in this Lighttpd package, or in Lighttpd itself"
-  tags: tech,lighttpd,discovery
+  tags: tech,lighttpd
 
 http:
   - method: GET
@@ -29,4 +25,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f438b47c956b738f0f9b2cf06a3fbc35ff517a727f3574aec01bfc11f81d2573022067b1e67247e11b99d428637cd91c862a787d4264e5d3e46f804c2b689684f59f:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402207bbd50cbd24cbdba72b8ed88f7a98e3ba3ac7ba2ead08b276f42d7a713e59c0f022007f8916863aab5b425262574a27ec9a198ac6366682cd883ff50101063639a37:922c64590222798bb761d5b6d8e72950

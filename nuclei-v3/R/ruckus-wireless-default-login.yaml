@@ -1,6 +1,5 @@
 http:
 - attack: pitchfork
-  cookie-reuse: true
   host-redirects: true
   matchers:
   - condition: and

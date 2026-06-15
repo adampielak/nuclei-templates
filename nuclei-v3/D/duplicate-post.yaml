@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/duplicate-post/
   metadata:
+    max-request: 1
     plugin_namespace: duplicate-post
     wpscan: https://wpscan.com/plugin/duplicate-post
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100e9a02a8de405985697f87394a288ad594e0f185de6e586b06c7b780c4f5d96cf02207b8a25953ae1954b994b16705c2b8dac4febfc02c4360c2ba74d5d0c42f11457:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c096b4c5b9eefeab924754a9c9f67f451ac43d357a319d5ea529425ee4f4d00e022047f485b8acce6d2a26c51200c9dcf45204d460453488374b065aae687e13aaf2:922c64590222798bb761d5b6d8e72950

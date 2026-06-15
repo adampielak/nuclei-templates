@@ -20,7 +20,9 @@ info:
   description: SonicWall Network Security Login panel was detected.
   metadata:
     max-request: 2
+    product: tz_350
     shodan-query: title:"SonicWall Network Security Login"
+    vendor: sonicwall
     verified: true
   name: SonicWall Network Security Login - Detect
   severity: info

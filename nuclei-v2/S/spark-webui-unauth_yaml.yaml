@@ -6,8 +6,7 @@ info:
   severity: medium
   tags: spark,unauth
 requests:
-- attack: sniper
-  matchers:
+- matchers:
   - status:
     - 200
     type: status
@@ -18,15 +17,6 @@ requests:
     - <title>Spark Master at spark://
     - <strong>URL:</strong>
   matchers-condition: and
-  payloads:
-    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-  raw:
-  - 'GET / HTTP/1.1
-
-    Host: {{Subdomains}}
-
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-    like Gecko) Chrome/87.0.4280.88 Safari/537.36
-
-    '
-  threads: 100
+  method: GET
+  path:
+  - '{{BaseURL}}/'

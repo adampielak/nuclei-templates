@@ -5,17 +5,17 @@ info:
     \ a process called \u201Cstore and forward,\u201D SMTP moves your email on and\
     \ across networks.\n"
   metadata:
-    max-request: 2
+    max-request: 1
   name: SMTP Service Detection
   severity: info
-  tags: network,service,smtp
+  tags: network,service,smtp,detect,mail
 tcp:
 - host:
   - '{{Hostname}}'
-  - '{{Host}}:25'
   inputs:
   - data: "\r\n"
   matchers:
   - type: word
     words:
     - SMTP
+  port: 25

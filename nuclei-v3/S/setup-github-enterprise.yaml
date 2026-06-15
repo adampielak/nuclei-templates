@@ -22,4 +22,4 @@ info:
     verified: true
   name: Setup GitHub Enterprise - Detect
   severity: unknown
-  tags: panel,exposure,setup,github
+  tags: panel,exposure,setup,github,misconfig

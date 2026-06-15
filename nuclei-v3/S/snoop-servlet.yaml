@@ -23,4 +23,4 @@ info:
   reference:
   - https://www.acunetix.com/vulnerabilities/\web/snoop-servlet-information-disclosure/
   severity: low
-  tags: config,exposure,snoop,snoop-servlet
+  tags: config,exposure,snoop,snoop-servlet,vuln
