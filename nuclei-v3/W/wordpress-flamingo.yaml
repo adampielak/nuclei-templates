@@ -32,6 +32,7 @@ id: wordpress-flamingo
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: flamingo
     wpscan: https://wpscan.com/plugin/flamingo
   name: Flamingo Detection

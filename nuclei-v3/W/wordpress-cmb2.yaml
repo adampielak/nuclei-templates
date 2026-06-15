@@ -32,6 +32,7 @@ id: wordpress-cmb2
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: cmb2
     wpscan: https://wpscan.com/plugin/cmb2
   name: CMB2 Detection

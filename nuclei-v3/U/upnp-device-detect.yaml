@@ -23,6 +23,7 @@ http:
 id: upnp-device-detect
 info:
   author: geeknik
+  description: uPNP Device was detected.
   metadata:
     max-request: 1
   name: Detect Basic uPNP Device

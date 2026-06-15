@@ -32,6 +32,7 @@ id: wordpress-happy-elementor-addons
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: happy-elementor-addons
     wpscan: https://wpscan.com/plugin/happy-elementor-addons
   name: Happy Addons for Elementor Detection

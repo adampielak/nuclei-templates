@@ -32,6 +32,7 @@ id: wordpress-contact-form-7-honeypot
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: contact-form-7-honeypot
     wpscan: https://wpscan.com/plugin/contact-form-7-honeypot
   name: Honeypot for Contact Form 7 Detection

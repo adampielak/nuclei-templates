@@ -32,6 +32,7 @@ id: wordpress-ssl-insecure-content-fixer
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: ssl-insecure-content-fixer
     wpscan: https://wpscan.com/plugin/ssl-insecure-content-fixer
   name: SSL Insecure Content Fixer Detection

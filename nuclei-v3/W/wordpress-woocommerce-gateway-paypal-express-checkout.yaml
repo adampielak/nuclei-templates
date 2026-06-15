@@ -32,6 +32,7 @@ id: wordpress-woocommerce-gateway-paypal-express-checkout
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: woocommerce-gateway-paypal-express-checkout
     wpscan: https://wpscan.com/plugin/woocommerce-gateway-paypal-express-checkout
   name: WooCommerce PayPal Checkout Payment Gateway Detection

@@ -32,6 +32,7 @@ id: wordpress-woocommerce-paypal-payments
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: woocommerce-paypal-payments
     wpscan: https://wpscan.com/plugin/woocommerce-paypal-payments
   name: WooCommerce PayPal Payments Detection

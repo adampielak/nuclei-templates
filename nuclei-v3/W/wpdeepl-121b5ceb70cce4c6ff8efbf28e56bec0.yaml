@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - wpdeepl
-  - dsl:
-    - compare_versions(version, '<= 2.1.4')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wpdeepl/readme.txt'
-  redirects: true
 id: wpdeepl-121b5ceb70cce4c6ff8efbf28e56bec0
+
 info:
+  name: >
+    DeepL Pro API translation <= 2.1.4 - Cross-Site Request Forgery via saveSettings
   author: topscoder
+  severity: medium
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1fc58078-7520-4ee7-b5a1-d6a362ac1860?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/wpdeepl/
+    fofa-query: "wp-content/plugins/wpdeepl/"
     google-query: inurl:"/wp-content/plugins/wpdeepl/"
     shodan-query: 'vuln:'
-  name: 'DeepL Pro API translation <= 2.1.4 - Cross-Site Request Forgery via saveSettings
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1fc58078-7520-4ee7-b5a1-d6a362ac1860?source=api-scan
-  severity: medium
   tags: cve,wordpress,wp-plugin,wpdeepl,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wpdeepl/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "wpdeepl"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.1.4')

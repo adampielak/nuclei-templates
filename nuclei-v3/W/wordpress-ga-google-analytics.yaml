@@ -32,6 +32,7 @@ id: wordpress-ga-google-analytics
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: ga-google-analytics
     wpscan: https://wpscan.com/plugin/ga-google-analytics
   name: "GA Google Analytics \u2013 Connect Google Analytics to WordPress Detection"

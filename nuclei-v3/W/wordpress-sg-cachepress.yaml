@@ -32,9 +32,11 @@ id: wordpress-sg-cachepress
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: sg-cachepress
     wpscan: https://wpscan.com/plugin/sg-cachepress
-  name: SiteGround Optimizer Detection
+  name: "Speed Optimizer \u2013 The All-In-One WordPress Performance-Boosting Plugin\
+    \ Detection"
   reference:
   - https://wordpress.org/plugins/sg-cachepress/
   severity: info

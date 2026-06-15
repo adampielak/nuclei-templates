@@ -17,6 +17,7 @@ http:
 id: updraftplus-pem-keys
 info:
   author: dhiyaneshDk
+  description: UpdraftPlus wordpress plugin private key leaked with directory listing.
   metadata:
     max-request: 1
   name: UpdraftPlus Plugin Pem Key

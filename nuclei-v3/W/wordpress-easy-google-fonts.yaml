@@ -32,6 +32,7 @@ id: wordpress-easy-google-fonts
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: easy-google-fonts
     wpscan: https://wpscan.com/plugin/easy-google-fonts
   name: Easy Google Fonts Detection

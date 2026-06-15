@@ -21,6 +21,8 @@ info:
   description: 'A sync storage phishing website was detected
 
     '
+  metadata:
+    max-request: 1
   name: sync storage phishing Detection
   reference:
   - https://sync.com

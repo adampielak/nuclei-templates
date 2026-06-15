@@ -32,6 +32,7 @@ id: wordpress-members
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: members
     wpscan: https://wpscan.com/plugin/members
   name: "Members \u2013 Membership & User Role Editor Plugin Detection"

@@ -1,28 +1,32 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - Installation - Moodle
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/install.php'
 id: moodle-installer
+
 info:
+  name: Moodle Installation Exposure
   author: tess
-  description: Moodle is susceptible to the Installation page exposure due to misconfiguration.
+  severity: high
   metadata:
     max-request: 1
-    shodan-query: title:"Installation Moodle"
     verified: true
-  name: Moodle Installation Exposure
-  severity: high
+    shodan-query: title:"Installation Moodle"
   tags: misconfig,moodle,install,exposure
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/install.php'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Installation - Moodle"
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+      - type: status
+        status:
+          - 200

@@ -32,6 +32,7 @@ id: wordpress-loginizer
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: loginizer
     wpscan: https://wpscan.com/plugin/loginizer
   name: Loginizer Detection

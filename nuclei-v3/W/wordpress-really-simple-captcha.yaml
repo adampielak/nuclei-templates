@@ -32,6 +32,7 @@ id: wordpress-really-simple-captcha
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: really-simple-captcha
     wpscan: https://wpscan.com/plugin/really-simple-captcha
   name: Really Simple CAPTCHA Detection

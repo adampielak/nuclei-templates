@@ -13,6 +13,7 @@ http:
 id: uservoice-takeover
 info:
   author: MiryangJung
+  description: Uservoice takeover was detected.
   metadata:
     max-request: 1
   name: Uservoice Takeover Detection

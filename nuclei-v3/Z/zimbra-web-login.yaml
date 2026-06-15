@@ -27,7 +27,7 @@ info:
   author: powerexploit
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: 'Zimbra Collaboration Suite panel was detected. Zimbra Collaboration
     Suite simplifies the communication environment, connects people over multiple
@@ -36,7 +36,9 @@ info:
     '
   metadata:
     max-request: 1
+    product: zimbra_collaboration_suite
     shodan-query: http.title:"Zimbra Collaboration Suite"
+    vendor: synacor
     verified: true
   name: Zimbra Collaboration Suite Login Panel - Detect
   reference:

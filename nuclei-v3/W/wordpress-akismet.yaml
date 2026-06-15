@@ -34,7 +34,7 @@ info:
   metadata:
     plugin_namespace: akismet
     wpscan: https://wpscan.com/plugin/akismet
-  name: Akismet Anti-Spam' Spam Protection Detection
+  name: Akismet Anti-spam' Spam Protection Detection
   reference:
   - https://wordpress.org/plugins/akismet/
   severity: info

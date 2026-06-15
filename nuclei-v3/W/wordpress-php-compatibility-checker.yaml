@@ -32,6 +32,7 @@ id: wordpress-php-compatibility-checker
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: php-compatibility-checker
     wpscan: https://wpscan.com/plugin/php-compatibility-checker
   name: PHP Compatibility Checker Detection

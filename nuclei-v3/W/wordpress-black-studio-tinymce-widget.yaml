@@ -32,6 +32,7 @@ id: wordpress-black-studio-tinymce-widget
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: black-studio-tinymce-widget
     wpscan: https://wpscan.com/plugin/black-studio-tinymce-widget
   name: Black Studio TinyMCE Widget Detection

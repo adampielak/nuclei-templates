@@ -32,6 +32,7 @@ id: wordpress-autoptimize
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: autoptimize
     wpscan: https://wpscan.com/plugin/autoptimize
   name: Autoptimize Detection

@@ -16,6 +16,7 @@ http:
 id: unauth-mercurial
 info:
   author: pussycat0x
+  description: Mercurial repositories index is disclosed.
   metadata:
     max-request: 1
     shodan-query: html:"Mercurial repositories index"

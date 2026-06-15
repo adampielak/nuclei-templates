@@ -32,6 +32,7 @@ id: wordpress-woocommerce-services
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: woocommerce-services
     wpscan: https://wpscan.com/plugin/woocommerce-services
   name: WooCommerce Shipping & Tax Detection

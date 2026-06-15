@@ -32,6 +32,7 @@ id: wordpress-duplicator
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: duplicator
     wpscan: https://wpscan.com/plugin/duplicator
   name: "Duplicator \u2013 WordPress Migration & Backup Plugin Detection"

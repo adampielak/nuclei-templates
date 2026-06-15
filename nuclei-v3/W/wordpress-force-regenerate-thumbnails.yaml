@@ -32,6 +32,7 @@ id: wordpress-force-regenerate-thumbnails
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: force-regenerate-thumbnails
     wpscan: https://wpscan.com/plugin/force-regenerate-thumbnails
   name: Force Regenerate Thumbnails Detection

@@ -27,6 +27,7 @@ http:
 id: tasmota-config-webui
 info:
   author: ritikchaddha
+  description: Tasmota configuration is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"Tasmota"

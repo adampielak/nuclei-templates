@@ -32,6 +32,7 @@ id: wordpress-imagify
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: imagify
     wpscan: https://wpscan.com/plugin/imagify
   name: "Imagify \u2013 Optimize Images & Convert WebP | Compress Images Easily Detection"

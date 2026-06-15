@@ -34,9 +34,8 @@ info:
   metadata:
     plugin_namespace: woocommerce-payments
     wpscan: https://wpscan.com/plugin/woocommerce-payments
-  name: "WooCommerce Payments \u2013 Fully Integrated Solution Built and Supported\
-    \ by Woo Detection"
+  name: WooPayments' Integrated WooCommerce Payments Detection
   reference:
   - https://wordpress.org/plugins/woocommerce-payments/
   severity: info
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200

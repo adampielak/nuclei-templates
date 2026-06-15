@@ -34,7 +34,8 @@ info:
   metadata:
     plugin_namespace: wp-smushit
     wpscan: https://wpscan.com/plugin/wp-smushit
-  name: "Smush \u2013 Lazy Load Images, Optimize & Compress Images Detection"
+  name: "Smush \u2013 Optimize Images | Compress and Lazy Load Images | Convert WebP\
+    \ Detection"
   reference:
   - https://wordpress.org/plugins/wp-smushit/
   severity: info

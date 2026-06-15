@@ -32,6 +32,7 @@ id: wordpress-coming-soon
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: coming-soon
     wpscan: https://wpscan.com/plugin/coming-soon
   name: "Website Builder by SeedProd \u2014 Theme Builder, Landing Page Builder, Coming\

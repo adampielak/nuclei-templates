@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - yada-wiki
-  - dsl:
-    - compare_versions(version, '< 3.4.1')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/yada-wiki/readme.txt'
-  redirects: true
 id: yada-wiki-0e04c450c7a6033c90d580fe0890dc93
+
 info:
+  name: >
+    Yada Wiki <= 3.4 - Stored Cross-Site Scripting
   author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/63b272f5-08d1-4c5b-a500-d919903793b7?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/yada-wiki/
+    fofa-query: "wp-content/plugins/yada-wiki/"
     google-query: inurl:"/wp-content/plugins/yada-wiki/"
     shodan-query: 'vuln:'
-  name: 'Yada Wiki <= 3.4 - Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/63b272f5-08d1-4c5b-a500-d919903793b7?source=api-scan
-  severity: high
   tags: cve,wordpress,wp-plugin,yada-wiki,high
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/yada-wiki/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "yada-wiki"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 3.4.1')

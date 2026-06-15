@@ -32,6 +32,7 @@ id: wordpress-custom-css-js
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: custom-css-js
     wpscan: https://wpscan.com/plugin/custom-css-js
   name: Simple Custom CSS and JS Detection

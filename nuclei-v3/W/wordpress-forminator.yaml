@@ -32,6 +32,7 @@ id: wordpress-forminator
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: forminator
     wpscan: https://wpscan.com/plugin/forminator
   name: "Forminator \u2013 Contact Form, Payment Form & Custom Form Builder Detection"

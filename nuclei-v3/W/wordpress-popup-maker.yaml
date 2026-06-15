@@ -32,6 +32,7 @@ id: wordpress-popup-maker
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: popup-maker
     wpscan: https://wpscan.com/plugin/popup-maker
   name: "Popup Maker \u2013 Popup for opt-ins, lead gen, & more Detection"

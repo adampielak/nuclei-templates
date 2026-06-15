@@ -32,7 +32,6 @@ id: wordpress-jetpack-boost
 info:
   author: ricardomaia
   metadata:
-    max-request: 1
     plugin_namespace: jetpack-boost
     wpscan: https://wpscan.com/plugin/jetpack-boost
   name: "Jetpack Boost \u2013 Website Speed, Performance and Critical CSS Detection"

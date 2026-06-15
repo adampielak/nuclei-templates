@@ -32,6 +32,7 @@ id: wordpress-ninja-forms
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: ninja-forms
     wpscan: https://wpscan.com/plugin/ninja-forms
   name: "Ninja Forms Contact Form \u2013 The Drag and Drop Form Builder for WordPress\

@@ -32,6 +32,7 @@ id: wordpress-duplicate-page
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: duplicate-page
     wpscan: https://wpscan.com/plugin/duplicate-page
   name: Duplicate Page Detection

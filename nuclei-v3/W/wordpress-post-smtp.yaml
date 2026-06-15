@@ -32,6 +32,7 @@ id: wordpress-post-smtp
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: post-smtp
     wpscan: https://wpscan.com/plugin/post-smtp
   name: "POST SMTP Mailer \u2013 Email log, Delivery Failure Notifications and Best\

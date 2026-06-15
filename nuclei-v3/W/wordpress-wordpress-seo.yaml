@@ -32,6 +32,7 @@ id: wordpress-wordpress-seo
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: wordpress-seo
     wpscan: https://wpscan.com/plugin/wordpress-seo
   name: Yoast SEO Detection

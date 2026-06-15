@@ -32,6 +32,7 @@ id: wordpress-megamenu
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: megamenu
     wpscan: https://wpscan.com/plugin/megamenu
   name: Max Mega Menu Detection

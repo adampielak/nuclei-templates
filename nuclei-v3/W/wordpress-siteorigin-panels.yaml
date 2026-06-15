@@ -32,6 +32,7 @@ id: wordpress-siteorigin-panels
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: siteorigin-panels
     wpscan: https://wpscan.com/plugin/siteorigin-panels
   name: Page Builder by SiteOrigin Detection

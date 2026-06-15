@@ -32,6 +32,7 @@ id: wordpress-popup-builder
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: popup-builder
     wpscan: https://wpscan.com/plugin/popup-builder
   name: "Popup Builder \u2013 Create highly converting, mobile friendly marketing\

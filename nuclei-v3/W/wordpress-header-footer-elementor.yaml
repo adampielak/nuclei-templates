@@ -32,6 +32,7 @@ id: wordpress-header-footer-elementor
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: header-footer-elementor
     wpscan: https://wpscan.com/plugin/header-footer-elementor
   name: Elementor Header & Footer Builder Detection

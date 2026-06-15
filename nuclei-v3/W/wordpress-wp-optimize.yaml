@@ -34,7 +34,8 @@ info:
   metadata:
     plugin_namespace: wp-optimize
     wpscan: https://wpscan.com/plugin/wp-optimize
-  name: "WP-Optimize \u2013 Cache, Clean, Compress. Detection"
+  name: "WP-Optimize \u2013 Cache, Compress images, Minify & Clean database to boost\
+    \ page speed & performance Detection"
   reference:
   - https://wordpress.org/plugins/wp-optimize/
   severity: info

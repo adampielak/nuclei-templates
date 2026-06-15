@@ -32,10 +32,11 @@ id: wordpress-formidable
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: formidable
     wpscan: https://wpscan.com/plugin/formidable
-  name: "Formidable Forms \u2013 Contact Form, Survey, Quiz, Calculator & Custom Form\
-    \ Builder Detection"
+  name: "Formidable Forms \u2013 Contact Form, Survey, Quiz, Payment, Calculator Form\
+    \ & Custom Form Builder Detection"
   reference:
   - https://wordpress.org/plugins/formidable/
   severity: info

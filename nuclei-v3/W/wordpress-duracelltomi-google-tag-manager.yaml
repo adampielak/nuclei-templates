@@ -32,6 +32,7 @@ id: wordpress-duracelltomi-google-tag-manager
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: duracelltomi-google-tag-manager
     wpscan: https://wpscan.com/plugin/duracelltomi-google-tag-manager
   name: GTM4WP Detection

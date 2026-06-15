@@ -32,6 +32,7 @@ id: wordpress-wp-mail-smtp
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: wp-mail-smtp
     wpscan: https://wpscan.com/plugin/wp-mail-smtp
   name: "WP Mail SMTP by WPForms \u2013 The Most Popular SMTP and Email Log Plugin\

@@ -32,6 +32,7 @@ id: wordpress-easy-fancybox
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: easy-fancybox
     wpscan: https://wpscan.com/plugin/easy-fancybox
   name: Easy FancyBox Detection

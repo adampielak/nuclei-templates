@@ -15,6 +15,7 @@ http:
 id: unauth-zwave-mqtt
 info:
   author: geeknik
+  description: ZWave To MQTT Console is exposed.
   metadata:
     max-request: 1
     shodan-query: title:"ZWave To MQTT"

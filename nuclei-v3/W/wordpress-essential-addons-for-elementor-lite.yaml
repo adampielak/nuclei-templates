@@ -34,7 +34,8 @@ info:
   metadata:
     plugin_namespace: essential-addons-for-elementor-lite
     wpscan: https://wpscan.com/plugin/essential-addons-for-elementor-lite
-  name: Essential Addons for Elementor Detection
+  name: "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets,\
+    \ Kits & WooCommerce Builders Detection"
   reference:
   - https://wordpress.org/plugins/essential-addons-for-elementor-lite/
   severity: info

@@ -34,7 +34,8 @@ info:
   metadata:
     plugin_namespace: better-wp-security
     wpscan: https://wpscan.com/plugin/better-wp-security
-  name: iThemes Security Detection
+  name: "Solid Security \u2013 Password, Two Factor Authentication, and Brute Force\
+    \ Protection Detection"
   reference:
   - https://wordpress.org/plugins/better-wp-security/
   severity: info

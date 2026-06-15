@@ -1,52 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - wp-rss-by-publishers
-  - dsl:
-    - compare_versions(version, '<= 0.1')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wp-rss-by-publishers/readme.txt'
-  redirects: true
 id: wp-rss-by-publishers-87f60266692adb3a522a068c7de37b47
+
 info:
+  name: >
+    WP RSS By Publishers <= 0.1 - Authenticated (Admin+) SQL Injection
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3745b681-cb09-4a5b-a57b-c7f35b8c5133?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/wp-rss-by-publishers/
+    fofa-query: "wp-content/plugins/wp-rss-by-publishers/"
     google-query: inurl:"/wp-content/plugins/wp-rss-by-publishers/"
     shodan-query: 'vuln:'
-  name: 'WP RSS By Publishers <= 0.1 - Authenticated (Admin+) SQL Injection
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3745b681-cb09-4a5b-a57b-c7f35b8c5133?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,wp-rss-by-publishers,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wp-rss-by-publishers/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "wp-rss-by-publishers"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 0.1')

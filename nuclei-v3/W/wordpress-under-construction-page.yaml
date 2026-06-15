@@ -32,10 +32,11 @@ id: wordpress-under-construction-page
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: under-construction-page
     wpscan: https://wpscan.com/plugin/under-construction-page
   name: Under Construction Detection
   reference:
   - https://wordpress.org/plugins/under-construction-page/
   severity: info
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200

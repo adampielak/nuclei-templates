@@ -32,6 +32,7 @@ id: wordpress-better-search-replace
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: better-search-replace
     wpscan: https://wpscan.com/plugin/better-search-replace
   name: Better Search Replace Detection

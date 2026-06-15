@@ -34,8 +34,8 @@ info:
   metadata:
     plugin_namespace: fluentform
     wpscan: https://wpscan.com/plugin/fluentform
-  name: "Contact Form Plugin \u2013 Fastest Contact Form Builder Plugin for WordPress\
-    \ by Fluent Forms Detection"
+  name: Contact Form Plugin by Fluent Forms for Quiz, Survey, and Drag & Drop WP Form
+    Builder Detection
   reference:
   - https://wordpress.org/plugins/fluentform/
   severity: info

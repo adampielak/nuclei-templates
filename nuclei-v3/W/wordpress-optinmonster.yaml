@@ -32,6 +32,7 @@ id: wordpress-optinmonster
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: optinmonster
     wpscan: https://wpscan.com/plugin/optinmonster
   name: "Popup Builder by OptinMonster \u2013 WordPress Popups for Optins, Email Newsletters\

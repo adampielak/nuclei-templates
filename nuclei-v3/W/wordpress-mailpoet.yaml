@@ -34,8 +34,8 @@ info:
   metadata:
     plugin_namespace: mailpoet
     wpscan: https://wpscan.com/plugin/mailpoet
-  name: "MailPoet \u2013 emails and newsletters in WordPress Detection"
+  name: "MailPoet \u2013 Newsletters, Email Marketing, and Automation Detection"
   reference:
   - https://wordpress.org/plugins/mailpoet/
   severity: info
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200

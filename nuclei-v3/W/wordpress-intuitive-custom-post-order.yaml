@@ -32,6 +32,7 @@ id: wordpress-intuitive-custom-post-order
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: intuitive-custom-post-order
     wpscan: https://wpscan.com/plugin/intuitive-custom-post-order
   name: Intuitive Custom Post Order Detection

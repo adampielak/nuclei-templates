@@ -32,6 +32,7 @@ id: wordpress-kirki
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: kirki
     wpscan: https://wpscan.com/plugin/kirki
   name: Kirki Customizer Framework Detection

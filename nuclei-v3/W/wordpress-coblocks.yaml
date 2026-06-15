@@ -32,6 +32,7 @@ id: wordpress-coblocks
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: coblocks
     wpscan: https://wpscan.com/plugin/coblocks
   name: "Page Builder Gutenberg Blocks \u2013 CoBlocks Detection"

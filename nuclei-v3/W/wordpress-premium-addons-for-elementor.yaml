@@ -32,6 +32,7 @@ id: wordpress-premium-addons-for-elementor
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: premium-addons-for-elementor
     wpscan: https://wpscan.com/plugin/premium-addons-for-elementor
   name: Premium Addons for Elementor Detection

@@ -32,6 +32,7 @@ id: wordpress-wp-multibyte-patch
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: wp-multibyte-patch
     wpscan: https://wpscan.com/plugin/wp-multibyte-patch
   name: WP Multibyte Patch Detection

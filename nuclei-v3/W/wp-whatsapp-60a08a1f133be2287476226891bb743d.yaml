@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - wp-whatsapp
-  - dsl:
-    - compare_versions(version, '<= 3.6.2')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wp-whatsapp/readme.txt'
-  redirects: true
 id: wp-whatsapp-60a08a1f133be2287476226891bb743d
+
 info:
+  name: >
+    WP Chat App <= 3.6.2 - Authenticated(Contributor+) Stored Cross-Site Scripting via Block Image Attribute
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3bba2901-55a7-4ef1-ab3c-1415aa99c729?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/wp-whatsapp/
+    fofa-query: "wp-content/plugins/wp-whatsapp/"
     google-query: inurl:"/wp-content/plugins/wp-whatsapp/"
     shodan-query: 'vuln:'
-  name: 'WP Chat App <= 3.6.2 - Authenticated(Contributor+) Stored Cross-Site Scripting
-    via Block Image Attribute
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3bba2901-55a7-4ef1-ab3c-1415aa99c729?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-plugin,wp-whatsapp,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wp-whatsapp/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "wp-whatsapp"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.6.2')

@@ -32,7 +32,6 @@ id: wordpress-breeze
 info:
   author: ricardomaia
   metadata:
-    max-request: 1
     plugin_namespace: breeze
     wpscan: https://wpscan.com/plugin/breeze
   name: "Breeze \u2013 WordPress Cache Plugin Detection"

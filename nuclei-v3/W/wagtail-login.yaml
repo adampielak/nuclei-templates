@@ -17,14 +17,16 @@ id: wagtail-login
 info:
   author: kishore-hariram
   classification:
+    cpe: cpe:2.3:a:torchbox:wagtail:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: The Wagtail panel has been detected.
   metadata:
     max-request: 2
+    product: wagtail
     shodan-query: title:"Wagtail - Sign in"
+    vendor: torchbox
     verified: true
   name: Wagtail Login - Detect
   severity: info
-  tags: panel,wagtail
+  tags: panel,wagtail,torchbox

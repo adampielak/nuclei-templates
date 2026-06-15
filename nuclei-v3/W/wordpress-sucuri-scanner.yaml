@@ -32,6 +32,7 @@ id: wordpress-sucuri-scanner
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: sucuri-scanner
     wpscan: https://wpscan.com/plugin/sucuri-scanner
   name: "Sucuri Security \u2013 Auditing, Malware Scanner and Security Hardening Detection"

@@ -32,6 +32,7 @@ id: wordpress-wordfence
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: wordfence
     wpscan: https://wpscan.com/plugin/wordfence
   name: "Wordfence Security \u2013 Firewall, Malware Scan, and Login Security Detection"

@@ -21,7 +21,9 @@ info:
     '
   metadata:
     max-request: 1
+    product: truenas
     shodan-query: html:"TrueNAS"
+    vendor: ixsystems
     verified: true
   name: TrueNAS Panel - Detect
   reference:

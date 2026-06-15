@@ -32,6 +32,7 @@ id: wordpress-facebook-for-woocommerce
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: facebook-for-woocommerce
     wpscan: https://wpscan.com/plugin/facebook-for-woocommerce
   name: Facebook for WooCommerce Detection

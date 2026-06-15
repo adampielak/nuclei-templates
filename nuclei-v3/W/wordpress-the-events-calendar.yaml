@@ -32,6 +32,7 @@ id: wordpress-the-events-calendar
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: the-events-calendar
     wpscan: https://wpscan.com/plugin/the-events-calendar
   name: The Events Calendar Detection

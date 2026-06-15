@@ -32,6 +32,7 @@ id: wordpress-wpvivid-backuprestore
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: wpvivid-backuprestore
     wpscan: https://wpscan.com/plugin/wpvivid-backuprestore
   name: "Migration, Backup, Staging \u2013 WPvivid Detection"

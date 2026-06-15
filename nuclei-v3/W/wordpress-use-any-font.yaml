@@ -32,6 +32,7 @@ id: wordpress-use-any-font
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: use-any-font
     wpscan: https://wpscan.com/plugin/use-any-font
   name: Use Any Font | Custom Font Uploader Detection

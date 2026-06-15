@@ -32,6 +32,7 @@ id: wordpress-disable-gutenberg
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: disable-gutenberg
     wpscan: https://wpscan.com/plugin/disable-gutenberg
   name: Disable Gutenberg Detection

@@ -34,7 +34,7 @@ info:
   metadata:
     plugin_namespace: seo-by-rank-math
     wpscan: https://wpscan.com/plugin/seo-by-rank-math
-  name: Rank Math SEO Detection
+  name: Rank Math SEO with AI Best SEO Tools Detection
   reference:
   - https://wordpress.org/plugins/seo-by-rank-math/
   severity: info

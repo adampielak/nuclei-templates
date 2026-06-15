@@ -32,6 +32,7 @@ id: wordpress-velvet-blues-update-urls
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: velvet-blues-update-urls
     wpscan: https://wpscan.com/plugin/velvet-blues-update-urls
   name: Velvet Blues Update URLs Detection

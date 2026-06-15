@@ -1,53 +1,59 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Version: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - zenon-lite
-  - dsl:
-    - compare_versions(version, '<= 1.9')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/zenon-lite/style.css'
-  redirects: true
 id: zenon-lite-2cd191b5827abd40d7d1437a8d803b42
+
 info:
+  name: >
+    Zenon Lite <= 1.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button Shortcode
   author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e9b004a-2050-47e8-ac4d-491b715c87d2?source=api-scan
   classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: wp-content/themes/zenon-lite/
+    fofa-query: "wp-content/themes/zenon-lite/"
     google-query: inurl:"/wp-content/themes/zenon-lite/"
     shodan-query: 'vuln:'
-  name: 'Zenon Lite <= 1.9 - Authenticated (Contributor+) Stored Cross-Site Scripting
-    via Button Shortcode
-
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e9b004a-2050-47e8-ac4d-491b715c87d2?source=api-scan
-  severity: low
   tags: cve,wordpress,wp-theme,zenon-lite,low
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/zenon-lite/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "zenon-lite"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.9')

@@ -1,8 +1,10 @@
 http:
 - matchers:
-  - type: word
+  - condition: or
+    type: word
     words:
     - <title>Cluster Overview | Kubecost</title>
+    - <title>Kubecost</title>
   - part: header
     type: word
     words:
@@ -17,6 +19,7 @@ http:
 id: unauth-kubecost
 info:
   author: pussycat0x
+  description: KubeCost Dashboard is exposed to external users.
   metadata:
     max-request: 1
     shodan-query: title:kubecost

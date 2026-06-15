@@ -22,8 +22,8 @@ id: unauth-jupyter-lab
 info:
   author: j4vaovo
   classification:
-    cvss-metrics: AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10.0
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
     cwe-id: CWE-288
   description: 'JupyterLab was able to be accessed without authentication.
 

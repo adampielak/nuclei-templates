@@ -32,9 +32,10 @@ id: wordpress-tablepress
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: tablepress
     wpscan: https://wpscan.com/plugin/tablepress
-  name: TablePress Detection
+  name: "TablePress \u2013 Tables in WordPress made easy Detection"
   reference:
   - https://wordpress.org/plugins/tablepress/
   severity: info

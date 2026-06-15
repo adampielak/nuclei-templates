@@ -32,6 +32,7 @@ id: wordpress-meta-box
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: meta-box
     wpscan: https://wpscan.com/plugin/meta-box
   name: "Meta Box \u2013 WordPress Custom Fields Framework Detection"

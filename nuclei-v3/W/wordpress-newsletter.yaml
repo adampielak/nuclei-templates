@@ -32,6 +32,7 @@ id: wordpress-newsletter
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: newsletter
     wpscan: https://wpscan.com/plugin/newsletter
   name: "Newsletter \u2013 Send awesome emails from WordPress Detection"

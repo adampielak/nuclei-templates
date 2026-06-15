@@ -32,6 +32,7 @@ id: wordpress-woo-cart-abandonment-recovery
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: woo-cart-abandonment-recovery
     wpscan: https://wpscan.com/plugin/woo-cart-abandonment-recovery
   name: WooCommerce Cart Abandonment Recovery Detection

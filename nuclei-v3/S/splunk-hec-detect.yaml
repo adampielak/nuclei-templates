@@ -23,4 +23,4 @@ info:
   - https://dev.splunk.com/enterprise/docs/devtools/httpeventcollector/
   - https://community.splunk.com/t5/Getting-Data-In/How-to-check-if-an-HEC-is-up-or-not-before-posting-any-data-to/td-p/417404
   severity: info
-  tags: tech,splunk,hec,detect,discovery
+  tags: tech,splunk,hec,detect

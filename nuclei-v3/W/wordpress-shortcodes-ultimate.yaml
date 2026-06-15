@@ -32,10 +32,11 @@ id: wordpress-shortcodes-ultimate
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: shortcodes-ultimate
     wpscan: https://wpscan.com/plugin/shortcodes-ultimate
-  name: "WordPress Shortcodes Plugin \u2014 Shortcodes Ultimate Detection"
+  name: "WP Shortcodes Plugin \u2014 Shortcodes Ultimate Detection"
   reference:
   - https://wordpress.org/plugins/shortcodes-ultimate/
   severity: info
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-200

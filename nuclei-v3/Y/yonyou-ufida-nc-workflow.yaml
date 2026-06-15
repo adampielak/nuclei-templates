@@ -9,4 +9,4 @@ workflows:
   - name: yonyou-ism
     subtemplates:
     - tags: yonyou
-  template: http/technologies/fingerprinthub-web-fingerprints.yaml
+  template: technologies/fingerprinthub-web-fingerprints.yaml

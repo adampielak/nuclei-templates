@@ -32,6 +32,7 @@ id: wordpress-official-facebook-pixel
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: official-facebook-pixel
     wpscan: https://wpscan.com/plugin/official-facebook-pixel
   name: Meta pixel for WordPress Detection

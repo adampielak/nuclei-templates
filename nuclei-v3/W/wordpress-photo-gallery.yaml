@@ -32,6 +32,7 @@ id: wordpress-photo-gallery
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: photo-gallery
     wpscan: https://wpscan.com/plugin/photo-gallery
   name: "Photo Gallery by 10Web \u2013 Mobile-Friendly Image Gallery Detection"

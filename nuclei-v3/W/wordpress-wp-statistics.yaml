@@ -32,6 +32,7 @@ id: wordpress-wp-statistics
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: wp-statistics
     wpscan: https://wpscan.com/plugin/wp-statistics
   name: WP Statistics Detection

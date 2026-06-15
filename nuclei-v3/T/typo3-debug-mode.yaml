@@ -16,6 +16,7 @@ http:
 id: typo3-debug-mode
 info:
   author: tess
+  description: TYPO3 Debug Mode is enabled.
   metadata:
     max-request: 1
     shodan-query: http.title:"TYPO3 Exception"

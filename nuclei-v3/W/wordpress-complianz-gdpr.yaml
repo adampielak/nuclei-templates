@@ -32,6 +32,7 @@ id: wordpress-complianz-gdpr
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: complianz-gdpr
     wpscan: https://wpscan.com/plugin/complianz-gdpr
   name: "Complianz \u2013 GDPR/CCPA Cookie Consent Detection"

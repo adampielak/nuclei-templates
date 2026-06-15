@@ -32,6 +32,7 @@ id: wordpress-elementor
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: elementor
     wpscan: https://wpscan.com/plugin/elementor
   name: "Elementor Website Builder \u2013 More than Just a Page Builder Detection"

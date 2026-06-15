@@ -34,7 +34,7 @@ info:
   metadata:
     plugin_namespace: custom-fonts
     wpscan: https://wpscan.com/plugin/custom-fonts
-  name: Custom Fonts Detection
+  name: "Custom Fonts \u2013 Host Your Fonts Locally Detection"
   reference:
   - https://wordpress.org/plugins/custom-fonts/
   severity: info

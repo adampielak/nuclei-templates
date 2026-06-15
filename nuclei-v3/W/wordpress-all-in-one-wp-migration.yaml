@@ -34,7 +34,7 @@ info:
   metadata:
     plugin_namespace: all-in-one-wp-migration
     wpscan: https://wpscan.com/plugin/all-in-one-wp-migration
-  name: All-in-One WP Migration Detection
+  name: All-in-One WP Migration and Backup Detection
   reference:
   - https://wordpress.org/plugins/all-in-one-wp-migration/
   severity: info

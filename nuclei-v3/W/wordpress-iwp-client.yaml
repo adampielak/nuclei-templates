@@ -32,6 +32,7 @@ id: wordpress-iwp-client
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: iwp-client
     wpscan: https://wpscan.com/plugin/iwp-client
   name: InfiniteWP Client Detection

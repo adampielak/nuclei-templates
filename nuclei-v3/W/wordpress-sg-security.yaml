@@ -34,7 +34,7 @@ info:
   metadata:
     plugin_namespace: sg-security
     wpscan: https://wpscan.com/plugin/sg-security
-  name: All-inclusive Security Solution by SiteGround Detection
+  name: "Security Optimizer \u2013 The All-In-One WordPress Protection Plugin Detection"
   reference:
   - https://wordpress.org/plugins/sg-security/
   severity: info

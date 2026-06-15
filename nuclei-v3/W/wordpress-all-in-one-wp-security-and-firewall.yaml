@@ -32,6 +32,7 @@ id: wordpress-all-in-one-wp-security-and-firewall
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: all-in-one-wp-security-and-firewall
     wpscan: https://wpscan.com/plugin/all-in-one-wp-security-and-firewall
   name: "All-In-One Security (AIOS) \u2013 Security and Firewall Detection"

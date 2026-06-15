@@ -32,6 +32,7 @@ id: wordpress-all-in-one-seo-pack
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: all-in-one-seo-pack
     wpscan: https://wpscan.com/plugin/all-in-one-seo-pack
   name: "All in One SEO \u2013 Best WordPress SEO Plugin \u2013 Easily Improve SEO\

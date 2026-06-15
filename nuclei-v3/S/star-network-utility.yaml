@@ -17,7 +17,7 @@ info:
   author: ritikchaddha
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: Star Micronics Network Utility panel was detected.
   metadata:
@@ -26,4 +26,4 @@ info:
     verified: true
   name: Star Micronics Network Utility Panel - Detect
   severity: info
-  tags: panel,network,utility
+  tags: panel,utility

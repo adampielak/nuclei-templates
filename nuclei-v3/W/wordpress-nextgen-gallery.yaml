@@ -32,6 +32,7 @@ id: wordpress-nextgen-gallery
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: nextgen-gallery
     wpscan: https://wpscan.com/plugin/nextgen-gallery
   name: "WordPress Gallery Plugin \u2013 NextGEN Gallery Detection"

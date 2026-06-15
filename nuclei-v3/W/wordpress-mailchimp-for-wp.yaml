@@ -32,6 +32,7 @@ id: wordpress-mailchimp-for-wp
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: mailchimp-for-wp
     wpscan: https://wpscan.com/plugin/mailchimp-for-wp
   name: MC4WP' Mailchimp for WordPress Detection

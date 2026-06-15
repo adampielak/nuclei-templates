@@ -32,6 +32,7 @@ id: wordpress-wp-super-cache
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: wp-super-cache
     wpscan: https://wpscan.com/plugin/wp-super-cache
   name: WP Super Cache Detection

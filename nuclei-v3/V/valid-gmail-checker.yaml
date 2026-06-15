@@ -16,5 +16,5 @@ info:
   reference:
   - https://github.com/dievus/geeMailUserFinder
   severity: info
-  tags: fuzz,gmail
+  tags: gmail
 self-contained: true

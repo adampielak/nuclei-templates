@@ -32,6 +32,7 @@ id: wordpress-pixelyoursite
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: pixelyoursite
     wpscan: https://wpscan.com/plugin/pixelyoursite
   name: "PixelYourSite \u2013 Your smart PIXEL (TAG) Manager Detection"

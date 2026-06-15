@@ -32,6 +32,7 @@ id: wordpress-envato-elements
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: envato-elements
     wpscan: https://wpscan.com/plugin/envato-elements
   name: "Envato Elements \u2013 Photos & Elementor Templates Detection"

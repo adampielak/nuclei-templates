@@ -32,6 +32,7 @@ id: wordpress-mailchimp-for-woocommerce
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: mailchimp-for-woocommerce
     wpscan: https://wpscan.com/plugin/mailchimp-for-woocommerce
   name: Mailchimp for WooCommerce Detection

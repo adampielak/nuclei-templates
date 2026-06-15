@@ -32,10 +32,11 @@ id: wordpress-creative-mail-by-constant-contact
 info:
   author: ricardomaia
   metadata:
+    max-request: 1
     plugin_namespace: creative-mail-by-constant-contact
     wpscan: https://wpscan.com/plugin/creative-mail-by-constant-contact
   name: "Creative Mail \u2013 Easier WordPress & WooCommerce Email Marketing Detection"
   reference:
   - https://wordpress.org/plugins/creative-mail-by-constant-contact/
   severity: info
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-200
