@@ -1,42 +1,40 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"config":{'
+    - '"agentId":"'
+  - condition: or
+    part: header
+    type: word
+    words:
+    - application/json
+    - application/vnd.spring-boot.actuator
+    - application/vnd.spring-boot.actuator.v1+json
+    - application/vnd.spring-boot.actuator.v2+json
+    - application/vnd.spring-boot.actuator.v3+json
+    - text/plain
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/jolokia'
+  - '{{BaseURL}}/actuator/jolokia'
+  stop-at-first-match: true
 id: springboot-jolokia
-
 info:
-  name: Detects Springboot Jolokia Actuator
   author: DhiyaneshDK
-  severity: low
-  reference:
-    - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  description: Springboot Jolokia Actuator is exposed.
   metadata:
     max-request: 2
-    verified: true
     shodan-query: title:"Eureka"
+    verified: true
+  name: Detects Springboot Jolokia Actuator
+  reference:
+  - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  severity: low
   tags: misconfig,springboot,exposure
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/jolokia"
-      - "{{BaseURL}}/actuator/jolokia"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"config":{'
-          - '"agentId":"'
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "application/json"
-          - "application/vnd.spring-boot.actuator"
-          - "application/vnd.spring-boot.actuator.v1+json"
-          - "text/plain"
-        condition: or
-
-      - type: status
-        status:
-          - 200

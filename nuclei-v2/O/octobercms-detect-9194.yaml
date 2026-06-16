@@ -1,5 +1,4 @@
 id: octobercms-detect
-
 info:
   name: OctoberCMS detect
   author: cyllective
@@ -7,13 +6,11 @@ info:
   description: Detects OctoberCMS
   tags: tech,octobercms
   references: https://github.com/octobercms/october
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/modules/system/assets/js/framework.combined-min.js"
-
     redirects: true
     max-redirects: 1
     matchers:
@@ -21,7 +18,6 @@ requests:
         part: header
         words:
           - 'october_session'
-
       - type: word
         part: body
         words:
