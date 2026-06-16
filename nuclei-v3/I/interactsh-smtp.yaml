@@ -1,30 +1,35 @@
 id: interactsh-smtp
-info:
-  author: darses
-  description: 'Detect Interact.sh SMTP service.
 
-    '
-  metadata:
-    product: interactsh
-    shodan-query:
-    - product:"Interactsh SMTP Server"
-    vendor: projectdiscovery
+info:
   name: ProjectDiscovery Interact.sh SMTP - Detect
   severity: info
+  author: darses
+  description: |
+    Detect Interact.sh SMTP service.
+  metadata:
+    vendor: projectdiscovery
+    product: interactsh
+    shodan-query:
+      - product:"Interactsh SMTP Server"
   tags: detect,network,tcp,smtp,interactsh
+
 tcp:
-- extractors:
-  - group: 1
-    regex:
-    - 220 ([^\s]+) interactsh
-    type: regex
-  host:
-  - '{{Hostname}}'
-  inputs:
-  - data: "\r\n"
-  matchers:
-  - type: word
-    words:
-    - interactsh
-    - STMP
-  port: 25
+  - inputs:
+      - data: "\r\n"
+    
+    host:
+      - "{{Hostname}}"
+    
+    port: 25
+
+    matchers:
+      - type: word
+        words:
+          - "interactsh"
+          - "STMP"
+
+    extractors:
+      - type: regex
+        group: 1
+        regex:
+          - "220 ([^\\s]+) interactsh"

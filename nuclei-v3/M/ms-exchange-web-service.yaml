@@ -1,37 +1,40 @@
-http:
-- extractors:
-  - kval:
-    - x_owa_version
-    type: kval
-  matchers:
-  - part: header
-    regex:
-    - (?i)(X-Owa-Version:)
-    type: regex
-  - status:
-    - 401
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/EWS/Exchange.asmx'
 id: ms-exchange-web-service
-info:
-  author: bhutch
-  classification:
-    cpe: cpe:2.3:a:microsoft:exchange_server:*:*:*:*:*:*:*:*
-  description: 'Microsoft Exchange Web Services was detected.
 
-    '
+info:
+  name: Microsoft Exchange Web Service - Detect
+  author: bhutch
+  severity: info
+  description: |
+    Microsoft Exchange Web Services was detected.
+  reference:
+    - https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/start-using-web-services-in-exchange
+    - https://pentestlab.blog/tag/ews/
   metadata:
+    verified: true
     max-request: 1
+    vendor: microsoft
     product: exchange_server
     shodan-query: http.favicon.hash:1768726119
-    vendor: microsoft
-    verified: true
-  name: Microsoft Exchange Web Service - Detect
-  reference:
-  - https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/start-using-web-services-in-exchange
-  - https://pentestlab.blog/tag/ews/
-  severity: info
   tags: ms,microsoft,exchange,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/EWS/Exchange.asmx"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: header
+        regex:
+          - "(?i)(X-Owa-Version:)"
+
+      - type: status
+        status:
+          - 401
+
+    extractors:
+      - type: kval
+        kval:
+          - x_owa_version
+# digest: 4b0a00483046022100c3da71e14cd9ca4a3041c28af6cd8de4263e8d8012a081c058f1cb0b65ef0af3022100cfd70281156be2e9a7d90f74c540ecfebb45b597804f83f9a8b102632794b8cf:922c64590222798bb761d5b6d8e72950
