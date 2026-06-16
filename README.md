@@ -1,5 +1,9 @@
 # nuclei-templates
 
+![Templates](https://img.shields.io/badge/engines-nuclei%20%7C%20xray-blue)
+![License](https://img.shields.io/badge/license-various%20upstream-lightgrey)
+![Authorized use only](https://img.shields.io/badge/use-authorized%20testing%20only-red)
+
 A curated mirror of community-contributed [nuclei](https://github.com/projectdiscovery/nuclei)
 and [xray](https://github.com/chaitin/xray) templates, aggregated via
 [cent](https://github.com/xm1k3/cent) from many upstream repositories and
