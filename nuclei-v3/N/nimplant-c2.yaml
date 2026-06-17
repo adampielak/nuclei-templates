@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "nimplant C2 server"
-  tags: tech,nimplant,c2
+  tags: tech,nimplant,c2,discovery
 
 http:
   - method: GET
@@ -24,5 +24,4 @@ http:
         part: header
         words:
           - "NimPlant C2 Server"
-
-# digest: 490a004630440220242ecb9589d241337b6532339ea45e2f0cc72e4e3eda0f9307a3cc7c1bf1c1140220181fdfe3fba480c75296ba96ecd4087211a1998163982c9e531a79754b4befbf:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ec3cca7a517598e226e427ec32ce91f0a9d4933e3d69d96f5bbc3a0e3cd8e20702201625b0c2efcedd16b6261760b15b8838b335f55903b1d6c317e85df991fd1ab4:922c64590222798bb761d5b6d8e72950

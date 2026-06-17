@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: symantec,panel,login
+  tags: symantec,panel,login,discovery
 
 self-contained: true
 variables:
@@ -39,5 +39,4 @@ http:
       - type: dsl
         dsl:
           - company
-
-# digest: 4b0a00483046022100a5f459ce5172273e0ee3b0208f15dbeb58f6588a0d9e8dbf55d28e27076150fd022100b74e5b597b914e0685074dff040bbac98821d484449865bfce4ad61b53c464a4:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100d21f69ce89052edf353f4e5a2db5fca22eef06b669b10c5a79c73c225954434502202a4ae1091e88995826a2cfd858abee480a6d2183efecc90ebba6d6f9058333f2:922c64590222798bb761d5b6d8e72950

@@ -1,30 +1,35 @@
-http:
-- host-redirects: true
-  matchers:
-  - type: word
-    words:
-    - Credit Cards, Rewards, Travel and Business Services | American Express
-  - status:
-    - 200
-    type: status
-  - dsl:
-    - '!contains(host,"americanexpress.com")'
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: american-express-phish
-info:
-  author: rxerium
-  description: 'An american express phishing website was detected
 
-    '
+info:
+  name: american-express phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    An american express phishing website was detected
+  reference:
+    - https://www.americanexpress.com
   metadata:
     max-request: 1
-  name: american-express phishing Detection
-  reference:
-  - https://www.americanexpress.com
-  severity: info
-  tags: phishing,american-express,osint
+  tags: phishing,american-express,osint,discovery
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'Credit Cards, Rewards, Travel and Business Services | American Express'
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"americanexpress.com")'
+# digest: 4a0a004730450220437eaa3fad352599ca54268d2d0b12eac69b00d2f9721a4a4a898b77ce37d013022100a49f1c4cdd4a8f4c194a79e202f0fdb14387785040407c561952f68565ba4ada:922c64590222798bb761d5b6d8e72950

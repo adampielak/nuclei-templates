@@ -7,10 +7,9 @@ info:
   reference:
     - https://wordpress.org/plugins/woo-variation-swatches/
   metadata:
-    max-request: 1
     plugin_namespace: woo-variation-swatches
     wpscan: https://wpscan.com/plugin/woo-variation-swatches
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100c0fbb92eae1fa2dd6d72405156f2e38454742e27c7e083a0b3e63434f32404090220039f749d1acbe988908be732fb9cf825222e146eacd0a6e1312aa9f04a3db1a9:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210081c484e78f2c5ab381476278090c0d2dd706a1d3f35a350bc6d49eb30dab4e87022100e6acf11f96d6a74493fac445a2dd91de1895208fd5264afa083e2d7d998bf4f9:922c64590222798bb761d5b6d8e72950

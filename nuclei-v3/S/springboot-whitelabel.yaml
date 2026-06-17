@@ -10,14 +10,14 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Whitelabel Error Page"
-  tags: tech,spring,springboot,errorpage
+  tags: tech,spring,springboot,errorpage,discovery
 
 http:
-  - raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Hostname}}
-        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    headers:
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 
     host-redirects: true
     max-redirects: 3
@@ -33,4 +33,4 @@ http:
         part: header
         words:
           - "text/html"
-# digest: 4a0a0047304502205b3b71ff62395f51cc210326a30c7274ae6e0b38573718a5dc6fc8571655d52e022100cd6fd5b391c050634cbd9372bca0af146c59f7896633d0e77d89305b10bf2929:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402202032e36a291470b2df70074679916e270cb7eed11d85fc4a27be44fa3e7175a2022017532bc9efae51332ebfc1d03b5da7624accd84dd9aedf724d3f32c42cb5892e:922c64590222798bb761d5b6d8e72950

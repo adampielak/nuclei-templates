@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1101206929
-  tags: tech,panel,secui
+  tags: tech,panel,secui,discovery
 
 http:
   - method: GET
@@ -26,5 +26,4 @@ http:
       - type: dsl
         dsl:
           - "status_code==200 && (\"-1101206929\" == mmh3(base64_py(body)))"
-
-# digest: 4a0a004730450221009de163a8764653c434e299162d60550b0d8b9d4764cea4de20e30018c8eafa9202206360b78caea57407e46ddcabdbbe2e402a534238caeb0907e2156c20904d29c3:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402205a72844f6b1cf2075ed69222490d1b35778fa8f40066191479ff7762838117a902203696ef7977ba35489d3aed852abe94b38232cb7137d2326e4c107af78ec52884:922c64590222798bb761d5b6d8e72950

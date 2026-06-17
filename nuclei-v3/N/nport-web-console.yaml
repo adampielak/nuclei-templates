@@ -9,13 +9,15 @@ info:
     - https://www.moxa.com/en/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:o:moxa:nport_6450-t_firmware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"NPort Web Console"
-  tags: panel,nport
+    product: nport_6450-t_firmware
+    vendor: moxa
+  tags: panel,nport,discovery
 
 http:
   - method: GET
@@ -32,5 +34,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100e4aa582ecb8bbf290e06741862a2890c2c76a8fc8a8f83dd9317e66ccd83ccef02207846b68cb0706241f6c4f1e186c7f4cbc2e095fae5c226a89200293d51e22607:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100d5f5a75fc7596ae0d4c7ec3560b436f7f56a6730112895a9eeb133726c4daa4c0220193904b0ec94fd0cf37479aec58b5fef91208a013645b7e0f0c3c67f6307a4c5:922c64590222798bb761d5b6d8e72950

@@ -4,11 +4,15 @@ info:
   name: PHP CLI Server Stack Trace
   author: DhiyaneshDk
   severity: info
+  classification:
+    cpe: cpe:2.3:a:php:php:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: php
+    product: php
     shodan-query: The requested resource <code class="url">
-  tags: misconfig,phpcli,intrusive
+  tags: misconfig,phpcli,intrusive,vuln
 
 http:
   - method: GET
@@ -33,5 +37,4 @@ http:
       - type: status
         status:
           - 404
-
-# digest: 490a004630440220562317d603c300e4d51bc22217a0758d3c43add49d3e2b342225826297c42be80220320994e9a1cd0b2cd620df74974b888e95118329cfd61f0de1d8952bc594d5a0:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100d19b53467864e471b97e58552acc8b1d1596765001f2b74b9cd447314c1c86c2022100bee784d2ae18f14b30f559b5c2922be08f75cdd4497751d956b067becefec2e9:922c64590222798bb761d5b6d8e72950

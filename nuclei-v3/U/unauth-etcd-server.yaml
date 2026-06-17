@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"etcd"
-  tags: tech,k8s,kubernetes,devops,etcd,unauth,anonymous,misconfig
+  tags: tech,k8s,kubernetes,devops,etcd,unauth,anonymous,misconfig,vuln
 
 http:
   - method: GET
@@ -37,5 +37,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a004830460221008197bef87fa34861d2ab1944cadad12bcc8360465948fba7f6ffbbdd432bffe8022100ddcdd2cbf42843e69e095e2128f27b60f788a0adf4a26940549c23bb62f239e6:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210089febf51eb643d7c6e7ebb4996b13c8356cafad2af6317838c61d818732fe1680220340e1272fa9785ac2807ce0c4b3bf91434f2712df0d398773ffa98c15c9097e6:922c64590222798bb761d5b6d8e72950

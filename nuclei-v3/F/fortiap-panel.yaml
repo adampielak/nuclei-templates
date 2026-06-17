@@ -9,15 +9,19 @@ info:
     - https://www.fortinet.com/products/wireless-access-points
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:fortinet:fortiap:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     vendor: fortinet
     product: fortiap
-    shodan-query: title:"FortiAP"
-  tags: panel,fortinet,fortiap
+    shodan-query:
+      - title:"FortiAP"
+      - http.title:"fortiap"
+    fofa-query: title="fortiap"
+    google-query: intitle:"fortiap"
+  tags: panel,fortinet,fortiap,discovery
 
 http:
   - method: GET
@@ -38,4 +42,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022016a7d922dc6a34815792dd223e7949c0cfa30c4c21d96b681b936075b588beb2022100fb97c2897aee28ecd47d175a5b91e69737162d0162438ad4f534cf11c3198cbe:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ed5a30558ba83c15a3f54d9f92061dc7c3e59acdd99ebea0bd11500214b43146022100b866df9dd5474247f422c5db87d399a80d4e6718ad7a453068d3bf9a615248e2:922c64590222798bb761d5b6d8e72950

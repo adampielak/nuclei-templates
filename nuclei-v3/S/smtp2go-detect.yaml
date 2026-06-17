@@ -7,7 +7,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"smtp2go"
-  tags: tech,smtp2go
+  tags: tech,smtp2go,discovery
 
 http:
   - method: GET
@@ -31,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c06e361a871f8cc3b40fd0c5faccddd12462bc3ec1290ae4c9348ede9a0a79590220160edaba456fa0594aea69ae9bbc9c4e540cd2f6f8c49ae67762fbfca2a43349:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022072b8bae122ad6488a19a93b5501196293f6fc2df1cc061d9d683ca8e1fa2e8e5022100e2a46ef80191dca5738543bf62d3aa3da0bfc10e465199d25d5fd5806f1021ae:922c64590222798bb761d5b6d8e72950
