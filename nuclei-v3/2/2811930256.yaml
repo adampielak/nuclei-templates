@@ -1,21 +1,20 @@
 id: mdns
 info:
-  name: Lexmark $1 printer mdns
+  name: DNS-based service discovery
   author: nmap,cn-kali-team
   tags: detect,tech,mdns,service
   severity: info
   metadata:
-    device_type: printer
-    rarity: 5
+    rarity: 4
 tcp:
-- name: ntprequest
+- name: dns-sd
   inputs:
-  - data: \xe3\x00\x04\xfa\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xc5\x4f\x23\x4b\x71\xb1\x52\xf3
+  - data: \0\0\0\0\0\x01\0\0\0\0\0\0\x09_services\x07_dns-sd\x04_udp\x05local\0\0\x0c\0\x01
   host:
   - '{{Hostname}}'
-  port: 123,5353,9100
+  port: '5353'
   extractors:
   - name: mdns
     type: regex
     regex:
-    - (?i)^\0\0\x84\0\0\0\0\x05\0\0\0\0.Lexmark ([\x20-\x7f]+)\x0c_host-config\x04_udp\x05local\0
+    - (?i)^\0\0\x84\0\0\x01..\0\0\0\0\x09_services\x07_dns-sd\x04_udp\x05local\0\0\x0c\0\x01
