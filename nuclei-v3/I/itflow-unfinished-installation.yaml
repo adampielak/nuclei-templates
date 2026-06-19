@@ -1,31 +1,30 @@
-id: itflow-unfinished-installation
-
-info:
-  name: ITFlow Unfinished Installation
-  author: 0x_Akoko
-  severity: high
-  description: |
-    Detected ITFlow setup wizard was exposed with an unfinished installation, allowing attackers to configure the database and create an admin account.
-  reference:
-    - https://github.com/itflow-org/itflow
-    - https://docs.itflow.org/installation
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ITFlow"})
-    verified: true
-    max-request: 1
-    shodan-query: http.title:"ITFlow"
-    fofa-query: title="ITFlow"
-  tags: itflow,misconfig,install,exposure
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/setup/index.php"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "<title>ITFlow Setup</title>", "for choosing to try ITFlow",
+      "Begin Setup", "Database")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/setup/index.php'
+id: itflow-unfinished-installation
+info:
+  author: 0x_Akoko
+  description: 'Detected ITFlow setup wizard was exposed with an unfinished installation,
+    allowing attackers to configure the database and create an admin account.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "<title>ITFlow Setup</title>", "for choosing to try ITFlow", "Begin Setup", "Database")'
-        condition: and
-
+    '
+  metadata:
+    fofa-query: title="ITFlow"
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ITFlow"})
+    shodan-query: http.title:"ITFlow"
+    verified: true
+  name: ITFlow Unfinished Installation
+  reference:
+  - https://github.com/itflow-org/itflow
+  - https://docs.itflow.org/installation
+  severity: high
+  tags: itflow,misconfig,install,exposure

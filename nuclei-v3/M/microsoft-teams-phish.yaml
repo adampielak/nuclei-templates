@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Download Microsoft Teams Desktop and Mobile Apps | Microsoft Teams
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"microsoft.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: microsoft-teams-phish
-
 info:
-  name: microsoft teams phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A microsoft teams phishing website was detected
-  reference:
-    - https://www.microsoft.com/en-gb/microsoft-teams/download-app
+  description: 'A microsoft teams phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,microsoft-teams,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Download Microsoft Teams Desktop and Mobile Apps | Microsoft Teams'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"microsoft.com")'
-
+  name: microsoft teams phishing Detection
+  reference:
+  - https://www.microsoft.com/en-gb/microsoft-teams/download-app
+  severity: info
+  tags: phishing,microsoft-teams,osint

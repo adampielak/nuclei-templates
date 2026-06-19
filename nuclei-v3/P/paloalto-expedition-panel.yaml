@@ -1,36 +1,31 @@
-id: paloalto-expedition-panel
-
-info:
-  name: Palo Alto Expedition Project Login - Detect
-  author: johnk3r
-  severity: info
-  description: |
-    Palo Alto Expedition Project login panel was detected.
-  metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "1499876150"
-    verified: true
-    max-request: 1
-    vendor: paloaltonetworks
-    product: expedition
-    shodan-query: http.favicon.hash:1499876150
-  tags: panel,expedition,palo-alto,login,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Expedition Project</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: paloalto-expedition-panel
+info:
+  author: johnk3r
+  description: 'Palo Alto Expedition Project login panel was detected.
 
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Expedition Project</title>"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    max-request: 1
+    product: expedition
+    runzero-match: service["favicon.ico.image.mmh3"] == "1499876150"
+    shodan-query: http.favicon.hash:1499876150
+    vendor: paloaltonetworks
+    verified: true
+  name: Palo Alto Expedition Project Login - Detect
+  severity: info
+  tags: panel,expedition,palo-alto,login,detect,discovery

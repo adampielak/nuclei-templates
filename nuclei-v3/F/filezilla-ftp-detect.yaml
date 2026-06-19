@@ -1,34 +1,29 @@
 id: filezilla-ftp-detect
 info:
-  name: FileZilla FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: FileZilla FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: product:"FileZilla Server"
     max-request: 1
+    shodan-query: product:"FileZilla Server"
+    verified: true
+  name: FileZilla FTP Service - Detect
+  severity: info
   tags: network,ftp,filezilla,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "FileZilla Server"
-
-    extractors:
-      - type: regex
-        group: 1
-        name: version
-        regex:
-          - "FileZilla Server version ([0-9.]+ beta)"
-
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - FileZilla Server version ([0-9.]+ beta)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - FileZilla Server
+  port: 21
+  read-size: 1024

@@ -1,32 +1,28 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Ubersmith Setup
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/setup/index.php'
 id: ubersmith-installer
-
 info:
-  name: Ubersmith Setup Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed Ubersmith Setup page.
-  reference:
-    - https://ubersmith.com/
+  description: 'Detects exposed Ubersmith Setup page.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"Ubersmith Setup"
+    verified: true
+  name: Ubersmith Setup Page - Exposure
+  reference:
+  - https://ubersmith.com/
+  severity: high
   tags: misconfig,install,exposure,ubersmith,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/setup/index.php"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Ubersmith Setup"
-
-      - type: status
-        status:
-          - 200
-

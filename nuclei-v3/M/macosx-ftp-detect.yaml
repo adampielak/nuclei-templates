@@ -1,27 +1,23 @@
 id: macosx-ftp-detect
 info:
-  name: Mac OS X Server FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: Mac OS X Server FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "Mac OS X Server's FTP server"
     max-request: 1
+    shodan-query: Mac OS X Server's FTP server
+    verified: true
+  name: Mac OS X Server FTP Service - Detect
+  severity: info
   tags: network,ftp,macosx,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Mac OS X Server's FTP server"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Mac OS X Server's FTP server
+  port: 21
+  read-size: 1024

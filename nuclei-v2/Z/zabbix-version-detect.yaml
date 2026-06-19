@@ -1,29 +1,24 @@
 id: zabbix-version-detect
-
 info:
-  name: Zabbix Version Detect
   author: milo2012
+  name: Zabbix Version Detect
   severity: info
   tags: tech,zabbix
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/zabbix/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Zabbix</title>'
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1  
-        regex:
-          - ' href="http://www.zabbix.com/documentation/(.*?)/">'
-          - ' href="https://www.zabbix.com/documentation/(.*?)/">'
-
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - ' href="http://www.zabbix.com/documentation/(.*?)/">'
+    - ' href="https://www.zabbix.com/documentation/(.*?)/">'
+    type: regex
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Zabbix</title>
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/zabbix/'

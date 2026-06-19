@@ -1,36 +1,31 @@
+http:
+- extractors:
+  - kval:
+    - Server
+    part: header
+    type: kval
+  matchers:
+  - part: header
+    regex:
+    - Trellix
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login/login'
 id: trellix-panel
-
 info:
-  name: Trellix Login Panel
   author: johnk3r
-  severity: info
-  description: |
-    Trellix login panel was detected.
+  description: 'Trellix login panel was detected.
+
+    '
   metadata:
     max-request: 1
-    shodan-query: "Server: Trellix"
+    shodan-query: 'Server: Trellix'
     verified: true
+  name: Trellix Login Panel
+  severity: info
   tags: trellix,panel,login,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login/login"
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: header
-        regex:
-          - "Trellix"
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
-          - Server
-

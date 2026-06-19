@@ -1,38 +1,34 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Subrion CMS Web Installer
+    - Installation wizard
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install/'
 id: subrion-installer
-
 info:
-  name: Subrion CMS Web Installer - Exposure
   author: ritikchaddha
-  severity: high
-  description: |
-    Subrion CMS Web Installer has been exposed.
-  reference:
-    - https://github.com/intelliants/subrion
   classification:
     cpe: cpe:2.3:a:intelliants:subrion:*:*:*:*:*:*:*:*
+  description: 'Subrion CMS Web Installer has been exposed.
+
+    '
   metadata:
-    verified: true
-    max-request: 1
-    vendor: intelliants
-    product: subrion
     fofa-query: title="Subrion CMS Web Installer"
+    max-request: 1
+    product: subrion
+    vendor: intelliants
+    verified: true
+  name: Subrion CMS Web Installer - Exposure
+  reference:
+  - https://github.com/intelliants/subrion
+  severity: high
   tags: subrion,cms,install,misconfig,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Subrion CMS Web Installer"
-          - "Installation wizard"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

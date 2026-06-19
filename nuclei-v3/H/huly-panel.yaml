@@ -1,29 +1,26 @@
-id: huly-panel
-
-info:
-  name: Huly Login Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-    Huly products was detected.
-  reference:
-    - https://huly.io/
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)Huly"
-    verified: true
-    max-request: 1
-    shodan-query: http.html:"Huly"
-  tags: panel,huly,login,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login%3Acomponent%3ALoginApp"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(to_lower(body), "<title>huly</title>")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/login%3Acomponent%3ALoginApp'
+id: huly-panel
+info:
+  author: righettod
+  description: 'Huly products was detected.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains(to_lower(body), "<title>huly</title>")'
-        condition: and
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)Huly"
+    shodan-query: http.html:"Huly"
+    verified: true
+  name: Huly Login Panel - Detect
+  reference:
+  - https://huly.io/
+  severity: info
+  tags: panel,huly,login,discovery

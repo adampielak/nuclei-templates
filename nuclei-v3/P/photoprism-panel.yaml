@@ -1,31 +1,28 @@
-id: photoprism-panel
-
-info:
-  name: PhotoPrism Panel - Detect
-  author: rxerium,ritikchaddha
-  severity: info
-  description: |
-    PhotoPrism is an AI-powered photos app for the decentralized web. This template detects the presence of PhotoPrism login panel.
-  reference:
-    - https://docs.photoprism.app/getting-started/
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)PhotoPrism"})
-    verified: true
-    max-request: 1
-    shodan-query: title:"PhotoPrism"
-    fofa-query: title="PhotoPrism"
-  tags: photoprism,panel,login,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/library/login"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "PhotoPrism", "login")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/library/login'
+id: photoprism-panel
+info:
+  author: rxerium,ritikchaddha
+  description: 'PhotoPrism is an AI-powered photos app for the decentralized web.
+    This template detects the presence of PhotoPrism login panel.
 
-    matchers:
-
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "PhotoPrism", "login")'
-        condition: and
-
+    '
+  metadata:
+    fofa-query: title="PhotoPrism"
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)PhotoPrism"})
+    shodan-query: title:"PhotoPrism"
+    verified: true
+  name: PhotoPrism Panel - Detect
+  reference:
+  - https://docs.photoprism.app/getting-started/
+  severity: info
+  tags: photoprism,panel,login,detect,discovery

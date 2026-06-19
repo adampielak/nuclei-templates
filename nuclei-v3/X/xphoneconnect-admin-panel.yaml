@@ -1,44 +1,39 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - XPhone Connect server - Logon
+    - XPhone Web-Meeting
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/xphoneconnect/admin/Login.aspx'
+  stop-at-first-match: true
 id: xphoneconnect-admin-panel
-
 info:
-  name: XPhone Connect Admin Interface - Detect
   author: FLX
-  severity: info
-  description: |
-    Detects the presence of the XPhone Connect admin interface.
-  reference:
-    - https://www.c4b.com/en/xphone-connect/
   classification:
+    cpe: cpe:2.3:a:3cx:3cx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:3cx:3cx:*:*:*:*:*:*:*:*
+  description: 'Detects the presence of the XPhone Connect admin interface.
+
+    '
   metadata:
-    verified: true
-    max-request: 1
-    vendor: c4b
-    product: xphone
     fofa-query: icon_hash="516202656"
+    max-request: 1
+    product: xphone
+    vendor: c4b
+    verified: true
+  name: XPhone Connect Admin Interface - Detect
+  reference:
+  - https://www.c4b.com/en/xphone-connect/
+  severity: info
   tags: panel,xphone,login,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-      - '{{BaseURL}}/xphoneconnect/admin/Login.aspx'
-
-    host-redirects: true
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "XPhone Connect server - Logon"
-          - "XPhone Web-Meeting"
-        condition: or
-
-      - type: status
-        status:
-          - 200
-

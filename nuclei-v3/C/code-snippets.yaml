@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/code-snippets/
   metadata:
+    max-request: 1
     plugin_namespace: code-snippets
     wpscan: https://wpscan.com/plugin/code-snippets
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022074d42ee9a44999ce4987ec102df25adebdbc7b7aa274855635fb002f57678675022100d0da56692a5a9368fdfb739a58bdfff5528b9c8cba381c0da6c759b14705a772:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502202fff43249f19f7c75ba483b15e38bd25781bd80240810ec26649dc0ec0f3150f022100eefbf55ce26e7027016c8585d27e04c17d2ac78eec222785e43fa0cb11d19e49:922c64590222798bb761d5b6d8e72950

@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - "Thunderbird \u2014 Free Your Inbox. \u2014 Thunderbird"
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"thunderbird.net")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: thunderbird-phish
-
 info:
-  name: thunderbird phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A thunderbird phishing website was detected
-  reference:
-    - https://thunderbird.net
+  description: 'A thunderbird phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,thunderbird,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Thunderbird — Free Your Inbox. — Thunderbird'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"thunderbird.net")'
-
+  name: thunderbird phishing Detection
+  reference:
+  - https://thunderbird.net
+  severity: info
+  tags: phishing,thunderbird,osint

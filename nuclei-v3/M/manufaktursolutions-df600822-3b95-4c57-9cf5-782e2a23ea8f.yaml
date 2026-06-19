@@ -1,51 +1,45 @@
-id: manufaktursolutions-df600822-3b95-4c57-9cf5-782e2a23ea8f
-
-info:
-  name: >
-    Manufaktur Solutions <= 1.1.1 - Unauthenticated PHP Object Injection
-  author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/df600822-3b95-4c57-9cf5-782e2a23ea8f?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/themes/manufaktursolutions/"
-    google-query: inurl:"/wp-content/themes/manufaktursolutions/"
-    shodan-query: 'http.html:"wp-content/themes/manufaktursolutions/"'
-  tags: cve,wordpress,wp-theme,manufaktursolutions,critical,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/manufaktursolutions/style.css"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - manufaktursolutions
+  - dsl:
+    - compare_versions(version, '<= 1.1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/manufaktursolutions/style.css'
+  redirects: true
+id: manufaktursolutions-df600822-3b95-4c57-9cf5-782e2a23ea8f
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/manufaktursolutions/
+    google-query: inurl:"/wp-content/themes/manufaktursolutions/"
+    shodan-query: http.html:"wp-content/themes/manufaktursolutions/"
+  name: 'Manufaktur Solutions <= 1.1.1 - Unauthenticated PHP Object Injection
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "manufaktursolutions"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.1.1')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/df600822-3b95-4c57-9cf5-782e2a23ea8f?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,manufaktursolutions,critical,candidate

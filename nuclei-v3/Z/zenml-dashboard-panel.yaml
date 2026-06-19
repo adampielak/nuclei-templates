@@ -1,34 +1,24 @@
-id: zenml-dashboard-panel
-
-info:
-  name: ZenML Dashboard Panel - Detect
-  author: DhiyaneshDK
-  severity: info
-  classification:
-    cpe: cpe:2.3:a:zenml:zenml:*:*:*:*:*:*:*:*
-  metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-2028554187"
-    verified: true
-    max-request: 1
-    vendor: zenml
-    product: zenml
-    shodan-query: http.favicon.hash:-2028554187
-    fofa-query: body="ZenML"
-  tags: zenml,panel,login,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login?route=%2Fworkspaces%2Fdefault%3F"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "ZenML - Dashboard"
-        part: body
-
-      - type: status
-        status:
-          - 200
-
+- matchers:
+  - part: body
+    type: word
+    words:
+    - ZenML - Dashboard
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login?route=%2Fworkspaces%2Fdefault%3F'
+id: zenml-dashboard-panel
+info:
+  author: DhiyaneshDK
+  metadata:
+    fofa-query: body="ZenML"
+    max-request: 1
+    shodan-query: http.favicon.hash:-2028554187
+    verified: true
+  name: ZenML Dashboard Panel - Detect
+  severity: info
+  tags: zenml,panel,login

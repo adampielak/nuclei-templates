@@ -1,13 +1,10 @@
 id: open-redirect
-
 info:
   name: Open Redirect Detection
   author: melbadry9 & Elmahdi & @pxmme1337 & @Regala_ & @andirrahmani1
   severity: low
-
 requests:
   - method: GET
-
     path:
       - "{{BaseURL}}/evil.com/"
       - "{{BaseURL}}///;@evil.com"

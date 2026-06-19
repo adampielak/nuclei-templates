@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - '<title>Grammarly: Free AI Writing Assistant'
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"grammarly.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: grammarly-phish
-
 info:
-  name: Grammarly phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Grammarly phishing website was detected
-  reference:
-    - https://grammarly.com
+  description: 'A Grammarly phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Grammarly phishing Detection
+  reference:
+  - https://grammarly.com
+  severity: info
   tags: phishing,grammarly,writing,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Grammarly: Free AI Writing Assistant'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"grammarly.com")'
-

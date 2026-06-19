@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Surfshark VPN &amp; all-in-one cybersecurity suites - Official Site
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"surfshark.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: surfshark-phish
-
 info:
-  name: Surfshark phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Surfshark phishing website was detected
-  reference:
-    - https://surfshark.com
+  description: 'A Surfshark phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Surfshark phishing Detection
+  reference:
+  - https://surfshark.com
+  severity: info
   tags: phishing,surfshark,vpn,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Surfshark VPN &amp; all-in-one cybersecurity suites - Official Site'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"surfshark.com")'
-

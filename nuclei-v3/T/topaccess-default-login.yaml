@@ -1,52 +1,60 @@
+http:
+- extractors:
+  - internal: true
+    kval:
+    - session
+    name: csrf_token
+    type: kval
+  host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <name>Administrator
+    - STATUS_OK</statusOfOperation
+  - part: content_type
+    type: word
+    words:
+    - text/xml
+  - part: header_2
+    status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  raw:
+  - 'GET / HTTP/1.1
+
+    Host: {{Hostname}}
+
+    '
+  - 'POST /contentwebserver HTTP/1.1
+
+    Host: {{Hostname}}
+
+    csrfpId: {{csrf_token}}
+
+    Content-Type: text/plain; charset=UTF-8
+
+
+    <DeviceInformationModel><GetValue><Authentication><UserCredential></UserCredential></Authentication></GetValue><GetValue><Panel><DiagnosticMode><Mode_08><Code_8913></Code_8913></Mode_08></DiagnosticMode></Panel></GetValue><SetValue><Authentication><UserCredential><userName>{{username}}</userName><passwd>{{password}}</passwd><ipaddress></ipaddress><DepartmentManagement
+    isEnable=''false''><requireDepartment></requireDepartment></DepartmentManagement><domainName></domainName><applicationType>TOP_ACCESS</applicationType></UserCredential></Authentication></SetValue><SetValue><UserManager><View><Users><Information><passwd>admin</passwd></Information></Users></View></UserManager></SetValue><Command><Login><commandNode>Authentication/UserCredential</commandNode><Params><appName>TOPACCESS</appName></Params></Login></Command></DeviceInformationModel>
+
+    '
 id: topaccess-default-login
 info:
-  name: Toshiba TopAccess - Default-Login
   author: ritikchaddha
-  severity: high
-  reference:
-    - https://business.toshiba.com/downloads/KB/f1Ulds/11646/KH-1020_TAG_EN_0002.pdf
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)topaccess"})
     max-request: 2
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)topaccess"})
     shodan-query: title:"topaccess"
     verified: true
+  name: Toshiba TopAccess - Default-Login
+  reference:
+  - https://business.toshiba.com/downloads/KB/f1Ulds/11646/KH-1020_TAG_EN_0002.pdf
+  severity: high
   tags: default-login,misconfig,topaccess,vuln
 variables:
-  password: "123456"
+  password: '123456'
   username: admin
-http:
-  - extractors:
-      - internal: true
-        kval:
-          - session
-        name: csrf_token
-        type: kval
-    host-redirects: true
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - <name>Administrator
-          - STATUS_OK</statusOfOperation
-      - part: content_type
-        type: word
-        words:
-          - text/xml
-      - part: header_2
-        status:
-          - 200
-        type: status
-    matchers-condition: and
-    max-redirects: 2
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Hostname}}
-      - |
-        POST /contentwebserver HTTP/1.1
-        Host: {{Hostname}}
-        csrfpId: {{csrf_token}}
-        Content-Type: text/plain; charset=UTF-8
-
-        <DeviceInformationModel><GetValue><Authentication><UserCredential></UserCredential></Authentication></GetValue><GetValue><Panel><DiagnosticMode><Mode_08><Code_8913></Code_8913></Mode_08></DiagnosticMode></Panel></GetValue><SetValue><Authentication><UserCredential><userName>{{username}}</userName><passwd>{{password}}</passwd><ipaddress></ipaddress><DepartmentManagement isEnable='false'><requireDepartment></requireDepartment></DepartmentManagement><domainName></domainName><applicationType>TOP_ACCESS</applicationType></UserCredential></Authentication></SetValue><SetValue><UserManager><View><Users><Information><passwd>admin</passwd></Information></Users></View></UserManager></SetValue><Command><Login><commandNode>Authentication/UserCredential</commandNode><Params><appName>TOPACCESS</appName></Params></Login></Command></DeviceInformationModel>

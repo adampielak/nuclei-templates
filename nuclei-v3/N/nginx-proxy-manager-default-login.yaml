@@ -1,28 +1,33 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - contains_all(body, "{\"token", "expires\":")
+    - contains(content_type, "application/json")
+    - status_code == 200
+    type: dsl
+  raw:
+  - 'POST /api/tokens HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Type: application/json
+
+
+    {"identity": "admin@example.com","secret": "changeme"}
+
+    '
 id: nginx-proxy-manager-default-login
 info:
-  name: Nginx Proxy Manager - Default Login
   author: barttran2000
-  severity: high
-  description: |
-    Default Nginx Proxy Manager credentials was discovered.
+  description: 'Default Nginx Proxy Manager credentials was discovered.
+
+    '
   metadata:
-    runzero-match: service["http.body"] matches "Nginx Proxy Manager"
     max-request: 1
+    runzero-match: service["http.body"] matches "Nginx Proxy Manager"
     shodan-query: html:"Nginx Proxy Manager"
     verified: true
+  name: Nginx Proxy Manager - Default Login
+  severity: high
   tags: default-login,nginx,proxy-manager,vuln
-http:
-  - matchers:
-      - condition: and
-        dsl:
-          - contains_all(body, "{\"token", "expires\":")
-          - contains(content_type, "application/json")
-          - status_code == 200
-        type: dsl
-    raw:
-      - |
-        POST /api/tokens HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/json
-
-        {"identity": "admin@example.com","secret": "changeme"}

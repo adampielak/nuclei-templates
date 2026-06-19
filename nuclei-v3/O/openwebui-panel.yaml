@@ -1,43 +1,39 @@
-id: openwebui-panel
-
-info:
-  name: Openweb UI Panel - Detect
-  author: rxerium,righettod
-  severity: info
-  description: |
-    OpenWebUI was detected - a platform for running AI on your own terms
-  reference:
-    - https://openwebui.com/
-  metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-286484075"
-    verified: true
-    max-request: 1
-    shodan-query: http.favicon.hash:-286484075 http.title:"Open WebUI"
-  tags: panel,openwebui,login,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/api/config"
-      - "{{BaseURL}}/auth"
-      - "{{BaseURL}}/opensearch.xml"
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - '"version"\s*:\s*"([0-9\.]+)"'
+    type: regex
+  host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "<title>open webui</title>", "\"name\":\"open webui\"",
+      "<shortname>open webui</shortname>")
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/api/config'
+  - '{{BaseURL}}/auth'
+  - '{{BaseURL}}/opensearch.xml'
+  stop-at-first-match: true
+id: openwebui-panel
+info:
+  author: rxerium,righettod
+  description: 'OpenWebUI was detected - a platform for running AI on your own terms
 
-    host-redirects: true
-    max-redirects: 2
-
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "<title>open webui</title>", "\"name\":\"open webui\"", "<shortname>open webui</shortname>")'
-        condition: and
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - '"version"\s*:\s*"([0-9\.]+)"'
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["favicon.ico.image.mmh3"] == "-286484075"
+    shodan-query: http.favicon.hash:-286484075 http.title:"Open WebUI"
+    verified: true
+  name: Openweb UI Panel - Detect
+  reference:
+  - https://openwebui.com/
+  severity: info
+  tags: panel,openwebui,login,detect,discovery

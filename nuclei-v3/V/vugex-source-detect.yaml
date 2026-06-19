@@ -1,26 +1,24 @@
+http:
+- matchers:
+  - condition: and
+    regex:
+    - '@framework\s+Vugex Framework'
+    - require_once\s+'?/var/www/scripts/help.php'?
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}/'
 id: vugex-source-detect
-
 info:
-  name: Vugex Framework Source Code - Detect
   author: ProjectDiscoveryAI,pdteam
-  severity: medium
-  description: |
-    Detects the presence of exposed Vugex Framework source code by identifying common files and directories associated with the framework.
+  description: 'Detects the presence of exposed Vugex Framework source code by identifying
+    common files and directories associated with the framework.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"Vugex Framework"
+    verified: true
+  name: Vugex Framework Source Code - Detect
+  severity: medium
   tags: vugex,framework,disclosure,info-leak,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
-
-    matchers:
-      - type: regex
-        regex:
-          - "@framework\\s+Vugex Framework"
-          - "require_once\\s+'?/var/www/scripts/help.php'?"
-        condition: and
-

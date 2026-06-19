@@ -1,37 +1,32 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - Grailed
+    - '<title>Grailed: Online Marketplace to Buy Fashion'
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"grailed.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: grailed-phish
-
 info:
-  name: Grailed phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Grailed phishing website was detected
-  reference:
-    - https://grailed.com
+  description: 'A Grailed phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Grailed phishing Detection
+  reference:
+  - https://grailed.com
+  severity: info
   tags: phishing,grailed,ecommerce,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Grailed'
-          - '<title>Grailed: Online Marketplace to Buy Fashion'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"grailed.com")'
-

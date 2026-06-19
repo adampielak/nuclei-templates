@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - GIMP - GNU Image Manipulation Program
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"gimp.org")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: gimp-phish
-
 info:
-  name: gimp phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A gimp phishing website was detected
-  reference:
-    - https://gimp.org
+  description: 'A gimp phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,gimp,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'GIMP - GNU Image Manipulation Program'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"gimp.org")'
-
+  name: gimp phishing Detection
+  reference:
+  - https://gimp.org
+  severity: info
+  tags: phishing,gimp,osint

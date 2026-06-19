@@ -1,19 +1,16 @@
-id: zapier-webhook
-
-info:
-  name: Zapier Webhook
-  author: Devang-Solanki
-  severity: high
-  reference:
-    - https://github.com/streaak/keyhacks#Zapier-Webhook-Token
-    - https://docs.gitguardian.com/secrets-detection/detectors/specifics/zapier_webhook_url
-  tags: token,file,zapier
-
 file:
-  - extensions:
-      - all
-
-    extractors:
-      - type: regex
-        regex:
-          - 'https://(?:www.)?hooks\.zapier\.com/hooks/catch/[A-Za-z0-9]+/[A-Za-z0-9]+/'
+- extensions:
+  - all
+  extractors:
+  - regex:
+    - https://(?:www.)?hooks\.zapier\.com/hooks/catch/[A-Za-z0-9]+/[A-Za-z0-9]+/
+    type: regex
+id: zapier-webhook
+info:
+  author: Devang-Solanki
+  name: Zapier Webhook
+  reference:
+  - https://github.com/streaak/keyhacks#Zapier-Webhook-Token
+  - https://docs.gitguardian.com/secrets-detection/detectors/specifics/zapier_webhook_url
+  severity: high
+  tags: file,keys,token,zapier

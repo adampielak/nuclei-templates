@@ -1,32 +1,26 @@
 id: fortiswitch-certificate
-
 info:
-  name: Fortinet FortiSwitch Certificate - Detect
   author: johnk3r
-  severity: info
   metadata:
-    verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortiswitch"
+    verified: true
+  name: Fortinet FortiSwitch Certificate - Detect
+  severity: info
   tags: ssl,tls,fortinet,fortiswitch,discovery
-
 ssl:
-  - address: "{{Host}}:{{Port}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: subject_dn
-        words:
-          - "emailAddress=support@fortinet.com"
-
-      - type: word
-        part: subject_dn
-        words:
-          - "OU=FortiSwitch"
-
-    extractors:
-      - type: dsl
-        dsl:
-          - 'subject_cn'
-
+- address: '{{Host}}:{{Port}}'
+  extractors:
+  - dsl:
+    - subject_cn
+    type: dsl
+  matchers:
+  - part: subject_dn
+    type: word
+    words:
+    - emailAddress=support@fortinet.com
+  - part: subject_dn
+    type: word
+    words:
+    - OU=FortiSwitch
+  matchers-condition: and

@@ -1,36 +1,33 @@
-id: xspeeder-login
-
-info:
-  name: XSpeeder Login - Detect
-  author: rxerium
-  severity: info
-  description: |
-    Detects the presence of XSpeeder router login panels.
-  reference:
-    - https://www.xspeeder.com/
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)神行者路由"})
-    verified: true
-    max-request: 1
-    vendor: Changsha Tongxun Computer Technology Co., Ltd
-    product: xspeeder_router
-    shodan-query: http.title:"神行者路由"
-    fofa-query: title="神行者路由"
-  tags: panel,xspeeder,router,login,detect
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login/?nLang=1"
+- matchers:
+  - part: body
+    type: word
+    words:
+    - "<title>\u795E\u884C\u8005\u8DEF\u7531"
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login/?nLang=1'
+id: xspeeder-login
+info:
+  author: rxerium
+  description: 'Detects the presence of XSpeeder router login panels.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>神行者路由"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    fofa-query: "title=\"\u795E\u884C\u8005\u8DEF\u7531\""
+    max-request: 1
+    product: xspeeder_router
+    runzero-match: "any(each(service[\"html.titles\"]), {# matches \"(?i)\u795E\u884C\
+      \u8005\u8DEF\u7531\"})"
+    shodan-query: "http.title:\"\u795E\u884C\u8005\u8DEF\u7531\""
+    vendor: Changsha Tongxun Computer Technology Co., Ltd
+    verified: true
+  name: XSpeeder Login - Detect
+  reference:
+  - https://www.xspeeder.com/
+  severity: info
+  tags: panel,xspeeder,router,login,detect

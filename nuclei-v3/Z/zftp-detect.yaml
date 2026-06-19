@@ -1,26 +1,22 @@
 id: zftp-detect
 info:
-  name: Z-FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: Z-FTP service was detected.
   metadata:
-    shodan-query: "Z-FTP"
     max-request: 1
+    shodan-query: Z-FTP
+  name: Z-FTP Service - Detect
+  severity: info
   tags: network,ftp,zftp,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Z-FTP"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Z-FTP
+  port: 21
+  read-size: 1024

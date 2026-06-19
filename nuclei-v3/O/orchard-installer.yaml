@@ -1,34 +1,30 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Orchard Setup - Get Started
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: orchard-installer
-
 info:
-  name: Orchard Setup Wizard - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Orchard is susceptible to the Installation page exposure due to misconfiguration.
   classification:
     cpe: cpe:2.3:a:orchardproject:orchard:*:*:*:*:*:*:*:*
+  description: 'Orchard is susceptible to the Installation page exposure due to misconfiguration.
+
+    '
   metadata:
-    verified: true
     max-request: 1
-    vendor: orchardproject
     product: orchard
     shodan-query: html:"Orchard Setup - Get Started"
+    vendor: orchardproject
+    verified: true
+  name: Orchard Setup Wizard - Exposure
+  severity: high
   tags: misconfig,exposure,install,orchard,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Orchard Setup - Get Started"
-
-      - type: status
-        status:
-          - 200
-

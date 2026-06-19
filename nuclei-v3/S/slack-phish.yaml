@@ -1,35 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - "Slack is a new way to communicate with your team. It\u2019s faster, better\
+      \ organised and more secure than email."
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"slack.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: slack-phish
-
 info:
-  name: slack phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A slack phishing website was detected
-  reference:
-    - https://slack.com
+  description: 'A slack phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,slack,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Slack is a new way to communicate with your team. It’s faster, better organised and more secure than email.'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"slack.com")'
-
+  name: slack phishing Detection
+  reference:
+  - https://slack.com
+  severity: info
+  tags: phishing,slack,osint

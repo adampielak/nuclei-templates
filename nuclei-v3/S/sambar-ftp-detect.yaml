@@ -1,29 +1,26 @@
 id: sambar-ftp-detect
-
 info:
-  name: Sambar FTP Service - Detect
   author: pussycat0x
-  severity: info
-  description: |
-    The File Transfer Protocol (FTP) is a standard network protocol that transfers computer files between a client and server on a computer network.
+  description: 'The File Transfer Protocol (FTP) is a standard network protocol that
+    transfers computer files between a client and server on a computer network.
+
+    '
   metadata:
     max-request: 1
-    shodan-query: "Sambar FTP Server"
+    shodan-query: Sambar FTP Server
+  name: Sambar FTP Service - Detect
+  severity: info
   tags: network,ftp,sambar,detect,detection,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Sambar FTP Server"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - part: body
+    type: word
+    words:
+    - Sambar FTP Server
+  port: 21
+  read-size: 1024

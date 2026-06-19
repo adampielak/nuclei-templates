@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - "Download Firefox for Desktop \u2014 Mozilla"
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"mozilla.org")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: firefox-phish
-
 info:
-  name: firefox phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A firefox phishing website was detected
-  reference:
-    - https://www.mozilla.org/en-GB/firefox/new/
+  description: 'A firefox phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,firefox,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Download Firefox for Desktop — Mozilla'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"mozilla.org")'
-
+  name: firefox phishing Detection
+  reference:
+  - https://www.mozilla.org/en-GB/firefox/new/
+  severity: info
+  tags: phishing,firefox,osint

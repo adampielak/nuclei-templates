@@ -1,33 +1,29 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Install - StackPosts - Social Marketing Tools
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install/index.php'
 id: stackposts-installer
-
 info:
-  name: StackPosts Installation Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed StackPosts installation page.
-  reference:
-    - https://codecanyon.net/item/stackposts-social-marketing-tool/21747459
+  description: 'Detects exposed StackPosts installation page.
+
+    '
   metadata:
-    verified: true
+    fofa-query: icon_hash="700046539"
     max-request: 1
     shodan-query: html:"Install - StackPosts"
-    fofa-query: icon_hash="700046539"
+    verified: true
+  name: StackPosts Installation Page - Exposure
+  reference:
+  - https://codecanyon.net/item/stackposts-social-marketing-tool/21747459
+  severity: high
   tags: misconfig,install,exposure,stackposts,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install/index.php"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Install - StackPosts - Social Marketing Tools"
-
-      - type: status
-        status:
-          - 200
-

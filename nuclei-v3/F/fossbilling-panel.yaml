@@ -1,38 +1,33 @@
+http:
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>FOSSBilling
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: fossbilling-panel
-
 info:
-  name: FOSSBilling Panel - Detect
   author: ritikchaddha
-  severity: info
-  description: |
-    FOSSBilling panel has been detected.
   classification:
     cpe: cpe:2.3:a:fossbilling:fossbilling:*:*:*:*:*:*:*:*
+  description: 'FOSSBilling panel has been detected.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)FOSSBilling"})
-    verified: true
     max-request: 1
-    vendor: fossbilling
     product: fossbilling
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)FOSSBilling"})
     shodan-query: title:"FOSSBilling"
+    vendor: fossbilling
+    verified: true
+  name: FOSSBilling Panel - Detect
+  severity: info
   tags: fossbilling,panel,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>FOSSBilling"
-
-      - type: status
-        status:
-          - 200
-

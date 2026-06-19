@@ -1,36 +1,32 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Pandora FMS - Installation Wizard
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install.php'
 id: pandora-fms-installer
-
 info:
-  name: Pandora FMS Installation Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed Pandora FMS installation page.
-  reference:
-    - https://pandorafms.com/en/
   classification:
     cpe: cpe:2.3:a:pandorafms:pandora_fms:*:*:*:*:*:*:*:*
+  description: 'Detects exposed Pandora FMS installation page.
+
+    '
   metadata:
-    verified: true
-    max-request: 1
-    vendor: pandorafms
-    product: pandora_fms
     fofa-query: body="Pandora FMS - Installation Wizard"
+    max-request: 1
+    product: pandora_fms
+    vendor: pandorafms
+    verified: true
+  name: Pandora FMS Installation Page - Exposure
+  reference:
+  - https://pandorafms.com/en/
+  severity: high
   tags: misconfig,install,exposure,pandora-fms,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install.php"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Pandora FMS - Installation Wizard"
-
-      - type: status
-        status:
-          - 200
-

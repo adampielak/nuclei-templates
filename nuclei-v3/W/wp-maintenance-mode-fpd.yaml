@@ -1,43 +1,39 @@
-id: wp-maintenance-mode-fpd
-
-info:
-  name: WordPress WP Maintenance Mode - Full Path Disclosure
-  author: ritikchaddha
-  severity: low
-  description: |
-    WordPress WP Maintenance Mode plugin is vulnerable to full path disclosure via direct access to plugin files.
-  reference:
-    - https://wordpress.org/plugins/wp-maintenance-mode/
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/wp-maintenance-mode/"
-    verified: true
-    max-request: 3
-    vendor: developer
-    product: wp-maintenance-mode
-    framework: wordpress
-    fofa-query: body="/wp-content/plugins/wp-maintenance-mode/"
-  tags: wp,wordpress,wp-plugin,fpd,maintenance-mode,exposure
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/includes/classes/class-wp-maintenance-mode.php"
-      - "{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/includes/classes/class-wp-maintenance-mode-admin.php"
-      - "{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/views/maintenance.php"
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Fatal error
+    - wp-maintenance-mode
+    - 'Uncaught Error:'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/includes/classes/class-wp-maintenance-mode.php'
+  - '{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/includes/classes/class-wp-maintenance-mode-admin.php'
+  - '{{BaseURL}}/wp-content/plugins/wp-maintenance-mode/views/maintenance.php'
+  stop-at-first-match: true
+id: wp-maintenance-mode-fpd
+info:
+  author: ritikchaddha
+  description: 'WordPress WP Maintenance Mode plugin is vulnerable to full path disclosure
+    via direct access to plugin files.
 
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Fatal error'
-          - 'wp-maintenance-mode'
-          - 'Uncaught Error:'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    fofa-query: body="/wp-content/plugins/wp-maintenance-mode/"
+    framework: wordpress
+    max-request: 3
+    product: wp-maintenance-mode
+    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/wp-maintenance-mode/"
+    vendor: developer
+    verified: true
+  name: WordPress WP Maintenance Mode - Full Path Disclosure
+  reference:
+  - https://wordpress.org/plugins/wp-maintenance-mode/
+  severity: low
+  tags: wp,wordpress,wp-plugin,fpd,maintenance-mode,exposure

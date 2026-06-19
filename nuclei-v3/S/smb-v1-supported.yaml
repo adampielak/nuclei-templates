@@ -1,31 +1,33 @@
 id: smb-v1-supported
-
 info:
-  name: SMB v1 Supported - Detection
   author: pussycat0x
-  severity: info
-  description: |
-    This indicates that the system or application possesses the functionality to operate with SMB version 1. Supporting SMBv1 enables the system to engage in communication utilizing the SMB protocol at its version 1.0.
-  reference:
-    - https://kb.iu.edu/d/aumn
+  description: 'This indicates that the system or application possesses the functionality
+    to operate with SMB version 1. Supporting SMBv1 enables the system to engage in
+    communication utilizing the SMB protocol at its version 1.0.
+
+    '
   metadata:
+    shodan-query: port:445
     verified: true
-    shodan-query: "port:445"
+  name: SMB v1 Supported - Detection
+  reference:
+  - https://kb.iu.edu/d/aumn
+  severity: info
   tags: js,network,smb,enum,discovery
-
 javascript:
-  - code: |
-      var m = require("nuclei/smb");
-      var c = m.SMBClient();
-      var response = c.ConnectSMBInfoMode(Host, Port);
-      to_json(response);
+- args:
+    Host: '{{Host}}'
+    Port: '445'
+  code: 'var m = require("nuclei/smb");
 
-    args:
-      Host: "{{Host}}"
-      Port: "445"
+    var c = m.SMBClient();
 
-    matchers:
-      - type: word
-        words:
-          - '"SupportV1": true'
+    var response = c.ConnectSMBInfoMode(Host, Port);
 
+    to_json(response);
+
+    '
+  matchers:
+  - type: word
+    words:
+    - '"SupportV1": true'

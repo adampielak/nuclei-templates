@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Quora - A place to share knowledge and better understand the world
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"quora.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: quora-phish
-
 info:
-  name: quora phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A quora phishing website was detected
-  reference:
-    - https://quora.com
+  description: 'A quora phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,quora,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Quora - A place to share knowledge and better understand the world'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"quora.com")'
-
+  name: quora phishing Detection
+  reference:
+  - https://quora.com
+  severity: info
+  tags: phishing,quora,osint

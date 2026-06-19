@@ -1,29 +1,23 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>PowerChute Network Shutdown</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login'
 id: powerchute-network-panel
-
 info:
-  name: PowerChute Network Shutdown Panel - Detect
   author: DhiyaneshDK
-  severity: info
   metadata:
-    runzero-match: service["http.body"] matches "(?i)PowerChute Network Shutdown"
-    verified: true
     max-request: 1
     shodan-query: html:"PowerChute Network Shutdown"
-  tags: panel,login,powerchute,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>PowerChute Network Shutdown</title>"
-
-      - type: status
-        status:
-          - 200
-
+    verified: true
+  name: PowerChute Network Shutdown Panel - Detect
+  severity: info
+  tags: panel,login,powerchute,detect

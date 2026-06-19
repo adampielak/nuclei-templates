@@ -1,31 +1,27 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Mirth Connect Administrator</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: mirth-connect-detect
-
 info:
-  name: Mirth Connect Admin Panel - Detect
   author: rxerium
-  severity: info
-  description: |
-    Detects Mirth Connect Administrator panel.
+  description: 'Detects Mirth Connect Administrator panel.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     product: mirth_connect
     shodan-query: title:"mirth connect administrator"
+    verified: true
+  name: Mirth Connect Admin Panel - Detect
+  severity: info
   tags: mirth-connect,tech,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Mirth Connect Administrator</title>"
-
-      - type: status
-        status:
-          - 200
-

@@ -1,34 +1,26 @@
-id: phpipam-installer
-
-info:
-  name: PHP IPAM Installation Page - Exposed
-  author: DhiyaneshDK
-  severity: high
-  description: |
-    PHP IPAM is susceptible to the Installation page exposure due to misconfiguration.
-  classification:
-    cpe: cpe:2.3:a:phpipam:phpipam:*:*:*:*:*:*:*:*
-  metadata:
-    verified: true
-    max-request: 1
-    vendor: phpipam
-    product: phpipam
-    shodan-query: html:"phpipam installation wizard"
-  tags: misconfig,exposure,install,phpipam,vuln
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/index.php?page=install"
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>phpipam installation</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/index.php?page=install'
+id: phpipam-installer
+info:
+  author: DhiyaneshDK
+  description: 'PHP IPAM is susceptible to the Installation page exposure due to misconfiguration.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>phpipam installation</title>"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    max-request: 1
+    shodan-query: html:"phpipam installation wizard"
+    verified: true
+  name: PHP IPAM Installation Page - Exposed
+  severity: high
+  tags: misconfig,exposure,install,phpipam

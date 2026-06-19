@@ -1,27 +1,23 @@
 id: globalscape-ftp-detect
 info:
-  name: GlobalSCAPE Secure FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: GlobalSCAPE Secure FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "GlobalSCAPE Secure FTP Server"
     max-request: 1
+    shodan-query: GlobalSCAPE Secure FTP Server
+    verified: true
+  name: GlobalSCAPE Secure FTP Service - Detect
+  severity: info
   tags: network,ftp,globalscape,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "GlobalSCAPE Secure FTP Server"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - GlobalSCAPE Secure FTP Server
+  port: 21
+  read-size: 1024

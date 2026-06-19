@@ -1,34 +1,29 @@
 id: windriver-ftp-detect
 info:
-  name: Wind River FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: Wind River FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "Wind River FTP server"
     max-request: 1
+    shodan-query: Wind River FTP server
+    verified: true
+  name: Wind River FTP Service - Detect
+  severity: info
   tags: network,ftp,windriver,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Wind River FTP server"
-
-    extractors:
-      - type: regex
-        group: 1
-        name: version
-        regex:
-          - "Wind River FTP server ([0-9.]+)"
-
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - Wind River FTP server ([0-9.]+)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Wind River FTP server
+  port: 21
+  read-size: 1024

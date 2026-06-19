@@ -1,27 +1,24 @@
+http:
+- matchers:
+  - part: body
+    regex:
+    - (?i)foundation(?:\.min)?\.(?:css|js)
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: zurb-foundation-detect
-
 info:
-  name: ZURB Foundation Framework - Detect
   author: Shivam Kamboj
-  severity: info
-  description: |
-    Detects the presence of ZURB Foundation, a responsive front-end framework.
-  reference:
-    - https://get.foundation/
+  description: 'Detects the presence of ZURB Foundation, a responsive front-end framework.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"foundation.min.css"
+    verified: true
+  name: ZURB Foundation Framework - Detect
+  reference:
+  - https://get.foundation/
+  severity: info
   tags: tech,discovery,zurb
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - '(?i)foundation(?:\.min)?\.(?:css|js)'
-

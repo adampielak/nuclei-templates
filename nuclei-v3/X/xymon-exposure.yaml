@@ -1,41 +1,36 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Xymon
+    - xymon-se
+    - xymon-cgi
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/xymon/'
+  - '{{BaseURL}}/xymon-se/xymon/'
+  stop-at-first-match: true
 id: xymon-exposure
-
 info:
-  name: Xymon - Exposure
   author: theamanrawat
-  severity: low
-  description: |
-    Detected the exposure of the Xymon monitoring system interface.
-  reference:
-    - https://xymon.com/
+  description: 'Detected the exposure of the Xymon monitoring system interface.
+
+    '
   metadata:
     runzero-match: any(each(service["html.titles"]), {# matches "(?i)Xymon"})
     shodan-query: http.title:"Xymon"
+  name: Xymon - Exposure
+  reference:
+  - https://xymon.com/
+  severity: low
   tags: xymon,exposure,monitoring,panel
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/xymon/"
-      - "{{BaseURL}}/xymon-se/xymon/"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Xymon"
-          - "xymon-se"
-          - "xymon-cgi"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
-

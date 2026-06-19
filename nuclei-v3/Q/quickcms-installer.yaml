@@ -1,30 +1,26 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - QuickCMS Installation
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install/'
 id: quickcms-installer
-
 info:
-  name: QuickCMS Installation Wizard
   author: DhiyaneshDK
-  severity: high
-  description: |
-    PMM is susceptible to the Installation page exposure due to misconfiguration.
+  description: 'PMM is susceptible to the Installation page exposure due to misconfiguration.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"QuickCMS Installation"
+    verified: true
+  name: QuickCMS Installation Wizard
+  severity: high
   tags: misconfig,exposure,install,quickcms,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "QuickCMS Installation"
-
-      - type: status
-        status:
-          - 200
-

@@ -1,34 +1,30 @@
-id: turnkey-lamp-panel
-
-info:
-  name: TurnKey LAMP Panel - Detect
-  author: ritikchaddha
-  severity: info
-  description: |
-    TurnKey LAMP Control Panel was detected.
-  reference:
-    - https://www.turnkeylinux.org/lamp
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)TurnKey LAMP"})
-    verified: true
-    max-request: 1
-    shodan-query: title:"TurnKey LAMP"
-    fofa-query: title="TurnKey LAMP"
-  tags: panel,login,turnkey,lamp,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- matchers:
+  - part: body
+    type: word
+    words:
+    - TurnKey LAMP</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: turnkey-lamp-panel
+info:
+  author: ritikchaddha
+  description: 'TurnKey LAMP Control Panel was detected.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "TurnKey LAMP</title>"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    fofa-query: title="TurnKey LAMP"
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)TurnKey LAMP"})
+    shodan-query: title:"TurnKey LAMP"
+    verified: true
+  name: TurnKey LAMP Panel - Detect
+  reference:
+  - https://www.turnkeylinux.org/lamp
+  severity: info
+  tags: panel,login,turnkey,lamp,detect,discovery

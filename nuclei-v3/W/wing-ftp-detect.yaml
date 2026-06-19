@@ -1,27 +1,27 @@
 id: wing-ftp-detect
-
 info:
-  name: Wing FTP Service - Detect
   author: ritikchaddha
-  severity: info
-  description: |
-    The File Transfer Protocol (FTP) is a standard network protocol that transfers computer files between a client and server on a computer network.
+  description: 'The File Transfer Protocol (FTP) is a standard network protocol that
+    transfers computer files between a client and server on a computer network.
+
+    '
   metadata:
     max-request: 1
+    shodan-query: Wing FTP Server
     verified: true
-    shodan-query: "Wing FTP Server"
-  tags: network,ftp,wing,detect,detection,tcp,discovery
-
+  name: Wing FTP Service - Detect
+  severity: info
+  tags: network,ftp,wing,detect
 tcp:
-  - inputs:
-      - data: "\n"
-    host:
-      - "{{Hostname}}"
-    port: 21
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: '
 
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Wing FTP Server"
-
+      '
+  matchers:
+  - part: body
+    type: word
+    words:
+    - Wing FTP Server
+  port: 21

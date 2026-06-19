@@ -1,34 +1,29 @@
 id: netbsd-ftpd-detect
 info:
-  name: NetBSD FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: NetBSD FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "FTP server (NetBSD-ftpd"
     max-request: 1
+    shodan-query: FTP server (NetBSD-ftpd
+    verified: true
+  name: NetBSD FTP Service - Detect
+  severity: info
   tags: network,ftp,netbsd,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "FTP server (NetBSD-ftpd"
-
-    extractors:
-      - type: regex
-        group: 1
-        name: version
-        regex:
-          - "NetBSD-ftpd ([0-9]+)"
-
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - NetBSD-ftpd ([0-9]+)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - FTP server (NetBSD-ftpd
+  port: 21
+  read-size: 1024

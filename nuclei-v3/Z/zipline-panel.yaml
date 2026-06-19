@@ -1,37 +1,33 @@
-id: zipline-panel
-
-info:
-  name: Diced Zipline - Detect
-  author: icarot
-  severity: info
-  description: |
-    Zipline panel was detected.
-  reference:
-    - https://github.com/diced/zipline
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)Zipline"
-    verified: true
-    max-request: 1
-    vendor: diced
-    product: zipline
-    shodan-query: html:"Zipline"
-  tags: diced,zipline,login,panel,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/auth/login"
+- matchers:
+  - case-insensitive: true
+    condition: or
+    type: word
+    words:
+    - '"title":"Zipline"'
+    - "Zipline \u2013 Login</title>"
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/auth/login'
+id: zipline-panel
+info:
+  author: icarot
+  description: 'Zipline panel was detected.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '"title":"Zipline"'
-          - 'Zipline – Login</title>'
-        condition: or
-        case-insensitive: true
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    max-request: 1
+    product: zipline
+    runzero-match: service["http.body"] matches "(?i)Zipline"
+    shodan-query: html:"Zipline"
+    vendor: diced
+    verified: true
+  name: Diced Zipline - Detect
+  reference:
+  - https://github.com/diced/zipline
+  severity: info
+  tags: diced,zipline,login,panel,detect,discovery

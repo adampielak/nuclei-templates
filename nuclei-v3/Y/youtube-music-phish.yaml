@@ -1,36 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Your browser is deprecated. Please upgrade.
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"music.youtube.com")'
+    - '!contains(host,"youtube.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: youtube-music-phish
-
 info:
-  name: YouTube Music phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A YouTube Music phishing website was detected
-  reference:
-    - https://music.youtube.com
+  description: 'A YouTube Music phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: YouTube Music phishing Detection
+  reference:
+  - https://music.youtube.com
+  severity: info
   tags: phishing,youtube-music,streaming,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Your browser is deprecated. Please upgrade."
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"music.youtube.com")'
-          - '!contains(host,"youtube.com")'
-

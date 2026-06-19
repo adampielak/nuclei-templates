@@ -1,45 +1,43 @@
 id: obsolete-ssh-version
-
 info:
-  name: Obsolete and less secure SSH Version
   author: pussycat0x
-  severity: info
-  reference:
-    - https://nmap.org/nsedoc/scripts/sshv1.html
   metadata:
     max-request: 2
     shodan-query: port:22
-  tags: js,ssh,network
-
+  name: Obsolete and less secure SSH Version
+  reference:
+  - https://nmap.org/nsedoc/scripts/sshv1.html
+  severity: info
+  tags: enum,js,ssh,network
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port)
-    code: |
-      var m = require("nuclei/ssh");
-      var c = m.SSHClient();
-      var response = c.ConnectSSHInfoMode(Host, Port);
-      to_json(response);
+- args:
+    Host: '{{Host}}'
+    Port: '22'
+  code: 'var m = require("nuclei/ssh");
 
-    args:
-      Host: "{{Host}}"
-      Port: "22"
+    var c = m.SSHClient();
 
-    matchers:
-      - type: dsl
-        dsl:
-          - "success == true"
-          - "version == '1.0'"
-        condition: and
+    var response = c.ConnectSSHInfoMode(Host, Port);
 
-    extractors:
-      - type: json
-        name: SSH Protocol Version
-        json:
-          - '.ServerID.ProtoVersion'
+    Export(response);
 
-      - type: json
-        internal: true
-        name: version
-        json:
-          - '.ServerID.ProtoVersion'
-# digest: 4a0a00473045022100f2972e441dc35ca755973f70a3ea19ba7fa785b71859e3d3ce9fd936ba353e2f02207969769a6cb8ea912162bff562b6f0f4e65c5af2e837e6104f915bd745b6d6d7:922c64590222798bb761d5b6d8e72950
+    '
+  extractors:
+  - json:
+    - .ServerID.ProtoVersion
+    name: SSH Protocol Version
+    type: json
+  - internal: true
+    json:
+    - .ServerID.ProtoVersion
+    name: version
+    type: json
+  matchers:
+  - condition: and
+    dsl:
+    - success == true
+    - version == '1.0'
+    type: dsl
+  pre-condition: 'isPortOpen(Host,Port)
+
+    '

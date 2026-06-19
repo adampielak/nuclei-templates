@@ -1,30 +1,28 @@
 id: oracle-detect
-
 info:
-  name: Oracle - Detection
   author: pussycat0x
-  severity: info
   description: Detects if a target host is running Oracle service on port 1521
   metadata:
-    verified: true
     max-request: 1
     shodan-query: oracle port:1521
+    verified: true
+  name: Oracle - Detection
+  severity: info
   tags: js,network,oracle,info,enum,discovery
-
 javascript:
-  - code: |
-      let m = require('nuclei/oracle');
-      let response = m.IsOracle(Host,Port);
-      Export(response);
+- args:
+    Host: '{{Host}}'
+    Port: '1521'
+  code: 'let m = require(''nuclei/oracle'');
 
-    args:
-      Host: "{{Host}}"
-      Port: "1521"
+    let response = m.IsOracle(Host,Port);
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'success == true'
-          - 'contains(response, "\"IsOracle\": true")'
-        condition: and
+    Export(response);
 
+    '
+  matchers:
+  - condition: and
+    dsl:
+    - success == true
+    - 'contains(response, "\"IsOracle\": true")'
+    type: dsl

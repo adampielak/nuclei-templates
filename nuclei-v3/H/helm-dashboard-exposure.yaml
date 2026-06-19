@@ -1,32 +1,23 @@
-id: helm-dashboard-exposure
-
-info:
-  name: Helm Dashboard - Exposure
-  author: DhiyaneshDk
-  severity: medium
-  classification:
-    cpe: cpe:2.3:a:helm:helm:*:*:*:*:*:*:*:*
-  metadata:
-    verified: true
-    max-request: 1
-    vendor: helm
-    product: helm
-    shodan-query: http.favicon.hash:-594722214
-  tags: helm,exposure,dashboard,misconfig,vuln
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Helm Dashboard</title>"
-
-      - type: status
-        status:
-          - 200
-
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Helm Dashboard</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: helm-dashboard-exposure
+info:
+  author: DhiyaneshDk
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-594722214
+    verified: true
+  name: Helm Dashboard - Exposure
+  severity: medium
+  tags: helm,exposure,dashboard,misconfig

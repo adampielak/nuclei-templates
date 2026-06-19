@@ -1,28 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - "contains_any(to_lower(body), \"vince - high performance\", \"vince \xB7 open\
+      \ source web\", \"Welcome to Vince\")"
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/login'
 id: vince-panel
-
 info:
-  name: Vince Login Panel - Detect
   author: righettod
-  severity: info
-  description: |
-    Vince products was detected.
-  reference:
-    - https://github.com/vinceanalytics/vince
-    - https://www.vinceanalytics.com/
+  description: 'Vince products was detected.
+
+    '
   metadata:
     max-request: 1
     verified: true
+  name: Vince Login Panel - Detect
+  reference:
+  - https://github.com/vinceanalytics/vince
+  - https://www.vinceanalytics.com/
+  severity: info
   tags: panel,vince,login,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "vince - high performance", "vince · open source web", "Welcome to Vince")'
-        condition: and
-

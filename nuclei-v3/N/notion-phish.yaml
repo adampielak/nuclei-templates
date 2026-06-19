@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Your connected workspace for wiki, docs &amp; projects | Notion
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"notion.so")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: notion-phish
-
 info:
-  name: notion phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A notion phishing website was detected
-  reference:
-    - https://notion.so
+  description: 'A notion phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,notion,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Your connected workspace for wiki, docs &amp; projects | Notion'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"notion.so")'
-
+  name: notion phishing Detection
+  reference:
+  - https://notion.so
+  severity: info
+  tags: phishing,notion,osint

@@ -1,41 +1,45 @@
 id: zeroconf-detect
-
 info:
-  name: Zeroconf - Detect
   author: pussycat0x
-  severity: info
-  description: |
-    Queried `_services._dns-sd._udp.local` over UDP/5353 and identified Zeroconf (mDNS/DNS-SD) services that were advertised locally.
-  reference:
-    - https://en.wikipedia.org/wiki/Zero-configuration_networking
+  description: 'Queried `_services._dns-sd._udp.local` over UDP/5353 and identified
+    Zeroconf (mDNS/DNS-SD) services that were advertised locally.
+
+    '
   metadata:
     verified: true
     zoomeye-query: service="zeroconf"
+  name: Zeroconf - Detect
+  reference:
+  - https://en.wikipedia.org/wiki/Zero-configuration_networking
+  severity: info
   tags: zeroconf,network,js,udp,discovery
-
 javascript:
+- args:
+    Host: '{{Host}}'
+    Port: 5353
+  code: 'let packet = bytes.NewBuffer();
 
-  - pre-condition: |
-      isUDPPortOpen(Host,Port);
+    const c = require("nuclei/net");
 
-    code: |
-      let packet = bytes.NewBuffer();
-      const c = require("nuclei/net");
-      const cmd = "000000000001000000000000095f7365727669636573075f646e732d7364045f756470056c6f63616c00000c0001"
-      packet.WriteString(cmd)
-      let conn = c.Open('udp', `${Host}:${Port}`);
-      conn.SendHex(packet);
-      const result = conn.RecvFullHex();
-      result
+    const cmd = "000000000001000000000000095f7365727669636573075f646e732d7364045f756470056c6f63616c00000c0001"
 
-    args:
-      Host: "{{Host}}"
-      Port: 5353
+    packet.WriteString(cmd)
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'success == true'
-          - 'contains_all(response, "udp.local","rvices._dns-sd") || contains(response, "-servers.net")'
-        condition: and
+    let conn = c.Open(''udp'', `${Host}:${Port}`);
 
+    conn.SendHex(packet);
+
+    const result = conn.RecvFullHex();
+
+    result
+
+    '
+  matchers:
+  - condition: and
+    dsl:
+    - success == true
+    - contains_all(response, "udp.local","rvices._dns-sd") || contains(response, "-servers.net")
+    type: dsl
+  pre-condition: 'isUDPPortOpen(Host,Port);
+
+    '

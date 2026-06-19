@@ -1,27 +1,23 @@
 id: zywall-ftp-detect
 info:
-  name: ZyWALL FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: ZyWALL FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "FTP Server (ZyWALL"
     max-request: 1
+    shodan-query: FTP Server (ZyWALL
+    verified: true
+  name: ZyWALL FTP Service - Detect
+  severity: info
   tags: network,ftp,zywall,detect,firewall,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "FTP Server (ZyWALL"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - FTP Server (ZyWALL
+  port: 21
+  read-size: 1024

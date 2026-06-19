@@ -1,36 +1,32 @@
-id: olympic-panel
-
-info:
-  name: OLYMPIC Banking System Login Panel - Detect
-  author: righettod
-  severity: info
-  description: OLYMPIC Banking System was detected.
-  reference:
-    - https://www.olympicbankingsystem.com/en/
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)olympic banking system"})
-    max-request: 2
-    shodan-query: http.title:"olympic banking system"
-  tags: panel,olympic,login,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Connect.do"
-      - "{{BaseURL}}/javaScript/responsive/portal.js"
-
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "olympic banking system", "olympic.action=")'
-        condition: and
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - '&#169;([0-9]+)-'
-
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - '&#169;([0-9]+)-'
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "olympic banking system", "olympic.action=")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/Connect.do'
+  - '{{BaseURL}}/javaScript/responsive/portal.js'
+  stop-at-first-match: true
+id: olympic-panel
+info:
+  author: righettod
+  description: OLYMPIC Banking System was detected.
+  metadata:
+    max-request: 2
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)olympic banking
+      system"})
+    shodan-query: http.title:"olympic banking system"
+  name: OLYMPIC Banking System Login Panel - Detect
+  reference:
+  - https://www.olympicbankingsystem.com/en/
+  severity: info
+  tags: panel,olympic,login,discovery

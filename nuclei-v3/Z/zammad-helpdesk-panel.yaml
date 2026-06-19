@@ -1,33 +1,32 @@
-id: zammad-helpdesk-panel
-
-info:
-  name: Zammad Helpdesk Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-    Zammad is an open source helpdesk and customer support system that provides ticket management, live chat, and knowledge base functionality. This template detects exposed Zammad installations.
-  reference:
-    - https://github.com/zammad/zammad
-    - https://zammad.org/
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Zammad Helpdesk"})
-    verified: true
-    max-request: 1
-    vendor: zammad
-    product: zammad
-    shodan-query: http.title:"Zammad Helpdesk"
-    fofa-query: title="Zammad Helpdesk"
-  tags: panel,zammad,detect,helpdesk,ticketing,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "<title>zammad helpdesk</title>", "zammad_form_script")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: zammad-helpdesk-panel
+info:
+  author: righettod
+  description: 'Zammad is an open source helpdesk and customer support system that
+    provides ticket management, live chat, and knowledge base functionality. This
+    template detects exposed Zammad installations.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "<title>zammad helpdesk</title>", "zammad_form_script")'
-        condition: and
-
+    '
+  metadata:
+    fofa-query: title="Zammad Helpdesk"
+    max-request: 1
+    product: zammad
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Zammad Helpdesk"})
+    shodan-query: http.title:"Zammad Helpdesk"
+    vendor: zammad
+    verified: true
+  name: Zammad Helpdesk Panel - Detect
+  reference:
+  - https://github.com/zammad/zammad
+  - https://zammad.org/
+  severity: info
+  tags: panel,zammad,detect,helpdesk,ticketing,discovery

@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Walmart | Save Money. Live better.
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"walmart.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: walmart-phish
-
 info:
-  name: walmart phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A walmart phishing website was detected
-  reference:
-    - https://walmart.com
+  description: 'A walmart phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,walmart,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Walmart | Save Money. Live better.'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"walmart.com")'
-
+  name: walmart phishing Detection
+  reference:
+  - https://walmart.com
+  severity: info
+  tags: phishing,walmart,osint

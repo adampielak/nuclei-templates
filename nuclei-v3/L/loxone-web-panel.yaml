@@ -1,30 +1,25 @@
-id: loxone-web-panel
-
-info:
-  name: Loxone WebInterface Panel - Detect
-  author: DhiyaneshDk
-  severity: info
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)<title>Webinterface</title>"
-    verified: true
-    max-request: 1
-    shodan-query: html:"<title>Webinterface</title>"
-  tags: panel,login,loxone,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Webinterface</title>'
-          - 'loxone'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - <title>Webinterface</title>
+    - loxone
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: loxone-web-panel
+info:
+  author: DhiyaneshDk
+  metadata:
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)<title>Webinterface</title>"
+    shodan-query: html:"<title>Webinterface</title>"
+    verified: true
+  name: Loxone WebInterface Panel - Detect
+  severity: info
+  tags: panel,login,loxone,detect,discovery

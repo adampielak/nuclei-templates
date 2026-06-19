@@ -1,29 +1,26 @@
-id: vaultwarden-panel
-
-info:
-  name: Vaultwarden Login Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-    Vaultwarden products was detected.
-  reference:
-    - https://github.com/dani-garcia/vaultwarden
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)vaultwarden"
-    verified: true
-    max-request: 1
-    shodan-query: http.html:"vaultwarden"
-  tags: panel,vaultwarden,login,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/#/login"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(to_lower(body), "vaultwarden web</title>")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/#/login'
+id: vaultwarden-panel
+info:
+  author: righettod
+  description: 'Vaultwarden products was detected.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains(to_lower(body), "vaultwarden web</title>")'
-        condition: and
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)vaultwarden"
+    shodan-query: http.html:"vaultwarden"
+    verified: true
+  name: Vaultwarden Login Panel - Detect
+  reference:
+  - https://github.com/dani-garcia/vaultwarden
+  severity: info
+  tags: panel,vaultwarden,login,discovery

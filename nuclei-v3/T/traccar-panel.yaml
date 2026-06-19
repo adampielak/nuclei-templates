@@ -1,25 +1,26 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - contains_any(body, "<title>Traccar</title>", "Traccar GPS Tracking System")
+    - status_code == 200
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/login'
 id: traccar-panel
 info:
-  name: Traccar Panel - Detect
   author: s4e-io
-  severity: info
-  description: |
-    Traccar panel was discovered.
+  description: 'Traccar panel was discovered.
+
+    '
   metadata:
-    runzero-match: service["http.body"] matches "(?i)Traccar"
     fofa-query: app="Traccar"
     max-request: 1
+    runzero-match: service["http.body"] matches "(?i)Traccar"
     shodan-query: html:"Traccar"
     verified: true
+  name: Traccar Panel - Detect
+  severity: info
   tags: detect,discovery,login,panel,traccar
-http:
-  - host-redirects: true
-    matchers:
-      - condition: and
-        dsl:
-          - contains_any(body, "<title>Traccar</title>", "Traccar GPS Tracking System")
-          - status_code == 200
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}/login'

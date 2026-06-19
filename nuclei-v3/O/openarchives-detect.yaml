@@ -1,34 +1,30 @@
-id: openarchives-detect
-
-info:
-  name: openarchives - Detection
-  author: ZeroChill
-  severity: info
-  description: |
-    Detects Open Archives Initiative instance
-  reference:
-    - https://www.openarchives.org/
-  metadata:
-    verified: true
-    shodan-query: http.html:"</OAI-PMH"
-  tags: tech,openarchive,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - OAI-PMH
+    - www.openarchives.org
+    - </OAI-PMH
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: openarchives-detect
+info:
+  author: ZeroChill
+  description: 'Detects Open Archives Initiative instance
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'OAI-PMH'
-          - 'www.openarchives.org'
-          - '</OAI-PMH'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    shodan-query: http.html:"</OAI-PMH"
+    verified: true
+  name: openarchives - Detection
+  reference:
+  - https://www.openarchives.org/
+  severity: info
+  tags: tech,openarchive,discovery

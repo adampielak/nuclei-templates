@@ -1,34 +1,23 @@
 id: tekton-dashboard
-
 info:
-  name: Tekton Dashboard Panel - Detect
   author: DhiyaneshDk
-  severity: info
-  description: Tekton Dashboard panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
-    cwe-id: CWE-200
   metadata:
-    verified: true
     shodan-query: title:"Tekton"
+    verified: true
+  name: Tekton Dashboard Exposure
+  severity: low
   tags: panel,tekton,exposure
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/#/pipelines"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Tekton Dashboard"
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-# Enhanced by md on 2023/01/18
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Tekton Dashboard
+  - part: header
+    type: word
+    words:
+    - text/html
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/#/pipelines'

@@ -1,45 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - login.bundle.js\?v=([\d\.]+)
+    type: regex
+  matchers:
+  - part: body
+    type: word
+    words:
+    - 'Veeam Backup Enterprise Manager : Login'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login.aspx'
 id: veeam-backup-manager-login
 info:
-  name: Veeam Backup Enterprise Manager Login - Detect
   author: Charles D
-  severity: info
-  description: |
-    Veeam Backup Enterprise Manager Login
   classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cve-id: CWE-200
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id:
-      - CWE-200
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)veeam backup enterprise manager"}) || service["favicon.ico.image.mmh3"] == "169658321" || service["http.body"] matches "(?i)Veeam"
-    fofa-query:
-      - title="veeam backup enterprise manager"
-      - icon_hash="169658321"
-    max-request: 1
-    shodan-query:
-      - title:"veeam backup enterprise manager"
-      - http.favicon.hash:169658321
-      - '"Set-Cookie: .ASPXANONYMOUS" http.html:"Veeam"'
-    verified: true
-  tags: detect,discovery,enterprise-manager,login,panel,veeam
-http:
-  - extractors:
-      - group: 1
-        name: version
-        regex:
-          - login.bundle.js\?v=([\d\.]+)
-        # digest: 4b0a00483046022100929d62d1b0478c45141db87a5d87c0c87b53e8f502c1baee48184af18c5da712022100cec3b089045069b6af198bdc48833d77f0455dc6fe79b44ec12dc40ce76f4d31:922c64590222798bb761d5b6d8e72950
+    - CWE-200
+  description: 'Veeam Backup Enterprise Manager Login
 
-        type: regex
-    matchers:
-      - part: body
-        type: word
-        words:
-          - 'Veeam Backup Enterprise Manager : Login'
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/login.aspx'
+    '
+  metadata:
+    fofa-query:
+    - title="veeam backup enterprise manager"
+    - icon_hash="169658321"
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)veeam backup
+      enterprise manager"}) || service["favicon.ico.image.mmh3"] == "169658321" ||
+      service["http.body"] matches "(?i)Veeam"
+    shodan-query:
+    - title:"veeam backup enterprise manager"
+    - http.favicon.hash:169658321
+    - '"Set-Cookie: .ASPXANONYMOUS" http.html:"Veeam"'
+    verified: true
+  name: Veeam Backup Enterprise Manager Login - Detect
+  severity: info
+  tags: detect,discovery,enterprise-manager,login,panel,veeam

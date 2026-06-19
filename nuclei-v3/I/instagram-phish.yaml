@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - "Login \u2022 Instagram"
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"instagram.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: instagram-phish
-
 info:
-  name: instagram phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A instagram phishing website was detected
-  reference:
-    - https://instagram.com
+  description: 'A instagram phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,instagram,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Login • Instagram'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"instagram.com")'
-
+  name: instagram phishing Detection
+  reference:
+  - https://instagram.com
+  severity: info
+  tags: phishing,instagram,osint

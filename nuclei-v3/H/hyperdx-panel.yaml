@@ -1,38 +1,33 @@
-id: hyperdx-panel
-
-info:
-  name: HyperDX Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-    HyperDX panel was discovered.
-  reference:
-    - https://github.com/hyperdxio/hyperdx
-    - https://www.hyperdx.io/
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)hyperdx"
-    max-request: 1
-    verified: true
-    shodan-query: html:"hyperdx"
-  tags: panel,hyperdx,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/search"
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - (?i)"version":"([0-9.]+)"
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), ">hyperdx</span>", ">loading hyperdx<")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/search'
+id: hyperdx-panel
+info:
+  author: righettod
+  description: 'HyperDX panel was discovered.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), ">hyperdx</span>", ">loading hyperdx<")'
-        condition: and
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-
-          - '(?i)"version":"([0-9.]+)"'
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)hyperdx"
+    shodan-query: html:"hyperdx"
+    verified: true
+  name: HyperDX Panel - Detect
+  reference:
+  - https://github.com/hyperdxio/hyperdx
+  - https://www.hyperdx.io/
+  severity: info
+  tags: panel,hyperdx,detect,discovery

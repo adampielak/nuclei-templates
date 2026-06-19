@@ -1,37 +1,31 @@
+http:
+- matchers:
+  - part: header
+    type: word
+    words:
+    - 'Set-Cookie: _writebook_session'
+  - condition: or
+    part: body
+    type: word
+    words:
+    - Made with Writebook
+    - Writebook</h1>
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/session/new'
+  stop-at-first-match: true
 id: writebook-detect
-
 info:
-  name: Writebook - Detect
   author: hahwul
-  severity: info
-  reference:
-    - https://once.com/writebook
-    - https://books.37signals.com/2/the-writebook-manual
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"Writebook"
+    verified: true
+  name: Writebook - Detect
+  reference:
+  - https://once.com/writebook
+  - https://books.37signals.com/2/the-writebook-manual
+  severity: info
   tags: writebook,tech,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/session/new"
-
-    stop-at-first-match: true
-
-    matchers-condition: or
-    matchers:
-      - type: word
-        part: header
-        words:
-          - "Set-Cookie: _writebook_session"
-
-      - type: word
-        part: body
-        words:
-          - "Made with Writebook"
-          - "Writebook</h1>"
-        condition: or
-

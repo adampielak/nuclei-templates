@@ -1,38 +1,34 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - 'Best Password Manager: No more writing down passwords'
+    - Multi-platform secure solution to simplify your online experience. One click
+      login on Chrome, Firefox, Safari, IE, Opera, Edge, Windows, Mac, iOS, Android.
+    - roboform
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"roboform.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: roboform-phish
-
 info:
-  name: roboform phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A roboform phishing website was detected
-  reference:
-    - https://roboform.com
+  description: 'A roboform phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,roboform,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Best Password Manager: No more writing down passwords'
-          - 'Multi-platform secure solution to simplify your online experience. One click login on Chrome, Firefox, Safari, IE, Opera, Edge, Windows, Mac, iOS, Android.'
-          - 'roboform'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"roboform.com")'
-
+  name: roboform phishing Detection
+  reference:
+  - https://roboform.com
+  severity: info
+  tags: phishing,roboform,osint

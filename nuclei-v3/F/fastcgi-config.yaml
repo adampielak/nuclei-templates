@@ -1,27 +1,25 @@
-id: fastcgi-config
-
-info:
-  name: FastCGI Configuration - File Disclosure
-  author: DhiyaneshDk
-  severity: medium
-  description: |
-    FastCGI configuration file is exposed and accessible, potentially leading to sensitive information disclosure.
-  metadata:
-    verified: true
-    max-request: 2
-  tags: fastcgi,config,exposure,vuln
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/fastcgi.conf"
-      - "{{BaseURL}}/config/fastcgi.conf"
+- matchers:
+  - condition: and
+    dsl:
+    - contains_all(body, 'fastcgi_param','fastcgi_script')
+    - contains(content_type, 'application/octet-stream')
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/fastcgi.conf'
+  - '{{BaseURL}}/config/fastcgi.conf'
+  stop-at-first-match: true
+id: fastcgi-config
+info:
+  author: DhiyaneshDk
+  description: 'FastCGI configuration file is exposed and accessible, potentially
+    leading to sensitive information disclosure.
 
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - contains_all(body, 'fastcgi_param','fastcgi_script')
-          - contains(content_type, 'application/octet-stream')
-        condition: and
-
+    '
+  metadata:
+    max-request: 2
+    verified: true
+  name: FastCGI Configuration - File Disclosure
+  severity: medium
+  tags: fastcgi,config,exposure,vuln

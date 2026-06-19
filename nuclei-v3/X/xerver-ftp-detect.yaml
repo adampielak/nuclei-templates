@@ -1,34 +1,29 @@
 id: xerver-ftp-detect
 info:
-  name: Xerver Free FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: Xerver Free FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "Xerver Free FTP Server"
     max-request: 1
+    shodan-query: Xerver Free FTP Server
+    verified: true
+  name: Xerver Free FTP Service - Detect
+  severity: info
   tags: network,ftp,xerver,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Welcome to Xerver Free FTP Server"
-
-    extractors:
-      - type: regex
-        group: 1
-        name: version
-        regex:
-          - "Server ([0-9]+)"
-
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - Server ([0-9]+)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Welcome to Xerver Free FTP Server
+  port: 21
+  read-size: 1024

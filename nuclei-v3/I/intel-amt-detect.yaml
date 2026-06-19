@@ -1,34 +1,31 @@
-id: intel-amt-detect
-
-info:
-  name: Intel Active Management Technology Server Detection
-  author: Shivam Kamboj
-  severity: info
-  description: |
-    Detected Intel Active Management Technology (AMT) web interfaces by identifying the Server header in HTTP responses.
-  metadata:
-    verified: true
-    max-request: 1
-    vendor: intel
-    product: active-management-technology
-  tags: tech,intel,amt,detect,server,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
+- extractors:
+  - group: 1
+    part: header
+    regex:
+    - (?i)Intel\(R\)\s*Active\s*Management\s*Technology\s*([0-9.]+)
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(tolower(header), "intel", "active management technology")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/'
+id: intel-amt-detect
+info:
+  author: Shivam Kamboj
+  description: 'Detected Intel Active Management Technology (AMT) web interfaces by
+    identifying the Server header in HTTP responses.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(tolower(header), "intel", "active management technology")'
-        condition: and
-
-    extractors:
-      - type: regex
-        part: header
-        group: 1
-        regex:
-          - '(?i)Intel\(R\)\s*Active\s*Management\s*Technology\s*([0-9.]+)'
-
+    '
+  metadata:
+    max-request: 1
+    product: active-management-technology
+    vendor: intel
+    verified: true
+  name: Intel Active Management Technology Server Detection
+  severity: info
+  tags: tech,intel,amt,detect,server,discovery

@@ -1,27 +1,23 @@
 id: freebox-ftp-detect
 info:
-  name: Freebox FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: Freebox FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "Freebox FTP Server"
     max-request: 1
+    shodan-query: Freebox FTP Server
+    verified: true
+  name: Freebox FTP Service - Detect
+  severity: info
   tags: network,ftp,freebox,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Welcome to Freebox FTP Server"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Welcome to Freebox FTP Server
+  port: 21
+  read-size: 1024

@@ -1,32 +1,33 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - alt=PrivateGPT
+    - title":"My Private GPT
+    - content="My Private GPT
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: privategpt-detect
 info:
-  name: PrivateGPT - Detect
   author: ritikchaddha
-  severity: info
-  description: |
-    PrivateGPT panel has been detected.
-  reference:
-    - https://github.com/zylon-ai/private-gpt
+  description: 'PrivateGPT panel has been detected.
+
+    '
   metadata:
-    runzero-match: service["http.body"] matches "(?i)private gpt"
     max-request: 1
     product: private-gpt
+    runzero-match: service["http.body"] matches "(?i)private gpt"
     shodan-query: html:"private gpt"
     verified: true
+  name: PrivateGPT - Detect
+  reference:
+  - https://github.com/zylon-ai/private-gpt
+  severity: info
   tags: ai,detect,discovery,panel,privategpt
-http:
-  - matchers:
-      - condition: or
-        part: body
-        type: word
-        words:
-          - alt=PrivateGPT
-          - title":"My Private GPT
-          - content="My Private GPT
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}'

@@ -1,36 +1,32 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - WoWonder | Installation
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install/'
 id: wowonder-installer
-
 info:
-  name: WoWonder Installation Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed WoWonder installation page.
-  reference:
-    - https://www.wowonder.com/
   classification:
     cpe: cpe:2.3:a:wowonder:wowonder:*:*:*:*:*:*:*:*
+  description: 'Detects exposed WoWonder installation page.
+
+    '
   metadata:
-    verified: true
-    max-request: 1
-    vendor: wowonder
-    product: wowonder
     fofa-query: body="WoWonder | Installation"
+    max-request: 1
+    product: wowonder
+    vendor: wowonder
+    verified: true
+  name: WoWonder Installation Page - Exposure
+  reference:
+  - https://www.wowonder.com/
+  severity: high
   tags: misconfig,install,exposure,wowonder,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "WoWonder | Installation"
-
-      - type: status
-        status:
-          - 200
-

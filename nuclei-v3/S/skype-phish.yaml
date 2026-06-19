@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Skype | Stay connected with free video calls worldwide
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"skype.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: skype-phish
-
 info:
-  name: skype phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A skype phishing website was detected
-  reference:
-    - https://skype.com
+  description: 'A skype phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,skype,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Skype | Stay connected with free video calls worldwide'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"skype.com")'
-
+  name: skype phishing Detection
+  reference:
+  - https://skype.com
+  severity: info
+  tags: phishing,skype,osint

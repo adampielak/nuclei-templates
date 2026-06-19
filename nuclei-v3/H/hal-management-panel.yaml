@@ -1,31 +1,27 @@
-id: hal-management-panel
-
-info:
-  name: HAL Management Console Panel
-  author: DhiyaneshDK
-  severity: info
-  description: |
-    HAL Management Console login panel was discovered.
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)HAL Management Console"
-    verified: true
-    max-request: 1
-    shodan-query: html:"HAL Management Console"
-  tags: panel,login,hal,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/console/index.html"
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>HAL Management Console</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/console/index.html'
+id: hal-management-panel
+info:
+  author: DhiyaneshDK
+  description: 'HAL Management Console login panel was discovered.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>HAL Management Console</title>"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)HAL Management Console"
+    shodan-query: html:"HAL Management Console"
+    verified: true
+  name: HAL Management Console Panel
+  severity: info
+  tags: panel,login,hal,discovery

@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - 'Zapier: Automate AI Workflows, Agents, and Apps'
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"zapier.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: zapier-phish
-
 info:
-  name: Zapier phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Zapier phishing website was detected
-  reference:
-    - https://zapier.com
+  description: 'A Zapier phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Zapier phishing Detection
+  reference:
+  - https://zapier.com
+  severity: info
   tags: phishing,zapier,automation,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Zapier: Automate AI Workflows, Agents, and Apps'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"zapier.com")'
-

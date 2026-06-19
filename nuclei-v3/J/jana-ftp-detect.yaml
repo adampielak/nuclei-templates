@@ -1,27 +1,23 @@
 id: jana-ftp-detect
 info:
-  name: Jana-Server FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: Jana-Server FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "Ftp service of Jana-Server ready"
     max-request: 1
+    shodan-query: Ftp service of Jana-Server ready
+    verified: true
+  name: Jana-Server FTP Service - Detect
+  severity: info
   tags: network,ftp,jana,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Ftp service of Jana-Server ready"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Ftp service of Jana-Server ready
+  port: 21
+  read-size: 1024

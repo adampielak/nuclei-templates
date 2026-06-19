@@ -1,32 +1,28 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - UVDesk Helpdesk Community Edition - Installation Wizard
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/#welcome'
 id: uvdesk-helpdesk-installer
-
 info:
-  name: UVDesk Helpdesk Installation Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed UVDesk Helpdesk Installation page.
-  reference:
-    - https://www.uvdesk.com/en/
+  description: 'Detects exposed UVDesk Helpdesk Installation page.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"UVDesk Helpdesk Community Edition - Installation Wizard"
+    verified: true
+  name: UVDesk Helpdesk Installation Page - Exposure
+  reference:
+  - https://www.uvdesk.com/en/
+  severity: high
   tags: misconfig,install,exposure,uvdesk,helpdesk,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/#welcome"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "UVDesk Helpdesk Community Edition - Installation Wizard"
-
-      - type: status
-        status:
-          - 200
-

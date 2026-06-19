@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - "Sign in to GitHub \xB7 GitHub"
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"github.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: github-phish
-
 info:
-  name: github phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A github phishing website was detected
-  reference:
-    - https://github.com
+  description: 'A github phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,github,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Sign in to GitHub · GitHub'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"github.com")'
-
+  name: github phishing Detection
+  reference:
+  - https://github.com
+  severity: info
+  tags: phishing,github,osint

@@ -1,34 +1,29 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <title>mongod
+    - List all commands
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/'
 id: mongod-exposure
-
 info:
-  name: MongoD Server - Exposure
   author: DhiyaneshDk
-  severity: low
   classification:
     cpe: cpe:2.3:a:mongodb:mongodb:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    vendor: mongodb
     product: mongodb
     shodan-query: html:"mongod"
+    vendor: mongodb
+    verified: true
+  name: MongoD Server - Exposure
+  severity: low
   tags: mongod,exposure,info-leak,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>mongod"
-          - "List all commands"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

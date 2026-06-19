@@ -1,37 +1,32 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - Welcome to Steam
+    - Steam is the ultimate destination for playing, discussing, and creating games.
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"steampowered.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: steam-phish
-
 info:
-  name: steam phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A steam phishing website was detected
-  reference:
-    - https://steampowered.com
+  description: 'A steam phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,steam,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Welcome to Steam'
-          - 'Steam is the ultimate destination for playing, discussing, and creating games.'
-
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"steampowered.com")'
-
+  name: steam phishing Detection
+  reference:
+  - https://steampowered.com
+  severity: info
+  tags: phishing,steam,osint

@@ -1,35 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Hang out anytime, anywhere&#x2014;Messenger makes it easy and fun to stay close
+      to your favorite people
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"messenger.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: messenger-phish
-
 info:
-  name: messenger phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A messenger phishing website was detected
-  reference:
-    - https://messenger.com
+  description: 'A messenger phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,messenger,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Hang out anytime, anywhere&#x2014;Messenger makes it easy and fun to stay close to your favorite people'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"messenger.com")'
-
+  name: messenger phishing Detection
+  reference:
+  - https://messenger.com
+  severity: info
+  tags: phishing,messenger,osint

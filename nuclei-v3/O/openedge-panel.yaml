@@ -1,35 +1,32 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Welcome to Progress Application Server for OpenEdge
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: openedge-panel
-
 info:
-  name: OpenEdge Login Panel - Detect
   author: rxerium
-  severity: info
-  description: |
-    An OpenEdge login panel was detected.
   classification:
     cpe: cpe:2.3:a:progress:openedge:*:*:*:*:*:*:*:*
+  description: 'An OpenEdge login panel was detected.
+
+    '
   metadata:
-    runzero-match: service["http.body"] matches "(?i)Welcome to Progress Application Server for OpenEdge"
-    verified: true
     max-request: 1
-    vendor: progress
     product: openedge
+    runzero-match: service["http.body"] matches "(?i)Welcome to Progress Application
+      Server for OpenEdge"
     shodan-query: html:"Welcome to Progress Application Server for OpenEdge"
+    vendor: progress
+    verified: true
+  name: OpenEdge Login Panel - Detect
+  severity: info
   tags: panel,openedge,login,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Welcome to Progress Application Server for OpenEdge"
-
-      - type: status
-        status:
-          - 200
-

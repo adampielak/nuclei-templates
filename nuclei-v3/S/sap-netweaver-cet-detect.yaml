@@ -1,37 +1,33 @@
-id: sap-netweaver-cet-detect
-
-info:
-  name: SAP NetWeaver Composition Environment Tools - Detect
-  author: ap3r
-  severity: info
-  description: |
-    Detects the presence of the SAP NetWeaver Process Integration / Composition Environment Tools page
-  reference:
-    - https://help.sap.com/doc/saphelp_scm700_ehp02/7.0.2/en-US/f6/2a7cb018bc4b239ea5b7af675a18ef/content.htm?no_cache=true
-  metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-266008933"
-    max-request: 1
-    shodan-query: http.favicon.hash:-266008933
-  tags: sap,netweaver,cet,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/rep/start/index.jsp"
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Composition Environment Tools
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/rep/start/index.jsp'
+id: sap-netweaver-cet-detect
+info:
+  author: ap3r
+  description: 'Detects the presence of the SAP NetWeaver Process Integration / Composition
+    Environment Tools page
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Composition Environment Tools"
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["favicon.ico.image.mmh3"] == "-266008933"
+    shodan-query: http.favicon.hash:-266008933
+  name: SAP NetWeaver Composition Environment Tools - Detect
+  reference:
+  - https://help.sap.com/doc/saphelp_scm700_ehp02/7.0.2/en-US/f6/2a7cb018bc4b239ea5b7af675a18ef/content.htm?no_cache=true
+  severity: info
+  tags: sap,netweaver,cet,detect,discovery

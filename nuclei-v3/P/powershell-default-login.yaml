@@ -1,59 +1,55 @@
-id: powershell-default-login
-
-info:
-  name: PowerShell Universal - Default Login
-  author: ap3r
-  severity: high
-  description: |
-    PowerShell Universal default admin credentials were discovered.
-  reference:
-    - https://ironmansoftware.com/powershell-universal
-  metadata:
-    runzero-match: service["http.body"] matches "PowerShell Universal"
-    verified: true
-    max-request: 3
-    shodan-query: "html:\"PowerShell Universal\""
-  tags: default-login,powershell-universal,vuln
-
 http:
-  - raw:
-      - |
-        POST /api/v1/signin HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/json
+- attack: clusterbomb
+  host-redirects: true
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: header
+    type: word
+    words:
+    - Set-Cookie
+  - part: body
+    type: word
+    words:
+    - '{"returnUrl":"/admin"}'
+  - negative: true
+    part: body
+    type: word
+    words:
+    - '{"errorMessage":"Bad username or password"}'
+  matchers-condition: and
+  payloads:
+    password:
+    - admin
+    - password
+    - powershell
+    username:
+    - admin
+  raw:
+  - 'POST /api/v1/signin HTTP/1.1
 
-        {"username":"{{username}}","password":"{{password}}"}
+    Host: {{Hostname}}
 
-    attack: clusterbomb
-    payloads:
-      username:
-        - admin
-      password:
-        - admin
-        - password
-        - powershell
-    host-redirects: true
-    stop-at-first-match: true
+    Content-Type: application/json
 
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
 
-      - type: word
-        part: header
-        words:
-          - 'Set-Cookie'
+    {"username":"{{username}}","password":"{{password}}"}
 
-      - type: word
-        part: body
-        words:
-          - '{"returnUrl":"/admin"}'
+    '
+  stop-at-first-match: true
+id: powershell-default-login
+info:
+  author: ap3r
+  description: 'PowerShell Universal default admin credentials were discovered.
 
-      - type: word
-        part: body
-        words:
-          - '{"errorMessage":"Bad username or password"}'
-        negative: true
-
+    '
+  metadata:
+    max-request: 3
+    shodan-query: html:"PowerShell Universal"
+    verified: true
+  name: PowerShell Universal - Default Login
+  reference:
+  - https://ironmansoftware.com/powershell-universal
+  severity: high
+  tags: default-login,powershell-universal

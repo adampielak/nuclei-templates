@@ -1,38 +1,34 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Snipe-IT Setup
+    - Create Admin User
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/setup'
 id: snipe-it-installer
-
 info:
-  name: Snipe-IT Setup Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed Snipe-IT Setup page.
-  reference:
-    - https://snipeitapp.com/
   classification:
     cpe: cpe:2.3:a:snipeitapp:snipe-it:*:*:*:*:*:*:*:*
+  description: 'Detects exposed Snipe-IT Setup page.
+
+    '
   metadata:
-    verified: true
     max-request: 1
-    vendor: snipeitapp
     product: snipe-it
     shodan-query: html:"Snipe-IT Setup"
+    vendor: snipeitapp
+    verified: true
+  name: Snipe-IT Setup Page - Exposure
+  reference:
+  - https://snipeitapp.com/
+  severity: high
   tags: misconfig,install,exposure,snipe-it,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/setup"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Snipe-IT Setup"
-          - "Create Admin User"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-

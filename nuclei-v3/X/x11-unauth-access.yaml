@@ -1,49 +1,38 @@
 id: x11-unauth-access
-
 info:
-  name: x11 - Unauthenticated Access
   author: pussycat0x
-  severity: high
-  description: |
-    To check if you can connect to a remote X server, send an X11 initial connection request to TCP port 6000+n (where n is the display number). The response success byte (0x00 or 0x01) indicates if you are allowed; if successful, the script will display "X server access is granted," confirming that an attacker can connect to the X server
-  reference:
-    - https://nmap.org/nsedoc/scripts/x11-access.html
-    - https://book.hacktricks.xyz/network-services-pentesting/6000-pentesting-x11
-    - https://www.hackingarticles.in/penetration-testing-on-x11-server/
+  description: 'To check if you can connect to a remote X server, send an X11 initial
+    connection request to TCP port 6000+n (where n is the display number). The response
+    success byte (0x00 or 0x01) indicates if you are allowed; if successful, the script
+    will display "X server access is granted," confirming that an attacker can connect
+    to the X server
+
+    '
   metadata:
-    shodan-query: "Open X Server:"
-    verified: true
     max-request: 1
+    shodan-query: 'Open X Server:'
+    verified: true
+  name: x11 - Unauthenticated Access
+  reference:
+  - https://nmap.org/nsedoc/scripts/x11-access.html
+  - https://book.hacktricks.xyz/network-services-pentesting/6000-pentesting-x11
+  - https://www.hackingarticles.in/penetration-testing-on-x11-server/
+  severity: high
   tags: x11,network,js,remote,unauth,vuln
-
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port);
-    code: |
-      let packet = bytes.NewBuffer();
-      const c = require("nuclei/net");
-      const cmd = "l\u0000\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
-      packet.WriteString(cmd)
-      let conn = c.Open('tcp', `${Host}:${Port}`);
-      conn.SendHex(packet.Hex());
-      const result = conn.RecvFull();
+- args:
+    Host: '{{Host}}'
+    Port: 6000
+  code: "let packet = bytes.NewBuffer();\nconst c = require(\"nuclei/net\");\nconst\
+    \ cmd = \"l\\u0000\\u000b\\u0000\\u0000\\u0000\\u0000\\u0000\\u0000\\u0000\\u0000\\\
+    u0000\"\npacket.WriteString(cmd)\nlet conn = c.Open('tcp', `${Host}:${Port}`);\n\
+    conn.SendHex(packet.Hex());\nconst result = conn.RecvFull();\n\nlet accessGranted;\n\
+    \nif (result.length >= 8 && result[0] === 1 ) {\naccessGranted = \"x11 Unauth\
+    \ Access - Detected\";\n  } else {\n    conn.Close();\n  }\n\naccessGranted\n"
+  extractors:
+  - dsl:
+    - response
+    type: dsl
+  pre-condition: 'isPortOpen(Host,Port);
 
-      let accessGranted;
-
-      if (result.length >= 8 && result[0] === 1 ) {
-      accessGranted = "x11 Unauth Access - Detected";
-        } else {
-          conn.Close();
-        }
-
-      accessGranted
-
-    args:
-      Host: "{{Host}}"
-      Port: 6000
-
-    extractors:
-      - type: dsl
-        dsl:
-          - response
-
+    '

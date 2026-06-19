@@ -1,29 +1,26 @@
-id: icinga-dashboard-exposure
-
-info:
-  name: Icinga Exposed Dashboard
-  author: DhiyaneshDk
-  severity: medium
-  description: |
-    Icinga Dashboard was exposed.
-  reference:
-    - https://icinga.com/
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)icinga\" html:\"Statistics"
-    verified: true
-    max-request: 1
-    shodan-query: html:"icinga" html:"Statistics"
-  tags: exposure,icinga,statistics,oos
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/icinga2"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "Statistics", "Icinga")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/icinga2'
+id: icinga-dashboard-exposure
+info:
+  author: DhiyaneshDk
+  description: 'Icinga Dashboard was exposed.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "Statistics", "Icinga")'
-        condition: and
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["http.body"] matches "(?i)icinga\" html:\"Statistics"
+    shodan-query: html:"icinga" html:"Statistics"
+    verified: true
+  name: Icinga Exposed Dashboard
+  reference:
+  - https://icinga.com/
+  severity: medium
+  tags: exposure,icinga,statistics,oos

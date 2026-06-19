@@ -1,35 +1,32 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - "Celebrate life\u2019s moments with custom invitations, announcements, photo\
+      \ cards, and more. Discover unique gifts crafted by our community of Independent\
+      \ Creators."
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"zazzle.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: zazzle-phish
-
 info:
-  name: Zazzle phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Zazzle phishing website was detected
-  reference:
-    - https://zazzle.com
+  description: 'A Zazzle phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Zazzle phishing Detection
+  reference:
+  - https://zazzle.com
+  severity: info
   tags: phishing,zazzle,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Celebrate life’s moments with custom invitations, announcements, photo cards, and more. Discover unique gifts crafted by our community of Independent Creators."
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"zazzle.com")'
-

@@ -1,37 +1,27 @@
+http:
+- matchers:
+  - dsl:
+    - Host != ip
+    type: dsl
+  - part: body
+    type: word
+    words:
+    - You may have followed an invalid link or the job you are looking for has been
+      archived
+  - status:
+    - 404
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: gohire-takeover
-
 info:
-  name: GoHire Takeover Detection
   author: philippedelteil
-  severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/403
   metadata:
     max-request: 1
-  tags: takeover,gohire,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
-      - type: word
-        part: body
-        words:
-          - 'You may have followed an invalid link or the job you are looking for has been archived'
-
-      - type: status
-        status:
-          - 404
-
-    extractors:
-      - type: dsl
-        dsl:
-          - cname
-
+  name: GoHire Takeover Detection
+  reference:
+  - https://github.com/EdOverflow/can-i-take-over-xyz/issues/403
+  severity: high
+  tags: takeover,gohire

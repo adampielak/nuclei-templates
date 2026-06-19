@@ -1,42 +1,35 @@
-id: ypareo-panel
-
-info:
-  name: YPAREO Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-     YPAREO was detected — an Enterprise Resource Planning system.
-  reference:
-    - https://www.ypareo.com/legacy
-    - https://www.ymag.fr/
-  metadata:
-    runzero-match: service["http.body"] matches "(?i)ypareo"
-    verified: true
-    max-request: 4
-    shodan-query: http.html:"ypareo"
-  tags: panel,ymag,login,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/index.php"
-      - "{{BaseURL}}/net-ypareo/index.php"
-      - "{{BaseURL}}/netypareo/index.php"
-      - "{{BaseURL}}/index.html"
-
-    stop-at-first-match: true
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "<title>ypareo", "<title>NetYParéo")'
-        condition: and
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - 'script.js\?v=([0-9.]+)'
-
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - script.js\?v=([0-9.]+)
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - "contains_any(to_lower(body), \"<title>ypareo\", \"<title>NetYPar\xE9o\")"
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/index.php'
+  - '{{BaseURL}}/net-ypareo/index.php'
+  - '{{BaseURL}}/netypareo/index.php'
+  - '{{BaseURL}}/index.html'
+  stop-at-first-match: true
+id: ypareo-panel
+info:
+  author: righettod
+  description: "YPAREO was detected \u2014 an Enterprise Resource Planning system.\n"
+  metadata:
+    max-request: 4
+    runzero-match: service["http.body"] matches "(?i)ypareo"
+    shodan-query: http.html:"ypareo"
+    verified: true
+  name: YPAREO Panel - Detect
+  reference:
+  - https://www.ypareo.com/legacy
+  - https://www.ymag.fr/
+  severity: info
+  tags: panel,ymag,login,detect,discovery

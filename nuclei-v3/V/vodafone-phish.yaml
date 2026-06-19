@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Vodafone &ndash; Our Best Ever Network
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"vodafone.co.uk")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: vodafone-phish
-
 info:
-  name: vodafone phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A vodafone phishing website was detected
-  reference:
-    - https://vodafone.co.uk
+  description: 'A vodafone phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,vodafone,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Vodafone &ndash; Our Best Ever Network'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"vodafone.co.uk")'
-
+  name: vodafone phishing Detection
+  reference:
+  - https://vodafone.co.uk
+  severity: info
+  tags: phishing,vodafone,osint

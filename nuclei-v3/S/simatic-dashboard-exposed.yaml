@@ -1,37 +1,33 @@
+http:
+- matchers:
+  - part: body
+    regex:
+    - SIMATIC\s*300
+    type: regex
+  - part: body
+    type: word
+    words:
+    - alt="Simatic S7 CP"
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/Portal0000.htm'
 id: simatic-dashboard-exposed
-
 info:
-  name: Siemens SIMATIC 300 Dashboard - Exposed
   author: Th3l0newolf
-  severity: high
-  description: |
-    An unauthenticated exposed web interface for Siemens SIMATIC S7-300 was discovered, potentially allowing access without any login credentials.
-  reference:
-    - https://new.siemens.com
+  description: 'An unauthenticated exposed web interface for Siemens SIMATIC S7-300
+    was discovered, potentially allowing access without any login credentials.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: title:"SIMATIC 300"
+    verified: true
+  name: Siemens SIMATIC 300 Dashboard - Exposed
+  reference:
+  - https://new.siemens.com
+  severity: high
   tags: siemens,simatic,plc,scada,iot,misconfig,unauth,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Portal0000.htm"
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - "SIMATIC\\s*300"
-
-      - type: word
-        part: body
-        words:
-          - 'alt="Simatic S7 CP"'
-
-      - type: status
-        status:
-          - 200
-

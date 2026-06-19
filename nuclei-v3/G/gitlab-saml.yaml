@@ -1,42 +1,48 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - EntityDescriptor
+    - SAML
+  - part: content_type
+    type: word
+    words:
+    - application/xml
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  raw:
+  - 'GET /users/auth/saml/metadata HTTP/1.1
+
+    Host: {{Hostname}}
+
+    '
 id: gitlab-saml
 info:
-  name: Gitlab SAML - Detection
   author: rootxharsh,iamnoooob,pdresearch
-  severity: info
-  description: |
-    The presence of SAML-based authentication on GitLab instances. SAML is commonly used for Single Sign-On (SSO) integrations, which allows users to authenticate with GitLab using an external Identity Provider (IdP).
+  description: 'The presence of SAML-based authentication on GitLab instances. SAML
+    is commonly used for Single Sign-On (SSO) integrations, which allows users to
+    authenticate with GitLab using an external Identity Provider (IdP).
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)gitlab"}) || service["http.body"] matches "(?i)gitlab enterprise edition"
     fofa-query:
-      - body="gitlab enterprise edition"
-      - title="gitlab"
+    - body="gitlab enterprise edition"
+    - title="gitlab"
     google-query: intitle:"gitlab"
     max-request: 1
     product: gitlab
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)gitlab"}) ||
+      service["http.body"] matches "(?i)gitlab enterprise edition"
     shodan-query:
-      - http.title:"gitlab"
-      - cpe:"cpe:2.3:a:gitlab:gitlab"
-      - http.html:"gitlab enterprise edition"
+    - http.title:"gitlab"
+    - cpe:"cpe:2.3:a:gitlab:gitlab"
+    - http.html:"gitlab enterprise edition"
     vendor: gitlab
     verified: true
+  name: Gitlab SAML - Detection
+  severity: info
   tags: discovery,gitlab,panel,saml
-http:
-  - matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - EntityDescriptor
-          - SAML
-      - part: content_type
-        type: word
-        words:
-          - application/xml
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    raw:
-      - |
-        GET /users/auth/saml/metadata HTTP/1.1
-        Host: {{Hostname}}

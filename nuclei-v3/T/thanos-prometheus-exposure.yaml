@@ -1,32 +1,26 @@
-id: thanos-prometheus-exposure
-
-info:
-  name: Thanos Prometheus Setup - Exposure
-  author: DhiyaneshDk,righettod
-  severity: high
-  description: |
-    Thanos graph endpoint was detected.
-  reference:
-    - https://thanos.io/
-    - https://github.com/thanos-io/thanos
-  metadata:
-    verified: true
-    max-request: 2
-    shodan-query: title:"Thanos | Highly available Prometheus setup"
-    fofa-query: icon_hash="29632872"
-  tags: thanos,prometheus,exposure,setup,misconfig,vuln
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/graph"
-      - "{{BaseURL}}/classic/graph"
-
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "THANOS_COMPONENT", "THANOS_QUERY_URL") || contains_all(body, "<title>Thanos", "href=\"/classic/\">Thanos</a>")'
-        condition: and
-
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - THANOS_COMPONENT
+    - THANOS_QUERY_URL
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/graph'
+id: thanos-prometheus-exposure
+info:
+  author: DhiyaneshDk
+  metadata:
+    fofa-query: icon_hash="29632872"
+    max-request: 1
+    shodan-query: title:"Thanos | Highly available Prometheus setup"
+    verified: true
+  name: Thanos Prometheus Setup - Exposure
+  severity: high
+  tags: thanos,prometheus,exposure,setup

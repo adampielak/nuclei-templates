@@ -1,35 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Telegram is a cloud-based mobile and desktop messaging app with a focus on security
+      and speed.
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"telegram.org")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: telegram-phish
-
 info:
-  name: telegram phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A telegram phishing website was detected
-  reference:
-    - https://telegram.org
+  description: 'A telegram phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,telegram,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"telegram.org")'
-
+  name: telegram phishing Detection
+  reference:
+  - https://telegram.org
+  severity: info
+  tags: phishing,telegram,osint
