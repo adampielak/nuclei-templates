@@ -31,4 +31,4 @@ tcp:
         name: version
         regex:
           - "FileZilla Server version ([0-9.]+ beta)"
-# digest: 4a0a004730450221009a34e0a523842637b35fdf1616a79f641a46909174a6948d1e82a0a5b54941ec02206d88b15f0c46003f5f8de752a25363cbcc41f792f868094c18ecf799ae25b5d0:922c64590222798bb761d5b6d8e72950
+

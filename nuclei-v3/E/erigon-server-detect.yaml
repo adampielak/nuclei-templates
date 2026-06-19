@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"Erigon"
-  tags: tech,erigon,ethereum,web3,blockchain,discovery
+  tags: tech,erigon,ethereum,web3,blockchain
 
 http:
   - raw:
@@ -37,4 +37,5 @@ http:
         group: 1
         regex:
           - '(erigon/[0-9_.]+)'
-# digest: 4b0a004830460221009189d63902c0e621c93845ef8acadf38ff6836624f76a89e1cf8a79ed4746a5802210082ed941dd2d1e8f4d15c9548d45b08886299883245d8ec84b61105943f220daf:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450220772f151d9d50f296452af820aa0000d43e80ea87ccfd0bb53d4d4599b6eca5d2022100a6c8c15b4c067a59651623a5724d05819b5c77fd77d918fca4615fdd63f92950:922c64590222798bb761d5b6d8e72950

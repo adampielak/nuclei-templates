@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/header-footer-elementor/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/header-footer-elementor.txt
+      last_version: ../../../helpers/wordpress/plugins/header-footer-elementor.txt
 
     extractors:
       - type: regex

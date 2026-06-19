@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: aa3939fc357723135870d5036b12a67097b03309
-  tags: c2,ir,osint,pupyc2,panel,vuln
+  tags: c2,ir,osint,pupyc2,panel
 
 http:
   - method: GET
@@ -30,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022061517751d0454b1d52dd85d37086c0d65fde44775d3460020eeca0f61d6b5ea502200099442547a41c92ac2a4d3c1bb29908fe713ccf0c537a47fccb55eddb638088:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100fa71c1e22038c75eaf6c497340b1f33ecf41c7228c34fc55da3435f5aab87c630221009364ce11f0b2a1d097c1cf72429d5c9f8ca31a489b740af6e2a89ec7338c2a84:922c64590222798bb761d5b6d8e72950

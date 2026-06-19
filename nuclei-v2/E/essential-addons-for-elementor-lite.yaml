@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/essential-addons-for-elementor-lite.txt
+      last_version: ../../../helpers/wordpress/plugins/essential-addons-for-elementor-lite.txt
 
     extractors:
       - type: regex

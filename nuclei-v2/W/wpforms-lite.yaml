@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/wpforms-lite/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/wpforms-lite.txt
+      last_version: ../../../helpers/wordpress/plugins/wpforms-lite.txt
 
     extractors:
       - type: regex

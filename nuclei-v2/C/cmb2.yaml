@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/cmb2/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/cmb2.txt
+      last_version: ../../../helpers/wordpress/plugins/cmb2.txt
 
     extractors:
       - type: regex

@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/really-simple-ssl/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/really-simple-ssl.txt
+      last_version: ../../../helpers/wordpress/plugins/really-simple-ssl.txt
 
     extractors:
       - type: regex

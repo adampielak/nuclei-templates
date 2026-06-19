@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/better-wp-security/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/better-wp-security.txt
+      last_version: ../../../helpers/wordpress/plugins/better-wp-security.txt
 
     extractors:
       - type: regex

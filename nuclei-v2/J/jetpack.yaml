@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/jetpack/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/jetpack.txt
+      last_version: ../../../helpers/wordpress/plugins/jetpack.txt
 
     extractors:
       - type: regex

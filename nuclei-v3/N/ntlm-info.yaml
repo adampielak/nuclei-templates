@@ -40,4 +40,4 @@ javascript:
       - type: json
         json:
           - '"NTLM: "+ .NTLM'
-# digest: 4a0a0047304502206aad7c1f81a1263b5a61a5f32e558f4376c9f3457de3361e23cbfafa326b0fdc022100927490914f9e68aad7136b64a489c9c67f37abbbc9a817965b2181cb8e231339:922c64590222798bb761d5b6d8e72950
+

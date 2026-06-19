@@ -10,15 +10,11 @@ info:
     - https://download.seafile.com/published/web-api/home.md
     - https://manual.seafile.com/
     - https://www.seafile.com/en/home/
-  classification:
-    cpe: cpe:2.3:a:seafile:seafile:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: seafile
-    product: seafile
     shodan-query: http.html:"seafile"
-  tags: exposure,api,detect,discovery
+  tags: exposure,api,detect
 
 http:
   - method: GET
@@ -49,4 +45,5 @@ http:
         group: 1
         regex:
           - '"version":\s*"([0-9.]+)"'
-# digest: 4b0a00483046022100d902ece0b9abb2a6c79b9e03a69119b21d3ba86e13c51e37b10a825f10d36f63022100dce5115ca5edf18f97688e8e6d125a19cd4ea9f8cce2ddf1c4160a27390c59b3:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100c47c1ae5d724d7b5a58f902d8807a9c455951aea612d75bae34e5f0b5fbf0d5f022004cbf64a4224a7d86c861b15ee1983a7b9a0d5ea80efc59b92ff61adb2cc285d:922c64590222798bb761d5b6d8e72950

@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/imagify/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/imagify.txt
+      last_version: ../../../helpers/wordpress/plugins/imagify.txt
 
     extractors:
       - type: regex

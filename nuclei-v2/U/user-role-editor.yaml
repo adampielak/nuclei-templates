@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/user-role-editor/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/user-role-editor.txt
+      last_version: ../../../helpers/wordpress/plugins/user-role-editor.txt
 
     extractors:
       - type: regex

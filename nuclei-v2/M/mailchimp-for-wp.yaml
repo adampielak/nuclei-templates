@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/mailchimp-for-wp/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/mailchimp-for-wp.txt
+      last_version: ../../../helpers/wordpress/plugins/mailchimp-for-wp.txt
 
     extractors:
       - type: regex

@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/instagram-feed/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/instagram-feed.txt
+      last_version: ../../../helpers/wordpress/plugins/instagram-feed.txt
 
     extractors:
       - type: regex

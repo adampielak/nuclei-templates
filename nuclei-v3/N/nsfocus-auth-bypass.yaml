@@ -9,8 +9,9 @@ info:
   reference:
     - https://forum.butian.net/article/251
   metadata:
-    max-request: 2
+    runzero-match: service["http.body"] matches "(?i)/needUsbkey\\.php\\?username="
     verified: true
+    max-request: 2
     fofa-query: body="/needUsbkey.php?username=" && "NSFOCUS"
   tags: nsfocus,auth-bypass,vuln
 
@@ -49,4 +50,4 @@ http:
         part: content_type
         words:
           - application/json
-# digest: 4a0a0047304502207764dbdfd3de1f4c55fd7c86ac35bb900f5da28465c0c33091b038811be6aaf6022100ff98ac93cb98b7ac484bc093716f02f3530f8b313969f181c3d2bb97716bfbf8:922c64590222798bb761d5b6d8e72950
+

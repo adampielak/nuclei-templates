@@ -16,7 +16,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: miscellaneous,whois,rdap,osint,misc,vuln
+  tags: whois,rdap,osint,misc
 
 http:
   - method: GET
@@ -102,4 +102,5 @@ http:
         name: secureDNS
         json:
           - '.secureDNS.delegationSigned // false'
-# digest: 4a0a0047304502210089f0a9e2881e1bdf0fd908267bae0c4091674aab999d12ce7d5f89e0fef5eddd02203622c149d38037f8fda4750b070762b7b3e3339fa73296c79fbac5255373e096:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100ad80b6de8e6031b71c9ed3714fee31c4d47447bc27ca8b8e5784ef200f27c663022100ad31bbd079ecfe1ac91bdc0b590cff4bd93bac28cffd56abeb0db5ac43837f0b:922c64590222798bb761d5b6d8e72950

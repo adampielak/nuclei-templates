@@ -8,14 +8,10 @@ info:
     Openstack exposing Configuration or settings related to the Swift object storage system.
   reference:
     - https://docs.openstack.org/python-cloudkittyclient/stein/api_reference/info.html
-  classification:
-    cpe: cpe:2.3:a:openstack:swift:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
-    vendor: openstack
-    product: swift
     shodan-query: http.favicon.hash:786533217
-  tags: exposure,misconfig,openstack,vuln
+  tags: exposure,misconfig,openstack
 
 http:
   - method: GET
@@ -41,4 +37,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ac0d6d5d548fb27272fdeec226c19c20b878f2533ee559311868a61bd1e72529022100f3c3d1e3b8d347a5a09986edd9de16155d1abff5895c5943b11695287ba002dd:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100c504ae86098c92cdf1075b41054fd034ae21ecebd6d3aba49a10adb53a4c2356022100915148716537ac9841a78f79df37fb16c699ac1852fec8448ebb9746215f4d40:922c64590222798bb761d5b6d8e72950

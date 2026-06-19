@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/coming-soon/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/coming-soon.txt
+      last_version: ../../../helpers/wordpress/plugins/coming-soon.txt
 
     extractors:
       - type: regex

@@ -17,6 +17,7 @@ http:
       - "{{BaseURL}}/actuator/jolokia/read/Users:database=UserDatabase,type=UserDatabase"
 
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: status
@@ -35,4 +36,4 @@ http:
         words:
           - '"users":[]'
         negative: true
-# digest: 4a0a00473045022100da943127b7ae9861849075ebe802fa2792285210da3f5203307ec1d43b09b262022074302171532ca33b1007612c1397f49717af9ff40eec6106d9a75b67b4c5e122:922c64590222798bb761d5b6d8e72950
+

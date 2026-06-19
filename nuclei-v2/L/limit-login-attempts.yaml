@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/limit-login-attempts/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/limit-login-attempts.txt
+      last_version: ../../../helpers/wordpress/plugins/limit-login-attempts.txt
 
     extractors:
       - type: regex

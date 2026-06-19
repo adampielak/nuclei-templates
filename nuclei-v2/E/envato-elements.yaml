@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/envato-elements/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/envato-elements.txt
+      last_version: ../../../helpers/wordpress/plugins/envato-elements.txt
 
     extractors:
       - type: regex

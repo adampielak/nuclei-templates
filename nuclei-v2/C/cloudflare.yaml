@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/cloudflare/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/cloudflare.txt
+      last_version: ../../../helpers/wordpress/plugins/cloudflare.txt
 
     extractors:
       - type: regex

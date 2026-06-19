@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/wp-fastest-cache/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/wp-fastest-cache.txt
+      last_version: ../../../helpers/wordpress/plugins/wp-fastest-cache.txt
 
     extractors:
       - type: regex

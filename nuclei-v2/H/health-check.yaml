@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/health-check/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/health-check.txt
+      last_version: ../../../helpers/wordpress/plugins/health-check.txt
 
     extractors:
       - type: regex

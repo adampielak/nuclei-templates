@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: network,gopher,detect,detection,tcp,discovery
+  tags: network,gopher,detect
 
 tcp:
   - inputs:
@@ -24,4 +24,4 @@ tcp:
       - type: dsl
         dsl:
           - "contains(to_lower(raw), 'gopher')"
-# digest: 4b0a00483046022100b575dee9d011e0e71850e9c8bd81ac380a41905836c43235715f54c9595ad10b022100c5e02fa9c3cf3dfc0db27d74cc4b63c5f0409207a71493774e2aafb6141f199a:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022018247452de1229eec5d04fb5ccfb37ca5e8624ab00258499555a4290ef80ad97022100deebe67ab267119d266cb6787193f2b17738e02777a667439b6c769adae58d78:922c64590222798bb761d5b6d8e72950

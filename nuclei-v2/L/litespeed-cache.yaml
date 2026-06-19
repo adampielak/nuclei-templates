@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/litespeed-cache/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/litespeed-cache.txt
+      last_version: ../../../helpers/wordpress/plugins/litespeed-cache.txt
 
     extractors:
       - type: regex

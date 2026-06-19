@@ -11,6 +11,7 @@ info:
   classification:
     cwe-id: CWE-78
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)TOTOLINK"})
     max-request: 2
     product: TOTOLINK
     fofa-query: title="TOTOLINK"
@@ -49,4 +50,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022015273a94d319b86a2a5a2c236da7f179670910ac0359250a2e1f9a558ab7301602210083338915aab313861f06ccfa6b1a98627100bbd08e6ef64d3d362fcd90dcdeb5:922c64590222798bb761d5b6d8e72950
+

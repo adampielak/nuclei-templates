@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: product:"OpenSSH"
-  tags: enum,js,ssh,misconfig,network,discovery
+  tags: js,ssh,misconfig,network
 
 javascript:
   - pre-condition: |
@@ -21,7 +21,7 @@ javascript:
       let m = require("nuclei/ssh");
       let c = m.SSHClient();
       let response = c.ConnectSSHInfoMode(Host, Port);
-      Export(response);
+      to_json(response);
 
     args:
       Host: "{{Host}}"
@@ -38,4 +38,4 @@ javascript:
       - type: word
         words:
           - "hmac-sha1"
-# digest: 4a0a00473045022100b831923d7102517ab1971edcf68990724d3c85a58610e41000bf68452a332aee022067d17a9f56c1a103677074db63b589ea8a8f82c973e2bebc9e38d133d32a54b8:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220484762717b3b9118a897170f85324decab222fc75ac72bb42ffac2d9f61f534a02210099442b183e30ac52a41d090376c249d76da1398c84d4ea106106ae48d122ef64:922c64590222798bb761d5b6d8e72950

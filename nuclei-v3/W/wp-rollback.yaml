@@ -1,15 +1,16 @@
 id: wordpress-wp-rollback
 
 info:
-  name: WP Rollback – Rollback Plugins and Themes Detection
+  name: WP Rollback Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-rollback/
   metadata:
+    max-request: 1
     plugin_namespace: wp-rollback
     wpscan: https://wpscan.com/plugin/wp-rollback
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100b966fbce8d68ca7e8708f6eaa75be9a9aaa5c816f8edf66715a2b06b78e00bc10221008087bb3578bca1e61fc8e5f046e1a2bb0a7a385f595f71741a64d7e02b808054:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022003a85bd293d01a3c018f794ad974e3b4c4b972aa2cd04d2ef81980453db845f102206b55d21712c5c982aa48b1711843665e1718545842908ac65dee4cd0093455a5:922c64590222798bb761d5b6d8e72950

@@ -10,17 +10,13 @@ info:
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:rancher:rancher:*:*:*:*:*:*:*:*
   metadata:
     verified: "true"
     max-request: 2
     vendor: rancher
     product: rancher
-    shodan-query:
-      - http.favicon.hash:-1324930554
-      - http.favicon.hash:464587962
-    fofa-query: icon_hash=464587962
-  tags: panel,rancher,dashboard,login,discovery
+    shodan-query: http.favicon.hash:-1324930554
+  tags: panel,rancher,dashboard,login
 
 http:
   - method: GET
@@ -45,4 +41,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e3f6efd06f42d5bfda1c97a94cf5feac90e03558b708c0536512c7ac1dcea67e02202d0a0ebbf2976600996ec432e1fc15f77105a9cc44d7f288c39b39a2f18a042c:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210095070c067c21f28c3386e8ff624c112a375077ad2b327e2fcf7fea8d4ef7d5c5022064f7f08488ec2afa1eb1617f8cc7d50836d22fddbc7d374a84a5adacb2aab640:922c64590222798bb761d5b6d8e72950

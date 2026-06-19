@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/polylang/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/polylang.txt
+      last_version: ../../../helpers/wordpress/plugins/polylang.txt
 
     extractors:
       - type: regex

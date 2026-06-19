@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: "明御运维审计与风险控制系统"
-  tags: mingyu,xmlrpc,sock,intrusive,misconfig,vuln
+  tags: mingyu,xmlrpc,sock,intrusive,misconfig
 variables:
   username: "{{rand_base(6)}}"
   password: "{{rand_base(8)}}"
@@ -120,4 +120,5 @@ http:
         dsl:
           - '"USERNAME: "+ username'
           - '"PASSWORD: "+ password'
-# digest: 4a0a0047304502202a0708b9d61a2e5ddeed824dfd0a1697c2f0109c280a088c4fbaaf8904f73a16022100864455e433b78d545b39c60c3b970be7d9a17710221ca3af1cedcc3bb7462860:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450220488a667a94a091971629a33cbf11fbfbe58905253a449022ffa03770c1768371022100ee2c1cb574e25e77c27e27a9f0469c3357de535acbebb531c7345f656103296b:922c64590222798bb761d5b6d8e72950

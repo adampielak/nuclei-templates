@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/popup-maker/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/popup-maker.txt
+      last_version: ../../../helpers/wordpress/plugins/popup-maker.txt
 
     extractors:
       - type: regex

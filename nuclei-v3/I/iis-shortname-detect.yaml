@@ -74,4 +74,4 @@ http:
       - type: dsl
         dsl:
           - "status_code_1!=404 && status_code_2 == 404 || status_code_3 != 404 && status_code_4 == 404 || status_code_5 != 404 && status_code_6 == 404"
-# digest: 4a0a00473045022100e886853272dacc3bab4867ebae9383ab03ffec8ad4f3dbc3829bae2409d089ec02201cec513c4b3b8f9e072d93611bb89a11b0339b88c1d70c5d2cdd6099ba4e992b:922c64590222798bb761d5b6d8e72950
+

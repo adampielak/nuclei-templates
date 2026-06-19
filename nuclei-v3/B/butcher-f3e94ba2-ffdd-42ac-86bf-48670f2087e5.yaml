@@ -2,7 +2,7 @@ id: butcher-f3e94ba2-ffdd-42ac-86bf-48670f2087e5
 
 info:
   name: >
-    Butcher <= 2.40 - Reflected Cross-Site Scripting
+    Butcher < 2.54 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.40')
+          - compare_versions(version, '< 2.54')

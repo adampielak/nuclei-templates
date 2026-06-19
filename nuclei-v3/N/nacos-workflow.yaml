@@ -10,3 +10,4 @@ workflows:
   - template: http/technologies/nacos-version.yaml
     subtemplates:
       - tags: nacos
+

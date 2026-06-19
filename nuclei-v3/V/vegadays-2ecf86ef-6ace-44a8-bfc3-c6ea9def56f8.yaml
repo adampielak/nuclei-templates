@@ -1,46 +1,51 @@
-http:
-- extractors:
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - (?mi)Version:\s*([0-9.]+)
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - vegadays
-  - dsl:
-    - compare_versions(version, '<= 1.2.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/vegadays/style.css'
-  redirects: true
 id: vegadays-2ecf86ef-6ace-44a8-bfc3-c6ea9def56f8
-info:
-  author: topscoder
-  classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
-  metadata:
-    fofa-query: wp-content/themes/vegadays/
-    google-query: inurl:"/wp-content/themes/vegadays/"
-    shodan-query: http.html:"wp-content/themes/vegadays/"
-  name: 'VegaDays - Vegetarian Food Festival & Eco Event WordPress Theme <= 1.2.0
-    - Unauthenticated Local File Inclusion
 
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ecf86ef-6ace-44a8-bfc3-c6ea9def56f8?source=api-scan
+info:
+  name: >
+    VegaDays - Vegetarian Food Festival & Eco Event WordPress Theme <= 1.2.0 - Unauthenticated Local File Inclusion
+  author: topscoder
   severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ecf86ef-6ace-44a8-bfc3-c6ea9def56f8?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/themes/vegadays/"
+    google-query: inurl:"/wp-content/themes/vegadays/"
+    shodan-query: 'http.html:"wp-content/themes/vegadays/"'
   tags: cve,wordpress,wp-theme,vegadays,critical,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/vegadays/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "vegadays"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.2.0')

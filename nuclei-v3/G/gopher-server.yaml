@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Gopher Server"
-  tags: misconfig,gopher,server,vuln
+  tags: misconfig,gopher,server
 
 http:
   - method: GET
@@ -30,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fa8c7de339de74c67a747d86be0f57dcf0d2712b019ff33ce7f6230f4a5cf5ee0220531adc6b0e4e78190d38b5b998a2c6f6993544e76bd3a1241dc8bf64840cd9a7:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502207873bb8bf010c666f17f7e27467b597759e064d060fe7bdf2b43c37fc68c4b56022100d6d0e50a817de6f7dd0593ad1cdda5c6fea32d3dd1f2dc8440ac11ebddcf93ba:922c64590222798bb761d5b6d8e72950

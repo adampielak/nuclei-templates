@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/really-simple-captcha/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/really-simple-captcha.txt
+      last_version: ../../../helpers/wordpress/plugins/really-simple-captcha.txt
 
     extractors:
       - type: regex

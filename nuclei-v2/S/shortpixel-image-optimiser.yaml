@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/shortpixel-image-optimiser/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/shortpixel-image-optimiser.txt
+      last_version: ../../../helpers/wordpress/plugins/shortpixel-image-optimiser.txt
 
     extractors:
       - type: regex

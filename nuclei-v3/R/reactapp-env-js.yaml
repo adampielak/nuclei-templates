@@ -2,23 +2,20 @@ id: reactapp-env-js
 
 info:
   name: React App Environment Js
-  author: random-robbie,rinolock
+  author: random-robbie
   severity: unknown
   metadata:
     verified: true
-    max-request: 4
+    max-request: 2
     github-query: "REACT_APP_"
-  tags: react,exposure,config,js,javascript,vuln
+  tags: react,exposure,config,js,javascript
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}/env.js"
       - "{{BaseURL}}/config.js"
-      - "{{BaseURL}}/config/env.js"
-      - "{{BaseURL}}/config/runtime-env.js"
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
@@ -37,4 +34,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210088ec304914d1e231abfb4c4568da9db3e64e3cab9184bc3d969ac6df676bc77402210080b7068a49587b375d030b400f5ddd23f7a434b378900124d862c737d932c516:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100d47ee476b177ba0f5ceea8076584a52b6758704f1db788adecc923256a018639022100c7044670830f789636fd1532adeb82775f542f1bfea4c56c72ac4f209e7f6cf0:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,7 @@ info:
   reference:
     - https://cxsecurity.com/issue/WLB-2019050108
   metadata:
+    runzero-match: service["http.body"] matches "(?i)/plugins/generic/tinymce/plugins/justboil\\.me/"
     verified: true
     max-request: 1
     fofa-query: body="/plugins/generic/tinymce/plugins/justboil.me/"
@@ -38,4 +39,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b5096049ecf0d84742385bb4a625c76dbd9c41b9dc4e5bbb0320d837720906b40221009b8c729f582e702062ca977534856ce98f55d9f2543dc656b3fe82feb985ee4c:922c64590222798bb761d5b6d8e72950
+

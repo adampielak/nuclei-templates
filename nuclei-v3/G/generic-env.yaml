@@ -12,35 +12,33 @@ info:
     cwe-id: CWE-522
   metadata:
     max-request: 22
-  tags: config,exposure,env,vuln
+  tags: config,exposure,env
 
 http:
   - method: GET
     path:
-      - "{{BaseURL}}{{paths}}"
-    payloads:
-      paths:
-        - "/.env"
-        - "/.env.bak"
-        - "/.env.dev"
-        - "/.env.dev.local"
-        - "/.env.development.local"
-        - "/.env.prod"
-        - "/.env.prod.local"
-        - "/.env.production"
-        - "/.env.production.local"
-        - "/.env.local"
-        - "/.env.stage"
-        - "/.env.live"
-        - "/.env.backup"
-        - "/.env.save"
-        - "/.env.old"
-        - "/.env.www"
-        - "/.env_1"
-        - "/.env_sample"
-        - "/.env.{{DN}}"
-        - "/.env.{{SD}}"
-        - "/api/.env"
+      - "{{BaseURL}}/.env"
+      - "{{BaseURL}}/.env.bak"
+      - "{{BaseURL}}/.env.dev"
+      - "{{BaseURL}}/.env.dev.local"
+      - "{{BaseURL}}/.env.development.local"
+      - "{{BaseURL}}/.env.prod"
+      - "{{BaseURL}}/.env.prod.local"
+      - "{{BaseURL}}/.env.production"
+      - "{{BaseURL}}/.env.production.local"
+      - "{{BaseURL}}/.env.local"
+      - "{{BaseURL}}/.env.example"
+      - "{{BaseURL}}/.env.stage"
+      - "{{BaseURL}}/.env.live"
+      - "{{BaseURL}}/.env.backup"
+      - "{{BaseURL}}/.env.save"
+      - "{{BaseURL}}/.env.old"
+      - "{{BaseURL}}/.env.www"
+      - "{{BaseURL}}/.env_1"
+      - "{{BaseURL}}/.env_sample"
+      - "{{BaseURL}}/.env.{{DN}}"
+      - "{{BaseURL}}/.env.{{SD}}"
+      - "{{BaseURL}}/api/.env"
 
     matchers-condition: and
     matchers:
@@ -54,4 +52,5 @@ http:
         negative: true
         words:
           - "<html"
-# digest: 4a0a00473045022013879e4c23b99e394bd6edf1a11242bdf01ad612299d3d5666628a446dc8290302210084913aadcc73584f0b177e8205edffb2c58fc27363095c272111d8477e6063fe:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220547bb968413b5bb510e75cc5dd3135d11954ea3c79ed2e3417088143b020e76802205ab6a107244bb426ca80737c2e5f601b2546cd26277330e52f218b4544def2f2:922c64590222798bb761d5b6d8e72950

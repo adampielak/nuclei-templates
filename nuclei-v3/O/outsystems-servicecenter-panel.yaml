@@ -1,5 +1,4 @@
 id: outsystems-servicecenter-panel
-
 info:
   name: OutSystems Service Center Login Panel - Detect
   author: righettod
@@ -11,33 +10,38 @@ info:
   classification:
     cpe: cpe:2.3:a:outsystems:platform_server:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: service["http.body"] matches "(?i)outsystems"
     max-request: 2
-    vendor: outsystems
     product: platform_server
-    shodan-query: "http.html:\"outsystems\""
-  tags: panel,outsystems,login,detect,discovery
-
+    shodan-query: http.html:"outsystems"
+    vendor: outsystems
+    verified: true
+  tags: detect,discovery,login,outsystems,panel
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Login.aspx"
-      - "{{BaseURL}}/ServiceCenter/Login.aspx"
-
-    host-redirects: true
-    max-redirects: 2
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains(body, "Enter your OutSystems credentials")'
-        condition: and
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 1
         part: body
-        group: 1
         regex:
-          - 'environmentName:.?([a-z0-9A-Z\s]+).?'
-# digest: 4b0a004830460221008ef369b89386db83179edfa60774288c11c17640256b033e21f6d70529b16643022100d0a8bf02d461b14a2b54fbc5c428263fba40d3505177db0f9bc9fa6e755ac322:922c64590222798bb761d5b6d8e72950
+          - environmentName:.?([a-z0-9A-Z\s]+).?
+        # digest: 490a0046304402201c62a144a9e449e5230c4430527af17d687c230b0cf2f0db47e456f1bc369d2c022061cd536efda992a1626fcd95e239da32874db417e10b0972633c4baea4cf18ae:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    host-redirects: true
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(body, "Enter your OutSystems credentials")
+        type: dsl
+      - condition: or
+        part: set_cookie
+        type: word
+        words:
+          - osVisitor=
+          - osVisit=
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}/Login.aspx'
+      - '{{BaseURL}}/ServiceCenter/Login.aspx'
+    stop-at-first-match: true

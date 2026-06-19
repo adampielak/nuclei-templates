@@ -8,15 +8,11 @@ info:
     Pexip technology was detected.
   reference:
     - https://www.pexip.com/
-  classification:
-    cpe: cpe:2.3:a:pexip:pexip_infinity:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: pexip
-    product: pexip_infinity
     shodan-query: http.title:"Pexip Connect for Web"
-  tags: tech,pexip,detect,discovery
+  tags: tech,pexip,detect
 
 http:
   - method: GET
@@ -31,4 +27,4 @@ http:
           - 'status_code == 200'
           - 'contains(body, "<title>Pexip Connect for Web")'
         condition: and
-# digest: 4a0a00473045022100be1afe5047880e086c0a875feb6e68b95eca027df2e1da73b45093a339c89be5022048579c93e832ceeff87cfa8694780f562031156c27c32ccca64a097208596a28:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022052f1d4ca4cc0836000f6eb9f951cfb738dc1adea10d7511838d3184f2df8bd2c02202cc4f51355cf3410a455e5e85efcf5ef0bffb1850b33d8a4c868ab2deddf6e28:922c64590222798bb761d5b6d8e72950

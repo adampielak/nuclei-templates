@@ -4,15 +4,11 @@ info:
   name: ShareFile Storage Server - Detect
   author: DhiyaneshDK
   severity: info
-  classification:
-    cpe: cpe:2.3:a:citrix:sharefile_storage_zones_controller:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: citrix
-    product: sharefile_storage_zones_controller
     shodan-query: title:"ShareFile Storage Server"
-  tags: tech,citrix,sharefile,discovery
+  tags: tech,citrix,sharefile
 
 http:
   - method: GET
@@ -32,4 +28,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201e612bd8247d0b3151cb5d15aec1a771c534efc32c61b08fa227e8039771a1c902201c83cefaf36cbff149fb3afa568e1e06f00eb062a0d8f1a70123a10579353772:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502207ca5079a2f0c74cbd6b9594958e360176f50fc609bf9de0c27bfdd93f78df544022100f40278d7ff54983742c56073d73db238786d79942ec91b1ccd52c4b1c93924cb:922c64590222798bb761d5b6d8e72950

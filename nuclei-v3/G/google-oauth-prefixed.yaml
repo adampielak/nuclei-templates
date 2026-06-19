@@ -5,11 +5,11 @@ info:
   author: DhiyaneshDK
   severity: info
   reference:
-    - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/google.yml
+    - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/google.yml
   metadata:
     verified: true
     max-request: 1
-  tags: google,token,exposure,vuln
+  tags: google,token,exposure
 
 http:
   - method: GET
@@ -21,4 +21,5 @@ http:
         part: body
         regex:
           - '(GOCSPX-[a-zA-Z0-9_-]{28})'
-# digest: 4a0a00473045022100bc9688f01f61dc6d58dfa6fc2008aec2b8158f7ae329e9c78d2e4ec60eed458802203a18da6cb8396947194f9b411d8c2698911ee815d1f8d438b26ab2edcc3622e1:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502210096c1b5435e3f287b67eb4166f8bb3784143d5f5eb33714d5c81cd3472b96773902201b6e9da414651c76ddf5aaae6ef2b111819bebc5d384589d981a84115ac17781:922c64590222798bb761d5b6d8e72950

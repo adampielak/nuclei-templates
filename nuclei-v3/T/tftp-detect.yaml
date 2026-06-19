@@ -39,4 +39,4 @@ javascript:
           - "permission denied!"
         condition: or
         case-insensitive: true
-# digest: 4a0a0047304502201feb336fe38e9c5561f1a946517b29d1d22d8375e567b778c6f37a8880e29c79022100fa03f049170fa72d91ffed3dbf0bd5e774f198de38520128a5f68372ac4c7294:922c64590222798bb761d5b6d8e72950
+

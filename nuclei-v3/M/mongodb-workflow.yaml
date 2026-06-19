@@ -8,3 +8,4 @@ workflows:
   - template: network/detection/mongodb-detect.yaml
     subtemplates:
       - tags: mongodb
+

@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/cookie-notice/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/cookie-notice.txt
+      last_version: ../../../helpers/wordpress/plugins/cookie-notice.txt
 
     extractors:
       - type: regex

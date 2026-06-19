@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.tibco.com/products/managed-file-transfer
   metadata:
+    runzero-match: service["http.body"] matches "(?i)TIBCO Managed"
     verified: true
     max-request: 1
     shodan-query: html:"TIBCO Managed"
@@ -32,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b54a92d5b78f9d4ffff2ac3a375ba12c26e13937301783bdf6ce00b366647ef5022073c08957a8f3455355aa8c1414ef4ed4c7461a257095239499d3e3bd7c1f84a4:922c64590222798bb761d5b6d8e72950
+

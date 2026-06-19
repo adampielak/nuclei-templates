@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/code-snippets/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/code-snippets.txt
+      last_version: ../../../helpers/wordpress/plugins/code-snippets.txt
 
     extractors:
       - type: regex

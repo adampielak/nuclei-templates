@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"Geth"
-  tags: tech,geth,ethereum,web3,blockchain,discovery
+  tags: tech,geth,ethereum,web3,blockchain
 
 http:
   - raw:
@@ -38,4 +38,5 @@ http:
         group: 1
         regex:
           - '(v[0-9a-z-_.]+)'
-# digest: 4b0a00483046022100e8be33d56f52d9817da0794a1fa35380156824d4929441d64b03c4c20329cacb022100b15fd470d4715d21a41b710a8e009093f4b14321dfd52a3e1d452503e6e0d85d:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100d2f3564e305a54e66b200c6868ebbd62fab2342ce73eeac64d0a5ec4e5016b3402204a788d1bb647ec03064e3f4ea496d5a270709c27bcf35f95a5f46a5f5ad7ad43:922c64590222798bb761d5b6d8e72950

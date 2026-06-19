@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/safe-svg/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/safe-svg.txt
+      last_version: ../../../helpers/wordpress/plugins/safe-svg.txt
 
     extractors:
       - type: regex

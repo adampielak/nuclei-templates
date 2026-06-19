@@ -9,6 +9,7 @@ info:
   reference:
     - https://hoobs.com
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)HOOBS"})
     verified: true
     max-request: 1
     shodan-query: http.title:"HOOBS"
@@ -29,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220447685cfa246c97a703211e3e95dc40224857e06d7becf38ea244af8d5731a55022100b6df49231ad6419492269c92f217ce6b2c4303ff88445fbb32191971e7f0d150:922c64590222798bb761d5b6d8e72950
+

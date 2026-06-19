@@ -33,4 +33,4 @@ http:
           - "This username is associated with a computer that was infected by an info-stealer"
           - "hudsonrock.com"
         condition: and
-# digest: 4a0a00473045022100b481d83fe052b9822c179a1ef03ed314c6627d423577a1df3ade1a0a9351701802202b1eb50f3eb687fec730360c22c6c553060fe75f86c61f26a6958dedfffba89f:922c64590222798bb761d5b6d8e72950
+

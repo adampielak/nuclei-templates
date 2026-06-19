@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/happy-elementor-addons/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/happy-elementor-addons.txt
+      last_version: ../../../helpers/wordpress/plugins/happy-elementor-addons.txt
 
     extractors:
       - type: regex

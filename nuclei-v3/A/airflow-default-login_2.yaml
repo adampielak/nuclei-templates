@@ -4,7 +4,7 @@ info:
   name: Apache Airflow Default Login
   author: pdteam
   severity: high
-  description: Apache Airflow default login credentials were discovered.
+  description: An Apache Airflow default login was discovered.
   reference:
     - https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html
   classification:
@@ -12,8 +12,6 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    product: airflow
-    vendor: apache
     max-request: 2
     shodan-query: title:"Sign In - Airflow"
   tags: airflow,default-login,apache
@@ -39,6 +37,7 @@ http:
         - airflow
       password:
         - airflow
+    cookie-reuse: true
 
     extractors:
       - type: regex
@@ -47,6 +46,7 @@ http:
         internal: true
         regex:
           - 'type="hidden" value="(.*?)">'
+    req-condition: true
 
     matchers-condition: and
     matchers:
@@ -60,4 +60,5 @@ http:
       - type: word
         words:
           - 'You should be redirected automatically to target URL: <a href="/">'
-# digest: 4a0a0047304502204adfd61ba2dc3d441f13c5b7dd246458cb8fc3a9b53cb8a0e0b0423a1748be55022100e7e39b8b675615ae83a15d4b6f27f4bff8d0c0e3f5fc40c2c7f6643c107642cd:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100f49d4caa9bf89c2a070d5f375b964793d339a93583c4e33415da484a485ab32a02210083e0e951c3760c79ba69b629facc33e235af4fc953a96b1b57d4a457e5cf910f:922c64590222798bb761d5b6d8e72950

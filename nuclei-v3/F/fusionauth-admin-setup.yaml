@@ -5,16 +5,12 @@ info:
   author: ritikchaddha
   severity: high
   description: FusionAuth Admin Setup is exposed.
-  classification:
-    cpe: cpe:2.3:a:fusionauth:fusionauth:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: fusionauth
-    product: fusionauth
     shodan-query: title:"FusionAuth Setup Wizard"
     fofa-query: title="FusionAuth Setup Wizard"
-  tags: misconfig,fusionauth,admin,setup,vuln
+  tags: misconfig,fusionauth,admin,setup
 
 http:
   - method: GET
@@ -32,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008bcc506c7b7ca393e7fdd7b29a6359b5ca3d95e2bf9017fded4169425d34d87b022100aa9bb1654a6c369776dd48e078c53a64023254c13962286fbe40463e777fe9d3:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022007d4dbb8a296fe926e5f296078aecfd6e737a4478b5ce8761f2de44c8620c953022018807ad838fddfa4096e7915fccf574e67b1c1b935d5c10d07082af0640b8632:922c64590222798bb761d5b6d8e72950

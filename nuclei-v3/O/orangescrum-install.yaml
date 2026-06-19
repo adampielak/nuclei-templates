@@ -5,15 +5,11 @@ info:
   author: ritikchaddha
   severity: high
   description: Orangescrum is susceptible to the Installation page exposure due to misconfiguration.
-  classification:
-    cpe: cpe:2.3:a:orangescrum:orangescrum:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: orangescrum
-    product: orangescrum
     shodan-query: title:"Orangescrum Setup Wizard"
-  tags: misconfig,orangescrum,install,vuln
+  tags: misconfig,orangescrum,install
 
 http:
   - method: GET
@@ -29,4 +25,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009d1be4909a09d07a172d7c05ec65f31d148f0207a5bf92bb22d00c21601ccf5802203fbe2855718048698db8ca71dc6b9a608832f36427a8bc46a5b9bf83a4fb6b98:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e36721a4892737aa3749b1b9970cf00e6b0605905886136352703c672fa519b5022100e6b2f738351a15d804e3fc3d76f523fba679e89864d5a1cac6c342516cfae12a:922c64590222798bb761d5b6d8e72950

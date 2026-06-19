@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/classic-editor/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/classic-editor.txt
+      last_version: ../../../helpers/wordpress/plugins/classic-editor.txt
 
     extractors:
       - type: regex

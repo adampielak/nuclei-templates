@@ -47,4 +47,4 @@ http:
           - '<(?:pwg:)?SerialNumber>([^<]+)</(?:pwg:)?SerialNumber>'
           - '<(?:pwg:)?Model>([^<]+)</(?:pwg:)?Model>'
           - '<(?:pwg:)?MakeAndModel>([^<]+)</(?:pwg:)?MakeAndModel>'
-# digest: 4b0a00483046022100f6798c80fcb058cae61ead76e0c647380af9ed31a918952732e075b2c32179aa022100f8b9372feffbdb530507473814ef619a323735b20c39f1f927b7a61474573895:922c64590222798bb761d5b6d8e72950
+

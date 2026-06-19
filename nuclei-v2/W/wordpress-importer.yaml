@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/wordpress-importer/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/wordpress-importer.txt
+      last_version: ../../../helpers/wordpress/plugins/wordpress-importer.txt
 
     extractors:
       - type: regex

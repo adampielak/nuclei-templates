@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/sucuri-scanner/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/sucuri-scanner.txt
+      last_version: ../../../helpers/wordpress/plugins/sucuri-scanner.txt
 
     extractors:
       - type: regex

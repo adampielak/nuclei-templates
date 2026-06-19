@@ -1,4 +1,5 @@
 id: graphql-java-detect
+
 info:
   name: Graphql Java Detect
   author: princechaddha
@@ -14,7 +15,9 @@ http:
       - "{{BaseURL}}/api/graphql"
       - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
+
     body: '{"query":"queryy { __typename }"}'
+
     headers:
       Content-Type: application/json
     redirects: true
@@ -30,4 +33,4 @@ http:
         words:
           - "Invalid Syntax : offending token 'queryy'"
         part: body
-# digest: 4a0a00473045022100d2e265199abcd8974d914b950fcd2f53bba30a39808c357c6369a94a536a1307022078b3b48e345d75978f7337a5c79d3dc9acdba7caa3fc60c977dac38c4cb2210e:922c64590222798bb761d5b6d8e72950
+

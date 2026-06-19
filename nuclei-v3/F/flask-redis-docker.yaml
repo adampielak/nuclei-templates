@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Flask + Redis Queue + Docker"
-  tags: misconfig,exposure,flask,redis,docker,vuln
+  tags: misconfig,exposure,flask,redis,docker
 
 http:
   - method: GET
@@ -31,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203c8fb8336b3dcb9e676860fd05d9c74833ad16e9720bc855913b7ca2fa036de0022100b87928d4fb73e651d94a4edd0f6f67f23809b9362db934a0c19383f87ccad018:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100e3e661fc87c5aa63b2b067e230926b15bae0dec6f53ac16dd2bb848593be7883022060d24b6d580cbe239dad30849d695bc70af634409b3d96be650da04bbf4876ab:922c64590222798bb761d5b6d8e72950

@@ -1,32 +1,27 @@
-id: horde-unauthenticated 1
+id: horde-unauthenticated
+
 info:
-  author: pikpikcu
   name: Horde Groupware Unauthenticated
+  author: pikpikcu
   severity: critical
   tags: horde,unauth
+
 requests:
-- attack: sniper
-  matchers:
-  - condition: and
-    type: word
-    words:
-    - '<title>Horde :: User Administration</title>'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  payloads:
-    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-  raw:
-  - 'GET /horde/admin/user.php HTTP/1.1
+  - method: GET
+    path:
+      - "{{BaseURL}}/horde/admin/user.php"
+      - "{{BaseURL}}/admin/user.php"
+    headers:
+      Content-Type: text/html
 
-    Host: {{Subdomains}}
+    matchers-condition: and
+    matchers:
 
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+      - type: word
+        words:
+          - "<title>Horde :: User Administration</title>"
+        condition: and
 
-    Accept-Encoding: gzip, deflate
-
-    Content-Type: text/html
-
-    '
-  threads: 100
+      - type: status
+        status:
+          - 200

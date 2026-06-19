@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/wp-sitemap-page/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/wp-sitemap-page.txt
+      last_version: ../../../helpers/wordpress/plugins/wp-sitemap-page.txt
 
     extractors:
       - type: regex

@@ -1,4 +1,5 @@
 id: graphql-hypergraphql-detect
+
 info:
   name: Graphql Hypergraphql Detect
   author: princechaddha
@@ -14,7 +15,9 @@ http:
       - "{{BaseURL}}/api/graphql"
       - "{{BaseURL}}/query"
       - "{{BaseURL}}/"
+
     body: '{"query":"zzz { __typename }"}'
+
     headers:
       Content-Type: application/json
     redirects: true
@@ -30,4 +33,4 @@ http:
         words:
           - "Validation error of type InvalidSyntax: Invalid query syntax."
         part: body
-# digest: 490a0046304402200d1e98a70176f013171757c9fdc85905cc2096a054f85cd009710b29168cdec70220434f5fdd867e11981aae4953748491ea1027ad05c0e13db02e7bb37d57b35c09:922c64590222798bb761d5b6d8e72950
+

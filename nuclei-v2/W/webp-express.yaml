@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/webp-express/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/webp-express.txt
+      last_version: ../../../helpers/wordpress/plugins/webp-express.txt
 
     extractors:
       - type: regex

@@ -8,7 +8,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: http.favicon.hash:965982073
-  tags: openadmin,login,panel,discovery
+  tags: openadmin,login,panel
 
 http:
   - method: GET
@@ -24,4 +24,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cfc2b42f09d2d4cbc0c52ac61b862383a5b63ae1bc16e0bd4086cdc35f97cd49022100d797c8933409cfd34c16d7c54b5433db6891271657596c0412e69131d2f8570f:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450221008a729735bc7592cf11e813e2d4c7c3998920d57e32c3aad7110057b9bbeba70d022045277ec48cb07d0a39b7df8b885a7927e0ec489a7cfdb156c28f3deae878bc37:922c64590222798bb761d5b6d8e72950

@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/forminator/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/forminator.txt
+      last_version: ../../../helpers/wordpress/plugins/forminator.txt
 
     extractors:
       - type: regex

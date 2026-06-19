@@ -13,11 +13,12 @@ info:
 
 requests:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/nextend-facebook-connect/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/nextend-facebook-connect.txt
+      last_version: ../../../helpers/wordpress/plugins/nextend-facebook-connect.txt
 
     extractors:
       - type: regex
