@@ -1,29 +1,30 @@
-http:
-- matchers:
-  - part: body
-    regex:
-    - SG\.[a-zA-Z0-9-_]{22}\.[a-zA-Z0-9_-]{43}
-    type: regex
-  - negative: true
-    status:
-    - 429
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/sendgrid.env'
 id: sendgrid-env
+
 info:
+  name: SendGrid Env File Exposure
   author: DhiyaneshDk
-  classification:
-    cpe: cpe:2.3:a:sendgrid:sendgrid:*:*:*:*:wordpress:*:*:*
+  severity: medium
   description: SendGrid file is exposed containing environment variables.
   metadata:
-    max-request: 1
-    product: sendgrid
-    shodan-query: html:"sendgrid.env"
-    vendor: sendgrid
     verified: true
-  name: SendGrid Env File Exposure
-  severity: medium
-  tags: exposure,sendgrid,key,api,files,vuln
+    max-request: 1
+    shodan-query: html:"sendgrid.env"
+  tags: exposure,sendgrid,key,api,files
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/sendgrid.env"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - 'SG\.[a-zA-Z0-9-_]{22}\.[a-zA-Z0-9_-]{43}'
+
+      - type: status
+        status:
+          - 429
+        negative: true
+# digest: 4a0a0047304502205a88c97956ef974c3f3d8d386cf6c5821dc0b471e9fbb17a7c198d08441dd105022100d39f0631cd20d813b18f61131b18dc37002b08255ea6cb627443e72543f809c6:922c64590222798bb761d5b6d8e72950

