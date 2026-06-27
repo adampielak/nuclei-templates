@@ -1,22 +1,26 @@
 http:
-- matchers:
+- host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '{"username":"{{user}}"}'
+    - Instagram photos and videos from
   - status:
     - 200
     type: status
-  - part: body
-    type: word
-    words:
-    - Instagram profile with posts and stories
   matchers-condition: and
+  max-redirects: 2
   method: GET
   path:
-  - https://www.picuki.com/profile/{{user}}
+  - https://www.instagram.com/{{user}}
 id: instagram
 info:
   author: dwisiswant0
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
+    cvss-score: 0
     cwe-id: CWE-200
   description: Instagram user name information check was conducted.
   metadata:

@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     google-dork: intitle:"NoVus IP camera" -com
-  tags: camera,novus,edb,iot,panel
+  tags: iot,panel,camera,novus
 
 requests:
   - method: GET

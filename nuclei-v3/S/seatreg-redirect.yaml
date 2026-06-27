@@ -1,7 +1,7 @@
 id: seatreg-redirect
 
 info:
-  name: WordPress Plugin ‘SeatReg’  - Open Redirect
+  name: WordPress Plugin ‘SeatReg’ - Open Redirect
   author: Mariam Tariq
   severity: medium
   description: |
@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 3
-  tags: redirect,packetstorm,seatreg,wp-plugin,wp,wordpress,authenticated
+  tags: redirect,packetstorm,seatreg,wp-plugin,wp,wordpress,authenticated,vuln
 
 http:
   - raw:
@@ -46,5 +46,4 @@ http:
         regex:
           - '"seatreg\-admin\-nonce" value="([0-9a-z]+)"'
         internal: true
-
-# digest: 4b0a00483046022100de2ca36d24ece13aea8be9d0461aba69d091c9229b6a8e619d917f1eb6beca960221009ebfff983b4629eba67907d1fdbb6cfe6fa4458ba3fb171db2b7b637dd1db369:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220415b511c3a3a92f7501ce0e8c989acc4468c0f7403f4bdd3cf048f083332a1a30220431457b9b557d16ea57e029ab8d1b6ab5e7edd577abfa95d749077a9eaf751f2:922c64590222798bb761d5b6d8e72950
