@@ -1,43 +1,39 @@
 id: ldap-interactsh-detect
-info:
-  author: darses
-  classification:
-    cpe: cpe:2.3:a:projectdiscovery:interactsh:*:*:*:*:*:*:*:*
-  description: 'Detect Interactsh LDAP service. Interactsh is used for Out-of-band
-    Application Security Testing (OAST).
 
-    '
+info:
+  name: Interactsh LDAP server - Detect
+  author: darses
+  severity: low
+  description: |
+    Detect Interactsh LDAP service. Interactsh is used for Out-of-band Application Security Testing (OAST).
   metadata:
+    verified: true
     max-request: 1
+    vendor: projectdiscovery
     product: interactsh
     shodan-query: product:"Interactsh LDAP Server"
-    vendor: projectdiscovery
-    verified: true
-  name: Interactsh LDAP server - Detect
+  classification:
+    cpe: cpe:2.3:a:projectdiscovery:interactsh:*:*:*:*:*:*:*:*
   reference: https://github.com/projectdiscovery/interactsh
-  severity: low
   tags: js,ldap,detect,discovery,interactsh
+
 javascript:
-- args:
-    Host: ldap://{{Host}}
-    Port: 389
-  code: 'let ldap = require(''nuclei/ldap'');
+  - code: |
+      let ldap = require('nuclei/ldap');
+      let cfg = new ldap.Config();
+      cfg.Upgrade = true;
+      let client = ldap.Client(Host, Port, cfg);
+      cn = client.Search('(objectinterface=*)', 'cn');
+      Export((cn));
 
-    let cfg = new ldap.Config();
+    args:
+      Host: "ldap://{{Host}}"
+      Port: 389
 
-    cfg.Upgrade = true;
-
-    let client = ldap.Client(Host, Port, cfg);
-
-    cn = client.Search(''(objectinterface=*)'', ''cn'');
-
-    Export((cn));
-
-    '
-  matchers:
-  - dsl:
-    - success == true
-    - len(resp) != 0
-    - contains(resp, "cn=interactsh")
-    type: dsl
-  stop-at-first-match: true
+    stop-at-first-match: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'success == true'
+          - 'len(resp) != 0'
+          - contains(resp, "cn=interactsh")
