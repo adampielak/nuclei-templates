@@ -1,51 +1,46 @@
-id: wp_user_stylesheet_switcher-4735dfe7-ad24-4427-8760-64ff4acd95ed
-
-info:
-  name: >
-    WP User Stylesheet Switcher <= v2.2.0 - Cross-Site Request Forgery to Stored Cross-Site Scripting
-  author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4735dfe7-ad24-4427-8760-64ff4acd95ed?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/wp-user-stylesheet-switcher/"
-    google-query: inurl:"/wp-content/plugins/wp-user-stylesheet-switcher/"
-    shodan-query: 'http.html:"wp-content/plugins/wp-user-stylesheet-switcher/"'
-  tags: cve,wordpress,wp-plugin,wp-user-stylesheet-switcher,medium,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/wp-user-stylesheet-switcher/readme.txt"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wp-user-stylesheet-switcher
+  - dsl:
+    - compare_versions(version, '<= v2.2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wp-user-stylesheet-switcher/readme.txt'
+  redirects: true
+id: wp_user_stylesheet_switcher-4735dfe7-ad24-4427-8760-64ff4acd95ed
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wp-user-stylesheet-switcher/
+    google-query: inurl:"/wp-content/plugins/wp-user-stylesheet-switcher/"
+    shodan-query: http.html:"wp-content/plugins/wp-user-stylesheet-switcher/"
+  name: 'WP User Stylesheet Switcher <= v2.2.0 - Cross-Site Request Forgery to Stored
+    Cross-Site Scripting
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wp-user-stylesheet-switcher"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= v2.2.0')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4735dfe7-ad24-4427-8760-64ff4acd95ed?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,wp-user-stylesheet-switcher,medium,candidate

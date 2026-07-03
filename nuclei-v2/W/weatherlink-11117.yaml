@@ -1,5 +1,4 @@
 id: weatherlink-configuration
-
 info:
   name: WeatherLinkIP Configuration
   author: dhiyaneshDK
@@ -7,12 +6,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6007
   tags: panel
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers-condition: and
     matchers:
       - type: word

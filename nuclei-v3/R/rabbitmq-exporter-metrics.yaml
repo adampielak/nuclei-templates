@@ -1,29 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - rabbitmq_up
+    - rabbitmq_exporter_build_info
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
 id: rabbitmq-exporter-metrics
-
 info:
-  name: RabbitMQ Exporter
   author: DhiyaneshDk
-  severity: low
+  description: RabbitMQ Exporter is exposed.
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"RabbitMQ Exporter"
-  tags: rabbitmq,exposure,debug
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/metrics"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "rabbitmq_up"
-          - "rabbitmq_exporter_build_info"
-        condition: and
-
-      - type: status
-        status:
-          - 200
+    verified: true
+  name: RabbitMQ Exporter
+  severity: low
+  tags: rabbitmq,exposure,debug,misconfig
