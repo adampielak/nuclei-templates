@@ -10,6 +10,7 @@ info:
   classification:
     cpe: cpe:2.3:a:concrete5:concrete5:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)install concrete5"}) || any(each(service["html.titles"]), {# matches "(?i)concrete5"})
     fofa-query:
       - title="install concrete5"
       - title="concrete5"

@@ -11,6 +11,7 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:dzzoffice:dzzoffice:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "-1961736892"
     fofa-query:
       - title="dzzoffice"
       - icon_hash=-1961736892

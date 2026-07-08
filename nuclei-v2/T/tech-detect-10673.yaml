@@ -2635,4 +2635,38 @@ requests:
       - type: word
         name: akamai
         words:
-          - "AkamaiGHo
+          - "AkamaiGHost"
+        part: header
+      - type: word
+        name: sucuri
+        words:
+          - "Sucuri/Cloudproxy"
+        part: header
+      - type: word
+        name: Imperva
+        words:
+          - "X-Iinfo:"
+        part: header
+      - type: word
+        name: ddos-guard
+        words:
+          - "ddos-guard"
+        part: header
+      - type: word
+        name: dosarrest
+        words:
+          - "DOSarrest"
+          - "X-DIS-Request-ID:"
+        part: header
+      - type: word
+        name: arvancloud
+        words:
+          - "ArvanCloud"
+          - "AR-Request-ID:"
+        part: header
+      - type: word
+        name: aem_cms
+        words:
+          - "/etc/clientlibs/"
+          - "/content/dam/"
+        part: body
