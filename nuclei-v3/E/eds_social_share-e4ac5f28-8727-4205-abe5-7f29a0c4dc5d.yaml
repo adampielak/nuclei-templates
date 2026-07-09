@@ -2,7 +2,7 @@ id: eds_social_share-e4ac5f28-8727-4205-abe5-7f29a0c4dc5d
 
 info:
   name: >
-    Ed's Social Share <= 2.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode Attributes
+    Ed's Social Share <= 3.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode Attributes
   author: topscoder
   severity: low
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0')
+          - compare_versions(version, '<= 3.0')

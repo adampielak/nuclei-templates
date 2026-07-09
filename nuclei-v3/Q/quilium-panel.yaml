@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.html:"CMS Quilium"
-  tags: panel,quilium,login,detect
+  tags: panel,quilium,login,detect,discovery
 
 http:
   - method: GET
@@ -42,5 +42,4 @@ http:
         group: 1
         regex:
           - 'CMS Quilium ([a-f0-9.]+)'
-
-# digest: 490a004630440220738aca81d32bb043c715375df9d608ffd149a084da538bdf2c9805cd429b4d4302203cb4570f5d97a8127073540c1e248c55e99b64db67409635cfff4c6811b2b3e3:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b7244e07e77fef7d3f39c1dd12d3056db5286299bba4df2c8b33601b949c15d6022100e0e6bbd842837f2fdf58c580163b6e88a892f210f3a86df3bfe529067e191756:922c64590222798bb761d5b6d8e72950

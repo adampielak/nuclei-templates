@@ -3,6 +3,7 @@ info:
   name: Find Git log exposure
   author: Clark
   severity: medium
+
 requests:
   - method: GET
     path:
@@ -27,11 +28,13 @@ requests:
       - "{{BaseURL}}/.gitignore"
       - "{{BaseURL}}/.git/refs/tags"
       - "{{BaseURL}}/.git/packed-refs"
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - 'root'
@@ -40,4 +43,5 @@ requests:
           - 'COMMIT_EDITMSG'
           - 'pack-refs'
           - 'gitignore'
+
         part: body
