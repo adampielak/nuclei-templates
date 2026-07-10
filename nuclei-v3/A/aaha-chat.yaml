@@ -1,27 +1,33 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - og:title
-  matchers-condition: and
-  method: GET
-  path:
-  - https://www.aahachat.org/profile/{{user}}/
 id: aaha-chat
+
 info:
+  name: Aaha chat User Name Information - Detect
   author: dwisiswant0
+  severity: info
+  description: Aaha chat user name information check was conducted.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
-  description: Aaha chat user name information check was conducted.
   metadata:
     max-request: 1
-  name: Aaha chat User Name Information - Detect
-  severity: info
-  tags: osint,osint-social,aaha-chat
+  tags: osint,osint-social,aaha-chat,discovery
+
 self-contained: true
+
+http:
+  - method: GET
+    path:
+      - "https://www.aahachat.org/profile/{{user}}/"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "og:title"
+# digest: 490a004630440220786423ab6a750e6354f50ad00b91a75f974ae17840c75509da0ec40b10087f11022040df9300242eb6b9be02b524bd3648ca7f2f96dd69d905ea6c5d5e418b49de96:922c64590222798bb761d5b6d8e72950

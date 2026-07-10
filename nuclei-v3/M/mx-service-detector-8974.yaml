@@ -1,12 +1,10 @@
 id: mx-service-detector
-
 info:
   name: E-mail service detector
   author: binaryfigments
   severity: info
   description: Check the email service or spamfilter that is used for a domain.
   tags: dns
-
 dns:
   - name: "{{FQDN}}"
     type: MX

@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1575154882
-  tags: misconfig,exposure,install,netsparker
+  tags: misconfig,exposure,install,netsparker,vuln
 
 http:
   - method: GET
@@ -33,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f324c02149012072f622d3a0feec932e0e0d8ccd743000aea59bf4f739d5a204022100f2d8eadc1e7d0fc28defb17d786becf858a4ce3e64a02c95a0e569c5bbc035dd:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220424a52f337894969b9d9708028de7201deb320dc5429dc150d8a7953381bc06c022057e968ccf480ac1eac071cd5952d1b75120ffb27a0aea70d3c1269362ce6595d:922c64590222798bb761d5b6d8e72950
