@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-hobby,3dtoday,discovery
+  tags: osint,osint-hobby,3dtoday
 
 self-contained: true
 
@@ -30,4 +30,5 @@ http:
         part: body
         words:
           - "Блог владельца 3d-принтера"
-# digest: 4a0a00473045022100fbca3eed6f4e053d51c81fb6378e7fabf9e0542f179aad746df727e5085a6cdc022067823579bbb9fa9ad9496f2bf324e80ff033f05864579348ce7f25e26b78d3db:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022014810c77bf8f64a961985358504463896bea05b19460f016981258ff066f0f6a02210084e52079e3d3c0bc6c8de79f706661dc28a866bd5926a6cf50c0fdb58aba5425:922c64590222798bb761d5b6d8e72950

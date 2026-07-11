@@ -7,15 +7,11 @@ info:
   description: Combodo iTop is susceptible to the Installation page exposure due to misconfiguration.
   reference:
     - https://www.itophub.io/wiki/page?id=2_4_0:install:install_wizard
-  classification:
-    cpe: cpe:2.3:a:combodo:itop:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
-    vendor: combodo
-    product: itop
     shodan-query: html:"Installation" html:"itop"
-  tags: misconfig,itop,install,exposure,vuln
+  tags: misconfig,itop,install,exposure
 
 http:
   - method: GET
@@ -37,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022012550911eb531d4bcfc8ad9121506d36d7297bc8cc4a3c7e291d5ef92fb2c8b2022100ced5f4208cb4de31a8c7a861f358cd1b9da8232abbdb361c29e881db2a412637:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220471fdc699623440130dd74256b7869b21664828661f159a94535029f6c2c2e45022100da8b7c1e8bef0e17c904d5fa71cc374b4d1d05bcc995195d8f13adc7a1ace2a8:922c64590222798bb761d5b6d8e72950

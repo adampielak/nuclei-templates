@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Lomnido Login"
-  tags: lomnido,panel,login,detect,discovery
+  tags: lomnido,panel,login,detect
 
 http:
   - method: GET
@@ -31,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022063c1c8c3388780e1bde53822e4b919194611f57e8f79aee9f31c53d4f096373702210090a80e65662fed0e91ab939655bc2e8c8335fc522cbaf25f51a49b84f7d700c1:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210093bdf138d4cb179ab18bec6343b17665e64c28f8c33d1291a18f6f732c59484e02202fdc09b3a6dfb852b32a4361a9271ab852161dc59772744f2d90df1af0fba0b3:922c64590222798bb761d5b6d8e72950

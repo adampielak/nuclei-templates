@@ -9,7 +9,7 @@ info:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:
     max-request: 2
-  tags: cloud,creds-stuffing,login-check,postman,vuln
+  tags: login-check,postman,creds-stuffing
 
 self-contained: true
 
@@ -51,4 +51,5 @@ http:
           - "contains(to_lower(body), 'identity.postman.co/continue')"
           - "status_code==200"
         condition: and
-# digest: 490a004630440220691ace07791fce89c3448fcd1aba6fe68bbbbfa5611951514e71b8a08f96daa802200b5c9e06cc1a3653d566a8733a167e60e7f134ec44714b08f03c9fa51fc16ac6:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100a5cc97815eecb4cac96601b204c3eabb0ad1e9c0d8dd7480f813f38e9014617202200422cee6d3374b8b07c6ea34ca09d7e6731d1d087a29386e8d921021835af829:922c64590222798bb761d5b6d8e72950

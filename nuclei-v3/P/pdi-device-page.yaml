@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"PDI Intellifuel"
-  tags: exposure,pdi,intellifuel,panel,discovery
+  tags: exposure,pdi,intellifuel,panel
 
 http:
   - method: GET
@@ -27,4 +27,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202df9ca0d0c86b932b3a2da66ba4f97c143a1a7a502214f9b1ff742283cd073fe022100a4a442ff8664e06a7f671b2c1a28a3cd6cc9ea0b0ab61138a5de80f65bedc4cc:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502203b11dd4e74e4fda909ca9f75bcafe595298d9aa20b5f2eb464f28eef307a29c6022100ed556ea41e84cefdc27c3f1c65524239a95a8c14477db91e7556f9b6bf0cbc42:922c64590222798bb761d5b6d8e72950

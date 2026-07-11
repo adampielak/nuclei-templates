@@ -1,5 +1,4 @@
 id: plesk-stat
-
 info:
   name: Plesk-stat (Log analyzer)
   author: th3.d1p4k
@@ -7,24 +6,20 @@ info:
   reference:
     - http://www.webalizer.org
   tags: config,exposure,plesk
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/plesk-stat/"
-
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: word
         words:
           - 'Index of /plesk-stat'
           - 'Parent Directory'
         condition: and
-
       - type: word
         words:
           - 'anon_ftpstat'

@@ -8,18 +8,13 @@ info:
     Dataease Login Panel is discovered
   reference:
     - https://github.com/dataease/dataease
-  classification:
-    cpe: cpe:2.3:a:dataease:dataease:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     vendor: dataease
     product: dataease
-    shodan-query:
-      - html:"Dataease"
-      - http.html:"dataease"
-    fofa-query: body="dataease"
-  tags: login,panel,dataease,discovery
+    shodan-query: html:"Dataease"
+  tags: login,panel,dataease
 
 http:
   - method: GET
@@ -36,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022057719b13ff931f4622cc68d355fe7bb94df625244724f1a59a73b398579f6bbd022100fb4b234e5fa3d9b8371c885e3915c6992aaf26e5b5b583712210538f11a8c9d3:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022035578b48fcbc5bdea7161bab8d6eaca5c3f28a38bb06807608d83d004997ddb4022100d8f3b395b83e4fd97773ffaa04a6686e84c3c9f4db37463e210d55560d006dc8:922c64590222798bb761d5b6d8e72950

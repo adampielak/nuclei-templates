@@ -10,7 +10,7 @@ info:
     - https://sky.com
   metadata:
     max-request: 1
-  tags: phishing,sky,osint,discovery
+  tags: phishing,sky,osint
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"sky.com")'
-# digest: 490a00463044022023dd5858ce1a4cd3853a55294669fdb1e86a6efcbb7d84b68e8b5eeb72224c36022071fcd92639cbf4b364dbef461d2d42f5a7bc0954a8ddf13e5529c7b65b7c5ade:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220209b8188bcc584c2caafcb4e4ad0d90882898e22405cd8f4183a60b8b857535f02205bcd08640b04a83069f2a84f034d6eb375c5f1df00441740fd7ea7fce77626f6:922c64590222798bb761d5b6d8e72950

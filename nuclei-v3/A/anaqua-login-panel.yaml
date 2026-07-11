@@ -8,12 +8,13 @@ info:
     Checks for the presence of Anaqua login page
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Anaqua User Sign On""
-  tags: anaqua,login,panel,discovery
+  tags: anaqua,login,panel
 
 http:
   - method: GET
@@ -32,4 +33,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220446b7876456231cfd209b3b39f4fbdfe9e3ba15f3d16a409825a4f76181622c202210082dc0e424c5064999043703988bf01ee4784b66b33156e423b571853d466baa3:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022060d150b256f40e43d6af397522ba3bbd382272d4d9eb1e0a051ff5991f287eac022100ec26375c36ddb970378b49e6bc3d54a8a4ece3d7343064fe43746bb9be38d497:922c64590222798bb761d5b6d8e72950

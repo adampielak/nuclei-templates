@@ -10,12 +10,14 @@ info:
   reference:
     - https://snyk.io/blog/setting-up-ssl-tls-for-kubernetes-ingress/
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: ssl:"Kubernetes Ingress Controller Fake Certificate"
-  tags: ssl,tls,kubernetes,self-signed,vuln
+  tags: ssl,kubernetes,tls,self-signed
+
 ssl:
   - address: "{{Host}}:{{Port}}"
+
     matchers:
       - type: dsl
         dsl:
@@ -27,4 +29,3 @@ ssl:
       - type: dsl
         dsl:
           - '"Issuer: " + issuer_cn'
-# digest: 490a0046304402201211fbddb309f4e3a4a66a57abf74295a4837e33885e053b51ec82cf57ab958102206fcea3746263e36436cff69bda661b069ee660257bb7e1c9499c483799082c09:922c64590222798bb761d5b6d8e72950

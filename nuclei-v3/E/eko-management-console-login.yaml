@@ -9,13 +9,14 @@ info:
     - https://ekoenergetyka.com.pl/software-solutions/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Charger Management Console"
     google-query: intitle:"Charger Management Console"
-  tags: panel,eko,discovery
+  tags: panel,eko
 
 http:
   - method: GET
@@ -32,4 +33,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100914a8b4ee569e01749443144d38c7c04dad8e558cfdcf1aa3067caeed6f8903d02210096c56f5838e7f3c593be9aa674cc1a6789f6d5b8a4636bf442704c91244d765c:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220537e31ebaf2eae9d387383eec9ee82c72dc1d9d9eed64043b3f14f8d55bcddd202206e83f8e5a35c44f3bf8f5701440931fe44474110a8a62ddebf44cfd051d4f7c5:922c64590222798bb761d5b6d8e72950

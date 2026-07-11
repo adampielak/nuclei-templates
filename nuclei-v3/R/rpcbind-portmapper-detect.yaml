@@ -5,16 +5,17 @@ info:
   author: geeknik
   severity: info
   description: Rpcbind portmapper was detected.
-  reference:
-    - https://book.hacktricks.xyz/pentesting/pentesting-rpcbind
+  reference: https://book.hacktricks.xyz/pentesting/pentesting-rpcbind
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 2
     verified: true
-    max-request: 1
     shodan-query: port:"111"
-  tags: network,rpcbind,portmap,detect,detection,tcp
+  tags: network,rpcbind,portmap
+
 tcp:
   - inputs:
       - data: 8000002836ed646d0000000000000002000186a0000000040000000400000000000000000000000000000000
@@ -22,10 +23,11 @@ tcp:
 
     host:
       - "{{Hostname}}"
-    port: 111
+      - "{{Host}}:111"
 
     matchers:
       - type: word
         words:
           - "/run/rpcbind.sock"
-# digest: 490a004630440220021918bddfad2db7fcd420c2354c0cee66c1b53404a902a5eb0fd7616563b0940220102a5b1ebff43482be32759ae3ba76f53bfbf851e04fa6b80997688ea9a14f80:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/02/06

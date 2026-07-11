@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,couchsurfing,discovery
+  tags: osint,osint-social,couchsurfing
 
 self-contained: true
 
@@ -32,4 +32,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206fa5bd57119faf277277b138cfd826fd84232ad6e6d4956354b4ee07cc3fde64022100c0e6b66dafb07e29fc15dbbbb44a36310323fc7d195a289184d606cb1cc259cb:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220688d5b0f56c51dea5531d2d828fcf9a8f0bc2bfc967cb355c5c625f94e9d173602200fcbdf8f8bb24f170cc2cf20a4e6ad7c7a761dc6ee93b66ab09983e6ee75233a:922c64590222798bb761d5b6d8e72950

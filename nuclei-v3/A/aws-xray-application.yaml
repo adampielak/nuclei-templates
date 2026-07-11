@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"AWS X-Ray Sample Application"
-  tags: misconfig,aws,x-ray,amazon,vuln
+  tags: misconfig,aws,x-ray,amazon
 
 http:
   - method: GET
@@ -33,4 +33,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a873bd333e4b4e8a6d94df8ee85ecfdf8bad4f38bd55eb69060c621c3c2f4642022100d597b5224b40ed8432c5dad2be34d96141884310d795934cde2e0c012a6b4140:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100dbe3c017b302cdf46850fa902720549499d2f9397a3fc4f9cfa7d8b4a6cec319022067762d58480d093919ffeda2e012fb6e00014e4b2c8b21f764a71a49d829a7bb:922c64590222798bb761d5b6d8e72950

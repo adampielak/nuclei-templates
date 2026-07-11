@@ -9,7 +9,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: title:"AddOnFinancePortal"
-  tags: panel,addon,finance,detect,discovery
+  tags: panel,addon,finance,detect
 
 http:
   - method: GET
@@ -26,4 +26,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f3ba8b347c8cda39f3d1bc14b77b26590dbd8e7f7989bb43775fe38bdf018bb50220443349085d6e845e0e5a5d663ca47c60accd6481179cc24a7abb3855c5f92a1a:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502206409d6b70ca25b45a79369512e7e277e896b66bf45d0994de8c7fe6037165087022100aa0732f67e7aa217c670b1552d6791576b62efe440758562e0bf0f6b0a4892ab:922c64590222798bb761d5b6d8e72950

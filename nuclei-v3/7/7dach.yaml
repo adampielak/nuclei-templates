@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,7dach,discovery
+  tags: osint,osint-social,7dach
 
 self-contained: true
 
@@ -30,4 +30,5 @@ http:
         part: body
         words:
           - "Информация / Профиль"
-# digest: 4a0a004730450220432b7f8b98e3d2b9dc70023fc30daf48bf3996beec6b5c7833c7852ae964e564022100e315fc639ac69477b6e4d10be32081b8b6c7e900bef5c6a11662b2d486c0edfe:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100af962b98d6becdb004ae0164d9ebeb317e6099fb9892146eb72f830423f08537022007f7f7773f87b35aeb81028afcfd25b9cee0077cba73c73be07f93e97a133a10:922c64590222798bb761d5b6d8e72950

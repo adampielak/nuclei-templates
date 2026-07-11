@@ -7,24 +7,15 @@ info:
   description: Openfire Admin Console login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:igniterealtime:openfire:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     vendor: igniterealtime
     product: openfire
-    shodan-query:
-      - http.title:"Openfire Admin Console"
-      - http.title:"openfire"
-      - http.title:"openfire admin console"
-    fofa-query:
-      - title="openfire"
-      - title="openfire admin console"
-    google-query:
-      - intitle:"openfire admin console"
-      - intitle:"openfire"
-  tags: panel,openfire,admin,console,igniterealtime,discovery
+    shodan-query: http.title:"Openfire Admin Console"
+  tags: panel,openfire,admin,console
 
 http:
   - method: GET
@@ -46,4 +37,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f4cb64ff352ca5a684c11b584b99727c875991222d847048aeab273f77772cf902206f92f8a20b97edad8a4b4fbcd556013dc15af64ccfa1d874dc034332a3145042:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100895147705e4cf3f6daa5ae87f475f70a96397d067dff7a4714aa6bfdd3f922e702210093672b7a991de96b8a85fef60c735bb12475b81cda3f65588c652f002095acf2:922c64590222798bb761d5b6d8e72950

@@ -10,7 +10,7 @@ info:
     - https://ticketmaster.com
   metadata:
     max-request: 1
-  tags: phishing,ticket-master,osint,discovery
+  tags: phishing,ticket-master,osint
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"ticketmaster.com")'
-# digest: 490a00463044022016deb0f098791286a33def2c06f0ac59b1da225f9fbb4321ef25aa39c4e4a68702200357747ba1c749449a444f52b981483a82c12159af3ed419c336158b612da4b1:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e213b4b24307a3fa905e364a9e389b1b3eb8900eb907aa8e5c2194704d00453f022100a14e4e87b3b26a512180f6c42ab0806c305b672b4e8ecaca63c241749644b2d0:922c64590222798bb761d5b6d8e72950

@@ -7,15 +7,13 @@ info:
   description: CasaOS login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:o:icewhale:casaos:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: html:"CasaOS"
-    product: casaos
-    vendor: icewhale
-  tags: panel,casaos,login,detect,discovery
+  tags: panel,casaos,login,detect
 
 http:
   - method: GET
@@ -38,4 +36,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e79391b92d245f8ec83d9550a8505de1c15f323e10edcca3efdab1f3cf9a8bd502210098e3b3fd841097ed1337c4c806216b3673f41eb89f4d9911852f5db4ed478f4f:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100c799640ec4626d77a41a026a6fca4a0d4e40d11930fe33e5e339a24c83c91fb3022100ecc33a8a3b0f5b797244a541d23beef4b08bd6ae3c47c5dcef9429507ef1d30c:922c64590222798bb761d5b6d8e72950

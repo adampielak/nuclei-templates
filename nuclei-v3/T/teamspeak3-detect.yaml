@@ -7,17 +7,17 @@ info:
   description: |
     ServerQuery is a commandline based administration tool/feature of TeamSpeak 3 server.
   metadata:
-    verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: product:"TeamSpeak 3 ServerQuery"
-  tags: network,service,teamspeak3,detect,detection,tcp,discovery
+    verified: true
+  tags: network,service,teamspeak3
 tcp:
   - inputs:
       - data: "\r\n"
 
     host:
       - "{{Hostname}}"
-    port: 2002
+      - "{{Host}}:2002"
 
     matchers:
       - type: word
@@ -25,4 +25,3 @@ tcp:
           - "TS3"
           - "TeamSpeak 3 ServerQuery interface"
         condition: and
-# digest: 4b0a00483046022100c8802834a8ff4e0ee16123ea58ea1e54b3d8489f15ee22b3b7cf363b453659ea0221008fda002d672bcd1fbb81fd186d0adfd5810923bab2e2720485a2eb87db1faf30:922c64590222798bb761d5b6d8e72950

@@ -9,12 +9,13 @@ info:
     - https://www.exploit-db.com/ghdb/6811
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     google-query: intitle:"Total Web Solutions" + "Meter Name"
-  tags: panel,edb,discovery
+  tags: panel,edb
 
 http:
   - method: GET
@@ -30,4 +31,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200d282a63a882791364aa05bea62c780e558b1ee9ba7385ed78cd266204125517022029664c1fb951e1ca09a6b2089c93d65cde5b978f6257fc7978743062ecec6936:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100e1a67f71184da37e6993a27ae592bd680d3f2dc18ea540da040c3d20e13bf5ae022079899c3f96dc83d45ad75fc05cede8881520c95a776881e019f75f838805a611:922c64590222798bb761d5b6d8e72950

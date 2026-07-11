@@ -9,7 +9,7 @@ info:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:
     max-request: 2
-  tags: cloud,creds-stuffing,login-check,atechmedia,codebase,vuln
+  tags: login-check,atechmedia,codebase,creds-stuffing
 
 self-contained: true
 
@@ -52,4 +52,4 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a0047304502201d0976538553d5e9019320a5b30170f310554a6e16c5c0890456365906e903590221008f02abaf1f16492712cc6cbc07b16a2867d19d682b5d83da367a73d058c52262:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502203211e4c4a8ee586c921ef85318df427da89889286ef172f41e919af244cf9f29022100fdcdaafd216a411845f5a049a99435d301f1023257f461d33f360641023c2451:922c64590222798bb761d5b6d8e72950

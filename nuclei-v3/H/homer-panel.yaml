@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-417785140
-  tags: panel,homer,detect,login,discovery
+  tags: panel,homer,detect,login
 
 http:
   - method: GET
@@ -30,4 +30,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022076fb8e14bb3fca4938caf2d68b6d2199eba6d3fc0873bf1733ce40e7586c29f30221008915a57cdad926e4bed403916e2569c075848bfd034549395da0761fcd31c557:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402205a66b6311073b9db6be1adaf8645f447de55ab88b96ba072654e506860fafc2902202605d074beaa1b5b97b637a0bf793172572b3fd87c83e9224cf36c5b30c8f159:922c64590222798bb761d5b6d8e72950

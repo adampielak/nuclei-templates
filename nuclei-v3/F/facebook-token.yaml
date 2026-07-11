@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: facebook,exposure,tokens,vuln
+  tags: facebook,exposure,tokens
 
 http:
   - method: GET
@@ -22,4 +22,5 @@ http:
         part: body
         regex:
           - (?i)(?:facebook)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-f0-9]{32})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 490a0046304402202c5900546c3cce2bc2a799091c4a5c0d9cc2d3e38d07d89c26ee8c5ea7f9f7560220605856ad1da1e7540626a0907235a708eec53b32ff297e26c9a1c977615c4653:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402204e3bfd126732b58218029a246773aafd30867498b81d88d94835e406c88c01df02200ab092c8a47993769495f6507312a5baebd9024dde9f1c26ba838f8aeb737897:922c64590222798bb761d5b6d8e72950

@@ -10,10 +10,11 @@ info:
     - https://linux.die.net/man/1/rsync
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: network,rsyncd
   metadata:
-    max-request: 1
-  tags: network,rsyncd,detect,detection,tcp,discovery
+    max-request: 2
 
 tcp:
   - inputs:
@@ -21,7 +22,7 @@ tcp:
 
     host:
       - "{{Hostname}}"
-    port: 873
+      - "{{Host}}:873"
 
     matchers:
       - type: word
@@ -34,4 +35,5 @@ tcp:
       - type: regex
         regex:
           - 'RSYNCD: \d\d.\d'
-# digest: 4b0a004830460221008aff12cd416ddbafda78e66430ce41f3b38036221e7338fc51c414f508f0da080221009198660b8c2694314c266e536a19e660410b67cac49725f3f1d5843032db5aaa:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/02/06

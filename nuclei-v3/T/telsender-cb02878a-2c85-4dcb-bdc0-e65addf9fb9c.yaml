@@ -6,19 +6,19 @@ info:
   author: topscoder
   severity: high
   description: >
-    The TelSender plugin for WordPress is vulnerable to DOM-Based Cross-Site Scripting in all versions up to, and including, 1.14.14. This is due to insufficient input sanitization when processing Telegram API responses containing attacker-controlled chat titles. This makes it possible for unauthenticated attackers to inject malicious scripts via Telegram chat titles that execute when an administrator opens the TelSender settings page and clicks the "Tested" button.
+    
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb02878a-2c85-4dcb-bdc0-e65addf9fb9c?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb02878a-2c85-4dcb-bdc0-e65addf9fb9c?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/telsender/"
     google-query: inurl:"/wp-content/plugins/telsender/"
     shodan-query: 'http.html:"wp-content/plugins/telsender/"'
-  tags: cve,wordpress,wp-plugin,telsender,high,production
+  tags: cve,wordpress,wp-plugin,telsender,high,candidate
 
 http:
   - method: GET

@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: easypost,exposure,tokens,vuln
+  tags: easypost,exposure,tokens
 
 http:
   - method: GET
@@ -22,4 +22,5 @@ http:
         part: body
         regex:
           - EZAK(?i)[a-z0-9]{54}
-# digest: 4b0a0048304602210080817ad2817dffcfeace3c2eab09090b4bc0e002ea22196b9f56e9c200a436f2022100d74a8ae79bc864327f9beaabe4ca45d7f3a324da41617efe754f39ce07aa87a8:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402207b3ca806144f1274916a2da0c470ca51f372f23a2b3ff21e7fb32ae40c78749c0220381129702526001d140a2de8ef6bc03ea108e7f49809c596f06959861ca76263:922c64590222798bb761d5b6d8e72950

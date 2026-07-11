@@ -6,19 +6,19 @@ info:
   author: topscoder
   severity: low
   description: >
-    The Plus Addons for Elementor plugin for WordPress was vulnerable to Authenticated (Contributor+) Stored Cross-Site Scripting via the Button widget's `custom_attributes` setting in versions up to and including 6.4.11. The `render` function in `modules/widgets/tp_button.php` passed the raw `custom_attributes` string through `tp_senitize_js_input()`. This filter is bypassable. The issue is patched in version 6.4.12.
+    
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c3217f9-67e5-488d-b80a-49a61678fb98?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c3217f9-67e5-488d-b80a-49a61678fb98?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/the-plus-addons-for-elementor-page-builder/"
     google-query: inurl:"/wp-content/plugins/the-plus-addons-for-elementor-page-builder/"
     shodan-query: 'http.html:"wp-content/plugins/the-plus-addons-for-elementor-page-builder/"'
-  tags: cve,wordpress,wp-plugin,the-plus-addons-for-elementor-page-builder,low,production
+  tags: cve,wordpress,wp-plugin,the-plus-addons-for-elementor-page-builder,low,candidate
 
 http:
   - method: GET

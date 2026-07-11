@@ -2,17 +2,17 @@ id: smtp-user-enum
 
 info:
   name: SMTP User Enumeration
-  author: pussycat0x,userdehghani
+  author: pussycat0x
   severity: medium
   description: |
     enumerate the users on a SMTP server by issuing the VRFY/EXPN commands
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-enum-users.html
   metadata:
-    verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: smtp
-  tags: network,enum,smtp,mail,tcp,discovery
+    verified: true
+  tags: network,enum,smtp,mail
 
 tcp:
   - inputs:
@@ -23,7 +23,7 @@ tcp:
 
     host:
       - "{{Hostname}}"
-    port: 25,2525,465,587
+      - "{{Host}}:25"
 
     attack: batteringram
     payloads:
@@ -38,4 +38,3 @@ tcp:
           - "252"
           - "250"
         condition: or
-# digest: 490a004630440220314d97a1538349418f1c1f44eb1cebfb049d692e8ade1c2795a1a67c47a4dd960220028f035b5d52a220cbe526fcf2941c464683f19f2e9739f1b5530145b1020001:922c64590222798bb761d5b6d8e72950

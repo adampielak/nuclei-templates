@@ -2,7 +2,7 @@ id: ultimate_classified_listings-6003ad4e-f4ad-49bf-8d83-3da4945456a4
 
 info:
   name: >
-    Ultimate Classified Listings <= 1.6 - Authenticated (Contributor+) Local File Inclusion
+    Ultimate Classified Listings <= 1.7 - Authenticated (Contributor+) Local File Inclusion
   author: topscoder
   severity: low
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6')
+          - compare_versions(version, '<= 1.7')

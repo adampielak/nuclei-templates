@@ -1,48 +1,29 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - 'Server Version:'
-    - 'Server Built:'
-  - part: body
-    type: word
-    words:
-    - Apache Server Status for
-  matchers-condition: or
-  method: GET
-  path:
-  - '{{BaseURL}}/server-info'
-  - '{{BaseURL}}/server-info/'
-  - '{{BaseURL}}/server-status/common.htm'
-  - '{{BaseURL}}/server-status'
-  - '{{BaseURL}}/server-status/'
-  - '{{BaseURL}}/server-status?full'
-  - '{{BaseURL}}/status'
-  - '{{BaseURL}}/..;/status'
-  - '{{BaseURL}}/;/status'
-  - '{{BaseURL}}/%2e/status'
-  - '{{BaseURL}}/balancer-manager'
-  - '{{BaseURL}}/..;/server-info'
-  - '{{BaseURL}}/..;/server-status'
-  - '{{BaseURL}}/..;/server-status?full'
-  - '{{BaseURL}}/..;/balancer-manager'
-  - '{{BaseURL}}/;/server-info'
-  - '{{BaseURL}}/;/server-status'
-  - '{{BaseURL}}/foo/..;/server-status'
-  - '{{BaseURL}}/;/server-status?full'
-  - '{{BaseURL}}/;/balancer-manager'
-  - '{{BaseURL}}/%2e/server-info'
-  - '{{BaseURL}}/%2e/server-status'
-  - '{{BaseURL}}/%2e/server-status?full'
-  - '{{BaseURL}}/%2e/balancer-manager'
-  stop-at-first-match: true
 id: apache-server-info
+
 info:
-  author: DoubleTake (https://twitter.com/LeDoubleTake)
-  description: This template checks if the some Apache endpoints can leak information
-    like "Server Version".
   name: Check Apache Server Info
+  author: DoubleTake (https://twitter.com/LeDoubleTake)
   severity: low
-  tags: apache,generic,config
+  description: This template checks if the some Apache endpoints can leak information like "Server Version".
+
+  tags:
+    - server-info
+    - server-status
+    - balancer-manager
+    - apache
+    - information
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/server-info"
+      - "{{BaseURL}}/server-status"
+      - "{{BaseURL}}/balancer-manager"
+
+    matchers:
+      - type: word
+        part: response
+        words:
+          - "Server Version:"
+          
+          

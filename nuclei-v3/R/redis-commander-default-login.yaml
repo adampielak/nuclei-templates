@@ -7,6 +7,7 @@ info:
   description: |
     Redis Commander Default Login credentials were discovered.
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Redis Commander"})
     verified: true
     max-request: 1
     shodan-query: title:"Redis Commander"
@@ -38,4 +39,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220159a6f2bb94ba9d8757d4d4699db0cbc7229631e3c8b760ce4c7350745e117f7022011847dbca7091ebdb509da33b602d9166245eb59b1d1394d1742693ea370a7a9:922c64590222798bb761d5b6d8e72950
+

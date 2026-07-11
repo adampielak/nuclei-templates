@@ -10,7 +10,7 @@ info:
     - https://spyclub.tech/2022/12/14/unusual-cache-poisoning-akamai-s3/
   metadata:
     max-request: 1
-  tags: akamai,cdn,tech,discovery
+  tags: akamai,cdn,tech
 
 http:
   - method: GET
@@ -24,4 +24,5 @@ http:
         part: x_cache
         words:
           - "deploy.akamai"
-# digest: 4b0a00483046022100a6e58dbf35949e91a77d332299d5892d65102ec6b162b08d0d52a5257f240916022100a42487fa10ff423f3596c8c32befc4a9cbfd2c3db76d105c2d28f3436415dd36:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402204cfdfcfd8138c730176b2d360e96b97de9785e215e4fa1c768574552e496d1ee02200ce0780445c2e3bd98b1b58aa75583c5b50957d2d9d1515743f898828ac02e02:922c64590222798bb761d5b6d8e72950

@@ -11,7 +11,7 @@ info:
     max-request: 2
     shodan-query: port:2375 product:"docker"
     fofa-query: app="docker-Daemon" && port="2375"
-  tags: docker,exposure,misconfig,vuln
+  tags: docker,exposure,misconfig
 
 http:
   - raw:
@@ -38,4 +38,4 @@ http:
         regex:
           - '"ApiVersion":"(.*?)"'
         internal: true
-# digest: 490a00463044022024b13df2e7b28154442ac2bf7ac123ea41d7aa1fe2d341745524634eb3ff216e0220716c3af7be2c2e2a24fefcb3e74d90d9432953fe92759a8a04416f986e192eba:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502204626aa849bc6837c86c193b5794710f7b01316c525f17924e8db7aa818772ec9022100f3c6d104e7d268933dbfbacd0b3ddf8049a9cc7fec4d9487cebbdc93877883d5:922c64590222798bb761d5b6d8e72950

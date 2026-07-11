@@ -12,14 +12,11 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:schedmd:slurm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Slurm HPC Dashboard"
-    product: slurm
-    vendor: schedmd
-  tags: misconfig,slurm,dashboard,discovery
+  tags: misconfig,slurm,dashboard
 
 http:
   - method: GET
@@ -37,4 +34,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205ec1199c7278140b1f4b7e782b7ec15c5c8fcf28ed5dc4f4a8ea7db9a7b67367022100ad4ca071091a4a7e4647ce16d55d20f648341cb6f205d872af8c5965e9b96512:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220358102075928d8cd96d5159898e160962fa9e61001cb499d467851f5f66ba85a022046159a85002fc920cc6e23c16aec078fa7c4ed9a3b9e5cf2acd6e5705fcba846:922c64590222798bb761d5b6d8e72950
