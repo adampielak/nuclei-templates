@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Setup Wizard" http.favicon.hash:-1851491385
-  tags: misconfig,indegy,sensor,installer
+  tags: misconfig,indegy,sensor,installer,vuln
 
 http:
   - method: GET
@@ -26,4 +26,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e01b4c1893daf7b47a2f77c7f8dfffec2efe5b43914a217de8774b57f28fe907022100892573a22dcfcc2d156ef6b6a7bfdaa044cdb1d391fe6a33484770b6c5281acf:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022006aa6621aa1fa1237ed462b8f154a5422fff197e3e5b75b40a283ca7638075100220078b9285757c2918dd988523ae36c3dabf695010b914aa1216431c81808aa0df:922c64590222798bb761d5b6d8e72950

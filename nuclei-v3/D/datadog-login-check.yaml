@@ -9,7 +9,7 @@ info:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:
     max-request: 2
-  tags: login-check,datadog,creds-stuffing
+  tags: cloud,creds-stuffing,login-check,datadog,vuln
 
 self-contained: true
 
@@ -50,4 +50,4 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a00473045022100b9ba3ac63ed0c052497f5abac20910ad07e154dcb7d842cf1d00ee4473c5cf9e02203ce5f09f352bb9e3d238dca757a67cf504056a4c703fe1bfcb621869c3c90b81:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502207ffee6dea6b55c536124f12f76644e41caf3f789c5d9e70f3a2f2f5bae61b188022100c5e9fabafbc04710df4818c0958c53733a35df4505d9aa13611f55360074c044:922c64590222798bb761d5b6d8e72950

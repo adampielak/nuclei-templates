@@ -10,7 +10,7 @@ info:
     - https://mega.io
   metadata:
     max-request: 1
-  tags: phishing,mega,osint
+  tags: phishing,mega,osint,discovery
 http:
   - method: GET
     path:
@@ -34,4 +34,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"mega.io")'
-# digest: 4b0a004830460221008718f579895f66d68eea64631d1f850cc7ffc2043f92bfe503c5553764709955022100b6013f69b2fe1d9907535206e588e52e16d1eed3d39af013c4f5a6e9f5704096:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100f8c8c3e2605f6d7f339919185880edb9027363477cdff7cd411e46668371b3a4022047aee17e6ad7db17804aa6e0811a179c7b5b71d24d376de8ec393fb1e54234e1:922c64590222798bb761d5b6d8e72950

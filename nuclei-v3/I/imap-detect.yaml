@@ -8,21 +8,19 @@ info:
     IMAP was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 2
     verified: true
-    shodan-query: 'imap'
-  tags: network,detect,imap,mail
-
+    max-request: 1
+    shodan-query: imap
+  tags: network,detect,imap,mail,detection,tcp,discovery
 tcp:
   - inputs:
       - data: "\n"
 
     host:
       - "{{Hostname}}"
-      - "{{Host}}:143"
+    port: 143
 
     matchers-condition: and
     matchers:
@@ -31,5 +29,4 @@ tcp:
           - "OK "
           - "IMAP4rev1"
         condition: and
-
-# Enhanced by md on 2023/03/29
+# digest: 490a0046304402206976fbc507512c2e899ab8f6c91e88314470df0282a74a116dac42d55617b50002201602e88e6b878fbf87154a0d537a2000bcdc9523eb8c39afc4aa036f39571194:922c64590222798bb761d5b6d8e72950

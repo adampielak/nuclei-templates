@@ -8,7 +8,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Coming Soon"
-  tags: tech,default-page
+  tags: tech,default-page,discovery
 
 http:
   - method: GET
@@ -32,5 +32,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022025a28c2227412f6cc3e78602577558d99cf6b25a960dcedcfd493d888cf69eb3022100fbd0a1b4134a4f95fabd98f0c0b8229baf8417c1fb73e9fc4489c5d64e554b62:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a9717d2611fe45560df8d7da41974e044da3a4eb66e08256c30e675f266dcbff022100ec8ceb5dcf1b83e31a42eb61b7053fdc9cd255527f10391197256237812fb0bf:922c64590222798bb761d5b6d8e72950

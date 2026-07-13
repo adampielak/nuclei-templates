@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     github-query: filename:stestr.conf
-  tags: exposure,stestr,config,files
+  tags: exposure,stestr,config,files,vuln
 
 http:
   - method: GET
@@ -35,5 +35,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100ea40deb53239bebfe08837fd68e1d4f8e020c4916badaa14c3b5408f19eea17702210092ebf01a3d972a433d5b9fe1519055d5f06b31bbfc8c97c8a1ede70bf25580d8:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100acf07d393d0cda53eb9e02ed227b867c504462b4fe07c59885232992606066e4022027a0b8d5272b0da79808e8985ebf0b531fcfebf4021c640f28c9b0c9a2f21979:922c64590222798bb761d5b6d8e72950

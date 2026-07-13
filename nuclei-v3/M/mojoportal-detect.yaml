@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     max-request: 1
-  tags: tech,mojoportal
+  tags: tech,mojoportal,discovery
 
 http:
   - method: GET
@@ -29,5 +29,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a00463044022077795f58d8b7febdba78063fb3f67c58e0b0e89ca2def87ca9512ed62391290e02202b11fe44b37bfe1136905bc5466db3a7d2096a32fa59f3baedd20a2514836591:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502206aa5265cc977e8af39a366b3a6a285f8b612494ff5bb442e3d54cfcfefca5720022100afb4d5e6a604d90c6551af4a99a3c325d2268a168c3de7c923e6610a75f86545:922c64590222798bb761d5b6d8e72950

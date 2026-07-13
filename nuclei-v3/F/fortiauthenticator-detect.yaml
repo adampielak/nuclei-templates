@@ -7,15 +7,16 @@ info:
   description: The FortiAuthenticator panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:fortinet:fortiauthenticator:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     vendor: fortinet
     product: fortiauthenticator
     shodan-query: http.favicon.hash:-1653412201
-  tags: panel,fortinet,fortiauthenticator,detect
+    fofa-query: icon_hash=-1653412201
+  tags: panel,fortinet,fortiauthenticator,detect,discovery
 
 http:
   - method: GET
@@ -43,4 +44,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022039be3c06f01e149a15777c4f19b2f6a3f7ca463f24a7e50aa463c9236724d36202200dcfda1205cc5467f3173ac4104b0a3977da662f15667afcf7bc84c326792589:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100cea38e95c609af13d11fed776ebd8749bc099ccab150062d5d7d10e1f752f344022055db856254dd2bbdc91ef3af8b93f719a5f9e1229b690117bfa6ecfe0b3c16bf:922c64590222798bb761d5b6d8e72950

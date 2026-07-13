@@ -9,11 +9,15 @@ info:
   reference:
     - https://github.com/authelia/authelia
     - https://www.authelia.com/
+  classification:
+    cpe: cpe:2.3:a:authelia:authelia:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: authelia
+    product: authelia
     shodan-query: title:"Login - Authelia"
-  tags: login,panel,authelia
+  tags: login,panel,authelia,discovery
 
 http:
   - method: GET
@@ -29,5 +33,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a004630440220490a5021967e030ff89ae16d4641c71e7eed70d1dd4ff6cd0f0194c789109b09022059bfbb46ae3a213be944bd8038a53d6fc66cd14351190788fbc8a035e9e6fbed:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a3f4eb2a4b489a9098c715e512d37ecbdc6505ee82be1eb65e5a0a33fa700d2d022100fae2288be2f4c75ea23be9d3dfbfe0be3e767e3341e4fd1a32dffa5bd5ade6de:922c64590222798bb761d5b6d8e72950

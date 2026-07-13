@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"nsqadmin"
-  tags: nsq,admin,panel,exposure
+  tags: nsq,admin,panel,exposure,discovery
 
 http:
   - method: GET
@@ -38,5 +38,4 @@ http:
         group: 1
         regex:
           - "nsqadmin/v([0-9.]+)"
-
-# digest: 4a0a004730450220724d57dbb8379d8c9ff0a3a3e2854c5a92f482fb2747d89909d3264f6baa6060022100cc322ca32f4b142e684188729f0a597fed9312adfa508c19799ee42cab64fd21:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022010fe0abada44296601eff856073ed634b9eebde08a41deb3b5f54f70eab1aebd02202576e5159f9c6eb5fa513ebff56a5fc475d6e091bc5fb3b6fddcac22839e6ca2:922c64590222798bb761d5b6d8e72950

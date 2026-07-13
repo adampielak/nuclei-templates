@@ -9,7 +9,7 @@ info:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:
     max-request: 1
-  tags: login-check,chefio,creds-stuffing
+  tags: cloud,creds-stuffing,login-check,chefio,vuln
 
 self-contained: true
 
@@ -32,5 +32,4 @@ http:
       - type: status
         status:
           - 302
-
-# digest: 490a0046304402200c3238e6e98a6fa779a4b4e2d33d86c0a2c80eefff6815249e7c0cdf0a95501b02206d958bc31a683e23a949eb4309323902a0cfa3145f45504afc40dc264aa9d328:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200f0a690d466722638b5eb47824235d6e2b41a485c17a4209b33fbe47399d5f91022100d84619cc762a9d687fbf45ce2a0f2473d6320cdacb39a5ee138c518c469fdf7e:922c64590222798bb761d5b6d8e72950

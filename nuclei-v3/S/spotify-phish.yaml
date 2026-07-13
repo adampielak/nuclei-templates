@@ -10,7 +10,7 @@ info:
     - https://spotify.com
   metadata:
     max-request: 1
-  tags: phishing,spotify,osint
+  tags: phishing,spotify,osint,discovery
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"spotify.com")'
-# digest: 4a0a0047304502207887c805529bafc55a504c62c962f80fe0641f613a64d4aa93c5d073a1c8bd07022100de517e87ee6d9da381512208d65510112cf3e25ab76d7b9a76f347ec2991c84e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c39697257e5ba0590ae42118ddc057809cd8c7a5cadf981960118d189522fd5c02207368bb95a4a9811f51f36e790cfe50d3b1db1db1f313d41baf27c2508196c7b6:922c64590222798bb761d5b6d8e72950

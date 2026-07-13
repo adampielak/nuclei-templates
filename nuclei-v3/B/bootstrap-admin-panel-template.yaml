@@ -9,11 +9,14 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:teamworktec:responsive_bootstrap_admin_template:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Dashboard - Bootstrap Admin Template"
-  tags: bootstrap,panel,misconfig,exposure
+    product: responsive_bootstrap_admin_template
+    vendor: teamworktec
+  tags: bootstrap,panel,misconfig,exposure,vuln
 
 http:
   - method: GET
@@ -33,5 +36,4 @@ http:
         part: body
         words:
           - "Bootstrap Admin Template"
-
-# digest: 490a0046304402207fc667b4310d0f7b9a032a6008338b26fdea039238a89f5263d86db48f41857102203fa67b9e182a95b42d597d2ac50905baf282bea6f1be18968f971e06f59f9aa9:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221008b6be141bfa4a912eb88ff5484a959bfeeacdc5eb2384a4270cb639e6a5249e9022027ec9ebed5524a6b422a5e4156bdaa0d3f282f92a8ceabf808da504d7bf56770:922c64590222798bb761d5b6d8e72950

@@ -1,16 +1,15 @@
 id: wordpress-elementskit-lite
 
 info:
-  name: ElementsKit Elementor addons Detection
+  name: ElementsKit Elementor Addons and Templates Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/elementskit-lite/
   metadata:
-    max-request: 1
     plugin_namespace: elementskit-lite
     wpscan: https://wpscan.com/plugin/elementskit-lite
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100872d7b6284231343b009011424076302c4ac104f4b560f77b95e24b79f6310ec02204f6ffd04d97b104003458830c7bea30daf5f6e2754c24369bd6a3dee675c0801:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402200108f16fb81bea92d7fa34f3a97c307ecc12d5d01ef51f5bb348b0af9fb35b2302206404b94a052cc71731ea26a5f86581d4a16cd7f645e93e997f053e904e09d153:922c64590222798bb761d5b6d8e72950

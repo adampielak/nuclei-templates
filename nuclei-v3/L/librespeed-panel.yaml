@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"LibreSpeed"
-  tags: panel,librespeed,detect
+  tags: panel,librespeed,detect,discovery
 
 http:
   - method: GET
@@ -33,5 +33,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100b33c56157343d9f0d5796ad2b8f15e98fbf5368a8d2ebe2e0ed2b14ab773bac3022100ee2249b6b859aa623fbf753c7852c000f70808fabf2e45f1a264038796b056f6:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220224d09a4002444a4a7ea5608b38adbe24b5559a21117ce1db0dc7af2ab59011e02202653251af9501d0d2bf42b20c869c3020ec3e8333d117532a63218d0ed9f4a08:922c64590222798bb761d5b6d8e72950

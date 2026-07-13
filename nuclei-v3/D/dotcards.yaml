@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-business,dotcards
+  tags: osint,osint-business,dotcards,discovery
 
 self-contained: true
 
@@ -36,5 +36,4 @@ http:
         words:
           - '"message":"The username does not exist"'
         negative: true
-
-# digest: 4b0a00483046022100fb9e9ee19c7cfdf4e8e94c5852ec6ef6f01eb745377fb98c04f170880780064d022100fff791aed123fb102ea5b9fcea40656c645cf403f272941c81a86b0d2e9ed0c4:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c8cd0668e826250522dc3803bfadf2d3215c3f90f5d44445bbac706e48e0612a022100ab03beab9b3e040eefefdfdcb6be9fcc393d6a69e4b798f62fd1cf456684f777:922c64590222798bb761d5b6d8e72950

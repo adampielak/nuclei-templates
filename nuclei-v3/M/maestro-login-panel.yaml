@@ -7,13 +7,12 @@ info:
   description: Maestro LuCI login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Maestro - LuCI"
-  tags: panel,maestro,luci
+  tags: panel,maestro,luci,discovery
 
 http:
   - method: GET
@@ -35,5 +34,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a004630440220205edc4959f5b667543841c43d9154b0ec896c7e4b8d6909d6ab296f1d0081b4022036108642e4ce4fb58e3b45b36bdfd6a25a0959826b8994472c07bc2f29ce985e:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ad09b649da64950ca5426f1981421f36ad2d1daadc156153b394c483c4325ef8022100f37a83ca6da334296aaa843a20cae709ace64427ea76ad7e8d80a2533e98e0c6:922c64590222798bb761d5b6d8e72950

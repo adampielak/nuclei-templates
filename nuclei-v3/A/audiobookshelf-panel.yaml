@@ -6,11 +6,15 @@ info:
   severity: info
   reference:
     - https://github.com/advplyr/audiobookshelf
+  classification:
+    cpe: cpe:2.3:a:audiobookshelf:audiobookshelf:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"Audiobookshelf"
-  tags: panel,audiobookshelf,detect
+    product: audiobookshelf
+    vendor: audiobookshelf
+  tags: panel,audiobookshelf,detect,discovery
 
 http:
   - method: GET
@@ -34,5 +38,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a0046304402205c2b8c821545d360dea78b15558d6e1976d17b27b05796ced518f11dc6180363022060d87a8c9d7338a79e7d0cd96f19ce47412e803f78353038942a590db85bcdcd:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022046e8fbfa1e847e4394e8468e13ff52b25da1c3a00daffa189169b23547dc212f022041f7cf7c2166a6bf4a6c9c409db63a7289d7c56baad2c7c7f1ec8f35ba6dcf60:922c64590222798bb761d5b6d8e72950

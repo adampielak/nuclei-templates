@@ -8,7 +8,7 @@ info:
     max-request: 1
     shodan-query: http.favicon.hash:-1595726841
     fofa-query: body="Login @ Reporter"
-  tags: panel,login,acenet,acereporter
+  tags: panel,login,acenet,acereporter,discovery
 
 http:
   - method: GET
@@ -26,5 +26,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a00463044022004780fe2201d05e2c99677df8fa4404b1e2beda707aff8d6cd407c537994472d0220533c9dc5bfb969e0158b175aa46f4c7543c0e34108b39810a1bffd9fcc050a20:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100df9a29a102acb24e618d9a91781d3e2e633e41b401eb6363e09f4d0176f67712022100b865ba4cb7964142e592ff4c3ae228fb378d8e32c0219a912286659151f5a729:922c64590222798bb761d5b6d8e72950

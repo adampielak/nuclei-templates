@@ -15,7 +15,7 @@ info:
   metadata:
     verified: true
     max-request: 204
-  tags: cache,poisoning,xss,akamai,s3,misconfig
+  tags: cache,poisoning,xss,akamai,s3,misconfig,vuln
 variables:
   rand: "{{rand_base(5)}}"
 
@@ -65,5 +65,4 @@ http:
           - 'contains(body_2, "alert(document.domain)")'
           - 'status_code_2 == 200'
         condition: and
-
-# digest: 490a0046304402205d755aa1fb1c07d6eac253f8ed760b27408545a8b3bd8104e6cb8298d05d720802204ffa53e1789ed44edb45fc98d3b03deaa7da5566a8bf3a3bce1b6ac03c1df145:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100aac77893e88ddd18fa4d35f6705e1c26d8bae5b910fd71e4573605d9a89128b202202c7a38d6c4a33b43f839a137c74af1f3d51616f8f18187ef6acec46b564fd3dc:922c64590222798bb761d5b6d8e72950

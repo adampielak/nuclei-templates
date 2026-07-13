@@ -4,11 +4,15 @@ info:
   name: Apache Shiro Default Page
   author: DhiyaneshDK
   severity: info
+  classification:
+    cpe: cpe:2.3:a:apache:shiro:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: apache
+    product: shiro
     shodan-query: title:"Apache Shiro Quickstart"
-  tags: tech,apache,shiro
+  tags: tech,apache,shiro,discovery
 
 http:
   - method: GET
@@ -25,5 +29,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a0046304402206679e43f4e2125fa6ab7f37680f2c0464b2b7251690168259de5ac9c1f18fb51022071a731cd2862bb734edb2e7491f15198961599fa7ed8cb84bfa49805b92df0f3:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c0157350e7fff45ad1a9b46e4110bab152e75e381ea41218ff13315db515d328022011e87ef8dd672df60fc4adf51d1b31853e986c8c8f44bee97cb0b7be26b1a64c:922c64590222798bb761d5b6d8e72950

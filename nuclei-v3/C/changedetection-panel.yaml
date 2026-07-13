@@ -9,11 +9,15 @@ info:
   reference:
     - https://github.com/dgtlmoon/changedetection.io
     - https://changedetection.io/
+  classification:
+    cpe: cpe:2.3:a:changedetection:changedetection:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: changedetection
+    product: changedetection
     shodan-query: title:"Change Detection"
-  tags: panel,changedetection,detect
+  tags: panel,changedetection,detect,discovery
 
 http:
   - method: GET
@@ -33,5 +37,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100a7950dea04a3cf9122de914a886eaef0c9aab72f812c9bb6181b84cf5b4b08ec022074cb3c618da8ca86ec63cc57c24e4a74c76606d622c3555ff695eb55f11e605b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100eca53c10fa41c4ff004fcd3a4ceabd1c210a89148eaab2da100b64ca139784df02201afa7f7786e7e1bd25a96932a45d706da3b2427479b907fd62b841bff221a471:922c64590222798bb761d5b6d8e72950

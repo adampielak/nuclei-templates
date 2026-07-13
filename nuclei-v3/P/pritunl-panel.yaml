@@ -9,13 +9,15 @@ info:
   reference:
     - https://github.com/louislam/uptime-kuma
     - https://uptime.kuma.pet/docs/
+  classification:
+    cpe: cpe:2.3:a:pritunl:pritunl:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    vendor: pritunl
     product: pritunl
     shodan-query: title:"Pritunl"
-  tags: pritunl,panel,login
+    vendor: pritunl
+    verified: true
+  tags: pritunl,panel,login,discovery
 
 http:
   - method: GET
@@ -31,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207271498e78e6951f94b51968437adb78f500dbdba71021e86835017f6e7286600221008c058b5c35a64a25a87e9c9f1cfe417be6acaf4775d9516766825cfc2f201be4:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100a00e8191b04965ff080aa6ab1840cb965a5f0917a62bfdbc98ad163c8a0177ea02203d8c71822d8a4676d171e597ca589bcb0c697be24adaea39c138845a74b90232:922c64590222798bb761d5b6d8e72950

@@ -1,5 +1,4 @@
 id: joomla-htaccess-file
-
 info:
   name: Joomla! htaccess file disclosure
   author: oppsec
@@ -7,13 +6,11 @@ info:
   description: Joomla!  has an htaccess file to store configurations about HTTP config, directory listing, etc.
   metadata:
     max-request: 1
-  tags: miscellaneous,misc,joomla,vuln
-
+  tags: joomla,misc,miscellaneous,vuln
 http:
   - method: GET
     path:
       - "{{BaseURL}}/htaccess.txt"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -21,12 +18,10 @@ http:
           - "Joomla"
           - "Open Source Matters. All rights reserved"
         condition: and
-
       - type: word
         part: header
         words:
           - "text/plain"
-
       - type: status
         status:
           - 200

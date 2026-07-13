@@ -7,11 +7,15 @@ info:
   description: Versa Director API Endpoint (Unauthorized) Detection
   reference:
     - https://versa-networks.com/products/components/
+  classification:
+    cpe: cpe:2.3:a:versa-networks:versa_director:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: versa-networks
+    product: versa_director
     shodan-query: html:"Versa Networks"
-  tags: api,versa,tech
+  tags: api,versa,tech,discovery
 
 http:
   - method: GET
@@ -28,5 +32,4 @@ http:
       - type: status
         status:
           - 401
-
-# digest: 4b0a00483046022100e229eb5d84def3a3b79048003f546d8f3c558dff0cc70f7c1b58bb1fc430bb2d022100bd5f07601566a246eb302c1155740fc73aa30795b425f83240bd7e90ce8183e7:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502207476e1abb1dcd9ba2bcaa9e3df6ae056bf9a548f013d434fbcf5dcdae39124ac022100e837444c1104582561d6be501c11f976e8a7a20a329db3b9a810d8be98fd42e7:922c64590222798bb761d5b6d8e72950
