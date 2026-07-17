@@ -7,19 +7,15 @@ info:
   description: Xeams Admin Console login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:synametrics:xeams:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     vendor: synametrics
     product: xeams
-    shodan-query:
-      - http.title:"Xeams Admin"
-      - http.title:"xeams admin"
-    fofa-query: title="xeams admin"
-    google-query: intitle:"xeams admin"
-  tags: panel,xeams,admin,console,synametrics,discovery
+    shodan-query: http.title:"Xeams Admin"
+  tags: panel,xeams,admin,console
 
 http:
   - method: GET
@@ -41,4 +37,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201da53a2eb83c7e1c1e2402ffbb6b15754cb84a7b104f91879bc35af7ab2fdebb022027b567154de0eb2020453dec606a8743c2d8bd557f561e33f429ad332c6c07a9:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100874fc1f66e0cb44bcf77b4e27928718a1e92fdac2370903070c52a46691205f3022100f430dab293b68049d2614cc63bdc30c497c3a6fd0883cd61f4ce56f664fadca3:922c64590222798bb761d5b6d8e72950

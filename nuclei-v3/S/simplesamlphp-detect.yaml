@@ -1,34 +1,28 @@
-id: simplesamlphp-detect
-
-info:
-  name: SimpleSAMLphp - Detect
-  author: righettod
-  severity: info
-  description: |
-    SimpleSAMLphp was detected.
-  reference:
-    - https://simplesamlphp.org/
-  classification:
-    cpe: cpe:2.3:a:simplesamlphp:simplesamlphp:*:*:*:*:*:*:*:*
-  metadata:
-    verified: true
-    max-request: 2
-    vendor: simplesamlphp
-    product: simplesamlphp
-    shodan-query: "http.title:\"SimpleSAMLphp installation page\""
-  tags: tech,simplesamlphp,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/simplesaml/module.php/core/frontpage_welcome.php"
-      - "{{BaseURL}}/module.php/core/frontpage_welcome.php"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "you have successfully installed simplesamlphp",
+      "simplesamlphp installation page", "/module.php/core/login-admin.php")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/simplesaml/module.php/core/frontpage_welcome.php'
+  - '{{BaseURL}}/module.php/core/frontpage_welcome.php'
+  stop-at-first-match: true
+id: simplesamlphp-detect
+info:
+  author: righettod
+  description: 'SimpleSAMLphp was detected.
 
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "you have successfully installed simplesamlphp", "simplesamlphp installation page", "/module.php/core/login-admin.php")'
-        condition: and
-# digest: 4a0a0047304502207eccc156e360de7409c5445d6b9b7d85f3d9bbdba99c9b1802aeaaab06e4acb3022100906d9cc465ce787c21e7697d55e98e637c39e77b39ec615b27ed84a60ea7f74d:922c64590222798bb761d5b6d8e72950
+    '
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"SimpleSAMLphp installation page"
+    verified: true
+  name: SimpleSAMLphp - Detect
+  reference:
+  - https://simplesamlphp.org/
+  severity: info
+  tags: tech,simplesamlphp,detect
