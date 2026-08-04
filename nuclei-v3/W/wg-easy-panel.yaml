@@ -9,7 +9,7 @@ info:
   reference:
     - https://github.com/wg-easy/wg-easy
   metadata:
-    runzero-match: service["http.body"] matches "wg-easy"
+    runzero-match: any(each(service["http.bodies"]), {# matches "wg-easy"})
     max-request: 1
     shodan-query: http.html:"wg-easy" http.html:"WireGuard"
   tags: detect,panel,vpn,wg-easy,wireguard

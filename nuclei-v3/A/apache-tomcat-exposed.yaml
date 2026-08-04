@@ -8,7 +8,7 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Apache Tomcat"}) || service["http.body"] matches "(?i)apache tomcat"
+    runzero-match: any(each(service["html.titles"]), {# matches "Apache Tomcat"}) || any(each(service["http.bodies"]), {# matches "(?i)apache tomcat"})
     fofa-query:
       - body="apache tomcat"
       - title="apache tomcat"

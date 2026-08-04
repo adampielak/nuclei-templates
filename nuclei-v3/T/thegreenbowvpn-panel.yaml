@@ -8,7 +8,7 @@ info:
   reference:
     - https://www.thegreenbowvpn.com/
   metadata:
-    runzero-match: service["http.body"] matches `href="/tgb/">ThegreenBow</a>`
+    runzero-match: any(each(service["http.bodies"]), {# matches `href="/tgb/">ThegreenBow</a>`})
     max-request: 1
     shodan-query: 'http.html:"TheGreenBow"'
   tags: panel,thegreenbowvpn,vpn

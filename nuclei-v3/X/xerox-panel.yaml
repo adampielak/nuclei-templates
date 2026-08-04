@@ -10,7 +10,7 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
-    runzero-match: service["http.body"] matches "(?i)/XUX-nwave/"
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/XUX-nwave/"})
     max-request: 1
     fofa-query: body="/XUX-nwave/"
   tags: panel,xerox,discovery,login

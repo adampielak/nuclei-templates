@@ -12,7 +12,7 @@ info:
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "^Internet Services$"}) && service["http.body"] matches "FUJI XEROX"
+    runzero-match: any(each(service["html.titles"]), {# matches "^Internet Services$"}) && any(each(service["http.bodies"]), {# matches "FUJI XEROX"})
     max-request: 1
   tags: discovery,edb,iot,panel
 http:

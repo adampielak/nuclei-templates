@@ -12,7 +12,7 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:checkmarx:cxsast:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["http.body"] matches "CxSASTManagerUri"
+    runzero-match: any(each(service["http.bodies"]), {# matches "CxSASTManagerUri"})
     max-request: 3
     product: cxsast
     shodan-query: http.html:"CxSASTManagerUri"

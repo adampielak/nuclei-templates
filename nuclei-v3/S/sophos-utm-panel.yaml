@@ -8,7 +8,7 @@ info:
   reference:
     - https://www.sophos.com/en-us/products/unified-threat-management
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "User Portal"}) && service["http.body"] matches "/themes/lite1/"
+    runzero-match: any(each(service["html.titles"]), {# matches "User Portal"}) && any(each(service["http.bodies"]), {# matches "/themes/lite1/"})
     max-request: 1
     shodan-query: 'title:"User Portal" ssl:"Sophos"'
   tags: panel,sophos,ssl-vpn,vpn

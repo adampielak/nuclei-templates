@@ -1,41 +1,43 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - 'Magento\/([0-9.]+) '
-    type: regex
-  matchers:
-  - dsl:
-    - compare_versions(version, '<=2.4')
-    type: dsl
-  - part: body
-    regex:
-    - 'Magento\/([0-9.]+) '
-    type: regex
-  method: GET
-  path:
-  - '{{BaseURL}}'
-id: magento-eol
+id: eol-magento
+
 info:
+  name: Magento End-of-life Detect
   author: dogancanbakir
+  severity: info
+  description: |
+    Magento end of life detection.
+  reference:
+    - https://www.magento.com/
   classification:
-    cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
-  description: 'Magento end of life detection.
-
-    '
   metadata:
-    max-request: 1
-    product: magento
-    shodan-query: http.component:"Magento"
-    vendor: magento
     verified: true
-  name: Magento End-of-life Detect
-  reference:
-  - https://www.magento.com/
-  severity: info
-  tags: cms,discovery,magento,tech
+    max-request: 1
+    shodan-query: http.component:"Magento"
+  tags: magento,tech,cms
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    extractors:
+      - type: regex
+        part: body
+        internal: true
+        name: version
+        group: 1
+        regex:
+          - 'Magento\/([0-9.]+) '
+    matchers:
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<=2.4')
+
+      - type: regex
+        part: body
+        regex:
+          - 'Magento\/([0-9.]+) '
+
+# digest: 490a004630440220300372e1185accfbfbd861fd3d5f5a2871aa75c9cb1be6532602b9f3cc81448b022062498d3aba4c74277c9872d8cd40a9ddab2dd8f3880597967e44367b27c9031f:922c64590222798bb761d5b6d8e72950

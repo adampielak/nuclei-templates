@@ -9,7 +9,7 @@ info:
   reference:
     - https://www.arubanetworks.com/products/security/remote-access/
   metadata:
-    runzero-match: service["http.body"] matches `action="/screens/wms/wms\.login"`
+    runzero-match: any(each(service["http.bodies"]), {# matches `action="/screens/wms/wms\.login"`})
     max-request: 2
     shodan-query: 'http.html:"/screens/wms/" port:4343'
   tags: aruba,hpe,network,panel,via-vpn,vpn
