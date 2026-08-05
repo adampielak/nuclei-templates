@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - FileZilla - The free FTP solution
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"filezilla-project.org")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: filezilla-phish
-
 info:
-  name: filezilla phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A filezilla phishing website was detected
-  reference:
-    - https://filezilla-project.org
+  description: 'A filezilla phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,filezilla,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'FileZilla - The free FTP solution'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"filezilla-project.org")'
-# digest: 4b0a004830460221008ff598eb915bfe60fb8911ac042b60589720b040572ea4b28f488aa284e9442e022100af1bda7a6f8ed1fa5fe563f48e8bfa8a7046e9227fae93aea21f520499e7ad77:922c64590222798bb761d5b6d8e72950
+  name: filezilla phishing Detection
+  reference:
+  - https://filezilla-project.org
+  severity: info
+  tags: phishing,filezilla,osint
