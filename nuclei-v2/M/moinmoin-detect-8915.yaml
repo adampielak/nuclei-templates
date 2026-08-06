@@ -1,4 +1,5 @@
 id: moinmoin-detect
+
 info:
   name: MoinMoin wiki detect
   author: cyllective
@@ -7,10 +8,12 @@ info:
   tags: tech,moin,moinmoin,wiki
   references:
     - https://github.com/moinwiki/moin-1.9
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers:
       - type: word
         part: body
@@ -18,6 +21,7 @@ requests:
         words:
           - '<a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a>'
           - '<a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a>'
+
     extractors:
       - type: regex
         part: body
