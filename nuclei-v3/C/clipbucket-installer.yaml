@@ -1,26 +1,30 @@
-http:
-- matchers:
-  - part: body
-    regex:
-    - <title>ClipBucket ([a-z0-9.]+) STABLE Installer</title>
-    type: regex
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/cb_install/'
 id: clipbucket-installer
+
 info:
+  name: ClipBucket Installer - Exposure
   author: DhiyaneshDk
-  description: ClipBucket is susceptible to the Installation page exposure due to
-    misconfiguration.
+  severity: high
+  description: ClipBucket is susceptible to the Installation page exposure due to misconfiguration.
   metadata:
-    fofa-query: icon_hash="538583492"
+    verified: true
     max-request: 1
     shodan-query: http.favicon.hash:538583492
-    verified: true
-  name: ClipBucket Installer - Exposure
-  severity: high
+    fofa-query: icon_hash="538583492"
   tags: misconfig,clipbucket,install,exposure
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/cb_install/'
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - '<title>ClipBucket ([a-z0-9.]+) STABLE Installer</title>'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100b0232e0f9d6cc10a6b6b81af15074c2d3071badba75eb623cd7395ab80c7a0f9022011fb63fbd16492a3889ae16290c0d8af40631603dfecb07a53490e3283c38142:922c64590222798bb761d5b6d8e72950

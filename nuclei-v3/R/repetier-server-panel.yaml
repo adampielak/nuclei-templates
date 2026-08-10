@@ -1,38 +1,41 @@
-http:
-- extractors:
-  - group: 2
-    part: body
-    regex:
-    - Repetier\-Server ([A-Za-z]+) ([0-9.]+)
-    type: regex
-  matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - content="Repetier-Server
-    - About Repetier-Server
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/#!/login'
 id: repetier-server-panel
-info:
-  author: ritikchaddha
-  classification:
-    cpe: cpe:2.3:a:repetier-server:repetier-server:*:*:*:*:*:*:*:*
-  description: 'Repetier Server login panel detected.
 
-    '
+info:
+  name: Repetier Server Panel - Detect
+  author: ritikchaddha
+  severity: info
+  description: |
+    Repetier Server login panel detected.
   metadata:
+    verified: true
     max-request: 1
+    vendor: repetier-server
     product: repetier-server
     shodan-query: title:"Repetier-Server"
-    vendor: repetier-server
-    verified: true
-  name: Repetier Server Panel - Detect
-  severity: info
-  tags: panel,repetier,detect,repetier-server
+  tags: panel,repetier,detect
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/#!/login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'content="Repetier-Server'
+          - 'About Repetier-Server'
+        condition: or
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        group: 2
+        regex:
+          - 'Repetier\-Server ([A-Za-z]+) ([0-9.]+)'
+# digest: 4a0a00473045022100c6a69b9f9f4c7363857e755829e56c661bba7d884ea504b1415a828c62e5286c02200ea6d8153ee2561cfa107c0f0e32a0053609ef46867c3fbef39db3203ef678c1:922c64590222798bb761d5b6d8e72950

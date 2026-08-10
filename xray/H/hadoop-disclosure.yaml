@@ -1,14 +1,15 @@
-expression: r0()
 id: hadoop-disclosure
+
 info:
-  author: zan8in
   name: Apache Hadoop Disclosure
+  author: zan8in
   severity: low
   verified: true
+
 rules:
   r0:
-    expression: response.status == 200 && response.body.bcontains(b'class="navbar-brand"')
-      && response.body.bcontains(b'dfshealth.js')
     request:
       method: GET
       path: /dfshealth.html
+    expression: response.status == 200 && response.body.bcontains(b'class="navbar-brand"') && response.body.bcontains(b'dfshealth.js')
+expression: r0()
