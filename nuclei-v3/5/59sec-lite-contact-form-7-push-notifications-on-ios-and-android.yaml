@@ -1,4 +1,4 @@
-id: 59sec-lite-contact-form-7-push-notifications-on-ios-and-android-c7c69c95a15f67a578f24154c0f70005
+id: 59sec-lite-contact-form-7-push-notifications-on-ios-and-android
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/65aa6694-0ed9-40a4-bd1c-1b51cd5e537d?source=api-scan
   classification:
     cvss-metrics: 

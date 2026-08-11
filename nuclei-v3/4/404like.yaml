@@ -1,4 +1,4 @@
-id: 404like-043c34b9d2549a1bd43a00f23e20dee8
+id: 404like
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f5bcad01-02ca-46a0-9196-df9f2110bc8a?source=api-scan
   classification:
     cvss-metrics: 

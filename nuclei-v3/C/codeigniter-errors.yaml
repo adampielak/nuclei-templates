@@ -1,38 +1,38 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - DBPASSWORD</td>
+    - PAYPAL_CLIENT_SECRET</td>
+    - redrake_password</td>
+    - elk_password</td>
+    - PASSWORD
+    - DB_HOST
+    - DB_PASS
+    - database.default.password</td>
+    - database.minisite.password</td>
+    - database.db2.password</td>
+    - AWS_ACCESS_KEY_ID</td>
+    - AWS_SECRET_ACCESS_KEY</td>
+    - S3_BUCKET</td>
+  - part: body
+    type: word
+    words:
+    - <title>Error</title>
+  - status:
+    - 200
+    - 500
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: codeigniter-errors
 info:
-  id: codeigniter-errors
+  author: reewardius
+  metadata:
+    max-request: 1
   name: CodeIgniter - Errors
-  author: OpenAI
-  description: Codeigniter Misconfiguration. 
   severity: medium
-  classification:
-    tags:
-      - codeigniter
-      - misconfiguration
-
-  matchers-condition: or
-
-  requests:
-      method: GET
-      path: 
-        - "/"
-      description: Attempt to retrieve the root page of the Vercel deployment
-
-  matchers:
-    - pattern: "DBPASSWORD</td>"
-    - pattern: "PAYPAL_CLIENT_SECRET</td>"
-    - pattern: "redrake_password</td>"
-    - pattern: "elk_password</td>"
-    - pattern: "database.default.password</td>"
-    - pattern: "database.minisite.password</td>"
-    - pattern: "database.db2.password</td>"
-    - pattern: "AWS_ACCESS_KEY_ID</td>"
-    - pattern: "AWS_SECRET_ACCESS_KEY</td>"
-    - pattern: "S3_BUCKET</td>"
-    - pattern: "<title>ErrorException</title>"
-      type: body
-      description: Vercel deployment returned a 404 response
-
-  response:
-    - status:
-        - 200
-        - 500
+  tags: error

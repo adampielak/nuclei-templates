@@ -1,4 +1,4 @@
-id: 3d-cover-carousel-e3b7977578ea85058de3bb34af6ce851
+id: 3d-cover-carousel
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5e14205-d31d-414b-aff2-22f589dbf04c?source=api-scan
   classification:
     cvss-metrics: 
