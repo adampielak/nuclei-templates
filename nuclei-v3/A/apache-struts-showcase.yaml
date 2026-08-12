@@ -1,31 +1,28 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Struts2 Showcase
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/struts2-showcase/showcase.action'
+  stop-at-first-match: true
 id: apache-struts-showcase
-
 info:
-  name: Apache Struts - ShowCase Application Exposure
   author: DhiyaneshDK
-  severity: low
-  reference:
-    - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/ApacheStrutsWebConsole.java
+  description: Apache Structs ShowCase Application is exposed.
   metadata:
     max-request: 2
-    verified: "true"
     shodan-query: title:"Struts2 Showcase"
+    verified: true
+  name: Apache Struts - ShowCase Application Exposure
+  reference:
+  - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/ApacheStrutsWebConsole.java
+  severity: low
   tags: apache,struts,showcase,misconfig,exposure
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-      - '{{BaseURL}}/struts2-showcase/showcase.action'
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Struts2 Showcase'
-
-      - type: status
-        status:
-          - 200

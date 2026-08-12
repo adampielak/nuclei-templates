@@ -1,29 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - Cookies Example
+    - 'Your browser is sending the following cookies:'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/examples/servlets/servlet/CookieExample'
 id: tomcat-cookie-exposed
-
 info:
-  name: Tomcat Cookie Exposed
   author: tess,dk999
-  severity: low
-  reference:
-    - https://medium.com/bugbountywriteup/apache-example-servlet-leads-to-61a2720cac20
+  description: Tomcat Cookie is exposed.
   metadata:
     max-request: 1
     verified: true
+  name: Tomcat Cookie Exposed
+  reference:
+  - https://medium.com/bugbountywriteup/apache-example-servlet-leads-to-61a2720cac20
+  severity: low
   tags: misconfig,apache,tomcat,exposure
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/examples/servlets/servlet/CookieExample"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Cookies Example"
-          - "Your browser is sending the following cookies:"
-        condition: and
-
-      - type: status
-        status:
-          - 200

@@ -1,26 +1,27 @@
 id: jira-plugin-sqli
 info:
-  name: Jira Plugin SQL Injection Check
   author: lopseg
+  description: "Verifica se o servidor do plugin Jira est\xE1 vulner\xE1vel a ataques\
+    \ de Inje\xE7\xE3o SQL."
+  name: Jira Plugin SQL Injection Check
   severity: high
-  description: Verifica se o servidor do plugin Jira está vulnerável a ataques de Injeção SQL.
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/plugins/servlet/oauth/users/icon-uri?consumerUri={{SQLI}}"
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "You have an error in your SQL syntax"
-          - "SQLSyntaxErrorException"
-          - "MySQLSyntaxErrorException"
-      - type: status
-        status:
-          - "500"
-          - "503"
-          - "504"
-          - "400"
-          - "401"
-          - "403"
-          - "404"
+- matchers:
+  - type: word
+    words:
+    - You have an error in your SQL syntax
+    - SQLSyntaxErrorException
+    - MySQLSyntaxErrorException
+  - status:
+    - '500'
+    - '503'
+    - '504'
+    - '400'
+    - '401'
+    - '403'
+    - '404'
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/plugins/servlet/oauth/users/icon-uri?consumerUri={{SQLI}}'
