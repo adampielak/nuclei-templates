@@ -1,0 +1,51 @@
+id: kitchor-c6a49422-ac78-4fad-a69a-55c0569ec8b5
+
+info:
+  name: >
+    Kitchor <= 1.4.3 - Authenticated (Contributor+) Local File Inclusion
+  author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c6a49422-ac78-4fad-a69a-55c0569ec8b5?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/themes/kitchor/"
+    google-query: inurl:"/wp-content/themes/kitchor/"
+    shodan-query: 'http.html:"wp-content/themes/kitchor/"'
+  tags: cve,wordpress,wp-theme,kitchor,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/kitchor/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "kitchor"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.4.3')

@@ -2,7 +2,7 @@ id: hbook-e1c16bcb-c188-4e01-9d0b-e4e1a1ef82ee
 
 info:
   name: >
-    Booking Calendar – Event Calendar <= 2.1.6 - Unauthenticated Stored Cross-Site Scripting via Multiple Parameters
+    HBook <= 2.1.9 - Unauthenticated Stored Cross-Site Scripting via Multiple Parameters
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.6')
+          - compare_versions(version, '<= 2.1.9')

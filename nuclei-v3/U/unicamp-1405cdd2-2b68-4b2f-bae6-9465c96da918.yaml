@@ -1,0 +1,51 @@
+id: unicamp-1405cdd2-2b68-4b2f-bae6-9465c96da918
+
+info:
+  name: >
+    Unicamp - University and College WordPress Theme <= 2.2.2 - Authenticated (Subscriber+) SQL Injection
+  author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1405cdd2-2b68-4b2f-bae6-9465c96da918?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/themes/unicamp/"
+    google-query: inurl:"/wp-content/themes/unicamp/"
+    shodan-query: 'http.html:"wp-content/themes/unicamp/"'
+  tags: cve,wordpress,wp-theme,unicamp,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/unicamp/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "unicamp"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.2.2')

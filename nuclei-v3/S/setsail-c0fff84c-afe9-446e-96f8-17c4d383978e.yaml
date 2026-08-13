@@ -1,0 +1,51 @@
+id: setsail-c0fff84c-afe9-446e-96f8-17c4d383978e
+
+info:
+  name: >
+    SetSail - Travel Agency WordPress Theme <= 2.1 - Authenticated (Contributor+) Local File Inclusion
+  author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0fff84c-afe9-446e-96f8-17c4d383978e?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/themes/setsail/"
+    google-query: inurl:"/wp-content/themes/setsail/"
+    shodan-query: 'http.html:"wp-content/themes/setsail/"'
+  tags: cve,wordpress,wp-theme,setsail,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/setsail/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "setsail"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.1')

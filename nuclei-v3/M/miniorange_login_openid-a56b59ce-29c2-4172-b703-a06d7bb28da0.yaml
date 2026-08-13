@@ -1,0 +1,51 @@
+id: miniorange_login_openid-a56b59ce-29c2-4172-b703-a06d7bb28da0
+
+info:
+  name: >
+    miniOrange Social Login and Register (Discord, Google, Twitter, LinkedIn) <= 7.7.0 - Unauthenticated Authentication Bypass to Administrator Account Takeover via Profile Completion OTP Flow
+  author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a56b59ce-29c2-4172-b703-a06d7bb28da0?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/miniorange-login-openid/"
+    google-query: inurl:"/wp-content/plugins/miniorange-login-openid/"
+    shodan-query: 'http.html:"wp-content/plugins/miniorange-login-openid/"'
+  tags: cve,wordpress,wp-plugin,miniorange-login-openid,critical,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/miniorange-login-openid/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "miniorange-login-openid"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 7.7.0')

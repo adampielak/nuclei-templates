@@ -2,7 +2,7 @@ id: wp_event_solution-84a5348a-a307-4db4-83b6-08682282a4b8
 
 info:
   name: >
-    Eventin 4.0.25 - 4.1.15 - Missing Authorization to Unauthenticated Payment Bypass via REST API
+    Eventin 4.0.26 - 4.1.15 - Missing Authorization to Unauthenticated Payment Bypass via REST API
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '> 4.0.25', '<= 4.1.15')
+          - compare_versions(version, '>= 4.0.26', '<= 4.1.15')

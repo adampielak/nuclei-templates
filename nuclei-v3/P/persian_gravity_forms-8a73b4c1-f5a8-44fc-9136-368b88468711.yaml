@@ -1,0 +1,51 @@
+id: persian_gravity_forms-8a73b4c1-f5a8-44fc-9136-368b88468711
+
+info:
+  name: >
+    sync-basalam <= 3.0.2 - Authenticated (Administrator+) SQL Injection
+  author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a73b4c1-f5a8-44fc-9136-368b88468711?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/persian-gravity-forms/"
+    google-query: inurl:"/wp-content/plugins/persian-gravity-forms/"
+    shodan-query: 'http.html:"wp-content/plugins/persian-gravity-forms/"'
+  tags: cve,wordpress,wp-plugin,persian-gravity-forms,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/persian-gravity-forms/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "persian-gravity-forms"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.0.2')

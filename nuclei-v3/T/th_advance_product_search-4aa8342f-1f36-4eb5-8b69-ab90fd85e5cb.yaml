@@ -1,0 +1,51 @@
+id: th_advance_product_search-4aa8342f-1f36-4eb5-8b69-ab90fd85e5cb
+
+info:
+  name: >
+    Advance Product Search- Voice & Ajax Search for WooCommerce <= 1.4.4 - Unauthenticated SQL Injection via 's' and 'match' Parameter
+  author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4aa8342f-1f36-4eb5-8b69-ab90fd85e5cb?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/th-advance-product-search/"
+    google-query: inurl:"/wp-content/plugins/th-advance-product-search/"
+    shodan-query: 'http.html:"wp-content/plugins/th-advance-product-search/"'
+  tags: cve,wordpress,wp-plugin,th-advance-product-search,critical,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/th-advance-product-search/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "th-advance-product-search"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.4.4')

@@ -1,0 +1,51 @@
+id: neve_pro_addon-22c2b12b-dc80-4127-86bd-21d4f1988e56
+
+info:
+  name: >
+    Neve PRO <= 3.1.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
+  author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/22c2b12b-dc80-4127-86bd-21d4f1988e56?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/themes/neve-pro-addon/"
+    google-query: inurl:"/wp-content/themes/neve-pro-addon/"
+    shodan-query: 'http.html:"wp-content/themes/neve-pro-addon/"'
+  tags: cve,wordpress,wp-theme,neve-pro-addon,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/neve-pro-addon/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "neve-pro-addon"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.1.2')

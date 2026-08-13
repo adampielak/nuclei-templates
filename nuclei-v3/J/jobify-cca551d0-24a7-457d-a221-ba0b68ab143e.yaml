@@ -1,0 +1,51 @@
+id: jobify-cca551d0-24a7-457d-a221-ba0b68ab143e
+
+info:
+  name: >
+    Jobify <= 4.3.2 - Unauthenticated Stored Cross-Site Scripting
+  author: topscoder
+  severity: high
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cca551d0-24a7-457d-a221-ba0b68ab143e?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/themes/jobify/"
+    google-query: inurl:"/wp-content/themes/jobify/"
+    shodan-query: 'http.html:"wp-content/themes/jobify/"'
+  tags: cve,wordpress,wp-theme,jobify,high,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/jobify/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "jobify"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 4.3.2')

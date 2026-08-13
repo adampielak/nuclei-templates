@@ -1,0 +1,51 @@
+id: wpify_woo-a9b8f2d5-a2c5-4f90-ab1d-4e17f7a7996e
+
+info:
+  name: >
+    WPify Woo <= 5.4.16 - Authenticated (Shop Manager+) Privilege Escalation via Arbitrary Option Update via save_option REST Endpoint
+  author: topscoder
+  severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a9b8f2d5-a2c5-4f90-ab1d-4e17f7a7996e?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/wpify-woo/"
+    google-query: inurl:"/wp-content/plugins/wpify-woo/"
+    shodan-query: 'http.html:"wp-content/plugins/wpify-woo/"'
+  tags: cve,wordpress,wp-plugin,wpify-woo,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/wpify-woo/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "wpify-woo"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 5.4.16')

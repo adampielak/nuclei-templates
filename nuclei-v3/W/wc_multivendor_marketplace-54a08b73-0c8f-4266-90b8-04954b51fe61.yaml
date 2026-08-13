@@ -2,7 +2,7 @@ id: wc_multivendor_marketplace-54a08b73-0c8f-4266-90b8-04954b51fe61
 
 info:
   name: >
-    WCFM Marketplace <= 3.6.17 - Missing Authorization
+    WCFM Marketplace <= 3.7.3 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.6.17')
+          - compare_versions(version, '<= 3.7.3')
