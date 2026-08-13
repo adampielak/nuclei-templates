@@ -484,4 +484,9 @@ requests:
 
       - type: regex
         name: virtuoso
-        re
+        regex:
+          - "SQ074: Line \\d+:"
+          - "SR185: Undefined procedure"
+          - "SQ200: No table "
+          - "Virtuoso S0002 Error"
+          - "\\[(Virtuoso Driver|Virtuoso iODBC Driver)\\]\\[Virtuoso Server\\]"
