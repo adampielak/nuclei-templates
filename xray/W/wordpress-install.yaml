@@ -1,16 +1,17 @@
-expression: r0()
 id: wordpress-install
+
 info:
-  author: princechaddha
   name: WordPress Exposed Installation
-  reference:
-  - https://smaranchand.com.np/2020/04/misconfigured-wordpress-takeover-to-remote-code-execution/
+  author: princechaddha
   severity: high
   verified: false
+  reference:
+    - https://smaranchand.com.np/2020/04/misconfigured-wordpress-takeover-to-remote-code-execution/
+
 rules:
   r0:
-    expression: response.status == 200 && response.body.ibcontains(b'<title>WordPress
-      &rsaquo; Installation</title>') && response.body.ibcontains(b'Site Title')
     request:
       method: GET
       path: /wp-admin/install.php
+    expression: response.status == 200 && response.body.ibcontains(b'<title>WordPress &rsaquo; Installation</title>') && response.body.ibcontains(b'Site Title')
+expression: r0()

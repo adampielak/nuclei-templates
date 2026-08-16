@@ -1,16 +1,17 @@
-expression: r0()
 id: storm-unauthorized-access
+
 info:
-  author: pikpikcu
   name: Apache Storm Unauthorized Access
-  reference:
-  - https://storm.apache.org/releases/current/STORM-UI-REST-API.html
+  author: pikpikcu
   severity: medium
   verified: false
+  reference: 
+    - https://storm.apache.org/releases/current/STORM-UI-REST-API.html
+
 rules:
-  r0:
-    expression: response.status == 200 && response.body.bcontains(b"{\"totalMem\":")
-      && response.body.bcontains(b"\"stormVersion\":")
-    request:
-      method: GET
-      path: /api/v1/cluster/summary
+    r0:
+        request:
+            method: GET
+            path: /api/v1/cluster/summary
+        expression: response.status == 200 && response.body.bcontains(b"{\"totalMem\":") && response.body.bcontains(b"\"stormVersion\":")
+expression: r0()

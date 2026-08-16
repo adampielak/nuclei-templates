@@ -1,33 +1,30 @@
 id: rsync-version
-info:
-  author: DhiyaneshDK
-  description: 'Identify the Version of the Rsync Protocol
 
-    '
+info:
+  name: Rsync Version - Detect
+  author: DhiyaneshDK
+  severity: info
+  description: |
+    Identify the Version of the Rsync Protocol
   metadata:
+    verified: true
     max-request: 1
     shodan-query: port:"873"
-    verified: true
-  name: Rsync Version - Detect
-  severity: info
   tags: js,network,rsync,enum
+
 javascript:
-- args:
-    Host: '{{Host}}'
-    Port: 873
-  code: 'let m = require(''nuclei/rsync'');
+  - code: |
+      let m = require('nuclei/rsync');
+      let c = m.RsyncClient();
+      let response = c.IsRsync(Host,Port);
+      Export(response);
 
-    let response = m.IsRsync(Host,Port);
+    args:
+      Host: "{{Host}}"
+      Port: "873"
 
-    Export(response);
-
-    '
-  extractors:
-  - json:
-    - .Banner
-    name: version
-    type: json
-  matchers:
-  - dsl:
-    - len(version) != 0
-    type: dsl
+    extractors:
+      - type: json
+        json:
+          - .Banner
+# digest: 4a0a00473045022013d9f19ecf0b7e4e55ca380beff6e7ea6669e826f817fbb5141a8d86a41a4f02022100fba251af63e45c45ae00ff8b0bffc6686124cbe5dcc4aaba91c6e1d164742e4f:922c64590222798bb761d5b6d8e72950

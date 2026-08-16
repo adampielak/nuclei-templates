@@ -1,21 +1,23 @@
+expression: r0() || r1()
 id: axis-detect
-
 info:
-  name: apache-axis-detect
   author: dogasantos
+  description: Axis and Axis2 detection
+  name: apache-axis-detect
   severity: info
   verified: true
-  description: Axis and Axis2 detection
-
 rules:
   r0:
+    expression: response.status == 200 && response.body.bcontains(b"Validate") &&
+      response.body.bcontains(b"Welcome") && response.body.bcontains(b"Axis") && response.body.bcontains(b"deployed")
+      && response.body.bcontains(b"installation") && response.body.bcontains(b"Admin")
     request:
       method: GET
       path: /axis2/
-    expression: response.status == 200 && response.body.bcontains(b"Validate") && response.body.bcontains(b"Welcome") && response.body.bcontains(b"Axis") && response.body.bcontains(b"deployed") && response.body.bcontains(b"installation") && response.body.bcontains(b"Admin")
   r1:
+    expression: response.status == 200 && response.body.bcontains(b"Validate") &&
+      response.body.bcontains(b"Welcome") && response.body.bcontains(b"Axis") && response.body.bcontains(b"deployed")
+      && response.body.bcontains(b"installation") && response.body.bcontains(b"Admin")
     request:
       method: GET
       path: /axis/
-    expression: response.status == 200 && response.body.bcontains(b"Validate") && response.body.bcontains(b"Welcome") && response.body.bcontains(b"Axis") && response.body.bcontains(b"deployed") && response.body.bcontains(b"installation") && response.body.bcontains(b"Admin")
-expression: r0() || r1()

@@ -1,5 +1,4 @@
 id: php-ini
-
 info:
   name: Php.ini File Disclosure
   author: geeknik,DhiyaneshDK
@@ -9,15 +8,12 @@ info:
     verified: true
     shodan-query: php.ini
   tags: config,exposure
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/php.ini"
-
     matchers-condition: and
     matchers:
-
       - type: word
         part: body
         words:
@@ -26,7 +22,6 @@ requests:
           - "safe_mode"
           - "expose_php"
         condition: and
-
       - type: status
         status:
           - 200

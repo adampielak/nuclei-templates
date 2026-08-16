@@ -1,30 +1,35 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - class="esphome-header
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/login'
 id: esphome-panel
+
 info:
+  name: ESPHome Login Panel - Detect
   author: fabaff
-  classification:
-    cpe: cpe:2.3:a:esphome:esphome:*:*:*:*:*:*:*:*
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cwe-id: CWE-200
+  severity: info
   description: ESPHome login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
   metadata:
+    verified: true
     max-request: 1
+    vendor: esphome
     product: esphome
     shodan-query: title:"Login - ESPHome"
-    vendor: esphome
-    verified: true
-  name: ESPHome Login Panel - Detect
-  severity: info
   tags: panel,esphome,iot
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/login'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'class="esphome-header'
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a004830460221008ce067dd6f1594af1166fa8103d62afa89ce31b34d3c35c90d451ee10a001c87022100f61ee70c6410075ffc4c11c4c875b0498989365da264675305a8b4ce5b77937a:922c64590222798bb761d5b6d8e72950

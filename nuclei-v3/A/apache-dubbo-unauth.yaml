@@ -1,24 +1,27 @@
 id: apache-dubbo-unauth
-
 info:
-  name: Apache Dubbo - Unauthenticated Access
   author: j4vaovo
-  severity: high
-  description: Apache Dubbo Unauthenticated Access.
+  description: 'Apache Dubbo Unauthenticated Access were detected.
+
+    '
+  metadata:
+    fofa-query: apache dubbo
+    max-request: 1
+    verified: true
+  name: Apache Dubbo - Unauthenticated Access
   reference:
-  tags: network,dubbo,apache,unauth
-
-network:
-  - inputs:
-      - data: "68656c700d0a"
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-      - "{{Host}}:20880"
-    read-size: 2048
-
-    matchers:
-      - type: word
-        words:
-          - "trace [service] [method] [times]"
+  - https://dubbo.apache.org/en/docs3-v2/java-sdk/advanced-features-and-usage/security/auth/
+  severity: high
+  tags: network,dubbo,apache,unauth,misconfig
+tcp:
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 68656c700d0a
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - trace [service] [method] [times]
+  port: 20880
+  read-size: 2048

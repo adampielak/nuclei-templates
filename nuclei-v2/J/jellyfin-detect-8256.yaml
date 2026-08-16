@@ -1,10 +1,8 @@
 id: jellyfin-detect
-
 info:
   name: Jellyfin detected
   author: dwisiswant0
   severity: info
-
 requests:
   - method: GET
     path:
