@@ -5,15 +5,22 @@ info:
   tags: detect,tech,showdoc
   severity: info
   metadata:
+    fofa-query:
+    - app="showdoc"
+    hunter-query:
+    - web.title="showdoc"
     product: showdoc
-    vendor: 00_unknown
-    verified: false
+    shodan-query:
+    - http.title:"showdoc"
+    vendor: star7th
+    verified: true
+    zoomeye-query:
+    - app:"showdoc"
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: word
-    words:
-    - content=本网站基于开源版showdoc搭建
-    case-insensitive: true
+  - type: regex
+    regex:
+    - (?mi)<title[^>]*>showdoc.*?</title>

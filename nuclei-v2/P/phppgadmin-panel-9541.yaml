@@ -1,4 +1,5 @@
 id: phppgadmin-panel
+
 info:
   name: phpPgAdmin Panel
   author: Ganofins
@@ -10,6 +11,7 @@ info:
     cwe-id: CWE-200
   remediation: Ensure proper access.
   tags: panel,phppgadmin
+
 requests:
   - method: GET
     path:

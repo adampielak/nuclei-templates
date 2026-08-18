@@ -1,8 +1,10 @@
 id: server-status-localhost
+
 info:
   name: Server Status Disclosure
   author: bauthard
   severity: low
+
 requests:
   - method: GET
     # Example of sending some headers to the servers
