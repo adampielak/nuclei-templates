@@ -1,23 +1,21 @@
 id: reverse-proxy-detect
-
 info:
-  name: Reverse Proxy Detect
   author: NkxxkN https://twitter.com/NkkxN
+  name: Reverse Proxy Detect
   severity: low
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
-    matchers-condition: or
-    matchers:
-      - type: word
-        name: nginx
-        words:
-          - "Server: nginx"
-        part: header
-      - type: word
-        name: apache
-        words:
-          - "Server: Apache"
-        part: header
+- matchers:
+  - name: nginx
+    part: header
+    type: word
+    words:
+    - 'Server: nginx'
+  - name: apache
+    part: header
+    type: word
+    words:
+    - 'Server: Apache'
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}/'

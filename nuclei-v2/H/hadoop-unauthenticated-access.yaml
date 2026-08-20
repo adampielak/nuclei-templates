@@ -1,19 +1,19 @@
+author: YourName
 id: hadoop-unauthenticated-access
 info:
+  description: Detects potential unauthenticated access to Apache Hadoop in the target
   name: Apache Hadoop Unauthenticated Access
   severity: high
-  description: Detects potential unauthenticated access to Apache Hadoop in the target
-author: YourName
-tags:
-  - web
-  - apache-hadoop
 requests:
-- method: GET
-  path:
-    - "/hadoop"
-    - "/list-files"
-  matchers:
-  - type: regex
-    part: body
+- matchers:
+  - part: body
     regex:
-    - "Unauthorized: Access denied"
+    - 'Unauthorized: Access denied'
+    type: regex
+  method: GET
+  path:
+  - /hadoop
+  - /list-files
+tags:
+- web
+- apache-hadoop

@@ -1,24 +1,23 @@
 id: zhiyuan-A6-leakage
-
 info:
-  name: 致远OA A6 createMysql.jsp 数据库敏感信息泄露
   author: str1am
+  name: "\u81F4\u8FDCOA A6 createMysql.jsp \u6570\u636E\u5E93\u654F\u611F\u4FE1\u606F\
+    \u6CC4\u9732"
   severity: high
   tags: zhiyuan
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/yyoa/createMysql.jsp"
-      - "{{BaseURL}}/yyoa/ext/createMysql.jsp"
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        words:
-          - "root"
-          - "localhost"
-        part: body
-        condition: and
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - root
+    - localhost
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/yyoa/createMysql.jsp'
+  - '{{BaseURL}}/yyoa/ext/createMysql.jsp'
