@@ -1,11 +1,14 @@
 id: mysql
 info:
-  name: Drizzle
+  name: MySQL
   author: nmap,cn-kali-team
   tags: detect,tech,mysql,service
   severity: info
   metadata:
+    product: mysql
     rarity: 0
+    vendor: mysql
+    verified: true
     version: $1
 tcp:
 - name: 'null'
@@ -17,4 +20,4 @@ tcp:
   - name: mysql
     type: regex
     regex:
-    - (?i)^.\0\0\0\x0a([\w._-]+)\0............\0\x5f\xd3\x2d\x02\0\0\0\0\0\0\0\0\0\0\0\0\0\0............\0$
+    - (?i)^.\0\0\0\x0a(5\.[-_~.+\w]+)\0

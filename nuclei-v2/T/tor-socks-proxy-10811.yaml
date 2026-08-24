@@ -3,12 +3,10 @@ info:
   name: Detect tor SOCKS proxy
   author: geeknik
   severity: info
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers-condition: and
     matchers:
       - type: word
