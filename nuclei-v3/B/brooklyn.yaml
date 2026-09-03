@@ -1,15 +1,14 @@
-id: brooklyn-2fa86c84e3142a5f1056eb334a8088de
+id: brooklyn
 
 info:
   name: >
-    Brooklyn Theme <= 4.9.9.2 - Authenticated (Subscriber+) PHP Object Injection in ot_decode
+    Brooklyn <= 4.9.7.6 - PHP Object Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/50cc3bd5-91ee-4b57-8159-60dd700375f3?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5dd962a5-ec0e-415f-8efa-91e78bb80d16?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.9.9.2')
+          - compare_versions(version, '<= 4.9.7.6')

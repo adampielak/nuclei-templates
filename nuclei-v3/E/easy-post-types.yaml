@@ -1,15 +1,14 @@
-id: easy-post-types-422d4e69ffd0199ede6b487dc4d39805
+id: easy-post-types
 
 info:
   name: >
-    WP Easy Post Types <= 1.4.4 - Authenticated (Subscriber+) Missing Authorization via Multiple Functions
+    WP Easy Post Types < 1.4.4 - Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d12c4b1c-23d0-430f-a6ea-0a3ab487ed10?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/63af18df-a3e4-48e6-be84-15d33edf3b46?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/easy-post-types/"
     google-query: inurl:"/wp-content/plugins/easy-post-types/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,easy-post-types,low
+  tags: cve,wordpress,wp-plugin,easy-post-types,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.4')
+          - compare_versions(version, '< 1.4.4')

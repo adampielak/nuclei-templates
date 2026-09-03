@@ -1,15 +1,14 @@
-id: atomchat-545b7c51685b0ce18aedd153cc71f86f
+id: atomchat
 
 info:
   name: >
-    AtomChat <= 1.1.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via atomchat Shortcode
+    AtomChat <= 1.1.4 - Missing Authorization via credits REST API Endpoint
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c10993bd-b4f3-44b6-bb0f-cb783dbcf314?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/21f917a4-efee-421b-98b1-a9b18c7527d2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/atomchat/"
     google-query: inurl:"/wp-content/plugins/atomchat/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,atomchat,low
+  tags: cve,wordpress,wp-plugin,atomchat,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.5')
+          - compare_versions(version, '<= 1.1.4')

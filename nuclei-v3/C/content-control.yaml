@@ -1,15 +1,14 @@
-id: content-control-a2270e9b07760163091f643909724c0f
+id: content-control
 
 info:
   name: >
-    Content Control – The Ultimate Content Restriction Plugin! Restrict Content, Create Conditional Blocks & More <= 2.5.0 - Unauthenticated Content Restriction Bypass to Sensitive Information Exposure
+    Content Control <= 2.1.0 - Missing Authorization to Sensitive Information Exposure
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bbe51f96-82b2-4091-acd8-a8131a47eb07?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a14cce74-6432-4b92-85c8-8b899e4248fd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/content-control/"
     google-query: inurl:"/wp-content/plugins/content-control/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,content-control,low
+  tags: cve,wordpress,wp-plugin,content-control,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.0')
+          - compare_versions(version, '<= 2.1.0')

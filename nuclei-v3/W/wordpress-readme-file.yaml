@@ -1,26 +1,30 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - WordPress &#8250; ReadMe
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/readme.html'
-  - '{{BaseURL}}/wp/readme.html'
-  - '{{BaseURL}}/blog/wp/readme.html'
-  stop-at-first-match: true
 id: wordpress-readme-file
+
 info:
+  name: WordPress Readme File
   author: tess
+  severity: info
   metadata:
     max-request: 3
-    shodan-query: http.component:"wordpress"
     verified: true
-  name: WordPress Readme File
-  severity: info
+    shodan-query: http.component:"wordpress"
   tags: exposure,wordpress,wp,readme,files
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/readme.html"
+      - "{{BaseURL}}/wp/readme.html"
+      - "{{BaseURL}}/blog/wp/readme.html"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'WordPress &#8250; ReadMe'
+
+      - type: status
+        status:
+          - 200

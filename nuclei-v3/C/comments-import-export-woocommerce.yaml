@@ -1,15 +1,14 @@
-id: comments-import-export-woocommerce-98650657297b8f36c779ec9f7184271a
+id: comments-import-export-woocommerce
 
 info:
   name: >
-    WordPress Comments Import & Export <= 2.4.3 - Missing Authorization to Authenticated (Subscriber+) Stored Cross-Site Scripting
+    WebToffee Plugins <= (Various Versions) - Arbitrary User Creation
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f8bc8863-04a9-4631-9510-624f98ea1e75?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/27ac48a7-52ee-46cb-a6d0-efbd2b516445?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.3')
+          - compare_versions(version, '< 2.1.11')

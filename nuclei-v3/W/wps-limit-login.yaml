@@ -2,14 +2,13 @@ id: wps-limit-login
 
 info:
   name: >
-    WPS Limit Login < 1.4.6.1 - Stored Cross-Site Scripting
+    WPS Limit Login < 1.4.6.1 - Authorization Bypass via IP Spoofing
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/28dfc8c9-478c-48b2-8781-7e0787fd50fd?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5e0ce0dc-34eb-4577-82a5-8ed822847ff4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
