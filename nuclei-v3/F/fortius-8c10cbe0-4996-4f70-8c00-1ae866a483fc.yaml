@@ -1,45 +1,51 @@
-http:
-- extractors:
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - (?mi)Version:\s*([0-9.]+)
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - fortius
-  - dsl:
-    - compare_versions(version, '<= 2.3.0')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/fortius/style.css'
-  redirects: true
 id: fortius-8c10cbe0-4996-4f70-8c00-1ae866a483fc
-info:
-  author: topscoder
-  classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
-  metadata:
-    fofa-query: wp-content/themes/fortius/
-    google-query: inurl:"/wp-content/themes/fortius/"
-    shodan-query: http.html:"wp-content/themes/fortius/"
-  name: 'Fortius <= 2.3.0 - Unauthenticated Local File Inclusion
 
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/8c10cbe0-4996-4f70-8c00-1ae866a483fc?source=api-scan
+info:
+  name: >
+    Fortius <= 2.3.0 - Unauthenticated Local File Inclusion
+  author: topscoder
   severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8c10cbe0-4996-4f70-8c00-1ae866a483fc?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/themes/fortius/"
+    google-query: inurl:"/wp-content/themes/fortius/"
+    shodan-query: 'http.html:"wp-content/themes/fortius/"'
   tags: cve,wordpress,wp-theme,fortius,critical,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/themes/fortius/style.css"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Version:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "fortius"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.3.0')

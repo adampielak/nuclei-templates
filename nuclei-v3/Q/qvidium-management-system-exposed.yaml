@@ -1,32 +1,39 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - QVidium Management
-    - src="/cgi-bin/banner.cgi
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: qvidium-management-system-exposed
+
 info:
+  name: QVidium Management System Exposed
   author: tess
+  severity: medium
   description: QVidium Management System is Exposed.
   metadata:
+    verified: true
     max-request: 1
     shodan-query: html:"QVidium Management"
-    verified: true
-  name: QVidium Management System Exposed
-  severity: medium
   tags: misconfig,qvidium
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'QVidium Management'
+          - 'src="/cgi-bin/banner.cgi'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'text/html'
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100cab3f70632c4d4da72cd4d2de5df595b462924836daf83ace39444757c820e69022100bcc677436f8cd78dfc8c71a17091bcb92d3048510a1d5baf0b84877ec7711dd5:922c64590222798bb761d5b6d8e72950

@@ -1,4 +1,5 @@
 id: apport-error-reporting-disabled-check
+
 info:
   name: Ensure Automatic Error Reporting is Not Enabled
   author: Th3l0newolf
@@ -13,9 +14,12 @@ info:
       sudo apt remove apport -y
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
+  tags: cis,linux,ubuntu,apport,error-reporting,audit
   metadata:
     verified: true
-  tags: apport,audit,cis,error-reporting,linux,ubuntu
+
+self-contained: true
+
 code:
   - engine:
       - bash
@@ -27,14 +31,15 @@ code:
         else
           echo "[apport-error-reporting-disabled-check:Policy-Pass] [Automatic Error Reporting is disabled] [CIS_PASS] [medium]"
         fi
+
     matchers:
       - type: word
         name: policy-pass
         words:
           - "Policy-Pass"
+
       - type: word
         name: policy-fail
         words:
           - "Policy-Fail"
-        # digest: 490a0046304402200d37587f3a27f271e96ffbea88879b3f065db850de39a41b3ec97fb0c538f07b0220445de576573745b10d3e4d01b186ef72a9b7270bd0685634c45ddc4348243424:922c64590222798bb761d5b6d8e72950
-self-contained: true
+# digest: 490a0046304402200d37587f3a27f271e96ffbea88879b3f065db850de39a41b3ec97fb0c538f07b0220445de576573745b10d3e4d01b186ef72a9b7270bd0685634c45ddc4348243424:922c64590222798bb761d5b6d8e72950

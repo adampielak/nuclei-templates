@@ -5,9 +5,13 @@ info:
   tags: detect,tech,clipbucket
   severity: info
   metadata:
+    fofa-query:
+    - body="clipbucket" || body="clipbucket"
     product: clipbucket
-    vendor: 00_unknown
-    verified: false
+    shodan-query:
+    - http.html:"clipbucket"
+    vendor: macwarrior
+    verified: true
 http:
 - method: GET
   path:
@@ -15,12 +19,4 @@ http:
   matchers:
   - type: word
     words:
-    - <!-- clipbucket
-    - content="clipbucket
-    condition: and
-    case-insensitive: true
-  - type: word
-    words:
-    - <!-- forged by clipbucket
-    - href="http://clip-bucket.com/">clipbucket
-    case-insensitive: true
+    - clipbucket

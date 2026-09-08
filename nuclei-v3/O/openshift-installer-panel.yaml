@@ -9,14 +9,11 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:L
     cvss-score: 4.6
     cwe-id: CWE-284
-    cpe: cpe:2.3:a:redhat:openshift_assisted_installer:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"OpenShift Assisted Installer"
-    product: openshift_assisted_installer
-    vendor: redhat
-  tags: panel,openshift,cluster,misconfig,vuln
+  tags: panel,openshift,cluster,misconfig
 
 http:
   - method: GET
@@ -38,4 +35,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022036e229dc3aa8c667e3c48edd636be0689fb08551b0c58888a1b20db94e39a2c7022100e890df701d976a47eb0b8ad0fb2d9e3d4cf65d315ca6b683667df8200d05e1a6:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a0048304602210091fc7bb70722073fe8dc3d57bc3debe24159eb2b4a0363af2f47ef4db5d0a05d022100b35cedf0abddb00d8d9951fe689069f4a00190b13f6c4d44a38236be4300668a:922c64590222798bb761d5b6d8e72950

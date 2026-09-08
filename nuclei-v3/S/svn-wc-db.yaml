@@ -9,11 +9,15 @@ info:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
     - https://github.com/rapid7/metasploit-framework/blob/master//modules/auxiliary/scanner/http/svn_wcdb_scanner.rb
     - https://infosecwriteups.com/indias-aadhar-card-source-code-disclosure-via-exposed-svn-wc-db-c05519ea7761
+  classification:
+    cpe: cpe:2.3:a:apache:subversion:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: apache
+    product: subversion
     google-query: intitle:"index of" "wc.db"
-  tags: msf,exposure,svn,config,files
+  tags: msf,exposure,svn,config,files,vuln
 
 http:
   - method: GET
@@ -36,4 +40,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207b3da2350ab0dfe42fea1b9232ea351923200d1ea45bd9d3ae7a0c20ab8b1a5102210094ee3f8bfe328ad9a92ca4f3473a4e14a0dfe5e9f2a598b38282b826b31c7f38:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100be0f47d2126fe4ea476a980f78fa045ab6d163e2f25a70a19c4d26e47693471c02206100247ce31796913a6510935187322c705ee858d460eb39a7c1f4f9a9ba494f:922c64590222798bb761d5b6d8e72950

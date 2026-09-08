@@ -1,46 +1,51 @@
-http:
-- extractors:
-  - group: 1
-    name: version
-    part: body
-    regex:
-    - (?mi)Stable tag:\s*([0-9.]+)
-    type: regex
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - flashcard
-  - dsl:
-    - compare_versions(version, '<= 0.9')
-    type: dsl
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/flashcard/readme.txt'
-  redirects: true
 id: flashcard-f4fcc6e5-1f90-41e7-8d5a-2bfe8cbf46fa
-info:
-  author: topscoder
-  classification:
-    cve-id: null
-    cvss-metrics: null
-    cvss-score: null
-  description: ''
-  metadata:
-    fofa-query: wp-content/plugins/flashcard/
-    google-query: inurl:"/wp-content/plugins/flashcard/"
-    shodan-query: http.html:"wp-content/plugins/flashcard/"
-  name: 'Flashcard Plugin for WordPress <= 0.9 - Authenticated (Contributor+) Arbitrary
-    File Read via Path Traversal
 
-    '
-  reference:
-  - https://github.com/topscoder/nuclei-wordfence-cve
-  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f4fcc6e5-1f90-41e7-8d5a-2bfe8cbf46fa?source=api-scan
+info:
+  name: >
+    Flashcard Plugin for WordPress <= 0.9 - Authenticated (Contributor+) Arbitrary File Read via Path Traversal
+  author: topscoder
   severity: low
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f4fcc6e5-1f90-41e7-8d5a-2bfe8cbf46fa?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/flashcard/"
+    google-query: inurl:"/wp-content/plugins/flashcard/"
+    shodan-query: 'http.html:"wp-content/plugins/flashcard/"'
   tags: cve,wordpress,wp-plugin,flashcard,low,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/flashcard/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "flashcard"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 0.9')
