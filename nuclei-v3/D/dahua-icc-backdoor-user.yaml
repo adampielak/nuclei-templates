@@ -1,7 +1,7 @@
 id: dahua-icc-backdoor-user
 
 info:
-  name: Dahua Intelligent IoT - Information Disclosure
+  name: dahua-icc-backdoor-user
   author: DhiyaneshDk
   severity: high
   description: |
@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: icon_hash="-1935899595"body="*客户端会小于800*"
-  tags: dahua,exposure,backdoor,bypass,vuln
+  tags: dahua,exposure,backdoor,bypass
 
 http:
   - raw:
@@ -36,4 +36,4 @@ http:
         part: header
         words:
           - 'application/json'
-# digest: 4b0a00483046022100d9fa8f4cc82aad6bc968fea2327a40c16b8f9c6f8cb7ab6a9baa8e5b79877e3d022100caf7e9388c45662cbf7e0e195b45a6a97168bb351706374fc27304f5f99c395e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502202f66ac6a8c54de587e6e21482a082175a7931ae59dfa8ac2e63bf405ddcfe870022100a19620245a5e1eb6c6390359e3735bfff8a966f72dd07da246133ccf02ce03e5:922c64590222798bb761d5b6d8e72950

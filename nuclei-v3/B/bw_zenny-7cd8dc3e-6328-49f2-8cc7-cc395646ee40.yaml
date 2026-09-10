@@ -1,51 +1,45 @@
-id: bw_zenny-7cd8dc3e-6328-49f2-8cc7-cc395646ee40
-
-info:
-  name: >
-    Zenny <= 1.7.5 - Unauthenticated Local File Inclusion
-  author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7cd8dc3e-6328-49f2-8cc7-cc395646ee40?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/themes/bw-zenny/"
-    google-query: inurl:"/wp-content/themes/bw-zenny/"
-    shodan-query: 'http.html:"wp-content/themes/bw-zenny/"'
-  tags: cve,wordpress,wp-theme,bw-zenny,critical,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/bw-zenny/style.css"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - bw-zenny
+  - dsl:
+    - compare_versions(version, '<= 1.7.5')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/bw-zenny/style.css'
+  redirects: true
+id: bw_zenny-7cd8dc3e-6328-49f2-8cc7-cc395646ee40
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/bw-zenny/
+    google-query: inurl:"/wp-content/themes/bw-zenny/"
+    shodan-query: http.html:"wp-content/themes/bw-zenny/"
+  name: 'Zenny <= 1.7.5 - Unauthenticated Local File Inclusion
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "bw-zenny"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.7.5')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7cd8dc3e-6328-49f2-8cc7-cc395646ee40?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,bw-zenny,critical,candidate

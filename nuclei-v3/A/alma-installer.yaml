@@ -1,34 +1,28 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Setup wizard | Alma Installation</title>
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/setup/start'
 id: alma-installer
-
 info:
-  name: Alma Installation Exposure
   author: DhiyaneshDK
-  severity: high
   description: Alma is susceptible to the Installation page exposure due to misconfiguration.
   metadata:
-    verified: true
     max-request: 1
     shodan-query: title:"Alma Installation"
+    verified: true
+  name: Alma Installation Exposure
+  severity: high
   tags: misconfig,alma,install,exposure
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}/setup/start'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Setup wizard | Alma Installation</title>'
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
-# digest: 4b0a00483046022100c6250654d85fbaf80fbfeb1011ad7902c233e811ca4b2ecd51079239fd1d4998022100f44bc592a98719ffc09c63d53bbc99ce6798630a5618ca1693cf6aa6fda70b84:922c64590222798bb761d5b6d8e72950

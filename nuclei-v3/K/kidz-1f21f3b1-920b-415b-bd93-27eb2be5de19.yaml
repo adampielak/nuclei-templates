@@ -1,51 +1,45 @@
-id: kidz-1f21f3b1-920b-415b-bd93-27eb2be5de19
-
-info:
-  name: >
-    KIDZ <= 5.24 - Unauthenticated PHP Object Injection
-  author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f21f3b1-920b-415b-bd93-27eb2be5de19?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/themes/kidz/"
-    google-query: inurl:"/wp-content/themes/kidz/"
-    shodan-query: 'http.html:"wp-content/themes/kidz/"'
-  tags: cve,wordpress,wp-theme,kidz,critical,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/kidz/style.css"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - kidz
+  - dsl:
+    - compare_versions(version, '<= 5.24')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/kidz/style.css'
+  redirects: true
+id: kidz-1f21f3b1-920b-415b-bd93-27eb2be5de19
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/kidz/
+    google-query: inurl:"/wp-content/themes/kidz/"
+    shodan-query: http.html:"wp-content/themes/kidz/"
+  name: 'KIDZ <= 5.24 - Unauthenticated PHP Object Injection
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "kidz"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 5.24')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f21f3b1-920b-415b-bd93-27eb2be5de19?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,kidz,critical,candidate

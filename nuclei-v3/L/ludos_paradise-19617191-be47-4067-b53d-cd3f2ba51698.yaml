@@ -1,51 +1,45 @@
-id: ludos_paradise-19617191-be47-4067-b53d-cd3f2ba51698
-
-info:
-  name: >
-    Ludos Paradise <= 2.1.3 - Unauthenticated Local File Inclusion
-  author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/19617191-be47-4067-b53d-cd3f2ba51698?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/themes/ludos-paradise/"
-    google-query: inurl:"/wp-content/themes/ludos-paradise/"
-    shodan-query: 'http.html:"wp-content/themes/ludos-paradise/"'
-  tags: cve,wordpress,wp-theme,ludos-paradise,critical,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/ludos-paradise/style.css"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ludos-paradise
+  - dsl:
+    - compare_versions(version, '<= 2.1.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/ludos-paradise/style.css'
+  redirects: true
+id: ludos_paradise-19617191-be47-4067-b53d-cd3f2ba51698
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/ludos-paradise/
+    google-query: inurl:"/wp-content/themes/ludos-paradise/"
+    shodan-query: http.html:"wp-content/themes/ludos-paradise/"
+  name: 'Ludos Paradise <= 2.1.3 - Unauthenticated Local File Inclusion
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "ludos-paradise"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.1.3')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/19617191-be47-4067-b53d-cd3f2ba51698?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,ludos-paradise,critical,candidate

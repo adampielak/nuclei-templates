@@ -1,51 +1,45 @@
-id: author_avatars-c52eba24-e9b1-4471-9c0e-090f5cf8d932
-
-info:
-  name: >
-    Author Avatars List/Block <= 2.1.25 - Missing Authorization
-  author: topscoder
-  severity: high
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c52eba24-e9b1-4471-9c0e-090f5cf8d932?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/author-avatars/"
-    google-query: inurl:"/wp-content/plugins/author-avatars/"
-    shodan-query: 'http.html:"wp-content/plugins/author-avatars/"'
-  tags: cve,wordpress,wp-plugin,author-avatars,high,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/author-avatars/readme.txt"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - author-avatars
+  - dsl:
+    - compare_versions(version, '<= 2.1.25')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/author-avatars/readme.txt'
+  redirects: true
+id: author_avatars-c52eba24-e9b1-4471-9c0e-090f5cf8d932
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/author-avatars/
+    google-query: inurl:"/wp-content/plugins/author-avatars/"
+    shodan-query: http.html:"wp-content/plugins/author-avatars/"
+  name: 'Author Avatars List/Block <= 2.1.25 - Missing Authorization
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "author-avatars"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 2.1.25')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c52eba24-e9b1-4471-9c0e-090f5cf8d932?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,author-avatars,high,candidate
