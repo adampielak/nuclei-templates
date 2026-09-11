@@ -1,31 +1,35 @@
-http:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - id="appVersion"\s+value="([0-9\.]+)"
-    type: regex
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(body, ">PAHTool")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: pahtool-panel
-info:
-  author: righettod
-  description: 'PAHTool login panel was detected.
 
-    '
+info:
+  name: PAHTool Login Panel - Detect
+  author: righettod
+  severity: info
+  description: |
+    PAHTool login panel was detected.
+  reference:
+    - http://www.inovultus.com/index.html
   metadata:
+    verified: true
     max-request: 1
     shodan-query: http.title:"PAHTool"
-    verified: true
-  name: PAHTool Login Panel - Detect
-  reference:
-  - http://www.inovultus.com/index.html
-  severity: info
   tags: panel,pahtool,login,detect
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, ">PAHTool")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - 'id="appVersion"\s+value="([0-9\.]+)"'
+# digest: 4a0a00473045022100d5acfcf5009717529013cfc5415e09717151e6452f6c15dec73562d07eed0b9f022004d4e735bac0056b7bfa7849d2c263905e89e7670720bf1448b2f667b9b898db:922c64590222798bb761d5b6d8e72950
