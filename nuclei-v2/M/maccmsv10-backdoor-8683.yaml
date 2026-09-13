@@ -4,6 +4,7 @@ info:
   author: princechaddha
   severity: critical
   tags: maccmsv10,rce
+
 requests:
   - method: POST
     path:
@@ -11,6 +12,7 @@ requests:
     body: "getpwd=WorldFilledWithLove"
     headers:
       Content-Type: application/x-www-form-urlencoded
+
     matchers-condition: and
     matchers:
       - type: word

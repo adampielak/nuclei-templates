@@ -1,51 +1,43 @@
-id: feedbucket-063021f1-aeaf-4acc-bdb7-f5ba7bc1313c
-
-info:
-  name: >
-    Feedbucket – Website Feedback Tool <= 1.0.6 - Cross-Site Request Forgery
-  author: topscoder
-  severity: medium
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/063021f1-aeaf-4acc-bdb7-f5ba7bc1313c?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/feedbucket/"
-    google-query: inurl:"/wp-content/plugins/feedbucket/"
-    shodan-query: 'http.html:"wp-content/plugins/feedbucket/"'
-  tags: cve,wordpress,wp-plugin,feedbucket,medium,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/feedbucket/readme.txt"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "feedbucket"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.0.6')
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - feedbucket
+  - dsl:
+    - compare_versions(version, '<= 1.0.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/feedbucket/readme.txt'
+  redirects: true
+id: feedbucket-063021f1-aeaf-4acc-bdb7-f5ba7bc1313c
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/feedbucket/
+    google-query: inurl:"/wp-content/plugins/feedbucket/"
+    shodan-query: http.html:"wp-content/plugins/feedbucket/"
+  name: "Feedbucket \u2013 Website Feedback Tool <= 1.0.6 - Cross-Site Request Forgery\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/063021f1-aeaf-4acc-bdb7-f5ba7bc1313c?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,feedbucket,medium,candidate

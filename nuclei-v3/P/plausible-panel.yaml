@@ -1,35 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - Login
+    - "Plausible \xB7 Web analytics"
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login'
 id: plausible-panel
-
 info:
-  name: Plausible Panel - Detect
   author: rxerium
-  severity: info
-  description: |
-    Plausible is intuitive, lightweight and open source web analytics.
-  reference:
-    - https://plausible.io/
-    - https://github.com/plausible/analytics
+  description: 'Plausible is intuitive, lightweight and open source web analytics.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"Plausible"
+    verified: true
+  name: Plausible Panel - Detect
+  reference:
+  - https://plausible.io/
+  - https://github.com/plausible/analytics
+  severity: info
   tags: panel,plausible,detect
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Login'
-          - 'Plausible · Web analytics'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-# digest: 4a0a0047304502205b3e098c277d6d74b092989074612adc369e4f8fb340167fbfa4b960e1a5d2bb022100bf86738a50402b8388d0a65b77d70deb3854103fa84301acacd594b199e381eb:922c64590222798bb761d5b6d8e72950

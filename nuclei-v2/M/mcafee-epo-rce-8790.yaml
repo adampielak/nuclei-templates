@@ -1,4 +1,5 @@
 id: mcafee-epo-rce
+
 info:
   name: McAfee ePolicy Orchestrator RCE
   author: dwisiswant0
@@ -14,6 +15,7 @@ info:
     References:
     - https://swarm.ptsecurity.com/vulnerabilities-in-mcafee-epolicy-orchestrator/
   tags: mcafee,rce
+
 requests:
   - method: GET
     path:
