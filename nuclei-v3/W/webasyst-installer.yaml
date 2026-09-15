@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"Webasyst Installer"
-  tags: misconfig,webasyst,install,exposure
+  tags: misconfig,webasyst,install,exposure,vuln
 
 http:
   - method: GET
@@ -26,4 +26,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b9c5a7a84415c34ce00b8844707c4878b9a3b45d3958ba45771f3473b90af0930220565dad1276f7aff40ef48a5b98810041ed2b79458992ae7548fb96fcd05deb08:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502204104ceb19e998055bbd3153fe177530f040c637fae3e051080ee0d12a1f64261022100d93f62ad8de040af8e9e4e9cf491cca93e0317106cab0f57d13b9c78c4a9405b:922c64590222798bb761d5b6d8e72950

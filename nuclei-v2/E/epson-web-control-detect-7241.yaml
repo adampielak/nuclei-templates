@@ -1,5 +1,4 @@
 id: epson-web-control-detect
-
 info:
   name: Epson Printer
   author: pussycat0x
@@ -10,12 +9,10 @@ info:
   classification:
     cwe-id: CWE-200
   tags: iot,printer,panel,unauth,epson
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/home"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -24,7 +21,6 @@ requests:
           - "Basic Control"
           - "Advanced"
         condition: and
-
       - type: status
         status:
           - 200

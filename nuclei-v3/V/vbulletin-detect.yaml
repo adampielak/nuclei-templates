@@ -7,12 +7,16 @@ info:
   description: vBulletin is a proprietary forum and community publishing software written in PHP.
   reference:
     - https://www.vbulletin.com/
+  classification:
+    cpe: cpe:2.3:a:vbulletin:vbulletin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: vbulletin
+    product: vbulletin
     shodan-query: title:"Powered By vBulletin"
     google-query: intext:"Powered By vBulletin"
-  tags: tech,vbulletin
+  tags: tech,vbulletin,discovery
 
 http:
   - method: GET
@@ -39,5 +43,4 @@ http:
         regex:
           - '(?i)meta.name=.generator.*content=.vbulletin.([\d.|\d]+)'
           - '(?i)\*.vBulletin.([\d.|\d]+).CSS'
-
-# digest: 4b0a00483046022100c0c5f1bc5bc014454e00e0e538be652648abb599315a9720e3d5fcbb160eb02b02210087a18452e4696d25f41ceed2e600a8c78f37d14fa51557f53d70893b1cc7546d:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022075a46b11220f5361e63389c11f342e6cf1a25edb9a7843215441c4601f621ed1022100b814d4ac2e42429f41ee6571f7c67311d9af958c95e5493a93c42540f0d80a13:922c64590222798bb761d5b6d8e72950

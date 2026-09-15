@@ -7,10 +7,9 @@ info:
   reference:
     - https://wordpress.org/plugins/header-footer/
   metadata:
-    max-request: 1
     plugin_namespace: header-footer
     wpscan: https://wpscan.com/plugin/header-footer
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022008c5182af358ccf96088e3adf6d986242f3fea210f8fdb14707c244246ea3833022100da7c9a4f055ea11b3020aa9e7f6c6c9286d9b07fa973c12f27ba87ca27092ac6:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022054e45c8e2260d497a33e51c77dfe119fb9ef84d0bce29b69deadbc73122392080220050c3a23edb9565ad6ceb2fcc8d365ecdca2eaeb87ff9af8d3d73adac3562821:922c64590222798bb761d5b6d8e72950

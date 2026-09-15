@@ -5,11 +5,15 @@ info:
   author: DhiyaneshDk
   severity: high
   description: TestRail is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:gurock:testrail:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: gurock
+    product: testrail
     shodan-query: title:"TestRail Installation Wizard"
-  tags: misconfig,testrail,install,exposure
+  tags: misconfig,testrail,install,exposure,vuln
 
 http:
   - method: GET
@@ -26,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009dea75a2e3208eef747084522cafdcffc7d9f7e4044f85e971eb04eba0e3abc8022100cb3d62958931d47e671428b921db2276c50a03bdff03724413d1ad3900f402d6:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022008e557a68221174dcd5790fac9150f954bc4b357f8783d3e563522482dd74d61022100a69284b923f05c1e34daec2f6057647702de7fa4cb2f96224bc6dac23e143280:922c64590222798bb761d5b6d8e72950

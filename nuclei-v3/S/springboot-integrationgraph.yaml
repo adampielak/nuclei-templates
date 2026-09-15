@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: misconfig,springboot,exposure
+  tags: misconfig,springboot,exposure,vuln
 
 http:
   - method: GET
@@ -42,4 +42,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d183c21828b5abc9c0c9a13190bf76ca23981fb753c900f72a5e2e294b5c11ef02202be44528139cdf4c97d32994a75a82395c7ac983b532ded0186c21ed4f23a516:922c64590222798bb761d5b6d8e72950
+# digest: 480a00453043021f089f63db6c063ceec452ba54d488328781d71260c87133a8d3f92fce33ed6a022031fb3e86c3046b6cba53144c98967e104c12cadeb9192c43d7f6002fbbdb1af3:922c64590222798bb761d5b6d8e72950

@@ -7,10 +7,9 @@ info:
   reference:
     - https://wordpress.org/plugins/header-footer-code-manager/
   metadata:
-    max-request: 1
     plugin_namespace: header-footer-code-manager
     wpscan: https://wpscan.com/plugin/header-footer-code-manager
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100a1cdabcedd798f4d2a97329fd1724247a5116ace21f648e3b5cbc31c6e81df54022100a037fe25bb57ce262e569e2ff2eb3c1abb819c4069fb95d37959c45ec24d5aa3:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402203055871ca24ce0230ee8fe8098df3f9bf386d9d6551f0f24d240af84a7bb2df0022033a9975792370b794f05138c134edc1970f65c31169ece4c4663a650ca056538:922c64590222798bb761d5b6d8e72950

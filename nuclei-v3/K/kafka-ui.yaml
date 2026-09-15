@@ -1,31 +1,22 @@
+id: kafka-ui
 info:
-  id: kafka-ui
-  name: Apache Kafka UI - Detect
-  author: OpenAI
-  description: Template to detect the UI for Apache Kafka
-  severity: Low
-  classification:
-    country: any
-    tags:
-      - kafka
-      - ui
-      - web
-
-  matcher-condition: and
-
-  requests:
-      method: GET
-      path:
-        - "/ui"
-      description: Attempt to retrieve Apache Kafka UI
-      condition: and
-
+  name: kafka-ui
+  author: cn-kali-team
+  tags: detect,tech,kafka-ui
+  severity: info
+  metadata:
+    fofa-query:
+    - title="ui for apache kafka"
+    product: kafka-ui
+    shodan-query:
+    - http.title:"ui for apache kafka"
+    vendor: provectus
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
   matchers:
-    - pattern: "Apache Kafka"
-      type: body
-      description: Apache Kafka header found in response
-
-  response:
-    - status:
-        - 200
-      description: Successful response status
+  - type: regex
+    regex:
+    - (?mi)<title[^>]*>ui for apache kafka.*?</title>

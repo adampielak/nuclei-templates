@@ -4,11 +4,15 @@ info:
   name: Setup GitHub Enterprise - Detect
   author: tess
   severity: unknown
+  classification:
+    cpe: cpe:2.3:a:github:enterprise_server:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: github
+    product: enterprise_server
     shodan-query: http.favicon.hash:-1373456171
-  tags: panel,exposure,setup,github,misconfig
+  tags: misconfig,installer,github,setup,vuln
 
 http:
   - method: GET
@@ -27,5 +31,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a00463044022054ec1cd746591f30334be3d3af156ab086f89a6120fb908f899320a462f7ac8e02204e63937eb2e1648bfb9cdc3f74cd58e4846ee18ad4d2db21b9e7db237578ec4e:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210093dab6c9eb94d9d4ccb0d152b18f74f61b4e6b5dee0cc23e4fe65a7cdc105303022100b56127c6e6572afb5cd8c1a1fbd19b0861410f232ee9d96ece1d215306331580:922c64590222798bb761d5b6d8e72950
