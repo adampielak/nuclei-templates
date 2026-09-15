@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/litespeed-cache/
   metadata:
+    max-request: 1
     plugin_namespace: litespeed-cache
     wpscan: https://wpscan.com/plugin/litespeed-cache
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220517728ce3f8086a0c3193e47231c59ec6af65282f65d1db6d549079466bfe816022100d735aebcf1f66cb55b747927c6f38f32be123a2fe4bcba1ab7f71677885eecc6:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ec9e03c0d7a7fe909c32a1f46b12a4fd9a8c18f458107b056f7a436cab0218f4022100acf765f39e89de791ee70b585237cc7839be3c71a911f0d12df6d02e7f4682b7:922c64590222798bb761d5b6d8e72950

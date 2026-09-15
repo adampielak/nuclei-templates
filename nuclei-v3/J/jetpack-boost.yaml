@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/jetpack-boost/
   metadata:
+    max-request: 1
     plugin_namespace: jetpack-boost
     wpscan: https://wpscan.com/plugin/jetpack-boost
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100ba881d797a15e60190b75e552cd76c45ee49834013a8ad05d644c91770253f10022063159c40a929887a838d97fd2b954c7623b564d5d5719ac58076051b954d5a2e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100f843e5cbd4da4c80a614c7b5580465676ac123640458efe8a5ce749be07db5f7022016c3f9ea51f41d607e93123d19ff4cf5605311f4a7b4b5abb0722772f8c187d3:922c64590222798bb761d5b6d8e72950

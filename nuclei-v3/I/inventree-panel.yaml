@@ -1,5 +1,4 @@
 id: inventree-panel
-
 info:
   name: InvenTree Panel - Detect
   author: ChrisJr404
@@ -10,19 +9,18 @@ info:
     - https://github.com/inventree/InvenTree
     - https://inventree.org/
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "^InvenTree"})
+    fofa-query: title="InvenTree"
     max-request: 1
-    vendor: inventree
     product: inventree
     shodan-query: http.title:"InvenTree"
-    fofa-query: title="InvenTree"
-  tags: panel,inventree,inventory,selfhosted,detect,discovery,login
-
+    vendor: inventree
+    verified: true
+  tags: detect,discovery,inventory,inventree,login,panel,selfhosted
 http:
   - method: GET
     path:
       - "{{BaseURL}}/api/"
-
     matchers:
       - type: dsl
         dsl:
@@ -31,10 +29,9 @@ http:
           - 'contains(body, "InvenTree")'
           - 'contains_all(body, "\"apiVersion\"", "\"worker_running\"", "\"instance\"")'
         condition: and
-
     extractors:
       - type: json
         part: body
         json:
           - '.version'
-# digest: 490a0046304402207b41b3c2ad5e897ef802c20bdee6ba98f4217fdbe00e16ffc11f5871d9479d5902202802bf745f5b6bce5e6bf7da23af7c29bb0e7344792434f9724412442c9f6370:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402207b41b3c2ad5e897ef802c20bdee6ba98f4217fdbe00e16ffc11f5871d9479d5902202802bf745f5b6bce5e6bf7da23af7c29bb0e7344792434f9724412442c9f6370:922c64590222798bb761d5b6d8e72950

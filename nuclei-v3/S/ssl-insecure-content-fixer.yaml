@@ -10,7 +10,7 @@ info:
     max-request: 1
     plugin_namespace: ssl-insecure-content-fixer
     wpscan: https://wpscan.com/plugin/ssl-insecure-content-fixer
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -47,4 +47,5 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402207638e977786996747b3747a7bab515664371f90a6c3b9b348abb65bee9391a8302204bde8b0fe7b37f99ac51981012a66a0fa3a9882f2ed966183b2475d3cabf599a:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a00463044022002c0df3540c1925dc253977eb817bbb649cf1ce94a09eb8994b9431ab32505a4022006be9056da612a5d655c4da5bf6d18c1dcd87e71c72ce5bb6ac5e9199c9cfb1f:922c64590222798bb761d5b6d8e72950

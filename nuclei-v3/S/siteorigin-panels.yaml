@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/siteorigin-panels/
   metadata:
+    max-request: 1
     plugin_namespace: siteorigin-panels
     wpscan: https://wpscan.com/plugin/siteorigin-panels
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100dfea29d6a0ad15f58a9b26d5f8692e47ad81fed7bad0ca2902fac74f10140b71022018dcb8f6b83f9b523fcf69a181d9154578175d1b4beefb6aa2b7fdef32b4cf21:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022069c779239c1c570f2c08ad979f7d53fda34ad47ffbea564c10ea0e671c8a754002207d7cb64d5e1686ddfe3a9fbba6731da08d109df11115f29fe3df219cfd4e7f98:922c64590222798bb761d5b6d8e72950

@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/classic-widgets/
   metadata:
+    max-request: 1
     plugin_namespace: classic-widgets
     wpscan: https://wpscan.com/plugin/classic-widgets
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502204daa55bb109a281576c9774a5e570f7b02384ede96e9fd539992d4cad7f79cef022100d1ac1eaee1565bb704e60d58cf514a18b125932aa54c9e408bf6853ed973a228:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b386badf2c6b08db33cddf111d34bbebe03b776a97028d75376b231ea8d817e702205d4cf06b87eb95984811ddc20513f9ec23fb1c60ba9e7de8867cd4816b356b68:922c64590222798bb761d5b6d8e72950

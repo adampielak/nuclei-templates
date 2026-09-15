@@ -1,5 +1,4 @@
 id: maven-settings-xml-exposure
-
 info:
   name: Apache Maven settings.xml Credentials - Exposure
   author: ChrisJr404
@@ -14,20 +13,17 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-522
   metadata:
-    verified: false
-    max-request: 3
     google-query: intitle:"index of" "settings.xml" "maven.apache.org/SETTINGS"
-  tags: exposure,config,maven,java,credentials,files
-
+    max-request: 3
+    verified: false
+  tags: config,credentials,exposure,files,java,maven
 http:
   - method: GET
     path:
       - "{{BaseURL}}/settings.xml"
       - "{{BaseURL}}/.m2/settings.xml"
       - "{{BaseURL}}/conf/settings.xml"
-
     stop-at-first-match: true
-
     matchers:
       - type: dsl
         dsl:
@@ -35,11 +31,10 @@ http:
           - 'contains_all(body, "maven.apache.org/SETTINGS", "<server>", "<password>")'
           - '!contains_any(tolower(body), "<html", "<!doctype", "<script", "<meta", "application/json", "application/javascript", "image/", "mongodb over http")'
         condition: and
-
     extractors:
       - type: regex
         part: body
         group: 1
         regex:
           - '<username>([^<]+)</username>'
-# digest: 4a0a00473045022100bbc7497b055a578ec65c180c0417ff57db4b5e3f4214086e36000d9dbb59b7be0220145bf53467a270fb356292acaffc0d0f1c1bb6f7befdd5091cbf0697bdc968e4:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100bbc7497b055a578ec65c180c0417ff57db4b5e3f4214086e36000d9dbb59b7be0220145bf53467a270fb356292acaffc0d0f1c1bb6f7befdd5091cbf0697bdc968e4:922c64590222798bb761d5b6d8e72950

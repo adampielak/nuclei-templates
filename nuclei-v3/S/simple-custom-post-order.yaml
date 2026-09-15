@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/simple-custom-post-order/
   metadata:
+    max-request: 1
     plugin_namespace: simple-custom-post-order
     wpscan: https://wpscan.com/plugin/simple-custom-post-order
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220171feb63dc446576132f1220186cb8734024f436971012563219309d0aec73ec02202eec0bd3416b73fc8ee5c7158a1c03e003e2710a879c91ec0adbb13bb60db4a1:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100e6db696456e8304db04c1b7451ab75840386c794681096fa728a9352c4b64134022003af60eff44417be190bb08028ca0b48f447477ebab57421cebfffdb4d9e7e3a:922c64590222798bb761d5b6d8e72950

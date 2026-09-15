@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/iwp-client/
   metadata:
+    max-request: 1
     plugin_namespace: iwp-client
     wpscan: https://wpscan.com/plugin/iwp-client
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100c43b082e25d9e9c320778f041e4622ba85e18fb06982938eac886ea873bba7ba022100e93d810cd9add1fe687663732755d0b890bcc4ed64f5aa62f962274a5b341fab:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402204d450c37f13b5bcca1b0269cfcc8a65c1e12bcc2a6c53d134f43381939638dcb022013dbb9a40591ab506a6ae6c3dfd8b9450646fcbdd0dd9cb0075a3a9f8a147f0d:922c64590222798bb761d5b6d8e72950

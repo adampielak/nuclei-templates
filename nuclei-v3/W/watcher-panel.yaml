@@ -8,7 +8,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"/vsaas/v2/static/"
-  tags: panel,watcher,login,discovery
+  tags: panel,watcher,login
 
 http:
   - method: GET
@@ -25,4 +25,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c9e031140dbc36c2a129ba3205441c4b348397e45ff3b8bffafd43939ba38059022100ecbf33e7c05924d3c987c91a57d3d4a611e58037d8885b86af770768518e58ea:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100c25e6773421892f859147eb458d47205fee293814e882a11f2ade5fbec6e571302206bd7297fb8502946f0bf9bbf61f0e4b7688385870bbe426f6d85d516df792574:922c64590222798bb761d5b6d8e72950

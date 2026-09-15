@@ -7,16 +7,12 @@ info:
   description: Zen Cart is susceptible to the Installation page exposure due to misconfiguration.
   reference:
     - https://www.zen-cart.com/
-  classification:
-    cpe: cpe:2.3:a:zen-cart:zen_cart:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: zen-cart
-    product: zen_cart
     shodan-query: html:"shopping cart program by zen cart"
     fofa-query: title="Installer" && icon_hash="899320116"
-  tags: misconfig,zencart,install,exposure,vuln
+  tags: misconfig,zencart,install,exposure
 
 http:
   - method: GET
@@ -33,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220066be9361dd6282b8216e7c372d9d54cef0e8a75cc93718b1f57841a7cb3baea02205b3ea92efdc141e3e5edc4c44297b8cf15cf5d5c75aa7b954bcb555c6b672eb0:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220186141ea271e865ffc608b9d1e05bd48a7004e2f67d90e6abe28f03b12f609a00221009533d5330fed8366314bf91338d33bf7b492f1042cdf4861019f3417058e57a4:922c64590222798bb761d5b6d8e72950

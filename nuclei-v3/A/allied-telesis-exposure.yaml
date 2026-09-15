@@ -9,18 +9,15 @@ info:
     - https://www.alliedtelesis.com/in/en
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     vendor: allied_telesis
     product: device_gui
-    shodan-query:
-      - title:"Allied Telesis Device GUI"
-      - http.title:"allied telesis device gui"
-    fofa-query: title="allied telesis device gui"
-    google-query: intitle:"allied telesis device gui"
-  tags: panel,allied,allied_telesis,discovery
+    shodan-query: title:"Allied Telesis Device GUI"
+  tags: panel,allied
 
 http:
   - method: GET
@@ -42,4 +39,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220444ac1726a86c521f1c13749b6cc03fa79b9ac5ba75fb0be7e059ba7fb218a10022030eb6c58a40a182552b43a4153817dc69957a31db1a218b02752d59da12b34b0:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502204fac6741dba866ab690a61fbb43d751293537f2f4038dd6fd1dcbac123cd5794022100f40f58e10555127c08d28f98c296f91c2b288ebce0d5528fc5e6909a87da7eaa:922c64590222798bb761d5b6d8e72950

@@ -8,7 +8,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Veriz0wn"
-  tags: veriz0wn,panel,discovery
+  tags: veriz0wn,panel
 
 http:
   - method: GET
@@ -25,4 +25,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402205780f9442b209cab3e629db325383dbc00259841594154a8c558f1809e72b1f502202b29bfded20ad945052761943c93b681ca84b45781713dfbbbf3b071919382c0:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402202bb5113b7d9e374acb6165d8f93ba2e8f3e17da08cece5d3eea29383f64a2b6602201588cbf0d40fbe0b2a8e0c84638b73cee03d34e00c3255f2db881bac39d5b6d1:922c64590222798bb761d5b6d8e72950

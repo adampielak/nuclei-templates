@@ -7,15 +7,11 @@ info:
   description: Progress Web Transfer Client login panel was detected.
   reference:
     - https://www.progress.com/ftp-server/web-transfer
-  classification:
-    cpe: cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: progress
-    product: moveit_transfer
     shodan-query: http.title:"Web Transfer Client"
-  tags: panel,webtransferclient,login,detect,discovery
+  tags: panel,webtransferclient,login,detect
 
 http:
   - method: GET
@@ -28,4 +24,4 @@ http:
           - 'status_code == 200'
           - 'contains(body, "<title>Web Transfer Client")'
         condition: and
-# digest: 4a0a00473045022100e852c4a8a5b3f8542beb8e342f7ec846d84c5e1f562c542bd56394137152e08f0220471eedee3ae2d1cfb2f436f0abc79a54509cc14ba906f62eb9dffee0df6b6d28:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220264a2f05510a7d6cc3d93b5fd7efb5bb7d901ba8f78d4ed05b61593ce9bce787022100b0c25370f8cec3f76e7cedcbbc0c291676985fcc9c99a60caddca38cc33bbb94:922c64590222798bb761d5b6d8e72950

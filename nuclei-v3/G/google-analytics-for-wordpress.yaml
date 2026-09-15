@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/google-analytics-for-wordpress/
   metadata:
+    max-request: 1
     plugin_namespace: google-analytics-for-wordpress
     wpscan: https://wpscan.com/plugin/google-analytics-for-wordpress
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502207786beaa3a061fe9b44c76ceaecc87408c776decaa13a5f2b62500f9a2d0e919022100cfc1ef251f16a1c0c2c5e7b6a88857101e04e5b6c9a872d8f3d3cda5ee5cfbeb:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022058c0858eb490859cdfee38203f37304d7ee980f51d410ec71b3edfd2a0982ce2022100f0c33e819ecbbb3c027b51cb4837448d393728b6dfb20edb099c56060d5935c1:922c64590222798bb761d5b6d8e72950

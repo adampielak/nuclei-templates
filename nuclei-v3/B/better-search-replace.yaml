@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/better-search-replace/
   metadata:
+    max-request: 1
     plugin_namespace: better-search-replace
     wpscan: https://wpscan.com/plugin/better-search-replace
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100f3a6b386d6fdb8c3f00faa3ec0e05e8d995251f02afc3dd262177f092b780423022100863358b163d606e59e0d2fac8763636974c46bf6bc52eacdf51d016f49af50ab:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e97ac05255d67298eca15497df6e0e58a908583372e959daf780fac66628200302210082ff65e9b39d679b1d06cce1f3e20046e59b80a45ba55dd772cbe8dfd89fab9a:922c64590222798bb761d5b6d8e72950

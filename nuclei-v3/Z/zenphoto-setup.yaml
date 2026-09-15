@@ -9,14 +9,11 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
     cvss-score: 9.4
     cwe-id: CWE-284
-    cpe: cpe:2.3:a:zenphoto:zenphoto:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     shodan-query: title:"Zenphoto install"
-    product: zenphoto
-    vendor: zenphoto
-  tags: misconfig,panel,zenphoto,setup,installer,vuln
+  tags: misconfig,panel,zenphoto,setup,installer
 
 http:
   - method: GET
@@ -32,4 +29,4 @@ http:
         part: body
         words:
           - Welcome to Zenphoto! This page will set up Zenphoto
-# digest: 4a0a00473045022100ddb65d5a5d7e4b2ee255ddf766a6c45f97d636816fb6925b6c0dc087c471d3de02203fbe92c461dc2a18d3d435b780d9a66ad14c2658e43d0b16dccd247fb687e0da:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220629b5aaff25239d9961f3fede15984202268329e4563d84f33d4effb2a7bddcc0221009d4e4b8bd14612cc456660fad9260decbbc802445317994cdf4ef2ca5f17da97:922c64590222798bb761d5b6d8e72950

@@ -1,17 +1,16 @@
 id: woodwing-panel
 
 info:
-  name: Woodwing Studio Server Panel - Detect
-  author: pdteam,righettod
+  name: Woodwing Studio Server - Panel
+  author: pdteam
   severity: info
   reference:
     - https://twitter.com/ynsmroztas/status/1680961398011047936
   metadata:
-    verified: true
     max-request: 2
     shodan-query: http.title:"WoodWing Studio Server"
     fofa-query: title=="WoodWing Studio Server"
-  tags: woodwing,panel,discovery
+  tags: woodwing,panel
 
 http:
   - method: GET
@@ -26,11 +25,4 @@ http:
       - type: dsl
         dsl:
           - "contains(tolower(body), 'woodwing studio server')"
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - '<!---->v([0-9.]+\s+Build\s+[0-9]+)'
-# digest: 4b0a0048304602210099c078e6f247de5306505b6ba77a73f48d65c9d541b16d3b102429c62d20cd76022100fc2e798a3da71c24377be5eceb59c245fe5d612b1825a4beb8ad1987661f5e8c:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402202118d22b78194f8e15e0badfba81c2b17539da0516d484b5a061cb8db59ceed7022052c485fb841406d15d7384d7a2f376bb902e14826fe60f9936cbb0f08af9ec8e:922c64590222798bb761d5b6d8e72950
