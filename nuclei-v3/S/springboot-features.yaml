@@ -1,39 +1,35 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"enabled":['
+    - '"disabled":['
+  - condition: or
+    part: header
+    type: word
+    words:
+    - application/json
+    - application/vnd.spring-boot.actuator
+    - application/vnd.spring-boot.actuator.v1+json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/features'
+  - '{{BaseURL}}/actuator/features'
+  stop-at-first-match: true
 id: springboot-features
-
 info:
-  name: Detects Springboot Features Actuator
   author: DhiyaneshDK
-  severity: low
+  description: Springboot Features Actuator is exposed.
   metadata:
     max-request: 2
-    verified: true
     shodan-query: title:"Eureka"
+    verified: true
+  name: Detects Springboot Features Actuator
+  severity: low
   tags: misconfig,springboot,exposure
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/features"
-      - "{{BaseURL}}/actuator/features"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"enabled":['
-          - '"disabled":['
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "application/json"
-          - "application/vnd.spring-boot.actuator"
-          - "application/vnd.spring-boot.actuator.v1+json"
-        condition: or
-
-      - type: status
-        status:
-          - 200

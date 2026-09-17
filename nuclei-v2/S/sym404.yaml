@@ -1,7 +1,6 @@
-id: wp-sym404
-
+id: sym404
 info:
-  name: Wordpress sym404 directory
+  name: sym404
   author: pussycat0x
   severity: High
   description: Searches for sensitive directories present in the sym404.
@@ -10,20 +9,17 @@ info:
   metadata:
     verified: true
     google-dork: inurl:"/wp-includes/sym404/"
-  tags: wordpress,listing,wp,exposure
-
+  tags: wordpress,listing
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-includes/sym404/root/etc/passwd"
-
     matchers-condition: and
     matchers:
       - type: regex
         part: body
         regex:
           - "root:.*:0:0:"
-
       - type: status
         status:
           - 200

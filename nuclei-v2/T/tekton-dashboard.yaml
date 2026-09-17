@@ -1,23 +1,27 @@
 id: tekton-dashboard
+
 info:
-  author: DhiyaneshDk
-  metadata:
-    shodan-query: title:"Tekton"
-    verified: true
   name: Tekton Dashboard Exposure
+  author: DhiyaneshDk
   severity: low
+  metadata:
+    verified: true
+    shodan-query: title:"Tekton"
   tags: panel,tekton,exposure
+
 requests:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - Tekton Dashboard
-  - part: header
-    type: word
-    words:
-    - text/html
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/#/pipelines'
+  - method: GET
+    path:
+      - "{{BaseURL}}/#/pipelines"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Tekton Dashboard"
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
