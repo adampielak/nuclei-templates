@@ -1,31 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '# HELP'
+    - libvirt_
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
 id: libvirt-exporter-metrics
-
 info:
-  name: Libvirt Exporter Metrics
   author: DhiyaneshDk
-  severity: low
   description: Libvirt Exporter is leaking metrics.
   metadata:
-    verified: true
     max-request: 1
     shodan-query: title:"Libvirt"
+    verified: true
+  name: Libvirt Exporter Metrics
+  severity: low
   tags: libvirt,exposure,debug,misconfig
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/metrics"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "# HELP"
-          - "libvirt_"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-# digest: 4a0a00473045022100ac9bbd9334308cc65e44dc00ebbf9f01d35b668591a9bd160eb4413f33ecae49022011278789fb2751d9091be3986d3725b641966f1201ff2ae95abf08fb0791b7cf:922c64590222798bb761d5b6d8e72950

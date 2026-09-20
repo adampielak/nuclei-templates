@@ -1,4 +1,5 @@
 id: phpcollab-panel
+
 info:
   name: PhpCollab Login Panel
   author: pikpikcu
@@ -6,19 +7,23 @@ info:
   metadata:
     shodan-query: http.title:"PhpCollab"
   tags: panel,phpcollab,login
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/general/login.php"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>PhpCollab</title>'
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

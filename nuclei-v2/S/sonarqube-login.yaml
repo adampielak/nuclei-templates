@@ -4,19 +4,13 @@ info:
   name: SonarQube panel detect
   author: dhiyaneshDk
   severity: info
-  tags: panel
+  tags: panel,sonarqube
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/sessions/new"
 
-    raw:
-      - |
-        GET /sessions/new HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:

@@ -1,4 +1,5 @@
 id: stridercd-panel
+
 info:
   name: StriderCD Panel
   author: Adam Crosser
@@ -9,10 +10,12 @@ info:
   metadata:
     shodan-query: http.favicon.hash:115295460
   tags: panel,cicd,oss,stridercd,strider
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     redirects: true
     max-redirects: 2
     matchers:

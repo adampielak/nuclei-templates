@@ -7,7 +7,7 @@ info:
   description: |
     Detect UserGate NGFW/UTM Admin Panel.
   metadata:
-    max-requests: 2
+    max-request: 2
     shodan-query:
       - "Server: nextgen_0.5"
       - "Server: UserGate-UTM/42"

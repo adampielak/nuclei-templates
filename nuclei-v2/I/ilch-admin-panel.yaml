@@ -1,4 +1,5 @@
 id: ilch-admin-panel
+
 info:
   name: Ilch CMS Admin Panel
   author: ritikchaddha
@@ -7,16 +8,19 @@ info:
     verified: true
     shodan-query: http.title:"Ilch"
   tags: panel,ilch,cms
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php/admin/admin/login/index/"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - 'ilch_token'
+
       - type: status
         status:
           - 200

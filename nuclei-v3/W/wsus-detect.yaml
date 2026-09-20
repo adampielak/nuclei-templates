@@ -1,19 +1,25 @@
 id: wsus-detect
 
 info:
-  name: Microsoft WSUS - Detect
+  name: Microsoft Product - Detect
   severity: info
   author: darses
   description: |
-    Microsoft Windows Server Update Services (WSUS) was detected.
+    Microsoft Product was detected.
+  classification:
+    cve-id: todo
   metadata:
     verified: false
     max-requests: 2
     vendor: microsoft
-    product: wsus
+    product: product
+    shodan-query:
+      -
     fofa-query:
       - 'server="Microsoft-IIS" && "Content-Length: 0" && "X-Powered-By: ASP.NET" && status_code="200" && header!="X-Frame-Options" && header!="Etag" && header!="Last-Modified" && header!="Set-Cookie" && header!="Content-Type"'
-  tags: tech,microsoft,wsus,detect
+  reference:
+    - http://example.com
+  tags: tech,microsoft
 
 http:
   # - method: GET

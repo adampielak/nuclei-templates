@@ -1,4 +1,5 @@
 id: ruby-rail-storage
+
 info:
   name: Ruby on Rails storage.yml File Disclosure
   author: DhiyaneshDK
@@ -7,6 +8,7 @@ info:
     verified: true
     google-dork: intitle:"index of" storage.yml
   tags: exposure,ruby,devops
+
 requests:
   - method: GET
     path:
@@ -14,6 +16,7 @@ requests:
       - "{{BaseURL}}/config/storage.yml"
       - "{{BaseURL}}/ruby/config/storage.yml"
       - "{{BaseURL}}/railsapp/config/storage.yml"
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -22,6 +25,7 @@ requests:
           - 'service:'
           - 'local:'
         condition: and
+
       - type: word
         part: header
         words:
@@ -29,6 +33,7 @@ requests:
           - "text/html"
         negative: true
         condition: and
+
       - type: status
         status:
           - 200

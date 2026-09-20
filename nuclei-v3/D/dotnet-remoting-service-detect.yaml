@@ -10,10 +10,11 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
-    verified: true
     max-request: 1
     shodan-query: product:"MS .NET Remoting httpd"
-  tags: network,detect,microsoft,dotnet,detection,tcp,discovery
+    verified: true
+  tags: network,detect,microsoft
+
 tcp:
   - inputs:
       - data: "\n"
@@ -32,4 +33,4 @@ tcp:
       - type: regex
         regex:
           - ".NET CLR ([0-9.]+)"
-# digest: 4a0a00473045022065eb78b3ed57ddc99b2d6756f32c0c766bc82fd57e5a7ba257e5fa832645c893022100a15d3f21dcd24a51cad685194499beccdee4cbc06b2bae0fbbcb5b03f1d94e17:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b12790be64bc8752a000e725872e23e84b9fbca3d5612d78e98376be168bb2c20220127ad78af513a4d34bf2c543ad9ce4783bdfd5fd16a516f2b62140a3400ff54c:922c64590222798bb761d5b6d8e72950

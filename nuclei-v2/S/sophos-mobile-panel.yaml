@@ -1,4 +1,5 @@
 id: sophos-mobile-panel
+
 info:
   name: Sophos Mobile Panel Detect
   author: Adam Crosser,idealphase
@@ -9,14 +10,17 @@ info:
   metadata:
     shodan-query: http.title:"Sophos Mobile"
   tags: panel,sophos
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/login.xhtml?faces-redirect=true'
+
     matchers:
       - type: word
         words:
           - "<title>Sophos Mobile</title>"
+
     extractors:
       - type: regex
         group: 1

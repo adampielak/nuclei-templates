@@ -4,23 +4,15 @@ info:
   name: SAMSUNG Printer Detection
   author: pussycat0x
   severity: info
-  tags: iot,panel
   metadata:
-    fofa-query: 'app="SAMSUNG-Printer"'
+    fofa-query: app="SAMSUNG-Printer"
+  tags: iot,panel,samsung,printer
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/sws/index.html"
 
-    raw:
-      - |
-        GET /sws/index.html HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
