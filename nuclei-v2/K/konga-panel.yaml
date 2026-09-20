@@ -4,8 +4,7 @@ info:
   name: Konga Panel Detect
   author: princechaddha
   severity: info
-  reference:
-    - https://github.com/pantsel/konga
+  reference: https://github.com/pantsel/konga
   tags: tech,konga,oss
 
 requests:

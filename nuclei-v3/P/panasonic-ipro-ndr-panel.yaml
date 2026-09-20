@@ -1,0 +1,37 @@
+id: panasonic-ipro-ndr-panel
+
+info:
+  name: Panasonic i-PRO Network Disk Recorder - Panel
+  author: darses
+  severity: info
+  description: |
+    Panasonic i-PRO Network Disk Recorder login panel was detected.
+  reference:
+    - https://i-pro.com/
+  metadata:
+    verified: true
+    max-requests: 1
+    vendor: panasonic
+    product: ipro_network_disk_recorder
+    shodan-query:
+      - http.html_hash:-1774716666
+  tags: panel,iot,camera,panasonic,detect,login
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/start.cgi"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Network Disk Recorder"
+          - "NdrDatabase"
+          - "ulogin.cgi"
+        condition: and
+
+      - type: status
+        status:
+          - 200

@@ -8,7 +8,7 @@ info:
     Microsoft Intune Tunnel VPN server was detected.
   metadata:
     verified: true
-    max-request: 1
+    max-requests: 1
     vendor: Microsoft
     product: Tunnel
     shodan-query:
@@ -17,7 +17,7 @@ info:
       - body="<message>I am still alive!!</message>"
   reference:
     - https://learn.microsoft.com/en-us/intune/intune-service/protect/microsoft-tunnel-overview
-  tags: detect,tech,vpn
+  tags: detect,tech,vpn,microsoft,intune
 
 http:
   - method: GET

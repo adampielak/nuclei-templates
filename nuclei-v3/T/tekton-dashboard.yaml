@@ -7,12 +7,13 @@ info:
   description: Tekton Dashboard panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Tekton"
-  tags: panel,tekton,exposure,discovery
+  tags: panel,tekton,exposure
 
 http:
   - method: GET
@@ -30,4 +31,5 @@ http:
         part: header
         words:
           - "text/html"
-# digest: 490a0046304402202c61c6a3867ce57f88107a828894cc0938b4b0db567471d445b7a9097a80c0150220364b3439f4f99bd2f1006e6be5c7143f78be2f4133ffe3ec6e916ede9cdadfd6:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502207df85c6fa0f2a061fbca8003ca1f250ead435417db59576884794cbcc009eea9022100e180e5f26760d5af6cc61624b10405b3cd5ab3dff2aadedd1d03422f1741cd6e:922c64590222798bb761d5b6d8e72950

@@ -4,9 +4,7 @@ info:
   name: Pagespeed Global Admin
   author: geeknik
   severity: low
-  reference:
-    - https://www.modpagespeed.com/
-  tags: pagespeed
+  tags: pagespeed,admin
 
 requests:
   - method: GET
@@ -22,13 +20,8 @@ requests:
     path:
       - "{{BaseURL}}/pagespeed-global-admin/"
 
-    matchers-condition: and
     matchers:
       - type: word
         words:
           - "X-Mod-Pagespeed"
         part: header
-
-      - type: status
-        status:
-          - 200

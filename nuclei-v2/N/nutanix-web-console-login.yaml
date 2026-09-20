@@ -5,13 +5,19 @@ info:
   author: gy741
   severity: info
   description: Default Credentials of admin:admin on Nutanix web console.
-  tags: panel,nutanix,login
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/console/'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /console/ HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

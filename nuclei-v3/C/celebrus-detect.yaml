@@ -1,33 +1,38 @@
-http:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - Celebrus\s+([0-9.]+)\s+Collection
-    type: regex
-  host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_any(to_lower(body), "content=\"celebrus technologies ltd", "<title>celebrus")
-    type: dsl
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: celebrus-detect
-info:
-  author: righettod
-  description: 'Celebrus was detected.
 
-    '
+info:
+  name: Celebrus - Detect
+  author: righettod
+  severity: info
+  description: |
+    Celebrus was detected.
+  reference:
+    - https://investors.celebrus.com/
   metadata:
+    verified: true
     max-request: 1
     shodan-query: http.title:"Celebrus"
-    verified: true
-  name: Celebrus - Detect
-  reference:
-  - https://investors.celebrus.com/
-  severity: info
-  tags: tech,celebrus,detect
+  tags: tech,celebrus,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_any(to_lower(body), "content=\"celebrus technologies ltd", "<title>celebrus")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - 'Celebrus\s+([0-9.]+)\s+Collection'
+# digest: 490a00463044022005eeac7201071cd8b1f7f2f34759eb6172e3c558678f4a925adf85813f046ec00220019faed6b135a5711f753df9643a3dd868c1cd9d140a7d405148ee4a9ecd95c2:922c64590222798bb761d5b6d8e72950

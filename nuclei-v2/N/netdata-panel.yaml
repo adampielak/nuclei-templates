@@ -1,5 +1,4 @@
 id: netdata-panel
-
 info:
   name: Netdata Panel
   author: TechbrunchFR
@@ -11,23 +10,19 @@ info:
   reference:
     - https://github.com/netdata/netdata
   tags: panel,netdata
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/api/v1/info"
-
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: word
         part: header
         words:
           - "application/json"
-
       - type: word
         part: body
         words:

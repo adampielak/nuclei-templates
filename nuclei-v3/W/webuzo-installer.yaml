@@ -5,15 +5,11 @@ info:
   author: DhiyaneshDk
   severity: high
   description: Webuzo is susceptible to the Installation page exposure due to misconfiguration.
-  classification:
-    cpe: cpe:2.3:a:softaculous:webuzo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: softaculous
-    product: webuzo
     shodan-query: title:"Webuzo Installer"
-  tags: misconfig,webuzo,install,exposure,vuln
+  tags: misconfig,webuzo,install,exposure
 
 http:
   - method: GET
@@ -37,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008ed534639aeccb9efc1650a38514510e75e585365247d3992804cfdb8a9cf85e022100ed9a96438b43f31387f1f231a841655bad12a682f08bb4b194a27694e0b5d622:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201e9e336d440f29f998b483a0b4a878c0a8eaba3e1150df1eee20fe3b90fd19a402204d9ed6fce922e80a4de77abc56e6dbc362d8be9ad0213fc12a906af6ff1f950b:922c64590222798bb761d5b6d8e72950

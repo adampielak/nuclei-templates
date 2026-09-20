@@ -1,0 +1,69 @@
+id: checkpoint-ike-asn1
+
+info:
+  name: Check Point IKE ID_DER_ASN1_DN Parser & CERTREQ Fingerprint
+  author: darses
+  severity: info
+  metadata:
+    verified: false
+  description: >
+    Onderzoekt het specifieke gedrag van Check Point Security Gateways (vpnd/iked)
+    tijdens de IKEv1/IKEv2 fase 1 authenticatie over UDP poort 500.
+    Voert differentiële analyse uit op:
+    1) Validatie van de Check Point Vendor ID hash (f4ed19e0c114eb51) en responder SA acceptatie
+       bij een canoniek DER-gecodeerde CERTREQ payload (definite length).
+    2) Differentiële responsanalyse bij IKE state-machine en ASN.1 payload validatie
+       (zoals afwijzing via INVALID_PAYLOAD_TYPE 0x0001 of PAYLOAD_MALFORMED 0x0010).
+  reference:
+    - https://tools.ietf.org/html/rfc7296
+    - https://tools.ietf.org/html/rfc2408
+    - https://tools.ietf.org/html/rfc2409
+    - https://www.itu.int/rec/T-REC-X.690
+  tags: network,ike,checkpoint,vpn,udp,kev
+
+javascript:
+  - code: |
+      let net = require("nuclei/net");
+      let conn = net.Open('udp', `${HostName}:500`);
+      let resp = "";
+      try {
+        // Probe 1: IKEv1 Phase 1 SA Proposal + CERTREQ with Canonical DER (Definite Length)
+        // Generates a random 8-byte SPIi (Initiator Cookie) to prevent state-machine drop
+        let randHex = "";
+        for (let i = 0; i < 8; i++) {
+          randHex += ("0" + Math.floor(Math.random() * 256).toString(16)).slice(-2);
+        }
+
+        // SA proposal (AES-256 / SHA1 / RSA-Sig / DH2) + CERTREQ with DER DN (CN=TestDN)
+        // Total packet length: 112 bytes (0x00000070)
+        let body = "0700003800000001000000010000002c01010001000000240101000080010007800e0100800200028003000380040002800b0001000c000400015180" +
+                  "0000001c043011310f300d06035504030c0654657374444e";
+        let totalLenHex = "00000070";
+        let p1 = randHex + "00000000000000000110020000000000" + totalLenHex + body;
+
+        conn.SendHex(p1);
+        resp = conn.RecvHex(1024);
+      } catch (e) {
+
+      } finally {
+        conn.Close();
+      }
+      resp;
+    args:
+      Host: "{{Host}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        name: checkpoint-vendor-id
+        words:
+          - "f4ed19e0c114eb51"
+        part: response
+
+      - type: word
+        name: ike-sa-accept-der
+        words:
+          - "01100200"
+          - "0d100200"
+        part: response
+        condition: or

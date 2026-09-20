@@ -5,7 +5,7 @@ info:
   tags: detect,tech,ubiquiti-discovery,service
   severity: info
   metadata:
-    info: v1 protocol, AirCamDome
+    info: v1 protocol, $1
     rarity: 9
 tcp:
 - name: ubiquiti-discoveryv1
@@ -18,4 +18,4 @@ tcp:
   - name: ubiquiti-discovery
     type: regex
     regex:
-    - (?i)^\x01\0.[^\0].*\x0c\0\nAirCamDome
+    - (?i)^\x01\0.[^\0].*\x0c\0.([\w-]+)

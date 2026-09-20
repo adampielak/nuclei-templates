@@ -1,16 +1,13 @@
 id: subrion-login
-
 info:
   name: Subrion Admin Login Panel
   author: princechaddha
   severity: info
   tags: panel,subrion
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/panel"
-
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -19,11 +16,9 @@ requests:
         part: body
         words:
           - "<h1>Welcome to<br>Subrion Admin Panel</h1>"
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body

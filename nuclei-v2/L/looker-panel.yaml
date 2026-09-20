@@ -1,5 +1,4 @@
 id: looker-panel
-
 info:
   name: Looker Login Panel
   author: ritikchaddha
@@ -8,12 +7,10 @@ info:
     verified: true
     shodan: http.html:"lookerVersion"
   tags: panel,login,looker
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -22,7 +19,6 @@ requests:
           - "lookerVersion"
           - "lookerLocation.title"
         condition: or
-
       - type: status
         status:
           - 200

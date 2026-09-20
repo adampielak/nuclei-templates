@@ -1,0 +1,31 @@
+id: custom-favicon-detect
+
+info:
+  name: Custom Favicon Detection
+  author: darses
+  severity: info
+  description: |
+    Custom multi-asset favicon detection for technologies not covered by upstream templates. This template does not contain metadata search queries.
+  metadata:
+    verified: true
+    max-requests: 2
+  tags: tech,favicon,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/favicon.ico"
+      - "{{BaseURL}}/images/favicon.ico"
+
+    stop-at-first-match: true
+
+    matchers:
+      - type: dsl
+        name: dedecms
+        dsl:
+          - 'status_code==200 && ("-47597126" == mmh3(base64_py(body)))'
+
+      - type: dsl
+        name: sysaid
+        dsl:
+          - 'status_code==200 && ("1540720428" == mmh3(base64_py(body)))'

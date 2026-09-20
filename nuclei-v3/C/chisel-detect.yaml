@@ -1,0 +1,71 @@
+id: chisel-detect
+
+info:
+  name: Chisel Tunnel Server - Detection
+  author: darses
+  severity: info
+  description: |
+    Chisel HTTP/WebSocket tunnel server was detected. Chisel is a fast TCP/UDP tunnel transported over HTTP/HTTPS and secured via SSH.
+  reference:
+    - https://github.com/jpillora/chisel
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: jpillora
+    product: chisel
+    shodan-query:
+      - '"Not found" "Content-Length: 9"'
+      - 'html:"Not Found" "404 Not Found" "Content-Length: 9" "Content-Type: text/plain; charset=utf-8" -"awselb" -"Connection:" -"Server" -"location:" -"X-Request-Id"'
+  tags: c2,proxy,tech,detect,websocket,chisel
+
+flow: http(1) && http(2)
+
+http:
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        Connection: Upgrade
+        Upgrade: websocket
+        Sec-WebSocket-Version: 13
+        Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+        Sec-WebSocket-Protocol: chisel-v3
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Sec-Websocket-Accept"
+          - "Upgrade: websocket"
+        condition: and
+
+      - type: status
+        status:
+          - 101
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/version"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "text/plain"
+
+      - type: regex
+        part: body
+        regex:
+          - '^([0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?|0\.0\.0-src)$'
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '^([0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?|0\.0\.0-src)$'

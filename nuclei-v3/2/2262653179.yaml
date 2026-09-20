@@ -5,12 +5,11 @@ info:
   tags: detect,tech,nbd,service
   severity: info
   metadata:
-    info: new handshake
+    info: old handshake
     product: nbd
     rarity: 0
     vendor: wouter_verhelst
     verified: true
-    version: 2.9.17
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +20,4 @@ tcp:
   - name: nbd
     type: regex
     regex:
-    - ^NBDMAGICIHAVEOPT\0\0
+    - ^NBDMAGIC\0\0B\x02\x81\x86\x12S

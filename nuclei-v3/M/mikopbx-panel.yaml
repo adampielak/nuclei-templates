@@ -1,0 +1,47 @@
+id: mikopbx-panel
+
+info:
+  name: MikoPBX Login - Panel
+  author: darses
+  severity: info
+  description: |
+    MikoPBX administrative login panel was detected.
+  reference:
+    - https://github.com/mikopbx/Core
+    - https://mikopbx.com/
+  metadata:
+    verified: true
+    max-requests: 1
+    vendor: miko
+    product: mikopbx
+    shodan-query:
+      - http.favicon.hash:8309143
+      - title:"MikoPBX"
+    fofa-query:
+      - icon_hash="8309143"
+      - title="MikoPBX"
+  tags: panel,miko,mikopbx,detect
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "MikoPBX"
+          - "globalPBXVersion"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        group: 1
+        regex:
+          - "var globalPBXVersion = '([0-9.]+)';"

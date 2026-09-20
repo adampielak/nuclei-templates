@@ -1,5 +1,4 @@
 id: privx-panel
-
 info:
   name: SSH PrivX Login Page
   author: korteke
@@ -10,19 +9,16 @@ info:
   metadata:
     shodan-query: title:"PrivX"
   tags: panel,privx
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/auth/login"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '<title>PrivX</title>'
-
       - type: status
         status:
           - 200

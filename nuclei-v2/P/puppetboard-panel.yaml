@@ -1,12 +1,12 @@
 id: puppetboard-panel
 
 info:
-  name: Puppetlabs Puppetboard
+  name: Puppetlabs Puppetboard detection 
   author: c-sh0
   severity: info
   metadata:
     shodan-query: http.title:"Puppetboard"
-  tags: panel,puppet,exposure
+  tags: panel,puppet,tech,exposure
 
 requests:
   - method: GET
@@ -20,3 +20,4 @@ requests:
         part: body
         words:
           - "<title>Puppetboard</title>"
+
