@@ -1,20 +1,20 @@
-expression: r0() || r1()
 id: git-leak
+
 info:
+  name: Git 代码托管泄漏
   author: zan8in
-  name: "Git \u4EE3\u7801\u6258\u7BA1\u6CC4\u6F0F"
   severity: high
   verified: true
+
 rules:
   r0:
-    expression: response.status == 403 && response.body.bcontains(b'403 Forbidden')
-      && response.body.bcontains(b'You do not have permission to access /.git/')
     request:
       method: GET
       path: /.git/
+    expression: response.status == 403 && response.body.bcontains(b'403 Forbidden') && response.body.bcontains(b'You do not have permission to access /.git/')
   r1:
-    expression: response.status == 200 && response.body.bcontains(b'[core]') && response.body.bcontains(b'repositoryformatversion')
-      && response.body.bcontains(b'[branch')
     request:
       method: GET
       path: /.git/config
+    expression: response.status == 200 && response.body.bcontains(b'[core]') && response.body.bcontains(b'repositoryformatversion') && response.body.bcontains(b'[branch')
+expression: r0() || r1() 

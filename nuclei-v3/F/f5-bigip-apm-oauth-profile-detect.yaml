@@ -1,0 +1,55 @@
+id: f5-bigip-apm-oauth-profile-detect
+
+info:
+  name: F5 BIG-IP APM - OAuth Authorization Server Profile Detected
+  author: darses
+  severity: info
+  description: |
+    F5 BIG-IP Access Policy Manager (APM) was detected with an OAuth 2.0 / OpenID Connect
+    Authorization Server profile configured. The template probes default (/f5-oauth2/v1/)
+    and custom/standard OIDC discovery endpoints, extracting the authorization, token,
+    introspection, and JWKS endpoints. While the discovery endpoint is intended to be
+    public, its presence confirms an active APM OAuth profile and enables targeted reconnaissance.
+  reference:
+    - https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-oauth-configuration/configuring-apm-as-an-oauth-2-0-authorization-server.html
+    - https://support.f5.com/csp/article/K000138683
+    - https://clouddocs.f5.com/products/big-iq/mgmt-api/v5.4/ApiReferences/bigiq_api_ref/r_auth_login.html
+  classification:
+    cpe: cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 5
+    vendor: f5
+    product: big-ip_access_policy_manager
+    shodan-query:
+      - "Set-Cookie: MRHSession=deleted;"
+    driftnet-query:
+      - 'http-header:"MRHSession=deleted;"'
+  tags: f5,bigip,apm,detect,tech,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/f5-oauth2/v1/.well-known/openid-configuration"
+      - "{{BaseURL}}/.well-known/openid-configuration"
+      - "{{BaseURL}}/oauth2/v1/.well-known/openid-configuration"
+      - "{{BaseURL}}/oauth2/.well-known/openid-configuration"
+      - "{{BaseURL}}/oauth/.well-known/openid-configuration"
+
+    stop-at-first-match: true
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code == 200"
+          - 'contains(content_type, "application/json")'
+          - 'contains(body, "authorization_endpoint")'
+          - 'contains(body, "token_endpoint")'
+          - 'regex("\"version\"\\s*:\\s*\"1\\.0\"", body)'
+        condition: and
+
+    extractors:
+      - type: json
+        part: body
+        json:
+          - ".userinfo_endpoint"
