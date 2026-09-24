@@ -1,5 +1,4 @@
 id: fileflows-detect
-
 info:
   name: FileFlows - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://fileflows.com/
   metadata:
-    verified: true
     max-request: 1
-    vendor: fileflows
     product: fileflows
     shodan-query: 'http.html:"FileFlows"'
-  tags: fileflows,tech,detect,media,automation
-
+    vendor: fileflows
+    verified: true
+  tags: automation,detect,fileflows,media,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - '<meta name="app-version"'
           - 'flow-editor/fileflows-editor.js'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200eb88fea94fa41050190e1df2f2b854491591d87b4e8d99300720b3424665c1d02210085eb9951add68deda3d4239f14c2ac9d7a729bfa00343d223af047b1d9b39789:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502200eb88fea94fa41050190e1df2f2b854491591d87b4e8d99300720b3424665c1d02210085eb9951add68deda3d4239f14c2ac9d7a729bfa00343d223af047b1d9b39789:922c64590222798bb761d5b6d8e72950

@@ -1,5 +1,4 @@
 id: gladys-assistant-detect
-
 info:
   name: Gladys Assistant - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://gladysassistant.com/
     - https://github.com/GladysAssistant/Gladys
   metadata:
-    verified: true
     max-request: 1
-    vendor: gladysassistant
     product: gladys
     shodan-query: 'http.title:"Gladys Assistant"'
-  tags: gladys,tech,iot,home-automation,detect
-
+    vendor: gladysassistant
+    verified: true
+  tags: detect,gladys,home-automation,iot,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - '<title>Gladys Assistant</title>'
           - '/assets/splash/apple-splash-2048-2732.jpg'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 490a004630440220433723cc68541b8b108555ecb7e59aa02c1c0632ec5b683e80217d8fcc56dc5d02201c913a3fc8b028f13f58f6b4eb3dcd76262983222fb87588552166ac8ebf864c:922c64590222798bb761d5b6d8e72950
+        # digest: 490a004630440220433723cc68541b8b108555ecb7e59aa02c1c0632ec5b683e80217d8fcc56dc5d02201c913a3fc8b028f13f58f6b4eb3dcd76262983222fb87588552166ac8ebf864c:922c64590222798bb761d5b6d8e72950

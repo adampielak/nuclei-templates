@@ -1,5 +1,4 @@
 id: shynet-detect
-
 info:
   name: Shynet - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://github.com/milesmcc/shynet
   metadata:
-    verified: true
     max-request: 1
-    vendor: shynet
     product: shynet
     shodan-query: 'http.html:"Shynet"'
-  tags: shynet,analytics,privacy,tech,detect
-
+    vendor: shynet
+    verified: true
+  tags: analytics,detect,privacy,shynet,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - 'action="/accounts/login/"'
           - '/static/dashboard/images/icon.'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 490a0046304402200d5e4ed5042dd7f8aba1a540459350314c522694892bee4435fb8ee2df17437e022041b5a086b0899e02bf11f241715134f2dde167e9067b8ebf33744e75932eb0a3:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402200d5e4ed5042dd7f8aba1a540459350314c522694892bee4435fb8ee2df17437e022041b5a086b0899e02bf11f241715134f2dde167e9067b8ebf33744e75932eb0a3:922c64590222798bb761d5b6d8e72950

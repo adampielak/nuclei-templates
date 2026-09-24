@@ -1,5 +1,4 @@
 id: monica-detect
-
 info:
   name: Monica - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://www.monicahq.com/
     - https://github.com/monicahq/monica
   metadata:
-    verified: true
     max-request: 1
-    vendor: monicahq
     product: monica
     shodan-query: http.title:"Monica – personal relationship manager"
-  tags: tech,monica,crm,detect
-
+    vendor: monicahq
+    verified: true
+  tags: crm,detect,monica,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - '<title>Monica'
           - 'img/monica.svg'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e7249c8a952d6965716c4a9df9c91ed50a5dd01f3392f7f313ad69371a7403360220733de0b0b08bba4b1d7053d58122b095f5ba1b4f1411f17f52710dc2321b4c73:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100e7249c8a952d6965716c4a9df9c91ed50a5dd01f3392f7f313ad69371a7403360220733de0b0b08bba4b1d7053d58122b095f5ba1b4f1411f17f52710dc2321b4c73:922c64590222798bb761d5b6d8e72950

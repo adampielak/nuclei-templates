@@ -9,7 +9,7 @@ info:
     - https://github.com/SAP/spartacus
   metadata:
     verified: true
-  tags: tech,sap,hybris,angular,spartacus,headless,discovery
+  tags: tech,sap,hybris,angular,spartacus,headless
 
 headless:
   - steps:
@@ -30,4 +30,4 @@ headless:
         type: word
         words:
           - "ng-version="
-# digest: 4b0a00483046022100df5dae6c0c114b3c9acd0e80a9d12747cda95ddd4514773521350f6646f00104022100e9c290bec256eb9aa71b3393da3fae74bbc36a697203d95f8d787828cd0692e9:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220356620943e543b9c5e3cfbf35c10319be7c1ab5dce906d807f3a89e1c3717264022100ec9db8ca9f5b62fa92a5e2b419fda494be5f9b158e037f95f6e5c228e6ff81f6:922c64590222798bb761d5b6d8e72950

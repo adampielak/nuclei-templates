@@ -1,5 +1,4 @@
 id: rport-detect
-
 info:
   name: RPort - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://github.com/realvnc-labs/rport
   metadata:
-    verified: true
     max-request: 1
-    vendor: realvnc-labs
     product: rport
     shodan-query: http.title:"rport"
-  tags: tech,rport,remote-access,remote-management,discovery
-
+    vendor: realvnc-labs
+    verified: true
+  tags: discovery,remote-access,remote-management,rport,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -29,8 +26,7 @@ http:
           - "<title>rport</title>"
           - "This browser is not supported"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100db3a9961fae01121bbd1ef36c65d9ed45d5cd302683a378149ea07041cadf899022100cd4e065a24ffebf3f62657a0a547351f7e3ec6936621b21908682386ce532588:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100db3a9961fae01121bbd1ef36c65d9ed45d5cd302683a378149ea07041cadf899022100cd4e065a24ffebf3f62657a0a547351f7e3ec6936621b21908682386ce532588:922c64590222798bb761d5b6d8e72950

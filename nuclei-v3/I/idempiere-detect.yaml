@@ -1,5 +1,4 @@
 id: idempiere-detect
-
 info:
   name: iDempiere - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://www.idempiere.org/
     - https://github.com/idempiere/idempiere
   metadata:
-    verified: true
     max-request: 1
-    vendor: idempiere
     product: idempiere
     shodan-query: http.title:"iDempiere Application Home"
-  tags: tech,idempiere,erp,crm,detect
-
+    vendor: idempiere
+    verified: true
+  tags: crm,detect,erp,idempiere,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -33,8 +30,7 @@ http:
           - "Welcome to iDempiere"
           - "idempiereMonitor"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 490a0046304402202673162795a6e2a5e0c22dbd29420d51b7f328258b93b20af73bbd700d8b6e5f0220347b6a851b1aa053f1045c8b99a62aeb284a9f63619d0a0f258df51af2f56e1a:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402202673162795a6e2a5e0c22dbd29420d51b7f328258b93b20af73bbd700d8b6e5f0220347b6a851b1aa053f1045c8b99a62aeb284a9f63619d0a0f258df51af2f56e1a:922c64590222798bb761d5b6d8e72950

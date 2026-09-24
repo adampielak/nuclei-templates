@@ -1,5 +1,4 @@
 id: bareos-webui-detect
-
 info:
   name: Bareos WebUI - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://github.com/bareos/bareos
     - https://docs.bareos.org/IntroductionAndTutorial/Webui.html
   metadata:
-    verified: true
     max-request: 1
-    vendor: bareos
     product: bareos
     shodan-query: http.title:"Bareos - Login"
-  tags: tech,bareos,backup,detect
-
+    vendor: bareos
+    verified: true
+  tags: backup,bareos,detect,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     matchers-condition: and
     matchers:
@@ -31,8 +28,7 @@ http:
           - "<title>Bareos - Login</title>"
           - "img/bareos.png"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022028ca868537694bd36b0f11814230194dc93f46130fc82e2dc70eb1c13e316cae022100a144b84f1b33e0e597e67f232fbdeca1cc5b6fee2da79ec0e48d06131bee46f9:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022028ca868537694bd36b0f11814230194dc93f46130fc82e2dc70eb1c13e316cae022100a144b84f1b33e0e597e67f232fbdeca1cc5b6fee2da79ec0e48d06131bee46f9:922c64590222798bb761d5b6d8e72950

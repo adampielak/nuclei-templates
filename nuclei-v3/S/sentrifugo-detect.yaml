@@ -1,5 +1,4 @@
 id: sentrifugo-detect
-
 info:
   name: Sentrifugo - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://www.sentrifugo.com/
     - https://github.com/sapplica/sentrifugo
   metadata:
-    verified: true
     max-request: 1
-    vendor: sentrifugo
     product: sentrifugo
     shodan-query: http.title:"Sentrifugo"
-  tags: tech,sentrifugo,hrms,detect
-
+    vendor: sentrifugo
+    verified: true
+  tags: detect,hrms,sentrifugo,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - '<title>Sentrifugo'
           - '/public/media/'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e74ed689c75129645902a7b372e22a74fde9e75ccd72c14907f9c6653446980502200f2717c3e20f5e60d48029594c3ca9773cffa24134cd6a33864a5eff35c7e94e:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100e74ed689c75129645902a7b372e22a74fde9e75ccd72c14907f9c6653446980502200f2717c3e20f5e60d48029594c3ca9773cffa24134cd6a33864a5eff35c7e94e:922c64590222798bb761d5b6d8e72950

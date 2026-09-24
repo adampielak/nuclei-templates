@@ -1,5 +1,4 @@
 id: dispatcharr-detect
-
 info:
   name: Dispatcharr - Detect
   author: rxerium
@@ -9,20 +8,17 @@ info:
   reference:
     - https://github.com/Dispatcharr/Dispatcharr
   metadata:
-    verified: true
     max-request: 2
-    vendor: dispatcharr
     product: dispatcharr
     shodan-query: 'http.title:"Dispatcharr"'
-  tags: dispatcharr,tech,detect
-
+    vendor: dispatcharr
+    verified: true
+  tags: detect,dispatcharr,tech
 flow: http(1) && http(2)
-
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,12 +28,10 @@ http:
         words:
           - '<title>Dispatcharr</title>'
         internal: true
-
       - type: status
         status:
           - 200
         internal: true
-
     extractors:
       - type: regex
         name: js
@@ -46,11 +40,9 @@ http:
         regex:
           - 'src="(/assets/index-[^"]+\.js)"'
         internal: true
-
   - method: GET
     path:
       - "{{BaseURL}}{{js}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -61,8 +53,7 @@ http:
           - 'https://dispatcharr.github.io/Dispatcharr-Docs/'
           - 'https://github.com/Dispatcharr/Dispatcharr'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022009e2b17d80f2b45d09eb5e59300057a7da8682cebe953ee33afdac3f1aba881902210099c8d0de19f6328b72826f00b0e08835319e8068e2da92c7f106e420ca5ef474:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022009e2b17d80f2b45d09eb5e59300057a7da8682cebe953ee33afdac3f1aba881902210099c8d0de19f6328b72826f00b0e08835319e8068e2da92c7f106e420ca5ef474:922c64590222798bb761d5b6d8e72950

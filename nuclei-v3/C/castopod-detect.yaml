@@ -1,5 +1,4 @@
 id: castopod-detect
-
 info:
   name: Castopod - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://castopod.org/
     - https://code.castopod.org/adaures/castopod
   metadata:
-    verified: true
     max-request: 1
-    vendor: ad_aures
     product: castopod
     shodan-query: 'http.html:"Castopod"'
-  tags: castopod,tech,detect,podcast,media
-
+    vendor: ad_aures
+    verified: true
+  tags: castopod,detect,media,podcast,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -33,8 +30,7 @@ http:
           - 'title="Castopod"'
           - 'alt="Castopod"'
         condition: or
-
       - type: status
         status:
           - 200
-# digest: 490a004630440220369f7a5f163d86131649409a8d595a8c310e5ce25884ae7fe052c19135c0d29902201210829932bee31e39eb0a55f596711b7b956c4455cf84e2c97fcd733c0cfa01:922c64590222798bb761d5b6d8e72950
+        # digest: 490a004630440220369f7a5f163d86131649409a8d595a8c310e5ce25884ae7fe052c19135c0d29902201210829932bee31e39eb0a55f596711b7b956c4455cf84e2c97fcd733c0cfa01:922c64590222798bb761d5b6d8e72950

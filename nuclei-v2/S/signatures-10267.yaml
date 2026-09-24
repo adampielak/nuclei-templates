@@ -43114,4 +43114,6221 @@ requests:
     matchers:
       - type: dsl
         name: 1.7.0.0 - 1.9.4.2
-    
+        dsl:
+          - "(\"d430896eaf6f887e27270603f733411d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/i_star_blank_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f97de532ec2b88cf0790b73e9e1910fe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/btn_remove_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"3753999730503155256ee20cd75aeba1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/media/cell_phone_landing_banner1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b25562360fc470f1091ca7ea014a3290\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/btn_remove.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"85a455dbc19b798db021f49a233a0074\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/i_zoom_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"24e0813f2a9b0dd8397697099a1a2b77\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/bg_shadow_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f7fbd64eef2e917e2510c02701f3dcdd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/i_dropdown_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"5acb1effecb2fde5772adce02f110196\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/bg_divider.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ba2a43d9e360c99ce443d4bdf5b85ffd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/bg_gradient_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"d562372c4c0a82c3166aa6429e224134\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/i_dropdown.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2417495ef0c87816f949c338fd0dfd79\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/bg_divider_dark.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bdefe066741b9019e7f2f831d78326c2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/i_cart.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"df5a51680821193b78c1987ea32ce985\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/custom/arrow_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"45fee5f79b118e9a48521419ac530ba7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/custom/bg_logo.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"baef4dfa239d520769dd2fd3eaa9171c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/custom/arrow.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"86fe4be42cf815703b281f7cd60e3b47\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/custom/bg_header.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bdef8eb94b88c1131ba458b55965bbc6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/custom/bg_logo_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fab8c423be5133e45e5fff72680396fc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/custom/bg_header_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fd4f83a9ce8e59b02a559da09b0bf574\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/i_search_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c8865e46ca3851fc481ce24b63121849\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/bg_checkbox.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"64d515d23e7661a69ac58713d1c73f9c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/bg_back_btn_retina.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b6894134cd3d8860df912f8df0d5111f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/btn_edit.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b5db4c39106c54b8a398dd0cd7456ca6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/i_star.png"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f10afff0ab8fe39aa06e4b70b6117749\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/iphone/images/opc-ajax-loader.gif"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"3eb92a9317c81f5a7d67e8534f1d6ff9\" == md5(body))"
+      - type: dsl
+        name: 1.4.0.0 - 1.6.2.0
+        dsl:
+          - "(\"e805ea7eca1f34c75ba0f93780d32d38\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/favicon.ico"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"88733ee53676a47fc354a61c32516e82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_btn.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"1b9a2115bfd66afd1d47b9872de1f9e8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_notice.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ebd56dc80b8346e10e93628bc0e6c372\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/btn_remove.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e106b9cea6e73407f5311ebf024ebbbb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/slider_btn_zoom_out.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"17567db9d985e26ab13cbed6e81abb44\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"47bc079d9b3933c419739b580e4d0f39\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/map_popup_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.6.0.0 - 1.9.4.2
+        dsl:
+          - "(\"447cca32b28856fa8382a53d478ea3dc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"47bc079d9b3933c419739b580e4d0f39\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_pipe1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bca445209e5b0c9390c526ff6fb9bfcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_body.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f721950262bb5c60227ee74bb435fa79\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/fam_book_open.png"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0ba89b9fbe7e88d4c6896ed0a1f495aa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"47bc079d9b3933c419739b580e4d0f39\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_toolbar.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b51ad5ce6fc7c93c7be429822b7d0f54\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_add-to.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"30ad4986308f5012175006648ec002c4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0aed138181495642e9ab29e55d194d40\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/window_overlay.png"
+    matchers:
+      - type: dsl
+        name: 1.9.3.0 - 1.9.4.2
+        dsl:
+          - "(\"9ec9aea4c2159e0b1e73bda29821a39f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_btn-green.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"732c08dcbb45ecc07305a6fcc8a8e1a2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_nav_top.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e208d78164da001372d050b4933d021c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_pager-prev.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ba5d000eb30be2f5b9d8f1aa85cdf478\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/btn_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"79b6d671dc425b20d024255e76187f70\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_collapse-gm.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"37c585c23bbfbb3ef8f51191513d435b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/magnifier_handle.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2ee40683870a2bef5c5b34d30c84d6d8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/pager_arrow_left.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.2.0 - 1.9.4.2
+        dsl:
+          - "(\"ba5d000eb30be2f5b9d8f1aa85cdf478\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_pager-next.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b565ec86dceddf2c89397a31a6fc9bc8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/slider_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a1b9c405b99162b803ea0026371c38c3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_msg-error.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e4f28607f075a105e53fa3113d84bd26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_btn.png"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"df9af47f282450892546effa54e7da59\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/slider_btn_zoom_in.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e1fb26133b6b00cf548ecb0225867c8e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/grid-cal.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b1468e5239504974c689eea5d93f86d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/widgets/i_widget-link.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"1bf753578171f147f0203e7b13bdd0c4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/btn_edit.gif"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"a723d24e578ae946d29c46585d91f066\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/cvv.gif"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"83cdd38bf110b0f9c52fe84b56f45298\" == md5(body))"
+      - type: dsl
+        name: 1.4.0.0 - 1.6.2.0
+        dsl:
+          - "(\"ed0f392004a405466291071a760b285d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_collapse.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2333c68e38163ed4656da82b9bcf362b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_nav_parent.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0208ae272e474b99bf1f8743b525c342\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/left_col_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e19cc46c3c2b3777484d2847da8564d8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/home_co_bottom.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"52eb6bdfa8926e7a2d0e381b1604e868\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/footer_callout.png"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"9dc69b9d5517457e08dfce85424e6e16\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/fpo_no_crosssell.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7aa2defb505f4d1353fadaac00812501\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/callout1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0f274fb85b3f1b153072f8478ced414e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/home_co_br.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"8ae386c3822b77287a6339068f53953b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/home_co_main.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c74e1e5276d3c09c6089ce157bda0b24\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/media/home_co_tr.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"4fec17962d091640046cab9aa9f4b42e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/catalog/product/placeholder/image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"097ab8a3051bc037ea3de0e17f440540\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/catalog/product/placeholder/small_image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f825d16f97a640453553c79c48ebaa73\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/catalog/product/placeholder/thumbnail.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b2b682d28a08a748a73d2cda70ab5a57\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_btn-small.png"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"395fbc85113004f09b8e497c766f0b26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/spacer.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"df3e567d6f16d040326c7a0ea29a4f41\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/calendar.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b1468e5239504974c689eea5d93f86d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_cart-totals.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"1fbacde3b2afd6562f35d0bc21ea41c5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_availability_only_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.1.0 - 1.9.4.2
+        dsl:
+          - "(\"0cf32b72fefc94b89b74e4f3f02c2e93\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_msg-note.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e774ee481a2820789c1a77112377c4e0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_block-layered-title.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"5ba30a503859e0c74703e9451dc66ca5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_desc_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2ffa641590dbc5017952f77135d96185\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_asc_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"54fa7a2610dca6402a8159a0de658894\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/btn_window_close.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e106b9cea6e73407f5311ebf024ebbbb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_pipe3.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"11bfac1e590f0c77fb12f37d7f05cd3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_availability_only.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.1.0 - 1.9.4.2
+        dsl:
+          - "(\"bca1f00a50864171ad98317b778e869c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_pipe2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7da64eefaf4da3855ab6ee76dbced0c2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/btn_previous.gif"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2134c0c1f262054e782265b74672f64e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_rss-big.png"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6cf70e7c52a3f3d7b833ccadb041a555\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_subtotal.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fa2f26527c87fc6b00be8b5e594e52f4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_rss.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e5bbc388d818c142868b4a1df0b48793\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/validation_advice_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"992b643e08dd71f20de7f94f29e647ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/i_msg-success.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"834dfafd5f8b44c4b24a4c00add56fcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_btn-small.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"63a4d1b7cf6cf9f8c2ba557c21b3d6ec\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/pager_arrow_right.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.2.0 - 1.9.4.2
+        dsl:
+          - "(\"b565ec86dceddf2c89397a31a6fc9bc8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_rating.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"d2ea21ea9824962892adf2e9d78f03ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_tabs.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"3929ea638ee939e2280b909d291dd706\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/opc-ajax-loader.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2d5cf231c4f520b5c2b4de5536ecb82d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_top-promo.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"9e11a17ae228afd7073f5082daa68094\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/bkg_grid.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a6f64fedbac51fb1b86184cd488cc4e6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/modern/images/btn_trash.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bcb22f558a0eb32243a2a36645189e9f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/favicon.ico"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"88733ee53676a47fc354a61c32516e82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_ma-reviews.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"859c97695ec396c0b284a0c3c7c416ad\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_shadow-bottom.png"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"b6b5dae8220ea3b2b19b46b08ee75857\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_notice.gif"
+    matchers:
+      - type: dsl
+        name: 1.3.2 - 1.9.4.2
+        dsl:
+          - "(\"ebd56dc80b8346e10e93628bc0e6c372\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_remove.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6182e723aa2a253dc6cf334a3dfaaa84\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/slider_btn_zoom_out.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"68b3d1c28dc5aec4f6b64d70a6996b6f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-layered-li.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"753ebb76a4fc2b5b6915c536fcf4d487\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-currency.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"643024bcae5ece554fdbbc041aeb297c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_grand-total.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"10f1c3d82d78170706fa3e9c4baa7e04\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_page1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"704f7d4eccbdf9cabbad7770f18856ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_main1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a8f5717873dc6cf8f6bd22924b5838fe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_nav1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f4e26840c8cca0e74aba5b810341c5c0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_buttons-set1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2c641e927bc83156b7004ea37920513c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-cart.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"cc19e21f9c89b70cc10354ff588ca8ab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"48b7eb03807fdf80bdfb19b872cf84b8\" == md5(body))"
+      - type: dsl
+        name: 1.1.5 - 1.3.3.0
+        dsl:
+          - "(\"5fe61cfd953900ed6769a2ff4a3617b4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/map_popup_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.6.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c000ea228a0d0d11362107f53e5dd0e6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_header.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ed0ed0f1e68c1ca775b8983dca38146d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_pipe1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7852290f6a443000ead96b8cec5cd7c7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_body.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"bb4022c0c56087f7d4278148d5cd8997\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/fam_book_open.png"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"0ba89b9fbe7e88d4c6896ed0a1f495aa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-subscribe.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"9e5fee06a543742045118a95f2debcb8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_arrow-top.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"3dbb0584e8eb1d96cc3d3c40c17d7aaf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_form-search.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f1cd0803fcba781a950a3d402c6c7662\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_toolbar.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fb7ed019476eaa1643af922b59ede4fb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0aed138181495642e9ab29e55d194d40\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_login-box.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"5538675d7f1c35d96a2b8013948f42a6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/window_overlay.png"
+    matchers:
+      - type: dsl
+        name: 1.9.3.0 - 1.9.4.2
+        dsl:
+          - "(\"9ec9aea4c2159e0b1e73bda29821a39f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_th-v.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b0d17555dfc6060941e0c067718189df\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_th.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f249911b08f2822fc0b561b7f98575d2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_ma-info.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"91259557447ee80eb1110fe0c85cb3b5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_pager-prev.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"75973b020105dccbaf34e49d7852552d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-list.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fe8424127ecbe4b0d893bcf6f253dc1a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_search.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2d93b43c0a1c1182358677661e26a978\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"83ccd209d8d02b2f2db211203d7a9816\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-title-account.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a64f1df5a7e3d0f6a58b017f74311cb1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_shadow.png"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"98028c649be3dbd5ea888f95243b7ff4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-actions.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"da2970eac0a22c850b19ee3680475d51\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_collapse-gm.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"37418f23e65006dcfde07ce9b249e057\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-currency.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bfaad1b64557c05ad6f4b124ad3d3532\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-title.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f8c1f130ad69464fe7aff2f589b2ec75\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/product_zoom_overlay_magnif.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"83834893e162221d6d9257fe67847370\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-layered-dt.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ba8229068657b80f2c42111c5a1a307e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/magnifier_handle.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"238fbdd7959f517db11c6f57ee4daaf4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/pager_arrow_left.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"75973b020105dccbaf34e49d7852552d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_pager-next.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ed4d6640624c2b6edeab4c212314bd6d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/slider_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"87bc1b46d87de4f6252c7216216627c3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_msg-error.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e4f28607f075a105e53fa3113d84bd26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_search_criteria.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"cf67b9cc5c311ae3f99e68cd29ae17be\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_body2.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"11b4b7905afc15598c83966b1439e6ed\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_tag_add.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a736baa992aa55b6fb71e8742a04dc82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_tier.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c5189e25afeb7c1a8c4902a42832593e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_remove2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"234bddc4c5878c5ef16407a944824236\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_account_box.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"dd98174b6e3e5605a3f9551a59c66841\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/slider_btn_zoom_in.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"ef0fc67f77f30827ee67f4e744b60781\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/grid-cal.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"b1468e5239504974c689eea5d93f86d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_edit.gif"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"df3565eb4e4d0dc578201df60de54b47\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_shipping.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"91a0d2cc2eb2391f90ec8a75c04b3183\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_page2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"57a04ca584e05e28dc94c7e68f0af62e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_nav0.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f9ac3f31e293cf075471d2d3fe07353a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_collapse.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2333c68e38163ed4656da82b9bcf362b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_product-view.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7078a7f2827156d5ae0a1cb59da3c418\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-tags.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"67d1255c2c3e9ed1a5c845f8d4e4a3ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-related.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"4e277173b6372b1a90b0f19e0388ad54\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/catalog/product/placeholder/image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"097ab8a3051bc037ea3de0e17f440540\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/catalog/product/placeholder/small_image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"f825d16f97a640453553c79c48ebaa73\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/catalog/product/placeholder/thumbnail.jpg"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"b2b682d28a08a748a73d2cda70ab5a57\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-viewed.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"67d1255c2c3e9ed1a5c845f8d4e4a3ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_product_collateral.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"1d4d6b22e5108aefae52709d3934f397\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/spacer.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"df3e567d6f16d040326c7a0ea29a4f41\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/calendar.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"b1468e5239504974c689eea5d93f86d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_availability_only_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.1.0 - 1.9.4.2
+        dsl:
+          - "(\"0cf32b72fefc94b89b74e4f3f02c2e93\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_main2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"cf18ba9f7c7e6b058b439cde1a897e9c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_divider1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"260ebae91ffb1b7c663906b29a069925\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_msg-note.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e774ee481a2820789c1a77112377c4e0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_button.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"78642717c4e82e5bf042ffb47511c890\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-layered-title.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c92e29b30af7abf4e0bc3f714a246f55\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_desc_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"92fd194bfae4ce5ae3354e1e47d7ac7d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_opc-title-off.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f69b40b5331ab3760f54d038daf287eb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_asc_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"40aa554212d6a1f60593c27d78d85fa3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_ma-tags.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"1e83e3b0b677c92b3aa8a252268f7b86\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_window_close.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"c83f3cbbb2aedfc580dff78d5cfb63ed\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_sp-methods.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"17d68b5449adaa87dafc62ae0afa1b9a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-wishlist.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"8f8cda89ca20ba4a9b2f8c91f73fdff9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_pipe3.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"11bfac1e590f0c77fb12f37d7f05cd3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-layered-dd.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6ae6f8184e87de496fb74eeec65737c9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_availability_only.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.1.0 - 1.9.4.2
+        dsl:
+          - "(\"bca1f00a50864171ad98317b778e869c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_block-poll.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"52d778dddbf48b8d04226bee9370a7ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/best_selling_tr_odd_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"926622704f53796801bb5d097e116c8e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_pipe2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7da64eefaf4da3855ab6ee76dbced0c2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-layered1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"607167f198572e83a0e728b6b9383a70\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_previous.gif"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"63473a1520a73bb0c9b47b685d17cd21\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_discount.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"908d44da90de5e54185764d093bbdb77\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_rss-big.png"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6cf70e7c52a3f3d7b833ccadb041a555\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_rss.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e5bbc388d818c142868b4a1df0b48793\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/validation_advice_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"b85432906de8985a8b14eeb2dc652d3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_msg-success.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"834dfafd5f8b44c4b24a4c00add56fcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/i_folder-table.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bf006ddb591d8ac95d2e895bf2fdbc8d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/best_selling_tr_even_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"5022d648379090e306f00cd64738b146\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_tfoot.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"da2970eac0a22c850b19ee3680475d51\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/pager_arrow_right.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"ed4d6640624c2b6edeab4c212314bd6d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_rating.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0a8777c815350ddf1e316a537ad0c335\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"11258fe49feff5513c9608f2ea486776\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_nav2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a64c8f5165b239e432d26a62ae5f79b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/opc-ajax-loader.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"e805ea7eca1f34c75ba0f93780d32d38\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_grid.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a6f64fedbac51fb1b86184cd488cc4e6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/bkg_block-layered-label.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"14687dfa3921cfd12d2149c1497d9765\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_trash.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.5 - 1.9.4.2
+        dsl:
+          - "(\"bcb22f558a0eb32243a2a36645189e9f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/btn_gm-close.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"346e26eece27449a2f224aef76ae372e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/french/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.3.2 - 1.9.4.2
+        dsl:
+          - "(\"76d14822357ae697772e372ffe5cab35\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/french/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"4b942299a27d8795716ff642ad9e19b1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/french/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.3.2 - 1.9.4.2
+        dsl:
+          - "(\"4b942299a27d8795716ff642ad9e19b1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/favicon.ico"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"88733ee53676a47fc354a61c32516e82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_ma-reviews.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"859c97695ec396c0b284a0c3c7c416ad\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_notice.gif"
+    matchers:
+      - type: dsl
+        name: 1.3.2 - 1.9.4.2
+        dsl:
+          - "(\"ebd56dc80b8346e10e93628bc0e6c372\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/ph_callout_left_top.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"f17a036d75e5065eb76bafbb2c8ad7ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_remove.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6182e723aa2a253dc6cf334a3dfaaa84\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/np_thumb.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e46270c89358ecc8341d1565c14644b8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/slider_btn_zoom_out.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"68b3d1c28dc5aec4f6b64d70a6996b6f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-layered-li.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"753ebb76a4fc2b5b6915c536fcf4d487\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-currency.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"643024bcae5ece554fdbbc041aeb297c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_grand-total.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"10f1c3d82d78170706fa3e9c4baa7e04\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/np_thumb2.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"8502866cdabc5c74aca7d7bd32a06a03\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_page1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"704f7d4eccbdf9cabbad7770f18856ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_main1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a8f5717873dc6cf8f6bd22924b5838fe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_nav1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f4e26840c8cca0e74aba5b810341c5c0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_buttons-set1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2c641e927bc83156b7004ea37920513c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-cart.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"cc19e21f9c89b70cc10354ff588ca8ab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"48b7eb03807fdf80bdfb19b872cf84b8\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.3.3.0
+        dsl:
+          - "(\"5fe61cfd953900ed6769a2ff4a3617b4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/map_popup_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.6.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6383b40a9e7bd3c95260bef4fbb1b163\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_header.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0211c47be1493bd0ec72949c47932b81\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_pipe1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7852290f6a443000ead96b8cec5cd7c7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_google_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"843d75249ce05b5d87ca5419f37b1c3b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/ph_callout_left_rebel.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"0ce8ad0026d8b8a83ed7acdf6209129b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_body.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"82bfc5bfe346c8e974cd33b1314b0acf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/fam_book_open.png"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"0ba89b9fbe7e88d4c6896ed0a1f495aa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-subscribe.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"9e5fee06a543742045118a95f2debcb8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_arrow-top.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"3dbb0584e8eb1d96cc3d3c40c17d7aaf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_form-search.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2ca36eb80ea705e063409153f3821f78\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_toolbar.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fb7ed019476eaa1643af922b59ede4fb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/cvv.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e27210d810bbab732935d9410936ef87\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0aed138181495642e9ab29e55d194d40\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_login-box.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"5538675d7f1c35d96a2b8013948f42a6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/window_overlay.png"
+    matchers:
+      - type: dsl
+        name: 1.9.3.0 - 1.9.4.2
+        dsl:
+          - "(\"9ec9aea4c2159e0b1e73bda29821a39f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_th-v.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b0d17555dfc6060941e0c067718189df\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_th.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f249911b08f2822fc0b561b7f98575d2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_ma-info.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"91259557447ee80eb1110fe0c85cb3b5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_pager-prev.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"75973b020105dccbaf34e49d7852552d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-list.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fe8424127ecbe4b0d893bcf6f253dc1a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_search.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2d93b43c0a1c1182358677661e26a978\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"d2060501e14e86c29e28137130e5726e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-title-account.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a64f1df5a7e3d0f6a58b017f74311cb1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-actions.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"da2970eac0a22c850b19ee3680475d51\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_collapse-gm.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"37418f23e65006dcfde07ce9b249e057\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-currency.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bfaad1b64557c05ad6f4b124ad3d3532\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-title.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f8c1f130ad69464fe7aff2f589b2ec75\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/home_main_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e6d1c119d5b24a5916fe394cb4b5cdc3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/product_zoom_overlay_magnif.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"83834893e162221d6d9257fe67847370\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-layered-dt.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ba8229068657b80f2c42111c5a1a307e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/magnifier_handle.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"238fbdd7959f517db11c6f57ee4daaf4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/pager_arrow_left.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"75973b020105dccbaf34e49d7852552d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_pager-next.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"ed4d6640624c2b6edeab4c212314bd6d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/slider_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"87bc1b46d87de4f6252c7216216627c3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_msg-error.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e4f28607f075a105e53fa3113d84bd26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_search_criteria.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"cf67b9cc5c311ae3f99e68cd29ae17be\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_tag_add.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a736baa992aa55b6fb71e8742a04dc82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_tier.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c5189e25afeb7c1a8c4902a42832593e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_remove2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"234bddc4c5878c5ef16407a944824236\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_account_box.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"dd98174b6e3e5605a3f9551a59c66841\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/slider_btn_zoom_in.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"ef0fc67f77f30827ee67f4e744b60781\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/grid-cal.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.1 - 1.9.4.2
+        dsl:
+          - "(\"b1468e5239504974c689eea5d93f86d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/home_left_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"ee99a5586cf52e85c986d1275958a7da\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_edit.gif"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"df3565eb4e4d0dc578201df60de54b47\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/cvv.gif"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"83cdd38bf110b0f9c52fe84b56f45298\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.6.2.0
+        dsl:
+          - "(\"ed0f392004a405466291071a760b285d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_shipping.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"91a0d2cc2eb2391f90ec8a75c04b3183\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_page2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"57a04ca584e05e28dc94c7e68f0af62e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_nav0.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f9ac3f31e293cf075471d2d3fe07353a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_paypal_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"6edd61270b7b5632eafad10557129114\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/tab_home.png"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"07d0af93e167b9366d3d4fb3d6cdb31c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/tab_cart.png"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"9055ba76e256a51d3fee53a8c41d5226\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/tab_shop.png"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"fe602fc2e7093efef5ecc0b027a32d91\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/tab_page.png"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"ca05dbc42f944b8d4255f6675f6dd93a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/tab_search.png"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"25e880eb2a4d06828e2e1c3f32d22400\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/tab_more.png"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"b9fc21feb8d7655bc9c2985c37b0de2f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/tab_account.png"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"0498d73e47ed47179e5546dc15c17dc7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/catalog/category/placeholder/image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"097ab8a3051bc037ea3de0e17f440540\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/catalog/category/placeholder/small_image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"f825d16f97a640453553c79c48ebaa73\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/xmlconnect/catalog/category/placeholder/thumbnail.jpg"
+    matchers:
+      - type: dsl
+        name: 1.5.0.1 - 1.9.4.2
+        dsl:
+          - "(\"b2b682d28a08a748a73d2cda70ab5a57\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_collapse.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2333c68e38163ed4656da82b9bcf362b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_product-view.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7078a7f2827156d5ae0a1cb59da3c418\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/laptop_callout_mid3.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"22aa71ecfe0aa9b6936a1eddb62d889e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/furniture_callout_spot.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"28edc7d72486ab2362324995550d87af\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/best_selling_img02.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b9a49c0964938ec72fb834cb166b9352\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/about_us_img.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"726f36dd75b5a709a1a14acab1660188\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/electronics_laptops.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e050e92d72000e6bdc763a7b5888ec8a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/best_selling_img01.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"5e7337a4061a636df8ee4bf979a092ac\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/furnitures_bed_room.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b8616c5bffc23a92d2a1c97dae57b262\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/col_left_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.1.7 - 1.9.4.2
+        dsl:
+          - "(\"5f762006021e046f9bd536f37ea7c463\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.1.6
+        dsl:
+          - "(\"23f26d7cb0df78125cd4bb1f27e3413d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/best_selling_img04.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"7e59bf99f5f813e327595c52d3320174\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/cell_phone_landing_banner1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b25562360fc470f1091ca7ea014a3290\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/col_right_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"dae22f37a542da272a35195ec286ec25\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/best_selling_img06.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"2702839637efbe0fd0a4bad41cd6a551\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/404_callout1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"834e53a03e2921a2fd3c135c0c7189df\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/electronics_digitalcameras.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"953b8d7db6f0bdcd53b1d6b1386962b9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/best_selling_img05.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e396892daec7ffcf7244082b3e596911\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/laptop_callout_mid1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"4ffb50bd3b7b32a78fd059b1571c202e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/electronics_cellphones.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"8f6badbc32ce806c6109c788df6ef5e9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/head_electronics_laptops.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b2c55387ffa92277315bdedeb4cb9b8f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/head_electronics_digicamera.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"bde3cec3fc16b2d0ae57e7783eb00652\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/laptop_callout_mid2.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"662cf3881b06b090e9500496b19b03e4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/404_callout2.jpg"
+    matchers:
+      - type: dsl
+        name: 1.1.7 - 1.9.4.2
+        dsl:
+          - "(\"016984b4a1579df34147f9407098db73\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.1.6
+        dsl:
+          - "(\"9e1a1be732bcb4498eca505ec676ed8c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/head_electronics_cellphones.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"a69425966444ea597fb7c629114d5165\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/best_selling_img03.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e3581487fb4589baecc553f2ce8d5247\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/furnitures_living_room.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"2663737f3997cb1a49ce24d07dc8aefb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/shirts_landing_banner1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"4acc8620b009d835e5c25587671ea25d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/media/laptop_callout_spot.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"2e469d1bd871355eaef6076487a973db\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-tags.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"67d1255c2c3e9ed1a5c845f8d4e4a3ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-related.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"4e277173b6372b1a90b0f19e0388ad54\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/catalog/product/placeholder/image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"097ab8a3051bc037ea3de0e17f440540\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/catalog/product/placeholder/small_image.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"f825d16f97a640453553c79c48ebaa73\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/catalog/product/placeholder/thumbnail.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b2b682d28a08a748a73d2cda70ab5a57\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-viewed.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"67d1255c2c3e9ed1a5c845f8d4e4a3ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_type_grid.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a1e5d8ac36fb2891ea16e729b95c552c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_place_order.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"d35219f86ae2c983ee1a31557e37b612\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_product_collateral.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"1d4d6b22e5108aefae52709d3934f397\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/spacer.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"df3e567d6f16d040326c7a0ea29a4f41\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/calendar.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b1468e5239504974c689eea5d93f86d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_availability_only_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.1.0 - 1.9.4.2
+        dsl:
+          - "(\"0cf32b72fefc94b89b74e4f3f02c2e93\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_proceed_to_checkout_dis.gif"
+    matchers:
+      - type: dsl
+        name: 1.1.1 - 1.9.4.2
+        dsl:
+          - "(\"9e152c01d5d88f690dc52cb62428f3b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_main2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"cf18ba9f7c7e6b058b439cde1a897e9c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_type_list.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"61333d383ec142b8d270abe77324aa5d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_divider1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"260ebae91ffb1b7c663906b29a069925\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_msg-note.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e774ee481a2820789c1a77112377c4e0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/np_more_img.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"ace357bfe3e81ffb62137cd5b25ae5e1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-layered-title.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c92e29b30af7abf4e0bc3f714a246f55\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_desc_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"92fd194bfae4ce5ae3354e1e47d7ac7d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_opc-title-off.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f69b40b5331ab3760f54d038daf287eb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_asc_arrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"40aa554212d6a1f60593c27d78d85fa3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_ma-tags.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"1e83e3b0b677c92b3aa8a252268f7b86\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_window_close.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"c83f3cbbb2aedfc580dff78d5cfb63ed\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_sp-methods.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"17d68b5449adaa87dafc62ae0afa1b9a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-wishlist.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"8f8cda89ca20ba4a9b2f8c91f73fdff9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_pipe3.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"11bfac1e590f0c77fb12f37d7f05cd3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-layered-dd.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6ae6f8184e87de496fb74eeec65737c9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/np_cart_thumb.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e9fdd943e0947e15f0638506f477e358\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_availability_only.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.1.0 - 1.9.4.2
+        dsl:
+          - "(\"bca1f00a50864171ad98317b778e869c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_block-poll.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"52d778dddbf48b8d04226bee9370a7ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/best_selling_tr_odd_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"926622704f53796801bb5d097e116c8e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_pipe2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7da64eefaf4da3855ab6ee76dbced0c2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/np_product_main.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"d0cccda76de50efa025215ce85dacb1c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-layered1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"607167f198572e83a0e728b6b9383a70\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_previous.gif"
+    matchers:
+      - type: dsl
+        name: 1.7.0.0 - 1.9.4.2
+        dsl:
+          - "(\"63473a1520a73bb0c9b47b685d17cd21\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_discount.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"908d44da90de5e54185764d093bbdb77\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/free_shipping_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"cbf2e494ef7ca50acf8826321d739559\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_rss-big.png"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6cf70e7c52a3f3d7b833ccadb041a555\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_rss.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e5bbc388d818c142868b4a1df0b48793\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/validation_advice_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b85432906de8985a8b14eeb2dc652d3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_msg-success.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"834dfafd5f8b44c4b24a4c00add56fcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/i_folder-table.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"bf006ddb591d8ac95d2e895bf2fdbc8d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/best_selling_tr_even_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"5022d648379090e306f00cd64738b146\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_tfoot.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"da2970eac0a22c850b19ee3680475d51\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/pager_arrow_right.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"ed4d6640624c2b6edeab4c212314bd6d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_proceed_to_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"4daac687b514fecfd1068539500ac3d7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_rating.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0a8777c815350ddf1e316a537ad0c335\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_checkout.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"11258fe49feff5513c9608f2ea486776\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_nav2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.1.0 - 1.9.4.2
+        dsl:
+          - "(\"a64c8f5165b239e432d26a62ae5f79b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/opc-ajax-loader.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e805ea7eca1f34c75ba0f93780d32d38\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_grid.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a6f64fedbac51fb1b86184cd488cc4e6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/bkg_block-layered-label.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"14687dfa3921cfd12d2149c1497d9765\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_trash.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"bcb22f558a0eb32243a2a36645189e9f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/btn_gm-close.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"346e26eece27449a2f224aef76ae372e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/german/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.3.2 - 1.9.4.2
+        dsl:
+          - "(\"4133c535c479b79f4acd349a29d5043c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/german/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7f17a7cee6eb3e7ce07201678f6b1bd2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/german/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.3.2 - 1.9.4.2
+        dsl:
+          - "(\"7f17a7cee6eb3e7ce07201678f6b1bd2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/scss/config.rb"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"5f50b4dc5eefbab9e22abdfb80f4d689\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/demo_logo.png"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7694461c41abb69ca60c086c69e312cc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/social_icons@2x.png"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"531cc696a7b949dbc8121809c1bb4d46\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/demo-logo.png"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c6f4b110e5379547e71d367479f0f945\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/icon_sprite.png"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e15f0103ef5ebe3baf48960bb9ccfaab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/ajax-loader.gif"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f48ee069890b16455c3ddcacee9b5f75\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/bg_x.png"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c321c67f6929326129426c9e83207ea3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/social_icons.png"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a6d0bdaea0ca0f507bd36628a6ad31a2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_banner_1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"267b2827f3db118d99f7a623ee02ad8f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/col_left_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"5f762006021e046f9bd536f37ea7c463\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/col_right_callout.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"dae22f37a542da272a35195ec286ec25\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_callout_2.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"057ab6200f6ea05d4a6793969c5edac3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_banner_1@2x.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"3baa6702111d6f5f5dd40d96f148fc60\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_callout_2@2x.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e923c6323d22235876fe61a9c5588c85\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_callout_3.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"b2cf1e73e87b3330df17425044d22f52\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_banner_2.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"67f70cfb1690b5de6e185769fb55cd28\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_callout_1@2x.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"fb5e215f6cb623abf6f0365b5de1541d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_callout_1.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"4b8451e4e99e87b6c60a015f659d32b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/media/homepage_callout_3@2x.jpg"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"8b98dee63a61608b09c26bd60acea65e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/icon_sprite@2x.png"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"2e9c31d760a33d9f27951210f8311341\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/opc-ajax-loader.gif"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f48ee069890b16455c3ddcacee9b5f75\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/selectivizr.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"8e596ea5ffac3cf3eb53f75a15cdc7eb\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"76618ffd6e448c796f0d2422c57a6658\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/modernizr.custom.min.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e508acbc792b5761fe98dc892a1fd952\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"6b30635dd7d7297419bce69b3a0808e7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/jquery.cycle2.swipe.min.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"15747fbd45dd1adcaf8f04a2d8a71d68\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"a1310de18f5cbbf2c91cfd2fad7e19a0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/fastclick.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"7f1e1673fa395e43cbdc584c8798541b\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"8613ebaa39dc59362c2a4b69b8669d05\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/matchMedia.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"89f369588d629240d6a8d4f8788490c8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/matchMedia.addListener.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"6f47448212550bd3157c4265e3ebf085\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/elevatezoom/jquery.elevatezoom.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"76494c5afa372e08d0a8a5f4ba7e58ed\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"85bed439e504fad4c0e631146d7a75ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a18ff8649464a0c999f5d063a081da61\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"b8c320b245bda0ee6d6a05b1c5551a58\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/enquire.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"c11ca42a1f2bf189d004f9a4f42e3ca2\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"17df503d3abac5be0bec038e4b133de1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/imagesloaded.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"f70def9bddf45be549ec0575645b8038\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"82bdcdaa438659d4cb966ab112b162f4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/js/lib/jquery.cycle2.min.js"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.4.2
+        dsl:
+          - "(\"24f809434b3e494cc7b98c6c08404b33\" == md5(body))"
+      - type: dsl
+        name: 1.9.1.0 - 1.9.2.0
+        dsl:
+          - "(\"eb609c79b0c3f4d32ee1ba625e4fb52e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/i_notice.gif"
+    matchers:
+      - type: dsl
+        name: 1.3.2 - 1.9.4.2
+        dsl:
+          - "(\"ebd56dc80b8346e10e93628bc0e6c372\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/header_top_bg.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"143f524392ee62fcc8183f5930d7258b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"48b7eb03807fdf80bdfb19b872cf84b8\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.3.3.0
+        dsl:
+          - "(\"5fe61cfd953900ed6769a2ff4a3617b4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/header_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"795c6de754d0d49717ed08d5cd8168c8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/footer_container_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"d468e3943943cbbf711586e69d40ca42\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/footer_right.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"a45eaf35c8797d299bd4d9b936528e8f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/error_msg_icon.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e4f28607f075a105e53fa3113d84bd26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/success_msg_icon.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"834dfafd5f8b44c4b24a4c00add56fcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/footer_legality_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"4eb1602e3369dccd901ffe98ea0fd4b3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/main_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"cf18ba9f7c7e6b058b439cde1a897e9c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/note_msg_icon.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"e774ee481a2820789c1a77112377c4e0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/header_top_container_bg.jpg"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"294c18f3f6b838bba06ae41dd3c3d638\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/main_container_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"a8f5717873dc6cf8f6bd22924b5838fe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/footer_informational_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"72d37f4b2ea747bf8969c2654ad1d1e0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/footer_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"d59784af16fd95ea82226e5708a89232\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/footer_info_separator.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"7da64eefaf4da3855ab6ee76dbced0c2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/validation_advice_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"b85432906de8985a8b14eeb2dc652d3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/header_nav_bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"80c6a18686eb0243e06d6176506a2502\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/install/default/default/images/footer_left.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"2b15a54bea9409a75c142d14a62f0149\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/bkg_main1.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"a8f5717873dc6cf8f6bd22924b5838fe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"48b7eb03807fdf80bdfb19b872cf84b8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/bkg_header.jpg"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"0211c47be1493bd0ec72949c47932b81\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/bkg_body.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"82bfc5bfe346c8e974cd33b1314b0acf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/favicon.ico"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"88733ee53676a47fc354a61c32516e82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/i_msg-error.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e4f28607f075a105e53fa3113d84bd26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/bkg_main2.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"cf18ba9f7c7e6b058b439cde1a897e9c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/i_msg-note.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"e774ee481a2820789c1a77112377c4e0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/errors/default/images/i_msg-success.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.4.2
+        dsl:
+          - "(\"834dfafd5f8b44c4b24a4c00add56fcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/performance-toolkit/README.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.11
+        dsl:
+          - "(\"bd590efabdbd274039a6d530d548eb93\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Fixtures/tax_rates.csv"
+    matchers:
+      - type: dsl
+        name: 2.1.8 - 2.1.18
+        dsl:
+          - "(\"b93cdbcbee031fc02522e8014b3a24bc\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.1.7
+        dsl:
+          - "(\"ec1a7a6f7cc0c7ff8e225dd8575d7712\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Fixtures/tax_rates.csv.bak"
+    matchers:
+      - type: dsl
+        name: 2.1.8 - 2.1.18
+        dsl:
+          - "(\"ec1a7a6f7cc0c7ff8e225dd8575d7712\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/opt/magento/var/resource_config.json"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"cec9215028c4faebdf73b6733eac3dee\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/images/favicon.ico"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"88733ee53676a47fc354a61c32516e82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/images/i_msg-error.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"7135419b36425fac5691368335b9b3e5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/images/i_msg-note.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"06269d79a2f79c1fbc9613604a4e360d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/images/i_msg-success.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"220d37ce2a7d998edb910dc28900639f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular-sanitize/angular-sanitize.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.2.6
+        dsl:
+          - "(\"83603f7048cfbdd2d17ddfda55e8ddb7\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.4.1
+        dsl:
+          - "(\"84690571191bdadf875c0f2ea1ea68b8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/regular/opensans-400.woff"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"79515ad0788973c533405f7012dfeccd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/regular/opensans-400.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"7b6eca812c54dce42a4119d1ce3a1565\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/regular/opensans-400.eot"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"c4d82460ef260eb1589e73528cbfb257\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/regular/opensans-400.woff2"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"3f958ab39ec94f00bbb6a20d73b3b015\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/regular/opensans-400.ttf"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"488d5cc145299ba07b75495100419ee6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/light/opensans-300.woff"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"45b47f3e9c7d74b80f5c6e0a3c513b23\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/light/opensans-300.eot"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"09e00aa7622ece30a0f1e06b55f66c2a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/light/opensans-300.woff2"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"be585ca3fdeeee2d1de637c9a5321329\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/light/opensans-300.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"acf6f56f5389104348f9efdb5dd7bef7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/light/opensans-300.ttf"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"2e98fc3ce85f31f63010b706259cb604\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/bold/opensans-700.ttf"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"76cc6be5d8a231dc012fef4bdb86f79c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/bold/opensans-700.woff"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"2e90d5152ce92858b62ba053c7b9d2cb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/bold/opensans-700.eot"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"1d9c7945c7bc7dd0909105119bfbc191\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/bold/opensans-700.woff2"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"6c49c2d6a0014316a7b94b200dc24881\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/bold/opensans-700.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"a0bc6bb7e1d9640247301607313856ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/semibold/opensans-600.woff"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"697574b47bcfdd2c45e3e63c7380dd67\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/semibold/opensans-600.ttf"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"b32acea6fd3c228b5059042c7ad21c55\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/semibold/opensans-600.eot"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"f28eb362fb6afe946d822ee5451c2146\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/semibold/opensans-600.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"f78f533cac39efc320100275eec4ac7b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/fonts/opensans/semibold/opensans-600.woff2"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"56ec9fabff004302146ce1b781b83ec2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular-ng-dialog/angular-ng-dialog.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"478e978e7d971fdbc19ea60770db3946\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular-ui-router/angular-ui-router.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.2.6
+        dsl:
+          - "(\"9a242c72460520f3bf1cc206323578ea\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.4.1
+        dsl:
+          - "(\"1f33a4658268b2e87515fe680a0f966d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/images/loader-2.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"e9409e128885acb4a1a1b7b4fd00cfe7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/images/logo.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"f4e63dc26d5df13fdf74b69d5e7639ca\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/images/arrows-bg.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"2656a27b640a2c607757beb9446233e3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/images/magento-icon.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"f4e63dc26d5df13fdf74b69d5e7639ca\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/images/magento-logo.svg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.2.6
+        dsl:
+          - "(\"72bab9ea0e55bacb77eb3586c06040d9\" == md5(body))"
+      - type: dsl
+        name: 2.1.16 - 2.4.1
+        dsl:
+          - "(\"64354424243f7843ae367671a58b1edd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/images/favicon/favicon.ico"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"0a5976b2ff3e682ec15c125dbb1c8e3f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/bootstrap/js/bootstrap.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"c1eff7b72ea8c15a787bd03b63d82f08\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/bootstrap/js/bootstrap.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"ba847811448ef90d98d272aeccef2a95\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular-ng-storage/angular-ng-storage.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.2.6
+        dsl:
+          - "(\"fef204e3e843a1a39bb5cc854c256bc7\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.4.1
+        dsl:
+          - "(\"ee45fc1dc996fc2033bc24c058f95fe4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular/angular.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.2.5
+        dsl:
+          - "(\"031f7204f444ee50acea8207563dc548\" == md5(body))"
+      - type: dsl
+        name: 2.1.15 - 2.2.6
+        dsl:
+          - "(\"747768901afb68cb7602c4a084c55efa\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.4.1
+        dsl:
+          - "(\"9b68a9a7e5d06ef699f1c65a63a6e414\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular/angular.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.2.6
+        dsl:
+          - "(\"c6d2cdd97f02e4e7d54ff5c1996a8160\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.4.1
+        dsl:
+          - "(\"ee68d81d8d3967545bf0f7ffbd40c899\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular/angular.min.js.map"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"cccfb314f65f7ebe332984c758788664\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular-ui-bootstrap/angular-ui-bootstrap.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.2.6
+        dsl:
+          - "(\"c9b7dffb8e14da8e0b2f2c07edf412df\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.4.1
+        dsl:
+          - "(\"3818870615ec9455f294c19b54d852a1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/angular-clickout/angular-clickout.min.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"9f2e421735c146f8d312018bf876d483\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Fixtures/_files/tax_rates.csv"
+    matchers:
+      - type: dsl
+        name: 2.1.8 - 2.4.1
+        dsl:
+          - "(\"ec1a7a6f7cc0c7ff8e225dd8575d7712\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Fixtures/_files/tax_rates_small.csv"
+    matchers:
+      - type: dsl
+        name: 2.1.8 - 2.4.1
+        dsl:
+          - "(\"16a1a7dc5d75e96a4d52596929e37800\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Model/_files/dictionary.csv"
+    matchers:
+      - type: dsl
+        name: 2.1.8 - 2.4.1
+        dsl:
+          - "(\"b330333c96a92b93cb046a96eb838a72\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/I18n/Parser/Adapter/Php/_files/objectsCode.php.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"50fcd87821870aa4b094ba5273462573\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/LICENSE.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.4.1
+        dsl:
+          - "(\"0f167626b14fada473646dd0105f815f\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.9.4.2
+        dsl:
+          - "(\"59563e7be45096d0833dade102989042\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/CONTRIBUTING.md"
+    matchers:
+      - type: dsl
+        name: 2.1.8 - 2.2.3
+        dsl:
+          - "(\"1119c15606100000503d801926db05ca\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.7
+        dsl:
+          - "(\"f2b1853949a138d19277b78f217dcec5\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.18
+        dsl:
+          - "(\"613727fc87bbc5e69e613f27d538bbe0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/adminhtml/default/default/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.3.9
+        dsl:
+          - "(\"5e0912a388db8cd83c062766ac3a5d89\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"b5c6c6f40ba031f613d0f2aaa7f3c087\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/adminhtml/default/default/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.3.9
+        dsl:
+          - "(\"5e0912a388db8cd83c062766ac3a5d89\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"b5c6c6f40ba031f613d0f2aaa7f3c087\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/adminhtml/default/default/images/login_logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.3.9
+        dsl:
+          - "(\"9cc90e7aa1210883000fe5319862ce14\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"a15f85d59684e1ec548b758fb6165469\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/adminhtml/default/default/images/logo-large.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.9.3.9
+        dsl:
+          - "(\"5c77654c424b0a35cc24d28df5166dc4\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"b938979c790d4aba4170054fc4a060be\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blank/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.3.9
+        dsl:
+          - "(\"8de347192e0524cff7a69e4020182dbd\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"4073982b6c0263fe5f902566fd5c305b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blank/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.3.9
+        dsl:
+          - "(\"8de347192e0524cff7a69e4020182dbd\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"4073982b6c0263fe5f902566fd5c305b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blank/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.3.9
+        dsl:
+          - "(\"8de347192e0524cff7a69e4020182dbd\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"4073982b6c0263fe5f902566fd5c305b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.3.9
+        dsl:
+          - "(\"8de347192e0524cff7a69e4020182dbd\" == md5(body))"
+      - type: dsl
+        name: 1.3.2 - 1.3.3.0
+        dsl:
+          - "(\"6b5211b7de79a89b162de049b224e56a\" == md5(body))"
+      - type: dsl
+        name: 1.1.5 - 1.3.1.1
+        dsl:
+          - "(\"3901817e7bdd9456699f7a267078f2ff\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"4073982b6c0263fe5f902566fd5c305b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/blue/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.3.9
+        dsl:
+          - "(\"8de347192e0524cff7a69e4020182dbd\" == md5(body))"
+      - type: dsl
+        name: 1.3.2 - 1.3.3.0
+        dsl:
+          - "(\"6b5211b7de79a89b162de049b224e56a\" == md5(body))"
+      - type: dsl
+        name: 1.1.5 - 1.3.1.1
+        dsl:
+          - "(\"3901817e7bdd9456699f7a267078f2ff\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"4073982b6c0263fe5f902566fd5c305b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.3.9
+        dsl:
+          - "(\"8de347192e0524cff7a69e4020182dbd\" == md5(body))"
+      - type: dsl
+        name: 1.3.2 - 1.3.3.0
+        dsl:
+          - "(\"6b5211b7de79a89b162de049b224e56a\" == md5(body))"
+      - type: dsl
+        name: 1.1.1 - 1.3.1.1
+        dsl:
+          - "(\"3901817e7bdd9456699f7a267078f2ff\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"4073982b6c0263fe5f902566fd5c305b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/default/default/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.4.0.0 - 1.9.3.9
+        dsl:
+          - "(\"8de347192e0524cff7a69e4020182dbd\" == md5(body))"
+      - type: dsl
+        name: 1.3.2 - 1.3.3.0
+        dsl:
+          - "(\"6b5211b7de79a89b162de049b224e56a\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.3.1.1
+        dsl:
+          - "(\"3901817e7bdd9456699f7a267078f2ff\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"4073982b6c0263fe5f902566fd5c305b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/logo.gif"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.3.9
+        dsl:
+          - "(\"5e0912a388db8cd83c062766ac3a5d89\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"b5c6c6f40ba031f613d0f2aaa7f3c087\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/logo_print.gif"
+    matchers:
+      - type: dsl
+        name: 1.9.0.0 - 1.9.3.9
+        dsl:
+          - "(\"5e0912a388db8cd83c062766ac3a5d89\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"b5c6c6f40ba031f613d0f2aaa7f3c087\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/skin/frontend/rwd/default/images/logo_email.gif"
+    matchers:
+      - type: dsl
+        name: 1.9.1.0 - 1.9.3.9
+        dsl:
+          - "(\"773ca21465d08684ea7db8bf49d30a36\" == md5(body))"
+      - type: dsl
+        name: 1.9.0.0 - 1.9.0.1
+        dsl:
+          - "(\"5e0912a388db8cd83c062766ac3a5d89\" == md5(body))"
+      - type: dsl
+        name: 1.9.3.10 - 1.9.4.2
+        dsl:
+          - "(\"9024e782b5ef7fb76e935a47c39f53c6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/js/lib/jquery/jquery-1.12.1.js"
+    matchers:
+      - type: dsl
+        name: 1.9.4.0 - 1.9.4.2
+        dsl:
+          - "(\"62f69d29b6f01c8d477a547cedd922f2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/js/lib/jquery/jquery-1.12.1.min.js"
+    matchers:
+      - type: dsl
+        name: 1.9.4.0 - 1.9.4.2
+        dsl:
+          - "(\"1d244cb043be8157f0050ce9e45c9ef2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/js/lib/jquery/jquery-1.12.1.min.map"
+    matchers:
+      - type: dsl
+        name: 1.9.4.0 - 1.9.4.2
+        dsl:
+          - "(\"7761e30c5da1bf6d7cebc61bf612cd0e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/marketplace-credentials.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"c4fb37288e034de973af6f98347bea2c\" == md5(body))"
+      - type: dsl
+        name: 2.1.9 - 2.1.12
+        dsl:
+          - "(\"0c092878db8e18de9dae9db304c7de0c\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.8
+        dsl:
+          - "(\"a431cb79d1a7096382a42e3e55a34af2\" == md5(body))"
+      - type: dsl
+        name: 2.0.11 - 2.1.4
+        dsl:
+          - "(\"240c50e65a67cf83efa87ac20bff579f\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.15
+        dsl:
+          - "(\"dbcdd10b04d9de5d3bafd61e625a3da4\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"71387f011dcff3d0f970884e5fbf178f\" == md5(body))"
+      - type: dsl
+        name: 2.1.16 - 2.1.18
+        dsl:
+          - "(\"3be020db2373afaff2bf1e3be505fa1c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/package.json.sample"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.11
+        dsl:
+          - "(\"5186d439c6424ddb6e78f51ff24af93b\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.9
+        dsl:
+          - "(\"09363ea9a265e8f582b1e787ee0b65f6\" == md5(body))"
+      - type: dsl
+        name: 2.1.10 - 2.1.18
+        dsl:
+          - "(\"0478b18ac373cd50b68241ee3f945da5\" == md5(body))"
+      - type: dsl
+        name: 2.3.0 - 2.4.1
+        dsl:
+          - "(\"29983028bafe43c22c8c8c5c57e45dee\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/readiness-check.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.4
+        dsl:
+          - "(\"4869abdf21904d8e9f33fe329a2f7bbb\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"b8f8de6bd1f300b1f014d1e33901022b\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"42c5b9e3a40146ed516dbb52a7181c98\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"c60aba1642416da3f2d4b4f982bcee93\" == md5(body))"
+      - type: dsl
+        name: 2.2.5 - 2.3.6
+        dsl:
+          - "(\"ee15e6f6afc23ce207529b052c410202\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"61c2c4403e71be6150e60bcb1cba0a98\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/system-config.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"1d0647a9c981e63b52f0f8b16559270c\" == md5(body))"
+      - type: dsl
+        name: 2.1.9 - 2.1.12
+        dsl:
+          - "(\"511cdd9d1fff113d876ef0773e0c04f2\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.8
+        dsl:
+          - "(\"d6297077d8d2b0eba11aa2cbfe4e909a\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"afcc1a49cb7cbb6d536d1f1c8d4437cb\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"c40ce75e311a2761ac01791a84ca6af0\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"efc794eb77d7426d126be2e6de25dc48\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"ef15c5f2475ca896cd6eb5b76f85e94f\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"b192f0413578751c76d093143498c364\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/design.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"f7f6ae52a0434de5193e8ff86ae35f21\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"860f3e378d1e8668de02fa6452bf6edb\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"6eef007e6e8b1c5418cc5e0db8e6b733\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"4e719feac2bd70be5c7a344c08c65705\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/page.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.4.1
+        dsl:
+          - "(\"d22c578b4cd8abdca1fba2ddcfb1f05d\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"de504624849cefd6bcab67f1fb23b280\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"c887af00e24bf665ccf5b61515211359\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"74fe37186ff7a02a86207186bc7adfcd\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"c9a668a31afa91bb45a4f45ed6413e1c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/404.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"bd6a2e6fff8eae89b2a7f98077582c62\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"232fd67e81e03acf6c17fb691d251aac\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"234dc2f67dbed9adecfdf8742c5990b0\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"a07c31f3929244039ea2ad328ae9cf6c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/nocache.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"a5bb88cc0456821c37485e01e6f2628b\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"caa8189d5e93bf7e0bc7bfdd10151351\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"9c3745dd280aecb51d6c52f8f16a895e\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"bd76d985e1724c02f75c4355a3bf7645\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/503.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.4.1
+        dsl:
+          - "(\"569ae68b1434928198fd10a1af028693\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"ad8de1421d89f674dfee69a42b61465f\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"977268842238f8863d7bdb841737e021\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"08dfaf271d8736eb9cf6fcfd9aa37884\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"674386b9e4aef522b77ef33794255795\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/css/styles.css"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"6a5f31c82ad97d81ea501ec35eea1eb8\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"1cf2893fee422aa6613653fde859c8ce\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"c58de80dcf91153910ffee3efd0dd1fa\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"a35dcb3ea53beb752dc2bc426ce52466\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/complete-backup.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.2.6
+        dsl:
+          - "(\"22101badbfa4e50d858173968d2ca92b\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"c71acd6eeb44ddbd508abbf6364b0c12\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"82496b64929e587a6b072621408ce907\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"ae8372bc23270eb986af1a951ab75239\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"b333f7b7f51820f6fc01ddf0f2f03237\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/add-database.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.2.6
+        dsl:
+          - "(\"2391a8c09805875ff20b41ddd8e130ca\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"01606a7faf51fff0ee93e5a08fa1c670\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"2bf720a544eec697c67f8b91580948b3\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"7758f06c0a37b95e0f720aae0b3d2d65\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"9a199a5d8f0ea64473b68bbfb110220a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/start-updater.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"592b4c1f95949fa065eaa42828d95831\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"e21187a38b6f09f8357173d02c5e945f\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"5cccf3368bb6dd84894ca738d36f8ac1\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"79a66915bb3abf51624a75638aa5ae5b\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"6ada27f1b2c3c43b8741b7afd6fdd34a\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"1f3b3844f9491095add9a73aec80a2b9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/create-admin-account.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"3ec349301dcffd93e3632fb4f6c0fb31\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"d77d9aee86d9ba83d47dada0a53d1ca8\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"6f801117f669676b5b991aaac52ce427\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"bda864d8767488e6252c27696f28916b\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"e2c93fe8e5c1f04a2e809eb17095048e\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"004589f9d069b5b938e93c294d26b827\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"856eb355fbe94901350ac8b9d857863e\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"42c72bb1cea701bbac6c740bb0422964\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/landing.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"b3977ea83fafd3e4ec527432f75c5212\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"8c8394dd39baa03138d693194f5b19f7\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"8c78e48ea200d6ba07f9dbbda6557982\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"598f9a5894239710a32ff1b8d4f181ee\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/updater-success.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"330410ed557fc74d01e8929513ccda26\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"f5365422da34acac811e0fabd1c45e22\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"b9b62966511b96962807b8196f1a2dd4\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"846b2e6c10f4c7acfbdd6348afa57814\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"f9433c4a31bb082936caec6f14e08dcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/home.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.6
+        dsl:
+          - "(\"2c46d761184bba9ab2e79803b876e47a\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"d835c38dee9d6fa4745192baf9b972fe\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"cd29f6685a10307829798d179ccbccc4\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"01723eb7a03edab4a8095d5c941bc757\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/system-config.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"b211d239ec9e4ae3c231462502d63463\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"787565c325886518d8fd9c2f43956a1b\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"05539a2c4d9eb48ca7405ca95e4e1ade\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"2322b157936ed9a30292e671e7818f7f\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"0eb07ff743ae0c93305377d0ce6c770c\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"8fb3ec03e8de395ff708d43dd584b080\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"abf1bf520f20b0afa3596b36c20ca50f\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"accc7fedafd7f2b3bea1356972cb2868\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/create-backup.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.6
+        dsl:
+          - "(\"21de8b81019a7f5ab87dbc589692dcb0\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"9d811213edbb6768f436085196c6c5f9\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"9e1260e51aa220db2e814722bdb73908\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"4d377ec55da6e5d48db2776bcac9ff6f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/data-option.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.2.6
+        dsl:
+          - "(\"172680427f1b41df53eea4b68158565a\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"c7a87e6dfb6b32d0a453fd22fa251f65\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"47fc50855971add7f27ee3dcf58ecaed\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"986634fd9e7a7b3abd8faa446c0203c4\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"27f91dbecefa6eac4d87eb9d37e9662e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/success.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.6
+        dsl:
+          - "(\"db989bb27b61aaa598c9c042015d7e2e\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"fdbe9c049b54ead8699f21900c307bcd\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"7127d65bd71302d0997775ee9d628373\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"1936371adaa6a4dbd28aa1aba4d867da\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/auth-dialog.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"73405f55b7e1d13f389839d10e9fb2f1\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"806c1f9d3895bc2db25513cc3db33dc2\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"539180b3437a72c41cb0a5362cc4ac3c\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"28fc7e34ff0a68da64c38fe72952ebdb\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"38bc793d39b875aa899d96e4f44bfa3e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/install-extension-grid.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"9fe51913437078a8b4e38a9ec1188ed2\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"0d97ff4460e004046391af71c5facc00\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"dbe3188b7c0ac050c97edd39719259fe\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"8b0a4746c944c5333e64336d5619b6a6\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"94ba422a52b3b27e137049935517ac2b\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"059c83ee3e09fc7fa38e47e4d56fcc5d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/styles/lib/variables/_buttons.less"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"58a6370c32578a3c119df20e3ec88c83\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"b5f70ed92d1b17c48397e27f6c7a43a6\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"f3955319c6af53ba161d9a7d886891e8\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"af383f6068f934121772ef86b32d042e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/styles/lib/variables/_colors.less"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.0
+        dsl:
+          - "(\"585926145e510e5ba059a9b5904aa3df\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"57833fecc616f657cb0483cf0a3e3597\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"665ed5c0e98a3cd67a773d41f786bdba\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"55a58082ec32a17994dc5ae403dfd8bc\" == md5(body))"
+      - type: dsl
+        name: 2.1.17 - 2.4.1
+        dsl:
+          - "(\"a216fd757076fba4dfd56fec3b353a2b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/styles/lib/variables/_typography.less"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"c24dc60182d8e9259b4dbd8b30a1ce7e\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"d0e60b955a13015bc22213b836cf130d\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"0480476b43fce265e91fefa1e173b7bc\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"9a66641f0802663521e688db946d16f2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/error/index.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"28a9987046196e7256797468df840d88\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"a2d8cd0bd793f642875d85ec4df305d5\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"c35eccc393db6aadae58f4b85c89f78b\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"fc83aa375041af08910eccf5df22fe25\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"2f32bd72fe3149dab4a287e08a21dd9d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/error/404.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"f9a45d77dd252c76ca33bc70d6ae74b6\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"5c7310afb32c4c0e692afe0c2ed409ea\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"08b9be2bb5f1037bbfbc853980adfe8b\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"3c09c16858beb701b7ff3c14b84da2b9\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"9770daefd9d9c030675f61a32815ecab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/error/401.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"013d85bd6c1f7adab2d19ecb045b0b1c\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"3ffe909e06639cfe27d78dc68d8ebac8\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"9b11973626e27e9bbaa313fc97151af6\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"b549db6f7bd82aeb4ab32d3395afcf8d\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"2f055d38824611419330e578f05dfc7e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/create-backup.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.6
+        dsl:
+          - "(\"e375352f7c4c262f748b156984559ad6\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"bd91005f4d891cca8b82750d1ff0b14e\" == md5(body))"
+      - type: dsl
+        name: 2.0.10 - 2.1.4
+        dsl:
+          - "(\"221933319c311715c89cd66483ef7d21\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.9
+        dsl:
+          - "(\"0eb595b81b2ee41534bc67bdada60394\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"45e48040e4aa1d7d866c5381d7dabb96\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/install-extension-grid.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"589506827f51900caa239d1cef0c0744\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"09e40e49df45e37a446c7073463769cd\" == md5(body))"
+      - type: dsl
+        name: 2.0.11 - 2.1.4
+        dsl:
+          - "(\"4534ee8e0e9a6e4528387a701c23e810\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.10
+        dsl:
+          - "(\"484724770eb0cc60318e5e0f0c76f00d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"3629f81d5f094539b1d4377f099553e4\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"758ab9504cc4ab9ae43b617311e35a10\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/data-option.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.0
+        dsl:
+          - "(\"998dcf330d966e1000e65871c574b33b\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"b29e38f7c245672cccec882720b445b8\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"c09f389ae231b272e59dc9b64c42b58d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"4f703eb3071ee60ebbfdb2d9b982f4f5\" == md5(body))"
+      - type: dsl
+        name: 2.2.8 - 2.3.6
+        dsl:
+          - "(\"3f4b0f12d9de43d14da0ea470ace5833\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/customize-your-store.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"1e69e7f21951c56ab6628b618912d8b8\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"892f1908ec86ee345e93222e2d584555\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"08e937237f695334cd9a8c54f43f0794\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"364716e5eadc9a9cda74a00972c3da6d\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"19aa721204f8ffcb420b40993dd98409\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"1a62d0f21e13328118f870b6a1f51877\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/license.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.4.1
+        dsl:
+          - "(\"2576d867fb8bae4de657b9f83c36530e\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"44f07ef51431c594b22b0ea67ef424a3\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"6c4347bde8872852d80765bd73a8a314\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"42c3f149914e3c17a742133561f7c76b\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"95a03cad6e037e0370212029f728620f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/create-admin-account.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"c0ea81d8e354ffcb7dc712c0a7f1a9fc\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"5046c6bf65c37e4b3574c089950a546e\" == md5(body))"
+      - type: dsl
+        name: 2.1.3 - 2.1.4
+        dsl:
+          - "(\"2772d3adf95a5b12869169876ac7b848\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.2
+        dsl:
+          - "(\"4966d3c6866f18183aa8c99e1bfc8ef8\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.10
+        dsl:
+          - "(\"046ee1af4e35b839f04cdf5a48a9e25f\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"d538f34755d91558ed3e76fd5188fa62\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"31b19c5d43471dc55f2abf6ceccb1cb1\" == md5(body))"
+      - type: dsl
+        name: 2.0.11 - 2.0.12
+        dsl:
+          - "(\"142ccff8ee5d3bee906481ecd3238e9b\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"f8277069ddb863caca2014ac9acaaf7e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/navigation/menu.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"8d1f47565ee46a74ce41102d61098aaa\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"f6faab6c4dd06d65dddd9521b9c6d563\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"39770d654058c33af9a850852393d01c\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"e0dfba8ca978e156bf278ae04062c85f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/navigation/header-bar.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"72a5ca5dd8910497f5e51be348c48ae7\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"1d6678dbd5920031373a62b241d817f8\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"6a4a328be3674690e97ba99cf0b50043\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"afadea22894d0b61b45cac0cf01f69c4\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"1595ada4a5554b259503e0d6b243a6c7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/navigation/side-menu.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.3
+        dsl:
+          - "(\"77395532068d7d1182b5fa5a7d87475a\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"00379c56b9f7432fe7c07f50dbadb36a\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"668f2cc17d7544330b958d99ea582456\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"b9e5b1bf5295a7f3ade2534f69838d5c\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"f156f01fb3364adb63eeb53e46f92e57\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"20606cd3703ad2155c9f0afda9699e44\" == md5(body))"
+      - type: dsl
+        name: 2.2.4 - 2.3.0
+        dsl:
+          - "(\"f823c12d466d6e627700b475dbab1550\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"cc3370d47809eb78256894f28cfae626\" == md5(body))"
+      - type: dsl
+        name: 2.2.8 - 2.3.6
+        dsl:
+          - "(\"76afc0ad870678ed207c80da4c78a2e7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/home.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"d7087556156f1f5d7dc4586261f89143\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"1c28d825a2b0478de6d6a9fbd3090569\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"8162e2b639d3086092a3b798efe2d474\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"1761453ff7a63d5f9b3e8e658486c443\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"b21f86f2e6e3e74a2dc90ab964526715\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/install.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.6
+        dsl:
+          - "(\"1ecefc6290a40fc6924eb195ae1a327f\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"2e21d8c43fb5b6d0068ba61406038174\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"5a51e89b1117d38c894ea25909a39622\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"baf89d15f3f9bb218909fcf51ae56114\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/complete-backup/progress.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.6
+        dsl:
+          - "(\"f8e13c0baa9da3f4527de9be98c265e5\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"3859da552ac6adcae16010c6c62db8c8\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"daceb3fa66308d26298d9081f0746639\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"24f87166609e64cd326bd0fff357f03a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/success.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.6
+        dsl:
+          - "(\"ca75d5c6126846935e49065cc5bdcfb8\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"0c903cac8117fc15db5708210bcb1d40\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"3d223ef721eeef66a874e45a3b7b510d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"3fefd977596330edcd5ec7543f0eb47a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/updater-success.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"33417b172013e2968d876b3ffe209e4c\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"f5137b98d4403673beafa82d82d0a6d4\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"e8d4868331f63133b40255d25c841ff8\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"507e22786edae0de40d62cacda4c159e\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"03cd5730c97c90183e39fcf450dc76f5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/I18n/_files/files_collector/file.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"0c61a3586038a202dc981a3eef29e1fc\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"415495fe7f4ab9135c10a096a67810f2\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"558416f0a9aedefb514398ef82f8a0ae\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"99b441e1ae409c4c1f971b64f50bb4c9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/I18n/_files/files_collector/default.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"a38b7d646540bf7852b2b12d8913244c\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"6cd12e4daceb30eed29e3f834fe8bf06\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"69d7b8a9f7f30b539668ea60fdd0745d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"039a89025dab08105e95fcb71241bba5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/I18n/Parser/Adapter/_files/file.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"737177546ffe63f756a2f08faebc1608\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"a6cc9dc5cc9bad525b041b55cfaa36c5\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"98ec1132025a40e65ba70176fe913a34\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"1b60f890ec30b4dc2e4f8d9e9aaa4c99\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/I18n/Parser/Adapter/_files/email.html"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"4830bccb0bc88ef69eaa894c44634e7a\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"794be8d30a4852111f3fef4ad2cf6935\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"7cfc015ce95c1f852a0762d6982c2d61\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"39505545d916ad6d03e6cc2d940c7e95\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"bfcf26ee581e2af9e3aaab0721d82b08\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"1b5d2ef4c245ddd46827f1c86d6359ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/I18n/Parser/Adapter/_files/default.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.2.1
+        dsl:
+          - "(\"a38b7d646540bf7852b2b12d8913244c\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"6cd12e4daceb30eed29e3f834fe8bf06\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"69d7b8a9f7f30b539668ea60fdd0745d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"039a89025dab08105e95fcb71241bba5\" == md5(body))"
+      - type: dsl
+        name: 2.2.2 - 2.4.1
+        dsl:
+          - "(\"e62af94ad0e609bee6169dbb76a7a970\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/extension_attributes.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"a7483800b133f00938231757ef9ca075\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"bf7ac15612876808ca012dd332a5e731\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"171e21deeb688f69a35daa4de406ec01\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"6e6c3978a99437c9d108ace941c2c642\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/app/design/adminhtml/default/backend/layout.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"ef3adfd791d20ef6cdf36635ed256162\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"165f959fe65ab8c60e7811b20fcdf3c9\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"956a1ffcac1f2354256f1a6d44381dca\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"5e847146845bf4594b2e4395147e8560\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/app/code/Magento/SomeModule/view/frontend/default.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"79fe9843da9ca887a53130700d2ba21c\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"583185f9c8122b9a9df36d83ac0d9578\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"9cf12b3d106b6774681b7623ff9dd95c\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"b519f25d286d506f5f6d07a6a9746c7d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/app/code/Magento/SomeModule/etc/di.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"f3a8752f869c9dbb65997e1e5ba2843b\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"ccefb47b2546538a286cfa3df9ba5254\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"ce43711c91a7c4eb733ec77012390102\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"3d7d60445977122c2c72f97e82e0a86d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/app/etc/config.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"bd07247c58fe69f25418071007e6d4b8\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"39129eeb3705a01b8ffb41d21c16838c\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"25426130d73b88c9ea835d17ae8b4e03\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"600ceacd61fb1e334ba30a18c09d3e92\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/app/etc/additional.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"ef3adfd791d20ef6cdf36635ed256162\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"165f959fe65ab8c60e7811b20fcdf3c9\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"956a1ffcac1f2354256f1a6d44381dca\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"5e847146845bf4594b2e4395147e8560\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/app/etc/di/config.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.4.1
+        dsl:
+          - "(\"14618e933d662e1906833d18044dad11\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"c95c753296d483ebe7f2caf05c37a40b\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"0d9d07850198abd46075241b46bbd6a7\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"314517b726149ebb730882e31a7d15ee\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/bin/magento"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.4.1
+        dsl:
+          - "(\"9c406d14991220b7fa9f78a5d9881fb2\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"d8785508e733d76da21c9c7a080a0759\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"3fef206fbaebabea3c0cb7d600f9dbfc\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"b306a7fa79ddcb9b39f68d3471835e1f\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"c262fc786f753d1e3536e94a5b2eb9ca\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"9866376479ca036e532f3b757c8ff59e\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"cb0bcc23c145d3872762f4bfd1c5c54d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Gruntfile.js"
+    matchers:
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"b1fae2d40e9a9be4a07799093000cfe3\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"ab1b4d30b210e7a56c6f9c27bc21d2aa\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"b20802594cb6fa8c200ae18b06f2ae31\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/CONTRIBUTOR_LICENSE_AGREEMENT.html"
+    matchers:
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"3607644ad4e210895316a061177f04f2\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"cf75f10df0186a3ef4aba8e55e56b8cd\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"97a27d844072620476bb86dc3afcb9de\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/component-grid.js"
+    matchers:
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"e426adbe9489d7af73e6336f2a097631\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"2a2db649ea65d6933bb4ab1392375d05\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"b26d59cdea19f4e63223fd946be7743d\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"625a05232fbfee6528e6f9e01755e479\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/component-grid.phtml"
+    matchers:
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"d56da19c89e015cd13fd93155ecfb563\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"dbc7e522fcdc6c1b0eccd5c488bb2416\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"765d9a0dd59710dd7bcdebb02edcd36c\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"5d7b1ae3e29f6d9d2a6ebdb62e9032d0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/LICENSE_AFL.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.3 - 2.4.1
+        dsl:
+          - "(\"b5ab2974a0b940618ba7c27921734f32\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"0e3cb8112c018920eee7a316a2a69103\" == md5(body))"
+      - type: dsl
+        name: 1.1.7 - 1.9.4.2
+        dsl:
+          - "(\"45a399f2095030865fb962263ccd7506\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/select-version.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.5
+        dsl:
+          - "(\"42dae09fd9b1a6122d3f9307ba0e4507\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"1955223ced8df2e72cd8fd920c79b230\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"9a4b9d7168f10c02f7c5019cd5b55bca\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"acae3021d17287ecb75bbdbb428d1509\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"285144c881b9f7753b576ca8067a2996\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"18603a2116da33b2b4b50674b234382f\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"44a158e1c54db937ae0df0929b1be98e\" == md5(body))"
+      - type: dsl
+        name: 2.2.6 - 2.3.0
+        dsl:
+          - "(\"a9351a29a24dec52a1024e5d8a0fce0e\" == md5(body))"
+      - type: dsl
+        name: 2.2.8 - 2.3.6
+        dsl:
+          - "(\"e75cf5830bed576723ecb6fd90684599\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/popupauth.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"91116bd4821444c015192aa449d9fa08\" == md5(body))"
+      - type: dsl
+        name: 2.1.9 - 2.1.12
+        dsl:
+          - "(\"319fb5ca798def5f1d31ebafae0c0390\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.8
+        dsl:
+          - "(\"0971b6749de0870951f18e5e9ade39c1\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"b8235d0ff88fb01618c750960b7c1258\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.10
+        dsl:
+          - "(\"8928b55f8b52f41de70522a5e6e2d148\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"17beac3f7ee920984fb30532eca2cead\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"ce8e46b415ccdea52e37416cd0dfdbf1\" == md5(body))"
+      - type: dsl
+        name: 2.0.11 - 2.0.12
+        dsl:
+          - "(\"f2318a9181356ea8ccbec1729a6bf214\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.15
+        dsl:
+          - "(\"e0e1af938fe4832adee1c98fc0e0b995\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"ff624c5d0c2fb3587361c595c7684697\" == md5(body))"
+      - type: dsl
+        name: 2.1.16 - 2.1.18
+        dsl:
+          - "(\"f807a8c61ad75337d7a79fd357e795c4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/install.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.2.6
+        dsl:
+          - "(\"fb9d0ccfa6d7c6c8d98042e00b79808f\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"52404b9024b3f7eed52095589db294d0\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"f241df8c8cca9cf838adc37523563fa5\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"0175a55d2c0081d449977167e8ad9ff4\" == md5(body))"
+      - type: dsl
+        name: 2.3.0 - 2.3.6
+        dsl:
+          - "(\"d33a759ebefcbf09ebd1d0e1808bb96f\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.2.11
+        dsl:
+          - "(\"b32c7ff845394347db0f9eccaed96977\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/readiness-check.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"c756378cb199ccf7038540d6a4f1378b\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"ccf5aed60429e848d1d837f164201c9e\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"0b3697655e181ebbbf5aa086e3a89970\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"e5fa07ecdd3a7bf76bd139540c1b93a7\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"5179d88d8b0697353b03a6c53289c49f\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"c76959d5f81c57fafdd08aa65072fc6b\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"965d4061b9480ac34f3c23f73154c6a6\" == md5(body))"
+      - type: dsl
+        name: 2.3.0 - 2.3.6
+        dsl:
+          - "(\"e748c482f8b4bd028f0df90a40f039a8\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.2.11
+        dsl:
+          - "(\"9f76bc54a6e6ab8552f59204eec67cc7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/customize-your-store.js"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.2.6
+        dsl:
+          - "(\"03935c4d85e1c57930683367840741f9\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"9d4b3ac84f829b3f4a26dbf4b7ed90f7\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"b9edadbfc46ed4486c3e7e4675098f5c\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"980427948780c062f0384fa7fba6836b\" == md5(body))"
+      - type: dsl
+        name: 2.3.0 - 2.3.6
+        dsl:
+          - "(\"5281787db6e7dfd90525b4d133aa0684\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.2.11
+        dsl:
+          - "(\"5577063008f4876ae2eb3fc8d7211fd9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/start-updater.phtml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.0
+        dsl:
+          - "(\"75feac775f5d3cb7b69982c3028e6536\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"1ffa7f9160b5b7d3cbe557c70568b655\" == md5(body))"
+      - type: dsl
+        name: 2.0.10 - 2.1.4
+        dsl:
+          - "(\"1fced0f69a29d31ed16d4c9c228a5599\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.9
+        dsl:
+          - "(\"e02611a193dfa6ab12c1cc019ae6ae3f\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"e66b501a25bdefa0caa75cd92024878a\" == md5(body))"
+      - type: dsl
+        name: 2.3.1 - 2.3.3
+        dsl:
+          - "(\"439fd22cda7617659cae5baf170a33aa\" == md5(body))"
+      - type: dsl
+        name: 2.3.4 - 2.3.6
+        dsl:
+          - "(\"0a662c981a2bf7e7b3f9ac3a3886dd34\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/readiness-check/progress.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.3
+        dsl:
+          - "(\"6c86efd8a09d22653603c0bf811c4ed7\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"9ff1750ccb96b8445afcdfc88b7022ce\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"ba9885ad0af60e380da1b811b9db0a6f\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"5a022dc7518ca2978c7fc0b2184fb2cf\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"7323a8a98cecad3f21f5f099312c24eb\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"8c921d34a2b3e06fe7a2f4cd188b77a9\" == md5(body))"
+      - type: dsl
+        name: 2.2.4 - 2.3.0
+        dsl:
+          - "(\"d904519538a049780cf4e1d65145a493\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"5509c31b8415e4effcc43cd3cffeee03\" == md5(body))"
+      - type: dsl
+        name: 2.3.1 - 2.3.3
+        dsl:
+          - "(\"26dcad8d8255b77c3234baab2069be03\" == md5(body))"
+      - type: dsl
+        name: 2.3.4 - 2.3.6
+        dsl:
+          - "(\"bc704efb06e7d6db1af5d0230e8306fc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/local.xml.sample"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.3
+        dsl:
+          - "(\"63e1d75ef76d4f046d1350230ea05a32\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"b5a196f99ad39d77b75137efe11b1859\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"e2eb41fdf952c1f462d2b4603e1bd3fd\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"1e6f51fb10ce5d49f6c31e1d37f1a9cf\" == md5(body))"
+      - type: dsl
+        name: 2.3.4 - 2.4.1
+        dsl:
+          - "(\"cc43d9cd009b99dc48b5b99e6f5c4a0a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Test/Unit/Module/Di/_files/app/code/Magento/SomeModule/etc/adminhtml/system.xml"
+    matchers:
+      - type: dsl
+        name: 2.1.13 - 2.3.3
+        dsl:
+          - "(\"13a4e2219e38848484e9c134dff918d2\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"e3ba8d9be66216aa03d3d8898dc2a560\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"1447940bc3adbc1585a1d16cbdee4b9f\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"a8bffd4ead14c694938fbcef5be9c00f\" == md5(body))"
+      - type: dsl
+        name: 2.3.4 - 2.4.1
+        dsl:
+          - "(\"5e6f65f8ee0b98287eeaed2f7e88dff6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/src/Magento/Setup/Fixtures/_files/dictionary.csv"
+    matchers:
+      - type: dsl
+        name: 2.1.8 - 2.3.4
+        dsl:
+          - "(\"e3ba5ca99f7fb408453342f937bf27ad\" == md5(body))"
+      - type: dsl
+        name: 2.3.5 - 2.4.1
+        dsl:
+          - "(\"24f9ab9ffbbc6e6bd0b7ebc87777d6cf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/app.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.6
+        dsl:
+          - "(\"f0cc97dfb5f7dd20fa16c1941c6b5388\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"f8c4b4be715ea6f20f7a97a1d9a3211e\" == md5(body))"
+      - type: dsl
+        name: 2.0.11 - 2.1.4
+        dsl:
+          - "(\"12687609fd3a88e33fa000a4b117acff\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.10
+        dsl:
+          - "(\"291244d3470a29c4ed2070b8a9c9abd1\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"f2e1f115811f815e4bf4b81efd66a220\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"d04fae8d98fb6b1427d9eb87c1ee4445\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.3.6
+        dsl:
+          - "(\"77319de330fd0d4c77b7d0c043b63c72\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.4.1
+        dsl:
+          - "(\"7388bc5d8a694e57f3f85208b288466b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/index.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.6
+        dsl:
+          - "(\"d6d7ff766af34d048d309fb751372660\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"62f2ef62b82447a24c6b3c74bbab1a21\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"2ded6c054545ceb3719f4ef027a78589\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"6c0e6adf5a97be94776f8111e2c1645f\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"ddbd3b78d8396dd464959f01c5d52ef3\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.4.1
+        dsl:
+          - "(\"8c6955140b60853a4b6bb62aed6e27fd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pub/errors/default/report.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.5
+        dsl:
+          - "(\"02865bf3c4608736dffaac122102c04a\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"be93d8bbfbb03071972c974f6a8148cb\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.1.4
+        dsl:
+          - "(\"6a8b182a6389f62b396ddd0acc06ee13\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"f8ffa264f335dd08a71a272c6ecf7816\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.14
+        dsl:
+          - "(\"6e05c18f76d1ed8a9c32710354d40eb3\" == md5(body))"
+      - type: dsl
+        name: 2.2.6 - 2.3.6
+        dsl:
+          - "(\"b2779028831c04a95a3b27a9e8392746\" == md5(body))"
+      - type: dsl
+        name: 2.1.15 - 2.1.18
+        dsl:
+          - "(\"fa2be9cf05783fa7f7b4078ee730122d\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.4.1
+        dsl:
+          - "(\"fd48866236da8fc79836b32d84b1d55b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/layout/layout.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.11
+        dsl:
+          - "(\"64c0cccc82c5db9357911b770ca7f968\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.1.12
+        dsl:
+          - "(\"a024065f5f3598bbd3046638d6781d56\" == md5(body))"
+      - type: dsl
+        name: 2.0.11 - 2.1.4
+        dsl:
+          - "(\"5e93afa91a5f22c2bfa46734e9306892\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.10
+        dsl:
+          - "(\"03b17962b9829a0532475c5eabfedb39\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"e9fbc370a654c584d9ac408375b8625b\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"f4926a1757e76510739837e2af311466\" == md5(body))"
+      - type: dsl
+        name: 2.3.0 - 2.3.6
+        dsl:
+          - "(\"08c9638b050b6e301b1379d93af54129\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.4.1
+        dsl:
+          - "(\"90a00901a815c977adcfb98c788dfb17\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/magento/setup/main.js"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.4
+        dsl:
+          - "(\"41a9ee3db38ffab6f3689bfe4228568e\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"62866df59b78439641f9e831eccf8801\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"dfcadf74724c5ea6fc7c43466a77b46c\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"5a2205ddefd3a8c450532a76e5fb623e\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"8ba04dee4e08902787efb884ed4a6448\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"f0d80fb9824111187531ffd2ab0007f9\" == md5(body))"
+      - type: dsl
+        name: 2.2.5 - 2.2.6
+        dsl:
+          - "(\"0b3592e131e0d973cd50d90573a96eb7\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"d59b984088ed585bd4c9e2a37e73b7ee\" == md5(body))"
+      - type: dsl
+        name: 2.3.0 - 2.3.6
+        dsl:
+          - "(\"4f6fc69670b9190acf3cee02f86ed23d\" == md5(body))"
+      - type: dsl
+        name: 2.2.7 - 2.2.11
+        dsl:
+          - "(\"3435711f266c1527199050d178738af3\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.4.1
+        dsl:
+          - "(\"a36d235dcb392d4006a9a80d97b0199d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/pub/styles/setup.css"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.2.3
+        dsl:
+          - "(\"d2008fb632c1a9658a25c268ab6fc593\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"989713309f3531ac09689a15824f46f7\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"ffc28073bb37fc5322a6376f2dd50d36\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"0cdbca4fcd85ace3b0c450ad5b3391eb\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"b7aece950b65e535e484c13b7c470fdd\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"d18b6b4d4c99493847d85614daf09e42\" == md5(body))"
+      - type: dsl
+        name: 2.2.4 - 2.3.1
+        dsl:
+          - "(\"ae0a6d7720d4be2e45947da3066014a2\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"b26e4f368d6c6efec7fbb8d02881e109\" == md5(body))"
+      - type: dsl
+        name: 2.3.2 - 2.3.6
+        dsl:
+          - "(\"1c40ac3d9d2a00e134857398d6bc8748\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.4.1
+        dsl:
+          - "(\"74a970c5ec872debf46d0bd8848801a9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/setup/view/magento/setup/landing.phtml"
+    matchers:
+      - type: dsl
+        name: 2.2.0 - 2.3.0
+        dsl:
+          - "(\"c5a57a20e546c75439467151a74b2058\" == md5(body))"
+      - type: dsl
+        name: 2.1.5 - 2.1.12
+        dsl:
+          - "(\"62932a75ca50363378931cc911281b43\" == md5(body))"
+      - type: dsl
+        name: 2.1.0 - 2.1.4
+        dsl:
+          - "(\"3f99bf31912abdfb56569cbad10d5821\" == md5(body))"
+      - type: dsl
+        name: 2.0.3 - 2.0.12
+        dsl:
+          - "(\"8afb15ce2ef18f0a2518d929fd462c7d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"49e4c2b8d6ed059a6f394a37fd395e26\" == md5(body))"
+      - type: dsl
+        name: 2.0.13 - 2.0.18
+        dsl:
+          - "(\"d6775ea808425afa3e94af1c771a5f27\" == md5(body))"
+      - type: dsl
+        name: 2.1.13 - 2.1.18
+        dsl:
+          - "(\"0aef5057d89527033cc9240e5f6d2ea5\" == md5(body))"
+      - type: dsl
+        name: 2.3.1 - 2.3.3
+        dsl:
+          - "(\"e454b0acfd8c3f2d771c89ccf2978a23\" == md5(body))"
+      - type: dsl
+        name: 2.3.4 - 2.3.6
+        dsl:
+          - "(\"650b08a8224607ddc5a5bfa88bebef6b\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.4.1
+        dsl:
+          - "(\"29913146d016773b8569ae8c135468c3\" == md5(body))"

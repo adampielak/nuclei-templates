@@ -1,34 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Elastic HD Dashboard
+    - elasticsearch go Edition head plugin
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: elastic-hd-dashboard
-
 info:
-  name: Elastic HD Dashboard Exposure
   author: tess
-  severity: low
+  description: Elastic HD Dashboard is exposed.
   metadata:
     max-request: 1
-    verified: true
     shodan-query: title:"Elastic HD Dashboard"
+    verified: true
+  name: Elastic HD Dashboard Exposure
+  severity: low
   tags: misconfig,exposure,elastic
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Elastic HD Dashboard"
-          - "elasticsearch go Edition head plugin"
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200

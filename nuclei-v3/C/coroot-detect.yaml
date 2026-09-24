@@ -1,5 +1,4 @@
 id: coroot-detect
-
 info:
   name: Coroot - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://coroot.com/
     - https://github.com/coroot/coroot
   metadata:
-    verified: true
     max-request: 1
-    vendor: coroot
     product: coroot
     shodan-query: http.title:"Coroot"
-  tags: tech,coroot,detect,observability
-
+    vendor: coroot
+    verified: true
+  tags: coroot,detect,observability,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -30,8 +27,7 @@ http:
           - '<title>Coroot</title>'
           - 'window.coroot = {'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100eadda2098c0624d7305860c13763cb26599a539c395d2116921dc1cd65229a390221008fa8d59a6a3525afe23a18a2af20cc934dd427dbcbe466adfaf13b34a92dea8f:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100eadda2098c0624d7305860c13763cb26599a539c395d2116921dc1cd65229a390221008fa8d59a6a3525afe23a18a2af20cc934dd427dbcbe466adfaf13b34a92dea8f:922c64590222798bb761d5b6d8e72950

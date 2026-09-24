@@ -1,5 +1,4 @@
 id: typesense-dashboard-detect
-
 info:
   name: Typesense Dashboard - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
     - https://github.com/bfritscher/typesense-dashboard
     - https://hub.docker.com/r/bfritscher/typesense-dashboard
   metadata:
-    verified: true
     max-request: 1
-    vendor: bfritscher
     product: typesense_dashboard
     shodan-query: http.title:"Typesense-Dashboard"
-  tags: tech,typesense,dashboard,search,database,detect
-
+    vendor: bfritscher
+    verified: true
+  tags: dashboard,database,detect,search,tech,typesense
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -29,8 +26,7 @@ http:
           - "<title>Typesense-Dashboard</title>"
           - 'content="A Typesense Dashboard to manage and browse collections."'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 490a00463044022062c666163369129c7f6429e29e92ac89e3e0ef91a9586e3d4cd9027cfc44d6e0022028ea010f8798bd6e221c5d00ac01263d26ebb35969180f693d0b87076d841989:922c64590222798bb761d5b6d8e72950
+        # digest: 490a00463044022062c666163369129c7f6429e29e92ac89e3e0ef91a9586e3d4cd9027cfc44d6e0022028ea010f8798bd6e221c5d00ac01263d26ebb35969180f693d0b87076d841989:922c64590222798bb761d5b6d8e72950
