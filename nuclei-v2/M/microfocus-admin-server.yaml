@@ -1,26 +1,27 @@
 id: microfocus-admin-server
-
 info:
-  name: Micro Focus Enterprise Server Administration
   author: theabhinavgaur
-  severity: medium
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
+    cwe-id: CWE-200
+  description: Micro Focus Enterprise Server Admin panel was detected.
   metadata:
+    shodan-query: Micro Focus DSD
     verified: true
-    shodan-query: "Micro Focus DSD"
+  name: Micro Focus Enterprise Server Admin Panel - Detect
+  severity: medium
   tags: panel,exposure,microfocus,admin
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: header
-        words:
-          - "Micro Focus DSD"
-
-      - type: status
-        status:
-          - 200
+- matchers:
+  - part: header
+    type: word
+    words:
+    - Micro Focus DSD
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'

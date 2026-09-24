@@ -1,32 +1,27 @@
 id: syncthru-web-service
-
 info:
-  name: SyncThru Web Service
   author: DhiyaneshDk
-  severity: low
-  reference:
-    - https://www.exploit-db.com/ghdb/7843
   metadata:
-    verified: true
     shodan-query: title:"SyncThru Web Service"
+    verified: true
+  name: SyncThru Web Service
+  reference:
+  - https://www.exploit-db.com/ghdb/7843
+  severity: low
   tags: edb,panel,syncthru,printer
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/sws/index.sws"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "<title>SyncThru Web Service</title>"
-
-      - type: word
-        part: header
-        words:
-          - "text/html"
-
-      - type: status
-        status:
-          - 200
+- matchers:
+  - type: word
+    words:
+    - <title>SyncThru Web Service</title>
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/sws/index.sws'

