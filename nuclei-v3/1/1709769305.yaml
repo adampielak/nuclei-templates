@@ -6,7 +6,6 @@ info:
   severity: info
   metadata:
     rarity: 0
-    version: '3.13'
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +16,4 @@ tcp:
   - name: hptsvr
     type: regex
     regex:
-    - (?i)^\(\0\0\0hpt_stor\x01..\xbf\0\0\0\0\0\0\0\0....\.\.\.E\0\0\0\0\0\0\0\0$
+    - ^\(\0\0\0\0\0\0\0..`\0\x01\xff\xff\xff\xcc\xfa\x85\0C\x1d\xe6whfnk\.\.\.E\0\0\0\0\0\0\0\0$

