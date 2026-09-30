@@ -1,8 +1,10 @@
 id: telerik-fileupload-detect
+
 info:
   name: Detect Telerik Web UI fileupload handler
   author: organiccrap
   severity: info
+
 requests:
   - method: GET
     path:

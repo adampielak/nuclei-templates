@@ -1,25 +1,30 @@
-id: fake-referer-header-auth-bypass
-
-info:
-  name: Fake Referer Header Authentication Bypass
-  author: chudamax
-  severity: info
-  description: Fake Referer Header Authentication Bypass
-
 http:
-  - raw:
-      - |
-        GET HTTP/1.1
-        Host: {{Hostname}}
-        Accept: */*
-      - |
-        GET HTTP/1.1
-        Host: {{Hostname}}
-        Accept: */*
-        Referer: {{BaseURL}}
+- matchers:
+  - condition: or
+    dsl:
+    - (status_code_1 == 403 || status_code_1 == 401) && status_code_2 != 403 && status_code_2
+      != 401 && status_code_2 < 500 && status_code_2 != 400
+    type: dsl
+  raw:
+  - 'GET HTTP/1.1
 
-    matchers:
-      - type: dsl
-        dsl:
-          - "(status_code_1 == 403 || status_code_1 == 401) && status_code_2 != 403 && status_code_2 != 401 && status_code_2 < 500 && status_code_2 != 400"
-        condition: or
+    Host: {{Hostname}}
+
+    Accept: */*
+
+    '
+  - 'GET HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Accept: */*
+
+    Referer: {{BaseURL}}
+
+    '
+id: fake-referer-header-auth-bypass
+info:
+  author: chudamax
+  description: Fake Referer Header Authentication Bypass
+  name: Fake Referer Header Authentication Bypass
+  severity: info

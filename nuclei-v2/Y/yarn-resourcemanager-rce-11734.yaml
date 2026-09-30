@@ -1,14 +1,17 @@
 id: yarn-resourcemanager-rce
+
 info:
   name: Apache Yarn ResourceManager RCE
   author: pdteam
   severity: low
   tags: apache,rce
   reference: https://neerajsabharwal.medium.com/hadoop-yarn-hack-9a72cc1328b6
+
 requests:
   - method: POST
     path:
       - '{{BaseURL}}/ws/v1/cluster/apps/new-application'
+
     matchers-condition: and
     matchers:
       - type: word

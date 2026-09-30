@@ -1,9 +1,11 @@
 id: webeditors
+
 info:
   name: Web Editors
   author: pwnmachine
   severity: info
   tags: panel
+
 requests:
   - method: GET
     path:

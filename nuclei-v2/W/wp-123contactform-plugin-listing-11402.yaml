@@ -1,4 +1,5 @@
 id: wp-123contactform-plugin-listing
+
 info:
   name: WordPress 123ContactForm Plugin Directory Listing
   author: pussycat0x
@@ -8,10 +9,12 @@ info:
     - https://blog.sucuri.net/2021/01/critical-vulnerabilities-in-123contactform-for-wordpress-wordpress-plugin.html
     - https://www.exploit-db.com/ghdb/6979
   tags: wordpress,listing,plugin
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/123contactform-for-wordpress/"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -19,6 +22,7 @@ requests:
           - "Index of"
           - "/123contactform-for-wordpress"
         condition: and
+
       - type: status
         status:
           - 200
