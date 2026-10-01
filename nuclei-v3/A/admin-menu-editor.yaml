@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/admin-menu-editor/
   metadata:
+    max-request: 1
     plugin_namespace: admin-menu-editor
     wpscan: https://wpscan.com/plugin/admin-menu-editor
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502210099498b7ac0df1e83bd86c2be77af4024a6951686c62eba92f5538b5d5720d2fc0220745419fb4cfadc2dbe906150c44f8517438b68c553a15d6ca1fcb38665fabc3f:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100e7c54fe180726a1c3cf0c7c0af0c6eadf5f2196e958ad2a3ff1e63351ce5598c022024ae3f0fda8c51593c57fbb2dd0ae64dd71846bb480b1dbf805ff39b02b83c2e:922c64590222798bb761d5b6d8e72950

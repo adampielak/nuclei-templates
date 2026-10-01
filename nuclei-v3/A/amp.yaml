@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/amp/
   metadata:
+    max-request: 1
     plugin_namespace: amp
     wpscan: https://wpscan.com/plugin/amp
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100bb41bdd1c34a0c897641006c6689a80459e53700745f32e41f212fabef0adf3302203af8ffb860be4a5b501a4c475d1e6b096d047bd34c548827ea551b35518dd602:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440221008730c6a1aa838ed25d6055c2a097cb2638df2e7306c29381157e77c6524a6a67021f38befd56549b7b6edb197632dcd7f176f48dabfd3850b96397035eaa5e9d5b:922c64590222798bb761d5b6d8e72950

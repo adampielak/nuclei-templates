@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/premium-addons-for-elementor/
   metadata:
+    max-request: 1
     plugin_namespace: premium-addons-for-elementor
     wpscan: https://wpscan.com/plugin/premium-addons-for-elementor
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100906bf9e88112dbfdc6aa52a3f5ea0e1090a857dc27e04e6a011ad332dbddf9cf0220286bc0c4e4a5de32ce7c1ab19e7331a2b83fab84080b0e21e3038bd897f9dcdb:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200a888ae77d51d58fb510622ab1b8eb1e3c9e8e19cd4cb6020c7f6534bad42585022100b637e352422220d9dbee8b12d2a16f4425d7bb37d1f2a74b724894f25bbf7b15:922c64590222798bb761d5b6d8e72950
