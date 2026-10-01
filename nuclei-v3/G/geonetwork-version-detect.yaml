@@ -1,0 +1,86 @@
+id: geonetwork-version-detect
+
+info:
+  name: GeoNetwork opensource - Version & System Fingerprint
+  author: darses
+  severity: info
+  description: |
+    Detects GeoNetwork opensource catalog deployments and extracts software platform version,
+    subversion, GeoNetwork Enterprise (GNE) release, site name, and managing organization
+    from the unauthenticated XML configuration endpoint.
+  reference:
+    - https://geonetwork-opensource.org/
+    - https://github.com/geonetwork/core-geonetwork
+    - https://www.geocat.net/
+  metadata:
+    verified: true
+    max-request: 6
+    shodan-query: 'http.component:"geonetwork" OR http.html:"geonetwork"'
+  tags: geonetwork,geocat,gis,catalog,inspire,detect,tech,version
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/srv/eng/info?type=config"
+      - "{{BaseURL}}/srv/dut/info?type=config"
+      - "{{BaseURL}}/geonetwork/srv/eng/info?type=config"
+      - "{{BaseURL}}/catalogue/srv/eng/info?type=config"
+      - "{{BaseURL}}/meta/srv/eng/info?type=config"
+      - "{{BaseURL}}/opendataportaal/srv/eng/info?type=config"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "<info>"
+          - "<system."
+
+    extractors:
+      - type: regex
+        part: body
+        name: version
+        group: 1
+        regex:
+          - '<system\.platform\.version>([^<]+)</system\.platform\.version>'
+
+      - type: regex
+        part: body
+        name: subversion
+        group: 1
+        regex:
+          - '<system\.platform\.subVersion>([^<]+)</system\.platform\.subVersion>'
+
+      - type: regex
+        part: body
+        name: gne-version
+        group: 1
+        regex:
+          - '<system\.platform\.gne-version>([^<]+)</system\.platform\.gne-version>'
+
+      - type: regex
+        part: body
+        name: site-name
+        group: 1
+        regex:
+          - '<system\.site\.name>([^<]+)</system\.site\.name>'
+
+      - type: regex
+        part: body
+        name: organization
+        group: 1
+        regex:
+          - '<system\.site\.organization>([^<]+)</system\.site\.organization>'
+
+      - type: regex
+        part: body
+        name: site-id
+        group: 1
+        regex:
+          - '<system\.site\.siteId>([^<]+)</system\.site\.siteId>'

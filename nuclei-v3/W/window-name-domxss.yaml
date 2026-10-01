@@ -5,7 +5,7 @@ info:
   author: pdteam
   severity: medium
   reference: https://public-firing-range.appspot.com/dom/index.html
-  tags: headless,xss,domxss
+ 
 
 headless:
   - steps:
