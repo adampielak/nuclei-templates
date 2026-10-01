@@ -1,30 +1,44 @@
-id: zenserp-api-key
-
-info:
-  name: Zenserp Api Key
-  author: ritikchaddha
-  severity: info
-  reference:
-    - https://github.com/trufflesecurity/trufflehog/blob/main/pkg/detectors/zenserp/zenserp.go
-  metadata:
-    max-request: 1
-  tags: exposure,token,zenserp,apikey
-
+flow: http(1) && http(2)
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- matchers:
+  - internal: true
+    name: token
+    part: body
+    regex:
+    - ([0-9a-z-]{36})
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}'
+- disable-path-automerge: true
+  extractors:
+  - dsl:
+    - token
+    type: dsl
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(content_type, 'application/json')
+    - contains(body, 'remaining_requests')
+    type: dsl
+  raw:
+  - '@Host: https://app.zenserp.com:443
 
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "zenserp"
+    GET /api/v2/status HTTP/1.1
 
-    extractors:
-      - type: regex
-        part: body
-        regex:
-          - '([0-9a-z-]{36})'
+    Host: app.zenserp.com
 
-# digest: 490a00463044022042ad9f8109a37dd49c46a31b6fbec43bc7fd138ea7f1dff4652e50e303e1bc850220277526b5fa66f10374a1f6df7d070577113dd8013eb62dce9f4676db4d9b22f9:922c64590222798bb761d5b6d8e72950
+    Apikey: {{token}}
+
+    '
+id: zenserp-api-key
+info:
+  author: ritikchaddha
+  metadata:
+    max-request: 2
+  name: Zenserp Api Key
+  reference:
+  - https://github.com/trufflesecurity/trufflehog/blob/main/pkg/detectors/zenserp/zenserp.go
+  severity: high
+  tags: exposure,token,zenserp,apikey,vuln

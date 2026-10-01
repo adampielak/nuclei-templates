@@ -7,10 +7,9 @@ info:
   reference:
     - https://wordpress.org/plugins/redirection/
   metadata:
-    max-request: 1
     plugin_namespace: redirection
     wpscan: https://wpscan.com/plugin/redirection
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220398e6d5567c4ff9ac82b4caeb15ca8cf7e570a2582e74ba556e9aaaace6bdb570220287a4d61f59b77a0ab516d28b95ae9e9c1eef126bf7674f019a06b4119e25ddb:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ff7e1d5583e6976ae0b7af03f75f1fa2f26bbc02a4949c468596482b66e2e378022024eb3cb89575ac9aae071a27e81e1f646887eb66cc6ecb6ef72d376322a8aaf9:922c64590222798bb761d5b6d8e72950

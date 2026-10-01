@@ -1,88 +1,86 @@
 id: web-server
-
 info:
-  name: Detect web server daemon
   author: fabaff
+  name: Detect web server daemon
   severity: low
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
-    matchers-condition: or
-    matchers:
-      - type: word
-        name: apache
-        words:
-          - "Apache"
-        part: header
-      - type: word
-        name: lighttpd
-        words:
-          - "lighttpd"
-        part: header
-      - type: word
-        name: lighttpd
-        words:
-          - "lighttpd"
-        part: header
-      - type: word
-        name: wsgiserver
-        words:
-          - "WSGIServer"
-        part: header
-      - type: word
-        name: simplehttp
-        words:
-          - "SimpleHTTP"
-        part: header
-      - type: word
-        name: twistedweb
-        words:
-          - "TwistedWeb"
-        part: header
-      - type: word
-        name: tsm
-        words:
-          - "TSM_HTTP"
-        part: header
-      - type: word
-        name: ms-iis
-        words:
-          - "Microsoft-IIS"
-        part: header
-      - type: word
-        name: ms-httpapi
-        words:
-          - "Microsoft-HTTPAPI"
-        part: header
-      - type: word
-        name: tomcat
-        words:
-          - "Tomcat"
-        part: header
-      - type: word
-        name: darkhttpd
-        words:
-          - "darkhttpd"
-        part: header
-      - type: word
-        name: cherrypy
-        words:
-          - "CherryPy"
-        part: header
-      - type: word
-        name: cherokee
-        words:
-          - "Cherokee"
-        part: header
-      - type: word
-        name: caddy
-        words:
-          - "Caddy"
-        part: header
-      - type: word
-        name: jetty
-        words:
-          - "Jetty"
-        part: header
+- matchers:
+  - name: apache
+    part: header
+    type: word
+    words:
+    - Apache
+  - name: lighttpd
+    part: header
+    type: word
+    words:
+    - lighttpd
+  - name: lighttpd
+    part: header
+    type: word
+    words:
+    - lighttpd
+  - name: wsgiserver
+    part: header
+    type: word
+    words:
+    - WSGIServer
+  - name: simplehttp
+    part: header
+    type: word
+    words:
+    - SimpleHTTP
+  - name: twistedweb
+    part: header
+    type: word
+    words:
+    - TwistedWeb
+  - name: tsm
+    part: header
+    type: word
+    words:
+    - TSM_HTTP
+  - name: ms-iis
+    part: header
+    type: word
+    words:
+    - Microsoft-IIS
+  - name: ms-httpapi
+    part: header
+    type: word
+    words:
+    - Microsoft-HTTPAPI
+  - name: tomcat
+    part: header
+    type: word
+    words:
+    - Tomcat
+  - name: darkhttpd
+    part: header
+    type: word
+    words:
+    - darkhttpd
+  - name: cherrypy
+    part: header
+    type: word
+    words:
+    - CherryPy
+  - name: cherokee
+    part: header
+    type: word
+    words:
+    - Cherokee
+  - name: caddy
+    part: header
+    type: word
+    words:
+    - Caddy
+  - name: jetty
+    part: header
+    type: word
+    words:
+    - Jetty
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}/'
