@@ -1,29 +1,24 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Mako Runtime Error
+    - TopLevelLookupException
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: mako-runtime-error
-
 info:
-  name: Mako Runtime Error - Page
   author: DhiyaneshDk
-  severity: info
   metadata:
+    fofa-query: title="Mako Runtime Error"
     max-request: 1
     vendor: twig
-    fofa-query: title="Mako Runtime Error"
+  name: Mako Runtime Error - Page
+  severity: info
   tags: error,mako,log,vuln
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Mako Runtime Error'
-          - 'TopLevelLookupException'
-        condition: and
-

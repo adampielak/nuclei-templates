@@ -1,4 +1,5 @@
 id: docebo-elearning-panel
+
 info:
   name: Docebo E-learning Login Panel
   author: pikpikcu
@@ -7,16 +8,19 @@ info:
     verified: true
     fofa-query: title="Docebo E-learning"
   tags: panel,docebo
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "Docebo E-learning"
+
       - type: status
         status:
           - 200

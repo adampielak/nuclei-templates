@@ -1,4 +1,5 @@
 id: defectdojo-panel
+
 info:
   name: DefectDojo Exposure
   author: Adam Crosser
@@ -6,10 +7,12 @@ info:
   metadata:
     shodan-query: html:"DefectDojo Logo"
   tags: panel,defectdojo
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/login?next='
+
     matchers:
       - type: word
         words:

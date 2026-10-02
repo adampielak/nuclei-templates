@@ -1,4 +1,5 @@
 id: openvpn-monitor
+
 info:
   name: OpenVPN Monitor Disclosure
   author: geeknik
@@ -11,16 +12,19 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: openvpn,disclosure,panel
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/openvpn-monitor/'
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
+
       - type: word
         part: body
         words:
@@ -29,6 +33,7 @@ requests:
           - 'VPN IP'
           - 'Remote IP'
         condition: and
+
       - type: word
         part: header
         words:

@@ -1,4 +1,5 @@
 id: aqua-enterprise-panel
+
 info:
   name: Aqua Enterprise Panel
   author: idealphase
@@ -12,10 +13,12 @@ info:
     shodan-query: http.title:"Aqua Enterprise" || http.title:"Aqua Cloud Native Security Platform"
     google-query: intitle:"Aqua Cloud Native Security Platform"
   tags: panel,aqua,aquasec
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -24,6 +27,7 @@ requests:
           - "<title>Aqua Enterprise</title>"
           - "<title>Aqua Cloud Native Security Platform</title>"
         condition: or
+
       - type: status
         status:
           - 200

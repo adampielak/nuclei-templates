@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     fofa-query: title="TopApp-LB 负载均衡系统"
-  tags: topsec,topapplb,auth-bypass
+  tags: topsec,topapplb,auth-bypass,vuln
 
 http:
   - raw:
@@ -33,5 +33,4 @@ http:
           - 'contains(body_2,"var IsHeadMin ")'
           - 'contains(header_1,"redirect.php") && !contains(tolower(header_1), "error=1")'
         condition: and
-
-# digest: 4b0a00483046022100e8f44d9990db2387a73ae9797f68b7ae5979aeee4c2b7ece9e389bf4bcd17321022100e4fa7bfe663a13d29c25eced27b5aaf6f66f8e1d78a56c430cdf479cf3b0d365:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022001365cc58d849b2dcd69d94bc35eb5197ded53b5bce3e137837022b7cc9512bf02203a5a0f7497a1e560c6cf59bf5f8d5dcb12080d0781b1d1142f9b24a38c458704:922c64590222798bb761d5b6d8e72950

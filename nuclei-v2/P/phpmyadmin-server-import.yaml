@@ -5,7 +5,7 @@ info:
   author: Cristi vlad (@cristivlad25)
   severity: high
   description: Finds Unauthenticated PhpMyAdmin Server Import Pages.
- 
+  tags: phpmyadmin,misconfig
 
 requests:
   - method: GET

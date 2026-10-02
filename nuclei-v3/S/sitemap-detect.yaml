@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 3
     google-query: intext:"sitemap" filetype:txt,filetype:xml inurl:sitemap,inurl:"/sitemap.xsd" ext:xsd
-  tags: misc,generic,sitemap
+  tags: miscellaneous,misc,generic,sitemap,vuln
 
 http:
   - method: GET
@@ -36,5 +36,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a004730450221008a81d638c6e5b4d57ccb3e1bea2a5f4b3329fb9b997c44a69ff407885c97657002201084ce876d67e848ebdfddafe5971be5f975d54deb95dbab9a7d23826cd1594d:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f3ccd78ee57840be1e17ffa8de25fe4b6483ad5f80c80b2f5ee20b809c91d938022100ed27e37858891b9371660790745b93deb260771c0201e248d6fac1f41c389900:922c64590222798bb761d5b6d8e72950

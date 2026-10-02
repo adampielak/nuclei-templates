@@ -1,4 +1,5 @@
 id: npm-shrinkwrap-exposure
+
 info:
   name: Node Shrinkwrap Exposure
   author: DhiyaneshDk
@@ -7,10 +8,12 @@ info:
     verified: true
     shodan-query: html:"npm-shrinkwrap.json"
   tags: config,exposure,npm
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/npm-shrinkwrap.json"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -18,10 +21,12 @@ requests:
           - "version"
           - "dependencies"
         condition: and
+
       - type: word
         part: header
         words:
           - "application/json"
+
       - type: status
         status:
           - 200

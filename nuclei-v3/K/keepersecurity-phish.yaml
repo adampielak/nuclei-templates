@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Password and Secrets Management - Keeper Security
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"keepersecurity.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: keepersecurity-phish
-
 info:
-  name: keepersecurity phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A keepersecurity phishing website was detected
-  reference:
-    - https://keepersecurity.com
+  description: 'A keepersecurity phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,keepersecurity,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Password and Secrets Management - Keeper Security'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"keepersecurity.com")'
-
+  name: keepersecurity phishing Detection
+  reference:
+  - https://keepersecurity.com
+  severity: info
+  tags: phishing,keepersecurity,osint

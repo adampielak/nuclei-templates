@@ -7,16 +7,9 @@ info:
   tags: exposure,config,airflow,apache
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /airflow.cfg HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+  - method: GET
+    path:
+      - '{{BaseURL}}/airflow.cfg'
     matchers:
       - type: word
         words:

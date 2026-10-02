@@ -7,8 +7,6 @@ info:
   reference:
     - https://book.hacktricks.xyz/pentesting/9100-pjl
   tags: network,iot,printer
-  metadata:
-  mongoid: 0000
 
 network:
   - inputs:

@@ -1,4 +1,5 @@
 id: volumio-detect
+
 info:
   name: Volumio - Detect
   author: rxerium
@@ -8,16 +9,18 @@ info:
   reference:
     - https://github.com/volumio/Volumio2
   metadata:
+    verified: true
     max-request: 1
+    vendor: volumio
     product: volumio
     shodan-query: 'http.title:"Volumio - The Music Player"'
-    vendor: volumio
-    verified: true
-  tags: detect,tech,volumio
+  tags: volumio,tech,detect
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -28,7 +31,8 @@ http:
           - '<title>Volumio - The Music Player</title>'
           - 'ng-app="volumio"'
         condition: and
+
       - type: status
         status:
           - 200
-        # digest: 4b0a0048304602210096d8f753520984b47444a14e0ee6f0c609535530d6b5e1ea37cdae242dc54ffa022100f4a6eabe5b19130e564409aa527aa35026be2923c70263240a95a731a68e13fd:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210096d8f753520984b47444a14e0ee6f0c609535530d6b5e1ea37cdae242dc54ffa022100f4a6eabe5b19130e564409aa527aa35026be2923c70263240a95a731a68e13fd:922c64590222798bb761d5b6d8e72950

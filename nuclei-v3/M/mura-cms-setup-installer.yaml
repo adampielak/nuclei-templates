@@ -1,36 +1,32 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Mura CMS - Setup
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: mura-cms-setup-installer
-
 info:
-  name: Mura CMS Setup Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed Mura CMS Setup page.
-  reference:
-    - https://www.murasoftware.com/mura-cms/
   classification:
     cpe: cpe:2.3:a:murasoftware:mura_cms:*:*:*:*:*:*:*:*
+  description: 'Detects exposed Mura CMS Setup page.
+
+    '
   metadata:
-    verified: true
-    max-request: 1
-    vendor: murasoftware
-    product: mura_cms
     fofa-query: body="Mura CMS - Setup"
+    max-request: 1
+    product: mura_cms
+    vendor: murasoftware
+    verified: true
+  name: Mura CMS Setup Page - Exposure
+  reference:
+  - https://www.murasoftware.com/mura-cms/
+  severity: high
   tags: misconfig,install,exposure,mura-cms,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Mura CMS - Setup"
-
-      - type: status
-        status:
-          - 200
-

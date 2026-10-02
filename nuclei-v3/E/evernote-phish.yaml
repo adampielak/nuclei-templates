@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Best Note Taking App - Organize Your Notes with Evernote
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"evernote.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: evernote-phish
-
 info:
-  name: evernote phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A evernote phishing website was detected
-  reference:
-    - https://evernote.com
+  description: 'A evernote phishing website was detected
+
+    '
   metadata:
     max-request: 1
-  tags: phishing,evernote,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Best Note Taking App - Organize Your Notes with Evernote'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"evernote.com")'
-
+  name: evernote phishing Detection
+  reference:
+  - https://evernote.com
+  severity: info
+  tags: phishing,evernote,osint

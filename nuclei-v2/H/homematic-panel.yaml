@@ -1,4 +1,5 @@
 id: homematic-panel
+
 info:
   name: Homematic Panel Detect
   author: princechaddha
@@ -6,10 +7,12 @@ info:
   metadata:
     shodan-query: http.html:"Homematic"
   tags: panel,homematic,iot
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -20,6 +23,7 @@ requests:
           - "HomeMatic Logo"
           - "<title>HomeMatic WebUI</title>"
         condition: or
+
       - type: status
         status:
           - 200

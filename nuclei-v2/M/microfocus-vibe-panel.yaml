@@ -1,4 +1,5 @@
 id: microfocus-vibe-panel
+
 info:
   name: Micro Focus Vibe Login Panel
   author: ritikchaddha
@@ -7,10 +8,12 @@ info:
     verified: true
     shodan-query: http.html:"Micro Focus Vibe"
   tags: panel,microfocus,vibe
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/ssf/s/portalLogin"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -21,6 +24,7 @@ requests:
           - "Micro Focus Vibe"
           - "baseVibeUrl"
         condition: and
+
       - type: status
         status:
           - 200

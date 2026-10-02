@@ -1,4 +1,5 @@
 id: seeddms-panel
+
 info:
   name: SeedDMS Login Panel
   author: pussycat0x,daffainfo
@@ -6,11 +7,13 @@ info:
   metadata:
     shodan-query: http.title:"SeedDMS"
   tags: panel,seeddms,login
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/out/out.Login.php?referuri=%2Fout%2Fout.ViewFolder.php"
       - "{{BaseURL}}/dms/out/out.Login.php?referuri=%2Fout%2Fout.ViewFolder.php"
+
     redirects: true
     max-redirects: 2
     stop-at-first-match: true
@@ -22,6 +25,7 @@ requests:
           - 'href="/out/out.ViewFolder.php">SeedDMS</a>'
           - 'href="../out/out.ViewFolder.php?folderid=1">SeedDMS</a>'
         condition: or
+
       - type: status
         status:
           - 200

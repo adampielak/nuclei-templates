@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Instacart | Grocery Delivery or Pickup from Local Stores Near You
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"instacart.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: instacart-phish
-
 info:
-  name: Instacart phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    An Instacart phishing website was detected
-  reference:
-    - https://instacart.com
+  description: 'An Instacart phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Instacart phishing Detection
+  reference:
+  - https://instacart.com
+  severity: info
   tags: phishing,instacart,food-delivery,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Instacart | Grocery Delivery or Pickup from Local Stores Near You"
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"instacart.com")'
-

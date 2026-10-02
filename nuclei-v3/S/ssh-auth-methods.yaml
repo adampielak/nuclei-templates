@@ -11,14 +11,16 @@ info:
   metadata:
     max-request: 1
     shodan-query: product:"OpenSSH"
-  tags: ssh,js,enum,network
+  tags: js,detect,ssh,enum,network,discovery
 
 javascript:
-  - code: |
+  - pre-condition: |
+      isPortOpen(Host,Port);
+    code: |
       var m = require("nuclei/ssh");
       var c = m.SSHClient();
       var response = c.ConnectSSHInfoMode(Host, Port);
-      to_json(response);
+      Export(response);
     args:
       Host: "{{Host}}"
       Port: "22"
@@ -27,4 +29,4 @@ javascript:
       - type: json
         json:
           - '.UserAuth'
-# digest: 4a0a00473045022100d86145d1b26a1047a12fc167f6804a1e97dcc7bf782b199519ff3b442006d42502200414484c0cb8c77e394449cb387d976e454245a420272d741f416bff61828ea0:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a4359bc3a0e2abd7eea0e30141287f832f1626cb66a8f68147a4ab493631fa38022100b001b5662359b7795868feed2478b7cade0b2d07929c90bb7dbb17e79b6ef702:922c64590222798bb761d5b6d8e72950

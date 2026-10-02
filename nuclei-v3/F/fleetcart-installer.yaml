@@ -1,32 +1,29 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - FleetCart - Installation
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install'
 id: fleetcart-installer
-
 info:
-  name: FleetCart Installation Page - Exposure
   author: DhiyaneshDK
-  severity: high
-  description: |
-    Detects exposed FleetCart setup installation pages which could allow unauthorized access or information disclosure.
-  reference:
-    - https://codecanyon.net/item/fleetcart-laravel-ecommerce-system/23014826
+  description: 'Detects exposed FleetCart setup installation pages which could allow
+    unauthorized access or information disclosure.
+
+    '
   metadata:
-    verified: true
     max-request: 1
     shodan-query: html:"FleetCart - Installation"
+    verified: true
+  name: FleetCart Installation Page - Exposure
+  reference:
+  - https://codecanyon.net/item/fleetcart-laravel-ecommerce-system/23014826
+  severity: high
   tags: misconfig,install,exposure,fleetcart,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "FleetCart - Installation"
-
-      - type: status
-        status:
-          - 200
-

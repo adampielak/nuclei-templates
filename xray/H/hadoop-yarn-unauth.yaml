@@ -1,18 +1,22 @@
-name: poc-yaml-hadoop-yarn-unauth
-manual: true
-transport: http
+expression: r0() || r1()
+id: hadoop-yarn-unauth
+info:
+  author: p0wd3r,sharecast
+  description: 'app="APACHE-hadoop-YARN"
+
+    '
+  name: Hadoop Yarn Unauth
+  severity: medium
+  verified: true
 rules:
-    r0:
-        request:
-            cache: true
-            method: GET
-            path: /ws/v1/cluster/info
-            headers:
-                Content-Type: application/json
-            follow_redirects: true
-        expression: response.status == 200 && response.content_type.contains("json") && response.body.bcontains(b"resourceManagerVersionBuiltOn") && response.body.bcontains(b"hadoopVersion")
-expression: r0()
-detail:
-    author: p0wd3r,sharecast
-    links:
-        - https://github.com/vulhub/vulhub/tree/master/hadoop/unauthorized-yarn
+  r0:
+    expression: response.status == 200 && response.body.bcontains(b"resourceManagerVersionBuiltOn")
+      && response.body.bcontains(b"hadoopVersion")
+    request:
+      method: GET
+      path: /ws/v1/cluster/info
+  r1:
+    expression: response.status == 200 && response.body.bcontains(b"javax.ws.rs.WebApplicationException")
+    request:
+      method: GET
+      path: /ws/v1/cluster/apps/new-application

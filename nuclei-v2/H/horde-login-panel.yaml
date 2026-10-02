@@ -1,4 +1,5 @@
 id: horde-login-panel
+
 info:
   name: Horde Login Panel
   author: ritikchaddha
@@ -7,17 +8,21 @@ info:
     verified: true
     shodan-query: http.favicon.hash:-741491222
   tags: horde,panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/horde/login.php"
       - "{{BaseURL}}/login.php"
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
+
       - type: word
         words:
           - "HordeLogin.user"
+
       - type: status
         status:
           - 200

@@ -21,9 +21,9 @@ http:
   - method: GET
     path:
       - "{{RootURL}}/s/"
-
     redirects: true
     max-redirects: 1
+
     matchers:
       - type: status
         status:
@@ -42,15 +42,14 @@ http:
   - method: POST
     path:
       - "{{RootURL}}/s/sfsites/aura"
-
     headers:
       Content-Type: application/x-www-form-urlencoded
-
     body: |
       message={{url_encode(actions)}}&aura.context={{aura_context}}&aura.token=null
+
     matchers:
       - type: word
         part: body
         words:
           - "recordTypeInfo"
-
+# digest: 4a0a00473045022100a572fe733c24f31b3bdd8cc8591f29a111ac6239d3b8cca5119f8859f3390f80022002cd90211a9a2fac66be5e4c8272a4e966e37de1ceadff0d56b6d0ae9d7e124c:922c64590222798bb761d5b6d8e72950

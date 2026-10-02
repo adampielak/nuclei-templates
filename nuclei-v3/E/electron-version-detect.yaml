@@ -1,4 +1,5 @@
 id: electron-version-detect
+
 info:
   name: Electron Version Detect
   author: me9187
@@ -6,9 +7,11 @@ info:
   reference:
     - https://www.electronjs.org/blog/chromium-rce-vulnerability/
   tags: electron,file
+
 file:
   - extensions:
       - json
+
     extractors:
       - type: regex
         regex:

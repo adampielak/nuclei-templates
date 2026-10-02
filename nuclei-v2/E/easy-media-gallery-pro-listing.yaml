@@ -1,4 +1,5 @@
 id: easy-media-gallery-pro-listing
+
 info:
   name: WordPress Plugin Media Gallery Pro Listing
   author: pussycat0x
@@ -8,18 +9,10 @@ info:
   tags: wordpress,listing,wp-plugin
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/plugins/easy-media-gallery-pro/"
 
-    raw:
-      - |
-        GET /wp-content/plugins/easy-media-gallery-pro/ HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

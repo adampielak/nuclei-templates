@@ -1,4 +1,5 @@
 id: jeedom-panel
+
 info:
   name: Jeedom Login Panel
   author: pikpikcu,daffainfo
@@ -6,10 +7,12 @@ info:
   metadata:
     shodan-query: http.title:"Jeedom"
   tags: panel,jeedom,login
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php?v=d"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -18,6 +21,7 @@ requests:
           - "<title>Jeedom</title>"
           - "JEEDOM_PRODUCT_NAME"
         condition: and
+
       - type: status
         status:
           - 200

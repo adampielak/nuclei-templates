@@ -1,21 +1,23 @@
-id: condition-flow-no-operators
+id: ghost-blog-detection
 info:
-  name: Condition Flow No Operators
+  name: Ghost blog detection
   author: pdteam
   severity: info
 
+
 flow: dns() && http()
+
 
 dns:
   - name: "{{FQDN}}"
     type: CNAME
-
+        
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/?ref={{dns_cname}}"
+      - "{{BaseURL}}?ref={{dns_cname}}"
 
     matchers:
       - type: word
         words:
-          - "html>"
+          - "ghost.io"

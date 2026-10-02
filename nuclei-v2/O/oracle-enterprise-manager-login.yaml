@@ -1,13 +1,16 @@
 id: oracle-enterprise-manager-login
+
 info:
   name: Oracle Enterprise Manager login
   author: dogasantos
   severity: info
   tags: panel,oracle,manager,login
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/em/console/logon/logon"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -16,6 +19,7 @@ requests:
           - "libNPSVG3.so"
           - "Oracle Enterprise Manager"
         condition: or
+
       - type: status
         status:
           - 200

@@ -1,39 +1,41 @@
+http:
+- extractors:
+  - group: 1
+    name: bucket-name
+    part: body
+    regex:
+    - <Name>([^<]+)</Name>
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "<ListBucketResult", "<Name>")
+    - contains_any(tolower(header), "ibm-sse-kp-enabled", "ibm-sse-kp-customer-root-key-crn",
+      "ibm-")
+    - contains_any(tolower(content_type), "application/xml", "text/xml")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/?list-type=2'
+  stop-at-first-match: true
 id: ibm-cloud-bucket-exposure
 info:
-  name: IBM Cloud Object Storage - Bucket Exposure
   author: 0x_Akoko
-  severity: unknown
-  description: |
-    IBM Cloud Object Storage bucket is publicly accessible, potentially exposing sensitive files and data. Public bucket listing allows enumeration of stored objects.
-  reference:
-    - https://cloud.ibm.com/docs/cloud-object-storage
-    - https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-iam-bucket-permissions
+  description: 'IBM Cloud Object Storage bucket is publicly accessible, potentially
+    exposing sensitive files and data. Public bucket listing allows enumeration of
+    stored objects.
+
+    '
   metadata:
     fofa-query: host="cloud-object-storage.appdomain.cloud"
     max-request: 2
     shodan-query: ssl.cert.subject.cn:"cloud-object-storage.appdomain.cloud"
     verified: true
-  tags: bucket,cloud,exposure,ibm,misconfig,s3,vuln
-http:
-  - extractors:
-      - group: 1
-        name: bucket-name
-        part: body
-        regex:
-          - <Name>([^<]+)</Name>
-        # digest: 4b0a00483046022100a13275a0c5cb277b92ea8eea8770f71e3956458c5396d7ba484061599de130da022100d80d4ac4f525122f30387cfefa17bd8189478ed0566161786bcacbaa8b696ce4:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    matchers:
-      - condition: and
-        dsl:
-          - status_code == 200
-          - contains_all(body, "<ListBucketResult", "<Name>")
-          - contains_any(tolower(header), "ibm-sse-kp-enabled", "ibm-sse-kp-customer-root-key-crn", "ibm-")
-          - contains_any(tolower(content_type), "application/xml", "text/xml")
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}'
-      - '{{BaseURL}}/?list-type=2'
-    stop-at-first-match: true
+  name: IBM Cloud Object Storage - Bucket Exposure
+  reference:
+  - https://cloud.ibm.com/docs/cloud-object-storage
+  - https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-iam-bucket-permissions
+  severity: unknown
+  tags: ibm,cloud,bucket,exposure,misconfig,s3

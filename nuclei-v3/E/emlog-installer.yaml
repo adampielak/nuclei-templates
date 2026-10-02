@@ -1,34 +1,30 @@
-id: emlog-installer
-
-info:
-  name: Emlog Pro - Installation
-  author: ritikchaddha
-  severity: high
-  description: |
-    Emlog Pro Installation page has been exposed.
-  metadata:
-    verified: true
-    max-request: 1
-    fofa-query: title="emlog"
-  tags: emlog,install,misconfig,vuln
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/install.php"
+- matchers:
+  - case-insensitive: true
+    condition: and
+    part: body
+    type: word
+    words:
+    - '>MySQL'
+    - install.php?action=install
+    - emlog
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install.php'
+id: emlog-installer
+info:
+  author: ritikchaddha
+  description: 'Emlog Pro Installation page has been exposed.
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '>MySQL'
-          - 'install.php?action=install'
-          - 'emlog'
-        condition: and
-        case-insensitive: true
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    fofa-query: title="emlog"
+    max-request: 1
+    verified: true
+  name: Emlog Pro - Installation
+  severity: high
+  tags: emlog,install,misconfig,vuln

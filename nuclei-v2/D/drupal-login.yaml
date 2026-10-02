@@ -1,14 +1,19 @@
 id: drupal-login
+
 info:
   name: Drupal login
   author: pathtaga
   severity: info
+  metadata:
+    shodan-query: http.component:"drupal"
   tags: panel,drupal
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/user/login"
+
     stop-at-first-match: true
     matchers-condition: or
     matchers:
@@ -18,6 +23,7 @@ requests:
           - '<(?:link|style)[^>]+"/sites/(?:default|all)/(?:themes|modules)/'
           - '<[^>]+(?:id="block[_-]commerce[_-]cart[_-]cart|class="commerce[_-]product[_-]field)'
         condition: or
+
       - type: regex
         part: header
         regex:

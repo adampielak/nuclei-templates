@@ -8,7 +8,7 @@ info:
     Xxllnc Zaaksysteem login panel was detected.
   metadata:
     verified: true
-    max-requests: 1
+    max-request: 1
     vendor: xxllnc
     product: zaaksysteem
     fofa-query:

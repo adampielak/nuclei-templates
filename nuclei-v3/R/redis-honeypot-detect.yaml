@@ -7,13 +7,16 @@ info:
   description: |
     A Redis honeypot has been identified.
     The response to the 'QUIT' command differs from real installations, signaling a possible deceptive setup.
+  classification:
+    cpe: cpe:2.3:a:redis:redis:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    product: redis
-    shodan-query: redis
     vendor: redis
-  tags: redis,honeypot,ir,cti,network
-
+    product: redis
+    shodan-query:
+      - redis
+      - redis_version
+  tags: redis,honeypot,ir,cti,network,tcp,discovery
 tcp:
   - inputs:
       - data: "QUIT"
@@ -27,4 +30,4 @@ tcp:
       - type: word
         words:
           - "-ERR unknown command `QUIT`, with args beginning with:"
-# digest: 4b0a00483046022100cdcb8d188514271b3d23ddcb5938ae101a623696da1d8eb8675038370f4bf89c0221008fbfe50e4ff45499182eca5194b89fae4d35119a04e9771c1e299c7191f71b9b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502206335296d1c31481a0fc46d315218d35ebce3b860fb1a27424631caf60df43901022100b60471af88156c9c81db5b74df7370bcbd0bd9284047d68b228e7a1b99734095:922c64590222798bb761d5b6d8e72950

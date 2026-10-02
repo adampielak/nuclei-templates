@@ -1,23 +1,15 @@
-name: poc-yaml-elasticsearch-unauth
-manual: true
-transport: http
+expression: r0()
+id: elasticsearch-unauth
+info:
+  author: p0wd3r
+  description: "/_nodes #\u67E5\u770B\u8282\u70B9\u6570\u636E\n/_cat/indices #\u7D22\
+    \u5F15\n_cat/indices\n/_plugin/head\n/_nodes/\n/_status\n/_search?pretty\n"
+  name: ElasticSearch Information Disclosure
+  severity: high
+  verified: true
 rules:
-    r0:
-        request:
-            cache: true
-            method: GET
-            path: /
-            follow_redirects: false
-        expression: response.status == 200 && response.content_type.contains("application/json") && response.body.bcontains(b"You Know, for Search")
-    r1:
-        request:
-            cache: true
-            method: GET
-            path: /_cat
-            follow_redirects: false
-        expression: response.status == 200 && response.body.bcontains(b"/_cat/master")
-expression: r0() && r1()
-detail:
-    author: p0wd3r
-    links:
-        - https://yq.aliyun.com/articles/616757
+  r0:
+    expression: response.status == 200 && response.body.bcontains(b"/_cat/master")
+    request:
+      method: GET
+      path: /_cat

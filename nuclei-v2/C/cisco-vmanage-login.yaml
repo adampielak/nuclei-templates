@@ -1,4 +1,5 @@
 id: cisco-vmanage-login
+
 info:
   name: Cisco vManage Login
   author: DhiyaneshDk
@@ -7,16 +8,20 @@ info:
     verified: true
     shodan-query: title:"Cisco vManage"
   tags: panel,cisco
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
+
       - type: word
         part: body
         words:
           - "<title>Cisco vManage</title>"
+
       - type: status
         status:
           - 200

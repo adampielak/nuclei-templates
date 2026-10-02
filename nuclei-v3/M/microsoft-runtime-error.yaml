@@ -1,29 +1,24 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Runtime Error</title>
+  - status:
+    - 500
+    - 404
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: microsoft-runtime-error
-
 info:
-  name: Microsoft Runtime Error Page
   author: DhiyaneshDk
-  severity: info
   metadata:
     max-request: 1
-    vendor: microsoft
     shodan-query: title:"Runtime Error"
+    vendor: microsoft
+  name: Microsoft Runtime Error Page
+  severity: info
   tags: iis,error,microsoft,log,vuln
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Runtime Error</title>"
-
-      - type: status
-        status:
-          - 500
-          - 404
-

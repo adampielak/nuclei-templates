@@ -1,26 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "ListBucketResult", "<Contents>", "<Generation>")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: gcs-bucket-listing
 info:
-  name: Google Cloud Storage - Public Bucket Listing
   author: 0x_Akoko
-  severity: unknown
-  description: |
-    Detected Google Cloud Storage bucket was publicly accessible and allows listing of objects, potentially exposing sensitive files.
-  reference:
-    - https://cloud.google.com/storage/docs/public-access-prevention
+  description: 'Detected Google Cloud Storage bucket was publicly accessible and allows
+    listing of objects, potentially exposing sensitive files.
+
+    '
   metadata:
     max-request: 1
     shodan-query: storage.googleapis.com
     verified: true
-  tags: bucket,cloud,exposure,gcs,google,misconfig,vuln
-http:
-  - matchers:
-      - condition: and
-        # digest: 4a0a0047304502210092a3adcf783804e5ab807e064d610c6b38e57c7bbfb42759b2f96f18de67b38a02201161afa985ffc55524e0e2cf0878ecdcbcf1bb4189a2596faf198e181e5175e6:922c64590222798bb761d5b6d8e72950
-
-        dsl:
-          - status_code == 200
-          - contains_all(body, "ListBucketResult", "<Contents>", "<Generation>")
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}'
+  name: Google Cloud Storage - Public Bucket Listing
+  reference:
+  - https://cloud.google.com/storage/docs/public-access-prevention
+  severity: unknown
+  tags: exposure,gcs,google,cloud,bucket,misconfig

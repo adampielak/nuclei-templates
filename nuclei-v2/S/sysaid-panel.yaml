@@ -4,7 +4,7 @@ info:
   name: SysAid Panel
   author: pdteam
   severity: info
- 
+  tags: panel,sysaid,helpdesk
 
 requests:
   - method: GET

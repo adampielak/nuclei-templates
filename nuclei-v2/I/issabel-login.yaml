@@ -1,4 +1,5 @@
 id: issabel-login
+
 info:
   name: Issabel Login Panel
   author: pikpikcu
@@ -6,10 +7,12 @@ info:
   metadata:
     fofa-query: title="Issabel"
   tags: issabel,panel
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -18,6 +21,7 @@ requests:
           - '<a href="http://www.issabel.org"'
           - '<title>Issabel - Login page</title>'
         condition: or
+
       - type: status
         status:
           - 200

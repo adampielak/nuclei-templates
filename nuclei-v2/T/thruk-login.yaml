@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     fofa-query: title=="Thruk Monitoring Webinterface"
- 
+  tags: thruk,panel
 
 requests:
   - method: GET

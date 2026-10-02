@@ -1,4 +1,5 @@
 id: dnssec-detection
+
 info:
   name: DNSSEC Detection
   author: pdteam
@@ -10,9 +11,11 @@ info:
   classification:
     cwe-id: CWE-200
   tags: dns,dnssec
+
 dns:
   - name: "{{FQDN}}"
     type: DS
+
     extractors:
       - type: regex
         group: 1
