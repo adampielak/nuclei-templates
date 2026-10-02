@@ -1,23 +1,21 @@
 id: zhiyuan-rce
-
 info:
-  name: 致远OA A8 rce
   author: str1am
+  name: "\u81F4\u8FDCOA A8 rce"
   severity: critical
   tags: zhiyuan
-
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/seeyon/htmlofficeservlet"
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        words:
-          - "DBSTEP"
-          - "htmoffice operate"
-        part: body
-        condition: and
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - DBSTEP
+    - htmoffice operate
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/seeyon/htmlofficeservlet'
