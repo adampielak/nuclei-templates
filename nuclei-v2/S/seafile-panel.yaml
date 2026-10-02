@@ -1,5 +1,4 @@
 id: seafile-panel
-
 info:
   name: Seafile Panel
   author: TechbrunchFR
@@ -10,7 +9,6 @@ info:
     - https://www.seafile.com/en/home/
     - https://github.com/haiwen/seafile
   tags: sefile,panel
-
 requests:
   - method: GET
     path:

@@ -1,5 +1,4 @@
 id: x-backend-server-header-detect
-
 info:
   name: X-Backend-Server Header - Exposure
   author: pussycat0x
@@ -11,27 +10,25 @@ info:
     - https://docs.gitlab.com/user/application_security/dast/browser/checks/16.4/
     - https://www.zaproxy.org/docs/alerts/10039/
   metadata:
-    verified: true
     max-request: 1
-    shodan-query: "X-Backend-Server"
-  tags: headers,misconfig,exposure
-
+    shodan-query: X-Backend-Server
+    verified: true
+  tags: exposure,headers,misconfig,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/en"
-
-    matchers:
-      - type: word
-        part: header
-        words:
-          - "X-Backend-Server"
-
-    extractors:
-      - type: regex
-        part: header
+  - extractors:
+      - group: 1
         name: hostname
-        group: 1
+        part: header
         regex:
           - 'X-Backend-Server: ([A-Za-z0-9.-]+)'
-# digest: 4a0a00473045022100af20a9ac0db7e1343fae75521798cda74c5eb0f56f998aa4397e124efc662966022061001162e755607ae1a896e664c949f13dd8c5e77d96a66a50186cb06bd1f0d1:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502210085aec261623a4c7c8cbb73cf739b3f9ff1d25058783dfdfae146b9c7583bd477022024c10e372b8a588b56c142d5ec09901fab83c30165d33f17c019e40c19f96b82:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - part: header
+        type: word
+        words:
+          - X-Backend-Server
+    method: GET
+    path:
+      - '{{BaseURL}}/en'

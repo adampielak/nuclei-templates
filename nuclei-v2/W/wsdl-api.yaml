@@ -4,13 +4,22 @@ info:
   name: wsdl-detect
   author: jarijaas
   severity: info
-  description: Detects web services that have WSDL (https://www.w3.org/TR/wsdl/)
   tags: exposure,api
+  description: Detects web services that have WSDL (https://www.w3.org/TR/wsdl/)
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/?wsdl"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /?wsdl HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers:
       - type: word
         words:

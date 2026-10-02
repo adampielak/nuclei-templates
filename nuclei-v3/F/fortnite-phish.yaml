@@ -1,33 +1,38 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    type: word
-    words:
-    - Fortnite
-    - <title>Fortnite | Free-to-Play Cross-Platform Game - Fortnite
-  - status:
-    - 200
-    type: status
-  - dsl:
-    - '!contains(host,"fortnite.com")'
-    - '!contains(host,"epicgames.com")'
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: fortnite-phish
-info:
-  author: rxerium
-  description: 'A Fortnite phishing website was detected
 
-    '
+info:
+  name: Fortnite phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    A Fortnite phishing website was detected
+  reference:
+    - https://fortnite.com
   metadata:
     max-request: 1
-  name: Fortnite phishing Detection
-  reference:
-  - https://fortnite.com
-  severity: info
   tags: phishing,fortnite,epic-games,osint,discovery
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'Fortnite'
+          - '<title>Fortnite | Free-to-Play Cross-Platform Game - Fortnite'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"fortnite.com")'
+          - '!contains(host,"epicgames.com")'
+

@@ -1,42 +1,32 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - <title>Outback Power</title>
-    - status_tab
-    - meters_tab
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: outback-power-detect
 info:
+  name: OutBack Power Mate3s Gateway - Detect
   author: rxerium
-  description: 'OutBack Power Mate3s is a system hub and gateway for OutBack FX-series
-    inverter-chargers
-
-    used in off-grid, grid-hybrid, and battery backup solar power systems.
-
-    The built-in web interface exposes system status, battery metrics, and inverter
-    data.
-
-    '
+  severity: info
+  description: |
+    OutBack Power Mate3s is a system hub and gateway for OutBack FX-series inverter-chargers used in off-grid, grid-hybrid, and battery backup solar power systems. The built-in web interface exposes system status, battery metrics, and inverter data.
+  reference:
+    - https://www.outbackpower.com/outback-products/communications/detail/mate3s
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "Outback Power"})
     max-request: 1
     product: mate3s
-    runzero-match: any(each(service["html.titles"]), {# matches "Outback Power"})
-    shodan-query: http.title:"Outback Power"
+    shodan-query: http.title:"Outback Power" || any(each(service["http.bodies"]), {# matches "outbackpower\.com"})
     vendor: outback-power
     verified: true
-  name: OutBack Power Mate3s Gateway - Detect
-  reference:
-  - https://www.outbackpower.com/outback-products/communications/detail/mate3s
-  severity: info
   tags: detect,energy,ics,outback,panel,scada,solar,tech
+http:
+  - host-redirects: true
+    matchers:
+      - condition: and
+        # digest: 4a0a00473045022100cf7f7aa2aa7dbb0ccb8776d6924f672e5f5321436a2f7252da870047070de33f022054152889f04a3f362a8574f995aac098672421bcb34fa7fbb2c8990c21b89d8e:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains_all(body, "status_tab", "meters_tab")
+          - contains_any(body, "<title>Outback Power</title>", "outbackpower.com")
+        type: dsl
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'

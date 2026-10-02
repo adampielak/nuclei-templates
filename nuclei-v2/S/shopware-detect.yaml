@@ -8,9 +8,6 @@ info:
   reference:
     - https://github.com/shopware/shopware
     - https://github.com/shopware/platform
-  metadata:
-    verified: true
-    shodan-query: title:"shopware AG"
   tags: tech,shopware,cms
 
 requests:
@@ -19,7 +16,6 @@ requests:
       - "{{BaseURL}}/admin"
       - "{{BaseURL}}/backend"
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

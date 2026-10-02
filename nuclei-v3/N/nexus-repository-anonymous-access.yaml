@@ -1,42 +1,39 @@
-http:
-- extractors:
-  - json:
-    - .[].name
-    part: body
-    type: json
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "\"name\"", "\"format\"", "\"type\"")
-    - contains_any(body, "maven", "npm", "docker", "nuget", "pypi", "raw", "apt",
-      "yum")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/service/rest/v1/repositories'
 id: nexus-repository-anonymous-access
 info:
+  name: Nexus Repository Manager - Anonymous Access Enabled
   author: 0x_Akoko
+  severity: medium
+  description: |
+    Detected Nexus Repository Manager instance with anonymous access enabled, allowing unauthenticated users to list and browse repositories containing private artifacts including source code, packages, and Docker images.
+  reference:
+    - https://help.sonatype.com/en/anonymous-access.html
+    - https://help.sonatype.com/en/access-control.html
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 6.5
     cwe-id: CWE-276
-  description: 'Detected Nexus Repository Manager instance with anonymous access enabled,
-    allowing unauthenticated users to list and browse repositories containing private
-    artifacts including source code, packages, and Docker images.
-
-    '
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Nexus Repository Manager"})
     fofa-query: title="Nexus Repository Manager"
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Nexus Repository
-      Manager"})
     shodan-query: title:"Nexus Repository Manager"
     verified: true
-  name: Nexus Repository Manager - Anonymous Access Enabled
-  reference:
-  - https://help.sonatype.com/en/anonymous-access.html
-  - https://help.sonatype.com/en/access-control.html
-  severity: medium
-  tags: misconfig,nexus,sonatype,exposure,unauth
+  tags: exposure,misconfig,nexus,sonatype,unauth,vuln
+http:
+  - extractors:
+      - json:
+          - .[].name
+        # digest: 4b0a00483046022100976daa77366809d499ed3fdc4013e7834992e9e39389b730f92dcf484d3de941022100f9a0eb63f5aed2387a34a048b4ccf7c6afa3c1b5ffb4a8be8d4ff8907845677e:922c64590222798bb761d5b6d8e72950
+
+        part: body
+        type: json
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_all(body, "\"name\"", "\"format\"", "\"type\"")
+          - contains_any(body, "maven", "npm", "docker", "nuget", "pypi", "raw", "apt", "yum")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/service/rest/v1/repositories'

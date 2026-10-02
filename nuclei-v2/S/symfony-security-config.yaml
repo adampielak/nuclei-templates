@@ -7,7 +7,7 @@ info:
   reference:
     - https://symfony2-document.readthedocs.io/en/latest/book/security.html
     - https://symfony.com/doc/current/reference/configuration/security.html
-  tags: config,exposure,symfony
+ 
 
 requests:
   - method: GET

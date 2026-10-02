@@ -9,12 +9,10 @@ info:
     verified: true
     shodan-query: http.favicon.hash:-399298961
   tags: maximo,panel,ibm
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/maximo/webclient/login/login.jsp"
-
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -25,7 +23,6 @@ requests:
           - "maximo-icon.png"
           - "IBM"
         condition: and
-
       - type: status
         status:
           - 200

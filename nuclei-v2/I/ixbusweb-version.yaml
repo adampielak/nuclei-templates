@@ -1,5 +1,4 @@
 id: ixbusweb-panel
-
 info:
   name: iXBusWeb Panel Detect
   author: Podalirius
@@ -7,22 +6,18 @@ info:
   metadata:
     shodan-query: http.title:"iXBus"
   tags: panel,ixbusweb,cms
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>iXBus</title>'
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body

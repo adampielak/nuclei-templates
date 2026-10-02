@@ -1,18 +1,15 @@
 id: matomo-login-portal
-
 info:
   name: Matomo Login Portal
   author: Arr0way
   severity: info
   description: Matomo provides website analytics
   tags: panel,matomo
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/matomo"
-
     stop-at-first-match: true
     redirects: true
     max-redirects: 2

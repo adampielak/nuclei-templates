@@ -1,5 +1,4 @@
 id: contao-login-panel
-
 info:
   name: Contao Login Panel
   author: princechaddha
@@ -8,22 +7,18 @@ info:
     verified: true
     shodan-query: http.html:"Contao Open Source CMS"
   tags: panel,contao
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/contao/login"
-
     matchers-condition: and
     matchers:
-
       - type: word
         part: body
         words:
           - "Contao Open Source CMS"
           - "<h1>Login</h1>"
         condition: and
-
       - type: status
         status:
           - 200

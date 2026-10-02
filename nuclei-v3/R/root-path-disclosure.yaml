@@ -20,6 +20,7 @@ http:
       - "{{BaseURL}}/app/webroot/files/kcfinder/files/home/000~ROOT~000/etc/passwd"
 
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: regex
@@ -35,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cface6ef4dbf9b3956243f6375da0d1e2410283d03552ba3d82c79318bcd7842022100e8edb860c8280962a2af8a516da090c81fbcfb11a8dcb45d74045dadf1d811ea:922c64590222798bb761d5b6d8e72950
+

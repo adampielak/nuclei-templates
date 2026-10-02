@@ -1,35 +1,13 @@
-http:
-- extractors:
-  - dsl:
-    - '"Email: " + email + ". Password: "+ password'
-    type: dsl
-  matchers:
-  - condition: and
-    dsl:
-    - contains(body, "token\":\"ey")
-    - contains(header, 'application/json')
-    - status_code == 200
-    type: dsl
-  raw:
-  - 'POST /api/v1/auth/user/signup HTTP/1.1
-
-    Host: {{Hostname}}
-
-    Content-Type: application/json
-
-
-    {"email":"{{email}}","password":"{{password}}"}
-
-    '
 id: nocodb-public-registration-enabled
 info:
+  name: NocoDB Public Registration Enabled
   author: pussycat0x
-  description: 'Detected NocoDB instances that allow public user registration without
-    requiring an invitation. This misconfiguration allows anyone to create an account
-    on the NocoDB instance, potentially leading to unauthorized access to databases
-    and sensitive information.
-
-    '
+  severity: medium
+  description: |
+    Detected NocoDB instances that allow public user registration without requiring an invitation. This misconfiguration allows anyone to create an account on the NocoDB instance, potentially leading to unauthorized access to databases and sensitive information.
+  reference:
+    - https://docs.nocodb.com/getting-started/self-hosted/environment-variables/
+    - https://nocodb.com/docs/product-docs/account-settings/oss-specific-details
   metadata:
     fofa-query: title="NocoDB"
     max-request: 1
@@ -37,12 +15,28 @@ info:
     shodan-query: http.title:"NocoDB"
     vendor: nocodb
     verified: true
-  name: NocoDB Public Registration Enabled
-  reference:
-  - https://docs.nocodb.com/getting-started/self-hosted/environment-variables/
-  - https://nocodb.com/docs/product-docs/account-settings/oss-specific-details
-  severity: medium
-  tags: nocodb,misconfig,exposure,intrusive
+  tags: exposure,intrusive,misconfig,nocodb,vuln
 variables:
   email: '{{randstr}}@{{rand_base(5)}}.com'
   password: '{{rand_base(8)}}'
+http:
+  - extractors:
+      - dsl:
+          - '"Email: " + email + ". Password: "+ password'
+        # digest: 4b0a00483046022100a7de49c94b5771484ad8894bc2b2ffe1ea701880e8f3f7d3a60d2a719d60fc83022100faa2b68471830c1264a96b4bad3b437a355788c1d120bc824bfd57491c0131c5:922c64590222798bb761d5b6d8e72950
+
+        type: dsl
+    matchers:
+      - condition: and
+        dsl:
+          - contains(body, "token\":\"ey")
+          - contains(header, 'application/json')
+          - status_code == 200
+        type: dsl
+    raw:
+      - |
+        POST /api/v1/auth/user/signup HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"email":"{{email}}","password":"{{password}}"}

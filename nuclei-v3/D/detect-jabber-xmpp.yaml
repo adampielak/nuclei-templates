@@ -8,6 +8,8 @@ info:
   reference:
     - https://datatracker.ietf.org/doc/html/rfc6120
   tags: network,jabber,xmpp,messaging
+  metadata:
+  mongoid: 0000
 
 network:
   - inputs:

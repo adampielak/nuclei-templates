@@ -1,5 +1,4 @@
 id: incapptic-connect-panel
-
 info:
   name: IVANTI Incapptic Connect
   author: righettod
@@ -11,13 +10,11 @@ info:
       - http.title:"incapptic"
       - http.favicon.hash:-1067582922
   tags: panel,ivanti,incapptic-connect
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/static/img/custom_icons/favicon.ico'
-
     redirects: true
     max-redirects: 3
     stop-at-first-match: true
@@ -28,7 +25,6 @@ requests:
           - "status_code==200"
           - "contains(tolower(body), 'incapptic')"
         condition: and
-
       - type: dsl
         dsl:
           - "status_code==200"

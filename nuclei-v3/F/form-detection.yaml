@@ -1,25 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - <form
-    - </form>
-    - <button
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  redirects: true
 id: form-detection
-info:
-  author: pdteam
-  description: 'A template to detect HTML Forms in page response.
 
-    '
+info:
   name: Form Detection
-  reference:
-  - https://github.com/dirtycoder0124/formcrawler
+  author: pdteam
   severity: info
-  tags: form,misc
+  description: |
+    A template to detect HTML Forms in page response.
+  reference:
+    - https://github.com/dirtycoder0124/formcrawler
+  metadata:
+    max-request: 1
+  tags: form,misc,miscellaneous,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    redirects: true
+    max-redirects: 2
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<form"
+          - "</form>"
+          - "<button"
+        condition: and
+

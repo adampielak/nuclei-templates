@@ -7,8 +7,6 @@ info:
   description: An Apache Tomcat Manager panel was discovered.
   classification:
     cwe-id: CWE-200
-  metadata:
-    shodan-query: title:"Apache Tomcat"
   tags: panel,tomcat,apache
 
 requests:

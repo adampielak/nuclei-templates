@@ -1,5 +1,4 @@
 id: openx-panel
-
 info:
   name: OpenX Login Panel
   author: pikpikcu
@@ -7,13 +6,11 @@ info:
   metadata:
     shodan-query: http.title:"OpenX"
   tags: panel,openx,login
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/www/admin/index.php"
       - "{{BaseURL}}/admin/index.php"
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -21,11 +18,9 @@ requests:
         part: body
         regex:
           - '<title>OpenX</title>'
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body

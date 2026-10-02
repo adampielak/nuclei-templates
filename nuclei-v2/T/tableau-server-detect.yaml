@@ -3,9 +3,9 @@ id: tableau-server-detect
 info:
   name: Detect Tableau Server
   author: TechbrunchFR
-  severity: info
   description: Detects Tableau Server and extract the buildId
-  tags: tech,tableau
+  severity: info
+ 
 
 requests:
   - method: GET

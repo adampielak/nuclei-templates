@@ -1,5 +1,4 @@
 id: digitalrebar-login
-
 info:
   name: RackN Digital Rebar Login Panel
   author: c-sh0
@@ -9,13 +8,11 @@ info:
     - https://docs.rackn.io/
     - https://docs.rackn.io/en/latest/doc/server.html#ports
   tags: rackn,digitalrebar,panel
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/ui"
-
     stop-at-first-match: true
     redirects: true
     max-redirects: 2
@@ -24,7 +21,6 @@ requests:
       - type: status
         status:
           - 200
-
       - type: word
         part: body
         words:

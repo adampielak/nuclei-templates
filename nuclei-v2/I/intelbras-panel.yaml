@@ -1,5 +1,4 @@
 id: intelbras-panel
-
 info:
   name: Intelbras Panel
   author: pikpikcu
@@ -9,12 +8,10 @@ info:
     shodan-query: http.title:"Intelbras"
     fofa-query: app="Intelbras"
   tags: panel,intelbras
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     redirects: true
     max-redirects: 2
     matchers:
@@ -22,7 +19,6 @@ requests:
         words:
           - "<title>Intelbras"
         case-insensitive: true
-
     extractors:
       - type: regex
         part: body

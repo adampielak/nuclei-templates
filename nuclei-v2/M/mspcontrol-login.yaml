@@ -1,5 +1,4 @@
 id: mspcontrol-login
-
 info:
   name: MSPControl Login
   author: idealphase
@@ -12,15 +11,12 @@ info:
     shodan-query: http.title:"MSPControl - Sign In"
     google-query: intitle:"MSPControl - Sign In"
   tags: panel,mspcontrol
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/Default.aspx?pid=Login"
-
     headers:
       Cookie: UserCulture=en-US
-
     matchers-condition: and
     matchers:
       - type: word
@@ -29,7 +25,6 @@ requests:
           - "MSPControl - Sign In"
           - "Sign In to Control Panel"
         condition: or
-
       - type: status
         status:
           - 200

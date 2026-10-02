@@ -1,10 +1,9 @@
 id: slocum-login
-
 info:
   name: Slocum Fleet Mission Control Login
   author: pussycat0x
   severity: info
-  tags: panel,tech,slocum
+ 
 
 requests:
   - method: GET

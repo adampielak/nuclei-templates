@@ -4,10 +4,8 @@ info:
   author: organiccrap
   severity: medium
   description: Nginx off-by-slash vulnerability exposes Git configuration.
-  tags: config,exposure
-  reference: |
-    - https://twitter.com/Random_Robbie/status/1262676628167110656
-    - https://github.com/PortSwigger/nginx-alias-traversal/blob/master/off-by-slash.py
+
+  # https://twitter.com/Random_Robbie/status/1262676628167110656
 
 requests:
   - method: GET

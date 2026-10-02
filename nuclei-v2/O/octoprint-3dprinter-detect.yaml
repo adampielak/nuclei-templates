@@ -1,5 +1,4 @@
 id: octoprint-3dprinter
-
 info:
   name: Octoprint 3D Printer Detection
   author: Matthew Nickerson (b0than) @ Layer 8 Security
@@ -10,12 +9,10 @@ info:
       - http.favicon.hash:1307375944
       - http.title:"OctoPrint"
   tags: iot,octoprint,panel
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -24,7 +21,6 @@ requests:
         part: body
         words:
           - 'OctoPrint'
-
       - type: status
         status:
           - 200

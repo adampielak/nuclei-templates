@@ -1,44 +1,40 @@
-http:
-- matchers:
-  - condition: and
-    regex:
-    - user"\s*:\s*"admin"
-    - dba"\s*:\s*"true"
-    type: regex
-  - part: content_type
-    type: word
-    words:
-    - application/xml
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  raw:
-  - 'POST /exist/apps/dashboard/login HTTP/1.1
-
-    Host: {{Hostname}}
-
-    Content-Type: application/x-www-form-urlencoded
-
-
-    user={{username}}&password=
-
-    '
 id: exist-db-dashboard-access
 info:
+  name: eXist-DB Dashboard Access
   author: ritikchaddha
-  description: Detects eXist DB dashboard login endpoint access. eXist DB is a document-oriented
-    database that allows you to store and query XML data. The dashboard is a web interface
-    that allows you to manage the database and view the data.
+  severity: high
+  description: Detects eXist DB dashboard login endpoint access. eXist DB is a document-oriented database that allows you to store and query XML data. The dashboard is a web interface that allows you to manage the database and view the data.
+  reference:
+    - https://exist-db.org/
   metadata:
     fofa-query: title="eXist db"
     max-request: 2
     shodan-query: title:"eXist db"
     verified: true
-  name: eXist-DB Dashboard Access
-  reference:
-  - https://exist-db.org/
-  severity: high
-  tags: misconfig,exist-db,dashboard,login,exposure
+  tags: dashboard,exist-db,exposure,login,misconfig,vuln
 variables:
   username: admin
+http:
+  - matchers:
+      - condition: and
+        regex:
+          - user"\s*:\s*"admin"
+          - dba"\s*:\s*"true"
+        type: regex
+      - part: content_type
+        type: word
+        words:
+          - application/xml
+      - status:
+          - 200
+        # digest: 4a0a0047304502206637c04f76e890485dfbe092568ab27ead7bf6a917336fa6d5be850bf5d1bb47022100eb863c9992ee8e9f9d0e952e17b7f15dcff377f1cd9bf1526f9c64590aa03cc7:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    raw:
+      - |
+        POST /exist/apps/dashboard/login HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+
+        user={{username}}&password=

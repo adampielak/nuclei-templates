@@ -1,28 +1,27 @@
-http:
-- matchers:
-  - case-insensitive: true
-    part: header
-    type: word
-    words:
-    - x-envoy-peer-metadata
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: envoy-metadata-disclosure
 info:
-  author: theamanrawat
-  description: 'Detected misconfigured Envoy proxy instances that disclose sensitive
-    information about the target infrastructure via the "x-envoy-peer-metadata" response
-    header.
-
-    '
-  metadata:
-    max-request: 1
-    runzero-match: service["http.head.xEnvoyPeerMetadata"] != ""
-    shodan-query: x-envoy-peer-metadata
   name: Envoy Proxy - Metadata Disclosure
-  reference:
-  - https://www.acunetix.com/vulnerabilities/web/envoy-metadata-disclosure/
-  - https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration
+  author: theamanrawat
   severity: info
-  tags: envoy,exposure,misconfig,disclosure
+  description: |
+    Detected misconfigured Envoy proxy instances that disclose sensitive information about the target infrastructure via the "x-envoy-peer-metadata" response header.
+  reference:
+    - https://www.acunetix.com/vulnerabilities/web/envoy-metadata-disclosure/
+    - https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration
+  metadata:
+    runzero-match: service["http.head.xEnvoyPeerMetadata"] != ""
+    max-request: 1
+    shodan-query: x-envoy-peer-metadata
+  tags: disclosure,envoy,exposure,misconfig,vuln
+http:
+  - matchers:
+      - case-insensitive: true
+        # digest: 490a0046304402206be15830579a0001b1d8a5bc8264ab6810e662c5d83e5dfa0557bb130e5fbd6e022003e3f462ecf59f7b0f83223c97551282cd3e2beb7eb2b987f6b0f396fc51050b:922c64590222798bb761d5b6d8e72950
+
+        part: header
+        type: word
+        words:
+          - x-envoy-peer-metadata
+    method: GET
+    path:
+      - '{{BaseURL}}'

@@ -1,5 +1,4 @@
 id: wordfence-rules-disclosure
-
 info:
   name: WordPress Wordfence - Rules File Disclosure
   author: ritikchaddha
@@ -14,26 +13,25 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/plugins/wordfence"})
+    fofa-query: body="/plugins/wordfence"
     max-request: 1
     verified: true
-    fofa-query: body="/plugins/wordfence"
-  tags: wordpress,wp-plugin,wordfence,rules,disclosure,exposure
-
+  tags: disclosure,exposure,rules,vuln,wordfence,wordpress,wp-plugin
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/wflogs/rules.php"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - "wfWAFrule"
-          - "$this"
-        condition: and
-
-      - type: status
-        status:
+          - wfWAFrule
+          - $this
+      - status:
           - 200
-# digest: 4a0a00473045022052a72b463302339c60b0251a41d876e57837749b1078dcf7d19d920119432819022100ae1c0710398c8c12395264ddaa1953a4d0628991f88daf778e23cf583462e137:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100ef753bf30fc170ad0b50fcd0c4cfb940d715dc48f60f25aa04018de386d9901502210096a950b77bd0afeff6cab4d2c30dd50eae1fc1e3106912d603c6437bbe86f3b0:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/wflogs/rules.php'

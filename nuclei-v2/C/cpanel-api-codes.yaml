@@ -1,5 +1,4 @@
 id: cpanel-api-codes
-
 info:
   name: CPanel API Codes
   author: DhiyaneshDK
@@ -8,24 +7,19 @@ info:
     verified: true
     shodan-query: title:"CPanel - API Codes"
   tags: panel,cpanel
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
-
       - type: word
         words:
           - "<title>CPanel - API Codes</title>"
-
       - type: word
         part: header
         words:
           - "text/html"
-
       - type: status
         status:
           - 200

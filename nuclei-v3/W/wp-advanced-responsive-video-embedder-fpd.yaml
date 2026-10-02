@@ -1,5 +1,4 @@
 id: wp-advanced-responsive-video-embedder-fpd
-
 info:
   name: WordPress Advanced Responsive Video Embedder - Full Path Disclosure
   author: DhiyaneshDk
@@ -9,24 +8,22 @@ info:
   reference:
     - https://wordpress.org/plugins/advanced-responsive-video-embedder/
   metadata:
-    verified: true
     max-request: 2
-    publicwww-query: "/wp-content/plugins/advanced-responsive-video-embedder/"
-  tags: wp,wordpress,wp-plugin,fpd,advanced-iframe,misconfig
-
+    publicwww-query: /wp-content/plugins/advanced-responsive-video-embedder/
+    verified: true
+  tags: advanced-iframe,fpd,misconfig,vuln,wordpress,wp,wp-plugin
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/php/init.php"
-      - "{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/advanced-responsive-video-embedder.php"
+  - matchers:
+      - condition: and
+        # digest: 490a0046304402202350a2cdf4f826c1e3cdbad9db4ae345f130db2b849ee3a7d9af815260d83ffb02203bca9a398fd1e7a0372b7cbc0424cabd2b5ffd72192e5d64413324b33559bb16:922c64590222798bb761d5b6d8e72950
 
-    stop-at-first-match: true
-
-    matchers:
-      - type: dsl
         dsl:
-          - 'contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")'
-          - 'contains(body, "advanced-responsive-video-embedder")'
-          - 'status_code == 200 || status_code == 500'
-        condition: and
-# digest: 4a0a00473045022100eb3d19a10decc9581a24e6f8a450be879a7b42bfcbbaeb07249b5c6b3aaf6050022035c661b5b54fd6abd039fccf965c5db94d342649351d030cd35d87e2f7f29728:922c64590222798bb761d5b6d8e72950
+          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")
+          - contains(body, "advanced-responsive-video-embedder")
+          - status_code == 200 || status_code == 500
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/php/init.php'
+      - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/advanced-responsive-video-embedder.php'
+    stop-at-first-match: true

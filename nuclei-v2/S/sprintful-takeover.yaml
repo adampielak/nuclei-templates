@@ -4,7 +4,7 @@ info:
   name: Sprintful Takeover
   author: Mhdsamx
   severity: high
-  tags: takeover,sprintful
+ 
 
 requests:
   - method: GET

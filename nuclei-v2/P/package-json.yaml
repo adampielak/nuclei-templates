@@ -1,31 +1,29 @@
-id: package-json
+id: package-json 
 
 info:
-  name: npm package.json disclosure
-  author: geeknik,afaq
-  severity: info
-  description: All npm packages contain a file, usually in the project root, called package.json - this file holds various metadata relevant to the project.
-  tags: config,exposure
-
+  name: Check for package.json
+  author: tedm.infosec
+  severity: info 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/package.json"
-      - "{{BaseURL}}/package-lock.json"
-
+  - raw:
+      - |
+        GET /package.json HTTP 2.0
+        Host: {{Hostname}}
+      - |
+        GET /js/package.json HTTP 2.0
+        Host: {{Hostname}}
+      - |
+        GET /assets/package.json HTTP 2.0
+        Host: {{Hostname}}
+      - |
+        GET /src/package.json HTTP 2.0
+        Host: {{Hostname}}
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - "name"
-          - "version"
-        condition: and
-
-      - type: word
-        words:
-          - "application/json"
-        part: header
-
+          - "\"dependencies\": {"
+        part: body
       - type: status
         status:
           - 200

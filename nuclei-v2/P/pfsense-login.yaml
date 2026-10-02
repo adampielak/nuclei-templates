@@ -1,5 +1,4 @@
 id: pfsense-login
-
 info:
   name: pfSense Login
   author: idealphase
@@ -12,23 +11,19 @@ info:
     shodan-query: http.title:"pfSense - Login"
     google-query: intitle:"pfSense - Login"
   tags: panel,pfsense
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>pfSense - Login</title>"
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         group: 1

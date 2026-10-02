@@ -1,5 +1,4 @@
 id: gryphon-login
-
 info:
   name: Gryphon Panel
   author: pdteam
@@ -9,12 +8,10 @@ info:
   metadata:
     shodan-query: http.title:"Gryphon"
   tags: gryphon,router
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/luci/"
-
     matchers:
       - type: word
         part: body

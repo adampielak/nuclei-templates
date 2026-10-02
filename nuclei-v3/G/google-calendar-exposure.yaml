@@ -1,46 +1,45 @@
-http:
-- extractors:
-  - name: calendar-url
-    part: body
-    regex:
-    - (https?://calendar\.google\.com/calendar/(?:embed|ical|u/0/embed)[^"'\s>]+)
-    type: regex
-  host-redirects: true
-  matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - calendar.google.com/calendar/embed
-    - calendar.google.com/calendar/ical
-    - calendar.google.com/calendar/u/0/embed
-    - www.googleapis.com/calendar
-  - status:
-    - 200
-    type: status
-  - negative: true
-    part: body
-    type: word
-    words:
-    - reviewable_default_visibility
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: google-calendar-exposure
 info:
+  name: Google Calendar - Exposure
   author: DhiyaneshDk
-  description: 'Detected publicly accessible Google Calendar embedded on the target
-    that may expose sensitive information including meeting details, attendee names,
-    event schedules, and internal organizational data.
-
-    '
+  severity: low
+  description: |
+    Detected publicly accessible Google Calendar embedded on the target that may expose sensitive information including meeting details, attendee names, event schedules, and internal organizational data.
+  reference:
+    - https://support.google.com/calendar/answer/37083
   metadata:
     max-request: 1
     verified: true
-  name: Google Calendar - Exposure
-  reference:
-  - https://support.google.com/calendar/answer/37083
-  severity: low
-  tags: google,calendar,exposure,misconfig
+  tags: calendar,exposure,google,misconfig,vuln
+http:
+  - extractors:
+      - name: calendar-url
+        part: body
+        regex:
+          - (https?://calendar\.google\.com/calendar/(?:embed|ical|u/0/embed)[^"'\s>]+)
+        # digest: 4a0a00473045022100839e4fdd25ef6ee8b552d1dbf1c1767daada5ac0adab423fd8653b3ce21ca7a502205ac1b3abd38124b9ca659a42d2faf31ef79b79f1b1a77b59531692b7985d3351:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    host-redirects: true
+    matchers:
+      - condition: or
+        part: body
+        type: word
+        words:
+          - calendar.google.com/calendar/embed
+          - calendar.google.com/calendar/ical
+          - calendar.google.com/calendar/u/0/embed
+          - www.googleapis.com/calendar
+      - status:
+          - 200
+        type: status
+      - negative: true
+        part: body
+        type: word
+        words:
+          - reviewable_default_visibility
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'

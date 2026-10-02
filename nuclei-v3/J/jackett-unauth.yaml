@@ -1,31 +1,35 @@
-http:
-- matchers:
-  - condition: and
-    type: word
-    words:
-    - Jackett
-    - 'API Key:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/UI/Dashboard'
-  - '{{BaseURL}}/jackett/UI/Dashboard'
-  stop-at-first-match: true
 id: jackett-unauth
-info:
-  author: ProjectDiscoveryAI
-  description: 'The Jackett UI can be accessed without authentication, potentially
-    exposing sensitive information and configuration settings to unauthorized users.
 
-    '
+info:
+  name: Jackett UI - Unauthenticated
+  author: ProjectDiscoveryAI
+  severity: high
+  description: |
+    The Jackett UI can be accessed without authentication, potentially exposing sensitive information and configuration settings to unauthorized users.
   metadata:
-    fofa-query: title="Jackett"
+    verified: true
     max-request: 2
     shodan-query: title:"Jackett"
-    verified: true
-  name: Jackett UI - Unauthenticated
-  severity: high
+    fofa-query: title="Jackett"
   tags: unauth,misconfig,exposure,jackett-ui,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/UI/Dashboard"
+      - "{{BaseURL}}/jackett/UI/Dashboard"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Jackett"
+          - "API Key:"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+

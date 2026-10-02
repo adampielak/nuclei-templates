@@ -1,10 +1,12 @@
 id: bigcartel-takeover
+
 info:
   name: Bigcartel Takeover Detection
   author: pdcommunity
   severity: high
   tags: takeover
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
+
 requests:
   - method: GET
     path:

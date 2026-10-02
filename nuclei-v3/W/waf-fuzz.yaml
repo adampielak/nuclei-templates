@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 58
-  tags: waf,fuzz,fuzzing,vuln
+  tags: waf,tech,fuzz
 
 http:
   - raw:
@@ -56,7 +56,6 @@ http:
         - SELECT * FROM information_schema.tables
         - SELECT user FROM information_schema.tables AND user = \'test user\';
         - UNION SELECT * FROM users WHERE user = \'admin\';
-
     stop-at-first-match: true
     matchers:
       - type: regex
@@ -791,4 +790,5 @@ http:
           - '(?)content="CloudWAF"'
           - 'Server: CloudWAF'
           - 'Set-Cookie: HWWAFSESID='
-# digest: 490a0046304402202981dcbffe187f5f5e9695375f20099a394328aa7113941953d58caa78b560850220054a4c6a797708d399cd2cc6a1ef85536513144d632e16d8d663141e359f0184:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220322154e94d3aee2bce65bdc57d1e34cf63bb749b8367b936625646f9fe2a9b3502207cd6b4b20d1b56e36ee295ca542304d22c338526bcba309a074584f105b9fc62:922c64590222798bb761d5b6d8e72950

@@ -1,13 +1,16 @@
 id: mida-eframework-workflow
 
 info:
-  name: Mida eFramework Security Checks
+  name: Mida eFramework workflow
   author: CasperGN
-  description: A simple workflow that runs all Mida eFramework related nuclei templates on a given target.
 
-workflows:
-  - template: technologies/tech-detect.yaml
-    matchers:
-      - name: mida-eframework
-        subtemplates:
-          - template: vulnerabilities/other/mida-eframework-xss.yaml
+variables:
+  mida: technologies/tech-detect.yaml
+  cve_2020_15920: cves/CVE-2020-15920.yaml
+
+logic: |
+  mida()
+
+  if mida["mida-eframework"] {
+    cve_2020_15920()
+  }

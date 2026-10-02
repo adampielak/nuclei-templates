@@ -1,38 +1,38 @@
-http:
-- extractors:
-  - kval:
-    - x_backend_server
-    type: kval
-  host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - contains_all(tolower(header), "x-served-by", "x-cache-hits", "fastly")
-    - contains(tolower(header), "x-backend-server")
-    - '!regex("(?i)x-backend-server:\\s*(nginx|apache|httpd|iis|tomcat)\\s*$", header)'
-    type: dsl
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: fastly-backend-info-disclosure
 info:
+  name: Fastly Backend Server Information Disclosure
   author: 0x_Akoko
+  severity: low
+  description: |
+    Detected Fastly CDN misconfigured and exposing backend/origin server IP addresses or hostnames in HTTP response headers.
+  reference:
+    - https://developer.fastly.com/reference/http/http-headers/
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
-  description: 'Detected Fastly CDN misconfigured and exposing backend/origin server
-    IP addresses or hostnames in HTTP response headers.
-
-    '
   metadata:
-    max-request: 1
     runzero-match: service["http.head.xBackendServer"] != ""
+    max-request: 1
     shodan-query: X-backend-server
     verified: true
-  name: Fastly Backend Server Information Disclosure
-  reference:
-  - https://developer.fastly.com/reference/http/http-headers/
-  severity: low
-  tags: exposure,fastly,cdn,misconfig
+  tags: cdn,exposure,fastly,misconfig,vuln
+http:
+  - extractors:
+      - kval:
+          - x_backend_server
+        # digest: 490a004630440220540fa554d79732b4d2b2ea8952b5887d7fcf1afceb65ecf4a9fdc0895b5b657502200b5209325e8852bff083035d0dcfaa2732db337b08d90dec23c74ebb0a09b2a1:922c64590222798bb761d5b6d8e72950
+
+        type: kval
+    host-redirects: true
+    matchers:
+      - condition: and
+        dsl:
+          - contains_all(tolower(header), "x-served-by", "x-cache-hits", "fastly")
+          - contains(tolower(header), "x-backend-server")
+          - '!regex("(?i)x-backend-server:\\s*(nginx|apache|httpd|iis|tomcat)\\s*$", header)'
+        type: dsl
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'
