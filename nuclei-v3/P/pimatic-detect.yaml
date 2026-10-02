@@ -1,5 +1,4 @@
 id: pimatic-detect
-
 info:
   name: pimatic - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://pimatic.org/
     - https://github.com/pimatic/pimatic
   metadata:
-    verified: true
     max-request: 1
-    vendor: pimatic
     product: pimatic
     shodan-query: 'http.title:"pimatic"'
-  tags: pimatic,tech,iot,home-automation,detect
-
+    vendor: pimatic
+    verified: true
+  tags: detect,home-automation,iot,pimatic,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - '<title>pimatic</title>'
           - 'src="api/decl-api-client.js"'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100bdc39159ad966c12bc4b66e01210cf984cbc18b218499ad59e017305404eb57b0220499aa96f030de5858e291d5237971bd7025d39869d7dd3c2b2f0a8987a2ac6de:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100bdc39159ad966c12bc4b66e01210cf984cbc18b218499ad59e017305404eb57b0220499aa96f030de5858e291d5237971bd7025d39869d7dd3c2b2f0a8987a2ac6de:922c64590222798bb761d5b6d8e72950

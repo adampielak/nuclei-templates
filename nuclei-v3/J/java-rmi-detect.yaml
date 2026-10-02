@@ -4,9 +4,7 @@ info:
   name: Detect Java RMI Protocol
   author: F1tz
   severity: info
-  tags: network,rmi,java
-  metadata:
-  mongoid: 0000
+  tags: network,rmi
 
 network:
   - inputs:

@@ -1,5 +1,4 @@
 id: ovenmediaengine-detect
-
 info:
   name: OvenMediaEngine - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://github.com/OvenMediaLabs/OvenMediaEngine
   metadata:
-    verified: true
     max-request: 1
-    vendor: ovenmedialabs
     product: ovenmediaengine
     shodan-query: 'http.html:"OvenMediaEngine"'
-  tags: ovenmediaengine,tech,detect,streaming,webrtc
-
+    vendor: ovenmedialabs
+    verified: true
+  tags: detect,ovenmediaengine,streaming,tech,webrtc
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -31,8 +28,7 @@ http:
           - "<title>OvenMediaEngine Enterprise</title>"
           - 'content="OvenStudio"'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022028161e3abb71030a0103b48d2c325a96b30672a5b5778c246114e503c837393b022100aa31054369398141be0cc36443213818f8d82e46b9bf17dc14075166b0af5235:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022028161e3abb71030a0103b48d2c325a96b30672a5b5778c246114e503c837393b022100aa31054369398141be0cc36443213818f8d82e46b9bf17dc14075166b0af5235:922c64590222798bb761d5b6d8e72950

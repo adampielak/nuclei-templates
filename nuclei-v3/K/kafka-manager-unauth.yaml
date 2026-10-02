@@ -1,25 +1,29 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>Kafka Manager</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: kafka-manager-unauth
+
 info:
-  author: Paper-Pen
-  description: A kafka manager unauthorized access was discovered.
-  metadata:
-    fofa-query: app="Kafka-Manager"
-    max-request: 1
   name: Kafka Manager Panel - Unauthorized Access
-  reference:
-  - https://github.com/yahoo/CMAK
+  author: Paper-Pen
   severity: low
+  description: A kafka manager unauthorized access was discovered.
+  reference:
+    - https://github.com/yahoo/CMAK
+  metadata:
+    max-request: 1
+    fofa-query: app="Kafka-Manager"
   tags: misconfig,apache,kafka,unauth,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Kafka Manager</title>"
+
+      - type: status
+        status:
+          - 200

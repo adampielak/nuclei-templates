@@ -1,5 +1,4 @@
 id: focalboard-detect
-
 info:
   name: Focalboard - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://github.com/mattermost-community/focalboard
   metadata:
-    verified: true
     max-request: 1
-    vendor: mattermost
     product: focalboard
     shodan-query: 'http.title:"Focalboard"'
-  tags: focalboard,mattermost,tech,detect
-
+    vendor: mattermost
+    verified: true
+  tags: detect,focalboard,mattermost,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - 'class="focalboard-body"'
           - 'id="focalboard-app"'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202526a9a3f6ecdcbb863c62236815dc48789b69b4903827e339163285e2086c3f022100f59e270c4803d104e810ef48501531c4ba63f2ab8f59df55d93ad63118d95303:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502202526a9a3f6ecdcbb863c62236815dc48789b69b4903827e339163285e2086c3f022100f59e270c4803d104e810ef48501531c4ba63f2ab8f59df55d93ad63118d95303:922c64590222798bb761d5b6d8e72950

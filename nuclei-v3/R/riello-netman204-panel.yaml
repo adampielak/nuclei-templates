@@ -1,31 +1,33 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - contains(body,"Netman 204")
-    - status_code == 200
-    type: dsl
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: riello-netman204-panel
-info:
-  author: s4e-io
-  description: 'Riello UPS NetMan 204 login panel was detected.
 
-    '
-  metadata:
-    censys-query: services.http.response.body:"netman204"
-    fofa-query: title="netman 204"
-    google-query: intitle:"netman 204"
-    product: netman_204_firmware
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)netman 204"})
-    shodan-query: title:"netman 204"
-    vendor: riello-ups
+info:
   name: Riello UPS NetMan 204 Panel - Detect
-  reference:
-  - https://www.riello-ups.com
+  author: s4e-io
   severity: info
-  tags: detect,discovery,login,netman,panel
+  description: |
+    Riello UPS NetMan 204 login panel was detected.
+  reference:
+    - https://www.riello-ups.com
+  metadata:
+    vendor: riello-ups
+    product: netman_204_firmware
+    shodan-query: title:"netman 204"
+    fofa-query: title="netman 204"
+    censys-query: services.http.response.body:"netman204"
+    google-query: intitle:"netman 204"
+  tags: netman,panel,detect,login,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body,"Netman 204")'
+          - 'status_code == 200'
+        condition: and
+# digest: 4b0a00483046022100a1cb4d037db533e3c9a117bf5695c616ce0ab5b3c310c8797b9bbecc8eea1f7f022100c1710898887275bfe1ed2eff1f6b1129cc04389b27214470c3e2443340405d2c:922c64590222798bb761d5b6d8e72950
