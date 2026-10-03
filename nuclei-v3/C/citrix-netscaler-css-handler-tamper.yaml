@@ -1,0 +1,125 @@
+id: citrix-netscaler-css-handler-tamper
+
+info:
+  name: Citrix NetScaler ADC / Gateway - CSS PHP Handler Tampering Detection
+  author: darses
+  severity: high
+  description: |
+    Detects server-wide or directory-level Apache configuration tampering on Citrix NetScaler ADC / Gateway appliances where static stylesheet extensions (.css) have been mapped to the PHP execution handler (application/x-httpd-php).
+    
+    Legitimate NetScaler stylesheets (such as ctxs.large-ui.min.css and ctxs.no-js-ui.min.css) natively return HTTP 200 with Content-Type: text/css and static caching headers (ETag, Accept-Ranges: bytes). When the Apache configuration is tampered with (e.g. via AddHandler application/x-httpd-php .css or SetHandler), the PHP engine processes these files instead, causing the Content-Type to flip to text/html, stripping static byte-range headers, or injecting dynamic PHP no-cache headers.
+  remediation: |
+    Audit /etc/httpd.conf, /var/netscaler/logon/httpd.conf, and any .htaccess files for unauthorized AddHandler, SetHandler, or Action directives associating application/x-httpd-php with .css, .ico, or .sig extensions. Restore original Apache configuration and investigate appliance for root compromise.
+  reference:
+    - https://support.citrix.com/s/article/CTX697096
+    - https://www.reddit.com/r/Citrix/comments/1wvwva9/netscaler_active_exploit_after_patch/
+    - https://ifin.network/t/multiple-citrix-netscaler-0-days-exploited/867/27
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10.0
+    cwe-id: CWE-553
+  metadata:
+    verified: false
+    max-requests: 6
+    vendor: citrix
+    product: netscaler_adc
+    shodan-query:
+      - title:"Citrix Gateway"
+      - http.html:"/vpn/index.html"
+    fofa-query:
+      - title="Citrix Gateway"
+      - body="/vpn/index.html"
+  tags: citrix,netscaler,backdoor,handler,misconfig,detect,cve2026
+
+http:
+  # -------------------------------------------------------------------------
+  # PASS 1: HTTP GET Probe against Known Legitimate NetScaler Stylesheets
+  # -------------------------------------------------------------------------
+  - method: GET
+    path:
+      - "{{BaseURL}}/logon/LogonPoint/receiver/css/ctxs.large-ui.min.css"
+      - "{{BaseURL}}/logon/LogonPoint/receiver/css/ctxs.no-js-ui.min.css"
+      - "{{BaseURL}}/logon/LogonPoint/receiver/css/ctxs.medium-ui.min.css"
+
+    stop-at-first-match: false
+    matchers-condition: or
+    matchers:
+      # Matcher 1: Content-Type flipped from text/css to text/html by PHP default_mimetype
+      - type: dsl
+        name: css-handler-mime-tamper
+        dsl:
+          - 'status_code == 200 && contains(header, "text/html") && !contains(header, "text/css") && (contains(request, "ctxs.large-ui.min.css") || contains(request, "ctxs.no-js-ui.min.css"))'
+
+      # Matcher 2: PHP dynamic cache-control headers injected onto static stylesheets
+      - type: dsl
+        name: css-handler-php-cache-tamper
+        dsl:
+          - 'status_code == 200 && (contains(header, "no-store, no-cache") || contains(header, "Pragma: no-cache")) && (contains(request, "ctxs.large-ui.min.css") || contains(request, "ctxs.no-js-ui.min.css"))'
+
+      # Matcher 3: 0-byte response on existing legitimate stylesheet (PHP unauthenticated exit)
+      - type: dsl
+        name: css-handler-empty-body
+        dsl:
+          - 'status_code == 200 && len(body) == 0 && (contains(request, "ctxs.large-ui.min.css") || contains(request, "ctxs.no-js-ui.min.css"))'
+
+      # Matcher 4: Static byte-range and ETag headers completely stripped by dynamic handler
+      - type: dsl
+        name: css-handler-stripped-static-headers
+        dsl:
+          - 'status_code == 200 && !contains(header, "Accept-Ranges") && !contains(header, "ETag") && !contains(header, "text/css") && (contains(request, "ctxs.large-ui.min.css") || contains(request, "ctxs.no-js-ui.min.css"))'
+
+    extractors:
+      - type: kval
+        part: header
+        kval:
+          - content_type
+          - content_length
+          - cache_control
+          - pragma
+          - etag
+          - accept_ranges
+          - server
+
+      - type: dsl
+        dsl:
+          - "len(body)"
+
+  # -------------------------------------------------------------------------
+  # PASS 2: HTTP GET HA Secondary Sweep (Probe peer HA node)
+  # -------------------------------------------------------------------------
+  - method: GET
+    path:
+      - "{{BaseURL}}/logon/LogonPoint/receiver/css/ctxs.large-ui.min.css?ha=2"
+      - "{{BaseURL}}/logon/LogonPoint/receiver/css/ctxs.no-js-ui.min.css?ha=2"
+      - "{{BaseURL}}/logon/LogonPoint/receiver/css/ctxs.medium-ui.min.css?ha=2"
+
+    stop-at-first-match: false
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: ha2-css-handler-mime-tamper
+        dsl:
+          - 'status_code == 200 && contains(header, "text/html") && !contains(header, "text/css") && (contains(request, "ctxs.large-ui.min.css") || contains(request, "ctxs.no-js-ui.min.css"))'
+
+      - type: dsl
+        name: ha2-css-handler-php-cache-tamper
+        dsl:
+          - 'status_code == 200 && (contains(header, "no-store, no-cache") || contains(header, "Pragma: no-cache")) && (contains(request, "ctxs.large-ui.min.css") || contains(request, "ctxs.no-js-ui.min.css"))'
+
+      - type: dsl
+        name: ha2-css-handler-empty-body
+        dsl:
+          - 'status_code == 200 && len(body) == 0 && (contains(request, "ctxs.large-ui.min.css") || contains(request, "ctxs.no-js-ui.min.css"))'
+
+    extractors:
+      - type: kval
+        part: header
+        kval:
+          - content_type
+          - content_length
+          - cache_control
+          - pragma
+
+      - type: dsl
+        dsl:
+          - "len(body)"

@@ -1,51 +1,46 @@
-id: bookingpress_appointment_booking_pro-ed738dc5-7848-4b04-a3fd-317cc366acfa
-
-info:
-  name: >
-    BookingPress Pro <= 5.6 - Unauthenticated Arbitrary File Upload via Signature Custom Field
-  author: topscoder
-  severity: critical
-  description: >
-    
-  reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ed738dc5-7848-4b04-a3fd-317cc366acfa?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
-  metadata:
-    fofa-query: "wp-content/plugins/bookingpress-appointment-booking-pro/"
-    google-query: inurl:"/wp-content/plugins/bookingpress-appointment-booking-pro/"
-    shodan-query: 'http.html:"wp-content/plugins/bookingpress-appointment-booking-pro/"'
-  tags: cve,wordpress,wp-plugin,bookingpress-appointment-booking-pro,critical,candidate
-
 http:
-  - method: GET
-    redirects: true
-    max-redirects: 3
-    path:
-      - "{{BaseURL}}/wp-content/plugins/bookingpress-appointment-booking-pro/readme.txt"
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - bookingpress-appointment-booking-pro
+  - dsl:
+    - compare_versions(version, '<= 5.6')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/bookingpress-appointment-booking-pro/readme.txt'
+  redirects: true
+id: bookingpress_appointment_booking_pro-ed738dc5-7848-4b04-a3fd-317cc366acfa
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/bookingpress-appointment-booking-pro/
+    google-query: inurl:"/wp-content/plugins/bookingpress-appointment-booking-pro/"
+    shodan-query: http.html:"wp-content/plugins/bookingpress-appointment-booking-pro/"
+  name: 'BookingPress Pro <= 5.6 - Unauthenticated Arbitrary File Upload via Signature
+    Custom Field
 
-    extractors:
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "bookingpress-appointment-booking-pro"
-        part: body
-
-      - type: dsl
-        dsl:
-          - compare_versions(version, '<= 5.6')
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/ed738dc5-7848-4b04-a3fd-317cc366acfa?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,bookingpress-appointment-booking-pro,critical,candidate

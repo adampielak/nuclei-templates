@@ -1,0 +1,211 @@
+id: citrix-netscaler-backdoor-detect
+
+info:
+  name: Citrix NetScaler ADC / Gateway - Webshell & Backdoor Detection
+  author: darses
+  severity: critical
+  description: |
+    Detects active in-the-wild web shell implants, staged artifacts, credential scrapers, and backdoor configurations on Citrix NetScaler ADC / Gateway appliances (associated with September/October 2026 exploitation campaigns including CVE-2026-88771, CVE-2026-88772, and related zero-day activity).
+    
+    Identifies anomalous PHP handler execution on aliased static extensions (.css, .sig, .deb), unauthenticated 0-byte execution exits, differential cache-control headers on static webroots, and staged phishing/credential harvesting scripts. Multi-method requests across GET, HEAD, and OPTIONS probe known backdoor endpoints and handler behaviors without executing commands.
+  remediation: |
+    Immediately isolate the appliance, preserve memory and disk forensics, check /var/netscaler/logon/LogonPoint/custom/ and /netscaler/ns_gui/ for unapproved files, audit httpd.conf for custom AddHandler or AliasMatch directives, inspect /flash/nsconfig/ for rogue admin accounts (e.g. sec_monitor), and perform a clean reinstallation or firmware upgrade.
+  reference:
+    - https://support.citrix.com/s/article/CTX697096
+    - https://www.reddit.com/r/Citrix/comments/1wvwva9/netscaler_active_exploit_after_patch/
+    - https://www.reddit.com/r/Citrix/comments/1wvwuno/vulnerability_scans_causing_netscaler_reboots/
+    - https://ifin.network/t/multiple-citrix-netscaler-0-days-exploited/867/27
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10.0
+    cwe-id: CWE-553
+  metadata:
+    verified: false
+    max-requests: 43
+    vendor: citrix
+    product: netscaler_adc
+    shodan-query:
+      - title:"Citrix Gateway"
+      - http.html:"/vpn/index.html"
+    fofa-query:
+      - title="Citrix Gateway"
+      - body="/vpn/index.html"
+  tags: citrix,netscaler,backdoor,webshell,detect,cve2026,kev
+
+http:
+  # -------------------------------------------------------------------------
+  # PASS 1: HTTP GET Probe (Primary Sweep across all known backdoor paths)
+  # -------------------------------------------------------------------------
+  - method: GET
+    path:
+      # CSS Aliased PHP Webshells (.ctxs.receiver / .slap.receiver)
+      - "{{BaseURL}}/logon/LogonPoint/custom/receiver.min.css"
+      - "{{BaseURL}}/logon/LogonPoint/custom/receiver.v2.min.css"
+      - "{{BaseURL}}/vpn/custom/receiver.min.css"
+      - "{{BaseURL}}/vpn/custom/receiver.v2.min.css"
+      - "{{BaseURL}}/logon/receiver.min.css"
+      - "{{BaseURL}}/vpn/receiver.min.css"
+      # Debian Package PHP Webshells (AddHandler application/x-httpd-php .deb)
+      - "{{BaseURL}}/vpn/scripts/linux/nsginstaller.deb"
+      - "{{BaseURL}}/vpn/scripts/linux/nsgclient.deb"
+      - "{{BaseURL}}/vpn/scripts/linux/nsginstaller64.deb"
+      # Signature & Icon Aliased Webshells (.sig / .ico)
+      - "{{BaseURL}}/vpn/media/nsgclient.sig"
+      - "{{BaseURL}}/vpn/media/e6ee7c85.sig"
+      - "{{BaseURL}}/vpn/media/citrix.ico"
+      - "{{BaseURL}}/vpn/media/NS_icon.ico"
+      - "{{BaseURL}}/vpn/media/favicon.ico"
+      - "{{BaseURL}}/logon/LogonPoint/media/citrix.ico"
+      # Injected Credential Scrapers
+      - "{{BaseURL}}/logon/insight-new.js"
+      - "{{BaseURL}}/vpn/js/insight-new.js"
+      - "{{BaseURL}}/logon/LogonPoint/custom/insight-new.js"
+      - "{{BaseURL}}/vpn/custom/insight-new.js"
+      # Staged Harvesting / Phishing Pages
+      - "{{BaseURL}}/logon/LogonPoint/xua.html"
+      - "{{BaseURL}}/vpn/xua.html"
+      - "{{BaseURL}}/logon/xua.html"
+      - "{{BaseURL}}/vpn/media/xua.html"
+      # Staging / Tracking / Marker Files
+      - "{{BaseURL}}/logon/id009.txt"
+      - "{{BaseURL}}/vpn/id009.txt"
+      - "{{BaseURL}}/logon/LogonPoint/id009.txt"
+      - "{{BaseURL}}/vpn/media/id009.txt"
+      - "{{BaseURL}}/id009.txt"
+
+    stop-at-first-match: false
+    matchers-condition: or
+    matchers:
+      # Matcher 1: PHP script unauthenticated exit on CSS files (0-byte body)
+      - type: dsl
+        name: css-webshell-empty-200
+        dsl:
+          - 'status_code == 200 && len(body) == 0 && (contains(request, "receiver.min.css") || contains(request, "receiver.v2.min.css"))'
+
+      # Matcher 2: PHP execution leaks on CSS (text/html MIME or PHP cache headers with empty/tiny body)
+      - type: dsl
+        name: css-webshell-php-headers
+        dsl:
+          - 'status_code == 200 && (contains(header, "text/html") || len(body) == 0) && (contains(header, "no-store, no-cache") || contains(header, "Pragma: no-cache")) && (contains(request, "receiver.min.css") || contains(request, "receiver.v2.min.css"))'
+
+      # Matcher 3: Scripted 404 spoofing (0-byte body or PHP no-cache headers vs Apache standard 236-byte HTML)
+      - type: dsl
+        name: css-webshell-spoofed-404
+        dsl:
+          - 'status_code == 404 && len(body) == 0 && (contains(header, "no-store") || contains(header, "no-cache")) && (contains(request, "receiver.min.css") || contains(request, "receiver.v2.min.css"))'
+
+      # Matcher 4: Debian package executed via PHP handler (tiny body or text/html instead of binary archive)
+      - type: dsl
+        name: deb-php-webshell-anomaly
+        dsl:
+          - 'status_code == 200 && contains(request, ".deb") && (len(body) < 1000 || contains(header, "text/html")) && !contains(body, "<title>404") && !contains(body, "Citrix Gateway") && !contains(body, "tmindex.html")'
+
+      # Matcher 5: Staged xua.html implant (excluding standard login page rewrites)
+      - type: dsl
+        name: staged-xua-html-implant
+        dsl:
+          - 'status_code == 200 && contains(request, "xua.html") && !contains(body, "<title>404") && !contains(body, "Citrix Gateway") && !contains(body, "tmindex.html")'
+
+      # Matcher 6: Staged id009.txt marker file (excluding standard login page rewrites)
+      - type: dsl
+        name: staged-id009-marker-file
+        dsl:
+          - 'status_code == 200 && contains(request, "id009.txt") && !contains(body, "<title>404") && !contains(body, "Citrix Gateway") && !contains(body, "tmindex.html")'
+
+      # Matcher 7: Injected credential scraper insight-new.js
+      - type: dsl
+        name: insight-new-js-scraper
+        dsl:
+          - 'status_code == 200 && contains(request, "insight-new.js") && !contains(body, "<title>404") && !contains(body, "Citrix Gateway") && !contains(body, "tmindex.html") && (contains(body, "password") || contains(body, "passwd") || contains(body, "login") || contains(body, "submit") || contains(body, "addEventListener"))'
+
+      # Matcher 8: Signature shell or media icon returning 0 bytes or PHP execution headers
+      - type: dsl
+        name: sig-icon-webshell-anomaly
+        dsl:
+          - 'status_code == 200 && (contains(request, ".sig") || contains(request, "citrix.ico")) && (len(body) == 0 || (contains(header, "text/html") && contains(header, "no-store, no-cache")))'
+
+    extractors:
+      - type: kval
+        part: header
+        kval:
+          - content_type
+          - content_length
+          - cache_control
+          - pragma
+          - location
+          - server
+
+      - type: dsl
+        dsl:
+          - "len(body)"
+
+  # -------------------------------------------------------------------------
+  # PASS 2: HTTP HEAD Probes (Detects Content-Length: 0 & nsppe policy bypass)
+  # -------------------------------------------------------------------------
+  - method: HEAD
+    path:
+      - "{{BaseURL}}/logon/LogonPoint/custom/receiver.min.css"
+      - "{{BaseURL}}/logon/LogonPoint/custom/receiver.v2.min.css"
+      - "{{BaseURL}}/vpn/custom/receiver.min.css"
+      - "{{BaseURL}}/vpn/scripts/linux/nsginstaller.deb"
+      - "{{BaseURL}}/vpn/media/nsgclient.sig"
+      - "{{BaseURL}}/logon/insight-new.js"
+      - "{{BaseURL}}/logon/LogonPoint/xua.html"
+      - "{{BaseURL}}/vpn/xua.html"
+      - "{{BaseURL}}/logon/id009.txt"
+      - "{{BaseURL}}/vpn/id009.txt"
+
+    stop-at-first-match: false
+    matchers-condition: or
+    matchers:
+      # On clean NetScaler, HEAD returns 302 Object Moved Location: /
+      # A 200 OK on HEAD indicates the request bypassed packet engine interception and reached the backend handler
+      - type: dsl
+        name: head-webshell-200-nocache
+        dsl:
+          - 'status_code == 200 && (contains(header, "Content-Length: 0") || contains(header, "no-store, no-cache") || contains(header, "Pragma: no-cache")) && (contains(request, "receiver.min.css") || contains(request, "receiver.v2.min.css") || contains(request, ".deb") || contains(request, ".sig"))'
+
+      - type: dsl
+        name: head-staged-file-present
+        dsl:
+          - 'status_code == 200 && (contains(request, "xua.html") || contains(request, "id009.txt") || contains(request, "insight-new.js"))'
+
+    extractors:
+      - type: kval
+        part: header
+        kval:
+          - content_type
+          - content_length
+          - cache_control
+          - pragma
+          - location
+
+  # -------------------------------------------------------------------------
+  # PASS 3: HTTP OPTIONS Method Probing (Handler method allowance inspection)
+  # -------------------------------------------------------------------------
+  - method: OPTIONS
+    path:
+      - "{{BaseURL}}/logon/LogonPoint/custom/receiver.min.css"
+      - "{{BaseURL}}/vpn/scripts/linux/nsginstaller.deb"
+      - "{{BaseURL}}/logon/LogonPoint/custom/"
+      - "{{BaseURL}}/logon/insight-new.js"
+      - "{{BaseURL}}/logon/LogonPoint/xua.html"
+
+    stop-at-first-match: false
+    matchers-condition: or
+    matchers:
+      # On clean NetScaler, OPTIONS returns 302 Object Moved Location: /
+      # A 200 OK with Allow header indicates Apache method handling on custom webroot paths
+      - type: dsl
+        name: options-handler-anomaly
+        dsl:
+          - 'status_code == 200 && contains(header, "Allow:") && (contains(request, "receiver.min.css") || contains(request, ".deb") || contains(request, "xua.html") || contains(request, "insight-new.js"))'
+
+    extractors:
+      - type: kval
+        part: header
+        kval:
+          - allow
+          - location
+          - server
+          - content_length
