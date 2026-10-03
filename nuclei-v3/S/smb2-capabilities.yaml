@@ -11,18 +11,13 @@ info:
   metadata:
     max-request: 1
     shodan-query: port:445
-    product: dionaea
-    vendor: dionaea
-  tags: js,network,smb,enum,discovery
 
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port);
-    code: |
+  - code: |
       var m = require("nuclei/smb");
       var c = m.SMBClient();
       var response = c.ConnectSMBInfoMode(Host, Port);
-      Export(response);
+      to_json(response);
 
     args:
       Host: "{{Host}}"
@@ -33,4 +28,4 @@ javascript:
         part: response
         json:
           - '.Capabilities | with_entries(select(.value == true)) | keys'
-# digest: 490a00463044022063c444297129f2b3bc0568804afc02215afef4083909cf810e53d172fb2ecd8902201d60c134768aa6be4364139bd891f31cb06156c9d12be4b60497df0f2f9ca68f:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022032f1ad2fe6e37fe78714b48ce33bfb3a8601516f2cb7027484899d324cccab2c0220499ef2328e4529ea34c0b84b2782ceaa9f6a46ec5bb846e5d75bef988126ff8e:922c64590222798bb761d5b6d8e72950

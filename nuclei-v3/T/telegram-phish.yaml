@@ -10,7 +10,7 @@ info:
     - https://telegram.org
   metadata:
     max-request: 1
-  tags: phishing,telegram,osint,discovery
+  tags: phishing,telegram,osint
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"telegram.org")'
-# digest: 490a0046304402206b947d8fed4e9dc786dcc23338b1c012b51ee91b8dcdea11475a600a62e1f5b202205a8bb3cb56a9193e56d15ee891cc90b53c387c71a0e84a16a529af185b20c50f:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022059bc29acc773eef0b94d1884c84e34daed8653ca7cc9d4c0fa95fc1c5f4c485a02206edc53f220cf696fda81e2543719512f65998ac4c89a93d35e0d726d5d5ee33b:922c64590222798bb761d5b6d8e72950

@@ -10,7 +10,7 @@ info:
     - https://putty.org
   metadata:
     max-request: 1
-  tags: phishing,putty,osint,discovery
+  tags: phishing,putty,osint
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"putty.org")'
-# digest: 4a0a00473045022033871aff3f3d903f5b7e5f78ce7e26e263ad0fa11ae6340bcad230a111c1bdea0221008ae49518bdf77dda14b494d13f13b12119cd3a778fd07151f3904dd8d74fe2b0:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220622996b4320966a1f09fd68ed6945f5812b7cb1ffeb52f5738f26b59acf8f2d8022100b710a1585cc6c00e796cf540c680e94a1a4dc0f2a7406bea042b1b43fe65abb5:922c64590222798bb761d5b6d8e72950
