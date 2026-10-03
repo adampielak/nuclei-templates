@@ -10,7 +10,7 @@ info:
     - https://thunderbird.net
   metadata:
     max-request: 1
-  tags: phishing,thunderbird,osint
+  tags: phishing,thunderbird,osint,discovery
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"thunderbird.net")'
-# digest: 4a0a004730450220231db41afb15e483086fd2eb3241aab8418cc63dd8da4efce9a5dd727b285a90022100b4d5eb8d8ff7419991b528cbb392094c2490cac5e96f7db087d00b943e745bd6:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100e7a722273c8eb08410e5d6e547030f4c9350cce8d069309dcba42c786ec6769802201a63f5725af81d49f8ed8e24fc9d05d0e849aedd6f7df3e5c6a617a59d4df5b0:922c64590222798bb761d5b6d8e72950

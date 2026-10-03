@@ -1,21 +1,27 @@
 id: flink-version-detect
+
 info:
-  author: pdteam,milo2012
-  description: Apache Flink Version detection
   name: Apache Flink Version Detect
+  author: pdteam,milo2012
   severity: info
+  description: Apache Flink Version detection
   tags: panel,apache,flink
+
 requests:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - '"flink-version":"(.*?)",'
-    type: regex
-  matchers:
-  - type: word
-    words:
-    - flink-version
-  method: GET
-  path:
-  - '{{BaseURL}}/config'
+  - method: GET
+    path:
+      - '{{BaseURL}}/config'
+
+    matchers:
+      - type: word
+        words:
+          - 'flink-version'
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '"flink-version":"(.*?)",'
+
+

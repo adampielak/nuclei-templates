@@ -9,7 +9,7 @@ info:
   metadata:
     max-request: 2
     shodan-query: port:22
-  tags: js,ssh,network
+  tags: enum,js,ssh,network,discovery
 
 javascript:
   - pre-condition: |
@@ -18,7 +18,7 @@ javascript:
       var m = require("nuclei/ssh");
       var c = m.SSHClient();
       var response = c.ConnectSSHInfoMode(Host, Port);
-      to_json(response);
+      Export(response);
 
     args:
       Host: "{{Host}}"
@@ -42,4 +42,4 @@ javascript:
         name: version
         json:
           - '.ServerID.ProtoVersion'
-# digest: 4a0a00473045022100f2972e441dc35ca755973f70a3ea19ba7fa785b71859e3d3ce9fd936ba353e2f02207969769a6cb8ea912162bff562b6f0f4e65c5af2e837e6104f915bd745b6d6d7:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220062952b5c0a8b1435d83bc9cbf907781497c7d3a941b15963ad0c7876605dd58022100f7abaa4aad4c2724ff99055153f57b893a719aa11db639ad2d54404e46ee7687:922c64590222798bb761d5b6d8e72950

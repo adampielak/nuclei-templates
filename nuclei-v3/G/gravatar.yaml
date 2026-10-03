@@ -1,27 +1,27 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - entry
-  matchers-condition: and
-  method: GET
-  path:
-  - http://en.gravatar.com/profiles/{{user}}.json
-id: gravatar
+id: extract-gravatar-avatars-links
+
 info:
-  author: dwisiswant0
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  description: Gravatar user name information check was conducted.
-  metadata:
-    max-request: 1
-  name: Gravatar User Name Information - Detect
+  name: Gravatar avatars links extractor
+  author: cipher387
   severity: info
-  tags: osint,osint-images,gravatar
-self-contained: true
+  description: Extract Gravatar avatars links from web page body
+  tags: osint,juicy-info
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - 'gravatar.com/avatar/((.|\n)*?)(\s|\"|\]|\,)'
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - 'gravatar.com/avatar/((.|\n)*?)(\s|\"|\]|\,)'
+
+
+#url for test https://stackoverflow.com/users/100297/martijn-pieters

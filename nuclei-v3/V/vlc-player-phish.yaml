@@ -10,7 +10,7 @@ info:
     - https://www.videolan.org
   metadata:
     max-request: 1
-  tags: phishing,vlc-media,osint
+  tags: phishing,vlc-media,osint,discovery
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"videolan.org")'
-# digest: 4b0a00483046022100afea732b25eaa6c2160d1acf071c1bd5ae31ee38c3fe5bfa7d9ad72ffa490e7d022100a55797eed39ee36bf0ea9005bb5c19aa14c0335c1595d4e34bca6addc35ecfac:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220700b9e94bbd0f75423c7985edbdb52d8a5456be7c15eb75607205994ee79ab1b022015d68d210f27d44aa8f12a9c48e51f834bab22f647ae75cb598fc46eb3cb11ad:922c64590222798bb761d5b6d8e72950
