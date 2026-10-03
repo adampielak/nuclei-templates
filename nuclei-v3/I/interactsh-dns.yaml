@@ -1,0 +1,34 @@
+id: interactsh-dns
+
+info:
+  name: Interactsh DNS server - Detect
+  author: darses
+  severity: low
+  description: |
+    Detect Interactsh DNS service. Interactsh is used for Out-of-band Application Security Testing (OAST).
+  metadata:
+    verified: true
+    max-requests: 2
+    vendor: projectdiscovery
+    product: interactsh
+  classification:
+    cpe: cpe:2.3:a:projectdiscovery:interactsh:*:*:*:*:*:*:*:*
+  reference: https://github.com/projectdiscovery/interactsh
+  tags: dns,detect,discovery,interactsh
+
+dns:
+  - name: "oracle.{{FQDN}}"
+    type: A
+
+    matchers:
+      - type: word
+        words:
+          - 192.0.0.192
+
+  - name: "localhost.{{FQDN}}"
+    type: A
+
+    matchers:
+      - type: word
+        words:
+          - 127.0.0.1

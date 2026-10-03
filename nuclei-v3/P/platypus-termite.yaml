@@ -1,36 +1,58 @@
-id: platypus-termite
+id: platypus-detect
 
 info:
-  name: WangYihang Platypus Termite - Detect
-  severity: info
+  name: WangYihang Platypus - Detect
   author: darses
+  severity: info
   description: |
-    WangYihang Platypus Termite C2 implant API download endpoint was detected.
-  metadata:
-    verified: false
-    max-requests: 1
-    vendor: wangyihang
-    product: platypus
+    WangYihang Platypus C2 detected.
   reference:
     - https://github.com/WangYihang/Platypus
-  tags: wangyihang,platypus,termite,c2,detect
+  metadata:
+    verified: true
+    max-requests: 3
+    vendor: wangyihang
+    product: platypus
+    shodan-query:
+      - ssl.cert.subject.cn:"platypus-ingress"
+      - ssl:"Platypus project default"
+  tags: wangyihang,platypus,termite,c2,detect,ssl
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/termite/127.0.0.1"
+ssl:
+  - address: "{{Host}}:{{Port}}"
 
     matchers-condition: and
     matchers:
       - type: word
+        part: subject_cn
         words:
-          - "github.com/WangYihang/Platypus"
+          - "platypus-ingress"
 
       - type: word
-        part: header
+        part: issuer_cn
         words:
-          - "Content-Type: application/octet-stream"
+          - "Platypus project default"
 
-      - type: status
-        status:
-          - 200
+    extractors:
+      - type: json
+        json:
+          - ".subject_an[]"
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/v1/auth/info"
+      - "{{BaseURL}}/termite/127.0.0.1"
+
+    stop-at-first-match: true
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: api
+        dsl:
+          - 'status_code == 200 && contains(content_type, "application/json") && contains(body, "\"product\":\"platypus\"")'
+
+      - type: dsl
+        name: termite
+        dsl:
+          - 'status_code == 200 && contains(content_type, "application/octet-stream") && contains(body, "github.com/WangYihang/Platypus")'

@@ -1,0 +1,40 @@
+id: interactsh-ldap
+
+info:
+  name: Interactsh LDAP server - Detect
+  author: darses
+  severity: low
+  description: |
+    Detect Interactsh LDAP service. Interactsh is used for Out-of-band Application Security Testing (OAST).
+  metadata:
+    verified: true
+    max-requests: 1
+    vendor: projectdiscovery
+    product: interactsh
+    shodan-query: product:"Interactsh LDAP Server"
+  classification:
+    cpe: cpe:2.3:a:projectdiscovery:interactsh:*:*:*:*:*:*:*:*
+  reference: https://github.com/projectdiscovery/interactsh
+  tags: js,ldap,detect,discovery,interactsh
+
+javascript:
+  - code: |
+      let ldap = require('nuclei/ldap');
+      let cfg = new ldap.Config();
+      cfg.Upgrade = true;
+      let client = ldap.Client(Host, Port, cfg);
+      cn = client.Search('(objectinterface=*)', 'cn');
+      Export((cn));
+
+    args:
+      Host: "ldap://{{Host}}"
+      Port: 389
+
+    stop-at-first-match: true
+    matchers:
+      - type: dsl
+        dsl:
+          - "success == true"
+          - "len(resp) != 0"
+          - contains(resp, "cn=interactsh")
+# digest: 4a0a00473045022100b102a1681467c2db09f77e5f3e5c7d8de36ff403ae46418e32b527122f88700802204f460e41bd582cdcab815d1ccacba084aff9c738b1dfb5d2cd17f4df5777b5e0:7a9fe9e61d67fac71b7da5c648e13ad0
