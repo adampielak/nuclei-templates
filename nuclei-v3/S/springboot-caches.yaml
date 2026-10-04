@@ -1,0 +1,35 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - cacheManagers
+  - condition: or
+    part: header
+    type: word
+    words:
+    - application/json
+    - application/vnd.spring-boot.actuator
+    - application/vnd.spring-boot.actuator.v1+json
+    - application/vnd.spring-boot.actuator.v2+json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/caches'
+  - '{{BaseURL}}/actuator/caches'
+  stop-at-first-match: true
+id: springboot-caches
+info:
+  author: ELSFA7110
+  description: The caches endpoint provides access to the application's caches.
+  metadata:
+    max-request: 2
+    verified: true
+  name: Springboot Actuator Caches
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#caches
+  severity: low
+  tags: misconfig,springboot,exposure

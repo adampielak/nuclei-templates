@@ -1,0 +1,35 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - flywayBeans
+  - condition: or
+    part: header
+    type: word
+    words:
+    - application/json
+    - application/vnd.spring-boot.actuator
+    - application/vnd.spring-boot.actuator.v1+json
+    - application/vnd.spring-boot.actuator.v2+json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/flyway'
+  - '{{BaseURL}}/actuator/flyway'
+  stop-at-first-match: true
+id: springboot-flyway
+info:
+  author: ELSFA7110
+  description: This endpoint to retrieve the migrations
+  metadata:
+    max-request: 2
+    verified: true
+  name: Springboot Flyway API
+  reference:
+  - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#flyway
+  severity: low
+  tags: misconfig,springboot,exposure,flyway
