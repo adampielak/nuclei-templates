@@ -1,23 +1,27 @@
 id: venomrat
+
 info:
-  author: pussycat0x
-  metadata:
-    fofa-query: cert.issuer.cn="VenomRAT Server"
-    max-request: 1
-    verified: 'true'
   name: VenomRAT - Detect
-  reference:
-  - https://twitter.com/v0lundr_/status/1727277517659353297
+  author: pussycat0x
   severity: info
-  tags: c2,ir,osint,malware,ssl,venomrat
+  reference:
+    - https://twitter.com/v0lundr_/status/1727277517659353297
+  metadata:
+    verified: "true"
+    max-request: 1
+    fofa-query: cert.issuer.cn="VenomRAT Server"
+  tags: c2,ir,osint,malware,ssl,venomrat,tls,discovery
+
 ssl:
-- address: '{{Host}}:{{Port}}'
-  extractors:
-  - json:
-    - .issuer_cn
-    type: json
-  matchers:
-  - part: issuer_cn
-    type: word
-    words:
-    - VenomRAT Server
+  - address: "{{Host}}:{{Port}}"
+    matchers:
+      - type: word
+        part: issuer_cn
+        words:
+          - "VenomRAT Server"
+
+    extractors:
+      - type: json
+        json:
+          - ".issuer_cn"
+

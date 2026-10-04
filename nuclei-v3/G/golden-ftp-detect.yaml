@@ -1,29 +1,34 @@
 id: golden-ftp-detect
 info:
+  name: Golden FTP Server Pro Service - Detect
   author: pussycat0x
+  severity: info
   description: Golden FTP Server Pro service was detected.
   metadata:
-    max-request: 1
-    shodan-query: Golden FTP Server Pro
     verified: true
-  name: Golden FTP Server Pro Service - Detect
-  severity: info
+    shodan-query: "Golden FTP Server Pro"
+    max-request: 1
   tags: network,ftp,golden,detect,tcp,discovery
+
 tcp:
-- extractors:
-  - group: 1
-    name: version
-    regex:
-    - v([0-9.]+)
-    type: regex
-  host:
-  - '{{Hostname}}'
-  inputs:
-  - data: 0
-    type: hex
-  matchers:
-  - type: word
-    words:
-    - Golden FTP Server Pro
-  port: 21
-  read-size: 1024
+  - inputs:
+      - data: 00000000
+        type: hex
+
+    host:
+      - "{{Hostname}}"
+    port: 21
+    read-size: 1024
+
+    matchers:
+      - type: word
+        words:
+          - "Golden FTP Server Pro"
+
+    extractors:
+      - type: regex
+        group: 1
+        name: version
+        regex:
+          - "v([0-9.]+)"
+

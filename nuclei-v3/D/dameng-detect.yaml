@@ -1,47 +1,41 @@
 id: dameng-detect
 info:
+  name: Dameng Database - Detect
   author: pussycat0x
-  description: 'The Dameng (DMDB) Protocol Enumerator is a lightweight network reconnaissance
-    tool designed to identify and fingerprint Dameng Database (DM/DM7/DM8) servers
-    using their native wire-protocol.
-
-    '
+  severity: info
+  description: |
+    The Dameng (DMDB) Protocol Enumerator is a lightweight network reconnaissance tool designed to identify and fingerprint Dameng Database (DM/DM7/DM8) servers using their native wire-protocol.
   metadata:
     fofa-query: protocol="dameng"
     max-request: 1
     verified: true
-  name: Dameng Database - Detect
-  severity: info
-  tags: network,dameng,detection,protocol
+  tags: dameng,detection,discovery,network,protocol
 javascript:
-- args:
-    Host: '{{Host}}'
-    Port: 5236
-  code: 'let packet = bytes.NewBuffer();
+  - pre-condition: |
+      isPortOpen(Host,Port);
+  - args:
+      Host: '{{Host}}'
+      Port: 5236
+    code: |
+      const c = require("nuclei/net");
+      const cmd = "00000000c8005100000000000000000000000099000000000000000001020000000000000000000000000000000000000000000000000000000000000000000008000000382e312e312e34390040000000068149bbe004a62fb45552831704c802d4d802b4579cb045b3c6100880725ececf148a7c9205047caccadfef5ff264460d11092a3b483bf9d24382dea1dc43e7";
+      let conn = c.Open('tcp', `${Host}:${Port}`);
+      conn.SendHex(cmd);
+      const result = conn.RecvFullString();
+      conn.Close();
+      let versionMatch = result.match(/(\d+\.\d+\.\d+\.\d+)/);
+      if (versionMatch && result.includes(String.fromCharCode(0))) {
+        Export("version", versionMatch[1]);
+        Export("full", result);
+      }
+    extractors:
+      - regex:
+          - (\d+\.\d+\.\d+\.\d+)
+        # digest: 4a0a00473045022100ed9db66c2950c352320fc9278060c7e38583b0b12339806639ebccb589ba017202207d6a27854ac582fedadb73a9e7fbc19e1eed754957ecd7d1409de55cea184b7d:922c64590222798bb761d5b6d8e72950
 
-    const c = require("nuclei/net");
-
-    const cmd = "00000000c8005100000000000000000000000099000000000000000001020000000000000000000000000000000000000000000000000000000000000000000008000000382e312e312e34390040000000068149bbe004a62fb45552831704c802d4d802b4579cb045b3c6100880725ececf148a7c9205047caccadfef5ff264460d11092a3b483bf9d24382dea1dc43e7"
-
-    packet.WriteString(cmd)
-
-    let conn = c.Open(''tcp'', `${Host}:${Port}`);
-
-    conn.SendHex(cmd);
-
-    const result = conn.RecvFullString()
-
-    result
-
-    '
-  extractors:
-  - regex:
-    - (\d+\.\d+\.\d+\.\d+)
-    type: regex
-  matchers:
-  - dsl:
-    - success == true
-    type: dsl
-  pre-condition: 'isPortOpen(Host,Port);
-
-    '
+        type: regex
+    matchers:
+      - dsl:
+          - success == true
+          - version != null
+        type: dsl

@@ -1,23 +1,27 @@
 id: personal-ftp-detect
 info:
+  name: Personal FTP Service - Detect
   author: pussycat0x
+  severity: info
   description: Personal FTP service was detected.
   metadata:
-    max-request: 1
-    shodan-query: Personal FTP Server
     verified: true
-  name: Personal FTP Service - Detect
-  severity: info
+    shodan-query: "Personal FTP Server"
+    max-request: 1
   tags: network,ftp,personal,detect,tcp,discovery
+
 tcp:
-- host:
-  - '{{Hostname}}'
-  inputs:
-  - data: 0
-    type: hex
-  matchers:
-  - type: word
-    words:
-    - Personal FTP Server ready
-  port: 21
-  read-size: 1024
+  - inputs:
+      - data: 00000000
+        type: hex
+
+    host:
+      - "{{Hostname}}"
+    port: 21
+    read-size: 1024
+
+    matchers:
+      - type: word
+        words:
+          - "Personal FTP Server ready"
+

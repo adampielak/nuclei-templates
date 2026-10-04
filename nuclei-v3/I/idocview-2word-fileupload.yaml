@@ -1,25 +1,31 @@
-http:
-- matchers:
-  - part: response
-    type: word
-    words:
-    - '{{md5(file)}}.docx'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/html/2word?url={{file}}'
 id: idocview-2word-fileupload
+
 info:
-  author: DhiyaneshDK
-  metadata:
-    fofa-query: "title==\"\u5728\u7EBF\u6587\u6863\u9884\u89C8 - I Doc View\""
-    max-request: 1
-    verified: true
   name: IDoc View /html/2word - Arbitrary File Upload
+  author: DhiyaneshDK
   severity: high
-  tags: idoc,rce,instrusive,file-upload
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: title=="在线文档预览 - I Doc View"
+  tags: idoc,rce,instrusive,file-upload,vuln
+
 variables:
-  file: '{{to_lower(rand_text_alpha(5))}}'
+  file: "{{to_lower(rand_text_alpha(5))}}"
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/2word?url={{file}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: response
+        words:
+          - "{{md5(file)}}.docx"
+
+      - type: status
+        status:
+          - 200
+

@@ -1,23 +1,27 @@
 id: jd-ftp-detect
 info:
+  name: JD FTP Service - Detect
   author: pussycat0x
+  severity: info
   description: JD FTP service was detected.
   metadata:
-    max-request: 1
-    shodan-query: JD FTP Server Ready
     verified: true
-  name: JD FTP Service - Detect
-  severity: info
+    shodan-query: "JD FTP Server Ready"
+    max-request: 1
   tags: network,ftp,jd,detect,tcp,discovery
+
 tcp:
-- host:
-  - '{{Hostname}}'
-  inputs:
-  - data: 0
-    type: hex
-  matchers:
-  - type: word
-    words:
-    - JD FTP Server Ready
-  port: 21
-  read-size: 1024
+  - inputs:
+      - data: 00000000
+        type: hex
+
+    host:
+      - "{{Hostname}}"
+    port: 21
+    read-size: 1024
+
+    matchers:
+      - type: word
+        words:
+          - "JD FTP Server Ready"
+

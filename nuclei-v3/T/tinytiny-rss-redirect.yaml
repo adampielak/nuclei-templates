@@ -1,31 +1,30 @@
-http:
-- matchers:
-  - part: header
-    regex:
-    - (?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$
-    type: regex
-  - status:
-    - 302
-    - 301
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/public.php?return=http%3a%2f%2finteract.sh%2f&op=login&login=password=&profile=0'
 id: tinytiny-rss-redirect
 info:
+  name: TinyTiny RSS Open Redirect
   author: DhiyaneshDk
-  description: 'Detected an open redirect vulnerability in Tiny Tiny RSS where the
-    return parameter in public.php was abused to redirect users to an attacker-controlled
-    external URL after the authentication flow.
-
-    '
+  severity: low
+  description: |
+    Detected an open redirect vulnerability in Tiny Tiny RSS where the return parameter in public.php was abused to redirect users to an attacker-controlled external URL after the authentication flow.
+  reference:
+    - https://seclists.org/oss-sec/2019/q1/155
   metadata:
     max-request: 1
     shodan-query: html:"Tiny Tiny RSS"
     verified: true
-  name: TinyTiny RSS Open Redirect
-  reference:
-  - https://seclists.org/oss-sec/2019/q1/155
-  severity: low
-  tags: redirect,tiny-tiny,rss
+  tags: redirect,rss,tiny-tiny,vuln
+http:
+  - matchers:
+      - part: header
+        regex:
+          - (?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$
+        type: regex
+      - status:
+          - 302
+          - 301
+        # digest: 4b0a004830460221008e7dd310bc7ace912f32a5eb2f516f14366b0fcb4aa095f660c44a7c9a4f2dc8022100b6c1aeefc0299bbe48c176368890fac6b73cdd49f6c21da114d1c78aee35aa53:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/public.php?return=http%3a%2f%2finteract.sh%2f&op=login&login=password=&profile=0'

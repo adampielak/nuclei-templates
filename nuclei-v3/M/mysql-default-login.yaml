@@ -1,52 +1,40 @@
 id: mysql-default-login
+
 info:
-  author: DhiyaneshDk,pussycat0x,ritikchaddha
-  description: 'A MySQL service was accessed with easily guessed credentials.
-
-    '
-  metadata:
-    max-request: 21
-    shodan-query: port:3306
-    verified: true
   name: MySQL - Default Login
+  author: DhiyaneshDk,pussycat0x,ritikchaddha
   severity: high
-  tags: js,mysql,default-login,network,fuzz
+  description: |
+    A MySQL service was accessed with easily guessed credentials.
+  metadata:
+    verified: true
+    max-request: 21
+    shodan-query: "port:3306"
+  tags: js,mysql,default-login,network,fuzz,enum,vuln
+
 javascript:
-- args:
-    Host: '{{Host}}'
-    Pass: '{{passwords}}'
-    Port: '3306'
-    User: '{{usernames}}'
-  attack: clusterbomb
-  code: 'var m = require("nuclei/mysql");
+  - pre-condition: |
+      isPortOpen(Host,Port);
+    code: |
+      var m = require("nuclei/mysql");
+      var c = m.MySQLClient();
+      c.Connect(Host,Port,User,Pass)
 
-    var c = m.MySQLClient();
+    args:
+      Host: "{{Host}}"
+      Port: "3306"
+      User: "{{usernames}}"
+      Pass: "{{passwords}}"
 
-    c.Connect(Host,Port,Username,Password)
+    payloads:
+      usernames: helpers/wordlists/mysql-users.txt
+      passwords: helpers/wordlists/mysql-passwords.txt
+    attack: clusterbomb
 
-    '
-  matchers:
-  - condition: and
-    dsl:
-    - response == true
-    - success == true
-    type: dsl
-  payloads:
-    passwords:
-    - root
-    - admin
-    - mysql
-    - test
-    - null
-    usernames:
-    - root
-    - admin
-    - mysql
-    - test
-  pre-condition: 'var m = require("nuclei/mysql");
+    matchers:
+      - type: dsl
+        dsl:
+          - "response == true"
+          - "success == true"
+        condition: and
 
-    var c = m.MySQLClient();
-
-    c.IsMySQL(Host, Port);
-
-    '

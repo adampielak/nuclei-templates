@@ -1,117 +1,101 @@
-expression: r0() || r1() || r2() || r3() || r4() || r5() || r6() || r7() || r8() ||
-  r9() || r10() || r11() || r12() || r13() || r14() || r15() ||  r16() || r17()
 id: phpinfo-disclosure
+
 info:
-  author: pdteam,daffainfo,meme-lord,dhiyaneshDK
   name: phpinfo Disclosure
+  author: pdteam,daffainfo,meme-lord,dhiyaneshDK
   severity: low
   verified: true
+
 rules:
   r0:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /phpinfo.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r1:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /php.php
-  r10:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /time.php
-  r11:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /index.php
-  r12:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /temp.php
-  r13:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /old_phpinfo.php
-  r14:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /infos.php
-  r15:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /linusadmin.php
-  r16:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /php-info.php
-  r17:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
-    request:
-      method: GET
-      path: /dashboard/phpinfo.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r2:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /info.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r3:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /infophp.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r4:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /php_info.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r5:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /test.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r6:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /i.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r7:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /asdf.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r8:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /pinfo.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
   r9:
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension')
-      && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
     request:
       method: GET
       path: /phpversion.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r10:
+    request:
+      method: GET
+      path: /time.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r11:
+    request:
+      method: GET
+      path: /index.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r12:
+    request:
+      method: GET
+      path: /temp.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r13:
+    request:
+      method: GET
+      path: /old_phpinfo.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r14:
+    request:
+      method: GET
+      path: /infos.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r15:
+    request:
+      method: GET
+      path: /linusadmin.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r16:
+    request:
+      method: GET
+      path: /php-info.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+  r17:
+    request:
+      method: GET
+      path: /dashboard/phpinfo.php
+    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+
+expression: r0() || r1() || r2() || r3() || r4() || r5() || r6() || r7() || r8() || r9() || r10() || r11() || r12() || r13() || r14() || r15() ||  r16() || r17()
