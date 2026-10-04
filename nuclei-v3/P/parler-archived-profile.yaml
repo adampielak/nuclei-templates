@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-archived,parler-archived-profile,discovery
+  tags: osint,osint-archived,parler-archived-profile
 
 self-contained: true
 
@@ -30,4 +30,5 @@ http:
         part: body
         words:
           - "\"archived_snapshots\": {\"closest\""
-# digest: 4a0a00473045022100c266aae594e0ad841650f9a02c95830d9854b0f08152b11080dcf4c6770ac1f30220562b0343f52a41357473153715477d813712359618a5d9e01adcc6023cac28c8:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a00463044022064bce08426cece023ced29a8884253d8a5fb401112d18895edd21e7c810c28b9022009ec376284a671ebf7f3b6fd7b0bf63f2f416411a518bf71ea1b7c5d24a43e9a:922c64590222798bb761d5b6d8e72950

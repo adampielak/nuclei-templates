@@ -1,34 +1,29 @@
 id: bsdi-ftp-detect
 info:
-  name: BSDI FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: BSDI FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "FTP server (BSDI"
     max-request: 1
+    shodan-query: FTP server (BSDI
+    verified: true
+  name: BSDI FTP Service - Detect
+  severity: info
   tags: network,ftp,bsdi,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "FTP server (BSDI"
-
-    extractors:
-      - type: regex
-        group: 1
-        name: version
-        regex:
-          - " Version ([0-9.A-Z]+)"
-
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - ' Version ([0-9.A-Z]+)'
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - FTP server (BSDI
+  port: 21
+  read-size: 1024

@@ -10,7 +10,7 @@ info:
     - https://roblox.com
   metadata:
     max-request: 1
-  tags: phishing,roblox,osint,discovery
+  tags: phishing,roblox,osint
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"roblox.com")'
-# digest: 4b0a0048304602210089d08d4a614341616e77c1df3539183e9217af32304f25c545e097803049902e022100dd96714de9e85908e71b225f5a3530bc549ad7c015c3680556477dd27fc70ae0:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402202c7369ef7ef272c28a8e6b97f6bf71f64e5013f25d6c5f6862a5062311b541e802207e39b0b24ac7ad591afd9c140e63a4673d44ddd0958fbe48fd8358a9ec7b847e:922c64590222798bb761d5b6d8e72950

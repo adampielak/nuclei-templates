@@ -9,7 +9,6 @@ info:
   reference:
     - https://forum.butian.net/article/243
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)nginxwebui"})
     max-request: 1
     shodan-query: title="nginxwebui"
     fofa-query: title="nginxwebui"
@@ -39,4 +38,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a004730450221009c48041db76a0cb45f9614d46b57899c720eef6c911ba33429cc899fedf212b402201d576775da535c0afd8540f3277080f5961c2363c1384753188612307b0f2ebb:922c64590222798bb761d5b6d8e72950

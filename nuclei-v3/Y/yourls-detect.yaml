@@ -49,4 +49,4 @@ http:
         regex:
           - 'YOURLS<\/a>([ a-z0-9.-]+)'
           - 'content="YOURLS([ 0-9.]+)"'
-
+# digest: 4a0a00473045022100e0287541cdc4e7ff3f10a75b508cd8ea5ce60e233e6ac1f31ae31613eb436ab60220421e6bdf28212631f8f513b1b667b4098fb2b465f9acf45e090f64bb8cf369bf:922c64590222798bb761d5b6d8e72950

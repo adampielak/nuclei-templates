@@ -9,4 +9,3 @@ workflows:
   - template: network/detection/ftp-detect.yaml
     subtemplates:
       - tags: ftp
-

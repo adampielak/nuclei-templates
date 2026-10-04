@@ -8,4 +8,3 @@ workflows:
   - template: network/detection/pgsql-detect.yaml
     subtemplates:
       - tags: pgsql
-

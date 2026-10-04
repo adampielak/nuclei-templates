@@ -1,4 +1,5 @@
 id: runtipi-detect
+
 info:
   name: Runtipi - Detect
   author: rxerium
@@ -9,17 +10,20 @@ info:
     - https://runtipi.io/
     - https://github.com/runtipi/runtipi
   metadata:
+    verified: true
     max-request: 2
+    vendor: runtipi
     product: runtipi
     shodan-query: http.title:"Runtipi"
-    vendor: runtipi
-    verified: true
-  tags: detect,runtipi,self-hosted,tech
+  tags: tech,runtipi,detect,self-hosted
+
 flow: http(1) && http(2)
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -27,13 +31,16 @@ http:
         words:
           - '<title>Runtipi</title>'
         internal: true
+
       - type: status
         status:
           - 200
         internal: true
+
   - method: GET
     path:
       - "{{BaseURL}}/icons/site.webmanifest"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -42,11 +49,13 @@ http:
           - '"name": "Runtipi"'
           - '"short_name": "Runtipi"'
         condition: and
+
       - type: word
         part: header
         words:
           - 'Content-Type: application/manifest+json'
+
       - type: status
         status:
           - 200
-        # digest: 4b0a00483046022100c8db3eb006aa9d49fbdfbd057d91049c81ff0873d52175211f9d1662c12bdb8d0221008e10303f420050642c75750314632bd2070fc6d827869f8df0e0e3458ced0139:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c8db3eb006aa9d49fbdfbd057d91049c81ff0873d52175211f9d1662c12bdb8d0221008e10303f420050642c75750314632bd2070fc6d827869f8df0e0e3458ced0139:922c64590222798bb761d5b6d8e72950

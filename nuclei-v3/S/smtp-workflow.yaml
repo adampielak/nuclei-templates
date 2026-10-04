@@ -8,4 +8,3 @@ workflows:
   - template: network/detection/smtp-detect.yaml
     subtemplates:
       - tags: smtp
-

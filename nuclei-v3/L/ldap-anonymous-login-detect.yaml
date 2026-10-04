@@ -1,4 +1,5 @@
 id: ldap-anonymous-login-detect
+
 info:
   name: LDAP Anonymous Login - Detect
   author: pussycat0x,s0obi
@@ -13,13 +14,10 @@ info:
     max-request: 1
     shodan-query: ldap
     verified: true
-  tags: enum,js,ldap,network,vuln
+  tags: js,network,ldap,enum,vuln
+
 javascript:
-  - args:
-      Host: '{{Host}}'
-      Realm: anonymous
-      TargetPort: '{{Port}}'
-    code: |
+  - code: |
       try {
         let ldap = require('nuclei/ldap');
 
@@ -38,9 +36,14 @@ javascript:
       } catch (e) {
         // ignore errors
       }
-    matchers:
-      - dsl:
-          - success == true
-        # digest: 4b0a00483046022100db26b121212ebbe5215a0ff5d0e719c49d7a0cb384f64817d13bbd482474e9b4022100c09c92084f21c4207a5c432b51eb0d0e08210c43c432cdc99dabab25a6dac982:922c64590222798bb761d5b6d8e72950
 
-        type: dsl
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+      Realm: "anonymous"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "success == true"
+# digest: 4b0a00483046022100db26b121212ebbe5215a0ff5d0e719c49d7a0cb384f64817d13bbd482474e9b4022100c09c92084f21c4207a5c432b51eb0d0e08210c43c432cdc99dabab25a6dac982:922c64590222798bb761d5b6d8e72950

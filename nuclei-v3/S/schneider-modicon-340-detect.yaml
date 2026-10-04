@@ -1,4 +1,5 @@
 id: schneider-modicon-340-detect
+
 info:
   name: Schneider Electric Modicon 340 Series PLC - Detect
   author: biero-el-corridor
@@ -6,31 +7,35 @@ info:
   description: |
     Detected Schneider Electric Modicon 340 series PLCs by identifying the BMX P34 signature via the UMAS protocol over Modbus TCP (port 502).The Modicon 340 series is part of Schneider Electric’s industrial automation product line used in Industrial Control Systems (ICS).
   metadata:
-    shodan-query: port:502 "P34"
     verified: true
-  tags: detect,discovery,ics,modicon,network,schenider
+    shodan-query: port:502 "P34"
+  tags: ics,schenider,modicon,detect,network,discovery
+
 tcp:
-  - host:
-      - '{{Hostname}}'
-    inputs:
-      - data: 000000000005002b0e0200
+  - inputs:
+      - data: "000000000005002b0e0200"
+        type: hex
+        read: 200
         name: info
-        read: 200
+      - data: "000100000004005a0002"
         type: hex
-      - data: 000100000004005a0002
+        read: 200
         name: note
-        read: 200
-        type: hex
-    matchers:
-      - part: note
-        type: word
-        words:
-          - BMX P34
-      - part: info
-        type: word
-        words:
-          - Schneider Electric
-          # digest: 490a004630440220341faaf27672a587bffde3073f992432bbc821dfc29d59fc3766eb3333ecf30702204eb3c2d0214518df1dfb730acd65785bd30d363f48e0f8cbb6ed03b92a549e32:922c64590222798bb761d5b6d8e72950
-    matchers-condition: and
+
+    host:
+      - "{{Hostname}}"
     port: 502
     read-size: 1024
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: note
+        words:
+          - "BMX P34"
+
+      - type: word
+        part: info
+        words:
+          - "Schneider Electric"
+# digest: 490a004630440220341faaf27672a587bffde3073f992432bbc821dfc29d59fc3766eb3333ecf30702204eb3c2d0214518df1dfb730acd65785bd30d363f48e0f8cbb6ed03b92a549e32:922c64590222798bb761d5b6d8e72950

@@ -1,34 +1,29 @@
 id: cleo-vlproxy-ftp-detect
 info:
-  name: Cleo VLProxy FTP Service - Detect
   author: pussycat0x
-  severity: info
   description: Cleo VLProxy FTP service was detected.
   metadata:
-    verified: true
-    shodan-query: "Cleo VLProxy"
     max-request: 1
+    shodan-query: Cleo VLProxy
+    verified: true
+  name: Cleo VLProxy FTP Service - Detect
+  severity: info
   tags: network,ftp,cleo,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Cleo VLProxy"
-
-    extractors:
-      - type: regex
-        group: 1
-        name: version
-        regex:
-          - "VLProxy/([0-9.]+)"
-
+- extractors:
+  - group: 1
+    name: version
+    regex:
+    - VLProxy/([0-9.]+)
+    type: regex
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Cleo VLProxy
+  port: 21
+  read-size: 1024

@@ -25,7 +25,6 @@ http:
 
     redirects: true
     max-redirects: 4
-
     matchers-condition: or
     matchers:
       - type: word
@@ -57,4 +56,4 @@ http:
           - '<!-- ZK v?([0-9.]+) [\d\s\w]+ -->'
           - 'zkau/web/js/zk/zk\.wpd\?v=([0-9.]+)'
           - 'zkau/web/js/zk/zk\.js\?v=([0-9.]+)'
-
+# digest: 490a00463044022018def4f2e102b4d7bfccb4101f58aaf6b2df49c993227ce7898cd11341203b3e022012f3e2204e058edd424652ad08fc9d786fbc4f25a13b29578952336e950e962d:922c64590222798bb761d5b6d8e72950
