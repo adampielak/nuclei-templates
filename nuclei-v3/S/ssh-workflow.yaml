@@ -8,3 +8,4 @@ workflows:
   - template: network/detection/openssh-detect.yaml
     subtemplates:
       - tags: ssh
+

@@ -8,7 +8,7 @@ info:
   reference:
     - https://attackerkb.com/topics/in9sPR2Bzt/cve-2021-44228-log4shell/rapid7-analysis
     - https://www.vmware.com/security/advisories/VMSA-2021-0028.html
- 
+  tags: rce,jndi,log4j,horizon,vmware
 
 requests:
   - raw:

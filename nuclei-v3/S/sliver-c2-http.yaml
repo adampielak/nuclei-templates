@@ -1,0 +1,45 @@
+id: sliver-c2-http
+
+info:
+  name: Bishop Fox Sliver C2 HTTP Listener - Detect
+  author: darses
+  severity: info
+  description: |
+    Detects an exposed Bishop Fox Sliver C2 HTTP/HTTPS listener by verifying both its procedural 404 response profile (zero-byte content length, Cache-Control header, absence of Server/MIME headers) and its characteristic non-RFC-compliant OPTIONS 405 Method Not Allowed response.
+  reference:
+    - https://github.com/BishopFox/sliver
+    - https://howto.thec2matrix.com/c2/sliver
+    - https://twitter.com/Glacius_/status/1731699013873799209
+  metadata:
+    verified: true
+    max-requests: 2
+    vendor: bishopfox
+    product: sliver
+    shodan-query: '"HTTP/1.1 404 Not Found" "Cache-Control: no-store, no-cache, must-revalidate" "Content-Length: 0" -"Server:"'
+  tags: c2,sliver,bishopfox,detect,ir,osint
+
+http:
+  - raw:
+      - |
+        GET /{{rand_text_alphanumeric(8)}} HTTP/1.1
+        Host: {{Hostname}}
+
+      - |
+        OPTIONS / HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code_1 == 404"
+          - "content_length_1 == 0"
+          - "contains(to_lower(header_1), 'cache-control: no-store, no-cache, must-revalidate')"
+          - "!contains(to_lower(header_1), 'server:')"
+          - "!contains(to_lower(header_1), 'pragma:')"
+          - "!contains(to_lower(header_1), 'content-type:')"
+          - "!contains(to_lower(header_1), 'x-content-type-options:')"
+          - "status_code_2 == 405"
+          - "content_length_2 == 0"
+          - "!contains(to_lower(header_2), 'allow:')"
+          - "!contains(to_lower(header_2), 'server:')"
+        condition: and

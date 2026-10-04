@@ -8,3 +8,4 @@ workflows:
   - template: javascript/enumeration/redis/redis-info.yaml
     subtemplates:
       - tags: redis
+

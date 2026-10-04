@@ -1,17 +1,24 @@
 id: sap-netweaver-portal
 
-# SAP Netweaver default creds - SAP*/06071992 or TMSADM/$1Pawd2&
-
 info:
   name: SAP NetWeaver Portal
   author: organiccrap
   severity: info
   tags: panel,sap
 
+  # SAP Netweaver default creds - SAP*/06071992 or TMSADM/$1Pawd2&
+
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/irj/portal"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /irj/portal HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:

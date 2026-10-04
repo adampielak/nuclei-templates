@@ -8,3 +8,4 @@ workflows:
   - template: javascript/enumeration/smb/smb-version-detect.yaml
     subtemplates:
       - tags: smb
+

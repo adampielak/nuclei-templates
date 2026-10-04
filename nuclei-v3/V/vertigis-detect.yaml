@@ -2,7 +2,7 @@ id: vertigis-detect
 
 info:
   name: VertiGIS - Detect
-  author: righettod
+  author: righettod,darses
   severity: info
   description: |
     VertiGIS products was detected.
@@ -10,9 +10,9 @@ info:
     - https://www.vertigis.com/
   metadata:
     verified: true
-    max-request: 9
+    max-requests: 10
     shodan-query: http.title:"vertigis"
-  tags: tech,vertigis,detect,discovery
+  tags: tech,vertigis,detect
 
 http:
   - method: GET
@@ -22,16 +22,27 @@ http:
       - "{{BaseURL}}/FM/GeoManLogin.aspx"
       - "{{BaseURL}}/GEBman/GeoManLogin.aspx"
       - "{{BaseURL}}/Geoportal/synserver"
+      - "{{BaseURL}}/ModuleViewer/"
       - "{{BaseURL}}/vertigisstudio/web/designer/locales/en/translations.json"
       - "{{BaseURL}}/vertigisstudio/search/designer/locales/en/translations.json"
       - "{{BaseURL}}/vertigisstudio/mobile/designer/locales/en/translations.json"
       - "{{BaseURL}}/vertigisstudio/accesscontrol/locales/en/translations.json"
 
     stop-at-first-match: true
+    matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_any(to_lower(body), "<title>vertigis", "welcome to vertigis", "vertigis fm - login", "<title>weboffice landing page" , "vertigis studio app designer", "vertigis studio web designer", "vertigis studio access control")'
-        condition: and
-# digest: 4b0a00483046022100a04939c83d48f6c168d777dc175ebb23c9b721bd14af5b910571dd9cef9fa4e4022100eb0887ad4a373682a9186d877f1014f0e33e46c676cfe30c86a61a04cf189cd6:922c64590222798bb761d5b6d8e72950
+      - type: status
+        status:
+          - 200
+      
+      - type: word
+        words:
+          - "<title>vertigis"
+          - "welcome to vertigis"
+          - "vertigis fm - login"
+          - "<title>weboffice landing page"
+          - "vertigis studio app designer"
+          - "vertigis studio web designer"
+          - "vertigis studio access control"
+          - "vertigisstudio"
+        condition: or

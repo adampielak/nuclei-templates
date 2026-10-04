@@ -4,17 +4,19 @@ info:
   name: Nextcloud Exposed Installation
   author: skeltavik
   severity: high
-  reference:
-    - https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html
   tags: tech,nextcloud,storage
+  reference: https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    redirects: true
-    max-redirects: 2
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
     matchers-condition: and
     matchers:
       - type: word

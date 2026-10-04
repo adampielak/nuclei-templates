@@ -8,3 +8,4 @@ workflows:
   - template: network/detection/pop3-detect.yaml
     subtemplates:
       - tags: pop3
+

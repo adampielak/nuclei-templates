@@ -5,8 +5,6 @@ info:
   author: lu4nx
   severity: high
   tags: network,clickhouse,unauth
-  metadata:
-  mongoid: 0000
 
 network:
   - inputs:
@@ -20,9 +18,8 @@ network:
       - "{{Host}}:9000"
 
     read-size: 100
+
     matchers:
       - type: word
         words:
           - "ClickHouse"
-          - "UTC"
-        condition: and

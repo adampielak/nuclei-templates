@@ -1,0 +1,39 @@
+id: havoc-c2-http
+
+info:
+  name: Havoc C2 HTTP Listener - Detect
+  author: darses
+  severity: info
+  description: |
+    Detects an exposed Havoc C2 HTTP/HTTPS listener and TeamServer by matching characteristic response headers (X-IsHavocFramework: true or X-Havoc: true) configured in default listener profiles (havoc.yaotl). Havoc is a modern, malleable post-exploitation framework with Demon agents created by C5pider.
+  reference:
+    - https://github.com/HavocFramework/Havoc
+    - https://havocframework.com/docs/listeners
+    - https://github.com/montysecurity/C2-Tracker
+  metadata:
+    verified: false
+    max-requests: 1
+    vendor: havocframework
+    product: havoc
+    shodan-query: 'product:"Havoc"'
+  tags: c2,havoc,detect,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 404
+
+      - type: word
+        part: header
+        words:
+          - "X-IsHavocFramework: true"
+          - "X-Havoc: true"
+        condition: or
+        case-insensitive: true

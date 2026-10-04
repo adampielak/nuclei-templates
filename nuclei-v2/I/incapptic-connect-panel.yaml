@@ -4,8 +4,7 @@ info:
   name: IVANTI Incapptic Connect
   author: righettod
   severity: info
-  reference:
-    - https://www.ivanti.com/products/incapptic-connect
+  reference: https://www.ivanti.com/products/incapptic-connect
   metadata:
     shodan-query:
       - http.title:"incapptic"

@@ -1,0 +1,43 @@
+id: adaptix-c2-detect
+
+info:
+  name: AdaptixServer - Detect
+  author: darses
+  severity: info
+  description: |
+    Detects exposed AdaptixServer instances by matching characteristic HTTP response headers (Server: AdaptixC2 or Adaptix-Version:) returned by the server profile. AdaptixC2 is a post-exploitation framework with a Golang teamserver and modular beacon listeners.
+  reference:
+    - https://github.com/Adaptix-Framework/AdaptixC2
+    - https://adaptix-framework.gitbook.io/adaptix-framework/
+  metadata:
+    verified: false
+    max-requests: 2
+    vendor: adaptix-framework
+    product: adaptixc2
+    shodan-query: 'Server: "AdaptixC2"'
+    fofa-query: 'header="Server: AdaptixC2"'
+  tags: c2,adaptix,detect,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "https://{{Hostname}}"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 401
+          - 404
+
+      - type: word
+        part: header
+        words:
+          - "Server: AdaptixC2"
+          - "Adaptix-Version:"
+        condition: or
+        case-insensitive: true

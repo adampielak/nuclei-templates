@@ -10,3 +10,4 @@ workflows:
     subtemplates:
       - template: javascript/misconfiguration/unauth-vnc-server-detect.yaml
       - template: javascript/default-logins/vnc-default-login.yaml
+
