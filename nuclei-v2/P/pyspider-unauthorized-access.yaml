@@ -4,8 +4,7 @@ info:
   name: Pyspider Unauthorized Access
   author: ritikchaddha
   severity: high
-  reference:
-    - https://github.com/ianxtianxt/Pyspider-webui-poc
+  reference: https://github.com/ianxtianxt/Pyspider-webui-poc
   tags: pyspider,unauth
 
 requests:

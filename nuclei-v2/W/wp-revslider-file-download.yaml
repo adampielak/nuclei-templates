@@ -10,7 +10,7 @@ info:
     - https://cxsecurity.com/issue/WLB-2021090129
   metadata:
     google-dork: inurl:/wp-content/plugins/revslider
-  tags: wordpress,wp-plugin,lfi,revslider
+ 
 
 requests:
   - method: GET

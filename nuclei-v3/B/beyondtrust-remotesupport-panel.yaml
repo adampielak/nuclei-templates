@@ -1,34 +1,36 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - condition: and
-    part: body
-    type: word
-    words:
-    - BeyondTrust Remote Support
-    - powered_by_text
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: beyondtrust-remotesupport-panel
-info:
-  author: darses
-  description: 'Detect BeyondTrust Remote Support Panel.
 
-    '
-  metadata:
-    fofa-query:
-    - icon_hash="-694003434"
-    max-requests: 1
-    product: remote_support
-    runzero-match: service["favicon.ico.image.mmh3"] == "-694003434"
-    shodan-query:
-    - http.favicon.hash:-694003434
-    vendor: beyondtrust
-    verified: true
+info:
   name: BeyondTrust Remote Support Panel - Detect
+  author: darses
   severity: info
-  tags: beyondtrust,detect,discovery,panel
+  description: |
+    Detect BeyondTrust Remote Support Panel.
+  metadata:
+    verified: true
+    max-requests: 1
+    shodan-query:
+      - http.favicon.hash:-694003434
+    fofa-query:
+      - icon_hash="-694003434"
+    vendor: BeyondTrust
+    product: Remote Support
+  tags: panel,detect,beyondtrust
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "BeyondTrust Remote Support"
+          - "powered_by_text"
+        condition: and

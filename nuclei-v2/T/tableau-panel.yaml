@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     fofa-dork: 'app="Tableau-Python-Server"'
-  tags: tableau,panel,python
+ 
 
 requests:
   - method: GET

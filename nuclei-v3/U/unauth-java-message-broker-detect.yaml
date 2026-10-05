@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     shodan-query: product:"Java Message Service"
-  tags: network,tcp,jms,openmq,unauth,vuln
+  tags: network,tcp,jms,openmq,unauth
 
 tcp:
   - inputs:
@@ -30,4 +30,4 @@ tcp:
       - type: regex
         regex:
           - "imqbroker ([0-9.]+)"
-# digest: 4a0a0047304502203db0003c1b0606dc3e8bfba3b8ff37c242c2c0b1e602f04b2b36129c50497f05022100fcea782e96984c0adc9f8f0d8251b2cd2d9846b14833cea2a14957e3561aee17:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b0a9022e983f2c6c0e07d4866b1d0155845a511733ec0e7d0857f26120707836022100ea4aa0f5ec777f1f55c0606db6cd9b261ae8ecfb5f26275704d509e77353b417:922c64590222798bb761d5b6d8e72950

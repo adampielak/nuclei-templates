@@ -9,13 +9,11 @@ info:
   reference:
     - https://www.php.net/supported-versions.php
     - https://endoflife.date/php
-  classification:
-    cwe-id: CWE-1104
   metadata:
     verified: true
     max-request: 1
     shodan-query: "X-Powered-By: PHP/"
-  tags: tech,php,eol,discovery
+  tags: tech,php,eol
 
 http:
   - method: GET
@@ -37,4 +35,4 @@ http:
         regex:
           - 'X-Powered-By: PHP/([0-9.]+)'
           - 'Server:.*PHP/([0-9.]+)'
-# digest: 4a0a0047304502204eee68d0737ee74bd5df6418e7c245b4fa9c9c9ab9f7ad51d37969070f7bf0cd022100fa6b8042816b04cae227fac4b00872e3f642a25e6e9f69f509be4ec50b322c4d:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220027824f978184f313710b099dfe8d0f70ee7110a2dddc4aa350da875f160ec1302205330d9a4837caa41c17d134f05397a0493b9cff0fea90b71ef35555dfd9dc435:922c64590222798bb761d5b6d8e72950

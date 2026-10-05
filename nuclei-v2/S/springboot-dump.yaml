@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: low
   description: Performs a thread dump
-  tags: springboot,exposure
+ 
 
 requests:
   - method: GET
@@ -13,7 +13,6 @@ requests:
       - "{{BaseURL}}/dump"
       - "{{BaseURL}}/actuator/dump"
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

@@ -4,7 +4,7 @@ info:
   name: Webpack Sourcemap Disclosure
   author: dhiyaneshDk
   severity: info
-  tags: exposure,files
+ 
 
 requests:
   - method: GET

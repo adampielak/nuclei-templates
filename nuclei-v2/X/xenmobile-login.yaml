@@ -4,8 +4,7 @@ info:
   name: Xenmobile Console Logon
   author: dhiyaneshDK
   severity: info
-  reference:
-    - https://www.exploit-db.com/ghdb/6675
+  reference: https://www.exploit-db.com/ghdb/6675
   tags: panel
 
 requests:

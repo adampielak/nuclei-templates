@@ -1,20 +1,25 @@
 id: sap-web-dispatcher-detection
-
 info:
   name: SAP Web Dispatcher detection
   author: randomstr1ng
-  severity: info
   description: Detection of SAP Web Dispatcher service
+  severity: info
   tags: sap,webserver,proxy
 
 requests:
-  - method: GET
-    redirects: true
-    max-redirects: 2
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    path:
-      - "{{BaseURL}}/inormalydonotexist"
-
+    raw:
+      - |
+        GET /inormalydonotexist HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        
     matchers:
       - type: word
         part: body

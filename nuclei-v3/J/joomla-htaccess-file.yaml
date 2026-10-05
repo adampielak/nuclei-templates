@@ -1,33 +1,35 @@
-id: joomla-htaccess-file
-
 info:
-  name: Joomla! htaccess file disclosure
-  author: oppsec
-  severity: info
-  description: Joomla!  has an htaccess file to store configurations about HTTP config, directory listing, etc.
-  metadata:
-    max-request: 1
-  tags: miscellaneous,misc,joomla,vuln
+  id: joomla-htaccess-file
+  name: Joomla .htaccess File Misconfiguration - Security Risk
+  author: OpenAI
+  description: Template to detect misconfigurations in the Joomla .htaccess file
+  severity: Low
+  classification:
+    country: any
+    tags:
+      - joomla
+      - security
+      - htaccess
+      - misconfiguration
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/htaccess.txt"
+  reference:
+    - https://docs.joomla.org/Security_Checklist_7_-_Administration_Area
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Joomla"
-          - "Open Source Matters. All rights reserved"
-        condition: and
+  matcher-condition: and
 
-      - type: word
-        part: header
-        words:
-          - "text/plain"
+  requests:
+      method: GET
+      path:
+        - "/.htaccess"
+        - "/administrator/.htaccess"
+      description: Attempt to access the Joomla .htaccess file
 
-      - type: status
-        status:
-          - 200
-# digest: 490a0046304402202a327f7b5b6ff0f66fedc4605b12e086c77e567a65d2367d1b45a40e6eaa45410220781cd0aff118292e10cc9d9af4d28732106949c81a4ec0056716001899d6fe85:922c64590222798bb761d5b6d8e72950
+  matchers:
+    - pattern: "Options Indexes"
+      type: body
+      description: Directory indexing option enabled in .htaccess file
+
+  response:
+    - status:
+        - 200
+      description: Successful response status

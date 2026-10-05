@@ -9,11 +9,9 @@ info:
   reference:
     - https://nginx.org/en/docs/http/ngx_http_api_module.html
     - https://x.com/akshaysharma71/status/1825815869953552844
-  classification:
-    cwe-id: CWE-23,CWE-73
   metadata:
     verified: true
-  tags: nginx,fuzz,misconfig,lfi,vuln
+  tags: nginx,fuzz,misconfig,lfi
 
 http:
   - method: GET
@@ -109,4 +107,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205defdb29ac69f680b1acf26f02d7463b6c80de13653a48274a5b23a50c750e710221009a0dba7c96fd9a0e533c7497f4c0034bd751761c6132c7f3236ec0ff74553ba6:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100da1966297d3d5398d0af2daf677a09472a1dd6048750105d56c61849f06776a802202c213f77c56ec5ef2d354a8553b221728029136eed7b4a86114d2274d9df9bef:922c64590222798bb761d5b6d8e72950

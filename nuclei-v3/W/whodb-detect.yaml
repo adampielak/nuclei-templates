@@ -1,5 +1,4 @@
 id: whodb-detect
-
 info:
   name: WhoDB - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://github.com/clidey/whodb
   metadata:
-    verified: true
     max-request: 1
-    vendor: clidey
     product: whodb
     shodan-query: 'http.title:"WhoDB"'
-  tags: whodb,clidey,database,tech,detect
-
+    vendor: clidey
+    verified: true
+  tags: clidey,database,detect,tech,whodb
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -31,8 +28,7 @@ http:
           - '<title>Clidey WhoDB</title>'
           - 'content="WhoDB is the next-generation database explorer"'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f02b9a071c7afbd6e5a54605e9f74af23f6dc3852f461f8325fa3325b92a1f440220790c92ebbe88212071e63b1102c4f60933f6c234d0e5c2fa997ba6dacf922a56:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100f02b9a071c7afbd6e5a54605e9f74af23f6dc3852f461f8325fa3325b92a1f440220790c92ebbe88212071e63b1102c4f60933f6c234d0e5c2fa997ba6dacf922a56:922c64590222798bb761d5b6d8e72950

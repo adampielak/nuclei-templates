@@ -1,5 +1,4 @@
 id: taiga-detect
-
 info:
   name: Taiga - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://taiga.io/
     - https://github.com/taigaio/taiga-front
   metadata:
-    verified: true
     max-request: 1
-    vendor: taigaio
     product: taiga
     shodan-query: 'http.title:"Taiga"'
-  tags: tech,taiga,detect,discovery
-
+    vendor: taigaio
+    verified: true
+  tags: detect,discovery,taiga,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}/"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - '<title>Taiga</title>'
           - 'window.TAIGA_VERSION ='
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 490a0046304402206872b765bc3552d1d41af4e17729b9dccb09c9f9c229bb198d0aa5e3e27f8fdc0220229e6d9711af8552ee538483fcfbd574ddc75c2a284f5b240619ef0040093086:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402206872b765bc3552d1d41af4e17729b9dccb09c9f9c229bb198d0aa5e3e27f8fdc0220229e6d9711af8552ee538483fcfbd574ddc75c2a284f5b240619ef0040093086:922c64590222798bb761d5b6d8e72950

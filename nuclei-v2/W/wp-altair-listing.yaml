@@ -4,7 +4,7 @@ info:
   author: pussycat0x
   severity: info
   description: Searches for directories listing in the altair theme.
-  tags: wordpress,listing,wp-theme
+ 
 
 requests:
   - method: GET

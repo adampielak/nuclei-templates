@@ -4,9 +4,8 @@ info:
   name: Detect SugarCRM Panel
   author: johnk3r
   severity: info
-  metadata:
-    shodan-query: http.title:sugarcrm
-  tags: sugarcrm,panel
+  reference: https://www.shodan.io/search?query=sugarcrm
+ 
 
 requests:
   - method: GET
