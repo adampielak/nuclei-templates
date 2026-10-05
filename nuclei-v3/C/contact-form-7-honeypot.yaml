@@ -1,16 +1,15 @@
 id: wordpress-contact-form-7-honeypot
 
 info:
-  name: Honeypot for Contact Form 7 Detection
+  name: CF7 Apps – [Honeypot and hCAPTCHA for Contact Form 7] Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/contact-form-7-honeypot/
   metadata:
-    max-request: 1
     plugin_namespace: contact-form-7-honeypot
     wpscan: https://wpscan.com/plugin/contact-form-7-honeypot
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402206e8697b321f3b7c421a92a74e57ca49106c5a2ce40943628f57fbd3d803b390702200d1366d680e462e693ccf5b29f23655ffb2e4244140854c3fb1091cbc53f79c6:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221009e86438b6bf514550131dfb641904bedfb36f18251587cec1a28012f684a10eb022100e7abd6d0ab5f3e2a4fdb7ecf44ddb256c7e454974aae8fce9a575acfaaa88731:922c64590222798bb761d5b6d8e72950

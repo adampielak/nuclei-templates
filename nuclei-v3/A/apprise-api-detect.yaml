@@ -1,5 +1,4 @@
 id: apprise-api-detect
-
 info:
   name: Apprise API - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://github.com/caronc/apprise-api
   metadata:
-    verified: true
     max-request: 1
-    vendor: caronc
     product: apprise-api
     shodan-query: http.title:"Apprise API"
-  tags: tech,apprise,api,notification,detect
-
+    vendor: caronc
+    verified: true
+  tags: api,apprise,detect,notification,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}/"
-
     host-redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -29,15 +26,13 @@ http:
         part: body
         regex:
           - '(?i)<title>\s*Apprise API\s*</title>'
-
       - type: word
         part: body
         words:
           - '/s/favicon.ico'
           - 'Apprise Logo'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100afb0066da554b551d3cdfb58a5124eec335f053f58331295e6204138fa3c5025022100bcab57ff9551e8016f9ced88b56c29675fe2b8ba573643323e01b47dfd273ca2:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100afb0066da554b551d3cdfb58a5124eec335f053f58331295e6204138fa3c5025022100bcab57ff9551e8016f9ced88b56c29675fe2b8ba573643323e01b47dfd273ca2:922c64590222798bb761d5b6d8e72950

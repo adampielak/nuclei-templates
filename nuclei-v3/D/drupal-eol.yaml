@@ -1,5 +1,4 @@
 id: drupal-eol
-
 info:
   name: Drupal End-of-Life - Detect
   author: CyberTechSea
@@ -15,24 +14,21 @@ info:
     - https://www.drupal.org/about/core/policies/core-release-cycles/schedule
     - https://www.drupal.org/about/drupal-7/d7eol
   metadata:
-    verified: true
     max-request: 3
     product: drupal
-    vendor: drupal
     shodan-query: http.component:"Drupal"
-  tags: tech,drupal,eol
-
+    vendor: drupal
+    verified: true
+  tags: drupal,eol,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/core/CHANGELOG.txt"
       - "{{BaseURL}}/CHANGELOG.txt"
-
     host-redirects: true
     max-redirects: 2
     stop-at-first-match: true
-
     extractors:
       - type: regex
         part: all
@@ -42,9 +38,8 @@ http:
           - '(?i)Drupal\s+([0-9]+\.[0-9]+(?:\.[0-9]+)?),\s+[0-9]{4}-'
           - '(?i)content=["\x27]?Drupal\s+([0-9]+(?:\.[0-9]+)*)'
           - '(?i)X-Generator:\s*Drupal\s+([0-9]+(?:\.[0-9]+)*)'
-
     matchers:
       - type: dsl
         dsl:
           - "compare_versions(version, '<10.0.0')"
-# digest: 4b0a004830460221009a57f53a2bee19526486b9ea784b9b8133e28657ea445789dcb16aa07355cc19022100eefed539d11d858f002b89f7d16e688bce1928ed96ea62bf9024b2e980add745:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a004830460221009a57f53a2bee19526486b9ea784b9b8133e28657ea445789dcb16aa07355cc19022100eefed539d11d858f002b89f7d16e688bce1928ed96ea62bf9024b2e980add745:922c64590222798bb761d5b6d8e72950

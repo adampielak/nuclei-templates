@@ -1,31 +1,36 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - GeniusOcean - Script Installer
-    - GeniusOcean Installer
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/install/?step=1'
 id: geniusocean-installer
+
 info:
+  name: GeniusOcean Installer Exposure
   author: DhiyaneshDk
-  description: GeniusOcean is susceptible to the Installation page exposure due to
-    misconfiguration.
+  severity: high
+  description: GeniusOcean is susceptible to the Installation page exposure due to misconfiguration.
   metadata:
+    verified: true
     max-request: 1
     shodan-query: html:"GeniusOcean Installer"
-    verified: true
-  name: GeniusOcean Installer Exposure
-  severity: high
-  tags: misconfig,geniusocean,install,exposure
+  tags: misconfig,geniusocean,install,exposure,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/install/?step=1'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'GeniusOcean - Script Installer'
+          - 'GeniusOcean Installer'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'text/html'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100bba9a1516028a5d505c6b7647a9c40f86ef53bf741c80b57243ed2e89b72f8e40220139abe1e4ec504e4a1914805c735f333b9c7d3cc450bd07228d060ba274f0ffc:922c64590222798bb761d5b6d8e72950

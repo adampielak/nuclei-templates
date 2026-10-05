@@ -7,10 +7,9 @@ info:
   reference:
     - https://wordpress.org/plugins/stops-core-theme-and-plugin-updates/
   metadata:
-    max-request: 1
     plugin_namespace: stops-core-theme-and-plugin-updates
     wpscan: https://wpscan.com/plugin/stops-core-theme-and-plugin-updates
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100fdef50d36b5e2f666543ed4277ee521cb44e33a515b5ee007db68315ab900e92022100dd48407b899ca558ca493ebf9d94fca9ba9b04ecd8ad07a19658fd3782d3661f:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220084fb5a05aa9c197aa840e76bbf704dd52006ac123602279295f65ac212f4a9602206230e57ab37988a9a7270eab623bb5791553abba7d98e92b378ca9812221bd87:922c64590222798bb761d5b6d8e72950

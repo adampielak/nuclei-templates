@@ -1,25 +1,34 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Welcome to tengine
-    - Thank you for using tengine
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: default-tengine-page
+
 info:
-  author: pussycat0x
-  metadata:
-    max-request: 1
-    shodan-query: http.title:"Welcome to tengine"
-    verified: true
   name: Tengine Default Page
+  author: pussycat0x
   severity: info
-  tags: tech,tengine,default-page
+  classification:
+    cpe: cpe:2.3:a:alibaba:tengine:*:*:*:*:nginx:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: alibaba
+    product: tengine
+    shodan-query: http.title:"Welcome to tengine"
+  tags: tech,tengine,default-page,discovery
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Welcome to tengine'
+          - 'Thank you for using tengine'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a0047304502201d9cc211c9d88cffdd5e21c89233d154ed4b3c4a2d299ce60a93e00ecad7ea260221008ba4cf3e89d89937546af236f7e9170dcb549927bb77c9417308a033e0bf4df9:922c64590222798bb761d5b6d8e72950

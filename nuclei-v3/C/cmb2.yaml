@@ -7,10 +7,9 @@ info:
   reference:
     - https://wordpress.org/plugins/cmb2/
   metadata:
-    max-request: 1
     plugin_namespace: cmb2
     wpscan: https://wpscan.com/plugin/cmb2
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a0048304602210091950a9818bd8012fbdcbeede025e4b65cf2b94a5b2c099260cafe3edc2aa7c4022100f8f954844f6704994d68228fb63168b5b92d2a61823abc551b612119e0971bc8:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ca20fb0c31b0f4805eca18ddef6bc62984c00020c87c80b70264242df674abe3022100a2672e9ae84e30b8f7c38b9ad0821b363074d8ba0dbb6d482d35251877ecd061:922c64590222798bb761d5b6d8e72950

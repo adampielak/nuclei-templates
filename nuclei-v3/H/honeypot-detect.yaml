@@ -1,30 +1,34 @@
-http:
-- matchers:
-  - regex:
-    - root:[x*]:0:0
-    type: regex
-  - part: body
-    type: word
-    words:
-    - '{{md5({{rand2}})}}'
-  matchers-condition: or
-  method: GET
-  path:
-  - '{{BaseURL}}/?{{rand1}}=../../../../../../../../etc/passwd&{{rand3}}=1%20and%20updatexml(1,concat(0x7e,(select%20md5({{rand2}}))),1)'
 id: honeypot-detect
-info:
-  author: j4vaovo
-  description: 'Honeypot was Detected.
 
-    '
+info:
+  name: Honeypot Detection
+  author: j4vaovo
+  severity: info
+  description: |
+    Honeypot was Detected.
+  reference:
+    - https://github.com/zema1/yarx
   metadata:
     max-request: 1
-  name: Honeypot Detection
-  reference:
-  - https://github.com/zema1/yarx
-  severity: info
-  tags: honeypot,tech,cti
+  tags: honeypot,tech,cti,discovery
 variables:
-  rand1: '{{randstr}}'
-  rand2: '{{rand_int(11111, 99999)}}'
-  rand3: '{{randstr}}'
+  rand1: "{{randstr}}"
+  rand2: "{{rand_int(11111, 99999)}}"
+  rand3: "{{randstr}}"
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?{{rand1}}=../../../../../../../../etc/passwd&{{rand3}}=1%20and%20updatexml(1,concat(0x7e,(select%20md5({{rand2}}))),1)"
+
+    matchers-condition: or
+    matchers:
+      - type: regex
+        regex:
+          - "root:[x*]:0:0"
+
+      - type: word
+        part: body
+        words:
+          - '{{md5({{rand2}})}}'
+# digest: 4a0a0047304502201bce97d6bdb3801a67bb70fd8e8d0829cc58744ad075a9ddf685a47c939095ee022100def754776660ec806a71886d900af8a1ff5472d04578012066c1aa158f0b1ae6:922c64590222798bb761d5b6d8e72950

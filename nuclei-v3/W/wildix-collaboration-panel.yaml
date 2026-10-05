@@ -1,29 +1,32 @@
-http:
-- host-redirects: true
-  matchers:
-  - part: server
-    type: word
-    words:
-    - wildix
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: wildix-collaboration-panel
+
 info:
+  name: Wildix Collaboration Panel - Detect
   author: rxerium
+  severity: info
+  description: |
+    Wildix Collaboration login panel was detected.
+  reference:
+    - https://www.wildix.com/product/collaboration-ucc-platform/#
   classification:
     cwe-id: CWE-200
-  description: 'Wildix Collaboration login panel was detected.
-
-    '
   metadata:
     max-request: 1
-    runzero-match: service["favicon.ico.image.mmh3"] == "-1295577382"
-    shodan-query: http.favicon.hash:-1295577382
     verified: true
-  name: Wildix Collaboration Panel - Detect
-  reference:
-  - https://www.wildix.com/product/collaboration-ucc-platform/#
-  severity: info
+    shodan-query: http.favicon.hash:-1295577382
   tags: panel,login,wildix,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers:
+      - type: word
+        part: server
+        words:
+          - "wildix"
+# digest: 490a00463044022010f7fda2b1c71c89675b666829fc32a359c2d3aeeedd56d5957fe1bcb5bc02f502201b92f643404e06b1ff552b288fddd68c2223feebf34274666994333ce0e036e5:922c64590222798bb761d5b6d8e72950

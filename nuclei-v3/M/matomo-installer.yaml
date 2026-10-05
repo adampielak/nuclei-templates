@@ -1,30 +1,40 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Matomo
-    - Installation status
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: matomo-installer
+
 info:
-  author: DhiyaneshDk
-  description: Matomo is susceptible to the Installation page exposure due to misconfiguration.
-  metadata:
-    max-request: 1
-    shodan-query: title:"Matomo"
-    verified: true
   name: Matomo Installer Exposure
+  author: DhiyaneshDk
   severity: high
-  tags: misconfig,matomo,install
+  description: Matomo is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: matomo
+    product: matomo
+    shodan-query: title:"Matomo"
+  tags: misconfig,matomo,install,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Matomo"
+          - "Installation status"
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100d0db0c16ba9046ce33530fef1615b874a45d42cef5c19e408ad11c2e1adf8fa2022100bf7516fdda0de5c789a28c5a4703cf92477f1ecaed16ee43216eb85b86ce8dcd:922c64590222798bb761d5b6d8e72950

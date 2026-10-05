@@ -1,25 +1,33 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>KnowledgeTree Installer
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/setup/wizard/'
 id: knowledgetree-installer
+
 info:
-  author: ritikchaddha
-  description: KnowledgeTree is susceptible to the Installation page exposure due
-    to misconfiguration.
-  metadata:
-    max-request: 1
-    shodan-query: title:"KnowledgeTree Installer"
-    verified: true
   name: KnowledgeTree Installer Exposure
+  author: ritikchaddha
   severity: high
-  tags: misconfig,knowledgetree,install,exposure
+  description: KnowledgeTree is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:knowledgetree:knowledgetree:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: knowledgetree
+    product: knowledgetree
+    shodan-query: title:"KnowledgeTree Installer"
+  tags: misconfig,knowledgetree,install,exposure,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/setup/wizard/'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>KnowledgeTree Installer'
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100c1198a92eaf68d1b4bb589536d8323ae27e6a902391219ebc4ae09bc530213fe022100827dcc6230ecf51487837f2199cec0dacb6dab7c1ddc351339fae78a0857d803:922c64590222798bb761d5b6d8e72950
