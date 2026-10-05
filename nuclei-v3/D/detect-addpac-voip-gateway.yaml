@@ -7,8 +7,6 @@ info:
   reference:
     - http://www.addpac.com/addpac_eng2/down.php?file=505_f16.pdf
   tags: network,addpac,apos,voip
-  metadata:
-  mongoid: 0000
 
 network:
   - inputs:

@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/woocommerce-pdf-invoices-packing-slips/
   metadata:
+    max-request: 1
     plugin_namespace: woocommerce-pdf-invoices-packing-slips
     wpscan: https://wpscan.com/plugin/woocommerce-pdf-invoices-packing-slips
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a004830460221008ee1f62a16d7da082e632d5f07dee2aa2eb0fb9aefa33857d549ff7ed780692a022100f83cc0cb795f39fa021453f3fd041f960f82f48fa05da154912ff31e6ce78b93:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402207a2b5a998ac7abceb3c89e7dfd7f8309b0fa1572869a7a5dfd92711bcf4f9f36022065c99809799d55e76081e3553cefdaf4166a6420b4267e22b7524419618edfb2:922c64590222798bb761d5b6d8e72950

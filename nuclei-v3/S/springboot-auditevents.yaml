@@ -9,16 +9,13 @@ info:
     - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 2
+    verified: true
     shodan-query: title:"Eureka"
-    product: spring_boot
-    vendor: vmware
-  tags: misconfig,springboot,exposure,vuln
+  tags: misconfig,springboot,exposure
 
 http:
   - method: GET
@@ -27,7 +24,6 @@ http:
       - "{{BaseURL}}/actuator/auditevents"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -46,4 +42,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bbf7532438aad846596dc7528ff958ba72b1d93dd1486db03945fb18933c8afb022100969cc5b7536661c2aaf3d65a02908841977598e38ea01d1daa1d4a1ee1a09a00:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/02/06

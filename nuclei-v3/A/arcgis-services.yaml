@@ -7,19 +7,13 @@ info:
   description: Check for the existence of the "/arcgis/rest/services" path on an ArcGIS server.
   reference:
     - https://enterprise.arcgis.com/en/
-  classification:
-    cpe: cpe:2.3:a:esri:arcgis_server:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     vendor: esri
     product: arcgis_server
-    shodan-query:
-      - title:"ArcGIS"
-      - http.title:"arcgis"
-    fofa-query: title="arcgis"
-    google-query: intitle:"arcgis"
-  tags: panel,arcgis,rest,api,detect,esri,discovery
+    shodan-query: title:"ArcGIS"
+  tags: panel,arcgis,rest,api,detect
 
 http:
   - method: GET
@@ -44,4 +38,4 @@ http:
         group: 1
         regex:
           - 'Current Version:\s*<\/b>\s*([0-9.]+)'
-# digest: 4b0a00483046022100a1b7ca12379bd11ac5198cb45f73acfdbda8c1270bc20b748eb86dddb6d75652022100dc6a432ecd6d01a1c3331697e94601265e90d831b25a13fb865cbb061efc2cbe:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a098cf3b3472bbc94ecc5e01a30e81321252b1e2aaa9dfd3fa2dbe15f76ac46002210087775392928656c8ed94592b4188564aa740aac93cedf497be32b3995c610e71:922c64590222798bb761d5b6d8e72950

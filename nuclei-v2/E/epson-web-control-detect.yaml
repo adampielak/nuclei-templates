@@ -1,24 +1,21 @@
 id: epson-web-control-detect
+
 info:
   name: Epson Printer
   author: pussycat0x
   severity: info
-  reference: https://www.exploit-db.com/ghdb/6873
-  tags: iot,printer,panel,unauth
+  description: An Epson printer web panel was discovered.
+  reference:
+    - https://www.exploit-db.com/ghdb/6873
+  classification:
+    cwe-id: CWE-200
+  tags: iot,printer,panel,unauth,epson
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/home"
 
-    raw:
-      - |
-        GET /cgi-bin/home HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -31,3 +28,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2022/03/24
