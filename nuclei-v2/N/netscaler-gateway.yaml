@@ -1,23 +1,24 @@
 id: netscaler-gateway
 
 info:
-  name: Netscaler gateway
+  name: Netscaler Gateway
   author: joeldeleep
   severity: info
-  tags: panel
+  description: Citrix NetScaler is an application delivery controller that improves the delivery speed and quality of applications to an end user.
+  reference:
+    - https://stack.watch/product/citrix/netscaler-gateway/
+  classification:
+    cwe-id: CWE-200
+  remediation: Ensure proper access.
+  tags: panel,netscaler
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /vpn/index.html HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+  - method: GET
+    path:
+      - "{{BaseURL}}/vpn/index.html"
     matchers:
       - type: word
         words:
           - <title>Netscaler Gateway</title>
+
+# Enhanced by mp on 2022/02/09

@@ -1,19 +1,14 @@
 id: alumni-management-sqli
 
 info:
-  name: Alumni Management System 1.0 - SQL Injection
+  name: Alumni Management System 1.0 - SQLi Authentication Bypass
   author: arafatansari
-  severity: critical
+  severity: high
   description: |
-    Alumni Management System 1.0 contains a SQL injection vulnerability via admin/login in the username parameter. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+    Alumni Management System Admin Login page can be bypassed with a simple SQLi to the username parameter.
   reference:
     - https://www.exploit-db.com/exploits/48883
-    - https://nvd.nist.gov/vuln/detail/CVE-2020-29214
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10.0
-    cwe-id: CWE-89
-  tags: sqli,auth-bypass,cms,edb,alumni
+  tags: alumni,sqli,auth-bypass,cms
 
 requests:
   - raw:
@@ -47,5 +42,3 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/09/28

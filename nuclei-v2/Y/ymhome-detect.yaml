@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     fofa-query: app="一米OA"
- 
+  tags: ymhome,tech
 
 requests:
   - method: GET

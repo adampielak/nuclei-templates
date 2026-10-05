@@ -1,36 +1,32 @@
-id: moodle-version
-
-info:
-  name: Moodle Version
-  author: gtrrnr, metascan
-  severity: info
-  description: Discover Moodle version.
-  tags: misc,moodle
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/lib/upgrade.txt"
+- extractors:
+  - group: 1
+    regex:
+    - 'especially for developers.+
 
-    matchers-condition: and
-    matchers:
 
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        part: header
-        words:
-          - "text/plain"
-
-      - type: word
-        words:
-          - "new my moodle and profiles API"
-        condition: and
-
-    extractors:
-      - type: regex
-        group: 1
-        regex:
-          - "especially for developers.+\n\n=== *([0-9.]+) *==="
+      === *([0-9.]+) *==='
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: header
+    type: word
+    words:
+    - text/plain
+  - condition: and
+    type: word
+    words:
+    - new my moodle and profiles API
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/lib/upgrade.txt'
+id: moodle-version
+info:
+  author: gtrrnr, metascan
+  description: Discover Moodle version.
+  name: Moodle Version
+  severity: info
+  tags: misc,moodle

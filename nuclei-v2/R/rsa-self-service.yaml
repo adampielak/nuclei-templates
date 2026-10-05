@@ -4,19 +4,12 @@ info:
   name: Detect RSA Self-Service Panel
   author: PR3R00T
   severity: info
-  tags: panel
+  tags: panel,rsa
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /console-selfservice/SelfService.do HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+  - method: GET
+    path:
+      - "{{BaseURL}}/console-selfservice/SelfService.do"
     matchers-condition: and
     matchers:
       - type: word

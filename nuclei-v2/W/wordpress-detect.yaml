@@ -4,9 +4,9 @@ info:
   name: WordPress Detection
   author: pdteam
   severity: info
- 
   metadata:
     shodan-query: http.component:"WordPress"
+  tags: tech,wordpress
 
 requests:
   - method: GET

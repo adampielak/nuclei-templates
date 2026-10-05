@@ -1,31 +1,41 @@
 id: liveview-axis-camera
 
 info:
-  name: Live view AXIS Network Camera
-  author: dhiyaneshDK
+  name: Live View AXIS Network Camera
+  author: dhiyaneshDK,f1she3
   severity: info
-  reference: https://www.exploit-db.com/ghdb/6843
-  tags: iot
+  reference:
+    - https://www.exploit-db.com/ghdb/6843
+  tags: iot,axis,network
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - '{{BaseURL}}/view/viewer_index.shtml'
+      - '{{BaseURL}}/pics/logo_70x29px.gif'
 
-    raw:
-      - |
-        GET /view/viewer_index.shtml HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
-    matchers-condition: and
+    redirects: true
+    max-redirects: 2
+    stop-at-first-match: true
+    matchers-condition: or
     matchers:
-      - type: word
-        words:
-          - 'Live view  - AXIS'
-      - type: status
-        status:
-          - 200
+      - type: dsl
+        name: stream-view
+        dsl:
+          - 'contains(tolower(body), "live view  - axis")'
+          - 'contains(tolower(body), "live view - axis")'
+        condition: or
+
+      - type: dsl
+        name: logo
+        dsl:
+          - 'status_code == 200'
+          - '"1106649083" == mmh3(base64_py(body))'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - 'AXIS (.*) Network Camera</title>'

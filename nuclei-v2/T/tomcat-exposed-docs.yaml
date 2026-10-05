@@ -4,7 +4,9 @@ info:
   name: Tomcat exposed docs
   author: Podalirius
   severity: info
-  tags: tomcat,apache,remote,services
+  metadata:
+    shodan-query: title:"Apache Tomcat"
+  tags: version,tomcat,docs
 
 requests:
   - method: GET
