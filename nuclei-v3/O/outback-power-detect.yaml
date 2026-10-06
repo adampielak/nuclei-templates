@@ -1,4 +1,5 @@
 id: outback-power-detect
+
 info:
   name: OutBack Power Mate3s Gateway - Detect
   author: rxerium
@@ -8,25 +9,26 @@ info:
   reference:
     - https://www.outbackpower.com/outback-products/communications/detail/mate3s
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Outback Power"})
     max-request: 1
-    product: mate3s
+    verified: true
     shodan-query: http.title:"Outback Power"
     vendor: outback-power
-    verified: true
-  tags: detect,energy,ics,outback,panel,scada,solar,tech
-http:
-  - host-redirects: true
-    matchers:
-      - condition: and
-        # digest: 4a0a00473045022100cf7f7aa2aa7dbb0ccb8776d6924f672e5f5321436a2f7252da870047070de33f022054152889f04a3f362a8574f995aac098672421bcb34fa7fbb2c8990c21b89d8e:922c64590222798bb761d5b6d8e72950
+    product: mate3s
+  tags: tech,panel,outback,ics,solar,energy,scada,detect
 
-        dsl:
-          - status_code == 200
-          - contains_all(body, "status_tab", "meters_tab")
-          - contains_any(body, "<title>Outback Power</title>", "outbackpower.com")
-        type: dsl
-    max-redirects: 2
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}'
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_all(body, "status_tab", "meters_tab")'
+          - 'contains_any(body, "<title>Outback Power</title>", "outbackpower.com")'
+        condition: and
+# digest: 4a0a00473045022100cf7f7aa2aa7dbb0ccb8776d6924f672e5f5321436a2f7252da870047070de33f022054152889f04a3f362a8574f995aac098672421bcb34fa7fbb2c8990c21b89d8e:922c64590222798bb761d5b6d8e72950

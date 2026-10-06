@@ -7,13 +7,13 @@ info:
   description: |
     Detect SimpleSAMLphp.
   metadata:
-    max-requests: 5
+    max-request: 4
     vendor: simplesamlphp
     product: simplesamlphp
     shodan-query:
       - http.favicon.hash:-556981179
       - "Set-Cookie: SimpleSAMLSessionID="
-  tags: detect,simplesaml,tech,auth
+  tags: detect,simplesaml,tech
 
 flow: http(1) || http(2)
 
