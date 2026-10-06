@@ -1,0 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"domain"'
+    - '"rank"'
+    - '"url"'
+  method: GET
+  path:
+  - https://host.io/api/full/facebook.com?token=${{token}}
+id: api-host-io
+info:
+  author: daffainfo
+  description: Domains Data API for Developers
+  metadata:
+    max-request: 1
+  name: host.io API Test
+  reference:
+  - https://host.io/docs
+  - https://github.com/daffainfo/all-about-apikey/tree/main/host-io
+  severity: info
+  tags: token-spray,hostio
+self-contained: true

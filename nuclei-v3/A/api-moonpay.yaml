@@ -1,0 +1,21 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"accountId":'
+  method: GET
+  path:
+  - https://api.moonpay.com/v3/currencies/btc/buy_quote?apiKey={{token}}&baseCurrencyAmount=1
+id: api-moonpay
+info:
+  author: 0ri2N
+  metadata:
+    max-request: 1
+  name: MoonPay API Test
+  reference:
+  - https://dashboard.moonpay.com/getting_started
+  severity: info
+  tags: token-spray,moonpay,cryptocurrencies
+self-contained: true

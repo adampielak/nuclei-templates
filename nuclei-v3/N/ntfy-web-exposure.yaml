@@ -1,27 +1,30 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>ntfy web</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/settings'
 id: ntfy-web-exposure
-info:
-  author: DhiyaneshDk
-  description: 'Publicly exposed NTFY web interface allowing unauthorized publish
-    or subscribe access.
 
-    '
+info:
+  name: NTFY Web - Exposure
+  author: DhiyaneshDk
+  severity: medium
+  description: |
+    Publicly exposed NTFY web interface allowing unauthorized publish or subscribe access.
   metadata:
+    verified: true
     max-request: 1
     shodan-query: html:"ntfy.sh"
-    verified: true
-  name: NTFY Web - Exposure
-  severity: medium
   tags: exposure,ntfy,web,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/settings"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>ntfy web</title>"
+
+      - type: status
+        status:
+          - 200
+

@@ -1,43 +1,41 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - '"builds"'
-    - '"uri"'
-    - '"lastStarted"'
-  - condition: or
-    part: content_type
-    type: word
-    words:
-    - application/json
-    - application/vnd.org.jfrog
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/artifactory/api/build'
 id: jfrog-artifactory-build-exposure
 info:
+  name: JFrog Artifactory Build - Exposure
   author: theamanrawat
-  description: 'Detected exposure of build information in JFrog Artifactory via unauthenticated
-    API endpoints. Access to these endpoints may disclose sensitive data such as build
-    names, numbers, CI/CD pipeline details, artifact paths, and internal infrastructure
-    information.
-
-    '
+  severity: medium
+  description: |
+    Detected exposure of build information in JFrog Artifactory via unauthenticated API endpoints. Access to these endpoints may disclose sensitive data such as build names, numbers, CI/CD pipeline details, artifact paths, and internal infrastructure information.
+  reference:
+    - https://jfrog.com/help/r/jfrog-rest-apis/builds
+    - https://jfrog.com/artifactory/
   metadata:
+    runzero-match: service["product"] contains "JFrog:Artifactory"
     fofa-query: title="Artifactory"
     max-request: 1
-    runzero-match: service["product"] contains "JFrog:Artifactory"
     shodan-query: http.title:"Artifactory"
     verified: true
-  name: JFrog Artifactory Build - Exposure
-  reference:
-  - https://jfrog.com/help/r/jfrog-rest-apis/builds
-  - https://jfrog.com/artifactory/
-  severity: medium
-  tags: jfrog,artifactory,exposure,misconfig,cicd
+  tags: artifactory,cicd,exposure,jfrog,misconfig,vuln
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '"builds"'
+          - '"uri"'
+          - '"lastStarted"'
+      - condition: or
+        part: content_type
+        type: word
+        words:
+          - application/json
+          - application/vnd.org.jfrog
+      - status:
+          - 200
+        # digest: 4a0a004730450220475e5dfde4cb291bcfb197fc5ca26b7014294d4f87ec91502394f98152dcbd95022100d18ea931d7cb02223aa059d016324e0d69babd3500d9d47dd85b2aebb0726639:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/artifactory/api/build'

@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - yith-woocommerce-wishlist
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/yith-woocommerce-wishlist/includes/class-yith-wcwl.php'
-  - '{{BaseURL}}/wp-content/plugins/yith-woocommerce-wishlist/includes/class-yith-wcwl-frontend.php'
-  - '{{BaseURL}}/wp-content/plugins/yith-woocommerce-wishlist/includes/functions-yith-wcwl.php'
-  stop-at-first-match: true
 id: wp-yith-woocommerce-wishlist-fpd
 info:
+  name: WordPress YITH WooCommerce Wishlist - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress YITH WooCommerce Wishlist plugin is vulnerable to full path
-    disclosure via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress YITH WooCommerce Wishlist plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/yith-woocommerce-wishlist/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/yith-woocommerce-wishlist/"})
     fofa-query: body="/wp-content/plugins/yith-woocommerce-wishlist/"
     framework: wordpress
     max-request: 3
     product: yith-woocommerce-wishlist
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/yith-woocommerce-wishlist/"
     vendor: yithemes
     verified: true
-  name: WordPress YITH WooCommerce Wishlist - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/yith-woocommerce-wishlist/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,yith,woocommerce,wishlist,exposure
+  tags: exposure,fpd,vuln,wishlist,woocommerce,wordpress,wp,wp-plugin,yith
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - yith-woocommerce-wishlist
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 4a0a00473045022100c2443a726d19cf22b356a27e237cbe73c1ba592f3749c54c778239122587267a02202657314fab9fa24f195dc01599a92f285ab7e568a1edbb107a6ef43ad80fa3cd:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/yith-woocommerce-wishlist/includes/class-yith-wcwl.php'
+      - '{{BaseURL}}/wp-content/plugins/yith-woocommerce-wishlist/includes/class-yith-wcwl-frontend.php'
+      - '{{BaseURL}}/wp-content/plugins/yith-woocommerce-wishlist/includes/functions-yith-wcwl.php'
+    stop-at-first-match: true

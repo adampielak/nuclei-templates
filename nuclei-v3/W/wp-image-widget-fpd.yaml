@@ -1,31 +1,28 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "Fatal error", "Uncaught Error", "image-widget")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/plugins/image-widget/image-widget.php'
 id: wp-image-widget-fpd
 info:
+  name: Image Widget - Full Path Disclosure
   author: theamanrawat
-  description: 'Image Widget WordPress plugin contains a full path disclosure vulnerability
-    due to improper access restrictions in its source files, allowing unauthenticated
-    attackers to retrieve full server paths and aiding exploitation.
-
-    '
-  impact: 'Attackers can obtain sever file paths, aiding in further exploitation of
-    the website.
-
-    '
+  severity: low
+  description: |
+    Image Widget WordPress plugin contains a full path disclosure vulnerability due to improper access restrictions in its source files, allowing unauthenticated attackers to retrieve full server paths and aiding exploitation.
+  impact: |
+    Attackers can obtain sever file paths, aiding in further exploitation of the website.
+  reference:
+    - https://wordpress.org/plugins/image-widget/
   metadata:
     max-requests: 1
     publicwww-query: /wp-content/plugins/image-widget/
     verified: true
-  name: Image Widget - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/image-widget/
-  severity: low
-  tags: debug,wordpress,wp,wp-plugin,image-widget,fpd
+  tags: debug,fpd,image-widget,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100c6113a1f798ef628fd87de84879bc849dcecd4751b4a8634826a40ea1211854902202957cd1ba1426a97a5ec1d891cf33d0df0dfb1ac544092f468336a7d75d66647:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains_all(body, "Fatal error", "Uncaught Error", "image-widget")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/plugins/image-widget/image-widget.php'

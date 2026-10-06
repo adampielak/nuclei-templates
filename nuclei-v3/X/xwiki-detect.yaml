@@ -1,36 +1,50 @@
-http:
-- extractors:
-  - group: 1
-    regex:
-    - <html.*?data-xwiki-page="(.*?)"
-    type: regex
-  host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200 || status_code == 401
-    - contains(body, "xwikiplatformversion")
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/xwiki/'
-  stop-at-first-match: true
 id: xwiki-detect
-info:
-  author: matejsmycka
-  description: 'XWiki Platform was discovered.
 
-    '
-  metadata:
-    fofa-query: body="data-xwiki-reference"
-    max-request: 2
-    product: xwiki
-    shodan-query: html:"data-xwiki-reference"
-    vendor: xwiki
-    verified: true
+info:
   name: XWiki - Detection
+  author: darses
   severity: info
-  tags: xwiki,detect,tech
+  description: |
+    XWiki Platform was detected.
+  reference:
+    - https://www.xwiki.org/
+  metadata:
+    verified: true
+    max-requests: 1
+    vendor: xwiki
+    product: xwiki
+    shodan-query:
+      - http.favicon.hash:831700033
+      - http.html:"data-xwiki"
+    fofa-query:
+      - icon_hash="831700033"
+      - body="data-xwiki"
+  tags: xwiki,tech,detect
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 3
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "xwikiplatformversion"
+          - "data-xwiki"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+          - 401
+
+    extractors:
+      - type: regex
+        group: 1
+        regex:
+          - 'xwikiplatformversion">\s*<a[^>]+>\s*([\w\d\s\.\-]+?)\s*</a>'

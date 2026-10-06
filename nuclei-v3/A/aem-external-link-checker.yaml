@@ -1,36 +1,31 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - <title>External Link Checker</title>
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/etc/linkchecker.html'
+  - '{{BaseURL}}/var/linkchecker.html'
+  stop-at-first-match: true
 id: aem-external-link-checker
-
 info:
-  name: Adobe AEM External Link Checker Exposure
   author: dhiyaneshDk
-  severity: unknown
-  reference:
-    - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
   metadata:
     max-request: 2
     shodan-query:
-      - http.title:"AEM Sign In"
-      - http.component:"Adobe Experience Manager"
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  name: Adobe AEM External Link Checker Exposure
+  reference:
+  - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  severity: unknown
   tags: misconfig,aem,adobe,exposure
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/etc/linkchecker.html"
-      - "{{BaseURL}}/var/linkchecker.html"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>External Link Checker</title>'
-
-      - type: word
-        part: header
-        words:
-          - text/html
-
-      - type: status
-        status:
-          - 200

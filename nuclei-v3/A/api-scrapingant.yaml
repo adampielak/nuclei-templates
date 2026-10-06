@@ -1,0 +1,35 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"content"'
+    - '"cookies"'
+    - '"status_code"'
+  raw:
+  - 'POST https://api.scrapingant.com/v1/general HTTP/1.1
+
+    Host: api.scrapingant.com
+
+    x-api-key: {{token}}
+
+    Content-Type: application/json
+
+
+    {"url": "https://example.com"}
+
+    '
+id: api-scrapingant
+info:
+  author: daffainfo
+  description: Headless Chrome scraping with a simple API
+  metadata:
+    max-request: 1
+  name: ScrapingAnt API Test
+  reference:
+  - https://docs.scrapingant.com/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/scrapingant
+  severity: info
+  tags: token-spray,scrapingant
+self-contained: true

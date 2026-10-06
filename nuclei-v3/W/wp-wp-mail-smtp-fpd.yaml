@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - wp-mail-smtp
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wp-mail-smtp/src/WPMailSMTP.php'
-  - '{{BaseURL}}/wp-content/plugins/wp-mail-smtp/vendor/autoload.php'
-  - '{{BaseURL}}/wp-content/plugins/wp-mail-smtp/src/Core.php'
-  stop-at-first-match: true
 id: wp-wp-mail-smtp-fpd
 info:
+  name: WordPress WP Mail SMTP - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress WP Mail SMTP plugin is vulnerable to full path disclosure
-    via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress WP Mail SMTP plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/wp-mail-smtp/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/wp-mail-smtp/"})
     fofa-query: body="/wp-content/plugins/wp-mail-smtp/"
     framework: wordpress
     max-request: 3
     product: wp-mail-smtp
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/wp-mail-smtp/"
     vendor: developer
     verified: true
-  name: WordPress WP Mail SMTP - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/wp-mail-smtp/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,wp-mail-smtp,exposure
+  tags: exposure,fpd,vuln,wordpress,wp,wp-mail-smtp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - wp-mail-smtp
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 4a0a004730450220666bc2e77064cc633132132ffb31063acc370379e2e4d79a93c0e183c3a56ee0022100d12c57429d468174d15607dadaee4bf9eab61151bdcd3d9c11b2bd687849295a:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/wp-mail-smtp/src/WPMailSMTP.php'
+      - '{{BaseURL}}/wp-content/plugins/wp-mail-smtp/vendor/autoload.php'
+      - '{{BaseURL}}/wp-content/plugins/wp-mail-smtp/src/Core.php'
+    stop-at-first-match: true

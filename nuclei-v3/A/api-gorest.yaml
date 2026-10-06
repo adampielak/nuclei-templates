@@ -1,0 +1,37 @@
+http:
+- matchers:
+  - status:
+    - 201
+    type: status
+  - part: body
+    type: word
+    words:
+    - '"name"'
+  matchers-condition: and
+  raw:
+  - 'GET https://gorest.co.in/public/v2/users HTTP/1.1
+
+    Host: gorest.co.in
+
+    Content-Type: application/json
+
+    Authorization: Bearer {{token}}
+
+
+    {"name":"Tenali Ramakrishna", "gender":"male", "email":"tenali.rdamakrishna@15ce.com",
+    "status":"active"}
+
+    '
+id: api-gorest
+info:
+  author: daffainfo
+  description: Online REST API for Testing and Prototyping
+  metadata:
+    max-request: 1
+  name: Gorest API Test
+  reference:
+  - https://gorest.co.in/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/gorest
+  severity: info
+  tags: token-spray,gorest
+self-contained: true

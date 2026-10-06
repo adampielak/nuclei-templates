@@ -1,33 +1,33 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "Fatal error", "/themes/oceanwp", "Uncaught Error:")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/oceanwp/inc/helpers.php'
-  - '{{BaseURL}}/wp-content/themes/oceanwp/inc/customizer/customizer.php'
-  - '{{BaseURL}}/wp-content/themes/oceanwp/inc/walker/menu-walker.php'
-  stop-at-first-match: true
 id: wp-oceanwp-fpd
 info:
+  name: WordPress OceanWP - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress OceanWP theme is vulnerable to full path disclosure via
-    direct access to theme files.
-
-    '
+  severity: low
+  description: |
+    WordPress OceanWP theme is vulnerable to full path disclosure via direct access to theme files.
+  reference:
+    - https://wordpress.org/themes/oceanwp/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/themes/oceanwp/"})
     fofa-query: body="/wp-content/themes/oceanwp/"
     framework: wordpress
     max-request: 3
     product: oceanwp
-    runzero-match: service["http.body"] matches "(?i)/wp-content/themes/oceanwp/"
     vendor: developer
     verified: true
-  name: WordPress OceanWP - Full Path Disclosure
-  reference:
-  - https://wordpress.org/themes/oceanwp/
-  severity: low
-  tags: wp,wordpress,wp-theme,fpd,oceanwp,exposure
+  tags: exposure,fpd,oceanwp,vuln,wordpress,wp,wp-theme
+http:
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100df9bc00745ce610f2e899d29957e288564d392efcf7b4802cdfea07c6afad4c802204159fcdc28d1a42993b4ddac77977df642c74724415e890207fd302d10b7c354:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains_all(body, "Fatal error", "/themes/oceanwp", "Uncaught Error:")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/themes/oceanwp/inc/helpers.php'
+      - '{{BaseURL}}/wp-content/themes/oceanwp/inc/customizer/customizer.php'
+      - '{{BaseURL}}/wp-content/themes/oceanwp/inc/walker/menu-walker.php'
+    stop-at-first-match: true

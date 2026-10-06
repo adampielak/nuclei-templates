@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Example Domain</title>
+  method: GET
+  path:
+  - https://api.scrapestack.com/scrape?access_key={{token}}&url=https://example.com
+id: api-scrapestack
+info:
+  author: daffainfo
+  description: Real-time, Scalable Proxy & Web Scraping REST API
+  metadata:
+    max-request: 1
+  name: Scrapestack API Test
+  reference:
+  - https://scrapestack.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/scrapestack
+  severity: info
+  tags: token-spray,scrapestack
+self-contained: true

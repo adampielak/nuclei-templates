@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - table-of-contents-plus
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/includes/class.toc.php'
-  - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/admin/class.admin.php'
-  - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/front.php'
-  stop-at-first-match: true
 id: wp-table-of-contents-plus-fpd
 info:
+  name: WordPress Table of Contents Plus - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress Table of Contents Plus plugin is vulnerable to full path
-    disclosure via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress Table of Contents Plus plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/table-of-contents-plus/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/table-of-contents-plus/"})
     fofa-query: body="/wp-content/plugins/table-of-contents-plus/"
     framework: wordpress
     max-request: 3
     product: table-of-contents-plus
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/table-of-contents-plus/"
     vendor: developer
     verified: true
-  name: WordPress Table of Contents Plus - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/table-of-contents-plus/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,toc,exposure
+  tags: exposure,fpd,toc,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - table-of-contents-plus
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 4a0a00473045022100c621638b5639c06c0d947606a2f735d055614f83f66396ed3d658b6a4b2c2e3e02204c93ccf73926ff139fa9c32ce462e9609d242fd45c04b68ac6ea2a8296870680:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/includes/class.toc.php'
+      - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/admin/class.admin.php'
+      - '{{BaseURL}}/wp-content/plugins/table-of-contents-plus/front.php'
+    stop-at-first-match: true

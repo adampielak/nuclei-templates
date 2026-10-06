@@ -1,28 +1,27 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "Fatal error", "Uncaught Error:", "/plugins/megamenu/")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/megamenu/integration/zerif/functions.php'
 id: wp-megamenu-fpd
 info:
+  name: WordPress Plugin Max Mega Menu (megamenu) - Full Path Disclosure
   author: DhiyaneshDk
-  description: 'WordPress Plugin Max Mega Menu plugin files are publicly accessible
-    without ABSPATH protection, exposing sensitive server path information through
-    PHP error messages when accessed directly.
-
-    '
+  severity: low
+  description: |
+    WordPress Plugin Max Mega Menu plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+  reference:
+    - https://wordpress.org/plugins/megamenu/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/plugins/megamenu"})
     max-request: 1
-    runzero-match: service["http.body"] matches "(?i)/plugins/megamenu"
     shodan-query: html:"/plugins/megamenu"
     verified: true
-  name: WordPress Plugin Max Mega Menu (megamenu) - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/megamenu/
-  severity: low
-  tags: debug,wordpress,fpd,megamenu,wp-plugin
+  tags: debug,fpd,megamenu,vuln,wordpress,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100eae71cc4c70ae8c555fcf748c6a20fbc0cb6b2f5ce0722494c14d6c769b66c4402205284de727328f580027da188ef44e8a9cf926fbaead6216e389a1a29fb0214d0:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains_all(body, "Fatal error", "Uncaught Error:", "/plugins/megamenu/")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/megamenu/integration/zerif/functions.php'

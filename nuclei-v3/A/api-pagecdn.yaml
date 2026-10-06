@@ -1,0 +1,24 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"username"'
+    - '"email"'
+  method: GET
+  path:
+  - https://pagecdn.com/api/v2/private/account/info?apikey={{token}}
+id: api-pagecdn
+info:
+  author: daffainfo
+  description: Public API for javascript, css and font libraries on PageCDN
+  metadata:
+    max-request: 1
+  name: PageCDN API Test
+  reference:
+  - https://pagecdn.com/docs/public-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/pagecdn
+  severity: info
+  tags: token-spray,pagecdn
+self-contained: true

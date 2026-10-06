@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - plugins/cmb2
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2.php'
-  - '{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2_Field.php'
-  - '{{BaseURL}}/wp-content/plugins/cmb2/includes/helper-functions.php'
-  stop-at-first-match: true
 id: wordpress-cmb2-fpd
 info:
+  name: WordPress CMB2 - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress CMB2 plugin is vulnerable to full path disclosure via direct
-    access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress CMB2 plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/cmb2/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/cmb2/"})
     fofa-query: body="/wp-content/plugins/cmb2/"
     framework: wordpress
     max-request: 3
     product: cmb2
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/cmb2/"
     vendor: developer
     verified: true
-  name: WordPress CMB2 - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/cmb2/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,cmb2,exposure
+  tags: cmb2,exposure,fpd,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - plugins/cmb2
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 490a0046304402204ef86714e5ade776b55ea089936ed50888df76bb4261e87e93dc6628ca868e5302204f30cd6c28701bac89d8e45ca5025ce4459875b7b8be6a276f44034dc1953b9b:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2.php'
+      - '{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2_Field.php'
+      - '{{BaseURL}}/wp-content/plugins/cmb2/includes/helper-functions.php'
+    stop-at-first-match: true

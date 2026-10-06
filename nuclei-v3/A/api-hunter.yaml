@@ -1,0 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"domain"'
+    - '"disposable"'
+    - '"webmail"'
+  method: GET
+  path:
+  - https://api.hunter.io/v2/domain-search?domain=stripe.com&api_key={{token}}
+id: api-hunter
+info:
+  author: daffainfo
+  description: API for domain search, professional email finder, author finder and
+    email verifier
+  metadata:
+    max-request: 1
+  name: Hunter API Test
+  reference:
+  - https://hunter.io/api-documentation/v2
+  - https://github.com/daffainfo/all-about-apikey/tree/main/hunter
+  severity: info
+  tags: token-spray,hunter
+self-contained: true

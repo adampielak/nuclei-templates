@@ -1,53 +1,92 @@
-http:
-- body: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"\
-    http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <GetConfig xmlns=\"\
-    http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService\">\n   \
-    \   <protocolVersion>3.2</protocolVersion>\n    </GetConfig>\n  </soap:Body>\n\
-    </soap:Envelope>\n"
-  extractors:
-  - group: 1
-    regex:
-    - <LastChange>([\d\-]+)T[\d\w\-\:\.]+</LastChange>
-    type: regex
-  - group: 1
-    regex:
-    - <Name>PackageServerShare</Name><Value>\\\\([\d\w\-\.]+)\\[\w\d\-]+</Value>
-    type: regex
-  headers:
-    Content-Type: text/xml
-    Soapaction: http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService/GetConfig
-  matchers:
-  - type: word
-    words:
-    - LastChange
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/ClientWebService/Client.asmx'
 id: wsus-detect
-info:
-  author: darses
-  classification:
-    cve-id: todo
-  description: 'Microsoft Product was detected.
 
-    '
-  metadata:
-    fofa-query:
-    - 'server="Microsoft-IIS" && "Content-Length: 0" && "X-Powered-By: ASP.NET" &&
-      status_code="200" && header!="X-Frame-Options" && header!="Etag" && header!="Last-Modified"
-      && header!="Set-Cookie" && header!="Content-Type"'
-    max-requests: 2
-    product: product
-    shodan-query:
-    - null
-    vendor: microsoft
-    verified: false
-  name: Microsoft Product - Detect
-  reference:
-  - http://example.com
+info:
+  name: Microsoft Windows Server Update Services (WSUS) - Detect
+  author: darses
   severity: info
-  tags: tech,microsoft
+  description: |
+    Microsoft Windows Server Update Services (WSUS) was detected via its SOAP ClientWebService endpoint.
+  reference:
+    - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-wusp/
+    - https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-overview
+    - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-59287
+  classification:
+    cpe: cpe:2.3:a:microsoft:windows_server_update_services:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: microsoft
+    product: windows_server_update_services
+    shodan-query:
+      - 'port:8530 "Microsoft-IIS"'
+      - 'port:8530 "ClientWebService"'
+      - 'http.title:"Windows Server Update Services"'
+    fofa-query:
+      - 'app="Microsoft-WSUS"'
+      - 'port="8530" && header="Microsoft-IIS"'
+    driftnet-query:
+      - "service.port:8530 and software.vendor:Microsoft"
+  tags: tech,microsoft,wsus,detect
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/ClientWebService/Client.asmx"
+
+    headers:
+      Content-Type: text/xml; charset=utf-8
+      SOAPAction: "http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService/GetConfig"
+
+    body: |
+      <?xml version="1.0" encoding="utf-8"?>
+      <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+        <soap:Body>
+          <GetConfig xmlns="http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService">
+            <protocolVersion>1.8</protocolVersion>
+          </GetConfig>
+        </soap:Body>
+      </soap:Envelope>
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "text/xml"
+
+      - type: word
+        part: body
+        words:
+          - "http://www.microsoft.com/SoftwareDistribution"
+          - "GetConfigResponse"
+        condition: and
+
+      - type: word
+        part: body
+        words:
+          - "LastChange"
+          - "PackageServerShare"
+        condition: or
+
+    extractors:
+      - type: regex
+        name: internal_hostname
+        group: 1
+        regex:
+          - '(?s)<Name>PackageServerShare</Name>\s*<Value>\\\\([a-zA-Z0-9\.\-_]+)\\'
+
+      - type: regex
+        name: last_change
+        group: 1
+        regex:
+          - "<LastChange>(.*?)</LastChange>"
+
+      - type: regex
+        name: is_registration_required
+        group: 1
+        regex:
+          - "<IsRegistrationRequired>(true|false)</IsRegistrationRequired>"

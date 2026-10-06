@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - iwp-client
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/iwp-client/lib/IWPClass.php'
-  - '{{BaseURL}}/wp-content/plugins/iwp-client/backup/backup.class.php'
-  - '{{BaseURL}}/wp-content/plugins/iwp-client/lib/phpseclib/Crypt/AES.php'
-  stop-at-first-match: true
 id: wp-iwp-client-fpd
 info:
+  name: WordPress Plugin InfiniteWP Client - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress InfiniteWP Client plugin is vulnerable to full path disclosure
-    via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress InfiniteWP Client plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/iwp-client/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/iwp-client/"})
     fofa-query: body="/wp-content/plugins/iwp-client/"
     framework: wordpress
     max-request: 3
     product: iwp-client
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/iwp-client/"
     vendor: developer
     verified: true
-  name: WordPress Plugin InfiniteWP Client - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/iwp-client/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,iwp-client,exposure
+  tags: exposure,fpd,iwp-client,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - iwp-client
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 4a0a00473045022100844a5b313f95f2f57b5638d1cd2d88b3ddea939884e668688d6a933d958006b102205dccc2b2e63426104387be51a5d007ee92115403b9a145f4dfb1e4c71efee7f6:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/iwp-client/lib/IWPClass.php'
+      - '{{BaseURL}}/wp-content/plugins/iwp-client/backup/backup.class.php'
+      - '{{BaseURL}}/wp-content/plugins/iwp-client/lib/phpseclib/Crypt/AES.php'
+    stop-at-first-match: true

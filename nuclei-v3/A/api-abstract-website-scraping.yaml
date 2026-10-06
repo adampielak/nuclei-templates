@@ -1,0 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"code":"validation_error"'
+    - Reached error page
+  method: GET
+  path:
+  - https://scrape.abstractapi.com/v1/?api_key={{token}}&url=https://test.test
+id: api-abstract-website-scraping
+info:
+  author: daffainfo
+  description: Scrape and extract data from any website, with powerful options like
+    proxy / browser customization, CAPTCHA handling, ad blocking, and more.
+  metadata:
+    max-request: 1
+  name: Abstract Api Web Scraping Test
+  reference:
+  - https://www.abstractapi.com/api/web-scraping-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-website-scraping
+  severity: info
+  tags: token-spray,abstractapi
+self-contained: true

@@ -1,31 +1,28 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - '"jcr:primaryType":'
+    - '"jcr:uuid":'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/bin.tidy.infinity.json'
 id: aem-osgi-bundles
-
 info:
-  name: Adobe AEM Installed OSGI Bundles
   author: dhiyaneshDk
-  severity: low
-  reference:
-    - https://www.slideshare.net/0ang3el/hacking-aem-sites
+  description: Adobe AEM Installed OSGI Bundles leaked.
   metadata:
     max-request: 1
     shodan-query:
-      - http.title:"AEM Sign In"
-      - http.component:"Adobe Experience Manager"
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  name: Adobe AEM Installed OSGI Bundles
+  reference:
+  - https://www.slideshare.net/0ang3el/hacking-aem-sites
+  severity: low
   tags: misconfig,aem,adobe
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/bin.tidy.infinity.json"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '"jcr:primaryType":'
-          - '"jcr:uuid":'
-        condition: and
-
-      - type: status
-        status:
-          - 200

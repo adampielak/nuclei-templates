@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - /plugins/wordpress-seo
-    - 'Uncaught TypeError:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wordpress-seo/src/main.php'
-  - '{{BaseURL}}/wp-content/plugins/wordpress-seo/admin/class-admin.php'
-  - '{{BaseURL}}/wp-content/plugins/wordpress-seo/inc/class-wpseo-utils.php'
-  stop-at-first-match: true
 id: wp-yoast-seo-fpd
 info:
+  name: WordPress Yoast SEO - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress Yoast SEO plugin is vulnerable to full path disclosure via
-    direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress Yoast SEO plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/wordpress-seo/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/wordpress-seo/"})
     fofa-query: body="/wp-content/plugins/wordpress-seo/"
     framework: wordpress
     max-request: 3
     product: wordpress-seo
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/wordpress-seo/"
     vendor: yoast
     verified: true
-  name: WordPress Yoast SEO - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/wordpress-seo/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,yoast,seo,exposure
+  tags: exposure,fpd,seo,vuln,wordpress,wp,wp-plugin,yoast
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - /plugins/wordpress-seo
+          - 'Uncaught TypeError:'
+      - status:
+          - 200
+        # digest: 4a0a00473045022100f2a711f297c81d399fcc420ff70eef021c7b9449918c3bdceb2cf0af4aa1ca3b022029fc7bb4a871881873bd16489d0d34be9af2f27eaace4fd46fb1960f3c7d7a81:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/wordpress-seo/src/main.php'
+      - '{{BaseURL}}/wp-content/plugins/wordpress-seo/admin/class-admin.php'
+      - '{{BaseURL}}/wp-content/plugins/wordpress-seo/inc/class-wpseo-utils.php'
+    stop-at-first-match: true

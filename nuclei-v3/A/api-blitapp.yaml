@@ -1,0 +1,32 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"id"'
+    - '"name"'
+    - '"apps"'
+  raw:
+  - 'GET https://blitapp.com/api/scheduledcapture HTTP/1.1
+
+    Host: blitapp.com
+
+    Accept: application/json
+
+    Api-key: {{token}}
+
+    '
+id: api-blitapp
+info:
+  author: daffainfo
+  description: Schedule screenshots of web pages and sync them to your cloud storage
+  metadata:
+    max-request: 1
+  name: Blitapp API Test
+  reference:
+  - https://blitapp.com/api/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/blitapp
+  severity: info
+  tags: token-spray,blitapp
+self-contained: true

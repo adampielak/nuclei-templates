@@ -1,39 +1,36 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:",
-      "failed to open stream")
-    - contains(body, "header-footer-elementor")
-    - status_code == 200 || status_code == 500
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/header-footer-elementor/inc/widgets-manager/widgets/navigation-menu/navigation-menu.php'
-  - '{{BaseURL}}/wp-content/plugins/header-footer-elementor/inc/widgets-manager/widgets/copyright/copyright.php'
-  - '{{BaseURL}}/wp-content/plugins/header-footer-elementor/inc/widgets-manager/class-widgets-loader.php'
-  stop-at-first-match: true
 id: wp-header-footer-elementor-fpd
 info:
+  name: WordPress Header Footer Elementor - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress Header Footer Elementor plugin (also known as Ultimate Addons
-    for Elementor - Lite) contains PHP files that lack proper ABSPATH protection,
-    allowing direct access that reveals sensitive server path information via PHP
-    error messages.
-
-    '
+  severity: low
+  description: |
+    WordPress Header Footer Elementor plugin (also known as Ultimate Addons for Elementor - Lite) contains PHP files that lack proper ABSPATH protection, allowing direct access that reveals sensitive server path information via PHP error messages.
+  reference:
+    - https://wordpress.org/plugins/header-footer-elementor/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)wp-content/plugins/header-footer-elementor/"})
     fofa-query: body="/wp-content/plugins/header-footer-elementor/"
     framework: wordpress
     max-request: 3
     product: header-footer-elementor
     publicwww-query: /wp-content/plugins/header-footer-elementor/
-    runzero-match: service["http.body"] matches "(?i)wp-content/plugins/header-footer-elementor/"
     shodan-query: html:"wp-content/plugins/header-footer-elementor/"
     vendor: brainstormforce
     verified: true
-  name: WordPress Header Footer Elementor - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/header-footer-elementor/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,header-footer-elementor
+  tags: fpd,header-footer-elementor,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100e7e2356d1cdb42fcbd716ba7be152e993d0e679b93ffcbf2464fab3edf1d1d05022100c051d24ce1b21b8622d19eb751c048cf3ec157d57363327e6909cd473c80099e:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:", "failed to open stream")
+          - contains(body, "header-footer-elementor")
+          - status_code == 200 || status_code == 500
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/header-footer-elementor/inc/widgets-manager/widgets/navigation-menu/navigation-menu.php'
+      - '{{BaseURL}}/wp-content/plugins/header-footer-elementor/inc/widgets-manager/widgets/copyright/copyright.php'
+      - '{{BaseURL}}/wp-content/plugins/header-footer-elementor/inc/widgets-manager/class-widgets-loader.php'
+    stop-at-first-match: true

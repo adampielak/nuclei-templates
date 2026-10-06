@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - getaddrinfo ENOTFOUND selfcontained.test
+  method: GET
+  path:
+  - https://api.savepage.io/v1?key={{token}}&q=https://selfcontained.test
+id: api-savepage
+info:
+  author: daffainfo
+  description: A free, RESTful API used to screenshot any desktop, or mobile website
+  metadata:
+    max-request: 1
+  name: SavePage API Test
+  reference:
+  - https://docs.savepage.io
+  - https://github.com/daffainfo/all-about-apikey/tree/main/savepage
+  severity: info
+  tags: token-spray,savepage
+self-contained: true

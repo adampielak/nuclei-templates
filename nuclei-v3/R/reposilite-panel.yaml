@@ -1,28 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_any(to_lower(body), "reposilite repository", "reposilite description",
-      "hosted through the reposilite")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: reposilite-panel
-info:
-  author: righettod
-  description: 'Reposilite products was detected.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)reposilite"})
-    shodan-query: http.title:"reposilite"
-    verified: true
+info:
   name: Reposilite Login Panel - Detect
-  reference:
-  - https://reposilite.com/
-  - https://github.com/dzikoysk/reposilite
+  author: righettod
   severity: info
+  description: |
+    Reposilite products was detected.
+  reference:
+    - https://reposilite.com/
+    - https://github.com/dzikoysk/reposilite
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)reposilite"})
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"reposilite"
   tags: panel,reposilite,login,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_any(to_lower(body), "reposilite repository", "reposilite description", "hosted through the reposilite")'
+        condition: and
+

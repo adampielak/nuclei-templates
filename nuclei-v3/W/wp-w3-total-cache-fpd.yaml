@@ -1,29 +1,27 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed
-      to open stream")
-    - contains(body, "w3-total-cache")
-    - status_code == 200 || status_code == 500
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/w3-total-cache/inc/lightbox/purchase.php'
 id: wp-w3-total-cache-fpd
 info:
+  name: WordPress W3 Total Cache - Full Path Disclosure
   author: DhiyaneshDk
-  description: 'WordPress W3 Total Cache plugin files are publicly accessible without
-    ABSPATH protection, exposing sensitive server path information through PHP error
-    messages when accessed directly.
-
-    '
+  severity: low
+  description: |
+    WordPress W3 Total Cache plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+  reference:
+    - https://wordpress.org/plugins/advanced-iframe/
   metadata:
     max-request: 1
     publicwww-query: /wp-content/plugins/w3-total-cache
     verified: true
-  name: WordPress W3 Total Cache - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/advanced-iframe/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,w3-total-cache,misconfig
+  tags: fpd,misconfig,vuln,w3-total-cache,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 490a0046304402202eb6c1890da5adea739cee3925f069010a92eafcb97066eaa90967924489786e02205bf86e881422a2c88c7711bbe68fedd26f34ce13829da214d2d245118b621dc5:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")
+          - contains(body, "w3-total-cache")
+          - status_code == 200 || status_code == 500
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/w3-total-cache/inc/lightbox/purchase.php'

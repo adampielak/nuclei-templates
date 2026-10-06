@@ -1,33 +1,33 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "Fatal error", "the-events-calendar", "Uncaught Error:")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/the-events-calendar/src/Tribe/Main.php'
-  - '{{BaseURL}}/wp-content/plugins/the-events-calendar/src/Tribe/Admin/Admin.php'
-  - '{{BaseURL}}/wp-content/plugins/the-events-calendar/common/src/Tribe/Main.php'
-  stop-at-first-match: true
 id: wp-the-events-calendar-fpd
 info:
+  name: WordPress The Events Calendar - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress The Events Calendar plugin is vulnerable to full path disclosure
-    via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress The Events Calendar plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/the-events-calendar/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/the-events-calendar/"})
     fofa-query: body="/wp-content/plugins/the-events-calendar/"
     framework: wordpress
     max-request: 3
     product: the-events-calendar
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/the-events-calendar/"
     vendor: developer
     verified: true
-  name: WordPress The Events Calendar - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/the-events-calendar/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,events-calendar,exposure
+  tags: events-calendar,exposure,fpd,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 490a0046304402202e549c5c078dd9a42b92c6058f7429eebce274648ab6c5b6bc07f658e5cad4ab0220530569773916c4e95bdd641d68c4e121a2d79cc126ebe111c1916c6251cba2bb:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains_all(body, "Fatal error", "the-events-calendar", "Uncaught Error:")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/the-events-calendar/src/Tribe/Main.php'
+      - '{{BaseURL}}/wp-content/plugins/the-events-calendar/src/Tribe/Admin/Admin.php'
+      - '{{BaseURL}}/wp-content/plugins/the-events-calendar/common/src/Tribe/Main.php'
+    stop-at-first-match: true

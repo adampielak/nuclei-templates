@@ -4,6 +4,7 @@ info:
   author: Kiblyn11,zomsop82,madrobot,geeknik,daffainfo
   severity: high
   tags: wordpress,backups
+
 requests:
   - method: GET
     path:

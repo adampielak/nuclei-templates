@@ -1,26 +1,14 @@
-http:
-- host-redirects: true
-  matchers:
-  - part: header
-    regex:
-    - (?i)MicrosoftSharePointTeamServices
-    type: regex
-  - status:
-    - 401
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}/_layouts/15/Authenticate.aspx'
-  - '{{BaseURL}}/_layouts/Authenticate.aspx'
-  stop-at-first-match: true
 id: sharepoint-exposed-login-endpoint
 info:
+  name: Microsoft SharePoint - Exposed Login Endpoint
   author: pussycat0x
-  description: 'Detected Microsoft SharePoint login and authentication endpoints.
-
-    '
+  severity: info
+  description: |
+    Detected Microsoft SharePoint login and authentication endpoints.
+  reference:
+    - https://learn.microsoft.com/en-us/sharepoint/authentication
+    - https://learn.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/plan-for-administrative-and-service-accounts
+    - https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/CMS/Sharepoint-Ennumeration.txt
   metadata:
     fofa-query: app="Microsoft-SharePoint"
     max-request: 2
@@ -28,10 +16,23 @@ info:
     shodan-query: http.component:"Microsoft SharePoint"
     vendor: microsoft
     verified: true
-  name: Microsoft SharePoint - Exposed Login Endpoint
-  reference:
-  - https://learn.microsoft.com/en-us/sharepoint/authentication
-  - https://learn.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/plan-for-administrative-and-service-accounts
-  - https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/CMS/Sharepoint-Ennumeration.txt
-  severity: info
-  tags: sharepoint,microsoft,login,exposure,misconfig,panel,tech
+  tags: exposure,login,microsoft,misconfig,panel,sharepoint,tech,vuln
+http:
+  - host-redirects: true
+    matchers:
+      - part: header
+        regex:
+          - (?i)MicrosoftSharePointTeamServices
+        type: regex
+      - status:
+          - 401
+        # digest: 4b0a00483046022100f3fdad34c31b00cc1748bfe03fdca79dda67777b88bb4e8e3c857cdfd3d3545202210082a4e95805aecee1ace148d84c9141bc6466a5a2bed6b2e2aa31a62e5047a03a:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}/_layouts/15/Authenticate.aspx'
+      - '{{BaseURL}}/_layouts/Authenticate.aspx'
+    stop-at-first-match: true

@@ -1,0 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"data":'
+    - '"id":'
+  raw:
+  - 'GET https://api.cloudconvert.com/v2/tasks HTTP/1.1
+
+    Host: api.cloudconvert.com
+
+    Authorization: Bearer {{token}}
+
+    '
+id: api-cloudconvert
+info:
+  author: daffainfo
+  description: Online file converter for audio, video, document, ebook, archive, image,
+    spreadsheet, presentation
+  metadata:
+    max-request: 1
+  name: CloudConvert API Test
+  reference:
+  - https://cloudconvert.com/api/v2
+  - https://github.com/daffainfo/all-about-apikey/tree/main/cloudconvert
+  severity: info
+  tags: token-spray,cloudconvert
+self-contained: true

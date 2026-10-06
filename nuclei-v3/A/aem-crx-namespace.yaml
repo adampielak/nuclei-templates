@@ -1,36 +1,32 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - <title>Namespaces</title>
+    - 'The following namespaces are registered in the repository:'
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/crx/explorer/ui/namespace_editor.jsp'
 id: aem-crx-namespace
-
 info:
-  name: Adobe AEM CRX Namespace Editor Exposure
   author: dhiyaneshDk
-  severity: low
-  reference:
-    - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  description: Adobe AEM CRX Namespace Editor is exposed.
   metadata:
     max-request: 1
     shodan-query:
-      - http.title:"AEM Sign In"
-      - http.component:"Adobe Experience Manager"
-  tags: exposure,aem,adobe
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/crx/explorer/ui/namespace_editor.jsp"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Namespaces</title>'
-          - 'The following namespaces are registered in the repository:'
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - text/html
-
-      - type: status
-        status:
-          - 200
+    - http.title:"AEM Sign In"
+    - http.component:"Adobe Experience Manager"
+  name: Adobe AEM CRX Namespace Editor Exposure
+  reference:
+  - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  severity: low
+  tags: exposure,aem,adobe,misconfig

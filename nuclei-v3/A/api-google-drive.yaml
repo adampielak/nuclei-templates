@@ -1,0 +1,26 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - 'File not found: {{randstr}}.txt.'
+  raw:
+  - 'GET https://www.googleapis.com/drive/v3/files/{{randstr}}.txt/%3fkey={{token}}&supportsAllDrives=true
+    HTTP/1.1
+
+    Referer: {{referer}}
+
+    Content-Type:application/json
+
+    '
+id: api-google-drive
+info:
+  author: geeknik
+  metadata:
+    max-request: 1
+  name: Google Drive API Test
+  reference:
+  - https://developers.google.com/drive/api/guides/about-sdk
+  severity: info
+  tags: token-spray,google,drive,intrusive
+self-contained: true

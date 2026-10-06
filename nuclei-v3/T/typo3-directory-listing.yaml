@@ -1,43 +1,40 @@
-flow: http(1) && http(2)
-http:
-- matchers:
-  - dsl:
-    - '!contains_all(body, "Index of /", "PARENTDIR")'
-    internal: true
-    type: dsl
-  raw:
-  - 'GET / HTTP/1.1
-
-    Host: {{Hostname}}
-
-    '
-- matchers:
-  - condition: and
-    type: word
-    words:
-    - Index of /typo3temp
-    - Last modified
-    - Parent Directory
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/typo3temp/'
 id: typo3-directory-listing
 info:
+  name: Typo3 Directory Listing
   author: theamanrawat
-  description: 'Detects directory listing enabled on the TYPO3 temp directory. The
-    typo3temp folder contains cached files, compiled assets, and temporary data that
-    may reveal sensitive information about the application structure and configuration.
-
-    '
+  severity: low
+  description: |
+    Detects directory listing enabled on the TYPO3 temp directory. The typo3temp folder contains cached files, compiled assets, and temporary data that may reveal sensitive information about the application structure and configuration.
+  reference:
+    - https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/FileStructure/Index.html
   metadata:
     runzero-match: service["product"] contains "TYPO3:TYPO3"
     shodan-query: http.component:"typo3"
-  name: Typo3 Directory Listing
-  reference:
-  - https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/FileStructure/Index.html
-  severity: low
-  tags: typo3,directory-listing,exposure
+  tags: directory-listing,exposure,typo3,vuln
+flow: http(1) && http(2)
+http:
+  - matchers:
+      - dsl:
+          - '!contains_all(body, "Index of /", "PARENTDIR")'
+        internal: true
+        type: dsl
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+  - matchers:
+      - condition: and
+        type: word
+        words:
+          - Index of /typo3temp
+          - Last modified
+          - Parent Directory
+      - status:
+          - 200
+        # digest: 4a0a00473045022100f5f13c83809145a71ea478b6c20175f9b2fcdef9ab90a129b582e32b5aa628170220410fb3ec8cb6344ab7bdecf605d748e068bab29bd2d9a4b5d6c62c70444bb9ba:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/typo3temp/'

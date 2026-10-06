@@ -1,29 +1,27 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed
-      to open stream")
-    - contains(body, "wpfront-scroll-top")
-    - status_code == 200 || status_code == 500
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wpfront-scroll-top/wpfront-scroll-top.php'
 id: wp-wpfront-scroll-top-fpd
 info:
+  name: WordPress WPFront Scroll Top - Full Path Disclosure
   author: DhiyaneshDk
-  description: 'WordPress Plugin WPFront Scroll Top plugin files are publicly accessible
-    without ABSPATH protection, exposing sensitive server path information through
-    PHP error messages when accessed directly.
-
-    '
+  severity: low
+  description: |
+    WordPress Plugin WPFront Scroll Top plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+  reference:
+    - https://wordpress.org/plugins/wpfront-scroll-top/
   metadata:
     max-request: 1
     publicwww-query: /plugins/wpfront-scroll-top
     verified: true
-  name: WordPress WPFront Scroll Top - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/wpfront-scroll-top/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,wpfront-scroll-top,misconfig
+  tags: fpd,misconfig,vuln,wordpress,wp,wp-plugin,wpfront-scroll-top
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a004830460221009719f1099282512136e6d1f4df116bca0abaf06ce8cdc3167cf3930bd21682c7022100e8d51801efe979ccfadc844a4528d15abc9d2a07ef62094aa8f53b51d23f9ca0:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")
+          - contains(body, "wpfront-scroll-top")
+          - status_code == 200 || status_code == 500
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/wpfront-scroll-top/wpfront-scroll-top.php'

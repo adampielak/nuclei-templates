@@ -1,0 +1,26 @@
+http:
+- matchers:
+  - status:
+    - 304
+    type: status
+  - part: body
+    type: word
+    words:
+    - <title>Example Domain</title>
+  matchers-condition: and
+  method: GET
+  path:
+  - https://api.scraperbox.com/scrape?token={{token}}&url=https://example.com
+id: api-scraperbox
+info:
+  author: daffainfo
+  description: Undetectable web scraping API
+  metadata:
+    max-request: 1
+  name: ScraperBox API Test
+  reference:
+  - https://scraperbox.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/scraperbox
+  severity: info
+  tags: token-spray,scraperbox
+self-contained: true

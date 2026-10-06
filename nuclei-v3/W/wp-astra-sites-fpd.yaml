@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - plugins/astra-sites
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/classes/class-astra-sites.php'
-  - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/classes/class-astra-sites-importer.php'
-  - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/starter-templates-importer.php'
-  stop-at-first-match: true
 id: wp-astra-sites-fpd
 info:
+  name: WordPress Astra Sites - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress Starter Templates plugin is vulnerable to full path disclosure
-    via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress Starter Templates plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/astra-sites/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/astra-sites/"})
     fofa-query: body="/wp-content/plugins/astra-sites/"
     framework: wordpress
     max-request: 3
     product: astra-sites
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/astra-sites/"
     vendor: developer
     verified: true
-  name: WordPress Astra Sites - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/astra-sites/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,astra-sites,exposure
+  tags: astra-sites,exposure,fpd,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - plugins/astra-sites
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 4a0a00473045022100ce70ca8f35e3158e4323310ccaa875f188b3c4256866152a4aa0f0e0cacbe3cd02203afb96d85d713d8aed03190f17e587c3c733997c619502b2615cb375894f6195:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/classes/class-astra-sites.php'
+      - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/classes/class-astra-sites-importer.php'
+      - '{{BaseURL}}/wp-content/plugins/astra-sites/inc/lib/starter-templates-importer/starter-templates-importer.php'
+    stop-at-first-match: true

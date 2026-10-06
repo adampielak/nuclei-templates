@@ -1,0 +1,29 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"id":'
+    - '"name":'
+  raw:
+  - 'GET https://app.flowdash.com/api/v1/workflows HTTP/1.1
+
+    Host: app.flowdash.com
+
+    Authorization: Bearer {{token}}
+
+    '
+id: api-flowdash
+info:
+  author: daffainfo
+  description: Automate business workflows
+  metadata:
+    max-request: 1
+  name: Flowdash API Test
+  reference:
+  - https://docs.flowdash.com/docs/api-introduction
+  - https://github.com/daffainfo/all-about-apikey/tree/main/flowdash
+  severity: info
+  tags: token-spray,flowdash
+self-contained: true

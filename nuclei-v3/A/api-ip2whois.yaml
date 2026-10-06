@@ -1,0 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"domain"'
+    - '"domain_id"'
+    - '"whois_server"'
+  method: GET
+  path:
+  - https://api.ip2whois.com/v2?key={{token}}&domain=daffa.tech&format=json
+id: api-ip2whois
+info:
+  author: daffainfo
+  description: WHOIS domain name lookup
+  metadata:
+    max-request: 1
+  name: IP2WHOIS API Test
+  reference:
+  - https://www.ip2whois.com/developers-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/ip2whois
+  severity: info
+  tags: token-spray,ip2whois
+self-contained: true

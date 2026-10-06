@@ -1,0 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"date"'
+    - '"base"'
+    - '"rates"'
+  method: GET
+  path:
+  - https://api.currencyfreaks.com/latest?apikey={{token}}
+id: api-currencyfreaks
+info:
+  author: daffainfo
+  description: Provides current and historical currency exchange rates with free plan
+    1K requests/month
+  metadata:
+    max-request: 1
+  name: CurrencyFreaks API Test
+  reference:
+  - https://currencyfreaks.com/documentation.html
+  - https://github.com/daffainfo/all-about-apikey/tree/main/currencyfreaks
+  severity: info
+  tags: token-spray,currencyfreaks
+self-contained: true

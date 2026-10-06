@@ -1,38 +1,35 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "Fatal error", "Uncaught Error:") || contains_all(body, "Warning:",
-      "failed to open stream")
-    - status_code == 200 || status_code == 500
-    - contains(body, "svg-support")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/InstalledVersions.php'
-  - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/autoload.php'
-  - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/autoload_real.php'
-  - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/ClassLoader.php'
-  - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/autoload_static.php'
-  - '{{BaseURL}}/wp-content/plugins/svg-support/svg-support.php'
-  - '{{BaseURL}}/wp-content/plugins/svg-support/functions/mime-types.php'
-  - '{{BaseURL}}/wp-content/plugins/svg-support/includes/svg-tags.php'
-  stop-at-first-match: true
 id: wp-svg-support-fpd
 info:
+  name: WordPress SVG Support - Full Path Disclosure
   author: pussycat0x
-  description: 'The WordPress SVG Support plugin was detected to have publicly accessible
-    PHP files without ABSPATH protection, which exposed sensitive server path information.
-    Direct access to vendor/composer files triggered PHP fatal errors that revealed
-    the full WordPress filesystem path.
-
-    '
+  severity: low
+  description: |
+    The WordPress SVG Support plugin was detected to have publicly accessible PHP files without ABSPATH protection, which exposed sensitive server path information. Direct access to vendor/composer files triggered PHP fatal errors that revealed the full WordPress filesystem path.
+  reference:
+    - https://wordpress.org/plugins/svg-support/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/svg-support/"})
     fofa-query: body="/wp-content/plugins/svg-support/"
     max-request: 8
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/svg-support/"
-  name: WordPress SVG Support - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/svg-support/
-  severity: low
-  tags: wordpress,fpd,disclosure,wp,wp-plugin,svg-support
+  tags: disclosure,fpd,svg-support,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 4a0a0047304502205182f868a7bf7b2998ec8dd4773ecf625bde79b441c90029adabe3c5c2256fc00221009e8e64d116d450daafde51e5b67702933f7c624c7c19de8d63a8410cd72a9260:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_all(body, "Fatal error", "Uncaught Error:") || contains_all(body, "Warning:", "failed to open stream")
+          - status_code == 200 || status_code == 500
+          - contains(body, "svg-support")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/InstalledVersions.php'
+      - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/autoload.php'
+      - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/autoload_real.php'
+      - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/ClassLoader.php'
+      - '{{BaseURL}}/wp-content/plugins/svg-support/vendor/composer/autoload_static.php'
+      - '{{BaseURL}}/wp-content/plugins/svg-support/svg-support.php'
+      - '{{BaseURL}}/wp-content/plugins/svg-support/functions/mime-types.php'
+      - '{{BaseURL}}/wp-content/plugins/svg-support/includes/svg-tags.php'
+    stop-at-first-match: true

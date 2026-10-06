@@ -1,29 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(body, "plugins/duracelltomi-google-tag-manager")
-    - contains_all(body, "Fatal error", "Uncaught Error:")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/duracelltomi-google-tag-manager/admin/admin.php'
 id: wp-duracelltomi-google-tag-manager-fpd
-info:
-  author: DhiyaneshDk
-  description: 'WordPress Plugin Google Tag Manager files are publicly accessible
-    without ABSPATH protection, exposing sensitive server path information through
-    PHP error messages when accessed directly.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: service["http.body"] matches "(?i)/plugins/duracelltomi-google-tag-manager/"
-    shodan-query: html:"/plugins/duracelltomi-google-tag-manager/"
-    verified: true
+info:
   name: WordPress Plugin Google Tag Manager - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/duracelltomi-google-tag-manager/
+  author: DhiyaneshDk
   severity: low
+  description: |
+    WordPress Plugin Google Tag Manager files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+  reference:
+    - https://wordpress.org/plugins/duracelltomi-google-tag-manager/
+  metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/plugins/duracelltomi-google-tag-manager/"})
+    max-request: 1
+    verified: true
+    shodan-query: html:"/plugins/duracelltomi-google-tag-manager/"
   tags: debug,wordpress,fpd,vuln,duracelltomi-google-tag-manager,wp-plugin
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/plugins/duracelltomi-google-tag-manager/admin/admin.php"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, "plugins/duracelltomi-google-tag-manager")'
+          - 'contains_all(body, "Fatal error", "Uncaught Error:")'
+        condition: and
+

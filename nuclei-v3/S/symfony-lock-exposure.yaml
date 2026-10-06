@@ -1,45 +1,36 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - 'contains_all(body, "version\":", ": {", "branch\":")'
-    - contains_any(body, "symfony/", "php\":")
-    - status_code == 200
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/symfony.lock'
 id: symfony-lock-exposure
 info:
+  name: Symfony Lock File - Exposure
   author: ritikchaddha
-  description: 'symfony.lock was found accessible, exposing a full list of installed
-    Composer packages, library versions, and metadata for a Symfony-based PHP application.
-    Disclosure of this file can provide insight into the application''s attack surface,
-    potentially revealing vulnerable or outdated dependencies and aiding an attacker
-    in choosing their exploit strategy.
-
-    '
-  impact: 'Attackers can enumerate all installed Composer packages and versions, increasing
-    the risk of targeted attacks (e.g., against known CVEs in dependencies) or application
-    fingerprinting.
-
-    '
+  severity: low
+  description: |
+    symfony.lock was found accessible, exposing a full list of installed Composer packages, library versions, and metadata for a Symfony-based PHP application. Disclosure of this file can provide insight into the application's attack surface, potentially revealing vulnerable or outdated dependencies and aiding an attacker in choosing their exploit strategy.
+  impact: |
+    Attackers can enumerate all installed Composer packages and versions, increasing the risk of targeted attacks (e.g., against known CVEs in dependencies) or application fingerprinting.
+  remediation: |
+    Restrict direct access to internal and sensitive files such as symfony.lock via proper web server configuration (e.g., .htaccess, nginx directives) and consider excluding such files from the web root in deployment.
+  reference:
+    - https://cheatsheetseries.owasp.org/cheatsheets/Information_Leakage.html
+    - https://symfony.com/doc/current/deployment.html
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)symfony\\.lock"})
     fofa-query: body="symfony.lock"
     max-request: 1
     product: symfony
-    runzero-match: service["http.body"] matches "(?i)symfony\\.lock"
     shodan-query: http.component:"symfony"
     vendor: symfony
     verified: true
-  name: Symfony Lock File - Exposure
-  reference:
-  - https://cheatsheetseries.owasp.org/cheatsheets/Information_Leakage.html
-  - https://symfony.com/doc/current/deployment.html
-  remediation: 'Restrict direct access to internal and sensitive files such as symfony.lock
-    via proper web server configuration (e.g., .htaccess, nginx directives) and consider
-    excluding such files from the web root in deployment.
+  tags: composer,config,exposure,php,symfony,vuln
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100e9d24ddcf142e55e85a6b172ad62bc6cf23efcb4afdd0c37bf77addee5741593022100fe6b0256c3dd87d04720bd40dcba44cdf109ac35cb97763d46fa25699eec0a11:922c64590222798bb761d5b6d8e72950
 
-    '
-  severity: low
-  tags: symfony,exposure,composer,php,config
+        dsl:
+          - 'contains_all(body, "version\":", ": {", "branch\":")'
+          - contains_any(body, "symfony/", "php\":")
+          - status_code == 200
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/symfony.lock'

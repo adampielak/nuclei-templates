@@ -1,30 +1,28 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:",
-      "failed to open stream")
-    - status_code == 200 || status_code == 500
-    - contains(body, "wpforms-lite")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/wpforms-lite/src/Frontend/Modern.php'
 id: wp-wpforms-lite-fpd
 info:
+  name: WordPress WPForms - Full Path Disclosure
   author: DhiyaneshDk
-  description: 'WordPress Plugin WPForms files are publicly accessible without ABSPATH
-    protection, exposing sensitive server path information through PHP error messages
-    when accessed directly.
-
-    '
+  severity: low
+  description: |
+    WordPress Plugin WPForms files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+  reference:
+    - https://wordpress.org/plugins/wpforms-lite/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/wpforms-lite"})
     fofa-query: body="/wp-content/plugins/wpforms-lite"
     max-request: 1
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/wpforms-lite"
     verified: true
-  name: WordPress WPForms - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/wpforms-lite/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,wpforms-lite,misconfig
+  tags: fpd,misconfig,vuln,wordpress,wp,wp-plugin,wpforms-lite
+http:
+  - matchers:
+      - condition: and
+        # digest: 490a00463044022069f0d574292e719e31683e41cc51b3d539d4b19d773add44a92193b9457d940002200c79518be1e79daec9cfc0aa59adbfc1ed9c1e48d856cf985f187bf190ffe2a8:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:", "failed to open stream")
+          - status_code == 200 || status_code == 500
+          - contains(body, "wpforms-lite")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/wpforms-lite/src/Frontend/Modern.php'

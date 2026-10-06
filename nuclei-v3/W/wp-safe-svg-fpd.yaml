@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - safe-svg
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/safe-svg/includes/class-safe-svg.php'
-  - '{{BaseURL}}/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/Sanitizer.php'
-  - '{{BaseURL}}/wp-content/plugins/safe-svg/lib/safe-svg-tags.php'
-  stop-at-first-match: true
 id: wp-safe-svg-fpd
 info:
+  name: WordPress Plugin Safe SVG - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress Safe SVG plugin is vulnerable to full path disclosure via
-    direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress Safe SVG plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/safe-svg/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/safe-svg/"})
     fofa-query: body="/wp-content/plugins/safe-svg/"
     framework: wordpress
     max-request: 3
     product: safe-svg
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/safe-svg/"
     vendor: developer
     verified: true
-  name: WordPress Plugin Safe SVG - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/safe-svg/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,safe-svg,exposure
+  tags: exposure,fpd,safe-svg,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - safe-svg
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 4b0a00483046022100b2f8fb3204ddd150152b410a350dbb16f1a7581ecc3dc5c6c55f80b07ea17ec8022100efcb2c74b1176266ac1cedcbce2d6d5a555af9030eda2dde2cabb8e55a21bdf7:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/safe-svg/includes/class-safe-svg.php'
+      - '{{BaseURL}}/wp-content/plugins/safe-svg/lib/vendor/enshrined/svg-sanitize/src/Sanitizer.php'
+      - '{{BaseURL}}/wp-content/plugins/safe-svg/lib/safe-svg-tags.php'
+    stop-at-first-match: true

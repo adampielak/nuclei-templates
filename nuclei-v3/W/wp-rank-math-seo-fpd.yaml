@@ -1,34 +1,33 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:",
-      "failed to open stream")
-    - status_code == 200 || status_code == 500
-    - contains(body, "seo-by-rank-math")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/seo-by-rank-math/vendor/developer/developer.php'
-  - '{{BaseURL}}/wp-content/plugins/seo-by-rank-math/vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php'
-  stop-at-first-match: true
 id: wp-rank-math-seo-fpd
 info:
+  name: WordPress SEO Plugin Rank Math - Full Path Disclosure
   author: ritikchaddha,DhiyaneshDK
-  description: 'WordPress Rank Math SEO plugin is vulnerable to full path disclosure
-    via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress Rank Math SEO plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/seo-by-rank-math/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/seo-by-rank-math/"})
     fofa-query: body="/wp-content/plugins/seo-by-rank-math/"
     framework: wordpress
     max-request: 3
     product: seo-by-rank-math
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/seo-by-rank-math/"
     vendor: developer
     verified: true
-  name: WordPress SEO Plugin Rank Math - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/seo-by-rank-math/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,rank-math,seo,exposure
+  tags: exposure,fpd,rank-math,seo,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100e41b9f2f6a519d1bc45978cf8771202ebf624325f034ce49ecc9adb56b0d802f02210087ac32359b6662545b01f5182129cbd047b60aafa299d182c888644b600445fa:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:", "failed to open stream")
+          - status_code == 200 || status_code == 500
+          - contains(body, "seo-by-rank-math")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/seo-by-rank-math/vendor/developer/developer.php'
+      - '{{BaseURL}}/wp-content/plugins/seo-by-rank-math/vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php'
+    stop-at-first-match: true

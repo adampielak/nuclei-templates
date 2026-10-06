@@ -1,49 +1,52 @@
-http:
-- extractors:
-  - json:
-    - '"adminUser: " + ( .adminPrincipals[] | tostring )'
-    - '"principalDomain: " + .principalDomain'
-    - '"allowedDomains: " + ( .allowedEmailRegistrationDomains[] | tostring )'
-    type: json
-  matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - '"adminPrincipals":'
-    - '"principalDomain"'
-  - part: content_type
-    type: word
-    words:
-    - application/json
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  raw:
-  - 'GET /api/v1/system/config/authorizer HTTP/1.1
-
-    Host: {{Hostname}}
-
-    Content-Type: application/json
-
-    '
 id: openmetadata-admin-userenum
-info:
-  author: icarot
-  description: 'Enumerates the admin users registered on OpenMetadata server.
 
-    '
+info:
+  name: OpenMetadata - Admin User Enumeration
+  author: icarot
+  severity: medium
+  description: |
+    Enumerates the admin users registered on OpenMetadata server.
+  reference:
+    - https://github.com/open-metadata/OpenMetadata
   metadata:
-    fofa-query: title="OpenMetadata"
-    max-request: 1
-    product: openmetadata
     runzero-match: any(each(service["html.titles"]), {# matches "(?i)OpenMetadata"})
+    verified: true
+    max-request: 1
+    fofa-query: title="OpenMetadata"
     shodan-query: title:"OpenMetadata"
     vendor: open-metadata
-    verified: true
-  name: OpenMetadata - Admin User Enumeration
-  reference:
-  - https://github.com/open-metadata/OpenMetadata
-  severity: medium
+    product: openmetadata
   tags: openmetadata,open-metadata,userenum,discovery
+
+http:
+  - raw:
+      - |
+        GET /api/v1/system/config/authorizer HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"adminPrincipals":'
+          - '"principalDomain"'
+        condition: and
+
+      - type: word
+        part: content_type
+        words:
+          - 'application/json'
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: json
+        json:
+          - '"adminUser: " + ( .adminPrincipals[] | tostring )'
+          - '"principalDomain: " + .principalDomain'
+          - '"allowedDomains: " + ( .allowedEmailRegistrationDomains[] | tostring )'
+

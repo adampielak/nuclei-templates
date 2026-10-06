@@ -1,0 +1,27 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - manpages.8 = \
+    - manpages.1 = \
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/build.properties'
+  - '{{BaseURL}}/build/build.properties'
+  - '{{BaseURL}}/manual/style/build.properties'
+  stop-at-first-match: true
+id: build-properties
+info:
+  author: DhiyaneshDk
+  metadata:
+    google-query: intitle:"index of" "build.properties"
+    max-request: 3
+    verified: true
+  name: Build Properties File Exposure
+  severity: info
+  tags: exposure,config,files

@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - pretty-link
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/pretty-link/app/models/PrliLink.php'
-  - '{{BaseURL}}/wp-content/plugins/pretty-link/app/controllers/PrliLinksController.php'
-  - '{{BaseURL}}/wp-content/plugins/pretty-link/app/helpers/PrliUtils.php'
-  stop-at-first-match: true
 id: wp-pretty-links-fpd
 info:
+  name: WordPress Pretty Links - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress Pretty Links plugin is vulnerable to full path disclosure
-    via direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress Pretty Links plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/pretty-link/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/pretty-link/"})
     fofa-query: body="/wp-content/plugins/pretty-link/"
     framework: wordpress
     max-request: 3
     product: pretty-link
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/pretty-link/"
     vendor: developer
     verified: true
-  name: WordPress Pretty Links - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/pretty-link/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,pretty-links,exposure
+  tags: exposure,fpd,pretty-links,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - pretty-link
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 4a0a004730450221008205f7354fc9b034a6e60a0be4aaebd186cd1327d27fd3fc0a9ee5d317f5624b022047d1a994180f13a6081c3bde3e260f2798142ec99cb6c05a61f2bd82f3bba216:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/pretty-link/app/models/PrliLink.php'
+      - '{{BaseURL}}/wp-content/plugins/pretty-link/app/controllers/PrliLinksController.php'
+      - '{{BaseURL}}/wp-content/plugins/pretty-link/app/helpers/PrliUtils.php'
+    stop-at-first-match: true

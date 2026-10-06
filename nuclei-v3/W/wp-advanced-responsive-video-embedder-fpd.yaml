@@ -1,31 +1,29 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed
-      to open stream")
-    - contains(body, "advanced-responsive-video-embedder")
-    - status_code == 200 || status_code == 500
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/php/init.php'
-  - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/advanced-responsive-video-embedder.php'
-  stop-at-first-match: true
 id: wp-advanced-responsive-video-embedder-fpd
 info:
+  name: WordPress Advanced Responsive Video Embedder - Full Path Disclosure
   author: DhiyaneshDk
-  description: 'WordPress Advanced Responsive Video Embedder plugin files are publicly
-    accessible without ABSPATH protection, exposing sensitive server path information
-    through PHP error messages when accessed directly.
-
-    '
+  severity: low
+  description: |
+    WordPress Advanced Responsive Video Embedder plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+  reference:
+    - https://wordpress.org/plugins/advanced-responsive-video-embedder/
   metadata:
     max-request: 2
     publicwww-query: /wp-content/plugins/advanced-responsive-video-embedder/
     verified: true
-  name: WordPress Advanced Responsive Video Embedder - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/advanced-responsive-video-embedder/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,advanced-iframe,misconfig
+  tags: advanced-iframe,fpd,misconfig,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        # digest: 490a0046304402202350a2cdf4f826c1e3cdbad9db4ae345f130db2b849ee3a7d9af815260d83ffb02203bca9a398fd1e7a0372b7cbc0424cabd2b5ffd72192e5d64413324b33559bb16:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")
+          - contains(body, "advanced-responsive-video-embedder")
+          - status_code == 200 || status_code == 500
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/php/init.php'
+      - '{{BaseURL}}/wp-content/plugins/advanced-responsive-video-embedder/advanced-responsive-video-embedder.php'
+    stop-at-first-match: true

@@ -1,0 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"terms"'
+    - '"source"'
+    - '"quotes"'
+  method: GET
+  path:
+  - http://api.currencylayer.com/live?access_key={{token}}
+id: api-currencylayer
+info:
+  author: daffainfo
+  description: Exchange rates and currency conversion
+  metadata:
+    max-request: 1
+  name: Currencylayer API Test
+  reference:
+  - https://currencylayer.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/currencylayer
+  severity: info
+  tags: token-spray,currencylayer
+self-contained: true

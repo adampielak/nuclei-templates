@@ -1,0 +1,25 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"code":"validation_error"'
+    - Reached error page
+  method: GET
+  path:
+  - https://screenshot.abstractapi.com/v1/?api_key={{token}}&url=https://test.test
+id: api-abstract-website-screenshot
+info:
+  author: daffainfo
+  description: Transform any URL into an image with Abstract's Website Screenshot
+    API
+  metadata:
+    max-request: 1
+  name: Abstract Api Website Screenshot Test
+  reference:
+  - https://www.abstractapi.com/api/website-screenshot-api
+  - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-website-screenshot
+  severity: info
+  tags: token-spray,abstractapi
+self-contained: true

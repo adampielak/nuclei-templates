@@ -1,42 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Weblate
-    - Untranslated
-    - Browse all projects
-  - part: content_type
-    type: word
-    words:
-    - text/html
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/projects/'
 id: weblate-public-project-exposure
 info:
+  name: Weblate Public Project - Exposure
   author: ritikchaddha
-  description: 'Weblate instance is publicly accessible. Public exposure of Weblate
-    may lead to unauthorized access to translation projects, potential data leaks,
-    credential exposure, or manipulation of open source localization data. Attackers
-    can view available projects and access sensitive information if proper access
-    controls are not implemented.
-
-    '
+  severity: info
+  description: |
+    Weblate instance is publicly accessible. Public exposure of Weblate may lead to unauthorized access to translation projects, potential data leaks, credential exposure, or manipulation of open source localization data. Attackers can view available projects and access sensitive information if proper access controls are not implemented.
+  reference:
+    - https://docs.weblate.org/en/latest/admin/security.html
+    - https://github.com/WeblateOrg/weblate
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Weblate"})
     fofa-query: title="Weblate"
     max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Weblate"})
     shodan-query: http.title:"Weblate"
     verified: true
-  name: Weblate Public Project - Exposure
-  reference:
-  - https://docs.weblate.org/en/latest/admin/security.html
-  - https://github.com/WeblateOrg/weblate
-  severity: info
-  tags: misconfig,exposure,weblate,public
+  tags: exposure,misconfig,public,vuln,weblate
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Weblate
+          - Untranslated
+          - Browse all projects
+      - part: content_type
+        type: word
+        words:
+          - text/html
+      - status:
+          - 200
+        # digest: 490a0046304402205ede5f05de5e45ccb9d1bd8ce6c427781650106b7539cd7245359f4d9a78f1c402207d4b55e1c3079944977ca16f23351ddc4d6a4d1252daefb120bba5631bca548b:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/projects/'

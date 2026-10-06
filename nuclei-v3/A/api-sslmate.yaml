@@ -1,0 +1,27 @@
+http:
+- headers:
+    Authorization: Bearer {{token}}
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"exists"'
+    - '"wildcard"'
+    - '"auto_renew"'
+  method: GET
+  path:
+  - https://sslmate.com/api/v2/certs/interact.sh?expand=current.crt
+id: api-sslmate
+info:
+  author: 0ri2N
+  metadata:
+    max-request: 1
+  name: SSLMate API Test
+  reference:
+  - https://sslmate.com
+  - https://sslmate.com/help/
+  - https://sslmate.com/help/reference/apiv2
+  severity: info
+  tags: recon,sslmate,token-spray
+self-contained: true

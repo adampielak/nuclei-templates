@@ -1,0 +1,24 @@
+http:
+- headers:
+    Authorization: '{{token}}'
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"domain":'
+    - '"subdomains":'
+  method: GET
+  path:
+  - https://dns.projectdiscovery.io/dns/projectdiscovery.io
+id: api-chaos
+info:
+  author: 0ri2N
+  metadata:
+    max-request: 1
+  name: Chaos API Test
+  reference:
+  - https://chaos.projectdiscovery.io/#/docs
+  severity: info
+  tags: recon,chaos,token-spray,projectdiscovery
+self-contained: true

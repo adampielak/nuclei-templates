@@ -1,14 +1,15 @@
-expression: r0()
-id: spark-api-unauth
-info:
-  author: betta(https://github.com/betta-cyber)
-  name: spark Api Unauth
-  severity: high
-  verified: false
+name: poc-yaml-spark-api-unauth
+manual: true
+transport: http
 rules:
-  r0:
-    expression: response.status == 400 && response.body.bcontains(b"Missing an action")
-      && response.body.bcontains(b"serverSparkVersion")
-    request:
-      method: GET
-      path: /v1/submissions
+    r0:
+        request:
+            cache: true
+            method: GET
+            path: /v1/submissions
+        expression: response.status == 400 && response.body.bcontains(b"Missing an action") && response.body.bcontains(b"serverSparkVersion")
+expression: r0()
+detail:
+    author: betta(https://github.com/betta-cyber)
+    links:
+        - https://xz.aliyun.com/t/2490

@@ -1,33 +1,38 @@
-http:
-- host-redirects: true
-  matchers:
-  - part: body
-    type: word
-    words:
-    - RecoverPoint Wizard
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}/#!/welcome'
 id: recoverpoint-panel
-info:
-  author: rxerium
-  description: 'Dell EMC RecoverPoint management panel was detected.
 
-    '
-  metadata:
-    max-request: 1
-    product: emc_recoverpoint
-    runzero-match: service["favicon.ico.image.mmh3"] == "-742276344"
-    shodan-query: http.favicon.hash:-742276344
-    vendor: dell
-    verified: true
+info:
   name: Dell EMC RecoverPoint Panel - Detect
-  reference:
-  - https://www.delltechnologies.com/en-us/data-protection/recoverpoint-for-virtual-machines.htm
+  author: rxerium
   severity: info
+  description: |
+    Dell EMC RecoverPoint management panel was detected.
+  reference:
+    - https://www.delltechnologies.com/en-us/data-protection/recoverpoint-for-virtual-machines.htm
+  metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "-742276344"
+    verified: true
+    max-request: 1
+    vendor: dell
+    product: emc_recoverpoint
+    shodan-query: http.favicon.hash:-742276344
   tags: panel,recoverpoint,dell,emc,login,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/#!/welcome"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "RecoverPoint Wizard"
+
+      - type: status
+        status:
+          - 200
+

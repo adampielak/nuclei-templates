@@ -1,28 +1,27 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(body, "/themes/twentysixteen/")
-    - contains(body, "Call to undefined function")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/themes/twentysixteen/functions.php'
 id: wp-twentysixteen-fpd
 info:
+  name: WordPress Twenty Sixteen - Full Path Disclosure
   author: theamanrawat
-  description: 'WordPress Twenty Sixteen theme files are publicly accessible without
-    ABSPATH protection, exposing sensitive server path information through PHP error
-    messages when accessed directly.
-
-    '
+  severity: low
+  description: |
+    WordPress Twenty Sixteen theme files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+  reference:
+    - https://wordpress.org/themes/twentysixteen/
   metadata:
     max-request: 1
     publicwww-query: /wp-content/themes/twentysixteen/
     verified: true
-  name: WordPress Twenty Sixteen - Full Path Disclosure
-  reference:
-  - https://wordpress.org/themes/twentysixteen/
-  severity: low
-  tags: debug,wordpress,fpd
+  tags: debug,fpd,vuln,wordpress
+http:
+  - matchers:
+      - condition: and
+        # digest: 480a0045304302200a05c0733772c5b5c83954ab13456c800559e0d615f3801e713656ed504f3185021f591e13a48c2cd93f3d301a7fe779aa7b52eee086e8321fa74c22987f59aaa5:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains(body, "/themes/twentysixteen/")
+          - contains(body, "Call to undefined function")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/themes/twentysixteen/functions.php'

@@ -1,0 +1,20 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - PING 1.1.1.1
+  method: GET
+  path:
+  - https://api.c99.nl/ping?key={{token}}&host=1.1.1.1
+id: api-c99
+info:
+  author: 0ri2N
+  metadata:
+    max-request: 1
+  name: C99 API Test
+  reference:
+  - https://api.c99.nl
+  severity: info
+  tags: c99,api,token-spray
+self-contained: true

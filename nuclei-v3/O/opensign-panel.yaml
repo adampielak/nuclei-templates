@@ -1,29 +1,32 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(body, "OpenSign")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/locales/en/translation.json'
-  - '{{BaseURL}}/'
-  stop-at-first-match: true
 id: opensign-panel
-info:
-  author: righettod
-  description: 'OpenSign Login panel was discovered.
 
-    '
-  metadata:
-    max-request: 2
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)opensign"})
-    shodan-query: http.title:"opensign"
-    verified: true
+info:
   name: OpenSign Login Panel - Detect
-  reference:
-  - https://www.opensignlabs.com/
-  - https://github.com/OpenSignLabs/OpenSign
+  author: righettod
   severity: info
+  description: |
+    OpenSign Login panel was discovered.
+  reference:
+    - https://www.opensignlabs.com/
+    - https://github.com/OpenSignLabs/OpenSign
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)opensign"})
+    max-request: 2
+    verified: true
+    shodan-query: http.title:"opensign"
   tags: panel,opensign,login,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/locales/en/translation.json"
+      - "{{BaseURL}}/"
+
+    stop-at-first-match: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, "OpenSign")'
+        condition: and
+

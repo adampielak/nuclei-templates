@@ -1,0 +1,28 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"document_url_not_found"'
+    - '"The document URL you specified was not found.'
+  raw:
+  - 'GET https://api.pdflayer.com/api/convert?access_key={{token}}&document_url=https://test.test
+    HTTP/1.1
+
+    Host: api.pdflayer.com
+
+    '
+id: api-pdflayer
+info:
+  author: daffainfo
+  description: HTML/URL to PDF
+  metadata:
+    max-request: 1
+  name: pdflayer API Test
+  reference:
+  - https://pdflayer.com/documentation
+  - https://github.com/daffainfo/all-about-apikey/tree/main/pdflayer
+  severity: info
+  tags: token-spray,pdflayer
+self-contained: true

@@ -1,46 +1,46 @@
-http:
-- matchers:
-  - condition: or
-    type: word
-    words:
-    - 'extends":'
-    - 'packageRules":'
-    - 'hostRules":'
-    - 'registryAliases":'
-  - part: header
-    type: word
-    words:
-    - application/json
-    - text/plain
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/renovate.json'
-  - '{{BaseURL}}/renovate.json5'
-  - '{{BaseURL}}/.github/renovate.json'
-  - '{{BaseURL}}/.github/renovate.json5'
-  - '{{BaseURL}}/.gitlab/renovate.json'
-  - '{{BaseURL}}/.gitlab/renovate.json5'
-  - '{{BaseURL}}/.renovaterc'
-  - '{{BaseURL}}/.renovaterc.json'
-  - '{{BaseURL}}/.renovaterc.json5'
-  stop-at-first-match: true
 id: renovate-config-exposure
 info:
+  name: Renovate Configuration Exposure
   author: ritikchaddha
-  description: 'Detects exposed Renovate configuration files that may contain sensitive
-    tokens or credentials.
-
-    '
+  severity: info
+  description: |
+    Detects exposed Renovate configuration files that may contain sensitive tokens or credentials.
+  reference:
+    - https://github.com/renovatebot/renovate
+    - https://docs.renovatebot.com/configuration-options/
   metadata:
     max-request: 5
     verified: true
-  name: Renovate Configuration Exposure
-  reference:
-  - https://github.com/renovatebot/renovate
-  - https://docs.renovatebot.com/configuration-options/
-  severity: info
-  tags: exposure,config,renovate
+  tags: config,exposure,renovate,vuln
+http:
+  - matchers:
+      - condition: or
+        type: word
+        words:
+          - 'extends":'
+          - 'packageRules":'
+          - 'hostRules":'
+          - 'registryAliases":'
+      - part: header
+        type: word
+        words:
+          - application/json
+          - text/plain
+      - status:
+          - 200
+        # digest: 4a0a00473045022010c26907b71680964aa0a75d25d101c31fe7cd1ab32ba763aed9cf2fceca4e95022100b0a49133e9942c94026b48dbb884063b16ce6298f971ded7775440b46a649b29:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/renovate.json'
+      - '{{BaseURL}}/renovate.json5'
+      - '{{BaseURL}}/.github/renovate.json'
+      - '{{BaseURL}}/.github/renovate.json5'
+      - '{{BaseURL}}/.gitlab/renovate.json'
+      - '{{BaseURL}}/.gitlab/renovate.json5'
+      - '{{BaseURL}}/.renovaterc'
+      - '{{BaseURL}}/.renovaterc.json'
+      - '{{BaseURL}}/.renovaterc.json5'
+    stop-at-first-match: true

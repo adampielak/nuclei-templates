@@ -1,49 +1,49 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - len(body) > 50
-    - contains(content_type, 'application/octet-stream')
-    type: dsl
-  - negative: true
-    part: response
-    type: word
-    words:
-    - MongoDB over HTTP on the native
-    - application/javascript
-    - application/x-javascript
-    - application/json
-    - application/xml
-    - text/xml
-    - <html
-    - <!doctype
-    - <script
-    - <meta
-    - image/
-    - Response xmlns
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/.prettierignore'
-  - '{{BaseURL}}/.prettierrc'
 id: prettier-ignore-disclosure
 info:
+  name: Prettier - Ignore File Disclosure
   author: ritikchaddha
-  description: 'The .prettierignore file is publicly accessible, potentially revealing
-    project structure, sensitive file paths, and internal directory organization.
-
-    '
+  severity: info
+  description: |
+    The .prettierignore file is publicly accessible, potentially revealing project structure, sensitive file paths, and internal directory organization.
+  reference:
+    - https://prettier.io/docs/en/ignore.html
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)\\.prettierignore"})
     fofa-query: body=".prettierignore" || body="prettier"
     max-request: 2
     product: prettier
-    runzero-match: service["http.body"] matches "(?i)\\.prettierignore"
     shodan-query: http.html:".prettierignore"
     vendor: prettier
     verified: true
-  name: Prettier - Ignore File Disclosure
-  reference:
-  - https://prettier.io/docs/en/ignore.html
-  severity: info
-  tags: prettier,config,exposure,disclosure
+  tags: config,disclosure,exposure,prettier,vuln
+http:
+  - matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - len(body) > 50
+          - contains(content_type, 'application/octet-stream')
+        type: dsl
+      - negative: true
+        # digest: 4a0a00473045022100bb267b86d64eeb4a26bfa8b5987e1d4cc1834eca0ecb9d3cef7f59a9c67addbc02202478fbe4627d47cac88303349a1db559b3bc50a4dc2f48c0044e81c5407bbc02:922c64590222798bb761d5b6d8e72950
+
+        part: response
+        type: word
+        words:
+          - MongoDB over HTTP on the native
+          - application/javascript
+          - application/x-javascript
+          - application/json
+          - application/xml
+          - text/xml
+          - <html
+          - <!doctype
+          - <script
+          - <meta
+          - image/
+          - Response xmlns
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/.prettierignore'
+      - '{{BaseURL}}/.prettierrc'

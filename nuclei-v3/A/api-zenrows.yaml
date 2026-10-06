@@ -1,0 +1,23 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Example Domain</title>
+  method: GET
+  path:
+  - https://api.zenrows.com/v1/?apikey={{token}}&url=https://example.com
+id: api-zenrows
+info:
+  author: daffainfo
+  description: Web Scraping API that bypasses anti-bot solutions while offering JS
+    rendering, and rotating proxies
+  metadata:
+    max-request: 1
+  name: ZenRows API Test
+  reference:
+  - https://www.zenrows.com/documentation/
+  - https://github.com/daffainfo/all-about-apikey/tree/main/zenrows
+  severity: info
+  tags: token-spray,zenrows
+self-contained: true

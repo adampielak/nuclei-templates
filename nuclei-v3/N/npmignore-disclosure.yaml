@@ -1,64 +1,64 @@
-http:
-- matchers:
-  - status:
-    - 200
-    type: status
-  - condition: and
-    part: body
-    type: word
-    words:
-    - node_modules
-  - condition: or
-    part: body
-    type: word
-    words:
-    - .*
-    - '*~'
-    - '*.swp'
-    - '*.log'
-    - '*.md'
-    - .git
-  - negative: true
-    part: body
-    type: word
-    words:
-    - <html
-    - <body
-    - <!DOCTYPE
-    - <script
-    - <?php
-  - condition: and
-    dsl:
-    - len(body) > 20 && len(body) < 5000
-    - content_type != "text/html"
-    - contains(body, "\n")
-    - '!contains(tolower(body), "error")'
-    - '!contains(tolower(body), "not found")'
-    type: dsl
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/.npmignore'
-  - '{{BaseURL}}/node_modules/.npmignore'
-  - '{{BaseURL}}/src/.npmignore'
-  - '{{BaseURL}}/api/.npmignore'
-  - '{{BaseURL}}/backend/.npmignore'
-  stop-at-first-match: true
 id: npmignore-disclosure
 info:
+  name: NPM .npmignore File Disclosure
   author: 0x_Akoko
-  description: 'Detected NPM .npmignore configuration file, potentially exposing excluded
-    files and project structure information.
-
-    '
+  severity: info
+  description: |
+    Detected NPM .npmignore configuration file, potentially exposing excluded files and project structure information.
+  reference:
+    - https://docs.npmjs.com/cli/v9/using-npm/developers#keeping-files-out-of-your-package
+    - https://docs.npmjs.com/cli/v9/configuring-npm/npmignore
   metadata:
     fofa-query: body=".npmignore"
     max-request: 5
     shodan-query: http.html:".npmignore"
     verified: true
-  name: NPM .npmignore File Disclosure
-  reference:
-  - https://docs.npmjs.com/cli/v9/using-npm/developers#keeping-files-out-of-your-package
-  - https://docs.npmjs.com/cli/v9/configuring-npm/npmignore
-  severity: info
-  tags: exposure,npm,config,node
+  tags: config,exposure,node,npm,vuln
+http:
+  - matchers:
+      - status:
+          - 200
+        type: status
+      - condition: and
+        part: body
+        type: word
+        words:
+          - node_modules
+      - condition: or
+        part: body
+        type: word
+        words:
+          - .*
+          - '*~'
+          - '*.swp'
+          - '*.log'
+          - '*.md'
+          - .git
+      - negative: true
+        part: body
+        type: word
+        words:
+          - <html
+          - <body
+          - <!DOCTYPE
+          - <script
+          - <?php
+      - condition: and
+        # digest: 490a0046304402207ebe2dbafd4dba1baec225320141a29f9f464ffc1bfe22567f234741a0faff030220023b39963cc1f092d2814c0ddfb713b57370820bd79f0b9c49ff3d97b001c5e1:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - len(body) > 20 && len(body) < 5000
+          - content_type != "text/html"
+          - contains(body, "\n")
+          - '!contains(tolower(body), "error")'
+          - '!contains(tolower(body), "not found")'
+        type: dsl
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/.npmignore'
+      - '{{BaseURL}}/node_modules/.npmignore'
+      - '{{BaseURL}}/src/.npmignore'
+      - '{{BaseURL}}/api/.npmignore'
+      - '{{BaseURL}}/backend/.npmignore'
+    stop-at-first-match: true
