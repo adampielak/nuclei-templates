@@ -1,34 +1,35 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - Index of
+    - Parent Directory
+    - <title>Index of
+    - Directory listing for
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/storage/framework/sessions/'
+  - '{{BaseURL}}/storage/sessions/'
+  stop-at-first-match: true
 id: laravel-sessions-exposure
 info:
-  name: Laravel Sessions Folder Exposure
   author: DhiyaneshDk
-  severity: high
-  description: |
-    Detected unauthenticated access to the Laravel session storage directory, allowing attackers to browse and download session files that may contain active authentication tokens, CSRF tokens, and serialized user data.
+  description: 'Detected unauthenticated access to the Laravel session storage directory,
+    allowing attackers to browse and download session files that may contain active
+    authentication tokens, CSRF tokens, and serialized user data.
+
+    '
   metadata:
     fofa-query: body="Index of" && body="sessions"
     max-request: 2
     shodan-query: http.html:"Index of" http.html:"sessions"
     verified: true
-  tags: exposure,laravel,misconfig,session,storage,vuln
-http:
-  - matchers:
-      - condition: or
-        part: body
-        type: word
-        words:
-          - Index of
-          - Parent Directory
-          - <title>Index of
-          - Directory listing for
-      - status:
-          - 200
-        # digest: 4b0a004830460221008f1e78212f9e8c530c25c96f4602838cc9a5ec269e10c9e0a844f37626d70b42022100a1e3d26cb75210dfd69b619c5dfa49aa41a50d46f11464e85afc7171135756b2:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/storage/framework/sessions/'
-      - '{{BaseURL}}/storage/sessions/'
-    stop-at-first-match: true
+  name: Laravel Sessions Folder Exposure
+  severity: high
+  tags: laravel,exposure,misconfig,storage,session

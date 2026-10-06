@@ -1,29 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "<title>ITFlow Setup</title>", "for choosing to try ITFlow",
+      "Begin Setup", "Database")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/setup/index.php'
 id: itflow-unfinished-installation
 info:
-  name: ITFlow Unfinished Installation
   author: 0x_Akoko
-  severity: high
-  description: |
-    Detected ITFlow setup wizard was exposed with an unfinished installation, allowing attackers to configure the database and create an admin account.
-  reference:
-    - https://github.com/itflow-org/itflow
-    - https://docs.itflow.org/installation
+  description: 'Detected ITFlow setup wizard was exposed with an unfinished installation,
+    allowing attackers to configure the database and create an admin account.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ITFlow"})
     fofa-query: title="ITFlow"
     max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ITFlow"})
     shodan-query: http.title:"ITFlow"
     verified: true
-  tags: exposure,install,itflow,misconfig,vuln
-http:
-  - matchers:
-      - condition: and
-        # digest: 490a004630440220471aa8db13b745a8bfadadf968819b89dcaea79881ab19b808ead4507e09e052022074f568dba787be097b56c42165cc89022a70ba2f839941648cac92c89ecbf597:922c64590222798bb761d5b6d8e72950
-
-        dsl:
-          - status_code == 200
-          - contains_all(body, "<title>ITFlow Setup</title>", "for choosing to try ITFlow", "Begin Setup", "Database")
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}/setup/index.php'
+  name: ITFlow Unfinished Installation
+  reference:
+  - https://github.com/itflow-org/itflow
+  - https://docs.itflow.org/installation
+  severity: high
+  tags: itflow,misconfig,install,exposure

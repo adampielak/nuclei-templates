@@ -27,4 +27,4 @@ http:
           - "fonts"
           - "extensions"
         condition: and
-
+# digest: 4a0a0047304502206fa07cb28d821067f0dacfbf8cd0444921513171ea214855b8e24f4c0ccd200a022100dea13643a53b720cee1e71b30bf3f7c0314bd9e97aeb7763c408fe2f11934a19:922c64590222798bb761d5b6d8e72950

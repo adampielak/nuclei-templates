@@ -1,4 +1,5 @@
 id: symfony-lock-exposure
+
 info:
   name: Symfony Lock File - Exposure
   author: ritikchaddha
@@ -13,24 +14,24 @@ info:
     - https://cheatsheetseries.owasp.org/cheatsheets/Information_Leakage.html
     - https://symfony.com/doc/current/deployment.html
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)symfony\\.lock"})
-    fofa-query: body="symfony.lock"
+    verified: true
     max-request: 1
+    vendor: symfony
     product: symfony
     shodan-query: http.component:"symfony"
-    vendor: symfony
-    verified: true
-  tags: composer,config,exposure,php,symfony,vuln
-http:
-  - matchers:
-      - condition: and
-        # digest: 4b0a00483046022100e9d24ddcf142e55e85a6b172ad62bc6cf23efcb4afdd0c37bf77addee5741593022100fe6b0256c3dd87d04720bd40dcba44cdf109ac35cb97763d46fa25699eec0a11:922c64590222798bb761d5b6d8e72950
+    fofa-query: body="symfony.lock"
+  tags: symfony,exposure,composer,php,config
 
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/symfony.lock"
+
+    matchers:
+      - type: dsl
         dsl:
           - 'contains_all(body, "version\":", ": {", "branch\":")'
-          - contains_any(body, "symfony/", "php\":")
-          - status_code == 200
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}/symfony.lock'
+          - 'contains_any(body, "symfony/", "php\":")'
+          - 'status_code == 200'
+        condition: and
+# digest: 4a0a00473045022100b7e2548ba634154c3b4aa94d832a451b9cfc512de3c73ec6c24204729c06f6a9022065adc546aa8bdc8eb997fd374f922f0d35817ca4219cee3145df5cf0b7cb3f14:922c64590222798bb761d5b6d8e72950

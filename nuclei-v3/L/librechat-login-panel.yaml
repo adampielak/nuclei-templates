@@ -1,33 +1,29 @@
-id: librechat-login-panel
-
-info:
-  name: LibreChat Login Panel - Detection
-  author: Kazgangap
-  severity: info
-  description: |
-    Detected LibreChat login panel. LibreChat is an open-source, self-hosted AI chat interface.
-  reference:
-    - https://github.com/danny-avila/LibreChat
-  metadata:
-    runzero-match: service["product"] contains "LibreChat:LibreChat"
-    fofa-query: app="LibreChat"
-  tags: panel,librechat,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>LibreChat</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login'
+id: librechat-login-panel
+info:
+  author: Kazgangap
+  description: 'Detected LibreChat login panel. LibreChat is an open-source, self-hosted
+    AI chat interface.
 
-    host-redirects: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "<title>LibreChat</title>"
-        part: body
-
-      - type: status
-        status:
-          - 200
-
+    '
+  metadata:
+    fofa-query: app="LibreChat"
+    runzero-match: service["product"] contains "LibreChat:LibreChat"
+  name: LibreChat Login Panel - Detection
+  reference:
+  - https://github.com/danny-avila/LibreChat
+  severity: info
+  tags: panel,librechat,discovery
