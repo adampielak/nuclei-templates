@@ -1,35 +1,34 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - ImageResizer.
+    - Diagnostics
+    - 'Configuration:'
+    - 'Registered plugins:'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/resizer.debug.ashx'
+  - '{{BaseURL}}/resizer.debug'
+  stop-at-first-match: true
 id: imageresizer-debug-exposure
 info:
-  name: ImageResizer Debug - Information Exposure
   author: ritikchaddha
-  severity: low
-  description: The ImageResizer debug endpoint exposes sensitive server configuration and path information.
-  reference:
-    - https://world.optimizely.com/blogs/Eric-Pettersson/Dates/2016/4/hide-resizer-debug-ashx-from-your-website/
+  description: The ImageResizer debug endpoint exposes sensitive server configuration
+    and path information.
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ImageResizer"})
     fofa-query: title="ImageResizer"
     max-request: 2
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ImageResizer"})
     verified: true
-  tags: config,debug,exposure,imageresizer,vuln
-http:
-  - matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - ImageResizer.
-          - Diagnostics
-          - 'Configuration:'
-          - 'Registered plugins:'
-      - status:
-          - 200
-        # digest: 490a004630440220489d641887e8a3c295b3b02d0f7d95601b9aeb240e35ed34c40206832b14940202205f34dc9e3153dac2ca4ee7a8244c88a0599100061f99c1f71ac088651d6d52e1:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/resizer.debug.ashx'
-      - '{{BaseURL}}/resizer.debug'
-    stop-at-first-match: true
+  name: ImageResizer Debug - Information Exposure
+  reference:
+  - https://world.optimizely.com/blogs/Eric-Pettersson/Dates/2016/4/hide-resizer-debug-ashx-from-your-website/
+  severity: low
+  tags: exposure,debug,imageresizer,config

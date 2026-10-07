@@ -1,43 +1,45 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - cheat.sh
+    - curl cheat.sh
+  - condition: or
+    part: body
+    type: word
+    words:
+    - :firstpage
+    - cht.sh
+    - /files/style.css
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/'
 id: cheatsh-detect
 info:
-  name: cheat.sh Instance - Detection
   author: ritikchaddha
-  severity: info
-  description: |
-    Detects exposed cheat.sh instances. cheat.sh is a community-driven cheat sheet service that provides quick command-line reference for programming languages and Unix commands. While designed to be public, self-hosted instances may expose internal documentation.
-  reference:
-    - https://github.com/chubin/cheat.sh
-    - https://cheat.sh/
+  description: 'Detects exposed cheat.sh instances. cheat.sh is a community-driven
+    cheat sheet service that provides quick command-line reference for programming
+    languages and Unix commands. While designed to be public, self-hosted instances
+    may expose internal documentation.
+
+    '
   metadata:
-    runzero-review: REJECT/2026-01-26/this is "designed to be public"
     fofa-query: title="cheat.sh"
     max-request: 1
     product: cheat.sh
+    runzero-review: REJECT/2026-01-26/this is "designed to be public"
     shodan-query: title:"cheat.sh"
     vendor: chubin
     verified: true
-  tags: cheatsh,detection,devtools,discovery,tech
-http:
-  - matchers:
-      - condition: or
-        part: body
-        type: word
-        words:
-          - cheat.sh
-          - curl cheat.sh
-      - condition: or
-        part: body
-        type: word
-        words:
-          - :firstpage
-          - cht.sh
-          - /files/style.css
-      - status:
-          - 200
-        # digest: 4a0a004730450220673eba977a7bd73c7c4148aa2bf226e730b513341a7cd1ae30be770f683e72b7022100e7d8db58e805bf6c1d7dcccc4fb74b00260e1858371da7ee45bf8a30e73b5a97:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/'
+  name: cheat.sh Instance - Detection
+  reference:
+  - https://github.com/chubin/cheat.sh
+  - https://cheat.sh/
+  severity: info
+  tags: tech,cheatsh,detection,devtools

@@ -1,34 +1,30 @@
-id: nexpose-panel
-
-info:
-  name: Rapid7 Nexpose VM Security Console - Detect
-  author: johnk3r
-  severity: info
-  description: |
-    Rapid7 Nexpose VM Security Console login panel was detected.
-  metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-516760689"
-    verified: true
-    max-request: 1
-    shodan-query: http.favicon.hash:-516760689
-  tags: nexpose,panel,login,detect,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login.jsp"
+- extractors:
+  - kval:
+    - Server
+    part: header
+    type: kval
+  matchers:
+  - condition: and
+    dsl:
+    - contains(header, "Security Console")
+    - contains(body, "nexposeccusername")
+    - status_code == 200
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/login.jsp'
+id: nexpose-panel
+info:
+  author: johnk3r
+  description: 'Rapid7 Nexpose VM Security Console login panel was detected.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains(header, "Security Console")'
-          - 'contains(body, "nexposeccusername")'
-          - status_code == 200
-        condition: and
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
-          - Server
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["favicon.ico.image.mmh3"] == "-516760689"
+    shodan-query: http.favicon.hash:-516760689
+    verified: true
+  name: Rapid7 Nexpose VM Security Console - Detect
+  severity: info
+  tags: nexpose,panel,login,detect,discovery

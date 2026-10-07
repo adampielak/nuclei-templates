@@ -1,27 +1,31 @@
 id: atlassian-bamboo-version-detect
+
 info:
-  author: milo2012
   name: Atlassian Bamboo Version Detect
+  author: milo2012
   severity: info
   tags: tech,bamboo
+
 requests:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - Continuous integration</a> powered by <a href="http://www.atlassian.com/software/bamboo/">Atlassian
-      Bamboo</a> version (.*?) - <
-    type: regex
-  matchers:
-  - part: body
-    type: word
-    words:
-    - Continuous integration</a> powered by <a href="http://www.atlassian.com/software/bamboo/">Atlassian
-      Bamboo</a>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Continuous integration</a> powered by <a href="http://www.atlassian.com/software/bamboo/">Atlassian Bamboo</a>'
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1  
+        regex:
+          - 'Continuous integration</a> powered by <a href="http://www.atlassian.com/software/bamboo/">Atlassian Bamboo</a> version (.*?) - <'
+

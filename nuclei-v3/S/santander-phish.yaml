@@ -1,35 +1,31 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - Our purpose is to help people and businesses prosper. We strive to make all
+      we do Simple, Personal and Fair.
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"santander.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: santander-phish
-
 info:
-  name: Santander Bank phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Santander Bank phishing website was detected
-  reference:
-    - https://santander.com
+  description: 'A Santander Bank phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Santander Bank phishing Detection
+  reference:
+  - https://santander.com
+  severity: info
   tags: phishing,santander,bank,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "Our purpose is to help people and businesses prosper. We strive to make all we do Simple, Personal and Fair."
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"santander.com")'
-

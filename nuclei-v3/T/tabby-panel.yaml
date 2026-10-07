@@ -9,7 +9,6 @@ info:
   reference:
     - https://github.com/TabbyML/tabby
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Tabby"})
     verified: true
     max-request: 1
     fofa-query: title="Tabby"
@@ -28,4 +27,4 @@ http:
           - 'contains(body, "<title>Tabby - Sign In")'
           - 'status_code == 200'
         condition: and
-
+# digest: 4a0a00473045022100d3271cfc5ef436045f2c9902962303639cc353a685b4e46ef1c828b5eca9dd4a022073034bdec6a83678915961cdcecb9b9d110bdfcec6f35263a3d1fd27fa295d62:922c64590222798bb761d5b6d8e72950

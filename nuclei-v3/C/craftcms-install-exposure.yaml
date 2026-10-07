@@ -1,33 +1,33 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "Install Craft", "Create your account", "/cpresources/")
+    - contains(header, "CRAFT_CSRF_TOKEN")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/admin/install'
 id: craftcms-install-exposure
 info:
-  name: Craft CMS Installation Wizard Exposure
   author: 0x_Akoko
-  severity: high
-  description: |
-    Detected Craft CMS installation wizard was exposed, allowing attackers to complete the installation process and gain administrative access to the CMS.
-  reference:
-    - https://craftcms.com/docs/4.x/installation.html
-    - https://craftcms.com/knowledge-base/securing-craft
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
     cvss-score: 9.1
     cwe-id: CWE-284
+  description: 'Detected Craft CMS installation wizard was exposed, allowing attackers
+    to complete the installation process and gain administrative access to the CMS.
+
+    '
   metadata:
-    runzero-match: service["product"] contains "CraftCMS:Craft CMS"
     fofa-query: body="Craft CMS"
     max-request: 1
+    runzero-match: service["product"] contains "CraftCMS:Craft CMS"
     shodan-query: http.html:"Craft CMS"
-  tags: craftcms,exposure,install,misconfig,vuln
-http:
-  - matchers:
-      - condition: and
-        # digest: 490a00463044022016afd102fc52cd6bb90060d6c32e511b7643ddcf11eaa9e2a1b47cfd4f4960d5022057b1df7fc257fe29af04ba540138055ff4f60440632b7c4a279fa1cf07b6084b:922c64590222798bb761d5b6d8e72950
-
-        dsl:
-          - status_code == 200
-          - contains_all(body, "Install Craft", "Create your account", "/cpresources/")
-          - contains(header, "CRAFT_CSRF_TOKEN")
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}/admin/install'
+  name: Craft CMS Installation Wizard Exposure
+  reference:
+  - https://craftcms.com/docs/4.x/installation.html
+  - https://craftcms.com/knowledge-base/securing-craft
+  severity: high
+  tags: craftcms,install,exposure,misconfig

@@ -1,14 +1,25 @@
+http:
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>ZPan
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: saltbo-zpan-panel
 info:
-  name: Saltbo/zpan Panel - Detect
   author: ritikchaddha
-  severity: info
-  description: |
-    Detects the presence of the Saltbo/zpan file management panel.
-  reference:
-    - https://github.com/saltbo/zpan
   classification:
     cpe: cpe:2.3:a:saltbo:zpan:*:*:*:*:*:*:*:*
+  description: 'Detects the presence of the Saltbo/zpan file management panel.
+
+    '
   metadata:
     fofa-query: title="zpan"
     max-request: 1
@@ -16,18 +27,8 @@ info:
     shodan-query: title:"zpan"
     vendor: saltbo
     verified: true
+  name: Saltbo/zpan Panel - Detect
+  reference:
+  - https://github.com/saltbo/zpan
+  severity: info
   tags: detect,discovery,login,panel,zpan
-http:
-  - host-redirects: true
-    matchers:
-      - part: body
-        type: word
-        words:
-          - <title>ZPan
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}'

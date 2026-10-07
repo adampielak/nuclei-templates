@@ -28,7 +28,9 @@ info:
   description: osTicket installer panel was detected.
   metadata:
     max-request: 2
+    product: osticket
     shodan-query: http.title:"osTicket Installer"
+    vendor: osticket
     verified: true
   name: osTicket Installer Panel - Detect
   severity: critical

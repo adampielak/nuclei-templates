@@ -1,32 +1,34 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"value":"true"'
+    - '"name":"first-login"'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/v3/settings/first-login'
 id: rancher-incomplete-setup
 info:
-  name: Rancher - Incomplete Setup Exposure
   author: 0x_Akoko
-  severity: low
-  description: |
-    Detected Rancher installation was found with an incomplete first-time setup. The bootstrap login page was publicly accessible at /dashboard/auth/login, indicating an unconfigured instance that could have been targeted for unauthorized setup completion.
-  reference:
-    - https://rancher.com/docs/rancher/v2.6/en/installation/
+  description: 'Detected Rancher installation was found with an incomplete first-time
+    setup. The bootstrap login page was publicly accessible at /dashboard/auth/login,
+    indicating an unconfigured instance that could have been targeted for unauthorized
+    setup completion.
+
+    '
   metadata:
     fofa-query: title="Rancher"
     max-request: 1
     shodan-query: title:"Rancher"
     verified: true
-  tags: exposure,misconfig,rancher,vuln
-http:
-  - matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - '"value":"true"'
-          - '"name":"first-login"'
-      - status:
-          - 200
-        # digest: 4a0a00473045022077c348f3cfd9c822cbae862cccb1dc635c9899e0af60d8500a435c8f35f31315022100e4fb6109a18815e3b1e9744d7aa0258a6a25794647637e31300464b5910d76e7:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/v3/settings/first-login'
+  name: Rancher - Incomplete Setup Exposure
+  reference:
+  - https://rancher.com/docs/rancher/v2.6/en/installation/
+  severity: low
+  tags: rancher,misconfig,exposure

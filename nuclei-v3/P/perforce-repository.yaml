@@ -1,39 +1,39 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - '*.log'
+    - yarn-error.log
+  - part: content_type
+    type: word
+    words:
+    - application/octet-stream
+  - dsl:
+    - '!contains_any(tolower(body), ''<html'',''<body'',''<!doctype'')'
+    type: dsl
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/.p4ignore'
 id: perforce-repository
 info:
-  name: Perforce Repository Disclosure
   author: DhiyaneshDk
-  severity: low
-  description: |
-    Detected an exposed .p4ignore file, which could have revealed ignored files, sensitive paths, or developer-specific information useful for further enumeration.
-  reference:
-    - https://help.perforce.com/helix-core/server-apps/cmdref/current/Content/CmdRef/P4IGNORE.html
+  description: 'Detected an exposed .p4ignore file, which could have revealed ignored
+    files, sensitive paths, or developer-specific information useful for further enumeration.
+
+    '
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)Perforce"})
     max-request: 1
+    runzero-match: service["http.body"] matches "(?i)Perforce"
     shodan-query: html:"Perforce"
     verified: true
-  tags: disclosure,exposure,perforce,repo,vuln
-http:
-  - matchers:
-      - condition: or
-        part: body
-        type: word
-        words:
-          - '*.log'
-          - yarn-error.log
-      - part: content_type
-        type: word
-        words:
-          - application/octet-stream
-      - dsl:
-          - '!contains_any(tolower(body), ''<html'',''<body'',''<!doctype'')'
-        type: dsl
-      - status:
-          - 200
-        # digest: 490a004630440220419223bf0bdc51c2428aa08aaf334e5ba235bc1f6eb480e27495c10f052868f302204d9dd76da847e1540c960e2326f9cd9b3f90099b3680bb392776a3e0d20221ed:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/.p4ignore'
+  name: Perforce Repository Disclosure
+  reference:
+  - https://help.perforce.com/helix-core/server-apps/cmdref/current/Content/CmdRef/P4IGNORE.html
+  severity: low
+  tags: exposure,perforce,repo,disclosure

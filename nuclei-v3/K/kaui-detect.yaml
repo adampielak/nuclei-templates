@@ -1,5 +1,4 @@
 id: kaui-detect
-
 info:
   name: Kaui - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://killbill.io/kaui.html
     - https://github.com/killbill/killbill-admin-ui
   metadata:
-    verified: true
     max-request: 1
-    vendor: killbill
     product: kaui
     shodan-query: http.title:"Kaui"
-  tags: tech,kaui,killbill,billing,subscription,payment,detect
-
+    vendor: killbill
+    verified: true
+  tags: billing,detect,kaui,killbill,payment,subscription,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -30,13 +27,11 @@ http:
         part: body
         words:
           - '<title>Kaui</title>'
-
       - type: word
         part: header
         words:
           - '_kaui-standalone_session='
-
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220791cc158aecfa980560557b2a83c179b80573c7759d27440530843b12f268de0022100bae90f3d7d75ce9a7c187f78a2b4a4bf37a0b37b60442388e05ea60aa05aa388:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a004730450220791cc158aecfa980560557b2a83c179b80573c7759d27440530843b12f268de0022100bae90f3d7d75ce9a7c187f78a2b4a4bf37a0b37b60442388e05ea60aa05aa388:922c64590222798bb761d5b6d8e72950

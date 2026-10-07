@@ -1,37 +1,34 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - contains_any(tolower(body), "<title>datagerry", "content=\"datagerry")
+    - status_code == 200
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/auth'
+  - '{{BaseURL}}'
+  stop-at-first-match: true
 id: datagerry-panel
-
 info:
-  name: Datagerry Panel - Detect
   author: s4e-io
-  severity: info
-  description: |
-    Datagerry panel was discovered.
-  reference:
-    - https://datagerry.com/
+  description: 'Datagerry panel was discovered.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)datagerry"})
-    verified: true
-    max-request: 1
-    vendor: becon
-    product: datagerry
-    shodan-query: http.title:"datagerry"
     fofa-query: title="datagerry"
     google-query: intitle:"datagerry"
+    max-request: 1
+    product: datagerry
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)datagerry"})
+    shodan-query: http.title:"datagerry"
+    vendor: becon
+    verified: true
+  name: Datagerry Panel - Detect
+  reference:
+  - https://datagerry.com/
+  severity: info
   tags: panel,login,datagerry,detect,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/auth"
-      - "{{BaseURL}}"
-
-    stop-at-first-match: true
-    host-redirects: true
-    max-redirects: 2
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains_any(tolower(body), "<title>datagerry", "content=\"datagerry")'
-          - 'status_code == 200'
-        condition: and
-

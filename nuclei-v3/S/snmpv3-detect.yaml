@@ -1,5 +1,4 @@
 id: snmpv3-detect
-
 info:
   name: SNMPv3 Fingerprint - Detect
   author: matejsmycka
@@ -12,15 +11,15 @@ info:
     - https://svn.nmap.org/nmap/nselib/data/enterprise_numbers.txt
     - http://docs.logmatrix.com/nervecenter/guides/NC-SNMPv3-EngineIDs.pdf
   metadata:
-    verified: true
     max-request: 1
     shodan-query: product:"SNMP"
-  tags: js,udp,network,snmp
-
+    verified: true
+  tags: discovery,js,network,snmp,udp
 javascript:
-  - pre-condition: |
-      isUDPPortOpen(Host, Port);
-
+  - args:
+      Host: '{{Host}}'
+      Port: 161
+      Timeout: 2
     code: |
       const c = require("nuclei/net");
       const b = require('nuclei/bytes');
@@ -34,6 +33,13 @@ javascript:
       hexBuffer.Write(resp);
       const respHex = hexBuffer.Hex()
 
+      if (!resp || resp.length === 0) {
+        throw new Error("No SNMP response received");
+      }
+
+      if (!respHex || respHex.length === 0) {
+        throw new Error("Empty SNMP response");
+      }
 
       const known_vendors = {
         "80000009": "Cisco",
@@ -65,20 +71,16 @@ javascript:
         return "Enterprise: " + (m ? m[0] : "unknown");
       }
       getVendor(respHex);
-
-    args:
-      Host: "{{Host}}"
-      Port: 161
-      Timeout: 2
-
-    matchers:
-      - type: dsl
-        dsl:
-          - "success == true"
-
     extractors:
-      - type: regex
-        group: 1
+      - group: 1
         regex:
-          - "(.*)"
-# digest: 4b0a0048304602210094aea547ef8edbe734a64fbe3e4e8b1609c469f99e11708d6a074d71be3beccd022100ec05cd74b50383414a98a3580653cc1cabcfe4d5c678ddbadba6d6de0c6e83ff:922c64590222798bb761d5b6d8e72950
+          - (.*)
+        # digest: 4a0a004730450221008fd2ec2b039d7b4f1cc77cd8c02635d7509b5594f3cfdf2bcd454cc56b6b4e56022023f5fe0902a3c7e716f1e21556b257ab6d0712883f220cac10f10c83adb66ffa:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - dsl:
+          - success == true
+        type: dsl
+    pre-condition: |
+      isUDPPortOpen(Host, Port);

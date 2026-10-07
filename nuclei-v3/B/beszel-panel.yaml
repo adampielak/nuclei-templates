@@ -1,30 +1,27 @@
-id: beszel-panel
-
-info:
-  name: Beszel Login Panel - Detect
-  author: righettod
-  severity: info
-  description: |
-    Beszel products was detected.
-  reference:
-    - https://github.com/henrygd/beszel
-    - https://beszel.dev/
-  metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)beszel"})
-    verified: true
-    max-request: 1
-    shodan-query: http.title:"beszel"
-  tags: panel,beszel,login,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(to_lower(body), "<title>beszel</title>")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/'
+id: beszel-panel
+info:
+  author: righettod
+  description: 'Beszel products was detected.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains(to_lower(body), "<title>beszel</title>")'
-        condition: and
-
+    '
+  metadata:
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)beszel"})
+    shodan-query: http.title:"beszel"
+    verified: true
+  name: Beszel Login Panel - Detect
+  reference:
+  - https://github.com/henrygd/beszel
+  - https://beszel.dev/
+  severity: info
+  tags: panel,beszel,login,discovery

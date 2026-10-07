@@ -1,47 +1,42 @@
+http:
+- extractors:
+  - kval:
+    - last_modified
+    part: header
+    type: kval
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - <title>Login</title>
+    - loginToFlexDiv
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/phoenix/login.html'
 id: fortisiem-panel
-
 info:
-  name: Fortinet FortiSIEM - Panel
   author: pussycat0x,darses
-  severity: info
-  description: |
-    FortiSIEM login panel was discovered.
   classification:
     cpe: cpe:2.3:a:fortinet:fortisiem:*:*:*:*:*:*:*:*
+  description: 'FortiSIEM login panel was discovered.
+
+    '
   metadata:
-    verified: true
+    fofa-query:
+    - icon_hash="-1341442175"
+    - body="var hst = location.hostname"
     max-request: 1
-    vendor: fortinet
     product: fortisiem
     shodan-query:
-      - http.favicon.hash:-1341442175
-      - http.html:"var hst = location.hostname"
-    fofa-query:
-      - icon_hash="-1341442175"
-      - body="var hst = location.hostname"
+    - http.favicon.hash:-1341442175
+    - http.html:"var hst = location.hostname"
+    vendor: fortinet
+    verified: true
+  name: Fortinet FortiSIEM - Panel
+  severity: info
   tags: panel,fortinet,login,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/phoenix/login.html"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>Login</title>"
-          - "loginToFlexDiv"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
-          - last_modified
-

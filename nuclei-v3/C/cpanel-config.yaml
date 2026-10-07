@@ -1,25 +1,23 @@
-id: cpanel-config
-
-info:
-  name: cPanel Configuration - File Disclosure
-  author: DhiyaneshDk
-  severity: medium
-  description: |
-    cPanel configuration file is exposed and accessible, potentially leading to sensitive information disclosure.
-  metadata:
-    verified: true
-    max-request: 1
-  tags: cpanel,config,exposure,discovery
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/cpanel.config"
+- matchers:
+  - condition: and
+    dsl:
+    - contains_all(body, 'configuration','user','access_log=')
+    - status_code == 200
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/cpanel.config'
+id: cpanel-config
+info:
+  author: DhiyaneshDk
+  description: 'cPanel configuration file is exposed and accessible, potentially leading
+    to sensitive information disclosure.
 
-    matchers:
-      - type: dsl
-        dsl:
-          - "contains_all(body, 'configuration','user','access_log=')"
-          - "status_code == 200"
-        condition: and
-
+    '
+  metadata:
+    max-request: 1
+    verified: true
+  name: cPanel Configuration - File Disclosure
+  severity: medium
+  tags: cpanel,config,exposure,discovery

@@ -1,29 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains(content_type, "application/json")
+    - contains(body, "\"firstRun\":true")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/api/beszel/first-run'
 id: beszel-unfinished-installation
 info:
-  name: Beszel Unfinished Installation
   author: 0x_Akoko
-  severity: high
-  description: |
-    Detected Beszel server monitoring hub had an unfinished installation with no admin account configured, allowing attackers to create an admin account and gain full control.
-  reference:
-    - https://github.com/henrygd/beszel
+  description: 'Detected Beszel server monitoring hub had an unfinished installation
+    with no admin account configured, allowing attackers to create an admin account
+    and gain full control.
+
+    '
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)globalThis\\.BESZEL"})
     fofa-query: body="globalThis.BESZEL"
     max-request: 1
+    runzero-match: service["http.body"] matches "(?i)globalThis\\.BESZEL"
     shodan-query: html:"globalThis.BESZEL"
     verified: true
-  tags: beszel,exposure,install,misconfig,vuln
-http:
-  - matchers:
-      - condition: and
-        # digest: 4a0a0047304502206a78e042c4877d8f27831d80292632bead209369c9e9616e2c864904f191307b022100c2986dc8c57d36c83b352643d4a04857671a97c305b4590925fe1275e559ec55:922c64590222798bb761d5b6d8e72950
-
-        dsl:
-          - status_code == 200
-          - contains(content_type, "application/json")
-          - contains(body, "\"firstRun\":true")
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}/api/beszel/first-run'
+  name: Beszel Unfinished Installation
+  reference:
+  - https://github.com/henrygd/beszel
+  severity: high
+  tags: beszel,misconfig,install,exposure

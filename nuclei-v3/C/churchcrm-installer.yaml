@@ -1,32 +1,28 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - contains(body, "ChurchCRM setup wizard")
+    - status_code == 200
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/setup'
 id: churchcrm-installer
-
 info:
-  name: ChurchCRM - Setup Exposure
   author: Kazgangap
-  severity: high
-  description: |
-    ChurchCRM setup is exposed.
-  reference:
-    - https://github.com/ChurchCRM/CRM
+  description: 'ChurchCRM setup is exposed.
+
+    '
   metadata:
-    vendor: churchcrm
+    fofa-query: app="churchcrm"
     product: churchcrm
     shodan-query: http.title:"churchcrm"
-    fofa-query: app="churchcrm"
+    vendor: churchcrm
+  name: ChurchCRM - Setup Exposure
+  reference:
+  - https://github.com/ChurchCRM/CRM
+  severity: high
   tags: misconfig,setup,churchcrm,exposure,vuln
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/setup"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'contains(body, "ChurchCRM setup wizard")'
-          - "status_code == 200"
-        condition: and
-

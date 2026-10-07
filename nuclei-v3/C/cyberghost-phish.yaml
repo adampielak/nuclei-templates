@@ -1,35 +1,30 @@
+http:
+- host-redirects: true
+  matchers:
+  - type: word
+    words:
+    - <title>Fast, Secure, &amp; Private VPN Service | CyberGhost VPN
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"cyberghostvpn.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: cyberghost-phish
-
 info:
-  name: CyberGhost phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A CyberGhost phishing website was detected
-  reference:
-    - https://cyberghostvpn.com
+  description: 'A CyberGhost phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: CyberGhost phishing Detection
+  reference:
+  - https://cyberghostvpn.com
+  severity: info
   tags: phishing,cyberghost,vpn,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Fast, Secure, &amp; Private VPN Service | CyberGhost VPN'
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"cyberghostvpn.com")'
-

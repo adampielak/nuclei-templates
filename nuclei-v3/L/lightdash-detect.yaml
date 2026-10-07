@@ -1,5 +1,4 @@
 id: lightdash-detect
-
 info:
   name: Lightdash - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://github.com/lightdash/lightdash
     - https://www.lightdash.com/
   metadata:
-    verified: true
     max-request: 1
-    vendor: lightdash
     product: lightdash
     shodan-query: 'http.title:"Lightdash"'
-  tags: lightdash,analytics,bi,data,tech,detect
-
+    vendor: lightdash
+    verified: true
+  tags: analytics,bi,data,detect,lightdash,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,14 +29,12 @@ http:
           - '<title>Lightdash</title>'
           - "content=\"Lightdash - Explore and visualize your team's analytics and metrics.\""
         condition: and
-
       - type: word
         part: header
         words:
           - "Lightdash-Version:"
         case-insensitive: true
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022000db622bfd2bab69075b2f9662c8a4b2e4dab1e79d955fea5a7c834cc23428a902210081baac98a876c615d400e314f34fd9f33e4607d5f634d919e7c85298c2074513:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022000db622bfd2bab69075b2f9662c8a4b2e4dab1e79d955fea5a7c834cc23428a902210081baac98a876c615d400e314f34fd9f33e4607d5f634d919e7c85298c2074513:922c64590222798bb761d5b6d8e72950

@@ -11,7 +11,6 @@ info:
   classification:
     cpe: cpe:2.3:a:tt-rss:tiny_tiny_rss:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-418614327"
     verified: true
     max-request: 1
     vendor: tt-rss
@@ -30,4 +29,4 @@ http:
           - 'status_code==200'
           - 'contains_any(body, "Tiny Tiny RSS", "ttrss_login", "ttrss_utility")'
         condition: and
-
+# digest: 490a00463044022044bedbff679c38df33d4591c04e94b9eb5cda5b1bd4afa8ca2610f78987910040220284069af2fa1e5d6b821389de77f21b8a91a6c52250184ed859a0cbd620cb156:922c64590222798bb761d5b6d8e72950

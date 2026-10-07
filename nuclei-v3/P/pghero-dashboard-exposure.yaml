@@ -26,4 +26,4 @@ info:
   reference:
   - https://github.com/ankane/pghero
   severity: medium
-  tags: exposure,panel,pghero
+  tags: exposure,panel,pghero,misconfig

@@ -10,7 +10,7 @@ info:
     - https://box.com
   metadata:
     max-request: 1
-  tags: phishing,box-storage,osint
+  tags: phishing,box-storage,osint,discovery
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"box.com")'
-# digest: 490a0046304402207eb7447aa2a54bf767f92168c9d8aa8e52122e6d128d3c33a58b013f26e531b20220464aec7e3baa71c414cfd441e2773ce818221adbec2d8e3646c7f8390f29e309:922c64590222798bb761d5b6d8e72950
+

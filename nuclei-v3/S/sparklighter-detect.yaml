@@ -1,5 +1,4 @@
 id: sparklighter-detect
-
 info:
   name: Spark Lighter Detection
   author: icarot
@@ -9,35 +8,31 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:spark:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
-    max-request: 1
-    vendor: apache
-    product: spark
     category: productivity
-    shodan-query:
-      - http.html:"/apps/imt/html/"
-      - http.title:"spark master at"
     fofa-query:
       - title="spark master at"
       - body="/apps/imt/html/"
     google-query: intitle:"spark master at"
-  tags: tech,lighter,spark,detect,apache
-
+    max-request: 1
+    product: spark
+    shodan-query:
+      - http.html:"/apps/imt/html/"
+      - http.title:"spark master at"
+    vendor: apache
+    verified: true
+  tags: apache,detect,discovery,lighter,spark,tech
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/lighter/api"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - '<title>Lighter</title>'
-          - '/lighter/favicon.svg'
-        condition: and
-
-      - type: status
-        status:
+          - <title>Lighter</title>
+          - /lighter/favicon.svg
+      - status:
           - 200
-# digest: 4b0a00483046022100885f1e1553d131a3bbba3319f5b12215deef51d4d638ef1e63f434b16fc0c78d022100fcaa52ebc6a19aa0eafad637f6816d21e8e9a7ce9f9ee6b0982c6074bfadfcc1:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/lighter/api'

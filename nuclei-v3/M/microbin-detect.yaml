@@ -1,5 +1,4 @@
 id: microbin-detect
-
 info:
   name: MicroBin - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://microbin.eu/
     - https://github.com/szabodanika/microbin
   metadata:
-    verified: true
     max-request: 1
-    vendor: microbin
     product: microbin
     shodan-query: 'http.title:"MicroBin"'
-  tags: microbin,tech,detect,pastebin
-
+    vendor: microbin
+    verified: true
+  tags: detect,microbin,pastebin,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -33,8 +30,7 @@ http:
           - 'id="pasta-form"'
           - '/static/aes.js'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204709051a5232a77873163879748c17c3c2232add318bd702eb0525acdd0561ea022100e1fe5a7e4af45ddfd373267fa5a76da1e2d49356a2b93962f24d31f880fcab50:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502204709051a5232a77873163879748c17c3c2232add318bd702eb0525acdd0561ea022100e1fe5a7e4af45ddfd373267fa5a76da1e2d49356a2b93962f24d31f880fcab50:922c64590222798bb761d5b6d8e72950

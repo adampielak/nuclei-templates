@@ -1,29 +1,24 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>dbt Docs</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: dbt-docs-panel
-
 info:
-  name: dbt Docs Panel - Detect
   author: johnk3r
-  severity: info
   description: dbt Docs panel was detected.
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)dbt Docs"})
     max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)dbt Docs"})
     shodan-query: http.title:"dbt Docs"
+  name: dbt Docs Panel - Detect
+  severity: info
   tags: panel,dbt,discovery
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>dbt Docs</title>"
-
-      - type: status
-        status:
-          - 200
-

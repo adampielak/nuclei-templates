@@ -1,37 +1,33 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - Buy Me a Coffee is the best way for creators and artists to accept support and
+      membership from their fans.
+    - <title>Buy Me a Coffee
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - '!contains(host,"buymeacoffee.com")'
+    type: dsl
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: buymeacoffee-phish
-
 info:
-  name: Buy Me a Coffee phishing Detection
   author: rxerium
-  severity: info
-  description: |
-    A Buy Me a Coffee phishing website was detected
-  reference:
-    - https://buymeacoffee.com
+  description: 'A Buy Me a Coffee phishing website was detected
+
+    '
   metadata:
     max-request: 1
+  name: Buy Me a Coffee phishing Detection
+  reference:
+  - https://buymeacoffee.com
+  severity: info
   tags: phishing,buymeacoffee,osint,discovery
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'Buy Me a Coffee is the best way for creators and artists to accept support and membership from their fans.'
-          - '<title>Buy Me a Coffee'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-      - type: dsl
-        dsl:
-          - '!contains(host,"buymeacoffee.com")'
-

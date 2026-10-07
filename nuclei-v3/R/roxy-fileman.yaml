@@ -23,14 +23,16 @@ id: roxy-fileman
 info:
   author: liquidsec,DhiyaneshDk
   classification:
+    cpe: cpe:2.3:a:roxyfileman:roxy_fileman:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   description: Roxy File Manager panel was detected.
   metadata:
     google-query: intitle:"Roxy file manager"
     max-request: 4
+    product: roxy_fileman
+    vendor: roxyfileman
     verified: true
   name: Roxy File Manager - Panel Detect
   severity: info
-  tags: tech,fileupload,roxy,fileman
+  tags: tech,roxy,fileman,panel,roxyfileman

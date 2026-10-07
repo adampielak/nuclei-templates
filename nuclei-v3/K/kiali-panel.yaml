@@ -1,41 +1,40 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - (?i)"Kiali version":\s*"([a-z0-9.]+)"
+    type: regex
+  host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "kiali-ui", "<title>kiali", "kiali version")
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}/kiali/api/status'
+  - '{{BaseURL}}/kiali/'
+  stop-at-first-match: true
 id: kiali-panel
 info:
-  name: Kiali - Detect
   author: righettod
-  severity: info
-  description: |
-    kiali panel was detected.
-  reference:
-    - https://kiali.io/
   classification:
     cpe: cpe:2.3:a:kiali:kiali:*:*:*:*:*:*:*:*
+  description: 'kiali panel was detected.
+
+    '
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Kiali"})
     max-request: 2
     product: kiali
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Kiali"})
     shodan-query: title:"Kiali"
     vendor: kiali
     verified: true
-  tags: detect,discovery,kiali,login,panel
-http:
-  - extractors:
-      - group: 1
-        part: body
-        regex:
-          - (?i)"Kiali version":\s*"([a-z0-9.]+)"
-        # digest: 490a0046304402204832bfb6426aaaaefe2dd7e8990f58faf318cae1771fc1126dd2ff21105d8b50022040618ef1a308be6a6704f4820d86e99ccc0fe2080a7154cc9fdcb004ad012dd3:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    host-redirects: true
-    matchers:
-      - condition: and
-        dsl:
-          - status_code == 200
-          - contains_any(to_lower(body), "kiali-ui", "<title>kiali</title>", "<title>kiali console</title>", "kiali version")
-        type: dsl
-    max-redirects: 2
-    method: GET
-    path:
-      - '{{BaseURL}}/kiali/api/status'
-      - '{{BaseURL}}/kiali/'
-    stop-at-first-match: true
+  name: Kiali - Detect
+  reference:
+  - https://kiali.io/
+  severity: info
+  tags: panel,kiali,detect,login,discovery

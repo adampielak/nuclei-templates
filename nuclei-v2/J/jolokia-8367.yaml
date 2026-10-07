@@ -1,8 +1,10 @@
 id: jolokia-instance
+
 info:
   name: Jolokia Version Disclosure
   author: mavericknerd & dwisiswant0
   severity: info
+
 requests:
   - method: GET
     path:

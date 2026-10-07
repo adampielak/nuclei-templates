@@ -1,36 +1,34 @@
 id: torchserve-detect
-
 info:
-  name: TorchServe API Description - Detect
-  author: DhiyaneshDk
+  name: PyTorch TorchServe - Detect
+  author: DhiyaneshDk,insidetrust,hdm
   severity: info
   description: |
-    Detects the presence of TorchServe APIs.
+    Detected PyTorch TorchServe, a model-serving framework for PyTorch models. The inference API (default port 8080) answers GET /ping with {"status":"Healthy"} and exposes /api-description; the management API (default port 8081) lists registered models at GET /models. An exposed management API permits unauthenticated model registration and scaling and discloses the served model names.
+  reference:
+    - https://github.com/pytorch/serve
+    - https://pytorch.org/serve/
   metadata:
-    verified: true
-    max-request: 1
-    vendor: pytorch
-    product: torchserve
     fofa-query: body="Requested method is not allowed, please refer to API document"
-  tags: tech,pytorch,api
-
+    max-request: 3
+    product: torchserve
+    shodan-query: http.html:"TorchServe"
+    vendor: pytorch
+    verified: true
+  tags: ai,detect,discovery,inference,llm,pytorch,tech,torchserve
 http:
-  - method: GET
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100c896f32f1ce8a549b704ef8bc397187cde8cec4af51cced645c4040778a589f50221008320962232873af43371f9ef9d3fba3f5778a5327058d42c132f4131f3f8bd2e:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_any(body, "\"TorchServe APIs\"", "\"apiDescription\"", "\"operationId\"") || contains_all(body, "\"models\"", "\"modelName\"") || contains_all(body, "\"status\"", "Healthy")
+          - contains(content_type, "application/json")
+          - status_code == 200
+        type: dsl
+    method: GET
     path:
-      - "{{BaseURL}}/api-description"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'TorchServe APIs"'
-          - '"apiDescription"'
-          - 'operationId":'
-        condition: or
-
-      - type: word
-        part: content_type
-        words:
-          - "application/json"
-# digest: 4a0a0047304502200270fd56a09ed29edf99ab0f7d5d5959be7e81d99e71a6f8496d762fda080ce2022100be4a1fb9680261413fb499e9385bfffafa439638eb0a940ab274d48a1f53b94f:922c64590222798bb761d5b6d8e72950
+      - '{{BaseURL}}/api-description'
+      - '{{BaseURL}}/models'
+      - '{{BaseURL}}/ping'
+    stop-at-first-match: true

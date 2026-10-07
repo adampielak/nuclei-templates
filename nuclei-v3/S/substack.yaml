@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,substack
+  tags: osint,substack,discovery
 
 self-contained: true
 
@@ -32,4 +32,4 @@ http:
         part: body
         words:
           - 'handle\":\"{{user}}\"'
-# digest: 4a0a0047304502200377499f59674bfbeffd94704f6265e9529519e484c7391eef1b85c839914902022100ab705fa2428a677daf2abdabcbe781c56f7f050627119132aad480ff42febb98:922c64590222798bb761d5b6d8e72950
+

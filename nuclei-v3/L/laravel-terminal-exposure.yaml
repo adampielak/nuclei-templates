@@ -1,31 +1,32 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - Laravel Terminal
+    - terminal.endpoint
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/asf/terminal'
 id: laravel-terminal-exposure
 info:
-  name: Laravel Terminal - Exposed
   author: pussycat0x
-  severity: high
-  description: |
-    The web application was built on the Laravel framework, with Laravel Terminal enabled and publicly accessible; this was detected in the production environment and led to disclosure of sensitive application information.
-  reference:
-    - https://github.com/recca0120/laravel-terminal
-    - https://www.acunetix.com/vulnerabilities/web/laravel-terminal-open/
+  description: 'The web application was built on the Laravel framework, with Laravel
+    Terminal enabled and publicly accessible; this was detected in the production
+    environment and led to disclosure of sensitive application information.
+
+    '
   metadata:
     max-request: 1
     verified: false
-  tags: exposure,laravel,misconfig,rce,terminal,vuln
-http:
-  - matchers:
-      - condition: or
-        part: body
-        type: word
-        words:
-          - Laravel Terminal
-          - terminal.endpoint
-      - status:
-          - 200
-        # digest: 4a0a004730450221009fa9ce580957f48b1f90efcdda9774da5b818605f59d8e27dbbf68624381c1e102206a474d189e4d30c7369fdec171d3a3c87e86434b08ed78a990cc7a3168dbb234:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/asf/terminal'
+  name: Laravel Terminal - Exposed
+  reference:
+  - https://github.com/recca0120/laravel-terminal
+  - https://www.acunetix.com/vulnerabilities/web/laravel-terminal-open/
+  severity: high
+  tags: laravel,terminal,exposure,misconfig,rce

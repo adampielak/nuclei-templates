@@ -1,17 +1,19 @@
+file:
+- extensions:
+  - all
+  matchers:
+  - negative: true
+    type: word
+    words:
+    - set admin-scp enable
+  matchers-condition: and
 id: scp-admin-disabled
 info:
-  name: Admin-SCP Disabled
   author: pussycat0x
-  severity: info
-  descritpion: Disable SCP by default. Enabling SCP allows downloading the configuration file from the FortiGate as an alternative method of backing up the configuration file.
+  descritpion: Disable SCP by default. Enabling SCP allows downloading the configuration
+    file from the FortiGate as an alternative method of backing up the configuration
+    file.
+  name: Admin-SCP Disabled
   reference: https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
+  severity: info
   tags: fortigate,config-audit
-file:
-  - extensions:
-      - all
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "set admin-scp enable"
-        negative: true

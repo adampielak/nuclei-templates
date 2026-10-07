@@ -1,33 +1,29 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>CloudCenter Installer
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
 id: cloudcenter-installer
-
 info:
-  name: CloudCenter Installer Exposure
   author: pussycat0x
-  severity: high
-  description: CloudCenter is susceptible to the Installation page exposure due to misconfiguration.
   classification:
     cpe: cpe:2.3:a:cisco:cloudcenter:*:*:*:*:*:*:*:*
+  description: CloudCenter is susceptible to the Installation page exposure due to
+    misconfiguration.
   metadata:
-    verified: true
     max-request: 1
-    vendor: cisco
     product: cloudcenter
     shodan-query: title:"CloudCenter Installer"
+    vendor: cisco
+    verified: true
+  name: CloudCenter Installer Exposure
+  severity: high
   tags: misconfig,cisco,cloudcenter,install,exposure,vuln
-
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>CloudCenter Installer'
-
-      - type: status
-        status:
-          - 200
-

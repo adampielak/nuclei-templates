@@ -1,27 +1,27 @@
+http:
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, 'BasePermissions','schemas.microsoft.com','_api/Web/')
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/_api/web/roledefinitions'
 id: sharepoint-files-disclosure
 info:
-  name: Microsoft SharePoint Files Disclosure
   author: pussycat0x
-  severity: info
-  description: |
-    Deteted information revealed that Microsoft SharePoint files had been inadvertently disclosed.
-  reference:
-    - https://sharepointstuff.com/2021/03/30/useful-sharepoint-urls/
-    - https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-folders-and-files-with-rest
+  description: 'Deteted information revealed that Microsoft SharePoint files had been
+    inadvertently disclosed.
+
+    '
   metadata:
     fofa-query: title="SharePoint"
     shodan-query: http.title:"SharePoint"
     verified: true
-  tags: exposure,microsoft,misconfig,sharepoint,vuln
-http:
-  - matchers:
-      - condition: and
-        # digest: 4a0a00473045022100de90ea141475fd0973df8daf91fed7c934941eeeb6b9e6cc0391a43a3a3e3ed202200a59ab039a5e1bcb9e6b8cb660dd73073801ee76882de54502e2c68dce6bdba7:922c64590222798bb761d5b6d8e72950
-
-        dsl:
-          - status_code == 200
-          - contains_all(body, 'BasePermissions','schemas.microsoft.com','_api/Web/')
-        type: dsl
-    method: GET
-    path:
-      - '{{BaseURL}}/_api/web/roledefinitions'
+  name: Microsoft SharePoint Files Disclosure
+  reference:
+  - https://sharepointstuff.com/2021/03/30/useful-sharepoint-urls/
+  - https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-folders-and-files-with-rest
+  severity: info
+  tags: sharepoint,microsoft,exposure,misconfig

@@ -12,7 +12,6 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Go\\.Control"})
     verified: true
     max-request: 1
     vendor: go-control
@@ -41,4 +40,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a004730450221008dc9a60a939fdf23aef21828db7c2357d42bbc82f58c3c6103e2c6c5d05efa6b0220601ee20b6043053baaf327102dca055d7f997a861d2496e231d8edc6edef33de:922c64590222798bb761d5b6d8e72950
