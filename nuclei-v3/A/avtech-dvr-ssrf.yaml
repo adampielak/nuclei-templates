@@ -1,36 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Search.Device
-    - Proto=
-    - IPAddress=
-  - part: header
-    type: word
-    words:
-    - text/plain
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/cgi-bin/nobody/Search.cgi?action=scan'
 id: avtech-dvr-ssrf
-info:
-  author: ritikchaddha
-  description: 'AVTECH DVR device, Search.cgi can be accessed directly. Search.cgi
-    is responsible for searching and accessing cameras in the local network. Search.cgi
-    provides the cgi_query function.
 
-    '
-  metadata:
-    fofa-query: "app=\"AVTECH-\u89C6\u9891\u76D1\u63A7\""
-    max-req: 1
-    shodan-query: title:"login" product:"Avtech"
-    verified: 'true'
+info:
   name: AVTECH DVR - SSRF
+  author: ritikchaddha
   severity: medium
-  tags: ssrf,avtech,unauth,iot
+  description: |
+    AVTECH DVR device, Search.cgi can be accessed directly. Search.cgi is responsible for searching and accessing cameras in the local network. Search.cgi provides the cgi_query function.
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"login" product:"Avtech"
+    fofa-query: app="AVTECH-视频监控"
+  tags: ssrf,avtech,unauth,iot,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/nobody/Search.cgi?action=scan"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Search.Device'
+          - 'Proto='
+          - 'IPAddress='
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - text/plain
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a004830460221008129e0eedf752d8e691ba7330a495676199d932104c48775dec98a15a3dd9677022100b781a3be4d8821304913559b3783339ed61d2cf9d5c5afe859ece74fd38be1b8:922c64590222798bb761d5b6d8e72950

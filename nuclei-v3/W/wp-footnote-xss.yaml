@@ -16,7 +16,6 @@ info:
     cvss-score: 6.4
     cwe-id: CWE-79
   metadata:
-    runzero-review: REJECT/2025-11-07/excluding tag authenticated
     max-request: 4
     framework: wordpress
   tags: wpscan,xss,wp,wordpress,footnote,xss,authenticated,vuln
@@ -31,9 +30,11 @@ http:
         Cookie: wordpress_test_cookie=WP%20Cookie%20check
 
         log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
+
       - |
         GET /wp-admin/post-new.php HTTP/1.1
         Host: {{Hostname}}
+
       - |
         POST /?rest_route=/wp/v2/posts/{{postid}} HTTP/1.1
         Host: {{Hostname}}
@@ -50,12 +51,14 @@ http:
           },
           "status": "pending"
         }
+
       - |
         GET /?p={{postid}} HTTP/1.1
         Host: {{Hostname}}
 
     host-redirects: true
     max-redirects: 2
+
     matchers:
       - type: dsl
         dsl:
@@ -80,4 +83,4 @@ http:
         regex:
           - 'createNonceMiddleware\(\s"(.*)\"\s\)'
         internal: true
-
+# digest: 4a0a0047304502201c8501c22f446c7ca165302d992f585be0e30f763bcf593e57dd3d09321bf5af022100e9b6033a688bb5e858f7c54b4a5a385db4cfeb9e31a8b61ee4556f7cd16eece3:922c64590222798bb761d5b6d8e72950

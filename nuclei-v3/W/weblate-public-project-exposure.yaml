@@ -1,4 +1,5 @@
 id: weblate-public-project-exposure
+
 info:
   name: Weblate Public Project - Exposure
   author: ritikchaddha
@@ -9,31 +10,33 @@ info:
     - https://docs.weblate.org/en/latest/admin/security.html
     - https://github.com/WeblateOrg/weblate
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Weblate"})
-    fofa-query: title="Weblate"
     max-request: 1
-    shodan-query: http.title:"Weblate"
     verified: true
-  tags: exposure,misconfig,public,vuln,weblate
-http:
-  - matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - Weblate
-          - Untranslated
-          - Browse all projects
-      - part: content_type
-        type: word
-        words:
-          - text/html
-      - status:
-          - 200
-        # digest: 490a0046304402205ede5f05de5e45ccb9d1bd8ce6c427781650106b7539cd7245359f4d9a78f1c402207d4b55e1c3079944977ca16f23351ddc4d6a4d1252daefb120bba5631bca548b:922c64590222798bb761d5b6d8e72950
+    fofa-query: 'title="Weblate"'
+    shodan-query: 'http.title:"Weblate"'
+  tags: misconfig,exposure,weblate,public
 
-        type: status
-    matchers-condition: and
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/projects/'
+      - "{{BaseURL}}/projects/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Weblate"
+          - "Untranslated"
+          - "Browse all projects"
+        condition: and
+
+      - type: word
+        part: content_type
+        words:
+          - "text/html"
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100e74da0a544cd32e7aa5e36a1f0b986727cc3eaf50f2723c6293c609e337cadc402203dbef97c8c3c9338c14892c1fdb4779e315981b6c64a652b179a4d2ba2e40737:922c64590222798bb761d5b6d8e72950
