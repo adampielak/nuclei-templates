@@ -1,5 +1,4 @@
 id: wordpress-cmb2-fpd
-
 info:
   name: WordPress CMB2 - Full Path Disclosure
   author: ritikchaddha
@@ -9,34 +8,32 @@ info:
   reference:
     - https://wordpress.org/plugins/cmb2/
   metadata:
-    verified: true
-    max-request: 3
-    vendor: developer
-    product: cmb2
-    framework: wordpress
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/cmb2/"})
     fofa-query: body="/wp-content/plugins/cmb2/"
-  tags: wp,wordpress,wp-plugin,fpd,cmb2,exposure
-
+    framework: wordpress
+    max-request: 3
+    product: cmb2
+    vendor: developer
+    verified: true
+  tags: cmb2,exposure,fpd,vuln,wordpress,wp,wp-plugin
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2.php"
-      - "{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2_Field.php"
-      - "{{BaseURL}}/wp-content/plugins/cmb2/includes/helper-functions.php"
-
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - "Fatal error"
-          - "plugins/cmb2"
-          - "Uncaught Error:"
-        condition: and
-
-      - type: status
-        status:
+          - Fatal error
+          - plugins/cmb2
+          - 'Uncaught Error:'
+      - status:
           - 200
-# digest: 4a0a00473045022100824ec0b8b7d9239fd70aadd15fcdca8a66d21fdd1d4c2e85030e00504ec90d8002207f528bc45fc864789d586326139a70f9b79829b3068e45a490d4eb0487db771e:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402204ef86714e5ade776b55ea089936ed50888df76bb4261e87e93dc6628ca868e5302204f30cd6c28701bac89d8e45ca5025ce4459875b7b8be6a276f44034dc1953b9b:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2.php'
+      - '{{BaseURL}}/wp-content/plugins/cmb2/includes/CMB2_Field.php'
+      - '{{BaseURL}}/wp-content/plugins/cmb2/includes/helper-functions.php'
+    stop-at-first-match: true

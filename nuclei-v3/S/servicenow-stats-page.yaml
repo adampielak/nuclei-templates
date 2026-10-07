@@ -1,5 +1,4 @@
 id: servicenow-stats-page
-
 info:
   name: ServiceNow Stats Page - Detection
   author: cham423
@@ -10,27 +9,25 @@ info:
     - https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0517269
     - https://www.servicenow.com/community/servicenow-ai-platform-forum/is-there-a-way-to-restrict-access-to-the-stats-do-page/m-p/1026919
   metadata:
-    verified: true
     max-request: 1
     shodan-query: http.component:"ServiceNow"
-  tags: servicenow,exposure,misconfig
-
+    verified: true
+  tags: exposure,misconfig,servicenow,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/stats.do"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains(tolower(body), "servlet statistics")'
-        condition: and
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 1
         name: build_tag
-        group: 1
         regex:
-          - 'Build tag:\s*([^\s<]+)'
-# digest: 4b0a00483046022100865ef9d4d61a5c4964e8a2770b5017746fb05c8b92eff4327b5d79a5db70c77c022100b8f75fcbfd04c08a1bb383bb1407c2273f9ace8457aa040b7ebf60520efb0a62:922c64590222798bb761d5b6d8e72950
+          - Build tag:\s*([^\s<]+)
+        # digest: 490a00463044021f230b1be4c1781d0a314f68b97c930d8b4c84197fc8012d90d8f44357bfc950022100c0c1de4a8c6d257ede904df3f8435e96920e3737fbbd2d5af8ffd293efcf9248:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(tolower(body), "servlet statistics")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/stats.do'

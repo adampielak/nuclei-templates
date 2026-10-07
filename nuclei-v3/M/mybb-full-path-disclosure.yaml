@@ -1,5 +1,4 @@
 id: mybb-full-path-disclosure
-
 info:
   name: MyBB - Full Path Disclosure
   author: 0x_Akoko
@@ -9,21 +8,21 @@ info:
   reference:
     - https://mybb.com/
   metadata:
-    verified: true
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)MyBB"})
+    fofa-query: body="Powered by MyBB"
     max-request: 1
     shodan-query: http.html:"MyBB"
-    fofa-query: body="Powered by MyBB"
-  tags: mybb,misconfig,fpd
-
+    verified: true
+  tags: fpd,misconfig,mybb,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/inc/cachehandlers/disk.php"
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022034abfde175522446010d58e2c1b7c758c230b18a686f20fa163823f443fe668b0221008098d6227dda84e47e558e8b8f0539eb3325f7d0be63c9af40e893eacfe3858b:922c64590222798bb761d5b6d8e72950
 
-    matchers:
-      - type: dsl
         dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "Fatal error", "Uncaught Error")'
-        condition: and
-# digest: 490a0046304402202450f476ee3692bb373803d065d10df409e65ab02665d5ce052de09a33c7f4630220300ea90e027e2f72736cd0f935af3b7a40f2b9c70eda87d38bb704ecff367b54:922c64590222798bb761d5b6d8e72950
+          - status_code == 200
+          - contains_all(body, "Fatal error", "Uncaught Error")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/inc/cachehandlers/disk.php'

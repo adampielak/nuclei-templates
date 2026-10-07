@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "X-Recruiting:"
-  tags: miscellaneous,misc,hiring,jobs,employment,generic,vuln
+  tags: misc,hiring,jobs,employment,generic
 
 http:
   - method: GET
@@ -30,4 +30,5 @@ http:
       - type: dsl
         dsl:
           - 'x_recruiting'
-# digest: 490a00463044022052f1f6cf78adcb44c073519179408fc211e98dccc4d44d091b719a551991709d0220304683ffb22e5f7a28f527878b940a9c12ef8d873b4ab7aa0c088bac3ebe536a:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022019cbdbe00589be8768d73c0c8c92b7697c579e7fc55dcc6898baeed92f66c1c80221008af1ead7dae6de19a478294ee190c2f94dd6677ad82c43aa71d673c86aca15b4:922c64590222798bb761d5b6d8e72950

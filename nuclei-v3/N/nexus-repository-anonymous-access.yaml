@@ -1,5 +1,4 @@
 id: nexus-repository-anonymous-access
-
 info:
   name: Nexus Repository Manager - Anonymous Access Enabled
   author: 0x_Akoko
@@ -14,28 +13,27 @@ info:
     cvss-score: 6.5
     cwe-id: CWE-276
   metadata:
-    max-request: 1
-    verified: true
-    shodan-query: title:"Nexus Repository Manager"
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Nexus Repository Manager"})
     fofa-query: title="Nexus Repository Manager"
-  tags: misconfig,nexus,sonatype,exposure,unauth
-
+    max-request: 1
+    shodan-query: title:"Nexus Repository Manager"
+    verified: true
+  tags: exposure,misconfig,nexus,sonatype,unauth,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/service/rest/v1/repositories"
+  - extractors:
+      - json:
+          - .[].name
+        # digest: 4b0a00483046022100976daa77366809d499ed3fdc4013e7834992e9e39389b730f92dcf484d3de941022100f9a0eb63f5aed2387a34a048b4ccf7c6afa3c1b5ffb4a8be8d4ff8907845677e:922c64590222798bb761d5b6d8e72950
 
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "\"name\"", "\"format\"", "\"type\"")'
-          - 'contains_any(body, "maven", "npm", "docker", "nuget", "pypi", "raw", "apt", "yum")'
-        condition: and
-
-    extractors:
-      - type: json
         part: body
-        json:
-          - '.[].name'
-# digest: 470a00443042022000a3e782fea23e5d7dfe698e8b90b1af1157e782eb8e5126e3fe49eb576967d4021e1e72552826a2d77d48b207dec12d244455a8f0896581bead563ac6d7d885:922c64590222798bb761d5b6d8e72950
+        type: json
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_all(body, "\"name\"", "\"format\"", "\"type\"")
+          - contains_any(body, "maven", "npm", "docker", "nuget", "pypi", "raw", "apt", "yum")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/service/rest/v1/repositories'

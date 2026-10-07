@@ -1,32 +1,31 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - '[include]'
-    - '[ignore]'
-    - build
-    - lib
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/.flowconfig'
 id: flow-config-exposure
 info:
+  name: Flow Configuration - Exposure
   author: theamanrawat
-  description: 'Detects an exposed Flow configuration file. These files may contain
-    sensitive information such as credentials, internal endpoints, or environment
-    settings.
-
-    '
+  severity: medium
+  description: |
+    Detects an exposed Flow configuration file. These files may contain sensitive information such as credentials, internal endpoints, or environment settings.
+  reference:
+    - https://flow.org/en/docs/config/
   metadata:
     max-request: 1
-  name: Flow Configuration - Exposure
-  reference:
-  - https://flow.org/en/docs/config/
-  severity: medium
-  tags: exposure,config,flow,devops
+  tags: config,devops,exposure,flow,vuln
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '[include]'
+          - '[ignore]'
+          - build
+          - lib
+      - status:
+          - 200
+        # digest: 490a00463044022042e35c748f41b08e26722fd566c105eaf39bae4f23ed002f7a3552fb5151a7ca02201052db7112e1d7dfc8b24fe9e70ecdf20f8152186e45e139ed8ec56e367547a4:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/.flowconfig'

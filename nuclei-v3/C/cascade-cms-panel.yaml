@@ -1,31 +1,33 @@
-http:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - (?i)\-\s*v([0-9\.]+)
-    type: regex
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_any(to_lower(body), "cascade cms</title>", "window.cascade_")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/login.act'
 id: cascade-cms-panel
 info:
+  name: Cascade CMS Panel - Detect
   author: righettod
-  description: "Cascade CMS was detected \u2014 a web content management system for\
-    \ managing stand-out websites.\n"
+  severity: info
+  description: |
+    Cascade CMS was detected — a web content management system for managing stand-out websites.
+  reference:
+    - https://www.hannonhill.com/products/cascade-cms-web-content-management/index.html
   metadata:
-    max-request: 1
     runzero-match: any(each(service["html.titles"]), {# matches "(?i)Cascade CMS"})
+    max-request: 1
     shodan-query: http.title:"Cascade CMS"
     verified: true
-  name: Cascade CMS Panel - Detect
-  reference:
-  - https://www.hannonhill.com/products/cascade-cms-web-content-management/index.html
-  severity: info
-  tags: panel,cascade,detect
+  tags: cascade,detect,discovery,panel
+http:
+  - extractors:
+      - group: 1
+        part: body
+        regex:
+          - (?i)\-\s*v([0-9\.]+)
+        # digest: 490a004630440220280e803fa3d3840d291e316f3c0b4ed7851695b674872fc1677a52a764e84a7b02203e74ac00ec7942dea05877ebdc9f96907f873d9f722341eb4f13cdd5e2805d2b:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_any(to_lower(body), "cascade cms</title>", "window.cascade_")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/login.act'

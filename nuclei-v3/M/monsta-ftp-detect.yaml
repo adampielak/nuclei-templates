@@ -1,5 +1,4 @@
 id: monsta-ftp-detect
-
 info:
   name: Monsta FTP - Detect
   author: rxerium
@@ -9,35 +8,32 @@ info:
   reference:
     - https://www.monstaftp.com/
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Monsta FTP"})
     max-request: 1
     shodan-query: http.title:"Monsta FTP"
-  tags: tech,monsta,ftp,detect
-
+    verified: true
+  tags: detect,discovery,ftp,monsta,tech
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - 'ng-app="MonstaFTP"'
-          - '<title>Monsta FTP'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 1
         name: version
-        group: 1
         regex:
-          - 'monsta-min-([0-9.]+)\.js'
-# digest: 4b0a00483046022100ef92ad74f3890bd1340284e4001e6814246f08be5b65262a4568572d8182742f022100de35c0babdf1c8c3634e0ce8f34bc9b30448e169f786636f342b636ecf3d95a3:922c64590222798bb761d5b6d8e72950
+          - monsta-min-([0-9.]+)\.js
+        # digest: 4a0a0047304502206078af19c1af1d1424fe7b273b4f902062f4f1de854e4127325b19be468a2bde0221009b3f1bb9381e62b739915bd5ea487c4d9bf5b4bf6f251a4532bddd63983eb610:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    host-redirects: true
+    matchers:
+      - condition: and
+        type: word
+        words:
+          - ng-app="MonstaFTP"
+          - <title>Monsta FTP
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'

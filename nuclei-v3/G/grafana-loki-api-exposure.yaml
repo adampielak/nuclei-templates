@@ -1,5 +1,4 @@
 id: grafana-loki-api-exposure
-
 info:
   name: Grafana Loki - Unauthenticated API Access
   author: RootKaito
@@ -12,31 +11,27 @@ info:
   classification:
     cpe: cpe:2.3:a:grafana:loki:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    vendor: grafana
     product: loki
-  tags: exposure,loki,grafana,unauth,misconfig
-
+    vendor: grafana
+    verified: true
+  tags: exposure,grafana,loki,misconfig,unauth
 http:
   - method: GET
     path:
       - "{{BaseURL}}/loki/api/v1/labels"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - '"status":"success"'
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: json
         name: labels
         json:
           - ".data"
-# digest: 4b0a00483046022100b09aed011c41686dd6d94523408db022a0d917664540d65d4567b9afee9dc735022100929e5256db3e90cd313a9ca5f43179c9cbae7e05352867b5595521fca7f7a123:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100b09aed011c41686dd6d94523408db022a0d917664540d65d4567b9afee9dc735022100929e5256db3e90cd313a9ca5f43179c9cbae7e05352867b5595521fca7f7a123:922c64590222798bb761d5b6d8e72950

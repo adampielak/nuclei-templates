@@ -1,30 +1,35 @@
-http:
-- host-redirects: true
-  matchers:
-  - type: word
-    words:
-    - Bank of America - Banking, Credit Cards, Loans and Merrill Investing
-  - status:
-    - 200
-    type: status
-  - dsl:
-    - '!contains(host,"bankofamerica.com")'
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: bank-of-america-phish
-info:
-  author: rxerium
-  description: 'A Bank Of America phishing website was detected
 
-    '
+info:
+  name: Bank Of America phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    A Bank Of America phishing website was detected
+  reference:
+    - https://bankofamerica.com
   metadata:
     max-request: 1
-  name: Bank Of America phishing Detection
-  reference:
-  - https://bankofamerica.com
-  severity: info
   tags: phishing,BankOfAmerica,osint
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'Bank of America - Banking, Credit Cards, Loans and Merrill Investing'
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"bankofamerica.com")'
+# digest: 4a0a0047304502202274a3e25410e8d0342305ac9acbefa1606503276eddda574b3144ed4f3b08b7022100f80c27d29f7201216ef31177c00443acb914f4fbdbf31688209681167f9f0cf0:922c64590222798bb761d5b6d8e72950

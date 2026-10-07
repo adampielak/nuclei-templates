@@ -17,6 +17,7 @@ http:
   - method: GET
     path:
       - "{{BaseURL}}{{paths}}"
+
     payloads:
       paths:
         - "/1.sql"
@@ -57,4 +58,4 @@ http:
           - 200
           - 206
         condition: or
-# digest: 4a0a004730450220742fe4186e8a760f081b2fcee81c384a4f00fcae293c410b879afdd9fbfc2219022100f54c54c0cd1787b0b9b7a240350a02fa3783292c59bcc7ce68bbc9d28cf798fc:922c64590222798bb761d5b6d8e72950
+

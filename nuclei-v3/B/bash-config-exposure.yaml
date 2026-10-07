@@ -1,50 +1,49 @@
-http:
-- matchers:
-  - part: body
-    regex:
-    - usr/(local|bin)/
-    type: regex
-  - condition: or
-    part: body
-    type: word
-    words:
-    - 'export '
-    - 'source '
-    - if [
-    - then
-    - 'echo '
-    - 'for '
-    - do
-    - done
-  - negative: true
-    part: body
-    type: word
-    words:
-    - <html
-    - <!DOCTYPE
-    - '404'
-    - Not Found
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/.bashrc'
-  - '{{BaseURL}}/.bash_profile'
-  - '{{BaseURL}}/.profile'
-  - '{{BaseURL}}/.zshrc'
-  stop-at-first-match: true
 id: bash-config-exposure
 info:
+  name: Bash Configuration - Exposure
   author: theamanrawat
-  description: 'Detected exposed bash configuration on web servers that could have
-    contained sensitive information such as credentials, API keys, database connection
-    strings, or internal paths.
-
-    '
+  severity: low
+  description: |
+    Detected exposed bash configuration on web servers that could have contained sensitive information such as credentials, API keys, database connection strings, or internal paths.
   metadata:
     verified: true
-  name: Bash Configuration - Exposure
-  severity: low
-  tags: exposure,config,misconfig,bash
+  tags: bash,config,exposure,misconfig,vuln
+http:
+  - matchers:
+      - part: body
+        regex:
+          - usr/(local|bin)/
+        type: regex
+      - condition: or
+        part: body
+        type: word
+        words:
+          - 'export '
+          - 'source '
+          - if [
+          - then
+          - 'echo '
+          - 'for '
+          - do
+          - done
+      - negative: true
+        part: body
+        type: word
+        words:
+          - <html
+          - <!DOCTYPE
+          - "404"
+          - Not Found
+      - status:
+          - 200
+        # digest: 4a0a00473045022003aa124c5d49a6a52760e2f602a2890e9f488401438042d82649ac47f62a3278022100821f75c64d3d4a90288fa19861b975e9bbc4487d4895e896898dc8bd6f525a2e:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/.bashrc'
+      - '{{BaseURL}}/.bash_profile'
+      - '{{BaseURL}}/.profile'
+      - '{{BaseURL}}/.zshrc'
+    stop-at-first-match: true

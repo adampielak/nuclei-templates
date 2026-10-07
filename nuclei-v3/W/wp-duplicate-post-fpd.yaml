@@ -1,5 +1,4 @@
 id: wp-duplicate-post-fpd
-
 info:
   name: Duplicate Post - Full Path Disclosure
   author: theamanrawat
@@ -11,27 +10,25 @@ info:
   reference:
     - https://wordpress.org/plugins/duplicate-post/
   metadata:
-    verified: true
     max-requests: 1
-    public-www: "/wp-content/plugins/duplicate-post/"
-  tags: debug,wordpress,wp,wp-plugin,duplicate-post,fpd
-
+    public-www: /wp-content/plugins/duplicate-post/
+    verified: true
+  tags: debug,duplicate-post,fpd,vuln,wordpress,wp,wp-plugin
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/plugins/duplicate-post/duplicate-post.php"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "Fatal error", "undefined function", "wp-content/plugins/duplicate-post/duplicate-post.php")'
-        condition: and
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 0
         name: disclosed-path
-        group: 0
         regex:
-          - '([A-Za-z]:\\[^\s<>"]+|/[^\s<>"]+)wp-content/plugins/duplicate-post/duplicate-post\.php'
-# digest: 4b0a00483046022100c24156cfff58a4a4219aace673600f0ee64bb7ceafefa49ce157038673f1149c022100ab97942a49b87f6b969cf28c9c8216f9770c79390bdcd67b0f5a773f52fb0579:922c64590222798bb761d5b6d8e72950
+          - ([A-Za-z]:\\[^\s<>"]+|/[^\s<>"]+)wp-content/plugins/duplicate-post/duplicate-post\.php
+        # digest: 490a0046304402204feac2e4c45d4c3b9b3543931ea2c5ce718607b8b83032cf415d56ba2bf1829f0220208bc0c9b195cadbd272ca342fe1e049e1d656f05dbe3e0ace0a16f6fa002463:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_all(body, "Fatal error", "undefined function", "wp-content/plugins/duplicate-post/duplicate-post.php")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/duplicate-post/duplicate-post.php'

@@ -1,30 +1,35 @@
-http:
-- host-redirects: true
-  matchers:
-  - type: word
-    words:
-    - CCleaner Makes Your Computer Faster & More Secure | Official Website
-  - status:
-    - 200
-    type: status
-  - dsl:
-    - '!contains(host,"ccleaner.com")'
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: ccleaner-phish
-info:
-  author: rxerium
-  description: 'A ccleaner phishing website was detected
 
-    '
+info:
+  name: ccleaner phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    A ccleaner phishing website was detected
+  reference:
+    - https://ccleaner.com
   metadata:
     max-request: 1
-  name: ccleaner phishing Detection
-  reference:
-  - https://ccleaner.com
-  severity: info
   tags: phishing,ccleaner,osint
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'CCleaner Makes Your Computer Faster & More Secure | Official Website'
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"ccleaner.com")'
+# digest: 4a0a0047304502201dc5896d61ef5304e98978e2c01021d339d1b9c2326d80f33ab8b4f89f4b1cb902210091097fa5bcc6cd5a399e1006a784f63c77343ed6a57c83670313d2074b503f0f:922c64590222798bb761d5b6d8e72950

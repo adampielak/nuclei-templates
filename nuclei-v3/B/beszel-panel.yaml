@@ -1,27 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(to_lower(body), "<title>beszel</title>")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/'
 id: beszel-panel
-info:
-  author: righettod
-  description: 'Beszel products was detected.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)beszel"})
-    shodan-query: http.title:"beszel"
-    verified: true
+info:
   name: Beszel Login Panel - Detect
-  reference:
-  - https://github.com/henrygd/beszel
-  - https://beszel.dev/
+  author: righettod
   severity: info
+  description: |
+    Beszel products was detected.
+  reference:
+    - https://github.com/henrygd/beszel
+    - https://beszel.dev/
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)beszel"})
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"beszel"
   tags: panel,beszel,login,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(to_lower(body), "<title>beszel</title>")'
+        condition: and
+

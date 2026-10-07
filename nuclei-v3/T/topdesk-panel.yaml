@@ -21,7 +21,7 @@ info:
       - icon_hash="589927604"
       - icon_hash="1123106483"
       - icon_hash="1431756848"
-  tags: detect,panel,topdesk
+  tags: detect,panel,topdesk,login
 
 http:
   - method: GET

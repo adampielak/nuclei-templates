@@ -1,5 +1,4 @@
 id: wp-google-analytics-fpd
-
 info:
   name: WordPress Google Analytics - Full Path Disclosure
   author: 0x_Akoko
@@ -9,19 +8,18 @@ info:
   reference:
     - https://wordpress.org/plugins/google-analytics-for-wordpress/
   metadata:
-    verified: true
     max-request: 1
-  tags: debug,wordpress,fpd,wp-google-analytics,wp-plugin
-
+    verified: true
+  tags: debug,fpd,vuln,wordpress,wp-google-analytics,wp-plugin
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/plugins/google-analytics-for-wordpress/lite/includes/admin/connect.php"
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100938460f7c2ee68042b2bb59fb441b72708a859178b48e3f9395d2699fed97d7f022002527e400e6fdc527d00d905188e3007350b623f03f8ece0c8c3c48a0283524c:922c64590222798bb761d5b6d8e72950
 
-    matchers:
-      - type: dsl
         dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "Fatal error", "Uncaught Error", "/google-analytics-for-wordpress/")'
-        condition: and
-# digest: 4b0a00483046022100ef6e73f39efae1e19a9cbe6e0737f25d1cbfa815bb2128e18bdf8f2265c0dd8f022100c92c26873702d22431ddfc3ad7b7d883b0612232bad67881c0601d10c0e6f62b:922c64590222798bb761d5b6d8e72950
+          - status_code == 200
+          - contains_all(body, "Fatal error", "Uncaught Error", "/google-analytics-for-wordpress/")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/google-analytics-for-wordpress/lite/includes/admin/connect.php'

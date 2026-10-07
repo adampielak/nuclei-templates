@@ -10,7 +10,7 @@ info:
     - https://notion.so
   metadata:
     max-request: 1
-  tags: phishing,notion,osint,discovery
+  tags: phishing,notion,osint
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"notion.so")'
-# digest: 4a0a00473045022100d6f0c73c5142b1eebc2f8dc96b7a1f7cf6fa43f2cbd9d3153bab4aa80e67a0d902207acdaf2db5469eda7e3ae105a8cbae5999caf80fdd73bbc5152986ba460f6b39:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f05ae40f2fb8458e381c73a13d8ee42a3ae3d03b7fba852d32ffd1d013bfa2ac022100a2542bea859eef919662ff7d8a8849bafa4c8148afcfcc1c127c6ddf8adce03b:922c64590222798bb761d5b6d8e72950
