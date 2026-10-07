@@ -1886,4 +1886,166 @@ requests:
         dsl:
           - "status_code==200 && (\"-2006308185\" == mmh3(base64_py(body)))"
       - type: dsl
-        name: "bosch-security-syst
+        name: "bosch-security-systems-camera"
+        dsl:
+          - "status_code==200 && (\"-1702769256\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "node-red"
+        dsl:
+          - "status_code==200 && (\"321591353\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "motioneye-camera"
+        dsl:
+          - "status_code==200 && (\"-923693877\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "saia-burgess-controls-pcd"
+        dsl:
+          - "status_code==200 && (\"-1547576879\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "arcadyan-o2-box-network"
+        dsl:
+          - "status_code==200 && (\"1479202414\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "d-link-network"
+        dsl:
+          - "status_code==200 && (\"1081719753\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "abilis-network/automation"
+        dsl:
+          - "status_code==200 && (\"-166151761\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "ghost-cms"
+        dsl:
+          - "status_code==200 && (\"-1231681737\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"321909464\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"-1153873472\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"1095915848\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"788771792\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"-1863663974\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "keyhelp-keyweb-ag"
+        dsl:
+          - "status_code==200 && (\"-1267819858\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "keyhelp-keyweb-ag"
+        dsl:
+          - "status_code==200 && (\"726817668\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "glpi"
+        dsl:
+          - "status_code==200 && (\"-1474875778\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "netcom-technology"
+        dsl:
+          - "status_code==200 && (\"5471989\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "cradlepoint"
+        dsl:
+          - "status_code==200 && (\"-1457536113\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "myasp"
+        dsl:
+          - "status_code==200 && (\"-736276076\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "intelbras-sa"
+        dsl:
+          - "status_code==200 && (\"-1343070146\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "lenel"
+        dsl:
+          - "status_code==200 && (\"538585915\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "okofen-pellematic"
+        dsl:
+          - "status_code==200 && (\"-625364318\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "simplehelp-remote-support"
+        dsl:
+          - "status_code==200 && (\"1117165781\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "graphql"
+        dsl:
+          - "status_code==200 && (\"-1067420240\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "dnn-cms"
+        dsl:
+          - "status_code==200 && (\"-1465479343\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "apple"
+        dsl:
+          - "status_code==200 && (\"1232159009\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "apple"
+        dsl:
+          - "status_code==200 && (\"1382324298\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "apple"
+        dsl:
+          - "status_code==200 && (\"-1498185948\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "ispconfig"
+        dsl:
+          - "status_code==200 && (\"483383992\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "microsoft-outlook"
+        dsl:
+          - "status_code==200 && (\"-1249852061\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "possibly-dvr"
+        dsl:
+          - "status_code==200 && (\"999357577\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "possible-ip-camera"
+        dsl:
+          - "status_code==200 && (\"492290497\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "dvr"
+        dsl:
+          - "status_code==200 && (\"400100893\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "One Identity Password Manager"
+        dsl:
+          - "status_code==200 && (\"983384876\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "Kaseya"
+        dsl:
+          - "status_code==200 && (\"-1445519482\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "OpenSNS"
+        dsl:
+          - "status_code==200 && (\"1167011145\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "SpamSniper"
+        dsl:
+          - "status_code==200 && (\"-1000719429\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "Selea-ANPR-Camera"
+        dsl:
+          - "status_code==200 && (\"-41369781\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "Selea-CarPlateServer"
+        dsl:
+          - "status_code==200 && (\"-656528622\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "KevinLAB"
+        dsl:
+          - "status_code==200 && (\"-1650202746\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "qdPM"
+        dsl:
+          - "status_code==200 && (\"762074255\" == mmh3(base64_py(body)))"

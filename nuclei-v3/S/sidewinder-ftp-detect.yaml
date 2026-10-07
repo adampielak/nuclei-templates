@@ -1,27 +1,23 @@
 id: sidewinder-ftp-detect
 info:
-  name: Sidewinder FTP Proxy Service - Detect
   author: pussycat0x
-  severity: info
   description: Sidewinder FTP Proxy service was detected.
   metadata:
-    verified: true
-    shodan-query: "Sidewinder ftp proxy"
     max-request: 1
+    shodan-query: Sidewinder ftp proxy
+    verified: true
+  name: Sidewinder FTP Proxy Service - Detect
+  severity: info
   tags: network,ftp,sidewinder,detect,tcp,discovery
-
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 21
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "Sidewinder ftp proxy"
-
+- host:
+  - '{{Hostname}}'
+  inputs:
+  - data: 0
+    type: hex
+  matchers:
+  - type: word
+    words:
+    - Sidewinder ftp proxy
+  port: 21
+  read-size: 1024

@@ -1,39 +1,35 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - springframework.web.HttpRequestMethodNotSupportedException
+    - INFO
+  - part: header
+    type: word
+    words:
+    - text/plain
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/logfile'
+  - '{{BaseURL}}/actuator/logfile'
+  - '{{BaseURL}}/actuators/logfile'
+  stop-at-first-match: true
 id: springboot-logfile
-
 info:
-  name: Detects Springboot Logfile Actuator
   author: DhiyaneshDK
-  severity: low
-  reference:
-    - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  description: Springboot Logfile Actuator is exposed.
   metadata:
     max-request: 3
-    verified: true
     shodan-query: title:"Eureka"
+    verified: true
+  name: Detects Springboot Logfile Actuator
+  reference:
+  - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  severity: low
   tags: misconfig,springboot,exposure
-
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/logfile"
-      - "{{BaseURL}}/actuator/logfile"
-      - "{{BaseURL}}/actuators/logfile"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'springframework.web.HttpRequestMethodNotSupportedException'
-          - 'INFO'
-        condition: and
-
-      - type: word
-        part: header
-        words:
-          - "text/plain"
-
-      - type: status
-        status:
-          - 200
