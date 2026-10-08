@@ -1,0 +1,39 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - E-Mobile&nbsp;([0-9.]+)
+    type: regex
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - E-Mobile&nbsp;
+    - Weaver E-Mobile
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/login.do?'
+  - '{{BaseURL}}/login/login.do?'
+  - '{{BaseURL}}/manager/login.do?'
+  stop-at-first-match: true
+id: e-mobile-panel
+info:
+  author: ritikchaddha
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: E-mobile panel was detected.
+  metadata:
+    max-request: 3
+    shodan-query: http.html:"E-Mobile&nbsp"
+    verified: true
+  name: E-mobile Panel - Detect
+  severity: info
+  tags: panel,e-mobile

@@ -1,38 +1,37 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Orbeon
-    - home</a>
-    - Quick Links
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/orbeon/'
-  - '{{BaseURL}}'
-  redirects: true
-  stop-at-first-match: true
 id: orbeon-forms-exposure
 info:
+  name: Orbeon Forms Exposure
   author: ritikchaddha
-  description: 'Detects exposed Orbeon Forms interfaces including Form Runner, Form
-    Builder, and Quick Links. Orbeon Forms is a web forms solution that may expose
-    sensitive form data and administrative interfaces if not properly secured.
-
-    '
+  severity: info
+  description: |
+    Detects exposed Orbeon Forms interfaces including Form Runner, Form Builder, and Quick Links. Orbeon Forms is a web forms solution that may expose sensitive form data and administrative interfaces if not properly secured.
+  reference:
+    - https://doc.orbeon.com/
+    - https://github.com/orbeon/orbeon-forms
   metadata:
     max-request: 2
     product: orbeon-forms
     shodan-query: http.favicon.hash:1253194620
     vendor: orbeon
-  name: Orbeon Forms Exposure
-  reference:
-  - https://doc.orbeon.com/
-  - https://github.com/orbeon/orbeon-forms
-  severity: info
-  tags: exposure,orbeon,forms,form-runner
+  tags: discovery,exposure,form-runner,forms,orbeon
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Orbeon
+          - home</a>
+          - Quick Links
+      - status:
+          - 200
+        # digest: 4a0a00473045022100f8713d1e864c1562e426d78960346760ab02753369534f82a7301627308eee84022073abedec59b4f2f6b0d0bcb8a878642d2840b2c56e92c230a319c80a316b4e51:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/orbeon/'
+      - '{{BaseURL}}'
+    redirects: true
+    stop-at-first-match: true

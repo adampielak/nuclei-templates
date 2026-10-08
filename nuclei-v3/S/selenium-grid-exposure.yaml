@@ -1,32 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(content_type, "application/json")
-    - contains_all(body, "\"value\"", "\"ready\"", "\"message\"", "Selenium Grid ready")
-    - contains_any(body, "\"browserName\"", "\"slots\"", "\"availability\"")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/wd/hub/status'
 id: selenium-grid-exposure
 info:
+  name: Selenium Grid Exposure
   author: 0x_Akoko
-  description: 'Detected Selenium Grid console without authentication, exposing internal
-    network IPs, container names, OS details, software versions, and browser node
-    configurations. Attackers could abuse this for SSRF, internal reconnaissance,
-    or resource hijacking.
-
-    '
+  severity: high
+  description: |
+    Detected Selenium Grid console without authentication, exposing internal network IPs, container names, OS details, software versions, and browser node configurations. Attackers could abuse this for SSRF, internal reconnaissance, or resource hijacking.
+  reference:
+    - https://www.selenium.dev/documentation/grid/
+    - https://github.com/SeleniumHQ/selenium
   metadata:
     fofa-query: body="Selenium Grid" && body="ready"
     max-request: 1
     shodan-query: http.html:"Selenium Grid" "ready"
     verified: true
-  name: Selenium Grid Exposure
-  reference:
-  - https://www.selenium.dev/documentation/grid/
-  - https://github.com/SeleniumHQ/selenium
-  severity: high
-  tags: selenium,grid,testing,exposure,misconfig
+  tags: exposure,grid,misconfig,selenium,testing,vuln
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100899184585bf266fc3d21c9be352edefe3e6715e16017ea368e1d81484191f8ce022100b8b90b5ec2c569d402c5d43ddb24c0eaf22d56b8394d9b9330caeb5136d1f646:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_all(body, "\"value\"", "\"ready\"", "\"message\"", "Selenium Grid ready")
+          - contains_any(body, "\"browserName\"", "\"slots\"", "\"availability\"")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wd/hub/status'

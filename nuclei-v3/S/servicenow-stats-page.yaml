@@ -1,33 +1,33 @@
-http:
-- extractors:
-  - group: 1
-    name: build_tag
-    regex:
-    - Build tag:\s*([^\s<]+)
-    type: regex
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(tolower(body), "servlet statistics")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/stats.do'
 id: servicenow-stats-page
 info:
+  name: ServiceNow Stats Page - Detection
   author: cham423
-  description: 'Detects exposed ServiceNow statistics pages (stats.do) that reveal
-    system information.
-
-    '
+  severity: info
+  description: |
+    Detects exposed ServiceNow statistics pages (stats.do) that reveal system information.
+  reference:
+    - https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0517269
+    - https://www.servicenow.com/community/servicenow-ai-platform-forum/is-there-a-way-to-restrict-access-to-the-stats-do-page/m-p/1026919
   metadata:
     max-request: 1
     shodan-query: http.component:"ServiceNow"
     verified: true
-  name: ServiceNow Stats Page - Detection
-  reference:
-  - https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0517269
-  - https://www.servicenow.com/community/servicenow-ai-platform-forum/is-there-a-way-to-restrict-access-to-the-stats-do-page/m-p/1026919
-  severity: info
-  tags: servicenow,exposure,misconfig
+  tags: exposure,misconfig,servicenow,vuln
+http:
+  - extractors:
+      - group: 1
+        name: build_tag
+        regex:
+          - Build tag:\s*([^\s<]+)
+        # digest: 490a00463044021f230b1be4c1781d0a314f68b97c930d8b4c84197fc8012d90d8f44357bfc950022100c0c1de4a8c6d257ede904df3f8435e96920e3737fbbd2d5af8ffd293efcf9248:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(tolower(body), "servlet statistics")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/stats.do'

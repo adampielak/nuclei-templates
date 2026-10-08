@@ -1,32 +1,36 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>Froxlor Server Management Panel - Installation
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/install/install.php'
 id: froxlor-installer
+
 info:
+  name: Froxlor Server Management - Installer
   author: DhiyaneshDK
+  severity: high
+  description: |
+    Detects the Froxlor Server Management Panel installation page.
+  reference:
+    - https://www.exploit-db.com/ghdb/8397
   classification:
     cpe: cpe:2.3:a:froxlor:froxlor:*:*:*:*:*:*:*:*
-  description: 'Detects the Froxlor Server Management Panel installation page.
-
-    '
   metadata:
-    fofa-query: title="Froxlor Server Management Panel - Installation"
-    max-request: 1
-    product: froxlor
-    vendor: froxlor
     verified: true
-  name: Froxlor Server Management - Installer
-  reference:
-  - https://www.exploit-db.com/ghdb/8397
-  severity: high
+    max-request: 1
+    vendor: froxlor
+    product: froxlor
+    fofa-query: title="Froxlor Server Management Panel - Installation"
   tags: misconfig,froxlor,installer,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/install/install.php"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Froxlor Server Management Panel - Installation"
+
+      - type: status
+        status:
+          - 200
+

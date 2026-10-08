@@ -1,28 +1,32 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - Invicti Enterprise - Installation Wizard
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wizard/database/'
 id: invicti-enterprise-installer
-info:
-  author: DhiyaneshDK
-  description: 'Detects exposed Invicti Enterprise Installation page.
 
-    '
+info:
+  name: Invicti Enterprise Installation Page - Exposure
+  author: DhiyaneshDK
+  severity: high
+  description: |
+    Detects exposed Invicti Enterprise Installation page.
+  reference:
+    - https://www.invicti.com/
   metadata:
+    verified: true
     max-request: 1
     shodan-query: html:"Invicti Enterprise - Installation Wizard"
-    verified: true
-  name: Invicti Enterprise Installation Page - Exposure
-  reference:
-  - https://www.invicti.com/
-  severity: high
   tags: misconfig,install,exposure,invicti,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/wizard/database/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Invicti Enterprise - Installation Wizard"
+
+      - type: status
+        status:
+          - 200
+

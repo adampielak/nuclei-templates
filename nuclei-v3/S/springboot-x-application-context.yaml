@@ -1,37 +1,37 @@
-http:
-- extractors:
-  - group: 1
-    part: header
-    regex:
-    - ^X-Application-Context:\s*\S.+$
-    type: regex
-  host-redirects: true
-  matchers:
-  - part: header
-    type: word
-    words:
-    - ^X-Application-Context:\s*\S.+$
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: springboot-x-application-context
 info:
+  name: Spring Boot `X-Application-Context` Header Exposure
   author: DhiyaneshDK
-  description: 'Detected the presence of the X-Application-Context header in HTTP
-    responses, which can expose sensitive application context information.
-
-    '
+  severity: low
+  description: |
+    Detected the presence of the X-Application-Context header in HTTP responses, which can expose sensitive application context information.
+  reference:
+    - https://github.com/spring-projects/spring-boot/issues/1308
   metadata:
     max-request: 1
     shodan-query: X-Application-Context
     verified: true
-  name: Spring Boot `X-Application-Context` Header Exposure
-  reference:
-  - https://github.com/spring-projects/spring-boot/issues/1308
-  severity: low
-  tags: springboot,misconfig,exposure
+  tags: exposure,misconfig,springboot,vuln
+http:
+  - extractors:
+      - group: 1
+        part: header
+        regex:
+          - (?m)^X-Application-Context:\s*(\S.+)$
+        # digest: 4a0a004730450221009426d2d8b86da606d24d3070bfcd9525684e96f359843c7f0b70dd43f397f3bf022049073ae1391a806da5c2b4855e2d670929674d2881c2ab2e47eb6c829c3a4ed0:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    host-redirects: true
+    matchers:
+      - part: header
+        type: word
+        words:
+          - ^X-Application-Context:\s*\S.+$
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'

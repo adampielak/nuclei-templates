@@ -1,27 +1,31 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>VMware Aria Operations</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/ui/login.action'
 id: vmware-aria-panel
-info:
-  author: rxerium
-  description: 'Detects VMware Aria Operations Panel.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)VMware Aria Operations"})
-    shodan-query: title:"VMware Aria Operations"
-    verified: true
+info:
   name: VMware Aria Operations Login - Detect
+  author: rxerium
   severity: info
+  description: |
+    Detects VMware Aria Operations Panel.
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)VMware Aria Operations"})
+    verified: true
+    max-request: 1
+    shodan-query: title:"VMware Aria Operations"
   tags: panel,aria,login,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/ui/login.action"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>VMware Aria Operations</title>"
+
+      - type: status
+        status:
+          - 200
+

@@ -1,28 +1,43 @@
-http:
-- matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - <title>Milvus
-    - <title>Milvus Demo
-    - <title>Milvus Insight
-    - <title>Milvus Enterprise Manager
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: milvus-detect
 info:
+  name: Milvus - Detect
   author: s4e-io
+  severity: info
   description: Milvus was detected.
+  reference:
+    - https://milvus.io/
+    - https://github.com/milvus-io/milvus
   metadata:
     fofa-query: title="Milvus"
     max-request: 1
     verified: true
-  name: Milvus - Detect
-  reference:
-  - https://milvus.io/
-  - https://github.com/milvus-io/milvus
-  severity: info
-  tags: tech,vector-database,milvus,detect,discovery
+  tags: detect,discovery,milvus,tech,vector-database
+http:
+  - extractors:
+      - group: 1
+        part: header
+        regex:
+          - (?i)Server:\s*Milvus/([0-9]+(?:\.[0-9]+)*)
+        # digest: 4a0a0047304502210082f8fd0ce99fe2de0e6030d3ac6c6b8bbf7d3970fa26a58e4ebe008cfa348b1602205313885920540cb2b20828d5da3233e6a1ee340f77cc17b4c25b22650f006770:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: or
+        part: body
+        type: word
+        words:
+          - <title>Milvus
+          - <title>Milvus Demo
+          - <title>Milvus Insight
+          - <title>Milvus Enterprise Manager
+      - part: header
+        regex:
+          - (?i)Server:\s*Milvus/[0-9]+(?:\.[0-9]+)*
+        type: regex
+    matchers-condition: or
+    method: GET
+    path:
+      - '{{BaseURL}}'
+      - '{{BaseURL}}/healthz'
+      - '{{BaseURL}}:9091/healthz'
+    stop-at-first-match: true

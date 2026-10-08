@@ -1,23 +1,33 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - BioStar 2</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/#/login'
 id: suprema-biostar-panel
+
 info:
-  author: ritikchaddha
-  metadata:
-    max-request: 1
-    shodan-query: title:"Biostar"
-    verified: true
   name: Suprema BioStar 2 Panel - Detect
+  author: ritikchaddha
   severity: info
-  tags: panel,login,biostar,detect
+  classification:
+    cpe: cpe:2.3:a:supremainc:biostar_2:*:*:*:*:*:*:*:*
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Biostar"})
+    verified: true
+    max-request: 1
+    vendor: supremainc
+    product: biostar_2
+    shodan-query: title:"Biostar"
+  tags: panel,login,biostar,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/#/login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "BioStar 2</title>"
+
+      - type: status
+        status:
+          - 200
+

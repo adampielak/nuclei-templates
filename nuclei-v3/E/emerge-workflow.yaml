@@ -1,9 +1,8 @@
 id: emerge-workflow
-
 info:
-  name: eMerge Checks
   author: DhiyaneshDk
-  description: A simple workflow that runs all eMerge related nuclei templates on a given target.
-
+  description: A simple workflow that runs all eMerge related nuclei templates on
+    a given target.
+  name: eMerge Checks
 workflows:
-  - tags: emerge
+- tags: emerge

@@ -1,29 +1,33 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - This is a fresh install
-    - Super Admin account
-    - listmonk
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/admin/login?next=%2Fadmin'
 id: listmonk-installer
-info:
-  author: DhiyaneshDk
-  description: 'Listmonk is susceptible to the Installation page exposure due to misconfiguration.
 
-    '
+info:
+  name: Listmonk Installer Exposure
+  author: DhiyaneshDk
+  severity: high
+  description: |
+    Listmonk is susceptible to the Installation page exposure due to misconfiguration.
   metadata:
+    verified: true
     max-request: 1
     shodan-query: html:"Listmonk"
-    verified: true
-  name: Listmonk Installer Exposure
-  severity: high
   tags: misconfig,listmonk,install,exposure,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/admin/login?next=%2Fadmin'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'This is a fresh install'
+          - 'Super Admin account'
+          - 'listmonk'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+

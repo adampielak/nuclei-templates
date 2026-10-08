@@ -1,10 +1,12 @@
 id: panabit-default-login
+
 info:
   name: Panabit Gateway Default Login
   author: pikpikcu
   severity: high
   reference: https://max.book118.com/html/2017/0623/117514590.shtm
   tags: panabit,default-login
+
 requests:
   - raw:
       - |
@@ -25,12 +27,14 @@ requests:
 
         panabit
         ------WebKitFormBoundaryAjZMsILtbrBp8VbC--
+
     payloads:
       username:
         - username
       password:
         - password
     attack: pitchfork
+
     matchers-condition: and
     matchers:
       - type: word
@@ -39,6 +43,7 @@ requests:
           - 'urn:schemas-microsoft-com:vml'
         part: body
         condition: and
+
       - type: status
         status:
           - 200

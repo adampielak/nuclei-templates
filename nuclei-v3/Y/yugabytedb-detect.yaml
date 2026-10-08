@@ -1,5 +1,4 @@
 id: yugabytedb-detect
-
 info:
   name: YugabyteDB - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
     - https://www.yugabyte.com/yugabytedb/
     - https://github.com/yugabyte/yugabyte-db
   metadata:
-    verified: true
     max-request: 1
-    vendor: yugabyte
     product: yugabytedb
     shodan-query: http.title:"YugabyteDB"
-  tags: tech,yugabytedb,database,sql,cluster,detect
-
+    vendor: yugabyte
+    verified: true
+  tags: cluster,database,detect,sql,tech,yugabytedb
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -30,8 +27,7 @@ http:
           - "href='/yb.css'"
           - "YugabyteDB Version"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e64d61b1150eba96dfd17f562fcbfc4d3c4cf4990f5106180a33317994c0bcf002207261dac03c302c14fca9f220c48338748d49160f3e1a409631d8a52044101d3c:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100e64d61b1150eba96dfd17f562fcbfc4d3c4cf4990f5106180a33317994c0bcf002207261dac03c302c14fca9f220c48338748d49160f3e1a409631d8a52044101d3c:922c64590222798bb761d5b6d8e72950

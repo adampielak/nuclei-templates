@@ -1,29 +1,31 @@
-http:
-- body: '{"query":"query @a { __typename }"}'
-  headers:
-    Content-Type: application/json
-  matchers:
-  - status:
-    - 200
-    - 400
-    type: status
-  - part: body
-    type: word
-    words:
-    - Unknow Directive < @a >.
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/graphql'
-  - '{{BaseURL}}/api/graphql'
-  - '{{BaseURL}}/query'
-  - '{{BaseURL}}/'
-  redirects: true
 id: graphql-tartiflette-detect
 info:
-  author: princechaddha
   name: Graphql Tartiflette Detect
-  reference:
-  - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  author: princechaddha
   severity: info
-  tags: tech,graphql,tartiflette
+  reference:
+    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: discovery,graphql,tartiflette,tech
+http:
+  - body: '{"query":"query @a { __typename }"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - status:
+          - 200
+          - 400
+        type: status
+      - part: body
+        # digest: 490a00463044022019669d3d6de57e3379bbae5890d2b366e76d212169721c5c1be77d37a8db8493022020b78fe236d0b0ab797fbd4b6d6d6e0840bf5850250cfc4099130e65fe4831ba:922c64590222798bb761d5b6d8e72950
+
+        type: word
+        words:
+          - Unknow Directive < @a >.
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

@@ -1,5 +1,4 @@
 id: vrealize-hyperic-panel
-
 info:
   name: vRealize Hyperic Login Panel - Detect
   author: Charles D
@@ -11,26 +10,23 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:vmware:hyperic_hq:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Sign In - Hyperic"})
     max-request: 1
-    shodan-query: http.title:"Sign In - Hyperic"
     product: hyperic_hq
+    shodan-query: http.title:"Sign In - Hyperic"
     vendor: vmware
-  tags: login,panel,vrealize,hyperic,detect,discovery
-
+    verified: true
+  tags: detect,discovery,hyperic,login,panel,vrealize
 http:
-  - method: GET
+  - matchers:
+      - part: body
+        type: word
+        words:
+          - Sign In - Hyperic
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    method: GET
     path:
       - '{{BaseURL}}/app/login'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Sign In - Hyperic"
-
-      - type: status
-        status:
-          - 200
-# digest: 490a004630440220463a7d0ec3d739195c56b085a39ca6de3835881b3222ed4a1c9481acdcc8520302205cb582e03f1e7cca67c81c5cdef7b113a39f0d8a89c1fae1d22df87cca2c9667:922c64590222798bb761d5b6d8e72950

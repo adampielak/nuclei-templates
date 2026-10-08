@@ -1,0 +1,37 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - DzzOffice
+  - condition: or
+    part: body
+    type: word
+    words:
+    - "\u7B80\u4F53\u4E2D\u6587 UTF8 \u7248"
+    - Simplified Chinese UTF8 version
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/install/index.php'
+id: dzzoffice-install
+info:
+  author: ritikchaddha
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  description: DzzOffice installation panel was detected.
+  metadata:
+    fofa-query: title="dzzoffice"
+    max-request: 1
+    product: dzzoffice
+    shodan-query: http.favicon.hash:-1961736892
+    vendor: dzzoffice
+    verified: true
+  name: DzzOffice Installation Panel - Detect
+  severity: high
+  tags: panel,dzzoffice,install

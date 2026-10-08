@@ -1,25 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    type: word
-    words:
-    - macOS Server
-    - apple-system
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: macos-server-panel
+
 info:
-  author: DhiyaneshDk
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)macOS Server"})
-    shodan-query: title:"macOS Server"
-    verified: true
   name: macOS Server Panel - Detect
+  author: DhiyaneshDk
   severity: info
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)macOS Server"})
+    verified: true
+    max-request: 1
+    shodan-query: title:"macOS Server"
   tags: panel,login,macos-server,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'macOS Server'
+          - 'apple-system'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+

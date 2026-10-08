@@ -23,7 +23,7 @@ requests:
       - type: word
         part: body
         words:
-          - "/nagvis/userfiles"
+          - "/nagvis/frontend"
           - "<title>NagVis"
         condition: or
 

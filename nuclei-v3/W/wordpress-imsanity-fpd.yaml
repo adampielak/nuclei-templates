@@ -1,39 +1,39 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - Fatal error
-    - plugins/imsanity
-    - 'Uncaught Error:'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/wp-content/plugins/imsanity/libs/imagecreatefrombmp.php'
-  - '{{BaseURL}}/wp-content/plugins/imsanity/ajax.php'
-  - '{{BaseURL}}/wp-content/plugins/imsanity/settings.php'
-  stop-at-first-match: true
 id: wordpress-imsanity-fpd
 info:
+  name: WordPress Plugin Imsanity - Full Path Disclosure
   author: ritikchaddha
-  description: 'WordPress Imsanity plugin is vulnerable to full path disclosure via
-    direct access to plugin files.
-
-    '
+  severity: low
+  description: |
+    WordPress Imsanity plugin is vulnerable to full path disclosure via direct access to plugin files.
+  reference:
+    - https://wordpress.org/plugins/imsanity/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/wp-content/plugins/imsanity/"})
     fofa-query: body="/wp-content/plugins/imsanity/"
     framework: wordpress
     max-request: 3
     product: imsanity
-    runzero-match: service["http.body"] matches "(?i)/wp-content/plugins/imsanity/"
     vendor: developer
     verified: true
-  name: WordPress Plugin Imsanity - Full Path Disclosure
-  reference:
-  - https://wordpress.org/plugins/imsanity/
-  severity: low
-  tags: wp,wordpress,wp-plugin,fpd,imsanity,exposure
+  tags: exposure,fpd,imsanity,vuln,wordpress,wp,wp-plugin
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Fatal error
+          - plugins/imsanity
+          - 'Uncaught Error:'
+      - status:
+          - 200
+        # digest: 490a00463044022030e0a02454ddecdb93fd1bf8892f215b9a711c0dbafd68205fc59332fc3a298f0220187f2173d5d1606ae86d5cb140c556b69343af81452c1272691124bc97437495:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/imsanity/libs/imagecreatefrombmp.php'
+      - '{{BaseURL}}/wp-content/plugins/imsanity/ajax.php'
+      - '{{BaseURL}}/wp-content/plugins/imsanity/settings.php'
+    stop-at-first-match: true

@@ -1,5 +1,4 @@
 id: kimai-detect
-
 info:
   name: Kimai - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://www.kimai.org/
     - https://github.com/kimai/kimai
   metadata:
-    verified: true
     max-request: 1
-    vendor: kimai
     product: kimai
     shodan-query: http.title:"Kimai"
-  tags: tech,kimai,time-tracking,detect
-
+    vendor: kimai
+    verified: true
+  tags: detect,kimai,tech,time-tracking
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -32,8 +29,7 @@ http:
           - '<title>Kimai'
           - "kimai_profile"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c49ecd4abd52ad4c5d10308455bb20cb5e1f7208fe6c0d6cee5828935f13c07e022079e9ec5ce3977c611fc9f2fd9054f57f6062bad4d784ce8cccda003d46348be0:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100c49ecd4abd52ad4c5d10308455bb20cb5e1f7208fe6c0d6cee5828935f13c07e022079e9ec5ce3977c611fc9f2fd9054f57f6062bad4d784ce8cccda003d46348be0:922c64590222798bb761d5b6d8e72950

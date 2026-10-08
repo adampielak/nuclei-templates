@@ -1,41 +1,42 @@
-http:
-- body: '{"query":"queryy { __typename }"}'
-  headers:
-    Content-Type: application/json
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - Syntax error while parsing GraphQL query. Invalid input "queryy", expected ExecutableDefinition
-      or TypeSystemDefinition
-  - negative: true
-    part: header
-    type: word
-    words:
-    - 'Content-Type: text/html'
-  - condition: or
-    negative: true
-    part: body
-    type: word
-    words:
-    - <html
-    - <body
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/graphql'
-  - '{{BaseURL}}/api/graphql'
-  - '{{BaseURL}}/query'
-  - '{{BaseURL}}/'
-  redirects: true
 id: graphql-sangria-detect
 info:
-  author: princechaddha
   name: Graphql Sangria Detect
-  reference:
-  - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  author: princechaddha
   severity: info
-  tags: tech,graphql,sangria
+  reference:
+    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: discovery,graphql,sangria,tech
+http:
+  - body: '{"query":"queryy { __typename }"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - status:
+          - 200
+        type: status
+      - part: body
+        type: word
+        words:
+          - Syntax error while parsing GraphQL query. Invalid input "queryy", expected ExecutableDefinition or TypeSystemDefinition
+      - negative: true
+        part: header
+        type: word
+        words:
+          - 'Content-Type: text/html'
+      - condition: or
+        negative: true
+        # digest: 490a0046304402205c6ca8463c60cdb27f2e3b02a07630ae0d1e8f8c7a3d01dd677dc42968ccec2502201897bd4c0d5edfa1f17978cb3a0f170557ab5c261735ea25a39d095b19f9ee3e:922c64590222798bb761d5b6d8e72950
+
+        part: body
+        type: word
+        words:
+          - <html
+          - <body
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

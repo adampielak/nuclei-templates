@@ -1,8 +1,10 @@
 id: Discourse XSS
+
 info:
   name: Discourse CMS XSS
   author: madrobot
   severity: medium
+
 requests:
   - method: GET
     path:

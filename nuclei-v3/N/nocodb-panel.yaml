@@ -1,37 +1,42 @@
-http:
-- matchers:
-  - case-insensitive: true
-    part: body
-    type: word
-    words:
-    - content="NocoDB
-  - dsl:
-    - status_code==200 && ("206985584" == mmh3(base64_py(body)))
-    type: dsl
-  matchers-condition: or
-  method: GET
-  path:
-  - '{{BaseURL}}/dashboard/#/signin'
-  - '{{BaseURL}}/dashboard/favicon.ico'
-  stop-at-first-match: true
 id: nocodb-panel
+
 info:
+  name: NocoDB Panel - Detect
   author: userdehghani
+  severity: info
+  description: |
+    NocoDB Login panel was discovered.
+  reference:
+    - https://www.nocodb.com/
+    - https://docs.nocodb.com/
   classification:
     cpe: cpe:2.3:a:xgenecloud:nocodb:*:*:*:*:*:*:*:*
-  description: 'NocoDB Login panel was discovered.
-
-    '
   metadata:
-    max-request: 2
-    product: nocodb
     runzero-match: service["favicon.ico.image.mmh3"] == "206985584"
-    shodan-query: http.favicon.hash:206985584
-    vendor: xgenecloud
     verified: true
-  name: NocoDB Panel - Detect
-  reference:
-  - https://www.nocodb.com/
-  - https://docs.nocodb.com/
-  severity: info
+    max-request: 2
+    vendor: xgenecloud
+    product: nocodb
+    shodan-query: "http.favicon.hash:206985584"
   tags: panel,nocodb,login,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/dashboard/#/signin"
+      - "{{BaseURL}}/dashboard/favicon.ico"
+
+    stop-at-first-match: true
+
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'content="NocoDB'
+        case-insensitive: true
+
+      - type: dsl
+        dsl:
+          - "status_code==200 && (\"206985584\" == mmh3(base64_py(body)))"
+

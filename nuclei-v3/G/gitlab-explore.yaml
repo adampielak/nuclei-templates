@@ -1,35 +1,38 @@
-http:
-- matchers:
-  - condition: or
-    dsl:
-    - contains_all(body, ">Most stars", "Hide archived projects")
-    - contains_all(body, "description\":", "name_with_namespace\":")
-    name: gitlab-community
-    type: dsl
-  - condition: and
-    dsl:
-    - contains_all(body, ">Most starred", "Explore public groups")
-    - status_code == 200
-    name: gitlab-enterprise
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/explore'
-  - '{{BaseURL}}/api/v4/projects'
-  stop-at-first-match: true
 id: gitlab-explore
-info:
-  author: Sujal Tuladhar
-  description: 'This template checks for GitLab instances by verifying if /explore
-    and /api/v4/projects endpoints are accessible with a 200 response.
 
-    '
-  metadata:
-    fofa-query: title="GitLab"
-    max-request: 2
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)GitLab"})
-    shodan-query: title:"GitLab"
-    verified: true
+info:
   name: GitLab Instance Explore - Detect
+  author: Sujal Tuladhar
   severity: info
+  description: |
+    This template checks for GitLab instances by verifying if /explore and /api/v4/projects endpoints are accessible with a 200 response.
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)GitLab"})
+    verified: true
+    max-request: 2
+    shodan-query: title:"GitLab"
+    fofa-query: title="GitLab"
   tags: gitlab,explore,panel,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/explore"
+      - "{{BaseURL}}/api/v4/projects"
+
+    stop-at-first-match: true
+    matchers:
+      - type: dsl
+        name: gitlab-community
+        dsl:
+          - 'contains_all(body, ">Most stars", "Hide archived projects")'
+          - 'contains_all(body, "description\":", "name_with_namespace\":")'
+        condition: or
+
+      - type: dsl
+        name: gitlab-enterprise
+        dsl:
+          - 'contains_all(body, ">Most starred", "Explore public groups")'
+          - 'status_code == 200'
+        condition: and
+

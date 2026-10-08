@@ -1,5 +1,4 @@
 id: keystonejs-detect
-
 info:
   name: KeystoneJS - Detect
   author: rxerium
@@ -10,23 +9,20 @@ info:
     - https://keystonejs.com/
     - https://github.com/keystonejs/keystone
   metadata:
-    verified: true
     max-request: 2
-    vendor: keystonejs
     product: keystone
     shodan-query: http.title:"KeystoneJS"
-  tags: tech,detect,keystonejs,cms,nodejs
-
+    vendor: keystonejs
+    verified: true
+  tags: cms,detect,keystonejs,nodejs,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/admin"
-
     stop-at-first-match: true
     host-redirects: true
     max-redirects: 2
-
     matchers:
       - type: dsl
         dsl:
@@ -34,4 +30,4 @@ http:
           - "contains_any(body, 'Welcome to KeystoneJS', '/admin/js/main.')"
           - "status_code == 200"
         condition: and
-# digest: 4a0a004730450220608089d8fca26788ba0ac9a3c624c12e46a99379b154e0d2e78cf443f9ff1dd7022100cde28dfc62f78ae43d92c494db38b1888b0665b755f8eb960237934958b934db:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a004730450220608089d8fca26788ba0ac9a3c624c12e46a99379b154e0d2e78cf443f9ff1dd7022100cde28dfc62f78ae43d92c494db38b1888b0665b755f8eb960237934958b934db:922c64590222798bb761d5b6d8e72950

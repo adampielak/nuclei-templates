@@ -1,39 +1,45 @@
-http:
-- extractors:
-  - name: version
-    part: body
-    regex:
-    - teamforge(\d+)
-    type: regex
-  matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - '<title>TeamForge :'
-    - Log In to TeamForge
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  redirects: true
 id: teamforge-panel
-info:
-  author: lstatro
-  description: 'TeamForge Login Panel was discovered.
 
-    '
-  metadata:
-    fofa-query: title="TeamForge :"
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)TeamForge :"})
-    shodan-query: title:"TeamForge :"
-    verified: true
+info:
   name: TeamForge Panel - Detection
-  reference:
-  - https://digital.ai/products/teamforge/
+  author: lstatro
   severity: info
+  description: |
+    TeamForge Login Panel was discovered.
+  reference:
+    - https://digital.ai/products/teamforge/
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)TeamForge :"})
+    verified: true
+    max-request: 1
+    shodan-query: title:"TeamForge :"
+    fofa-query: title="TeamForge :"
   tags: panel,teamforge,login,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    redirects: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>TeamForge :"
+          - "Log In to TeamForge"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        regex:
+          - "teamforge(\\d+)"
+

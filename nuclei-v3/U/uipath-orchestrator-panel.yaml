@@ -1,31 +1,40 @@
-http:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - \?(?:version|v)=([0-9.]+)
-    type: regex
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(to_lower(body), "<title>uipath orchestrator")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/Account/Login'
 id: uipath-orchestrator-panel
-info:
-  author: righettod
-  description: 'UiPath Orchestrator login panel was detected.
 
-    '
-  metadata:
-    max-request: 1
-    shodan-query: http.title:"UiPath Orchestrator"
-    verified: true
+info:
   name: UiPath Orchestrator Login Panel - Detect
-  reference:
-  - https://www.uipath.com/
+  author: righettod
   severity: info
-  tags: panel,uipath,login,detect
+  description: |
+    UiPath Orchestrator login panel was detected.
+  reference:
+    - https://www.uipath.com/
+  classification:
+    cpe: cpe:2.3:a:uipath:orchestrator:*:*:*:*:*:*:*:*
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)UiPath Orchestrator"})
+    verified: true
+    max-request: 1
+    vendor: uipath
+    product: orchestrator
+    shodan-query: http.title:"UiPath Orchestrator"
+  tags: panel,uipath,login,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/Account/Login"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(to_lower(body), "<title>uipath orchestrator")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '\?(?:version|v)=([0-9.]+)'
+

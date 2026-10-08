@@ -1,0 +1,35 @@
+http:
+- host-redirects: true
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - content="DzzOffice
+    - DZZSCRIPT
+    - dzzoffice.com
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/index.php'
+  - '{{BaseURL}}/user.php?mod=login'
+  stop-at-first-match: true
+id: dzzoffice-panel
+info:
+  author: ritikchaddha
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  description: DzzOffice login panel was detected.
+  metadata:
+    max-request: 3
+    shodan-query: http.favicon.hash:-1961736892
+    verified: true
+  name: DzzOffice Login Panel - Detect
+  severity: info
+  tags: dzzoffice,panel

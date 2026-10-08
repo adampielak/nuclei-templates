@@ -1,29 +1,31 @@
-http:
-- body: '{"query":""}'
-  headers:
-    Content-Type: application/json
-  matchers:
-  - status:
-    - 200
-    - 400
-    type: status
-  - part: body
-    type: word
-    words:
-    - Must provide an operation.
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/graphql'
-  - '{{BaseURL}}/api/graphql'
-  - '{{BaseURL}}/query'
-  - '{{BaseURL}}/'
-  redirects: true
 id: graphql-go-detect
 info:
-  author: princechaddha
   name: Graphql Go Detect
-  reference:
-  - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  author: princechaddha
   severity: info
-  tags: tech,graphql,go
+  reference:
+    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: discovery,go,graphql,tech
+http:
+  - body: '{"query":""}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - status:
+          - 200
+          - 400
+        type: status
+      - part: body
+        # digest: 4b0a00483046022100ec294a1b5cd757307364641a9a078c1c5e5da80ab24c2aeed4f1948eda93f1e2022100918ae2d267f1303b72346bcad36932d1030e21943e891763e7c3b054b57136f6:922c64590222798bb761d5b6d8e72950
+
+        type: word
+        words:
+          - Must provide an operation.
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

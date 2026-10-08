@@ -1,13 +1,16 @@
 id: old-copyright
+
 info:
   name: Find pages with old copyright dates
   author: geeknik
   severity: info
   tags: misc
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -17,6 +20,7 @@ requests:
         words:
           - '2022'
         negative: true
+
       - type: regex
         part: body
         regex:
@@ -24,6 +28,7 @@ requests:
           - '© [1-9]\d*'
           - '&copy; [1-9]\d*'
           - '&#169; [1-9]\d*'
+
     extractors:
       - type: regex
         part: body

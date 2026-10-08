@@ -1,28 +1,30 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "<title>Weaviate Console", "webpackJsonpweaviate-console")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: weaviate-console-detect
-info:
-  author: rxerium
-  description: 'Detected Weaviate Console interface. Weaviate was open-source vector
-    database that stores data objects and vector embeddings for AI applications.
 
-    '
-  metadata:
-    fofa-query: title="Weaviate Console"
-    max-request: 1
-    shodan-query: title:"Weaviate Console"
-    verified: true
+info:
   name: Weaviate Console - Detect
-  reference:
-  - https://weaviate.io/
-  - https://github.com/weaviate/weaviate
+  author: rxerium
   severity: info
+  description: |
+    Detected Weaviate Console interface. Weaviate was open-source vector database that stores data objects and vector embeddings for AI applications.
+  reference:
+    - https://weaviate.io/
+    - https://github.com/weaviate/weaviate
+  metadata:
+    verified: true
+    max-request: 1
+    fofa-query: title="Weaviate Console"
+    shodan-query: title:"Weaviate Console"
   tags: tech,weaviate,vector-database,ai,ml,database
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_all(body, "<title>Weaviate Console", "webpackJsonpweaviate-console")'
+        condition: and
+

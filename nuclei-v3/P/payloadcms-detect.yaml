@@ -1,35 +1,35 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_any(body, '<title>Login - Payload', '<title>Payload Admin')
-    - status_code == 200
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/admin/login'
-  redirects: true
-  stop-at-first-match: true
 id: payloadcms-detect
 info:
+  name: PayloadCMS - Detect
   author: Shivam Kamboj
-  description: 'PayloadCMS panel was detected. PayloadCMS is an open-source, headless
-    CMS and application framework built with Node.js, React, and TypeScript.
-
-    '
+  severity: info
+  description: |
+    PayloadCMS panel was detected. PayloadCMS is an open-source, headless CMS and application framework built with Node.js, React, and TypeScript.
+  reference:
+    - https://payloadcms.com/
+    - https://github.com/payloadcms/payload
   metadata:
     google-query: intitle:"Payload" inurl:"/admin"
     max-request: 2
     product: payload
     shodan-query:
-    - http.html:"payload__modal"
-    - http.html:"@layer payload-default"
+      - http.html:"payload__modal"
+      - http.html:"@layer payload-default"
     vendor: payloadcms
     verified: true
-  name: PayloadCMS - Detect
-  reference:
-  - https://payloadcms.com/
-  - https://github.com/payloadcms/payload
-  severity: info
-  tags: tech,detect,payloadcms,cms
+  tags: cms,detect,discovery,payloadcms,tech
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100a4f9c69e636d780d3e4a9d3427e89c2e7176d952ee6a6ed51597e763a0d79112022100ba6340b47c58e0bfbd0fd3e8e632540b43cf669e116765556a65c780d344305f:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - contains_any(body, '<title>Login - Payload', '<title>Payload Admin')
+          - status_code == 200
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}'
+      - '{{BaseURL}}/admin/login'
+    redirects: true
+    stop-at-first-match: true

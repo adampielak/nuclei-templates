@@ -1,41 +1,42 @@
-http:
-- body: '{"query":"query @skip {__typename}"}'
-  headers:
-    Content-Type: application/json
-  matchers:
-  - status:
-    - 200
-    type: status
-  - part: body
-    type: word
-    words:
-    - Directive "@skip" argument "if" of type "Boolean!" is required, but it was not
-      provided.
-  - negative: true
-    part: header
-    type: word
-    words:
-    - 'Content-Type: text/html'
-  - condition: or
-    negative: true
-    part: body
-    type: word
-    words:
-    - <html
-    - <body
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/graphql'
-  - '{{BaseURL}}/api/graphql'
-  - '{{BaseURL}}/query'
-  - '{{BaseURL}}/'
-  redirects: true
 id: graphql-apollo-detect
 info:
-  author: princechaddha
   name: Graphql Apollo Detect
-  reference:
-  - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  author: princechaddha
   severity: info
-  tags: tech,graphql,apollo
+  reference:
+    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: apollo,discovery,graphql,tech
+http:
+  - body: '{"query":"query @skip {__typename}"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - status:
+          - 200
+        type: status
+      - part: body
+        type: word
+        words:
+          - Directive "@skip" argument "if" of type "Boolean!" is required, but it was not provided.
+      - negative: true
+        part: header
+        type: word
+        words:
+          - 'Content-Type: text/html'
+      - condition: or
+        negative: true
+        # digest: 4a0a0047304502210097fe2cf9e1c69f772f86bbeeef688670fa90e21e47797976af9db7cbf69c088e02201c83d21476d3ba64021b6d34f3c0983fab241cd6d64b0e608ab40f842701451b:922c64590222798bb761d5b6d8e72950
+
+        part: body
+        type: word
+        words:
+          - <html
+          - <body
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

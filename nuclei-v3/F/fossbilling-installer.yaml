@@ -1,32 +1,36 @@
-http:
-- matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - <title>FOSSBilling setup
-    - <title>FOSSBilling Installation
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/install/install.php'
 id: fossbilling-installer
+
 info:
+  name: FOSSBilling - Installation
   author: ritikchaddha
+  severity: high
+  description: |
+    FOSSBilling installation dashboard has been detected.
   classification:
     cpe: cpe:2.3:a:fossbilling:fossbilling:*:*:*:*:*:*:*:*
-  description: 'FOSSBilling installation dashboard has been detected.
-
-    '
   metadata:
+    verified: true
     max-request: 1
+    vendor: fossbilling
     product: fossbilling
     shodan-query: title:"FOSSBilling"
-    vendor: fossbilling
-    verified: true
-  name: FOSSBilling - Installation
-  severity: high
   tags: fossbilling,install,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/install/install.php'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>FOSSBilling setup"
+          - '<title>FOSSBilling Installation'
+        condition: or
+
+      - type: status
+        status:
+          - 200
+

@@ -1,36 +1,35 @@
-http:
-- matchers:
-  - condition: and
-    part: body
-    type: word
-    words:
-    - StartupProfiler
-    - var profiler =
-    - '"DurationMilliseconds"'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/mini-profiler-resources/results'
-  - '{{BaseURL}}/umbraco/mini-profiler-resources/results'
-  stop-at-first-match: true
 id: umbraco-miniprofiler-exposure
 info:
-  author: theamanrawat
-  description: 'Detected the exposure of the MiniProfiler debugging interface in Umbraco
-    CMS. When exposed, it can reveal sensitive information including SQL queries,
-    execution times, stack traces, and internal application details.
-
-    '
-  metadata:
-    fofa-query: title="Umbraco"
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Umbraco"})
-    shodan-query: http.title:"Umbraco"
   name: Umbraco Mini Profiler - Exposure
-  reference:
-  - https://miniprofiler.com/
-  - https://umbraco.com/
+  author: theamanrawat
   severity: low
-  tags: umbraco,miniprofiler,exposure,debug,misconfig
+  description: |
+    Detected the exposure of the MiniProfiler debugging interface in Umbraco CMS. When exposed, it can reveal sensitive information including SQL queries, execution times, stack traces, and internal application details.
+  reference:
+    - https://miniprofiler.com/
+    - https://umbraco.com/
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Umbraco"})
+    fofa-query: title="Umbraco"
+    shodan-query: http.title:"Umbraco"
+  tags: debug,exposure,miniprofiler,misconfig,umbraco,vuln
+http:
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - StartupProfiler
+          - var profiler =
+          - '"DurationMilliseconds"'
+      - status:
+          - 200
+        # digest: 4b0a00483046022100e7617e6cd793f08fa24b61ebe7184097eee7c8e3971ae10981ca17f363a421ba022100c0e3a3c6a6ecb2aff2b157310e95052838193a3ebcabc080e9fb0f81225bcc7a:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/mini-profiler-resources/results'
+      - '{{BaseURL}}/umbraco/mini-profiler-resources/results'
+    stop-at-first-match: true

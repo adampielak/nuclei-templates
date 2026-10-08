@@ -1,29 +1,31 @@
-http:
-- body: '{"query":"queryy { __typename }"}'
-  headers:
-    Content-Type: application/json
-  matchers:
-  - status:
-    - 200
-    - 400
-    type: status
-  - part: body
-    type: word
-    words:
-    - 'Invalid Syntax : offending token ''queryy'''
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/graphql'
-  - '{{BaseURL}}/api/graphql'
-  - '{{BaseURL}}/query'
-  - '{{BaseURL}}/'
-  redirects: true
 id: graphql-java-detect
 info:
-  author: princechaddha
   name: Graphql Java Detect
-  reference:
-  - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  author: princechaddha
   severity: info
-  tags: tech,graphql,java
+  reference:
+    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: discovery,graphql,java,tech
+http:
+  - body: '{"query":"queryy { __typename }"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - status:
+          - 200
+          - 400
+        type: status
+      - part: body
+        # digest: 4a0a0047304502210093295a8fc11619e1a686b2bfd71af904364d941f0425d230fbbf45a8c3c128dd02200a8034f5f95c3838e8ac0bb1b60328d43b8fa6deb63a977e3564df9c7408403e:922c64590222798bb761d5b6d8e72950
+
+        type: word
+        words:
+          - 'Invalid Syntax : offending token ''queryy'''
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

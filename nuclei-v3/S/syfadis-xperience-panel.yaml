@@ -1,32 +1,36 @@
-http:
-- extractors:
-  - group: 1
-    part: body
-    regex:
-    - ajaxz/([0-9.]+)/Common
-    type: regex
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_any(to_lower(body), "syfadis xperience", "syfadis.supervision.browsersupport")
-      && contains(to_lower(body), "loginpage")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/Directory/Login/Login.aspx'
 id: syfadis-xperience-panel
-info:
-  author: righettod
-  description: 'Syfadis Xperience login panel was detected.
 
-    '
-  metadata:
-    fofa-query: title="Syfadis Xperience"
-    max-request: 1
-    verified: true
+info:
   name: Syfadis Xperience Login Panel - Detect
-  reference:
-  - https://syfadis.fr/xperience
+  author: righettod
   severity: info
-  tags: panel,syfadis,login,detect
+  description: |
+    Syfadis Xperience login panel was detected.
+  reference:
+    - https://syfadis.fr/xperience
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Syfadis Xperience"})
+    verified: true
+    max-request: 1
+    fofa-query: title="Syfadis Xperience"
+  tags: panel,syfadis,login,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/Directory/Login/Login.aspx"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_any(to_lower(body), "syfadis xperience", "syfadis.supervision.browsersupport") && contains(to_lower(body), "loginpage")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - 'ajaxz/([0-9.]+)/Common'
+

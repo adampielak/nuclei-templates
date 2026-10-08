@@ -1,25 +1,27 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_all(body, "\"resources\":", "\"actions\":", "\"patterns\":", "\"clusters\":")
-    - status_code == 200
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/api/me'
 id: unauth-akhq-dashboard
+
 info:
+  name: AKHQ Dashboard - Unauthenticated Access
   author: DhiyaneshDk
+  severity: high
+  description: |
+    AKHQ Dashboard was detected and appeared to be accessible without authentication.
   classification:
     cwe-id: CWE-200
-  description: 'AKHQ Dashboard was detected and appeared to be accessible without
-    authentication.
-
-    '
   metadata:
-    max-request: 1
     verified: true
-  name: AKHQ Dashboard - Unauthenticated Access
-  severity: high
+    max-request: 1
   tags: akhq,misconfig,unauth,dashboard,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/me"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains_all(body, "\"resources\":", "\"actions\":", "\"patterns\":", "\"clusters\":")'
+          - 'status_code == 200'
+        condition: and
+

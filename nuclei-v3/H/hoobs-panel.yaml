@@ -1,30 +1,33 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>HOOBS
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/login?url=%2F'
 id: hoobs-panel
-info:
-  author: rxerium
-  description: 'HOOBS is a home automation platform that bridges HomeKit and non-HomeKit
-    devices.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)HOOBS"})
-    shodan-query: http.title:"HOOBS"
-    verified: true
+info:
   name: HOOBS Panel - Detect
-  reference:
-  - https://hoobs.com
+  author: rxerium
   severity: info
+  description: |
+    HOOBS is a home automation platform that bridges HomeKit and non-HomeKit devices.
+  reference:
+    - https://hoobs.com
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)HOOBS"})
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"HOOBS"
   tags: panel,iot,homekit,hoobs,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/login?url=%2F"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<title>HOOBS'
+
+      - type: status
+        status:
+          - 200
+

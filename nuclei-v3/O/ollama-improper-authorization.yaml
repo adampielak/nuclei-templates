@@ -1,39 +1,39 @@
-http:
-- extractors:
-  - json:
-    - .models[].name
-    name: models
-    part: body
-    type: json
-  matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains(content_type, "application/json")
-    - contains_all(body, "models", "modified_at", "digest", "size")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/api/tags'
 id: ollama-improper-authorization
 info:
+  name: Ollama - Improper Authorization
   author: 0x_Akoko
+  severity: medium
+  description: |
+    Detected an exposed Ollama API without proper authorization, allowing unauthorized access to AI models and operations.
+  reference:
+    - https://ollama.ai/
+    - https://github.com/ollama/ollama
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-862
-  description: 'Detected an exposed Ollama API without proper authorization, allowing
-    unauthorized access to AI models and operations.
-
-    '
   metadata:
     fofa-query: body="Ollama" && port="11434"
     max-request: 1
     shodan-query: http.html:"Ollama" port:11434
     verified: true
-  name: Ollama - Improper Authorization
-  reference:
-  - https://ollama.ai/
-  - https://github.com/ollama/ollama
-  severity: medium
-  tags: ollama,exposure,misconfig,ai,unauth
+  tags: ai,exposure,misconfig,ollama,unauth,vuln
+http:
+  - extractors:
+      - json:
+          - .models[].name
+        # digest: 4a0a00473045022040c30eb2e46063cead5f6fe6ea2f100acdaeb2609c98503aa2792098dbea3367022100f67749eeec3e30001f2f96bf4b289f88c7717aaddf82abc00ee83a359935a908:922c64590222798bb761d5b6d8e72950
+
+        name: models
+        part: body
+        type: json
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_all(body, "models", "modified_at", "digest", "size")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/api/tags'

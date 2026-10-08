@@ -1,28 +1,31 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - contains_any(body, "<title>Sanity Studio", "window.__sanityErrorChannel", "__sanityError")
-    - status_code == 200 || status_code == 302
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  redirects: true
 id: sanity-studio-panel
-info:
-  author: Shivam Kamboj
-  description: 'Sanity Studio panel was detected. Sanity is a headless CMS platform.
 
-    '
-  metadata:
-    fofa-query: title="Sanity Studio"
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Sanity Studio"})
-    shodan-query: http.title:"Sanity Studio"
-    verified: true
+info:
   name: Sanity Studio Panel - Detect
-  reference:
-  - https://www.sanity.io/
+  author: Shivam Kamboj
   severity: info
+  description: |
+    Sanity Studio panel was detected. Sanity is a headless CMS platform.
+  reference:
+    - https://www.sanity.io/
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Sanity Studio"})
+    verified: true
+    max-request: 1
+    shodan-query: http.title:"Sanity Studio"
+    fofa-query: title="Sanity Studio"
   tags: panel,sanity,tech,discovery,detect
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    redirects: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains_any(body, "<title>Sanity Studio", "window.__sanityErrorChannel", "__sanityError")'
+          - 'status_code == 200 || status_code == 302'
+        condition: and
+

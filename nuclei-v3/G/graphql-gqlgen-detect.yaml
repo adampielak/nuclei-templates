@@ -1,29 +1,31 @@
-http:
-- body: '{"query":"query { __typename { }"}'
-  headers:
-    Content-Type: application/json
-  matchers:
-  - status:
-    - 200
-    - 400
-    type: status
-  - part: body
-    type: word
-    words:
-    - expected at least one definition
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/graphql'
-  - '{{BaseURL}}/api/graphql'
-  - '{{BaseURL}}/query'
-  - '{{BaseURL}}/'
-  redirects: true
 id: graphql-gqlgen-detect
 info:
-  author: princechaddha
   name: Graphql Gqlgen Detect
-  reference:
-  - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  author: princechaddha
   severity: info
-  tags: tech,graphql,gqlgen
+  reference:
+    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: discovery,gqlgen,graphql,tech
+http:
+  - body: '{"query":"query { __typename { }"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - status:
+          - 200
+          - 400
+        type: status
+      - part: body
+        # digest: 4a0a00473045022028a97c242c20e5b01a801374b053032a758ec29890c57682abf18391bfc924b3022100d36e8118a47ce47cfdf4b32529a1fc8e925a3d76e8676686422569f3a0bc8044:922c64590222798bb761d5b6d8e72950
+
+        type: word
+        words:
+          - expected at least one definition
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

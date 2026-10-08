@@ -1,29 +1,33 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - contains_any(body,'Kong Manager OSS','Kong Admin','kconfig.js')
-    - contains(content_type, "text/html")
-    - status_code == 200
-    type: dsl
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: kong-manager-exposure
-info:
-  author: Krishna Jaishwal
-  description: 'Exposed Kong Manager (OSS/Admin) interface accessible without authentication.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Kong Manager"})
-    shodan-query: title:"Kong Manager"
-    verified: true
+info:
   name: Kong Manager OSS/Admin - Exposure
-  reference:
-  - http://github.com/Kong/kong-manager
+  author: Krishna Jaishwal
   severity: medium
+  description: |
+    Exposed Kong Manager (OSS/Admin) interface accessible without authentication.
+  reference:
+    - http://github.com/Kong/kong-manager
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Kong Manager"})
+    max-request: 1
+    verified: true
+    shodan-query: title:"Kong Manager"
   tags: kong,manager,misconfig,exposure,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "contains_any(body,'Kong Manager OSS','Kong Admin','kconfig.js')"
+          - 'contains(content_type, "text/html")'
+          - 'status_code == 200'
+        condition: and
+

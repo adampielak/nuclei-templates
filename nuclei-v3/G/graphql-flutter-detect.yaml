@@ -1,29 +1,31 @@
-http:
-- body: '{"query":"query { __typename @deprecated }"}'
-  headers:
-    Content-Type: application/json
-  matchers:
-  - status:
-    - 200
-    - 400
-    type: status
-  - part: body
-    type: word
-    words:
-    - Directive "deprecated" may not be used on FIELD.
-  matchers-condition: and
-  method: POST
-  path:
-  - '{{BaseURL}}/graphql'
-  - '{{BaseURL}}/api/graphql'
-  - '{{BaseURL}}/query'
-  - '{{BaseURL}}/'
-  redirects: true
 id: graphql-flutter-detect
 info:
-  author: princechaddha
   name: Graphql Flutter Detect
-  reference:
-  - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  author: princechaddha
   severity: info
-  tags: tech,graphql,flutter
+  reference:
+    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: discovery,flutter,graphql,tech
+http:
+  - body: '{"query":"query { __typename @deprecated }"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - status:
+          - 200
+          - 400
+        type: status
+      - part: body
+        # digest: 4a0a00473045022019f0e9c40acaaed24d7ff5123d7d755be4bfded0bcb1dd5d375e4aaf717520a8022100877a1c46a458f0cd87c6db53e313edbc905a847c4635318883cace1120c8f1c3:922c64590222798bb761d5b6d8e72950
+
+        type: word
+        words:
+          - Directive "deprecated" may not be used on FIELD.
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

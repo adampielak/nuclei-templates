@@ -1,32 +1,35 @@
-http:
-- host-redirects: true
-  matchers:
-  - type: word
-    words:
-    - "Make the impossible, possible with Trello. The ultimate tool to boost your\
-      \ productivity. Escape the clutter and chaos\u2014stay efficient with Inbox,\
-      \ Boards, and Planner from anywhere, even on mobile."
-  - status:
-    - 200
-    type: status
-  - dsl:
-    - '!contains(host,"trello.com")'
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: trello-phish
-info:
-  author: rxerium
-  description: 'A Trello phishing website was detected
 
-    '
+info:
+  name: Trello phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    A Trello phishing website was detected
+  reference:
+    - https://trello.com
   metadata:
     max-request: 1
-  name: Trello phishing Detection
-  reference:
-  - https://trello.com
-  severity: info
   tags: phishing,trello,productivity,osint,discovery
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Make the impossible, possible with Trello. The ultimate tool to boost your productivity. Escape the clutter and chaos—stay efficient with Inbox, Boards, and Planner from anywhere, even on mobile."
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"trello.com")'
+

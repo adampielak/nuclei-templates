@@ -4,6 +4,7 @@ info:
   author: princechaddha
   severity: medium
   tags: ecology,lfi
+
 requests:
   - method: GET
     path:

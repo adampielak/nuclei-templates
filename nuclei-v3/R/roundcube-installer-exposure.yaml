@@ -1,30 +1,27 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "Roundcube Webmail Installer", "wiki/Installation", "General
-      configuration")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/installer/'
-  - '{{BaseURL}}/installer/index.php?_step=2'
 id: roundcube-installer-exposure
 info:
+  name: Roundcube Webmail Installer - Exposure
   author: theamanrawat
-  description: 'Detects exposure of the Roundcube Webmail installer interface. Public
-    access to this installer may allow attackers to reconfigure the webmail application,
-    potentially leading to email account compromise or the disclosure of sensitive
-    configuration details.
-
-    '
+  severity: high
+  description: |
+    Detects exposure of the Roundcube Webmail installer interface. Public access to this installer may allow attackers to reconfigure the webmail application, potentially leading to email account compromise or the disclosure of sensitive configuration details.
+  reference:
+    - https://roundcube.net/
+    - https://github.com/roundcube/roundcubemail/wiki/Installation
   metadata:
     max-request: 2
     verified: true
-  name: Roundcube Webmail Installer - Exposure
-  reference:
-  - https://roundcube.net/
-  - https://github.com/roundcube/roundcubemail/wiki/Installation
-  severity: high
-  tags: roundcube,webmail,installer,config,misconfig,exposure
+  tags: config,exposure,installer,misconfig,roundcube,vuln,webmail
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100941e83a2f629e9754cd1fff05dc693d6777e44edf4cd59233f0b49e16af0d6ef022100f001a87ea7acf65f9236b1cbd55b3800d4c8f298808c65d8cff4f52735feacd2:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains_all(body, "Roundcube Webmail Installer", "wiki/Installation", "General configuration")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/installer/'
+      - '{{BaseURL}}/installer/index.php?_step=2'

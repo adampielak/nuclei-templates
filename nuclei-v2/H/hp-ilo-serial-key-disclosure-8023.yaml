@@ -1,4 +1,5 @@
 id: hp-ilo-serial-key-disclosure
+
 info:
   name: HP ILO Serial Key Disclosure
   author: dhiyaneshDk
@@ -6,10 +7,12 @@ info:
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/hp-ilo-serial-key-disclosure.json
   tags: exposure,config
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/xmldata?item=CpqKey"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -19,6 +22,7 @@ requests:
           - "KEY"
         part: body
         condition: and
+
       - type: status
         status:
           - 200
