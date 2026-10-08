@@ -10,7 +10,6 @@ info:
   metadata:
     shodan-query: http.title:"GitLab"
   tags: gitlab,exposure,misconfig
-  mongoid: 0000
 
 requests:
   - method: GET
