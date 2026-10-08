@@ -7,11 +7,10 @@ info:
   description: |
     The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network.
   metadata:
+    verified: true
     max-request: 1
     shodan-query: product:"GNU Inetutils FTPd"
-    verified: true
-  tags: network,ftp,smartgateway,gnu,inetutils,detect
-
+  tags: network,ftp,smartgateway,gnu,inetutils,detect,detection,tcp,discovery
 tcp:
   - inputs:
       - data: "\n"
@@ -27,4 +26,4 @@ tcp:
       - type: regex
         regex:
           - "GNU inetutils ([0-9.]+)"
-# digest: 4b0a00483046022100d53fa5917b995c96a5a67ec835489ab217df163b9d8cd5d622fe78fe0123691b02210092872705de2a111ebb1b733f3362471c49194ba90fa9ce471465477ea3fed700:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210093b1d1da64d674ea713ccc5fa84edc23fca62e4be4deb2d14be23dae4ddc5a86022100aea469dcc6c46278f6fab9bfc913d403627d2d0d1a2ae8a99543ae0f89f78641:922c64590222798bb761d5b6d8e72950

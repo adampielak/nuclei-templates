@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: product:"OpenSSH"
-  tags: js,enum,ssh,misconfig,network
+  tags: js,enum,ssh,misconfig,network,vuln
 
 javascript:
   - pre-condition: |
@@ -21,7 +21,7 @@ javascript:
       let m = require("nuclei/ssh");
       let c = m.SSHClient();
       let response = c.ConnectSSHInfoMode(Host, Port);
-      to_json(response);
+      Export(response);
     args:
       Host: "{{Host}}"
       Port: "22"
@@ -43,4 +43,4 @@ javascript:
           - "hmac-md5-96"
           - "hmac-sha1-96"
         condition: or
-# digest: 490a0046304402200808b310f424b589a3a2f8857b11481b27e3141e21dd9ae12991cc026d7a1dff022059ffe406c18c198b90735f0a78b24d49fbb04a6152186b7d83ae9e775b0e2072:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022072eb125dda208274d62dfdc67c6f432bb316e90ad168bfe8ebff4e08dd510079022044278e8d49df4e4dae6038b599da14aaa279dae789c9a64ad6cc6112ffcab451:922c64590222798bb761d5b6d8e72950

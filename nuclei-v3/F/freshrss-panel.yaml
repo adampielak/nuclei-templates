@@ -9,7 +9,6 @@ info:
   classification:
     cpe: cpe:2.3:a:freshrss:freshrss:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Freshrss"})
     verified: true
     max-request: 1
     vendor: freshrss
@@ -39,4 +38,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a00473045022100fbce912bd19b671dd37ddb9e374295d77729d05fa48247fabf9c6eba682bb17702204bbf19513f7a6d1fffa3faa98dadf9c387232898834cf9d81e286a88755167af:922c64590222798bb761d5b6d8e72950

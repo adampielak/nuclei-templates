@@ -13,7 +13,6 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:o:infoblox:nios:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Infoblox"})
     max-request: 1
     vendor: infoblox
     product: nios
@@ -37,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a0047304502207a503b945dbbd04d131d8859af07e4d44122fd9619aff9f4363db34f42b8842d022100a735e15f6f00b256d9b07c63ffdfeb462fd1c127e8be28fa22c3fab4fff13665:922c64590222798bb761d5b6d8e72950

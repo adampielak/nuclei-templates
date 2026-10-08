@@ -10,7 +10,6 @@ info:
     - https://github.com/Threekiii/Awesome-POC/blob/master/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%BC%8F%E6%B4%9E/Panabit%20iXCache%20date_config%20%E5%90%8E%E5%8F%B0%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/iot/Panabit/Panabit%20iXCache%20date_config%20%E5%90%8E%E5%8F%B0%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
   metadata:
-    runzero-review: REJECT/2025-11-17/excluding tag intrusive
     max-request: 2
     fofa-query: title="iXCache"
     veified: true
@@ -53,4 +52,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a004730450221009b84cb1163b3afacdddd8dc72bba923c29631de8470ee535900ef4b4880bd4aa022024745ef8b95239936ece8ae232c22c0b6501d49c2bf6465517c8a0dc84242a2e:922c64590222798bb761d5b6d8e72950

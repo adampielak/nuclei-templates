@@ -1,5 +1,4 @@
 id: node-integration-enabled
-
 info:
   name: Node Integration Enabled
   author: me9187
@@ -9,13 +8,10 @@ info:
     - https://book.hacktricks.xyz/pentesting/pentesting-web/xss-to-rce-electron-desktop-apps
   tags: electron,file,nodejs
   # nodeIntegration in Electron Applications means you can turn XSS into RCE by calling require('child_process').exec('COMMAND');
-
 file:
   - extensions:
       - all
-
     matchers:
-
       - type: word
         words:
           - "nodeIntegration: true"

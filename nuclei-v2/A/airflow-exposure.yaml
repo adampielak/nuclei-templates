@@ -1,16 +1,18 @@
 id: airflow-exposure
+
 info:
-  author: pd-team
   name: Apache Airflow Exposure / Unauthenticated Access
+  author: pd-team
   severity: medium
+
 requests:
-- matchers:
-  - condition: and
-    type: word
-    words:
-    - <title>Airflow - DAGs</title>
-    - <a href="https://github.com/apache/airflow">
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/admin/'
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+      - '{{BaseURL}}/admin/'
+    matchers:
+      - type: word
+        words:
+          - '<title>Airflow - DAGs</title>'
+          - '<a href="https://github.com/apache/airflow">'
+        condition: and

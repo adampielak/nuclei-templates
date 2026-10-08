@@ -1,4 +1,5 @@
 id: jellyfin-public-users-exposure
+
 info:
   name: Jellyfin Public Users - Exposure
   author: theamanrawat
@@ -13,34 +14,38 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200,CWE-306
   metadata:
-    fofa-query: title="Jellyfin"
     max-request: 2
-    shodan-query: http.title:"Jellyfin"
     verified: true
-  tags: api,disclosure,exposure,jellyfin,misconfig,vuln
+    shodan-query: http.title:"Jellyfin"
+    fofa-query: title="Jellyfin"
+  tags: misconfig,jellyfin,exposure,api,disclosure
+
 http:
-  - matchers:
-      - condition: and
+  - method: GET
+    path:
+      - "{{BaseURL}}/Users/Public"
+      - "{{BaseURL}}/jellyfin/Users/Public"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
         part: body
-        type: word
         words:
           - '"Name"'
           - '"ServerId"'
           - '"Id"'
           - '"Policy"'
           - '"Configuration"'
-      - part: content_type
-        type: word
-        words:
-          - application/json
-      - status:
-          - 200
-        # digest: 490a00463044022057e463996fd16ef4a8aa3a607ea4f61fc5de590ba14a1162c5c39871df7a193202204b3633b23555165d6634120100537bff87739d5eb2d5360530cc01bfd819cc4e:922c64590222798bb761d5b6d8e72950
+        condition: and
 
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/Users/Public'
-      - '{{BaseURL}}/jellyfin/Users/Public'
-    stop-at-first-match: true
+      - type: word
+        part: content_type
+        words:
+          - "application/json"
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022035a9176addf581fb56711bac812df0c1fc6b45b502bb0d6682a5a4c4dc98d2a7022100eb1ef99fd1a2d7f06d60b8e3daa11ec8beb833eff571911470a556e90e1c6b1f:922c64590222798bb761d5b6d8e72950

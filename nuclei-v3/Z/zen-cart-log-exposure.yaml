@@ -1,4 +1,5 @@
 id: zen-cart-log-exposure
+
 info:
   name: Zen Cart Log File Exposure
   author: 0x_Akoko
@@ -13,34 +14,38 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    fofa-query: body="zen-cart" || body="Zen Cart"
     max-request: 5
     shodan-query: http.html:"zen-cart" || http.html:"Zen Cart"
-  tags: ecommerce,exposure,logs,vuln,zencart
+    fofa-query: body="zen-cart" || body="Zen Cart"
+  tags: zencart,exposure,logs,ecommerce
+
 http:
-  - extractors:
-      - name: log-files
+  - method: GET
+    path:
+      - "{{BaseURL}}/logs/"
+      - "{{BaseURL}}/cache/"
+      - "{{BaseURL}}/includes/logs/"
+      - "{{BaseURL}}/admin/logs/"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Index of"
+          - "myDEBUG"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        name: log-files
         part: body
         regex:
-          - myDEBUG[a-zA-Z0-9_-]+\.log
-        # digest: 490a0046304402204e1c6da89621b1851aa15b4186cced5688b5931342a35a0c6ea9d3530e379988022066af90082fed80ea5b7f1252f71306e316820fd553a65bf957d2a0ebe0adf119:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - Index of
-          - myDEBUG
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/logs/'
-      - '{{BaseURL}}/cache/'
-      - '{{BaseURL}}/includes/logs/'
-      - '{{BaseURL}}/admin/logs/'
-    stop-at-first-match: true
+          - 'myDEBUG[a-zA-Z0-9_-]+\.log'
+# digest: 490a0046304402207da0b0732c640af1de7c1c64f5d468e8b4cdd5dda4247c4b5175ba627acab325022018ccee22d2eaa3b0edfe8aa9e1019dbf6f7787f5573f30a7f47a8806e9249fb0:922c64590222798bb761d5b6d8e72950

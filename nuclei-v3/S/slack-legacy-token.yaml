@@ -21,4 +21,4 @@ http:
         part: body
         regex:
           - (xox[os]-\d+-\d+-\d+-[a-fA-F\d]+)
-
+# digest: 4a0a004730450220078b1110016cd469cfca1628cdd0da1d3f524fa09c438312652554d752cbca27022100c13e5c2a8019b5a14f71a0d1e440b9a21f109bb92b3bb62f26660f5577bcde06:922c64590222798bb761d5b6d8e72950

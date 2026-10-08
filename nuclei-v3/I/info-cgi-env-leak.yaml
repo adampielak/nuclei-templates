@@ -1,4 +1,5 @@
 id: info-cgi-env-leak
+
 info:
   name: info.cgi  Environment Variable - Disclosure
   author: pussycat0x
@@ -9,46 +10,49 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/test-cgi-script-leaking-environment-variables/
     - https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/cgi
   metadata:
-    max-request: 5
     verified: true
-  tags: cgi,disclosure,env,exposure,generic,info,vuln
-http:
-  - matchers:
-      - status:
-          - 200
-        type: status
-      - condition: or
-        part: body
-        type: word
-        words:
-          - SERVER_SOFTWARE
-          - SERVER_NAME
-          - GATEWAY_INTERFACE
-          - SERVER_PROTOCOL
-          - REQUEST_METHOD
-          - QUERY_STRING
-          - REMOTE_ADDR
-          - HTTP_USER_AGENT
-      - condition: or
-        # digest: 4b0a00483046022100c69282713538c7aabf0c89f79df56f21cbc70f467dc83c1ad80b2b3053c16a25022100efdc106a87bde055c5fabc70623b0d7f18dd54b7a18e89ae7f11c1b1bc3e9ae4:922c64590222798bb761d5b6d8e72950
+    max-request: 5
+  tags: cgi,exposure,info,env,disclosure,generic
 
-        part: body
-        type: word
-        words:
-          - PATH=
-          - '/bin:'
-          - '/usr/bin:'
-          - LD_LIBRARY_PATH
-          - MYSQL_HOME
-          - OPENSSL_CONF
-          - DOCUMENT_ROOT
-          - SCRIPT_FILENAME
-    matchers-condition: and
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/info.cgi'
-      - '{{BaseURL}}/cgi-bin/info.cgi'
-      - '{{BaseURL}}/cgi-sys/info.cgi'
-      - '{{BaseURL}}/scripts/info.cgi'
-      - '{{BaseURL}}/lite-scripts/info.cgi'
+      - "{{BaseURL}}/info.cgi"
+      - "{{BaseURL}}/cgi-bin/info.cgi"
+      - "{{BaseURL}}/cgi-sys/info.cgi"
+      - "{{BaseURL}}/scripts/info.cgi"
+      - "{{BaseURL}}/lite-scripts/info.cgi"
+
     stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "SERVER_SOFTWARE"
+          - "SERVER_NAME"
+          - "GATEWAY_INTERFACE"
+          - "SERVER_PROTOCOL"
+          - "REQUEST_METHOD"
+          - "QUERY_STRING"
+          - "REMOTE_ADDR"
+          - "HTTP_USER_AGENT"
+        condition: or
+
+      - type: word
+        part: body
+        words:
+          - "PATH="
+          - "/bin:"
+          - "/usr/bin:"
+          - "LD_LIBRARY_PATH"
+          - "MYSQL_HOME"
+          - "OPENSSL_CONF"
+          - "DOCUMENT_ROOT"
+          - "SCRIPT_FILENAME"
+        condition: or
+# digest: 4b0a00483046022100d837dd9036e39cbddbb806bf549210324d1870824ce6e0f479c745bbcedee3c9022100d0bef558687fe393dcefd514e1fe6db1c8bcbe796dfdc226c7c4ca640217b10c:922c64590222798bb761d5b6d8e72950

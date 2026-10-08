@@ -1,4 +1,5 @@
 id: grafana-metrics-exposure
+
 info:
   name: Grafana Metrics Endpoint - Information Disclosure
   author: 0x_Akoko
@@ -13,34 +14,38 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     verified: true
-  tags: exposure,grafana,metrics,misconfig,vuln
+    max-request: 1
+  tags: grafana,exposure,metrics,misconfig
+
 http:
-  - extractors:
-      - group: 1
+  - method: GET
+    path:
+      - "{{BaseURL}}/metrics"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "grafana_build_info"
+          - "# TYPE grafana_"
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - "text/plain"
+
+    extractors:
+      - type: regex
         name: version
         part: body
+        group: 1
         regex:
-          - grafana_build_info\{[^}]*version="([0-9.]+)"
-        # digest: 490a0046304402204940f3d30cbf9b669e60ffdcf728cbff5bd484bb646d61d5d4ca1092ec09d7b0022051ba1edcd0cf28f70e319c1f0324917cc24e2d5f4a7d5ee687df1d7e6d2ce35b:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    matchers:
-      - status:
-          - 200
-        type: status
-      - condition: and
-        part: body
-        type: word
-        words:
-          - grafana_build_info
-          - '# TYPE grafana_'
-      - part: header
-        type: word
-        words:
-          - text/plain
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/metrics'
+          - 'grafana_build_info\{[^}]*version="([0-9.]+)"'
+# digest: 4a0a0047304502203fcd5d467ed416927b72ed41f5b183db205206ce4a715af210d40606a6516c1b02210081b20d2aa0153ef9f7b81ec4f9adf61b94244d5e3edfbb716305a5cc3bbc2913:922c64590222798bb761d5b6d8e72950

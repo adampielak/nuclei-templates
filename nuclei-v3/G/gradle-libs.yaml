@@ -4,11 +4,15 @@ info:
   name: Gradle Library Version Disclosure
   author: DhiyaneshDK
   severity: info
+  classification:
+    cpe: cpe:2.3:a:gradle:gradle:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: gradle
+    product: gradle
     github-query: filename:libs.versions.toml
-  tags: file,gradle,exposure
+  tags: file,gradle,exposure,vuln
 
 http:
   - method: GET
@@ -31,5 +35,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a0048304602210080edd28e23b35c989037deb44531294eb9982daa89844ac847928bc471217ba5022100f9dde0727dc6c3bce417ab75bb24ee2564634eba671def40049a6364b134a36a:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c0ef12f630531c0b6ed2330c5562a829e854c52f76ee2237877c9f799afc2541022012311a2772ea7771e843301498b8b836755cacc56d210aa8e30edca20161551b:922c64590222798bb761d5b6d8e72950

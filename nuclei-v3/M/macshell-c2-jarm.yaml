@@ -11,7 +11,7 @@ info:
     - https://github.com/cedowens/MacShellSwift
   metadata:
     max-request: 1
-  tags: jarm,network,c2,ir,osint,cti,macshell
+  tags: jarm,network,c2,ir,osint,cti,macshell,tcp,vuln
 tcp:
   - inputs:
       - data: 2E
@@ -22,4 +22,4 @@ tcp:
       - type: dsl
         dsl:
           - "jarm(Hostname) == '2ad000000000000000000000000000eeebf944d0b023a00f510f06a29b4f46'"
-# digest: 4b0a00483046022100f23b4188401cc05701bd6d1ad953c5735ec60a2ea450465368f3f9fba1c149bd0221008a8b4651882556ae509a6f06f851200d8a8119a7c755bf90183b87b899485eb4:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210087bd5b0b954402aefc2ba9d12069b1a1663e7c259437984e2460906f7da19e16022034ffa55c9223aff8305ee1737dc8f9b001a97001855dea1935ef9607629d1d50:922c64590222798bb761d5b6d8e72950

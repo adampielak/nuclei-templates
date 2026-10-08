@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: product:"OpenSSH"
-  tags: js,enum,ssh,misconfig,network
+  tags: js,enum,ssh,misconfig,network,vuln
 
 javascript:
   - pre-condition: |
@@ -21,7 +21,7 @@ javascript:
       let m = require("nuclei/ssh");
       let c = m.SSHClient();
       let response = c.ConnectSSHInfoMode(Host, Port);
-      to_json(response);
+      Export(response);
     args:
       Host: "{{Host}}"
       Port: "22"
@@ -43,4 +43,4 @@ javascript:
           - "blowfish-cbc"
           - "cast128-cbc"
         condition: or
-# digest: 4b0a0048304602210082687c326b5c8ec0803ad1e07fd7d94f166ac53dad501f5ad325daf42d789045022100e7525130e591163bc997cca9eac1c1b757c6099e892becc2e9b546f12298d13d:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100a8342def03fd29787107123a3c017eb357073728a7dedc784b94b2a1d5170587022025ebb5270e5fe0b6e5a7881f81b84dd0d2dc5aaed51a385f3c52f104deb0e08b:922c64590222798bb761d5b6d8e72950

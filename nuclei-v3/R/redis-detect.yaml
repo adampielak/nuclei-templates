@@ -7,23 +7,32 @@ info:
   description: Redis service was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 2
     verified: true
-    shodan-query: product:"redis"
-  tags: network,redis
-
+    max-request: 2
+    shodan-query:
+      - product:"redis"
+      - http.title:"airflow - dags" || http.html:"apache airflow"
+      - http.title:"sign in - airflow"
+    product: airflow
+    vendor: apache
+    fofa-query:
+      - apache airflow
+      - title="airflow - dags" || http.html:"apache airflow"
+      - title="sign in - airflow"
+    google-query:
+      - intitle:"airflow - dags" || http.html:"apache airflow"
+      - intitle:"sign in - airflow"
+  tags: network,redis,detect,detection,tcp,discovery
 tcp:
   - inputs:
       - data: "*1\r\n$4\r\ninfo\r\n"
 
     host:
       - "{{Hostname}}"
-      - "{{Host}}:6379"
-      - "tls://{Hostname}}"
-      - "tls://{{Host}}:6380"
+      - "tls://{{Hostname}}"
+    port: 6379,6380
     read-size: 1024
 
     matchers:
@@ -33,5 +42,4 @@ tcp:
           - "CONFIG REWRITE"
           - "NOAUTH Authentication"
         condition: or
-
-# Enhanced by md on 2023/02/06
+# digest: 4b0a00483046022100882fb59c77f20c28cb8bd3b2865315634c6447805109c6b16e8217ab81902ec9022100f5020bb2db52f042bf5fcf9d82694e4fb25cbb6bf73c15b19f1b32e6fb164f56:922c64590222798bb761d5b6d8e72950

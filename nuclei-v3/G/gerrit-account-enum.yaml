@@ -1,4 +1,5 @@
 id: gerrit-account-enum
+
 info:
   name: Gerrit Code Review - Account Enumeration
   author: DhiyaneshDk
@@ -9,34 +10,38 @@ info:
     - https://gerrit-review.googlesource.com/Documentation/rest-api-accounts.html
     - https://gerrit-documentation.storage.googleapis.com/Documentation/2.11/rest-api-accounts.html
   metadata:
-    fofa-query: title="Gerrit Code Review"
     max-request: 2
-    shodan-query: title:"Gerrit Code Review"
     verified: true
-  tags: enum,exposure,gerrit,misconfig,vuln
+    shodan-query: title:"Gerrit Code Review"
+    fofa-query: title="Gerrit Code Review"
+  tags: gerrit,enum,exposure,misconfig
+
 http:
-  - extractors:
-      - group: 1
+  - method: GET
+    path:
+      - "{{BaseURL}}/accounts/?q=a&n=10"
+      - "{{BaseURL}}/accounts/?suggest&q=a&n=10"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "_account_id"
+          - "username"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
         name: usernames
         part: body
+        group: 1
         regex:
           - '"username":\s*"([^"]+)"'
-        # digest: 490a0046304402202ba16fa839aa2ec23cc8b78871f88b7c1669434aa25ac28861fd6c64dbc2aea9022077e6ee34e4d5dbbb43531af4d2727073ce83dbabd97183e4f97f9d9f31caa225:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - _account_id
-          - username
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/accounts/?q=a&n=10'
-      - '{{BaseURL}}/accounts/?suggest&q=a&n=10'
-    stop-at-first-match: true
+# digest: 490a0046304402200a73ce4ae2f3fedd7a62c931f0ad59c91e24ab7e10c68d9810fd6e297924634602201dbdd6af385809d62b9d150781c83ed8032c40bdb43d9a4e3bef5d0f114f8da3:922c64590222798bb761d5b6d8e72950

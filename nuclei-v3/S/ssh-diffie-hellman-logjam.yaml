@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: product:"OpenSSH"
-  tags: js,enum,ssh,misconfig,network
+  tags: js,enum,ssh,misconfig,network,discovery
 
 javascript:
   - pre-condition: |
@@ -21,7 +21,7 @@ javascript:
       let m = require("nuclei/ssh");
       let c = m.SSHClient();
       let response = c.ConnectSSHInfoMode(Host, Port);
-      to_json(response);
+      Export(response);
 
     args:
       Host: "{{Host}}"
@@ -36,4 +36,4 @@ javascript:
       - type: word
         words:
           - "diffie-hellman-group1-sha1"
-# digest: 4b0a00483046022100e1c71232ca17b65b8581b993269890f9ac6093089e4c7876586501911fcfdbb8022100c138df296e81048e721dac3917d728a37711475b1386dd01d2c6ff474b323450:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221008c2b3ad82250708df0d62a7258c96d484018bfc5493b1a52bd927292b45681120220617fe8d66ee1496c9b69f960cf439195fb6ad2c9d1b6ece288724fd08ec9e69a:922c64590222798bb761d5b6d8e72950

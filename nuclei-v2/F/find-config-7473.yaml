@@ -3,19 +3,15 @@ info:
   name: Search for config.xml
   author: Clark
   severity: medium
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/debug/config.xml"
-
     matchers-condition: and
     matchers:
-
       - type: word
         words:
           - appSettings
-
       - type: status
         status:
           - 200

@@ -1,5 +1,4 @@
 id: panabit-default-login
-
 info:
   name: Panabit Gateway Default Login
   author: pikpikcu,ritikchaddha
@@ -16,7 +15,6 @@ info:
   metadata:
     fofa-query: app="Panabit-智能网关"
   tags: panabit,default-login
-
 requests:
   - raw:
       - |
@@ -37,14 +35,12 @@ requests:
 
         {{password}}
         ------WebKitFormBoundaryAjZMsILtbrBp8VbC--
-
     payloads:
       username:
         - admin
       password:
         - panabit
     attack: pitchfork
-
     matchers-condition: and
     matchers:
       - type: word
@@ -53,12 +49,10 @@ requests:
           - '<META HTTP-EQUIV=REFRESH CONTENT="0;URL=/index.htm">'
           - 'urn:schemas-microsoft-com:vml'
         condition: and
-
       - type: word
         part: header
         words:
           - "paonline_admin"
-
       - type: status
         status:
           - 200

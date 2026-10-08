@@ -11,7 +11,6 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-1295577382"
     max-request: 1
     verified: true
     shodan-query: http.favicon.hash:-1295577382
@@ -30,4 +29,4 @@ http:
         part: server
         words:
           - "wildix"
-
+# digest: 490a00463044022010f7fda2b1c71c89675b666829fc32a359c2d3aeeedd56d5957fe1bcb5bc02f502201b92f643404e06b1ff552b288fddd68c2223feebf34274666994333ce0e036e5:922c64590222798bb761d5b6d8e72950

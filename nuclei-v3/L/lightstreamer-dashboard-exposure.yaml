@@ -1,4 +1,5 @@
 id: lightstreamer-dashboard-exposure
+
 info:
   name: Lightstreamer Dashboard Exposure
   author: DhiyaneshDk
@@ -9,27 +10,30 @@ info:
     - https://lightstreamer.com/
     - https://lightstreamer.com/docs/ls-server/latest/Dashboard%20and%20Monitoring.html
   metadata:
+    verified: true
     max-request: 2
     shodan-query: html:"lightstreamer"
-    verified: true
-  tags: dashboard,exposure,lightstreamer,misconfig,unauth,vuln
-http:
-  - matchers:
-      - case-insensitive: true
-        condition: and
-        part: body
-        type: word
-        words:
-          - Lightstreamer Monitoring Dashboard
-          - performance
-      - status:
-          - 200
-        # digest: 490a0046304402205d5e6e7b8bde547296b4d4890b7b5ba710a558e1031689a48662dd55ee7bd8c902205fd995e7e2928259387f5db35dc458220cf921d12980b6220b450abcf1eab0c0:922c64590222798bb761d5b6d8e72950
+  tags: exposure,lightstreamer,dashboard,misconfig,unauth
 
-        type: status
-    matchers-condition: and
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/dashboard/'
-      - '{{BaseURL}}/lightstreamer/dashboard/'
+      - "{{BaseURL}}/dashboard/"
+      - "{{BaseURL}}/lightstreamer/dashboard/"
+
     stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Lightstreamer Monitoring Dashboard"
+          - "performance"
+        condition: and
+        case-insensitive: true
+
+      - type: status
+        status:
+          - 200
+# digest: 490a0046304402206c891fdc23ee28abca66743a32fd2c663a09c6b62eb06e8d4a297ac5bf5ce33002205fefdfc829138fcbafaee5d41c0a69b58cec174189c3285e9e2aca8b44f8eb31:922c64590222798bb761d5b6d8e72950

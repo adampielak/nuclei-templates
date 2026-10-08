@@ -8,7 +8,6 @@ info:
   reference:
     - https://www.olympicbankingsystem.com/en/
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)olympic banking system"})
     max-request: 2
     shodan-query: http.title:"olympic banking system"
   tags: panel,olympic,login,discovery
@@ -33,4 +32,4 @@ http:
         group: 1
         regex:
           - '&#169;([0-9]+)-'
-
+# digest: 4b0a00483046022100fc8e468a8c8521c7784efda70209d9b8d042ee5cdd3e88c8b1dd9feeee53c787022100d7d41f824f3809c9dcf86f9050251f6995a743ceb8579b1993ad65f7a679e326:922c64590222798bb761d5b6d8e72950
