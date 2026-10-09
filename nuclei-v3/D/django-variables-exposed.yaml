@@ -1,49 +1,54 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - seeing this error because you have <code>DEBUG = True</code>
-    - SuspiciousOperation
-    - 'Invalid HTTP_HOST header:'
-    - 'Django Version:'
-    - <title>DisallowedHost at /</title>
-    - DisallowedHost
-    - DisallowedModelAdminLookup
-    - DisallowedModelAdminToField
-    - DisallowedRedirect
-    - InvalidSessionKey
-    - RequestDataTooBig
-    - SuspiciousFileOperation
-    - SuspiciousMultipartForm
-    - SuspiciousSession
-    - TooManyFieldsSent
-    - PermissionDenied
-  - part: header
-    type: word
-    words:
-    - text/html
-  - status:
-    - 400
-    - 404
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/widgets/platformx/-/svg-badge.svg'
-  stop-at-first-match: true
 id: django-variables-exposed
+
 info:
+  name: Django Config - Detect
   author: nobody
-  metadata:
-    max-request: 2
-    verified: true
-  name: Django Degub Config Detect
+  severity: info
+  description: Django configuration information was detected, which could reveal web application framework exceptions that could indicate exploitation attempts.
   reference:
-  - https://twitter.com/Alra3ees/status/1397660633928286208
-  - https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/
-  - https://hacklido.com/blog/704-exploiting-django-debug-mode-for-unrestricted-access-to-the-internal-dashboard
-  severity: low
-  tags: debug,django,generic,exposed
+    - https://docs.djangoproject.com/en/1.11/ref/exceptions/
+    - https://docs.djangoproject.com/en/1.11/topics/logging/#django-security
+    - https://github.com/projectdiscovery/nuclei-templates/blob/master/file/logs/django-framework-
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 1
+  tags: exposure,config,django
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'seeing this error because you have <code>DEBUG = True</code>'
+          - 'SuspiciousOperation'
+          - 'DisallowedHost'
+          - 'DisallowedModelAdminLookup'
+          - 'DisallowedModelAdminToField'
+          - 'DisallowedRedirect'
+          - 'InvalidSessionKey'
+          - 'RequestDataTooBig'
+          - 'SuspiciousFileOperation'
+          - 'SuspiciousMultipartForm'
+          - 'SuspiciousSession'
+          - 'TooManyFieldsSent'
+          - 'PermissionDenied'
+        condition: or
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+      - type: status
+        status:
+          - 400
+          - 500
+# digest: 4a0a00473045022100f67dd14e356fef79d9b80e6c9036835e73695659b834b166d39b5832d8d8677b02201fd1315aae896bd498f008b7a534809cbd5510094e9199d6e04fd4a3d46f9add:922c64590222798bb761d5b6d8e72950

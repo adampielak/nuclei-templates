@@ -1,5 +1,4 @@
 id: tasmoadmin-detect
-
 info:
   name: TasmoAdmin - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://github.com/TasmoAdmin/TasmoAdmin
   metadata:
-    verified: true
     max-request: 1
-    vendor: tasmoadmin
     product: tasmoadmin
     shodan-query: 'http.title:"TasmoAdmin"'
-  tags: tasmoadmin,tasmota,tech,iot,home-automation,detect
-
+    vendor: tasmoadmin
+    verified: true
+  tags: detect,home-automation,iot,tasmoadmin,tasmota,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}/login"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -29,13 +26,11 @@ http:
           - '<title>Login - TasmoAdmin</title>'
           - '/resources/js/compiled/Sonoff.min.js'
         condition: and
-
       - type: word
         part: header
         words:
           - 'TASMO_SESSION='
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203ffdd6ab9d9eb71697d0a291b38f429f200d75b6bf8bed85ddaedba0b43f1dda022100e1ab0955bab38a90789a264f5baaf91c6492b007471bf2df34c848020e613f2f:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502203ffdd6ab9d9eb71697d0a291b38f429f200d75b6bf8bed85ddaedba0b43f1dda022100e1ab0955bab38a90789a264f5baaf91c6492b007471bf2df34c848020e613f2f:922c64590222798bb761d5b6d8e72950

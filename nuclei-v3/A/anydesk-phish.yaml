@@ -1,30 +1,35 @@
-http:
-- host-redirects: true
-  matchers:
-  - type: word
-    words:
-    - "The Fast Remote Desktop Application \u2013 AnyDesk"
-  - status:
-    - 200
-    type: status
-  - dsl:
-    - '!contains(host,"anydesk.com")'
-    type: dsl
-  matchers-condition: and
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: anydesk-phish
-info:
-  author: rxerium
-  description: 'An anydesk phishing website was detected
 
-    '
+info:
+  name: anydesk phishing Detection
+  author: rxerium
+  severity: info
+  description: |
+    An anydesk phishing website was detected
+  reference:
+    - https://anydesk.com
   metadata:
     max-request: 1
-  name: anydesk phishing Detection
-  reference:
-  - https://anydesk.com
-  severity: info
   tags: phishing,anydesk,osint
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'The Fast Remote Desktop Application – AnyDesk'
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(host,"anydesk.com")'
+# digest: 4a0a00473045022100f959c458333177ccf4e406a0c934cc1382f90b05f9c9a8273b8a4ce21f799ede02204fa59cf1c73c41062418c390b51467bdc90b80c5e93636ba69de4e544b8ba257:922c64590222798bb761d5b6d8e72950

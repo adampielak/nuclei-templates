@@ -1,31 +1,34 @@
-http:
-- host-redirects: true
-  matchers:
-  - condition: and
-    dsl:
-    - contains_any(body, "<title>Login - Cloudlog", "Login to Cloudlog", "/CloudLog_logo.png")
-    - status_code == 200
-    type: dsl
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/index.php/user/login'
-  stop-at-first-match: true
 id: cloudlog-panel
-info:
-  author: s4e-io
-  description: 'Cloudlog panel was discovered.
 
-    '
+info:
+  name: Cloudlog Panel - Detect
+  author: s4e-io
+  severity: info
+  description: |
+    Cloudlog panel was discovered.
+  reference:
+    - https://github.com/magicbug/Cloudlog
+    - https://lab.uberspace.de/guide_cloudlog/
   metadata:
-    fofa-query: title="Login - Cloudlog"
-    max-request: 1
     runzero-match: any(each(service["html.titles"]), {# matches "(?i)Login - Cloudlog"})
     verified: true
-  name: Cloudlog Panel - Detect
-  reference:
-  - https://github.com/magicbug/Cloudlog
-  - https://lab.uberspace.de/guide_cloudlog/
-  severity: info
+    max-request: 1
+    fofa-query: title="Login - Cloudlog"
   tags: panel,login,cloudlog,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/index.php/user/login"
+
+    stop-at-first-match: true
+    host-redirects: true
+    max-redirects: 2
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains_any(body, "<title>Login - Cloudlog", "Login to Cloudlog", "/CloudLog_logo.png")'
+          - 'status_code == 200'
+        condition: and
+

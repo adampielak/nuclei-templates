@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: product:"OpenSSH"
-  tags: js,ssh,misconfig,network
+  tags: enum,js,ssh,misconfig,network
 
 variables:
   ecdsa_bit: '256' # 256 bytes = 2048 bits
@@ -25,7 +25,7 @@ javascript:
       let m = require("nuclei/ssh");
       let c = m.SSHClient();
       let response = c.ConnectSSHInfoMode(Host, Port);
-      to_json(response);
+      Export(response);
     args:
       Host: "{{Host}}"
       Port: "22"
@@ -53,4 +53,4 @@ javascript:
         name: rsa_keylen
         json:
           - '.DHKeyExchange.server_host_key.rsa_public_key.length'
-# digest: 4a0a004730450220182295db8e95167fc1926a95f9c7218bb099cda7d6a529e6615c1b34054c510d022100b751065f522e3d5ba4d8e41f0bacbbb5edbefcd27e7e5d946b57840a173ba3f0:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ea8b80af27d86935581b08d31adc9c4ee09d297f7c1f97af6f1bd02f1cc2e4f5022062872e1f08a379f7a69b14f975ca692a57cb28777c95d0b5eacb52573e0585e5:922c64590222798bb761d5b6d8e72950

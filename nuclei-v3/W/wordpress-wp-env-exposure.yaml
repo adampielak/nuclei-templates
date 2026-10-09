@@ -1,5 +1,4 @@
 id: wordpress-wp-env-exposure
-
 info:
   name: WordPress Configuration wp-env - Exposure
   author: 0x_Akoko
@@ -9,29 +8,27 @@ info:
   reference:
     - https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/
   metadata:
-    verified: true
     max-request: 1
-  tags: wp,wordpress,config,exposure,misconfig
-
+    verified: true
+  tags: config,exposure,misconfig,vuln,wordpress,wp
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/.wp-env.json"
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
+  - matchers:
+      - condition: and
         dsl:
-          - "status_code == 200"
-          - "len(body) > 10"
-          - "contains(content_type, 'application/json')"
-        condition: and
+          - status_code == 200
+          - len(body) > 10
+          - contains(content_type, 'application/json')
+        type: dsl
+      - condition: and
+        # digest: 4b0a00483046022100f1d94b6aa2ff9378750785220989778d50af3628aff0bb1578cabeca8a8ffa5e022100b33feced469704b6a4d104954227cdda0e559ad7129efa1f879c43f01f001c21:922c64590222798bb761d5b6d8e72950
 
-      - type: word
         part: body
+        type: word
         words:
           - '"phpVersion"'
           - '"plugins"'
           - '"themes"'
-        condition: and
-# digest: 490a004630440220277d85f40a4c05dbc8a89f033ba67472cf337f83f76bdc41fe6b7bab480e798602207bf038d738608fae49aad4a36b642015a0dfb3273120b4e65a66979b2964beaa:922c64590222798bb761d5b6d8e72950
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/.wp-env.json'

@@ -1,31 +1,31 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_any(body, "require(",".exit","module.exports","let","process.","console.log(")
-    - contains(header, "application/octet-stream")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/.node_repl_history'
-  - '{{BaseURL}}/node_repl_history'
-  stop-at-first-match: true
 id: node-repl-history-disclosure
 info:
+  name: Node.js REPL History Disclosure
   author: pussycat0x
-  description: 'The Node.js REPL history file (.node_repl_history) was exposed, which
-    had contained a log of commands entered into the Node.js interactive shell.
-
-    '
+  severity: low
+  description: |
+    The Node.js REPL history file (.node_repl_history) was exposed, which had contained a log of commands entered into the Node.js interactive shell.
+  reference:
+    - https://nodejs.org/api/repl.html#persistent-history
+    - https://joshtronic.com/2022/12/18/nodejs-repl-history/
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)\\.node_repl_history"})
     max-request: 2
-    runzero-match: service["http.body"] matches "(?i)\\.node_repl_history"
     shodan-query: http.html:".node_repl_history"
     verified: true
-  name: Node.js REPL History Disclosure
-  reference:
-  - https://nodejs.org/api/repl.html#persistent-history
-  - https://joshtronic.com/2022/12/18/nodejs-repl-history/
-  severity: low
-  tags: exposure,nodejs,history,disclosure,misconfiguration
+  tags: disclosure,exposure,history,misconfiguration,nodejs,vuln
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100d10dcc708f1867e47f6c8ee506d48d707954e91e2b90788a66adae441a081354022100cdc04d688698aff01bcdba9ac005220060dbc87b65f00417b9950388e7f338a2:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200
+          - contains_any(body, "require(",".exit","module.exports","let","process.","console.log(")
+          - contains(header, "application/octet-stream")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/.node_repl_history'
+      - '{{BaseURL}}/node_repl_history'
+    stop-at-first-match: true

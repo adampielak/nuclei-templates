@@ -1,37 +1,41 @@
-http:
-- extractors:
-  - group: 1
-    part: header
-    regex:
-    - (?i)x-akuiteo-masterhash:\s+([0-9a-f]+)
-    type: regex
-  matchers:
-  - condition: and
-    dsl:
-    - contains_any(to_lower(body), "akuiteo collabs</title>", "akuiteo mobile</title>",
-      "akuiteo</title>", "<title>[akuiteo]")
-    type: dsl
-  max-redirects: 2
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  - '{{BaseURL}}/akuiteo.collabs/login/login.html'
-  - '{{BaseURL}}/akuiteo/login.html/'
-  redirects: true
-  stop-at-first-match: true
 id: akuiteo-panel
-info:
-  author: righettod
-  description: 'Akuiteo products was detected.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Akuiteo"})
-    shodan-query: title:"Akuiteo"
-    verified: true
+info:
   name: Akuiteo Login Panel - Detect
-  reference:
-  - https://www.akuiteo.com/en/
+  author: righettod
   severity: info
+  description: |
+    Akuiteo products was detected.
+  reference:
+    - https://www.akuiteo.com/en/
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Akuiteo"})
+    verified: true
+    max-request: 1
+    shodan-query: title:"Akuiteo"
   tags: panel,akuiteo,login,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/akuiteo.collabs/login/login.html"
+      - "{{BaseURL}}/akuiteo/login.html/"
+
+    redirects: true
+    max-redirects: 2
+
+    stop-at-first-match: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains_any(to_lower(body), "akuiteo collabs</title>", "akuiteo mobile</title>", "akuiteo</title>", "<title>[akuiteo]")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: header
+        group: 1
+        regex:
+          - '(?i)x-akuiteo-masterhash:\s+([0-9a-f]+)'
+

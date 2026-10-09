@@ -1,26 +1,25 @@
 id: microsoft-ftp-service
+
 info:
-  author: pussycat0x
-  description: 'The File Transfer Protocol (FTP) is a standard network protocol used
-    to transfer computer files between a client and server on a computer network.
-
-    '
-  metadata:
-    max-request: 1
-    shodan-query: Microsoft FTP Service
-    verified: true
   name: Microsoft FTP Service Detect
+  author: pussycat0x
   severity: info
-  tags: network,ftp,microsoft,detect
-tcp:
-- host:
-  - '{{Hostname}}'
-  inputs:
-  - data: '
+  description: |
+    The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network.
+  metadata:
+    verified: true
+    shodan-query: "Microsoft FTP Service"
+  tags: network,ftp,microsoft
 
-      '
-  matchers:
-  - type: word
-    words:
-    - Microsoft FTP Service
-  port: 21
+network:
+
+  - inputs:
+      - data: "\n"
+    host:
+      - "{{Hostname}}"
+      - "{{Host}}:21"
+
+    matchers:
+      - type: word
+        words:
+          - "Microsoft FTP Service"

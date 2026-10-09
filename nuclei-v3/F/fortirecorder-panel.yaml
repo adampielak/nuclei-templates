@@ -1,31 +1,35 @@
-http:
-- matchers:
-  - condition: and
-    type: word
-    words:
-    - FortiRecorder Admin
-    - Log In
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/admin/'
 id: fortirecorder-panel
-info:
-  author: rxerium
-  description: 'FortiRecorder Panel was discovered.
 
-    '
-  metadata:
-    fofa-query: title="FortiRecorder"
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)FortiRecorder"})
-    shodan-query: title:FortiRecorder
-    verified: true
+info:
   name: FortiRecorder Panel - Detect
-  reference:
-  - https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiRecorder.pdf
+  author: rxerium
   severity: info
+  description: |
+    FortiRecorder Panel was discovered.
+  reference:
+    - https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/FortiRecorder.pdf
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)FortiRecorder"})
+    max-request: 1
+    verified: true
+    shodan-query: title:FortiRecorder
+    fofa-query: title="FortiRecorder"
   tags: fortinet,fortirecorder,login,panel,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "FortiRecorder Admin"
+          - "Log In"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+

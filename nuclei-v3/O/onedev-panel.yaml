@@ -1,32 +1,36 @@
-http:
-- matchers:
-  - case-insensitive: true
-    condition: and
-    part: body
-    type: word
-    words:
-    - OneDev
-    - Git Server
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/~login'
 id: onedev-panel
-info:
-  author: vultza
-  description: 'OneDev is a Git Server with CI/CD, Kanban, and Packages.
 
-    '
-  metadata:
-    max-request: 1
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)OneDev"})
-    shodan-query: title:"OneDev"
-    verified: true
+info:
   name: OneDev Panel - Detect
-  reference:
-  - https://github.com/theonedev/onedev
+  author: vultza
   severity: info
+  description: |
+    OneDev is a Git Server with CI/CD, Kanban, and Packages.
+  reference:
+    - https://github.com/theonedev/onedev
+  metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)OneDev"})
+    verified: true
+    max-request: 1
+    shodan-query: title:"OneDev"
   tags: tech,detect,onedev,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/~login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "OneDev"
+          - "Git Server"
+        condition: and
+        case-insensitive: true
+
+      - type: status
+        status:
+          - 200
+

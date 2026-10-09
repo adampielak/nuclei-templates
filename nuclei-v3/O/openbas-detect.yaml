@@ -1,5 +1,4 @@
 id: openbas-detect
-
 info:
   name: OpenBAS - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://docs.openbas.io/
     - https://github.com/OpenAEV-Platform/openaev
   metadata:
-    verified: true
     max-request: 1
-    vendor: filigran
     product: openbas
     shodan-query: http.title:"OpenBAS - Open Breach & Attack Simulation Platform"
-  tags: tech,detect,openbas,openaev,bas,security
-
+    vendor: filigran
+    verified: true
+  tags: bas,detect,openaev,openbas,security,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -30,8 +27,7 @@ http:
           - '<title>OpenBAS - Open Breach & Attack Simulation Platform</title>'
           - 'OpenBAS is an open source platform allowing organizations to plan, schedule and conduct adversary simulation campaigns'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100be4d9057b1956ce102e45ea060117dbcfe700bcad8332a0edb0f4ce2ae3be081022100ef491916946c62cfbed12ea56ea774b32d54af909cb98e36b92937f457b8d516:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100be4d9057b1956ce102e45ea060117dbcfe700bcad8332a0edb0f4ce2ae3be081022100ef491916946c62cfbed12ea56ea774b32d54af909cb98e36b92937f457b8d516:922c64590222798bb761d5b6d8e72950
