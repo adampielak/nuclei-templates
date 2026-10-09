@@ -1,0 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - 'Sorry, the requested URL '
+    - ' caused an error:'
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <tt>&#039;{{BaseURL}}&#039;</tt>
+    - <tt>&#039;{{BaseURL}}/&#039;</tt>
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: bottle-debug
+info:
+  author: viondexd
+  metadata:
+    max-request: 1
+    shodan-query: html:"Sorry, the requested URL"
+    verified: true
+  name: Bottle debug mode enabled
+  reference:
+  - https://bottlepy.org/docs/dev/tutorial.html#debug-mode
+  severity: medium
+  tags: debug

@@ -1,0 +1,30 @@
+id: erlang-daemon
+info:
+  author: pussycat0x
+  description: 'The erlang port mapper daemon is used to coordinate distributed erlang
+    instances. His job is to keep track of which node name listens on which address.
+    Hence, epmd map symbolic node names to machine addresses.
+
+    '
+  metadata:
+    max-request: 1
+    shodan-query: product:"Erlang Port Mapper Daemon"
+    verified: true
+  name: Erlang Port Mapper Daemon
+  reference:
+  - https://nmap.org/nsedoc/scripts/epmd-info.html
+  - https://book.hacktricks.xyz/network-services-pentesting/4369-pentesting-erlang-port-mapper-daemon-epmd
+  - https://medium.com/@_sadshade/couchdb-erlang-and-cookies-rce-on-default-settings-b1e9173a4bcd
+  severity: low
+  tags: demon,enum,erlang,epmd
+tcp:
+- extractors:
+  - dsl:
+    - trim(raw, '[ ]')
+    name: default-instances
+    type: dsl
+  host:
+  - '{{Hostname}}'
+  inputs:
+  - data: "\0\x01n"
+  port: 4369

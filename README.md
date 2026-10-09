@@ -12,48 +12,53 @@ re-published here for convenient consumption.
 ## Credits
 
 Every template in this repository was written by someone else. Huge thanks to
-all upstream authors — the original `author:` field is preserved in each YAML.
+all upstream authors, the original `author:` field is preserved in each YAML.
 The contributing repositories are listed in `cent.yaml` upstream. If you find
 your work here and want it removed, open an issue and it will be dropped on
 the next sync.
 
 Special thanks to [@serialstream0](https://github.com/serialstream0) for
 reporting hardcoded OOB callback URLs (including ones embedded in hex-encoded
-payloads) — those templates have been sanitized or removed, and the sync
+payloads). Those templates have been sanitized or removed, and the sync
 pipeline now scrubs the same patterns on every run so they cannot reappear
 from upstream.
 
 ## Layout
 
-Templates are split by engine and version so users do not get compatibility
-warnings from nuclei when loading the wrong dialect:
+The tree follows [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates):
+one top-level directory per protocol, then a category, and CVE templates are
+grouped by year.
 
 ```
-nuclei-v3/   # nuclei v3+ templates (top-level: http, code, javascript, flow, dns, ...)
-nuclei-v2/   # legacy nuclei v2 templates (top-level: requests). Loadable by nuclei v3
-             # but emits deprecation warnings.
-xray/        # xray-poc dialect (top-level: rules). NOT compatible with nuclei.
+http/cves/<year>/        http/exposed-panels/     http/technologies/
+http/default-logins/     http/exposures/          http/misconfiguration/
+http/takeovers/          http/vulnerabilities/    http/osint/ ...
+network/  dns/  file/  ssl/  headless/  javascript/  code/  cloud/  dast/
+workflows/
+xray/                    # xray-poc dialect (top-level `rules:`), NOT loadable by nuclei
+unclassified/            # no recognizable protocol block
 ```
 
-Each tree is sharded by leading character of the filename (`A/`, `B/`, ..., `0/`, `1/`, `misc/`)
-to keep directory sizes manageable.
+Templates are placed by their protocol block, CVE id (filename or `id:`) and
+`tags:`. Names carry cent's dedup suffixes (`_1`, `_2`, md5 hash) when several
+upstream repos ship a template with the same file name.
 
 ## Usage
 
 ```bash
-# Run only modern nuclei templates against a target
-nuclei -t nuclei-v3/ -u https://target
+# All HTTP templates
+nuclei -t http/ -u https://target
 
-# Include legacy v2 as well
-nuclei -t nuclei-v3/ -t nuclei-v2/ -u https://target
+# Only CVEs from one year
+nuclei -t http/cves/2024/ -u https://target
 
 # xray templates must be loaded by xray, not nuclei
-xray webscan --plugins phantasm --poc 'xray/**/*.yaml' --url https://target
+xray webscan --plugins phantasm --poc 'xray/*.yaml' --url https://target
 ```
 
 ## Caveats
 
-- A subset of templates (≈13.5k under `nuclei-v2/`) reference a hardcoded
+- A subset of legacy templates (top-level `requests:`) references a hardcoded
   wordlist path `/home/mahmoud/Wordlist/AllSubdomains.txt` for subdomain
   fuzzing. Replace with your own wordlist before running, or skip them.
 - OOB callback URLs have been rewritten to nuclei's built-in
@@ -62,7 +67,7 @@ xray webscan --plugins phantasm --poc 'xray/**/*.yaml' --url https://target
 
 ## Don't be evil
 
-These templates are for **authorized** security testing only — your own
+These templates are for **authorized** security testing only: your own
 infrastructure, scope explicitly granted by the asset owner, CTFs, or bug
 bounty programs where you are within scope. Running them against systems you
 do not own or have permission to test is illegal in most jurisdictions and
@@ -70,4 +75,4 @@ unkind everywhere. Respect rate limits. Respect humans on the other end.
 
 ## Sync
 
-This mirror is regenerated automatically.
+This mirror is updated automatically.

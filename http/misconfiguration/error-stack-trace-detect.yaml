@@ -1,0 +1,52 @@
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/%ff'
+  - '{{BaseURL}}/%FF'
+  - '{{BaseURL}}/%5c/'
+  - '{{BaseURL}}/%ff/'
+- raw:
+  - 'GET /..\; HTTP/1.1
+
+    Host: {{Hostname}}
+
+    '
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Error
+  - condition: and
+    part: body
+    type: word
+    words:
+    - 'at '
+  - status:
+    - 400
+    - 500
+    type: status
+  matchers-condition: and
+  raw:
+  - 'GET /..\/ HTTP/1.1
+
+    Host: {{Hostname}}
+
+
+    '
+  stop-at-first-match: true
+  unsafe: true
+id: error-stack-trace-detect
+info:
+  author: haones
+  description: 'Generic application stack-trace exposure.
+
+    '
+  metadata:
+    max-request: 6
+    verified: true
+  name: Application stack-trace detected
+  remediation: Disable debug option in application settings to prevent from exposing
+    detailed error information in stack-trace.
+  severity: low
+  tags: misconfig,generic,exposure,debug
