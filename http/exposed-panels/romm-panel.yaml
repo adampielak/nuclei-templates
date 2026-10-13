@@ -1,4 +1,5 @@
 id: romm-panel
+
 info:
   name: RomM Panel - Detect
   author: ChrisJr404
@@ -10,18 +11,19 @@ info:
     - https://romm.app/
     - https://docs.romm.app/
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "^RomM$"})
-    fofa-query: title="RomM"
+    verified: true
     max-request: 1
+    vendor: rommapp
     product: romm
     shodan-query: http.title:"RomM"
-    vendor: rommapp
-    verified: true
-  tags: detect,discovery,panel,rom,romm,selfhosted
+    fofa-query: title="RomM"
+  tags: panel,romm,rom,selfhosted,detect,discovery
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/api/heartbeat"
+
     matchers:
       - type: dsl
         dsl:
@@ -29,10 +31,11 @@ http:
           - 'contains(content_type, "application/json")'
           - 'contains_all(body, "\"SHOW_SETUP_WIZARD\"", "\"METADATA_SOURCES\"", "\"IGDB_API_ENABLED\"", "\"FS_PLATFORMS\"")'
         condition: and
+
     extractors:
       - type: regex
         part: body
         group: 1
         regex:
           - '"VERSION"\s*:\s*"([^"]+)"'
-        # digest: 4b0a0048304602210086ffaf226699a9b284e6067c6a7c70c6d996eac5098c15569191b87c9beb3e4a022100f4917dccd99cc76c28e0367f9b98d91d96187e5da13183079b47f1c643b89631:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210086ffaf226699a9b284e6067c6a7c70c6d996eac5098c15569191b87c9beb3e4a022100f4917dccd99cc76c28e0367f9b98d91d96187e5da13183079b47f1c643b89631:922c64590222798bb761d5b6d8e72950

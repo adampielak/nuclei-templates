@@ -1,92 +1,82 @@
 id: wsus-detect
 
 info:
-  name: Microsoft Windows Server Update Services (WSUS) - Detect
-  author: darses
+  name: Microsoft Product - Detect
   severity: info
+  author: darses
   description: |
-    Microsoft Windows Server Update Services (WSUS) was detected via its SOAP ClientWebService endpoint.
-  reference:
-    - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-wusp/
-    - https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-overview
-    - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-59287
+    Microsoft Product was detected.
   classification:
-    cpe: cpe:2.3:a:microsoft:windows_server_update_services:*:*:*:*:*:*:*
+    cve-id: todo
   metadata:
-    verified: true
-    max-request: 1
+    verified: false
+    max-requests: 2
     vendor: microsoft
-    product: windows_server_update_services
+    product: product
     shodan-query:
-      - 'port:8530 "Microsoft-IIS"'
-      - 'port:8530 "ClientWebService"'
-      - 'http.title:"Windows Server Update Services"'
+      -
     fofa-query:
-      - 'app="Microsoft-WSUS"'
-      - 'port="8530" && header="Microsoft-IIS"'
-    driftnet-query:
-      - "service.port:8530 and software.vendor:Microsoft"
-  tags: tech,microsoft,wsus,detect
+      - 'server="Microsoft-IIS" && "Content-Length: 0" && "X-Powered-By: ASP.NET" && status_code="200" && header!="X-Frame-Options" && header!="Etag" && header!="Last-Modified" && header!="Set-Cookie" && header!="Content-Type"'
+  reference:
+    - http://example.com
+  tags: tech,microsoft
 
 http:
+  # - method: GET
+  #   path:
+  #     - "{{BaseURL}}/SimpleAuthWebService/SimpleAuth.asmx"
+  #     # - "{{BaseURL}}/ClientWebService/Client.asmx"
+  #     # - "{{BaseURL}}/ReportingWebService/ReportingWebService.asmx"
+  #     # - "{{BaseURL}}/selfupdate/wuident.cab"
+  #     # - "{{BaseURL}}/selfupdate/iuident.cab"
+  #     # - "{{BaseURL}}/selfupdate/WSUS3/x64/Other/wsus3setup.cab"
+    
+  #   matchers-condition: and
+  #   matchers:
+  #     - type: word
+  #       words:
+  #         - "GetAuthorizationCookie"
+
+  #     - type: status
+  #       status:
+  #         - 200
+
+
   - method: POST
     path:
       - "{{BaseURL}}/ClientWebService/Client.asmx"
 
     headers:
-      Content-Type: text/xml; charset=utf-8
-      SOAPAction: "http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService/GetConfig"
+      Content-Type: text/xml
+      Soapaction: "http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService/GetConfig"
 
     body: |
       <?xml version="1.0" encoding="utf-8"?>
       <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
         <soap:Body>
           <GetConfig xmlns="http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService">
-            <protocolVersion>1.8</protocolVersion>
+            <protocolVersion>3.2</protocolVersion>
           </GetConfig>
         </soap:Body>
       </soap:Envelope>
 
     matchers-condition: and
     matchers:
+      - type: word
+        words:
+          - "LastChange"
+
       - type: status
         status:
           - 200
 
-      - type: word
-        part: header
-        words:
-          - "text/xml"
-
-      - type: word
-        part: body
-        words:
-          - "http://www.microsoft.com/SoftwareDistribution"
-          - "GetConfigResponse"
-        condition: and
-
-      - type: word
-        part: body
-        words:
-          - "LastChange"
-          - "PackageServerShare"
-        condition: or
-
     extractors:
       - type: regex
-        name: internal_hostname
         group: 1
         regex:
-          - '(?s)<Name>PackageServerShare</Name>\s*<Value>\\\\([a-zA-Z0-9\.\-_]+)\\'
+          - '<LastChange>([\d\-]+)T[\d\w\-\:\.]+</LastChange>'
 
       - type: regex
-        name: last_change
         group: 1
         regex:
-          - "<LastChange>(.*?)</LastChange>"
-
-      - type: regex
-        name: is_registration_required
-        group: 1
-        regex:
-          - "<IsRegistrationRequired>(true|false)</IsRegistrationRequired>"
+          - '<Name>PackageServerShare</Name><Value>\\\\([\d\w\-\.]+)\\[\w\d\-]+</Value>'

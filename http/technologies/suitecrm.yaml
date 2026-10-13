@@ -5,15 +5,10 @@ info:
   tags: detect,tech,suitecrm
   severity: info
   metadata:
-    fofa-query:
-    - title="suitecrm"
-    google-query:
-    - intitle:"suitecrm"
     product: suitecrm
     shodan-query:
-    - title:"suitecrm"
     - http.title:"suitecrm"
-    vendor: salesagility
+    vendor: suitecrm
     verified: true
 http:
 - method: GET

@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: product:"OpenSSH"
-  tags: js,enum,ssh,misconfig,network
+  tags: js,enum,ssh,misconfig,network,vuln
 
 javascript:
   - pre-condition: |
@@ -41,4 +41,4 @@ javascript:
           - "gss-group14-sha1"
           - "rsa1024-sha1"
         condition: or
-# digest: 4b0a00483046022100befebbb66d9a144decdccdbc510a7867f86c5945c6525459c69cc4d76a8c4e5e0221008e321d163d3884e694add93b28f1cc94f18106c0f5d560e1bef2fd42e78ea380:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100bb3ec953d01b159e56bdde2565a3f7b745c3df475b2da33db4eb0ca2ea39affa022100b3a2194f54f27651c8e443d3af75c57c1d3cde6f62c7eee4f9275ac2c5444fa1:922c64590222798bb761d5b6d8e72950

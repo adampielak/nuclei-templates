@@ -1,30 +1,25 @@
-id: public-tomcat-manager 2
+id: public-tomcat-manager
+
 info:
-  author: Ahmed Sherif,geeknik
   name: tomcat manager disclosure
+  author: Ahmed Sherif,geeknik
   severity: info
-  tags: panel
+  tags: panel,tomcat,apache
+
 requests:
-- attack: sniper
-  matchers:
-  - type: word
-    words:
-    - Apache Tomcat
-  - condition: or
-    status:
-    - 401
-    - 200
-    type: status
-  matchers-condition: and
-  payloads:
-    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-  raw:
-  - 'GET /host-manager/html HTTP/1.1
+  - method: GET
+    path:
+      - '{{BaseURL}}/manager/html'
+      - '{{BaseURL}}/host-manager/html'
 
-    Host: {{Subdomains}}
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Apache Tomcat"
 
-    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-    (KHTML, like Gecko)
-
-    '
-  threads: 100
+      - type: status
+        status:
+          - 401
+          - 200
+        condition: or
