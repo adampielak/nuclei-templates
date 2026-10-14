@@ -1,4 +1,5 @@
 id: fastjson-1-2-47-rce
+
 info:
   name: Fastjson 1.2.47 - Remote Code Execution
   author: zh
@@ -14,6 +15,7 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: fastjson,rce,deserialization,oast
+
 requests:
   - raw:
       - |
@@ -32,12 +34,14 @@ requests:
                 "autoCommit":true
             }
         }
+
     matchers-condition: and
     matchers:
       - type: word
-        part: interactsh_protocol # Confirms DNS Interaction
+        part: interactsh_protocol   # Confirms DNS Interaction
         words:
           - "dns"
+
       - type: word
         condition: and
         words:

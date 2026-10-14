@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: ssl.jarm:07d14d16d21d21d07c42d41d00041d24a458a375eef0c576d23a7bab9a9fb1+port:443
-  tags: jarm,c2,ir,osint,cti,cobalt-strike
+  tags: jarm,network,c2,ir,osint,cti,cobalt-strike,tcp,vuln
 tcp:
   - inputs:
       - data: 2E
@@ -23,4 +23,4 @@ tcp:
       - type: dsl
         dsl:
           - "jarm(Hostname) == '07d14d16d21d21d07c42d41d00041d24a458a375eef0c576d23a7bab9a9fb1'"
-# digest: 490a0046304402207bbab75320505085b447bbcb7fadcf6bbbaeb867a1df49e7cebb3b052a20705102200259ca7e2e65bf5a5f63f9ec62711f86914bfdd56c71254a5c9b9987bf44133e:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b31e9bf46e9929a5feab88306a6b87854e93830832725b516f92b63e0d8b51bd0221008a3c9e14a764f299ef11ecd20471daa4554e48bb99c712722f065a99333d1bcb:922c64590222798bb761d5b6d8e72950

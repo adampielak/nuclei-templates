@@ -9,4 +9,3 @@ workflows:
   - template: http/exposed-panels/freepbx-administration-panel.yaml
     subtemplates:
       - tags: freepbx
-
