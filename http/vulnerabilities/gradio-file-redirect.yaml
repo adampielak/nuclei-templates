@@ -24,4 +24,4 @@ http:
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)example\.com\/?(\/|[^.].*)?$'
-
+# digest: 4a0a0047304502206bb24ee9877fa496a94d1aefe4cc8e7fae7a5c2e41ee99f4735655006c131f45022100bc730a2225d51df2c0ddc50f6c1fa38c3e139a0fdae1ea21078c2511c3bf541c:922c64590222798bb761d5b6d8e72950

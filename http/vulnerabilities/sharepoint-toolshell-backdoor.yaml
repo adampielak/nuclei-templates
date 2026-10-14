@@ -36,4 +36,4 @@ http:
         name: machinekey
         regex:
           - '^[A-Z0-9]{64}\|HMACSHA256\|[A-Z0-9]{64}\|Auto\|Framework20SP1$'
-
+# digest: 4a0a0047304502204ce6e0753098b2e51b2d950d66037623c2fbed1085dbc210c8f1ca5459de877c022100ee4bd6266174a0ec2e462452d7d7d341bdb0e2c4860143a5d5365288fc63dc19:922c64590222798bb761d5b6d8e72950
