@@ -1,5 +1,4 @@
 id: pdfjs-content-spoofing
-
 info:
   name: Mozilla PDF.js - Content Spoofing
   author: 0x_Akoko,s4e-io
@@ -12,48 +11,42 @@ info:
   classification:
     cwe-id: CWE-451
   metadata:
-    verified: true
     max-request: 5
-  tags: pdfjs,spoofing,headless
-
+    verified: true
+  tags: headless,pdfjs,spoofing,vuln
 headless:
-  - steps:
-      - args:
-          url: "{{BaseURL}}/{{path}}?file=https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/helpers/payloads/mozila-content-spoof.pdf"
-        action: navigate
+  - matchers:
+      - part: body
+        type: word
+        words:
+          - mozila-content-spoof.pdf
+      - condition: and
+        part: body
+        type: word
+        words:
+          - viewerContainer
+          - pdfViewer
+      - condition: or
+        # digest: 4a0a004730450220084933e86d4e7c57069acbd5ab77be61420b739ba82de5cfc1855e72d267b6b7022100d88166bac1adb6d3a434cb4707fbf759cbe686358bc848af74a64f3e24404d9f:922c64590222798bb761d5b6d8e72950
 
-      - action: waitload
-
+        negative: true
+        part: body
+        type: word
+        words:
+          - file origin does not match
+          - blocked
+          - Not Found
+    matchers-condition: and
     payloads:
       path:
-        - "pdf.js/web/viewer.html"
-        - "pdfjs/web/viewer.html"
-        - "web/viewer.html"
-        - "pdfjs-dist/web/viewer.html"
-        - "uiFramework/js/pdfjs/web/viewer.html"
-
+        - pdf.js/web/viewer.html
+        - pdfjs/web/viewer.html
+        - web/viewer.html
+        - pdfjs-dist/web/viewer.html
+        - uiFramework/js/pdfjs/web/viewer.html
+    steps:
+      - action: navigate
+        args:
+          url: '{{BaseURL}}/{{path}}?file=https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/helpers/payloads/mozila-content-spoof.pdf'
+      - action: waitload
     stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "mozila-content-spoof.pdf"
-
-      - type: word
-        part: body
-        words:
-          - "viewerContainer"
-          - "pdfViewer"
-        condition: and
-
-      - type: word
-        part: body
-        negative: true
-        words:
-          - "file origin does not match"
-          - "blocked"
-          - "Not Found"
-        condition: or
-# digest: 4a0a0047304502202ddea783b4abe6926b8be434dc4f47d1e827789e5f58c85cc9300b01f70f34ab02210088e36c82f3b5709d75ab0180d99481228d55d25453b1dce9a1f84f154e06a186:922c64590222798bb761d5b6d8e72950

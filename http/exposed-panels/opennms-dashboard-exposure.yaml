@@ -1,5 +1,4 @@
 id: opennms-dashboard-exposure
-
 info:
   name: OpenNMS Dashboard - Exposure Detection
   author: ritikchaddha
@@ -16,43 +15,39 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:opennms:opennms:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 3
-    vendor: opennms
-    product: opennms
-    shodan-query: title:"OpenNMS Web Console"
     fofa-query: title="OpenNMS Web Console"
     google-dork: intitle:"OpenNMS Web Console"
-  tags: panel,opennms,exposure,dashboard,network-monitoring,misconfig
-
+    max-request: 3
+    product: opennms
+    shodan-query: title:"OpenNMS Web Console"
+    vendor: opennms
+  tags: dashboard,exposure,misconfig,network-monitoring,opennms,panel,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/opennms/index.jsp"
-      - "{{BaseURL}}/opennms/dashboard.jsp"
-      - "{{BaseURL}}/opennms/"
-
-    stop-at-first-match: true
-    redirects: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: or
         part: body
+        type: word
         words:
-          - "OpenNMS Web Console"
-          - "OpenNMS"
-        condition: or
-
-      - type: word
+          - OpenNMS Web Console
+          - OpenNMS
+      - condition: and
         part: body
+        type: word
         words:
-          - "Status"
-          - "Dashboard"
-          - "Home"
-          - "Maps"
-        condition: and
-
-      - type: status
-        status:
+          - Status
+          - Dashboard
+          - Home
+          - Maps
+      - status:
           - 200
-# digest: 4a0a00473045022045aa14dda00a76112ced53259f59e5909c04002aa815271885702b0c75db207e0221009cf75b4d5940a048d99a0d2a94923eabbae918fd48ebdb2fcd607220230d0e82:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502206e7c929e2232d95b0342a50365291be07c98642b6350696129f51541ae4567ac022100c8124a03224b9ef3f3adc0afb742934f710130074e5f3df2b5dec69f69a1685c:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/opennms/index.jsp'
+      - '{{BaseURL}}/opennms/dashboard.jsp'
+      - '{{BaseURL}}/opennms/'
+    redirects: true
+    stop-at-first-match: true

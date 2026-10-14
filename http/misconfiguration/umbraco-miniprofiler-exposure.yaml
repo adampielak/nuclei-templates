@@ -1,5 +1,4 @@
 id: umbraco-miniprofiler-exposure
-
 info:
   name: Umbraco Mini Profiler - Exposure
   author: theamanrawat
@@ -10,29 +9,27 @@ info:
     - https://miniprofiler.com/
     - https://umbraco.com/
   metadata:
-    shodan-query: http.title:"Umbraco"
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Umbraco"})
     fofa-query: title="Umbraco"
-  tags: umbraco,miniprofiler,exposure,debug,misconfig
-
+    shodan-query: http.title:"Umbraco"
+  tags: debug,exposure,miniprofiler,misconfig,umbraco,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/mini-profiler-resources/results"
-      - "{{BaseURL}}/umbraco/mini-profiler-resources/results"
-
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - "StartupProfiler"
-          - "var profiler ="
+          - StartupProfiler
+          - var profiler =
           - '"DurationMilliseconds"'
-        condition: and
-
-      - type: status
-        status:
+      - status:
           - 200
-# digest: 4a0a00473045022063ffeaf43e6d2a4da2b987048d20eb293ce80f24c0e877bf9790b364c277df73022100e03e71beb6e0cb26ae0df343574a1166766e6929411b89df6bea6d7cd4162959:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100e7617e6cd793f08fa24b61ebe7184097eee7c8e3971ae10981ca17f363a421ba022100c0e3a3c6a6ecb2aff2b157310e95052838193a3ebcabc080e9fb0f81225bcc7a:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/mini-profiler-resources/results'
+      - '{{BaseURL}}/umbraco/mini-profiler-resources/results'
+    stop-at-first-match: true

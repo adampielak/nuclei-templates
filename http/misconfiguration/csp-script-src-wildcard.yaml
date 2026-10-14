@@ -1,5 +1,4 @@
 id: csp-script-src-wildcard
-
 info:
   name: Content-Security-Policy "script-src" Wildcard Detected
   author: pussycat0x
@@ -11,24 +10,21 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: csp,misconfig,headers,vuln
-
+  tags: csp,headers,misconfig,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-
-      - type: word
+  - matchers:
+      - case-insensitive: true
         part: header
+        type: word
         words:
-          - "Content-Security-Policy"
-        case-insensitive: true
-
-      - type: regex
-        part: header
+          - Content-Security-Policy
+      - part: header
         regex:
-          - "(?i)script-src[^;]*\\*[^;]*(?:;|$)"
-# digest: 490a0046304402203fed021ae8d88bd5ce2bbba8924e94153417a391e944c22934adc246a343d6c402206accca1252c094fd541eab1b8479d53c7d85de84351054ccae532514703098bf:922c64590222798bb761d5b6d8e72950
+          - (?i)script-src[^;]*\*[^;]*(?:;|$)
+        # digest: 490a0046304402203fed021ae8d88bd5ce2bbba8924e94153417a391e944c22934adc246a343d6c402206accca1252c094fd541eab1b8479d53c7d85de84351054ccae532514703098bf:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}'

@@ -1,5 +1,4 @@
 id: grafana-unauth-access
-
 info:
   name: Grafana Unauthenticated Access
   author: ritikchaddha
@@ -11,83 +10,76 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-306
   metadata:
-    verified: true
+    fofa-query: title="Grafana"
     max-request: 7
     shodan-query: title:"Grafana"
-    fofa-query: title="Grafana"
-  tags: grafana,misconfig,unauth,exposure,dashboard,vuln
-
+    verified: true
+  tags: dashboard,exposure,grafana,misconfig,unauth,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/api/search?type=dash-db"
-      - "{{BaseURL}}/api/dashboards/home"
-      - "{{BaseURL}}/dashboard"
-      - "{{BaseURL}}/api/org"
-      - "{{BaseURL}}/api/users"
-      - "{{BaseURL}}/api/datasources"
-      - "{{BaseURL}}/api/frontend/settings"
-
-    stop-at-first-match: true
-    matchers-condition: or
-    matchers:
-      - type: dsl
+  - matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_all(body, "dashboards:read", "name\":\"Dashboard list")
         name: dashboards-exposed
+        type: dsl
+      - condition: and
         dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "dashboards:read", "name\":\"Dashboard list")'
-        condition: and
-
-      - type: dsl
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_all(body, "\"uid\"", "\"title\"")
+          - contains_any(body, "\"type\":\"dash-db\"", "\"folderTitle\"")
         name: dashboard-search-exposed
+        type: dsl
+      - condition: and
         dsl:
-          - 'status_code == 200'
-          - 'contains(content_type, "application/json")'
-          - 'contains_all(body, "\"uid\"", "\"title\"")'
-          - 'contains_any(body, "\"type\":\"dash-db\"", "\"folderTitle\"")'
-        condition: and
-
-      - type: dsl
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_all(body, "\"dashboard\"", "\"meta\"")
         name: home-dashboard-exposed
+        type: dsl
+      - condition: and
         dsl:
-          - 'status_code == 200'
-          - 'contains(content_type, "application/json")'
-          - 'contains_all(body, "\"dashboard\"", "\"meta\"")'
-        condition: and
-
-      - type: dsl
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_all(body, "\"id\"", "\"name\"")
+          - contains_any(body, "\"address\"", "\"orgId\"")
         name: organization-info-exposed
+        type: dsl
+      - condition: and
         dsl:
-          - 'status_code == 200'
-          - 'contains(content_type, "application/json")'
-          - 'contains_all(body, "\"id\"", "\"name\"")'
-          - 'contains_any(body, "\"address\"", "\"orgId\"")'
-        condition: and
-
-      - type: dsl
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_any(body, "\"login\"", "\"email\"")
+          - contains_any(body, "\"isAdmin\"", "\"authLabels\"")
         name: users-list-exposed
+        type: dsl
+      - condition: and
         dsl:
-          - 'status_code == 200'
-          - 'contains(content_type, "application/json")'
-          - 'contains_any(body, "\"login\"", "\"email\"")'
-          - 'contains_any(body, "\"isAdmin\"", "\"authLabels\"")'
-        condition: and
-
-      - type: dsl
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_all(body, "\"type\"", "\"url\"")
+          - contains_any(body, "\"database\"", "\"access\"")
         name: datasources-exposed
-        dsl:
-          - 'status_code == 200'
-          - 'contains(content_type, "application/json")'
-          - 'contains_all(body, "\"type\"", "\"url\"")'
-          - 'contains_any(body, "\"database\"", "\"access\"")'
-        condition: and
+        type: dsl
+      - condition: and
+        # digest: 4a0a004730450221009495779a49071a13b9c789ac22b6c19baaf5805e9548bdb824ca8f13b04ffdaf022059a59cf03c846aeaf3c8684e7d4d613432aa7456e14b690832e1eb5d9807c944:922c64590222798bb761d5b6d8e72950
 
-      - type: dsl
-        name: frontend-settings-exposed
         dsl:
-          - 'status_code == 200'
-          - 'contains(content_type, "application/json")'
-          - 'contains_any(body, "\"allowOrgCreate\"", "\"authProxyEnabled\"")'
-          - 'contains_any(body, "\"buildInfo\"", "\"datasources\"")'
-        condition: and
-# digest: 4a0a004730450221009495779a49071a13b9c789ac22b6c19baaf5805e9548bdb824ca8f13b04ffdaf022059a59cf03c846aeaf3c8684e7d4d613432aa7456e14b690832e1eb5d9807c944:922c64590222798bb761d5b6d8e72950
+          - status_code == 200
+          - contains(content_type, "application/json")
+          - contains_any(body, "\"allowOrgCreate\"", "\"authProxyEnabled\"")
+          - contains_any(body, "\"buildInfo\"", "\"datasources\"")
+        name: frontend-settings-exposed
+        type: dsl
+    matchers-condition: or
+    method: GET
+    path:
+      - '{{BaseURL}}/api/search?type=dash-db'
+      - '{{BaseURL}}/api/dashboards/home'
+      - '{{BaseURL}}/dashboard'
+      - '{{BaseURL}}/api/org'
+      - '{{BaseURL}}/api/users'
+      - '{{BaseURL}}/api/datasources'
+      - '{{BaseURL}}/api/frontend/settings'
+    stop-at-first-match: true

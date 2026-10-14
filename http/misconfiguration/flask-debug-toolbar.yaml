@@ -1,5 +1,4 @@
 id: flask-debug-toolbar
-
 info:
   name: Flask Debug Toolbar - Exposure
   author: 0x_Akoko
@@ -14,38 +13,34 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    verified: true
+    fofa-query: body="flDebugToolbar"
     max-request: 1
     shodan-query: http.html:"flDebugToolbar"
-    fofa-query: body="flDebugToolbar"
-  tags: flask,python,debug,toolbar,exposure,misconfig,vuln
-
+    verified: true
+  tags: debug,exposure,flask,misconfig,python,toolbar,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
+  - host-redirects: true
     matchers:
-      - type: word
+      - condition: or
         part: body
+        type: word
         words:
-          - "flDebugToolbar"
-          - "flDebugPanelList"
-        condition: or
-
-      - type: word
+          - flDebugToolbar
+          - flDebugPanelList
+      - condition: or
         part: body
+        type: word
         words:
-          - "/_debug_toolbar/"
-          - "flDebugVersionPanel"
-          - "DEBUG_TOOLBAR_STATIC_PATH"
-        condition: or
-
-      - type: status
-        status:
+          - /_debug_toolbar/
+          - flDebugVersionPanel
+          - DEBUG_TOOLBAR_STATIC_PATH
+      - status:
           - 200
-# digest: 4a0a00473045022072787f35c22402cdcaedce088b56fcbf289d4ece18a20bd7a1d8e2e50f06452c022100951f1073e1511ba709723b4e3f8bb479c2002710fd7052ff7ffaba12951a34f3:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022072787f35c22402cdcaedce088b56fcbf289d4ece18a20bd7a1d8e2e50f06452c022100951f1073e1511ba709723b4e3f8bb479c2002710fd7052ff7ffaba12951a34f3:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'

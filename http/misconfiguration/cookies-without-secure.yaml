@@ -1,5 +1,4 @@
 id: cookies-without-secure
-
 info:
   name: Cookies without Secure attribute - Detect
   author: vthiery,RJ Coleman
@@ -15,23 +14,21 @@ info:
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
-    cwe-id: CWE-614
+    cwe-id:
+      - CWE-614
   metadata:
-    verified: true
     max-request: 1
-  tags: misconfig,http,cookie,generic,vuln
-
+    verified: true
+  tags: cookie,generic,http,misconfig,vuln
 flow: |
-    http()
-    javascript()
-
+  http()
+  javascript()
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-    host-redirects: true
+  - host-redirects: true
     max-redirects: 2
-
+    method: GET
+    path:
+      - '{{BaseURL}}'
 javascript:
   - code: |
       content = template.http_all_headers
@@ -44,9 +41,9 @@ javascript:
         return match ? match[1] : null;
       }).filter(Boolean);
       cookieNames
-
     extractors:
-      - type: regex
-        regex:
+      - regex:
           - '[a-zA-Z0-9_-]+'
-# digest: 490a00463044022034b3c47ea5a6970a301fcdb74f365c6c16346d866be1359b7a1ebfab0a62803702205ac99c8e3c4011f43e8a145f7b6bc3f6fc4ab93849fda3fa593fa297458e77ff:922c64590222798bb761d5b6d8e72950
+        # digest: 490a00463044022034b3c47ea5a6970a301fcdb74f365c6c16346d866be1359b7a1ebfab0a62803702205ac99c8e3c4011f43e8a145f7b6bc3f6fc4ab93849fda3fa593fa297458e77ff:922c64590222798bb761d5b6d8e72950
+
+        type: regex

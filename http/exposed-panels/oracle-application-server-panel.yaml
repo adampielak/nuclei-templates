@@ -9,10 +9,11 @@ info:
   reference:
     - https://www.oracle.com/middleware/technologies/internet-application-server.html
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Oracle Containers for J2EE"})
     verified: true
     max-request: 1
     shodan-query: http.title:"Oracle Containers for J2EE"
-  tags: panel,oracle,containers,login,detect
+  tags: panel,oracle,containers,login,detect,discovery
 
 http:
   - method: GET
@@ -23,7 +24,6 @@ http:
     stop-at-first-match: true
     host-redirects: true
     max-redirects: 2
-
     matchers:
       - type: dsl
         dsl:
@@ -36,4 +36,4 @@ http:
         group: 1
         regex:
           - '(?i)Copyright\s+&copy;\s+([0-9,\s]+),\s+Oracle'
-# digest: 490a00463044022053b12594dbb02f8b2cc189050076a1b779c33c6a082c8e795516a8f8b0537fc402202eba4ebdee77f0a05fe93bf9a792c1c06057f1a1614afb80bd0b421139089893:922c64590222798bb761d5b6d8e72950
+

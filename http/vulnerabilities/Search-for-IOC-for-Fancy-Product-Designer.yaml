@@ -3,7 +3,7 @@ info:
   author: Clark
   name: Find Indicators of Compromise for Fancy Product Designer
   severity: High
-requests:
+http:
 - matchers:
   - type: word
     words:

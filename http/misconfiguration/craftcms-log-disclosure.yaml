@@ -1,5 +1,4 @@
 id: craftcms-log-disclosure
-
 info:
   name: Craft CMS - Log File Disclosure
   author: pussycat0x
@@ -11,28 +10,26 @@ info:
     - https://craftcms.com/knowledge-base/locating-error-logs-and-database-backups
     - https://github.com/craftcms/cms/issues/3619
   metadata:
-    verified: true
+    fofa-query: app="Craft-CMS"
     max-request: 1
     shodan-query: http.component:"Craft CMS"
-    fofa-query: app="Craft-CMS"
-  tags: craftcms,cms,exposure,logs,misconfig,vuln
-
+    verified: true
+  tags: cms,craftcms,exposure,logs,misconfig,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/storage/logs/web.log"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - "craft_cms"
-          - "UrlManager"
-          - "schemaVersion"
-        condition: and
-
-      - type: status
-        status:
+          - craft_cms
+          - UrlManager
+          - schemaVersion
+      - status:
           - 200
-# digest: 4b0a004830460221009f5487223db414645376feff1565381b89f8abd0895abed0819130e11e03e120022100c1aa8774fe9c4ff40d079441ec90cefbd65651e6f81b01a0318b7d3771eede0b:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a004830460221009f5487223db414645376feff1565381b89f8abd0895abed0819130e11e03e120022100c1aa8774fe9c4ff40d079441ec90cefbd65651e6f81b01a0318b7d3771eede0b:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/storage/logs/web.log'

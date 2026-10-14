@@ -1,5 +1,4 @@
 id: fortra-filecatalyst-anonymous-access
-
 info:
   name: Fortra FileCatalyst - Anonymous Access
   author: ritikchaddha
@@ -10,31 +9,29 @@ info:
     - https://www.fortra.com/products/filecatalyst
     - https://www.fortra.com/products/filecatalyst/resources/security-best-practices
   metadata:
-    verified: true
+    fofa-query: title="FileCatalyst"
     max-request: 1
-    vendor: fortra
     product: filecatalyst
     shodan-query: title:"FileCatalyst"
-    fofa-query: title="FileCatalyst"
-  tags: filecatalyst,fortra,anonymous,exposure,misconfig,vuln
-
+    vendor: fortra
+    verified: true
+  tags: anonymous,exposure,filecatalyst,fortra,misconfig,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/workflow/jsp/downloadFiles.jsp"
-
-    redirects: true
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - '</i>Guest'
-          - 'Logout</a>'
-          - 'FileCatalyst'
-        condition: and
-
-      - type: status
-        status:
+          - </i>Guest
+          - Logout</a>
+          - FileCatalyst
+      - status:
           - 200
-# digest: 490a0046304402201e8bc98bc46481157b6dffa0062c971312abe33cbd003b44d0e74ac60598601402205a298f371c9e6dc0353303acfeb4ef57ed5720294fa275ad296079fc7fed597e:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402201e8bc98bc46481157b6dffa0062c971312abe33cbd003b44d0e74ac60598601402205a298f371c9e6dc0353303acfeb4ef57ed5720294fa275ad296079fc7fed597e:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/workflow/jsp/downloadFiles.jsp'
+    redirects: true

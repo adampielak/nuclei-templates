@@ -1,5 +1,4 @@
 id: aws-buildspec-exposure
-
 info:
   name: AWS CodeBuild Build Spec - Exposure
   author: theamanrawat
@@ -9,36 +8,34 @@ info:
   reference:
     - https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
   metadata:
-    verified: true
     max-request: 2
-  tags: aws,codebuild,exposure,config,devops,vuln
-
+    verified: true
+  tags: aws,codebuild,config,devops,exposure,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/buildspec.yml"
-      - "{{BaseURL}}/buildspec.yaml"
-
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - "version:"
-          - "phases:"
-          - "build:"
-          - "commands:"
-        condition: and
-
-      - type: word
+          - 'version:'
+          - 'phases:'
+          - 'build:'
+          - 'commands:'
+      - condition: or
         part: header
+        type: word
         words:
-          - "text/yaml"
-          - "text/plain"
-          - "application/x-yaml"
-        condition: or
-      - type: status
-        status:
+          - text/yaml
+          - text/plain
+          - application/x-yaml
+      - status:
           - 200
-# digest: 490a0046304402203f3d4d18784776b95995af079523a18c3bcef9d2c44b59bd70c787c088a96d2a02200b0c28e560a2977af682482a5867fc291df320e08d67f63914a78b6c83613202:922c64590222798bb761d5b6d8e72950
+        # digest: 490a0046304402203f3d4d18784776b95995af079523a18c3bcef9d2c44b59bd70c787c088a96d2a02200b0c28e560a2977af682482a5867fc291df320e08d67f63914a78b6c83613202:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/buildspec.yml'
+      - '{{BaseURL}}/buildspec.yaml'
+    stop-at-first-match: true

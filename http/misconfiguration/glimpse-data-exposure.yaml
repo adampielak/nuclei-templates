@@ -1,5 +1,4 @@
 id: glimpse-data-exposure
-
 info:
   name: Glimpse Diagnostics - Sensitive Data Exposure
   author: 0x_Akoko
@@ -12,23 +11,23 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    verified: true
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)Glimpse\\.axd"})
+    fofa-query: body="Glimpse.axd"
     max-request: 2
     shodan-query: html:"Glimpse.axd"
-    fofa-query: body="Glimpse.axd"
-  tags: exposure,misconfig,dotnet,glimpse,debug,vuln
-
+    verified: true
+  tags: debug,dotnet,exposure,glimpse,misconfig,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/glimpse.axd"
-      - "{{BaseURL}}/Glimpse.axd"
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100f59ddab79d764cea63ae30efe2f74bd13aa7abf2fe87372b9efbf9c72e9f31e50220356f1680c7fbda9b5505cd3f2ff015462a19e74d65a5edc1143450301e485515:922c64590222798bb761d5b6d8e72950
 
-    stop-at-first-match: true
-    matchers:
-      - type: dsl
         dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "Glimpse - Configuration Page", "Turn Glimpse On", "getglimpse.com")'
-        condition: and
-# digest: 4a0a00473045022100f59ddab79d764cea63ae30efe2f74bd13aa7abf2fe87372b9efbf9c72e9f31e50220356f1680c7fbda9b5505cd3f2ff015462a19e74d65a5edc1143450301e485515:922c64590222798bb761d5b6d8e72950
+          - status_code == 200
+          - contains_all(body, "Glimpse - Configuration Page", "Turn Glimpse On", "getglimpse.com")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/glimpse.axd'
+      - '{{BaseURL}}/Glimpse.axd'
+    stop-at-first-match: true

@@ -6,15 +6,17 @@ info:
   severity: info
   description: |
     Detect Windows Admin Center Panel web interface.
+  reference:
+    - https://github.com/microsoft/Windows-admin-center
   metadata:
-    verified: true
+    runzero-match: service["favicon.ico.image.mmh3"] == "-765377534" || any(each(service["html.titles"]), {# matches "(?i)Windows Admin Center"})
     shodan-query:
       - http.favicon.hash:-765377534
       - title:"Windows Admin Center"
     fofa-query:
       - icon_hash="-765377534"
       - title="Windows Admin Center"
-  tags: detect,windows,panel
+  tags: detect,windows,panel,discovery
 
 http:
   - method: GET
@@ -31,3 +33,4 @@ http:
         part: body
         words:
           - "Windows Admin Center</title>"
+
