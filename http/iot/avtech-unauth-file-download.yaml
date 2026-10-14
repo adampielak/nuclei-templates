@@ -11,7 +11,7 @@ info:
     max-request: 2
     shodan-query: title:"login" product:"Avtech"
     fofa-query: app="AVTECH-视频监控"
-  tags: exposure,avtech,unauth,download,iot
+  tags: exposure,avtech,unauth,download,iot,vuln
 
 http:
   - method: GET
@@ -38,5 +38,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100b16c713b1b3a67a6722e4e43e719a9f26985c47f5baafccd3a35156f3b00a8e2022100b1578359ee84e2982fe3bf2dca60cc610076d785f21f9a0dd9449e0e54dfd2c4:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220672d659c96f3134ac75bc53557b95c01faa67cefd84634fb188c354f566778f5022100f9cbd58ce4e9115544423428538a46ee548ad0c60456f25eb301c898ce71cda4:922c64590222798bb761d5b6d8e72950

@@ -9,7 +9,6 @@ info:
   reference:
     - https://github.com/gravitational/teleport
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "544208100" || service["favicon.ico.image.mmh3"] == "1854879765" || service["favicon.ico.image.mmh3"] == "-1275955539"
     verified: true
     max-request: 1
     shodan-query:
@@ -41,4 +40,4 @@ http:
       - type: json
         json:
           - '"Version: " +.server_version'
-
+# digest: 4b0a00483046022100e7d38f4ce643eaa775f9b0f5f9e815b35d253b8a92f977c3e89571556f31d6c9022100cf4964ef2f66eca38ec844286a2fab80307e055666fbd8c4038843767bf01ac3:922c64590222798bb761d5b6d8e72950

@@ -7,7 +7,6 @@ info:
   description: |
     Cisco Identity Services Engine (ISE) admin login panel was discovered.
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)Identity Services Engine"})
     verified: true
     max-request: 1
     shodan-query:
@@ -46,4 +45,4 @@ http:
         name: extracted_date
         dsl:
           - "date_time('%Y-%M-%D', extracted_unix_timestamp)"
-
+# digest: 490a004630440220065a9785dca6cb4adda4149dc9f329e668fbd80165954721c1e7e51e086a5f47022040c515ceb3d658be3c0c7561b5fab70812b224747cc36d79eed12e6524fd75fb:922c64590222798bb761d5b6d8e72950

@@ -9,7 +9,6 @@ info:
   reference:
     - https://docs.dependencytrack.org
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)Dependency-Track"})
     verified: true
     max-request: 1
     shodan-query: html:"Dependency-Track"
@@ -30,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a0047304502210087bdf54ccaa44c0698c5c977ce98a962474ea9514d9ab8b747aebea42d145af902204f1a3bfe78c9bc6f0d0044851def116fe02faaaa4969b886fe9b028c53737b2e:922c64590222798bb761d5b6d8e72950

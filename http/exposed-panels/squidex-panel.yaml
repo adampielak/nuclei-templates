@@ -9,7 +9,6 @@ info:
   reference:
     - https://github.com/Squidex/squidex
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "1099097618"
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:1099097618
@@ -22,7 +21,6 @@ http:
       - "{{BaseURL}}/favicon.ico"
 
     stop-at-first-match: true
-
     matchers-condition: or
     matchers:
       - type: word
@@ -36,4 +34,4 @@ http:
       - type: dsl
         dsl:
           - "status_code==200 && (\"1099097618\" == mmh3(base64_py(body)))"
-
+# digest: 4a0a00473045022100be892b1d7cc1c4120f487721a8945ca700c5913585df8938d909c23ba1c67dd802202448e9a7ab3291aec8cd05e52595dbbd07aa962548eeec8943214a367c6a3fbd:922c64590222798bb761d5b6d8e72950

@@ -1,4 +1,5 @@
 id: servicestack-requestlogs
+
 info:
   name: ServiceStack Request Logs - Unauthenticated Access
   author: DhiyaneshDk
@@ -14,32 +15,36 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:servicestack:servicestack:*:*:*:*:*:*:*:*
   metadata:
-    fofa-query: body="ServiceStack"
+    verified: true
     max-request: 3
     shodan-query: http.html:"ServiceStack"
-    verified: true
-  tags: exposure,logs,misconfig,servicestack,vuln
+    fofa-query: body="ServiceStack"
+  tags: servicestack,exposure,misconfig,logs
+
 http:
-  - matchers:
-      - condition: and
+  - method: GET
+    path:
+      - "{{BaseURL}}/requestlogs"
+      - "{{BaseURL}}/api/requestlogs"
+      - "{{BaseURL}}/json/reply/RequestLogs"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
         part: body
-        type: word
         words:
           - '"Results":['
           - '"Usage":{'
-      - part: content_type
-        type: word
-        words:
-          - application/json
-      - status:
-          - 200
-        # digest: 4b0a004830460221009bd87431449d218f057e606516200d259b645776a280b53b63e4c37e7eb507fb022100db8bf2eb0330ef7a22c5300d4d083059aca41ba1cb2fe7d42eefbbf0daae1ee6:922c64590222798bb761d5b6d8e72950
+        condition: and
 
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/requestlogs'
-      - '{{BaseURL}}/api/requestlogs'
-      - '{{BaseURL}}/json/reply/RequestLogs'
-    stop-at-first-match: true
+      - type: word
+        part: content_type
+        words:
+          - "application/json"
+
+      - type: status
+        status:
+          - 200
+# digest: 490a004630440220777cb3163915c8a31e7dfe616b262bfaf91d86379b2ac765741b4dd3af60f426022064f361fb0aaa86141558cb824b4c85866ab63e493e935462ac3b93cc04f4a310:922c64590222798bb761d5b6d8e72950
