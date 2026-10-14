@@ -1,0 +1,64 @@
+id: copeland-dixell-xweb-panel
+
+info:
+  name: Copeland / Dixell XWeb - Panel
+  author: darses
+  severity: info
+  description: |
+    Copeland and Dixell XWEB monitoring and supervising web interface was detected. Configured system name and firmware version were extracted.
+  reference:
+    - https://www.copeland.com/en-gb/products/controls-monitoring-systems/facility-controls-software/dixell-xweb-evo
+    - https://www.copeland.com/en-gb/products/controls-monitoring-systems/facility-controls-software/dixell-xweb-pro
+    - https://climate.emerson.com/
+  metadata:
+    verified: true
+    max-requests: 2
+    vendor: copeland
+    product: xweb
+    shodan-query:
+      - title:"XWEB" html:"login-alarms"
+      - http.favicon.hash:1154397117
+  tags: panel,copeland,dixell,emerson,xweb,iot,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/cgi-bin/sysinfo.lua"
+
+    host-redirects: true
+    max-redirects: 3
+
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: panel
+        dsl:
+          - 'status_code == 200 && (contains(body, "<title>XWEB EVO</title>") || contains(body, "<title>XWEB</title>")) && (contains(body, "login-alarms") || contains(body, "css/xweb.css") || contains(body, "Dixell"))'
+
+      - type: dsl
+        name: sysinfo
+        dsl:
+          - 'status_code == 200 && contains(content_type, "application/json") && (contains(body, "\"description\":\"XWEB") || contains(body, "\"software_version_label\":\"XWEB") || contains(body, "\"model_name\":\"XWEB") || contains(body, "\"modelName\":\"XWEB") || contains(body, "\"software_version_tag\"") || contains(body, "\"release\""))'
+
+    extractors:
+      - type: regex
+        name: version
+        group: 1
+        regex:
+          - '"software_version_label"\s*:\s*"([^"]+)"'
+          - '"release"\s*:\s*"([^"]+)"'
+          - '"software_version_tag"\s*:\s*"([^"]+)"'
+
+      - type: regex
+        name: systemname
+        group: 1
+        regex:
+          - '"name"\s*:\s*"([^"]+)"'
+
+      - type: regex
+        name: model
+        group: 1
+        regex:
+          - '"model(?:Name|_name)"\s*:\s*"([^"]+)"'
+          - '"description"\s*:\s*"([^"]+)"'

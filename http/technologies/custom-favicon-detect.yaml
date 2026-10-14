@@ -29,3 +29,8 @@ http:
         name: sysaid
         dsl:
           - 'status_code==200 && ("1540720428" == mmh3(base64_py(body)))'
+
+      - type: dsl
+        name: danfoss-storeview
+        dsl:
+          - 'status_code==200 && ("-853297641" == mmh3(base64_py(body)))'

@@ -1,0 +1,62 @@
+id: danfoss-storeview-panel
+
+info:
+  name: Danfoss StoreView - Panel
+  author: darses
+  severity: info
+  description: |
+    Danfoss StoreView web interface was detected.
+  reference:
+    - https://www.danfoss.com/
+  metadata:
+    verified: true
+    max-requests: 2
+    vendor: danfoss
+    product: storeview
+    shodan-query:
+      - http.favicon.hash:-853297641
+      - title:"Danfoss StoreView"
+    driftnet-query:
+      - title:"Danfoss StoreView"
+  tags: panel,danfoss,ics,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/metadata.json"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: modern
+        dsl:
+          - 'status_code == 200 && contains(body, "<title>Danfoss StoreView</title>") && contains(body, "<app-root>")'
+
+      - type: dsl
+        name: legacy
+        dsl:
+          - 'status_code == 200 && contains(to_lower(header), "mqx http") && (contains(to_lower(body), "webapp.swf") || regex("(?i)[0-9]*swfob\\.js", body))'
+
+      - type: dsl
+        name: metadata
+        dsl:
+          - 'status_code == 200 && contains(body, "Installation") && (contains(body, "File_version") || contains(body, "File-version"))'
+
+    extractors:
+      - type: regex
+        name: version
+        group: 1
+        regex:
+          - '(?i)"Installation[-_]version"\s*:\s*"([0-9.]+)"'
+          - '(?i)swfVersionStr\s*=\s*"([0-9.]+)"'
+
+      - type: regex
+        name: build
+        group: 1
+        regex:
+          - 'src="([0-9]+)swfob\.js"'
+          - '(?i)"build_number"\s*:\s*"([^"]+)"'
