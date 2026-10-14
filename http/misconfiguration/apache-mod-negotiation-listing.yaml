@@ -1,4 +1,5 @@
 id: apache-mod-negotiation-listing
+
 info:
   name: Apache mod_negotiation - Pseudo Directory Listing
   author: 0x_Akoko
@@ -9,38 +10,21 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/apache-mod_negotiation-filename-bruteforcing/
     - https://cwe.mitre.org/data/definitions/538.html
   classification:
+    cwe-id: CWE-538
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
-    cwe-id: CWE-538
   metadata:
-    max-request: 5
     verified: true
-  tags: apache,exposure,misconfig,mod-negotiation,vuln
-http:
-  - extractors:
-      - group: 1
-        # digest: 4a0a00473045022100cc3ca39c3e7ecee6029c5667237d11ab706ae5fa18407a30133df8fcd904702a022061b928bb8e086fc220c2423104b21433a0c8dfb78baf0b89cfb00fe66f0952cf:922c64590222798bb761d5b6d8e72950
+    max-request: 5
+  tags: apache,misconfig,exposure,mod-negotiation
 
-        name: exposed_files
-        part: body
-        regex:
-          - <a href="([^"]+)">
-        type: regex
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - Available variants
-          - href=
-      - status:
-          - 406
-        type: status
-      - part: header
-        type: word
-        words:
-          - text/html
-    matchers-condition: and
+http:
+  - raw:
+      - |
+        GET {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Accept: fake/fake
+
     payloads:
       path:
         - /index
@@ -48,8 +32,30 @@ http:
         - /admin
         - /login
         - /config
-    raw:
-      - |
-        GET {{path}} HTTP/1.1
-        Host: {{Hostname}}
-        Accept: fake/fake
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Available variants"
+          - "href="
+        condition: and
+
+      - type: status
+        status:
+          - 406
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+    extractors:
+      - type: regex
+        name: exposed_files
+        part: body
+        regex:
+          - '<a href="([^"]+)">'
+        group: 1
+# digest: 490a0046304402204ad5c67359cb420afb24441f5d2a9f35311205534cf062c59db84405d931a2280220561627dceccfed3759d0ad0b9bb2a8488d1af0c78deadb2fe5615faffd8afd9e:922c64590222798bb761d5b6d8e72950

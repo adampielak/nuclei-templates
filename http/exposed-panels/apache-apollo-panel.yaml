@@ -7,7 +7,6 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:activemq_apollo:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Apache Apollo"})
     verified: true
     max-request: 1
     vendor: apache
@@ -30,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 490a00463044022018a143567c16eed0515bdd3e61e7b607b1b607185b807351cf2d4f348234007e022046495a5604c617b7bf92beede116a49cf135093ac40add28a9262407cfeb6d29:922c64590222798bb761d5b6d8e72950

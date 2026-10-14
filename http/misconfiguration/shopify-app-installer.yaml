@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Shopify App — Installation"
-  tags: misconfig,shopify,install
+  tags: misconfig,shopify,install,vuln
 
 http:
   - method: GET
@@ -31,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b68c097a6101b3163e19dc2608ae9584db32c51b04a3e22aae2b3c6785fbdd9a022100e5010fabe8df12a44b8f1a74ca15beb4c5f68a2a5fbc98fe4e4831e1235a0b92:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ac1498fac168652fabd47172aa959698840957ac4f683185c6ddb60c12ea73ee0221008fb635fa2ff47c49fd18d196ab7580952b8ca1712bd29f3f61ac479ed17cb095:922c64590222798bb761d5b6d8e72950

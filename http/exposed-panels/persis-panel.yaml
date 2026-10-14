@@ -9,13 +9,15 @@ info:
     - https://www.persis.de/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:persis:human_resource_management_portal:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"Persis"
-  tags: panel,persis
+    product: human_resource_management_portal
+    vendor: persis
+  tags: panel,persis,discovery
 
 http:
   - method: GET
@@ -45,5 +47,4 @@ http:
           - 301
           - 302
         condition: or
-
-# digest: 4a0a00473045022100b75dbdc451d0d63f2edc7a5a163d872a0500f8bd069f81d3fb710585d28598030220324b06d6da6f2ef2fa69788732f5d7a0df020be6462443b28f11fda3904f7be4:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201e6f97f6e5ed4e813b749d18c6d3fb4469a20eea9e8a9a36f5ed680cc343693002202198a2b0c028c1a3d2cb8af18f4cfe5742d320d9256e21c9a22102a0d3491b42:922c64590222798bb761d5b6d8e72950
