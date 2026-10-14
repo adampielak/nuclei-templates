@@ -24,4 +24,4 @@ tcp:
       - type: word
         words:
           - "JD FTP Server Ready"
-# digest: 4a0a004730450221009d3ff3373902bbebbe8b64e4e144b5a53f7ef5f2cdec463cb6ed0fb0f0277eb20220456ea2ed17b2b18fc487ab20949911400456ed1717dfab7f3d8af58c9021ce88:922c64590222798bb761d5b6d8e72950
+

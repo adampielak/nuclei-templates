@@ -24,4 +24,4 @@ tcp:
       - type: word
         words:
           - "OpenDreambox FTP service"
-# digest: 4b0a00483046022100aad55cea65d20d5a86f6c5d14c8abf205c57ddd95db40a83fae8bd6cd7be3920022100d527a1bf324dcf1c1b5e3643671686d323e442ec4bdf02c87dce0bac1cc65361:922c64590222798bb761d5b6d8e72950
+
