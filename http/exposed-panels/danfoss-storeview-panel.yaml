@@ -16,15 +16,16 @@ info:
     shodan-query:
       - http.favicon.hash:-853297641
       - title:"Danfoss StoreView"
+      - title:"Danfoss - StoreView"
     driftnet-query:
       - title:"Danfoss StoreView"
+      - title:"Danfoss - StoreView"
   tags: panel,danfoss,ics,detect,discovery
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-      - "{{BaseURL}}/metadata.json"
 
     host-redirects: true
     max-redirects: 2
@@ -34,29 +35,44 @@ http:
       - type: dsl
         name: modern
         dsl:
-          - 'status_code == 200 && contains(body, "<title>Danfoss StoreView</title>") && contains(body, "<app-root>")'
+          - 'status_code == 200 && contains_any(to_lower(body), "<title>danfoss storeview", "<title>danfoss - storeview", "<title>danfoss-storeview")'
 
       - type: dsl
         name: legacy
         dsl:
           - 'status_code == 200 && contains(to_lower(header), "mqx http") && (contains(to_lower(body), "webapp.swf") || regex("(?i)[0-9]*swfob\\.js", body))'
 
-      - type: dsl
-        name: metadata
-        dsl:
-          - 'status_code == 200 && contains(body, "Installation") && (contains(body, "File_version") || contains(body, "File-version"))'
+  - method: POST
+    path:
+      - "{{BaseURL}}/xml.cgi"
+
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+
+    body: '<cmd action="read_info"/>'
+
+    matchers:
+      - type: word
+        name: xml
+        part: body
+        words:
+          - '<resp action="read_info"'
 
     extractors:
       - type: regex
         name: version
         group: 1
         regex:
-          - '(?i)"Installation[-_]version"\s*:\s*"([0-9.]+)"'
-          - '(?i)swfVersionStr\s*=\s*"([0-9.]+)"'
+          - '(?i)(?:Softwareversie|Software\s*Version|Softwareversion)\s+([A-Z0-9.\-]+)'
 
       - type: regex
-        name: build
+        name: model
         group: 1
         regex:
-          - 'src="([0-9]+)swfob\.js"'
-          - '(?i)"build_number"\s*:\s*"([^"]+)"'
+          - '(?i)(?:License\s*Model|Licenties|Licensing)\s+([A-Z0-9.\-]+)'
+
+      - type: regex
+        name: site
+        group: 1
+        regex:
+          - '(?i)(?:Store\s*Name|Naam\s*inst\.?)\s{2,}(\S[^<]*?)\s*</name>'
