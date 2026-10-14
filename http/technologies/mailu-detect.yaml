@@ -1,5 +1,4 @@
 id: mailu-detect
-
 info:
   name: Mailu - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://mailu.io/
     - https://github.com/Mailu/Mailu
   metadata:
-    verified: true
     max-request: 1
-    vendor: mailu
     product: mailu
     shodan-query: 'http.title:"Mailu-Admin"'
-  tags: tech,mailu,mail,detect
-
+    vendor: mailu
+    verified: true
+  tags: detect,mail,mailu,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}/"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -30,15 +27,13 @@ http:
         part: body
         regex:
           - '(?i)<title>Mailu-Admin\s*\|[^<]+</title>'
-
       - type: word
         part: body
         words:
           - 'data-static="/static/"'
           - 'href="/static/vendor.css"'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203a7ee4fff6b3dff30a8b094aac1cc757d9d8c4bcd8dbc87598aca6f718c2ba6f022100d586e994db268e1e411a71078ee7de689e3b8530b6decd1b1a444960a7a00a39:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502203a7ee4fff6b3dff30a8b094aac1cc757d9d8c4bcd8dbc87598aca6f718c2ba6f022100d586e994db268e1e411a71078ee7de689e3b8530b6decd1b1a444960a7a00a39:922c64590222798bb761d5b6d8e72950

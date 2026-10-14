@@ -1,26 +1,20 @@
 id: github-takeover
 
 info:
-  name: Github Takeover Detection
-  author: pdteam,th3r4id
+  name: github takeover detection
+  author: pdteam
   severity: high
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   tags: takeover,github
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
     matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         words:
           - "There isn't a GitHub Pages site here."

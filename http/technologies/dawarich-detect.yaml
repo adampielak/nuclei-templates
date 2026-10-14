@@ -1,5 +1,4 @@
 id: dawarich-detect
-
 info:
   name: Dawarich - Detect
   author: ChrisJr404
@@ -11,19 +10,17 @@ info:
     - https://dawarich.app/
     - https://github.com/Freika/dawarich/blob/master/app/controllers/api/v1/health_controller.rb
   metadata:
-    verified: true
+    fofa-query: title="Dawarich"
     max-request: 1
-    vendor: freika
     product: dawarich
     shodan-query: http.title:"Dawarich"
-    fofa-query: title="Dawarich"
-  tags: tech,dawarich,location,selfhosted,detect
-
+    vendor: freika
+    verified: true
+  tags: dawarich,detect,location,selfhosted,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}/api/v1/health"
-
     matchers:
       - type: dsl
         dsl:
@@ -31,9 +28,8 @@ http:
           - 'contains(header, "X-Dawarich-Version")'
           - 'contains(body, "\"status\":\"ok\"")'
         condition: and
-
     extractors:
       - type: kval
         kval:
           - x_dawarich_version
-# digest: 4a0a004730450220230e9290fe6fc480b918244625c4ec1caa91e1965c29f8fd0274c951d824f648022100c6fa1cc891dbbacb9f403a9f9612e205a76518f55ca7a3663aedf2bfe6e866b0:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a004730450220230e9290fe6fc480b918244625c4ec1caa91e1965c29f8fd0274c951d824f648022100c6fa1cc891dbbacb9f403a9f9612e205a76518f55ca7a3663aedf2bfe6e866b0:922c64590222798bb761d5b6d8e72950

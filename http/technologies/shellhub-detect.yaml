@@ -1,5 +1,4 @@
 id: shellhub-detect
-
 info:
   name: ShellHub - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://github.com/shellhub-io/shellhub
     - https://docs.shellhub.io/
   metadata:
-    verified: true
     max-request: 1
-    vendor: shellhub-io
     product: shellhub
     shodan-query: http.title:"ShellHub"
-  tags: tech,shellhub,ssh,remote-access,remote-management,discovery
-
+    vendor: shellhub-io
+    verified: true
+  tags: discovery,remote-access,remote-management,shellhub,ssh,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -30,8 +27,7 @@ http:
           - "<title>ShellHub</title>"
           - "/env.js"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206809ef8a7966bb1e74c84472b1785136e3157426a2b20078f058f615ec6d58970221008cc61dcb4ec08c48e48086a7f0b6e2a782c534842a417553578b8106f2d05c92:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502206809ef8a7966bb1e74c84472b1785136e3157426a2b20078f058f615ec6d58970221008cc61dcb4ec08c48e48086a7f0b6e2a782c534842a417553578b8106f2d05c92:922c64590222798bb761d5b6d8e72950

