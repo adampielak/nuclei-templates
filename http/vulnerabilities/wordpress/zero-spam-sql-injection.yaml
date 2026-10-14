@@ -10,12 +10,10 @@ info:
   reference:
     - https://wpscan.com/vulnerability/44cc8d59-9b45-46b7-afaf-894e4ba62dd5
     - https://wordpress.org/plugins/zero-spam/
-  classification:
-    cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
-  tags: time-based-sqli,wpscan,wp,wp-plugin,wordpress,zero-spam,sqli,unauth,vuln
+  tags: wpscan,wp,wp-plugin,wordpress,zero-spam,sqli,unauth
 
 http:
   - raw:
@@ -33,4 +31,5 @@ http:
           - 'contains(content_type, "text/html")'
           - 'contains(body, "zerospam-js")'
         condition: and
-# digest: 4a0a00473045022100cb6b385fd0da9483ad52af6ce2fc3a173b84b09a445ed648bfafe2a30fd097e1022074ad0ca6f15d20ad86532ae753824d2b21e0b1b0e2ba1ea383911304c022eb58:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100e3bfba15a72ac2cdc4fea28e066640859930a59abd2c016a2c3ad36fccca4072022100b20649152abf3ec807a126cc48618751466e929e4794c2b1b501a6b2755d341d:922c64590222798bb761d5b6d8e72950

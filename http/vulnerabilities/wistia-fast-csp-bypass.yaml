@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "wistia_fast_csp_xss == true"
-
+# digest: 490a00463044022034e6bea944a57d4b0161d781407636dfdbc2a89f7640ac0279b91a9e11ece2910220211abeae2a952f50a8c9373cbf4b1171f8bdb445a4b85f67e679ce70ca559be3:922c64590222798bb761d5b6d8e72950

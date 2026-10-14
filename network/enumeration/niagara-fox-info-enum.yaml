@@ -5,14 +5,14 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    Niagara Fox Protocol is a building automation protocol used between the Niagara software systems by Tridium. Detects both plaintext Fox (1911) and Fox over TLS (FoxS, 4911).
+    Niagara Fox Protocol is a building automation protocol used between the Niagara software systems by Tridium.
   reference:
     - https://nmap.org/nsedoc/scripts/fox-info.html
   metadata:
-    verified: true
-    max-request: 2
+    max-request: 1
     shodan-query: product:"Niagara Fox"
-  tags: network,fox,niagara,enum,tcp,tls,discovery
+    verified: true
+  tags: network,fox,niagara,enum
 
 tcp:
   - inputs:
@@ -20,56 +20,22 @@ tcp:
     host:
       - "{{Hostname}}"
     port: 1911
-    read-size: 1024
 
     matchers:
       - type: word
         words:
-          - "fox.version=s:"
-          - "app.name=s:"
-        condition: and
+          - "fox.version"
 
     extractors:
       - type: regex
         regex:
-          - 'fox\.version=s:([\w.]+)'
-          - 'hostName=s:([\w.-]+)'
-          - 'hostAddress=s:([\w.:-]+)'
-          - 'station\.name=s:([\w .-]+)'
-          - 'app\.name=s:([\w .-]+)'
-          - 'app\.version=s:([\w.-]+)'
-          - 'vm\.name=s:([\w .()-]+)'
-          - 'vm\.version=s:([\w.-]+)'
-          - 'os\.name=s:([\w .-]+)'
-          - 'os\.version=s:([\w.-]+)'
-          - 'brandId=s:([\w.-]+)'
-
-  - inputs:
-      - data: "fox a 1 -1 fox hello\n{\nfox.version=s:1.0\nid=i:1\n};;\n"
-    host:
-      - "tls://{{Hostname}}"
-    port: 4911
-    read-size: 1024
-
-    matchers:
-      - type: word
-        words:
-          - "fox.version=s:"
-          - "app.name=s:"
-        condition: and
-
-    extractors:
-      - type: regex
-        regex:
-          - 'fox\.version=s:([\w.]+)'
-          - 'hostName=s:([\w.-]+)'
-          - 'hostAddress=s:([\w.:-]+)'
-          - 'station\.name=s:([\w .-]+)'
-          - 'app\.name=s:([\w .-]+)'
-          - 'app\.version=s:([\w.-]+)'
-          - 'vm\.name=s:([\w .()-]+)'
-          - 'vm\.version=s:([\w.-]+)'
-          - 'os\.name=s:([\w .-]+)'
-          - 'os\.version=s:([\w.-]+)'
-          - 'brandId=s:([\w.-]+)'
-# digest: 490a004630440220678e83d7da788fe7e10ca1d2f6b2b307740f82b2f058e856e12151ba6620ea2a0220244f34bd5ed0f137d47b3c112fef48f37fc369262b8843e19848900324d6fd2c:922c64590222798bb761d5b6d8e72950
+          - "fox.version=s:([0-9.]+)"
+          - "hostName=s:([0-9.]+)"
+          - "hostAddress=s:([0-9.]+)"
+          - "app.name=s:([A-Za-z0-9]+)"
+          - "app.version=s:([0-9.]+)"
+          - "vm.name=s:([A-Za-z ()0-9]+)"
+          - "vm.version=s:([0-9._-a-z]+)"
+          - "os.name=s:([A-Z]+)"
+          - "os.version=s:([0-9.]+)"
+# digest: 4b0a00483046022100e5be6f32c270f9113060cd8d9d42e94aa13be16caac7469492c517a608d59915022100e33dac3e1d7cd60a9e00219de087a9897d79767f4c782d91d73b8953afa575c0:922c64590222798bb761d5b6d8e72950

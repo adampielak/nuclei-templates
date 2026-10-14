@@ -5,12 +5,12 @@ info:
   author: DhiyaneshDK
   severity: info
   reference:
-    - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/age.yml
+    - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/age.yml
     - https://github.com/FiloSottile/age/blob/main/doc/age.1.html
     - https://github.com/C2SP/C2SP/blob/8b6a842e0360d35111c46be2a8019b2276295914/age.md#the-x25519-recipient-type
   metadata:
     verified: true
-  tags: age-encryption,file,token
+  tags: file,keys,age-encryption,token
 
 file:
   - extensions:
@@ -21,4 +21,4 @@ file:
         part: body
         regex:
           - '\bage1[0-9a-z]{58}\b'
-# digest: 4a0a0047304502202af9959d77b3ff2a64ae96a469e13298ea2e0adc5949d537b4393f9af61e9f68022100eefe6feaa9e6947627487767d6669d17e7c0b4deeeb67357930e7b9b85112979:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502203861e7fb451a19e97d10fe3fbc6c94ca552d2ac3b0dc2f1e4e0ee33c629a9f15022100b75d3ae1c7ed30b569661013c8d95a9790415499843631cae81a2f04a78107ed:922c64590222798bb761d5b6d8e72950

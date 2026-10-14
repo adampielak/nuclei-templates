@@ -1,0 +1,30 @@
+http:
+- matchers:
+  - case-insensitive: true
+    condition: and
+    part: body
+    type: word
+    words:
+    - 'linters:'
+    - 'linters-settings:'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/.golangci.yml'
+  - '{{BaseURL}}/.golangci.yaml'
+  - '{{BaseURL}}/.golangci.toml'
+  - '{{BaseURL}}/.golangci.json'
+  stop-at-first-match: true
+id: golangci-config
+info:
+  author: Hardik-Solanki
+  metadata:
+    max-request: 4
+  name: GolangCI-Lint Configuration File Exposure
+  reference:
+  - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  severity: low
+  tags: config-files,config

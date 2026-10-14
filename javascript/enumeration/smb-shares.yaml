@@ -12,61 +12,22 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:445
-  tags: js,network,smb,enum,auth
-
+  tags: js,network,smb,enum
 javascript:
-  - pre-condition: |
-      isPortOpen(Host, Port);
-
-    code: |
-      try {
-          var smb = require("nuclei/smb");
-          var client = smb.SMBClient();
-
-          var shares = client.ListShares(Host, Port, User, Pass);
-
-          if (shares && shares.length > 0) {
-              Export(shares);
-          } else {
-              Export([]);
-          }
-      } catch (e) {
-          Export([]);
-      }
+  - code: |
+      var m = require("nuclei/smb");
+      var c = m.SMBClient();
+      var response = c.ListShares(Host, Port, User, Pass);
+      Export(response);
 
     args:
       Host: "{{Host}}"
       Port: "445"
-      User: "{{username}}"
-      Pass: "{{password}}"
-
-    attack: clusterbomb
-    threads: 1
-    stop-at-first-match: true
-
-    payloads:
-      username:
-        - ""
-        - administrator
-        - admin
-        - guest
-
-      password:
-        - ""
-        - administrator
-        - admin
-        - password
-        - guest
-
-    matchers:
-      - type: dsl
-        dsl:
-          - success == true
-          - response != "[]"
-        condition: and
+      User: "test"
+      Pass: "test"
 
     extractors:
-      - type: dsl
-        dsl:
-          - response
-# digest: 4b0a00483046022100e841dcb39531a29149cdef2b76ac5ae7dcd08253b9e122780e1c2180f030e062022100f4320fa42459105f809991e4e0dd80b30f834123ba4e40b1bc9a29e932c5817f:922c64590222798bb761d5b6d8e72950
+      - type: json
+        json:
+          - '.[]'
+# digest: 4b0a004830460221009f4105c209254c16d69381cc59fe56ce5001beefd0910b65c133b569116f3405022100b6c02b31a74b294eaf53890db5789abbbaf8c5c7322dbd0a67b5e39e59d7d5ba:922c64590222798bb761d5b6d8e72950

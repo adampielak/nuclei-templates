@@ -8,7 +8,6 @@ info:
     - https://www.assetnote.io/resources/research/chaining-three-bugs-to-access-all-your-servicenow-data
   classification:
     cpe: cpe:2.3:a:servicenow:servicenow:*:*:*:*:*:*:*:*
-    cwe-id: CWE-79
   metadata:
     verified: true
     max-request: 1
@@ -21,7 +20,7 @@ info:
       - icon_hash=1701804003
       - title="servicenow"
     google-query: intitle:"servicenow"
-  tags: cve,cve2024,servicenow,injection,vuln
+  tags: cve,cve2024,servicenow,injection
 
 http:
   - method: GET
@@ -43,4 +42,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220653889c274245a8b17bef8dcb2f4da468d1c00a778566e5bbfa6ac637434cd2e02202f58f6f595584120961e7eeb6a64e9baf5e732cee812faee3337264d8a609fc4:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100fc54defb7eacfbb172952824720b807bae46965bf7e04617685cb839e954791b022100d518274f1c8771f57b25704a413d402a9eee4173c5c242fcd976ea6b40e69861:922c64590222798bb761d5b6d8e72950

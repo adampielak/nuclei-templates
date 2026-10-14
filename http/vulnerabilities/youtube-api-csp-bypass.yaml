@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "youtube_api_csp_xss == true"
-
+# digest: 490a0046304402202a2d3fb31c5c9c2d0f222cb285d1842f443fc4c789b243f8e2e6391bb32e6c46022039d82a5312bf54e3fc51b0fd9c2191caacdfc932a48d9a660abb46acb0ad7daf:922c64590222798bb761d5b6d8e72950

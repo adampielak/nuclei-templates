@@ -7,15 +7,13 @@ info:
   description: |
     The Wanhu OA DocumentEdit.jsp file has a SQL injection vulnerability. An attacker can perform SQL injection into the database by sending a special request package and obtain sensitive information on the server.
   reference:
-    - http://wiki.peiqi.tech/wiki/oa/%E4%B8%87%E6%88%B7OA/%E4%B8%87%E6%88%B7OA%20DocumentEdit.jsp%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html
+    - http://wiki.peiqi.tech/wiki/oa/万户OA/万户OA%20DocumentEdit.jsp%20SQL注入漏洞.html
     - https://github.com/Threekiii/Awesome-POC/blob/master/OA%E4%BA%A7%E5%93%81%E6%BC%8F%E6%B4%9E/%E4%B8%87%E6%88%B7OA%20DocumentEdit.jsp%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
-  classification:
-    cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="万户网络-ezOFFICE"
-  tags: time-based-sqli,wanhu,sqli,vuln
+  tags: wanhu,sqli
 
 http:
   - raw:
@@ -31,4 +29,5 @@ http:
           - 'status_code == 200'
           - 'contains_all(body, "iSignature", "DoYFSignature")'
         condition: and
-# digest: 4b0a00483046022100a6ecaa43f02b4889e0cee0ad3114fdc46957925d780e124cc63d21c797cdc085022100a311ae02361071bf157234de269d1ca83bb7f69bc4c40943603831bdfc5c8dec:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022016f9af257412b4bfe0762314c3f3971596633859cfa90626787c8efea19e60a30221009eeccd9426f5c7a49e0d377e2335c4b191262964c243a24357babd9b63be858b:922c64590222798bb761d5b6d8e72950

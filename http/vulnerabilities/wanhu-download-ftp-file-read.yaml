@@ -7,15 +7,13 @@ info:
   description: |
     There is an arbitrary file download vulnerability in the Wanhu OA download_ftp.jsp file. An attacker can download any file on the server through the vulnerability.
   reference:
-    - http://wiki.peiqi.tech/wiki/oa/%E4%B8%87%E6%88%B7OA/%E4%B8%87%E6%88%B7OA%20download_ftp.jsp%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%BC%8F%E6%B4%9E.html
+    - http://wiki.peiqi.tech/wiki/oa/万户OA/万户OA%20download_ftp.jsp%20任意文件下载漏洞.html
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/wanhu-oa-download-ftp-file-read.yaml
-  classification:
-    cwe-id: CWE-23,CWE-73
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="万户网络-ezOFFICE"
-  tags: wanhu,lfi,vuln
+  tags: wanhu,lfi
 
 http:
   - method: GET
@@ -34,4 +32,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fa999ed18f22ca3686b9edf82561d890bab6dd22e8d129ab92e00923b517e00002207a390db2b1a5f23e2f28a7a17ef990a6c76756c229baac4ee415eff15a39850a:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402203fdcfe585750e7a338d075dbcaf8bedc691ad7019d709af623258a55f4e8b2f002206495e48765222deb0cc7e7f942a1dfb325eb47c512a61f38a2a036581a2ca22e:922c64590222798bb761d5b6d8e72950

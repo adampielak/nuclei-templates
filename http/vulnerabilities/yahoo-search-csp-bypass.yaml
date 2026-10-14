@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "yahoo_search_csp_xss == true"
-
+# digest: 490a00463044022063eec4b98be8a13b5788179b416b8b460280cb32aa8c8f09a9599fa53740063a0220264f72676ed9a010d6cf09d30ba3cefc15f398a80afda758e6aa72b1a6ce3569:922c64590222798bb761d5b6d8e72950

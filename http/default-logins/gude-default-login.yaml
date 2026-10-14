@@ -1,5 +1,4 @@
 id: gude-default-login
-
 info:
   name: GUDE - Default Login
   author: Bretss,BENZOOgatag
@@ -12,39 +11,36 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)Expert Net Control"})
+    fofa-query: body="Expert Net Control"
     max-request: 2
     shodan-query: http.html:"Expert Net Control"
-    fofa-query: body="Expert Net Control"
-  tags: gude,default-login
-
+  tags: default-login,gude
 http:
-  - raw:
+  - attack: clusterbomb
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Control Panel
+          - Output Port
+      - status:
+          - 200
+        # digest: 4a0a00473045022020ea808ebd10ce6ba1dc8c5a089fc3392c8ee0233289659b4eaec93fdaf425d4022100ef043d4e414517f832603c987c61b0cca069733c9f9af9062119b6f4124cca90:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - admin
+        - user
+      username:
+        - admin
+        - user
+    raw:
       - |
         GET /ov.html HTTP/1.1
         Host: {{Hostname}}
         Authorization: Basic {{base64(username + ':' + password)}}
-
-    attack: clusterbomb
-    payloads:
-      username:
-        - admin
-        - user
-      password:
-        - admin
-        - user
-
     stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Control Panel"
-          - "Output Port"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-# digest: 4a0a00473045022020ea808ebd10ce6ba1dc8c5a089fc3392c8ee0233289659b4eaec93fdaf425d4022100ef043d4e414517f832603c987c61b0cca069733c9f9af9062119b6f4124cca90:922c64590222798bb761d5b6d8e72950

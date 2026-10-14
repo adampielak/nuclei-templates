@@ -11,13 +11,11 @@ info:
     - https://wpscan.com/vulnerability/e060fbff-792f-4fb5-baa5-82d80240ec99
     - http://cinu.pl/research/wp-plugins/mail_0666ceeca20683907bf82514e8f93e0f.html
     - https://wordpress.org/plugins/smart-manager-for-wp-e-commerce/
-  classification:
-    cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 2
     publicwww-query: "/wp-content/plugins/smart-manager-for-wp-e-commerce/"
-  tags: time-based-sqli,wpscan,wp,wp-plugin,wordpress,smart-manager-for-wp-e-commerce,sqli,vuln
+  tags: wpscan,wp,wp-plugin,wordpress,smart-manager-for-wp-e-commerce,sqli
 
 http:
   - raw:
@@ -40,4 +38,5 @@ http:
           - 'contains(body_1, "Smart Manager for e-Commerce")'
           - 'contains(body_2, "rel=\"preconnect") || contains(body, "Error</title>")'
         condition: and
-# digest: 4b0a00483046022100903458b91755219b9e533778ef196225969b15ff4221276cff01448010ff9b63022100ea948fb0ac39002906cfa6a4f41afb14a178b715cf64ae3bdc344b8d0ed5f060:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100d48833d917b76837f53e578260bb9d0de3214e380835f7dcabd526d0f4256a000221008a9469351298a08125b9eac1101e26f43e0a4b50583f0fbf6df5adc46cf16cc9:922c64590222798bb761d5b6d8e72950

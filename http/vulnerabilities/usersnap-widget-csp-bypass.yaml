@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "usersnap_widget_csp_xss == true"
-
+# digest: 490a004630440220584266971ad89a35de032fbed60eebdabef329b7400e796a150fa1654dd1a61b0220048eff11f0c86b58a41c8a85662a36b5ada444323fae171bda482184a8c3fba0:922c64590222798bb761d5b6d8e72950
