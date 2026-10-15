@@ -1,4 +1,5 @@
 id: rundeck-login
+
 info:
   name: RunDeck Login
   author: DhiyaneshDk
@@ -7,10 +8,12 @@ info:
     verified: true
     shodan-query: title:"Rundeck"
   tags: panel,rundeck
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/user/login'
+
     redirects: true
     max-redirects: 2
     matchers-condition: or
@@ -19,6 +22,7 @@ requests:
         part: body
         words:
           - 'Rundeck - Login</title>'
+
       - type: word
         part: body
         words:

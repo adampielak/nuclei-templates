@@ -1,4 +1,5 @@
 id: rg-uac-panel
+
 info:
   name: RG-UAC Ruijie Login Panel
   author: princechaddha
@@ -6,10 +7,12 @@ info:
   metadata:
     shodan-query: http.html:"Get_Verify_Info"
   tags: panel,ruijie,router,firewall
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -18,6 +21,7 @@ requests:
           - "dkey_check.php"
           - "get_dkey_passwd"
         condition: and
+
       - type: status
         status:
           - 200

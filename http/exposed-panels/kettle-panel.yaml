@@ -1,4 +1,5 @@
 id: kettle-panel
+
 info:
   name: Kettle Panel
   author: For3stCo1d
@@ -7,10 +8,12 @@ info:
     verified: true
     shodan-query: basic realm="Kettle"
   tags: panel,kettle
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers:
       - type: word
         part: header

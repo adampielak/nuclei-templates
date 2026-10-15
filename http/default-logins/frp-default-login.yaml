@@ -1,25 +1,30 @@
 id: frp-default-login
 
 info:
-  name: Frp Default Login
+  name: FRP Default Login
   author: pikpikcu
   severity: high
+  description: FRP default login credentials were discovered.
+  reference:
+    - https://github.com/fatedier/frp/issues/1840
+  classification:
+    cwe-id: CWE-798
   tags: frp,default-login
-  reference: https://github.com/fatedier/frp/issues/1840
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         GET /api/proxy/tcp HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept: */*
-        Authorization: "Basic YWRtaW46YWRtaW4="
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+    attack: pitchfork
+
     matchers-condition: and
     matchers:
 
@@ -32,3 +37,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by mp on 2022/03/03

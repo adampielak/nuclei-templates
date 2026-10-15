@@ -4,27 +4,24 @@ info:
   name: Pulse Secure VPN Panel
   author: bsysop
   severity: info
-  tags: panel
+  tags: panel,pulse,vpn
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/dana-na/auth/url_default/welcome.cgi"
+      - "{{BaseURL}}/dana-na/auth/url_2/welcome.cgi"
+      - "{{BaseURL}}/dana-na/auth/url_3/welcome.cgi"
 
-    raw:
-      - |
-        GET /dana-na/auth/url_default/welcome.cgi HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+    stop-at-first-match: true
     matchers-condition: or
     matchers:
       - type: word
+        part: header
         words:
           - "/dana-na/auth/welcome.cgi"
-        part: header
 
       - type: regex
+        part: body
         regex:
           - "(?i)/dana-na/css/ds(_[a-f0-9]{64})?.css"
-        part: body
