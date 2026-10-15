@@ -11,14 +11,11 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:redis:redis:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"redis.conf"
-    product: redis
-    vendor: redis
-  tags: redis,exposure,config,vuln
+  tags: redis,exposure,config
 
 http:
   - method: GET
@@ -43,4 +40,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b2ad2fd273fe5115ffb32a28f8f3fc0fee7d9a4f6bf455fa4042dc935593f5570221009b423c409f265d9df09c6aa370d0e995f505a658c472554d2f9087639dc36a60:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a00463044022011e1c22bdba32f91460c631c4a3b89f47cdf3e9826fc3dd2c789c87dfd1725c90220296413dc2c242c894ad8ef2017d64bdce91a2b9fb8ee0fbde35f43a09f4c52cc:922c64590222798bb761d5b6d8e72950

@@ -7,12 +7,13 @@ info:
   description: Datadog login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Datadog"
-  tags: panel,datadog,discovery
+  tags: panel,datadog
 
 http:
   - method: GET
@@ -29,4 +30,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202ea89cbffe9906d00d1e7ef957bf986a0f8d0528fbd4447f07c7127a465789ed02202945c4186b7816d95dc5c338b1cebba5f2dcf0b54784ef6158dbf9752c6d9e20:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022041e66d00f7b8fb178b349d278e388922ba0210b96e174e6add1e3aaee7772c81022100f58565c2677278d401afae1587585114f2e555c6a490ecbbfa88f1ae21180e49:922c64590222798bb761d5b6d8e72950

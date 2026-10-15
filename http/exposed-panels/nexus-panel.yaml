@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Sonatype Nexus Repository"
-  tags: panel,nexus,login,detect,discovery
+  tags: panel,nexus,login,detect
 
 http:
   - method: GET
@@ -32,4 +32,4 @@ http:
         group: 1
         regex:
           - '_v=([0-9\.\-]+)'
-# digest: 4a0a00473045022100c98279abc78836a033800bbb0668ffb9d75e905fbcb3bfb11935c80882b769ba02206a91df2acc6b23735f5c66e9dce87514af86d4221abf72c671adc0d3c5fd1fa6:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221008e4340e881697d72ff0813d26e52916ac52944f286135502f783b991d8e32d15022100ac767f9e5c40a8da0ba858151a04f509d5f2b73ced232b57f34051e52ea00be1:922c64590222798bb761d5b6d8e72950

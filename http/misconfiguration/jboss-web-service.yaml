@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"JBossWS"
-  tags: jboss,misconfig,vuln
+  tags: jboss,misconfig
 
 http:
   - method: GET
@@ -37,4 +37,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220336389f1e2293b8a77f0fde92209d8b288654ce855c494ed95bf06ac26ea26f702203f65c4797a59cfe6ed91ec7fbae6fadd7fd098dc2eba678c22b0faadc0e6e938:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100994adf83a52cb8bd4770c61f637e2241ffeadb647753e98d052ffe1f9cdaf6ac0221009c057b596f129446405368b4e767f418aa430a384e67bed42ae44e1ced638fb4:922c64590222798bb761d5b6d8e72950

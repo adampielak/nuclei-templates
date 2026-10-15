@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/child-theme-configurator/
   metadata:
+    max-request: 1
     plugin_namespace: child-theme-configurator
     wpscan: https://wpscan.com/plugin/child-theme-configurator
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100cb9d514340a53fc429b3aadda08f5b46d542f6825d75e598eba819603498f96f022059bc77a29a7a4afa61b9d729a9027abfd2d8e02df3fe798cdc3de24634dac9f8:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e98dd468a62e8768d87cef35610a1e020108bb4bedab9ba26d8b6797d4743238022100d9dc4dead9d61ba08e97667952e2e04c5099fa3f1dc93469616a8ce2317581e5:922c64590222798bb761d5b6d8e72950
