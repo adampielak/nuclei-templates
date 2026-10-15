@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: thinkphp,rce
 
-requests:
+http:
   - raw:
       - |
         POST /index.php?s=captcha HTTP/1.1
