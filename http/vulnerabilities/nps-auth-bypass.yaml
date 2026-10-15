@@ -9,12 +9,11 @@ info:
   reference:
     - https://mari0er.club/post/nps.html/
   metadata:
-    max-request: 1
     verified: true
     shodan-query: html:"window.nps"
   tags: nps,auth-bypass
 
-http:
+requests:
   - raw:
       - |
         POST /index/gettunnel HTTP/1.1

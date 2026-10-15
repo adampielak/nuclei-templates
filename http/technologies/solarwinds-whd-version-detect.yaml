@@ -6,7 +6,7 @@ info:
   severity: info
   tags: tech,solarwinds,whd
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/helpdesk/i18n.js"
