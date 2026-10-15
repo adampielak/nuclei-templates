@@ -1,0 +1,49 @@
+id: safire-smart-panel
+
+info:
+  name: Safire Smart - Panel
+  author: darses
+  severity: info
+  description: |
+    Safire Smart IP camera and NVR web management panel was detected.
+  reference:
+    - https://www.safirecctv.com/
+    - https://www.visiotechsecurity.com/
+  metadata:
+    verified: true
+    max-request: 3
+    vendor: safire
+    product: smart
+    shodan-query:
+      - http.favicon.hash:1909405893
+  tags: panel,safire,iot,camera,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - 'id="InitialView"'
+          - "VideoPlugin"
+          - "TimeSliderPlugin"
+          - "js/index.js?v="
+        condition: and
+
+    extractors:
+      - type: regex
+        name: build_date
+        group: 1
+        regex:
+          - '(?i)data-main="js/index\.js\?v=([0-9.]+)"'
