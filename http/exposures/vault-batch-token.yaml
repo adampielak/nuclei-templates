@@ -22,4 +22,4 @@ http:
         part: body
         regex:
           - (?i)\b(hvb\.[a-z0-9_-]{138,212})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 4a0a00473045022066c0fed70990acfc748254028d8f5bcb39a3e6ed51d6968df51cb2638766a756022100bb02d1307764e403c1c7ad05e4d9eb18144e174817a2b033d7777da6518c63cd:922c64590222798bb761d5b6d8e72950
+

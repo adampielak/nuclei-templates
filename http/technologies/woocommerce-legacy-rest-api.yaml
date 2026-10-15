@@ -9,7 +9,7 @@ info:
   metadata:
     plugin_namespace: woocommerce-legacy-rest-api
     wpscan: https://wpscan.com/plugin/woocommerce-legacy-rest-api
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -46,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100b813eb220fea396f831b5f16d8dac9e8c5a315cc1672baeb0b2cf8acbe47947d02204951dd6efff107aa333643c532bf6ffe1823c352ad5ac78e686b223ee5064bc4:922c64590222798bb761d5b6d8e72950
+

@@ -1,0 +1,49 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - seeing this error because you have <code>DEBUG = True</code>
+    - SuspiciousOperation
+    - 'Invalid HTTP_HOST header:'
+    - 'Django Version:'
+    - <title>DisallowedHost at /</title>
+    - DisallowedHost
+    - DisallowedModelAdminLookup
+    - DisallowedModelAdminToField
+    - DisallowedRedirect
+    - InvalidSessionKey
+    - RequestDataTooBig
+    - SuspiciousFileOperation
+    - SuspiciousMultipartForm
+    - SuspiciousSession
+    - TooManyFieldsSent
+    - PermissionDenied
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 400
+    - 404
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/widgets/platformx/-/svg-badge.svg'
+  stop-at-first-match: true
+id: django-variables-exposed
+info:
+  author: nobody
+  metadata:
+    max-request: 2
+    verified: true
+  name: Django Degub Config Detect
+  reference:
+  - https://twitter.com/Alra3ees/status/1397660633928286208
+  - https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/
+  - https://hacklido.com/blog/704-exploiting-django-debug-mode-for-unrestricted-access-to-the-internal-dashboard
+  severity: low
+  tags: debug,django,generic,exposed

@@ -1,32 +1,38 @@
 id: chinaunicom-default-login
 
 info:
-  name: Chinaunicom Modem Default Login
+  name: China Unicom Modem Default Login
   author: princechaddha
   severity: high
+  description: Default login credentials were discovered for a China Unicom modem.
+  classification:
+    cwe-id: CWE-798
   tags: chinaunicom,default-login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST /cu.html HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Content-Type: application/json
-        
-        frashnum=&action=login&Frm_Logintoken=1&Username=CUAdmin&Password=CUAdmin&Username=&Password=
+        Host: {{Hostname}}
+
+        frashnum=&action=login&Frm_Logintoken=1&Username={{username}}&Password={{password}}&Username=&Password=
+
+    attack: pitchfork
+    payloads:
+      username:
+        - CUAdmin
+      password:
+        - CUAdmin
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 302
+
       - type: word
         words:
           - "/menu.gch"
         part: header
+
+# Enhanced by mp on 2022/03/03

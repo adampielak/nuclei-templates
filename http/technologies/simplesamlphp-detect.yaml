@@ -31,4 +31,4 @@ http:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "you have successfully installed simplesamlphp", "simplesamlphp installation page", "/module.php/core/login-admin.php")'
         condition: and
-# digest: 4a0a0047304502207eccc156e360de7409c5445d6b9b7d85f3d9bbdba99c9b1802aeaaab06e4acb3022100906d9cc465ce787c21e7697d55e98e637c39e77b39ec615b27ed84a60ea7f74d:922c64590222798bb761d5b6d8e72950
+
