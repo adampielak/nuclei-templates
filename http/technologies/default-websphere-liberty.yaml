@@ -1,5 +1,4 @@
 id: default-websphere-liberty
-
 info:
   name: WebSphere Liberty Default Page
   author: oppsec
@@ -8,23 +7,19 @@ info:
     verified: true
     shodan-query: http.title:"WebSphere Liberty"
   tags: tech,websphere,liberty
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "WebSphere Liberty"
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body

@@ -1,25 +1,15 @@
 id: jupyterhub-default-login
 
 info:
-  name: Jupyterhub - Default Admin Discovery
+  name: Jupyterhub Default Login
   author: For3stCo1d
   severity: high
-  description: Jupyterhub default admin credentials were discovered.
-  reference:
-    - https://github.com/jupyterhub/jupyterhub
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
-    cvss-score: 8.3
-    cwe-id: CWE-522
-    cpe: cpe:2.3:a:jupyter:jupyterhub:*:*:*:*:*:*:*:*
+  reference: https://github.com/jupyterhub/jupyterhub
   metadata:
-    max-request: 2
     shodan-query: http.title:"JupyterHub"
-    product: jupyterhub
-    vendor: jupyter
-  tags: jupyterhub,default-login,vuln
+  tags: jupyterhub,default-login
 
-http:
+requests:
   - raw:
       - |
         POST /hub/login?next= HTTP/1.1
@@ -41,11 +31,10 @@ http:
     matchers:
       - type: dsl
         dsl:
-          - contains(tolower(header), 'jupyterhub-session-id=')
-          - contains(tolower(header), 'jupyterhub-hub-login=')
+          - contains(tolower(all_headers), 'jupyterhub-session-id=')
+          - contains(tolower(all_headers), 'jupyterhub-hub-login=')
         condition: and
 
       - type: status
         status:
           - 302
-# digest: 4a0a0047304502204354244ee9629c4ec66ff2eb9938145935b977cc662ca2a18512068b79261f3a022100d7fb99d1fb7c0c7e9abef16d056819c3cbd0fc752c52cfd6d7249d582247d893:922c64590222798bb761d5b6d8e72950

@@ -1,5 +1,4 @@
 id: ftm-manager-panel
-
 info:
   name: FTM Manager Panel
   author: idealphase
@@ -10,12 +9,10 @@ info:
     shodan-query: http.html:"FTM manager"
     google-dork: intitle:"FTM manager"
   tags: panel,ftm
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -24,7 +21,6 @@ requests:
           - 'FTM Manager'
           - 'login-panel'
         condition: and
-
       - type: status
         status:
           - 200

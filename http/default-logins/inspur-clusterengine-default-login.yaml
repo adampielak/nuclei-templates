@@ -7,11 +7,16 @@ info:
   description: Inspur Clusterengine version 4 default admin login credentials were successful.
   reference:
     - https://blog.csdn.net/qq_36197704/article/details/115665793
+  classification:
+    cpe: cpe:2.3:a:inspur:clusterengine:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 1
+    vendor: inspur
+    product: clusterengine
     fofa-query: title="TSCEV4.0"
-  tags: default-login,inspur,clusterengine
+  tags: default-login,inspur,clusterengine,vuln
 
-requests:
+http:
   - raw:
       - |
         POST /login HTTP/1.1
@@ -25,9 +30,9 @@ requests:
         - admin|pwd
       password:
         - 123456
-
-    redirects: true
+    host-redirects: true
     max-redirects: 2
+
     matchers-condition: and
     matchers:
       - type: word
@@ -44,5 +49,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/07/04
+# digest: 490a004630440220124c6d29161f0153012e4c51c0584e0bd8156905abcefb9a95936b961076badc02205676bd8fbfcc47946613beb0d4701d8251b7b6c9832830224142ce9709374232:922c64590222798bb761d5b6d8e72950
