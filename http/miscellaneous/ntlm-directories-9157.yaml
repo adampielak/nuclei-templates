@@ -1,9 +1,11 @@
 id: ntlm-directories
+
 info:
   name: Discovering directories w/ NTLM
   author: puzzlepeaches
   severity: info
   tags: misc
+
 requests:
   - method: GET
     path:
@@ -51,6 +53,7 @@ requests:
       - "{{BaseURL}}/webticket/"
       - "{{BaseURL}}/webticket/webticketservice.svc"
       - "{{BaseURL}}/webticket/webticketservice.svcabs/"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -59,6 +62,7 @@ requests:
           - "Www-Authenticate: NTLM"
         part: header
         condition: or
+
       - type: status
         status:
           - 401
