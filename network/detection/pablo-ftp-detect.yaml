@@ -24,4 +24,4 @@ tcp:
       - type: word
         words:
           - "Welcome to Pablo's FTP Server"
-# digest: 4a0a0047304502201ce7162d11d14778a707873335e75cb648d8cab85326877aa5bacdc93b1e064b022100e8eabaf3344e4de16eadda093c000ffdd013d692fd2c9d13edcdbf49800283aa:922c64590222798bb761d5b6d8e72950
+

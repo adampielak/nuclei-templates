@@ -26,4 +26,4 @@ http:
           - 'contains(body, "Welcome to LobeChat")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100bec5ebab2cdf1480bd9c7ef7e1b10a3fa89b59227adaca81846ef28631fa229b0221008815b7bc45384026a43632a69ecd582c1575bffc14c19fece72575896902ebb8:922c64590222798bb761d5b6d8e72950
+

@@ -1,5 +1,4 @@
 id: stylelint-ignore-disclosure
-
 info:
   name: Stylelint - Ignore File Disclosure
   author: ritikchaddha
@@ -9,40 +8,38 @@ info:
   reference:
     - https://stylelint.io/user-guide/ignore-code
   metadata:
-    verified: true
+    fofa-query: body=".stylelintignore"
     max-request: 1
     shodan-query: http.html:".stylelintignore"
-    fofa-query: body=".stylelintignore"
-  tags: stylelintignore,config,exposure,disclosure
-
+    verified: true
+  tags: config,disclosure,exposure,stylelintignore,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/.stylelintignore"
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
+  - matchers:
+      - condition: and
         dsl:
-          - "status_code == 200"
-          - "len(body) > 30"
-          - "contains_any(content_type, 'application/octet-stream', 'text/plain')"
-        condition: and
+          - status_code == 200
+          - len(body) > 30
+          - contains_any(content_type, 'application/octet-stream', 'text/plain')
+        type: dsl
+      - negative: true
+        # digest: 4b0a00483046022100d1e88531ce183a20dde0e0f9027d3a022d60e113d92c9b4f1419615e2b7d5a7c022100c07cd07c3dcd0ecb82cd134bdeca26cc2722d80f6e92c74e02f9a5a56d7d2616:922c64590222798bb761d5b6d8e72950
 
-      - type: word
         part: response
+        type: word
         words:
-          - "MongoDB over HTTP on the native"
-          - "application/javascript"
-          - "application/x-javascript"
-          - "application/json"
-          - "application/xml"
-          - "text/xml"
-          - "<html"
-          - "<!doctype"
-          - "<script"
-          - "<meta"
-          - "image/"
-          - "Response xmlns"
-        negative: true
-# digest: 4a0a0047304502202c98f8acfd1af18cb85ab88070703c627ab7d6c16670a893b3273b4408144c27022100b6279080900e4910f36cccd2d6dac6749d39271fe77e7bc65763adba22e0f874:922c64590222798bb761d5b6d8e72950
+          - MongoDB over HTTP on the native
+          - application/javascript
+          - application/x-javascript
+          - application/json
+          - application/xml
+          - text/xml
+          - <html
+          - <!doctype
+          - <script
+          - <meta
+          - image/
+          - Response xmlns
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/.stylelintignore'

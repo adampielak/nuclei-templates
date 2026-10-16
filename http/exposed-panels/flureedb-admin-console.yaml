@@ -9,12 +9,13 @@ info:
     - https://github.com/fluree/fluree-admin-ui
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"FlureeDB Admin Console"
-  tags: panel,flureedb,discovery
+  tags: panel,flureedb
 
 http:
   - method: GET
@@ -30,4 +31,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009e15fb1733d700af6ba0e995be56ae5a382e18b522b67e1723b33003c1accf77022100872b62fece7a5f8fb8b7f2a070bdfbab45ed4d6c62e28bf9ead70db6f3a79e33:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100e59af4d8b1b48cd92c2c53a67335d0fb1653c98c25f1e7c9b19ae47499ca66a6022100c6b701641ad241b401540c14b51c50655b1e3d62ff32a17dad10af8e02f471d8:922c64590222798bb761d5b6d8e72950

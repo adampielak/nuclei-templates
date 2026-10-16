@@ -7,14 +7,11 @@ info:
   description: OVPS configuration download page was detected.
   classification:
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:openvpn:connect:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"OVPN Config Download"
-    product: connect
-    vendor: openvpn
-  tags: config,ovpn,exposure,vuln
+  tags: config,ovpn,exposure
 
 http:
   - method: GET
@@ -36,4 +33,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100aee525751e9a5036843ae95c9e3ce2d058d8f5dcc9b409ec39176164c011d3a8022100d2521299546a23880898d89d63b2aa21262fe5511cbc0c068f9184b650ab1df2:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a004830460221009cf8e75fac532debdb4bf102d32fb7eb5a271315da2fe6fa02f65edeae6ac7be02210095388e922fb78a4557c3008179d787757d850f332363178b1a2ed4c0bc8f12d2:922c64590222798bb761d5b6d8e72950
