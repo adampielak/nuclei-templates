@@ -7,7 +7,7 @@ info:
   description: |
     TrendMicro Apex Central login panel was detected.
   metadata:
-    max-requests: 1
+    max-request: 1
     vendor: trendmicro
     product: apex_central
   tags: detect,panel,trendmicro

@@ -1,5 +1,4 @@
 id: librebooking-detect
-
 info:
   name: LibreBooking - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://github.com/LibreBooking/app
     - https://librebooking.readthedocs.io/
   metadata:
-    verified: true
     max-request: 1
-    vendor: librebooking
     product: librebooking
     shodan-query: http.title:"LibreBooking - Log In"
-  tags: tech,librebooking,scheduling,appointment,detect
-
+    vendor: librebooking
+    verified: true
+  tags: appointment,detect,librebooking,scheduling,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -33,8 +30,7 @@ http:
           - "librebooking.css"
           - "img/librebooking.png"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202afda2a3d252c4033ddd74b08beb5a5438b6251dcecf4334e7b003f80b23901c022100a404c4fccc11abafed9eee70bceb26670366c6d21ad0fa6065ccd7340e0327e5:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502202afda2a3d252c4033ddd74b08beb5a5438b6251dcecf4334e7b003f80b23901c022100a404c4fccc11abafed9eee70bceb26670366c6d21ad0fa6065ccd7340e0327e5:922c64590222798bb761d5b6d8e72950
