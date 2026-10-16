@@ -1,13 +1,15 @@
-expression: r0()
 id: wordpress-wpconfig-inclosure
+
 info:
-  author: zhizhuo
   name: Wordpress wpconfig disclosure
+  author: zhizhuo
   severity: high
   verified: true
+
 rules:
   r0:
-    expression: response.status = 200 && response.body.bcontais(b'define') && response.body.bcontais(b'SECURE_AUTH_KEY')
     request:
       method: GET
       path: /wp-config.php.save
+    expression: response.status = 200 && response.body.bcontais(b'define') && response.body.bcontais(b'SECURE_AUTH_KEY')
+expression: r0()
