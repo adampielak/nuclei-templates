@@ -3,7 +3,7 @@ info:
   name: django_cms_version_fingerprint
   severity: info
   author: glatisant & erwan
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/static/cms/sass/components/_iconography.scss"
@@ -11309,3 +11309,2058 @@ requests:
       - "{{BaseURL}}/media/cms/jstree/_lib/sarissa_ieemu_xpath.js"
     matchers:
       - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"3a8c6b56c4839a3fac428feaa243664f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/jquery.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a9331828c517ac5d97f93b3cfdbcc9bc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/jquery.xslt.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"66750806dc5ff0e19df57cf7485d0927\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/jquery.listen.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"0a228efcc6373c9c5752cb0016ef3ebf\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"ebce8c5e37f584cf67177e491f2c7b8c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/css.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"25bdb3bc60683728c9def1b2c7230fe1\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"90f63e48e3251ee3a3f7ef5eadc55800\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/jquery.hotkeys.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"0ea5361f8b5113122ede573e50a0d5e5\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"0d8cbb71cfd7fcd220251453b46f850c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/_all.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"95db64ba52168e8335181204771ee30e\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"374d0116416bb19052da09284b3b21b8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/jquery.cookie.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"384772142d1907d7d3aea3ac11fad9d0\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"c840b994c245b4567d28c1687ea42274\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/sarissa.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"444b808656c2084e509dffc35138dbc2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/jquery.metadata.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"1910e4f6f1a0c7ce784a2e7d13c3765c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/_lib/jquery.log.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"513de3657e7511879b57e3732780b5e1\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"0dd90cd3dba162929ebc5324d46d7832\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/classic/minus.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"0b43afca8056495aaae7f18b077e1fd3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/classic/plus.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"7850fac01016fb8f9b004c8868d459b9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/classic/folderopen.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"42e9b3ae01e8becaec172c0ab0ea6452\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/classic/style.css"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"ac347747416b050e3da35e2c42232fa8\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"2b6f01755ae11c772476e7b584ca779d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/classic/folder.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"cf5950d835f38d6633095c70c1f926de\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/fplus_rtl.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4beaa055e10965916aa8207cb3be2166\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/rename.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"7454ff4b6737ae2ff18f27d53cab97eb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/remove.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d9caf3a5b2d4e75a181becf580330c6d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/plus.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"1f8f89cb534b79c9dddca12f1069b025\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/create.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d623674e446cb77c06e09008489f65c6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/marker.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c21b876dc8b0d6383aeca37885f53f28\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/context.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"105fcccf9b10921cec3db6c087ea076b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/dot.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"aee034eb35d1bc35a2777716fffe7f4b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/remove.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c3adda9e5833d2e3f8eff9fdcbd77d3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/style.css"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"23137fc2efe40673b4072a7ba8c7bab8\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"8949265f0a6b697c1859a89ea45e11ce\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/li.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"53df706bcbe20c6e8b212ca0c729aa4a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/throbber.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"ae5aef8da191f9c1a0c5d9862de2e5bd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/fminus.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"39967f74d01c2bdf061b70f4a38bd223\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/marker_rtl.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"41c7161f9d4a4e22f26c883ee6a3c7e9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/f.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a25acb82f6819ed6b788d86f3c2f8dac\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/fminus_rtl.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"214bd427db10adb7ddc2269286e975fc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/lastli_rtl.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"e8905e469948294261b4342b63dd45b3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/lastli.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4c37c1772ddd148f2ffcebc7b8927e36\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/themes/default/fplus.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"09ef19d8688689e3b3d81fd028ab4ff8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/flat.xsl"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"139fec7413ac17fb7fdf51eb80606c72\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"165b11b8b2ddb80f9f10a1a0e6fbfa5a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/tree_component.css"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"8b6e5e277621878871f8545e44deb21c\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"0527a33232941f575bacc9de0978a42b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/jstree/tree_component.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"66ac2de6e47a69bc08bd8fffbe0fa826\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"b6c6b99134e515be7e3efc5bdab81b5d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/it.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c267a9efc265501508b0c20beda2a202\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/nn.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f389e5577207f6125d3d95148f7f56ca\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/fr.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"de2243ddfc69cc11cde635d51c203f58\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/nl.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"16ecb01b57a7c6e627195c095ebd9664\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/nb.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b51b573772a041858126df92a8a7cc3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/zh_cn.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"83ba8a5406c3cb0ee1c480cb236ee6fa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/he.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f119d047232bcdb436a238b716060138\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/hu.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"87ec9def97fa4085049b2039af1e3cf5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/bg.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f1d85ab79383acf1698f7042773717e2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/ru.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"28782e8ac2861dfa57a39bbb6ab7c883\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/pl.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4170572c911e8dc00fe78b97eb034a87\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/pt-br.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"9f32ebcb89424e390b6d57668894987d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/en.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"cdf394e3bf4e65b9eeeedbe7826524ec\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/es.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"15ddb1092fb54b243ebc27306c4ff185\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/ca.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"ef8f5b258b41e4b85281c0ae810139bd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/fa.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"29d7bb6c7da2781c88503d9a75d7d93a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/de.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c47599295200bd1ae30bc51c749c49f0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/tr.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"976fd75344b1893f9de9262bf43263f8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/sv.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"8164d4eda2912f3a853a6f1c0b4501b4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/hr.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d9f0b6c76b689f76243dcbafb6c4ca8b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/cs.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"8407c00954064ee8a4bb1c5534e9b0cf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/pt.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"8de734032fe9edea9d37f4334cbbb64d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/lang/fi.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c7fa6c1e747480b1695e86bff08c3f99\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/embed/jquery.wymeditor.embed.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a9d28cf0b78510bfa9e8c1408aa711f6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/fullscreen/icon_fullscreen.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f443297ce16c5a70b10874e2a3e90b0a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/fullscreen/jquery.wymeditor.fullscreen.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"65825e00b603fb81c7a77094625ab81f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/hovertools/jquery.wymeditor.hovertools.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"9128791ae94a2438f6f6f751204e9827\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/resizable/readme.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"779875a11fe8526a6d246829afda4f1c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/resizable/jquery.wymeditor.resizable.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"dfe19ff3f55ea32c465ecd64c8b4b8bc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-pre.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"7ad78e30f68e5007ed479516f583e10f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/wymiframe.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"bb4ed9368fc143f7af3936d7e51d8d57\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-p.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"afe885e1e018a8aecee52a08e605c565\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-blockquote.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"5cd5fb5fe87078c1cae941dad05db2e2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-h1.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b3782df976443f4a0086893d4da991d2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-h4.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"03bfccf7f8d474142bafeabf86b4732f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-h6.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f19136291f975688a3784353ac0fc83c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-h3.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"8915729f6e8b98436f9a1a0723bc2d6a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-h5.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c0f5d3d29f3cf277960182af39f5028a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/iframe/default/lbl-h2.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"6e4bfdbfc57415b8c650347bd1704154\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/jquery.wymeditor.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"cf711c9d1556e72f3cd0071d110bd225\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"29c43bdc177398cae12e971a871f78f9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/jquery.wymeditor.pack.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"b98a3a85aaec7fad7b0eeae522ea163d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"b1f1464824cca8c4cca30cd3f2927d96\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/jquery.wymeditor.min.js"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"13ac37067b08f8a8cd96729337e411b4\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"7b0d4a77a968a5f7ee39de71b379b2ae\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/default/skin.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c4a95c3bb9df308f44860d0192bafce7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/default/skin.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"7d3ee5c699e5fbbcd4bd982ac7bfd769\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/default/icons.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"45a781288dc799f892fa517355ff80b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/minimal/skin.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b24eafed148e80826464943a977ba2ad\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/minimal/skin.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4f493f73bfb815d0dfff9c39d15a14e8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/minimal/images/icons.silver.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"3d55143203f242061d02ed4387e3c498\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/minimal/images/bg.wymeditor.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"dae577218f4bdd6f59197e3d8c8c9ea6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/minimal/images/bg.selector.silver.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"1101554f412121db5ad6157f366515e3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/minimal/images/bg.header.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4871b677b0af34f02d3a51046dd51f20\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/twopanels/skin.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"44291e60a00482eb07d2ec8f27b55025\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/twopanels/skin.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d47d82f6cda558d258263f3949d815f1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/twopanels/icons.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"45a781288dc799f892fa517355ff80b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/skin.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"cbaf62dbe4292b07d830e857dfb50230\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/COPYING"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d32239bcb673463ab874e80d47fae504\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/skin.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"7f55ea883250c072ce72cf60c2d77064\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/images/icons.silver.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"3d55143203f242061d02ed4387e3c498\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/images/bg.wymeditor.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"dae577218f4bdd6f59197e3d8c8c9ea6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/images/bg.selector.silver.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"1101554f412121db5ad6157f366515e3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/images/bg.header.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4871b677b0af34f02d3a51046dd51f20\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/silver/README"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"649465d1c305caedb34adc02b8cc0ea8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/compact/skin.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"5e72d1bc87bf1d27d05cd14dae77200e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/compact/skin.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"eb8726f426d41a0cb87a3a6831cf2848\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/compact/icons.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"45a781288dc799f892fa517355ff80b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/skins/wymeditor_icon.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d43650efc0228099352fc9998573dbb6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/swf/player.swf"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"f43bb1af593e77e14437759ea4576f8d\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"4d4a5640020a858d967155a20f724003\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/swf/expressInstall.swf"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"8c4bdc47410fc7c000dcd1655e2f3a7a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/pages.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"148c64628cab0a0b07c484daa4f33950\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/plugin_forms.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b02bc0b653838afbde05c7a8839b5fd2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/plugin_editor.css"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"8477a0b8ee2b9b6b99aae5be12490218\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"7e3449fb1a0d0abdc37b67df6c6bd388\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/wymeditor.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"ad23832ef59475274ceb7e7802350444\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery.tooltip.css"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"c67f6722c9ab75d61ca7edf2e8328002\" == md5(body))"
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"8768367104b9816b9670d48e5d4c19a4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/jquery-ui.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"fedb5ee02a3fed07bd06808ab23cf9ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-icons_2e83ff_256x240.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"25162bf857a8eb83ea932a58436e1049\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"485eaacf0adca5834aa66dcbcc0b69df\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"e1dfd54e95a50a152c448ce0f85496dd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"09157b3a07628d31140ca21018c799f7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"037d2fd1ee6fe1768020e5bf6c5768f1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-icons_2694e8_256x240.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"821da6688f406b465332264eca179f1b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d987b086c6e96fb45055361de17ac08e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"fc4316e3555f92dfbc7e7c980ecb1ded\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_glass_50_3baae3_1x400.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"40dbd3438ae9348cff27c586eb6b142c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-icons_72a7cf_256x240.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"23c1e2fcd4d50960f88751a361018163\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"0687b0cac1bf682ba9c66efca0c2e30e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-icons_3d80b3_256x240.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"68a8cc42b147ade87943e3394c6ef92a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"0d42625eb7cce728e081067b74fb026d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery/cupertino/images/ui-icons_ffffff_256x240.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"2cc87801d9d43b350adaa1ec2da8ff45\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/tinymce_toolbar.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4793b1c12a6c318ca0fb6e7a60b91b33\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/rte.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"08c171245f69150d956f19eab841f34d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/css/jquery.dialog.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d441846b03fc206bd2de655dac28637e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/nav-bg.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"dc7bc05b7ef188d1b727f0de16b8a1d2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/cms_toolbar.gif"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"d68be1718bf956adca099e3d6f58cf72\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/plugins/snippet.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"6b18451460a69ee3f503192649af6f14\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/plugins/image.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"13be026a98cf5151f56b4b13063dd0a1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/plugins/file.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"79cc41accac09cd730674a9321a92cf8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/plugins/link.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c0f4f8d56038c3ebd28036818d32fefa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/bold.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a10c1c70b7c7ca9adeb90c6ffc47a1ab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/cut.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"cf045fa7c91185a44e6d3064dbdcf343\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/close.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"407458aec9a09a02a5d1d41c75db78b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/pluginlist-delete.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"1cf2717d7939a65815642b7cbbbcd564\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/sitemap-li-bg.jpg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"10f346e74df92e47502709a1637f11e2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/copy.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b4cd7cfcbc178c3fa39a8a0758742048\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/image.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"13be026a98cf5151f56b4b13063dd0a1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/unordered.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"fb3a94f0d37f657a3c02979a6450ed4a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/sitemap-li-drag.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"9e8b17130a1d528655bf07facac0b354\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/cms_toolbar.png"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"ca8cb0933fefe3c062c5febe309d3dfd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/pluginlist-holder-bg.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"18f001bce2154c9ab0a4b77eb84da104\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/sitemap-li-collapse.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"eb034482c9e0f81de0ebe575183c2e0c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/pony.jpg"
+    matchers:
+      - type: dsl
+        name: 2.1.0 - 2.1.5
+        dsl:
+          - "(\"89c0fb7cd889d3ff392845411c09ef36\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/swf.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"8b1ae8fc21e27185d3244128a7504347\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/php.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a409be34503b2a2a88ef0c2b697477b3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/jpg.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"afaf217b75f8a0f0e80d2d49e88ced4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/wav.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a8ea38b8bdd79e3d8c59d77544ca89e2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/pdf.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"fda251e8d1162ebb0dccdde2bed24b4a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/gif.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"afaf217b75f8a0f0e80d2d49e88ced4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/flv.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"4347412023510c7d4e6de6473796af98\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/odt.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"314f25f3835d1490446b5b0fe8b518d8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/tgz.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f42f29ca77763212f3ea2fce1695c574\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/zip.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f42f29ca77763212f3ea2fce1695c574\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/png.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"afaf217b75f8a0f0e80d2d49e88ced4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/txt.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a6b2b4ca0eb10906bf7282045bee3e1a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/ods.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"2f94bcb09a96c9c649d5431a3bf98fff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/mp3.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"0c4829ada7c308c1ffa7168e4b744027\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/java.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"5023f44d9e152e3c770691d8d97d8fcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/ttf.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"20f99c950e37629c42f93d2792874950\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/txt.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f1bb5019755e5a54d288143a77537fd7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/file_icons/html.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"55f008460f4190411fead8af8c9d1491\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/icon_deletelink.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b797f012032299c3673b4822c5f09fda\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/italic.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"0f1707f45d0a0768a4ed021987cf35a6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/icon_addlink.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"27872b1581c46b0847c41f71aaf508ea\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/sitemap-exlm.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"718ed7b2f769a85357821dbc1ff418b8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/logo.jpg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"8fc08e439e7cad7f5a3a3a55e79af296\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/link.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"c0f4f8d56038c3ebd28036818d32fefa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/icon_pluginedit.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"641e66338beb49d1fead68f9bf70bb91\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/sitemap-exim.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"af8babeede8dacc36c477248812c7d2e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/sitemap-extm.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"8e3387d43b3edc1dca3fc0808e4cefbc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/icons.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"56e8000aeb4eb69731b5ba7e92724431\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-n.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d65d6ba94f816da6716166db6b7b3fc3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/nav-bg.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"dc7bc05b7ef188d1b727f0de16b8a1d2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-ne.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b0ea6b1989efe4df4cb2b9442b64305f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-middle-over.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d81c9eec64011d07137565abbdc1a13c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-right.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"e6f0af4955c230104e59d4f5fa4749d2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/default-bg.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"e61a71c9e730d2c7f91b476cedcbf3e5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-titlebar-close-hover.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"10830889a65df0bebb2c50b0bfacad94\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-left-over.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"76b446eeddd20c6eb34ceaa3407eb7c5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-title.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"e4c77a8488adf7568d03981353498f6a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/slider-handle.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"397fb99cc43f2b240eac07a429614837\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-sw.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d0b04099a872511cb8aa4b224d1a1381\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-nw.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"cad408462325569131c57e78ef857275\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-ne.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"294fa779565d7ebc4743996ce00ca65e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-n.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"875482bb0fb4b41347dede7d75457f5c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-w.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"d97f5e79223561ac8d28916a6dbaadbc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-sw.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"501b4806cead327c714f7dbf003c84fb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-se.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"5fd05a97b75d08050d0b56131525c38e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/slider-bg-2.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"179d62e85e7c8723e8442a6b2d6298b5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-e.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"44498fa27d50e29561c7b2b2b77e437a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-middle.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"dfe78bd32e6f52b45c690ba2fd5ff8e5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-right-over.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"0634322aeb4f05ad456659a75543ab6f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-s.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"3b05e650a5d74c116fd8cf5039b325ed\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-w.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"a1ee9293e218001055e6726870d0eee1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/slider-bg-1.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"36c2008c5b1d2bba336ea9ca2064fffa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/resizable-s.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"5329458c1b52b0a23254272038a73432\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-nw.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b8c91e39ecdde742474433c65a54d784\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-left.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"6dfeafa7eea98b1c1b87b8c4f771445a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-left-act.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"dc53c3e08a3acbc042abbf955d7279e1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-right-act.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"de99d227cc235c8e7311877b38908839\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/accordion-middle-act.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"0b814a9e693b5bbbc15275b1d8b4ea9e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-se.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"b047f1b4a491f2ec114cd7a3da354dda\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-titlebar-close.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"f923bc2ed9422d0b145b0ac58bbfae2a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/tabs.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"206590f7150f45c0b733afbb3689f598\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/jquery/dialog-e.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"bfb68469982e7fb33b812b338b9cd37f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/changelist-filter-button-bg.jpg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"560d8b6c8a51ff432c881a22cffba363\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/icon_extension.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"862174b90fdff1068f8a95eda7d5fe60\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/indicator.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"03ce3dcc84af110e9da8699a841e5200\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/images/page_find.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.1.5
+        dsl:
+          - "(\"04e2ec1b3317fff320a3053779bcce4c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/plugins.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"2e9894c671761b5d1564239935c52906\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/navigation.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"37f33313c68c7ad0670fcfbc8d521d5f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/i18n.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"73d77048007db8af34463cfde799f0b7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/sitemap.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"3a88038138e911dd22d388389096b95e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/Makefile"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"79c7b1bd37a8ce685d1e50f64213c3d5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/screen3.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"6b69c8f14bae69671ebe38dbf92856c2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/screen2.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"dd688baad97b973c5fa658f1f2a962ce\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/pygments.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"34be756e1c1d003c1956ae77ac85d828\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/screen1.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"337bfb89a81725cdcbdbba8532801d59\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/doctools.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"5995ef5846cfc1bac33287eb8002eded\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/basic.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"728e9a7151bbecc356b83bb0a0b34ac8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/file.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"6587e59c55e626744eb6fc11129d99a7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/jquery.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"a9331828c517ac5d97f93b3cfdbcc9bc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/plus.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"0125e6faa04e2cf0141a2d599d3bb220\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/minus.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"8d572395aa95c89584a09813ada4dfa1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/searchtools.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"c784e28784239905cb99ff23067fb72d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/docs/static/default.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"beb130caa499ffebacebc463ba297015\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/swf/player.zip"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"286ee093de9b626b2b343d573095e8f7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/tidy/tidy.php"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"3355fbc23378052db8213dbdcd4fe31f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/tidy/wand.png"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"22d8038ebf5ac63b0062ebf361e8261c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/tidy/jquery.wymeditor.tidy.js"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"d98533df80864268ba9661e18fc8b2ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/media/cms/wymeditor/plugins/tidy/README"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"b31aaf6b3928608a98b2028c2d9f523e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/fixtures/test.json"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.2
+        dsl:
+          - "(\"990f3ae9958253287208b4862e9cdf4a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/tests/frontend/unit/helpers/mock-ajax.js"
+    matchers:
+      - type: dsl
+        name: 3.4.4 - 3.7.4
+        dsl:
+          - "(\"fed206766c08afc8342240b0409a05ce\" == md5(body))"
+      - type: dsl
+        name: 3.3.0 - 3.4.3
+        dsl:
+          - "(\"e9ca4db4667cc37ffd0d5804876e4871\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/js/libs/jstree/jstree.grid.min.js"
+    matchers:
+      - type: dsl
+        name: 3.4.4 - 3.7.4
+        dsl:
+          - "(\"b57482c03008c31cc383a336b97c076f\" == md5(body))"
+      - type: dsl
+        name: 3.3.1 - 3.4.3
+        dsl:
+          - "(\"abac11bd4d08a9f20cde9d0a888f11d7\" == md5(body))"
+      - type: dsl
+        name: 3.2.2 - 3.3.0
+        dsl:
+          - "(\"e5bd4f29ba7a0f634b0cbc3f8c5ec5de\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/fonts/3.4.4/django-cms-iconfont.woff2"
+    matchers:
+      - type: dsl
+        name: 3.4.4 - 3.4.6
+        dsl:
+          - "(\"65b5ab2b7a8432447c0258982a5bd9c6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/fonts/3.4.4/django-cms-iconfont.woff"
+    matchers:
+      - type: dsl
+        name: 3.4.4 - 3.4.6
+        dsl:
+          - "(\"0718e1a3a6de43e13c2f485bfaecaa3e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/fonts/3.4.4/django-cms-iconfont.ttf"
+    matchers:
+      - type: dsl
+        name: 3.4.4 - 3.4.6
+        dsl:
+          - "(\"5fdbdc072502876ebde35d9d3d8de3c2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/fonts/3.4.4/django-cms-iconfont.eot"
+    matchers:
+      - type: dsl
+        name: 3.4.4 - 3.4.6
+        dsl:
+          - "(\"74d0431d6ec4790d9db145180abd36de\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/fonts/3.4.4/django-cms-iconfont.svg"
+    matchers:
+      - type: dsl
+        name: 3.4.4 - 3.4.6
+        dsl:
+          - "(\"31b747bb7b8d4547019313395fc8424f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/js/widgets/forms.slugwidget.js"
+    matchers:
+      - type: dsl
+        name: 3.4.5 - 3.7.4
+        dsl:
+          - "(\"4ceaa1183b8d4bbb7454b3a87b1ee9af\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/static/cms/js/modules/preload-images.js"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.5.2
+        dsl:
+          - "(\"d0b65c2a7e3b81873fec4b17c00a0d20\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.7.4
+        dsl:
+          - "(\"270aab301514ad44d08ab7dd57e87028\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/tests/frontend/unit/preload-images.test.js"
+    matchers:
+      - type: dsl
+        name: 3.5.3 - 3.7.4
+        dsl:
+          - "(\"9722b3df10df2e1a98bc388eed6716e7\" == md5(body))"
