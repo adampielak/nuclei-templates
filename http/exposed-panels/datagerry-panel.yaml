@@ -9,7 +9,6 @@ info:
   reference:
     - https://datagerry.com/
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)datagerry"})
     verified: true
     max-request: 1
     vendor: becon
@@ -34,4 +33,4 @@ http:
           - 'contains_any(tolower(body), "<title>datagerry", "content=\"datagerry")'
           - 'status_code == 200'
         condition: and
-
+# digest: 4a0a00473045022100b914e4dc4bd940ce926ee44e8800bd07bce716b4b629d51f1e99540ebcbaff2d02202305a2eb1eb41ca40c576cf438dcd9753afa17ca03f62afdcdf780dfe711ab79:922c64590222798bb761d5b6d8e72950

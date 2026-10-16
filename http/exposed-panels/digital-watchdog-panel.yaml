@@ -7,7 +7,6 @@ info:
   description: |
     Digital Watchdog panel was detected.
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "868509217"
     verified: true
     max-request: 2
     shodan-query: "http.favicon.hash:868509217"
@@ -21,8 +20,9 @@ http:
       - "{{BaseURL}}/static/customization/favicon.ico"
 
     stop-at-first-match: true
+
     matchers:
       - type: dsl
         dsl:
           - "status_code==200 && ('868509217' == mmh3(base64_py(body)))"
-
+# digest: 4a0a00473045022100cf621601caff60c5b521f948f935c7b1ce30507981a486a39c5e9d44a9e629d1022040df0765c608e8dec93dd7cbe075d94a4b465803dff30abcd4c621a403744b94:922c64590222798bb761d5b6d8e72950

@@ -5,11 +5,15 @@ info:
   author: SleepingBag945
   severity: high
   description: ChatGPT Web is exposed.
+  classification:
+    cpe: cpe:2.3:a:chanzhaoyu:chatgpt_web:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: chanzhaoyu
+    product: chatgpt_web
     fofa-query: app="Chatgpt-web"
-  tags: chatgpt,unauth,misconfig
+  tags: chatgpt,unauth,misconfig,vuln,ai
 
 http:
   - raw:
@@ -38,4 +42,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009335765c3a461281c6686e5525ef4df6ad033b509221998c003f467783efccbe022002fed2ad57b70a38346af4229f8309b5d16a21de09c245e1af3638f9d0086475:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f8fc36516b3360bb65492c544d73759757d923e0a7470afb090c6a21e2b703e1022100ce8f69f90e70cc66efa1075ae1a3e99950e449b25558a2bd7834d19d571fcca7:922c64590222798bb761d5b6d8e72950
