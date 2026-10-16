@@ -1,5 +1,4 @@
 id: next-terminal-default-login
-
 info:
   name: Next Terminal - Default Login
   author: ritikchaddha
@@ -9,38 +8,34 @@ info:
   reference:
     - https://github.com/dushixiang/next-terminal
   metadata:
-    verified: true
-    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Next Terminal"})
     fofa-query: title="Next Terminal"
-  tags: default-login,next-terminal,next,vuln
-
+    max-request: 1
+    verified: true
+  tags: default-login,next,next-terminal,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - message":"success
+          - code":1
+          - data":"
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    payloads:
+      password:
+        - admin
+      username:
+        - admin
+    raw:
       - |
         POST /login HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/json
 
         {"username":"{{username}}","password":"{{password}}","remember":false}
-
-    attack: pitchfork
-    payloads:
-      username:
-        - admin
-      password:
-        - admin
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'message":"success'
-          - 'code":1'
-          - 'data":"'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-# digest: 490a0046304402207584d96af9c1555d3b6417518a11c9746527594956fead695e351c8bb05275060220538f4983d2a4de049a12da3547bb19f57ab4c11153dfbd554458f39e372e2b78:922c64590222798bb761d5b6d8e72950

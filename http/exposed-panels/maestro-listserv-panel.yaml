@@ -10,6 +10,7 @@ info:
     - https://www.lsoft.com/
     - https://www.lsoft.com/products/maestro_11.1.asp
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)LISTSERV Maestro"})
     verified: true
     max-request: 1
     shodan-query: http.title:"LISTSERV Maestro"
@@ -34,4 +35,4 @@ http:
         regex:
           - '(?i)<title>[\n\r\t\s]*LISTSERV\s+Maestro[\n\r\t\s]*([0-9.-]+)[\n\r\t\s]*</title>'
           - '(?i)uniqvp=([0-9.-]+)'
-# digest: 4b0a00483046022100e330c1fcf1e760c53c858675d025533336986e38e039bed04d1238edaf07a1bc022100c0fedaea7cd8c3a45c51608abc9ee521e8f68809f2627b3fba14dfd3c5580b19:922c64590222798bb761d5b6d8e72950
+

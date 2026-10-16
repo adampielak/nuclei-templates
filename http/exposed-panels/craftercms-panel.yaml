@@ -11,6 +11,7 @@ info:
   classification:
     cpe: cpe:2.3:a:craftercms:craftercms:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)craftercms"})
     verified: true
     max-request: 1
     vendor: craftercms
@@ -36,4 +37,4 @@ http:
         group: 1
         regex:
           - 'Copyright\s+\(C\)\s+([0-9-]+)\s+Crafter'
-# digest: 4a0a0047304502204e2c87f37520d3a0b95562a7a50e2a56be82dce9d3e1ac6403e79dae518a3aa0022100953a1b90141b02ebbef80fe14aef40dec35dfbfa06d1c3157a4bdedbffdbedeb:922c64590222798bb761d5b6d8e72950
+

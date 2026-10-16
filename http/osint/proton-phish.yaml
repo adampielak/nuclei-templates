@@ -10,7 +10,7 @@ info:
     - https://proton.me
   metadata:
     max-request: 1
-  tags: phishing,proton,osint,discovery
+  tags: phishing,proton,osint
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"proton.me")'
-# digest: 4b0a00483046022100dfb726162c3da94b18553cc17d51eef66054b75b719df7e38285de464b40d1b0022100fc20da363cac19ff68c56d4a8c620ad739ba84498c46dbafe78bae705c5e97d7:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220779e306405d70025d0e516e924180578b26f127f7be83b6c0eb62b152ca2671e0220782fcab8061fec82c2d9c3ab57c77d8846cf28338a9a7909b8a06a91ae45f758:922c64590222798bb761d5b6d8e72950
