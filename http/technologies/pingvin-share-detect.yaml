@@ -1,5 +1,4 @@
 id: pingvin-share-detect
-
 info:
   name: Pingvin Share - Detect
   author: rxerium
@@ -9,31 +8,27 @@ info:
   reference:
     - https://github.com/stonith404/pingvin-share
   metadata:
-    verified: true
     max-request: 1
-    vendor: stonith404
     product: pingvin_share
     shodan-query: http.title:"Pingvin Share"
-  tags: tech,detect,pingvin-share
-
+    vendor: stonith404
+    verified: true
+  tags: detect,pingvin-share,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: regex
         part: body
         regex:
           - '<title>[^<]*Pingvin Share[^<]*</title>'
-
       - type: word
         part: body
         words:
           - 'content="An open-source and self-hosted sharing platform."'
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210091f4fff0c9fd5fd2420e8560124403884f9ee1349ce7efefa7832bc95c012ab202201a391612ab21c4efdff12bc2f16599f74ecf15a02b9060c4e27afaeaf6bfb82a:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502210091f4fff0c9fd5fd2420e8560124403884f9ee1349ce7efefa7832bc95c012ab202201a391612ab21c4efdff12bc2f16599f74ecf15a02b9060c4e27afaeaf6bfb82a:922c64590222798bb761d5b6d8e72950
