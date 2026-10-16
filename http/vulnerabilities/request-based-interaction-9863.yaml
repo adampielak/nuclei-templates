@@ -1,4 +1,5 @@
 id: request-based-interaction
+
 info:
   name: OOB Request Based Interaction
   author: pdteam
@@ -7,6 +8,7 @@ info:
   reference:
     - https://portswigger.net/research/cracking-the-lens-targeting-https-hidden-attack-surface
   tags: oast,ssrf,generic
+
 requests:
   - raw:
       - |+
@@ -47,6 +49,7 @@ requests:
         name: http
         words:
           - "http"
+
       - type: word
         part: interactsh_protocol
         name: dns
