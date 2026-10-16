@@ -12,11 +12,11 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
-    cpe: cpe:/a:bitvise:winsshd
+    cpe: cpe:2.3:a:bitvise:winsshd:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: product:"bitvise"
-  tags: network,ssh,bitvise,detect,detection,tcp
+  tags: network,ssh,bitvise,detect,detection,tcp,discovery
 tcp:
   - host:
       - "{{Hostname}}"
@@ -31,4 +31,4 @@ tcp:
       - type: regex
         regex:
           - "SSH([-0-9.]+) FlowSsh: Bitvise ([A-Z a-z()]+) ([0-9.]+)"
-# digest: 490a0046304402202d1a65f1251330c1fa13aadab8a7f2adc03c10fe70edad64d9b9c4097eb7e49c02205913d229716d7af0a6e501d5c69c1f3140a56c7896bcab0d85c09ba5808e4194:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402205ea8c5fdcdae6c9d0ac99c42d9d5d6fbf2d45764528c2970b7bf8cbeb96ed19802205b42af19d5477550353efe22d77ba5ba8525a2b043cf27f430b69484e9063486:922c64590222798bb761d5b6d8e72950
