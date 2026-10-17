@@ -7,14 +7,17 @@ info:
   description: Xibo CMS login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:springsignage:xibo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
+    max-request: 1
     shodan-query: http.html:"/xibosignage/xibo-cms"
-  tags: panel,xibocms
+    product: xibo
+    vendor: springsignage
+  tags: panel,xibocms,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/login"
@@ -38,5 +41,4 @@ requests:
         group: 1
         regex:
           - '([0-9.]+)            | <a id="source-link"'
-
-# Enhanced by md on 2023/01/26
+# digest: 4a0a00473045022100bbebd71c824368adc318fd8f454325710a12ed3fa4d4969537cdd99a29cc388502202637ab709c355a353e8a79d2c3011fa18b550dfeb499beb054016568920b18b3:922c64590222798bb761d5b6d8e72950

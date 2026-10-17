@@ -7,14 +7,21 @@ info:
   description: MikroTik RouterOS admin login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:o:mikrotik:routeros:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    shodan-query: title:"mikrotik routeros > administration"
-  tags: panel,login,mikrotik
+    max-request: 1
+    vendor: mikrotik
+    product: routeros
+    shodan-query:
+      - title:"mikrotik routeros > administration"
+      - http.title:"mikrotik routeros > administration"
+    fofa-query: title="mikrotik routeros > administration"
+    google-query: intitle:"mikrotik routeros > administration"
+  tags: panel,login,mikrotik,discovery
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -32,5 +39,4 @@ requests:
         group: 1
         regex:
           - '<div class="top">mikrotik routeros (.[0-9.]+) configuration page</div>'
-
-# Enhanced by md on 2022/12/05
+# digest: 4a0a00473045022023a80f1009166e4bd554705320c65b1e76806a69371e7d73f96ef3370f5f5c00022100dc814c518d153adc3c69e0b80302951937ddb6e05d7431b26e4641f2efcc3375:922c64590222798bb761d5b6d8e72950

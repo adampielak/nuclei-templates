@@ -7,18 +7,18 @@ info:
   reference:
     - https://wordpress.org/plugins/woocommerce-gateway-paypal-express-checkout/
   metadata:
+    max-request: 1
     plugin_namespace: woocommerce-gateway-paypal-express-checkout
     wpscan: https://wpscan.com/plugin/woocommerce-gateway-paypal-express-checkout
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
-requests:
+http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/woocommerce-gateway-paypal-express-checkout/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/woocommerce-gateway-paypal-express-checkout.txt
+      last_version: helpers/wordpress/plugins/woocommerce-gateway-paypal-express-checkout.txt
 
     extractors:
       - type: regex
@@ -47,3 +47,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a004730450220361aee856fe59ad4287f9b6dd19a11db0d1fac4bcc1fb65e688c476025bd07f7022100962b5d1bfe16f301aead635b636c3498f821713c1a6c239d92be3f175f21fb51:922c64590222798bb761d5b6d8e72950
