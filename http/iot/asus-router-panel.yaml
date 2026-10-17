@@ -7,15 +7,13 @@ info:
   description: Asus router login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:h:asus:rt-n53:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: 'Server: httpd/2.0 port:8080'
-    product: rt-n53
-    vendor: asus
-  tags: panel,asus,router,iot,discovery
+  tags: panel,asus,router,iot
 
 http:
   - method: GET
@@ -33,4 +31,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200bbedad18a6c17d5d340044df0c328688bde2d6bb1f4d5f560baaa71137e5abf022100b4a0a187cca940e75a33230903bcc7f387b40254c36949c201d65d1f443a7c49:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450221008d9f1e0aaf14ca4d2fc862e31e361b1afaf0b85ad996ce7b4253460d1e1eb29e02202d68b0ce5c6e86ec2f18dd8779004d53a39e7b6f309908b99f6b178ddf410e73:922c64590222798bb761d5b6d8e72950

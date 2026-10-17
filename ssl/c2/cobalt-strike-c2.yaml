@@ -12,7 +12,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: ssl.cert.serial:146473198
-  tags: c2,ssl,tls,ir,osint,malware,panel,cobalt-strike,discovery
+  tags: c2,ir,osint,malware,ssl,panel,cobalt-strike
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:
@@ -24,4 +24,4 @@ ssl:
       - type: json
         json:
           - ".serial"
-# digest: 4a0a00473045022100cc45d6fa64d6b3417e23f8f48c240d83fa7da68b25371e0e654a021d2a02976602204df0419bcd3162b17a7fbfa9ccd5541d3fdae7d67aee3418a88bb56dadcb5215:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502205ba910ef7a6c4ad9a4b4cde9bedc47cb51b5a5ede0b437a5cfe1dbb0671b9c330221008d1ab0226dd233212d2e0c55500006cb891193d96ef6539baa3c40046a2e3233:922c64590222798bb761d5b6d8e72950

@@ -7,7 +7,6 @@ info:
   classification:
     cpe: cpe:2.3:a:zenml:zenml:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "-2028554187"
     verified: true
     max-request: 1
     vendor: zenml
@@ -31,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4b0a00483046022100d5fc0bf271d55c9f0a573e818d2baa5700b153000522f0ef702ec5324206972e022100d70871908e624ae8d8f4211b7942933ad6f46f74db3601961d66b798fcda3531:922c64590222798bb761d5b6d8e72950
