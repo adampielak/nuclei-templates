@@ -16323,3 +16323,144 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/Themes/core/images/topic/hot_post_locked_sticky.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"9176c63245ee4c52781d08b1810a8b19\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/normal_poll.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"d2260bca5619128aaf5529db4adf7851\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/my_hot_post.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"dce9e2d11873c15a728a1d9e052e6a4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/normal_post_sticky.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"fd294f3d620579d8fc9094b51f80a1e1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/my_normal_post.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"984dd21a7ae7066266f836f3aba4aa71\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/veryhot_post_sticky.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"a368344ba706ba801bbb30d8df7ad9fc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/normal_post_locked_sticky.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"8a8b13aea3b781d5a61c56312f035d60\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/normal_poll_sticky.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"f20eff5c34f97213b2924bd7535ad155\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/topic/veryhot_poll.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"0dc4d32bdd7bc94710df85266732a209\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/aim.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"2323459668a717abe65eb8048aaa388c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/catbg.jpg"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"af76d5032620eaa3ddcbcf7ff7301a29\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/images/stats_board.gif"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"aca415906c75affe4946b0f383b125a6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/license.txt"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"9c82cce82c7625f2823f8a19698fd212\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/css/index.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"808cc042617070560635b2f3c953f0c0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/css/ie7.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"4526c1622cae7d28e3cff55575191c91\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/css/ie6.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"865337d1cc502f8661e83f27114e04db\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/css/webkit.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"66edc20af954814df49b1d0a20b41b38\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/Themes/core/css/rtl.css"
+    matchers:
+      - type: dsl
+        name: 2.0.0 - 2.0.16
+        dsl:
+          - "(\"8485e4532f08cee0acccba566b3ab1d7\" == md5(body))"

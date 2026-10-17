@@ -4,7 +4,7 @@ info:
   name: jwks.json File Exposed
   severity: low
   tags: exposure
-http:
+requests:
 - matchers:
   - status:
     - 200
