@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: icon_hash="915499123"
-  tags: tech,hcpanywhere,discovery
+  tags: tech,hcpanywhere
 
 http:
   - method: GET
@@ -25,4 +25,4 @@ http:
           - 'status_code == 200'
           - 'contains_any(body, "brandedUrl", "helpId", "url") && contains(body, "hcpaw")'
         condition: and
-# digest: 4b0a00483046022100b53602f6b7c5e95c96ca77e798075921536b243dd461267bb844a5622b5a8299022100b60fcae5fce47b7a672458611da18a38b79f65afeb1b30dc3ff97148d9bb448e:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210097b7db3e245c2f58776651985b7cef4f5336ea553b2d08adef59dc0d2a9deadd0221008a621ef7260edb87d24ece1bb2787f011823bb9a8fe47e3089dabf129e4b0a18:922c64590222798bb761d5b6d8e72950
