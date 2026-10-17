@@ -13,7 +13,7 @@ info:
     max-request: 1
     shodan-query: html:"searchreplacedb2.php"
     fofa-query: body="searchreplacedb2.php"
-  tags: misconfig,searchreplacedb2,exposure,vuln
+  tags: misconfig,searchreplacedb2,exposure
 
 http:
   - method: GET
@@ -37,4 +37,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b86c939931fedb3502245929f42267f90508ef62878167bd8108cd8aaef346c2022100939d5fd36dc0e7ccbc9f3a092f6acdeeb4c97bd822f462776097e8ccf2a9bf6a:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e16464853112c7aa3f75b6f2747ecb37b93000c3defe49c124cb8a71509aae2f022100e057e27dbf7c5c2087e400aa489ac6d64ea70004aae270877c1b56ef473c2721:922c64590222798bb761d5b6d8e72950

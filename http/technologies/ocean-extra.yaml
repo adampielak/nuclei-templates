@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/ocean-extra/
   metadata:
+    max-request: 1
     plugin_namespace: ocean-extra
     wpscan: https://wpscan.com/plugin/ocean-extra
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022053d12a2e04cf30981a8506815c4aef4c5c5f5ea676fa7a0127a9d3a0866693f0022100aea5173bee585b31c2d8d8e3353788ae26c82073c6771412a58ccfbb043ffc1c:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220305477391c85f79f48193267d70af1db265323e48c8b65f2604356b1f941e31702202f9504bf17f0729548ea14c8ca492f70f9e0b0d422ff98903f07367b72dbb64b:922c64590222798bb761d5b6d8e72950
