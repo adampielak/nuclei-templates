@@ -10,12 +10,13 @@ info:
     - https://github.com/mailhog/MailHog
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"mailhog"
-  tags: panel,mailhog,mail,smtp,discovery
+  tags: panel,mailhog,mail,smtp
 
 http:
   - method: GET
@@ -34,4 +35,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a47c13fc1b749dad899f183d02e04e0442e7451c85a68be1bf08f28f25d62a1102210092f161409d7cf6b46d57aecb1c47a21a172c786e97776bd58814f61dae2853e3:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450221008a55146decd1e0e9373f3d02f3958a5377aa956e9f92151a4828064a3a31c61902205633a098f77f9c33946c86c141613dc1e7972849b4b5f341d033c23adf841d8d:922c64590222798bb761d5b6d8e72950

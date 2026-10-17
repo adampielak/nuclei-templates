@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/woo-checkout-field-editor-pro/
   metadata:
+    max-request: 1
     plugin_namespace: woo-checkout-field-editor-pro
     wpscan: https://wpscan.com/plugin/woo-checkout-field-editor-pro
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022071c1d1e759909976d60e8ea57d48850bb95e1f31b7069f0b3d2dbb991c26e0b2022100c04857d77e2ea7895dff0191d98b43b59826726958959137b67ce249fc9b9f54:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e6ae92745adcab1a20772c8ad782eb97afd5ab1ae06709a348390815a4c43c2c022100dce3740582c0aa333e742ce1618b48afd856392aa2be5c4ca84f5a7bfadc2262:922c64590222798bb761d5b6d8e72950

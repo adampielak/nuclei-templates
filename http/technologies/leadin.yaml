@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/leadin/
   metadata:
+    max-request: 1
     plugin_namespace: leadin
     wpscan: https://wpscan.com/plugin/leadin
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a00463044022006e4d9bf3aa736fedf9f24f29b0e5211d60fb9ea12bf3da41a987a504f8177a802204799dd248871efbf0668b591c8ad5d34bfb3e8f610cb9827d1625613f0c7e6a1:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022031e75cfa396ed64b4299a0f2767d465a3fa58d5f74aebb85cbbd6c799c92c67202210084c95979cd97be3377aa939e6e2fbff153e74827a52d09c96a975651a52d3eaa:922c64590222798bb761d5b6d8e72950

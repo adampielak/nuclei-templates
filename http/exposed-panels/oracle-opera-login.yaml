@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: title:"Oracle Opera" && html:"/OperaLogin/Welcome.do"
-  tags: panel,opera,oracle,detect,discovery
+  tags: panel,opera,oracle,detect
 
 http:
   - method: GET
@@ -34,4 +34,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022054528025cc652e662b0f4e6755321fe18f8eb8d770fabe09cefc638b2b91c2d602205bb6f1dd6ef6eeb089c8daa13e956fd858c948859d2651711bcbe9f5bd5ac48e:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100913b287a8b0b9de193b993ae33b49bbf5a2173919ce3de7d8e329e968809d37f022014587108987bac2ebd1c1f4a72620e65660690bce165d0719efa4760525faacf:922c64590222798bb761d5b6d8e72950

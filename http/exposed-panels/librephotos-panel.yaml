@@ -6,15 +6,11 @@ info:
   severity: info
   reference:
     - https://github.com/LibrePhotos/librephotos
-  classification:
-    cpe: cpe:2.3:a:librephotos_project:librephotos:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: librephotos_project
-    product: librephotos
     shodan-query: title:"LibrePhotos"
-  tags: panel,librephotos,detect,login,discovery
+  tags: panel,librephotos,detect,login
 
 http:
   - method: GET
@@ -32,4 +28,5 @@ http:
         status:
           - 200
           - 404
-# digest: 4a0a004730450220761a2fac14f14df936eadbff96c195f0d56317e79ff9c04f130969fef058f6360221009182bb74b8f0dd31a454d2ff085739bf1acf15def12ec26c64910640e2e3ca75:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100c5c780bece93d1ae8f495d6d101a749d84849d811514906d67ace9273785a43102210081a2d6ca66211e8948f0d0c2ab7c13ceccd155584db276982e62d298b97d0180:922c64590222798bb761d5b6d8e72950
