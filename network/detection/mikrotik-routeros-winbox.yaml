@@ -1,4 +1,5 @@
 id: mikrotik-routeros-winbox
+
 info:
   name: MikroTik WinBox Service - Detect
   author: abdo342003
@@ -9,19 +10,22 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
-    fofa-query: port="8291" && banner="MikroTik"
+    verified: true
     max-request: 2
     shodan-query: port:8291 product:"MikroTik"
-    verified: true
-  tags: detect,detection,discovery,mikrotik,network,routeros,tcp,winbox
+    fofa-query: port="8291" && banner="MikroTik"
+  tags: network,mikrotik,routeros,winbox,detect,detection,tcp,discovery
+
 tcp:
   - inputs:
       - data: "220600000000000000000000000000000000000000000000000000000000000000000000"
         type: hex
+
     host:
       - "{{Hostname}}"
     port: 8291
     read-size: 512
+
     matchers:
       - type: dsl
         dsl:
@@ -32,4 +36,4 @@ tcp:
           # an echo service reflects our own 36-byte 0x22 frame back
           - '!regex("^2206", hex_encode(raw))'
         condition: and
-        # digest: 4a0a004730450220710df8416593b96807844843d8c462ec2cbdc041d3a0343eb37bfd34bec87749022100cf1b8ae8bfde89059cb8cb70e92ebb3c1d4ff9eaebc49cc1e51cf3e8e868e8f5:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220710df8416593b96807844843d8c462ec2cbdc041d3a0343eb37bfd34bec87749022100cf1b8ae8bfde89059cb8cb70e92ebb3c1d4ff9eaebc49cc1e51cf3e8e868e8f5:922c64590222798bb761d5b6d8e72950
