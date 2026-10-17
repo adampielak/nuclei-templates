@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 25
-  tags: config,exposure,phpinfo
+  tags: config,exposure,phpinfo,vuln
 
 http:
   - method: GET
@@ -27,12 +27,14 @@ http:
         - "/php_info.php"
         - "/test.php"
         - "/i.php"
+        - "/a.php"
         - "/p.php"
         - "/pi.php"
         - "/asdf.php"
         - "/pinfo.php"
         - "/phpversion.php"
         - "/time.php"
+        - "/inf0.php"
         - "/index.php"
         - "/temp.php"
         - "/old_phpinfo.php"
@@ -44,6 +46,7 @@ http:
         - "/_profiler/phpinfo"
         - "/?phpinfo=1"
         - "/l.php?act=phpinfo"
+        - "/testxx.php"
 
     stop-at-first-match: true
 
@@ -66,4 +69,4 @@ http:
         group: 1
         regex:
           - '>PHP Version <\/td><td class="v">([0-9.]+)'
-# digest: 4a0a0047304502210099232841cdc5c231ae3d676d8a93bdf005460495483757f8fc3716bc033b481a02202dacf40e940a66680b41af4802eb37a6e470d949904241b26612ba281013e422:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022032425ae8cb16ab3a178595619ba7b3f8d645b6e6327932903bd8f2aaabf9310002202f0ca200f6d2c004d016a6c3fb2e143631956fe260c8e3392b85161522a7a000:922c64590222798bb761d5b6d8e72950

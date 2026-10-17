@@ -11,26 +11,27 @@ info:
     - https://magento.stackexchange.com/a/62966
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    verified: "true"
+    max-request: 2
     shodan-query: http.component:"Magento"
-  tags: tech,magento,cms
+    product: magento
+    vendor: magento
+  tags: tech,magento,cms,discovery
 
-requests:
+http:
   - raw:
       - |
         GET /magento_version HTTP/1.1
         Host: {{Hostname}}
-
       - |
         GET /skin/frontend/default/default/css/styles.css HTTP/1.1
         Host: {{Hostname}}
 
     matchers-condition: or
     matchers:
-
       - type: regex
         regex:
           - '^Magento/.*$'
@@ -82,5 +83,4 @@ requests:
         name: version
         regex:
           - 'Magento\/([0-9.]+) '
-
-# Enhanced by dcb 2022/11/29
+# digest: 4a0a00473045022100ece319387628893e211b00cb312bee23f7b9161242bf0ec8d7965fd738c814f9022010476cdf74dde543c1c9d84a74d9944e328b7d8dfcb9b407157e78779b162ac2:922c64590222798bb761d5b6d8e72950

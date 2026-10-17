@@ -8,7 +8,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Apache Miracle Linux Web Server"
-  tags: tech,default-page,apache,miracle
+  tags: tech,default-page,apache,miracle,discovery
 
 http:
   - method: GET
@@ -25,5 +25,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a0046304402200665fe0eb6ff12dbcc84bef799781b92df9458d35989472edd0488dc9e42130c02203b49b17bd23d396c75a46b6afe88b5c90a552446f9b0545726ae827baacaa845:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502202ba1534c8bd646d3fe528ab7f1982ed13f2743f7e7de79035ecb67e5195b627f022100a9f24f9566a46ecaa78be5557702d2612071ce0a6a18baa5461446ec41d4f966:922c64590222798bb761d5b6d8e72950

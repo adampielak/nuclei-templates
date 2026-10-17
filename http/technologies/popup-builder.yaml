@@ -10,7 +10,7 @@ info:
     max-request: 1
     plugin_namespace: popup-builder
     wpscan: https://wpscan.com/plugin/popup-builder
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a004830460221009f0d9716d2fe98e972ed59e7f665b7160f754a140da8cc0c322bf9c29b8d6bc6022100ad8f87d69bc9a3c5b08116c87a20942eff76b8f6dd6f61a9d80446dc4884f2ef:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201cda62dc7f3d575315bdff8692f368ad383996bb29c2f84d78b55ba3aac40ea20220779908fdcc4148e08209fc5ae8b952bef37e1b23a6c249cb0f646720f98251e7:922c64590222798bb761d5b6d8e72950

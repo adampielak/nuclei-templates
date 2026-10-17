@@ -10,7 +10,7 @@ info:
     max-request: 1
     plugin_namespace: easy-google-fonts
     wpscan: https://wpscan.com/plugin/easy-google-fonts
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -47,5 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-
-# digest: 490a0046304402204d135b4701b8c3846ce1be87e121510d19561198883acfdf541178d02728acd7022069eba403192911038aba8b3c9b93f48d1a4d23a3c3650d0856cd5c0859f333cb:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100bab7eae26e9941594bcb4257c46ea6c32cfe299da930a9c7a66cd7b744fad5a802204a6e1b581f229150a836f9279aa4db88ad266168cdfa285e948918a79240c92a:922c64590222798bb761d5b6d8e72950
