@@ -20,7 +20,7 @@ info:
     max-request: 1
     shodan-query: title:"CloudCenter Suite"
     fofa-query: title="CloudCenter Suite"
-  tags: cve,cve2021,jndi,log4j,rce,oast,cloudcenter,cisco,kev
+  tags: cve,cve2021,jndi,log4j,rce,oast,cloudcenter,cisco,kev,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
@@ -69,5 +69,4 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-
-# digest: 4a0a00473045022100c2f5e8163a564e7d2fd0530a85cb7e37e568e017f19c9ed7fa4652e03a0de4c602203859ca9dc699f5dec2304a7611352a5d8889ae7e4a3400870ba2608640d522fa:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100aef648bbdc4da52f8b5dbd3ecce4956b47b5dbfb7046a6d0c868049834eda7f602210084c985ee0109216dc8d5bc2502e7966d4ce6f0f58d4252b7131eb169dabe4b61:922c64590222798bb761d5b6d8e72950

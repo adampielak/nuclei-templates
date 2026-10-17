@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,instagram
+  tags: osint,osint-social,instagram,discovery
 
 self-contained: true
 
@@ -35,5 +35,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502206f1f90d0ae6e87ffabb1bc19701bebc732a900faf42983eb19ef61612390649c022100e4c2da1597598563b42ecb16fbd584af21937dc9ae4aefbdc7ce0304708b816d:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210097b656b960c0f3cb4ddc9977ed27a50bf109fe06dabe4e4f4d97cbf0e67da1d70221008f4368268ab4e5d8e77e0d1d16ab5e88a664877cb3dd82174a789caa0d4cf53d:922c64590222798bb761d5b6d8e72950

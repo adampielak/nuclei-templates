@@ -48,4 +48,4 @@ javascript:
       - type: dsl
         dsl:
           - replace_regex(replace_regex(response, "\\+OK.*\\r\\n\\+OK.*\\r\\n", ""), "\\r\\n", " ")
-
+# digest: 4b0a0048304602210097cdf0882b08c85536dba6f3e47e8bfda7df92a9ce7b26f9967d2bd0640bc406022100a195a218f0c4116cfc7db0c4bdc381d4e3b5e18718ce28724438f6216fd3c6f3:922c64590222798bb761d5b6d8e72950
