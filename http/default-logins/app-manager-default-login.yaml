@@ -1,4 +1,5 @@
 id: app-manager-default-login
+
 info:
   name: ManageEngine Applications Manager - Default Credentials
   author: 0midC13
@@ -8,19 +9,21 @@ info:
   reference:
     - https://www.manageengine.com/products/applications_manager/
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "Applications Manager Login Screen"})
-    max-request: 3
     shodan-query: title:"Applications Manager Login Screen"
     verified: true
-  tags: default-login,manageengine,vuln,zoho
+    max-request: 1
+  tags: default-login,manageengine,zoho,vuln
+
 variables:
-  password: admin
-  username: admin
+  username: "admin"
+  password: "admin"
+
 http:
   - raw:
       - |
         GET /index.do HTTP/1.1
         Host: {{Hostname}}
+
   - raw:
       - |
         POST /j_security_check HTTP/1.1
@@ -30,29 +33,19 @@ http:
         Referer: {{RootURL}}/index.do
 
         clienttype=html&webstart=&j_username=admin&ScreenWidth=1280&ScreenHeight=709&username={{username}}&j_password={{password}}
-  - matchers:
-      - status:
-          - 200
-        type: status
-      - condition: and
-        part: body
-        type: word
-        words:
-          - Super Administrator
-          - Add Application
-      - condition: or
-        negative: true
-        # digest: 4b0a00483046022100aae678531e4d89bf0f59789e2e6cd8e2b65bba7979fec88a5c0fc5162ba05fe3022100a87a37ff4ad76dae2f87c566cf110c59d747b90dfb15ecb8c792f2b1e1e23ec7:922c64590222798bb761d5b6d8e72950
 
-        part: body
-        type: word
-        words:
-          - j_username
-          - j_password
-          - clienttype=html
-    matchers-condition: and
-    raw:
+  - raw:
       - |
         GET /showresource.do?group=All&method=showResourceTypes&monitor_viewtype=categoryview HTTP/1.1
         Host: {{Hostname}}
         Referer: {{RootURL}}/j_security_check
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Super Administrator"
+          - "Add Application"
+        condition: and
+# digest: 4b0a00483046022100c5ef3b42fb05c2bc2285ab3ba0a6d4657e3fff12400e5dd910d828c36cbd1654022100835f6b452949619e29a86742ebb8ff6684c531d1af5b50495f2774c946b3a1fb:922c64590222798bb761d5b6d8e72950

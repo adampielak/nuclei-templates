@@ -5,7 +5,7 @@ info:
   name: Serialization
   severity: Critical
   tags: cve,cisco
-requests:
+http:
 - matchers:
   - part: body
     type: word

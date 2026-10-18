@@ -3,7 +3,7 @@ info:
   author: Reksy
   name: Local File Inclusion Detector
   severity: High
-requests:
+http:
 - matchers:
   - part: body
     type: word
