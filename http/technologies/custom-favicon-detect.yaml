@@ -39,3 +39,8 @@ http:
         name: safire-smart
         dsl:
           - 'status_code==200 && ("1909405893" == mmh3(base64_py(body)))'
+
+      - type: dsl
+        name: bitrix24
+        dsl:
+          - 'status_code==200 && ("-59301345" == mmh3(base64_py(body)))'

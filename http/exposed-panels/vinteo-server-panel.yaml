@@ -1,0 +1,54 @@
+id: vinteo-server-panel
+
+info:
+  name: Vinteo Video Conferencing Server - Panel
+  author: darses
+  severity: info
+  description: |
+    Vinteo Video Conferencing Server (VCS / Video Core) web interface was detected.
+  reference:
+    - https://vinteo.com
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:vinteo:video_core:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: vinteo
+    product: video_core
+    shodan-query:
+      - http.title:"Vinteo"
+  tags: panel,tech,detect,discovery,vinteo
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'name="method" value="vinteo"'
+          - "LLC. Vinteo"
+        condition: or
+
+      - type: word
+        part: body
+        words:
+          - "/assets/js/login.min.js"
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '(?i)/assets/(?:css/theme\.css|js/login\.min\.js)\?v=([0-9.]+)'

@@ -1,0 +1,50 @@
+id: communigate-pro-detect
+
+info:
+  name: CommuniGate Pro Panel - Detect
+  author: darses
+  severity: info
+  description: |
+    CommuniGate Pro unified communications and messaging web interface was detected.
+  reference:
+    - https://www.communigate.com
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:communigate:communigate_pro:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: communigate
+    product: communigate_pro
+    shodan-query:
+      - http.favicon.hash:344867298
+  tags: panel,tech,detect,discovery,communigate
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "/SkinFiles/"
+
+      - type: word
+        part: header
+        words:
+          - "Server: CommuniGatePro"
+
+      - type: status
+        status:
+          - 200
+          - 500
+
+    extractors:
+      - type: regex
+        part: header
+        group: 1
+        regex:
+          - '(?i)Server:\s*CommuniGatePro/([0-9.]+)'

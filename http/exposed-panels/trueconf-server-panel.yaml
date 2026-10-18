@@ -1,0 +1,48 @@
+id: trueconf-server-panel
+
+info:
+  name: TrueConf Server Panel - Detect
+  author: darses
+  severity: info
+  description: |
+    TrueConf Server web interface or guest page was detected.
+  reference:
+    - https://trueconf.com
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:trueconf:trueconf_server:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: trueconf
+    product: trueconf_server
+    shodan-query:
+      - http.favicon.hash:509281308
+  tags: panel,tech,detect,discovery,video-conferencing
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "com.trueconf.videochat"
+          - "TrueConf Server Guest Page"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        name: version
+        group: 1
+        regex:
+          - '(?i)/user-area/chunks/index\.bundle-([0-9.]+)\.js'
