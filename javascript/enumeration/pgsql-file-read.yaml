@@ -47,4 +47,4 @@ javascript:
       - type: json
         json:
           - '.Rows[].pg_ls_dir'
-
+# digest: 4a0a00473045022100ee372a3164d2304e4345e7d7f4f9ad48c20030d6f710b6186edcf50fb6d7a58a02204976e5349ee0c01ff85af63e6d9c0cacd3119886bbe22fc777d5a0bdff3316d0:922c64590222798bb761d5b6d8e72950

@@ -1,4 +1,5 @@
 id: modicon-info
+
 info:
   name: Schneider Modicon PLC Information Disclosure
   author: biero-el-corridor
@@ -6,36 +7,39 @@ info:
   description: |
     Detected Schneider Electric Modicon PLCs via the Modbus TCP protocol by extracting device identification information.Extracted the device model and version from responses on port 502 for fingerprinting and ICS vulnerability assessment.
   metadata:
-    shodan-query: 'Device Identification: Schneider Electric'
     verified: true
-  tags: detect,discovery,ics,modicon,network,schneider,tcp
-tcp:
-  - extractors:
-      - group: 1
-        regex:
-          - Schneider Electric    ([A-Z 0-9a-z.]+)
-        # digest: 4a0a00473045022100b9a6f6a80c11c35c92bbd290a16a8253ac9d63fa9b770c7a3e199c6192ed078a02206940860ab78115b0c25aeff7792034f47901a7321b411c164a2ac99499b64a8d:922c64590222798bb761d5b6d8e72950
+    shodan-query: "Device Identification: Schneider Electric"
+  tags: ics,modicon,schneider,detect,network,tcp
 
-        type: regex
-    host:
-      - '{{Hostname}}'
-    inputs:
-      - data: 000000000005002b0e0200
-        name: info
-        read: 200
+tcp:
+  - inputs:
+      - data: "000000000005002b0e0200"
         type: hex
-      - data: 000f0000000d005a002000140064000000f600
+        read: 200
+        name: info
+      - data: "000f0000000d005a002000140064000000f600"
+        type: hex
+        read: 200
         name: note
-        read: 200
+      - data: "000400000005005a000300"
         type: hex
-      - data: 000400000005005a000300
+        read: 200
         name: info
-        read: 200
-        type: hex
-    matchers:
-      - part: raw
-        type: word
-        words:
-          - Schneider Electric
+
+    host:
+      - "{{Hostname}}"
     port: 502
     read-size: 1024
+
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "Schneider Electric"
+
+    extractors:
+      - type: regex
+        group: 1
+        regex:
+          - "Schneider Electric    ([A-Z 0-9a-z.]+)"
+# digest: 4b0a00483046022100bbbfadafbba53d32918f22125ea8af14d246cdad8c4201da5c09fd0f5ff0ba6d022100deea44e05daea5f88b1f73ff541a3371d3f64f7a21c20c3503e7e99abedd2d79:922c64590222798bb761d5b6d8e72950

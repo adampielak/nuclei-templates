@@ -1,6 +1,6 @@
 id: jamf-pro
 
-http:
+requests:
     matchers:
       - type: word
         words:

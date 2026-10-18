@@ -8,4 +8,3 @@ workflows:
   - template: javascript/detection/rdp-detect.yaml
     subtemplates:
       - tags: rdp
-

@@ -1,4 +1,5 @@
 id: wordfence-waf-logs-disclosure
+
 info:
   name: WordPress Wordfence - WAF Logs and Data Disclosure
   author: ritikchaddha
@@ -13,43 +14,48 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-538
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/plugins/wordfence"})
-    fofa-query: body="/plugins/wordfence"
     max-request: 3
     verified: true
-  tags: exposure,logs,vuln,wordfence,wordpress,wp,wp-plugin
-flow: http(1) && http(2)
-http:
-  - matchers:
-      - internal: true
-        part: body
-        type: word
-        words:
-          - plugins/wordfence
-    method: GET
-    path:
-      - '{{BaseURL}}'
-    redirects: true
-  - matchers:
-      - part: body
-        type: word
-        words:
-          - Index of
-      - condition: or
-        part: body
-        type: word
-        words:
-          - /wp-content/wflogs
-          - /wp-content/plugins/wordfence
-      - status:
-          - 200
-        # digest: 4a0a004730450220136b37cf5a3eaacca5d3a9b072da82d8f42fb134ef4085dc0ac66b5c119e26d9022100fafa14feec0b2d050a48943702f7d053dbb7187ce9f3e8bc16b27e10052c30be:922c64590222798bb761d5b6d8e72950
+    fofa-query: body="/plugins/wordfence"
+  tags: wordpress,wp,wp-plugin,wordfence,logs,exposure
 
-        type: status
-    matchers-condition: and
-    method: GET
+flow: http(1) && http(2)
+
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/wp-content/wflogs/'
-      - '{{BaseURL}}/wp-content/plugins/wordfence/lib/wflogs/'
-      - '{{BaseURL}}/wp-content/plugins/wordfence/tmp/'
+      - "{{BaseURL}}"
+
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "plugins/wordfence"
+        internal: true
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/wflogs/"
+      - "{{BaseURL}}/wp-content/plugins/wordfence/lib/wflogs/"
+      - "{{BaseURL}}/wp-content/plugins/wordfence/tmp/"
+
     stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Index of"
+
+      - type: word
+        part: body
+        words:
+          - "/wp-content/wflogs"
+          - "/wp-content/plugins/wordfence"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a004730450221008a308604fd1bdbce088236340f944570465d4ae7c47267fd2882bd581fa34a9f022055e87b0a3c6087adb21444abbcce4e1adde637348aa1e0dbc37ac51f7f979bf6:922c64590222798bb761d5b6d8e72950

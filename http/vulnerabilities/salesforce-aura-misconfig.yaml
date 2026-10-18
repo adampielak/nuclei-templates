@@ -9,7 +9,7 @@ info:
   # https://www.enumerated.de/index/salesforce
   # Severity of this misconfiguration depends of disclosed information.
 
-http:
+requests:
   - method: POST
     path:
       - "{{BaseURL}}/aura"

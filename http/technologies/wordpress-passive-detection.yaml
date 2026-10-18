@@ -47,4 +47,4 @@ http:
         regex:
           - '\/wp-content\/themes\/([a-zA-Z0-9_-]+)\/'
           - 'themes\/([a-zA-Z0-9_-]+)\/style\.css'
-
+# digest: 4a0a00473045022100dd1dfa16bb34b19352f44d55f8bbe81120111a197a675f41aeadc0cdab94655d022036e5aefbed2c6ee97e147e69479476f66de05340d2118282304c4dbc151435df:922c64590222798bb761d5b6d8e72950

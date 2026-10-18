@@ -22,7 +22,6 @@ http:
       - "{{BaseURL}}/web/index.php/auth/login"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -35,4 +34,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a00473045022100c797576c8d61b0b22746897eec8248eeb4ac379f5b66db2c10bf7054ce0fc89c02200643c41551db7af2e6537a6c5474f7dfe27e35c91ad8bda77693c8bf4d64aead:922c64590222798bb761d5b6d8e72950

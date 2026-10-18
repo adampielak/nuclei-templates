@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDK
   severity: unknown
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"Build Dashboard - Atlassian Bamboo"
   tags: misconfig,atlassian,bamboo
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/allPlans.action"
