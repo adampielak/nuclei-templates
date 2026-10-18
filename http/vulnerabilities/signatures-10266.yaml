@@ -3,7 +3,7 @@ info:
   name: liferay_version_fingerprint
   severity: info
   author: glatisant & erwan
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/WEB-INF/struts-config.xml"

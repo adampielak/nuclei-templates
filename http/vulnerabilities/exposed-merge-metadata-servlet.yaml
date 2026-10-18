@@ -9,7 +9,7 @@ info:
   - https://labs.withsecure.com/publications/securing-aem-with-dispatcher
   severity: medium
   tags: xss,aem
-requests:
+http:
 - matchers:
   - part: header
     type: word
