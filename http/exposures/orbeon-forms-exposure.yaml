@@ -1,5 +1,4 @@
 id: orbeon-forms-exposure
-
 info:
   name: Orbeon Forms Exposure
   author: ritikchaddha
@@ -11,31 +10,28 @@ info:
     - https://github.com/orbeon/orbeon-forms
   metadata:
     max-request: 2
-    vendor: orbeon
     product: orbeon-forms
     shodan-query: http.favicon.hash:1253194620
-  tags: exposure,orbeon,forms,form-runner
-
+    vendor: orbeon
+  tags: discovery,exposure,form-runner,forms,orbeon
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/orbeon/"
-      - "{{BaseURL}}"
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Orbeon
+          - home</a>
+          - Quick Links
+      - status:
+          - 200
+        # digest: 4a0a00473045022100f8713d1e864c1562e426d78960346760ab02753369534f82a7301627308eee84022073abedec59b4f2f6b0d0bcb8a878642d2840b2c56e92c230a319c80a316b4e51:922c64590222798bb761d5b6d8e72950
 
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/orbeon/'
+      - '{{BaseURL}}'
     redirects: true
     stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "Orbeon"
-          - "home</a>"
-          - "Quick Links"
-        condition: and
-
-      - type: status
-        status:
-          - 200
-# digest: 4a0a00473045022100c5178e32f12156a6efcdde7f2ab727df905eccbc8ec3a8e34a538ab33dabaf96022025264b7dd60d05ebf95062ab4e2cb29c73ab9929adfa8b2676782b154722124f:922c64590222798bb761d5b6d8e72950

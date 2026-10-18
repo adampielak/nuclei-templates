@@ -4,7 +4,7 @@ info:
   name: Arbitrary Text Injection
   severity: Low
   tags: injection
-requests:
+http:
 - matchers:
   - part: body
     type: word

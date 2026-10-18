@@ -1,5 +1,4 @@
 id: boa-web-server
-
 info:
   name: Boa Web Server - Detect
   author: johnk3r
@@ -14,28 +13,24 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:boa:boa:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    shodan-query: "Server: Boa/"
     product: boa
+    shodan-query: 'Server: Boa/'
     vendor: boa
-  tags: boa,tech,discovery
-
+    verified: true
+  tags: boa,discovery,tech
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: header
-        regex:
-          - "Server: Boa/"
-
-    extractors:
-      - type: kval
-        part: header
-        kval:
+  - extractors:
+      - kval:
           - Server
-# digest: 4b0a00483046022100cde1ba7a0572a730ccea316420f015f32fffdfb8389b2f4063840f38b754abb7022100920a94795d3f64cf64353a2e92c631f02c069be953b72b377241d1fe87f22c03:922c64590222798bb761d5b6d8e72950
+        part: header
+        type: kval
+    matchers:
+      - part: header
+        regex:
+          - 'Server: Boa/'
+        type: regex
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}'

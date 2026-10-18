@@ -36,4 +36,4 @@ tcp:
       - type: regex
         regex:
           - '[a-z0-9.-]+\.fortinet\.com'
-# digest: 4b0a00483046022100b45a444160e7b90dfead5c8c91f1edeb89ba6b9d0628a832fb08ea7cfadb9083022100a06e9d4839c5f70370c93c2e12ed6a31fbbfc1c856187420939f59ddf56000c4:922c64590222798bb761d5b6d8e72950
+

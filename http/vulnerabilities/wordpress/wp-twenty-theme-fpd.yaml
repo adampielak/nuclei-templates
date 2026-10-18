@@ -29,4 +29,4 @@ http:
           - 'contains(body, "/themes/twentyseventeen/")'
           - 'contains_all(body, "Fatal error", "Call to undefined function")'
         condition: and
-# digest: 490a00463044022025f813d046a7d73d86c8e0f23968c9facf91c7443e09f16b8da0cb737aa9ec8a022000ed0a4a0cb26f5d4d4fe3e915736d0d65a99defac1e897484cf6f88303d34a3:922c64590222798bb761d5b6d8e72950
+

@@ -5,7 +5,7 @@ info:
   name: Assetnote RCE
   severity: Critical
   tags: RCE
-requests:
+http:
 - matchers:
   - part: body
     type: word

@@ -21,7 +21,6 @@ http:
       - "{{BaseURL}}/shibboleth-idp"
 
     stop-at-first-match: true
-
     host-redirects: true
     max-redirects: 2
 
@@ -36,4 +35,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b767eba2d8743faad09dd7f6834947ea48e6145fa288d6ab6e5dfe1ec8d63017022100ce5e644d8da56dd00080e93298c9ced1ddf6b4931cd53df7847c9fce05d12c46:922c64590222798bb761d5b6d8e72950
+

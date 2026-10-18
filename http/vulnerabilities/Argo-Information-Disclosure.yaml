@@ -5,7 +5,7 @@ info:
   name: Argo information disclosure
   severity: High
   tags: argo
-requests:
+http:
 - matchers:
   - part: body
     type: word

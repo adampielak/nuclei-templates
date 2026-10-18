@@ -8,3 +8,4 @@ workflows:
   - template: javascript/enumeration/ldap/ldap-metadata.yaml
     subtemplates:
       - tags: ldap
+
