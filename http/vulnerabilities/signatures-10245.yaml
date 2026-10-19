@@ -3,7 +3,7 @@ info:
   name: moodle_version_fingerprint
   severity: info
   author: glatisant & erwan
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/theme/bootstrapbase/style/moodle.css"
