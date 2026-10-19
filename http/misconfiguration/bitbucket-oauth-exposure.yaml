@@ -105,4 +105,4 @@ http:
         regex:
           - '"bitbucket-oauth":\s*\{[^}]+\}'
           - '"bitbucket":\s*\{[^}]+\}'
-# digest: 4b0a00483046022100daf5c379d7425d219ed3884b4eb3d15d0f5f3dc75c9ed56bb5ea417f20f18ec5022100d76e4051a013522ab33c1ccd4a481fe649ec1c9919cc3735286b158810ef6387:922c64590222798bb761d5b6d8e72950
+

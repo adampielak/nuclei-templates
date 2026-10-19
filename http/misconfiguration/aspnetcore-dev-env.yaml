@@ -38,4 +38,4 @@ http:
           - "ASPNETCORE_ENVIRONMENT"
           - "<environment include=\"Development\">"
         condition: and
-# digest: 490a004630440220354f9b4827a84e2272a50796b1c958983d817f00480c5bb40d1bc2aa9462b4c902203137f8ba7e23cc6b7b02f1bdbed1dca826f497f8318d7405adf5f4a7b85d2e38:922c64590222798bb761d5b6d8e72950
+

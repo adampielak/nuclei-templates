@@ -8,14 +8,25 @@ info:
     Jedox is an Enterprise Performance Management software which is used for planning, analytics and reporting  in finance and other areas such as sales, human resources and procurement.
   reference:
     - https://www.jedox.com
+  classification:
+    cpe: cpe:2.3:a:jedox:jedox:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     vendor: jedox
     product: jedox
-    shodan-query: title:"Jedox Web - Login"
-    google-query: intitle:"Jedox Web Login"
-  tags: panel,jedox,detect
+    shodan-query:
+      - title:"Jedox Web - Login"
+      - http.title:"jedox web - login"
+      - http.title:"jedox web login"
+    google-query:
+      - intitle:"Jedox Web Login"
+      - intitle:"jedox web login"
+      - intitle:"jedox web - login"
+    fofa-query:
+      - title="jedox web login"
+      - title="jedox web - login"
+  tags: panel,jedox,detect,discovery
 
 http:
   - method: GET
@@ -39,4 +50,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022004d15e37c1c51c1918f272c56498271682611f3063a2bf8ac5714d31354bd99c022100d9f5c6777731d0b54c20c306f4153a4bba7a7dbcf01d1f5f35c7fd638fab41f2:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c582e42f3a7b22a592e5fd6f18d41b49f530ee0d08a623d29475af83144b66680220218b8682220fc6f158208d9e7d79cbbe74633bc101bf559f805ed29f03503ea4:922c64590222798bb761d5b6d8e72950

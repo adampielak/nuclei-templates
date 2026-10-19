@@ -23,4 +23,4 @@ http:
           - "hue personal wireless lighting"
           - "Welcome to hue"
         condition: or
-# digest: 4a0a00473045022100860536013b238b57163ce5235784a4dcfa96258598a223393cf9ad0b3b871e07022038751c9baed552337be0a06dc63dde50a1c84c9548ce3eb558f106130c183570:922c64590222798bb761d5b6d8e72950
+

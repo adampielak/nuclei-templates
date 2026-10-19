@@ -41,4 +41,4 @@ http:
         group: 1
         regex:
           - "class=\"header_addl_info\">version ([^<]+)</span>"
-# digest: 4a0a004730450220375953fe6a59f8e38928e876cd4bf3d509df0bbf965f67eb7a58deb3a87f50fd0221009df3d76fec90409c9bb203bf1ac53ea3366cfe11bcb9cb11c1a2ed1ff2485c61:922c64590222798bb761d5b6d8e72950
+

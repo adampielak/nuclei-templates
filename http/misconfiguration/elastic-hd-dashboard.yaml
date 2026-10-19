@@ -5,12 +5,11 @@ info:
   author: tess
   severity: low
   metadata:
-    max-request: 1
     verified: true
     shodan-query: title:"Elastic HD Dashboard"
   tags: misconfig,exposure,elastic
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -9,14 +9,14 @@ info:
     - https://docs.bmc.com/docs/discovery/documentation-home-1098837931.html
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
     verified: true
+    max-request: 1
     shodan-query: http.title:"BMC Software"
-  tags: panel,bmc
+  tags: panel,bmc,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/ui/"
@@ -40,5 +40,4 @@ requests:
         group: 1
         regex:
           - '<span class="logo-version">Version ([0-9.]+)'
-
-# Enhanced by md on 2022/11/02
+# digest: 4a0a004730450220411155147e3bf68e9f234e00f62e23bfa63f330174cbaac9898a66481131f076022100dbebdd365f8df2029d838027ada8deead020e189128c3dfed7c8e8287f9d082c:922c64590222798bb761d5b6d8e72950
