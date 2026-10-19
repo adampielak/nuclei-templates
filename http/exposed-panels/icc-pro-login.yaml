@@ -9,12 +9,13 @@ info:
     - https://www.exploit-db.com/ghdb/7980
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Login to ICC PRO system"
-  tags: panel,icc-pro,edb,discovery
+  tags: panel,icc-pro,edb
 
 http:
   - method: GET
@@ -36,4 +37,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b9824c576e49445cf61a967e0b3be4c4c6c0e01179d5cd8dbf0dcbc808ac8f8e022100eb9e1d6e0d7d674be3480682ae9f01d2af5588a6372b1f0a9c0c33ddcf5431b7:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450220443bc3429625cd7aa79cb6d7e2f9de8fded3fff9a7f00bed0d6395316bc618860221009ca3e0e2b36fe1059f9ae7999da428df1192ea73efaf72ed4c5c92d42ec71165:922c64590222798bb761d5b6d8e72950

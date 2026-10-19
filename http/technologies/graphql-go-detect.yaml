@@ -3,29 +3,32 @@ info:
   name: Graphql Go Detect
   author: princechaddha
   severity: info
-  reference:
-    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
-  tags: discovery,go,graphql,tech
-http:
-  - body: '{"query":""}'
+  reference: https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: tech,graphql,go
+
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/"
+    body: 'query { __typename { }'
+
     headers:
       Content-Type: application/json
-    matchers:
-      - status:
-          - 200
-          - 400
-        type: status
-      - part: body
-        # digest: 4b0a00483046022100ec294a1b5cd757307364641a9a078c1c5e5da80ab24c2aeed4f1948eda93f1e2022100918ae2d267f1303b72346bcad36932d1030e21943e891763e7c3b054b57136f6:922c64590222798bb761d5b6d8e72950
-
-        type: word
-        words:
-          - Must provide an operation.
-    matchers-condition: and
-    method: POST
-    path:
-      - '{{BaseURL}}/graphql'
-      - '{{BaseURL}}/api/graphql'
-      - '{{BaseURL}}/query'
-      - '{{BaseURL}}/'
     redirects: true
+
+  - method: POST
+    path:
+      - "{{BaseURL}}/"
+    body: ' '
+
+    headers:
+      Content-Type: application/json
+    redirects: true
+
+    matchers:
+      - type: word
+        words:
+          - 'Unexpected empty IN'
+          - 'Must provide an operation.'
+        part: body
+        condition: or

@@ -3,40 +3,41 @@ info:
   name: Graphql Hasura Detect
   author: princechaddha
   severity: info
-  reference:
-    - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
-  tags: discovery,graphql,hasura,tech
-http:
-  - body: '{"query":"query {aa}"}'
+  reference: https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  tags: tech,graphql,hasura
+
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/"
+    body: 'query {aa}'
+
     headers:
       Content-Type: application/json
-    matchers:
-      - status:
-          - 200
-        type: status
-      - part: body
-        type: word
-        words:
-          - 'field "aa" not found in type: ''query_root'''
-      - negative: true
-        part: header
-        type: word
-        words:
-          - 'Content-Type: text/html'
-      - condition: or
-        negative: true
-        # digest: 4a0a00473045022100e936cda8fa1464f0cca7effdfbf15d45635c1434382fd96b6767b9977c29085f022041b970db849cc56f479160464afce059fcbcab64fa4249a593655fbbf05fc4bb:922c64590222798bb761d5b6d8e72950
-
-        part: body
-        type: word
-        words:
-          - <html
-          - <body
-    matchers-condition: and
-    method: POST
-    path:
-      - '{{BaseURL}}/graphql'
-      - '{{BaseURL}}/api/graphql'
-      - '{{BaseURL}}/query'
-      - '{{BaseURL}}/'
     redirects: true
+
+  - method: POST
+    path:
+      - "{{BaseURL}}/"
+    body: 'query @skip {__typename}'
+
+    headers:
+      Content-Type: application/json
+    redirects: true
+
+  - method: POST
+    path:
+      - "{{BaseURL}}/"
+    body: 'query { __schema }'
+
+    headers:
+      Content-Type: application/json
+    redirects: true
+    matchers:
+      - type: word
+        words:
+          - "field \"aaa\" not found in type: 'query_root'"
+          - "directive \"skip\" is not allowed on a query"
+          - "missing selection set for \"__Schema\""
+        part: body
+        condition: or

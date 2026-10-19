@@ -14,7 +14,7 @@ info:
     vendor: webkul
     product: qloapps
     fofa-query: title="QloApps Installation"
-  tags: install,qloapps,misconfig,exposure,vuln
+  tags: install,qloapps,misconfig,exposure
 
 http:
   - method: GET
@@ -35,4 +35,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a0047304502201779c62d3f5da450b53b0996d9ac1faff72ea6b20d755bf9e067ec460b0f0965022100b1ea175afc7639a849bb6e4f28f2b82e4c262cbff032824d02dab21840d24062:922c64590222798bb761d5b6d8e72950

@@ -1,4 +1,5 @@
 id: jfrog-artifactory-build-exposure
+
 info:
   name: JFrog Artifactory Build - Exposure
   author: theamanrawat
@@ -9,33 +10,35 @@ info:
     - https://jfrog.com/help/r/jfrog-rest-apis/builds
     - https://jfrog.com/artifactory/
   metadata:
-    runzero-match: service["product"] contains "JFrog:Artifactory"
-    fofa-query: title="Artifactory"
-    max-request: 1
-    shodan-query: http.title:"Artifactory"
     verified: true
-  tags: artifactory,cicd,exposure,jfrog,misconfig,vuln
+    max-request: 1
+    shodan-query: 'http.title:"Artifactory"'
+    fofa-query: 'title="Artifactory"'
+  tags: jfrog,artifactory,exposure,misconfig,cicd
+
 http:
-  - matchers:
-      - condition: and
+  - method: GET
+    path:
+      - "{{BaseURL}}/artifactory/api/build"
+
+    matchers-condition: and
+    matchers:
+      - type: word
         part: body
-        type: word
         words:
           - '"builds"'
           - '"uri"'
           - '"lastStarted"'
-      - condition: or
-        part: content_type
-        type: word
-        words:
-          - application/json
-          - application/vnd.org.jfrog
-      - status:
-          - 200
-        # digest: 4a0a004730450220475e5dfde4cb291bcfb197fc5ca26b7014294d4f87ec91502394f98152dcbd95022100d18ea931d7cb02223aa059d016324e0d69babd3500d9d47dd85b2aebb0726639:922c64590222798bb761d5b6d8e72950
+        condition: and
 
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/artifactory/api/build'
+      - type: word
+        part: content_type
+        words:
+          - "application/json"
+          - "application/vnd.org.jfrog"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100c41177edbebecffe44bf868a8c6d28eac1a6535ad658d4fa0f6ddf234c269ed3022100b5bf7a02a3f21e1eae7a101610884fe6b0337c5feadbc79ca50d4eb04cc1e3b2:922c64590222798bb761d5b6d8e72950

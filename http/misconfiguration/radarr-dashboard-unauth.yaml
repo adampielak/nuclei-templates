@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"radarr"
-  tags: radarr,dashboard,unauth,misconfig,vuln
+  tags: radarr,dashboard,unauth,misconfig
 
 http:
   - method: GET
@@ -36,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 490a0046304402201c1660f877f8c4db08d8bee7b0fed2c8fc10250db5b2250428cadbe2a43a00c602200cf6abc4bf3d8b48fa9be89d4764535cd3cc8cd90482f70992ca12d0760dabd7:922c64590222798bb761d5b6d8e72950
