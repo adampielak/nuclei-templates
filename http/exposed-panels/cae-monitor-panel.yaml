@@ -1,4 +1,5 @@
 id: cae-monitor-panel
+
 info:
   name: CAE Monitoring - Login Panel
   author: biero-el-corridor
@@ -6,22 +7,26 @@ info:
   description: |
     Identified an exposed CAE Monitoring login panel.
   metadata:
-    max-request: 1
     shodan-query: http.favicon.hash:-268676052
     verified: true
-  tags: cae,detect,discovery,login,panel
+    max-request: 1
+  tags: cae,login,panel,detect,discovery
+
 http:
-  - matchers:
-      - condition: or
-        part: body
-        type: word
-        words:
-          - title="CAE Home Page"
-          - alt="CAE"
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}/index.html'
+      - "{{BaseURL}}/index.html"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'title="CAE Home Page"'
+          - 'alt="CAE"'
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 490a0046304402205a948fe23a10fb2f1926ce3b45da4b26780d2dc0db3148241127b7a8cbdefcf402205e00e9a37be70acf6d4f4777949aa1550d81f5bc4f41db9edf003d20e00804be:922c64590222798bb761d5b6d8e72950

@@ -11,7 +11,7 @@ info:
     max-request: 1
     shodan-query: title:"login" product:"Avtech"
     fofa-query: app="AVTECH-视频监控"
-  tags: ssrf,avtech,unauth,iot
+  tags: ssrf,avtech,unauth,iot,vuln
 
 http:
   - method: GET
@@ -36,5 +36,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100ec5b7f8b8cad83cf6aac91d8208f35873b33937d61ed95ff05ac72264e77c85e022047409f618785913f45532725bf9910384150b82cf2c8cdddbda079afe28d8f0b:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221008129e0eedf752d8e691ba7330a495676199d932104c48775dec98a15a3dd9677022100b781a3be4d8821304913559b3783339ed61d2cf9d5c5afe859ece74fd38be1b8:922c64590222798bb761d5b6d8e72950
