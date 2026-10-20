@@ -4,14 +4,12 @@ info:
   name: UniFi Wizard Installer
   author: DhiyaneshDk
   severity: high
-  description: UniFi Wizard is susceptible to the Installation page exposure due to misconfiguration.
   metadata:
     verified: true
-    max-request: 1
     shodan-query: title:"UniFi Wizard"
   tags: misconfig,install,unifi,exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/manage/wizard/"
@@ -35,4 +33,3 @@ http:
         group: 1
         regex:
           - "window.unifiConfig.version = '(.*)'"
-# digest: 4a0a00473045022100dffecb95a99e933acd97d061a0f75fa1529383f7d6698c2de3bf436da5291b3b02203582cc960c12e358ea6877bda16e1d432621c2f29879f0c040d2c07f4c2ca23d:922c64590222798bb761d5b6d8e72950

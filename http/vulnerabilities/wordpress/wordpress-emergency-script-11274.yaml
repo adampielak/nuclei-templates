@@ -1,4 +1,5 @@
 id: wordpress-emergency-script
+
 info:
   name: WordPress Emergency Script
   author: dwisiswant0
@@ -6,10 +7,12 @@ info:
   reference:
     - https://wordpress.org/support/article/resetting-your-password/#using-the-emergency-password-reset-script
   tags: wordpress
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/emergency.php"
+
     matchers-condition: and
     matchers:
       - type: word

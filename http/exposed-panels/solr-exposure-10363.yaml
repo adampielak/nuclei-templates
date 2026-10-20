@@ -1,9 +1,11 @@
 id: solr-exposure
+
 info:
   name: Apache Solr Exposure
   author: pdteam
   severity: medium
   tags: panel
+
 requests:
   - method: GET
     path:

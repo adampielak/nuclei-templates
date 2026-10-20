@@ -1,4 +1,5 @@
 id: wordpress-accessible-wpconfig
+
 info:
   name: WordPress wp-config Detection
   author: Kiblyn11,zomsop82,madrobot,geeknik,daffainfo,r12w4n
@@ -9,6 +10,7 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   tags: wordpress,backup
+
 requests:
   - method: GET
     path:
@@ -32,6 +34,7 @@ requests:
       - '{{BaseURL}}/wp-config.php.orig'
       - '{{BaseURL}}/wp-config.php.original'
       - '{{BaseURL}}/_wpeprivate/config.json'
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -41,6 +44,7 @@ requests:
           - "DB_PASSWORD"
         part: body
         condition: and
+
       - type: status
         status:
           - 200

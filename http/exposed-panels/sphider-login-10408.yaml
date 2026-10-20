@@ -1,4 +1,5 @@
 id: sphider-login
+
 info:
   name: Sphider Admin Login
   author: dhiyaneshDK
@@ -6,12 +7,14 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6641
   tags: panel
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/admin/spider.php'
       - '{{BaseURL}}/sphider/admin/admin.php'
       - '{{BaseURL}}/search/admin/admin.php'
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:

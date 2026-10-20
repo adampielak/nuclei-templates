@@ -1,10 +1,12 @@
 id: thinkcmf-rce
+
 info:
   name: ThinkCMF RCE
   author: pikpikcu
   severity: critical
   reference: https://www.freebuf.com/vuls/217586.html
   tags: thinkcmf,rce
+
 requests:
   - method: GET
     path:
@@ -12,6 +14,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/poc.php"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -19,6 +22,7 @@ requests:
           - "PHP Extension"
           - "PHP Version"
         condition: and
+
       - type: status
         status:
           - 200

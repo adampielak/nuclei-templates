@@ -1,4 +1,5 @@
 id: teradici-pcoip
+
 info:
   name: Teradici PCoIP Detection
   author: pdteam
@@ -9,14 +10,17 @@ info:
   classification:
     cwe-id: CWE-200
   tags: tech,pcoip
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/info/"
+
     matchers:
       - type: word
         words:
           - "PCoIP Connection Manager"
+
     extractors:
       - type: regex
         group: 1

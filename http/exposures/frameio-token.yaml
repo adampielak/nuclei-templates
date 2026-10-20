@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: frameio,exposure,tokens
+  tags: frameio,exposure,tokens,vuln
 
 http:
   - method: GET
@@ -22,5 +22,4 @@ http:
         part: body
         regex:
           - fio-u-(?i)[a-z0-9\-_=]{64}
-
-# digest: 4a0a0047304502207b502173a28c351808849cf5bfc490409a6cf9b4a260a58d0f7a00f43101a9bc022100c02ddc0f512bd72732c939eab30613f63f8a1304f445605169ede711080a9c85:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200a6918005ec43374b75c8e4899c4c6c718160c47ffb3eef2c9f55c1c98a74fd6022100caa5ffe0c102f56dfa05bd5b1d6586c017ae30c651fd7fbb6a59e4b640d09561:922c64590222798bb761d5b6d8e72950

@@ -4,14 +4,12 @@ info:
   name: Production Log File Disclosure
   author: geeknik
   severity: low
-  description: Production log file was exposed.
   metadata:
-    verified: true
-    max-request: 3
+    verified: "true"
     github-query: filename:production.log Connecting to database specified by database.yml
-  tags: exposure,files,logs,vuln
+  tags: exposure,files,logs
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/log/production.log'
@@ -19,7 +17,6 @@ http:
       - '{{BaseURL}}/production.log'
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -35,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a09bf73323056de07390be1e34a353b40a86b2a03a86f2799a40ae0fe5e9cf350220412dab6d06a8521fa14aa6531ca92ba4a6fcc6b84434c89bda9424ffe66d3a91:922c64590222798bb761d5b6d8e72950

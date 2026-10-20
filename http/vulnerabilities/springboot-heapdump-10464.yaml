@@ -1,15 +1,18 @@
 id: springboot-heapdump
+
 info:
   name: Detect Springboot Heapdump Actuator
   author: that_juan_ & dwisiswant0 & wdahlenb
   severity: critical
   description: Environment variables and HTTP requests can be found in the HPROF
   tags: springboot,disclosure
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/heapdump"
       - "{{BaseURL}}/actuator/heapdump"
+
     max-size: 2097152 # 2MB - Max Size to read from server response
     matchers-condition: and
     matchers:
@@ -20,9 +23,11 @@ requests:
           - "4850524f46" # "HPROF"
           - "1f8b080000000000" # Gunzip magic byte
         condition: or
+
       - type: status
         status:
           - 200
+
       - type: word
         words:
           - "application/octet-stream"
@@ -30,6 +35,7 @@ requests:
           - "application/vnd.spring-boot.actuator.v1+json"
         part: header
         condition: or
+
       - type: dsl
         dsl:
           - "len(body) >= 100000"
