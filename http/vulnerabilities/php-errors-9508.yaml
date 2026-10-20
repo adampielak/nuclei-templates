@@ -1,13 +1,16 @@
 id: php_errors
+
 info:
   name: PHP errors
   author: w4cky_
   severity: info
   tags: debug
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers:
       - type: word
         words:

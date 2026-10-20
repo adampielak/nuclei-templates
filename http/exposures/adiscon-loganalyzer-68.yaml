@@ -1,4 +1,5 @@
 id: adiscon-loganalyzer
+
 info:
   name: Detect exposed Adiscon LogAnalyzer
   author: geeknik
@@ -6,10 +7,12 @@ info:
   description: Adiscon LogAnalyzer is a web interface to syslog and other network event data. It provides easy browsing, analysis of realtime network events and reporting services.
   reference: https://loganalyzer.adiscon.com/
   tags: adiscon,loganalyzer,syslog,exposures
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
+
     matchers-condition: and
     matchers:
       - type: word
@@ -20,9 +23,11 @@ requests:
           - 'value="EVTRPT"'
           - 'value="WEBLOG"'
         condition: and
+
       - type: status
         status:
           - 200
+
       - type: word
         part: header
         words:

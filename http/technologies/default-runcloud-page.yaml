@@ -8,7 +8,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Welcome To RunCloud"
-  tags: tech,runcloud,default-page
+  tags: tech,runcloud,default-page,discovery
 
 http:
   - method: GET
@@ -25,5 +25,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502200ec60fb573b738b7375d4a5c4d5484c4242d88576aeea36ccf3f2f5b4816c3f3022100df96b36bb690e55068c543de5030a17fc67bc5d328bbf98e6c2436efff85200d:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402205abffc2140c5bec89026062a68b04abbb6233823e78cbbd31d34bb8286383df70220138b435aebf38654f240d85803eeb7412c4716ba67833e71f346c6f3a9f49ded:922c64590222798bb761d5b6d8e72950

@@ -7,13 +7,15 @@ info:
   description: airCube Dashboard login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:h:ui:aircube:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"AirCube Dashboard"
-  tags: panel,aircube
+    product: aircube
+    vendor: ui
+  tags: panel,aircube,discovery
 
 http:
   - method: GET
@@ -30,5 +32,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a004730450220142731bb41dfdf971dc26950f8d20c9d6b23f9b8fde977b4dc6fc2c02adabc2c022100a859ebaf732a39c9cc6b0f11880934a454ea18d9a77f01ce3a01c29ba10ce2c2:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ff31111aa627e5cc486fd7cb37aec62cc8b750ddec0671e03cb95aa48f4b4905022074656789eb5772cfc9df220aed8fcc74fc4ad5089c301561b58ffdb09c031f3c:922c64590222798bb761d5b6d8e72950
