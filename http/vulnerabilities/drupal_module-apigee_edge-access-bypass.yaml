@@ -4,11 +4,11 @@ info:
   name: drupal_module-apigee_edge-access-bypass
   author: Bishopfox
   severity: medium
-  description: "The Apigee Edge module allows connecting a Drupal site to Apigee Edge in order to build a developer portal. It contains an Apigee Edge Teams submodule that provides shared app functionality by allowing developers to be organized into teams. The Apigee Edge Teams submodule has an information disclosure vulnerability. The Add team member form displays an email autocomplete field which can expose the email addresses of other accounts in the system.  This vulnerability is mitigated by the fact that to have access to the form, the site must have the Apigee Edge Teams submodule enabled, and the user must have a team role that has the Manage team members permission. (Note that team roles and permissions are not related to Drupal core roles and permissions)."
+  description: "The Apigee Edge module allows connecting a Drupal site to Apigee Edge in order to build a developer portal.  The module did not properly validate user access for data creation in certain circumstances."
   reference:
-    - https://www.drupal.org/sa-contrib-2020-028
+    - https://www.drupal.org/sa-contrib-2021-020
   metadata:
-    security-risk: "Moderately critical 10∕25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Default"
+    security-risk: "Moderately critical 11∕25 AC:Basic/A:User/CI:None/II:Some/E:Theoretical/TD:All"
     vulnerability: "access-bypass"
     fofa-query: "/sites/all/modules/apigee_edge/"
     google-query: "inurl:'/sites/all/modules/apigee_edge/"

@@ -18,7 +18,7 @@ variables:
   service: acm
   region: us-east-1
 
-http:
+requests:
   - raw:
       - |
         POST https://{{service}}.{{region}}.amazonaws.com HTTP/1.1

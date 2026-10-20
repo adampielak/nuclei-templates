@@ -10,7 +10,7 @@ info:
     - https://portswigger.net/web-security/request-smuggling
   tags: vuln,vulnerabilities,smuggling
 
-http:
+requests:
   - raw:
     - |+
       POST / HTTP/1.1

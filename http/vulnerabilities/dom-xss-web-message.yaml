@@ -6,7 +6,7 @@ info:
   severity: medium
   tags: xss,dom-xss
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

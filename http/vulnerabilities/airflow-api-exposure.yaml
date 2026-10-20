@@ -4,8 +4,9 @@ info:
   name: Apache Airflow API Exposure / Unauthenticated Access
   author: pd-team
   severity: medium
+  tags: apache,airflow,unauth
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/api/experimental/latest_runs'

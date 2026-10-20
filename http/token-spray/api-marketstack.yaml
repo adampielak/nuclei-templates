@@ -10,7 +10,7 @@ info:
   tags: token-spray,marketstack
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.marketstack.com/v1/eod?access_key={{token}}&symbols=AAPL"

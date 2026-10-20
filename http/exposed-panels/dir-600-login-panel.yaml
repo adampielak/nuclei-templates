@@ -6,7 +6,7 @@ info:
   severity: info
   tags: dlink,router,panel
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

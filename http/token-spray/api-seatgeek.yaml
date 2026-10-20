@@ -10,7 +10,7 @@ info:
   tags: token-spray,seatgeek
 
 self-contained: true
-http:
+requests:
   - method: GET
     path:
       - "https://api.seatgeek.com/2/events?client_id={{token}}"

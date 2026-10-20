@@ -1,5 +1,4 @@
 id: duplicati-detect
-
 info:
   name: Duplicati - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://duplicati.com/
     - https://github.com/duplicati/duplicati
   metadata:
-    verified: true
     max-request: 1
-    vendor: duplicati
     product: duplicati
     shodan-query: 'http.title:"Duplicati Login"'
-  tags: duplicati,tech,detect,backup
-
+    vendor: duplicati
+    verified: true
+  tags: backup,detect,duplicati,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -33,8 +30,7 @@ http:
           - 'login/login.js'
           - '<h2>Duplicati</h2>'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100eb0db375201895d3f2c007bdb967ddb3f727d3741b09bb81ee583c400157abab0221008eec1a4a99b995165f1589b5de855f676c712a9303c3d515dba37bdf6c570159:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100eb0db375201895d3f2c007bdb967ddb3f727d3741b09bb81ee583c400157abab0221008eec1a4a99b995165f1589b5de855f676c712a9303c3d515dba37bdf6c570159:922c64590222798bb761d5b6d8e72950

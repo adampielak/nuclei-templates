@@ -4,7 +4,7 @@ info:
   author: yourname
   severity: high
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.bash_history"

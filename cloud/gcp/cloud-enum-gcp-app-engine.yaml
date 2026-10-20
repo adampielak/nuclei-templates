@@ -14,7 +14,7 @@ variables:
   baseDNS: "appspot.com"
   loginRedirect: "accounts.google.com"
 
-http:
+requests:
   - raw:
       - |
         GET https://{{keyword}}.{{baseDNS}} HTTP/1.1
