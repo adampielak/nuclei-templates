@@ -9,7 +9,7 @@ info:
     shodan-query: title:"Shopify App — Installation"
   tags: misconfig,shopify,install
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

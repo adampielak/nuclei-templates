@@ -193,31 +193,4 @@ javascript:
 
     args:
       Host: "{{Host}}"
-      Port: "1666"
-
-    matchers:
-      - type: word
-        words:
-          - '"serverRoot":'
-
-    extractors:
-      - type: json
-        name: version
-        json:
-          - '.[].version'
-
-      - type: json
-        name: server_root
-        json:
-          - '.[].serverRoot'
-
-      - type: json
-        name: server_addr
-        json:
-          - '.[].serverAddr'
-
-      - type: json
-        name: license
-        json:
-          - '.[].license'
-# digest: 4a0a00473045022100e1523a8bf2a2f3b6075f2573452cc723f608349ec0f547a2c36f9c5ba3b71a26022045cf906a0030ea8448cee45fc0a4f850d7747c80aab06b5414f1860add790e17:922c64590222798bb761d5b6d8e72950
+      Port: 

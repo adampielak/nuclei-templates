@@ -1,6 +1,6 @@
 id: git-urls
 
-http:
+requests:
   - method: GET
     path:
       - /.git/config

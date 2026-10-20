@@ -1,0 +1,33 @@
+id: woodwing-phpinfo
+
+info:
+  name: Woodwing Studio Server - Phpinfo Config
+  author: pdteam
+  severity: medium
+  description: Phpinfo Config file exposed in Woodwing Studio Server.
+  reference:
+    - https://twitter.com/ynsmroztas/status/1680961398011047936
+  metadata:
+    max-request: 2
+    shodan-query: http.title:"WoodWing Studio Server"
+    fofa-query: title=="WoodWing Studio Server"
+  tags: woodwing,phpinfo
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/StudioServer/server/wwtest/phpinfo.php"
+      - "{{BaseURL}}/server/wwtest/phpinfo.php"
+
+    stop-at-first-match: true
+    redirects: true
+    max-redirects: 2
+    matchers:
+      - type: dsl
+        dsl:
+          - contains(tolower(body), 'woodwing')
+          - contains(tolower(body), 'php extension')
+          - contains(tolower(body), 'php version')
+          - status_code == 200
+        condition: and
+# digest: 490a0046304402205b1d98d21b8b0a3d6a52ba8990577a2005d753529863c5280a257fafc07cb128022010459d94f591e97b0481e8dd2f2680fc625f5f82e3c7036d2caaa862f148b2d6:922c64590222798bb761d5b6d8e72950

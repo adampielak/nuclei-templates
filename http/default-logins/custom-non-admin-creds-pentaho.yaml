@@ -9,7 +9,7 @@ info:
     - https://www.hitachivantara.com/en-us/pdfd/training/pentaho-lesson-1-user-console-overview.pdf
   tags: pentaho,default-login
 
-http:
+requests:
   - raw:
       - |-
         POST /pentaho/j_spring_security_check HTTP/1.1
