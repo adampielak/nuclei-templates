@@ -1,4 +1,5 @@
 id: openproject-default-login
+
 info:
   name: OpenProject - Default Admin Credentials
   author: 0x_Akoko
@@ -10,21 +11,24 @@ info:
     - https://www.openproject.org/docs/api/introduction/
     - https://github.com/opf/openproject
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)OpenProject"})
-    fofa-query: app="OpenProject"
     max-request: 3
-    shodan-query: http.title:"OpenProject"
     verified: true
-  tags: auth,default-login,misconfig,openproject
+    fofa-query: app="OpenProject"
+    shodan-query: http.title:"OpenProject"
+  tags: openproject,default-login,auth,misconfig
+
 variables:
   username: "admin"
   password: "admin"
+
 flow: http(1) && http(2) && http(3)
+
 http:
   - raw:
       - |
         GET /login HTTP/1.1
         Host: {{Hostname}}
+
     extractors:
       - type: regex
         name: csrf_token
@@ -33,11 +37,13 @@ http:
         regex:
           - '<meta name="csrf-token" content="([^"]+)"'
         internal: true
+
     matchers:
       - type: dsl
         dsl:
           - 'status_code == 200 && contains(body, "OpenProject")'
         internal: true
+
   - raw:
       - |
         POST /login HTTP/1.1
@@ -45,21 +51,25 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         authenticity_token={{url_encode(csrf_token)}}&username={{username}}&password={{password}}&login=Sign+in
+
     redirects: true
     max-redirects: 3
+
     matchers:
       - type: dsl
         dsl:
           - 'status_code == 302'
         internal: true
+
   - raw:
       - |
         GET /api/v3/users/me HTTP/1.1
         Host: {{Hostname}}
+
     matchers:
       - type: dsl
         dsl:
           - 'contains_all(body, "\"_type\":\"User\"", "\"admin\":true", "\"login\":\"admin\"")'
           - 'status_code == 200'
         condition: and
-        # digest: 4b0a00483046022100bf1342aefce93ed830382d1d2b9cddfd969cf0c9550c6c50cf8daa9d7b3a9d09022100c9f8c1d8ba6cb07a232c67a878ceea2096d4f4527468cba2174c73d652b0a518:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100bf1342aefce93ed830382d1d2b9cddfd969cf0c9550c6c50cf8daa9d7b3a9d09022100c9f8c1d8ba6cb07a232c67a878ceea2096d4f4527468cba2174c73d652b0a518:922c64590222798bb761d5b6d8e72950

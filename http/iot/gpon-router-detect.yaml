@@ -1,4 +1,5 @@
 id: gpon-router-detect
+
 info:
   name: GPON Home Gateway - Detect
   author: K3ysTr0K3R
@@ -13,27 +14,30 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:o:dasannetworks:gpon_router_firmware:-:*:*:*:*:*:*:*
   metadata:
-    fofa-query: title="GPON Home Gateway"
+    verified: true
     max-request: 1
+    vendor: dasannetworks
     product: gpon_router_firmware
     shodan-query:
       - http.title:"GPON Home Gateway"
       - title:"GPON Home Gateway"
-    vendor: dasannetworks
-    verified: true
-  tags: detect,discovery,gpon,iot,router,tech
+    fofa-query: title="GPON Home Gateway"
+  tags: tech,gpon,router,iot,detect,discovery
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: regex
         part: body
         regex:
           - '(?i)<title>\s*GPON Home Gateway\s*</title>'
+
       - type: status
         status:
           - 200
           - 401
-        # digest: 4a0a00473045022100bd998b662de56147df0884ba0690d9e235d13262e67e420c0250e5d4bd4c3aa20220640636f31d59a70244d9d16b11f628b49642033baf975d81df2fc059369c91ad:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100bd998b662de56147df0884ba0690d9e235d13262e67e420c0250e5d4bd4c3aa20220640636f31d59a70244d9d16b11f628b49642033baf975d81df2fc059369c91ad:922c64590222798bb761d5b6d8e72950

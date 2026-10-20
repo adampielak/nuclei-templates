@@ -1,4 +1,5 @@
 id: budibase-admin-installer
+
 info:
   name: Budibase - Admin Installer
   author: 0x_Akoko
@@ -8,17 +9,19 @@ info:
   reference:
     - https://github.com/Budibase/budibase
   metadata:
-    fofa-query: app="Budibase"
-    max-request: 1
-    product: budibase
-    shodan-query: http.title:"Budibase"
-    vendor: budibase
     verified: true
-  tags: budibase,exposure,installer,setup
+    max-request: 1
+    vendor: budibase
+    product: budibase
+    fofa-query: app="Budibase"
+    shodan-query: http.title:"Budibase"
+  tags: exposure,setup,installer,budibase
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/api/global/configs/checklist"
+
     matchers:
       - type: dsl
         dsl:
@@ -27,4 +30,4 @@ http:
           - 'contains(header, "X-Budibase-Tenant-Id")'
           - 'contains_all(body, "\"adminUser\":{\"checked\":false", "\"smtp\"", "\"branding\"", "/builder/portal")'
         condition: and
-        # digest: 4b0a004830460221009af8b6a7e68523f5e6a95ff5f43fe3c3b6dda9f170881dc599d72178252c7b25022100df45ea55d37657dcd9186c6cfb07cf891e09662e4ba9278f77ff18e83b404a62:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221009af8b6a7e68523f5e6a95ff5f43fe3c3b6dda9f170881dc599d72178252c7b25022100df45ea55d37657dcd9186c6cfb07cf891e09662e4ba9278f77ff18e83b404a62:922c64590222798bb761d5b6d8e72950
