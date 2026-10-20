@@ -3,7 +3,7 @@ info:
   name: Search for log.txt
   author: Clark
   severity: meduim
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/log/log.txt"
