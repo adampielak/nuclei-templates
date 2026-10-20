@@ -1,5 +1,4 @@
 id: gost-ssh-detect
-
 info:
   name: GO Simple Tunnel (GOST) SSH Listener - Detect
   author: darses
@@ -11,36 +10,30 @@ info:
     - https://github.com/go-gost/gost
     - https://gost.run
   metadata:
-    verified: true
     max-requests: 2
-    vendor: gost
     product: gost
     shodan-query:
       - product:"Go SSH"
-  tags: network,tcp,code,ssh,proxy,tunnel,c2,gost,detect
-
+    vendor: gost
+    verified: true
+  tags: c2,code,detect,gost,network,proxy,ssh,tcp,tunnel
 flow: tcp(1) && javascript(1)
-
 tcp:
   - inputs:
       - data: "SSH-2.0-Nuclei\r\n"
         read: 20
-
     host:
       - "{{Hostname}}"
     port: 22,443,2222
-
     matchers:
       - type: word
         part: raw
         words:
           - "SSH-2.0-Go"
         internal: true
-
 javascript:
   - pre-condition: |
       isPortOpen(Host, Port);
-
     code: |
       const m = require("nuclei/ssh");
       const c = m.SSHClient();
@@ -79,17 +72,14 @@ javascript:
 
       Export("gost_banner", rawBanner);
       "gost-ssh-detected";
-
     args:
       Host: "{{Host}}"
-
     matchers:
       - type: dsl
         dsl:
           - success == true
-
     extractors:
       - type: kval
         kval:
           - gost_banner
-# digest: 490a00463044022038cf1d999c9016ce07dddc00fb125db11b0e257dd9ee59b837d9a0372f543289022001bd735e7c8cfd997ea6a4295eba2da56ffd259a00ae3d591804cebcce48211d:922c64590222798bb761d5b6d8e72950
+        # digest: 490a00463044022038cf1d999c9016ce07dddc00fb125db11b0e257dd9ee59b837d9a0372f543289022001bd735e7c8cfd997ea6a4295eba2da56ffd259a00ae3d591804cebcce48211d:922c64590222798bb761d5b6d8e72950
