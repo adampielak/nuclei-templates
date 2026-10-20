@@ -1,5 +1,4 @@
 id: vigor-login
-
 info:
   name: Vigor Login Page
   author: dhiyaneshDK
@@ -7,12 +6,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6610
   tags: panel,login
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/weblogin.htm'
-
     matchers-condition: and
     matchers:
       - type: word

@@ -9,16 +9,15 @@ info:
   metadata:
     plugin_namespace: simple-custom-post-order
     wpscan: https://wpscan.com/plugin/simple-custom-post-order
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
-requests:
+http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/simple-custom-post-order/readme.txt"
 
     payloads:
-      last_version: ../../../helpers/wordpress/plugins/simple-custom-post-order.txt
+      last_version: helpers/wordpress/plugins/simple-custom-post-order.txt
 
     extractors:
       - type: regex
@@ -47,3 +46,4 @@ requests:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 490a004630440220171feb63dc446576132f1220186cb8734024f436971012563219309d0aec73ec02202eec0bd3416b73fc8ee5c7158a1c03e003e2710a879c91ec0adbb13bb60db4a1:922c64590222798bb761d5b6d8e72950

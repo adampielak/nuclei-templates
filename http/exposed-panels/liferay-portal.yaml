@@ -10,14 +10,20 @@ info:
     - https://github.com/mzer0one/CVE-2020-7961-POC
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:liferay:liferay_portal:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    shodan-query: http.favicon.hash:129457226
-  tags: panel,liferay,portal
+    max-request: 3
+    vendor: liferay
+    product: liferay_portal
+    shodan-query:
+      - http.favicon.hash:129457226
+      - cpe:"cpe:2.3:a:liferay:liferay_portal"
+    fofa-query: icon_hash=129457226
+  tags: panel,liferay,portal,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -48,5 +54,4 @@ requests:
         group: 2
         regex:
           - '(i?)Liferay-Portal:.*?(\d+\.?.*?)\s'
-
-# Enhanced by md on 2022/11/28
+# digest: 490a0046304402204642334199c112e35f3e3e70499ba2a839eef294819505337bdc7d13e9c9f4f6022026b250aec0ae8791da03f12fd008022a5afdd1d0086be398069b3c1f300f13d4:922c64590222798bb761d5b6d8e72950

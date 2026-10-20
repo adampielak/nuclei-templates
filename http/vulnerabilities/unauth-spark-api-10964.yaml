@@ -5,7 +5,6 @@ info:
   severity: medium
   reference: https://xz.aliyun.com/t/2490
   tags: spark,unauth
-
 requests:
   - method: GET
     path:

@@ -8,15 +8,16 @@ info:
   reference:
     - https://docs.commscope.com/bundle/fastiron-08092-securityguide/page/GUID-32D3BB01-E600-4FBE-B555-7570B5024D34.html
   classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
-    cvss-score: 8.3
-    cwe-id: CWE-522
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cwe-id: CWE-1391
   metadata:
     verified: true
+    max-request: 1
     shodan-query: title:"ruckus"
-  tags: default-login,router,ruckus
+  tags: default-login,router,ruckus,vuln
 
-requests:
+http:
   - raw:
       - |
         POST /forms/doLogin HTTP/1.1
@@ -31,10 +32,9 @@ requests:
         - super
       password:
         - sp-admin
-
     host-redirects: true
     max-redirects: 2
-    cookie-reuse: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -47,5 +47,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/09
+# digest: 4a0a00473045022071c23a5a9b774961b7f7067f5c890af834cf01b511cf43768083d441a38e52a602210081722cd30b9e48330c00e05c0e4c4c548d197eacc9d9377ce5799f74ca39d92f:922c64590222798bb761d5b6d8e72950

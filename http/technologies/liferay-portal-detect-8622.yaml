@@ -1,5 +1,4 @@
 id: liferay-portal-detect
-
 info:
   name: Liferay Portal Detection
   author: organiccrap,dwisiswant0
@@ -7,13 +6,11 @@ info:
   reference:
     - https://github.com/mzer0one/CVE-2020-7961-POC
   tags: tech,liferay
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/api/jsonws'
       - '{{BaseURL}}/api/jsonws/invoke'
-
     matchers:
       - type: word
         words:

@@ -4,7 +4,6 @@ info:
   author: nullenc0de
   severity: medium
   tags: config,exposure
-
 requests:
   - method: GET
     path:
@@ -154,7 +153,6 @@ requests:
       - "{{BaseURL}}/web.config.test"
       - "{{BaseURL}}/web.config.tmp"
       - "{{BaseURL}}/web.config_inc"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -162,7 +160,6 @@ requests:
           - <configuration>
           - <system.webServer>
         condition: and
-
       - type: status
         status:
           - 200

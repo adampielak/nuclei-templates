@@ -1,5 +1,4 @@
 id: wp-config-setup
-
 info:
   name: WordPress Setup Configuration
   author: princechaddha
@@ -7,18 +6,15 @@ info:
   reference:
     - https://smaranchand.com.np/2020/04/misconfigured-wordpress-takeover-to-remote-code-execution/
   tags: wordpress,setup
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-admin/setup-config.php?step=1"
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "Below you should enter your database connection details."
-
       - type: status
         status:
           - 200

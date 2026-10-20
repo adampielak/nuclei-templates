@@ -6,14 +6,15 @@ info:
   severity: info
   description: |
     Covenant is a .NET command and control framework that aims to highlight the attack surface of .NET, make the use of offensive .NET tradecraft easier,and serve as a collaborative command and control platform for red teamers.
-  reference: |
-    https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
+  reference:
+    - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
   metadata:
     verified: true
+    max-request: 1
     shodan-query: ssl:”Covenant” http.component:”Blazor”
-  tags: c2,ir,osint,covenant
+  tags: c2,ir,osint,covenant,panel,vuln
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/covenantuser/login'
@@ -28,3 +29,4 @@ requests:
       - type: status
         status:
           - 200
+# digest: 4a0a00473045022100a91e92c67c83ecf8f020675ae1463ebf71e42e92e627fbcff50ddf4becbd2822022072b5526c2caa7367e1411b98f5103a217ceb31b7e5aafcc6ac94aad02916502f:922c64590222798bb761d5b6d8e72950

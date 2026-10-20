@@ -1,5 +1,4 @@
 id: wuzhicms-detect
-
 info:
   name: Wuzhicms Detected
   author: pikpikcu
@@ -11,7 +10,6 @@ info:
     cwe-id: CWE-200
   remediation: Ensure you are using the latest version and that all security patches have been applied.
   tags: tech,wuzhicms
-
 requests:
   - method: GET
     path:

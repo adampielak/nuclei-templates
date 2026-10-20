@@ -1,5 +1,4 @@
 id: xenmobile-login
-
 info:
   name: Xenmobile Console Logon
   author: dhiyaneshDK
@@ -7,12 +6,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6675
   tags: panel
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/zdm/login_xdm_uc.jsp'
-
     matchers-condition: and
     matchers:
       - type: word
