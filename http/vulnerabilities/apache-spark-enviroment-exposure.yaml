@@ -7,7 +7,7 @@ info:
   description: Detects exposed apache spark enviroment vars
   tags: custom
 
-http:
+requests:
   - method: GET
 
     path:
