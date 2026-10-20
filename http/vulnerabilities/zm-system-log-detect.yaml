@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: low
   reference: https://www.exploit-db.com/ghdb/6926
- 
+  tags: logs,zm,exposure
 
 requests:
   - method: GET
