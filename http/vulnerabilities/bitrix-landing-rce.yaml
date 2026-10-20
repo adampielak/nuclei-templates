@@ -3,7 +3,7 @@ id: bitrix-landing-rce
 info:
   name: Bitrix Landing module RCE version based detection
   author: gtrrnr,vulnspace
-  severity: Critical
+  severity: High
   description: A vulnerability in the landing module of the 1C-Bitrix Site Management content management system (CMS) is caused by synchronization errors when using a shared resource. Exploitation of the vulnerability can allow a remote attacker to execute OS commands on the vulnerable host, gain control over resources or gain access to internal network.
   reference:
     - https://bdu.fstec.ru/vul/2023-05857
