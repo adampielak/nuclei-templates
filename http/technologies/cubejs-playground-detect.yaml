@@ -1,5 +1,4 @@
 id: cubejs-playground-detect
-
 info:
   name: Cube.js Playground - Detect
   author: rxerium
@@ -10,18 +9,16 @@ info:
     - https://github.com/cube-js/cube
     - https://cube.dev/
   metadata:
-    verified: true
     max-request: 1
-    vendor: cube-dev
     product: cube
     shodan-query: 'http.title:"Cube.js Playground"'
-  tags: cubejs,cube,analytics,semantic-layer,data,tech,detect
-
+    vendor: cube-dev
+    verified: true
+  tags: analytics,cube,cubejs,data,detect,semantic-layer,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -33,8 +30,7 @@ http:
           - 'id="playground-root"'
           - 'webpackJsonp@cubejs-client/playground'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009e2d1ca131aabf667159a8604415783d436741c8ea3a9e22ef61fae6c9ba1da4022046d53868e8b878ecde8cb4b47b83ab0e9e2a67d41a72969e58558516f4b5a6f3:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a004730450221009e2d1ca131aabf667159a8604415783d436741c8ea3a9e22ef61fae6c9ba1da4022046d53868e8b878ecde8cb4b47b83ab0e9e2a67d41a72969e58558516f4b5a6f3:922c64590222798bb761d5b6d8e72950

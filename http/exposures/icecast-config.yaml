@@ -26,4 +26,4 @@ http:
           - 'contains(content_type, "application/xml")'
           - 'contains_all(body, "<hostname>","<fileserve>")'
         condition: and
-
+# digest: 4a0a00473045022100dbb87426dda6ee2d3f06bd2f09a5affba309f38ee05d864c9fa7443b1c8cc740022035f5b3edbc4a9e8705bc273c13e8ad0cfd683496a4c30561a3d30a32e09d36a5:922c64590222798bb761d5b6d8e72950

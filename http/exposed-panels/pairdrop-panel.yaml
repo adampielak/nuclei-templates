@@ -9,11 +9,10 @@ info:
   reference:
     - https://github.com/schlagmichdoch/pairdrop
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)PairDrop"})
     verified: true
     max-request: 1
     shodan-query: title:"PairDrop"
-  tags: panel,pairdrop,login,discovery
+  tags: panel,pairdrop,login
 
 http:
   - method: GET
@@ -34,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a00473045022100f5cd7d022281c3af0b2944da86f82d7966a9614a7f467a78632c105ee32c8b1e02200b66159063b30c45b0b019500e5bf48cffe06f965c550cd6676977cee390e226:922c64590222798bb761d5b6d8e72950

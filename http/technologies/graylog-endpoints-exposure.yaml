@@ -10,7 +10,7 @@ info:
     - https://gist.github.com/asachs01/f1f317b2924a688deb8ed2520a4520bd
   tags: tech,graylog,api
 
-requests:
+http:
   - method: "GET"
     path:
       - "{{BaseURL}}/"

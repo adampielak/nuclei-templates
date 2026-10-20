@@ -7,7 +7,7 @@ info:
   reference: https://rj45mp.github.io/phpMyAdmin-WooYun-2016-199433/
   tags: phpmyadmin,lfi
 
-requests:
+http:
   - raw:
       - |
         POST /scripts/setup.php HTTP/1.1

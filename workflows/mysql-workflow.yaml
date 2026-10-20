@@ -8,3 +8,4 @@ workflows:
   - template: network/detection/mysql-detect.yaml
     subtemplates:
       - tags: mysql
+
