@@ -1,4 +1,5 @@
 id: cakefile-exposure
+
 info:
   name: Cakefile - Exposure
   author: 0x_Akoko
@@ -10,45 +11,50 @@ info:
   classification:
     cwe-id: CWE-538
   metadata:
-    max-request: 7
     verified: true
-  tags: cakefile,coffeescript,config,exposure,vuln
-http:
-  - matchers:
-      - condition: and
-        type: word
-        words:
-          - 'task '
-          - 'require '
-          - ->
-      - negative: true
-        type: word
-        words:
-          - <!DOCTYPE
-          - <html
-          - '{"props"'
-          - <script
-      - condition: or
-        type: word
-        words:
-          - coffee
-          - spawn
-          - exec
-          - invoke
-          - fs.readFileSync
-      - status:
-          - 200
-        # digest: 4a0a00473045022100a6b04ec50990444216b388cf5c5bab2eeefa6f407835743665d5b9a30d17a0a9022053470f5109a107e247f77124ab50d56effb514811c59e63bed3b4627157b97d0:922c64590222798bb761d5b6d8e72950
+    max-request: 7
+  tags: exposure,config,coffeescript,cakefile
 
-        type: status
-    matchers-condition: and
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/Cakefile'
-      - '{{BaseURL}}/src/Cakefile'
-      - '{{BaseURL}}/app/Cakefile'
-      - '{{BaseURL}}/lib/Cakefile'
-      - '{{BaseURL}}/build/Cakefile'
-      - '{{BaseURL}}/node_modules/whet.extend/Cakefile'
-      - '{{BaseURL}}/node_modules/Cakefile'
+      - "{{BaseURL}}/Cakefile"
+      - "{{BaseURL}}/src/Cakefile"
+      - "{{BaseURL}}/app/Cakefile"
+      - "{{BaseURL}}/lib/Cakefile"
+      - "{{BaseURL}}/build/Cakefile"
+      - "{{BaseURL}}/node_modules/whet.extend/Cakefile"
+      - "{{BaseURL}}/node_modules/Cakefile"
+
     stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "task "
+          - "require "
+          - "->"
+        condition: and
+
+      - type: word
+        words:
+          - "<!DOCTYPE"
+          - "<html"
+          - '{"props"'
+          - "<script"
+        negative: true
+
+      - type: word
+        words:
+          - "coffee"
+          - "spawn"
+          - "exec"
+          - "invoke"
+          - "fs.readFileSync"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100f82600ea5dbfc2305c0d346ba3013a73337b078657d69af9cf8acc6082bfeae9022100d1b6b92ffa0050f679f610eec3c89248a7a6ac4d8d539118b3aac49650077cad:922c64590222798bb761d5b6d8e72950

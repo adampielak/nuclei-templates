@@ -5,7 +5,7 @@ info:
   name: Elmah Log Disclosure
   severity: Critical
   tags: log
-requests:
+http:
 - matchers:
   - part: body
     type: word

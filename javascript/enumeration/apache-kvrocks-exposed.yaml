@@ -1,45 +1,40 @@
 id: apache-kvrocks-exposed
-
 info:
   name: Apache Kvrocks - Exposed
   author: icarot
   severity: high
   description: |
-   Detects if an Apache Kvrocks server is exposed with no authentication credentials, this application is a distributed key value NoSQL database that uses RocksDB as storage engine and is compatible with Redis protocol.
+    Detects if an Apache Kvrocks server is exposed with no authentication credentials, this application is a distributed key value NoSQL database that uses RocksDB as storage engine and is compatible with Redis protocol.
   reference:
     - https://github.com/apache/kvrocks
   metadata:
-    verified: true
     max-request: 1
-  tags: apache,kvrocks,network,unauth,js,exposed
-
+    verified: true
+  tags: apache,exposed,js,kvrocks,network,unauth,vuln
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port);
-
+  - args:
+      Host: '{{Host}}'
+      Port: "6379"
     code: |
       const redis = require('nuclei/redis');
       const info = redis.GetServerInfo(Host,Port);
       Export(info);
-
-    args:
-      Host: "{{Host}}"
-      Port: "6379"
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - "kvrocks_version"
-          - "kvrocks_git_sha1"
-          - "kvrocks_mode"
-        condition: or
-
     extractors:
-      - type: regex
-        part: response
+      - part: response
         regex:
-          - "kvrocks_version:[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}"
-          - "kvrocks_git_sha1:\\w+"
-          - "kvrocks_mode:standalone"
-# digest: 4a0a00473045022100d040b084def2f6406f801a9bb7000e7b50884ec0ad9d1f479b42407f894a8d400220298c583c3b4c96924e108841f77131405d74b4ab7295f054abdd5cc9e777f9a3:922c64590222798bb761d5b6d8e72950
+          - kvrocks_version:[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}
+          - kvrocks_git_sha1:\w+
+          - kvrocks_mode:standalone
+        # digest: 4a0a004730450221008327d38ab8a653ea132cb4c8c71453bbbbf12d8fe51d60f37be0902e329b5a0602201fd081a98b9cf131c721f8ab44ac6ce3608de3054fb922085b3174086ca1198f:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: or
+        type: word
+        words:
+          - kvrocks_version
+          - kvrocks_git_sha1
+          - kvrocks_mode
+    matchers-condition: and
+    pre-condition: |
+      isPortOpen(Host,Port);
