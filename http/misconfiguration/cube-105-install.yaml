@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: title="Cube-105 Setup Wizard"
-  tags: misconfig,cube,cube105,install,vuln
+  tags: misconfig,cube,cube105,install
 
 http:
   - method: GET
@@ -27,4 +27,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f022efe8a74162fd881d3457ef6ebb2637ed114f6003c364bbf92db3a251c2050220653e69be938d3e961f8e8468375f68cd480d0e6a4c998b3c7f4af273020c6bb8:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220211857cdbc2dc64a20fc86fb51ee5b419a5de30b7592dbdd9652cdbda40ac90d022100a3ac755bb4c1076b2bd6fe82cb6a32067eef43f2977af2e6b72bac4e5f8458f7:922c64590222798bb761d5b6d8e72950

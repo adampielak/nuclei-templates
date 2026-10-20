@@ -1,4 +1,4 @@
-id: alertlist-lfi
+id: etc-passwd-exposure
 
 info:
   name: /etc/passwd Exposure
