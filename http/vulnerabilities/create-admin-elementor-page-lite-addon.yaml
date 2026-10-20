@@ -5,7 +5,7 @@ info:
   author: xElkomy
   severity: high
 
-requests:
+http:
   - raw:
       - |
         POST /wp-admin/admin-ajax.php HTTP/1.1

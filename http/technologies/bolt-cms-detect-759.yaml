@@ -9,7 +9,7 @@ info:
   references:
     - https://github.com/bolt/bolt
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/bolt/login"

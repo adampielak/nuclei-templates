@@ -9,7 +9,7 @@ info:
     max-request: 1
   tags: tech,zebra
 
-requests:
+http:
   - raw:
           - |
               POST /authorize HTTP/1.1
