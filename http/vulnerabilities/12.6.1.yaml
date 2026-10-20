@@ -52,8 +52,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
-        part: interactsh_protocol  # Confirms the HTTP Interaction
+        part: interactsh_protocol
         words:
           - "http"
           - "dns"
-# digest: 4b0a00483046022100c660a7e46a1f17eed707c5912df531e5f2938feba4be175f24f20b0ecb229fde022100a79f952331843fab8d0705fd10d56db51e59bdd935d65ad3a557357129527964:236a7c23afe836fbe231d6e037cff444
+# digest: 4a0a00473045022100df54f16772e7070065be0f76b4a0729bd9aaceb11093982424ad29dd4d13056f022026b642707e4b17641c3029a8d20b0b9d968353e6f425e29980b535a77c3e06f7:236a7c23afe836fbe231d6e037cff444
