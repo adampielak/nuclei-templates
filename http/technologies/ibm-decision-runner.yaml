@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: ibm,detect,tech,ibm-decision-runner,discovery
+  tags: ibm,detect,tech,ibm-decision-runner
 
 http:
   - method: GET
@@ -35,4 +35,4 @@ http:
         group: 1
         regex:
           - 'Decision Server ([0-9.]+)'
-# digest: 4a0a00473045022100927517d31acaf1ca64e9d3cd77e8938b8ec0be07717e0be4074959b8fd54efcc02203d5575d6a982722ccc6555841eee570d082985918cd5f87d65b342f91e5cb88d:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502207e2311f301b1a6c2c35544150df561448154d94ef42d1d291c50acdc68f6491b022100df61c19a03a740619522cd243fda36385c28f58928f916b6f0f5fe9a323d6ff2:922c64590222798bb761d5b6d8e72950
