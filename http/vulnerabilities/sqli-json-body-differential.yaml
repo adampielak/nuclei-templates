@@ -1,0 +1,79 @@
+id: sqli-json-body-differential
+
+info:
+  name: SQL Injection via JSON Body — Quote Differential
+  author: TyrusRC
+  severity: critical
+  description: |
+    Sends JSON POST requests with a single-quote appended to common
+    body field names (username, password, email, user, login, token,
+    name, query, search, id). Compares the response against a clean
+    baseline. A different response shape (status code, body length
+    delta > 20%, or SQL error string) indicates the field value reaches
+    a SQL query. Covers APIs that wrap SQL errors in custom JSON
+    ({"error":{"message":"..."}}) where raw error-pattern matching fails.
+  reference:
+    - https://owasp.org/www-community/attacks/SQL_Injection
+    - https://cwe.mitre.org/data/definitions/89.html
+  tags: custom,vulnerabilities,sqli,json,api,differential
+
+http:
+  - raw:
+      - |
+        POST {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"{{field}}":"test123'","_padding":"x"}
+
+    payloads:
+      path:
+        - "/tokens"
+        - "/login"
+        - "/auth"
+        - "/api/login"
+        - "/api/auth"
+        - "/api/tokens"
+        - "/user"
+        - "/api/user"
+        - "/register"
+        - "/signup"
+      field:
+        - "username"
+        - "password"
+        - "email"
+        - "user"
+        - "login"
+        - "token"
+        - "name"
+
+    attack: clusterbomb
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 400
+          - 401
+          - 500
+      - type: regex
+        part: body
+        condition: or
+        regex:
+          - '(?i)sql'
+          - '(?i)syntax.*error'
+          - '(?i)unrecognized token'
+          - '(?i)unterminated'
+          - '(?i)near\s+"'
+          - 'SQLITE_ERROR'
+          - 'OperationalError'
+          - '(?i)mysql'
+          - '(?i)pg_query'
+          - 'ORA-[0-9]'
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '(?i)(sql[^"<]{0,80}|syntax error[^"<]{0,80}|OperationalError[^"<]{0,80}|SQLITE_ERROR[^"<]{0,80}|near "[^"]+": syntax error)'

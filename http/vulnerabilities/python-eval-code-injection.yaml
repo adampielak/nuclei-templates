@@ -1,0 +1,43 @@
+id: python-eval-code-injection
+
+info:
+  name: Code Injection via Arithmetic Probe (eval / exec)
+  author: TyrusRC
+  severity: critical
+  description: |
+    Sends a bare arithmetic expression (1337*7) through common query
+    parameters that suggest server-side evaluation. When eval(), exec(),
+    vm.runInNewContext(), or similar functions process the input, the
+    computed result (9359) appears in the response body. The multiplier
+    1337*7 is chosen because 9359 rarely appears in normal responses.
+    This catches CODE INJECTION — raw interpreter eval — not template
+    injection (no {{ }}, ${ }, <% %> wrappers).
+  reference:
+    - https://owasp.org/www-community/attacks/Code_Injection
+    - https://cwe.mitre.org/data/definitions/94.html
+  tags: custom,vulnerabilities,code-injection,eval,rce
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?eval=1337*7"
+      - "{{BaseURL}}/?expr=1337*7"
+      - "{{BaseURL}}/?cmd=1337*7"
+      - "{{BaseURL}}/?execute=1337*7"
+      - "{{BaseURL}}/?calc=1337*7"
+      - "{{BaseURL}}/?code=1337*7"
+      - "{{BaseURL}}/?run=1337*7"
+      - "{{BaseURL}}/?input=1337*7"
+      - "{{BaseURL}}/?q=1337*7"
+      - "{{BaseURL}}/?query=1337*7"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "9359"
