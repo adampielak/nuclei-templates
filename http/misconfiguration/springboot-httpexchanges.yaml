@@ -1,4 +1,5 @@
 id: springboot-httpexchanges
+
 info:
   name: Detects Springboot HTTP Exchanges Actuator
   author: parkyoungdu
@@ -6,35 +7,39 @@ info:
   description: |
     The exposed httpexchanges endpoint can leak recent HTTP request/response data, including URIs, headers, and status codes.
   reference:
-    - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
     - https://docs.spring.io/spring-boot/docs/3.0.0/actuator-api/htmlsingle/#httpexchanges
+    - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
   metadata:
     max-request: 2
-  tags: exposure,misconfig,springboot,vuln
+  tags: springboot,exposure,misconfig,vuln
+
 http:
-  - matchers:
-      - condition: and
+  - method: GET
+    path:
+      - "{{BaseURL}}/httpexchanges"
+      - "{{BaseURL}}/actuator/httpexchanges"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
         part: body
-        type: word
         words:
           - '"exchanges"'
           - '"request"'
           - '"response"'
-      - condition: or
-        part: header
-        type: word
-        words:
-          - application/json
-          - application/vnd.spring-boot.actuator
-          - application/vnd.spring-boot.actuator.v3+json
-      - status:
-          - 200
-        # digest: 490a00463044022075340fb3d08872c7a81aa66c71afb9e440a9c2590fe8eeed70f6759c70371ea6022027ecb2ee9c148bd5383c990da7eb86b16f6fb9b1112c9fc3a981b2aac57cca00:922c64590222798bb761d5b6d8e72950
+        condition: and
 
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/httpexchanges'
-      - '{{BaseURL}}/actuator/httpexchanges'
-    stop-at-first-match: true
+      - type: word
+        part: header
+        words:
+          - "application/json"
+          - "application/vnd.spring-boot.actuator"
+          - "application/vnd.spring-boot.actuator.v3+json"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 490a00463044022075340fb3d08872c7a81aa66c71afb9e440a9c2590fe8eeed70f6759c70371ea6022027ecb2ee9c148bd5383c990da7eb86b16f6fb9b1112c9fc3a981b2aac57cca00:922c64590222798bb761d5b6d8e72950
