@@ -6,7 +6,7 @@ info:
   severity: info
   tags: aws,s3
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

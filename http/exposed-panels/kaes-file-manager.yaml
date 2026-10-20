@@ -7,11 +7,10 @@ info:
   description: Kae's File Manager login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,kaes,filemanager,kfm
+  tags: panel,kaes,filemanager,kfm,discovery
 
 http:
   - method: GET
@@ -28,5 +27,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100fa9915e532c838add38dff4ab301123d6360956b732751438f47742bf72f23520220500fc2007bb7ce71ed568febc7363832944b06a3f221fb02606a822767edc905:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402204f69c48167ad3bed36d12c3757b69a64d0cf218b65cb5eb0531580b5788a5ce502203eb46710a2f48800cabc875f2dddc1cc6327fd161052ec947aee7c605df02ddc:922c64590222798bb761d5b6d8e72950

@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Dashboard - Ace Admin"
-  tags: misconfig,exposure,aceadmin
+  tags: misconfig,exposure,aceadmin,discovery
 
 http:
   - method: GET
@@ -37,5 +37,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100ee8a5419cb9aad05c59a26d7cd0e6d399fd07a3a7253a5ce8adf7f8f9ab094f802200aa88ca217e25987f60ced61cd5c3e038f22bf0124022c182e7cb3a132e89494:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210083c4f4c1a1c801e7ec324886e34f0629eae9986360d99e3601e1f0165eae1e09022100eead930f9ca6d9b3301c2dae59c9e06de002671ed88264f7343bbf477171c786:922c64590222798bb761d5b6d8e72950

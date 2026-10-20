@@ -5,11 +5,15 @@ info:
   author: ritikchaddha
   severity: high
   description: Tasmota is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:o:tasmota_project:tasmota:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: tasmota_project
+    product: tasmota
     shodan-query: title:"Tasmota"
-  tags: misconfig,tasmota,install,exposure
+  tags: misconfig,tasmota,install,exposure,vuln
 
 http:
   - method: GET
@@ -28,4 +32,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022019eb38378f3d40f8a2f71fe25698efcee2357dec42b9514d95569c4fededa82a022100c812c07241e7e713db02ddaee366af9cb5670963e643898126265238791ead54:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502201ac26403ad8d68bc051e8adc425fb1431042ca76c5ae114f4316a054edadb068022100ed5fcf2ebb7d1c20026f878077b21119527cd1ea96baa45cf7e587464a2da997:922c64590222798bb761d5b6d8e72950

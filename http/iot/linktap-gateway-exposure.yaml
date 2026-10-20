@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"LinkTap Gateway"
-  tags: misconfig,linktap,iot,exposure
+  tags: misconfig,linktap,iot,exposure,vuln
 
 http:
   - method: GET
@@ -28,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009bb023af1a0054a0f2527b1fd81eb3d9426973327a90bdaf102a061909f769410220573d4959c45d99e4d8c7ccf56b1531031473f30f4b6b2dfa9ea33ef86e310275:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022025170f6bbf6d02c94e2f09ba0de2211a169bdc8ad5acf06cef5cef7053cd7917022011de0a0908f6c61718d436372b4424dd25e33dee7c19c08bfd9fbecca0eb4711:922c64590222798bb761d5b6d8e72950

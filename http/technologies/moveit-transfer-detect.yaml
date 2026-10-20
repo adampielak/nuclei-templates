@@ -4,11 +4,15 @@ info:
   name: Moveit File Transfer - Detect
   author: tess
   severity: info
+  classification:
+    cpe: cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: progress
+    product: moveit_transfer
     shodan-query: html:"human.aspx"
-  tags: tech,moveit
+  tags: tech,moveit,discovery
 
 http:
   - method: GET
@@ -33,5 +37,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100ce8b47477d2640d59a6879906574e3c628b07f4bc38a61a385b239d74453f34d02204c1c027d84cf76e60e97f36e85c084ceee87102e9a83b6363e1b6508ecaa6a6a:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022020cf2892ac9d08471713aa121a3384b7441cbaee55c23b8a8ac4e8b3169aa5ba02201c687c5b6a13ba071a54d93fe5a92789c89805960516d8523f50b61b7abfb551:922c64590222798bb761d5b6d8e72950

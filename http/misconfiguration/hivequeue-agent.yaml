@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"HiveQueue"
-  tags: misconfig,hivequeue
+  tags: misconfig,hivequeue,vuln
 
 http:
   - method: GET
@@ -33,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c83f5b80ea7847efd5569b8fc2f4fca944f9253c21348479a56634720ca73ee3022078b07b11d30eb932f0c8e955eeaf21478dd5ad8ef9f9255667df55aae574aaa8:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200bcbbf6dd93b3671eb2c9eab0451c7719606aa146cb5b7683e3cf961f92eb3d0022100e9ed7bb7046536b001a67ba7e56a4d3341e366dd34394a0156e1e50a57703b95:922c64590222798bb761d5b6d8e72950

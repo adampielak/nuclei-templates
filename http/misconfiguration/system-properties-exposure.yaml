@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"System Properties"
-  tags: misconfig,system,exposure
+  tags: misconfig,system,exposure,vuln
 
 http:
   - method: GET
@@ -28,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022047bc08099ad3726022019f995950f2763e512ec7ca60f79185550241ba215e65022100fc413f23b8d09291d5e673a83be2c13e1672f855be9767f370f263618e00be73:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220715e7fc08a20693b0fcc3cbfd1f579418ff8c83ab0a548fb4c7d1a88297b1813022100f24a51fc5c2a11cfaf4594c771504f2410448b45c0d9331adf5bd3ad49501f83:922c64590222798bb761d5b6d8e72950

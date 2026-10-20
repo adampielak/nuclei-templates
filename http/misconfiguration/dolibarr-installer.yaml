@@ -5,11 +5,15 @@ info:
   author: pussycat0x
   severity: high
   description: Dolibarr is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:dolibarr:dolibarr_erp\\/crm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: dolibarr
+    product: dolibarr_erp\\/crm
     shodan-query: title:"Dolibarr install or upgrade"
-  tags: misconfig,exposure,install
+  tags: misconfig,exposure,install,vuln
 
 http:
   - method: GET
@@ -33,4 +37,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220634532cbd8d85911eb5be70b6c6ba95f4e883927aeefa918bb7c7f7eec6c70e402200490d5848a436de703b294c57a533b11b5ef3006488a289b72028e9842d55872:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100d8fdfdf8737f9bd7ab59972609c07d6c30a6ddc9df6723351038ca462e4d789f022100bea03924cfcd9d627e4dd5dd6bbe53ee796594010d05d379f58d749b68a44505:922c64590222798bb761d5b6d8e72950

@@ -5,11 +5,15 @@ info:
   author: DhiyaneshDk
   severity: high
   description: phpBB is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:phpbb:phpbb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: phpbb
+    product: phpbb
     shodan-query: html:"Installation Panel"
-  tags: misconfig,phpbb,install,exposure
+  tags: misconfig,phpbb,install,exposure,vuln
 
 http:
   - method: GET
@@ -33,4 +37,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210087fc262cb360c9c8d8ee8da1a080617dea1385586bba8aeb2a25a099d9c5c55302210082fe0a042af08356fbfce93605835806ccdd1243e311d1db0318a52a9c80bbdd:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100fadfbcf851e59068aeaa4ce9acc328ed30612f94bac3b8f7a80fe1711e6a2f280220393af3b3a0b321a28b55dcd045c4e967d87dfaf0ea751b8426bea0b0af45ce83:922c64590222798bb761d5b6d8e72950

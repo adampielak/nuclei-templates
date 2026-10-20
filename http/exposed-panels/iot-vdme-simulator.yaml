@@ -14,16 +14,14 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"IoT vDME Simulator"
-  tags: exposure,misconfig,panel
+  tags: exposure,misconfig,panel,vuln
 
 http:
   - method: GET
     path:
       - '{{BaseURL}}'
-      - '{{BaseURL}}:9998'
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -42,5 +40,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a004630440220583d7aa60bfd9365cd87a7d272583f4c5c55fd8e01d11c44635bb0391daa124c0220291a463c32d3a9e4ad0988c2ef2c2106bb1c70b401f3508721fc36ef8024d935:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402200101d2d3cb00a4f61528ded594e41034579a9d6bac0ea11ec145e20afa67ffb202203ac61bfbc145cf10dd71d108a7ef9ac9262231956d293b16118938f653ae549c:922c64590222798bb761d5b6d8e72950

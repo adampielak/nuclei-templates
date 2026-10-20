@@ -7,7 +7,7 @@ info:
   description: Searches for exposed awstats Internal Information.
   metadata:
     max-request: 1
-  tags: misconfig,aws,exposure,amazon,awstats,oss
+  tags: misconfig,aws,exposure,amazon,awstats,oss,vuln
 
 http:
   - method: GET
@@ -26,5 +26,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a004730450220245efaddd842982f46f8eaa5737bc4e1a85fa38340f97a29dbc5012cb135f745022100fa5de8029489b49cd144c2b06f80ed0e1a785293d839c76d957afd58f61778ff:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220532e50d149587f4b65826bf2d909dadafa391472b8e433b03ee2eeab88274fe6022100a17a57d1e224a776174f0fafd828cf586318234100b5b774f878d1e311caa4fe:922c64590222798bb761d5b6d8e72950

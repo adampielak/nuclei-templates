@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misconfig,espeasy,install,exposure
+  tags: misconfig,espeasy,install,exposure,vuln
 
 http:
   - method: GET
@@ -28,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202e1b56610e0f6a93449b7b72576a30a66d215511cf95be234ee76f540a144c1b022100ff92827878649abf9d2767b99e61263d5005740365d551e56131e6d75fa1ea5e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100f098271167425ada3b991c6fff31533d06b91fd1cf2d794f49b13f99534eabc502205ce98a92e1640a7b73ffdf597bab9873c0483e7c4274692f829abe9d07e9b059:922c64590222798bb761d5b6d8e72950

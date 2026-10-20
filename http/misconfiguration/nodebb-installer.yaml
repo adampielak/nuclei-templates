@@ -5,11 +5,15 @@ info:
   author: DhiyaneshDk
   severity: high
   description: NodeBB Web is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:nodebb:nodebb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: nodebb
+    product: nodebb
     shodan-query: title:"NodeBB Web Installer"
-  tags: misconfig,nodebb,install,exposure
+  tags: misconfig,nodebb,install,exposure,vuln
 
 http:
   - method: GET
@@ -33,4 +37,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205dc5f44d357304e35741b0159896810ffe066e1f3a08ffabf5c32c457df7fd0f02210087ffd3229788f578be65093ee950a40935a540663bb68702c3c6218dcdd6a864:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022065bbdbf4e3e1df22292ea0485fbb1c3a2f52ef76127795de6671e0e5c2b96cde022100acd44b9f3e55bb831d85c7ce29d2754b80170aedd37aca84e4358a4528ca3a90:922c64590222798bb761d5b6d8e72950

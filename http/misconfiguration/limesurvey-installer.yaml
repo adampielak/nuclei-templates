@@ -5,12 +5,15 @@ info:
   author: DhiyaneshDk
   severity: high
   description: Limesurvey is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Limesurvey Installer"
-  tags: misconfig,limesurvey,install
-
+    product: limesurvey
+    vendor: limesurvey
+  tags: misconfig,limesurvey,install,vuln
 http:
   - method: GET
     path:
@@ -34,4 +37,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a3e22ceb23b87ef2b520167a256c38eaa46854119b124bacbea68402cd92185002203fa3b9a8e87a25025a9980a181d9b5f66db1b7d70f1dac7b41a0aa93bc91d6be:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221009154e774d079a9b2ba130d3baec9517f3b663831d5e0e26cb64e151411532d34022100f4b10b34919ca37cc28e321c9b2d43745fa6d85449824ed24495288cc1925c70:922c64590222798bb761d5b6d8e72950

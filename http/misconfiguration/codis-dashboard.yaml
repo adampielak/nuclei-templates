@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Codis • Dashboard"
-  tags: misconfig,exposure,codis
+  tags: misconfig,exposure,codis,discovery
 
 http:
   - method: GET
@@ -33,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022048909b86e377f642e35cedfc5ee9d94e6bdf7ed9e715ea3426dcabbd08257ce9022100aa0e7e26d66ca547223e61bf6846a05745bdba7600265736d11a3531227fbd34:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402205687942966e0d304152a7a1ab93ce06637a15a969adae8df61095fb5f3de319b02200a05dd50572bf19606bbc2ebf9fb6adf51c8b963abe7841c2dd45d7b6ce2cd95:922c64590222798bb761d5b6d8e72950

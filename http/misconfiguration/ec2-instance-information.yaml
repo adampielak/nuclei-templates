@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"EC2 Instance Information"
-  tags: misconfig,ec2,aws,amazon
+  tags: misconfig,ec2,aws,amazon,vuln
 
 http:
   - method: GET
@@ -33,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220247b4eca5ae30cd888b845ac65d87d52f64d6dcd2efd2a585fbd92d55e8b8e1e0220251b5544739c9a99d7dd45cf70f01501a169981e6c5f063eded7ab084b720594:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c3a2f9480f7e2934a19db8b790ba2fa0e39c7559071a9a84bffecd5b1fc9fec8022100d0a4f6d8cb431aa7c5dd842f05d5e31c2dfb94bee3aeca88aeb08c995228d132:922c64590222798bb761d5b6d8e72950

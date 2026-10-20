@@ -6,7 +6,7 @@ info:
   severity: low
   tags: cors
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

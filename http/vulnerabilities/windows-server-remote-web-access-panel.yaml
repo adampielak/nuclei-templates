@@ -7,7 +7,7 @@ info:
   description: |
     Detect Windows Server - Remote Web Access login panel.
   metadata:
-    max-request: 1
+    max-requests: 1
     shodan-query:
       - title:"Windows Server Essentials - Remote Web Access"
       - title:"Windows Server - Remote Web Access"

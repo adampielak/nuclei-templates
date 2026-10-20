@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"SMS Gateway | Installation"
-  tags: misconfig,sms,install
+  tags: misconfig,sms,install,vuln
 
 http:
   - method: GET
@@ -26,4 +26,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009754fb9d7060883644780f25980a787457eeb3eb9f5f6d03ae98eee0f918a35f02206ad48b980418439285ed1702c3b91ef476050da632f7fe130de530b32011bd34:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b0b434723c078055ddf4612c50bf53d0184adb8ffec19460a721af44e2f5a0530221009cd7261025dc1de7a3ae2d02e2fe8529aab3b048ec7c291e8b70732809b0ea02:922c64590222798bb761d5b6d8e72950

@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Piwik &rsaquo; Installation"
-  tags: misconfig,piwik,install
+  tags: misconfig,piwik,install,vuln
 
 http:
   - method: GET
@@ -33,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200a7963240efcf86c0dc6d822825d24acbcdc599a9cee0f1ba686367a64637490022100b6c6eb9e3d43a2baa0145812787644fc3d23e935a077f1e5bbe93ac00b9bcb5e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100f967ce86aaf4e1c63485215fd5917710bea1484bb6241499b7824aa79afd6924022006e45d5d19803849b1d5293932d65829cd05427fc7e212df54ec086b5da61c11:922c64590222798bb761d5b6d8e72950

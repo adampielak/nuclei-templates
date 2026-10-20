@@ -15,7 +15,7 @@ info:
   metadata:
     max-request: 8
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/api"

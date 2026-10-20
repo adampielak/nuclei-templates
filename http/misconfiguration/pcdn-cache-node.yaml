@@ -5,11 +5,15 @@ info:
   author: DhiyaneshDk
   severity: low
   description: PCDN Cache Node dataset is exposed.
+  classification:
+    cpe: cpe:2.3:a:cache-base_project:cache-base:*:*:*:*:node.js:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: cache-base_project
+    product: cache-base
     shodan-query: title:"PCDN Cache Node Dataset"
-  tags: node,pcdn,misconfig
+  tags: node,pcdn,misconfig,vuln
 
 http:
   - method: GET
@@ -34,4 +38,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210089f5532f1677cb86d4d15b412b49ce9126c8f530843b4748c20af7699ea527cb022100d62f108e4c61aa3ffc432f1b1aa3d991ca17ea9c45850a324fea02d5c52ea70c:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022037b284605dd36cddc597b5cc11ce53b724c040555320884caa8a06d0405b69c3022032a5225fcaa8bb35cbc6fe99421112d5259e4ea5f635b5f541a51d880ace902f:922c64590222798bb761d5b6d8e72950

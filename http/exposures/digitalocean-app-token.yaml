@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: digitalocean,exposure,token
+  tags: digitalocean,exposure,token,vuln
 
 http:
   - method: GET
@@ -22,5 +22,4 @@ http:
         part: body
         regex:
           - (?i)\b(doo_v1_[a-f0-9]{64})\b
-
-# digest: 4b0a004830460221009a87ad8edab9db51cbda1d3174496a73076319c17d6ab57c271055adbfc95514022100efbb78665c463471368188387fa0f49c280f2cd54bfc0edc4a46e0bbb006cb89:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100dd8defc06f5748a533350bc2e05ae6a2b75afe7befe73b4e6aea26363222f7100220078159c88278c193597d16a632ff2f8fa08c017458629b98873998ae1d3f9f0b:922c64590222798bb761d5b6d8e72950

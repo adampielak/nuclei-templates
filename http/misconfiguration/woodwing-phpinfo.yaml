@@ -11,7 +11,7 @@ info:
     max-request: 2
     shodan-query: http.title:"WoodWing Studio Server"
     fofa-query: title=="WoodWing Studio Server"
-  tags: misconfig,woodwing,phpinfo
+  tags: misconfig,woodwing,phpinfo,vuln
 
 http:
   - method: GET
@@ -30,4 +30,4 @@ http:
           - contains(tolower(body), 'php version')
           - status_code == 200
         condition: and
-# digest: 4a0a00473045022034c592f665b23abe3b7784ebf131a0c74946f75bc828985ef4a9eaf5c0c1f47a022100f7402c98b84871a7c560fdcc528e2b9f633041d026fbd1d571a002d5ff5311a5:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201aa899481df57a0259c7c8e0999e092d2e4fa0821af63a26d84e7bca2e32112c0220495afe75df11a7f55a24b4dfb04bdb06ee9aedd631c0871ff8641cf7cfe4fb8b:922c64590222798bb761d5b6d8e72950
