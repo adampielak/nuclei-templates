@@ -2,33 +2,19 @@ id: env-disclose
 
 info:
   name: env.js Disclosure
-  author: rix4uni
+  author: SirBugs
   severity: high
   description: This Template checks disclosing secret information via /assets/env.js
-  reference:
-    - https://twitter.com/ReebootToInit5/status/1666361432785711109
-  tags: env,env.js,js
+  tags: env, env.js, js
 
 http:
   - method: GET
     path:
       - '{{BaseURL}}/assets/env.js'
-
-    stop-at-first-match: true
-    matchers-condition: and
     matchers:
       - type: word
         part: body
+        condition: or
         words:
-          - 'window["env"]["backendApiUrl"]'
-          - 'window["env"]["meshcentralUrl"]'
-          - 'window["env"]["rootUrl"]'
-          - 'window["env"]["backendWsUrl"]'
-          - 'window["env"]["debug"]'
-          - 'window["env"]["authUrl"]'
-          - 'window["env"]["clientId"]'
-          - 'window["env"]["clientSecret"]'
-
-      - type: status
-        status:
-          - 200
+          - '["env"]'
+          - 'Environment variables'

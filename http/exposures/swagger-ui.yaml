@@ -55,7 +55,20 @@ requests:
       - "{{BaseURL}}/api/v1/swagger-ui/swagger.json"
       - "{{BaseURL}}/api/v1/swagger-ui/swagger.yaml"
       - "{{BaseURL}}/swagger-resources/restservices/v2/api-docs"
-      - "{{BaseURL}}/api/swagger_doc.json"
+      - "{{BaseURL}}/v2/api-docs"
+      - "{{BaseURL}}/v2/api-docs"
+      - "{{BaseURL}}/v3/api-docs"
+      - "{{BaseURL}}/api/v2/api-docs"
+      - "{{BaseURL}}/api/v3/api-docs"
+      - "{{BaseURL}}/;v2/api-docs"
+      - "{{BaseURL}}/v2/;api-docs"
+      - "{{BaseURL}}/v2/api-docs;"
+      - "{{BaseURL}}/;v3/api-docs"
+      - "{{BaseURL}}/v3/;api-docs"
+      - "{{BaseURL}}/v3/api-docs;"
+      - "{{BaseURL}}/swagger-resources"
+      - "{{BaseURL}}/api/swagger-resources"
+      - "{{BaseURL}}/;swagger-resources;"
 
     stop-at-first-match: true
     matchers-condition: and
@@ -66,16 +79,10 @@ requests:
           - "Swagger 2.0"
           - "\"swagger\":"
           - "Swagger UI"
+          - "api-docs"
           - "**token**:"
         condition: or
 
       - type: status
         status:
           - 200
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - " @version (v[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})"

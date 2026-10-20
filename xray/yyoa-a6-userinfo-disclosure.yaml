@@ -1,15 +1,15 @@
-expression: r0()
 id: yyoa-a6-userinfo-disclosure
+
 info:
+  name: 致远OA A6 initDataAssess.jsp 用户敏感信息泄露
   author: zan8in
-  name: "\u81F4\u8FDCOA A6 initDataAssess.jsp \u7528\u6237\u654F\u611F\u4FE1\u606F\
-    \u6CC4\u9732"
   severity: low
   verified: false
+
 rules:
   r0:
-    expression: response.status == 200 && response.body.bcontains(b'personList[')
-      && response.body.bcontains(b'new Person(')
     request:
       method: GET
       path: /yyoa/assess/js/initDataAssess.jsp
+    expression: response.status == 200 && response.body.bcontains(b'personList[') && response.body.bcontains(b'new Person(')
+expression: r0()

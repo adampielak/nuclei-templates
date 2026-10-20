@@ -12,6 +12,8 @@ requests:
       - "{{BaseURL}}/ueditor/net/controller.ashx?action=catchimage&encode=utf-8"
       - "{{BaseURL}}/js/ueditor/net/controller.ashx?action=catchimage&encode=utf-8"
       - "{{BaseURL}}/static/ueditor/net/controller.ashx?action=catchimage&encode=utf-8"
+      - "{{BaseURL}}/Utility/UEditor?action=catchimage"
+
     matchers-condition: and
     matchers:
       - type: status

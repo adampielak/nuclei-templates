@@ -1,22 +1,23 @@
-expression: r0() || r1()
 id: hadoop-yarn-unauth
-info:
-  author: p0wd3r,sharecast
-  description: 'app="APACHE-hadoop-YARN"
 
-    '
-  name: Hadoop Yarn Unauth
-  severity: medium
-  verified: true
+info:
+    name: Hadoop Yarn Unauth
+    author: p0wd3r,sharecast
+    severity: medium
+    verified: true
+    description: |
+        app="APACHE-hadoop-YARN"
+
 rules:
-  r0:
-    expression: response.status == 200 && response.body.bcontains(b"resourceManagerVersionBuiltOn")
-      && response.body.bcontains(b"hadoopVersion")
-    request:
-      method: GET
-      path: /ws/v1/cluster/info
-  r1:
-    expression: response.status == 200 && response.body.bcontains(b"javax.ws.rs.WebApplicationException")
-    request:
-      method: GET
-      path: /ws/v1/cluster/apps/new-application
+    r0:
+        request:
+            method: GET
+            path: /ws/v1/cluster/info
+        expression: response.status == 200 && response.body.bcontains(b"resourceManagerVersionBuiltOn") && response.body.bcontains(b"hadoopVersion")
+    r1:
+        request:
+            method: GET
+            path: /ws/v1/cluster/apps/new-application
+        expression: response.status == 200 && response.body.bcontains(b"javax.ws.rs.WebApplicationException")
+expression: r0() || r1()
+
