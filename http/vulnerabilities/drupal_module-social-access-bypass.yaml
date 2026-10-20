@@ -2,19 +2,19 @@
 id: drupal_module-social-access-bypass
 info:
   name: drupal_module-social-access-bypass
-  author: Bishopfox
+  author: me
   severity: medium
-  description: "The Social User Export module enables users within Open Social to create an export of users and download this to a CSV file. The module doesnt sufficiently check access when building the CSV file, allowing logged-in users without the manage members permission to be able to export all data from a selected user in certain scenarios. This vulnerability is mitigated by the fact that an attacker must have the authenticated user role and the site must have the configuration set in such a way a logged in user is able to export users."
+  description: "Open Social is a Drupal distribution for online communities, which ships with a default (optional) module social_file_private to ensure the images and files provided by the distribution are stored in the private instead of the public filesystem. For installations of Open Social prior to version 11.8.0, after updating to 11.8.0 or higher, newly uploaded files were no longer stored in the private file system as intended. Instead, they were stored in the public file system."
   reference:
-    - https://www.drupal.org/sa-contrib-2021-002
+    - https://www.drupal.org/sa-contrib-2024-076
   metadata:
-    security-risk: "Moderately critical 10∕25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Default"
+    security-risk: "Moderately critical 12 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Default"
     vulnerability: "access-bypass"
     fofa-query: "/sites/all/modules/social/"
     google-query: "inurl:'/sites/all/modules/social/"
     impact: medium
     type: indicator
-    created_at: '0001-01-01T00:00:00Z'
+    created_at: '2025-01-09'
   tags: drupal
 
 http:
@@ -30,13 +30,18 @@ http:
         part: body
         regex:
           - 'version = "([0-9]+\.x-[0-9]+\.[0-9]+)"'
+        condition: and
+        
       - type: status
         status:
           - 200
+        condition: and
+        
       - type: word
         words:
           - 'social'
         part: body
+        condition: and
 
     extractors:
       - type: regex
@@ -48,21 +53,4 @@ http:
 
       - type: dsl
         dsl:
-         - compare_versions(version, '8.x-9.7')
-         - compare_versions(version, '8.x-9.6')
-         - compare_versions(version, '8.x-9.5')
-         - compare_versions(version, '8.x-9.4')
-         - compare_versions(version, '8.x-9.3')
-         - compare_versions(version, '8.x-9.2')
-         - compare_versions(version, '8.x-9.1')
-         - compare_versions(version, '8.x-9.0')
-         - compare_versions(version, '8.x-8.9')
-         - compare_versions(version, '8.x-8.8')
-         - compare_versions(version, '8.x-8.7')
-         - compare_versions(version, '8.x-8.6')
-         - compare_versions(version, '8.x-8.5')
-         - compare_versions(version, '8.x-8.4')
-         - compare_versions(version, '8.x-8.3')
-         - compare_versions(version, '8.x-8.2')
-         - compare_versions(version, '8.x-8.1')
-         - compare_versions(version, '8.x-8.0')
+         - compare_versions(version, '>=11.8.0 <= 12.3.10 || >=12.4.0  <= 12.4.9')

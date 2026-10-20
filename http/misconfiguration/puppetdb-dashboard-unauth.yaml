@@ -1,5 +1,4 @@
 id: puppetdb-dashboard-unauth
-
 info:
   name: PuppetDB Dashboard - Unauthenticated Access
   author: DhiyaneshDk,pussycat0x
@@ -20,41 +19,37 @@ info:
     cwe-id: CWE-306
     cpe: cpe:2.3:a:puppet:puppetdb:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
-    max-request: 5
-    shodan-query: 'title:"PuppetDB: Dashboard"'
     fofa-query: 'title="PuppetDB: Dashboard"'
+    max-request: 5
     product: puppetdb
+    shodan-query: 'title:"PuppetDB: Dashboard"'
     vendor: puppet
-  tags: puppetdb,misconfig,exposure,unauth,dashboard
-
+    verified: true
+  tags: dashboard,exposure,misconfig,puppetdb,unauth
 flow: http(1) && http(2)
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/pdb/dashboard/index.html"
-      - "{{BaseURL}}/dashboard/index.html"
-
-    stop-at-first-match:
-
-    matchers:
-      - type: dsl
+  - matchers:
+      - condition: and
         dsl:
           - 'contains(body, "PuppetDB: Dashboard")'
-          - 'contains_any(body, "metrics","population","puppetdb")'
-          - 'status_code == 200'
-        condition: and
+          - contains_any(body, "metrics","population","puppetdb")
+          - status_code == 200
         internal: true
-
-  - method: GET
+        type: dsl
+    method: GET
     path:
-      - "{{BaseURL}}/pdb/query/v4/facts"
+      - '{{BaseURL}}/pdb/dashboard/index.html'
+      - '{{BaseURL}}/dashboard/index.html'
+    stop-at-first-match: null
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100fe0f60564f8b09b551fe3897d1fc9ba8617d6c6a59b563616b478ee8aa7eeaba022100fae1e9a44339b6171799ef34fd9c50233324c337eeeb3c4e2ff98c28361dccb1:922c64590222798bb761d5b6d8e72950
 
-    matchers:
-      - type: dsl
         dsl:
-          - 'contains(header, "application/json")'
-          - 'contains_all(body, "certname","environment","value")'
-          - 'status_code == 200'
-        condition: and
-# digest: 4b0a00483046022100fe0f60564f8b09b551fe3897d1fc9ba8617d6c6a59b563616b478ee8aa7eeaba022100fae1e9a44339b6171799ef34fd9c50233324c337eeeb3c4e2ff98c28361dccb1:922c64590222798bb761d5b6d8e72950
+          - contains(header, "application/json")
+          - contains_all(body, "certname","environment","value")
+          - status_code == 200
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/pdb/query/v4/facts'
