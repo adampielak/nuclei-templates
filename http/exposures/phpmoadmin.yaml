@@ -8,7 +8,7 @@ info:
     - http://www.phpmoadmin.com/
     - https://github.com/MongoDB-Rox/phpMoAdmin-MongoDB-Admin-Tool-for-PHP
   tags: phpmoadmin, exposure, mongo
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/"

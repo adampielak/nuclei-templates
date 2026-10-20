@@ -3,7 +3,7 @@ info:
   name: Find partnerportal elmah.axd
   author: Clark
   severity: meduim
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/MX/partnerportal/elmah.axd"

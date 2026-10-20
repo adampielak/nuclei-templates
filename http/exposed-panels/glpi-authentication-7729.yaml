@@ -8,7 +8,7 @@ info:
     - https://www.shodan.io/search?query=http.title%3A%22GLPI+-+Authentication%22
   tags: panel,auth,glpi
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

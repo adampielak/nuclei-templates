@@ -6,11 +6,10 @@ info:
   severity: info
   metadata:
     verified: true
-    max-request: 1
     shodan-query: http.title:"PowerCom Network Manager"
-  tags: powercommanager,login,panel,discovery
+  tags: powercommanager,login,panel
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -25,4 +24,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c86a28377ee3fd493f04a7bd91c6763c192c757be53a97aebd93ac97c0e8c9a6022100bbc30f9906267e1ea38786f73d6b30f65fbd7f4d45e86c5870560e89ef789e42:922c64590222798bb761d5b6d8e72950

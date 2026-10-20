@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"LockSelf"
-  tags: panel,lockself,login,detect,discovery
+  tags: panel,lockself,login,detect
 
 http:
   - method: GET
@@ -25,4 +25,4 @@ http:
           - 'status_code == 200'
           - 'contains_any(body, "<title>LockSelf","content=\"LockSelf", "name=\"LockSelf")'
         condition: and
-# digest: 4a0a004730450220354de51e33aee88c00ee393d13f2e539b8432c4f07820ecf2163eee652a7935c02210088bfa8ecc7abfb74bc1a0a2d31a523e9e816537ea642cbfe82b10efc02dc57f8:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220116180e77c579a55372710b60eae94548a9b26f5e8223846f9edd97d652ae33a022060ec21926e8a88688e8697fb47b9dd888ffef82e6d6994091a6fd2ed7549ee1e:922c64590222798bb761d5b6d8e72950

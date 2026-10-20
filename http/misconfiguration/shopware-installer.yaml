@@ -7,15 +7,11 @@ info:
   description: Shopware is susceptible to the Installation page exposure due to misconfiguration.
   reference:
     - https://www.shopware.com/en/
-  classification:
-    cpe: cpe:2.3:a:shopware:shopware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: shopware
-    product: shopware
     fofa-query: title="Installation | Shopware 6"
-  tags: misconfig,shopware,install,exposure,vuln
+  tags: misconfig,shopware,install,exposure
 
 http:
   - method: GET
@@ -34,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e493d2b8eb6cbd73261cecedc603e7361d83c53a03aeeec20fd87e7910b60b05022028fb9225b4f55f01f743ff0bf8e7db1f6c086b060af24006090040d8a396d0ba:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c49d7dd7b97eb87d5b4de3f9e09232a82505cd82cf325da8d921f8ae060ba4f4022100a7a8fbaacad106a6f9797a34c058e728821f47099467a86276a92d3bc3a55cd1:922c64590222798bb761d5b6d8e72950

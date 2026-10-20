@@ -7,28 +7,20 @@ info:
   description: OpenCATS login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:opencats:opencats:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 2
-    vendor: opencats
-    product: opencats
-    shodan-query:
-      - title:"opencats"
-      - http.title:"opencats"
-    fofa-query: title="opencats"
-    google-query: intitle:"opencats"
-  tags: panel,opencats,discovery
+    shodan-query: title:"opencats"
+  tags: panel,opencats
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
       - "{{BaseURL}}/opencats/"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -40,4 +32,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d915111b14fc131dc9634599bdccf91bfacdb116a5dd04070b25c9c7b5dac8d202206998a044912b79b5fc9fe7673db8e4d00d93b2897671a8b5008cdc63b653e780:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2022/12/01
