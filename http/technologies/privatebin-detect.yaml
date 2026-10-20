@@ -43,4 +43,4 @@ http:
         group: 1
         regex:
           - 'privatebin\.[a-z]{2,3}\?([0-9.]+)'
-# digest: 490a00463044022018ec511518037b483edef0b39495c3dbca38aa510d8e97cd2791c775ce823de402201d3fd1342dbe7914a795552d3f0748fc805d7cb3fb2a5cac4141b548b87d5f3b:922c64590222798bb761d5b6d8e72950
+
