@@ -7,18 +7,18 @@ info:
   description: Kae's File Manager admin login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
-  tags: panel,kfm
+  metadata:
+    max-request: 1
+  tags: panel,kfm,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/kfm/admin/"
 
     matchers-condition: and
     matchers:
-
       - type: word
         part: body
         words:
@@ -29,5 +29,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/22
+# digest: 4a0a0047304502203b6df6a026f48d4822b03fd1d238c65af41e24b8f152e2ddc0d27e6c9c63b6f7022100de76ec5fd2b45b58694fafb1f55550bc344f824400b1264f24600cb36f46577e:922c64590222798bb761d5b6d8e72950

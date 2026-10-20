@@ -7,14 +7,14 @@ info:
   description: Loxone Intercom Video panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
     verified: true
+    max-request: 1
     shodan-query: http.title:"Loxone Intercom Video"
-  tags: panel,loxone
+  tags: panel,loxone,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -29,5 +29,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/03
+# digest: 4a0a00473045022100b0ee4a7a877bf50cfc8dbd39c5b46127de4225fc97352706a39f449d7b2e4096022048e23b3a1ddf8c811cccc9b77f7f03cbba3dce2626def571c651e23b0e6e366a:922c64590222798bb761d5b6d8e72950

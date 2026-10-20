@@ -9,20 +9,24 @@ info:
     - https://avtech.com/articles/166/how-to-access-a-room-alert-monitors-settings-pages-2/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:h:avtech:room_alert_3e:*:*:*:*:*:*:*:*
   metadata:
     verified: true
+    max-request: 2
     shodan-query: title:"Room Alert"
-  tags: panel,room-alert,avtech
+    product: room_alert_3e
+    vendor: avtech
+  tags: panel,room-alert,avtech,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/index.html"
       - "{{BaseURL}}/gateway"
 
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -41,5 +45,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/03
+# digest: 4a0a0047304502200f6edf645d8e0cb37e56c44f59b79271f8fb013620edbda5a0d1d1466a6bd28c02210080845434202bc692ffb1b6af41df1cb923b64401350c2288279b839fe6aaa563:922c64590222798bb761d5b6d8e72950

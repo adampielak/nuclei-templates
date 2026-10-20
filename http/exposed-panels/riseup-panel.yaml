@@ -9,13 +9,13 @@ info:
     - https://www.riseup.ai/en/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
     verified: true
-  tags: panel,riseup
+    max-request: 1
+  tags: panel,riseup,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/Account/login"
@@ -38,5 +38,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/03
+# digest: 4b0a0048304602210083f8eb32af5804ff3d33be1c961feb96baa6dfcbc3554353665095b5d49e82c3022100d8f25c1df69bb62346b479cedeaf2af4616fcf90fbd2e190488b3026afcebdec:922c64590222798bb761d5b6d8e72950

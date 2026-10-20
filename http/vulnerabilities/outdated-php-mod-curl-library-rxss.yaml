@@ -5,7 +5,7 @@ info:
   author: xElkomy
   severity: medium
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/slider-range-htapps/vendor/curl/curl/tests/server/php-curl-test/post_file_path_upload.php?key=%3Cimg%20src%20onerror%3Dalert%28%27XSS%27%29%3E"

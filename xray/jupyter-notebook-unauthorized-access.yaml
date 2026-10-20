@@ -1,14 +1,15 @@
-expression: r0()
 id: jupyter-notebook-unauthorized-access
+
 info:
-  author: bufsnake(https://github.com/bufsnake)
-  name: Jupyter Notebook Unauthorized Access
-  severity: high
-  verified: false
+    name: Jupyter Notebook Unauthorized Access
+    author: bufsnake(https://github.com/bufsnake)
+    severity: high
+    verified: false
+
 rules:
-  r0:
-    expression: response.status == 200 && response.body.bcontains(b"terminals/websocket")
-      && !response.body.bcontains(b"Password:")
-    request:
-      method: GET
-      path: /terminals/3
+    r0:
+        request:
+            method: GET
+            path: /terminals/3
+        expression: response.status == 200 && response.body.bcontains(b"terminals/websocket") && !response.body.bcontains(b"Password:")
+expression: r0()

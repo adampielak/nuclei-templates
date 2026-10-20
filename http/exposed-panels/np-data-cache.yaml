@@ -7,14 +7,14 @@ info:
   description: NP Data Cache panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
     verified: true
+    max-request: 1
     shodan-query: title:"NP Data Cache"
-  tags: np,panel,cache
+  tags: np,panel,cache,discovery
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -31,5 +31,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/12/01
+# digest: 4b0a00483046022100d8ea523ace086971bd45f210ef3da6f0a5f436048ea252a18f737c5d3b23bd16022100bd637150d70e2a8f2ccbf90da11ab09f4a6b1a313856440651354bf9a8248ee6:922c64590222798bb761d5b6d8e72950

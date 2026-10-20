@@ -7,7 +7,7 @@ info:
   description: Search for the each repos patterns on passed URLs.
   tags: exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/{{repo-path}}"
