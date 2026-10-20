@@ -5,15 +5,11 @@ info:
   author: ritikchaddha
   severity: info
   description: Doris panel detection template.
-  classification:
-    cpe: cpe:2.3:a:apache:doris:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: apache
-    product: doris
     shodan-query: http.favicon.hash:24048806
-  tags: doris,panel,login,detect,discovery
+  tags: doris,panel,login,detect
 
 http:
   - method: GET
@@ -32,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ce8e42ce1a7306f0074f5867c8684a2c2ac978f6701437b1193680eb37304457022100fcf6604b9252d77420335dab031eee41522edffbf952a6d2da23e55488094283:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402207ee363cb0c1dceb56f95a5cedc6266bae22b5b47bd7fa1d344fd3748f295a489022049bf512a5b7470f9857111d5599773c6735f00f014ca1825454c8ef20ae56522:922c64590222798bb761d5b6d8e72950

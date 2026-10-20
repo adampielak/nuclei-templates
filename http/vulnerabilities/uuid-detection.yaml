@@ -6,7 +6,7 @@ info:
   severity: info
   description: This template detects UUIDs in the response body.
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

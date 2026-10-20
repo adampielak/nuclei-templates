@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: panel,dxplanning,login,detect,discovery
+  tags: panel,dxplanning,login,detect
 
 http:
   - method: GET
@@ -33,4 +33,5 @@ http:
         group: 1
         regex:
           - '<td>([0-9.]+)</td>'
-# digest: 4a0a00473045022100f52a3135538f6ea08ab9ffc02f0dbe3ee4f1fc2ef4652af1e7062d837dafe4e302206d36ea46cfac1f61fa0e278e2b55db884463c633966828852a8fee4286cde994:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402207addb001514e395fbf2c1ddc51e199096c7555499d24fb6e7dd87cdab1e727e502203d81d7a97483115fb4e0b6cbeedde974ca6f5672ac23243739979f3ecc395543:922c64590222798bb761d5b6d8e72950

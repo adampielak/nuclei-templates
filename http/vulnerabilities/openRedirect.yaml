@@ -4,7 +4,7 @@ info:
   author: coffinxp
   severity: medium
   description: detect all uri/url get based openredirect
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/https://bing.com/"

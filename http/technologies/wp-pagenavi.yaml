@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/wp-pagenavi/
   metadata:
+    max-request: 1
     plugin_namespace: wp-pagenavi
     wpscan: https://wpscan.com/plugin/wp-pagenavi
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502204a2c8ac2b946244381f639bb90098b3bc227d2d4aedf34fa8b6fd70683da860c022100867e5a99f6404dbf35903ad8366d37cd7da33fd983d2398d2ed29e827c3e525c:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221009158b8c348ef501b0b8673f2f735b55533d869a69c3f4bfe033e147279dad6b50221009e5aeb20b7d946df69b59423c556a1881e52c47d48918149a44b2c85dc01bd1c:922c64590222798bb761d5b6d8e72950

@@ -6,7 +6,7 @@ info:
   severity: info
   tags: cisco,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/+CSCOE+/logon.html"

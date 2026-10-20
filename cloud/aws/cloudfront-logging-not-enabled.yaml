@@ -15,7 +15,7 @@ variables:
   service: cloudfront
   region: us-east-1
 
-requests:
+http:
   - method: GET
     path:
       - "https://{{service}}.amazonaws.com/2020-05-31/distribution"

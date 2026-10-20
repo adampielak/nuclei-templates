@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/akismet/
   metadata:
+    max-request: 1
     plugin_namespace: akismet
     wpscan: https://wpscan.com/plugin/akismet
-  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a004830460221008b9438ff92e77c43724a72f8bae8134261f9db4342a0fd51e8a2e79c0ad820b4022100fbbabfa89f81515d3982510a13f26c4df70d840b5399995961a0741dd129f37c:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c9ca66877cfe93fbac643a61865e6a96c397cd64cd40a2180eaf1963e77acb11022100e4ab1e60decfcfbbe5b2066e6784e964e808a011821005058517fa71bcd9703e:922c64590222798bb761d5b6d8e72950

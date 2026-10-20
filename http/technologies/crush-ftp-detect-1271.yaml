@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   tags: tech,ftp
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/WebInterface/login.html"
