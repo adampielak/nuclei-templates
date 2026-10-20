@@ -2,7 +2,7 @@ id: 3dprint-f89e9c46-aca3-4b2f-b935-2976c510ed8b
 
 info:
   name: >
-    3DPrint <= 3.5.4.7 - Cross-Site Request Forgery to Arbitrary File Deletion
+    3DPrint < 3.5.6.9 - Cross-Site Request Forgery to Arbitrary File Deletion
   author: topscoder
   severity: medium
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.5.4.7')
+          - compare_versions(version, '<= 3.5.4.8')

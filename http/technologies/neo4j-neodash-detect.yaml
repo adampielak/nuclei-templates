@@ -9,8 +9,8 @@ info:
   classification:
     cpe: cpe:2.3:a:neo4j:*:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     vendor: neo4j
     product: neodash
     shodan-query: title:"NeoDash"
@@ -27,4 +27,4 @@ http:
           - 'contains(body, "<title>NeoDash - Neo4j Dashboard Builder")'
           - 'status_code == 200'
         condition: and
-
+# digest: 4b0a00483046022100e695b1159725df30d268b2759af6326ff12c4a9bb15d676df6a25eb603320cb5022100d8dcdec7ccff6c8cd21f6328a1f22d0e18ca5400e9666d8e90e31e6e30223151:922c64590222798bb761d5b6d8e72950

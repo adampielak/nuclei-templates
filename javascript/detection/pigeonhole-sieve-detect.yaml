@@ -42,4 +42,4 @@ javascript:
         name: version
         regex:
           - 'VERSION([ "0-9.]+)'
-
+# digest: 490a0046304402202aaee1c4b50153a0c62f6574e0e481df436ddfa9de8df495eb3ac67ce381615202206f40616c18ab2ffceabe6bb75a4613ffdbd88972a4692893178b55dc5cc80031:922c64590222798bb761d5b6d8e72950

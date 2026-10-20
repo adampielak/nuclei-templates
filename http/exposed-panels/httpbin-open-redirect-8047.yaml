@@ -1,13 +1,10 @@
----
 id: httpbin-open-redirect
-
 info:
   name: HTTPBin Open Redirect Vulnerability
   author: Adam Crosser
   severity: info
   tags: panel
-
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/redirect-to?url=https%3A%2F%2Fexample.com"

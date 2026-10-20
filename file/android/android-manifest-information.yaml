@@ -1,26 +1,31 @@
-file:
-- extensions:
-  - xml
-  extractors:
-  - group: 1
-    name: package-name
-    regex:
-    - package="([^"]+)"
-    type: regex
-  - group: 1
-    name: min-sdk-version
-    regex:
-    - minSdkVersion="(\d+)"
-    type: regex
-  matchers:
-  - condition: and
-    type: word
-    words:
-    - <manifest
-    - </manifest>
 id: android-manifest-information
+
 info:
-  author: MrW0l05zyn
   name: Android manifest information
+  author: MrW0l05zyn
   severity: info
   tags: file,android,manifest
+
+file:
+  - extensions:
+      - xml
+
+    matchers:
+      - type: word
+        words:
+          - "<manifest"
+          - "</manifest>"
+        condition: and
+
+    extractors:
+      - type: regex
+        name: package-name
+        group: 1
+        regex:
+          - "package=\"([^\"]+)\""
+
+      - type: regex
+        name: min-sdk-version
+        group: 1
+        regex:
+          - "minSdkVersion=\"(\\d+)\""

@@ -3,7 +3,7 @@ info:
   name: Finds Letter Opener Web Exposed
   author: Clark
   severity: meduim
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/letter_opener/"

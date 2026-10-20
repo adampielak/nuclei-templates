@@ -3,7 +3,7 @@ info:
   name: Find Git log exposure
   author: Clark
   severity: meduim
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/.git/logs/HEAD"

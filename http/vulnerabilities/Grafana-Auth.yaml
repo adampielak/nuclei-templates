@@ -7,7 +7,7 @@ info:
   description: Grafana default credentials
   tags: Grafana
 
-http:
+requests:
   - raw:
       - |
         GET /api/admin/settings HTTP/1.1

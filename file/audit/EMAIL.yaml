@@ -1,12 +1,15 @@
-file:
-- extensions:
-  - all
-  extractors:
-  - regex:
-    - '[a-zA-Z0-9._-]+@[a-z]+\.+[a-z]+'
-    type: regex
 id: EMAIL
+
 info:
-  author: Saud Alenazi @Dmaral3noz
   name: EMAIL
+  author: Saud Alenazi @Dmaral3noz
   severity: info
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        regex:
+          - "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
