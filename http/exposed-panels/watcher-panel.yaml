@@ -5,12 +5,11 @@ info:
   author: DhiyaneshDK
   severity: info
   metadata:
-    verified: true
-    max-request: 1
+    verified: "true"
     shodan-query: html:"/vsaas/v2/static/"
-  tags: panel,watcher,login,discovery
+  tags: panel,watcher,login
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/vsaas/v2/login'
@@ -25,4 +24,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c9e031140dbc36c2a129ba3205441c4b348397e45ff3b8bffafd43939ba38059022100ecbf33e7c05924d3c987c91a57d3d4a611e58037d8885b86af770768518e58ea:922c64590222798bb761d5b6d8e72950

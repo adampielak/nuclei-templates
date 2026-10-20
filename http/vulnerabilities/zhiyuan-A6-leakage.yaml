@@ -9,7 +9,6 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/yyoa/index.jsp"
       - "{{BaseURL}}/yyoa/createMysql.jsp"
       - "{{BaseURL}}/yyoa/ext/createMysql.jsp"
     matchers-condition: and
@@ -20,7 +19,6 @@ requests:
       - type: word
         words:
           - "root"
-          - "致远A6"
           - "localhost"
         part: body
         condition: and
