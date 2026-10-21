@@ -7,7 +7,7 @@ info:
   tags: gitlab,enum
 
 
-http:
+requests:
   - method: POST
     path:
       - "{{BaseURL}}/api/graphql"
