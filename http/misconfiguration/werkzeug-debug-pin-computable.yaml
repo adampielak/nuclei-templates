@@ -1,0 +1,42 @@
+id: werkzeug-debug-pin-computable
+
+info:
+  name: Werkzeug Debug Console PIN Computable (RCE)
+  author: assay
+  severity: critical
+  description: |
+    Werkzeug debug console is exposed with EVALEX enabled. The PIN can be
+    computed from leaked server information (machine-id, MAC address, process
+    details). The SECRET variable is leaked in the page source. Combined with
+    PIN computation, this leads to arbitrary Python code execution (RCE).
+  tags: misconfig,werkzeug,flask,python,rce,code-injection
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/console"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "EVALEX = true"
+          - "SECRET"
+        condition: and
+        part: body
+
+      - type: word
+        words:
+          - "Interactive Console"
+        part: body
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        name: werkzeug_secret
+        group: 1
+        regex:
+          - 'SECRET = "([^"]+)"'
