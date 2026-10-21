@@ -10,7 +10,7 @@ info:
     - https://filezilla-project.org
   metadata:
     max-request: 1
-  tags: phishing,filezilla,osint
+  tags: phishing,filezilla,osint,discovery
 http:
   - method: GET
     path:
@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"filezilla-project.org")'
-# digest: 4a0a00473045022071b2a7e0478ce01d929175a5455ae0b9cbefcad581ae7805113d6e51b7b31a93022100d72661e63143ec223ea853379cf513304dabbc7e736287a6d61ef48e7eee340a:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221008ff598eb915bfe60fb8911ac042b60589720b040572ea4b28f488aa284e9442e022100af1bda7a6f8ed1fa5fe563f48e8bfa8a7046e9227fae93aea21f520499e7ad77:922c64590222798bb761d5b6d8e72950

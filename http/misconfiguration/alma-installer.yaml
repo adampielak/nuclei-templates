@@ -5,15 +5,11 @@ info:
   author: DhiyaneshDK
   severity: high
   description: Alma is susceptible to the Installation page exposure due to misconfiguration.
-  classification:
-    cpe: cpe:2.3:a:almapay:alma:*:*:*:*:wordpress:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: almapay
-    product: alma
     shodan-query: title:"Alma Installation"
-  tags: misconfig,alma,install,exposure,vuln
+  tags: misconfig,alma,install,exposure
 
 http:
   - method: GET
@@ -35,4 +31,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205d755ef14ee4ac720b96a67192cafb0c740d86c4c6ee84a2fb8770a1bc4cc521022100a28fcf95460bf2ccf54b15c1730dc418a78ecb37cb9b29801fcd0cbc51a65382:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c6250654d85fbaf80fbfeb1011ad7902c233e811ca4b2ecd51079239fd1d4998022100f44bc592a98719ffc09c63d53bbc99ce6798630a5618ca1693cf6aa6fda70b84:922c64590222798bb761d5b6d8e72950
