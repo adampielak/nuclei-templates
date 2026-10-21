@@ -1,5 +1,4 @@
 id: apache-skywalking-horizon-ui-config
-
 info:
   name: Apache SkyWalking Horizon UI - Config Exposure
   author: icarot
@@ -10,17 +9,15 @@ info:
     - https://github.com/apache/skywalking-horizon-ui
   metadata:
     max-request: 2
+    product: skywalking-horizon-ui
     shodan-query: title:"SkyWalking Horizon UI"
     vendor: apache
-    product: skywalking-horizon-ui
-  tags: apache,skywalking-horizon-ui,config,exposure
-
+  tags: apache,config,exposure,skywalking-horizon-ui
 http:
   - method: GET
     path:
       - "{{BaseURL}}/api/auth/oidc/providers"
       - "{{BaseURL}}/api/auth/health"
-
     matchers-condition: and
     matchers:
       - type: dsl
@@ -28,13 +25,11 @@ http:
           - contains_all(body, '"backend":', '"configured":', '"ldap":')
           - contains_all(body, '"passwordLogin":', '"providers":')
         condition: or
-
       - type: word
         part: content_type
         words:
           - 'application/json'
-
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220617ed8602540f59e07f6f66511d3be05c8b68686bbb062e15bf3a09b09aa641e0221008d922a9a60dfd2d610dfb0a53a13be4762056fcc46628689eedf549927ddf769:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a004730450220617ed8602540f59e07f6f66511d3be05c8b68686bbb062e15bf3a09b09aa641e0221008d922a9a60dfd2d610dfb0a53a13be4762056fcc46628689eedf549927ddf769:922c64590222798bb761d5b6d8e72950
