@@ -1,0 +1,34 @@
+id: redis-config-write
+
+info:
+  name: Redis CONFIG SET Writable (File Write RCE Vector)
+  author: assay
+  severity: high
+  description: |
+    Redis CONFIG SET dir and dbfilename commands are accessible without
+    authentication. An attacker can write arbitrary files to the server
+    filesystem by setting the dump directory and filename, injecting
+    payload data via SET, then triggering BGSAVE. Common RCE vectors:
+    crontab (/var/spool/cron), SSH authorized_keys (/root/.ssh),
+    webshell (/var/www/html). Blocked only when target directories
+    do not exist (e.g. minimal container).
+  tags: network,redis,misconfig,rce
+
+tcp:
+  - inputs:
+      - data: "*3\r\n$6\r\nCONFIG\r\n$3\r\nGET\r\n$3\r\ndir\r\n"
+    host:
+      - "{{Hostname}}"
+    port: 6379
+    read-size: 256
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "dir"
+
+      - type: word
+        words:
+          - "-NOAUTH"
+        negative: true

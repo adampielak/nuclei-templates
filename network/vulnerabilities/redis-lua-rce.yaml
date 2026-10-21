@@ -1,0 +1,26 @@
+id: redis-lua-rce
+
+info:
+  name: Redis Lua EVAL Script Execution
+  author: assay
+  severity: high
+  description: |
+    Redis server allows unauthenticated Lua script execution via EVAL.
+    On instances without strict Lua mode, io.popen/os.execute give OS
+    command execution. Even with strict Lua, redis.call() from scripts
+    can read/write all data. Detected by executing a safe arithmetic
+    eval that returns a known marker.
+  tags: network,redis,rce,lua
+
+tcp:
+  - inputs:
+      - data: "*3\r\n$4\r\nEVAL\r\n$13\r\nreturn 7*1337\r\n$1\r\n0\r\n"
+    host:
+      - "{{Hostname}}"
+    port: 6379
+    read-size: 64
+
+    matchers:
+      - type: word
+        words:
+          - ":9359"

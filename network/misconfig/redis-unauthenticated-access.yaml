@@ -1,0 +1,25 @@
+id: redis-unauthenticated-access
+
+info:
+  name: Redis Unauthenticated Access
+  author: assay
+  severity: critical
+  description: |
+    Redis server accepts connections without authentication. An attacker can
+    read/write all data, execute Lua scripts (RCE via io.popen on Redis <=6),
+    change server configuration (CONFIG SET dir/dbfilename for file write),
+    and perform denial-of-service (FLUSHALL, DEBUG SEGFAULT).
+  tags: network,redis,misconfig,rce
+
+tcp:
+  - inputs:
+      - data: "PING\r\n"
+    host:
+      - "{{Hostname}}"
+    port: 6379
+    read-size: 32
+
+    matchers:
+      - type: word
+        words:
+          - "+PONG"
