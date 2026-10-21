@@ -2,7 +2,7 @@ id: wamate_confirm-f9566fdd-c4ad-4971-b23b-bcf76c8b5cef
 
 info:
   name: >
-    WaMate Confirm <= 2.0.1 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Phone Number Blocking/Unblocking
+    WaMate Confirm <= 2.0.2 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Phone Number Blocking/Unblocking
   author: topscoder
   severity: low
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.1')
+          - compare_versions(version, '<= 2.0.2')
