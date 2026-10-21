@@ -1,0 +1,95 @@
+id: waf-fingerprint-detection
+
+info:
+  name: WAF Fingerprint Detection
+  author: custom
+  severity: info
+  description: |
+    Identifies the WAF product protecting a target by sending a known-blocked
+    payload and analysing response headers and body for product signatures.
+    Knowing the WAF guides which bypass techniques to apply.
+  tags: waf,fingerprint,recon
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?xss=<script>alert(1)</script>"
+
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "cf-ray"
+          - "CF-RAY"
+        condition: or
+        name: cloudflare
+
+      - type: word
+        part: header
+        words:
+          - "AkamaiGHost"
+          - "X-Akamai"
+        condition: or
+        name: akamai
+
+      - type: word
+        words:
+          - "incapsula"
+          - "imperva"
+          - "visid_incap_"
+          - "_incap_ses_"
+        condition: or
+        name: imperva
+
+      - type: word
+        part: header
+        words:
+          - "x-amzn-requestid"
+          - "x-amzn-errortype"
+        condition: or
+        name: aws-waf
+
+      - type: word
+        words:
+          - "BigIP"
+          - "BIG-IP"
+          - "F5"
+        condition: or
+        name: f5-bigip
+
+      - type: word
+        words:
+          - "Mod_Security"
+          - "ModSecurity"
+          - "NOYB"
+        condition: or
+        name: modsecurity
+
+      - type: word
+        words:
+          - "Sucuri"
+          - "X-Sucuri-ID"
+          - "sucuri-"
+        condition: or
+        name: sucuri
+
+      - type: word
+        words:
+          - "Barracuda"
+          - "barra_counter_session"
+        condition: or
+        name: barracuda
+
+      - type: word
+        words:
+          - "ddos-guard"
+          - "DDoS-Guard"
+        condition: or
+        name: ddos-guard
+
+    extractors:
+      - type: kv
+        part: header
+        kv:
+          - server

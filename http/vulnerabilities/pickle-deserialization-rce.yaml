@@ -1,0 +1,36 @@
+id: pickle-deserialization-rce
+
+info:
+  name: Python Pickle Deserialization RCE
+  author: custom
+  severity: critical
+  description: |
+    Detects endpoints that accept pickled Python objects and
+    deserialize them unsafely (pickle.loads / pickle.load).
+    A crafted pickle payload achieves arbitrary code execution.
+  reference:
+    - https://docs.python.org/3/library/pickle.html#restricting-globals
+  tags: deserialization,rce,python,pickle
+
+http:
+  - raw:
+      - |
+        POST {{Path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/octet-stream
+
+        {{hex_decode('80049563000000000000008c')}}
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "UnpicklingError"
+          - "pickle"
+          - "_pickle"
+          - "invalid load key"
+        condition: or
+
+      - type: status
+        status:
+          - 500

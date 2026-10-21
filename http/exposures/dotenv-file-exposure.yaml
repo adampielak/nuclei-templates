@@ -1,0 +1,49 @@
+id: dotenv-file-exposure
+
+info:
+  name: Exposed .env Configuration File
+  author: custom
+  severity: high
+  description: |
+    Environment configuration files (.env) are accessible via HTTP.
+    These files contain database credentials, API keys, JWT secrets,
+    SMTP passwords, and other sensitive configuration.
+  tags: exposure,env,credentials,config
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.env"
+      - "{{BaseURL}}/.env.bak"
+      - "{{BaseURL}}/.env.local"
+      - "{{BaseURL}}/.env.production"
+      - "{{BaseURL}}/.env.development"
+      - "{{BaseURL}}/.env.example"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "DB_PASSWORD"
+          - "DATABASE_URL"
+          - "SECRET_KEY"
+          - "JWT_SECRET"
+          - "API_KEY"
+          - "SMTP_PASSWORD"
+          - "AWS_SECRET"
+          - "REDIS_URL"
+          - "MONGO_URI"
+        condition: or
+
+      - type: word
+        negative: true
+        words:
+          - "<html"
+          - "<!DOCTYPE"
+          - "404"

