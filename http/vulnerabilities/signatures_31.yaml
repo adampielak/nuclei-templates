@@ -77849,4 +77849,5344 @@ requests:
       - type: dsl
         name: 3.1 - 3.1.1
         dsl:
-          - 
+          - "(\"f4a9c85dfeb4384d2ee410087625714d\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"5a94b8aeb8401cb4c6132f0fc706c178\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/skins/v2/panel.css"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"17f43809adfca1ef6341611ef2d1f6fc\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"2a54bf22d3042d29b1d392aac9dccf29\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"07be772d6dfc77885b3d79c28d11ea6b\" == md5(body))"
+      - type: dsl
+        name: 3.4.1 - 3.5
+        dsl:
+          - "(\"bf83eb3858af35b16d95d6266f46d501\" == md5(body))"
+      - type: dsl
+        name: 3.3.2 - 3.4
+        dsl:
+          - "(\"9206466e38d16e0ca23862a5ea3baaaa\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.3.1
+        dsl:
+          - "(\"9f9d014f9c16ccf7323a517e0749a3fc\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.1.1
+        dsl:
+          - "(\"73be68ce5dbd415bfcf6c6d9cb68768d\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"c16a0db31fb0d8a6bbc45531059e755e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/skins/v2/presets.css"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"230e305605ce91aa1e3e2dc50ff74b82\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"fc338dfbb17fcf94df246564ac1d8140\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"7f8950cc6bb58649760468568c8b69e2\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"58100b1dcbb28862ebd66396db34cb5f\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"38d72c22906be98f921164349a477df3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/skins/v2/templates.css"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"61cbe4a567d7aaf00fbecc77c7c72d99\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"348ee94fb3a982b6050c88ba809327dd\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"7dc673be32d27d2322f15ede127e98d3\" == md5(body))"
+      - type: dsl
+        name: 3.2.2 - 3.5
+        dsl:
+          - "(\"9ed0ea260f943c4bb732e58d1e6602fa\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.2.1
+        dsl:
+          - "(\"d264907fe334224aaf1edecce6c16cd7\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.1.1
+        dsl:
+          - "(\"b51a87277c8ed2611f866b41833d014c\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"80cec161b95777c00dbce34eb12cc757\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/dom.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"6db7b6d70abc562de52aec5de164e8f4\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"eede36d605b2a1f8de6b8118aee6cade\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"b3eec869cd89b1ecc2514666f0896066\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"5fbed22d76ae6fe5b106fc48a6335398\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.4.1
+        dsl:
+          - "(\"c17c8564d5db43caab22baaa3f5cd5a1\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"a0641b94b2b0273f4b623e81de9540c0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/dataprocessor.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7fbc647672e610be1e49d7bd48a4a623\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f02353015d36a0e6c93e9af411bf463f\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"06b3e47c80cb1ff7fdb60e21905b5be4\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"192605f136ec186f63f6aed75bdbf8a0\" == md5(body))"
+      - type: dsl
+        name: 3.1.1 - 3.4.1
+        dsl:
+          - "(\"3486a9cd8bcb0c76622f1846889c7e78\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/dom/documentfragment.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"22440eaf9f5837f62ceca29132ba8857\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"029871c9c71719ffd5b722d2c5b8eddc\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"ad7ad0942151fe11cdf94679e507fa4f\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"02e388bcea68edad862ba49582c58c15\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.4.1
+        dsl:
+          - "(\"ff23aadf57a3a70fc5018d7ed158ee8d\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"12774b501648eea5b8e00cbe986b65b8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/dom/nodelist.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"94e1a74987a7c5de6c5cca9174702b36\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"340f57afc9835ad9aa1928b1ef3c9897\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"32f478c7c8e4cc2c4bfdf8f9463d1330\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"6fca418cae32e23500330140f4440c5e\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.4.1
+        dsl:
+          - "(\"65b02b11b4c84cbc13253f930d8ddd9b\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"6f4055cd2a20d88c85d2d4d222b87675\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/dom/comment.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"cb3b023e65058684b9a115a9f9b2e645\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"79dd2b4289d60a8af0ae4385056a4ec1\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"997f88990106060824de0ef3bbcb7cae\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"7c82124a4b301ae1857396bb5675ea3e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/dom/text.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"9dc29851de17ef894f3cbb4c14667719\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"705b7d14ebb5f963a8b2dabc9a71bad6\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.6.2
+        dsl:
+          - "(\"28e7921750ac8b17decb2b5edcfe08d4\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.2
+        dsl:
+          - "(\"b1cf0fc2a98d168a0ed45e49c1713f59\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"2651550dcf86abe7ab3a4317ff5d3094\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"61331665238eef68f4234a107ff16f77\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/dom/elementpath.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"a6a8f48cd769a1d8f0f9a982a2769201\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"bb96cb7bbd14e0db26103849695343b6\" == md5(body))"
+      - type: dsl
+        name: 3.6.1 - 3.6.2
+        dsl:
+          - "(\"3d0953760865050c1907bcd1cc83c266\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6
+        dsl:
+          - "(\"d6ea29e34192462fd1f33301b92467f0\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"e72b3f4b1ec1bcc7d607bfcdc5663e0d\" == md5(body))"
+      - type: dsl
+        name: 3.3 - 3.4.1
+        dsl:
+          - "(\"f8e60180e0a1ef4a6a8a24a579fc4387\" == md5(body))"
+      - type: dsl
+        name: 3.2.1 - 3.2.2
+        dsl:
+          - "(\"73f3c647a5316333767fefad0e2c026e\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.2
+        dsl:
+          - "(\"0ca8fddda3f4d2eb4ef2384ce44a90cd\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"04603f9974ec178aace9bd8138ab8b6a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/plugindefinition.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ed9527efbbdf5424c58bdba94487ac86\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"a5357b7025bb0357609a31dee1ee9213\" == md5(body))"
+      - type: dsl
+        name: 3.5.4 - 3.6.2
+        dsl:
+          - "(\"66dc8845e7cb476ed256bde8d26f39bf\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.3
+        dsl:
+          - "(\"0566ffbce6c6fff9efcf611ff966c817\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"ac5c5b30f6f871adddb03fabab43bb2b\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"aee4d86bf4b04a67c740401e0622c323\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/htmlparser/cdata.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ccd0c4dd85d2f4b0e4c226e3cdb2e9ca\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"a84e24d3d7413f0650417c52e31cf1a5\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"2dcbf219c5d2eae5eb7c23b55da1f7c3\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"8ffd69a1bd2ca1c0195897f887841128\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"54a2f59f3aaa5c009014bb29fc7c5057\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/htmlparser/comment.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"680d1d2a842180ee6dbe51738413f761\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"49ed161cf083158d8c42bafa8f6677ae\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"34ddf769f5b16c262a2f985bef7a0085\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"382fec721c04666abcbcefecb4995ff4\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"dafd4b406018b0023443f6a86b6e33bc\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/resourcemanager.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"fd46397897d9cedcc23ce1b3692c8162\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"475cd9ec5416b4314e1f04a3b91a37c1\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"728c2e0f1a257249f007f3a461a64c3b\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.5
+        dsl:
+          - "(\"00854eba75d30e40b3b36008e5c6faf6\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.1.1
+        dsl:
+          - "(\"9fb65ca3f6e3438c651ebd237f353198\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"c9d360c872110be457714d1e79161d58\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/core/scriptloader.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7eeabb29d2293549d5d33a97d5c6a194\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"82e82a71b9769fc37e833c062074849f\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"74c83b633cb4f8869574a8a88134dab4\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"41f92feb3b1196e3eb11c9bcb95d6b64\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.4.1
+        dsl:
+          - "(\"2d550e44b980912eb0be9182009ab104\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"41063e352e29a0a7736a52eff9023a30\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/fi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b1a9cac3dc1d3def10ffa7e1effdcda7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"48a295e787ff0bbc668c0c55f05af9d4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/cs.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"fd1fce89723560643b68354eb63c0da8\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d45218b73a1b7980745a81c6a93f1b83\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/eo.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"28de25dcbbe954423797f7fd16c2130e\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5789e342c07042bbc898a3b398a15816\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/hr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"487ded7548e8c58467a2f4585df75a15\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e524a967dc61cc8783c68468492cb026\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/tr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0ba4ac93115cbecf4c550458ae7dbbaa\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"112eefdc4097971ce995ac9ef68f5386\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/vi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"a2d8c98d18ff0424007018dc730b41df\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"3f3bd42251e6f4e50868c2d31e570ee5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/gu.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"bf3dfba93b91fdc8338b2db4470ec2c7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"ea38516df14ebe683013a7c4af1e02d3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/de.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"acde6d6e49cc71c0f15019cdc65364c5\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"6286883af2a59764af7d0c46e94e77a0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/ug.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f412b57cae125d4221416852f725f551\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e8c5dbe101359e31cbeee8e8839ecbe3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/uk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0728ef9a6fe9b865bef8e88483ffc895\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"3de862a414e3902e3ad293781e546779\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/en.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"368e470ecbeee11e6890f29ec8fb76cb\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"519a256f7b4cba16a6dd07d27db35345\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"80df1dd6982976f8fad0e5b183ae608f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/cy.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"20c4fe227f644d90ab45fbee8c75c44d\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"6a05cd26f84232a3b79e21559b64f3f7\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/pt-br.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7839b291ac9c20aa4c3bb53ff0a52ad8\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"b32807154c7ee1f53cdbae731128b746\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/et.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"aba8d7d452b0e6ac66d268c6b5276002\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"40a11f5fb9d57ef5c22677b42f9d2f73\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/pl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b15f9667c8c4f77949353f1c989e12a1\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"ed6aa2d4721e4b2f0290be264e8e9a54\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"6ed7453e2667260e57d3ced93937ae2d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/bg.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"25b8f8f67fb58331ee03fcbd467554be\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"971f3e675cde7d873b138efc22d151fe\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/he.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"2f120efb3ba803f848bfc838a5afc4c9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"08a03d9cf9a243f7d9f13b12f1312a68\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/nb.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e883c32d273b34a535fb5c586fb50f8f\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"c4dc3397874e3028fbc6c9fcf627d1b0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/nl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"bb5eff723b9fa6f77fe09828d67434e7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5f5dd77fdb8169f1c9c4f4d13f32fd1e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/da.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"be6feb4b603cc90fdd20057d7b65dadc\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"da77c40654e30151128483bac5920cc8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/no.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"49e57e9b0f8a2e7ef925c309b44450e7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"c27bc2e62b0ff1d9cf78bfa8fc2c6844\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/zh-cn.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f9625517bd0de69fe434835637d091df\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"10ba7080d0147464db4c9c77d8843134\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/fr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e454373dc3ab716d1ee424d0cc0aef70\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"08e28f789fd1469e31043d2c1a0e033c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/el.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f28c8275efef089d5c698352eb5bb0cf\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f30997c123bf8a693bb0b006ee2591f4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/devtools/lang/it.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7d18b87cf9918e5d3af54923adced6dc\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"51a66dd721f341d1f5122ba167f96200\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/wsc/dialogs/tmpFrameset.html"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"cc4e887260a0c8632e0758b34c3cb979\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f765137050dc626fc8c96d2b00e0b071\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"c4ad3b4e3d27b8c86d03aaf16607e017\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"ceeb3615c9f7d3f243eb93e58434f43e\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"d9f65b550ce7440334072e064db1e3b3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/wsc/dialogs/wsc.css"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"dbef586217987537668def4b24a163b0\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"78c6756c76870496ecbaee1aeedf1adb\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"18eb2c8dd2c95f138cdb59ad0018d938\" == md5(body))"
+      - type: dsl
+        name: 3.3.2 - 3.5
+        dsl:
+          - "(\"18394c8b09c6a7147c216ba8e7992ef6\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.3.1
+        dsl:
+          - "(\"7e96dcd7e0868873e7cab4a272b4cc10\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"a7bee5924e38f4a754223a4a93f7aabf\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/yui/assets/hue_thumb.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"b1a887427b558af46f17262784da3583\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/yui/assets/yui.css"
+
+    matchers:
+      - type: dsl
+        name: 3.2.2 - 3.6.6.1
+        dsl:
+          - "(\"bc6f0b98fc4a7d35d3ef224a0db1d9d1\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.2.1
+        dsl:
+          - "(\"c9893caeb658f68b94ce7dd4612a6aab\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/yui/assets/hue_bg.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"73ae3465d3dcbd95ebb4165760fac8e8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/yui/assets/picker_mask.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"a4d3b14fbcc5b8f112d3635f981d6a1c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/yui/assets/picker_thumb.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"96aa37e578d0428346e4c7170ac9a230\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/yui/yui.js"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"e9bbde6180ecd6bf3169a9a3696eb1ca\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/uicolor.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"83be344f9d97ac22ccfb90a07d128b04\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/fi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"c8724c653f96745e184b8cd0fe5ade44\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"09710324035abdc4789345a2b7c830ee\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/cs.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4951d9d0e3b9a1cf18b4471f8b1a0c72\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"96247087d5cca098504d2bad6b985f53\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/eo.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"8820a94e1ca91941ad0445f7148ba6f2\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"7f1f5f77965dc4ca7f9ac31409fc4e62\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/hr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"871c17cff7df392d802843c86d2446fc\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"bede587e44ec3f1f8e5e15bde4b9a49a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/tr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"72b8e9acf1649271a98dfd9483151ef9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b61ef141cb9b1642a41edd903a7be065\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/vi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"00d90eaa8d84a7103ed1336edf697e02\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d8c91ecf36bca9af7bd04cf1ed134ddd\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/de.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"a2a2173321bfd1acc35c6f1d1a7b8319\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"30ea13e3928222f864a91dafcb632853\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/ug.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"8c7e39ea680eef41bd05a98b8f47380d\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d83b276be6390c07ab94d2f8a4d822e2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/uk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e4144d76d117ac06e3c6427bc8d2a652\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"186b0b02dd8fc6cfac5c07a5d2b88532\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/en.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e2433933b86e475189726e0ae140277f\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"7fc26002f6521a79750c0d0a02eab2bf\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"e8a8850ca4b28af7a0e589577b7e947e\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"288290b48043a7b337e9a0f045b7da0f\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"24d4f726d2633d942b5fa0d3179cea46\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/cy.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0ab11764d0f336a6f6641d3a515dc548\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"040bfc928574850d25e805c360e6083c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/pt-br.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ab16bc82c675f5359b98c111aa32dc5c\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"8b1a0412bda7277c3b172177fcded849\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/et.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"141d449df12941c137c5b404684dd192\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5afda02aafd9865758016cc7049729ec\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/pl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1a876c3c9a79effd3c6927490d5a195e\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"845ef8036adac4aede58a09cf297df3b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"828dbeb36ce8247dd97a9869c5db86ae\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/bg.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"55b5d79d65301de58ed980c5a07b6f84\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"170644af28b150ae98e5c01aa461cfb0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/he.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"c0f21f46d77cda33ac71a0a6b0ea75d8\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"2333abebb17ff729eb10aceaaad9f958\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"a73161f7c39b501803062bc6a590b0ec\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"3724aada3ae96239e22f7a308b9fbdbc\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/nb.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"68a056601b739689a432c11bf3f02a4d\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e07a54080ab47bb239899b39c993f91c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/nl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b58dc71703917d61e0de8512bf72f6d4\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d37d1d276b01aa851e3928ab74a92cd9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/da.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"d38d97fa297d164d395070c56cb324de\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"21fa3e4d54c727782a0b99df1571b6ba\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/no.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f1b577918e8923b33545711c59e29f9d\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"c23665299ae5b957a96b72b9f138e38a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/mk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f505ab9538cbd669771ace81e4adfb56\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5d7ff84ff1bf017cdf45648fdee03291\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/fr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"3d1bddbb7785f953e980f9641bc2edcd\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"a9bf1076134a9e0c0cc3f04945f9f941\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/el.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"90021f8c9751ab03d233db2c3a404ffe\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"fd52f646bf978ad40119e49c9fe2e68f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/uicolor/lang/it.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"215745670354505a9fbcf02380341ef2\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"744414e519bed0f3cb94e9c1444ed410\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/ajax/plugin.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"991ff469de1c11a34a379ae45b067771\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"fb66d6c612a5e21ff8222bfa033a8a79\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.6.2
+        dsl:
+          - "(\"3a263a0ea32d661cceb732ceeda12419\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/xml/plugin.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b242ca891242b5396bb3434c88de947a\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"097e2843238b547cadc9d40f994742c5\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.6.2
+        dsl:
+          - "(\"a6f5f4428abe9b797189fd1c7a89ae62\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/preview/preview.html"
+
+    matchers:
+      - type: dsl
+        name: 3.6.4 - 3.6.6.1
+        dsl:
+          - "(\"0cb3238b83e5979689066242976082ef\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/print/plugin.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7afe3a1faee028fb340e19ace81f8bb9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e8a9a5db29de674b4889319c0afaeabe\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"eac8926ff82f469226e01cc9011ddd27\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.4
+        dsl:
+          - "(\"0ec2e9f82d00aa1ba88e6ac907c0b136\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"3a2fe32fbde09a8d6d014639346be1cb\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"61cce71b2a30cc2979bf8980dcda8976\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/fi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"09cf5bfd823ee8f83c65420d5a8dabf8\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"0857b013320c8d2cfc2a03b9a9041d04\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/cs.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"441f0050b12c36fb40984226cb5e2de4\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d6b5f2114cc3b8d7ed12ee8c421745ec\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/eo.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"fafc63c4fa46f6fde9631003d01fedd2\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"1eda22545252a3a4965a9ce84c6cc039\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/hr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"9420ada65611332fd3f03d6fdfcfeb1b\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"89ee6b524d9b1631f8f78ba0967f19d7\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/tr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"153ed158d702fb39ac4779f70eeff3cf\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"2b7c1de7a7c0d0230ae200abdb0387bd\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/de.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"47c3861e982682c237ff328b4e31360f\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"374791825f09dd9373737e847bc30933\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/ug.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"2420e32e441f4a9d282cb066672820a5\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"0a967b76e5440ee019c2e6310e2ec328\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/cy.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"49361dae33698879098d46904e7eed29\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b80a7055daf607705f3ec4ae5dd36d61\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/pt-br.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"256a6c354eafafc1cedc206ade0fe4c4\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"0c0c98cafb8ed562d0a2113db49a45de\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/et.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"79c3209396f2e2798c97f397634bfe8f\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"15543f421ae104ea42a12b9549ccefb6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"d5236ac85ca97194f5006cd556567596\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/he.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b4577e5b68dc6cc9d538ceabd89fb27a\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"0666918a65187ae0d6efbcd66ae5a7eb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/nb.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"129d5c6795c107661c5ea7d259fd1e8f\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"06d6d505bbc0e00faed8de4ce4823865\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/nl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"726630b486bb93d5d95c7d14d9df5843\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5c767d23013385dd035d6506a7009d9b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/sk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f9d9dd55c7eed48e4fa28bda9539d914\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/no.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"2cfb6b9f6e78a4b0d050acaef9ddc7b5\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"184e1550f80beafde17c86a744fbfd01\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/zh-cn.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"c8c0a42f066860c6d262db3bd345b918\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"c71dae707ed8092f8a011701153a8fb1\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/fr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"02080f8e2be8d5ab389ceabe27e7c53f\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e4680aebe9ba0dc0deea3039523e61e5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/el.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"094113e2c07ed839878489c2260820db\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"731a843f3449df60d9673c58592b4ac2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/specialchar/lang/it.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"c1be237c4cef80625c299118b712a111\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5cb718046af0f5368459a95f69c14ae8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/styles/styles/default.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"33e648e2d682dfa5fa4ce7c1772fe5c8\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f08ff7541c087bd15be3f46bbbf7ca27\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"71ee5e90e0dce64969f34f61c06e6209\" == md5(body))"
+      - type: dsl
+        name: 3.2.1 - 3.5
+        dsl:
+          - "(\"48f0a2f0716b7b6818e9294090249bc0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/pagebreak/images/pagebreak.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"59caae8ab95b2eeba9444ba219446c75\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/blockquote/plugin.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"bae6c6dfec05dc95b9f390a14848fcfe\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d0672d0137b4dbb862052be55b633381\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"a9b28ad4d20df4895c1e3cadcab2697b\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.4
+        dsl:
+          - "(\"b7c60d0d640f30dd9a160c7e7e4865fa\" == md5(body))"
+      - type: dsl
+        name: 3.4 - 3.5
+        dsl:
+          - "(\"8b165bfd34a3a047e668b232bf8c1438\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.3.2
+        dsl:
+          - "(\"678371451ff007429bab64c35b35b78c\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"19f27bfa6b797214bb86537681db1e13\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/flash/images/placeholder.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"e9ac9384237d8d1cdaab68d31a22005d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/templates/templates/images/template3.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"b8650f06582ac88ece68948bac1bf734\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/templates/templates/images/template2.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"8a4d45166ebeef73e222270a8113d66f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/templates/templates/images/template1.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"fc667c4366fe133c30ab122fe2ee7f20\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/iframedialog/plugin.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f4a6bc5a4f317f4874ab1ad5d4d0afd9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"68f21aa60f7ff531ad342b15d621b644\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"e5c67167f1e195fbb3a8d327b51d409f\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.5.4
+        dsl:
+          - "(\"0ffc7ead60c5a582bd71c8e391509be6\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.2
+        dsl:
+          - "(\"436e351f61dfb79f07e52250943bb155\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"0694ac4762a3e115cde4b1993f0eb5c3\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.4.1
+        dsl:
+          - "(\"ef5d9299409d7918da774f0a448788e2\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"f8867cc466bc5ae3c56c657793c83f30\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/placeholder.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.5 - 3.6.6.1
+        dsl:
+          - "(\"090274dbcc2f5a50ea1086d948ca85ab\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/fi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4d75323a9036bfff8fba4ad6e0c63502\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"ce23f3ee0718333da0b5b8263a2488f6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/cs.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f984336c6d9420b0bdbc2d9b077bbfbb\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"3d5b1b0b97ec0350aa2af85c80a3c321\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/eo.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ad37e8bc62aaa2bef66b43559c578dec\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b850931d3b3cc4f3980b55c54ea77474\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/hr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4d9949816a2b5f68fd38a688579fee3b\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5d6cf2a31e6a0bccdf3bb43bd6643fd6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/tr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1f853f95770d6f4314008926d7952555\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"0f4c243aff590d2e62450550f234094d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/de.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"8919114a2ea435ca3cbffdf22f27920c\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"a9b6e626c742061b017bd4fd831a354a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/ug.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"36ac05ef3632fc602c29e7d98f3e546b\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"3c77284b979496c96942a3b0c3327115\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/uk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4a8aa3a858e0133e9ff38b3cf6d6236d\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"8ffba522ab812b74e56ae098b47a52d6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/cy.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"782c4080600ce7e978e519e8898bd431\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"9bddabf9f37cdb6f39290bac669585a7\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/pt-br.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"713de7549fb7dd6a3dbcaf72d21626cf\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"0e663320fe91d2d0681d94e85376a14d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/et.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"81e88c6bcc1603bd599e2f9cf3512362\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f0bffe44a80493c9ff650486a61cd27c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/pl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ef5027c1212ac44eeb6bf28ec0a5ccc1\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"a8b5a61daf5c7e3a5505a10b7c3f4d71\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7a423e4527c75e38118d9596ee5c8eca\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/bg.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b16138d1f017ac1ddc112790215c1c05\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"976231d0f910884c870a954dd9308ae5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/he.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1f0beabd1dd9f5205228e60539bd43d5\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"92e877db12ad78b6c7752ff0d7149b3b\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.6.2
+        dsl:
+          - "(\"0e2ee51ce70a9fc5b74bdd57c237db1a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/nb.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1fc5eb451439a4e864303b3d06fa0fd9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5585c037cb029e5b26ff61d073017583\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/nl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4bcd1e50294c24971889275a693a3109\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"390043bdbcc00278380dd1e4f5e599a1\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/no.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"d9c952a951f9d014fd20add40188b598\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"dd4939a0be247c7cbd859fb05e36f4ff\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/fr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"3cc75ebeefe48582ffadea7d6662fe44\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"ee0dcd68a8475046b3bb5a2d3528e046\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/el.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"45495024bbf9184a6e8fceb0dff4170a\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"8b1cf904cc9482a1142f2e7b1af35443\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/placeholder/lang/it.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e8bb30677ecf147efc0403f5e1a1756e\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"06f22e70421304654ca1ef223f2b9309\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/dialogs/a11yhelp.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4f18208d2a1dcbdc2217c83423e8fc97\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"55b530aabf1b98063c6d9814f74f198e\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.6.2
+        dsl:
+          - "(\"9ba330949db312bfd45ff0e6daec816d\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.2
+        dsl:
+          - "(\"e198f33a04562b6bab698ad0261547df\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5
+        dsl:
+          - "(\"0c319b55fed709c45c7c693f299b3c85\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.4.1
+        dsl:
+          - "(\"7f23c78091ee08e45b684db70c076f80\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/fi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e0d5cc7dd59631c1bf884d5f8fb9a526\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e4fcf8ba8ac9bad713b12d1b747e28c3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/cs.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7901f9133cde76c72ebc77a8a603bba7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"94844892041cb32f3636f182c7ba1b6b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/eo.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4b03b39c932852c050fffe97774c8dc9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"9e2619cf9519aa05eeaac1c7ae6a272a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/tr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e5e47c3823a36beef2252f27204f79ae\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"1911ea5961af7d03e360577b0ec52dc3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/vi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"be6d528a166c23ea71275e4545b9c60b\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"9e4468d65968f6343b7d08a473489fb8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/gu.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"8477272602934748480d953f7eb719c9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"c149a506c1b0a56152ac44656126d869\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/de.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"2b2a43b14dbd1057b054ea680d2c3355\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f4513636c87773efd56490ad6cff9903\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/ug.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"7b77f66988168db9f55ba65888c1b898\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"7d38639702631da173cc29de61e899bb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/en.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"73f76c3e928802e6d1b47d20303a93e5\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"bfc359f50bb030db3afe573604588b15\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"cd65a79cbec7a6bf7d5e6ea1496cb6ce\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.4
+        dsl:
+          - "(\"6a1921e57f66cf197d24adf89ee006ff\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.5
+        dsl:
+          - "(\"0d10e059d7c6e977b3a460ab025f6577\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/cy.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0e33464dc48bcc03cce712928115c3ca\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"a6826950155612495de1664c4f99e61a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/pt-br.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f9eaecd32f887488c361cfc3e86d8b1a\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"907a920b9621132a6cea976c8668946c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ec87f2afea99a78b670538dd30c4b300\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/he.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0f94505be0227c4103a4cfe022c80b4c\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d8a97b84f54137289dec5144661ae64e\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"46db1db3649128ac60efb0a3b806fb08\" == md5(body))"
+      - type: dsl
+        name: 3.2.2 - 3.5
+        dsl:
+          - "(\"833ca0f910d45fe44b943860dd852549\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/nb.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"24740a5f91ad753d4db99a95b5d207b7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"1895864ac020288790de8f0b13a0e01e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/nl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"22f7b323950793afe9ef102abe3a0ced\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e2e9d6ed2737bdca050659a07bb0a190\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/no.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"9e75d16fce92366d035f02a8644a53fc\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"7e23d2f3852d4daf02661703cc30d57e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/mk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"e107ce57f8b875f72bfdc76ffed58564\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f15942c74891bde4cb41c0c3b315f074\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/fr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"5d7de14714b94bbaa8ca9934364d6808\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"24e546439b6475b8789d69831b2a9c92\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/ro.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"c1dd76225a9bd996effdbda79d469c5d\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"d5c8da2abd318107887f0535985cd210\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/a11yhelp/lang/it.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0cde87edbd0b0a3bde9508871a6e185d\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"d00f2548411790e175fb53fbd512f187\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/iframe/images/placeholder.png"
+
+    matchers:
+      - type: dsl
+        name: 3.5 - 3.6.6.1
+        dsl:
+          - "(\"952e216a7803312fa67ee61c06f3c532\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/docprops/plugin.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"c48619ec9b772ab50aabf651aaeb76d8\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f6f428d7c17d685b57764004d824c95e\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"84ecbb59b19e256059aa5192331e2431\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_pre.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"2f0f661518f1dbda9eedda2b6bee734e\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"999072a02c1674b934ec4b10bef0e4a4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_h3.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"5468e59e8840a0a6799d6db5d36733dc\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"24ac5c977af7a1fa5263f0251f1b43e5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_address.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"5a24be2dbcae65e78db23bf732ae39fd\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"57dc5811429f94172e0842f17fc4efe6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_h4.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"6c65bfeac7e5b5b28af498f2d757f3f0\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"7da29192cac8c9ede098b9cafebf40ce\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_div.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"05e8b4037cfbb469f9ddc37e8fc9e970\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"8a7cf6cdba133a06b44982e8fff02851\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_p.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"b4f2152a14d790847565aa176161acab\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"e06dcb8fcfedbe631e1b822601f0e802\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_h1.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"2c56066f59944c0167a8e4321f193913\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"9c880c71a4d648c4668407490bba35e5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_h5.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"4f196e19ed8ad0fdd14cb73c93fee1ab\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"899c58b50fab2cd7953d7363f447ab14\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_h2.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"060e9e0bb5a4e5dc1fe0d2fb20b2c801\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"2a7a4dabd510dbd65042f72f94bdf144\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_h6.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"dde71309b78bdb3b366654446adea123\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"4b1c6a8e16b16b8884e5ea9504905e02\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/showblocks/images/block_blockquote.png"
+
+    matchers:
+      - type: dsl
+        name: 3.4.1 - 3.6.6.1
+        dsl:
+          - "(\"198d39094c81152155f8f35108845bbe\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.4
+        dsl:
+          - "(\"fd2d20427731263f3e3db94bf35afd41\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/link/images/anchor.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"60a2121d55f9238f529458ee5f2e6e4e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/pastetext/dialogs/pastetext.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"76068c37e260b7e85f1650bebbd979e6\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"9aa6152d144209607d3f38d992128e76\" == md5(body))"
+      - type: dsl
+        name: 3.5.4 - 3.6.2
+        dsl:
+          - "(\"47b325cbb07782e01ff18892037b9e80\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.3
+        dsl:
+          - "(\"32739ad8fd30cc5e4196548f7bb41bf6\" == md5(body))"
+      - type: dsl
+        name: 3.3.2 - 3.5
+        dsl:
+          - "(\"2b166c44b86ad725dc6d4b4501640132\" == md5(body))"
+      - type: dsl
+        name: 3.2.2 - 3.3.1
+        dsl:
+          - "(\"bb28a32cae8d1b8b7e70e016bcbdcdeb\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.2.1
+        dsl:
+          - "(\"be4cd9d80bade625482dbebe5c380825\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.1.1
+        dsl:
+          - "(\"d6e4096f55452c5029e6ffd206cc656d\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"d5bc6a95cf99079ae6feaa0e60f9c10a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/scayt/dialogs/toolbar.css"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"abb7173bc76c982641101d81cc544ab0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/forms/images/hiddenfield.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.3 - 3.6.6.1
+        dsl:
+          - "(\"c724101436b085bf318e695fd784d658\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/angry_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"7ba4d0e00161b200103f5ed77e3edff8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/tounge_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"71c132b5a59e115289e350ce68114ba1\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/devil_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"e5f58bf6ad852375b9ff4a41db2c4daf\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/embaressed_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"83f84ceb8be784840b7f8e49558095d8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/envelope.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"3ccafbc051beaa0dc224fb597e1d2264\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/kiss.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"97357230885c2224cabbda15e7a267d9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/confused_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"07bafe9896e8c3132b04b17f3c8d32fb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/thumbs_down.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"50eb753262fa58d1ce5d8ac4108fe8d9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/whatchutalkingabout_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"bed5fcb3b6414dd80cc065f1775b316c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/broken_heart.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"ef47bc5b95fcf4508c3b12cb4b5ca1e2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/thumbs_up.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"9c97cd1d759876471e3608df582fe8e9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/sad_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"e6da33dd28666d0579fb56ccadc580da\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/cry_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"65e506443085a5022a3f70ea5184b814\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/heart.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"8abe8f7fbbec2bf6e5e8c327ad3b6842\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/omg_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"81cfd8d8c979b7f3b2e733cc062077bd\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/regular_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"895f2ccbf133f411752cc847ff99a068\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/teeth_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"572c5f85395a197237820c77018f16e2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/angel_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"afa3b9f5922ab14a29edaac876b9a5dd\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/shades_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"0bb3a9a705f75a534f711ad6d5d9df2b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/lightbulb.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"ad387a2e0e7400ff09a84873839a86b6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/smiley/images/wink_smile.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"0dbb4bf6e7992a05bd9961acfa1f02d0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/about/dialogs/about.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1ea3177b9fb9bc1e5779f2f9d36eb4b9\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b7920754c51256d83a56bc5d0a0bf596\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"34ed5aa74c9a742d2becef3209292231\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.4
+        dsl:
+          - "(\"3502e5c425c17bd3b348dea739b353ba\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"f25530a747ad227eb5c47767464b4696\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"82cd5e9c2fc60726e3cc71b880e190c0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/about/dialogs/logo_ckeditor.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"18203e6508e7cf786fb60093744881aa\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_source/plugins/save/plugin.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f7008c899f99b0ecf3c5c0b93f2dca5f\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b7e0e6ce901332cc6be103ed79ec0807\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"0bfcd4fd1804a62ceb46df1207f5d68f\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.4
+        dsl:
+          - "(\"117dbdfff2523103f3bc972ccb3f5c05\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"7f283e78864a2613f45dd452ecb7d50d\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"1222dcf1651552af0439784ada2115c7\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/INSTALL.html"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1a7925323ca9342de33d86af5e82413e\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"42825ba841772a3eca0bb7a54279e3b1\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"880940f8e28cf280d67310235db01028\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"7ed0406597938897f0a87a700aeba49b\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"7b11518ee0d09100c7c0f7b7cfa9afcc\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/yui/assets/hue_thumb.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"b1a887427b558af46f17262784da3583\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/yui/assets/yui.css"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"93e2ab9880cc521ccc615e0c009ea969\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"1b02f9d9282f7f8ca5327f498866a77f\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"dea00b8611c372e7aabff5ca0e0b88c7\" == md5(body))"
+      - type: dsl
+        name: 3.2.2 - 3.5
+        dsl:
+          - "(\"04b9618ebcbfb6f9fb6b53b034746d4d\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.2.1
+        dsl:
+          - "(\"06e1e7022c628b648cf3559845935e56\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"f656e9dcd7000b0bd3669ef44eaa31b2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/yui/assets/hue_bg.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"73ae3465d3dcbd95ebb4165760fac8e8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/yui/assets/picker_mask.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"a4d3b14fbcc5b8f112d3635f981d6a1c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/yui/assets/picker_thumb.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"96aa37e578d0428346e4c7170ac9a230\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/yui/yui.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0745b22e2a0df9fb001c33eb19dd9615\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"3f6166a9a9da25999a46be77520c44a0\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"10abef0dd30ac925af630f25bca784b2\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"d66a3b7e3366d7997635737bd8e328f7\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"71009bdf79122d3ffdabc4d3e01db1fb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/uicolor.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"83be344f9d97ac22ccfb90a07d128b04\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/fi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"83fb4b5aaba17dc55719b5c4c204efa5\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"228b2986295974d671e0954659b76e59\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/cs.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f8eac415cae5d225a17319a594295b09\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b9856f742524b5543aa5dce0932930f3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/eo.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"16771696a1d8d09cfefaf9a22a116820\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b3bcc13968779dafb7b0fb8d754c1195\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/hr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"6c4256292146f0fcdbde10623b2bf346\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"027183aae8b55243bf0af15fa668a839\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/tr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"9ed22584201ee8c2f8ed752779a19d20\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"536797f49003f69ce6e895e2ee03e75e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/de.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"f07a55f726ec13f0ef2eb27fde1eae29\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"442f3e735635b728618b1e651d927756\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/ug.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"3d09c7e7c540b9f23d73e9f2397bc289\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"9637568e5185f3e2b3130b411ce90599\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/cy.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ccecf0650a64c5227f0e6e366a9c0ee5\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"91ab99b511d7487d57c2ea096f3aed00\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/pt-br.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"2528fd7410e0f1f3cbdec368a4185e30\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"06b3bd22bd81f7216dab64f783fcf84c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/et.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"65d834e5e3aade16804dcbcaefb59855\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"172bb65a1acfa5d8a2c581efa6bd5db4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"d6132bf598171ce60a18923622931558\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/he.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"34a3f09d6e6d38b67a12e035a6c9d2c1\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"d4339f45e373d49a7e7f6f6cb9ca7d73\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/nb.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"fd0c00ada255596b796be6285cb40b58\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"766127b78c0eb5fb72ddbd3e0c1c4459\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/nl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"0078384bffb7f8c9e0b53609587d0382\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"2560234ee70dcbd4c6b7443a5993262b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/sk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"74b916e0d32d22dabcdfcbea3ca54dc7\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/no.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"c5e5670d5cdab1894ca4bf6fb6385658\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"9b1e47ba11e8370b4ace2302beae035c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/zh-cn.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"de9acab3fd665a0d09d5f803649455de\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"a546453200d7b102ea6e75f256bd8324\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/fr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1601fddf319fd7f03041dd76fe0cf52a\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"8c5145ba11a5aebd48c6fed79c0812ce\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/el.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"5910ac901f649eac602747c26d6671cd\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"d77c6b4c4bec7de065828c03d7af6d2e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/lang/it.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"265ca314de54139aa4ae22ea9f79c22c\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"6b96e24dbf584d34867f3ae5311faf0a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/styles/styles/default.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"35335e322fb2ef7cfd218ba6693f106b\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"c6434233cdaa61e8eafb9d1cfd1b3cd2\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"bea0cf87bd1092b545dadc255d424bcb\" == md5(body))"
+      - type: dsl
+        name: 3.2.1 - 3.5
+        dsl:
+          - "(\"9abb25f1fd9948802240fd37259b2255\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/flash/images/placeholder.png"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 4.12.1
+        dsl:
+          - "(\"e9ac9384237d8d1cdaab68d31a22005d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/placeholder/placeholder.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.5 - 3.6.6.1
+        dsl:
+          - "(\"090274dbcc2f5a50ea1086d948ca85ab\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/fi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4108d6a50109dce1b265171ade1717eb\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"ca17c83fc050b35238d923ab8b325837\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/cs.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"588be2b3ed86858acd2aab89500d9599\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"dfb4c05a3cc03f0fdba932bafcaf866b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/eo.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"ce1be0a3908c10ed80d706e8a005f78b\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"86842d6103b19f590a216ff0b43ea4b0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/tr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1f6f65c2f0ce4e2fa94698f03ecea313\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"48b1d39b9d45d19c8c030f2ace4cd547\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/vi.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"57f4d30079bdfd9a24a0b6bbf7283267\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"83ecf94d0524bd7b527b492ea4604c40\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/gu.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"98d926b8451a24bca5199087c27fac5a\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"dc2edc08d1a8a912e2c8f568f5c95cc9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/de.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"8e221adf2a35be4e214b40efdfaa31ed\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"443f5071aae9d8a6aa78006351c47dc7\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/ug.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b8a4aa025603d04ce31e9a11dfb0f9ce\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"5bbdde2fd6e1a8e209823c8f390d253e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/en.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"6f48657e5d1ac71e152d2fadf90b6ff3\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f33bf0bcccd2bb8e7468d6d005d870dc\" == md5(body))"
+      - type: dsl
+        name: 3.6 - 3.6.2
+        dsl:
+          - "(\"684a88390f2833a2f1e48f58e322b713\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.4
+        dsl:
+          - "(\"833bc803573ef989a140994200620869\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.5
+        dsl:
+          - "(\"e199f4722909c35c3bcc7618f4bf0e8a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/cy.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"4443d6e03ea3a7ded8c21c0b9fe97d08\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e848ef09cf5e43c3cee6c816287e3085\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/pt-br.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"608cd1d25435d9e038a1ab617132f43c\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"05239b1ed9722d5e034689e333f774c0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"253a55c211cbbb56876f14488c41cc2e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/he.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"d941bde951e41e5c889f36b3ef81d631\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"8e62de3c3a48ac65e8114eeb8b7d9e4d\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"fed6eb800c3b3eb0e7057fba5cab6b98\" == md5(body))"
+      - type: dsl
+        name: 3.2.2 - 3.5
+        dsl:
+          - "(\"17a57dc3ee1ddb083fb22317bfe94109\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/nb.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"9a9f09912325826349ea99781e786c2c\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"ee94625edd0ed1ae42d57f37235f3e7c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/nl.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1c6ac62e3606eb701ab462a1ccbc43cd\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f252293ea5516729e7d7f7bfbd2576f5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/no.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"1aa57d1dd6dec57a6cfac4f7c16fa496\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"7cd99eadc0e9909c262c0e9355baea31\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/mk.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"5214e77f611a30e8a4d179efa3d92ee2\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"f229af9fe32f8f50e3e09b4f0c54f79d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/fr.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"b4f76f193a7242f2c1e9bd068fcbd7e7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"b8dc3676a3c239f1058ec8404a38ead5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/ro.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"20c76bd3efdce8e8aba386d4ef3abff0\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.6.5
+        dsl:
+          - "(\"8ec75993e58ed8a75b0066dbc933adca\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/a11yhelp/lang/it.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"3f7dad7171d093a1a4f27f5b33eb64fa\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"082873b93dc52fd9b3396aecf9219439\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/link/images/anchor.gif"
+
+    matchers:
+      - type: dsl
+        name: 3.0 - 3.6.6.1
+        dsl:
+          - "(\"60a2121d55f9238f529458ee5f2e6e4e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/pastetext/dialogs/pastetext.js"
+
+    matchers:
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"5c34be9baaad981afdbd63f7f0cf53cb\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"7e64c5f7b7da7a4f613fc172746ffb94\" == md5(body))"
+      - type: dsl
+        name: 3.5.4 - 3.6.2
+        dsl:
+          - "(\"68703ceb5f1c5f1b7efe976b4322515d\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.3
+        dsl:
+          - "(\"7b355d68f71fbcf1903e8e85736dd8c3\" == md5(body))"
+      - type: dsl
+        name: 3.3.2 - 3.5
+        dsl:
+          - "(\"3ef3cd9b2fd9902f7528813854f2c7a1\" == md5(body))"
+      - type: dsl
+        name: 3.2.2 - 3.3.1
+        dsl:
+          - "(\"2b9dec1c1de935fcd850bccc48f75b6a\" == md5(body))"
+      - type: dsl
+        name: 3.2 - 3.2.1
+        dsl:
+          - "(\"eb26b3611a5091114f97d1c9c9b5d005\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.1.1
+        dsl:
+          - "(\"bc5c6022a89f7e70387d3d15a1593f80\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"c4fb1f172ac43cf90cfd52f72f62cce8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono/images/mini.png"
+
+    matchers:
+      - type: dsl
+        name: 4.0 - 4.1.3
+        dsl:
+          - "(\"dc5927900b27c054f468f4eec43d7633\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/fakeobjects/images/spacer.gif"
+
+    matchers:
+      - type: dsl
+        name: 4.0 - 4.3.5
+        dsl:
+          - "(\"df3e567d6f16d040326c7a0ea29a4f41\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/assets/sample.css"
+
+    matchers:
+      - type: dsl
+        name: 4.0 - 4.4.1
+        dsl:
+          - "(\"fe2b8f76baac8d81bbd23ffd2bb65404\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.fla"
+
+    matchers:
+      - type: dsl
+        name: 4.0 - 4.4.8
+        dsl:
+          - "(\"8fb373f8580dc2f95678ca861a1ba9af\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js"
+
+    matchers:
+      - type: dsl
+        name: 4.0 - 4.4.8
+        dsl:
+          - "(\"85486e883eea7808f7abc772a85b8107\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.swf"
+
+    matchers:
+      - type: dsl
+        name: 4.0 - 4.4.8
+        dsl:
+          - "(\"de5410f8539db860e90a0c437f592f39\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/assets/inlineall/logo.png"
+
+    matchers:
+      - type: dsl
+        name: 4.4.5 - 4.4.8
+        dsl:
+          - "(\"24eff0ec56a9892334bb8f6041dcd562\" == md5(body))"
+      - type: dsl
+        name: 4.0 - 4.4.4
+        dsl:
+          - "(\"e8fb109ed6c4c7a3d42b6f99ba68d64f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/assets/sample.jpg"
+
+    matchers:
+      - type: dsl
+        name: 4.4.5 - 4.4.8
+        dsl:
+          - "(\"21d9ee7d983e172bf211e7724b39b383\" == md5(body))"
+      - type: dsl
+        name: 4.0 - 4.4.4
+        dsl:
+          - "(\"2716e017a7dda32657f9fa50cb484c5f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/inlinetextarea.html"
+
+    matchers:
+      - type: dsl
+        name: 4.4.7 - 4.4.8
+        dsl:
+          - "(\"4d70e1b01e4782ad9a8d0830b4f1cc43\" == md5(body))"
+      - type: dsl
+        name: 4.4.5 - 4.4.6
+        dsl:
+          - "(\"c7d14040b75c1d92a82455bfe6102450\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.4.4
+        dsl:
+          - "(\"430c01b9ecac1b7272be4c24b145e0f7\" == md5(body))"
+      - type: dsl
+        name: 4.2 - 4.3.1
+        dsl:
+          - "(\"d0c3438a40dca1cb61f813d656c5c378\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono/images/arrow.png"
+
+    matchers:
+      - type: dsl
+        name: 4.4.5 - 4.12.1
+        dsl:
+          - "(\"5b9854a7f865788fff62fe32b0324ca0\" == md5(body))"
+      - type: dsl
+        name: 4.0 - 4.4.4
+        dsl:
+          - "(\"1736b2041754ba66b0f078d8e1abaff2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono/images/spinner.gif"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"7f32b6e67f42a0ef3e1ddb0b9401f6c5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/lock.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"ea07d6ef76fbed90e35ae89faf736a5d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/hidpi/lock.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"cfab0f8b86845ad5eb0af5068bf37113\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/hidpi/refresh.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"d8eae619f2975357a10b39e91ee161c8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/hidpi/lock-open.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"9e24f2bfd6a35d0c8c9b8cac3fae4572\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/hidpi/close.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"c071b5338dc88129befd6ded5bd2b569\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/refresh.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"285e15bdd3d24ac56bca879f78807621\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/arrow.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"5b9854a7f865788fff62fe32b0324ca0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/lock-open.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"f04649cc8c4838f03d80d157fcad780a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/spinner.gif"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"7f32b6e67f42a0ef3e1ddb0b9401f6c5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/skins/moono-lisa/images/close.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"998bfd6b3607433508ebc03b674c18af\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/wsc/skins/moono-lisa/wsc.css"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"a90c4ec4d14806d0c6dc7640d7df1a8f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/wsc/README.md"
+
+    matchers:
+      - type: dsl
+        name: 4.0.1 - 4.7.3
+        dsl:
+          - "(\"07c5f45697e13e4f020fbf2d61765b99\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/wsc/dialogs/wsc.css"
+
+    matchers:
+      - type: dsl
+        name: 4.4.8 - 4.12.1
+        dsl:
+          - "(\"9f63e9dd90b207fdf884bb6e8b5dfbaf\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.7
+        dsl:
+          - "(\"6fe50ebd80a1fd86c630f1c561173c90\" == md5(body))"
+      - type: dsl
+        name: 4.0.1 - 4.3.5
+        dsl:
+          - "(\"78c6756c76870496ecbaee1aeedf1adb\" == md5(body))"
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"03b305023596e992a8e1b98e3cebac6b\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"1d1b2cb1b861d9aacf1d611eb097e6ee\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"1ea9b613e6b1c51190968b5421b5c748\" == md5(body))"
+      - type: dsl
+        name: 3.3.2 - 3.5
+        dsl:
+          - "(\"95e15f7333daff4721bcf78f59a86f35\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.3.1
+        dsl:
+          - "(\"607b2457fba1822596b54f54d28f3293\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"b090f82caf0092e1ff14b0f2aceb4552\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/wsc/dialogs/wsc_ie.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"47e6654b545a57f00589137476a68fdc\" == md5(body))"
+      - type: dsl
+        name: 4.4.8 - 4.5.3
+        dsl:
+          - "(\"d85764beb0ac0ddfa46e5f0d501355f4\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.7
+        dsl:
+          - "(\"d911d8f1bcb7f44aefa38a68271f24ed\" == md5(body))"
+      - type: dsl
+        name: 4.1.2 - 4.3.5
+        dsl:
+          - "(\"31f3882cc425568f4276987a0aba2b0d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/wsc/LICENSE.md"
+
+    matchers:
+      - type: dsl
+        name: 4.0.1 - 4.12.1
+        dsl:
+          - "(\"6b7f5cf703f4c8a3e0b53175e356dc11\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/magicline/images/hidpi/icon.png"
+
+    matchers:
+      - type: dsl
+        name: 4.4.5 - 4.12.1
+        dsl:
+          - "(\"5ba2e7b6aa50c7843ae9ca01ce08b606\" == md5(body))"
+      - type: dsl
+        name: 4.2 - 4.4.4
+        dsl:
+          - "(\"befacdcc4c5bf6a333b8c82fbebe282c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/magicline/images/icon.png"
+
+    matchers:
+      - type: dsl
+        name: 4.4.5 - 4.12.1
+        dsl:
+          - "(\"baf6974c98b636142c7b0b5ba19bd96c\" == md5(body))"
+      - type: dsl
+        name: 4.0 - 4.4.4
+        dsl:
+          - "(\"278509efbcd2e9f657549d42026b8bf5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/link/images/hidpi/anchor.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"dabcdf82e4c23bc02b0b7d1418821f2c\" == md5(body))"
+      - type: dsl
+        name: 4.4.5 - 4.5.11
+        dsl:
+          - "(\"9df1a4e40cabf35907a16ea59f3f9df1\" == md5(body))"
+      - type: dsl
+        name: 4.2 - 4.4.4
+        dsl:
+          - "(\"5ff2733687ed023674151563277f9606\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/link/images/anchor.png"
+
+    matchers:
+      - type: dsl
+        name: 4.6.0 - 4.12.1
+        dsl:
+          - "(\"aeb83dd838829f002cac946e6e1960eb\" == md5(body))"
+      - type: dsl
+        name: 4.4.5 - 4.5.11
+        dsl:
+          - "(\"c23e1c6b52f6ca6678b77f38fef61789\" == md5(body))"
+      - type: dsl
+        name: 4.2 - 4.4.4
+        dsl:
+          - "(\"b61cb3c36c0363df2b0ebf91a8b814a0\" == md5(body))"
+      - type: dsl
+        name: 4.0 - 4.1.3
+        dsl:
+          - "(\"c9a87756a631ccd6b3464264b2fbe402\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/image/images/noimage.png"
+
+    matchers:
+      - type: dsl
+        name: 4.5.3 - 4.12.1
+        dsl:
+          - "(\"3eed23f5021065a8351126936bbe1e95\" == md5(body))"
+      - type: dsl
+        name: 4.0 - 4.5.2
+        dsl:
+          - "(\"77404b5590596de508a542979f3cda84\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/scayt/skins/moono-lisa/scayt.css"
+
+    matchers:
+      - type: dsl
+        name: 4.7.0 - 4.12.1
+        dsl:
+          - "(\"0ae2d0bfc9ee9b071462a36101e257c5\" == md5(body))"
+      - type: dsl
+        name: 4.6.0 - 4.6.2
+        dsl:
+          - "(\"9f7c233d9ae6c228daa668bb382547e4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/scayt/README.md"
+
+    matchers:
+      - type: dsl
+        name: 4.4.0 - 4.7.3
+        dsl:
+          - "(\"1318c10ce6d6fb1c902d3c7915f41940\" == md5(body))"
+      - type: dsl
+        name: 4.0.1 - 4.3.5
+        dsl:
+          - "(\"132e9c5cb5b3163f641685d2ae1b9ef3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/scayt/dialogs/dialog.css"
+
+    matchers:
+      - type: dsl
+        name: 4.7.0 - 4.12.1
+        dsl:
+          - "(\"1e891fd91eb78122ddbc37d6726e19fd\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/scayt/dialogs/toolbar.css"
+
+    matchers:
+      - type: dsl
+        name: 4.0.1 - 4.12.1
+        dsl:
+          - "(\"abb7173bc76c982641101d81cc544ab0\" == md5(body))"
+      - type: dsl
+        name: 3.6.6 - 3.6.6.1
+        dsl:
+          - "(\"5e72c8d553bdea9111d3444d1d08efe7\" == md5(body))"
+      - type: dsl
+        name: 3.6.3 - 3.6.5
+        dsl:
+          - "(\"e21393e7023e908e78ad97f87e1c337b\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.6.2
+        dsl:
+          - "(\"e4fb1529dedc12ab5a0896360b1ceb8d\" == md5(body))"
+      - type: dsl
+        name: 3.1 - 3.5
+        dsl:
+          - "(\"b08d581f8e08c9eacec8580048dbe42a\" == md5(body))"
+      - type: dsl
+        name: 3.0 - 3.0.2
+        dsl:
+          - "(\"45b199fb7cc4c6e2fc8504d3b90bbe59\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/scayt/LICENSE.md"
+
+    matchers:
+      - type: dsl
+        name: 4.0.1 - 4.12.1
+        dsl:
+          - "(\"e8f3afac5c765acbec1df8fc737eb48d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/old/assets/inlineall/logo.png"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"24eff0ec56a9892334bb8f6041dcd562\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/old/assets/sample.jpg"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"21d9ee7d983e172bf211e7724b39b383\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"8fb373f8580dc2f95678ca861a1ba9af\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/old/htmlwriter/assets/outputforflash/swfobject.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"207c3b007ab7eabe33e8480dcf1a1c0e\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.3
+        dsl:
+          - "(\"85486e883eea7808f7abc772a85b8107\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"de5410f8539db860e90a0c437f592f39\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/img/header-separator.png"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"8b578c337e0ab69dc6f049985483f8a5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/img/navigation-tip.png"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"3453b1e41914b2be899303d76fef144b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/img/github-top.png"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"b22a7a41d8e3f3f6ad7fd0ed74fd165c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/img/header-bg.png"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"d329c8537d5ec7b90943f66c97e16a35\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/lib/codemirror/show-hint.css"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"c1318fca069d71f8c1917a41484c0833\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/lib/codemirror/javascript.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"214ca26c5649ea946f66b5cb30323a1c\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.3
+        dsl:
+          - "(\"c2d5bb656e6e5ff13fdb4b1f6839e621\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/lib/codemirror/show-hint.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"93a681b4ef5c05e92f02b1c97167d090\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.3
+        dsl:
+          - "(\"2207747502a5fda652cb64d71abb6022\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/lib/codemirror/LICENSE"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"f2ea4c894040b1d4915ae47c14f0087b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/lib/codemirror/neo.css"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"01ae574f634f83bfad9095f51a82a6fe\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/lib/codemirror/codemirror.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"6f90137538694b5266ddac58d0fabb6a\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.3
+        dsl:
+          - "(\"cd5e1b4d932eacbbcf1c8670e86ce7ca\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/lib/codemirror/codemirror.css"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"cbe98224a17c8882f4a80ea966ce1d95\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/font/fontello.svg"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"3d6b7d674745cda4f906917dd2e3a66e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/font/fontello.ttf"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"1816c94e15be9db939f91cb4e88be055\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/font/fontello.eot"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"5de3a2a020ca6f2661b05448d47bccd9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/font/LICENSE.txt"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"3f11bdb4cef2da5f7cf13219f1de36e3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/font/fontello.woff"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"49788464b67f333bf748ea80f87956fb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/font/config.json"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"618c570c9b5f3d5206aafa538e0bba6a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/css/fontello.css"
+
+    matchers:
+      - type: dsl
+        name: 4.5.0 - 4.12.1
+        dsl:
+          - "(\"71823ace6380d701b498b0c12d4c1271\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"e02d5f44edf921b5098ab95278482b88\" == md5(body))"
+      - type: dsl
+        name: 4.5.2 - 4.5.3
+        dsl:
+          - "(\"21264089cd7f1adf08837932f77866ea\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.1
+        dsl:
+          - "(\"a3881446643b20c799c5ea0006713608\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/js/toolbarmodifier.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"aee3df58b0f618d1fdece853bcb91960\" == md5(body))"
+      - type: dsl
+        name: 4.5.2 - 4.5.3
+        dsl:
+          - "(\"5b6414011a706a77324739caca6609d9\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.1
+        dsl:
+          - "(\"91015ca58a73c1c247cc6b22dbc9a65e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/js/toolbartextmodifier.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"0d226adc572ce3a9edda458ff7495cb5\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.3
+        dsl:
+          - "(\"a882036ecfd010a14d53ba2efb9f5704\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/samples/toolbarconfigurator/js/fulltoolbareditor.js"
+
+    matchers:
+      - type: dsl
+        name: 4.5.4 - 4.12.1
+        dsl:
+          - "(\"c3c503b61c40b347738ecffb938f699c\" == md5(body))"
+      - type: dsl
+        name: 4.5.2 - 4.5.3
+        dsl:
+          - "(\"42cb3052087d3df0de8f83caa7b6e9b4\" == md5(body))"
+      - type: dsl
+        name: 4.5.0 - 4.5.1
+        dsl:
+          - "(\"6b4236fcdda0db2e2b2733432098af30\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/image2/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.10.0
+        dsl:
+          - "(\"058dfaeb321028a31abd4e52eadc1031\" == md5(body))"
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"0142d626e061fa9dc6f88ddcff31146d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/image2/lang/fa.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.10.0
+        dsl:
+          - "(\"33d92f8b113bb02802c91c8b6aa419d9\" == md5(body))"
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"01cf712ffbd42e520b0bed8b77ba528a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/colorbutton/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.10.0
+        dsl:
+          - "(\"0119b16f43db483b02ecd8da87a597d3\" == md5(body))"
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"6562dac135531cc172b4cfabe2b5cd90\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/forms/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.10.0
+        dsl:
+          - "(\"59ffc4d571c34c5d4f6376e192b436cc\" == md5(body))"
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"89f26cac504fd96bfaddb14c0574d3d3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/forms/lang/fa.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.10.0
+        dsl:
+          - "(\"564f6cebdeea2a051d8a5d0f8b59a465\" == md5(body))"
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"fd95e2536cc0feb5e9260d629d50b4d6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/autoembed/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"c705ee0af0ae670d0c33bb4ef0d08069\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/mathjax/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"ac4100582ab753fdc2792f62109cb325\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/embedbase/lang/ar.js"
+
+    matchers:
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"5aa4520418f75e229bb5a1073d8fbe66\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/embedbase/lang/lv.js"
+
+    matchers:
+      - type: dsl
+        name: 4.10.1 - 4.12.1
+        dsl:
+          - "(\"52ca1fad54f26045b874fb2f5e89d5ac\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/liststyle/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.10.1
+        dsl:
+          - "(\"db1ffcffc71f65f06c376c5995937027\" == md5(body))"
+      - type: dsl
+        name: 4.11.0 - 4.11.3
+        dsl:
+          - "(\"fe10580942c8353c99726b6d391c4002\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"c882d5c30ace9d2008d8df8b4e297df0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/liststyle/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.10.1
+        dsl:
+          - "(\"e97c9b9b30e5a0a50ba75349879d4b69\" == md5(body))"
+      - type: dsl
+        name: 4.11.0 - 4.11.3
+        dsl:
+          - "(\"55516e73c013e25d40d3d4bcc03c38eb\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"14b1dd18b8aa82f161f8126a6d9cff9a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/image2/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"032a495ec812a0b9b85a9eb42c65eab2\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"964ff2ce842c82976d27005fe4eca7df\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/image2/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"7f0871812616dbef488477691b1faf04\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"a83ae259e4e51ab9b2cf74fed094abed\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/smiley/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"08eb5775d72e70c7a6ad59887365c8b5\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"c54ba27f28030bc0ac55f84d83049b95\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/smiley/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"dcfeb6779a9ad53928f88ef63384e008\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"9d75b63aad45d3e91a88313f5e46c83d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/showblocks/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"a2bf2e5eab761498bc4d4900358f342f\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"c90a36d746b870cbb189da26d2374088\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/showblocks/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"96de322334b7d0db05d43ff5760acabe\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"77066500fe67f75cc260b3d22308c47e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/templates/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"e3fb7bd5a70a61fa7bea467c97b56fd5\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"623e1dd7e1513da1a00a2fdf771d9c59\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/templates/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"ec80552e897c6aff2e291fb9b2884a17\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"8ac42f8113bff0367da5afe264dbcebc\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/pagebreak/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"39fadbab50c3c0d85ee07495ee3fee3a\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"698751ab04b9930b4585fa7757e2763c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/pagebreak/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"ac2e3e51f68121b2a7452020c8217ac8\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"1b42f621e04b654909a8c8c761cb9b74\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/colorbutton/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"f6e72a0f7ebba82a90f0c39d2fd090bf\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"378e16613ae65e95856a10210a20c0b1\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/colorbutton/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"ccabf57cf4dd14f6978732868e164d24\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"b472471e2ad1a2c9d395d6363f86b270\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/colordialog/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"5d2e8aedf132d23ecac8739f47d35f07\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"0648d3dbd24fd8b53ead19a2e48fe39d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/colordialog/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"b78203e246dfbff333721a9eac493a18\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"50a714fb01019df6148f2db844797c60\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/find/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"b17b9dad1d7ff7625e3cfdbfbbdebddf\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"23fd6ce67680192d1002f87254f4dbb6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/find/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"885a501bd4456ef1f5afd5b7fdb07c80\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"51bac4d45fb0573e52343184f454df44\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/sourcedialog/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"3874fcba666c836bcb42f749a002ea56\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"5498aac47db9955aa3730e77d57ea88f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/sourcedialog/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"95d930ecbeb0df0fbece70527d6144de\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"4f40469cce2cd36cb6acf12f824e9aaf\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/font/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"d341a51cd04eb5ff0d85f08cadbc6b00\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"c7bee5e98fc2e42ac99b9ebbd0db757e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/font/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"9ab158ccdd0b1a1b545e85b04b1b43ca\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"436fa1d48b4fc6e1bd6bca28ee057958\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/bidi/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"47c6024a114ee1c87b0397bb9be8bb46\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"361397804c991afa18119c3675844f9b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/bidi/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"f48900dfd79cd7185961c4ec952a1ca9\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"927a16c56351b867fc5edcd5b30bd048\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/flash/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"286b2a7bc91872ef75730f8218ad7b77\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"d55b676aec32866fcf6e68a7866c900a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/flash/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"0d01c1808551245282917ff5f450c616\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"aeef20bc3f4c27b1e516073dea53547b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/div/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"07d40cf7593b6eeec67feaf7923bc9f8\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"9532614b8970085cf967b92f8e2d3668\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/div/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"8f481230f27d8665025075475e8760e7\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"884e0f8bccedfdd6b07aa08d3acfc984\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/forms/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"5cae0b83f20d5e3b3ade8d3db27846ac\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"d19e5834c7900942a53ece622d109355\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/forms/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"482089c9e4f88b59192e8692bb9b8d13\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"2fe054aa87907764be423ff1d0ff1c70\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/docprops/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"abbc342bdaf336cc0f4336e3d02d2094\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"4184c9d5bb380464e5b2da5b0fd66719\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/docprops/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"63e82828813d1dba2f390f6060488c46\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"72b0920d501dc1ec8ae339a5ed9fc1eb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/iframe/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"0a44c89fdbee5aa507c84e92c91ab0d8\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"1ad1156aab6a446a8a1c6f33590d40b7\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/iframe/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.8.0 - 4.11.3
+        dsl:
+          - "(\"91722d3fc5a8b9c37b901c6aba265cf6\" == md5(body))"
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"83fa42250da7c77be674ee027b13908a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/placeholder/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"306ac3780bc7f1b40b08ca8b31cbd506\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/placeholder/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"523bc188f70251e5676d07dc5db8b28b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/devtools/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"ed0a59fda3c430892a6b157b7de91d25\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/devtools/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"8ef76683452e917bf1e862318bdda3de\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/language/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"4fe0902a907a21d679916457a4fe68cd\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/language/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"16e9d3d74576085136910be34741825e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/autoembed/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"7fb3f9760d4b1a5ee55a8f933de7634e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/autoembed/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"43d480eea69775d05f899867d1dee40a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/mathjax/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"7eee607437bbe55811c296226ce57948\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/mathjax/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"bb489215bb030febd40ea8c3542377cc\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"a80ee466baba5b7b70899d9f08917594\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/uicolor/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"8a63645f3f866ff039928806444eeda5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/dialogs/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"d98c73bd1ca93a2f6eab9b027ced97fe\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/specialchar/dialogs/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"f56047da4bc460ed7cc75c54595968be\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/embedbase/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"e001d43b43eee9a823b3cf668874272c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/embedbase/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"cb8e67a80bfcb2073f698f0bd090e011\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/codesnippet/lang/sr.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"5302248bcc74f0c7b918b51fe7513944\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/plugins/codesnippet/lang/sr-latn.js"
+
+    matchers:
+      - type: dsl
+        name: 4.11.4 - 4.12.1
+        dsl:
+          - "(\"6c2c1b77faef8aa14dc7cdc7db5b4421\" == md5(body))"
