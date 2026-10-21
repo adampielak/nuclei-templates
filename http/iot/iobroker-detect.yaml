@@ -1,4 +1,5 @@
 id: iobroker-detect
+
 info:
   name: ioBroker - Detect
   author: rxerium
@@ -9,16 +10,18 @@ info:
     - https://www.iobroker.net/
     - https://github.com/ioBroker/ioBroker
   metadata:
+    verified: true
     max-request: 1
+    vendor: iobroker
     product: iobroker
     shodan-query: 'http.html:"ioBroker"'
-    vendor: iobroker
-    verified: true
-  tags: detect,home-automation,iobroker,iot,tech
+  tags: iobroker,tech,iot,home-automation,detect
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -27,6 +30,7 @@ http:
         part: body
         words:
           - 'ioBroker'
+
       - type: word
         part: body
         words:
@@ -34,7 +38,8 @@ http:
           - '<title>Web Login (ioBroker)</title>'
           - '<title>ioBroker</title>'
         condition: or
+
       - type: status
         status:
           - 200
-        # digest: 490a004630440220217852e336063dfa4c8259c8f3f75d94ac9258e686b8d18498bff9c1e29ed539022017a1854e572223408321d41ac89cf55ff57d14af2791e3441dddd1cc0e069bc1:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220217852e336063dfa4c8259c8f3f75d94ac9258e686b8d18498bff9c1e29ed539022017a1854e572223408321d41ac89cf55ff57d14af2791e3441dddd1cc0e069bc1:922c64590222798bb761d5b6d8e72950
