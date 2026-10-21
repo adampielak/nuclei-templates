@@ -1,4 +1,5 @@
 id: gost-socks5-detect
+
 info:
   name: GO Simple Tunnel (GOST) SOCKS5 - Detect
   author: darses
@@ -10,17 +11,19 @@ info:
     - https://github.com/go-gost/gost
     - https://gost.run
   metadata:
+    verified: true
     max-request: 1
+    vendor: gost
     product: gost
     shodan-query:
       - ssl.cert.subject.cn:"gost.run"
       - ssl.cert.subject.cn:"gost"
-    vendor: gost
-    verified: true
-  tags: c2,detect,discovery,gost,network,proxy,socks,socks5,tcp
+  tags: network,tcp,socks,socks5,proxy,detect,discovery,c2,gost
+
 javascript:
   - pre-condition: |
       isPortOpen(Host, Port);
+
     code: |
       const net = require("nuclei/net");
       const conn = net.Open('tcp', `${Host}:${Port}`);
@@ -55,16 +58,19 @@ javascript:
 
       Export("gost_method", methodName);
       "gost-socks5-detected";
+
     args:
       Host: "{{Host}}"
       Port: 1080
       Timeout: 5
+
     matchers:
       - type: dsl
         dsl:
           - success == true
+
     extractors:
       - type: kval
         kval:
           - gost_method
-        # digest: 4a0a0047304502210081c0b087e628faa2a7487d1ee780d035468df48d346b5ea11b5410d2f53ae61e02202d666855d35eeb7855a5a5b34f721fa57cefcfc43e75819d1305b6d8ed32860b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210081c0b087e628faa2a7487d1ee780d035468df48d346b5ea11b5410d2f53ae61e02202d666855d35eeb7855a5a5b34f721fa57cefcfc43e75819d1305b6d8ed32860b:922c64590222798bb761d5b6d8e72950
