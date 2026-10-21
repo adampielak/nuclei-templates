@@ -1,5 +1,4 @@
 id: sharepoint-masterpage-disclosure
-
 info:
   name: Microsoft SharePoint - Master Page Disclosure
   author: DhiyaneshDk
@@ -9,24 +8,22 @@ info:
   reference:
     - https://sharepointstuff.com/2021/03/30/useful-sharepoint-urls/
   metadata:
-    max-request: 2
-    verified: true
-    shodan-query: http.title:"SharePoint"
     fofa-query: title="SharePoint"
-  tags: sharepoint,microsoft,exposure,misconfig
-
+    max-request: 2
+    shodan-query: http.title:"SharePoint"
+    verified: true
+  tags: exposure,microsoft,misconfig,sharepoint,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/_catalogs/masterpage/Forms/AllItems.aspx"
-      - "{{BaseURL}}/_catalogs/15/masterpage/Forms/AllItems.aspx"
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100cf4f7e6e2bdb699a59f76ccd98f64e55c94f082463559b23528acb7b4fb5beb3022100a0d7b6f3e267a0ca73ac7456ff8f89e9c5484d98e9e71a9162352b2aba4fe8f2:922c64590222798bb761d5b6d8e72950
 
-    stop-at-first-match: true
-
-    matchers:
-      - type: dsl
         dsl:
           - status_code == 200
           - contains_all(body, "Master Page Gallery", "Recycle")
-        condition: and
-# digest: 490a0046304402203657ee34bc9b960fb78fdebe6de0781075669ea74ae5cebed712fbfdc6a2a005022003d10e0d95f2344ee98e75525f81a7794b9c5a32658c48b705c223f7abf1b594:922c64590222798bb761d5b6d8e72950
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/_catalogs/masterpage/Forms/AllItems.aspx'
+      - '{{BaseURL}}/_catalogs/15/masterpage/Forms/AllItems.aspx'
+    stop-at-first-match: true

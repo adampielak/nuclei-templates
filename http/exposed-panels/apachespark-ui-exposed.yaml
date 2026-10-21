@@ -24,6 +24,7 @@ http:
       - "{{BaseURL}}:4040/jobs/"
 
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -35,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022033965f5fadacf9c51b712986e19b1282c3eae2bc67ba1f46eddc380e60b5175c022100e92c975a0736a5c165ed64f2ffa2d6470220d496972763d5ffecc6506c1bfcc9:922c64590222798bb761d5b6d8e72950
+

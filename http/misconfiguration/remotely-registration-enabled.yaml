@@ -1,5 +1,4 @@
 id: remotely-registration-enabled
-
 info:
   name: Remotely Registration Enabled
   author: ritikchaddha
@@ -14,38 +13,35 @@ info:
     - https://github.com/lucent-sea/Remotely
     - https://github.com/lucent-sea/Remotely/blob/master/README.md
   metadata:
-    verified: true
-    max-request: 2
-    vendor: lucent-sea
-    product: remotely
+    runzero-match: any(each(service["html.titles"]), {# matches "Remotely$"})
     framework: aspnetcore
+    max-request: 2
+    product: remotely
     shodan-query: title:"Remotely"
-  tags: remotely,registration,exposure,misconfig
-
+    vendor: lucent-sea
+    verified: true
+  tags: exposure,misconfig,registration,remotely,vuln
 http:
-  - method: GET
+  - matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - Create a new account.
+          - Remotely
+      - negative: true
+        part: body
+        type: word
+        words:
+          - Registration is disabled.
+      - status:
+          - 200
+        # digest: 4b0a00483046022100a9bba8be012bbb70dc97d20442a24a72d2647af81bd1e33c2d71e5dc65436fc5022100b7dae7c0a95a7920a3f81187f952d57e832c67cf23365edd329d149c7a2ffa3e:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
     path:
       - '{{BaseURL}}/Identity/Account/Register'
       - '{{BaseURL}}/Account/Register'
-
     stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Create a new account.'
-          - 'Remotely'
-        condition: and
-
-      - type: word
-        part: body
-        words:
-          - 'Registration is disabled.'
-        negative: true
-
-      - type: status
-        status:
-          - 200
-# digest: 490a0046304402201ea043c4d8995ad27cd11b39f9435f458b5e91dd280fa3778362c329da36cc7802204fb0f731b0aa82a24d242c69befacd29812d50cdfea16b0817dbe5a1e6c33cd2:922c64590222798bb761d5b6d8e72950
