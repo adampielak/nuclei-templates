@@ -1,4 +1,5 @@
 id: wp-better-wp-security-login-disclosure
+
 info:
   name: WordPress Solid Security < 9.0.1 - Unauthenticated Login Page Disclosure
   author: 0x_Akoko
@@ -13,27 +14,30 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     verified: true
-  tags: exposure,ithemes,solid-security,vuln,wordpress,wp,wp-plugin
+    max-request: 1
+  tags: wordpress,wp-plugin,wp,exposure,ithemes,solid-security
+
 http:
-  - extractors:
-      - group: 1
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    host-redirects: true
+    max-redirects: 3
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, "itsec-hb-token=")'
+        condition: and
+
+    extractors:
+      - type: regex
         name: secret-login-slug
         part: body
+        group: 1
         regex:
-          - itsec-hb-token=([a-zA-Z0-9_-]+)
-        # digest: 4b0a004830460221009d0ddf706bfdb081c8a38193b2f3910aae599408bbf878b632739b6e04d743bb022100b43edc259e9f8765b85e83f183c7ec3fa9e8124a5916a287d22a3d04ff3e816b:922c64590222798bb761d5b6d8e72950
-
-        type: regex
-    host-redirects: true
-    matchers:
-      - condition: and
-        dsl:
-          - status_code == 200
-          - contains(body, "itsec-hb-token=")
-        type: dsl
-    max-redirects: 3
-    method: GET
-    path:
-      - '{{BaseURL}}/'
+          - 'itsec-hb-token=([a-zA-Z0-9_-]+)'
+# digest: 4a0a0047304502202c7c3c59545198c77c7a035c12926661b5c9e6d527e942d6107ecb7b6fef277c0221009d8fc72aa522bdd2f4c581728ee933e01c1b93d3bd41aa6bfe288639f4878105:922c64590222798bb761d5b6d8e72950
