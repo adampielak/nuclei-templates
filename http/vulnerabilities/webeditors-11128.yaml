@@ -1,11 +1,9 @@
 id: webeditors
-
 info:
   name: Web Editors
   author: pwnmachine
   severity: info
-
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/fckeditor/_samples/default.html"
