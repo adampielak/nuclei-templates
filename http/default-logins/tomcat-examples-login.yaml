@@ -1,4 +1,5 @@
 id: tomcat-examples-login
+
 info:
   name: Tomcat Examples Default Login
   author: 0xelkomy & C0NQR0R
@@ -9,23 +10,27 @@ info:
   metadata:
     verified: true
   tags: default-login,tomcat
+
 requests:
   - raw:
       - |
         GET /examples/jsp/security/protected/index.jsp HTTP/1.1
         Host: {{Hostname}}
+
       - |
         POST /examples/jsp/security/protected/j_security_check HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         j_username={{username}}&j_password={{password}}
+
     attack: pitchfork
     payloads:
       username:
         - tomcat
       password:
         - tomcat
+
     redirects: true
     max-redirects: 2
     cookie-reuse: true

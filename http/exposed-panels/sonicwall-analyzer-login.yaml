@@ -1,4 +1,5 @@
 id: sonicwall-analyzer-login
+
 info:
   name: SonicWall Analyzer Login
   author: DhiyaneshDK
@@ -7,16 +8,19 @@ info:
     verified: true
     shodan-dork: title:"SonicWall Analyzer Login"
   tags: panel,sonicwall
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/sgms/auth'
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - 'SonicWall Analyzer Login'
+
       - type: status
         status:
           - 200

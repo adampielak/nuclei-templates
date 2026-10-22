@@ -3,24 +3,19 @@ id: sap-netweaver-detect
 info:
   name: SAP NetWeaver ICM Detection
   author: randomstr1ng
-  description: Detection of SAP NetWeaver ABAP Webserver (ICM/ICF)
   severity: info
+  description: Detection of SAP NetWeaver ABAP Webserver (ICM/ICF)
+  metadata:
+    shodan-query: http.favicon.hash:-266008933
   tags: sap,webserver
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
+    redirects: true
+    max-redirects: 2
     matchers:
       - type: regex
         part: header

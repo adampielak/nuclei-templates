@@ -1,4 +1,5 @@
 id: symfony-properties-ini
+
 info:
   name: Symfony properties.ini File Disclosure
   author: DhiyaneshDK
@@ -7,11 +8,13 @@ info:
     verified: true
     google-dork: intitle:"index of" "properties.ini"
   tags: symfony,exposure
+
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/properties.ini'
       - '{{BaseURL}}/config/properties.ini'
+
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -22,6 +25,7 @@ requests:
           - 'author='
           - 'orm='
         condition: and
+
       - type: status
         status:
           - 200

@@ -7,12 +7,11 @@ info:
   reference:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
   metadata:
-    max-request: 1
     verified: true
     github-query: filename:apiserver-etcd-client.key
   tags: files,exposure,kubernetes,k8s
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/apiserver-etcd-client.key"

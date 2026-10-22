@@ -1,4 +1,5 @@
 id: tlr-2005ksh-login
+
 info:
   name: Telesquare TLR-2005KSH Login Panel
   author: princechaddha
@@ -7,16 +8,19 @@ info:
     verified: true
     shodan-query: http.html:"TLR-2005KSH"
   tags: panel,router,telesquare
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>Login to TLR-2005KSH</title>"
+
       - type: status
         status:
           - 200

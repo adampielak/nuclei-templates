@@ -1,4 +1,5 @@
 id: emby-panel
+
 info:
   name: Emby Login Panel
   author: idealphase
@@ -12,10 +13,12 @@ info:
     verified: true
     shodan-query: http.title:"emby"
   tags: panel,emby,oss
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -24,9 +27,11 @@ requests:
         part: body
         words:
           - '<title>Emby</title>'
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

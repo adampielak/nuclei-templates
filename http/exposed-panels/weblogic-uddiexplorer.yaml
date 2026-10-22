@@ -1,4 +1,5 @@
 id: weblogic-uddiexplorer
+
 info:
   name: Oracle WebLogic UDDI Explorer
   author: pdteam
@@ -8,16 +9,19 @@ info:
   reference:
     - https://www.tenable.com/plugins/was/112421
   tags: panel,oracle,weblogic
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/uddiexplorer/"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - 'WebLogic UDDI Explorer'
+
       - type: status
         status:
           - 200

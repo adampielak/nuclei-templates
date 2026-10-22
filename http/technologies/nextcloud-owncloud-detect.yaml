@@ -1,4 +1,5 @@
 id: owncloud-status-page
+
 info:
   name: Owncloud StatusPage detection
   author: myztique
@@ -7,15 +8,18 @@ info:
     verified: true
     shodan-query: http.html:"owncloud"
   tags: tech,owncloud,status
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/status.php"
+
     matchers:
       - type: regex
         part: body
         regex:
           - '{"installed":(?:true|false),"maintenance":(?:true|false),"version":"[0-9\.]*","versionstring":"[a-z-A-Z0-9\.]*","edition":"[\d\D]*"}'
+
     extractors:
       - type: regex
         part: body

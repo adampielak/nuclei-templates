@@ -1,4 +1,5 @@
 id: supermicro-bmc-panel
+
 info:
   name: Supermicro BMC Login Panel
   author: idealphase
@@ -12,16 +13,19 @@ info:
     shodan-query: http.title:"Supermicro BMC Login"
     google-dork: intitle:"Supermicro BMC Login"
   tags: panel,supermicro,bmc
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>Supermicro BMC Login</title>"
+
       - type: status
         status:
           - 200

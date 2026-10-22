@@ -4,20 +4,15 @@ info:
   name: OpenNMS web console
   author: DhiyaneshDk
   severity: info
-  reference: https://www.exploit-db.com/ghdb/5468
+  reference:
+    - https://www.exploit-db.com/ghdb/5468
   tags: panel,login
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/opennms/login.jsp"
 
-    raw:
-      - |
-        GET /opennms/login.jsp HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
       - type: word

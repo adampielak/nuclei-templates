@@ -1,4 +1,5 @@
 id: synapse-mobility-panel
+
 info:
   name: Synapgse Mobility Login Panel
   author: idealphase
@@ -10,16 +11,19 @@ info:
     shodan-query: http.title:"Synapse Mobility Login"
     google-query: intitle:"Synapse Mobility Login"
   tags: panel,synapse
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/pureweb/server/login.jsp"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>Synapse Mobility Login</title>"
+
       - type: status
         status:
           - 200
