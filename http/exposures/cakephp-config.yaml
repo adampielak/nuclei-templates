@@ -13,18 +13,16 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 2
     shodan-query: html:"phinx.yml"
   tags: files,exposure,config
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/phinx.yml"
       - "{{BaseURL}}/phinx.yaml"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -33,10 +31,10 @@ http:
           - "host:"
           - "name:"
           - "pass:"
-          - "adapter:"
         condition: and
 
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220174e7b56d757ddb7d9ac26c557c04492c7b48a1af990970c8b1be5a74a6755a602210093f0838189c77f10640775dcf7d86e66d79c9bcf41fcaf9408b0fd0c49f4a22c:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/02/08
