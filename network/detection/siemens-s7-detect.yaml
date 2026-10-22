@@ -1,5 +1,4 @@
 id: siemens-s7-detect
-
 info:
   name: Siemens SIMATIC S7 Series PLC - Detect
   author: SergioCc13
@@ -12,11 +11,10 @@ info:
     - https://github.com/klsecservices/s7scan
   metadata:
     max-request: 3
-    vendor: siemens
     product: simatic_s7
     shodan-query: port:102 "6ES7"
-  tags: ics,siemens,simatic,s7,s7comm,detect,network,tcp
-
+    vendor: siemens
+  tags: detect,ics,network,s7,s7comm,siemens,simatic,tcp
 tcp:
   - inputs:
       - data: "0300001611e00000001400c1020100c2020102c0010a"
@@ -31,12 +29,10 @@ tcp:
         type: hex
         read: 1024
         name: szl
-
     host:
       - "{{Hostname}}"
     port: 102
     read-size: 1024
-
     matchers:
       - type: binary
         part: szl
@@ -44,7 +40,6 @@ tcp:
           - "02f08032070000"
           - "36455337"
         condition: and
-
     extractors:
       - type: regex
         part: szl
@@ -52,4 +47,4 @@ tcp:
         name: order_number
         regex:
           - "(6ES7[ -][0-9A-Za-z -]{9,})"
-# digest: 4b0a004830460221008504655c8ca479a7a1dec77cba615e331cb1b5a8db98c45b41eceea1063c576a022100a7c113bcc510dd7b1c730f6036a0727b45ff30d059716c395b892201a9d6909e:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a004830460221008504655c8ca479a7a1dec77cba615e331cb1b5a8db98c45b41eceea1063c576a022100a7c113bcc510dd7b1c730f6036a0727b45ff30d059716c395b892201a9d6909e:922c64590222798bb761d5b6d8e72950
