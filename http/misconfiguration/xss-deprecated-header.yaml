@@ -1,5 +1,4 @@
 id: xss-deprecated-header-detect
-
 info:
   name: Detect Deprecated XSS Protection Header
   author: joshlarsen
@@ -9,26 +8,21 @@ info:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
     - https://owasp.org/www-project-secure-headers/#x-xss-protection
   tags: xss,misconfig,generic
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
-
       - type: regex
         part: header
         regex:
           - "(?i)x-xss-protection: 0"
         negative: true
-
       - type: regex
         part: header
         regex:
           - "(?i)x-xss-protection: 1+"
-
     extractors:
       - type: kval
         part: header

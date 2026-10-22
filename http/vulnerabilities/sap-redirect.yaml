@@ -4,15 +4,20 @@ info:
   name: SAP wide open redirect
   author: Gal Nagli
   severity: medium
-  description: A vulnerability in SAP's 'logoff' endpoint allows attackers to redirect victims to their URL of choice.
   tags: redirect,sap
 
 requests:
-  - method: GET
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
-    path:
-      - "{{BaseURL}}/sap/public/bc/icf/logoff?redirecturl=https://interact.sh"
-
+    raw:
+      - |
+        GET /sap/public/bc/icf/logoff?redirecturl=https://example.com HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept: */*
     matchers-condition: and
     matchers:
 
@@ -22,7 +27,7 @@ requests:
 
       - type: word
         words:
-          - "Location: https://www.interact.sh"
-          - "Location: https://interact.sh"
+          - "Location: https://www.example.com"
+          - "Location: https://example.com"
         condition: or
         part: header

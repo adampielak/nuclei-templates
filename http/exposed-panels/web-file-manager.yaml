@@ -1,5 +1,4 @@
 id: web-file-manager
-
 info:
   name: Web File Manager
   author: DhiyaneshDK
@@ -8,12 +7,10 @@ info:
     verified: true
     shodan-dork: title:"Web File Manager"
   tags: panel,filemanager
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/Login'
-
     matchers-condition: and
     matchers:
       - type: word
@@ -22,7 +19,6 @@ requests:
           - 'Web File Manager'
           - 'Login'
         condition: and
-
       - type: status
         status:
           - 200

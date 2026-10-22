@@ -4,13 +4,19 @@ info:
   name: SAP HANA XSEngine Admin Panel
   author: PR3R00T
   severity: info
-  tags: panel,sap
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/sap/hana/xs/formLogin/login.html"
-    redirects: true
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /sap/hana/xs/formLogin/login.html HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers:
       - type: word
         words:

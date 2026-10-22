@@ -10,14 +10,12 @@ info:
     Successful exploitation allows attackers to access sensitive files and information stored on the server.
   reference:
     - https://github.com/szjr123/Target-practice/blob/05ed667090d8040a09235826f7698ff5347a93cf/%E7%94%A8%E5%8F%8BOA/NC%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96_DocServlet/yongyou_read.py
-  classification:
-    cwe-id: CWE-22,CWE-73
   metadata:
     verified: true
     max-request: 1
     fofa-query: 'app="用友-UFIDA-NC"'
     shodan-query: 'http.title:"用友" "NC"'
-  tags: yonyou,ufida,lfi,vuln
+  tags: yonyou,ufida,lfi
 
 http:
   - raw:
@@ -35,4 +33,4 @@ http:
           - 'contains(content_type, "application/xml")'
           - 'contains_all(body, "<web-app", "<?xml version")'
         condition: and
-# digest: 490a0046304402204f69947e83e9a2b52d766b01955eb10295aa3d6787f526d2bafac810dca6c7520220329038e5804fb0605ea38a768e9c53e01f55a713a335bee764192b0b28d3502c:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100d4cf3e0de891a8d3be3dde92197ea66bac975e1cc9f1bbaa2811073bf76384fa022100f96c403ca2e9a1188bcd5ca080fb5b0019b3dc92c0e3bd6254d147b2e379be18:922c64590222798bb761d5b6d8e72950

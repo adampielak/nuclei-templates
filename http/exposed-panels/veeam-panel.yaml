@@ -1,5 +1,4 @@
 id: veeam-panel
-
 info:
   name: Veeam Login Panel
   author: DhiyaneshDK
@@ -8,23 +7,19 @@ info:
     verified: true
     shodan-query: http.favicon.hash:-633512412
   tags: panel,veeam
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login.aspx"
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "Login - Veeam ONE Reporter"
-
       - type: word
         part: header
         words:
           - "text/html"
-
       - type: status
         status:
           - 200

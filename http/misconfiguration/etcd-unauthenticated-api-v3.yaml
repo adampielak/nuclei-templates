@@ -1,5 +1,4 @@
 id: http-etcd-unauthenticated-api-v3
-
 info:
   name: etcd v3 Unauthenticated API
   author: x3lfyn
@@ -17,11 +16,10 @@ info:
     cwe-id: CWE-306
   metadata:
     max-request: 1
-    vendor: etcd
     product: etcd
     shodan-query: product:"etcd"
-  tags: misconfig,unauth,etcd,exposure
-
+    vendor: etcd
+  tags: etcd,exposure,misconfig,unauth
 http:
   - id: check-auth-status
     method: POST
@@ -30,7 +28,6 @@ http:
     headers:
       Content-Type: application/json
     body: "{}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -38,13 +35,11 @@ http:
         words:
           - '"enabled":true'
         negative: true
-
       - type: word
         part: body
         words:
           - "authRevision"
-
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008be66c17948f6e3da949dffb294f6b9764f576f705d472be62f8807660f462f4022100cee6068b2ea1bd9f6fee932d845a0ef687257ced6b1ab5629bf085cdb3e8732c:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a004830460221008be66c17948f6e3da949dffb294f6b9764f576f705d472be62f8807660f462f4022100cee6068b2ea1bd9f6fee932d845a0ef687257ced6b1ab5629bf085cdb3e8732c:922c64590222798bb761d5b6d8e72950

@@ -1,5 +1,4 @@
 id: tenda-11n-wireless-router-panel
-
 info:
   name: Tenda 11n Wireless Router - Admin Panel
   author: idealphase
@@ -16,19 +15,16 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-419
   tags: panel,tenda
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login.asp"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>Tenda 11N Wireless Router Login Screen</title>"
-
       - type: status
         status:
           - 200

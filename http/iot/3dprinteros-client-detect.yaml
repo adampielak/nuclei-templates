@@ -1,5 +1,4 @@
 id: 3dprinteros-client-detect
-
 info:
   name: 3DPrinterOS Client - Detect
   author: rxerium
@@ -9,18 +8,16 @@ info:
   reference:
     - https://www.3dprinteros.com/
   metadata:
-    verified: true
     max-request: 1
-    vendor: 3dprinteros
     product: 3dprinteros-client
     shodan-query: 'http.title:"3DPrinterOS Client"'
-  tags: 3dprinteros,tech,iot,3d-printing,detect
-
+    vendor: 3dprinteros
+    verified: true
+  tags: 3d-printing,3dprinteros,detect,iot,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
     matchers-condition: and
@@ -29,13 +26,11 @@ http:
         part: body
         words:
           - '<title>3DPrinterOS Client</title>'
-
       - type: word
         part: header
         words:
           - 'aiohttp/'
-
       - type: status
         status:
           - 401
-# digest: 4a0a0047304502202c8074c8ce3d3685174bb9d56244c81c2a350c57cd48938a8da471c025509ed70221008720c42c91e7df35fff7a70843811d4cb537c77d76cb89e6185f004a4d5bc274:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502202c8074c8ce3d3685174bb9d56244c81c2a350c57cd48938a8da471c025509ed70221008720c42c91e7df35fff7a70843811d4cb537c77d76cb89e6185f004a4d5bc274:922c64590222798bb761d5b6d8e72950

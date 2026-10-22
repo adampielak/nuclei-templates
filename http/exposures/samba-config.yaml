@@ -4,13 +4,19 @@ info:
   name: Samba config file disclosure
   author: sheikhrishad
   severity: info
-  tags: config,exposure,smb,samba
+  tags: config,exposure,smb
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/smb.conf"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /smb.conf HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
       - type: word

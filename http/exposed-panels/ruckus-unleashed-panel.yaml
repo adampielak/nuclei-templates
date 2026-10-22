@@ -1,5 +1,4 @@
 id: ruckus-unleashed-panel
-
 info:
   name: Ruckus Wireless Unleashed Login Panel
   author: idealphase
@@ -11,23 +10,19 @@ info:
     shodan-query: http.title:"Unleashed Login"
     google-dork: intitle:"Unleashed Login"
   tags: panel,ruckus
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/admin/login.jsp"
-
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>Unleashed Login</title>"
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         group: 1

@@ -1,5 +1,4 @@
 id: teamcity-guest-login-enabled
-
 info:
   name: JetBrains TeamCity - Guest User Access Enabled
   author: Ph33r
@@ -17,13 +16,11 @@ info:
     verified: true
     shodan-query: http.component:"TeamCity"
   tags: misconfig,teamcity,jetbrains
-
 requests:
   - raw:
       - |
         GET /guestLogin.html?guest=1 HTTP/1.1
         Host: {{Hostname}}
-
     matchers-condition: and
     matchers:
       - type: word
@@ -32,7 +29,6 @@ requests:
           - 'Location: /overview.html'
           - 'TCSESSIONID='
         condition: and
-
       - type: status
         status:
           - 302

@@ -1,5 +1,4 @@
 id: smartping-dashboard
-
 info:
   name: Unauth SmartPing Dashboard
   author: DhiyaneshDk
@@ -8,20 +7,16 @@ info:
     verified: true
     shodan-query: title:"SmartPing Dashboard"
   tags: panel,misconfig,unauth,smartping
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/config.html"
-
     matchers-condition: and
     matchers:
-
       - type: word
         part: body
         words:
           - 'SmartPing Dashboard'
-
       - type: status
         status:
           - 200

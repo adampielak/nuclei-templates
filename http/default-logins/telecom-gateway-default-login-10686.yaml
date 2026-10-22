@@ -1,9 +1,11 @@
 id: telecom-gateway-default-login
+
 info:
   name: Telecom Gateway Default Login
   author: ritikchaddha
   severity: high
   tags: telecom,default-login,gateway
+
 requests:
   - raw:
       - |
@@ -11,6 +13,7 @@ requests:
         Host: {{Hostname}}
 
         Name={{username}}&Pass={{password}}
+
     attack: pitchfork
     payloads:
       username:
@@ -28,6 +31,7 @@ requests:
           - "index-shang.php"
           - "di.php"
         condition: and
+
       - type: status
         status:
           - 200

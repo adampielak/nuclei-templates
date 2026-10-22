@@ -1,5 +1,4 @@
 id: appsettings-file-disclosure
-
 info:
   name: Application Setting file disclosure
   author: DhiyaneshDK,tess
@@ -11,23 +10,19 @@ info:
   metadata:
     verified: true
   tags: exposure
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/appsettings.json"
-
     matchers-condition: and
     matchers:
       - type: word
         words:
           - "ConnectionStrings"
-
       - type: word
         part: header
         words:
           - "application/json"
-
       - type: status
         status:
           - 200

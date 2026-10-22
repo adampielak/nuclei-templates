@@ -1,5 +1,4 @@
 id: nymea-detect
-
 info:
   name: nymea - Detect
   author: rxerium
@@ -10,26 +9,23 @@ info:
     - https://nymea.io/
     - https://github.com/nymea/nymea
   metadata:
-    verified: true
     max-request: 1
-    vendor: nymea
     product: nymea
     shodan-query: '"nymea"'
-  tags: nymea,tech,iot,smart-home,home-automation,detect
-
+    vendor: nymea
+    verified: true
+  tags: detect,home-automation,iot,nymea,smart-home,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: regex
         part: header
         regex:
           - '(?mi)^Server:\s*nymea/[0-9]'
-
       - type: status
         status:
           - 404
-# digest: 4b0a00483046022100a43b23079142d05d9c78f2b228f8a746254e7a5549c3c3049d3be6f25467aaad022100ec012474eb60c8a6b363a86cb5927ea7c42d2b5d05cbb4f1d0cb7baaf558d802:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100a43b23079142d05d9c78f2b228f8a746254e7a5549c3c3049d3be6f25467aaad022100ec012474eb60c8a6b363a86cb5927ea7c42d2b5d05cbb4f1d0cb7baaf558d802:922c64590222798bb761d5b6d8e72950
