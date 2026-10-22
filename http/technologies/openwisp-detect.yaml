@@ -1,5 +1,4 @@
 id: openwisp-detect
-
 info:
   name: OpenWISP - Detect
   author: rxerium
@@ -10,21 +9,18 @@ info:
     - https://openwisp.org/
     - https://github.com/openwisp/openwisp-controller
   metadata:
-    verified: true
     max-request: 1
-    vendor: openwisp
     product: openwisp
     shodan-query: http.title:"OpenWISP"
-  tags: tech,openwisp,network-management,detect,discovery
-
+    vendor: openwisp
+    verified: true
+  tags: detect,discovery,network-management,openwisp,tech
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     host-redirects: true
     max-redirects: 3
-
     matchers-condition: and
     matchers:
       - type: word
@@ -33,8 +29,7 @@ http:
           - '<title>Log in | OpenWISP Admin</title>'
           - '/static/admin/css/openwisp'
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 490a00463044022057abe1dd82870aeccb0e65673ab93f6509b3c76f70cdd3f0bfeb6452aabebeb60220304c23cf2d9168a6a58aee89f3d672aaf4451e7f74740827b618bcb6ba57a48a:922c64590222798bb761d5b6d8e72950
+        # digest: 490a00463044022057abe1dd82870aeccb0e65673ab93f6509b3c76f70cdd3f0bfeb6452aabebeb60220304c23cf2d9168a6a58aee89f3d672aaf4451e7f74740827b618bcb6ba57a48a:922c64590222798bb761d5b6d8e72950
