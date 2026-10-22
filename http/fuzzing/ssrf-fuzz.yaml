@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: ssrf,fuzz
 
-requests:
+http:
 
   - raw:
       - |

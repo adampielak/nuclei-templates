@@ -6,15 +6,11 @@ info:
   severity: info
   description: |
     Extract the Matrix homeserver name and version
-  classification:
-    cpe: cpe:2.3:a:matrix:synapse:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: matrix
-    product: synapse
     shodan-query: title:"Synapse is running"
-  tags: tech,matrix,synapse,discovery
+  tags: tech,matrix,synapse
 
 http:
   - method: GET
@@ -24,7 +20,6 @@ http:
     redirects: true
     max-redirects: 2
 
-    matchers-condition: and
     matchers:
       - type: word
         part: body
@@ -34,14 +29,9 @@ http:
           - '"version":'
         condition: and
 
-      - type: word
-        part: content_type
-        words:
-          - 'application/json'
-
     extractors:
       - type: json
         part: body
         json:
           - '.server | select((.name != null) and (.version != null)) | .name, .version'
-# digest: 4b0a00483046022100f990227f84edeef2fd8264e4d1e2f8fd90f52c4c9fd73839e0be4caa56f549cf02210083b4651aa652e0af30ee6430de422dda3bea31e8dd9ffede4b6d6ac05538b6bd:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502203e1ffa3c5daae7131064e90d6ef6c55e18e48adb8062b670833ad61902a3d87a022100f9a08b0c7c808f73b24041638cfcbca7eef9289d26402551967c25c1a3a41e92:922c64590222798bb761d5b6d8e72950

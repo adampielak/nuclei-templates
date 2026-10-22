@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="Hak5-C2"
-  tags: c2,ir,osint,hack5c2,panel,vuln
+  tags: c2,ir,osint,hack5c2,panel
 
 http:
   - method: GET
@@ -29,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210088d8c5e0028f3b8788e605f0bc25e77f4fe4914e2679b663520591386cf427de022100fceefea892ab5cec8184966e6cb72dc635da3fb43a73c674661d739e23e160be:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c8fd1bc76ba8ef353399f0de6cd0e09930fc44481808d29eb0e3bb1910365b540220279652266852667d683caf75fd39444c45dfae3a5bc5b90e3bc0a26d315b26d2:922c64590222798bb761d5b6d8e72950

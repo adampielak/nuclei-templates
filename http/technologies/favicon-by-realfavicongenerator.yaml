@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/favicon-by-realfavicongenerator/
   metadata:
+    max-request: 1
     plugin_namespace: favicon-by-realfavicongenerator
     wpscan: https://wpscan.com/plugin/favicon-by-realfavicongenerator
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100fd654df7c33275d177164d071761b2549b6448f8bc1f215d5894208a4d9430ec022100beb1766ced26772963ce5809f95c3428bb1f9fc90d0f310944e0672adda84fc3:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100895e3fc77d3548fc474fc643ecd8c88e286c2c9b3af50f1adabb6519dc84bd9e02204d882580bdb547dbf632eb44f5a6df1daceadb9cdef1189b26da1a6e6140130b:922c64590222798bb761d5b6d8e72950

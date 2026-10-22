@@ -9,18 +9,13 @@ info:
     - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/JBossjBPMAdminConsole.java
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:redhat:jbpm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: redhat
-    product: jbpm
-    shodan-query:
-      - html:"JBossWS"
-      - http.html:"jbossws"
-    fofa-query: body="jbossws"
-  tags: jboss,panel,login,redhat,discovery
+    shodan-query: html:"JBossWS"
+  tags: jboss,panel,login
 
 http:
   - method: GET
@@ -37,4 +32,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022012f696cbffa2d8fc54f0a3a163e39c75d31628bcd8ab5c009dd8cfa0d8a669b1022075aec23cb805acf8cfca7553135f5b03bc0e12771f919ab71d587856300fb22c:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100b84266552ba533a6af0ab94da9546e7d3d142517c4d7e818df6b3d9a4720a2500220627fa084733a4442ebeed636bbfbcb99b4c6343755a372fd3b506dbb8112b211:922c64590222798bb761d5b6d8e72950

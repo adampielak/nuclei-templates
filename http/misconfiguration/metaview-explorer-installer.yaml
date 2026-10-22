@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"MetaView Explorer"
-  tags: misconfig,metaview,installer,vuln
+  tags: misconfig,metaview,installer
 
 http:
   - method: GET
@@ -28,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022044f2c3123fe9f9a886e56ab68cc79b8b1f0bc5ff349b9971b44330ff64482acb02205daafa889302cf2c2c506121c8115d710f819e25f3706c90c2376374b195eb21:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100fdbd4ef61897dac8db874847c63fec411084cd292e5b156b48b7d8a98c016e5d022100b063098eb95a13aee172f71cdef303cca2a1afca96b014afcb4849c45130e35c:922c64590222798bb761d5b6d8e72950
