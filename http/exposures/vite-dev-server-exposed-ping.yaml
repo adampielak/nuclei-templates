@@ -37,7 +37,7 @@ http:
       - type: dsl
         dsl:
           - 'status_code == 200 && len(body) < 4'
-    internal: true
+    # Pre-filter: confirms Vite ping before HMR client probe.
 
   - method: GET
     path:

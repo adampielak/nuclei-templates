@@ -1,8 +1,9 @@
+# gap: redis-lua-rce
 id: redis-lua-rce
 
 info:
   name: Redis Lua EVAL Script Execution
-  author: assay
+  author: TyrusRC
   severity: high
   description: |
     Redis server allows unauthenticated Lua script execution via EVAL.
@@ -10,7 +11,7 @@ info:
     command execution. Even with strict Lua, redis.call() from scripts
     can read/write all data. Detected by executing a safe arithmetic
     eval that returns a known marker.
-  tags: network,redis,rce,lua
+  tags: custom,network,redis,rce,lua
 
 tcp:
   - inputs:

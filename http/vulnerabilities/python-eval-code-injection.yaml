@@ -1,3 +1,4 @@
+# gap: python-eval-code-injection
 id: python-eval-code-injection
 
 info:
@@ -10,8 +11,8 @@ info:
     vm.runInNewContext(), or similar functions process the input, the
     computed result (9359) appears in the response body. The multiplier
     1337*7 is chosen because 9359 rarely appears in normal responses.
-    This catches CODE INJECTION — raw interpreter eval — not template
-    injection (no {{ }}, ${ }, <% %> wrappers).
+    This catches arbitrary code execution via raw interpreter eval — not
+    template injection (no {{ }}, ${ }, <% %> wrappers).
   reference:
     - https://owasp.org/www-community/attacks/Code_Injection
     - https://cwe.mitre.org/data/definitions/94.html

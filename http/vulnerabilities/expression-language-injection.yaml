@@ -1,0 +1,58 @@
+# gap: expression-language-injection
+id: expression-language-injection
+
+info:
+  name: Expression Language (EL) Injection
+  author: TyrusRC
+  severity: critical
+  description: |
+    Detects Java Expression Language injection by sending EL evaluation
+    payloads. Successful evaluation of arithmetic expressions proves the
+    application processes user input as EL, leading to remote code execution
+    via Runtime.exec() or ClassLoader manipulation on Java EE servers.
+  reference:
+    - https://owasp.org/www-community/vulnerabilities/Expression_Language_Injection
+    - https://cwe.mitre.org/data/definitions/917.html
+  tags: custom,el,injection,java,rce
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?input=${7*7}"
+      - "{{BaseURL}}/?input=#{7*7}"
+      - "{{BaseURL}}/?q=${7*7}"
+      - "{{BaseURL}}/?search=${7*7}"
+      - "{{BaseURL}}/?name=${7*7}"
+      - "{{BaseURL}}/?q=#{7*7}"
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "49"
+      - type: word
+        part: body
+        negative: true
+        words:
+          - "${7*7}"
+          - "#{7*7}"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/?input=${applicationScope}"
+      - "{{BaseURL}}/?q=${applicationScope}"
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "javax."
+          - "java.lang"
+          - "catalina"
+          - "ApplicationContext"
+        condition: or

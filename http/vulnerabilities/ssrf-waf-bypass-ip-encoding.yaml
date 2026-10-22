@@ -1,8 +1,9 @@
+# gap: ssrf-waf-bypass-ip-encoding
 id: ssrf-waf-bypass-ip-encoding
 
 info:
   name: SSRF via IP Encoding WAF Bypass
-  author: custom
+  author: TyrusRC
   severity: high
   description: |
     Tests SSRF with alternative IP representations that bypass WAF rules
@@ -10,7 +11,7 @@ info:
     octal, IPv6, and DNS rebinding representations.
   reference:
     - https://book.hacktricks.xyz/pentesting-web/ssrf-server-side-request-forgery
-  tags: ssrf,waf-bypass,ip-encoding
+  tags: custom,ssrf,waf-bypass,ip-encoding
 
 http:
   - method: GET

@@ -1,8 +1,9 @@
+# gap: path-traversal-waf-bypass-encoding
 id: path-traversal-waf-bypass-encoding
 
 info:
   name: Path Traversal via Encoding WAF Bypass
-  author: custom
+  author: TyrusRC
   severity: high
   description: |
     Tests local file inclusion / path traversal using encoding techniques
@@ -10,7 +11,7 @@ info:
     double URL encoding, UTF-8 overlong, and null-byte variants.
   reference:
     - https://owasp.org/www-community/attacks/Path_Traversal
-  tags: lfi,path-traversal,waf-bypass
+  tags: custom,lfi,path-traversal,waf-bypass
 
 http:
   - method: GET

@@ -1,9 +1,10 @@
+# gap: sqli-json-body-differential
 id: sqli-json-body-differential
 
 info:
   name: SQL Injection via JSON Body — Quote Differential
   author: TyrusRC
-  severity: critical
+  severity: high
   description: |
     Sends JSON POST requests with a single-quote appended to common
     body field names (username, password, email, user, login, token,

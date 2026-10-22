@@ -1,15 +1,17 @@
+# gap: redis-unauthenticated-access
 id: redis-unauthenticated-access
 
 info:
   name: Redis Unauthenticated Access
-  author: assay
+  author: TyrusRC
   severity: critical
   description: |
     Redis server accepts connections without authentication. An attacker can
-    read/write all data, execute Lua scripts (RCE via io.popen on Redis <=6),
-    change server configuration (CONFIG SET dir/dbfilename for file write),
-    and perform denial-of-service (FLUSHALL, DEBUG SEGFAULT).
-  tags: network,redis,misconfig,rce
+    read/write all data, execute arbitrary commands via Lua scripts
+    (RCE via io.popen on Redis <=6), change server configuration
+    (CONFIG SET dir/dbfilename for arbitrary file write), and perform
+    denial-of-service (FLUSHALL, DEBUG SEGFAULT).
+  tags: custom,network,redis,misconfig,rce
 
 tcp:
   - inputs:

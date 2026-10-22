@@ -1,8 +1,9 @@
+# gap: xss-waf-bypass-svg-onload
 id: xss-waf-bypass-svg-onload
 
 info:
   name: XSS via SVG onload WAF Bypass
-  author: custom
+  author: TyrusRC
   severity: high
   description: |
     Tests reflected XSS using SVG tag with onload event handler. Many WAFs
@@ -10,7 +11,7 @@ info:
     between tag name and event handler to split the WAF signature.
   reference:
     - https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
-  tags: xss,waf-bypass,svg
+  tags: custom,xss,waf-bypass,svg
 
 http:
   - method: GET

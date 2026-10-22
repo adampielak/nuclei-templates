@@ -1,14 +1,15 @@
+# gap: dotenv-file-exposure
 id: dotenv-file-exposure
 
 info:
   name: Exposed .env Configuration File
-  author: custom
+  author: TyrusRC
   severity: high
   description: |
     Environment configuration files (.env) are accessible via HTTP.
     These files contain database credentials, API keys, JWT secrets,
     SMTP passwords, and other sensitive configuration.
-  tags: exposure,env,credentials,config
+  tags: custom,exposure,env,credentials,config
 
 http:
   - method: GET

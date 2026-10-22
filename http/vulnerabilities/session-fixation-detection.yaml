@@ -1,0 +1,38 @@
+# gap: session-fixation-detection
+id: session-fixation-detection
+
+info:
+  name: Session Fixation Detection
+  author: TyrusRC
+  severity: high
+  description: |
+    Detects session fixation by sending a request with a pre-set session
+    cookie and checking whether the server accepts it without regenerating
+    the session ID. A fixated session allows an attacker to hijack the
+    victim's authenticated session.
+  reference:
+    - https://owasp.org/www-community/attacks/Session_fixation
+    - https://cwe.mitre.org/data/definitions/384.html
+  tags: custom,session,fixation,authentication
+
+http:
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        Cookie: PHPSESSID=nucleifixationtest123; JSESSIONID=nucleifixationtest123; session=nucleifixationtest123; connect.sid=s%3Anucleifixationtest123; ASP.NET_SessionId=nucleifixationtest123
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 302
+      - type: word
+        part: header
+        negative: true
+        words:
+          - "Set-Cookie:"
+      - type: dsl
+        dsl:
+          - '!regex("Set-Cookie:.*(?:PHPSESSID|JSESSIONID|session|connect\\.sid|ASP\\.NET_SessionId)=(?!nucleifixationtest123)", header)'

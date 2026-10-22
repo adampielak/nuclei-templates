@@ -1,14 +1,15 @@
+# gap: waf-fingerprint-detection
 id: waf-fingerprint-detection
 
 info:
   name: WAF Fingerprint Detection
-  author: custom
+  author: TyrusRC
   severity: info
   description: |
     Identifies the WAF product protecting a target by sending a known-blocked
     payload and analysing response headers and body for product signatures.
     Knowing the WAF guides which bypass techniques to apply.
-  tags: waf,fingerprint,recon
+  tags: custom,waf,fingerprint,recon
 
 http:
   - method: GET
@@ -89,7 +90,7 @@ http:
         name: ddos-guard
 
     extractors:
-      - type: kv
+      - type: kval
         part: header
-        kv:
+        kval:
           - server

@@ -1,16 +1,17 @@
+# gap: sqli-waf-bypass-inline-comment
 id: sqli-waf-bypass-inline-comment
 
 info:
   name: SQL Injection via MySQL Inline Comment WAF Bypass
-  author: custom
-  severity: critical
+  author: TyrusRC
+  severity: high
   description: |
     Tests SQL injection using MySQL version-conditional inline comments
     (/*!50000...*/) to bypass WAFs that block the literal keyword UNION SELECT.
     The MySQL server executes the comment content if its version >= 5.00.00.
   reference:
     - https://dev.mysql.com/doc/refman/8.0/en/comments.html
-  tags: sqli,waf-bypass,mysql
+  tags: custom,sqli,waf-bypass,mysql
 
 http:
   - method: GET

@@ -1,8 +1,9 @@
+# gap: redis-config-write
 id: redis-config-write
 
 info:
   name: Redis CONFIG SET Writable (File Write RCE Vector)
-  author: assay
+  author: TyrusRC
   severity: high
   description: |
     Redis CONFIG SET dir and dbfilename commands are accessible without
@@ -12,7 +13,7 @@ info:
     crontab (/var/spool/cron), SSH authorized_keys (/root/.ssh),
     webshell (/var/www/html). Blocked only when target directories
     do not exist (e.g. minimal container).
-  tags: network,redis,misconfig,rce
+  tags: custom,network,redis,misconfig,rce
 
 tcp:
   - inputs:

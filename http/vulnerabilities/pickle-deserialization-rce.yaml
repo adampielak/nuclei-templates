@@ -1,8 +1,9 @@
+# gap: pickle-deserialization-rce
 id: pickle-deserialization-rce
 
 info:
   name: Python Pickle Deserialization RCE
-  author: custom
+  author: TyrusRC
   severity: critical
   description: |
     Detects endpoints that accept pickled Python objects and
@@ -10,7 +11,7 @@ info:
     A crafted pickle payload achieves arbitrary code execution.
   reference:
     - https://docs.python.org/3/library/pickle.html#restricting-globals
-  tags: deserialization,rce,python,pickle
+  tags: custom,deserialization,rce,python,pickle
 
 http:
   - raw:

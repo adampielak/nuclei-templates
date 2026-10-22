@@ -1,8 +1,9 @@
+# gap: django-orm-sqli-order-by
 id: django-orm-sqli-order-by
 
 info:
   name: Django ORM SQL Injection via order_by
-  author: custom
+  author: TyrusRC
   severity: high
   description: |
     Django QuerySet.order_by() passes unsanitized user input to SQL
@@ -11,7 +12,7 @@ info:
   reference:
     - https://nvd.nist.gov/vuln/detail/CVE-2021-35042
     - https://www.djangoproject.com/weblog/2021/jul/01/security-releases/
-  tags: cve,cve2021,django,sqli,orm
+  tags: custom,cve,cve2021,django,sqli,orm
 
 http:
   - method: GET

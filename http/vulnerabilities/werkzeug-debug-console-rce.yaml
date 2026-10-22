@@ -1,3 +1,4 @@
+# gap: werkzeug-debug-console-rce
 id: werkzeug-debug-console-rce
 
 info:
@@ -6,12 +7,12 @@ info:
   severity: critical
   description: |
     Detects the Werkzeug interactive debugger at /console. When Flask
-    runs in debug mode, this endpoint allows arbitrary Python code
-    execution. The debugger is PIN-protected by default since Werkzeug
-    0.11, but older versions or misconfigured deployments may expose
-    it without a PIN. Even with the PIN, the console's presence
-    confirms debug mode is active (stack traces, source code, local
-    variables on every unhandled exception).
+    runs in debug mode, this endpoint allows remote code execution via
+    arbitrary Python code execution. The debugger is PIN-protected by
+    default since Werkzeug 0.11, but older versions or misconfigured
+    deployments may expose it without a PIN. Even with the PIN, the
+    console's presence confirms debug mode is active (stack traces,
+    source code, local variables on every unhandled exception).
   reference:
     - https://werkzeug.palletsprojects.com/en/latest/debug/
     - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods

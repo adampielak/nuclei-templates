@@ -1,8 +1,9 @@
+# gap: unicode-normalization-xss-bypass
 id: unicode-normalization-xss-bypass
 
 info:
   name: Unicode Normalization XSS Filter Bypass
-  author: custom
+  author: TyrusRC
   severity: high
   description: |
     The app applies NFKC/NFC Unicode normalization AFTER HTML sanitization.
@@ -10,7 +11,7 @@ info:
     after the filter runs, bypassing XSS protection.
   reference:
     - https://appcheck-ng.com/unicode-normalization-vulnerabilities-the-special-k-polyglot/
-  tags: xss,unicode,normalization,bypass
+  tags: custom,xss,unicode,normalization,bypass
 
 http:
   - method: GET

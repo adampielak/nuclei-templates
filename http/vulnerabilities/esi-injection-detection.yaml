@@ -1,0 +1,50 @@
+# gap: esi-injection-detection
+id: esi-injection-detection
+
+info:
+  name: Edge Side Include (ESI) Injection
+  author: TyrusRC
+  severity: high
+  description: |
+    Detects ESI injection by sending ESI include tags in common parameters.
+    When a caching proxy (Varnish, Squid, Akamai, Fastly, CDN) processes
+    ESI directives from user input, an attacker can include arbitrary
+    content or achieve server-side request forgery.
+  reference:
+    - https://www.gosecure.net/blog/2018/04/03/beyond-xss-edge-side-include-injection/
+    - https://cwe.mitre.org/data/definitions/94.html
+  tags: custom,esi,injection,cache,ssrf
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?q=<esi:include+src=%22/nuclei-esi-test%22/>"
+      - "{{BaseURL}}/?search=<esi:include+src=%22/nuclei-esi-test%22/>"
+      - "{{BaseURL}}/?name=<esi:include+src=%22/nuclei-esi-test%22/>"
+      - "{{BaseURL}}/?input=x]><esi:include+src=/nuclei-esi-test/>"
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        negative: true
+        words:
+          - "<esi:include"
+      - type: dsl
+        dsl:
+          - 'contains(body, "nuclei-esi-test") == false && status_code == 200'
+
+  - raw:
+      - |
+        GET /?q=%3Cesi:assign+name=%22nuclei_test%22+value=%22esi_works%22/%3E%3Cesi:vars%3E$(nuclei_test)%3C/esi:vars%3E HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "esi_works"

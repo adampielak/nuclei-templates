@@ -1,14 +1,15 @@
+# gap: werkzeug-debug-console-exposed
 id: werkzeug-debug-console-exposed
 
 info:
   name: Werkzeug Debug Console Exposed
-  author: assay
+  author: TyrusRC
   severity: high
   description: |
     Werkzeug interactive debug console is accessible. This exposes source code,
     application secrets (SECRET variable), and stack traces. If the PIN is
     guessable or brute-forced, it leads to arbitrary Python code execution (RCE).
-  tags: misconfig,werkzeug,flask,python,rce
+  tags: custom,misconfig,werkzeug,flask,python,rce
 
 http:
   - method: GET

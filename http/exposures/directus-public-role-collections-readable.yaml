@@ -38,9 +38,7 @@ http:
           - '"project"'
           - '"directus"'
         condition: and
-    # Internal pre-filter — confirms target is Directus before the
-    # access-control check fires. Does not produce a finding alone.
-    internal: true
+    # Pre-filter: confirms target is Directus before access-control check.
 
   - method: GET
     path:

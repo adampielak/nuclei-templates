@@ -1,15 +1,17 @@
+# gap: jwt-algorithm-none-bypass
 id: jwt-algorithm-none-bypass
 
 info:
   name: JWT Algorithm None Bypass
-  author: custom
+  author: TyrusRC
   severity: critical
   description: |
-    The server accepts JWT tokens with alg:none, allowing signature
-    bypass. An attacker can forge arbitrary tokens without the secret.
+    The server accepts JWT tokens with alg:none, allowing authentication
+    bypass via signature removal. An attacker can forge arbitrary tokens
+    without the secret.
   reference:
     - https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
-  tags: jwt,auth-bypass,token
+  tags: custom,jwt,auth-bypass,token
 
 http:
   - raw:

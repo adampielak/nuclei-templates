@@ -1,0 +1,61 @@
+# gap: deserialization-java-detection
+id: deserialization-java-detection
+
+info:
+  name: Java Deserialization Error Detection
+  author: TyrusRC
+  severity: critical
+  description: |
+    Detects Java deserialization endpoints by sending serialized Java
+    object magic bytes and checking for deserialization error messages.
+    A confirmed deserialization sink enables remote code execution via
+    gadget chains (Commons Collections, Spring, etc.).
+  reference:
+    - https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html
+    - https://cwe.mitre.org/data/definitions/502.html
+  tags: custom,deserialization,java,rce
+
+http:
+  - raw:
+      - |
+        POST {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-java-serialized-object
+
+        {{hex_decode("aced00057372001172616e646f6d2e6e75636c65692e7465737400000000000000000200014c00046e616d657400124c6a6176612f6c616e672f537472696e673b787074000e6e75636c65692d64657365720a")}}
+
+      - |
+        POST {{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/octet-stream
+
+        {{hex_decode("aced00057372001172616e646f6d2e6e75636c65692e7465737400000000000000000200014c00046e616d657400124c6a6176612f6c616e672f537472696e673b787074000e6e75636c65692d64657365720a")}}
+
+    payloads:
+      path:
+        - "/"
+        - "/api"
+        - "/invoker/JMXInvokerServlet"
+        - "/invoker/EJBInvokerServlet"
+        - "/jmx-console"
+        - "/wls-wsat/CoordinatorPortType"
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "java.io.InvalidClassException"
+          - "java.io.StreamCorruptedException"
+          - "ClassNotFoundException"
+          - "java.io.ObjectInputStream"
+          - "java.lang.ClassCastException"
+          - "deseriali"
+          - "ObjectInputStream"
+        condition: or
+      - type: status
+        status:
+          - 200
+          - 400
+          - 500

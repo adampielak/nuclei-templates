@@ -1,0 +1,40 @@
+# gap: http-parameter-pollution
+id: http-parameter-pollution
+
+info:
+  name: HTTP Parameter Pollution Detection
+  author: TyrusRC
+  severity: medium
+  description: |
+    Detects HTTP Parameter Pollution by sending duplicate parameters with
+    different values and checking which value the server uses. Different
+    web servers handle duplicates differently (first, last, concatenated),
+    which can bypass WAFs and input validation.
+  reference:
+    - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution
+    - https://cwe.mitre.org/data/definitions/235.html
+  tags: custom,hpp,parameter-pollution,waf-bypass
+
+http:
+  - raw:
+      - |
+        GET /?id=1&id=2&id=3 HTTP/1.1
+        Host: {{Hostname}}
+        Accept: */*
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: dsl
+        dsl:
+          - 'contains(body, "1") && contains(body, "3")'
+          - 'contains(body, "1,2,3") || contains(body, "1 2 3") || contains(body, "[1,2,3]")'
+        condition: or
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '(?:id|param)["\s:=]+["\s]*([123][,\s]*[123]*)'

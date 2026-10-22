@@ -42,8 +42,7 @@ http:
         part: body
         words:
           - "ok"
-    # Internal pre-filter — does not produce a finding on its own.
-    internal: true
+    # Pre-filter: confirms mcp-go healthz before SSE handshake probe.
 
   - raw:
       - |
