@@ -1,4 +1,5 @@
 id: komodo-detect
+
 info:
   name: Komodo - Detect
   author: rxerium
@@ -8,16 +9,18 @@ info:
   reference:
     - https://github.com/moghtech/komodo
   metadata:
+    verified: true
     max-request: 1
+    vendor: moghtech
     product: komodo
     shodan-query: http.title:"Komodo"
-    vendor: moghtech
-    verified: true
-  tags: detect,devops,komodo,tech
+  tags: tech,komodo,devops,detect
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/"
+
     host-redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -28,7 +31,8 @@ http:
           - '<title>Komodo</title>'
           - 'name="apple-mobile-web-app-title" content="Komodo"'
         condition: and
+
       - type: status
         status:
           - 200
-        # digest: 4a0a00473045022100b870f3aeba64308cc452ae5c7a89461c8b4da349adaf34ff72324f136701718e022051267c8245b967ec83af154f027cce9f70e32da598dfbe4e2f08cdeb39af6dfb:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b870f3aeba64308cc452ae5c7a89461c8b4da349adaf34ff72324f136701718e022051267c8245b967ec83af154f027cce9f70e32da598dfbe4e2f08cdeb39af6dfb:922c64590222798bb761d5b6d8e72950
