@@ -4,11 +4,15 @@ info:
   name: Dash Panel Detect
   author: tess
   severity: info
+  classification:
+    cpe: cpe:2.3:a:dash:dash_core:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: dash
+    product: dash_core
     shodan-query: html:"DashRenderer"
-  tags: tech,dash
+  tags: tech,dash,discovery
 
 http:
   - method: GET
@@ -30,5 +34,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a004730450220618eee2206cff4acc4a9f531eeadf6ef701dc62ba06109659ce044ca84e6e89f022100c0565b9f844f47b4ea79e0b021942c93aa9b76ae28abc4e31e65fa7973c3a922:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220402d416a7f7c62cd0c6ed40c3c3f03b03f7267b9d0445d8adb4aadfe278c121b0220535f10f73ffa7abaef7fcf76a9853995d1b459f72f7904664b9d5fbf023a626d:922c64590222798bb761d5b6d8e72950

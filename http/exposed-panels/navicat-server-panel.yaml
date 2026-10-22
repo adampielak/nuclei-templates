@@ -11,7 +11,7 @@ info:
     max-request: 2
     shodan-query: http.favicon.hash:598296063
     fofa-query: icon_hash="598296063"
-  tags: panel,navicat,on-prem,detect
+  tags: panel,navicat,on-prem,detect,discovery
 
 http:
   - method: GET
@@ -35,5 +35,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502201f988396cca1d393c729a7d33c7106ff7a47a4de1321390f96a7d9f81844795c022100f817ca2efbad143c179138cba5bfc76974c0e57b3a1030e0783bbbff3bc54052:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100caa22a8d9276bb70326d0458cef4a84b5f600c5cb6cbd455299645dbf08567bd022054abe98a881bd61c5ca175188317004ff8e2a69ff8b363f74e3794e8b04d032a:922c64590222798bb761d5b6d8e72950

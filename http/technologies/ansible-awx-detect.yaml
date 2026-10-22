@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:'Select a frequency for snapshot retention'
-  tags: tech,ansible,awx
+  tags: tech,ansible,awx,discovery
 
 http:
   - method: GET
@@ -28,5 +28,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100bf020e7e2d3b06a43e585b146a2b8cd4394bea88271f1d13d4efb3a96460d95a022100d43ab83f2902c67fd8854e4d1f8daf8e1fceb8a59d3fdcb8ce065c96a1827a08:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100c67677227a9cdbc860ff3034251f88a6e2f9558bd75b3e2e92aa393abd5c565a022100f4454c53682dda17caa227a62b3b28c6b85d59fc0de0733103210a2e6bedff15:922c64590222798bb761d5b6d8e72950
