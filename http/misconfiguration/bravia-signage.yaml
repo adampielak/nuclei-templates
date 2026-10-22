@@ -12,7 +12,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: title:"BRAVIA Signage"
-  tags: misconfig,exposure,bravia,sony,vuln
+  tags: misconfig,exposure,bravia,sony
 
 http:
   - method: GET
@@ -29,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c0f7e7eac73537bb34b1919eaa7d513f91c7f921fdd44985ffad67793dafb528022017a95a3dc923921240a4b5e3c7da0de5f8ec909471f0295a27ef597f10fe51a5:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b499fad0d4524aa20024f7f5dbf82384f7ed346e0cff2cffadfa1205fd6bb970022100a7be8a94dbe92b1f7da2ee45421c64bd09cd3b16dd320dfcd4c910699d888a87:922c64590222798bb761d5b6d8e72950
