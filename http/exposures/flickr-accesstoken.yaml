@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: flickr,exposure,tokens,vuln
+  tags: flickr,exposure,tokens
 
 http:
   - method: GET
@@ -22,4 +22,5 @@ http:
         part: body
         regex:
           - (?i)(?:flickr)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{32})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 4b0a00483046022100be3f3944a90ad67b7a61e30c821ab85e5a23ffae9d48690171257b890ef743f9022100d0e108a677cfeb5df4262a507fba103dc82b03a3ea9f528d8dea3cb9b6212f6c:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502206d97f085a066aeefcf3e3b1905b9e8108b2b87fd881b37802aedb47e600de3ae022100982fea77010d856f2aaf489fd2a35201411092d5ba098b67e99d6f354891803c:922c64590222798bb761d5b6d8e72950

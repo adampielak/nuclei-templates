@@ -17,7 +17,7 @@ info:
   metadata:
     verified: true
     max-request: 11
-  tags: spx-php,debug,misconfig,spx,vuln
+  tags: spx-php,debug,misconfig,spx
 
 http:
   - method: GET
@@ -58,4 +58,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203d46d1ced3e1dac8ca9b8eb2520ab0eabaa4f2f9c9a237219093d1586e8835900221008a3e4f8cbb19af20ac468f0153fa45e10aaa18e4b66d1ef84e8a0c240f0b37cd:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100c0572b3481460947441769560ba23e41fa23a500c9905ce4585cca52e3bd97cc02203322aafc293dff0bfb9f0a7933d49df6b9f26dd9c1996198e14f90f26049099f:922c64590222798bb761d5b6d8e72950
