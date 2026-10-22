@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"SOUND4"
-  tags: misconfig,listing,sound4,disclosure,packetstorm
+  tags: misconfig,listing,sound4,disclosure,packetstorm,vuln
 
 http:
   - method: GET
@@ -31,5 +31,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100c40d90c8b4aab2a3fdaa4adce595c9e931ef76a373cf0a34a86c9d812d09edbe022100f3ed0dfd4a1188260f8f218ffd4d7dd6808cc4895f69bae0e37e9044a7c37097:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022031725fc24cfa279dc2cdbb47d7167762ceb5108c10cfcc039e3422acec30558702207267559943c9bbc3f864b56061111081232e42d9cf3e4a1ef15017484da55483:922c64590222798bb761d5b6d8e72950

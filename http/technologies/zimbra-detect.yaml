@@ -7,7 +7,7 @@ info:
   description: Send a GET request to js file on Zimbra server to obtain version information
   metadata:
     max-request: 1
-  tags: tech,zimbra
+  tags: tech,zimbra,discovery
 
 http:
   - method: GET
@@ -32,5 +32,4 @@ http:
         group: 1
         regex:
           - 'CLIENT_VERSION\",					{type:ZmSetting.T_CONFIG, defaultValue:\"(.*?)"'
-
-# digest: 4a0a0047304502204026455a1afa6c8cc2aad9dc1c537b32defa2c862bb1ecf8f649687ee3327a6402210098f6238234aec256f0808f4e94902079d9f3da5518614200d5bd2c28c34fd1c4:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022045e490df13fbf99ad53fc50e084c461c7c8d7f41097edf240a9e8a76b264eeb4022033dde4d5a6b6f502b1236f4fe5b5a9536b192f7cad3f631d6e4b97c1dc5d78d0:922c64590222798bb761d5b6d8e72950

@@ -4,11 +4,15 @@ info:
   name: JshERP Boot Panel - Detect
   author: DhiyaneshDk
   severity: info
+  classification:
+    cpe: cpe:2.3:a:jishenghua:jsherp:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: jishenghua
+    product: jsherp
     shodan-query: http.favicon.hash:-1298131932
-  tags: panel,jsherp,login,detect
+  tags: panel,jsherp,login,detect,discovery
 
 http:
   - method: GET
@@ -27,5 +31,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502205150f707ce6fbff44a11bcf40f1fd2ba6809cf303d904c137b868660f4aea7a9022100b79ea337ce90f75d38a8c92d46413926d94b73adb89f73b0de3742fc9a7fe393:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502201c969efbfd80fb05e8ca11a5e9b27c2333661bc5298e63b26e5505d5c38af4df0221008dcb31a55136731c8fdd9cab4d3b2915d620c73d24394e8aeaa340c7b0236aee:922c64590222798bb761d5b6d8e72950
