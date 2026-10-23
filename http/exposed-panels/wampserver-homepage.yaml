@@ -7,14 +7,17 @@ info:
   description: WampServer panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:wampserver:wampserver:*:*:*:*:*:*:*:*
   metadata:
     verified: true
+    max-request: 1
     shodan-query: title:"WAMPSERVER Homepage"
-  tags: panel,wampserver
+    product: wampserver
+    vendor: wampserver
+  tags: panel,wampserver,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -29,5 +32,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/25
+# digest: 4a0a00473045022100bd7d0abef803731f6143ddf449671d000e476639d1efc2a3824552a15bf1afd20220677c32a06fd56b573540806ec46708e0858d92da40b099abcc5530a8c4f86d3c:922c64590222798bb761d5b6d8e72950

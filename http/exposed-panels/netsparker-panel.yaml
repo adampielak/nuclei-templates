@@ -10,14 +10,14 @@ info:
     - https://www.invicti.com/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
     verified: true
+    max-request: 1
     shodan-query: http.title:"Sign in to Netsparker Enterprise"
-  tags: panel,netsparker
+  tags: panel,netsparker,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/account/signin?ReturnUrl=%2f"
@@ -34,5 +34,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/09
+# digest: 4a0a004730450220127402bfa1a3e4ac46aaa187b2ec4bf1bc67830c1fa88be21c8a269a0a176bfc022100a2bc5e2790db202a96aaa424935ca034ceb3ad134cb00ad833d2738166dead90:922c64590222798bb761d5b6d8e72950

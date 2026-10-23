@@ -7,14 +7,19 @@ info:
   description: OpenVPN Connect panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:openvpn:connect:*:*:*:*:macos:*:*:*
   metadata:
     verified: true
+    max-request: 1
+    vendor: openvpn
+    product: connect
     shodan-query: http.title:"openvpn connect"
-  tags: panel,openvpn,connect,vpn
+    fofa-query: title="openvpn connect"
+    google-query: intitle:"openvpn connect"
+  tags: panel,openvpn,connect,vpn,discovery
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/?src=connect'
@@ -28,5 +33,4 @@ requests:
           - 'content="OpenVPN Connect'
           - '<title>OpenVPN Connect</title>'
         condition: or
-
-# Enhanced by md on 2022/12/02
+# digest: 4b0a00483046022100e6c1327151cc9a648d9a4855578fc514b9e8174bb6336ddcee29392eac7c546e022100945f4b1b11c6abf208301d9f1d9f104dfd0534cf0453da73bb80c750873363e2:922c64590222798bb761d5b6d8e72950

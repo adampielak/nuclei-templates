@@ -7,14 +7,14 @@ info:
   description: CudaTel login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
     verified: true
+    max-request: 1
     shodan-query: title:"CudaTel"
-  tags: panel,cudatel
+  tags: panel,cudatel,discovery
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -30,5 +30,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/12/05
+# digest: 4b0a00483046022100930382a96fe8a89947dd683081f7ec002d89ccbc7f219a3bb97c910333ed09040221009d049c48c47f4ba3a284e7c8e3747a92848c89f4d9f1706a9b79a0d3c7542ee8:922c64590222798bb761d5b6d8e72950

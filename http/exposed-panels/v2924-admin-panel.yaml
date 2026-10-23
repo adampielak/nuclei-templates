@@ -9,14 +9,14 @@ info:
     - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5538760399521122
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
     verified: true
+    max-request: 1
     shodan-query: title:"V2924"
-  tags: panel,v2924
+  tags: panel,v2924,discovery
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'
@@ -36,5 +36,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/20
+# digest: 4b0a00483046022100a58f7604c142bec54dd39a44ab5cc68a43e814bda759713acb1a60d9ce642ec0022100bd07fd64c8b639aafef6582d3ceef840383f27336cbb981fdc73c31e11326146:922c64590222798bb761d5b6d8e72950
