@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: ssti,fuzz
 
-requests:
+http:
 
   - raw:
       - |
