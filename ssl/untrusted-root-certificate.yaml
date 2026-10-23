@@ -12,11 +12,11 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: ssl,untrusted,tls
+  tags: ssl,tls,untrusted,vuln
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:
       - type: dsl
         dsl:
           - "untrusted == true"
-# digest: 490a00463044022016cb7636b9d7409033bcaab802a5b0f8ce08760880f7951bfa43e2ccfb8ca1fb02202938f0da37aa41a60fe943444a089bbd25530480929bad615b1c0e72ef599f80:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201421bea4f80bb55cb5ab634dc7709d225226a1e5f296a25b16fc3b63940bc10b022027cc35c34b34453267019284199b94da7460e3dfa508454c6ba7d44cf17f2869:922c64590222798bb761d5b6d8e72950

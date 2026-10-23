@@ -1,21 +1,19 @@
-expression: r0()
 id: apisix-panel
+
 info:
-  author: pikpikcu
-  description: 'An Apache APISIX login panel was detected.
-
-    Fofa: title="Apache APISIX Dashboard"
-
-    '
   name: Apache APISIX Login Panel
+  author: pikpikcu
   severity: info
   verified: true
-rules:
-  r0:
-    expression: 'response.status == 200 && response.body.bcontains(b''<title>Apache
-      APISIX Dashboard</title>'')
+  description: |
+    An Apache APISIX login panel was detected.
+    Fofa: title="Apache APISIX Dashboard"
 
-      '
-    request:
-      method: GET
-      path: /user/login?redirect=%2F
+rules:
+    r0:
+        request:
+            method: GET
+            path: /user/login?redirect=%2F
+        expression: |
+            response.status == 200 && response.body.bcontains(b'<title>Apache APISIX Dashboard</title>')
+expression: r0()
