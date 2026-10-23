@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     max-request: 1
-  tags: tech,emqx
+  tags: tech,emqx,discovery
 
 http:
   - method: GET
@@ -19,5 +19,4 @@ http:
         name: favicon
         dsl:
           - "status_code==200 && ('-670975485' == mmh3(base64_py(body)))"
-
-# digest: 490a0046304402201c22755470f2eed84230787074d0a6444f0c806f975351306291c361aea7e5700220059825d1bf033cc22ebb2cf124ad4f5032250dc7f641dfef66f0ecb074df80fd:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201c9b4e554da1924933719fbd9d5301263e21294ec77e031d984ba941d8c1c887022008ef5fe62b18f69a3c6dacec093dc3dd8eb3da385aa313dcb586e16268bbdde8:922c64590222798bb761d5b6d8e72950

@@ -7,10 +7,9 @@ info:
   reference:
     - https://wordpress.org/plugins/jetpack/
   metadata:
-    max-request: 1
     plugin_namespace: jetpack
     wpscan: https://wpscan.com/plugin/jetpack
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
 
 http:
   - method: GET
@@ -47,4 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502206d3ad56eb0cb94f9181e52702471bcdb569805488d581cfa7f3e8738b858563b0221009652cb8340b961750515b675eadef9aa0b186a51248564179b3393e6188e31ed:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220228c83cfb0cf87e3ac41b4bb1614a61679e89a68527cf529ef04678b1e7c03f0022100ee7c77ac432eea88ff765019eebcfe54ab0bbc41de030805bc4a72bf2dd4c6f8:922c64590222798bb761d5b6d8e72950
