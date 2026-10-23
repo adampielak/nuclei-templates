@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"Opinio"
-  tags: panel,opinio,login,detect,discovery
+  tags: panel,opinio,login,detect
 
 http:
   - method: GET
@@ -35,4 +35,4 @@ http:
         group: 1
         regex:
           - 'Opinio\s+([0-9.]+)'
-# digest: 490a00463044022048cc84b02890476b78552b5cf14a93949bb132fdcd8410874ac6b978341a671202206abc7ed979111e356216629719c2883c5bca2a30946b0014a6f872d09ccb4e09:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402206422747325d422b73fd67c33b093ccee5c0163dd820e297b4bc7b00b513962f80220550e03b11ba78aa7f3c466c80df5fb984c618472913de2101f62e9e004d776af:922c64590222798bb761d5b6d8e72950

@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:932345713
-  tags: misconfig,prometheus,promtail,exposure,vuln
+  tags: misconfig,prometheus,promtail,exposure
 
 http:
   - method: GET
@@ -31,4 +31,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220722d378a86e281a58b818deb02a97340ecef0cab2e765fecd6776e58f0594c4c02207e1c7bee6e6521e2cbd9bba65b4b72ae172164b0313c0502591c1ba75c21d19a:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100f8264326576ca4f60cc992ef6732a6b2379af8dafc26368b7255a966e41f9949022100922823d7c740798e9595c7d6c27c71fd5096498c32bddb5b2f90d6aea56e50d6:922c64590222798bb761d5b6d8e72950
