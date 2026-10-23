@@ -1,4 +1,5 @@
 id: emudhra-compromised-ca
+
 info:
   name: eMudhra - Compromised Intermediate CA Certificate - Detection
   author: DhiyaneshDk
@@ -15,21 +16,24 @@ info:
   classification:
     cwe-id: CWE-295
   metadata:
-    fofa-query: cert="eMudhra"
+    verified: true
     max-request: 1
+    vendor: emudhra
     product: emudhra
     shodan-query: ssl:"eMudhra"
-    vendor: emudhra
-    verified: true
-  tags: ca,certificate,emudhra,misconfig,ssl,tls
+    fofa-query: cert="eMudhra"
+  tags: ssl,tls,emudhra,ca,certificate,misconfig
+
 ssl:
   - address: "{{Host}}:{{Port}}"
+
     matchers:
       - type: dsl
         dsl:
           - 'contains_any(issuer_dn, "EM DV TLS CA - G3B", "EM DV TLS CA - G3C", "EM OV TLS CA - G3B", "EM OV TLS CA - G3C", "EM EV TLS CA - G3B", "EM EV TLS CA - G3C", "EM OV CS CA - G3B", "EM OV CS CA - G3C")'
+
     extractors:
       - type: dsl
         dsl:
           - issuer_cn
-        # digest: 490a0046304402200b68f4eabe255a93137734a8348cddca0d36b67f1978954eb00b857e10faf74f0220218e428cd4f6b4ba086071809d6d56094c6d9987a91eedd543a127232b8ed242:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402200b68f4eabe255a93137734a8348cddca0d36b67f1978954eb00b857e10faf74f0220218e428cd4f6b4ba086071809d6d56094c6d9987a91eedd543a127232b8ed242:922c64590222798bb761d5b6d8e72950
