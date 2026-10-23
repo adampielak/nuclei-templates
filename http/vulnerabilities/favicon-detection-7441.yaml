@@ -1420,4 +1420,607 @@ requests:
         name: "mobileiron"
         dsl:
           - "status_code==200 && (\"2086228042\" == mmh3(base64_py(body)))"
-      - type:
+      - type: dsl
+        name: "communigate"
+        dsl:
+          - "status_code==200 && (\"-1588746893\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "zte-network"
+        dsl:
+          - "status_code==200 && (\"1427976651\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "infinet-wireless-|-wanflex-network"
+        dsl:
+          - "status_code==200 && (\"1648531157\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "mersive-solstice"
+        dsl:
+          - "status_code==200 && (\"938616453\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "université-toulouse-1-capitole"
+        dsl:
+          - "status_code==200 && (\"1632780968\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "digium-switchvox"
+        dsl:
+          - "status_code==200 && (\"2068154487\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "powermta-monitoring"
+        dsl:
+          - "status_code==200 && (\"-1788112745\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "smartlan/g"
+        dsl:
+          - "status_code==200 && (\"-644617577\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "checkpoint-gaia"
+        dsl:
+          - "status_code==200 && (\"-1822098181\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "mailwizz"
+        dsl:
+          - "status_code==200 && (\"2127152956\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "rabbitmq"
+        dsl:
+          - "status_code==200 && (\"1064742722\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "openmediavault-nas"
+        dsl:
+          - "status_code==200 && (\"-693082538\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "openwrt-luci"
+        dsl:
+          - "status_code==200 && (\"1941381095\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "honeywell"
+        dsl:
+          - "status_code==200 && (\"903086190\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "bomgar-support-portal"
+        dsl:
+          - "status_code==200 && (\"829321644\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "nuxt-js"
+        dsl:
+          - "status_code==200 && (\"-1442789563\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "roundcube-webmail"
+        dsl:
+          - "status_code==200 && (\"-2140379067\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "d-link-camera"
+        dsl:
+          - "status_code==200 && (\"-1897829998\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "netgear-network"
+        dsl:
+          - "status_code==200 && (\"1047213685\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "sonarqube"
+        dsl:
+          - "status_code==200 && (\"1485257654\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "lupus-electronics-xt"
+        dsl:
+          - "status_code==200 && (\"-299324825\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "vanderbilt-spc"
+        dsl:
+          - "status_code==200 && (\"-1162730477\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "vzpp-plesk"
+        dsl:
+          - "status_code==200 && (\"-1268095485\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "baidu"
+        dsl:
+          - "status_code==200 && (\"1118684072\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "owncloud"
+        dsl:
+          - "status_code==200 && (\"-1616115760\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "sentora"
+        dsl:
+          - "status_code==200 && (\"-2054889066\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "alfresco"
+        dsl:
+          - "status_code==200 && (\"1333537166\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "digital-keystone-dk"
+        dsl:
+          - "status_code==200 && (\"-373674173\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "wispr-airlan"
+        dsl:
+          - "status_code==200 && (\"-106646451\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "synology-vpn-plus"
+        dsl:
+          - "status_code==200 && (\"1235070469\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "sentry"
+        dsl:
+          - "status_code==200 && (\"2063428236\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "watchguard"
+        dsl:
+          - "status_code==200 && (\"15831193\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "web-client-pro"
+        dsl:
+          - "status_code==200 && (\"-956471263\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "tecvoz"
+        dsl:
+          - "status_code==200 && (\"-1452159623\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "mdaemon-remote-administration"
+        dsl:
+          - "status_code==200 && (\"99432374\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "paradox-ip-module"
+        dsl:
+          - "status_code==200 && (\"727253975\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "dokuwiki"
+        dsl:
+          - "status_code==200 && (\"-630493013\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "sails"
+        dsl:
+          - "status_code==200 && (\"552597979\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "fastpanel-hosting"
+        dsl:
+          - "status_code==200 && (\"774252049\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "c-lodop"
+        dsl:
+          - "status_code==200 && (\"-329747115\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "jamf-pro-login"
+        dsl:
+          - "status_code==200 && (\"1262005940\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "struxureware-schneider-electric"
+        dsl:
+          - "status_code==200 && (\"979634648\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "axcient-replibit-management-server"
+        dsl:
+          - "status_code==200 && (\"475379699\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "twonky-server-media-streaming"
+        dsl:
+          - "status_code==200 && (\"-878891718\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "windows-azure"
+        dsl:
+          - "status_code==200 && (\"-2125083197\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "isp-manager-web-hosting-panel"
+        dsl:
+          - "status_code==200 && (\"-1151675028\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "jupyterhub"
+        dsl:
+          - "status_code==200 && (\"1248917303\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "centurylink-modem-gui-login-eg"
+        dsl:
+          - "status_code==200 && (\"-1908556829\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "tecvoz"
+        dsl:
+          - "status_code==200 && (\"1059329877\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "opnsense"
+        dsl:
+          - "status_code==200 && (\"-1148190371\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "ligowave-network"
+        dsl:
+          - "status_code==200 && (\"1467395679\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "rumpus"
+        dsl:
+          - "status_code==200 && (\"-1528414776\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "spiceworks-panel"
+        dsl:
+          - "status_code==200 && (\"-2117390767\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "teamcity"
+        dsl:
+          - "status_code==200 && (\"-1944119648\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "instar-full-hd-ip-camera"
+        dsl:
+          - "status_code==200 && (\"-1748763891\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "gpon-home-gateway"
+        dsl:
+          - "status_code==200 && (\"251106693\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "alienvault"
+        dsl:
+          - "status_code==200 && (\"-1779611449\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "arbor-networks"
+        dsl:
+          - "status_code==200 && (\"-1745552996\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "accrisoft"
+        dsl:
+          - "status_code==200 && (\"-1275148624\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "yasni"
+        dsl:
+          - "status_code==200 && (\"-178685903\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "slack"
+        dsl:
+          - "status_code==200 && (\"-43161126\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "innovaphone"
+        dsl:
+          - "status_code==200 && (\"671221099\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "shinobi-cctv"
+        dsl:
+          - "status_code==200 && (\"-10974981\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "tp-link-network-device"
+        dsl:
+          - "status_code==200 && (\"1274078387\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "siemens-ozw772"
+        dsl:
+          - "status_code==200 && (\"-336242473\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "lantronix-spider"
+        dsl:
+          - "status_code==200 && (\"882208493\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "claimtime-ramsell-public-health-&-safety"
+        dsl:
+          - "status_code==200 && (\"-687783882\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "surfilter-ssl-vpn-portal"
+        dsl:
+          - "status_code==200 && (\"-590892202\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "kyocera-printer"
+        dsl:
+          - "status_code==200 && (\"-50306417\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "lucee!"
+        dsl:
+          - "status_code==200 && (\"784872924\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "ricoh"
+        dsl:
+          - "status_code==200 && (\"1135165421\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "handle-proxy"
+        dsl:
+          - "status_code==200 && (\"926501571\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "metasploit"
+        dsl:
+          - "status_code==200 && (\"579239725\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"-689902428\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"-600508822\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"656868270\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"-2056503929\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"-1656695885\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"331870709\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"1241049726\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"998138196\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"322531336\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"-401934945\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iomega-nas"
+        dsl:
+          - "status_code==200 && (\"-613216179\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "chef-automate"
+        dsl:
+          - "status_code==200 && (\"-276759139\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "gargoyle-router-management-utility"
+        dsl:
+          - "status_code==200 && (\"1862132268\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "keepitsafe-management-console"
+        dsl:
+          - "status_code==200 && (\"-1738727418\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "entronix-energy-management-platform"
+        dsl:
+          - "status_code==200 && (\"-368490461\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "openproject"
+        dsl:
+          - "status_code==200 && (\"1836828108\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "unified-management-console-polycom"
+        dsl:
+          - "status_code==200 && (\"-1775553655\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "moxapass-iologik-remote-ethernet-i/o-server-"
+        dsl:
+          - "status_code==200 && (\"381100274\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "hfs-http-file-server"
+        dsl:
+          - "status_code==200 && (\"2124459909\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "hfs-http-file-server"
+        dsl:
+          - "status_code==200 && (\"731374291\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "traccar-gps-tracking"
+        dsl:
+          - "status_code==200 && (\"-335153896\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "iw"
+        dsl:
+          - "status_code==200 && (\"896412703\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "wordpress-under-construction-icon"
+        dsl:
+          - "status_code==200 && (\"191654058\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "combivox"
+        dsl:
+          - "status_code==200 && (\"-342262483\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "netcomwireless-network"
+        dsl:
+          - "status_code==200 && (\"5542029\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "elastic-database"
+        dsl:
+          - "status_code==200 && (\"1552860581\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "drupal"
+        dsl:
+          - "status_code==200 && (\"1174841451\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "truvision-nvr"
+        dsl:
+          - "status_code==200 && (\"-1093172228\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "spamexperts"
+        dsl:
+          - "status_code==200 && (\"-1688698891\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "sonatype-nexus-repository-manager"
+        dsl:
+          - "status_code==200 && (\"-1546574541\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "idirect-canada-network-management"
+        dsl:
+          - "status_code==200 && (\"-256828986\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "openerp-now-known-as-odoo"
+        dsl:
+          - "status_code==200 && (\"1966198264\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "pkp-openjournalsystems-public-knowledge-project"
+        dsl:
+          - "status_code==200 && (\"2099342476\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "liquidfiles"
+        dsl:
+          - "status_code==200 && (\"541087742\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "zyxel-network"
+        dsl:
+          - "status_code==200 && (\"-882760066\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "universal-devices-ud"
+        dsl:
+          - "status_code==200 && (\"16202868\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "huawei-network"
+        dsl:
+          - "status_code==200 && (\"987967490\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "gm77[.]com"
+        dsl:
+          - "status_code==200 && (\"-647318973\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "okazik[.]pl"
+        dsl:
+          - "status_code==200 && (\"-1583478052\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "gitea"
+        dsl:
+          - "status_code==200 && (\"1969970750\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "tc-group"
+        dsl:
+          - "status_code==200 && (\"-1734573358\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "deluge-web-ui"
+        dsl:
+          - "status_code==200 && (\"-1589842876\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "登录-amh"
+        dsl:
+          - "status_code==200 && (\"1822002133\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "otrs-open-ticket-request-system"
+        dsl:
+          - "status_code==200 && (\"-2006308185\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "bosch-security-systems-camera"
+        dsl:
+          - "status_code==200 && (\"-1702769256\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "node-red"
+        dsl:
+          - "status_code==200 && (\"321591353\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "motioneye-camera"
+        dsl:
+          - "status_code==200 && (\"-923693877\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "saia-burgess-controls-pcd"
+        dsl:
+          - "status_code==200 && (\"-1547576879\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "arcadyan-o2-box-network"
+        dsl:
+          - "status_code==200 && (\"1479202414\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "d-link-network"
+        dsl:
+          - "status_code==200 && (\"1081719753\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "abilis-network/automation"
+        dsl:
+          - "status_code==200 && (\"-166151761\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "ghost-cms"
+        dsl:
+          - "status_code==200 && (\"-1231681737\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"321909464\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"-1153873472\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"1095915848\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"788771792\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "airwatch"
+        dsl:
+          - "status_code==200 && (\"-1863663974\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "keyhelp-keyweb-ag"
+        dsl:
+          - "status_code==200 && (\"-1267819858\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "keyhelp-keyweb-ag"
+        dsl:
+          - "status_code==200 && (\"726817668\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "glpi"
+        dsl:
+          - "status_code==200 && (\"-1474875778\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "netcom-technology"
+        dsl:
+          - "status_code==200 && (\"5471989\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "cradlepoint"
+        dsl:
+          - "status_code==200 && (\"-1457536113\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "myasp"
+        dsl:
+          - "status_code==200 && (\"-736276076\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "intelbras-sa"
+        dsl:
+          - "status_code==200 && (\"-1343070146\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "lenel"
+        dsl:
+          - "status_code==200 && (\"538585915\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "okofen-pellematic"
+        dsl:
+          - "status_code==200 && (\"-625364318\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "simplehelp-remote-support"
+        dsl:
+          - "status_code==200 && (\"1117165781\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "graphql"
+        dsl:
+          - "status_code==200 && (\"-1067420240\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "dnn-cms"
+        dsl:
+          - "status_code==200 && (\"-1465479343\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "apple"
+        dsl:
+          - "status_code==200 && (\"1232159009\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "apple"
+        dsl:
+          - "status_code==200 && (\"1382324298\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "apple"
+        dsl:
+          - "status_code==200 && (\"-1498185948\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "ispconfig"
+        dsl:
+          - "status_code==200 && (\"483383992\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "microsoft-outlook"
+        dsl:
+          - "status_code==200 && (\"-1249852061\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "possibly-dvr"
+        dsl:
+          - "status_code==200 && (\"999357577\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "possible-ip-camera"
+        dsl:
+          - "status_code==200 && (\"492290497\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "dvr"
+        dsl:
+          - "status_code==200 && (\"400100893\" == mmh3(base64_py(body)))"
+      - type: dsl
+        name: "One Identity Password Manager"
+        dsl:
+          - "status_code==200 && (\"983384876\" == mmh3(base64_py(body)))"
