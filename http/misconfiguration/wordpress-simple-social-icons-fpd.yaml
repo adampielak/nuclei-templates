@@ -1,4 +1,5 @@
 id: wordpress-simple-social-icons-fpd
+
 info:
   name: WordPress Simple Social Icons - Full Path Disclosure
   author: DhiyaneshDk
@@ -8,20 +9,21 @@ info:
   reference:
     - https://wordpress.org/plugins/simple-social-icons/
   metadata:
-    max-request: 1
-    publicwww-query: /plugins/simple-social-icons
     verified: true
-  tags: fpd,misconfig,simple-social-icons,vuln,wordpress,wp,wp-plugin
-http:
-  - matchers:
-      - condition: and
-        # digest: 4a0a00473045022100ab75b791ea5113cda0a7f0901cc9f75e4f73a894ea9374014bc20d4bed86cb830220346721f16ecef25654cac61fd0dec5df37395cd669952ff6c25330eda26af68a:922c64590222798bb761d5b6d8e72950
+    max-request: 1
+    publicwww-query: "/plugins/simple-social-icons"
+  tags: wp,wordpress,wp-plugin,fpd,simple-social-icons,misconfig
 
-        dsl:
-          - status_code == 200 || status_code == 500
-          - contains(body, "simple-social-icons")
-          - contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")
-        type: dsl
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/wp-content/plugins/simple-social-icons/simple-social-icons.php'
+      - "{{BaseURL}}/wp-content/plugins/simple-social-icons/simple-social-icons.php"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 || status_code == 500'
+          - 'contains(body, "simple-social-icons")'
+          - 'contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")'
+        condition: and
+# digest: 490a0046304402200b0e0a6b82037ec76d026d54108f0ee214b24f0eb43c78d9cc83ccf9f4c7466702200b8467cb0faf52ef041ad7156e0f3ed2a1a6bdd98deb4a59e7ad1e17d9dca264:922c64590222798bb761d5b6d8e72950
