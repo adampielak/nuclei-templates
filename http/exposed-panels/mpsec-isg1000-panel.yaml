@@ -7,8 +7,8 @@ info:
   metadata:
     verified: true
     max-request: 1
-    fofa-query: 迈普通信技术股份有限公司
-  tags: panel,login,mpsec,isg1000,discovery
+    fofa-query: "迈普通信技术股份有限公司"
+  tags: panel,login,mpsec,isg1000
 
 http:
   - method: GET
@@ -24,4 +24,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d1430c5e03508cecad557dc7958a0ef996309be6b3920dd771a95fdca6025b3b0220025755bc974c172da16928b79889e89776e80c7ba48219dc71addd89e20dff88:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100c78182a84b5c832c37efdc68f4543a8636fc817f80952a3446a0677b603ae1ca022100f8d24188548c373b90aeb07fcb76553cb6e21e9a3d65ba7adb99c7f71d2d7eae:922c64590222798bb761d5b6d8e72950
