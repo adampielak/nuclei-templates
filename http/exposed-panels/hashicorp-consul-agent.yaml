@@ -1,0 +1,30 @@
+http:
+- extractors:
+  - json:
+    - ' .Config.Version'
+    type: json
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - '"Datacenter":'
+    - '"Revision":'
+    - '"PrimaryDatacenter"'
+  method: GET
+  path:
+  - '{{BaseURL}}/v1/agent/self'
+id: hashicorp-consul-agent
+info:
+  author: c-sh0
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: Hashicorp Consul Agent was detected.
+  metadata:
+    max-request: 1
+    product: consul
+    vendor: hashicorp
+  name: Hashicorp Consul Agent - Detect
+  severity: info
+  tags: tech,consul,api,panel

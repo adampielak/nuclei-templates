@@ -1,0 +1,34 @@
+id: ibm-maximo-panel
+info:
+  author: rix4uni
+  description: IBM Maximo default admin login credentials were detected.
+  metadata:
+    shodan-query:
+    - http.favicon.hash:-465775588
+    - http.favicon.hash:-399298961
+    - http.title:"Welcome to Maximo"
+  name: IBM Maximo Panel - Detect
+  reference:
+  - https://www.ibm.com/docs/en/mam-saas/7.6.0.5?topic=product-signing-in-using-default-user-id
+  - https://twitter.com/AliKM2000/status/1619730029499523075
+  severity: info
+  tags: maximo,panel,ibm
+requests:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <title>Welcome to Maximo</title>
+    - <title>IBM&nbsp;Maximo</title>
+    - href="../images/maximo-icon.ico?v2" />
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/maximo/webclient/login/login.jsp?appservauth=true'
+  - '{{BaseURL}}/maximo/webclient/login/login.jsp'
+  - '{{BaseURL}}/maximo/webclient/login/login.jsp?welcome=true'
+  stop-at-first-match: true

@@ -1,0 +1,26 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - 'Contexts known to this server are:'
+  - status:
+    - 404
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: jetty-showcontexts-enable
+info:
+  author: dhiyaneshDK
+  description: Jetty showContexts is Enabled in DefaultHandler
+  metadata:
+    max-request: 1
+    shodan-query: html:"contexts known to this"
+    verified: true
+  name: Jetty showContexts Enable in DefaultHandler
+  reference:
+  - https://github.com/jaeles-project/jaeles-signatures/blob/master/common/jetty-showcontexts-enable.yaml
+  - https://swarm.ptsecurity.com/jetty-features-for-hacking-web-apps/
+  severity: low
+  tags: jetty,misconfig

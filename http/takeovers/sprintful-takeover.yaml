@@ -1,0 +1,30 @@
+http:
+- matchers:
+  - dsl:
+    - Host != ip
+    type: dsl
+  - condition: or
+    type: word
+    words:
+    - The user account associated with this calendar has been deactivated.
+    - Please contact the owner of this calendar directly in order to book a meeting.
+    - This domain name does not have a default page configured.
+  - type: word
+    words:
+    - Sprintful
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: sprintful-takeover
+info:
+  author: Mhdsamx
+  description: Sprintful takeover was detected.
+  metadata:
+    max-request: 1
+  name: Sprintful Takeover
+  severity: high
+  tags: takeover,sprintful

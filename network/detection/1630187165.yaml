@@ -1,6 +1,6 @@
 id: printer
 info:
-  name: SEH Computertechnik lpd
+  name: Kyocera Mita KM-1530 lpd
   author: nmap,cn-kali-team
   tags: detect,tech,printer,service
   severity: info

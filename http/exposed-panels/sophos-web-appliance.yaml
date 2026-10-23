@@ -1,0 +1,29 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Sophos Web Appliance</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: sophos-web-appliance
+info:
+  author: DhiyaneshDk
+  classification:
+    cpe: cpe:2.3:a:sophos:web_appliance:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: web_appliance
+    shodan-query: http.favicon.hash:-893681401
+    vendor: sophos
+    verified: true
+  name: Sophos Web Appliance
+  reference:
+  - https://docs.sophos.com/nsg/swa/help/en-us/nsg/swa/concepts/AboutYourAppliance.html
+  severity: info
+  tags: panel,login,sophos

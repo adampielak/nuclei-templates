@@ -1,0 +1,26 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - 'Administrators name:'
+    - 'Support Administrators email address:'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/system/help/support'
+id: adobe-connect-username-exposure
+info:
+  author: dhiyaneshDk
+  description: Adobe Connect Username is exposed.
+  metadata:
+    max-request: 1
+  name: Adobe Connect Username Exposure
+  reference:
+  - https://packetstormsecurity.com/files/161345/Adobe-Connect-10-Username-Disclosure.html
+  severity: low
+  tags: adobe,disclosure,packetstorm,misconfig

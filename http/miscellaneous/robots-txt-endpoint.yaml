@@ -1,0 +1,36 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: endpoint
+    regex:
+    - (?m:\s(/[[:alpha:]]+[[:graph:]]+))
+    type: regex
+  iterate-all: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - 'User-agent:'
+    - 'Disallow:'
+    - 'Allow:'
+  - part: header
+    type: word
+    words:
+    - text/plain
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{RootURL}}/robots.txt'
+  - '{{RootURL}}{{endpoint}}'
+id: robots-txt-endpoint
+info:
+  author: CasperGN,pdteam
+  metadata:
+    max-request: 2
+  name: robots.txt endpoint prober
+  severity: info
+  tags: miscellaneous,misc,generic

@@ -1,0 +1,24 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - arn:aws:ecs
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/v1/metadata'
+  - '{{BaseURL}}/v1/tasks'
+id: aws-ecs-container-agent-tasks
+info:
+  author: dogasantos
+  description: Aws container metadata content
+  metadata:
+    max-request: 2
+  name: aws-ecs-container-agent-tasks
+  reference:
+  - https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/create_deploy_docker_ecstutorial.html#create_deploy_docker_ecstutorial_connect_inspect
+  severity: info
+  tags: miscellaneous,aws,docker,ec2,misc

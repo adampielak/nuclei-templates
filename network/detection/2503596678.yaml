@@ -7,7 +7,6 @@ info:
   metadata:
     fallback:
     - get-request
-    - httpoptions
     operating_system: Windows
     product: 3cx_phonesystem
     rarity: 5

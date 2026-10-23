@@ -1,0 +1,31 @@
+http:
+- matchers:
+  - part: header
+    type: word
+    words:
+    - autodiscover.interact.sh
+  - status:
+    - 302
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/autodiscover/autodiscover.json/v1.0/{{randstr}}@interact.sh?Protocol=Autodiscoverv1'
+id: office365-open-redirect
+info:
+  author: dhiyaneshDk
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cwe-id: CWE-601
+  description: Office365 Autodiscover contains an open redirect vulnerability. An
+    attacker can redirect a user to a malicious site and possibly obtain sensitive
+    information, modify data, and/or execute unauthorized operations.
+  metadata:
+    max-request: 1
+  name: Office365 Autodiscover - Open Redirect
+  reference:
+  - https://medium.com/@heinjame/office365-open-redirect-from-autodiscover-64284d26c168
+  remediation: See the workaround detailed in the Medium post in the references.
+  severity: medium
+  tags: redirect,office365,microsoft,misconfig,intrusive

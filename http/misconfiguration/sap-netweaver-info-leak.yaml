@@ -1,0 +1,27 @@
+http:
+- extractors:
+  - part: body
+    regex:
+    - <RFCDEST>.*</RFCDEST>
+    type: regex
+  matchers:
+  - part: body
+    regex:
+    - RFC_SYSTEM_INFO.Response
+    type: regex
+  method: GET
+  path:
+  - '{{BaseURL}}/sap/public/info'
+id: sap-netweaver-info-leak
+info:
+  author: randomstr1ng
+  description: Detection of SAP NetWeaver ABAP Webserver /public/info page
+  metadata:
+    max-request: 1
+    shodan-query: http.favicon.hash:-266008933
+  name: SAP NetWeaver ICM Info page leak
+  reference:
+  - https://www.acunetix.com/vulnerabilities/web/sap-icf-sap-public-info-sensitive-information-disclosure/
+  - https://github.com/Jean-Francois-C/SAP-Security-Audit
+  severity: medium
+  tags: sap,misconfig

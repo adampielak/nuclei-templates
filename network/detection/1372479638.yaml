@@ -1,12 +1,13 @@
 id: telnet-proxy
 info:
-  name: 602LAN Suite telnet proxy
+  name: kingate telnet proxy
   author: nmap,cn-kali-team
   tags: detect,tech,telnet-proxy,service
   severity: info
   metadata:
     operating_system: Windows
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +18,4 @@ tcp:
   - name: telnet-proxy
     type: regex
     regex:
-    - '^\xff\xfb\x01\xff\xfb\x03Telnet Gateway ready=enter computer name to connect to\.\\x0d\\x0a\\xd\\xahost\[:port\]: \r\n'
+    - '^Welcome to kingate ([\w._-]+)-win32 telnet proxy\.\r\nPlease enter host and port\r\nexample: abc\.com 23\r\nkingate >'

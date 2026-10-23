@@ -1,0 +1,13 @@
+file:
+- extensions:
+  - all
+  extractors:
+  - regex:
+    - (?i)linkedin(.{0,20})?(?-i)[0-9a-z]{12}
+    type: regex
+id: linkedin-id
+info:
+  author: gaurang
+  name: Linkedin Client ID
+  severity: low
+  tags: file,keys,token,linkedin

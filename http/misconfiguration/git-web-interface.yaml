@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - git web interface version
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: git-web-interface
+info:
+  author: dhiyaneshDK
+  description: Git Web Interface is exposed.
+  metadata:
+    max-request: 1
+    shodan-query: html:"git web interface version"
+  name: Git web interface
+  severity: low
+  tags: git,misconfig

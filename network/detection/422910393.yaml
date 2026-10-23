@@ -1,11 +1,15 @@
 id: irc
 info:
-  name: iacd ircd
+  name: InspIRCd
   author: nmap,cn-kali-team
   tags: detect,tech,irc,service
   severity: info
   metadata:
+    hostname: $1
+    product: inspircd
     rarity: 0
+    vendor: inspire_ircd
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +20,4 @@ tcp:
   - name: irc
     type: regex
     regex:
-    - ^PING :42\r\n$
+    - ^:([-\w_.]+) NOTICE Auth :\*\*\* Looking up your hostname\.\.\.\r\n

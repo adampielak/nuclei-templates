@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Welcome to Abyss Web Server
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: abyss-web-server
+info:
+  author: pussycat0x
+  metadata:
+    fofa-query: app="Abyss-Web-Server"
+    max-request: 1
+  name: Detect Abyss Web Server
+  severity: info
+  tags: tech

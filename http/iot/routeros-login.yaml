@@ -1,0 +1,31 @@
+http:
+- extractors:
+  - group: 1
+    regex:
+    - <h1>RouterOS v(.+)<\/h1>
+    type: regex
+  matchers:
+  - type: word
+    words:
+    - <title>RouterOS router configuration page</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: routeros-login
+info:
+  author: dhiyaneshDK,idealphase
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: RouterOS router login panel was detected.
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"RouterOS router configuration page"
+  name: RouterOS Router Login - Detect
+  severity: info
+  tags: panel,router,routeros,iot

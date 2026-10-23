@@ -1,0 +1,39 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"build"'
+    - '"artifact"'
+  - condition: or
+    part: header
+    type: word
+    words:
+    - application/json
+    - application/vnd.spring-boot.actuator
+    - application/vnd.spring-boot.actuator.v2+json
+    - application/vnd.spring-boot.actuator.v1+json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/info'
+  - '{{BaseURL}}/actuator/info'
+  stop-at-first-match: true
+id: springboot-info
+info:
+  author: philippedelteil
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: Spring Boot information panel displaying app name, version information,
+    and other values was detected.
+  metadata:
+    max-request: 2
+  name: Spring Boot Information Panel - Detect
+  severity: info
+  tags: springboot,misconfig

@@ -4,7 +4,7 @@ info:
   name: SMTP Service Detection
   author: pussycat0x
   severity: info
-  tags: network,service,smtp
+ 
 
 network:
   - inputs:

@@ -1,11 +1,13 @@
 id: ftp
 info:
-  name: Avery-Dennison Monarch $1 print server ftpd
+  name: Xitami ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
+    info: $2/$3 users
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 Monarch (\d+) Print Adapter FTP server ready\.\r\n
+    - ^220- Welcome to this Xitami FTP server, running version ([\d\w.]+) of Xitami\. \n You are user number (\d+) of a permitted (\d+) users\.

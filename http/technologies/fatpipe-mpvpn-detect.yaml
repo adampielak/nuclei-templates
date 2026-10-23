@@ -1,0 +1,38 @@
+id: fatpipe-mpvpn-detect
+info:
+  author: princechaddha
+  name: FatPipe MPVPN Detect
+  severity: info
+  tags: tech,fatpipe
+requests:
+- attack: sniper
+  extractors:
+  - group: 1
+    part: body
+    regex:
+    - <h5>([0-9.a-z]+)<\/h5>
+    type: regex
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>FatPipe MPVPN&nbsp;| Log in</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /fpui/jsp/login.jsp HTTP/1.1
+
+    Host: {{Subdomains}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+
+    Accept-Encoding: gzip, deflate
+
+    Accept: */*
+
+    '
+  threads: 100

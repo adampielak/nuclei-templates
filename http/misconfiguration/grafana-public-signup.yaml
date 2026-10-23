@@ -1,0 +1,40 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - User sign up completed successfully
+  - condition: and
+    part: header
+    type: word
+    words:
+    - grafana_sess
+    - grafana_user
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  raw:
+  - 'POST /api/user/signup/step2 HTTP/1.1
+
+    Host: {{Hostname}}
+
+    content-type: application/json
+
+    Origin: {{BaseURL}}
+
+    Referer: {{BaseURL}}
+
+
+    {"username":"{{randstr}}","password":"{{randstr_1}}"}
+
+    '
+id: grafana-public-signup
+info:
+  author: pdteam
+  description: Public Signup is enabled on Grafana.
+  metadata:
+    max-request: 1
+    shodan-query: title:"Grafana"
+  name: Grafana Public Signup
+  severity: medium
+  tags: grafana,intrusive,misconfig

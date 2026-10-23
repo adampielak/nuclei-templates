@@ -1,0 +1,24 @@
+http:
+- matchers:
+  - condition: or
+    type: word
+    words:
+    - <title>Microsoft Azure Web App - Error 404</title>
+    - Custom domain has not been configured inside Azure. See how to map an existing
+      domain to resolve this.
+  - status:
+    - 404
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: microsoft-azure-error
+info:
+  author: dhiyaneshDK
+  metadata:
+    max-request: 1
+    shodan-query: title:"Microsoft Azure Web App - Error 404"
+  name: Microsoft Azure Web App - Error 404
+  severity: info
+  tags: error,azure,microsoft,misc,takeover

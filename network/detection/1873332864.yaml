@@ -1,12 +1,12 @@
 id: printer
 info:
-  name: AIX lpd
+  name: lpsched
   author: nmap,cn-kali-team
   tags: detect,tech,printer,service
   severity: info
   metadata:
+    hostname: $1
     info: Unauthorized
-    operating_system: AIX
     rarity: 0
 tcp:
 - name: 'null'
@@ -18,4 +18,4 @@ tcp:
   - name: printer
     type: regex
     regex:
-    - ^\d+-202 your host does not have line printer access\.
+    - '^([-\w_.]+): lpsched: Host name for your address \([\d.]+\) unknown\n'

@@ -1,0 +1,33 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    type: word
+    words:
+    - issuer
+    - authorization_endpoint
+    - token_endpoint
+    - userinfo_endpoint
+    - jwks_uri
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/.well-known/openid-configuration'
+  - '{{BaseURL}}/auth/realms/master/.well-known/openid-configuration'
+id: keycloak-openid-config
+info:
+  author: rodnt
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: Keycloak Openid configuration information was detected.
+  metadata:
+    max-request: 2
+  name: Keycloak OpenID Configuration - Detect
+  reference:
+  - https://issues.jboss.org/browse/KEYCLOAK-571
+  severity: info
+  tags: keycloak,config,exposure

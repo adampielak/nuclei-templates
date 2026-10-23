@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - <title>ViewPoint System Status</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: viewpoint-system-status
+info:
+  author: dhiyaneshDK
+  description: ViewPoint System status page is exposed.
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"ViewPoint System Status"
+  name: ViewPoint System Status
+  severity: low
+  tags: status,exposure,viewpoint,misconfig

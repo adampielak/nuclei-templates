@@ -1,0 +1,34 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - <h5>([0-9.a-z]+)<\/h5>
+    type: regex
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>FatPipe WARP&nbsp;| Log in</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/fpui/jsp/login.jsp'
+id: fatpipe-warp-panel
+info:
+  author: princechaddha
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: the FatPipe WARP administration panel was discovered.
+  metadata:
+    max-request: 1
+  name: FatPipe WARP - Panel Detect
+  reference:
+  - https://www.fatpipeinc.com/products/warp/index.php
+  severity: info
+  tags: tech,fatpipe,panel

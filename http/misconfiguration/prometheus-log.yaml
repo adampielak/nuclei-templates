@@ -1,0 +1,25 @@
+http:
+- matchers:
+  - condition: or
+    type: word
+    words:
+    - gateway_request_total
+    - logback_events_total
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/prometheus'
+  - '{{BaseURL}}/actuator/prometheus'
+  - '{{BaseURL}}/actuator/prometheus;%2f..%2f..%2f'
+id: prometheus-log
+info:
+  author: dhiyaneshDK,thevillagehacker
+  description: Prometheus instance is exposed.
+  metadata:
+    max-request: 3
+  name: Exposed Prometheus
+  severity: low
+  tags: prometheus,misconfig

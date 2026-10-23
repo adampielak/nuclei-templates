@@ -1,0 +1,38 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - (?i)NAME="ProductVersion"\s+?VALUE="([^"]+)"
+    type: regex
+  - group: 1
+    part: body
+    regex:
+    - (?i)<string>([^<]+)</string>
+    type: regex
+  matchers:
+  - case-insensitive: true
+    condition: or
+    part: body
+    type: word
+    words:
+    - NAME="ProductVersion"
+    - <key>version</key>
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}/dana-na/nc/nc_gina_ver.txt'
+  - '{{BaseURL}}/dana-cached/hc/HostCheckerInstaller.osx'
+  stop-at-first-match: true
+id: pulse-secure-version
+info:
+  author: dadevel
+  classification:
+    cpe: cpe:2.3:a:pulsesecure:pulse_connect_secure:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    product: pulse_connect_secure
+    vendor: pulsesecure
+  name: Pulse Secure Version
+  severity: info
+  tags: pulse,panel,pulsesecure

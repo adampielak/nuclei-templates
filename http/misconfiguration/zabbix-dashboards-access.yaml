@@ -1,0 +1,30 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - Create dashboard
+    - Zabbix SIA
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/zabbix/zabbix.php?action=dashboard.list'
+id: zabbix-dashboards-access
+info:
+  author: pussycat0x,vsh00t
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
+    cvss-score: 5.8
+    cwe-id: CWE-522
+  description: zabbix-dashboards-access guest login credentials were successful.
+  metadata:
+    max-request: 1
+  name: zabbix-dashboards-access
+  reference:
+  - https://www.exploit-db.com/ghdb/5595
+  - https://packetstormsecurity.com/files/163657/zabbix5x-sqlxss.txt
+  severity: medium
+  tags: edb,packetstorm,zabbix,unauth,misconfig,xss

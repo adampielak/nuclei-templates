@@ -1,0 +1,26 @@
+http:
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - Roundcube Webmail
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/webmail/'
+  stop-at-first-match: true
+id: roundcube-webmail-portal
+info:
+  author: ritikchaddha
+  metadata:
+    max-request: 2
+    shodan-query: http.component:"RoundCube"
+  name: Roundcube webmail
+  severity: info
+  tags: roundcube,portal,tech

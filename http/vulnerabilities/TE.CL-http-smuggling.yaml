@@ -6,7 +6,7 @@ info:
   severity: info
   lab: https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl
 
-requests:
+http:
   - raw:
     - |+
       POST / HTTP/1.1

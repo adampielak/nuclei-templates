@@ -1,0 +1,27 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - '"type":"list"'
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/jolokia/list'
+  - '{{BaseURL}}/actuator/jolokia/list'
+  stop-at-first-match: true
+id: jolokia-list
+info:
+  author: pussycat0x
+  description: Jolokia listing enabled.
+  metadata:
+    max-request: 2
+  name: Jolokia - List
+  reference:
+  - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
+  - https://github.com/laluka/jolokia-exploitation-toolkit
+  severity: low
+  tags: jolokia,springboot,tomcat,misconfig

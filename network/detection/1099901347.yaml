@@ -1,11 +1,11 @@
 id: ident
 info:
-  name: midentd
+  name: FreeBSD authd
   author: nmap,cn-kali-team
   tags: detect,tech,ident,service
   severity: info
   metadata:
-    info: broken
+    operating_system: FreeBSD
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +17,4 @@ tcp:
   - name: ident
     type: regex
     regex:
-    - ^flock\(\) on closed filehandle .*midentd
+    - '^\d+, \d+ : USERID : FreeBSD : \[x\]-\d+\r\n'

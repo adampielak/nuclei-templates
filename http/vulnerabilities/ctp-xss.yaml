@@ -1,19 +1,19 @@
+author: qaisar afridi
 id: ctp-xss
 info:
+  description: Detects potential CTP-XSS vulnerabilities in the target
   name: Click-to-Play Cross-Site Scripting (CTP-XSS)
   severity: high
-  description: Detects potential CTP-XSS vulnerabilities in the target
-author: qaisar afridi
-tags:
-  - web
-  - ctp-xss
 requests:
-- method: GET
-  path:
-    - "/video"
-    - "/play?src=data:text/html,<script>alert('CTP-XSS')</script>"
-  matchers:
-  - type: regex
-    part: body
+- matchers:
+  - part: body
     regex:
-    - "alert\\('CTP-XSS'\\)"
+    - alert\('CTP-XSS'\)
+    type: regex
+  method: GET
+  path:
+  - /video
+  - /play?src=data:text/html,<script>alert('CTP-XSS')</script>
+tags:
+- web
+- ctp-xss

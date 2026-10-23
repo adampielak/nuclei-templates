@@ -1,0 +1,28 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - 'repos:'
+    - 'hooks:'
+    - 'rev:'
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/.pre-commit-config.yaml'
+  - '{{BaseURL}}/pre-commit-config.yaml'
+  - '{{BaseURL}}/.pre-commit-config.yml'
+  - '{{BaseURL}}/pre-commit-config.yml'
+  stop-at-first-match: true
+id: pre-commit-config
+info:
+  author: DhiyaneshDk
+  metadata:
+    max-request: 4
+  name: Pre Commit Configuration File Exposure
+  severity: low
+  tags: generic,config

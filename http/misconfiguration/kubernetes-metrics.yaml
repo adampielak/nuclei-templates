@@ -1,0 +1,28 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - namespace
+    - HELP
+    - TYPE
+    - kube
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
+id: kubernetes-metrics
+info:
+  author: pussycat0x
+  description: Information Disclosure of Garbage Collection
+  metadata:
+    max-request: 1
+  name: Detect Kubernetes Exposed Metrics
+  reference:
+  - https://kubernetes.io/docs/concepts/cluster-administration/system-metrics/#metrics-in-kubernetes
+  severity: low
+  tags: kubernetes,exposure,devops,misconfig

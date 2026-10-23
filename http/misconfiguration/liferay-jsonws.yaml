@@ -1,0 +1,31 @@
+http:
+- matchers:
+  - part: body
+    regex:
+    - .*<title>json-web-services-api<\/title>.*
+    type: regex
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/api/jsonws'
+id: liferay-jsonws
+info:
+  author: DhiyaneshDk
+  description: Liferay /api/jsonws - API is Exposed.
+  metadata:
+    max-request: 1
+    shodan-query: title:"Liferay"
+    verified: true
+  name: Liferay /api/jsonws - API Exposed
+  reference:
+  - https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/LiferayAPI.java
+  - https://liferay.dev/blogs/-/blogs/securing-the-api-jsonws-ui?_com_liferay_blogs_web_portlet_BlogsPortlet_showFlags=true&scroll=_com_liferay_blogs_web_portlet_BlogsPortlet_discussionContainer
+  severity: low
+  tags: liferay,exposure,api,misconfig

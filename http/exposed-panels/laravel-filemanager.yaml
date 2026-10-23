@@ -1,0 +1,27 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Laravel FileManager
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/laravel-filemanager?type=Files'
+id: laravel-filemanager
+info:
+  author: princechaddha
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  description: Laravel File Manager panel was detected.
+  metadata:
+    max-request: 1
+  name: Laravel File Manager - Panel Detect
+  reference:
+  - https://github.com/UniSharp/laravel-filemanager
+  severity: info
+  tags: panel,laravel,filemanager,fileupload,intrusive

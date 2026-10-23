@@ -1,4 +1,4 @@
-id: jellyfin-detect 1
+id: jellyfin-detect
 
 info:
   name: Jellyfin detected
@@ -6,19 +6,12 @@ info:
   severity: info
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /home.html HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-        
+  - method: GET
+    path:
+      - "{{BaseURL}}/home.html"
+      - "{{BaseURL}}/web/home.html"
+      - "{{BaseURL}}/index.html"
+      - "{{BaseURL}}/web/index.html"
     matchers-condition: and
     matchers:
       - type: word

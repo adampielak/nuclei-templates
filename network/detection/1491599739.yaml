@@ -7,7 +7,6 @@ info:
   metadata:
     fallback:
     - get-request
-    - httpoptions
     product: sippulse
     rarity: 5
     vendor: sippulse

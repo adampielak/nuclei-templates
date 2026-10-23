@@ -1,13 +1,13 @@
 id: ftp
 info:
-  name: Axis $1 Network Camera ftpd
+  name: Netgear broadband router or ZyXel VoIP adapter ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: webcam
+    hostname: $1
     rarity: 0
-    version: $2
+    version: '1.0'
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 Axis ([\w._ -]+) Network Camera ([\w._-]+) \w+ \d+ \d+ ready\.\r\n
+    - '^220 ([\w._-]+) FTP version 1\.0 ready at '

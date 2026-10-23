@@ -1,0 +1,29 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - /etc/wgetrc
+    - wget.info
+  - part: header
+    type: word
+    words:
+    - application/octet-stream
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/wgetrc'
+  - '{{BaseURL}}/.wgetrc'
+  - '{{BaseURL}}/wgetrc.old'
+  - '{{BaseURL}}/.wgetrc.old'
+  stop-at-first-match: true
+id: wgetrc-config
+info:
+  author: DhiyaneshDK
+  metadata:
+    max-request: 4
+  name: Wgetrc Configuration File Exposure
+  severity: medium
+  tags: config

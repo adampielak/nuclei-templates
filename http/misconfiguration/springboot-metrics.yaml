@@ -1,0 +1,31 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - mem
+    - mem.free
+    - processors
+    - instance.uptime
+    - systemload.average
+    - nonheap.init
+    - heap.committed
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/metrics'
+  - '{{BaseURL}}/actuator/metrics'
+  stop-at-first-match: true
+id: springboot-metrics
+info:
+  author: pussycat0x
+  description: Additional routes may be displayed
+  metadata:
+    max-request: 2
+  name: Detect Springboot metrics Actuator
+  severity: low
+  tags: springboot,exposure,misconfig

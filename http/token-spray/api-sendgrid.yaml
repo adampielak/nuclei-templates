@@ -1,0 +1,36 @@
+http:
+- headers:
+    Authorization: Bearer {{token}}
+    Content-Type: application/json
+  matchers:
+  - part: body
+    type: word
+    words:
+    - '"scopes":['
+  - part: header
+    type: word
+    words:
+    - application/json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - https://api.sendgrid.com/v3/scopes
+id: api-sendgrid
+info:
+  author: zzeitlin,0xpugal
+  description: 'A REST-like interface that enables you to send email at scale, ensuring
+    your application can handle high-volume email with ease.
+
+    '
+  metadata:
+    max-request: 1
+    verified: true
+  name: Sendgrid API Test
+  reference:
+  - https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api
+  severity: info
+  tags: token-spray,sendgrid
+self-contained: true

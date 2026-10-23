@@ -1,0 +1,24 @@
+http:
+- host-redirects: true
+  matchers:
+  - part: body
+    type: word
+    words:
+    - "\u6C49\u738B\u4EBA\u8138\u8003\u52E4\u7BA1\u7406\u7CFB\u7EDF"
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: hanwang-detect
+info:
+  author: ffffffff0x
+  metadata:
+    fofa-query: "\u6C49\u738B\u4EBA\u8138\u8003\u52E4\u7BA1\u7406\u7CFB\u7EDF"
+    max-request: 1
+  name: hanwang-detect
+  severity: info
+  tags: hanwang,tech

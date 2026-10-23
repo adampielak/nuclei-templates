@@ -6,6 +6,7 @@ info:
   severity: info
   metadata:
     device_type: printer
+    info: in use
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +18,4 @@ tcp:
   - name: hp-gsg
     type: regex
     regex:
-    - ^00$
+    - ^01$

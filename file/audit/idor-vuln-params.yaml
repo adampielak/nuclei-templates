@@ -1,0 +1,13 @@
+file:
+- extensions:
+  - all
+  extractors:
+  - regex:
+    - (?i)(\?|\&)(((([a-z0-9-_])+(-|_)+))|(-|_))?(id|uuid|user|account|number|order|no|doc|key|email|group|profile|edit|report|username)((=)|(\/[0-9]+\/?))
+    type: regex
+id: idor-vuln-params
+info:
+  author: ayadim
+  name: detect possible idor parameters
+  severity: info
+  tags: file,bbh,bbh-idor,bbh-check1

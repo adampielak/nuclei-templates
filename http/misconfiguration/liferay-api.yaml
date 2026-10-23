@@ -1,0 +1,28 @@
+http:
+- matchers:
+  - part: body
+    regex:
+    - .*Internal Server Error.*An error occurred while accessing the requested resource\..*
+    type: regex
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 404
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/api/liferay'
+id: liferay-api
+info:
+  author: DhiyaneshDk
+  metadata:
+    max-request: 1
+    shodan-query: title:"Liferay"
+    verified: true
+  name: Liferay /api/liferay - API Exposed
+  reference: https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/LiferayAPI.java
+  severity: info
+  tags: liferay,exposure,api,misconfig

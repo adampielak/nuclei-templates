@@ -5,12 +5,10 @@ info:
   tags: detect,tech,dgraph
   severity: info
   metadata:
-    fofa-query:
-    - body="dgraph"
     product: dgraph
     shodan-query:
-    - title:"dgraph"
-    vendor: hypermodeinc
+    - dgraph
+    vendor: dgraph
     verified: true
 http:
 - method: GET
@@ -20,4 +18,3 @@ http:
   - type: word
     words:
     - dgraph
-    case-insensitive: true

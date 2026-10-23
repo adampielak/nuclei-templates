@@ -1,0 +1,35 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - (?i)OpenWrt  ([A-Z0-9.]+)
+    type: regex
+  host-redirects: true
+  matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <title>OpenWrt
+    - Powered by LuCI
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/cgi-bin/luci/'
+  stop-at-first-match: true
+id: openwrt-login
+info:
+  author: For3stCo1d,TechbrunchFR
+  metadata:
+    max-request: 2
+    product: openwrt
+    shodan-query: http.title:"OpenWrt - LuCI"
+    vendor: openwrt
+  name: Opentwrt Login / Configuration Interface
+  reference:
+  - https://openwrt.org
+  - https://github.com/openwrt/luci
+  severity: info
+  tags: openwrt,router,panel

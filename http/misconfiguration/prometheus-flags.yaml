@@ -1,0 +1,35 @@
+http:
+- extractors:
+  - name: web_admin_enabled
+    regex:
+    - '\"web\.enable\-admin\-api\"\: \"true\"'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    type: word
+    words:
+    - '"data":'
+    - '"config.file":'
+  - part: header
+    type: word
+    words:
+    - application/json
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/api/v1/status/flags'
+id: prometheus-flags
+info:
+  author: geeknik
+  description: The flags endpoint provides a full path to the configuration file.
+    If the file is stored in the home directory, it may leak a username.
+  metadata:
+    max-request: 1
+  name: Prometheus flags API endpoint
+  reference:
+  - https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/
+  severity: info
+  tags: prometheus,leak,misconfig

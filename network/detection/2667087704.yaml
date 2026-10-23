@@ -1,11 +1,14 @@
 id: warcraft
 info:
-  name: World of Warcraft world server
+  name: MaNGOS worldserver
   author: nmap,cn-kali-team
   tags: detect,tech,warcraft,service
   severity: info
   metadata:
+    product: mangos
     rarity: 0
+    vendor: getmangos
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +19,4 @@ tcp:
   - name: warcraft
     type: regex
     regex:
-    - (?i)^\x00\x2a\xec\x01....
+    - ^WORLD OF WARCRAFT CONNECTION - SERVER TO CLIENT\n

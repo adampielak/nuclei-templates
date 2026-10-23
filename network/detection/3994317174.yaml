@@ -7,7 +7,6 @@ info:
   metadata:
     fallback:
     - get-request
-    - httpoptions
     product: wowza_streaming_engine
     rarity: 5
     vendor: wowza

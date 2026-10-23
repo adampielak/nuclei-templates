@@ -1,10 +1,9 @@
 id: keycloak-json
-
 info:
   name: Keycloak Json File
   author: oppsec
   severity: info
-  tags: exposure,keycloak,config
+  tags: exposure
 
 requests:
   - method: GET

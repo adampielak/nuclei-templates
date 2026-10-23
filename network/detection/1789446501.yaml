@@ -1,10 +1,11 @@
 id: pop3-proxy
 info:
-  name: kingate pop3-proxy
+  name: Proxy+ pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3-proxy,service
   severity: info
   metadata:
+    operating_system: Windows
     rarity: 0
 tcp:
 - name: 'null'
@@ -16,4 +17,4 @@ tcp:
   - name: pop3-proxy
     type: regex
     regex:
-    - ^\+OK kingate pop3 proxy\r\n
+    - ^Proxy\+ POP3 server\. Insecure access - terminating\.\r\n

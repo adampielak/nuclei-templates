@@ -7,7 +7,6 @@ info:
   metadata:
     fallback:
     - get-request
-    - httpoptions
     product: skype_for_business
     rarity: 5
     vendor: microsoft

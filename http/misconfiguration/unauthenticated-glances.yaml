@@ -1,0 +1,25 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - <title>Monitor</title>
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: unauthenticated-glances
+info:
+  author: remonsec
+  description: Glance running web server mode & Unauthenticated leads system monitoring
+    to info disclosure
+  metadata:
+    max-request: 1
+  name: Glances Unauthenticated Panel
+  reference:
+  - https://glances.readthedocs.io/en/latest/quickstart.html#how-to-protect-your-server-or-web-server-with-a-login-password
+  severity: low
+  tags: exposure,glances,misconfig

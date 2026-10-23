@@ -1,0 +1,28 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - <title>(.*?)</title>
+    type: regex
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - Exporter
+    - <a href="/metrics">Metrics</a>
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: prometheus-exporter
+info:
+  author: jarijaas
+  description: Prometheus exporter detector
+  metadata:
+    max-request: 1
+  name: Prometheus exporter detect
+  reference:
+  - https://github.com/prometheus/prometheus/wiki/Default-port-allocations
+  severity: info
+  tags: prometheus,misconfig

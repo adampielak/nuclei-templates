@@ -1,0 +1,23 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - <title>Alertmanager</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/#/alerts'
+id: unauthenticated-alert-manager
+info:
+  author: dhiyaneshDK
+  description: Alert Manager was able to be accessed with no authentication requirements
+    in place.
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Alertmanager"
+  name: Alert Manager - Unauthenticated Access
+  severity: high
+  tags: unauth,alertmanager,misconfig

@@ -1,19 +1,32 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - SessionProvider.js\?version=([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: header
+    type: word
+    words:
+    - text/html
+  - part: body
+    type: word
+    words:
+    - <title>vRealize Operations Manager</title>
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/ui/login.action'
 id: vmware-vrealize
 info:
-  name: vmware-vrealize
-  author: cn-kali-team
-  tags: detect,tech,vmware-vrealize
-  severity: info
+  author: milo2012
+  description: Version of VMware vRealize Operations Manager
   metadata:
-    product: vmware-vrealize
-    vendor: 00_unknown
-    verified: false
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - 正在重定向到 vrealize operations manager web
-    case-insensitive: true
+    max-request: 1
+  name: VMware vRealize
+  severity: info
+  tags: vmware,vrealize,tech

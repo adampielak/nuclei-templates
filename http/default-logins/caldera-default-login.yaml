@@ -1,5 +1,4 @@
 id: caldera-default-login
-
 info:
   name: MITRE Caldera - Default Login
   author: s4e-io
@@ -16,28 +15,25 @@ info:
   classification:
     cwe-id: CWE-798
   metadata:
-    verified: true
+    runzero-match: service["product"] contains "MITRE:CALDERA"
+    fofa-query: title="Caldera"
     max-request: 4
-    vendor: mitre
     product: caldera
     shodan-query: http.title:"Caldera"
-    fofa-query: title="Caldera"
-  tags: caldera,mitre,default-login,auth,vuln
-
+    vendor: mitre
+    verified: true
+  tags: auth,caldera,default-login,mitre,vuln
 flow: http(1) && http(2)
-
 http:
   - raw:
       - |
         GET /login HTTP/1.1
         Host: {{Hostname}}
-
     matchers:
       - type: dsl
         dsl:
           - 'regex("(?i)caldera", body)'
         internal: true
-
   - raw:
       - |
         POST /enter HTTP/1.1
@@ -45,7 +41,6 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         username={{username}}&password={{password}}
-
     attack: clusterbomb
     payloads:
       username:
@@ -54,7 +49,6 @@ http:
         - admin
       password:
         - admin
-
     stop-at-first-match: true
     matchers:
       - type: dsl
@@ -62,9 +56,8 @@ http:
           - 'contains(header, "API_SESSION=")'
           - 'status_code == 302'
         condition: and
-
     extractors:
       - type: dsl
         dsl:
           - username + ":" + password
-# digest: 4a0a00473045022100dcb49a4a20039401031f9bfaa3a7cc8508fbeb6794bcd9fa5e27aeb86ac9c0d0022040d20371a581d6e809761161dec0af307a02bcaa8c2da17b7ec3fe4cbc1529a7:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a00473045022100dcb49a4a20039401031f9bfaa3a7cc8508fbeb6794bcd9fa5e27aeb86ac9c0d0022040d20371a581d6e809761161dec0af307a02bcaa8c2da17b7ec3fe4cbc1529a7:922c64590222798bb761d5b6d8e72950

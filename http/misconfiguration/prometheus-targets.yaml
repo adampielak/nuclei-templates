@@ -1,0 +1,36 @@
+http:
+- matchers:
+  - status:
+    - 200
+    type: status
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"status": "success"'
+    - '"data":'
+    - '"labels":'
+  - part: header
+    type: word
+    words:
+    - application/json
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/api/v1/targets'
+id: prometheus-targets
+info:
+  author: geeknik
+  description: The targets endpoint exposes services belonging to the infrastructure,
+    including their roles and labels. In addition to showing the target machine addresses,
+    the endpoint also exposes metadata labels that are added by the target provider.
+    These labels are intended to contain non-sensitive values, like the name of the
+    server or its description, but various cloud platforms may automatically expose
+    sensitive data in these labels, oftentimes without the developer's knowledge.
+  metadata:
+    max-request: 1
+  name: Prometheus targets API endpoint
+  reference:
+  - https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/
+  severity: info
+  tags: prometheus,misconfig

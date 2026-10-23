@@ -18,4 +18,4 @@ tcp:
   - name: iscsi
     type: regex
     regex:
-    - ^\x1b\[2JStarWind Alcohol Edition iSCSI Target v([\w._-]+) \(Build (\d+), Win32\)\r\n
+    - ^\x1b\[2JStarWind iSCSI SAN Software v([\w._-]+) \(Build (\d+), Win32\)\r\nCopyright \(c\) StarWind Software \d+-\d+\. All rights reserved\.\r\n\r\n\r\n$

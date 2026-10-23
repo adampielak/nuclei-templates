@@ -7,7 +7,6 @@ info:
   metadata:
     fallback:
     - get-request
-    - httpoptions
     hostname: $1
     operating_system: Windows
     rarity: 5

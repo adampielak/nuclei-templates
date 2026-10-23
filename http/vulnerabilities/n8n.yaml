@@ -1,0 +1,30 @@
+http:
+- extractors:
+  - json:
+    - .data.versionCli
+    type: json
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - '{"data":{'
+    - endpointForm
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/rest/settings'
+id: n8n
+info:
+  author: darses
+  description: N8N
+  metadata:
+    max-requests: 1
+    product: n8n
+    vendor: n8n-io
+    verified: true
+  name: n8n-io n8n - Detect
+  severity: info
+  tags: n8n

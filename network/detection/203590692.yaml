@@ -1,14 +1,16 @@
 id: textui
 info:
-  name: TeamSpeak 3 ClientQuery
+  name: Nomad Digital Charger command interface
   author: nmap,cn-kali-team
   tags: detect,tech,textui,service
   severity: info
   metadata:
-    product: teamspeak3
+    info: build $2
+    product: charger
     rarity: 0
-    vendor: teamspeak
+    vendor: nomad_digital
     verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +21,4 @@ tcp:
   - name: textui
     type: regex
     regex:
-    - ^TS3 Client\n\r
+    - ^This is the command interface for nd-charger \(version ([\d.]+) build ([\d.-]+)\)\.\r\nReady\.\.\. Type "help" for a list of available commands\.\r\nOK\(0\)\r\n\r\n

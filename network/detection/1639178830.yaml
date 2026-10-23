@@ -1,6 +1,6 @@
 id: snpp
 info:
-  name: Sendpage SNPP
+  name: HylaFAX SNPP
   author: nmap,cn-kali-team
   tags: detect,tech,snpp,service
   severity: info
@@ -18,4 +18,4 @@ tcp:
   - name: snpp
     type: regex
     regex:
-    - '^220 ([-.\w]+) SNPP Sendpage ([-\w_.]+) '
+    - ^220 ([-.\w]+) SNPP server \(HylaFAX \(tm\) Version ([-.\w]+)\) ready.\r\n

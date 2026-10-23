@@ -1,0 +1,44 @@
+http:
+- body: '{"query":"query IntrospectionQuery{__schema{queryType{name}mutationType{name}subscriptionType{name}types{...FullType}directives{name
+    description locations args{...InputValue}}}}fragment FullType on __Type{kind name
+    description fields(includeDeprecated:true){name description args{...InputValue}type{...TypeRef}isDeprecated
+    deprecationReason}inputFields{...InputValue}interfaces{...TypeRef}enumValues(includeDeprecated:true){name
+    description isDeprecated deprecationReason}possibleTypes{...TypeRef}}fragment
+    InputValue on __InputValue{name description type{...TypeRef}defaultValue}fragment
+    TypeRef on __Type{kind name ofType{kind name ofType{kind name ofType{kind name
+    ofType{kind name ofType{kind name ofType{kind name ofType{kind name}}}}}}}}"}
+
+    '
+  headers:
+    Content-Type: application/json
+  matchers:
+  - part: header
+    type: word
+    words:
+    - 'Content-Type: application/json'
+  - part: body
+    type: word
+    words:
+    - GraphQL introspection is not allowed by Apollo Server
+  - status:
+    - 400
+    type: status
+  matchers-condition: and
+  method: POST
+  path:
+  - '{{BaseURL}}/graphql'
+id: apollo-server-detect
+info:
+  author: idealphase
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: Apollo Server GraphQL introspection was detected.
+  metadata:
+    max-request: 1
+  name: Apollo Server GraphQL Introspection - Detect
+  reference:
+  - https://github.com/apollographql/apollo-server
+  severity: info
+  tags: apollo,detect,graphql,tech

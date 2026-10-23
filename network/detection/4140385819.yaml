@@ -7,7 +7,6 @@ info:
   metadata:
     fallback:
     - get-request
-    - httpoptions
     info: 'device: $SUBST(1,"_"," ")'
     product: csipsimple
     rarity: 5

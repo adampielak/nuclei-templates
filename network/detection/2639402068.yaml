@@ -5,13 +5,11 @@ info:
   tags: detect,tech,amanda,service
   severity: info
   metadata:
-    hostname: $1
-    operating_system: Unix
+    info: 'broken: $1 not found'
     product: amanda
     rarity: 0
     vendor: amanda
     verified: true
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -22,4 +20,4 @@ tcp:
   - name: amanda
     type: regex
     regex:
-    - ^220 ([-.\w]+) AMANDA index server \((\d[-.\w ]+)\) ready\.\r\n
+    - '^ld\.so\.1: amandad: fatal: (libsunmath\.so\.1): open failed: No such file or directory\n$'

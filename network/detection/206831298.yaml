@@ -5,9 +5,8 @@ info:
   tags: detect,tech,openlookup,service
   severity: info
   metadata:
-    hostname: $1
     rarity: 0
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: openlookup
     type: regex
     regex:
-    - ^\d+:d7:smethod,6:shello,8:soptions,\d+:d10:shttp_port,\d+:i\d+,5:sname,\d+:s([\w._-]+),10:ssync_port,\d+:i\d+,10:stimestamp,\d+:f\d+(?:\.\d+),8:sversion,\d+:s([\w._-]+),$
+    - ^\d+:d7:smethod,6:shello,8:soptions,\d+:d10:shttp_port,\d+:i\d+,10:ssync_port,\d+:i\d+,10:stimestamp,\d+:f\d+(?:\.\d+),8:sversion,\d+:s([\w._-]+),\d+:syour_address,\d+:a\d+:s[\w._-]+,\d+:i\d+,,,,$

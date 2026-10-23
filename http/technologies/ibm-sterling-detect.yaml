@@ -1,0 +1,21 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Welcome to IBM Sterling File Gateway
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: ibm-sterling-detect
+info:
+  author: princechaddha
+  metadata:
+    max-request: 1
+  name: IBM Sterling File Gateway Detect
+  severity: info
+  tags: tech,sterling,ibm

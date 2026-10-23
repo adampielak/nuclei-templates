@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - type: word
+    words:
+    - <title>Android Debug Database</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: android-debug-database-exposed
+info:
+  author: dhiyaneshDK
+  description: Android Debug Manger is exposed.
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Android Debug Database"
+  name: Android Debug Manager
+  severity: low
+  tags: unauth,android,misconfig

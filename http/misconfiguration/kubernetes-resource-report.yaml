@@ -1,0 +1,22 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - Overview - Kubernetes Resource Report
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: kubernetes-resource-report
+info:
+  author: pussycat0x
+  description: Information Disclosure of Kubernetes Resource Report
+  metadata:
+    max-request: 1
+  name: Detect Overview Kubernetes Resource Report
+  severity: medium
+  tags: kubernetes,exposure,misconfig

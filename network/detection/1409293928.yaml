@@ -1,11 +1,14 @@
 id: irc
 info:
-  name: ratbox, charybdis, or ircd-seven ircd
+  name: Hybrid ircd
   author: nmap,cn-kali-team
   tags: detect,tech,irc,service
   severity: info
   metadata:
+    product: ircd-hybrid
     rarity: 0
+    vendor: ircd-hybrid
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +19,4 @@ tcp:
   - name: irc
     type: regex
     regex:
-    - ^ERROR :Reconnecting too fast, throttled\.\r\n$
+    - ^NOTICE AUTH :\*\*\* Looking up your hostname\.\.\.\r\nNOTICE AUTH :\*\*\* Checking Ident\r\nNOTICE AUTH :\*\*\* No Ident response\r\nNOTICE AUTH :\*\*\* Found your hostname\r\n$

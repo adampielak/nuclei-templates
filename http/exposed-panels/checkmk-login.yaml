@@ -1,0 +1,36 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - <div id="version">([0-9.a-z]+)<\/div>
+    - '<div id="foot">Version: ([0-9.a-z]+)'
+    type: regex
+  matchers:
+  - part: body
+    type: word
+    words:
+    - <title>Check_MK Multisite Login</title>
+  - part: body
+    regex:
+    - <title>Checkmk ([A-Za-z_0-9 ]+)<\/title>
+    type: regex
+  matchers-condition: or
+  method: GET
+  path:
+  - '{{BaseURL}}/check_mk/login.py'
+id: checkmk-login
+info:
+  author: princechaddha
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: Checkmk login panel was detected.
+  metadata:
+    max-request: 1
+    product: checkmk
+    vendor: tribe29
+  name: Checkmk Login Panel - Detect
+  severity: info
+  tags: login,tech,synology,rackstation,panel

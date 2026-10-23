@@ -1,0 +1,24 @@
+http:
+- matchers:
+  - condition: and
+    type: word
+    words:
+    - <title>Welcome to your Strapi app</title>
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: strapi-page
+info:
+  author: dhiyaneshDk
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  description: Strapi API was detected.
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"Welcome to your Strapi app"
+  name: Strapi API - Detect
+  reference: https://strapi.io/
+  severity: info
+  tags: api,strapi,exposure

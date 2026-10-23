@@ -1,0 +1,19 @@
+author: qaisar afridi
+id: cswsh
+info:
+  description: Detects potential CSWSH vulnerabilities in the target
+  name: Cross-Site WebSocket Hijacking (CSWSH)
+  severity: high
+requests:
+- matchers:
+  - part: body
+    regex:
+    - WebSocket connection established
+    type: regex
+  method: GET
+  path:
+  - /ws
+  - /chat
+tags:
+- web
+- cswsh

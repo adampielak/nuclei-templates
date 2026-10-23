@@ -1,0 +1,26 @@
+http:
+- extractors:
+  - part: body
+    regex:
+    - AutobahnPython([ 0-9.]+)
+    type: regex
+  matchers:
+  - regex:
+    - <h1>AutobahnPython([ 0-9.]+)<\/h1>
+    type: regex
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: autobahn-python-detect
+info:
+  author: pussycat0x
+  metadata:
+    max-request: 1
+    shodan-query: AutobahnPython
+  name: Autobahn-Python Webserver Detect
+  severity: info
+  tags: tech,webserver

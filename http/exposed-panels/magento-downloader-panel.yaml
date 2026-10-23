@@ -1,0 +1,51 @@
+http:
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - \(Magento Connect Manager ver\. ([0-9.]+)
+    type: regex
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - Magento Downloader
+    - Log In
+  - part: header
+    type: word
+    words:
+    - text/html
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/downloader/'
+id: magento-downloader-panel
+info:
+  author: 5up3r541y4n
+  classification:
+    cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
+  description: 'Magento Connect Manager installer was detected. The software, available
+    via /downloader/ location, requires Magento admin rights and uses the same authorization
+    methods as for backend. If an attacker locates a matching pair of login/password,
+    the installation will be compromised. An attacker can then discover backend URL
+    for login (even if it is customized as described in Securing Magento /admin/)
+    and install a Filesystem extension to obtain full access to all files and finally
+    the database.
+
+    '
+  metadata:
+    max-request: 1
+    product: magento
+    shodan-query: http.component:"Magento"
+    vendor: magento
+    verified: true
+  name: Magento Connect Manager Installer - Detect
+  reference:
+  - https://magentary.com/kb/restrict-access-to-magento-downloader/
+  - https://www.mageplaza.com/kb/how-to-stop-brute-force-attacks-magento.html#solution-3
+  severity: info
+  tags: magento,exposure,panel

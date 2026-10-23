@@ -1,0 +1,28 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - <title>browserless debugger</title>
+    - "<code>Click the \u25BA button to run your code.</code>"
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: browserless-debugger
+info:
+  author: ggranjus
+  description: Browserless instance can be used to make web requests. May worth checking
+    /workspace for juicy files.
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"browserless debugger"
+  name: Exposed Browserless debugger
+  reference:
+  - https://docs.browserless.io/docs/docker.html#securing-your-instance
+  severity: medium
+  tags: browserless,unauth,debug,misconfig

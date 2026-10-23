@@ -1,0 +1,32 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - predicate
+    - route_id
+  - part: header
+    type: word
+    words:
+    - application/json
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}/gateway/routes'
+  - '{{BaseURL}}/actuator/gateway/routes'
+  stop-at-first-match: true
+id: springboot-gateway
+info:
+  author: wdahlenb
+  description: Sensitive environment variables may not be masked
+  metadata:
+    max-request: 2
+  name: Detect Spring Gateway Actuator
+  reference:
+  - https://wya.pl/2021/12/20/bring-your-own-ssrf-the-gateway-actuator/
+  severity: medium
+  tags: springboot,exposure,misconfig
