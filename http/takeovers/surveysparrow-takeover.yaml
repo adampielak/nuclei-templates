@@ -4,14 +4,11 @@ info:
   name: SurveySparrow takeover detection
   author: philippedelteil
   severity: high
-  description: SurveySparrow takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/281
-  metadata:
-    max-request: 1
-  tags: takeover,surveysparrow,vuln
+  tags: takeover,surveysparrow
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -28,9 +25,3 @@ http:
           - "ouch!"
           - "SurveySparrow"
         condition: and
-
-    extractors:
-      - type: dsl
-        dsl:
-          - cname
-# digest: 4a0a00473045022100dbeabe0e5925159accd1db538623fe3477f7a984d49262eb9acac498bed7b49d022076935b83b1340caef427b18d155629d1df065292b840c8b2d1107a83994fbd14:922c64590222798bb761d5b6d8e72950

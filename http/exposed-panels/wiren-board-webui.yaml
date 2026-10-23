@@ -1,21 +1,15 @@
 id: wiren-board-webui
 
 info:
-  name: Wiren Board WebUI Panel - Detect
+  name: Wiren Board WebUI Exposed
   author: tess
-  severity: medium
-  description: Wiren Board WebUI panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
-    cvss-score: 6.5
-    cwe-id: CWE-200
+  severity: low
   metadata:
     verified: true
-    max-request: 1
-    shodan-query: http.title:"Wiren Board Web UI"
-  tags: panel,exposure,wiren,discovery
+    shodan-dork: http.title:"Wiren Board Web UI"
+  tags: panel,exposure,wiren
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/#!/dashboards'
@@ -37,4 +31,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220154dd2794bfb9dbfb82e9b231a88c64bb1813370fbe9185370c58bcd94ce3d96022100a35427247a24bbae04bae44436617494f96e7cedfff61c81e7e5a77497070b5c:922c64590222798bb761d5b6d8e72950
