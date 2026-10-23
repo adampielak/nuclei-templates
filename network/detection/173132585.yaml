@@ -1,11 +1,11 @@
 id: vnc
 info:
-  name: RealVNC
+  name: RealVNC Enterprise
   author: nmap,cn-kali-team
   tags: detect,tech,vnc,service
   severity: info
   metadata:
-    info: Trial expired; protocol 3.$1
+    info: protocol 4.1
     product: realvnc
     rarity: 0
     vendor: realvnc
@@ -20,4 +20,4 @@ tcp:
   - name: vnc
     type: regex
     regex:
-    - ^RFB 003\.00(\d)\n\0\0\0\0\0\0\0MTrial period has expired\.\nVisit http://www\.realvnc\.com to purchase a license\.
+    - ^RFB 004\.001\n

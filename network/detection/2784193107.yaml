@@ -1,14 +1,15 @@
 id: antivir
 info:
-  name: Symantec AntiVirus Scan Engine
+  name: NOD32 AntiVirus
   author: nmap,cn-kali-team
   tags: detect,tech,antivir,service
   severity: info
   metadata:
-    product: antivirus_scan_engine
+    product: nod32_antivirus
     rarity: 0
-    vendor: symantec
+    vendor: eset
     verified: true
+    version: $1 ($2)
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +20,4 @@ tcp:
   - name: antivir
     type: regex
     regex:
-    - ^220 Symantec AntiVirus Scan Engine ready\.\r\n
+    - ^200 NOD32SS ([\d.]+) \((\d+)\)\r\n

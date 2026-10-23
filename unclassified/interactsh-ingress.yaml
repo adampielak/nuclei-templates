@@ -1,7 +1,6 @@
 {{- if .Values.interactsh.ingress.enabled -}}
 {{- $fullName := include "nuclei.fullname" . -}}
-{{- $svcPort := .Values.interactsh.service.port -}}
-{{- $svcName := .Values.interactsh.service.name -}}
+{{- $svcPort := .Values.service.port -}}
 {{- if and .Values.interactsh.ingress.className (not (semverCompare ">=1.20-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.interactsh.ingress.annotations "kubernetes.io/ingress.class") }}
   {{- $_ := set .Values.interactsh.ingress.annotations "kubernetes.io/ingress.class" .Values.interactsh.ingress.className}}
@@ -50,11 +49,11 @@ spec:
             backend:
               {{- if semverCompare ">=1.20-0" $.Capabilities.KubeVersion.GitVersion }}
               service:
-                name: {{ $svcName }}
+                name: {{ $fullName }}
                 port:
                   number: {{ $svcPort }}
               {{- else }}
-              serviceName: {{ $svcName }}
+              serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
               {{- end }}
           {{- end }}

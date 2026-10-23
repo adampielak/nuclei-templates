@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     info: build $2
-    operating_system: $3
+    operating_system: Linux
     product: uptime_infrastructure_monitor
     rarity: 9
     vendor: idera
@@ -23,4 +23,4 @@ tcp:
   - name: uptime-agent
     type: regex
     regex:
-    - ^up.time agent ([\d.]+) \(build (\d+)\) ([\w._-]+)\n
+    - ^up.time agent ([\d.]+) \(build (\d+)\) linux\n

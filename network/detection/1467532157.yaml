@@ -16,4 +16,4 @@ tcp:
   - name: pop3pw
     type: regex
     regex:
-    - ^200 hello there, please tell me who you are\r\n
+    - ^200 hello there, who are you\?\r\n

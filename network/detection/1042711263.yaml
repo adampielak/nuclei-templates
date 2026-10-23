@@ -1,26 +1,24 @@
 id: smtp
 info:
-  name: Sendmail
+  name: Exim smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
-    info: AIX $2
-    operating_system: AIX
-    product: sendmail
-    rarity: 0
-    vendor: sendmail
+    product: exim
+    rarity: 8
+    vendor: exim
     verified: true
-    version: $3
 tcp:
-- name: 'null'
+- name: hello
   inputs:
-  - data: ''
+  - data: EHLO\r\n
   host:
   - '{{Hostname}}'
+  port: 25,587,3025
   extractors:
   - name: smtp
     type: regex
     regex:
-    - ^220[\s-](\S+) E?SMTP Sendmail AIX([\d.]+)/UCB (\d[^; ]+);
+    - ^220 (\w[\w.-]+) ESMTP\r\n501 Syntactically invalid EHLO argument\(s\)\r\n

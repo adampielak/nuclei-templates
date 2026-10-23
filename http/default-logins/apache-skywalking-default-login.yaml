@@ -1,4 +1,5 @@
 id: apache-skywalking-default-login
+
 info:
   name: Apache SkyWalking Horizon UI - Default Login
   author: icarot
@@ -8,12 +9,12 @@ info:
   reference:
     - https://github.com/apache/skywalking-horizon-ui
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "^SkyWalking Horizon UI$"})
     max-request: 1
+    vendor: apache
     product: skywalking
     shodan-query: title:"SkyWalking Horizon UI"
-    vendor: apache
-  tags: apache,default-login,skywalking-horizon-ui
+  tags: apache,skywalking-horizon-ui,default-login
+
 http:
   - raw:
       - |
@@ -22,12 +23,14 @@ http:
         content-type: application/json
 
         {"username":"{{username}}","password":"{{password}}"}
+
     attack: pitchfork
     payloads:
       username:
         - skywalking
       password:
         - skywalking
+
     matchers-condition: and
     matchers:
       - type: word
@@ -36,7 +39,8 @@ http:
           - '"authSource":'
           - '"roles":'
         condition: or
+
       - type: status
         status:
           - 200
-        # digest: 4a0a00473045022043c28c675fe86c52da9cd70ad1a15b0036d9707fd49ad860cc5347a59ab9a2af022100ab5f09f3f4b972b9996804e1966eaf8b2ebecf671a233467f8648261e4e95850:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022043c28c675fe86c52da9cd70ad1a15b0036d9707fd49ad860cc5347a59ab9a2af022100ab5f09f3f4b972b9996804e1966eaf8b2ebecf671a233467f8648261e4e95850:922c64590222798bb761d5b6d8e72950

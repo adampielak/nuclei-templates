@@ -7,7 +7,15 @@ info:
 
 dns:
   - name: "{{FQDN}}" # DNS Request
-    type: a
+    type: cname
+
+    extractors:
+      - type: dsl
+        name: blogid
+        dsl:
+          - trim_suffix(cname,'.ghost.io')
+        internal: true
+
 
 http:
   - method: GET # http request
@@ -17,6 +25,6 @@ http:
     matchers:
       - type: dsl
         dsl:
-          - body == "ok"
-          - dns_a == '128.199.158.128' # check for A record (extracted information from dns response)
+          - contains(body,'ProjectDiscovery.io') # check for http string
+          - blogid == 'projectdiscovery' # check for cname (extracted information from dns response)
         condition: and

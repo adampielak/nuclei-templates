@@ -5,12 +5,11 @@ info:
   tags: detect,tech,varnish-cli,service
   severity: info
   metadata:
-    operating_system: $1 $2
+    info: authentication required
     product: varnish
     rarity: 0
     vendor: varnish-cache
     verified: true
-    version: 2.1.5 - 3.0.3
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +20,4 @@ tcp:
   - name: varnish-cli
     type: regex
     regex:
-    - ^200 \d+ +\n-----------------------------\nVarnish Cache CLI 1.0\n-----------------------------\n([^,]+),([^,]+),[^\n]*\n\nType 'help' for command list\.\nType 'quit' to close CLI session\.\n\n
+    - ^107 59      \n[a-z]{32}\n\nAuthentication required\.\n\n

@@ -1,11 +1,10 @@
 id: ntp
 info:
-  name: Microsoft Windows Server 2003 NTP
+  name: NTP
   author: nmap,cn-kali-team
   tags: detect,tech,ntp,service
   severity: info
   metadata:
-    operating_system: Windows 2003
     rarity: 5
     version: v3
 tcp:
@@ -19,4 +18,4 @@ tcp:
   - name: ntp
     type: regex
     regex:
-    - (?i)^\x5c\x03..............................................$
+    - (?i)^\x1c[\x01-\x0f]..............................................$

@@ -1,13 +1,12 @@
 id: pop3
 info:
-  name: Heimdal kerberized pop3
+  name: Courier pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    info: UCB-pop3 derived
+    hostname: $1
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK UCB based pop server \(version (\d[-.\w]+) at sionisten\) starting\.\r\n
+    - ^\+OK Hello there\. <[\d.]+@([-\w_.]+)>\r\n$

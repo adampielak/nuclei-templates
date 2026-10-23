@@ -1,16 +1,16 @@
 id: ssh
 info:
-  name: Apache Mina sshd
+  name: OpenSSH
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
-    info: Gerrit Code Review $2; protocol $1
-    product: sshd
+    info: protocol $1
+    product: openssh
     rarity: 0
-    vendor: apache
+    vendor: openbsd
     verified: true
-    version: $3
+    version: $2 NCSA_GSSAPI_20040818 KRB5
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-([\d.]+)-GerritCodeReview_([\w._-]+) \(SSHD-CORE-([\w._-]+)\)\r\n
+    - ^SSH-([\d.]+)-OpenSSH_([\w._-]+) NCSA_GSSAPI_20040818 KRB5\r?\n

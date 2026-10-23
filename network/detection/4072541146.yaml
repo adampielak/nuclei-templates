@@ -1,26 +1,26 @@
 id: http
 info:
-  name: Boa httpd
+  name: Catwalk
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    device_type: broadband router
-    info: Prolink ADSL router
-    product: boa
-    rarity: 7
-    vendor: boa
-    verified: true
+    device_type: printer
+    fallback:
+    - get-request
+    - httpoptions
+    info: Canon imageRUNNER C5000-series printer http config
+    rarity: 5
     version: $1
 tcp:
-- name: oracle-tns
+- name: sipoptions
   inputs:
-  - data: \0Z\0\0\x01\0\0\0\x016\x01,\0\0\x08\0\x7F\xFF\x7F\x08\0\0\0\x01\0 \0:\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\04\xE6\0\0\0\x01\0\0\0\0\0\0\0\0(CONNECT_DATA=(COMMAND=version))
+  - data: 'OPTIONS sip:nm SIP/2.0\r\nVia: SIP/2.0/TCP nm;branch=foo\r\nFrom: <sip:nm@nm>;tag=root\r\nTo: <sip:nm2@nm2>\r\nCall-ID: 50000\r\nCSeq: 42 OPTIONS\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:nm@nm>\r\nAccept: application/sdp\r\n\r\n'
   host:
   - '{{Hostname}}'
-  port: 1035,1521,1522,1525,1526,1574,1748,1754,14238,20000
+  port: 406,5060,8081,31337
   extractors:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.0 400 Bad Request\r\nDate: .*\r\nServer: Boa/([\w._-]+)\r\nConnection: close\r\nContent-Type: text/html\r\n\r\n<HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>\n<BODY><H1>400 Bad Request</H1>\nYour client has issued a malformed or illegal request\.\n</BODY></HTML>\n$'
+    - '^HTTP/1\.1 500 Internal Server Error\r\nServer: Catwalk/([\d.]+)\r\n'

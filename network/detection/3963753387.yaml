@@ -1,28 +1,22 @@
 id: sip
 info:
-  name: RingCentral Softphone
+  name: SightSpeedClient sipd
   author: nmap,cn-kali-team
   tags: detect,tech,sip,service
   severity: info
   metadata:
-    fallback:
-    - get-request
-    info: 'arch: $3-bit; OS Version $4'
-    operating_system: $2
-    product: softphone
+    info: AVM FRITZ!Box Fon WAP
     rarity: 5
-    vendor: ringcentral
-    verified: true
     version: $1
 tcp:
-- name: sipoptions
+- name: ntprequest
   inputs:
-  - data: 'OPTIONS sip:nm SIP/2.0\r\nVia: SIP/2.0/TCP nm;branch=foo\r\nFrom: <sip:nm@nm>;tag=root\r\nTo: <sip:nm2@nm2>\r\nCall-ID: 50000\r\nCSeq: 42 OPTIONS\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:nm@nm>\r\nAccept: application/sdp\r\n\r\n'
+  - data: \xe3\x00\x04\xfa\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xc5\x4f\x23\x4b\x71\xb1\x52\xf3
   host:
   - '{{Hostname}}'
-  port: 406,5060,8081,31337
+  port: 123,5353,9100
   extractors:
   - name: sip
     type: regex
     regex:
-    - '(?i)^SIP/2\.0 200 OK\r\n(?:[^\r\n]+\r\n)*?User-Agent: Softphone/([\d.]+) \(RingCentral(?: \(\d+\))?; (Windows \w+) \((\d\d) bits\)/([\d.]+); revision: \d+\)\r\n'
+    - '(?i)^SIP/2\.0 200 OK\r\n(?:[^\r\n]+\r\n)*?Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, UPDATE, OPTIONS, MESSAGE, NOTIFY, INFO, REFER\r\n(?:[^\r\n]+\r\n)*?User-Agent: SightSpeedClient v\. ([\w._-]+)\r\n'

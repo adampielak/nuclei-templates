@@ -1,18 +1,12 @@
 id: pop3
 info:
-  name: Microsoft Exchange 2003 pop3d
+  name: Qualcomm Qpopper pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    hostname: $2
-    info: Korean
-    operating_system: Windows
-    product: exchange_server
+    hostname: $1
     rarity: 0
-    vendor: microsoft
-    verified: true
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -23,4 +17,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK Microsoft Exchange Server 2003 POP3 \xbc\xad\xb9\xf6 \xb9\xf6\xc0\xfc ([\d.]+) \(([-\w_.]+)\)
+    - ^\+OK ready  <\d{1,5}\.10\d{8}@([-.\w]+)>\r\n

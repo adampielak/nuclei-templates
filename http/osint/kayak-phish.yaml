@@ -32,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"kayak.co.uk")'
-# digest: 4a0a00473045022010f91b44f80a8fced2183f7325f313129877953b70cefa50fb3b4ae92bc97404022100d803ac32de72e1886509633e62ded45a3e4e7b046123cae59863302c4d67abbd:922c64590222798bb761d5b6d8e72950
+

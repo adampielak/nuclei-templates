@@ -1,6 +1,6 @@
 id: textui
 info:
-  name: TeamSpeak 3 ClientQuery
+  name: TeamSpeak 3 ServerQuery
   author: nmap,cn-kali-team
   tags: detect,tech,textui,service
   severity: info
@@ -19,4 +19,4 @@ tcp:
   - name: textui
     type: regex
     regex:
-    - ^TS3 Client\n\r
+    - ^TS3\n\r
