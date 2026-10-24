@@ -7,12 +7,12 @@ info:
   metadata:
     rarity: 9
 tcp:
-- name: wwwofflectrlstat
+- name: mydoom
   inputs:
-  - data: WWWOFFLE STATUS\r\n
+  - data: \x0d\x0d
   host:
   - '{{Hostname}}'
-  port: 706,8081
+  port: 706,3127-3198
   extractors:
   - name: silc
     type: regex

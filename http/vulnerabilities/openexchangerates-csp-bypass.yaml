@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "openexchangerates_csp_xss == true"
-
+# digest: 4a0a00473045022100aad13214994b1302b5830aa32fba7302b2c2a11b953c31b608fcb48b70041e2f02200201c70f648c90aa4335fa402aa6db5c6d35e2742a4b4d2e2c79f9baf41b4917:922c64590222798bb761d5b6d8e72950

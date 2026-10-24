@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "liveperson_lptag_csp_xss == true"
-
+# digest: 490a00463044022079c340ff78cd4188a280b1938ac95afd35f9ee1127076cb18aece86a2084620802204e069aae55db8d54d584800f2b77c7577c2cc651b5f8c1f75e034093c6576e05:922c64590222798bb761d5b6d8e72950

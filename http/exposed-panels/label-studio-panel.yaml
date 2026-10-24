@@ -9,12 +9,13 @@ info:
   classification:
     cpe: cpe:2.3:a:heartex:label_studio:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "-1649949475"
     verified: true
     max-request: 1
     vendor: heartex
     product: label_studio
     shodan-query: http.favicon.hash:-1649949475
-  tags: label-studio,login,panel
+  tags: label-studio,login,panel,discovery
 
 http:
   - raw:
@@ -34,4 +35,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204cf4dbf86d16fbdb8aa99fa3763feb522b632cf7555647dd2aa7ca699a8b2ab50221008bf81fab0805443364d5ee22deaff4da2e5e03daf7e123df3c93aeb8d2e08f95:922c64590222798bb761d5b6d8e72950
+

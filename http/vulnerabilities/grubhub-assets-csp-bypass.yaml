@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "grubhub_assets_csp_xss == true"
-
+# digest: 4a0a0047304502205c66b3a79860bcd275ded49843831197d6ce9343fb85eb5347b08e06b3991168022100fa058ff1b61234d5c80820dd37bccc60f550301e79ba374f799cd26b393d5e13:922c64590222798bb761d5b6d8e72950

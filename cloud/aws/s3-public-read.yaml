@@ -49,4 +49,4 @@ code:
       - type: dsl
         dsl:
           - '"The S3 bucket " + bucket +" have public READ access"'
-
+# digest: 490a0046304402200714d057b96220457f882153c1fe101f98cac27af607c2dfd9dfc80d1135272002200c7be5cf0aed1629c3f0290a49039c5095f709f97a10971e7e34b9c8662b06ed:922c64590222798bb761d5b6d8e72950

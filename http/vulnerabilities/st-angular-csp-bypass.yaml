@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "st_angular_csp_xss == true"
-
+# digest: 4a0a004730450221008849d9057feb93c9a251af87abdf80e4de2e9836e51ba09fc7a3ff75c548e5b3022042dc820abe8a0106b886de05c3248abfdb5dde67d3d502b23c0ba500aca53906:922c64590222798bb761d5b6d8e72950

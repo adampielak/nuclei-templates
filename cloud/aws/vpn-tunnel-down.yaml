@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'vpnid + " VPN tunnel is down"'
-
+# digest: 490a0046304402205e94efebf0467b3bfb7a7aecf9fdad9b2951ebcee018f10d63cb117c4a91617902202504d982be5f870195bf3c5a8ace855d2c26eca25ea383c1a22d9e5fc63784cf:922c64590222798bb761d5b6d8e72950

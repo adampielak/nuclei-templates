@@ -72,4 +72,4 @@ code:
       - type: dsl
         dsl:
           - 'KmsID + " SSE with service-managed key Disable"'
-
+# digest: 490a0046304402201f11561ccac93c5f9c3f01b039ab732fcda5bd2fbea367d3f69e40a2116e2e9d022072c6621d2ee39c602af009b2127eaf59b7fbb7d03a39843c98636bcdd61592b6:41987585204b393149694b2205534b1a

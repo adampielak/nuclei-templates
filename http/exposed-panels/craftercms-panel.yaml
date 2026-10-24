@@ -11,12 +11,13 @@ info:
   classification:
     cpe: cpe:2.3:a:craftercms:craftercms:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)craftercms"})
     verified: true
     max-request: 1
     vendor: craftercms
     product: craftercms
     shodan-query: http.title:"craftercms"
-  tags: panel,craftercms,login,detect
+  tags: panel,craftercms,login,detect,discovery
 
 http:
   - method: GET
@@ -36,4 +37,4 @@ http:
         group: 1
         regex:
           - 'Copyright\s+\(C\)\s+([0-9-]+)\s+Crafter'
-# digest: 4a0a00473045022100ee20a2673ae6c5fe35166d6f2cd5a7f44581e55ad595bee7e1fab8bec723785d02201de63cb0a2b83cb690cb269f0ab9ac1892d8596b95a185e457e15c84560ec32d:922c64590222798bb761d5b6d8e72950
+

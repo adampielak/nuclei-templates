@@ -33,4 +33,4 @@ code:
       - type: dsl
         dsl:
           - '"No event notifications for RDS resources in " + region + " AWS region"'
-
+# digest: 4a0a00473045022100c353a0f7695375fad5268b3bf767c0d48ea8b7ebff5d02c162d141355464781e02201dbe78f729940729cc1625b7c25d8a3729630f7ebe050886dbcda9fb392e7b4e:922c64590222798bb761d5b6d8e72950

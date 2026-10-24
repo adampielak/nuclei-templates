@@ -7,11 +7,12 @@ info:
   description: |
     This template checks for GitLab instances by verifying if /explore and /api/v4/projects endpoints are accessible with a 200 response.
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)GitLab"})
     verified: true
     max-request: 2
     shodan-query: title:"GitLab"
     fofa-query: title="GitLab"
-  tags: gitlab,explore,panel,detect
+  tags: gitlab,explore,panel,detect,discovery
 
 http:
   - method: GET
@@ -20,15 +21,18 @@ http:
       - "{{BaseURL}}/api/v4/projects"
 
     stop-at-first-match: true
-    matchers-condition: and
     matchers:
       - type: dsl
+        name: gitlab-community
         dsl:
           - 'contains_all(body, ">Most stars", "Hide archived projects")'
           - 'contains_all(body, "description\":", "name_with_namespace\":")'
         condition: or
 
-      - type: status
-        status:
-          - 200
-# digest: 4a0a004730450220458ec24f96a392d48763efca710365cc348e21d4175b2187c9b7c8612630d980022100d6ca288596306515fe6474f67e195c2eccf649e2235551379a6a5934ea95b996:922c64590222798bb761d5b6d8e72950
+      - type: dsl
+        name: gitlab-enterprise
+        dsl:
+          - 'contains_all(body, ">Most starred", "Explore public groups")'
+          - 'status_code == 200'
+        condition: and
+

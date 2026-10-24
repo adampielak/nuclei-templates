@@ -1,13 +1,15 @@
-expression: r0()
 id: frp-unauthenticated
+
 info:
-  author: pikpikcu
-  name: FRP Unauthenticated
-  severity: info
-  verified: false
+    name: FRP Unauthenticated
+    author: pikpikcu
+    severity: info
+    verified: false
+
 rules:
-  r0:
-    expression: response.status == 200 && response.body.bcontains(b"<title>frps dashboard</title>")
-    request:
-      method: GET
-      path: /static
+    r0:
+        request:
+            method: GET
+            path: /static
+        expression: response.status == 200 && response.body.bcontains(b"<title>frps dashboard</title>")
+expression: r0()

@@ -13,10 +13,13 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
+    cpe: cpe:2.3:a:zeit:next.js:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: html:"/_next/static"
-  tags: redirect,nextjs
+    product: next.js
+    vendor: zeit
+  tags: redirect,nextjs,xss,vuln
 
 http:
   - method: GET
@@ -33,5 +36,4 @@ http:
       - type: status
         status:
           - 308
-
-# digest: 490a00463044022014505ee889ac2af82f3f60a40140ff036fdb8a7f73f81d4586e9742fe31188f2022008e1b2d024f235583c97486ed9da49f8cca6ac3f73fd70cb132fe319aa137843:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b185f08167632fc3b126635ada113c1e8edd4fcf3cea19d3ebe5d49607239dbe022003d3c92ca7586862fa073c1d095604eb1c86acd74e80f9b03cc96f526e7c749b:922c64590222798bb761d5b6d8e72950

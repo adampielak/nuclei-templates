@@ -7,10 +7,11 @@ info:
   reference:
     - https://docs.librenms.org/Support/Device-Notes/Carel-pCOweb-Devices/#:~:text=Accessing%20the%20pCOWeb%20card,-Log%20on%20to&text=The%20default%20username%20and%20password%20is%20admin%2Ffadmin%20.
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)pCOWeb"})
     verified: true
     max-request: 2
     shodan-query: title:"pCOWeb"
-  tags: pcoweb,panel,login,detect
+  tags: pcoweb,panel,login,detect,discovery
 
 http:
   - method: GET
@@ -34,4 +35,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100fd0dca4d41eb8c2b187222925d8a685148421208f792cf8d28aea31836a8dc33022100ad85fae2e0a8cb3a22596c96b9bbad8ce5a65268c6c8092ee450bb5137645b10:922c64590222798bb761d5b6d8e72950
+

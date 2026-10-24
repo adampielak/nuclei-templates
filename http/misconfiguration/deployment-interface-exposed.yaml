@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDK
   severity: medium
   description: |
-   Deployment Management Interface is exposed. This exposure could potentially allow unauthorized access to the management interface
+    Deployment Management Interface is exposed. This exposure could potentially allow unauthorized access to the management interface
   metadata:
     verified: true
     max-request: 1
@@ -26,4 +26,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022025fcbc0abfd2caeb689e9ef8df25cffd2ff88d8bcc20782f90446309a86c7acb022067c9cbce94942324946ae76cf32fb17a188cc63d2100eddbf82c4261d3d5deda:922c64590222798bb761d5b6d8e72950
+

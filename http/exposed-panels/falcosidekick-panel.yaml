@@ -8,10 +8,11 @@ info:
   reference:
     - https://github.com/falcosecurity/falcosidekick-ui
   metadata:
-    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Falcosidekick"})
     verified: true
+    max-request: 1
     shodan-query: http.title:"Falcosidekick"
-  tags: panel,falco,detect,login
+  tags: panel,falco,detect,login,discovery
 
 http:
   - method: GET
@@ -24,4 +25,4 @@ http:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "falcosidekick ui", "falcosidekick-ui")'
         condition: and
-# digest: 4a0a00473045022100d0c7d8cf90437e4f42b4ceb1196e12f681fefd00d1cc69e91cb8106cb8f2afff022064e6d6e8dafd3e7cc0332aa1bdc49478f44ea0384e603059e1cf9ee410c49683:922c64590222798bb761d5b6d8e72950
+

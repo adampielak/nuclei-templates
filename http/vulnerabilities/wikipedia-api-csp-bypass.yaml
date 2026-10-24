@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "wikipedia_api_csp_xss == true"
-
+# digest: 490a004630440220060df435d2063714bd4bd95b9ee9f2d398aa3c285ab4b526a5543c21b4f750a0022054e45e96ab58cf635a531803b3b781ac0f37534a8dedc37af8d51454fc519cac:922c64590222798bb761d5b6d8e72950

@@ -10,10 +10,11 @@ info:
     - https://www.lsoft.com/
     - https://www.lsoft.com/products/maestro_11.1.asp
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)LISTSERV Maestro"})
     verified: true
     max-request: 1
     shodan-query: http.title:"LISTSERV Maestro"
-  tags: panel,maestro,detect,login
+  tags: panel,maestro,detect,login,discovery
 
 http:
   - method: GET
@@ -34,4 +35,4 @@ http:
         regex:
           - '(?i)<title>[\n\r\t\s]*LISTSERV\s+Maestro[\n\r\t\s]*([0-9.-]+)[\n\r\t\s]*</title>'
           - '(?i)uniqvp=([0-9.-]+)'
-# digest: 4b0a0048304602210098223480346f9251cb6b7095373b45f45b3507e010fe23e077770ec8c2c33d9d02210097c0763fd763b680e0144723c70da8dbdec88c52d2da41ade7bbf074dddfec59:922c64590222798bb761d5b6d8e72950
+

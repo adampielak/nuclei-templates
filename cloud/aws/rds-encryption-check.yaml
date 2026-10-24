@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - '"The encryption of data at rest is not enabled for " + db + " RDS database instance"'
-
+# digest: 4b0a00483046022100fbf2edd268c9635bbd530350e8ebc73f889d847a62d987267024eec5d0271e8e0221009966d74dfc170d097cb4a123d92ff610254c776016ec8f940c08c007c56d7080:922c64590222798bb761d5b6d8e72950

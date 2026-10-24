@@ -71,4 +71,4 @@ code:
       - type: dsl
         dsl:
           - '"Deprecated RSASHA1 Algorithm used in DNSSEC for Managed Zone: " + managedZoneName + " in Project: " + projectId'
-
+# digest: 4a0a00473045022100b162de9f0763eea4bcf9aa7277cb7298115a69682615a41e7680619b3f5e6a7d022070379ac61ebd9acdcdc3b5a15333969a2b443bd656f0dde2d86cefb9a38155c1:922c64590222798bb761d5b6d8e72950

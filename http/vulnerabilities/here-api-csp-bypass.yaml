@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "here_api_csp_xss == true"
-
+# digest: 4a0a00473045022100c3f94dde24c2b6b65a8f6853699152a2141f9d3bfffe1aeefece111b38b0319102206200f25cecdcedb01d99465718dd655c80d7c32ff1c06cdbfe91c98b0b798272:922c64590222798bb761d5b6d8e72950

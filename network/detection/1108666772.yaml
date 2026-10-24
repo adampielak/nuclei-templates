@@ -1,20 +1,20 @@
-id: secure-socket
+id: printer
 info:
-  name: CA Secure Socket Adapter
+  name: ''
   author: nmap,cn-kali-team
-  tags: detect,tech,secure-socket,service
+  tags: detect,tech,printer,service
   severity: info
   metadata:
-    rarity: 8
+    rarity: 6
 tcp:
-- name: verifier
+- name: lpdstring
   inputs:
-  - data: Subscribe\n
+  - data: \x01default\n
   host:
   - '{{Hostname}}'
-  port: '1500'
+  port: 515,2947,3333,32211,19350
   extractors:
-  - name: secure-socket
+  - name: printer
     type: regex
     regex:
     - ^\x00$

@@ -10,11 +10,14 @@ info:
     cvss-score: 10
     cve-id: CVE-2021-44228
     cwe-id: CWE-502
+    cpe: cpe:2.3:a:apache:druid:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Apache Druid"
-  tags: cve,cve2021,rce,jndi,log4j,apache,druid,oast
+    product: druid
+    vendor: apache
+  tags: cve,cve2021,rce,jndi,log4j,apache,druid,oast,kev
 
 http:
   - method: DELETE
@@ -36,4 +39,4 @@ http:
       - type: status
         status:
           - 404
-# digest: 490a00463044022030f1852a5d57ce940ce4fdb486ca500f0e80230abd9ef378a7fe2339e3a96812022023a04db5bf7848f414e848dfe20c4fc02efdb87b209cdf81956d9adad83e317b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b68a7a99ac97899c977b009a7199c63600b00c3e154f52104c7ae0fa6d448ad6022044c6c11ea438a7696764faba7ea1932b6a4c620b597b2055da03aafb6bf4438d:922c64590222798bb761d5b6d8e72950

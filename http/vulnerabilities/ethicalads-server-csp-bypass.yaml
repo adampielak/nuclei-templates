@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "ethicalads_server_csp_xss == true"
-
+# digest: 4a0a004730450220546d4f29eb6ac95ad413645b5cbb5ea987a55d3b4cad196178a99827b8bcdfea022100c91190c99c97cc22e60f9a74bf56c5e8d420c9393332d4cc4ce90ba20260ecd1:922c64590222798bb761d5b6d8e72950

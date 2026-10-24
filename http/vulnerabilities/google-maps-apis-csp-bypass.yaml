@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "google_maps_apis_csp_xss == true"
-
+# digest: 4a0a0047304502205f55a9f6db290888649a14886a0662a6ed5dcac2d851d1246be8fa5d37f825e2022100c79cebdd1127ed8f84ad01e41162437766deeecca6faa114827aeec44c72be1b:922c64590222798bb761d5b6d8e72950

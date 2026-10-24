@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "forismatic_api_csp_xss == true"
-
+# digest: 4b0a00483046022100b9ca195b0fe3d5cadec6a55e79932b87a3be425820058c609c94352caa74b6ec022100b3abc762bb140d565da9c8872505083b7965cbc8a4044dcf52854c1af8a73de4:922c64590222798bb761d5b6d8e72950

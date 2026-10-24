@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - '"The Amazon Instance " + ec2instance + " uses public IP addresses"'
-
+# digest: 4b0a004830460221008dc735d938a4e9110dbaf80a7c1a80c49b5333d9d1f3bbb165c85f6343feeeaa022100ce908b4252ab0899a33fd09d19c8e71996bd6bc867f49e4c86442d1cd7202bd9:922c64590222798bb761d5b6d8e72950

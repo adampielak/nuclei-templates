@@ -6,14 +6,16 @@ info:
   severity: info
   metadata:
     device_type: WAP
+    fallback:
+    - get-request
     rarity: 4
 tcp:
-- name: rpccheck
+- name: httpoptions
   inputs:
-  - data: \x80\0\0\x28\x72\xFE\x1D\x13\0\0\0\0\0\0\0\x02\0\x01\x86\xA0\0\x01\x97\x7C\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+  - data: OPTIONS / HTTP/1.0\r\n\r\n
   host:
   - '{{Hostname}}'
-  port: 81,111,199,514,544,710,711,1433,2049,4045,4999,7000,8307,8333,17007,38978,32750-32810
+  port: 2301,631,641,3128,5232,6000,8080,8888,9999,10000,10031,37435,49400,80-85
   extractors:
   - name: http
     type: regex

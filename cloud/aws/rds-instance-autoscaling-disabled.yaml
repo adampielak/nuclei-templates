@@ -57,4 +57,4 @@ code:
       - type: dsl
         dsl:
           - 'dbcluster + " RDS Instance Storage AutoScaling is Disabled"'
-
+# digest: 4b0a00483046022100c4214904851e1abc1c6deb9dd661cba059c3c73724311458790c515856cf681e022100ac7dde70bb47e7c9a08eacbdc59f4ef4381555fa5b5efec4260a2124b15fb5a8:922c64590222798bb761d5b6d8e72950

@@ -15,8 +15,15 @@ info:
   metadata:
     verified: true
     max-request: 1
-    shodan-query: http.favicon.hash:1469328760
-  tags: xss,pmb,cms
+    shodan-query:
+      - http.favicon.hash:1469328760
+      - http.html:"pmb group"
+    product: pmb
+    vendor: sigb
+    fofa-query:
+      - icon_hash=1469328760
+      - body="pmb group"
+  tags: xss,pmb,cms,vuln
 
 http:
   - raw:
@@ -49,5 +56,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100d1caea08e66f8951aeacd4292b919b84cb0164045a5b9dea137635d39fb8b325022100b99671201ee8cbff40ec92111b2c4d88ab031f225c79a9644c03746deb7f64c5:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100db372c6ad18e813581501bc4b66fea1eb41f0fd8431b0be08ebb6c7ce953839f022100d9cebbb183508c93350a596e9a1ae3b8e31109889dbc22ba7b4d789932684b8a:922c64590222798bb761d5b6d8e72950

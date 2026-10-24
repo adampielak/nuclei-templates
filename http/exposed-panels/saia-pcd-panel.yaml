@@ -7,9 +7,10 @@ info:
   description: |
     Saia PCD Web Server panel was detected.
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)Saia PCD Web Server"})
     max-request: 1
     shodan-query: html:"Saia PCD Web Server"
-  tags: saia,login,panel,pcd
+  tags: saia,login,panel,pcd,discovery
 
 http:
   - method: GET
@@ -26,4 +27,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220706841250612d55740cff1be84d3ae2fe146b980af1651fe2f02a0f6d803b32102202a3bbd35214a2498f5753a600038f71ab9a42b7d9f18f07695df293b714e146a:922c64590222798bb761d5b6d8e72950
+

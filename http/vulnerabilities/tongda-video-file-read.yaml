@@ -7,12 +7,17 @@ info:
   description: |
     There is an arbitrary file reading vulnerability in Extreme OA video_file.php. An attacker can obtain sensitive files on the server through the vulnerability.
   reference:
-    - http://wiki.peiqi.tech/wiki/oa/通达OA/通达OA%20v2017%20video_file.php%20任意文件下载漏洞.html
+    - http://wiki.peiqi.tech/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v2017%20video_file.php%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%BC%8F%E6%B4%9E.html
+  classification:
+    cpe: cpe:2.3:a:tongda2000:office_anywhere_2017:*:*:*:*:*:*:*:*
+    cwe-id: CWE-23,CWE-73
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="1967132225"
-  tags: tongda,lfi
+    product: office_anywhere_2017
+    vendor: tongda2000
+  tags: tongda,lfi,vuln
 
 http:
   - method: GET
@@ -29,5 +34,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a0046304402203d491497c57e0e70a7266b53e860b9ed5af0df0ac64ec101644c39221cc2004702205268afb077d307842fefa4b8ac93cf269be3bdb7011060114dfdde10d52d3035:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a7c2b206cb8cbe165232f142d08d57f755ac8c3f18d26bd769238b84dd3f1c22022100e57b6a221a2fb558baa6076cf389457d1dabeda04da43d43c543756294d9da17:922c64590222798bb761d5b6d8e72950

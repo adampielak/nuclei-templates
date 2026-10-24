@@ -8,12 +8,16 @@ info:
     OA E-Office UserSelect interface has an unauthorized access vulnerability, through which attackers can obtain sensitive information
   reference:
     - https://github.com/achuna33/MYExploit/blob/8ffbf7ee60cbd77ad90b0831b93846aba224ab29/src/main/java/com/achuna33/Controllers/WeaverEOfficeController.java
-    - http://wiki.peiqi.tech/wiki/oa/泛微OA/泛微OA%20E-Office%20UserSelect%20未授权访问漏洞.html
+    - http://wiki.peiqi.tech/wiki/oa/%E6%B3%9B%E5%BE%AEOA/%E6%B3%9B%E5%BE%AEOA%20E-Office%20UserSelect%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E.html
+  classification:
+    cpe: cpe:2.3:a:weaver:e-office:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: weaver
+    product: e-office
     fofa-query: app="泛微-EOffice"
-  tags: weaver,e-office,oa,unauth
+  tags: weaver,e-office,oa,unauth,vuln
 
 http:
   - method: GET
@@ -31,5 +35,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100a5327e5c4aa4bba40eb3dd6591e0262f3b68adb18dfe67506e1d01b19d89aea502205e2bc2df2faf6ad056f62b27aeb9871fc23f7f75f6e422837c1f4d1344a9ba6b:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100aca65a0452fefc3ef7b474faec48805dfe0fd796eddadd2c15dd7289a570ff10022100f6f552a09bd93dcc3590f667b293ca48ec24de16ba80e62781644ee05db4c3ce:922c64590222798bb761d5b6d8e72950

@@ -1,20 +1,24 @@
 id: opencats-default-login
 
 info:
-  name: OpenCATS Default Login
+  name: OpenCATS - Default Login
   author: arafatansari
   severity: high
-  description: OpenCATS default admin login information was discovered.
+  description: OpenCATS contains a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
+    cpe: cpe:2.3:a:opencats:opencats:*:*:*:*:*:*:*:*
   metadata:
     verified: true
+    max-request: 4
     shodan-query: title:"opencats"
-  tags: default-login,opencats
+    product: opencats
+    vendor: opencats
+  tags: default-login,opencats,vuln
 
-requests:
+http:
   - raw:
       - |
         POST /index.php?m=login&a=attemptLogin HTTP/1.1
@@ -35,13 +39,11 @@ requests:
         - cats
         - password
         - john99
-
     host-redirects: true
     max-redirects: 2
-    cookie-reuse: true
+
     matchers-condition: and
     matchers:
-
       - type: word
         words:
           - '<title>OpenCATS - Home</title>'
@@ -52,3 +54,4 @@ requests:
       - type: status
         status:
           - 200
+# digest: 4a0a0047304502202dead00a383a833af1f294a3ffa0c0cd10a2cd9bf5bd08489e1551a5c9449e1a022100936a80d8f5cc7d254995850b3c6856cb51332765053aacdba7285ce702028b4e:922c64590222798bb761d5b6d8e72950

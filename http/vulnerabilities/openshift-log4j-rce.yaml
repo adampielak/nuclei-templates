@@ -13,10 +13,13 @@ info:
     cvss-score: 10
     cve-id: CVE-2021-44228
     cwe-id: CWE-77
+    cpe: cpe:2.3:a:redhat:openshift_origin:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: title:"OpenShift"
-  tags: cve,cve2021,rce,jndi,log4j,openshift,oast,kev
+    product: openshift_origin
+    vendor: redhat
+  tags: cve,cve2021,rce,jndi,log4j,openshift,oast,kev,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
@@ -61,5 +64,4 @@ http:
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
         part: interactsh_request
-
-# digest: 4a0a00473045022100e04b557ecaf5c9bdd9fbed42c94e8a9c41bc2a3063bdf843bde20f58f53de29a0220493cef11b3504b961b48b9a583ac4ecb56d3d918715a4acf09426fa4a60ec300:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b62a586fb0a7474874e1a02ce38ea5742731380302dae421f4cf7d617c7443b202203cc428bf580703ea8cf8da45546dc381c08302735677dfd1602e917885763b3a:922c64590222798bb761d5b6d8e72950

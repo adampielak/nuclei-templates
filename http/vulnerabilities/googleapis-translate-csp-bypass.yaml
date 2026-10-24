@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "googleapis_translate_csp_xss == true"
-
+# digest: 4a0a00473045022100b0a04b05ed83ba62653d6a2bddcf657174b298d396e25d358f35c62bb3178d6102203234a21986adcab58a9d0a6741e4c69ca36a6619a40dd1c8871b92d56608bcce:922c64590222798bb761d5b6d8e72950
