@@ -1,15 +1,15 @@
 id: lmtp
 info:
-  name: Zimbra lmtpd
+  name: DSPAM lmtpd
   author: nmap,cn-kali-team
   tags: detect,tech,lmtp,service
   severity: info
   metadata:
-    hostname: $1
-    product: zimbra_collaboration_suite
+    product: dspam
     rarity: 0
-    vendor: zimbra
+    vendor: dspam
     verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +20,4 @@ tcp:
   - name: lmtp
     type: regex
     regex:
-    - ^220 ([\w._-]+) Zimbra LMTP (?:server )?ready\r\n
+    - ^220 DSPAM DLMTP ([\w._-]+) Authentication Required\r\n

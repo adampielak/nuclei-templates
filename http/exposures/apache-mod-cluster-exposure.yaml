@@ -9,6 +9,7 @@ info:
   reference:
     - https://httpd.apache.org/docs/2.4/mod/mod_proxy_cluster.html
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# contains "Mod_cluster Status"}) || any(each(service["http.bodies"]), {# contains "mod_proxy_cluster"})
     verified: true
     max-request: 3
   tags: apache,mod_proxy,cluster,exposure,discovery
@@ -33,4 +34,4 @@ http:
           - 'contains(header, "text/html")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a004830460221008ca010367ea0b4760d65d151b2a11dac5a289f0e72cac1d8e0f15cdb5e150278022100f9d66247559279d772655c72a3b700fd08aeed2164257a406116cf0c881a7247:922c64590222798bb761d5b6d8e72950
+

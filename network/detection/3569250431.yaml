@@ -6,16 +6,15 @@ info:
   severity: info
   metadata:
     product: pure-ftpd
-    rarity: 3
+    rarity: 0
     vendor: pureftpd
     verified: true
 tcp:
-- name: help
+- name: 'null'
   inputs:
-  - data: HELP\r\n
+  - data: ''
   host:
   - '{{Hostname}}'
-  port: 1,7,21,25,79,113,119,515,587,1111,1311,12345,2401,2627,3000,3493,6560,14690,22490,6666-6670
   extractors:
   - name: ftp
     type: regex

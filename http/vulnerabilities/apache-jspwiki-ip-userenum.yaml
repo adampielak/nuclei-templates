@@ -9,11 +9,11 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:jspwiki:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
     verified: true
+    max-request: 1
     vendor: apache
     product: jspwiki
-  tags: jspwiki,apache,enumeration
+  tags: jspwiki,apache,enumeration,discovery
 
 http:
   - method: GET
@@ -32,4 +32,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100bd09ebcc24615aa190c169ce223570155ec90a8a18a0005e3e1186860a51a23a022003ac2583ebdfba15712198bc085e89365db591843c57d187e58617d2209880c5:922c64590222798bb761d5b6d8e72950
+

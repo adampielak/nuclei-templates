@@ -1,5 +1,4 @@
 id: cgit-panel
-
 info:
   name: CGIT - Detect
   author: tess,righettod
@@ -12,33 +11,30 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:cgit_project:cgit:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)git repository browser"})
+    fofa-query: title="git repository browser"
+    google-query: intitle:"git repository browser"
     max-request: 1
-    vendor: cgit_project
     product: cgit
     shodan-query:
       - http.title:"Git repository browser"
       - http.title:"git repository browser"
-    fofa-query: title="git repository browser"
-    google-query: intitle:"git repository browser"
-  tags: panel,git,cgit_project
-
+    vendor: cgit_project
+    verified: true
+  tags: cgit_project,discovery,git,panel
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(to_lower(body), "git repository browser", "cgit")'
-        condition: and
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 1
         part: body
-        group: 1
         regex:
-          - '(?i)<meta\s+name=.?generator.?\s+content=.?([a-z0-9\s.]+).?'
-# digest: 4a0a004730450220269a1a7b3d811bfc052a90df58e0f66c4cd84e610a82ea230074e6c532919c5b022100c8616dfa6f3150d3179fa7908b9f86022ecb881421d4b24515d113850e6e1e1b:922c64590222798bb761d5b6d8e72950
+          - (?i)<meta\s+name=.?generator.?\s+content=.?([a-z0-9\s.]+).?
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_all(to_lower(body), "git repository browser", "cgit")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}'

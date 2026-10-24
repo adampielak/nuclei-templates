@@ -9,10 +9,11 @@ info:
   metadata:
     plugin_namespace: royal-elementor-addons
     wpscan: https://wpscan.com/plugin/royal-elementor-addons
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/royal-elementor-addons/readme.txt"
 
@@ -46,4 +47,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-

@@ -1,5 +1,4 @@
 id: cacti-guest-access-enabled
-
 info:
   name: Cacti - Guest User Access Enabled
   author: DhiyaneshDk
@@ -7,39 +6,35 @@ info:
   description: |
     Cacti instance has guest user access enabled, allowing unauthenticated users to access graph_view.php and potentially other resources.
   metadata:
-    verified: true
     max-request: 1
-    vendor: cacti
     product: cacti
     shodan-query: html:"graph_view.php" html:"cacti"
-  tags: cacti,misconfig,unauth,guest-access
-
+    vendor: cacti
+    verified: true
+  tags: cacti,guest-access,misconfig,unauth,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/graph_view.php"
-      - "{{BaseURL}}/cacti/graph_view.php"
-
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: or
         part: body
+        type: word
         words:
-          - "Tree Mode"
-          - "List Mode"
-          - "Preview Mode"
-        condition: or
-
-      - type: word
+          - Tree Mode
+          - List Mode
+          - Preview Mode
+      - negative: true
         part: body
+        type: word
         words:
-          - "Login to Cacti"
-          - "Please enter your Cacti"
-        negative: true
-
-      - type: status
-        status:
+          - Login to Cacti
+          - Please enter your Cacti
+      - status:
           - 200
-# digest: 4a0a00473045022008858e13e74008e68ab296668a725ac3e7b37a5322b5316b842921fdc083f11c022100ed6e6fa1ccd4ded2fa81882a2c91d0be57d8aa7e541df4917f7d9136c2c39cf8:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a0047304502201ad03c6726cb05d22a5c9be99de528ebdf1af4ef47a166ec555ea852752a50af02210094766b3ed8e955c88b778b7e4c205e57f25ea868e4e2a2d020ff650c55d57a3e:922c64590222798bb761d5b6d8e72950
+
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/graph_view.php'
+      - '{{BaseURL}}/cacti/graph_view.php'
+    stop-at-first-match: true

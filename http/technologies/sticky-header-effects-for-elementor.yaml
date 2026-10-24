@@ -9,10 +9,11 @@ info:
   metadata:
     plugin_namespace: sticky-header-effects-for-elementor
     wpscan: https://wpscan.com/plugin/sticky-header-effects-for-elementor
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
+
     path:
       - "{{BaseURL}}/wp-content/plugins/sticky-header-effects-for-elementor/readme.txt"
 
@@ -46,4 +47,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-

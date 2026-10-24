@@ -10,13 +10,11 @@ info:
     - https://github.com/20142995/sectool
     - https://github.com/tanjiti/sec_profile
     - https://github.com/wy876/POC/blob/main/D-Link_DAR-8000%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E(CVE-2023-4542).md
-  classification:
-    cwe-id: CWE-78
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="DT-100G-N" || title="DT-300N" || title="DT-100G" || title="AMR-3204G" || title="WMR-200N"
-  tags: cerio,rce,vuln
+  tags: cerio,rce
 
 http:
   - raw:
@@ -38,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009dbb7bc95dd61af5905200c2edf8572fc31ad2a93f5a4661a755b56f1a90f5ca02203e47b13dc22629e96d3853ea9a3952a66b6468eb6be148744ed42b678040b356:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022035c6d7a5db55e0a50f3b2a657b252ed94b941ab1ebd00f76655b6ceca8885b1a022100c782fa40433e612aef733b939376a96379b7ca02ae27a641d38cd54ce18dbc4c:922c64590222798bb761d5b6d8e72950

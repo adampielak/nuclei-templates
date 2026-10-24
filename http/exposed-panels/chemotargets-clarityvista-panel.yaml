@@ -9,10 +9,11 @@ info:
   reference:
     - https://chemotargets.com/clarityvista/
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)ClarityVista"})
     verified: true
     max-request: 1
     shodan-query: http.title:"ClarityVista"
-  tags: panel,chemotargets,login,detect
+  tags: panel,chemotargets,login,detect,discovery
 
 http:
   - method: GET
@@ -25,4 +26,4 @@ http:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "<title>clarityvista", "content=\"clarity pharmacovigilance")'
         condition: and
-# digest: 490a00463044022014bcc89989f71ace08503ba839c9783e0e8eaa27cad0710ecc531ab8f839f07302202118d32e394a8d76194a07c409e0033cfccf46fdbcbff85160971ec073f4231c:922c64590222798bb761d5b6d8e72950
+

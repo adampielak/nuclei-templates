@@ -1,4 +1,5 @@
 id: ms-exchange-local-domain
+
 info:
   name: Microsoft Exchange Autodiscover - Local Domain Exposure
   author: userdehghani
@@ -16,27 +17,32 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:microsoft:exchange_server:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
-    product: exchange_server
-    shodan-query: http.title:outlook exchange
-    vendor: microsoft
     verified: true
-  tags: ad,dc,microsoft,misconfig,ms-exchange,vuln
+    max-request: 1
+    shodan-query: http.title:outlook exchange
+    product: exchange_server
+    vendor: microsoft
+  tags: misconfig, microsoft,ms-exchange,ad,dc
+
 http:
-  - extractors:
-      - kval:
-          - x_calculatedbetarget
-        type: kval
+  - method: GET
+    path:
+      - "{{BaseURL}}/autodiscover/autodiscover.json?Protocol=ActiveSync&Email=user@domain.tld&RedirectCount=1"
+
+    matchers-condition: and
     matchers:
-      - part: header
+      - type: regex
+        part: header
         regex:
-          - (?i)(X-Calculatedbetarget:)
-        type: regex
-      - status:
+          - "(?i)(X-Calculatedbetarget:)"
+
+      - type: status
+        status:
           - 200
           - 302
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - '{{BaseURL}}/autodiscover/autodiscover.json?Protocol=ActiveSync&Email=user@domain.tld&RedirectCount=1'
+
+    extractors:
+      - type: kval
+        kval:
+          - x_calculatedbetarget
+# digest: 4a0a0047304502210098ed614b0123624f7a67c4b5487f5831925d23da990846ebac46f04f8269fc3d02202c7a09a84befb943fb82e3dd3321d2685b5a5dc88123d456821e1b45a90a5683:922c64590222798bb761d5b6d8e72950

@@ -5,7 +5,7 @@ info:
   name: Telerik
   severity: High
   tags: Telerik
-requests:
+http:
 - matchers:
   - part: body
     type: word

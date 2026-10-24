@@ -1,12 +1,11 @@
 id: backdoor
 info:
-  name: JTRAM backdoor
+  name: netcat -e
   author: nmap,cn-kali-team
   tags: detect,tech,backdoor,service
   severity: info
   metadata:
-    info: '**BACKDOOR**'
-    operating_system: Windows
+    info: misconfigured
     rarity: 0
 tcp:
 - name: 'null'
@@ -18,4 +17,4 @@ tcp:
   - name: backdoor
     type: regex
     regex:
-    - ^echo o [\d.]+ \d+ >s\r\necho common>> s\r\necho common>> s\r\necho bin>> s\r\necho get m220\.exe
+    - '^exec .* failed : No such file or directory\n$'

@@ -2,20 +2,18 @@ id: castel-digital-sqli
 
 info:
   name: Castel Digital - Authentication Bypass
-  author: s4e-io
+  author: Kazgangap
   severity: high
   description: |
     SQL Injection vulnerability in Castel Digital login forms.
   reference:
     - https://www.casteldigital.com.br/
     - https://cxsecurity.com/issue/WLB-2024050032
-  classification:
-    cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 2
     google-query: "Castel Digital"
-  tags: sqli,auth-bypass,castel,vuln
+  tags: sqli,auth-bypass,castel
 
 http:
   - raw:
@@ -42,4 +40,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022025f8bbf33c089eac1ed06e6118e1ff7556af9322adf8e89e14d18b57dd3527c10221008708ead38d0dc530b2e63723e9003db4e0039fb4781c419b8b0f066d2b4daec5:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221009399703ddcd6b6b00c51d1178d3efc64bbd3355a8ff277d1c069aa981678424a022071a5445e9dca1b5ecfe620dccdc38a47e3fb75f4ea8ccbbd1668ff108c722b75:922c64590222798bb761d5b6d8e72950
