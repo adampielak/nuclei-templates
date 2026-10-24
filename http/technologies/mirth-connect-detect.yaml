@@ -11,7 +11,7 @@ info:
     max-request: 1
     product: mirth_connect
     shodan-query: title:"mirth connect administrator"
-  tags: mirth-connect,tech,detect
+  tags: mirth-connect,tech,detect,discovery
 
 http:
   - method: GET
@@ -28,4 +28,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c460295f8ed60c23de9665c35d12993e5196d85037fe9709fecabc2547e36830022100c28d8661a74a44e75b9e307687ac8de4b1acd7b6b214bec9c8f26b33fa046777:922c64590222798bb761d5b6d8e72950
+

@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-coding,jsfiddle
+  tags: osint,osint-coding,jsfiddle,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "Settings - JSFiddle - Code Playground"
 
-# digest: 4a0a0047304502204ba8a86c0a99a6c4489c8ca9e538f541faf1911a28b7fa3638c2ef169a2b8d9c022100d72f71cc362255196e248b2f25ea9926fc5499a462db3ce1929baa3991dbeac7:922c64590222798bb761d5b6d8e72950

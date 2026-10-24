@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:1817615343
-  tags: panel,regify,login,detect
+  tags: panel,regify,login,detect,discovery
 
 http:
   - method: GET
@@ -40,5 +40,4 @@ http:
         group: 1
         regex:
           - '(?i)appv=([0-9.-]+)'
-
-# digest: 4a0a00473045022005dbb38d5171a14ec2cd3136f7cc6d5c0180818908ff043082efe31c64f427bb022100c83262948760423ae42f4fec02bde721fe9241982271e50ac2100d840379cd3e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100eb48cb0696e4e9cef26352d127a627871136b792a45d71ab238676b06ba6019d02204fd7a63d793212c905331b1fa81c7c290e23ab6264a57b3f23757a13e600714d:922c64590222798bb761d5b6d8e72950

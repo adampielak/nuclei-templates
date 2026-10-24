@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,stonerssocial-mastodon-instance
+  tags: osint,osint-social,stonerssocial-mastodon-instance,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "display_name"
 
-# digest: 4b0a004830460221009f64ba5ef314d8596c0e05509f87225cc07157932722b31bfdb806ba63abe2430221009199695757f1099fa449deda01315540ddcc140ef6d06be5641db5bd622c4e0d:922c64590222798bb761d5b6d8e72950

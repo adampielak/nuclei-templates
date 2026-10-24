@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-health,myfitnesspal-author
+  tags: osint,osint-health,myfitnesspal-author,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "About the Author"
 
-# digest: 4a0a00473045022100d351113430f5315f6f8a31d81757da3ea0e473750ac12e14aeb5d8ecc8883d6002200eff5b0b3d64dd4a51a1a9b1905c52d8d7fad410775694a17918f75bd13a7184:922c64590222798bb761d5b6d8e72950

@@ -8,13 +8,15 @@ info:
     SaltStack config panel was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:saltstack:saltstack:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"SaltStack Config"
-  tags: panel,vmware,login,saltstack
+    product: saltstack
+    vendor: saltstack
+  tags: panel,vmware,login,saltstack,discovery
 
 http:
   - method: GET
@@ -31,5 +33,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a0046304402203a01f97e9cf23f1a0d787a1b0799ecba28f48e331fbb18b223a23869e260223302201351ecc478c656214efa092efedd4bd58a43197b4479499b3191610653564b83:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220073e048a469cd44579680c27d86aecc20b030638a50e87934e42e258a62376ff022100f3b5bc289c17300dfdd3b0db33637521d669c1af05610c9f7b8ebceb6ea4963f:922c64590222798bb761d5b6d8e72950

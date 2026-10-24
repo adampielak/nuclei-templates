@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,pikabu
+  tags: osint,osint-social,pikabu,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "— все посты пользователя"
 
-# digest: 4a0a0047304502206cf17d61bc4ebb34747845b69a85daa26ed31a3acc2d3857ce38c1517dc300780221009f9b6e486ed9cc8cd23f107e0f655156018344360821d566bda590330b734727:922c64590222798bb761d5b6d8e72950

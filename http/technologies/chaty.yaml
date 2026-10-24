@@ -1,7 +1,7 @@
 id: wordpress-chaty
 
 info:
-  name: Floating Chat Widget' Contact Chat Icons, Telegram Chat, Line Messenger, WeChat, Email, SMS, Call Button, WhatsApp – Chaty Detection
+  name: Floating Chat Widget' Contact Chat Icons, Telegram Chat, Line Messenger, WeChat, Email, SMS, Call Button – Chaty Detection
   author: ricardomaia
   severity: info
   reference:
@@ -9,7 +9,7 @@ info:
   metadata:
     plugin_namespace: chaty
     wpscan: https://wpscan.com/plugin/chaty
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-200,discovery
 
 http:
   - method: GET
@@ -46,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+

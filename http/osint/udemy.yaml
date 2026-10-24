@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-tech,udemy
+  tags: osint,osint-tech,udemy,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "| Udemy</title>"
 
-# digest: 4a0a004730450221008ecfb5e24bb4b45447dcd725096e398a3e4928daf5bf978d942b13f776045b080220796f8122f9d7aa90fc8c006f8233845fbd534f58d485d458bb88be7bd34b1747:922c64590222798bb761d5b6d8e72950

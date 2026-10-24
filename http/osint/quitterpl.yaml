@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,quitterpl
+  tags: osint,osint-social,quitterpl,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "@quitter.pl"
 
-# digest: 4a0a0047304502206650f54f113d6e954b146f8a0b5601c007cc2ead37adb1d24057d272d97f86a2022100d409c8ab82f63781854c1a75baa658dcfffb40521eebf8e3a4ad535f906fb196:922c64590222798bb761d5b6d8e72950

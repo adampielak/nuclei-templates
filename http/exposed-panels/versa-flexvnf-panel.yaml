@@ -9,13 +9,12 @@ info:
     - https://versa-networks.com/products/components/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Flex VNF Web-UI"
-  tags: panel,versa,flexvnf
+  tags: panel,versa,flexvnf,discovery
 
 http:
   - method: GET
@@ -32,5 +31,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100d3996b54c36e738b1a4d2a0a18d6f40c09d980f534cad24a5cbd7450e1a9ba0a0220138f70ee688ae33d78676d7f6c9f4d07620ac9d5bb77649ffbb6abd9367f3332:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200cd8ebb8830bcdffae2ce74b82982589814b3782969ac3d76456e6ab7b8e1ced022100b7ab63dc2c85ad99c2677d8fdd0811cb53e3be09aab2af2b9d8b9caf57f81af3:922c64590222798bb761d5b6d8e72950

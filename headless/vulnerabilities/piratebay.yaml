@@ -11,10 +11,9 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: osint,osint-p2p,piratebay
+  tags: osint,osint-p2p,piratebay,headless,discovery
 
 self-contained: true
-
 headless:
   - steps:
       - args:
@@ -22,11 +21,10 @@ headless:
         action: navigate
 
       - action: waitload
-
     matchers:
       - type: dsl
         dsl:
           - "!contains(data, 'No results returned')"
           - "contains(data, 'User: {{user}}</label>')"
         condition: and
-# digest: 4b0a00483046022100dbd0b8dc38f01ce58b836e0d5c916c8237cef282a81f6e0daea5e6b8d640daa7022100fbb360b08c7499cdaaf2260a02ee6bbf1f36bdf6a4bd1506b9a5193a1ff43466:922c64590222798bb761d5b6d8e72950
+
