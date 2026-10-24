@@ -34,4 +34,4 @@ code:
       - type: dsl
         dsl:
           - 'securitygroup + " security group(s) alows unrestricted access (0.0.0.0/0 or ::/0) on TCP port 1433"'
-# digest: 4a0a0047304502207ded666fc36983291e9e29c80b8e8297ec07c665ddd8005bc147950394d3d4a40221008d507174957d0e8330d4754995635fca0436c15cedf6e81c91e00b40acd7050c:922c64590222798bb761d5b6d8e72950
+

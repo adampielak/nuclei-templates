@@ -40,4 +40,4 @@ http:
         part: header
         regex:
           - 'Composed-By: SPIP ([0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}) @ www.spip.net'
-
+# digest: 4a0a00473045022023d9dd21dde97c2ba2cb49b1a874e97d014f6441b52af82612cff365b124c56e022100cc3716029ec2afcdcb96e618e465493b3910dbcc3f12d2555e6964c3a36379ce:922c64590222798bb761d5b6d8e72950

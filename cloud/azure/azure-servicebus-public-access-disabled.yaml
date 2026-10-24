@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " has public network access enabled with no IP rules set"'
-# digest: 4a0a0047304502210090215128fbd39cf5d9964572e55fe8c85fd3ea7594bf654c6328ae8cd5ac0a7702204509b7acd9b5d7e1b37f1ad656e13f2127e78624fd3cdefb5c917cce1ba245bc:922c64590222798bb761d5b6d8e72950
+

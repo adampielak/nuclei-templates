@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "bing_csp_xss == true"
-# digest: 4a0a00473045022007dc8804ee955fc9a3638777598e2d9c23abe07daa1f15094f5be48a136118e6022100e2d84e009f7c2ed793e592ad391262ef0d5b132cea7f3f3b5ee744b0ea1092f7:922c64590222798bb761d5b6d8e72950
+

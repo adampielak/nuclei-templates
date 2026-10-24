@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - '"Deletion Protection safety feature is not enabled for " + cluster'
-# digest: 4a0a00473045022100e3859aaaa478bed03d4d145c87c574732729a84d8b3ed7d08567e299719fc2120220507c3e70335448d850e74572c307f74cf8df2519ee6dbef76dee59035be39669:922c64590222798bb761d5b6d8e72950
+

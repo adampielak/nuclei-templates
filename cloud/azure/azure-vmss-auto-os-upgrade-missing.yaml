@@ -52,4 +52,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " does not have automatic OS upgrades enabled"'
-# digest: 4a0a00473045022100c5c3a5b62f31ac5b09be77f90088d3291586a67222aa8a98013b4655ed846984022006f60b0eb15933eb244044ca998402089b60454ebbe0ebeb8b1fdd8800af6dd2:922c64590222798bb761d5b6d8e72950
+

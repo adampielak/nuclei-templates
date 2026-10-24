@@ -53,4 +53,4 @@ headless:
       - type: dsl
         dsl:
           - "cloudflare_cdn_csp_xss == true"
-# digest: 4a0a00473045022005b86317637615ef7f98f65673c09f94c15eb6aa98678e9aa8734ecc76fa349a022100af182f823aa82e0ad16c81b16fa85460de0925701536dac03763ea1097eec875:922c64590222798bb761d5b6d8e72950
+

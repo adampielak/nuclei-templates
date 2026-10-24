@@ -61,4 +61,4 @@ code:
       - type: dsl
         dsl:
           - 'policy + " custom RAM Policy allow Full Administrative Privileges "'
-# digest: 4a0a0047304502204cbc305a46f0716c1d9cde8d2e7eb3267ea7b1d03724236860e6bbb6e75ce077022100c4f3830e4b2e5d3f63b7f68d5fbd35792e74fb3f0faebb0f9b05877ff71dfb21:922c64590222798bb761d5b6d8e72950
+

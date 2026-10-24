@@ -58,4 +58,4 @@ code:
       - type: dsl
         dsl:
           - '"$name in $resourceGroup has public network access enabled"'
-# digest: 4b0a00483046022100e7b40c386f3b996967bba58bdfcdd5364875f896a5b894e960b2a9d9041b5228022100b894c1d029450025de524a5dbaab8ead72723d06402973a454fe7ba8da39a1b9:922c64590222798bb761d5b6d8e72950
+

@@ -1,4 +1,5 @@
 id: jboss-jmx-console-unauth
+
 info:
   name: JBoss JMX Console - Unauthenticated Access
   author: 0x_Akoko
@@ -10,24 +11,25 @@ info:
     - https://www.invicti.com/web-application-vulnerabilities/jboss-jmx-console-unrestricted-access
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 9
+    cvss-score: 9.0
     cwe-id: CWE-306
     cpe: cpe:2.3:a:redhat:jboss_application_server:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
     verified: true
-  tags: jboss,misconfig,unauth,vuln
-http:
-  - matchers:
-      - condition: and
-        # digest: 4a0a0047304502207e9536dc0222356fb10bb3743dcac8457a06c99daa350831222c32d777cb07a0022100a27616a38e9d5b04da8e60bda82cc0c56ed16059bfecee37d7a0dc2fdd3dbb62:922c64590222798bb761d5b6d8e72950
+    max-request: 1
+  tags: jboss,unauth,misconfig
 
-        dsl:
-          - status_code == 200
-          - contains_all(body, "JMX Agent View", "ObjectName Filter", "service=MainDeployer")
-          - contains_any(body, "jboss.deployment", "jboss.system")
-          - '!contains_any(body, "j_security_check", "j_username", "j_password")'
-        type: dsl
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/jmx-console/HtmlAdaptor?action=displayMBeans'
+      - "{{BaseURL}}/jmx-console/HtmlAdaptor?action=displayMBeans"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_all(body, "JMX Agent View", "ObjectName Filter", "service=MainDeployer")'
+          - 'contains_any(body, "jboss.deployment", "jboss.system")'
+          - '!contains_any(body, "j_security_check", "j_username", "j_password")'
+        condition: and
+# digest: 490a004630440220543f09e02d1256f8973ad1003b7769e4426673f5feb90080a1e15b105e0c0b6302207da412763123ae13c2d08c084d91e0c7929e1f7e3d66ad38e9a42a07979c6e47:922c64590222798bb761d5b6d8e72950

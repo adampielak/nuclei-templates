@@ -51,4 +51,4 @@ code:
       - type: dsl
         dsl:
           - 'ids + " disk volume is not encrypted"'
-# digest: 4b0a00483046022100e5b8dab05ac49fb242f0c9262ec4e1db236f8674463b0821380a4909beddb6940221008398c2c0ccf2321002ed6233c10670032eadcd8c86693e954c7f328bb6fab19c:922c64590222798bb761d5b6d8e72950
+

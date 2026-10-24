@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: cloud,enum,cloud-enum,aws,discovery
+  tags: cloud,cloud-enum,aws
 
 self-contained: true
 
@@ -34,4 +34,4 @@ http:
           - 200
           - 302
         condition: or
-# digest: 4b0a00483046022100c72eb76f5a040d1b24e529a3f41d00e23912cbf1a822f0bbc1b70de50fb93cbc022100d1bee6e4d2cdaf0c30963a746715395fc4438d47e6ed5b19f3113ba7f5d32bef:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402206cc21deaf3d479badf5b8b46dbe3448bd60ec76fc64503726d554051cca8a9bc02204dba37b6781d1c66eca341ac1c6c7a5041cfb376832d862700a864cc91af8870:922c64590222798bb761d5b6d8e72950

@@ -13,13 +13,10 @@ info:
     cvss-score: 10
     cve-id: CVE-2021-44228
     cwe-id: CWE-77
-    cpe: cpe:2.3:a:papercut:papercut_mf:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: title:"Papercut"
-    product: papercut_mf
-    vendor: papercut
-  tags: cve,cve2021,rce,jndi,log4j,papercut,oast,kev,intrusive,vuln
+  tags: cve,cve2021,rce,jndi,log4j,papercut,oast,kev
 variables:
   rand1: '{{rand_int(111, 999)}}'
   rand2: '{{rand_int(111, 999)}}'
@@ -64,4 +61,5 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a00473045022072bdd2c9b218af8f0dd8e272989d49367d48994c898ba648588cc99fca8f392d022100a3412581e4798e1322ed746c1a15081fab375d5c9196dabf296265549701b63f:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100e1f717ae6d14de12635cdb28abdf4a0ebd07b6880b8b8bafc11066425dbc7b72022033366236333a7cfb5beb96ae8591c82dddbd5fc8b3c457964828061cc786d216:922c64590222798bb761d5b6d8e72950

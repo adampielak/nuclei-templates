@@ -3,7 +3,7 @@ info:
   author: pikpikcu
   name: WebLogic Servlet/2.5 JSP/2.1 XSS
   severity: Medium
-requests:
+http:
 - matchers:
   - status:
     - 200

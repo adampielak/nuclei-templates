@@ -71,4 +71,4 @@ code:
       - type: dsl
         dsl:
           - '"The MFA Delete feature is not enabled for the S3 bucket " + bucket + " associated with the CloudTrail " + trail'
-# digest: 4a0a00473045022074bcc46953d45bd74975aabebd753202688f9d3774e1d44137f0eede82c5d7ea022100b701b86493ae07d3699f7a259c8e77374645f752be2923b83f33fbed7848ecee:922c64590222798bb761d5b6d8e72950
+

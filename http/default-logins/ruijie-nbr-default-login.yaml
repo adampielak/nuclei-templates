@@ -1,4 +1,5 @@
 id: ruijie-nbr-default-login
+
 info:
   name: Ruijie NBR Series Routers - Default Login
   author: pussycat0x
@@ -6,28 +7,13 @@ info:
   description: |
     Ruijie NBR Series Routers Default Login username and password was discovered.
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)上层网络出现异常，请检查外网线路或联系ISP运营商协助排查"})
-    fofa-query: body="上层网络出现异常，请检查外网线路或联系ISP运营商协助排查"
     max-request: 1
     verified: true
-  tags: default-login,ruijie-nbr,vuln
+    fofa-query: body="上层网络出现异常，请检查外网线路或联系ISP运营商协助排查"
+  tags: default-login,ruijie-nbr
+
 http:
-  - attack: pitchfork
-    matchers:
-      - part: body
-        regex:
-          - index\.htm\?_([0-9]+)
-        type: regex
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    payloads:
-      password:
-        - admin
-      username:
-        - admin
-    raw:
+  - raw:
       - |
         POST /login.cgi HTTP/1.1
         Host: {{Hostname}}
@@ -36,4 +22,23 @@ http:
         Referer: {{RootURL}}/login.html
 
         user={{username}}&password={{password}}
+
     stop-at-first-match: true
+    attack: pitchfork
+    payloads:
+      username:
+        - admin
+      password:
+        - admin
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - 'index\.htm\?_([0-9]+)'
+
+      - type: status
+        status:
+          - 200
+# digest: 490a0046304402200b84c8645798a4b44fb14f8d5ba60b5bd14f60d9692fe653c231d334493f9ddd022006a92f2dcb02a55a42e4ada8b6b2d0f137cd0d39c8c6f9965d0e25a0e55e6145:922c64590222798bb761d5b6d8e72950

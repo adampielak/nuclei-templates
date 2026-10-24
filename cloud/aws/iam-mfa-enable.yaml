@@ -48,4 +48,4 @@ code:
       - type: dsl
         dsl:
           - '"MFA is no enabled for IAM User " + user'
-# digest: 480a00453043021f73b26c8684f06e39fd82a9a9b41914ff5ba899fdab4b9c1f73d29e3a2bedb002205ee954e980c1f8ffe33918fa4fa1b1e49426260bdaecf2e4d368e5b36bfcb4ce:922c64590222798bb761d5b6d8e72950
+

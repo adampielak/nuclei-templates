@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "arkoselabs_client_api_csp_xss == true"
-# digest: 490a0046304402206752284123ad5cbb5a50de53c4320066df06df2ba5727c49dd19ca084ebc06e702202a482e7bcc2ab9d2b6242fdc2652555d964312f7d52b5e5c20ccd90ffb11bbe6:922c64590222798bb761d5b6d8e72950
+

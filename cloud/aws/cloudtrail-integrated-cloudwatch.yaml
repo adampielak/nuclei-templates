@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - '"CloudTrail trail" + trail + " is not configured to send events to CloudWatch Logs for monitoring purposes"'
-# digest: 4a0a00473045022079c294096ed170716849b5fb7d05822bd381caa9fcfef87b21ce761be412ea43022100b59348b2f6da4316675f81e0640c8c0c5530730d6dca6d63ea603a0cad3323c3:922c64590222798bb761d5b6d8e72950
+

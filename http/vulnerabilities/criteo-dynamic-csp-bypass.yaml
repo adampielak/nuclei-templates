@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "criteo_dynamic_csp_xss == true"
-# digest: 4b0a00483046022100bdcf869ed3c85e6d80afdb5a719700c3a3428d2953c2378256f2dab295b33639022100abb8f5f461e147c87ad5074ec825ca6983d6e3d4e05dfbcf86f99c9fac83c8e9:922c64590222798bb761d5b6d8e72950
+

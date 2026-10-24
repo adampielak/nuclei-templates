@@ -52,4 +52,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " is configured to host static websites"'
-# digest: 4b0a00483046022100c3d64734e30f3a30c17a43790cf744f19f44e1028c933c8d5d86d2aeb3be3fc70221008863ddfecdf39a9ac4ae639a682f6b260c2e1cdd3bdb0266c2c3555971f2e41f:922c64590222798bb761d5b6d8e72950
+

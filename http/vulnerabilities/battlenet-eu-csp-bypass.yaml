@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "battlenet_eu_csp_xss == true"
-# digest: 4b0a00483046022100d48fd719717e51eabdda7bf96b32454209a56c4eea3d3f6b6de9241feb8dcdf6022100b7aea86ca6954142248a14b4e594d549fc347d4d8457f8095a4a02dc5d1104f2:922c64590222798bb761d5b6d8e72950
+

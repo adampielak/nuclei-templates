@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "chartbeat_api_csp_xss == true"
-# digest: 4a0a00473045022100f96ac11d1cea13f3dd2030231f1ba4a0778b75665c4ad9435bbe8a8d93b6ce8a022040732fe1de3fbed9d4bc97e3ec2c6c694638368c0bb3c88fa4e63a4f1f7c2d47:922c64590222798bb761d5b6d8e72950
+

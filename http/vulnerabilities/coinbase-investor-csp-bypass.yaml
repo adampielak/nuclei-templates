@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "coinbase_investor_csp_xss == true"
-# digest: 4a0a00473045022100bb5a485b295a846fa6bae8522506b4ffd3483d42da6d382ebe0c590730c8a0bc02203a041bf2e7bc445d019ac36875e7faf6243d2524914b927437549330a3e6e18c:922c64590222798bb761d5b6d8e72950
+

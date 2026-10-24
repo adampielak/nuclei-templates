@@ -16,7 +16,7 @@ info:
     vendor: fujixerox
     product: apeosport-v_c3375
     fofa-query: '"prop.htm" && "docucentre"'
-  tags: default-login,fuji,fuji-xerox,printer,intrusive,vuln
+  tags: default-login,fuji,fuji-xerox,printer
 
 http:
   - raw:
@@ -39,4 +39,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203fcc8655e9ad65316356b06db4af2f3e9443cde2119d73b4174fe74ab1a53f7602206e3071704692c2b30d76ad22f0d77b95129b933c2b12d34bc83b346ca387eb11:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220277a7f3eae7f568325e3e3ff1748384224365d79ec9b39a2d1b2621ae98f7b12022048dec3f3c72049107f1d7f9a5daa4853fb747a3c33bbc390d2110981b8fdcc30:922c64590222798bb761d5b6d8e72950

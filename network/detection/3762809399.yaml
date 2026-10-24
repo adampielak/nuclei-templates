@@ -1,16 +1,15 @@
 id: ssh
 info:
-  name: OpenSSH
+  name: McAfee Web Gateway sshd
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
-    info: protocol $1; FIPS capable
-    product: openssh
+    info: protocol $1
+    product: web_gateway
     rarity: 0
-    vendor: openbsd
+    vendor: mcafee
     verified: true
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +20,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-([\d.]+)-OpenSSH_([\w._-]+)-FIPS\(capable\)\r\n
+    - ^SSH-([\d.]+)-SSH\r\n

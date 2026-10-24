@@ -36,4 +36,4 @@ code:
       - type: dsl
         dsl:
           - '"Scheduled Vulnerability Scan is Disabled "'
-# digest: 490a0046304402206c02830649fd1a4625f43a0339e4d3b03efda89840d274c8b94a54928878845d02207b010d79b6248d8df3e457e7550bafc969967a0f87d0b491911c9db87c527e5b:922c64590222798bb761d5b6d8e72950
+

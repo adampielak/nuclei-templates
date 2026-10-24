@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "alibaba_ug_csp_xss == true"
-# digest: 4b0a004830460221009dc836d36deb2843779786f061ff991983137f08ffcb7dcf955def46110f862c022100d14cf2f061b332b526b4dbaa68fd7b81cac71ed370a308d9f84dc61f9b47f151:922c64590222798bb761d5b6d8e72950
+

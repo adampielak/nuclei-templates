@@ -59,4 +59,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " is not using a zone-redundant configuration"'
-# digest: 4a0a00473045022100c8eb9d4ccbc1f710589e2a6b684d83d0a14bbdd4fb4306bb57b7717ce595c672022000bd27a2dbc18d1df9303350208bd424040e64c4f854bb9647fd885efd09e78f:922c64590222798bb761d5b6d8e72950
+

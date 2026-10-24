@@ -9,6 +9,7 @@ info:
     rarity: 8
     vendor: redislabs
     verified: true
+    version: $1
 tcp:
 - name: redis-server
   inputs:
@@ -20,4 +21,4 @@ tcp:
   - name: redis
     type: regex
     regex:
-    - (?i)-ERR operation not permitted\r\n
+    - (?i)^\$\d+\r\n(?:#[^\r\n]*\r\n)*redis_version:([.\d]+)\r\n

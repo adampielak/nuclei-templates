@@ -12,10 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.html:"tiki wiki"
-    product: tikiwiki_cms\/groupware
-    vendor: tiki
-    fofa-query: body="tiki wiki"
-  tags: edb,xss,tikiwiki,packetstorm,acketstorm,vuln
+  tags: edb,xss,tikiwiki,packetstorm,acketstorm
 
 http:
   - method: GET
@@ -42,4 +39,5 @@ http:
       - type: status
         status:
           - 403
-# digest: 4a0a00473045022100efa2d655c39d0835a4999a61be87d1adc6196aa83ad2da1fb92b36e3b2cf60f00220139f1552d3823e5e74c77bf8800fcd4f73074da3b3352cce1afa2d584a0b739d:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a0047304502206df242743117e9418ad65f8ef8342f4ca2f29c39eeeaf447014b09dc677d7317022100dde814f9d8ea3c3a14040c663c34ce13d32e54bc5b4a957d87ba2f6b3ad0732e:922c64590222798bb761d5b6d8e72950

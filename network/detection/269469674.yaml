@@ -1,12 +1,16 @@
 id: inetd
 info:
-  name: inetd
+  name: Pure-FTPd under inetd
   author: nmap,cn-kali-team
   tags: detect,tech,inetd,service
   severity: info
   metadata:
-    info: 'failed to exec $1: $2 at $3'
+    info: Broken
+    operating_system: Unix
+    product: pure-ftpd
     rarity: 0
+    vendor: pureftpd
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +21,4 @@ tcp:
   - name: inetd
     type: regex
     regex:
-    - '^Can''t exec \"([\w._/-]+)\": (.*) at ([\w._/-]+) line \d+\.\n'
+    - '^Can''t exec \"/usr/sbin/pure-ftpd\": No such file or directory'

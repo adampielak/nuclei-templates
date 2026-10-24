@@ -1,5 +1,4 @@
 id: cs141-default-login 1
-
 info:
   name: CS141 SNMP Module Default Credentials
   author: socketz
@@ -14,7 +13,6 @@ requests:
       Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
     attack: sniper
     threads: 100
-
     raw:
       - |
         POST /api/login HTTP/1.1
@@ -31,11 +29,9 @@ requests:
           - 'application/json'
         condition: and
         part: header
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: kval
         kval:

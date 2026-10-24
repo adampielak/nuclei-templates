@@ -51,4 +51,4 @@ code:
       - type: dsl
         dsl:
           - 'ids + " does not have Boot Diagnostics enabled."'
-# digest: 4a0a00473045022100e9ced3625fdb6c4c6d73fe35aa74e0e680583f98e83d4445f0dc0617605b6a8702203cbb30feb0d59a2f694ee34691d885d18443cfc0d8cd88c1abcdd8c253a2cbce:922c64590222798bb761d5b6d8e72950
+

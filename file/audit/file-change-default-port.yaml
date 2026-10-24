@@ -25,4 +25,4 @@ file:
           - "#Port 22"
           - "# This is the sshd server system-wide configuration file"
         condition: and
-# digest: 4a0a00473045022100e31a7b6e239ee575928c298085701bd16125c3c72e86466f51bebf03b782d9880220237893576668b4ebbb1904c323ff9e686059513594457a6d1a35daf608a6d700:922c64590222798bb761d5b6d8e72950
+

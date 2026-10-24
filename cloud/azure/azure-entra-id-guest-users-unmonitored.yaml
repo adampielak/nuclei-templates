@@ -30,4 +30,4 @@ code:
       - type: dsl
         dsl:
           - '"Azure Account han an Entra ID guest user Microsoft Entra ID"'
-# digest: 490a0046304402201deaeaf272ddbd2c7c056f375dcdd2059e8af91f678849051caa58dc9f46dd9102204007bf0d7302173e6b864e8fe89cf834e2a53d6d640d1fab3af5c154cd7bee5a:922c64590222798bb761d5b6d8e72950
+

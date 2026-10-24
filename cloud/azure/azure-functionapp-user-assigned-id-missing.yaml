@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " does not use user-assigned managed identity"'
-# digest: 4b0a0048304602210085a1797351e11b25bb80977ade24a774f0fd6b2015ab8177c9d7c321a326709a022100ca38ed41d8ef5d584b0a171a9e715917b323113933aab88a067c7ee58773f73b:922c64590222798bb761d5b6d8e72950
+

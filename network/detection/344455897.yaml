@@ -1,12 +1,12 @@
 id: chargen
 info:
-  name: Lantronix chargen
+  name: xinetd chargen
   author: nmap,cn-kali-team
   tags: detect,tech,chargen,service
   severity: info
   metadata:
+    operating_system: Unix
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +17,4 @@ tcp:
   - name: chargen
     type: regex
     regex:
-    - '^\*\*\* Port V([\d.]+) !\"#\$%&''\(\)\*\+,-\./0123456789:'
+    - ^\*\+,-\./0123456789:;<=>\?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\[\\\]\^_`abcdefghijklmnopq\r\n\+,-\./

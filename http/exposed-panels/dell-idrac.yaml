@@ -1,31 +1,38 @@
-http:
-- matchers:
-  - condition: or
-    part: body
-    type: word
-    words:
-    - <idrac-start-screen
-    - thisIDRACText
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/restgui/start.html'
-  - '{{BaseURL}}/login.html'
-  stop-at-first-match: true
 id: dell-idrac
+
 info:
+  name: Dell IDRAC Panel - Detect
   author: kazet
+  severity: info
+  description: Dell IDRAC panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
-  description: Dell IDRAC panel was detected.
   metadata:
+    verified: true
     max-request: 2
     shodan-query: html:"thisIDRACText"
-    verified: true
-  name: Dell IDRAC Panel - Detect
-  severity: info
   tags: panel,idrac,dell,detect
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/restgui/start.html'
+      - '{{BaseURL}}/login.html'
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<idrac-start-screen'
+          - 'thisIDRACText'
+        condition: or
+
+      - type: status
+        status:
+          - 200
+
+# digest: 490a0046304402203461fa10aee9c893ba764fb971985ee52f5dcccb521af276e21328038d0466010220259f4d5fbecbeadb19ca9cecc18fbfed15b14487768489728113d4a489105bfa:922c64590222798bb761d5b6d8e72950

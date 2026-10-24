@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "cloudfront_csp_xss == true"
-# digest: 490a0046304402201dd8434d3ce4550f0eea595a40afbbe2d16d9a5d846c094b1f12347a12e3ef7e02204cd0a5bf484cf1cda4766f0cc907784b92bc67fbd2de221d2dea967b5ea7ecd4:922c64590222798bb761d5b6d8e72950
+

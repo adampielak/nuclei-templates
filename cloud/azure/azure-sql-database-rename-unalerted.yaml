@@ -56,4 +56,4 @@ code:
       - type: dsl
         dsl:
           - 'id + " does not have the correct alert configuration for Rename Azure SQL Database events"'
-# digest: 490a0046304402207581c55930838bc48ed9520121905a53125cfb5a8779ab404eb06edd31a580ec02203c32edbbb818726fba8ecfb4a2e254cdf90bfce0e1220a388273dfc701d8d836:922c64590222798bb761d5b6d8e72950
+

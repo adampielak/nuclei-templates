@@ -50,4 +50,4 @@ code:
       - type: dsl
         dsl:
           - 'id + " does not enforce FTPS-only access"'
-# digest: 4b0a0048304602210082d38a5a8a4a38c756410db993efea22867b87c6dc842614b07964ca72c7d75d022100c7e93e42fc559622d1c62dfc68fba38cd4058b38f5e918674f82d622a5eba385:922c64590222798bb761d5b6d8e72950
+

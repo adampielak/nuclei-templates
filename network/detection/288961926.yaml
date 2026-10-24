@@ -1,11 +1,12 @@
 id: finger
 info:
-  name: cfingerd
+  name: Cisco fingerd
   author: nmap,cn-kali-team
   tags: detect,tech,finger,service
   severity: info
   metadata:
-    info: Broken
+    device_type: router
+    operating_system: IOS
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +18,4 @@ tcp:
   - name: finger
     type: regex
     regex:
-    - ^No cfingerd\.conf file present\.  Check your setup\.\n$
+    - \r\n {4}Line {5,8}User {6,8}Host\(s\) {13,18}Idle +Location\r\n
