@@ -1,4 +1,5 @@
 id: luma
+
 info:
   name: Luma User Name Information - Detect
   author: rxerium
@@ -12,20 +13,25 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: discovery,luma,osint,osint-social
-http:
-  - matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - ' Luma</title>'
-          - username
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
-    path:
-      - https://lu.ma/user/{{user}}
+  tags: osint,osint-social,luma,discovery
+
 self-contained: true
+
+http:
+  - method: GET
+    path:
+      - "https://lu.ma/user/{{user}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - " Luma</title>"
+          - "username"
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100bfcad3562d283f44c0457c1277c91f0e48588a90e4e7712a3603a12b39e35a3202206acd65559dc91b9828ba99a38dc97cc7fc722d5a3364b4aa8edd262c4b20ce1f:922c64590222798bb761d5b6d8e72950
