@@ -1,5 +1,4 @@
 id: wagtail-login
-
 info:
   name: Wagtail Login - Detect
   author: kishore-hariram
@@ -7,32 +6,32 @@ info:
   description: The Wagtail panel has been detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:torchbox:wagtail:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)wagtail - sign in"})
+    fofa-query: title="wagtail - sign in"
+    google-query: intitle:"wagtail - sign in"
     max-request: 2
-    vendor: torchbox
     product: wagtail
-    shodan-query: title:"Wagtail - Sign in"
-  tags: panel,wagtail
-
+    shodan-query:
+      - title:"Wagtail - Sign in"
+      - http.title:"wagtail - sign in"
+    vendor: torchbox
+    verified: true
+  tags: discovery,panel,torchbox,wagtail
 http:
-  - method: GET
+  - matchers:
+      - part: body
+        type: word
+        words:
+          - Wagtail - Sign in
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    method: GET
     path:
       - '{{BaseURL}}/login/?next=/'
       - '{{BaseURL}}/admin/login/?next=/admin/'
-
     stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Wagtail - Sign in'
-
-      - type: status
-        status:
-          - 200
-# digest: 4a0a004730450220217644e6f73b5c36f50a801d1f30348b82db0c0bc17b96b4c2ba808db90ad518022100b0899fc80f2d44c15c76fd77aa80035bceaba96a22163ca2ef929e62b21a5984:922c64590222798bb761d5b6d8e72950

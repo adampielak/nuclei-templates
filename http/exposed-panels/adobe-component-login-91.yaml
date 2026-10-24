@@ -7,7 +7,7 @@ info:
   reference: https://www.exploit-db.com/ghdb/6846
   tags: panel
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/CFIDE/componentutils/login.cfm'

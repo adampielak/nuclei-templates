@@ -6,7 +6,7 @@ info:
 
 id: header-time-sqli
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

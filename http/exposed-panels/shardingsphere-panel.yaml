@@ -1,5 +1,4 @@
 id: shardingsphere-panel
-
 info:
   name: ShardingSphere ElasticJob UI Panel
   author: DhiyaneshDk
@@ -7,30 +6,28 @@ info:
   description: An ShardingSphere ElasticJob UI panel was detected.
   classification:
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:apache:shardingsphere_elasticjob-ui:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: service["favicon.ico.image.mmh3"] == "816588900"
+    fofa-query: icon_hash=816588900
     max-request: 1
-    vendor: apache
     product: shardingsphere_elasticjob-ui
     shodan-query: http.favicon.hash:816588900
-  tags: panel,shardingsphere,login
-
+    vendor: apache
+    verified: true
+  tags: apache,discovery,login,panel,shardingsphere
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/#/login"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
+  - host-redirects: true
     matchers:
-      - type: word
-        part: body
+      - part: body
+        type: word
         words:
-          - '<title>ShardingSphere ElasticJob UI</title>'
-
-      - type: status
-        status:
+          - <title>ShardingSphere ElasticJob UI</title>
+      - status:
           - 200
-# digest: 490a0046304402202a5bcbd123b723d51b376a96792fafaa5ae54d3b18a6631972bb1aac08210938022065b2f692bb9fa1b066e820f9373ef0c10a12b545671b2e6461788ddf446640aa:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}/#/login'

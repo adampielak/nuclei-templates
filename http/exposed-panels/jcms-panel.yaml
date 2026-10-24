@@ -1,5 +1,4 @@
 id: jalios-jcms-panel
-
 info:
   name: Jalios JCMS Login Panel - Detect
   author: righettod
@@ -9,34 +8,34 @@ info:
     - https://www.jalios.com/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:jalios:jcms:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)jalios jcms"})
+    fofa-query: body="jalios jcms"
     max-request: 2
-    vendor: jalios
     product: jcms
-    shodan-query: html:"Jalios JCMS"
-  tags: panel,jalios,jcms
-
+    shodan-query:
+      - html:"Jalios JCMS"
+      - http.html:"jalios jcms"
+    vendor: jalios
+    verified: true
+  tags: discovery,jalios,jcms,panel
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-      - "{{BaseURL}}/front/privateLogin.jsp"
-
-    host-redirects: true
-    max-redirects: 2
-    stop-at-first-match: true
-
-    matchers-condition: and
+  - host-redirects: true
     matchers:
-      - type: word
+      - condition: or
         part: body
+        type: word
         words:
-          - 'content="Jalios JCMS'
-          - 'jalios-login'
-          - "JCMS_login"
-          - "/jcms/"
-        condition: or
-# digest: 4b0a0048304602210080bcc56907d27186e2a0d3d50346541251d9e1136b5554362cf73d67e044c9f9022100c05bb894c45a316d5d0c8a1c47f3dbba931469d2921014389a6b8e0ce5d83bf2:922c64590222798bb761d5b6d8e72950
+          - content="Jalios JCMS
+          - jalios-login
+          - JCMS_login
+          - /jcms/
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'
+      - '{{BaseURL}}/front/privateLogin.jsp'
+    stop-at-first-match: true

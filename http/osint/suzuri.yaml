@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-business,suzuri
+  tags: osint,osint-business,suzuri,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "Items"
 
-# digest: 4a0a00473045022100b19c81cd46ffc2420e61d7828281b5a00bbc8068533940f85c9f6f51210df256022044cb7175c6c3e62134a68fef29941e50ee79aad54bde02fe2a6cf29cf37559fd:922c64590222798bb761d5b6d8e72950

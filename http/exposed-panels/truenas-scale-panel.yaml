@@ -1,5 +1,4 @@
 id: truenas-panel
-
 info:
   name: TrueNAS Panel - Detect
   author: rxerium
@@ -8,29 +7,31 @@ info:
     TrueNAS scale is a free and open-source NAS solution
   reference:
     - https://www.truenas.com
+  classification:
+    cpe: cpe:2.3:h:ixsystems:truenas:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)truenas"})
+    fofa-query: body="truenas"
     max-request: 1
-    vendor: ixsystems
     product: truenas
-    shodan-query: html:"TrueNAS"
-  tags: login,panel,truenas
-
+    shodan-query:
+      - html:"TrueNAS"
+      - http.html:"truenas"
+    vendor: ixsystems
+    verified: true
+  tags: discovery,ixsystems,login,panel,truenas
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/ui/sessions/signin"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - "'TrueNAS'"
-          - "assets/images/TrueNAS"
-        condition: and
-
-      - type: status
-        status:
+          - '''TrueNAS'''
+          - assets/images/TrueNAS
+      - status:
           - 200
-# digest: 4b0a00483046022100ece185971ecd556127979d86bf7200c50f67dfaf61bb545570d1df063fd788a2022100ddaefbef6ccd73cfd9d33ba6612bfab01cd89d1c688769cc5159cfee1588d464:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/ui/sessions/signin'

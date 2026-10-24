@@ -5,7 +5,7 @@ info:
   severity: High
   description: Bypassing Client Side restriction through X-Rewrite-URl and X-Original-URL Headers.
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/'

@@ -1,5 +1,4 @@
 id: transmission-dashboard
-
 info:
   name: Transmission Dashboard - Detect
   author: fabaff
@@ -11,32 +10,29 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:transmissionbt:transmission:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
+    product: transmission
     shodan-query: http.title:"Transmission Web Interface"
-  tags: misconfig,transmission,exposure,dashboard
-
+    vendor: transmissionbt
+    verified: true
+  tags: dashboard,discovery,exposure,misconfig,transmission
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/transmission/web/"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: or
+  - host-redirects: true
     matchers:
-      - type: word
+      - condition: and
         part: body
+        type: word
         words:
-          - 'The Transmission Project'
-          - 'Transmission Web Interface'
-        condition: and
-
-      - type: word
-        part: server
+          - The Transmission Project
+          - Transmission Web Interface
+      - part: server
+        type: word
         words:
-          - 'Transmission'
-
-# digest: 490a0046304402201b681478d4c9a2b2331a47a5363799aac4535a5a455af8e0d8ab2a55a2b3a6c4022031ac1223d0d037097c30f69dcaaba5af1248ebb37c3078c7379a8276d62f22c3:922c64590222798bb761d5b6d8e72950
+          - Transmission
+    matchers-condition: or
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}/transmission/web/'

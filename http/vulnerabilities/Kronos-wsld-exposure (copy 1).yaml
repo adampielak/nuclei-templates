@@ -3,7 +3,7 @@ info:
   name: Find Kronos wsdl exposure (Try XXE)
   author: Clark
   severity: meduim
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wfc/webservice/ReportConfigService?wsdl"

@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-tech,zatrybipl
+  tags: osint,osint-tech,zatrybipl,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "Zarejestrowany od:"
 
-# digest: 4a0a00473045022100dece2fdc27ca86cd2f51008f3634112ca20adb63b1ba63a5be686b31861c9b5f02203cecdf833330f1d32048d11672ac97c1114eddf85cf4733d7308f81db0a3220c:922c64590222798bb761d5b6d8e72950

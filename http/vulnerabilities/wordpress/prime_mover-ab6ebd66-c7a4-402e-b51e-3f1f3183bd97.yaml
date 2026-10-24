@@ -1,0 +1,51 @@
+id: prime_mover-ab6ebd66-c7a4-402e-b51e-3f1f3183bd97
+
+info:
+  name: >
+    Prime Mover <= 2.2.1 - Unauthenticated PHP Object Injection via Base64-Encoded Comment during Migration Search-and-Replace
+  author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ab6ebd66-c7a4-402e-b51e-3f1f3183bd97?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/prime-mover/"
+    google-query: inurl:"/wp-content/plugins/prime-mover/"
+    shodan-query: 'http.html:"wp-content/plugins/prime-mover/"'
+  tags: cve,wordpress,wp-plugin,prime-mover,critical,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/prime-mover/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "prime-mover"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.2.1')

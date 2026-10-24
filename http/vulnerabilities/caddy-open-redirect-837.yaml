@@ -8,7 +8,7 @@ info:
     - https://github.com/caddyserver/caddy/issues/4502
   tags: redirect,caddy,server
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}//interact.sh/%2F..'

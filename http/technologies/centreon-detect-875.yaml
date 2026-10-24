@@ -6,7 +6,7 @@ info:
   severity: info
   tags: tech,centreon
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/centreon/index.php"

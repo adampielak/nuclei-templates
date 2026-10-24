@@ -1,5 +1,4 @@
 id: xibocms-login
-
 info:
   name: Xibo CMS Login Panel - Detect
   author: ritikchaddha,daffainfo
@@ -7,37 +6,34 @@ info:
   description: Xibo CMS login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:springsignage:xibo:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/xibosignage/xibo-cms"})
     max-request: 1
+    product: xibo
     shodan-query: http.html:"/xibosignage/xibo-cms"
-  tags: panel,xibocms
-
+    vendor: springsignage
+    verified: true
+  tags: discovery,panel,xibocms
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/login"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - extractors:
+      - group: 1
         part: body
-        words:
-          - 'xibo-cms'
-          - 'class="XiboFormButton'
-        condition: and
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        part: body
-        group: 1
         regex:
-          - '([0-9.]+)            | <a id="source-link"'
-
-# digest: 4a0a0047304502203ea9cdbff7b144d9dbe6911a242c678a6e329a9fec89e133800d9df1c38299c7022100bad016ec03c9129c5e23210b97ba6c0b8801ff0288787b79c8d1e31fdb33b713:922c64590222798bb761d5b6d8e72950
+          - ([0-9.]+)            | <a id="source-link"
+        type: regex
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - xibo-cms
+          - class="XiboFormButton
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/login'

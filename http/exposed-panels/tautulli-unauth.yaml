@@ -1,32 +1,39 @@
 id: tautulli-unauth
-
 info:
   name: Tautulli Panel - Unauthenticated Access
   author: ritikchaddha
   severity: medium
+  classification:
+    cpe: cpe:2.3:a:tautulli:tautulli:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)tautulli - home"}) || any(each(service["html.titles"]), {# matches "(?i)tautulli"})
+    fofa-query:
+      - title="tautulli - home"
+      - title="tautulli"
+    google-query:
+      - intitle:"tautulli"
+      - intitle:"tautulli - home"
     max-request: 1
-    vendor: tautulli
     product: tautulli
-    shodan-query: title:"Tautulli - Home"
-  tags: panel,misconfig,tautulli,unauth,exposure
-
+    shodan-query:
+      - title:"Tautulli - Home"
+      - http.title:"tautulli"
+      - http.title:"tautulli - home"
+    vendor: tautulli
+    verified: true
+  tags: discovery,exposure,misconfig,panel,tautulli,unauth
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/home"
-
-    matchers-condition: and
-    matchers:
-      - type: word
+  - matchers:
+      - condition: and
         part: body
+        type: word
         words:
-          - 'Tautulli - Home'
-          - 'Libraries</a>'
-        condition: and
-
-      - type: status
-        status:
+          - Tautulli - Home
+          - Libraries</a>
+      - status:
           - 200
-# digest: 4a0a004730450221009b3272438f7a184108376b773a02c4b9829ef7cf2a99a8c3cc6bd3f32dd76a7702205a2755902faa945e536766b4b3604c3cb740a7f3313c6e6a85ca7020dcf877a6:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/home'

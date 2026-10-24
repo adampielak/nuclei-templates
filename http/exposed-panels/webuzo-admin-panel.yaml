@@ -1,5 +1,4 @@
 id: webuzo-admin-panel
-
 info:
   name: Webuzo Admin Login Panel - Detect
   author: theamanrawat
@@ -7,32 +6,32 @@ info:
   description: Webuzo admin login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:softaculous:webuzo:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)webuzo - admin panel"})
+    fofa-query: title="webuzo - admin panel"
+    google-query: intitle:"webuzo - admin panel"
     max-request: 1
-    vendor: softaculous
     product: webuzo
-    shodan-query: http.title:"Webuzo - Admin Panel"
-  tags: panel,webuzo,admin
-
+    shodan-query:
+      - http.title:"Webuzo - Admin Panel"
+      - http.title:"webuzo - admin panel"
+    vendor: softaculous
+    verified: true
+  tags: admin,discovery,panel,softaculous,webuzo
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
+  - host-redirects: true
     matchers:
-      - type: word
-        part: body
+      - part: body
+        type: word
         words:
-          - 'Webuzo - Admin Panel'
-
-      - type: status
-        status:
+          - Webuzo - Admin Panel
+      - status:
           - 200
-# digest: 490a00463044022054e0538e243047ea8f4f2e787bf9e59c24a2ffabf47d84f6afd40bcc56014827022076bff933e679a2f50ef8cb013a1611ebda69035c1d56b9a44f5457b777a762be:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'

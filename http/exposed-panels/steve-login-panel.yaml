@@ -1,5 +1,4 @@
 id: steve-login-panel
-
 info:
   name: SteVe Login Panel - Detect
   author: clem9669
@@ -10,34 +9,31 @@ info:
     - https://github.com/steve-community/steve
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:steve-community:steve:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
-    max-request: 2
-    shodan-query: http.title:"SteVe - Steckdosenverwaltung"
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)SteVe - Steckdosenverwaltung"})
     google-query: intitle:"SteVe - Steckdosenverwaltung"
-  tags: panel,steve
-
+    max-request: 2
+    product: steve
+    shodan-query: http.title:"SteVe - Steckdosenverwaltung"
+    vendor: steve-community
+    verified: true
+  tags: discovery,panel,steve
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/manager/signin"
-      - "{{BaseURL}}/steve/manager/signin"
-
-    stop-at-first-match: true
-    redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
+  - matchers:
+      - part: body
+        type: word
         words:
-          - 'SteVe - Steckdosenverwaltung'
-
-      - type: status
-        status:
+          - SteVe - Steckdosenverwaltung
+      - status:
           - 200
-
-# digest: 4b0a00483046022100b722f49877c394cf29c275f560aab9705043e0302ae23cf065e43f99a0709356022100800c22ad657e6f92e223b70236ce5289a5a42ab3bd26e12c15bd20339a558d00:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}/manager/signin'
+      - '{{BaseURL}}/steve/manager/signin'
+    redirects: true
+    stop-at-first-match: true

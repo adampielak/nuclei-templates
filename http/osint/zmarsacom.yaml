@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-porn,zmarsacom
+  tags: osint,osint-porn,zmarsacom,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "Galeria użytkownika"
 
-# digest: 4b0a00483046022100934538ce3165ca51cd5bb5dbd62017af5db9fccfcdf0d129078f666adf2ad43c022100a3a716debde60e895556c1598731f43d067d959bc29314ad1078e39125c08b98:922c64590222798bb761d5b6d8e72950

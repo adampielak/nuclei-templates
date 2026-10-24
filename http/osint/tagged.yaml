@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,tagged
+  tags: osint,osint-social,tagged,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "s Profile</title>"
 
-# digest: 4b0a00483046022100ff097e3519f8ded2135d7dbd97bb131a6ff083101ca0de5c66a47f59bc7659b1022100af70401a270c495e173da23be9e7377df6831a7e68b7542cffe4223432af9545:922c64590222798bb761d5b6d8e72950
