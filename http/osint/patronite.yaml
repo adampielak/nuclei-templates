@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-finance,patronite,discovery
+  tags: osint,osint-finance,patronite
 
 self-contained: true
 
@@ -31,3 +31,4 @@ http:
         words:
           - "Zostań Patronem"
 
+# digest: 4a0a00473045022100856e3696c5641f2b418da5d14582b6fbae795d27331ffe86bd5e5cc4e8df13e5022001363a8bcf149bbb551d070869cdf7c59747320257ec674554fae57f31458584:922c64590222798bb761d5b6d8e72950

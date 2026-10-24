@@ -9,15 +9,13 @@ info:
     - https://dradisframework.com/ce/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:dradisframework:dradis:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Dradis Professional Edition"
-    product: dradis
-    vendor: dradisframework
-  tags: panel,dradis,discovery
+  tags: panel,dradis
 
 http:
   - method: GET
@@ -34,4 +32,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f967b907a9d7e37e1b1a40debe9afa20b504283315de9c3ff456fecccd4a9410022029a8ed0716a8ca0f0e5cacc555672761d0f8442b5c4e0faae92df312a0a27fac:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100dac22f18dcb6b26598ae8444627f6b0affe5cc3519b58af913e7c5d063d39f48022100f836f8b7685093b1f02f3ac1e2c298c0037dd13861b971f08dfdc7a2db7b5504:922c64590222798bb761d5b6d8e72950
