@@ -11,7 +11,7 @@ info:
     - https://merlin-c2.readthedocs.io/en/latest/
   metadata:
     max-request: 1
-  tags: jarm,network,c2,ir,osint,cti,merlin,tcp,vuln
+  tags: jarm,c2,ir,osint,cti,merlin
 tcp:
   - inputs:
       - data: 2E
@@ -22,4 +22,4 @@ tcp:
       - type: dsl
         dsl:
           - "jarm(Hostname) == '29d21b20d29d29d21c41d21b21b41d494e0df9532e75299f15ba73156cee38'"
-# digest: 4a0a004730450220757ff616b850ede825b079d7d9c2aaaf4c7160b6ce1b9d3046170e438f04aa9f022100becf4b33ce16fc750507d597e182c8e5aedafd0b32eaca668e6be54b558cf772:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502206927699c48ebbe2c756ba0c79ae85757a37395e98f8db448c7b598f89bd0fa0d022100ddb47054f2364d5b5ef80155c64cf7976d830a4a3317127ae71abe5be2819b7c:922c64590222798bb761d5b6d8e72950
