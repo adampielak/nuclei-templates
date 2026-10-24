@@ -9,11 +9,13 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/51695
     - https://phpgurukul.com/user-registration-login-and-user-management-system-with-admin-panel/
+  classification:
+    cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"Registration and Login System"
-  tags: sqli,auth-bypass,user-management
+  tags: sqli,auth-bypass,user-management,vuln
 
 http:
   - raw:
@@ -43,4 +45,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402206d891db0cfff156f9dbaf21661f1c99ab3a6a3f5d95ccc068e8b5163327797c902202f482bca7e9e518c763aa2773739f22e47a3e5ab4e635e0d9765087a0ecafc0c:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100d73185f3c6e20b908ed3af75960e8aaf9b8bf2d19c667e6cd4dabdcc51a4ffb4022049c6729f709fc48e1df394b6750fde4914b520b867c44f7cc3fd2d3fac9c7af5:922c64590222798bb761d5b6d8e72950

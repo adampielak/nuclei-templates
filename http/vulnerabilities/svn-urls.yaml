@@ -1,6 +1,6 @@
 id: svn-urls
 
-requests:
+http:
   - method: GET
     path:
       - /.svn/entries

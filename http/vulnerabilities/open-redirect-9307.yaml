@@ -1,9 +1,11 @@
 id: Open Redirect
+
 info:
   name: Open Redirect Issues
   description: This template can be used to detect Open Redirect vulnerability in the host.
   severity: Low
   tags: Open Redirect
+
 requests:
   - method: GET
     path:
@@ -23,12 +25,14 @@ requests:
       - "{{BaseURL}}/?flow=http://evil.com"
       - "{{BaseURL}}/?out=http://evil.com"
       - "{{BaseURL}}/?login=http://evil.com"
+
     matchers-condition: and
-    matchers:
+    matchers:   
       - type: status
         status:
           - 302
-      - type: regex
+
+      - type: regex 
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:http?://|//)?(?:[a-zA-Z0-9\-_\.@]*)evil\.com.*$'
         part: header

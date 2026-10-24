@@ -385806,4 +385806,4 @@ http:
           - 'regex("/plugins/admin-notices-for-woocommerce/", body)'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022050568205ee5c1bb310c6c9b6c0e9e0b5f62cca2085c0809149f908ff1ca5a724022100d576b32be2a546e0e61b8e1d305cc1eecd7e1a305fd6e226956694743abe6133:922c64590222798bb761d5b6d8e72950
+
