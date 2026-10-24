@@ -1,5 +1,4 @@
 id: wp-jetpack-fpd
-
 info:
   name: JetPack - Full Path Disclosure
   author: theamanrawat
@@ -11,27 +10,25 @@ info:
   reference:
     - https://wordpress.org/plugins/jetpack/
   metadata:
-    verified: true
     max-requests: 1
-    public-www: "/wp-content/plugins/jetpack/"
-  tags: debug,wordpress,wp,wp-plugin,jetpack,fpd
-
+    public-www: /wp-content/plugins/jetpack/
+    verified: true
+  tags: debug,fpd,jetpack,vuln,wordpress,wp,wp-plugin
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/wp-content/plugins/jetpack/jetpack.php"
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "Fatal error", "undefined function", "jetpack.php")'
-        condition: and
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 0
         name: disclosed-path
-        group: 0
         regex:
-          - '([A-Za-z]:\\[^\s<>"]+|/[^\s<>"]+)wp-content/plugins/jetpack/jetpack\.php'
-# digest: 4a0a0047304502201618db38675fc4e1df9ce5f0cc858e57cb81827092cf8fc0c5134e38179b13af022100bef52565f86601af757a3fe2e9bbc173cc5965de1e811d7a1e3e086870010dae:922c64590222798bb761d5b6d8e72950
+          - ([A-Za-z]:\\[^\s<>"]+|/[^\s<>"]+)wp-content/plugins/jetpack/jetpack\.php
+        # digest: 490a004630440220658e4d41d34d4e885bdb30d3cedbc8ee4089e337c8185b3fa6f3162c6a5b08fc022063acff3aa129f9d3562340ec6ea403127220e179d7c957fcbcabe01e4e5b22f2:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: and
+        dsl:
+          - status_code == 200
+          - contains_all(body, "Fatal error", "undefined function", "jetpack.php")
+        type: dsl
+    method: GET
+    path:
+      - '{{BaseURL}}/wp-content/plugins/jetpack/jetpack.php'

@@ -9,6 +9,7 @@ info:
   reference:
     - https://help.sap.com/doc/saphelp_scm700_ehp02/7.0.2/en-US/f6/2a7cb018bc4b239ea5b7af675a18ef/content.htm?no_cache=true
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "-266008933"
     max-request: 1
     shodan-query: http.favicon.hash:-266008933
   tags: sap,netweaver,cet,detect,discovery
@@ -33,4 +34,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022014758197b1d5d9665c58f8f22652fb791405b603bf9168873484efd600fcbada022100d36c3b9bf9f1c90b176589d8830f3219240140794b122bd62556615606bffcfe:922c64590222798bb761d5b6d8e72950
+
