@@ -1,4 +1,5 @@
 id: rdap-whois
+
 info:
   name: RDAP WHOIS
   author: ricardomaia,sttlr
@@ -13,109 +14,93 @@ info:
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     verified: true
-  tags: misc,miscellaneous,osint,rdap,vuln,whois
-http:
-  - extractors:
-      - json:
-          - .status[]
-        name: status
-        part: body
-        type: json
-      - json:
-          - .events[] | select(.eventAction == "registration").eventDate
-        name: registrationDate
-        part: body
-        type: json
-      - json:
-          - .events[] | select(.eventAction == "last changed").eventDate
-        name: lastChangeDate
-        part: body
-        type: json
-      - json:
-          - .events[] | select(.eventAction == "expiration").eventDate
-        name: expirationDate
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "fn") | .[-1]
-        name: registrantName
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "org") | .[-1]
-        name: registrantOrg
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "email") | .[-1]
-        name: registrantEmail
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "tel") | .[-1]
-        name: registrantPhone
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "adr") | .[-1][] | select(. != "")
-        name: registrantAddress
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "adr") | .[-1][-1]
-        name: registrantCountry
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrar")) | .publicIds[] | select(.type == "IANA Registrar ID") | .identifier
-        name: registrarIANAId
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrar")) | .vcardArray[1].[] | select(.[0] == "fn") | .[-1]
-        name: registrarName
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrar")) | .vcardArray[1].[] | select(.[0] == "org") | .[-1]
-        name: registrarOrg
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrar")) | .links[] | select(.rel == "about") | .href
-        name: registrarUrl
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrar")) | .entities[] | select(.roles[] | contains("abuse")) | .vcardArray[1].[] | select(.[0] == "email") | .[-1]
-        name: registrarEmail
-        part: body
-        type: json
-      - json:
-          - .entities[] | select(.roles[] | contains("registrar")) | .entities[] | select(.roles[] | contains("abuse")) | .vcardArray[1].[] | select(.[0] == "tel") | .[-1]
-        name: registrarPhone
-        part: body
-        type: json
-      - json:
-          - .nameservers[] | .ldhName
-        name: nameServers
-        part: body
-        type: json
-      - json:
-          - .secureDNS.delegationSigned // false
-        # digest: 4a0a004730450220787061b7c200cca80f91bab07e4a357af4868c42434bf0db5d6c8d8309f65dfb022100ef38f107e5c933ef1d727558f691764eb6a1b8bdacca866523a02a249c9e2622:922c64590222798bb761d5b6d8e72950
+    max-request: 1
+  tags: whois,rdap,osint,misc
 
-        name: secureDNS
-        part: body
-        type: json
-    matchers:
-      - status:
-          - 200
-        type: status
-    max-redirects: 3
-    method: GET
+http:
+  - method: GET
     path:
-      - https://www.rdap.net/domain/{{Host}}
+      - "https://www.rdap.net/domain/{{Host}}"
+
     redirects: true
+    max-redirects: 3
+    matchers:
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: json
+        part: body
+        name: status
+        json:
+          - '.status[]'
+
+      - type: json
+        part: body
+        name: registrationDate
+        json:
+          - '.events[] | select(.eventAction == "registration").eventDate'
+
+      - type: json
+        part: body
+        name: lastChangeDate
+        json:
+          - '.events[] | select(.eventAction == "last changed").eventDate'
+
+      - type: json
+        part: body
+        name: expirationDate
+        json:
+          - '.events[] | select(.eventAction == "expiration").eventDate'
+
+      - type: json
+        part: body
+        name: registrantName
+        json:
+          - '.entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "fn") | .[-1]'
+
+      - type: json
+        part: body
+        name: registrantOrg
+        json:
+          - '.entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "org") | .[-1]'
+
+      - type: json
+        part: body
+        name: registrantEmail
+        json:
+          - '.entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "email") | .[-1]'
+
+      - type: json
+        part: body
+        name: registrantPhone
+        json:
+          - '.entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "tel") | .[-1]'
+
+      - type: json
+        part: body
+        name: registrantAddress
+        json:
+          - '.entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "adr") | .[-1][] | select(. != "")'
+
+      - type: json
+        part: body
+        name: registrantCountry
+        json:
+          - '.entities[] | select(.roles[] | contains("registrant")) | .vcardArray[1].[] | select(.[0] == "adr") | .[-1][-1]'
+
+      - type: json
+        part: body
+        name: nameServers
+        json:
+          - '.nameservers[] | .ldhName'
+
+      - type: json
+        part: body
+        name: secureDNS
+        json:
+          - '.secureDNS.delegationSigned // false'
+
+# digest: 4b0a00483046022100ad80b6de8e6031b71c9ed3714fee31c4d47447bc27ca8b8e5784ef200f27c663022100ad31bbd079ecfe1ac91bdc0b590cff4bd93bac28cffd56abeb0db5ac43837f0b:922c64590222798bb761d5b6d8e72950

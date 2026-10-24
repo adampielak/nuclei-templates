@@ -1,5 +1,4 @@
 id: s3-username-disclosure
-
 info:
   name: x-amz-meta-s3cmd-attrs Header Username Disclosure
   author: DhiyaneshDK
@@ -13,32 +12,29 @@ info:
     - https://hackerone.com/reports/819146
     - https://medium.com/@jonathanbouman/how-s3cmd-discloses-your-linux-username-to-the-world-b9e4d79cb9e3
   metadata:
+    runzero-match: service["http.head.xAmzMetaS3cmdAttrs"] != ""
     max-request: 1
-    shodan-query: 'x-amz-meta-s3cmd-attrs'
-  tags: s3,aws,exposure,misconfig,header
-
+    shodan-query: x-amz-meta-s3cmd-attrs
+  tags: aws,exposure,header,misconfig,s3,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: header
-        regex:
-          - (?mi)^x-amz-meta-s3cmd-attrs:\s*\S.+$
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
-        part: header
+  - extractors:
+      - part: header
         regex:
           - (?mi)^(x-amz-meta-s3cmd-attrs:\s*\S.+)$
-# digest: 490a0046304402204597dee2da33bd5b16effdf9bfd629d33501caa5f35015c68f163e3b9de8612a02202bf8d5ff802c69342d169487f5cf9ef8bdd52a4f81b0a942c388b7d05f394021:922c64590222798bb761d5b6d8e72950
+        # digest: 4a0a004730450221009002efafa6d4eb46cc06873ed7273151352791f1731abbcb2a949e2cbd6f384d02206da1fb01dcdbfdb1ca635876e013aedf1dc9661e43c7f04bebe6b0733fa0e937:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    host-redirects: true
+    matchers:
+      - part: header
+        regex:
+          - (?mi)^x-amz-meta-s3cmd-attrs:\s*\S.+$
+        type: regex
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'
