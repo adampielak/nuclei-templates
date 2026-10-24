@@ -10,12 +10,13 @@ info:
     - https://github.com/storybookjs/storybook
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.title:"storybook"
-  tags: panel,storybook,workshop,discovery
+  tags: panel,storybook,workshop
 
 http:
   - method: GET
@@ -39,4 +40,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022100fdccb2c05990d3374dac713334764a416eed8f997b7de7e814c4f7e488162aca021f589aa963f5bbe52325c3b5dca453cceb134202f4eaa8dd22b9a846c1fc6526:922c64590222798bb761d5b6d8e72950
+
+# digest: 4b0a00483046022100cb8d2e0a80fe41f10f06114167c7d36e8e960bb758e8b77120028701b6a1784302210083af55d7486201a77f925741e161db8595dd7215e1f00b585bef6ba4c5549bed:922c64590222798bb761d5b6d8e72950
