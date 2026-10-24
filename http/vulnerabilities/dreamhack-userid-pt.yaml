@@ -10,7 +10,7 @@ info:                     # Bloco informativo com metadados da regra
     permitindo a leitura de arquivos arbitrários no servidor, como o arquivo 'flag'.
   tags: ctf,dreamhack,path-traversal,lfi   # Etiquetas (úteis para organização, filtros e relatórios)
 
-requests:               # Lista de requisições que o scanner fará (pode conter vários cenários)
+http:               # Lista de requisições que o scanner fará (pode conter vários cenários)
   - method: POST        # Método HTTP a ser usado nesta requisição (POST)
     path:               # Caminho do endpoint; pode usar variáveis (ex.: BaseURL)
       - "{{BaseURL}}/get_info"   # URL alvo onde a requisição será enviada (variável template)

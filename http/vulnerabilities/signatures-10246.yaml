@@ -34054,4 +34054,3673 @@ requests:
           - "(\"23ba1414b6b41244e36280f806264949\" == md5(body))"
   - method: GET
     path:
- 
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/32/dll.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"f0e74b60a4bd86a7e3c72703ae35bdbd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/bmp.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"72517dbfdffeee4aa7d31fd4bc08989a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/zip.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"08302bad21f1fa6c63e2676d8997c4c5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/ppt.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"5518e2e6b0fae1d10afcff0855ac54d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/default.icon.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"bfa40282d9494b2a4d2999f1b0cc3fb9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/mdb.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"a313226470463b1cef10c0a9e9ef810c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/html.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"1411e223b68d5b52ffe1af867f60c4a4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/cs.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"0a2d3ee44e20f13736fad04e7894b6df\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/htm.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"1411e223b68d5b52ffe1af867f60c4a4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/icons/dll.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"f70aeb96f2b1e6b321b8a0b33a0ec388\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/FolderUp.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"191d2a2463a0166ac3be558bea018c72\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/FolderOpened.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"cef0cd9df5fe27c9db45d897ab9690ce\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/FolderOpened32.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"1584da24e3b81672847ec8c1d5ff9dba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/Folder.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"08c5276ccec1e43cc5f3c6d0be5d2b8b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/spacer.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"325472601571f31e1bf00674c368d335\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/images/ButtonArrow.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"207173de248eeffe2f5137572e25a5f6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/fck_editor.css"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"116c5192c5d46af5a85c9979678ace03\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"d0366bae331d7f9ae23ce19a651542e4\" == md5(body))"
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"ee0e5b2ad225a50e52b917f188d421fd\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"e67d906c237100f78de7613dd32644ac\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/fck_strip.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"00187b4e1266a9591662dd3e8923171e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/fck_dialog.css"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"2ae94bf92e17a42c92002edaa0e0a169\" == md5(body))"
+      - type: dsl
+        name: 1.0.3 - 1.0.4
+        dsl:
+          - "(\"4e0ee7f46f03e3cfcc5869bd0d390804\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.2
+        dsl:
+          - "(\"67b95b635c8773ac6df5cb4fdfd7e7cb\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"9ebeb4879796841b2826891bd221a2d6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/images/toolbar.buttonarrow.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"f6b2fd6b57149cb40c68e95ba5eee9a5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/images/toolbar.collapse.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"99e0a3749c74b70c5286306cc0fe4fbf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/images/toolbar.separator.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"ea7f3776b57186a20d18af090fd7de53\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/images/toolbar.arrowright.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"cfa64a53737d552242fb39576da6856d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/images/toolbar.end.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"df3e567d6f16d040326c7a0ea29a4f41\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/images/toolbar.start.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"7ed13749e9da48abea49e9b22543120b\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"8d377b3d4b6093e89c9ce92d1eac772a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/images/toolbar.expand.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"f93ba24dfb635b29420f1604d7eaf861\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/fck_editor.css"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"ffa003d4c18ac96187fb6f4353a69174\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"9926a4e7c15d031576bb76021a3bd693\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/fck_strip.gif"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"fa400f7aa96703c2ba23c1997fc8437d\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"fd811aac74aaf1f31d7c6992b0142755\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/fck_dialog.css"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"936c5a2b6182fd0ae9fe6007a9e6319f\" == md5(body))"
+      - type: dsl
+        name: 1.0.3 - 1.0.4
+        dsl:
+          - "(\"bd4b5778e02cb56c6c69a5991bac3afc\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.2
+        dsl:
+          - "(\"e5161c44b619a5ec164fa09e25f65d8a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.buttonarrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"f6b2fd6b57149cb40c68e95ba5eee9a5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.collapse.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"e036c8aee66cfe0fd937c2795da7c5a9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.separator.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"25baafec2ab13e6c7b9010a9e6ea37a4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.arrowright.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"cfa64a53737d552242fb39576da6856d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.bg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"dcd7119a5634c5abeb0f53c40ecc8b87\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.end.gif"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"e4d00c2d7305ea76334d519706f3d901\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"4f1d410faff75f990f9ed3b2b8489a5d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.start.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"f3e99f7d83de836d70a183d0394edd18\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/office2003/images/toolbar.expand.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"dad1ef65b8998a5610feb19d10862259\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/fck_editor.css"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"9dca76a8842999821336490dea33e8dc\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"ea4789f772c6d6b25f2a032f0cce177d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/fck_strip.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"00187b4e1266a9591662dd3e8923171e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/fck_dialog.css"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"5e330edfb68a7c0ef404780cb36559c9\" == md5(body))"
+      - type: dsl
+        name: 1.0.3 - 1.0.4
+        dsl:
+          - "(\"7d6ff42838ad03cae6dd16e36cac561a\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.2
+        dsl:
+          - "(\"2ad5b0e1df85e4b0d0f4de0b35d1720c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.buttonarrow.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"f6b2fd6b57149cb40c68e95ba5eee9a5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.collapse.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"99e0a3749c74b70c5286306cc0fe4fbf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.separator.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"ea7f3776b57186a20d18af090fd7de53\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.arrowright.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"cfa64a53737d552242fb39576da6856d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.buttonbg.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"27384790d5a6040b37ca973c3188c2af\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.end.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"df3e567d6f16d040326c7a0ea29a4f41\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.start.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"7ed13749e9da48abea49e9b22543120b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/silver/images/toolbar.expand.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"f93ba24dfb635b29420f1604d7eaf861\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/_fckviewstrips.html"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"67509106641916a45e23ab2753856126\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"48758bcdb84d7d063d980d7cd3e5ab2c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/anchor.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"60a2121d55f9238f529458ee5f2e6e4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/arrow_rtl.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"840651429b858558c636ff5f26a764ed\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/arrow_ltr.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.8
+        dsl:
+          - "(\"91d8e121b6fddb9d69e8a2c23b9b988c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/spacer.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.8
+        dsl:
+          - "(\"df3e567d6f16d040326c7a0ea29a4f41\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/fckstyles.xml"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"14b543d6cb03412aa4710c7145805207\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"f07eadc2f84c4638d3e2af673031f9c8\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"3075152fd8e0a3aab9e8cde2be7a7151\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/fcktemplates.xml"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"c81c86df87c2f9f616e6e1d09bc08a0d\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"2a1e4cba52ed5baa193d53eaeaa89757\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"adbb9ff304746b8c8572c2620472599f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/_documentation.html"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"7d9c2e23dc511bbe9f34a456b6a56606\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"20a64a949ff5ad2d9c97b5ba47089fa6\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"3bfd544ecd6c04f3b898111f2797fde8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/license.txt"
+    matchers:
+      - type: dsl
+        name: 1.0.5 - 1.0.8
+        dsl:
+          - "(\"a99b8d7343416a7039ff0bec3161e4f6\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 1.0.4
+        dsl:
+          - "(\"4eed9ee12b3b7da80c678bb0759de70f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/4off.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"1ed37293f6a39b1f3421e02b5d8d535e\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"8a264a8c73ab62c22e18eb71c92dab26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/4.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"fe38e8bd21eb0aac860ebeab99eaa57e\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"0830c0c0d105e6a4663b6ca65bf37690\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/1.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"abec8f07af44100aa8b4e99dbdaed257\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"1e68d1c80d2ef0e3af849ff2e3b2f69e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/5.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"16a1984cf4d6366482f9d7e7930bfe2b\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"e67a6bf4116c3752ca2fde1713aead2e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/2.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"0aee26e2601f87600f800a46a1886e76\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"ecb10329a3ea4970fa41ab2d30d8d493\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/3off.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"26a177a803e0e98400cdfbced75fcef2\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"864fedc7408e94ade0cbd0c6b0ef9be0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/yellow.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"e1fd151b8ce2dcc916fe4cb124ea096c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/2off.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"53ae2ffad7f6a554a122f674ad65b124\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"da485731d0bcf338880c58fcdf97d1d3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/1off.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"7d6242f29a0bb17864807b331701cbbc\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"258bca313e16efda0386dbf9caab9197\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/3.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"0690c3422b77d0b73ceaf9c04d30f175\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"5beb5b71dcea278c000b6a9bc975b8fa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/true.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"b53dba2e6b14ffd85d09e1260fce8c77\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/green.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"708c948612bb821dae01ae5c9df94252\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/false.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"8966fd3b02db723427525867cd6f7efe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/5off.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"8795a5f80c8e33a77a266712a6dd3d86\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.13
+        dsl:
+          - "(\"96918f61203e1a9f4b27eaf549690f87\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/images/cms/install/red.gif"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.5
+        dsl:
+          - "(\"f38277ebdbb6d80c456da4b322ac1049\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/css/behaviors/hiddenfield.htc"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.4
+        dsl:
+          - "(\"dfd8bae31178cac3b4db067ecda45eaa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/css/behaviors/hiddenfield.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.4
+        dsl:
+          - "(\"d9e9680bf1e9589c662f040f59680d3e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey.html"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"a866cbe07f65a24a66c810c447156d82\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"17ad8a8c40a1c90fa399e4cfbb0c513d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey/multihexa.js"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"032d4d3184d93f486df802895ae278a0\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"6a605965fe2cf0dd35522f0e1aa8364b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey/dialogue.js"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"92c39a0b87970a4f9b7ba4746deda964\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e782abcf393f4c3543ce8acb75318c4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey/data.js"
+    matchers:
+      - type: dsl
+        name: 1.0.3 - 1.0.4
+        dsl:
+          - "(\"f10841a609f8c0d7b9ec2e0e379f70f5\" == md5(body))"
+      - type: dsl
+        name: 1.0 - 1.0.2
+        dsl:
+          - "(\"f00c64b74e5b10a4cafaf55cef8ea5f1\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"72a9ef80bdfb5dab87d93a607b474d1b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey/00.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.4
+        dsl:
+          - "(\"221d8352905f2c38b3cb2bd191d630b0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey/keyboard_layout.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.4
+        dsl:
+          - "(\"41cdcde6f69e6fcc9f5bd02288598292\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey/diacritic.js"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"85981630bba62f105de5a615667e2c60\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"50f3e98a459585e21032829de87a84ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_universalkey/fck_universalkey.css"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"4f7653625efd89a0ed27ad1e867c7d6d\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"b66acd4a3d5464cff305dfb99bfc17ca\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_about/lgpl.html"
+    matchers:
+      - type: dsl
+        name: 0.11 - 1.0.4
+        dsl:
+          - "(\"7674d2fb8caf17e0812ecd85718eada8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/upload/test.html"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"287088b775f3678eddac3975a300def8\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"f40fcc58f9b8719ad9aee61a217bf039\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/filemanager/browser/default/connectors/test.html"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"5662cd64639e2bf907a81648b07ebadb\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"0e08af3fbbe9e2c8b960e93498841d3d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/fckblank.html"
+    matchers:
+      - type: dsl
+        name: 1.0 - 1.0.4
+        dsl:
+          - "(\"484306a56d6084cf114d41d96806416f\" == md5(body))"
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"74a175b8a6d2822f564a7e7627c4e476\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"c54cbd671afc0891605ffb7dd7ec82e1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/logotop.gif"
+    matchers:
+      - type: dsl
+        name: 0.11.1 - 1.0.4
+        dsl:
+          - "(\"648cf1ce5a2c537cdca380c098a60e86\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp865"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e49ffc35520844a3543f192ea63c913c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-11"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"c2282ed0bdb0a03c66d815ea51ce4d82\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp437"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"9fa384add289191cee26e573ab065285\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp775"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"91cc876d63c3afa18f5dfcee4036d1d4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/gsm0338"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"c8bcd60a9a4c022d1c452799244cfbd0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-5"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"07b7281ff85845379e62c04378e10ff8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1253"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"8c2ebc299fb7ca3e78bedf682013ceb8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp1026"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"2c6dd05cac13a6ed67d2e0fa280c8540\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1255"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"9c8e4c6b5e3822d1def8940956d7b282\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-1"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"46af357b0bef0e725178d24e09020f52\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp863"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"fe925b3de1f9aac44806e6a0530bfe03\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/stdenc"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"0302fc1ecaec8e9e862034f9f9edbde0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-8"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"037c8cd9bd2e8308381f50cd1e9cb6b3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-15"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"c0b0a95e35fc5e53461b2cee84122c17\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp500"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"32a5ee47b9cb8e1f1b21e4a09619d59d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp850"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"62ee20238feda88bd7dc47972414f477\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-9"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7d1c2f349e90eee8cfaea3bdab66fb50\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1257"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"3c3fa6c6bdd90881f298c676aab77e96\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1252"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"2d77c9c1dd3bbc9837af80666fac146d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp874"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"c8b2632f5a34a26eff68b282e3800d30\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/koi8-u"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"b7056bc03fde6aebe982b676f12d49ac\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/us-ascii"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"440939354c33cb73c6c38b2f13eaeda7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1256"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"5ebe3ede59a46614545d5b13994be705\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp424"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"36378f04896f7204b1b234021d7edb91\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp857"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"9fa3a78104b030b8caf372c0245ba5f4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp875"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"672a5e1b6994a8013fdc7c044ce595ba\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-16"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7376a925d2954e83453962f4631e8f69\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp869"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"29e77f77d72407a824c07f69d9cb5505\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp856"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"a09d1332023087134efd545ccc236651\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp866"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"329bb893d6f6f32958d17d07e12cb8c4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/turkish"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"72ca5e25748dfd8cd5057269fc6865df\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-4"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"2bf18f626f29c196189691813c506e3a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp737"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"a53757f990895232e68462d0d4f1fb10\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/mazovia"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"222a5d81350c945ea1465474a80e4778\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp860"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"b549b762b3e5eeb9ef49819a80182b7a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp855"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"b90384551401c450afe047f55b9dabb0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp852"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"21ecb4ec417a5b2fe27d31effd73936b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-2"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"0471f820c11d79574785cd37b7be6c7f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-3"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7276c0ccccdbac32afe4cccba41562d6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp1006"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e8430fc1a80d090a67b29a583431b657\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-10"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"0d7e6b6a13885cf7887f984116153a44\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1251"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"1b8b43ef8443c2080003233fb087a729\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-7"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"d582dd5d8282026ee9dd61195e2a3e73\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp862"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"546c46dfa4cbb1d4733f79b686e1552f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-13"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"88e17e47e36c0a11d0741a6e14fca79c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-6"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"a036b82037c6518f3ad4fd73912eb477\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1254"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"fa8cc3153d7c376dd3badde1de58be79\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1250"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7447b69ad37137e4e6a588a9dbbcc24e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp861"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"4e084b225da90f24606541668082f0b5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/koi8-r"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"84cb4fd0cd0aedf69bb74467443eedbd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp864"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7d288a05654d8a38d50b0056f2c539b2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/iso-8859-14"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"1f867e300bc6091aa02efffcf7a55307\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/windows-1258"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"febec44e65efe400b8851b52f48f1ccb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/ConvertTables/cp037"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"b2a8be5b4288f2cc89f17ff72b2a2952\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/convert/License"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"80cd32b2644bd46ceab214d1ea100879\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/lang/fcklanguagemanager.js"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"d3d7a3b8fe5a99894b5cfcc6c2ad24a0\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"ccc83d66364cd9e07ffed7f918f1af71\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/js/fckeditorcode_gecko_2.js"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"71397334c7ba36b32274b2393d3c413c\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"17423466eb646f0a6b182b0296815bc3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/js/fckeditorcode_ie_1.js"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"7e91bbd0090587b8b8769233b3bf5373\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"2e98f6f0ab0c68c1625ac08acc2174b6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/js/fckeditorcode_ie_2.js"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"650a5f964192ef4dd1d45e323c578db5\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"40326939c9ba7ea73bcad4b3a42c449d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/js/fckeditorcode_gecko_1.js"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"ef106fa1a3362f040c8914e073040b6f\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"a24724a13266c798ae83f4506c5b74cb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/js/fck_startup.js"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"379e85217ff178f01d60f5aef061dfa3\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"2cf164a02696b50e4054d296d682e105\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/css/behaviors/anchors.htc"
+    matchers:
+      - type: dsl
+        name: 0.11.1 - 0.13
+        dsl:
+          - "(\"2f38e9c4aa041f18342c90c311f3f04c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/css/behaviors/anchor.gif"
+    matchers:
+      - type: dsl
+        name: 0.11.1 - 0.13
+        dsl:
+          - "(\"60a2121d55f9238f529458ee5f2e6e4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/css/behaviors/moz-bindings.xml"
+    matchers:
+      - type: dsl
+        name: 0.11.1 - 0.13
+        dsl:
+          - "(\"9a2ec5e4964270a8c5063ae6fd48a494\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_template/fck_template_moz-bindings.xml"
+    matchers:
+      - type: dsl
+        name: 0.11.1 - 0.13
+        dsl:
+          - "(\"470ffb83440c7b0314520991c6b51953\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/dialog/fck_template/fck_templateitem.htc"
+    matchers:
+      - type: dsl
+        name: 0.11.1 - 0.13
+        dsl:
+          - "(\"62770b0cced9fbb2a233eb8e2cd7ec0e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/fckdocument.html"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"dc9c023130407aac642145db11915066\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/fck_contextmenu.css"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.13
+        dsl:
+          - "(\"52813f6793563830b828a90492f3eaa4\" == md5(body))"
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"c529da36cd834369afe5057f4d4e7fdf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/inserthorizontalrule.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7b576542842b483631772b8a23c1fd5c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/about.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"28ddd9552b5d873244e8029b808eca20\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/removeformat.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"ff2a41797082a1f0a0e6e465c069abc3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/outdent.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"892d2413b3546219da06058de7109e95\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/form.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"12cbdf654f97da0d77fe068e33ff7e85\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/textcolor.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"bf438273416fcfb41f1a3a39e7a6671e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/redo.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"310815c1dd0658164a0d2cb95a8c3d3e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tabledeleterows.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"db5cd3f70c616c3c69fa5f4f350f815b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/pasteword.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"525626e1dbea31535c1bbf06037deb7c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/anchor.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"39eabad45e61f236f18ee073408db410\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tableinsertcolumn.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"1f922e43d59a971bce88574175883f57\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/source.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"3f2effa1a8c12f1a8ab497796ede8e36\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/bold.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"27d4df96222c1751956252c9e2a098c0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/print.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"90acf2c1e90a7c708ff5484fe09239e2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/button.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"54edaf129190f689dbb18c653d1095ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/textarea.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7939998c855ea072066fffe9219a2642\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/unlink.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"5c1a4b82b77ea0f63d26c3b1bad6ab90\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tablemergecells.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"6120176b5d3b3d19f264081e5657fec5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/cut.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"320da8ade8cfbcf8fbe3339c0543a3f3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/preview.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"59c5e274d2f2045af7e94b08f63057da\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/justifyfull.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"48976768ed89d7960254584085d954d0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/indent.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"ee9e9926a8034643079c3a9d254c694b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/bgcolor.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"903015da7796376b5a9df5e16baa4370\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/newpage.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"54ff8b277f2dd414cdd8df8b82ad4525\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/pagebreak.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"c57d7a8b40fa1770dbe24940a8647c73\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/docprops.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"c6ff474a2100e00c0c2773f6231a765a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/showdetails.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"29adf349dce2d0249ccf96f33530c51d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/pastetext.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e9b3ca4e8e16358a75d848cde6e01dab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/radio.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"ae19c18b7e07507e4449e2ce1422c6d7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/smiley.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"541864938751f6b4f38b9fa918afbb0c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/unorderedlist.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"77f31cbffa75bd6462c11789dc34cfcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/copy.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"5c982528b35ebccd4b9904dbc28a8712\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/link.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"857c163de8f19bdc8461eebf8dcdfb22\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/paste.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"d1b252a0f679bf8ce631a92d8786b8b9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tabledeletecells.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"15d47cc7f50ef262dd02770c5ca9298e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/select.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"25889184c22a43c371ae0b0c55c13793\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/numberedlist.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"0586b46e25ec6cf88d8b97be2f5dddd1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/bulletedlist.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"77f31cbffa75bd6462c11789dc34cfcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/specialchar.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"791a366d939c1a106fcc6921f5abd6c3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/showtableborders.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"acf6d86ef3dfea723e7acd2736f4fcfe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/find.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"6b6418a38bf6df295dee104bc9df4112\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/italic.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"2d253794f74f943c7bc0b512129e2c3e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tablecell.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"d758521817eb80cea0fbbafe6b8c557f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/insertorderedlist.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"0586b46e25ec6cf88d8b97be2f5dddd1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/underline.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"498e54bba5755a0faea86473f5e719a8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/textfield.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"98e14622bee4319efe37fbd7482655a8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/imagebutton.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"ea13ea6e6c46280fc5e9d981b796c9cb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/spellcheck.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"f61f9e7b9c1c9aa4701f13e5beae03e5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/superscript.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e5d3ebd081ae4971fb8b50f7e8abd53a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/selectall.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"20d2d6ccd4e2560a37c4997221a3dfc5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/flash.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"dbfa1e78b693d2f82222bb60b14552aa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tableinsertrow.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"92b6f7cbe938fcad84f3af47ede2874c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/undo.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"86e7ccf829bb11c23c2175efd8a14dab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tablesplitcell.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"5a64d8ed5d70630a3f56dd453470de7f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/insertunorderedlist.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"77f31cbffa75bd6462c11789dc34cfcf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/justifyleft.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"94bada222e88d742938c290110152a7e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/checkbox.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"bab49889de49fb1e821779e23474f1dd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/subscript.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"fbd0a8bb7980b6a59cbb54209366dc68\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/justifyright.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"2e06e8ab27a1f094c0ff0a9e3d7dda2b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tableinsertcell.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"76aecd6013ac8abec5e44704fb24b205\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/tabledeletecolumns.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"316cafa6d53017aac5b966292b526335\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/save.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"9d2cf08784ab2cd2abe8937bbfec039b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/table.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"8bd8b5630b76bcea1f10444274fefd6f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/strikethrough.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"821284ea1e4fa8e6593003f80fce2bc3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/templates.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"4cf891166bc911dabc59484e84fb0856\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/replace.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"77f4ea503c1a2ccde8df0eb41f4c2c52\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/justifycenter.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"ef9a959092ce56f9ac0ffff2c4c6793a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/hiddenfield.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"88c9be216acb121ac003d75d5855909f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/universalkey.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"b8796ae279e20ee8984b99445833a1c4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/skins/default/toolbar/image.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"749975c367f0a520264e7f4a1ef7e651\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/wink_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"2acb3656cf7889187530b7455beca2c9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/lightbulb.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e2552eba6c6d9b7bec8131521b611902\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/cake.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"18c62fda1474df74b22ed91b1d59c74b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/shades_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"abcb733c422a76308f5c7e1472475b34\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/angel_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"7133019b554c46740d5a0d6c143a01c0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/teeth_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"863f7febfce32095dbfc78bb36750879\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/regular_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"92428b2166257663aa7369fe8a7219af\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/omg_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"81390baeb7e4299286721c07eb5bd74e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/heart.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"be324251e9c589abbaeedd01dbcd0ded\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/cry_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"ad1c91cc429f3fe2874eed1d81ca110a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/sad_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"98c1a52fc0cc02bdc5a39dce35d0b7cf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/thumbs_up.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e2f519224f02cf489642e3d557262f35\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/broken_heart.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"e5a5f3486fa43a329672e62777055a01\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/whatchutalkingabout_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"d74e9ebb7ceeb117814aab7000faf489\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/thumbs_down.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"65c430f69a5b766a58fe940bd90575ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/confused_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"4bc9aff163e0749a6c9942dcb141382a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/kiss.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"2ef7fffad10faf28213d51e41db69c2f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/envelope.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"da9a98c4b0c3b379e756025daac4818e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/embaressed_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"529ed047bf5a3515e7f0a536f42e44c7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/devil_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"10bd9076f5c2efe1c17a82e8d1e9a7e4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/tounge_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"73ff8aee8bede562b0bf18b8786fecbe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/images/smiley/msn/angry_smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.13
+        dsl:
+          - "(\"d160df50ef3f3e126f02a360f2d26181\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/listener.js"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.12.2
+        dsl:
+          - "(\"e44ab3f01f7126299f25ec719c492a1e\" == md5(body))"
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"93c8b2f4cbf9473342bf8fc46c49a4ea\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/sqlitepo/sqlitepo_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"e0057373c540c5e03b9e2a81941e2530\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/postgres/postgres_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"b1e49834b6f19b1b8d3523eb0a737bfe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/postgres7/postgres7_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"29f0b0cd815a1202619ed69570a091d6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/mysql/mysql_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"4317866cc836527514be852aa8c23f98\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/postgres64/postgres64_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"f4184e00f81aa27b75d46f0b7303faf6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/postgres8/postgres8_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"517040b17621ee071e04b70e12c8d081\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/mysqli/mysqli_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"0dc9249b3a74f7c3fcf6183180e3adbc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/msql/msql_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"972c3ea2aff472dc40c49d8252f565e8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb_lite/adodbSQL_drivers/sqlite/sqlite_pear_module.inc"
+    matchers:
+      - type: dsl
+        name: 0.12 - 0.12.2
+        dsl:
+          - "(\"05100fd6007c40c4ef8f1fbe34a8637e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/xajax/lesser.txt"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.12
+        dsl:
+          - "(\"a6f89e2100d9b6cdffcea4f398e37343\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/lang/it_IT/LEGGIMI.txt"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"9cb2b452747f3fa25a0345a449cfa061\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/log4php/log4php.properties"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"9f16663232c054f7fbc7a057b4b749e2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb/index.html"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.11.2
+        dsl:
+          - "(\"d41d8cd98f00b204e9800998ecf8427e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/adodb/license.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.11.2
+        dsl:
+          - "(\"af93a1a6737be1af8ab9f41ce036af63\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/smarty/NEWS"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.11.2
+        dsl:
+          - "(\"603920b4ed9798a7cdfaac34c8e59637\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/smarty/ChangeLog"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.11.2
+        dsl:
+          - "(\"7918df1580fa075a714d38563dac6a8e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/News/lang/it_IT/LEGGIMI.txt"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"9cb2b452747f3fa25a0345a449cfa061\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/logotop.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"648cf1ce5a2c537cdca380c098a60e86\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/plugins/CMSModules/Copia di cmsmodules.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"8ef6940626da4b5977ffa5483b0b2558\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/plugins/CMSModules/info.txt"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"287e8f63b154da22b9a203432ed35bbd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/FCKeditorX/FCKeditor/editor/plugins/CMSModules/Copia di logo.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"5b3a950ade3a861de4d36bb750c8a328\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/CSSMenu/lang/it_IT/LEGGIMI.txt"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"9cb2b452747f3fa25a0345a449cfa061\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/CSSMenu/CSSMenu.js"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"42de5bb878e05e13f7cd671cf098f583\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/CSSMenu/images/arrow.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"f431f4e7bbc5d9e9022f69f25b828b65\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/CSSMenu/images/arrow-right.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"f431f4e7bbc5d9e9022f69f25b828b65\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/CSSMenu/images/arrow-down.gif"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"0cd26140f6bb437f9038040d5e1495a9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/EllNav/lang/it_IT/LEGGIMI.txt"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"9cb2b452747f3fa25a0345a449cfa061\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/EllNav/index.html"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"d41d8cd98f00b204e9800998ecf8427e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/EllNav/docs/sample_css.css"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"0b4824e4cdb6401e4bb68739bc8ca2f6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/EllNav/docs/sample_template.html"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"598d412e61a314fc44e29836d5580f3d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/EllNav/docs/README.txt"
+    matchers:
+      - type: dsl
+        name: 0.11 - 0.11.2
+        dsl:
+          - "(\"3795f08fb301abb179f705ca29f1cd04\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/AUTHORS"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"92fd4f0370ff1f586cd910c1aaa506c7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/COPYING"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"94d55d512a9ba36caa9b7df079bae19f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/UPGRADE.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"16fe4e94acad7544787f69ca8363c073\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/INSTALL.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0f189e51c531d554d82cf5463d02525b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/index.html"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"d41d8cd98f00b204e9800998ecf8427e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/LICENSE"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"3354b7a2968ad970eab9f914f6d83675\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/layersmenu-cms.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"cf1d81c672c9656876b2da38fb2af807\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/templates/layersmenu-sub_menu.ihtml"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b9f6588e6adcc3c02bbd3316f08620e1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/templates/layersmenu-horizontal_menu.ihtml"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b276fb17f13d4c5143ea4547cfed9060\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/templates/layersmenu-vertical_menu.ihtml"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"6295b29a26aff4077688d27c807fa80b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/COPYING"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"7fbc338309ac38fefcd64b04bb903e34\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layersmenu.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0be75788bcdef847d8fc18f9c3214906\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layersmenu-browser_detection.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"ad7be61522ab2146fd6cfe77c1f568ad\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layerstreemenu-cookies.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0dc737445025e63367a295fbd6f76a07\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layerstreemenu.ijs"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"8cb12f2e4ff11c418257588f11466933\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layersmenu-header.ijs"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"5ce402e18bf94c537574bf8feec9585e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layersmenu-see-through.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"81f5141510b0d21fe60719899b86d0da\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layersmenu-footer.ijs"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"be9fb09494ff08d4b4be3d0aba8ece7d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/libjs/layersmenu-library.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"ed31bd694097ec9dc81615e4079f86ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_collapse_corner.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"41ad1b2c6434ef0dfddb5ae8780909aa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_expand_corner_first.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"372d169cfa599c62621506a514885e5f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_collapse.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a2d44f4ef2d66578085420289d76ce3e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_expand.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"26444cb84482e43afe3a4197a4e023cd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_corner.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"f9b90869d2fbf94ea7f0abf464b5dc15\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_folder_open.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"26343718cc1dafcc4c3c512fa8a219ac\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_expand_corner.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"c4503095b844cac4b9325a22fe7a0170\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_collapse_corner_first.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0a3c37a77514df9f8fbde96c3f7ca2b0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_expand_first.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"36a0608e7ba428b124a910645ba51b05\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/forward-arrow.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b52d992309790ec8e4a9da0b2c6dce39\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_split.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a0c3bf2a328abb8c482e8b0975070dab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/transparent.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"04aa3d2433ebb282b4edfff0da36f022\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_split_first.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a393b8c436de15bb200e72f830e7e346\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_space.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"3be93317d60e95a6b21dca370ef87833\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_vertline.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"663d27f652179a148e6b14347e284689\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_leaf.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b9d597cadcb6f6dde0fcdf9052fb7203\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_folder_closed.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"af0f048fdc1db28102fe7dc76e1bdb60\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/down-arrow.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"c3a4515924c7cb1021ddb7dc2a65682d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/menuimages/tree_collapse_first.png"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"1d685154bbd985943c733b7d73697131\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/PHPLayers/phplayers/ACKNOWLEDGEMENTS"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"52560e2d7d4f1f67cfd26c2b1784c70b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/Comments/index.html"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"d41d8cd98f00b204e9800998ecf8427e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/lgpl.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"9e086d9816a3f0e8a4dabc3eb22707c6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/readme"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"4c50cdc0aab5024e4d84aefe193540a7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/save/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"ffc6b8c920f35b629b303a304f860339\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/save/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"bb018d0d904adfcc310c6fb47ed1e0d0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/save/images/save.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a0a10d2cb8ae35c6bbec827d571c7916\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"78f3503e396161ad1917994199e7e97e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/advhr/images/advhr.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"702cc4408aa8ddc495af68cd30584a26\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/ibrowser/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"90cab2212cf2104bb79ed4759e2640e6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/ibrowser/editor_plugin.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"aa6d02191d56e49068b5c91cc824f001\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/ibrowser/images/constrain.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"084cb50350952ee29a76896baf344726\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/ibrowser/images/textflow.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b9c7057c46716340e8967340ad11766e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/ibrowser/images/ibrowser.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"ac0f0348639b82a3be6b51146be41035\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"f01b17c72ed6d882e8163b448e747a61\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/insertdatetime/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"00139c63361259a7fa9b33733871040c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/insertdate.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"90b4d87e8a5bba004564f918a1c1fd15\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/inserttime.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"2de0115c6adb3dd47f4b4452cc13c06f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"54bf9c9cc064daa174239cb69abd30f9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-wink.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"72f9fe630fb5339e4a3a220f5d5452a5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cry.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"124b1a514ea9cc4e6429c3bcf9d83bc1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-innocent.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"95ae515f4a9c7381f291d183a51fc7ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/emotions.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"c192940495d031ab237fea53edf9c1e8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cool.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"900d62b13a2ebdb6fb63e9c28a1c532d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-sealed.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"2ff8098bbf70e0d1e971c441bc467cda\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-money-mouth.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"179651f88e3ace7d469d0bfbc4451c12\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-yell.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b3bab23f35b3f984c37f3d07b2d19ca9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-surprised.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"6fc1920eb72faf26999ff4fa7ab0c409\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-foot-in-mouth.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a5d5a047fc6ecf926258484b8a680276\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-embarassed.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"ab56e4310b1275ed556853b002dccc18\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-smile.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"350be80e317e69b7bb76a0df23ea94b7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-kiss.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b72c27bc92a9e2e6d55d09cdd1f0cc4b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"1132d8274aa9f9cff223b73b1f5dddd0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-undecided.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"f989c63b8f771778772c2a7109814584\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-laughing.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"13f691b87cd30b40b26dabe6e61f8be5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-tongue-out.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0249ef28b8fe5d3b63096a1c5b1b90f2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-frown.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"9487505b31adee188f3f25732ae528d8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"7fa21154f79aaa60f1a6a2f81be27a3c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/searchreplace/search.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a6f1d5b69d67164cc48293b0398f2c1b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/searchreplace/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"d396ffc0b92fe2d4bd634f2fbeb5d6e5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/searchreplace/replace.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"6c8beec114c522a3fa797b99411ac983\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/search.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"54403118e9b16593f961c70e7f0944ea\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/replace.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"28bf0fc5c766b04129bacd927e6bc619\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/flash/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"61908b20a969608f8aff54e142910c6a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/flash/flash.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"819d888107348d2ab86f69dd44059717\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"43587cdc933977de3197730ff719206e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/flash/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"2cedb75316450a9b09d2dd44831f651f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/flash/flash.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"804a79e772ef579312cbc5a9bf5b0ac0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/flash/images/flash.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"1c8a55c582bd05d6a767d114f04c4002\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin_src.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"eed9fc324672a2d1feb5ff9a8fb675e1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/fr.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b1ed72e245c85b66584e6c5aa302ad70\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/zh_cn.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a48df0a9729c80d081dd5723fd701b55\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/fr_ca.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"70e77319c5c7c245f836670990ac9282\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/pl.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"edca02a54df6847464fadedb70a7f34e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"3f55b239cc52fb7dd93cc4cb4f6da1ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/fa.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"e43050e6b7157560520cc2685ef427bb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/de.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"af63ed85ec975c091b2885a5656e27bc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/langs/sv.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a1438d9517f5ed30e7584377b357be47\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"34dba74090ee9e2c6b619496de51f29c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/print/images/print.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"9e53559d20ca9c2629f7531512cf3a23\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/preview/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0e43b9e24195becb2cc1fa4c8ea99d83\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/preview/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"cf52b60f2166a20dc999c562bf15d363\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/preview/images/preview.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"5e404704af7540f4c60d87cce45083a6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/iespell/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"f1edcfbccf6404f85e0ff48d03a90ad1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/iespell/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"5e3c7a7bb7d368055a39675f0d57e2d6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/iespell/images/iespell.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"c8ccbdd24c991ef0f2e63a39c21d911a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/zoom/langs/en.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"68e54bc7724b99376a04ce5466e25b77\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"03af2cd2adc10158717028d2b3427208\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/zoom/readme.txt"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"c63428cd745a1c7d22043aaae1d05ba9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/contextmenu/contextmenu.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"39fcd0f3682f323e13a02341e5664da3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/contextmenu/images/spacer.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"221d8352905f2c38b3cb2bd191d630b0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"eba870bff28210a998b845646f01e92a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/advlink/langs/ko.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"17245ed714c65514aa5347eefa8f88b0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fr_ca.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"a3de6951d5f7c90987b6f765e4e6cbae\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fa.js"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"c5ffd34748dabcefdde1a52db9ad473d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/editor_content.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"22008b1424885412e82c6dfc013976b9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/editor_ui.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0220267be1ea8a7af2a8a5c8acd09b0d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/editor_popup.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"e6d5addcc2214c7b4753241e0ce250fe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/table.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"39e4f6bbd2f093d89b355b601b12cf5f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/table_delete_col.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"b2529e1ee08e0647f6b4e4eedb32afab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_row_after.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"9f66e22253482fa4b25b7a6a6f30057d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_col_before.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"e0fec9775e7d51b927b10c1b0c836e40\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/left.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"df0e36319ee5f52155edcaabacf2d8a0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_row_before.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"e8ab1ade3e32b156f38960248db3e598\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/center.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"71894e0bd736a1f49cca39f67f8602de\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_col_after.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"f1d9d7b85da48f58587462fcdf3190cb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/full.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"dc53ed20df7ccc8074c8e7cfb70a0d75\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/right.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"30aace9ecc71cee468bc351114620cd3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/table_delete_row.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"cfd79f89bc3684b6225739e028a4eb77\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/jscripts/tiny_mce/themes/advanced/images/table.gif"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"85768240e9983ea7be85dc54fbd96759\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/faq.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"9c2b2a728eaac21687d338ea96b05564\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/about.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"79f81270219c04dca91d698891d92d43\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/langs.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"143d0350f39c09f5f2855185f444a944\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/index.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"140dd0ae0abd6eda338b742a037212cf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/using.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"80b4eee5b422e64641d0360e3730d575\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/style.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"6473d30e6d8d47d746abe0a80fec75ca\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/themes.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"bde13a4813394f4502f32fd0544021df\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/compatiblity.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"2f0de4a96a9ebd2ab9d600f419d7a0fd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/license.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"001d3ff9598ac1dcdbc406ec51baee3d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/faq.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"03077b760a2b65d95afaf973ab9f5805\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/about.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"17ff161112ff355d15236c9a0c424d39\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/langs.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"060fd51692bbe140af168a3555beff38\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/index.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"99d5fa04db3bc6dabb289e9444c989e2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/using.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"83bebfbc36957880c377195f1eb5f522\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/style.css"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"2aa06c8acdcc0509a41ac60e59ba7ad2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/themes.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"5ff5cd394b4db6966d79aca78f4cfde3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/compatiblity.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"82fa25aa940fb3b4fd87bb6e53863013\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/TinyMCE/tinymce/docs/zh_cn/license.htm"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"001d3ff9598ac1dcdbc406ec51baee3d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/RSS/rss_utils.inc"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"8674a357e001a54dfbb71b9c59464bd3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/RSS/extlib/Snoopy.class.inc"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"7ca692739ba6ef7d8e0da7b13e7481eb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/RSS/extlib/index.html"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"d41d8cd98f00b204e9800998ecf8427e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/RSS/index.html"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"d41d8cd98f00b204e9800998ecf8427e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/RSS/rss_parse.inc"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"0d1ef613a533aa72df00e99bc4651d59\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/RSS/rss_fetch.inc"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"af434e2e6803cb99a860273589f200ad\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/modules/RSS/rss_cache.inc"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"215f6b5fe3c53cead12315db7cde33f8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/README"
+    matchers:
+      - type: dsl
+        name: 0.10.3 - 0.10.4
+        dsl:
+          - "(\"974ad3b6c554b05ab4750ca4f424d19c\" == md5(body))"

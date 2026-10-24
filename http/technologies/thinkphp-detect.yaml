@@ -9,16 +9,12 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
   metadata:
-    runzero-review: REJECT/2025-11-17/excluding tag intrusive
     verified: true
     max-request: 2
-    vendor: thinkphp
-    product: thinkphp
     shodan-query: title:"ThinkPHP"
     fofa-query: app="ThinkPHP"
-  tags: thinkphp,tech,detect,intrusive,discovery
+  tags: thinkphp,tech,detect,intrusive
 
 http:
   - method: GET
@@ -43,3 +39,4 @@ http:
         words:
           - 'X-Powered-By: ThinkPHP'
 
+# digest: 490a00463044022065eac0fbc2a59f272e92b4ee1f54ce29aed5017c652e6a0ced0109fffdbbbeaa02202363a843d7d907a8bb5eb3d79d82a528a4700c6bacce350f49105ac02cbe8c07:922c64590222798bb761d5b6d8e72950

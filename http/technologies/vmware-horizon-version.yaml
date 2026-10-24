@@ -4,15 +4,11 @@ info:
   name: Vmware Horizon Version Detect
   author: veshraj
   severity: info
-  classification:
-    cpe: cpe:2.3:a:vmware:horizon_view:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: vmware
-    product: horizon_view
     shodan-query: title:"Vmware Horizon"
-  tags: vmware,tech,discovery
+  tags: vmware,tech
 
 http:
   - method: GET
@@ -24,3 +20,4 @@ http:
         regex:
           - '"clientVersion":"[^"]*"'
 
+# digest: 490a0046304402200faa5cdc8f7f4a1b51e25e35691756abd8df4ae9d364783acd04a444ec9b997602202246fd95abc5cc2b03f438afe83d8724aa67e766445f21beeec97386dea9b74e:922c64590222798bb761d5b6d8e72950

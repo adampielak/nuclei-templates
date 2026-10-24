@@ -11,14 +11,11 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:pocoo:babel:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"babel.config.js"
-    product: babel
-    vendor: pocoo
-  tags: exposure,config,file,vuln
+  tags: exposure,config,file
 
 http:
   - method: GET
@@ -37,4 +34,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022009952bcb36ae290932ece85fbbab5b27d1be7bb6932ecf0b8ab1acff9596bec1022011fbdf5ac1c3a1efbfaba7cfa3795cb02bd49b24fc38cfaa8bf55e5298daf49e:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402207f02b9048c39a6e243f435af4611a97738041e2ccb74cc2a316929fe4bab5788022079585909c01c8910d3176c8e802319014b3765d666bb4593a7164376070abbfa:922c64590222798bb761d5b6d8e72950

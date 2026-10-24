@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,szmerinfo,discovery
+  tags: osint,osint-social,szmerinfo
 
 self-contained: true
 
@@ -31,3 +31,4 @@ http:
         words:
           - "Joined"
 
+# digest: 490a0046304402207a6b8b174788935ad34fe7a139199f2bf463b4c45ecc95595129ef57a9cabefa022034a13f2a4dcee331b976bfae9e0b140d8969ca8347e55707084d9caa4593e9b8:922c64590222798bb761d5b6d8e72950

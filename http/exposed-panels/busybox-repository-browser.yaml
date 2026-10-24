@@ -11,6 +11,7 @@ info:
   classification:
     cpe: cpe:2.3:a:busybox:busybox:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Busybox Repository Browser"})
     verified: true
     max-request: 1
     vendor: busybox
@@ -35,4 +36,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c7bab31e59c50a421232d965d28bdce9789bc80df3a87853757e5ed40732363d022100eda0a01737748f1b5cb74587d95046e3354d267b8fef4a1ef1613ca5346781d3:922c64590222798bb761d5b6d8e72950
+

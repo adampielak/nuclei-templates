@@ -1,4 +1,5 @@
 id: sap-successfactors-detect
+
 info:
   name: SAP SuccessFactors Login Panel - Detect
   author: tess
@@ -6,36 +7,36 @@ info:
   description: SAP SuccessFactors login panel was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:sap:successfactors:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)login - sap successfactors"})
-    fofa-query: title="login - sap successfactors"
-    google-query: intitle:"login - sap successfactors"
-    max-request: 2
-    product: successfactors
-    shodan-query:
-      - title:"Login - SAP SuccessFactors"
-      - http.title:"login - sap successfactors"
-    vendor: sap
     verified: true
-  tags: detect,discovery,panel,sap
+    max-request: 2
+    vendor: sap
+    product: successfactors
+    shodan-query: title:"Login - SAP SuccessFactors"
+  tags: panel,sap,detect
+
 http:
-  - host-redirects: true
-    matchers:
-      - condition: and
-        part: body
-        type: word
-        words:
-          - SAP SuccessFactors
-          - sap-ui-core
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    max-redirects: 2
-    method: GET
+  - method: GET
     path:
       - '{{BaseURL}}'
       - '{{BaseURL}}/sf/start'
+
     stop-at-first-match: true
+    host-redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'SAP SuccessFactors'
+          - 'sap-ui-core'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100eddfb51a5daced9e65b8a2bea9405ca926a43f6bbb0d772fcd27fd093aa88d7402202876043a6aefa86d9aa70e04b8ff7e27275fc068d579f449ae6595adffb9d143:922c64590222798bb761d5b6d8e72950

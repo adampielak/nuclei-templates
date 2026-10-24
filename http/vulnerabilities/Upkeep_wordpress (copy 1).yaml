@@ -6,7 +6,7 @@ info:
   severity: high
 #https://www.cvebase.com/cve/2019/16270
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/boldgrid-backup/cli/env-info.php"

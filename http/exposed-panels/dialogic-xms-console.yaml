@@ -7,6 +7,7 @@ info:
   classification:
     cpe: cpe:2.3:a:dialogic:powermedia_xms:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Dialogic XMS Admin Console"})
     verified: true
     max-request: 1
     vendor: dialogic
@@ -29,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022063b4275c1a2b59bef6c7df522eb3ae98107062e7fef9e608527206fd6fe1ad70022100a30ab27940512c6e3112b901a987e70c4494679e8232dcd9158c80eb39fa237a:922c64590222798bb761d5b6d8e72950
+

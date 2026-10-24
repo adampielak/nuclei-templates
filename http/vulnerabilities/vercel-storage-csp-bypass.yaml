@@ -52,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "vercel_storage_csp_xss == true"
-
+# digest: 4a0a004730450221009426afc6a310b433cc31954890efc3a510b0d6a6e2935c961a6cfdcce430b91502205b16fc0bb57de2eab9f080594b452f0aba317fbf5614a61610b74375c84415c6:922c64590222798bb761d5b6d8e72950

@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: 'port:541 xab'
-  tags: network,tcp,fortinet,fortigate,fortimanager
+  tags: network,tcp,fortinet,fortigate,fortimanager,discovery
 
 tcp:
   - inputs:
@@ -36,4 +36,4 @@ tcp:
       - type: regex
         regex:
           - '[a-z0-9.-]+\.fortinet\.com'
-# digest: 4a0a00473045022100860d0195ebed435e8750cff74acf47494d9b1a9454d60a1541ca5cecd60551c7022009430476d349a5b5d69c05b6b2138b651081add725f54cecf271777693a9d92c:922c64590222798bb761d5b6d8e72950
+

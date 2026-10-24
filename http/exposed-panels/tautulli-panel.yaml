@@ -1,4 +1,5 @@
 id: tautulli-panel
+
 info:
   name: Tautulli Panel - Detect
   author: rxerium
@@ -8,42 +9,35 @@ info:
   reference:
     - https://tautulli.com/
     - https://github.com/Tautulli/Tautulli
-  classification:
-    cpe: cpe:2.3:a:tautulli:tautulli:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)tautulli"}) || any(each(service["html.titles"]), {# matches "(?i)tautulli - home"})
-    fofa-query:
-      - title="tautulli - home"
-      - title="tautulli"
-    google-query:
-      - intitle:"tautulli"
-      - intitle:"tautulli - home"
-    max-request: 2
-    product: tautulli
-    shodan-query:
-      - title:"TAUTULLI"
-      - http.title:"tautulli"
-      - http.title:"tautulli - home"
-    vendor: tautulli
     verified: true
-  tags: detect,discovery,panel,tautulli
+    max-request: 2
+    vendor: tautulli
+    product: tautulli
+    shodan-query: title:"TAUTULLI"
+  tags: panel,tautulli,detect
+
 http:
-  - host-redirects: true
-    matchers:
-      - condition: or
-        type: word
-        words:
-          - <title>Tautulli - Login
-          - content="Tautulli
-          - alt="Tautulli
-          - Sign In with Tautulli
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    max-redirects: 2
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}'
-      - '{{BaseURL}}/auth/login'
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/auth/login"
+
+    host-redirects: true
+    max-redirects: 2
     stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>Tautulli - Login'
+          - 'content="Tautulli'
+          - 'alt="Tautulli'
+          - 'Sign In with Tautulli'
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022012e6b9359e50443767a66793b9be3eabcd9fd929ab56a8644a9db74bac0ed3fb0221009e09efcf347501318b3214276dafd349bffbc2cfb5f3d2037c321d5835364e91:922c64590222798bb761d5b6d8e72950

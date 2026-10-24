@@ -1,4 +1,5 @@
 id: spark-panel
+
 info:
   name: Apache Spark Panel - Detect
   author: righettod
@@ -8,33 +9,29 @@ info:
     - https://www.hypeinnovation.com
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:apache:spark:*:*:*:*:*:*:*:*
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)/apps/imt/html/"}) || any(each(service["html.titles"]), {# matches "(?i)spark master at"})
-    fofa-query:
-      - title="spark master at"
-      - body="/apps/imt/html/"
-    google-query: intitle:"spark master at"
-    max-request: 1
-    product: spark
-    shodan-query:
-      - html:"/apps/IMT/Html/"
-      - http.html:"/apps/imt/html/"
-      - http.title:"spark master at"
-    vendor: apache
     verified: true
-  tags: apache,discovery,panel,spark
+    max-request: 1
+    vendor: apache
+    product: spark
+    shodan-query: html:"/apps/IMT/Html/"
+  tags: panel,spark
+
 http:
-  - matchers:
-      - part: body
-        type: word
-        words:
-          - url=servlet/hype
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}'
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "url=servlet/hype"
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a0047304502210096704a32db2728e5fc669a20909f69c0b8582189b4205ead0556e9817352699b0220756201c7db0c8eb8bb3050653ee2a31f38240196d2a26848de27ed13a3767c63:922c64590222798bb761d5b6d8e72950

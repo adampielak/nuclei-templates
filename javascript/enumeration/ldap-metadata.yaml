@@ -1,45 +1,81 @@
 id: ldap-metadata
-
 info:
   name: LDAP Metadata - Enumeration
-  author: pussycat0x
+  author: pussycat0x,0x_Akoko
   severity: info
   description: |
-    LDAP metadata refers to the data that describes the structure, schema, and attributes of the LDAP directory
+    LDAP metadata refers to the data that describes the structure, schema, and attributes of the LDAP directory. Both plaintext LDAP and implicit-TLS LDAPS ports are covered.
   reference:
     - https://docs.projectdiscovery.io/templates/protocols/javascript/modules/ldap.Metadata
   metadata:
     max-request: 1
     shodan-query: ldap
-  tags: js,network,ldap
-
+  tags: discovery,js,ldap,network
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port);
+  - args:
+      Host: '{{Host}}'
+      Realm: anonymous
+      TargetPort: '{{Port}}'
     code: |
       const ldap = require('nuclei/ldap');
-      const cfg = new ldap.Config();
-      cfg.Upgrade = true;
-      const client = new ldap.Client(Host, Port, cfg);
-      const metadata = client.CollectMetadata();
-      Export(metadata)
 
-    args:
-      Host: "ldap://{{Host}}"
-      Port: 389
+      // 636 and 3269 (AD global catalog) are implicit TLS. 389 and 3268 are
+      // plaintext with an optional StartTLS upgrade, which cfg.Upgrade requests.
+      const tlsPorts = ['636', '3269'];
 
-    matchers:
-      - type: dsl
-        dsl:
-          - "success == true"
+      function tryPort(port) {
+        const scheme = tlsPorts.indexOf(String(port)) !== -1 ? 'ldaps://' : 'ldap://';
+        const cfg = new ldap.Config();
+        // The module ignores Upgrade when the scheme is already ldaps.
+        cfg.Upgrade = true;
+        // Client(ldapUrl, Realm, {Config}) - the second argument is the realm,
+        // and the config has to be passed as the third argument to take effect.
+        const client = new ldap.Client(scheme + Host + ':' + port, Realm, cfg);
+        return client.CollectMetadata();
+      }
 
+      // Honour the scanned port when there is one, otherwise cover the common pair.
+      const ports = TargetPort ? [TargetPort] : ['389', '636'];
+
+      for (let i = 0; i < ports.length; i++) {
+        try {
+          const metadata = tryPort(ports[i]);
+          if (metadata) {
+            Export(metadata);
+            break;
+          }
+        } catch (e) {
+          // port closed, wrong scheme, or bind refused - try the next one
+        }
+      }
     extractors:
-      - type: json
+      - internal: true
         json:
-          - '"BaseDN: " + .BaseDN'
-          - '"DnsHostName: " + .DnsHostName '
+          - .DnsHostName
+        name: DnsHostName
+        type: json
+      - internal: true
+        json:
+          - .DefaultNamingContext
+        name: DefaultNamingContext
+        type: json
+      - internal: true
+        json:
+          - .DomainFunctionality
+        name: DomainFunctionality
+        type: json
+      - json:
+          - '"DnsHostName: " + .DnsHostName'
           - '"DefaultNamingContext: "+ .DefaultNamingContext'
           - '"DomainFunctionality: "+ .DomainFunctionality'
           - '"ForestFunctionality: " + .ForestFunctionality'
           - '"DomainControllerFunctionality: "+ .DomainControllerFunctionality'
-# digest: 4a0a0047304502200886e92d03a4fb94f9b303b470a526d5931c685f7cabd80d1963fbfd664ff7ed022100d63f0b5f6fe2e9787b92a561964cf3c962603b680451879745b244a1735fd7b5:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a0048304602210080a6d83b449b08bada3b7313f8882e77d2b141f35bb19c27f1b33e50bce6a43002210087bc7316041c735935a98082382f82d2c4b715b329867e0057e96c565d0e59f6:922c64590222798bb761d5b6d8e72950
+
+        type: json
+    matchers:
+      - condition: and
+        dsl:
+          - success == true
+          - len(DefaultNamingContext) != 0 || len(DnsHostName) != 0 || len(DomainFunctionality) != 0
+        type: dsl
