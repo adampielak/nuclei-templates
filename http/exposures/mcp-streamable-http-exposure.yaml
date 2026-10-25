@@ -1,5 +1,4 @@
 id: mcp-streamable-http-exposure
-
 info:
   name: MCP Streamable HTTP Server - Unauthenticated Initialize
   author: DevamShah
@@ -14,11 +13,10 @@ info:
     - https://modelcontextprotocol.io/specification/2025-06-18/basic/transports
     - https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle
   metadata:
-    verified: true
-    max-request: 3
     fofa-query: header="mcp-session-id"
-  tags: mcp,jsonrpc,exposure,api,ai,llm,unauth
-
+    max-request: 3
+    verified: true
+  tags: ai,api,exposure,jsonrpc,llm,mcp,unauth
 http:
   - raw:
       - |
@@ -28,29 +26,24 @@ http:
         Accept: application/json, text/event-stream
 
         {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"nuclei","version":"1.0"}}}
-
     payloads:
       path:
         - "/mcp"
         - "/mcp/"
         - "/api/mcp"
-
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: regex
         part: body
         regex:
           - '"protocolVersion"\s*:\s*"\d{4}-\d{2}-\d{2}"'
-
       - type: dsl
         dsl:
           - 'contains_all(body, "serverInfo", "capabilities", "jsonrpc")'
           - 'contains(content_type, "application/json") || contains(content_type, "text/event-stream")'
           - 'status_code == 200'
         condition: and
-
     extractors:
       - type: regex
         name: protocol_version
@@ -58,11 +51,10 @@ http:
         group: 1
         regex:
           - '"protocolVersion"\s*:\s*"(\d{4}-\d{2}-\d{2})"'
-
       - type: regex
         name: server
         part: body
         group: 1
         regex:
           - '"serverInfo"\s*:\s*\{[^}]*?"name"\s*:\s*"([^"]+)"'
-# digest: 4b0a00483046022100a134310850288b2d9913cccb71483db29218ba16fed52d341248539037c8c0f602210081abb1b4f249de2219bf9dd90732d38a33c5f356f9613f6c7c74cb9abb936011:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100a134310850288b2d9913cccb71483db29218ba16fed52d341248539037c8c0f602210081abb1b4f249de2219bf9dd90732d38a33c5f356f9613f6c7c74cb9abb936011:922c64590222798bb761d5b6d8e72950

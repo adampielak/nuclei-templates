@@ -4,16 +4,22 @@ info:
   name: Apache Yarn ResourceManager RCE
   author: pdteam
   severity: low
-  description: A vulnerability in Apache Yarn ResourceManager allows remote unauthenticated users to cause the product to execute arbitrary code.
-  reference:
-    - https://neerajsabharwal.medium.com/hadoop-yarn-hack-9a72cc1328b6
   tags: apache,rce
+  reference: https://neerajsabharwal.medium.com/hadoop-yarn-hack-9a72cc1328b6
 
 requests:
-  - method: POST
-    path:
-      - '{{BaseURL}}/ws/v1/cluster/apps/new-application'
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        POST /ws/v1/cluster/apps/new-application HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Accept-Encoding: gzip, deflate
+        Accept: */*
     matchers-condition: and
     matchers:
       - type: word

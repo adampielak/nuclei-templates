@@ -7,9 +7,10 @@ info:
   reference:
     - https://wordpress.org/plugins/siteguard/
   metadata:
+    max-request: 1
     plugin_namespace: siteguard
     wpscan: https://wpscan.com/plugin/siteguard
-  tags: tech,wordpress,wp-plugin,top-200,discovery
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
@@ -46,4 +47,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a004830460221009963c8a9e7dd83b367bf65c89d5be6dd235618352b20bb837763c12568576d0d022100a1c0b5255ecb14d131093876a760c688830588b1e296215fa0dc9c85a2239876:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ae832b8d695dbb02fe2e270bc8d52ffed9ff9ffb4968062096aae91536d0d925022100e0856c2bb6575a257f4964f33be808b47404aee3cd0749f1649baa3ebb009338:922c64590222798bb761d5b6d8e72950

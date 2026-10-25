@@ -10,10 +10,9 @@ info:
     - https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
     - https://github.com/righettod/burp-piper-custom-scripts/issues/1
   metadata:
+    max-request: 2
     verified: true
-    max-request: 1
-    shodan-query: html:"blazor.boot.json"
-  tags: blazor,webassembly,detect,discovery
+  tags: blazor,webassembly,detect
 
 http:
   - method: GET
@@ -21,7 +20,6 @@ http:
       - '{{BaseURL}}/_framework/blazor.boot.json'
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word
@@ -43,4 +41,3 @@ http:
         group: 1
         regex:
           - 'dotnet.([0-9.]+).[a-z0-9]+.js'
-# digest: 4a0a0047304502201ee5ae6e745a40ec765aaee1e54125feb14017192a0df6d768463d625fe183df022100ece13cd1c342a67455f68d092d697a6fc29e738a872ef5d000bd3711cfc993c9:922c64590222798bb761d5b6d8e72950
