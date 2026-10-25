@@ -11,12 +11,13 @@ info:
   classification:
     cpe: cpe:2.3:a:progress:whatsup_gold:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)WhatsUp Gold"})
     verified: true
     max-request: 2
     vendor: progress
     product: whatsup_gold
     shodan-query: title:"WhatsUp Gold" http.favicon.hash:-2107233094
-  tags: panel,whatsup-gold,detect
+  tags: panel,whatsup-gold,detect,discovery
 
 http:
   - method: GET
@@ -38,4 +39,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008a9adb3572005a1f084d99562c739c47db4b3f7ee012cf568318caa58da4a804022100861b796f8f7a18e0ac6455f5778b67e1950d71e8cd257764ac708bee30eff5d7:922c64590222798bb761d5b6d8e72950
+

@@ -8,7 +8,7 @@ info:
   severity: low
   tags: odoo,redirect
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/CMSPages/GetDocLink.ashx?link=https://example.com/"

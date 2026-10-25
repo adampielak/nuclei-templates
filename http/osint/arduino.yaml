@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-tech,arduino
+  tags: osint,osint-tech,arduino,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "- Arduino Project Hub"
 
-# digest: 4a0a0047304502207dc1977fe38ec362d493f5d5c45cb576eb257f4db29ed15a5685a609891eab54022100f7832246212caac25f367175689a77b1854a234fc20750df44ef03d4b1805bef:922c64590222798bb761d5b6d8e72950

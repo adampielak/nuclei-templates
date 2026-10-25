@@ -9,10 +9,11 @@ info:
   reference:
     - https://www.opentext.com/products/alm-quality-center
   metadata:
+    runzero-match: any(each(service["http.titles"]), {# matches "^Micro Focus Application Lifecycle Management"})
     verified: true
     max-request: 1
     shodan-query: http.html:"Micro Focus Application Lifecycle Management"
-  tags: panel,microfocus,login,detect
+  tags: panel,microfocus,login,detect,discovery
 
 http:
   - method: GET
@@ -21,7 +22,6 @@ http:
 
     redirects: true
     max-redirects: 2
-
     matchers:
       - type: dsl
         dsl:
@@ -35,4 +35,4 @@ http:
         group: 1
         regex:
           - '(?i)Micro\s+Focus\s+Application\s+Lifecycle\s+Management\s+([0-9.]+)'
-# digest: 490a00463044022061fb6af701b7a3ffbed3767b1dbfcb898062a28ac36ae1935c9640fd64c326350220156dd67878a035d0a5664faa272776fd8dbbaae6e3fbdbfd00c83561e07cfbd0:922c64590222798bb761d5b6d8e72950
+

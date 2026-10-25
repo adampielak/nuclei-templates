@@ -9,10 +9,11 @@ info:
   reference:
     - https://www.tixeo.com/en/
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)tixeo"})
     verified: true
     max-request: 3
     shodan-query: "http.title:\"tixeo\""
-  tags: panel,tixeo,login,detect
+  tags: panel,tixeo,login,detect,discovery
 http:
   - method: GET
     path:
@@ -35,4 +36,4 @@ http:
         group: 1
         regex:
           - '"applicationVersion"\s*:\s*"([0-9.]+)"'
-# digest: 4b0a00483046022100b0d26a26d61e3bf8a7b215de75532bc5376a8304b009332a8c7b7c873c6a4ee5022100dbee04d2066191de0cc425c447597db7abbaabaa2d1cdcf46df2ee3488b135a7:922c64590222798bb761d5b6d8e72950
+

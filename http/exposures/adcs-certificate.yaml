@@ -1,28 +1,39 @@
 id: adcs-certificate
-
 info:
-  name: Certification Authority Web Enrollment (ADCS) - Detection
-  author: pastaga,defte
+  name: Microsoft AD CS Web Enrollment - Detect
+  author: pastaga,defte,atomiczsec
   severity: info
   description: |
-    Web Enrollment is a service that can be installed on an AD CS server to allow users and computers in an Active Directory domain to request a certificate through an interactive web page.
+    Detects Microsoft Active Directory Certificate Services (AD CS) Web Enrollment and certificate download pages.
   metadata:
-    verified: true
+    max-request: 3
     shodan-query: html:"/certenroll"
-  tags: ad,adcs,exposure,files
-
+    verified: true
+  tags: ad,adcs,detect,exposure,files,vuln,web-enrollment
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/certenroll/"
-      - "{{BaseURL}}/CertEnroll/"
-
-    host-redirects: true
+  - host-redirects: true
     matchers:
-      - type: dsl
+      - condition: and
         dsl:
-          - contains(body, ".crl") || contains(body, ".crt")
-          - contains(body, "CertEnroll") || contains(body, "certenroll")
           - status_code == 200
-        condition: and
-# digest: 4b0a00483046022100834fe22a0cf908f657153bd2278bd1bb581fdb119537ad127e62ec7591c9c4f2022100ae681d05bbfec5621702a57f4bc67cd29afb9878d01c68c2b573086f3b0c6ea6:922c64590222798bb761d5b6d8e72950
+          - regex("(?i)href=[^>]*[.](crl|crt|cer|p7b)[^a-z0-9]", body)
+          - contains_any(tolower(body), "certenroll", "locmscertsrv", "certificate services")
+        name: certenroll
+        type: dsl
+      - condition: and
+        # digest: 490a00463044022012ce913a5bff72f3fdf9a3eee19fd2d1ac3e7b50dda18956a6636af154d1f1f302201903224966bdb24cda969ae1573bfb785c78ebf52cdc64ab135ef87264bedf83:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - status_code == 200 || status_code == 401 || status_code == 403
+          - contains_any(tolower(body), "locmscertsrv", "certificate services", "web enrollment")
+        name: certsrv
+        type: dsl
+    matchers-condition: or
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}/certenroll/'
+      - '{{BaseURL}}/CertEnroll/'
+      - '{{BaseURL}}/certsrv/'
+      - '{{BaseURL}}/certsrv'
+    stop-at-first-match: true

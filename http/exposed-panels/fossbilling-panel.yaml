@@ -9,12 +9,13 @@ info:
   classification:
     cpe: cpe:2.3:a:fossbilling:fossbilling:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)FOSSBilling"})
     verified: true
     max-request: 1
     vendor: fossbilling
     product: fossbilling
     shodan-query: title:"FOSSBilling"
-  tags: fossbilling,panel,detect
+  tags: fossbilling,panel,detect,discovery
 
 http:
   - method: GET
@@ -34,4 +35,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cb9e8eae28a5b7275023ccaeb9ae8601fe2755403ab04baeb6fbb69fa82c998302210083b02b8bfcefc17a297cc83ddf68533a72043cdf90c9f9c21394f6c22915abaf:922c64590222798bb761d5b6d8e72950
+

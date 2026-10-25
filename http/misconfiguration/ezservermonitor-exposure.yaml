@@ -1,5 +1,4 @@
 id: ezservermonitor-exposure
-
 info:
   name: eZ Server Monitor - Exposure
   author: pussycat0x
@@ -10,47 +9,42 @@ info:
     - https://github.com/shevabam/ezservermonitor-web
     - https://www.ezservermonitor.com/esm-web/features
   metadata:
-    verified: true
+    fofa-query: title="eZ Server Monitor"
     max-request: 4
     shodan-query: title:"eZ Server Monitor"
-    fofa-query: title="eZ Server Monitor"
-  tags: misconfig,exposure,ezservermonitor,monitoring
-
+    verified: true
+  tags: exposure,ezservermonitor,misconfig,monitoring,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/"
-      - "{{BaseURL}}/esm/"
-      - "{{BaseURL}}/monitoring/"
-      - "{{BaseURL}}/ezservermonitor/"
-
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>eZ Server Monitor"
-          - "eZ Server Monitor - v"
-        condition: and
-
-      - type: word
-        part: body
-        words:
-          - "web/css/frontend.css"
-          - '<span class="icon-gauge"></span>eSM'
-        condition: or
-
-      - type: status
-        status:
-          - 200
-
-    extractors:
-      - type: regex
+  - extractors:
+      - group: 1
         name: version
         part: body
-        group: 1
         regex:
-          - 'eZ Server Monitor - v([0-9.]+)'
-# digest: 490a00463044022078009653147f6533fe7ecc3954330bdf16c6e4bf8ea986bfb3c351828d782e78022019b6ac34579fdae69291dc5ec905ec1b6ab7a972a2f3e37a3713eb5044e87699:922c64590222798bb761d5b6d8e72950
+          - eZ Server Monitor - v([0-9.]+)
+        # digest: 4a0a00473045022077d9ab0705c759db3f3b75825847131be838d57964a3e8232ac873e1ea78402d0221008a765c15d878400e5bf9757a937dac348fcee96ea98b31c01aadb084af9dcf0a:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    matchers:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - <title>eZ Server Monitor
+          - eZ Server Monitor - v
+      - condition: or
+        part: body
+        type: word
+        words:
+          - web/css/frontend.css
+          - <span class="icon-gauge"></span>eSM
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/'
+      - '{{BaseURL}}/esm/'
+      - '{{BaseURL}}/monitoring/'
+      - '{{BaseURL}}/ezservermonitor/'
+    stop-at-first-match: true

@@ -11,12 +11,13 @@ info:
   classification:
     cpe: cpe:2.3:a:oracle:e-business_suite:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)Oracle UIX"})
     verified: true
     max-request: 1
     vendor: oracle
     product: e-business_suite
     shodan-query: http.html:"Oracle UIX"
-  tags: panel,oracle,login,detect
+  tags: panel,oracle,login,detect,discovery
 
 http:
   - method: GET
@@ -38,4 +39,4 @@ http:
         group: 1
         regex:
           - '(?i)/OA_HTML/cabo/oajsLibs/oafcore([A-Z0-9]+).js'
-# digest: 4a0a004730450220089fa93cd40629b9d03d8bb5c27c9eb94dbd679320d4527aaf3306e3228333090221009a7221303f60cc697a52d48b3e44d2567f0075756f2b94f05601e752c64d15ee:922c64590222798bb761d5b6d8e72950
+

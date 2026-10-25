@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-coding,asciinema
+  tags: osint,osint-coding,asciinema,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "s profile - asciinema"
 
-# digest: 4a0a0047304502207f72e9c421b8dd17baddaa7ac424ad2838d5ba6145fb17ee385e40353a8e75d002210087b30bbae7b72e00c18c00e1296612e4fd20cfb880e356b064932c666cf0467b:922c64590222798bb761d5b6d8e72950
