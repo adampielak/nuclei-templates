@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,pinterest,discovery
+  tags: osint,osint-social,pinterest
 
 self-contained: true
 
@@ -31,3 +31,4 @@ http:
         words:
           - " - Profile | Pinterest"
 
+# digest: 4a0a0047304502207839c3e06784bcf3b019c929e64d44e415f94975628e206d3ba6864bb99d429902210097b3b976986ae1650604685694935ec2961205c8b22704235f11b97372a1b276:922c64590222798bb761d5b6d8e72950

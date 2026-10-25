@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="TamronOS-IPTV系统"
-  tags: tamronos,miconfig,iptv
+  tags: tamronos,miconfig,iptv,vuln
 variables:
   username: "{{to_lower(rand_text_alphanumeric(6))}}"
   password: "{{rand_text_alphanumeric(12)}}"
@@ -38,4 +38,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203c41b9741b570328a26baf1c41bc5edfa8a93121d967eb84137abd3182dbf006022100acb983c4020f29ef74ef651b470f0e4384f3e902bd6c10b5ab90598bac7e1a99:922c64590222798bb761d5b6d8e72950
+

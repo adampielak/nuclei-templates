@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-coding,teamtreehouse,discovery
+  tags: osint,osint-coding,teamtreehouse
 
 self-contained: true
 
@@ -31,3 +31,4 @@ http:
         words:
           - "Member Since"
 
+# digest: 490a0046304402201cc54b791f4a059e80ea0d0902a8cdac4cc0036b2ebf01c8d3b6b31b24fa6af4022062b24b870fef664f517bfc921937a9708b91e59faefab8a3fe88d92f7a4bff8c:922c64590222798bb761d5b6d8e72950

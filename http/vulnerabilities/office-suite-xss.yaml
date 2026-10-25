@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: xss,office,suite
+  tags: xss,office,suite,vuln
 
 http:
   - method: GET
@@ -26,4 +26,3 @@ http:
           - 'contains_all(body, "<img src=a onerror=alert(document.domain)>", "\"payload\":")'
         condition: and
 
-# digest: 4a0a00473045022015bdf974cdfe562fb3b54dfbd2ff55be0c627f8183fe2bd2ffab70610f64ba9a022100e8afcb73b8ec0b8ec74f2fd7bd9a256b3fc3d615424517cacd20e280bf917ecf:922c64590222798bb761d5b6d8e72950
