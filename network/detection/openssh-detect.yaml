@@ -17,7 +17,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: seclists,network,ssh,openssh,detect,detection,tcp,discovery
+  tags: seclists,network,ssh,openssh,detect
 
 tcp:
   - host:
@@ -33,4 +33,4 @@ tcp:
       - type: regex
         regex:
           - '(?i)SSH-(.*)-OpenSSH_[^\r]+'
-# digest: 490a00463044022048886a2048dbd3bce77c945084516bc78f58d3d5d0b45644a6f49bab3a4e2567022036db8611bc081fc50fd44ad0240ac9c5c96efc571548c2f07af3eb4677f40772:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210095847f4fb20ccbd36d880911ebc120378339e74160b7406a875eff584ede101d0221008ddf1cdc72b5b264ce27c4a2bdb9fabf750d58dda6e76990fedb7646445212f9:922c64590222798bb761d5b6d8e72950

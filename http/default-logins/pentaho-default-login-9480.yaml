@@ -1,5 +1,4 @@
 id: pentaho-default-login
-
 info:
   name: Pentaho Default Login
   author: pussycat0x
@@ -14,7 +13,6 @@ info:
   metadata:
     shodan-query: pentaho
   tags: pentaho,default-login
-
 requests:
   - raw:
       - |
@@ -23,14 +21,12 @@ requests:
         Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
         j_username={{user}}&j_password={{pass}}
-
     attack: pitchfork
     payloads:
       user:
         - admin
       pass:
         - password
-
     matchers-condition: and
     matchers:
       - type: word
@@ -39,7 +35,6 @@ requests:
           - 'pentaho/Home'
           - 'JSESSIONID='
         condition: and
-
       - type: status
         status:
           - 302

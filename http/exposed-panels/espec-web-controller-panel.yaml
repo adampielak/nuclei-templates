@@ -5,11 +5,10 @@ info:
   severity: info
   author: darses
   description: |
-    Espec Web Controller panel was discovered.
-  reference:
-    - https://espec.com/na/products/option_detail/web_controller/
+    Espec Web Controller login panel was detected.
   metadata:
-    max-request: 2
+    verified: true
+    max-requests: 2
     vendor: espec
     product: web_controller
     shodan-query:
@@ -18,27 +17,47 @@ info:
     fofa-query:
       - title="Espec Web Controller"
       - icon_hash="1190353375"
-  tags: panel,espec,ics,login,discovery
+  reference:
+    - https://espec.com/na/products/option_detail/web_controller/
+  tags: panel,espec,ics
+
+flow: http(1) && http(2)
 
 http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        internal: true
+        status:
+          - 200
+
+      - type: word
+        internal: true
+        part: body
+        words:
+          - "<title>Espec Web Controller</title>"
+
   - method: GET
     path:
       - "{{BaseURL}}/version"
 
     matchers-condition: and
     matchers:
+      - type: status
+        status:
+          - 200
+
       - type: word
         part: body
         words:
           - "Espec Web Controller"
-
-      - type: status
-        status:
-          - 200
 
     extractors:
       - type: regex
         group: 1
         regex:
           - "Version: ([\\d\\.]+)"
-# digest: 490a004630440220243a8f9488352510eea42357308e2a2a6fd0a013386080621c0bf0c09d3ebae6022033f4a9724ee5cb52a3263a0e361374a347fc5871189b772f7adfe5ce325b3255:922c64590222798bb761d5b6d8e72950

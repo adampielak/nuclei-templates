@@ -5,7 +5,7 @@ info:
   name: Open Redirect Issues
   severity: Low
   tags: Open Redirect
-requests:
+http:
 - matchers:
   - status:
     - 302

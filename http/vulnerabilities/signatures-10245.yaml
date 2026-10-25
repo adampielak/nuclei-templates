@@ -3,7 +3,7 @@ info:
   name: moodle_version_fingerprint
   severity: info
   author: glatisant & erwan
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/theme/bootstrapbase/style/moodle.css"
@@ -420687,4 +420687,3876 @@ requests:
       - type: dsl
         name: 2.1.0 - 2.3.2
         dsl:
-          - "(\"0519e6d19719b93103cd6e9adc326981\" == md
+          - "(\"0519e6d19719b93103cd6e9adc326981\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"1cd1d2b99937a820a168f335fa3bb74e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/tests/behat/filter_idnumber.feature"
+    matchers:
+      - type: dsl
+        name: 3.2.1 - 3.8.6
+        dsl:
+          - "(\"2af46bf6bbc3b07816db34fbff96c608\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.2.0
+        dsl:
+          - "(\"fd6806e7025efee17dee85e9bf4c9c03\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"62e58f5d3cdd8f6528ea64760452dd1b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/url_select.mustache"
+    matchers:
+      - type: dsl
+        name: 3.3.2 - 3.6.2
+        dsl:
+          - "(\"3e9eb11b50a42b9dbb1ffb8f0e3fa9d3\" == md5(body))"
+      - type: dsl
+        name: 3.3.0 - 3.3.1
+        dsl:
+          - "(\"2d8e917ca4c9c602e7a816606238ee8e\" == md5(body))"
+      - type: dsl
+        name: 3.5.5 - 3.6.3
+        dsl:
+          - "(\"6aecc2c9d0ce3fb3ed7aed2adef73f69\" == md5(body))"
+      - type: dsl
+        name: 3.5.6 - 3.7.2
+        dsl:
+          - "(\"c8a83a00e72d127831e8e703e317c8d9\" == md5(body))"
+      - type: dsl
+        name: 3.6.7 - 3.8.6
+        dsl:
+          - "(\"545d904c0e73b8412e43887e323c0118\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"f5b41cab059782a23a92e949d97add4c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/amd/src/unified_filter_datasource.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"63b88dc56abc72dfcd979f25b25adecd\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2dfecaa9370fd8fbe22be71204a200ea\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/amd/src/unified_filter.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"dd76c949f85fa2695cea60d79ce94713\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2c33aa8d456bc1ed929ed36c6c0baa44\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/group/templates/group_details.mustache"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"c456e6e68ec6e79313a76b58bb4f4df9\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"22a8524ec1a23630c918af13bd862494\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/group/tests/behat/group_description.feature"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"182befa81fa0e73cdabeee3f55879543\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"0863876dc385d703f45b4a4b7b93708d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/templates/event_summary_modal.mustache"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"3149c4c8570fc102c471427543676abf\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2d55cf46d847322e048dead57a21087b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/amd/src/modal_delete.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"88117deeb33d3439cc2ae9df3c572be1\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"6dddca2afdfd22107a3a2c87eec5e2c3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/amd/src/crud.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.2
+        dsl:
+          - "(\"701de0f9d36b382f1a4079d66a9aa987\" == md5(body))"
+      - type: dsl
+        name: 3.5.12 - 3.8.3
+        dsl:
+          - "(\"189c896bae2f81961157c009538852e8\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"72a1dde98b5a34e7617fd4b1d21b2e64\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.8.6
+        dsl:
+          - "(\"0a0b07a3e9a1df4283ee4b5d247ac887\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/amd/src/summary_modal.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.8.3
+        dsl:
+          - "(\"be330d55a140e5e5b4b13ce9b21fb2ce\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.10.0
+        dsl:
+          - "(\"826cad2f01c14ec7015abeec00ef6862\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/src/modal_save_cancel.js"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.9
+        dsl:
+          - "(\"dee664bb1204d3b93c76163966fe9dbd\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.2.9
+        dsl:
+          - "(\"f523d106d5a3083c8e418882a45a7e6c\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"1b10b02534b3f2580f688b8f042ea58b\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"067e76718ea242da6264590487248bb2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/yui/src/dateselector/js/dateselector.js"
+    matchers:
+      - type: dsl
+        name: 3.2.5 - 3.3.9
+        dsl:
+          - "(\"5fe49f2538f068f67e923d3956468e01\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.3.1
+        dsl:
+          - "(\"ab20bb8ad7ef00f6f57f04f4e03adbef\" == md5(body))"
+      - type: dsl
+        name: 3.0.7 - 3.1.18
+        dsl:
+          - "(\"3ca7745457a26eaa67cb2d4b3d0a0d6c\" == md5(body))"
+      - type: dsl
+        name: 2.9.2 - 3.1.2
+        dsl:
+          - "(\"fd910eaedea3e39ed44c9266f12bd106\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.1
+        dsl:
+          - "(\"28dbe3e964c88c9303344b8597f5516c\" == md5(body))"
+      - type: dsl
+        name: 2.8.8 - 2.8.12
+        dsl:
+          - "(\"fa9ac193fd92126ad5afc01dc073eed9\" == md5(body))"
+      - type: dsl
+        name: 2.8.0 - 2.8.7
+        dsl:
+          - "(\"4f584ace41a3dce4a84f0710c480c22f\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"fdcfc4e74d26f0c4eef2011f6dd19f18\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"6338bfa0e793da1763b12d99e61050d6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/inplace_editable.mustache"
+    matchers:
+      - type: dsl
+        name: 3.1.0 - 3.3.9
+        dsl:
+          - "(\"ac58ab62c559a7b3bd5a22bfda62235b\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"9eaf2db6c07965ac7d2cd62bf8758b67\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2ec4685ea1227e7638f833fc57056562\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/dataformat/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.3.1 - 3.3.9
+        dsl:
+          - "(\"b0546236c347dfe2de4f768e80dc9ef8\" == md5(body))"
+      - type: dsl
+        name: 3.1.0 - 3.3.0
+        dsl:
+          - "(\"be0e002d239a976ae627007e45f56023\" == md5(body))"
+      - type: dsl
+        name: 3.2.4 - 3.2.9
+        dsl:
+          - "(\"28f8516268576483e08b472086914d06\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"d3fef5d8d0be586a6cb58e3336f77419\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"932d5798249ff0c7585635ac889dca67\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/lesson/tests/behat/import_fillintheblank_question.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.9
+        dsl:
+          - "(\"5d9e94d46cc90ed13be23cce8571834c\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.2.9
+        dsl:
+          - "(\"bdcb583aa3de21f5550379e90cd1aea1\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"0a9209a360da60fefe584c97b31f2922\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"f2c382c054d1ce8f6580b16cee42cf15\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/tests/behat/course_preference.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.9
+        dsl:
+          - "(\"0305fedd4b20be5ddda16136c9c651d4\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.2.9
+        dsl:
+          - "(\"909e0806327163d52ff909353435c843\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.6
+        dsl:
+          - "(\"1cac7b8259fa25ae16a9fa35896f40a0\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"06215858c10682fc59375222a5257218\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/src/chart_output_chartjs.js"
+    matchers:
+      - type: dsl
+        name: 3.2.5 - 3.4.1
+        dsl:
+          - "(\"e893814d9598e3521f1e4f7de87d0f53\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.3.1
+        dsl:
+          - "(\"c6bc46ed51e4092a157e8d801c274f76\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.8.6
+        dsl:
+          - "(\"7ea8581aa3a1c50b59e16f61c226a1de\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"3ceb2642f53538c72e831b8b6ab7fc71\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/enrol/manual/amd/src/quickenrolment.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.4.1
+        dsl:
+          - "(\"3161eab1c3611a8969b085bec72c9146\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.8.2
+        dsl:
+          - "(\"5a0aa7b17e03cb172aeaa839f66a73fc\" == md5(body))"
+      - type: dsl
+        name: 3.5.12 - 3.8.6
+        dsl:
+          - "(\"1b61b495f51ce81df2b6365ea17b1389\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"055fb78ba3afeb0319754874634d3311\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/output/popup/amd/src/notification_popover_controller.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.4
+        dsl:
+          - "(\"0a9502e25c264425c58a7e1749f96fac\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.4.1
+        dsl:
+          - "(\"8a531e0d7063ffdac08115544e887db4\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5.0
+        dsl:
+          - "(\"fcb3daf4364966f746aaaaaa3d1043fe\" == md5(body))"
+      - type: dsl
+        name: 3.3.5 - 3.3.9
+        dsl:
+          - "(\"bdeb3da21dfe4b120e743edc57ebeee8\" == md5(body))"
+      - type: dsl
+        name: 3.4.4 - 3.5.1
+        dsl:
+          - "(\"1293143aaa31a8c177096fa6ce82ccf5\" == md5(body))"
+      - type: dsl
+        name: 3.4.5 - 3.5.2
+        dsl:
+          - "(\"41c589bb3c26c441e64c1e2e9f90c6ae\" == md5(body))"
+      - type: dsl
+        name: 3.4.6 - 3.8.1
+        dsl:
+          - "(\"d9850b05c8f73fada162c4a4b0a93a8e\" == md5(body))"
+      - type: dsl
+        name: 3.7.5 - 3.8.6
+        dsl:
+          - "(\"ec735e91779be47a0258b9c4d262f54a\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"88e8d34ed938419d44d35db11ab9f90d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/tests/behat/disablecontrol.feature"
+    matchers:
+      - type: dsl
+        name: 3.4.5 - 3.8.6
+        dsl:
+          - "(\"e847548e05eca4b3585579e8bfb7c8bd\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"7784d7bd44b0160bfdacb9049ee84d2b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/tests/behat/filter_participants_showall.feature"
+    matchers:
+      - type: dsl
+        name: 3.4.5 - 3.8.6
+        dsl:
+          - "(\"8969f9b212498768f9e67188b078e10a\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"c8aac19148bf768781f37139043c6f4d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/tests/behat/custom_profile_fields.feature"
+    matchers:
+      - type: dsl
+        name: 3.5.2 - 3.5.15
+        dsl:
+          - "(\"8168d5c78556c639cc8b55838300381a\" == md5(body))"
+      - type: dsl
+        name: 3.4.5 - 3.4.9
+        dsl:
+          - "(\"11b98a9272b568eadd0ca78ba3710e0b\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"260f378d749a14ed6e698324207d1c55\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"88d8e178666ab353f7a2a2ce28aa7ffd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/question/type/multichoice/tests/behat/export.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.1
+        dsl:
+          - "(\"fb6c68327225f8cfe6c33aad637eb304\" == md5(body))"
+      - type: dsl
+        name: 3.0.5 - 3.2.9
+        dsl:
+          - "(\"876f89020db851b77cc3890e7bf70722\" == md5(body))"
+      - type: dsl
+        name: 2.9.5 - 3.0.4
+        dsl:
+          - "(\"e7ec9ff5100024f33d1832c755b40415\" == md5(body))"
+      - type: dsl
+        name: 3.5.2 - 3.5.15
+        dsl:
+          - "(\"762190110da911692201c7e552760c51\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"551a4d4a47f783c1b5655dcd17743c07\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"d9051791175ef88e1fe0fc1e769a74b1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/tool/dataprivacy/tests/behat/manage_purposes.feature"
+    matchers:
+      - type: dsl
+        name: 3.4.5 - 3.5.2
+        dsl:
+          - "(\"a6763dd4cc3d556491530928f9d6a5b3\" == md5(body))"
+      - type: dsl
+        name: 3.3.8 - 3.3.9
+        dsl:
+          - "(\"63383811bb813758503e9ae70f5d9091\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.3
+        dsl:
+          - "(\"c7eff627e3361b74e4c1f0a3e17c4874\" == md5(body))"
+      - type: dsl
+        name: 3.4.6 - 3.5.15
+        dsl:
+          - "(\"dc65659a687e99dd51d4afc75d1c398d\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.10.0
+        dsl:
+          - "(\"2ffcf53ecb79b93d7d58a5da61a2c27a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/badges/tests/behat/criteria_cohort.feature"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.5.15
+        dsl:
+          - "(\"375ae0d6a08b557f437a6c0e2534bf8f\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"26b2a8b4b59218858de31e0e289b4f1c\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"ecebf4b318c3abb9807f1d6e308e1b2a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/badges/tests/behat/criteria_profile.feature"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.5.15
+        dsl:
+          - "(\"f845ef7809fb4f300ec98ebca80bc19e\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"6301b8daae1fccb1e09121896e62ac3b\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2ea5b9a81e6e13e0b612a810338474e6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/badges/tests/behat/role_visibility.feature"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.5.15
+        dsl:
+          - "(\"907f5ed6b66730f710ab2443c3fea747\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"a43aa92b5d9d71b646dfdb65be8bedbb\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"13835ef205b5ee082a18e3d06f590f47\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/backup/util/ui/tests/behat/restore_moodle2_courses_settings.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.4 - 3.5.15
+        dsl:
+          - "(\"56031596cced5fde7013c1ed6c1f4150\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"ebc6e8c5fd6f985b2b6373b1c6a6a751\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"638d4fd41483ddb2a9c199da74a25902\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/enrol/guest/tests/behat/guest_access.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.15
+        dsl:
+          - "(\"61f1d8b0d33f05ee4a36aaa44223920b\" == md5(body))"
+      - type: dsl
+        name: 3.0.0 - 3.2.9
+        dsl:
+          - "(\"276f9f61391a7d5f69279a6445c42200\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.9
+        dsl:
+          - "(\"27646461868ae8079a4b04e572234b2e\" == md5(body))"
+      - type: dsl
+        name: 2.7.8 - 2.8.12
+        dsl:
+          - "(\"79a216421e854c4276873e9ddfc6a565\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.5
+        dsl:
+          - "(\"6524ba9c1ae42a37d21c0f62c8031afc\" == md5(body))"
+      - type: dsl
+        name: 2.6.0 - 2.6.11
+        dsl:
+          - "(\"9f055dfa649a1012521f36e8ec122d2e\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.5.9
+        dsl:
+          - "(\"7ea5e23ef2cf8400aff90b8edad49b02\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"e30ddd8ce0f3de7b30e87e4ca7d0f2b0\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"51731b85a57a1bcb828f858a9bcd9fb9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/blocks/badges/tests/behat/block_badges_course.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.15
+        dsl:
+          - "(\"4f59dc5eb2643745d59a54dbad0728c8\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.2.9
+        dsl:
+          - "(\"e5302796cd0bba6ba949317f584fffdc\" == md5(body))"
+      - type: dsl
+        name: 3.0.4 - 3.1.18
+        dsl:
+          - "(\"56d0f12c79062f321c120d37f75dab17\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"7ba1fbf9472d8f4c59889b8b2b691140\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"04995bd22fd8fa47100a73de6fbcb3b0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/blocks/badges/tests/behat/block_badges_frontpage.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.15
+        dsl:
+          - "(\"6638e304d7a55eef97283f528792a438\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.2.9
+        dsl:
+          - "(\"d82a651731e6075e69843ff9d9e2035f\" == md5(body))"
+      - type: dsl
+        name: 3.0.4 - 3.1.18
+        dsl:
+          - "(\"35d5f5e8f63cfa9cc8676a682dd4c06a\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"8efa1267bd18f6245f541e13a5a5b9a3\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"a4becf2b0dd2500f7e4ad76cce49e283\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/blocks/site_main_menu/tests/behat/add_url.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.15
+        dsl:
+          - "(\"a84c8d744bcf0db90c7e0441cc29841a\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.2.9
+        dsl:
+          - "(\"ea0b69159c1dceccbe9adebaee9545b4\" == md5(body))"
+      - type: dsl
+        name: 2.9.2 - 3.1.18
+        dsl:
+          - "(\"c53ce5676002295a21ce9c0d2a4d5b6a\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"244c6b00452a55b511df0077b6c99255\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"3b019500edadbfd4c5c76bd36a0b5c4e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/tag/tests/behat/delete_tag.feature"
+    matchers:
+      - type: dsl
+        name: 3.2.1 - 3.5.15
+        dsl:
+          - "(\"26b8ebecd102496cf0770069383d52cf\" == md5(body))"
+      - type: dsl
+        name: 3.1.0 - 3.2.0
+        dsl:
+          - "(\"732a32aa846594e116212c24c487ede2\" == md5(body))"
+      - type: dsl
+        name: 3.0.0 - 3.0.10
+        dsl:
+          - "(\"8e54abfc89fdcdd6e0b4d53701bc3636\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"02ac164f96fb7111c35aef785aaf03ae\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"6a3bf61d9c4cccbb955492471732655e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/wiki/tests/behat/reset_wiki_comments_tags_files.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.15
+        dsl:
+          - "(\"aa0ea4b8d6b63fa5527f27a63b58cd0d\" == md5(body))"
+      - type: dsl
+        name: 3.1.5 - 3.2.9
+        dsl:
+          - "(\"51a051f9b12bd9961df65e5b9fa8e806\" == md5(body))"
+      - type: dsl
+        name: 3.1.4 - 3.2.1
+        dsl:
+          - "(\"1713ae1e7f527234049a0a71013d0cf7\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"bcebc400d458f03810c1d79cf79f98d8\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"28bf4221f6a12530ed97bc20ad20061a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/assign/feedback/editpdf/yui/src/editor/js/annotationhighlight.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.5.15
+        dsl:
+          - "(\"13d045785acc1b0c064bd41cd66b2053\" == md5(body))"
+      - type: dsl
+        name: 3.0.7 - 3.1.18
+        dsl:
+          - "(\"c821978d7b8926a60c4afdfc0586a0e7\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.1.2
+        dsl:
+          - "(\"5cf74b59e5bcaeea66e9053c094aac7f\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"a6cd91c1094d86a200fd0eaa47942ed2\" == md5(body))"
+      - type: dsl
+        name: 2.6.0 - 2.6.11
+        dsl:
+          - "(\"b56c887157b6d853ab7cebe8ae60f04e\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"9fdbb3d7a1bdb1c26e89571547c01a8f\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"ab863471e957babcab54e97f44b57ecc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/question/tests/behat/delete_questions.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.15
+        dsl:
+          - "(\"79981fba123f8377a044fe6029793a6c\" == md5(body))"
+      - type: dsl
+        name: 2.8.9 - 3.2.9
+        dsl:
+          - "(\"b5e8a936c083a828ac7d9129d9560b32\" == md5(body))"
+      - type: dsl
+        name: 2.7.8 - 2.9.2
+        dsl:
+          - "(\"feb80296292acc7dbe3bd6235b1dcec1\" == md5(body))"
+      - type: dsl
+        name: 2.7.4 - 2.8.5
+        dsl:
+          - "(\"83a9be34fdfe9d5eefcd1c0440109245\" == md5(body))"
+      - type: dsl
+        name: 2.8.0 - 2.8.1
+        dsl:
+          - "(\"99dc6b8b94f562bdeb28b9e79eeafb31\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.7.3
+        dsl:
+          - "(\"bc1b83081a55d405dd586f0c41cc2b01\" == md5(body))"
+      - type: dsl
+        name: 2.5.3 - 2.6.11
+        dsl:
+          - "(\"33fb5683a13389c5db88058c41edbad2\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.7.2
+        dsl:
+          - "(\"0076342406dc200245c98786e3430eef\" == md5(body))"
+      - type: dsl
+        name: 3.6.7 - 3.8.3
+        dsl:
+          - "(\"16765449340ac23ff9fa8ad45094ebd1\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"279cfb501ab0588996fc4c3930214e76\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/workshop/tests/behat/file_type_restriction.feature"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.5.15
+        dsl:
+          - "(\"bc9d9b07ace5b2f525119410394abd73\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.0
+        dsl:
+          - "(\"5a29969b4bfc06d022bc6ce9bb666092\" == md5(body))"
+      - type: dsl
+        name: 3.7.4 - 3.8.6
+        dsl:
+          - "(\"2c4b2dae7e7c051fa363c8ea7c062097\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"28424b7a34ceaebbfbbc9ece370807b7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/src/user_date.js"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.9
+        dsl:
+          - "(\"d83c3fa87fd682ce5d19f019f1dab8db\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.5.15
+        dsl:
+          - "(\"a7005f56765824cb820c08a1e6e72f81\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.3
+        dsl:
+          - "(\"879c3ca1ab9e8e0ad71957115a0743b0\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"450e543cf3cb15a2c1f31343c0005145\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/tool/dataprivacy/tests/behat/manage_categories.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.8 - 3.5.2
+        dsl:
+          - "(\"7c6a51ab6de130e4198a50768a1bb74e\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.3
+        dsl:
+          - "(\"c02ecec34b0e68bde55c754729a38cb8\" == md5(body))"
+      - type: dsl
+        name: 3.4.6 - 3.5.15
+        dsl:
+          - "(\"27864ae7cbe51f6286f59cb4fe8c07c8\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.10.0
+        dsl:
+          - "(\"a10d2f9ffce184723d26b328b94b3e1e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/boost/scss/moodle/dashboard.scss"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"3c9e0fc0b48a3eb6a9defa680d3d3bf1\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"c87915590eca17242006f16602e2c7c7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/thirdpartylibs.xml"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"4a9a1e618582709680e0de6d2b4ea80a\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"e30022e4f23b2a2067d660d997433d66\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/src/codemirror/js/codemirror.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"9d7b08507ce6d09ddbe292728c37b289\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"82b9491f7e4ecd8ce57812ee3f99014f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/src/codemirror/js/xml.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"cae34fb93abc8b972c9fddbb7868c1d8\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"a61b1ed33d376a16389f42360c46f666\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/src/codemirror/js/htmlmixed.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"0442035997b7dadbfd59e7e58e215ef4\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"508a45ef2f7a40da878f2088c54b9a95\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/src/codemirror/js/javascript.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"9f4936f449c40522d301204f3bc4491d\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"14c431c54a9fe92bf13879a46519e824\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/src/codemirror/js/css.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"917c028a5251c851fc8b6a26ce378465\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4e1489f47857e5a520031b7fa3cbd27e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/src/codemirror/readme_moodle.txt"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"cde2b543740847ec55e50f2c4917699a\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4fee6608475ee6ed3c6fcb90738ba3db\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/build/moodle-atto_html-codemirror/moodle-atto_html-codemirror-min.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"d0d390df028caae0f67b353052209de1\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"adc37c40dbdf08801e2cbb6f76f9682a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/build/moodle-atto_html-codemirror/moodle-atto_html-codemirror.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"0d5c92e8cc23009dd1e95b96fb40f0b9\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"a8bdfad698e321e5c748bcb0f7a9cdea\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/build/moodle-atto_html-codemirror/moodle-atto_html-codemirror-debug.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"0d5c92e8cc23009dd1e95b96fb40f0b9\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"a8bdfad698e321e5c748bcb0f7a9cdea\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/html/yui/build/moodle-atto_html-beautify/moodle-atto_html-beautify-min.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"156bc7ecc689fab530392c402986b233\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"3e53e80d0425ba4437f6a4199aeb93b7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/templates/message_drawer_view_conversation_footer.mustache"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"5986973eee72683e155c6820b5b3225e\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"e980eab419dd57442c8c42d6d589d550\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/templates/message_drawer_view_conversation_header.mustache"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"74313ac6210c66509337aa7aa9b54448\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"82145fb4e2ade0b91f075e1b25d08222\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/templates/message_drawer_view_group_info_body_content.mustache"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.6.3
+        dsl:
+          - "(\"2d8b33c72c7f9b5c129ba48b1014e9c7\" == md5(body))"
+      - type: dsl
+        name: 3.6.4 - 3.8.6
+        dsl:
+          - "(\"486937d71e958dfcfc975f25ef25dacb\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2ee9295eeec39317eedd7ade1c459770\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/templates/message_drawer_view_settings_body_content_notification_preferences.mustache"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"774d7b6080c23771a6a59f5fbfb44a46\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2e8866757662e227c6456cedd732337a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/question/type/ddmarker/amd/src/shapes.js"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.7.0
+        dsl:
+          - "(\"2e2ead27114bfe93b445314f9e9e785a\" == md5(body))"
+      - type: dsl
+        name: 3.6.5 - 3.8.6
+        dsl:
+          - "(\"347563f0c7a7aacf5dc7c6545d717be3\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"172cd2e6998952f1a38b9283617be18a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"6539384a636a14946c65201b8930cd19\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"42cae1e5420d0cb09898bc2c49a9d4c5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/filter/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.0.0 - 3.5.2
+        dsl:
+          - "(\"0adebeeccc7c5a0a41aaef4690bebc4d\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.9.9
+        dsl:
+          - "(\"fdb565187022c1a21bb65f9e3d04a2f8\" == md5(body))"
+      - type: dsl
+        name: 2.6.0 - 2.6.11
+        dsl:
+          - "(\"fdd1c0dc8e32dcfddf17560384301f7d\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.5.9
+        dsl:
+          - "(\"733ef5f50aaeda4951f162b203571d1a\" == md5(body))"
+      - type: dsl
+        name: 2.3.0 - 2.4.11
+        dsl:
+          - "(\"e1402df6528d69615c132fcf5c6bcd0a\" == md5(body))"
+      - type: dsl
+        name: 2.2.0 - 2.2.11
+        dsl:
+          - "(\"2142cbbd03090a7c323900f4330fb30d\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.6
+        dsl:
+          - "(\"a5967a5666c442b4e47fd64f99c05da2\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.5.15
+        dsl:
+          - "(\"3eeba4c885e7ce16983f69418d9e6405\" == md5(body))"
+      - type: dsl
+        name: 3.4.6 - 3.4.9
+        dsl:
+          - "(\"6527f71ad4c2a16b4d1e740a67317f21\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"db96a5faf7d9b3b61c3662a4b8f2a9ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/tests/behat/securelayout.feature"
+    matchers:
+      - type: dsl
+        name: 3.5.5 - 3.8.2
+        dsl:
+          - "(\"19e097d37a471ff0e1869152d22f9a9b\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.8.6
+        dsl:
+          - "(\"2626242518c24f52838c0a23c42ded65\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"f2df753f8bca80c318f6f202bc5c99ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/amd/src/actions.js"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.7
+        dsl:
+          - "(\"e4385790d5a004488b34c06c733c5e6c\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.5.1
+        dsl:
+          - "(\"bde134fe833ef6c489c6bbf7156a4c50\" == md5(body))"
+      - type: dsl
+        name: 3.4.5 - 3.6.3
+        dsl:
+          - "(\"518d7c8f05fd4cf881495f6a8decd1cc\" == md5(body))"
+      - type: dsl
+        name: 3.3.8 - 3.3.9
+        dsl:
+          - "(\"98d361279caeea6f6e9ec1daf0ab2b36\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.2
+        dsl:
+          - "(\"2ba2711672eb2c02fa90911970655ed7\" == md5(body))"
+      - type: dsl
+        name: 3.5.6 - 3.6.10
+        dsl:
+          - "(\"e93cc9f5c98fe5ca46aacd540f449e77\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.8.6
+        dsl:
+          - "(\"e72ecd823416006f3d9b8b95758d28c9\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"0e6d5eef89285815dfd71c2960ea65fc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/boost/templates/navbar-secure.mustache"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.6.2
+        dsl:
+          - "(\"035ca5a931022189200ed968bfaed117\" == md5(body))"
+      - type: dsl
+        name: 3.5.5 - 3.6.10
+        dsl:
+          - "(\"a378743438afce2d6bf9245fb6ac5a31\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.0
+        dsl:
+          - "(\"9fbdfe5cf9de49b8f52a8ad97ef41962\" == md5(body))"
+      - type: dsl
+        name: 3.7.4 - 3.8.6
+        dsl:
+          - "(\"8ccef8b8c4f782b2a974b2a1b6344655\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"859a4f433126b55195b6e292b816d438\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/boost/templates/footer.mustache"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.6.10
+        dsl:
+          - "(\"d11d84b06146e53a4bcb02d8fefe1ac8\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"7a77d06c5c0dbd7d18fc33d7d92476c2\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"c2abd73e81aa1ad6b537b865285a37ab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/boost/scss/moodle/bs2-compat.scss"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.4.9
+        dsl:
+          - "(\"720f86fcc695ba31dd26cc871c5267bd\" == md5(body))"
+      - type: dsl
+        name: 3.5.0 - 3.6.10
+        dsl:
+          - "(\"37c647f1b728952cc831a8792866ecba\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"330ca44ccd85eaab765dde4187d6bcaa\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.3
+        dsl:
+          - "(\"f6c32591a824e16771834f8d95b6a981\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/initials_bar.mustache"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.4.9
+        dsl:
+          - "(\"5e509a974b893fbc340540c321565e20\" == md5(body))"
+      - type: dsl
+        name: 3.5.0 - 3.6.10
+        dsl:
+          - "(\"cbb0d7c7e1e4d31de63bee8a02f99aa4\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"b8d38d6c998748a962f8408087321225\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2fbd87ecefb9b1d519731a8deccc257d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/modal.mustache"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.9
+        dsl:
+          - "(\"bceaf2cd9e0e7aad5b2430e08310b3b8\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.4.9
+        dsl:
+          - "(\"b20364d2e95d027d0967f8a649075ad4\" == md5(body))"
+      - type: dsl
+        name: 3.5.0 - 3.6.10
+        dsl:
+          - "(\"cea83041cefa46a7abe1d746b215cc32\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"5c000732ff4aaaf704378979c00603e0\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"a06cca1d1c15b233134076e7ddbf0e5b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/group/tests/behat/auto_creation.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.6.10
+        dsl:
+          - "(\"f4474afd76b0122cc26b98323952a3c6\" == md5(body))"
+      - type: dsl
+        name: 3.2.1 - 3.2.9
+        dsl:
+          - "(\"88a824e4f12603a92366852ff4c6e4e7\" == md5(body))"
+      - type: dsl
+        name: 3.1.0 - 3.2.0
+        dsl:
+          - "(\"5928eb9918fb094237de4b92d916e394\" == md5(body))"
+      - type: dsl
+        name: 2.8.6 - 3.0.10
+        dsl:
+          - "(\"997ac294b93a8a861c672a594953fc05\" == md5(body))"
+      - type: dsl
+        name: 2.8.0 - 2.8.5
+        dsl:
+          - "(\"bec87c79d1100cc00263c81a68413107\" == md5(body))"
+      - type: dsl
+        name: 2.7.8 - 2.7.20
+        dsl:
+          - "(\"016ec6fee5154ef53253810bd03737a1\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.7.7
+        dsl:
+          - "(\"f7681749b4543bff43840829df499921\" == md5(body))"
+      - type: dsl
+        name: 2.6.0 - 2.6.11
+        dsl:
+          - "(\"646d263e36440bf7f4811d9cbe78c7c5\" == md5(body))"
+      - type: dsl
+        name: 2.5.3 - 2.5.9
+        dsl:
+          - "(\"a0dc12ef0e26f84ee4b7ede8a942b9fc\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.5.2
+        dsl:
+          - "(\"616731bc06363b5c94e1b56afc66bc0d\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"e00109b073cb5160664363cc3d705cc5\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4ae35639b800d217a7386d1736143ab6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/title/yui/build/moodle-atto_title-button/moodle-atto_title-button-min.js"
+    matchers:
+      - type: dsl
+        name: 2.7.0 - 3.6.10
+        dsl:
+          - "(\"cf147f04e403b1f2d8337e91dab3054a\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"3cf9ba75f5ecddb8e4c2d436d65c835c\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"bfd829fec892cc70bc76fbbdfed34629\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/form_autocomplete_input.mustache"
+    matchers:
+      - type: dsl
+        name: 3.0.0 - 3.5.1
+        dsl:
+          - "(\"83da279d0f89e9ef61ce5350551eefad\" == md5(body))"
+      - type: dsl
+        name: 3.0.7 - 3.0.10
+        dsl:
+          - "(\"bce1ec8ac24366a580e6fd34f28b0ab2\" == md5(body))"
+      - type: dsl
+        name: 3.4.5 - 3.6.2
+        dsl:
+          - "(\"f8dc14288107350c400a44f6396c464d\" == md5(body))"
+      - type: dsl
+        name: 3.5.5 - 3.6.5
+        dsl:
+          - "(\"eeb65691317eb43c0c1d0258bb49c98c\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.7.1
+        dsl:
+          - "(\"5062a6e2b9c61ec9f50d0b9a719dd541\" == md5(body))"
+      - type: dsl
+        name: 3.6.6 - 3.8.6
+        dsl:
+          - "(\"da8f61cb591541ee241c370bbe9ba3c6\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"1636986d4c1123698a9297ea6da905fc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/question/engine/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 2.9.5 - 3.6.10
+        dsl:
+          - "(\"7f7a1a484816831fa10635982befe7d9\" == md5(body))"
+      - type: dsl
+        name: 2.9.2 - 3.0.2
+        dsl:
+          - "(\"21c7e034230e40bdd55015c9a0aebc26\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.1
+        dsl:
+          - "(\"7332b8ea3a408f4564a73481e51522e7\" == md5(body))"
+      - type: dsl
+        name: 2.8.8 - 2.8.12
+        dsl:
+          - "(\"f69d824ca35d38fa43efa60a7b43888b\" == md5(body))"
+      - type: dsl
+        name: 2.6.0 - 2.8.7
+        dsl:
+          - "(\"863128a5f3a6da5dc8fee24e5112f4b6\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"aee7aabaeb8d0484c88a3c7ddab21f2c\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4b83a8b2fc3a169d6122cf3b87904348\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/templates/unified_filter.mustache"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.6.10
+        dsl:
+          - "(\"89b3a3b6ff2fb05941d5e277a5be695e\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"5c3763c304b222357737825e606527a2\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"3fb61c9363b4a6552b5d6252920cc558\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/plagiarism/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.1.0 - 3.3.9
+        dsl:
+          - "(\"7f65919610f4d30fccc783a617263507\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.6.10
+        dsl:
+          - "(\"896628dcb369433c27d0dc99e36df49b\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"d7da952c89ed2a1de8617fcad389315b\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"fd794e10596ffbb3f271cfe9d6941d20\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-template.mustache"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.9
+        dsl:
+          - "(\"7d7ac0370d40953cd5882d426fac831b\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.6.10
+        dsl:
+          - "(\"5c3f79b30f0e96e260500f0f96368a3b\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.2
+        dsl:
+          - "(\"9ade01c329ca58687faa61b38dbfb7ea\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.8.3
+        dsl:
+          - "(\"1a7614094ab8be5a8f465de4ac1811db\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"eb1cef4a6f6c05242446459441904147\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/media/yui/src/button/js/button.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.5.0
+        dsl:
+          - "(\"f65dafec090589370961f3b56e710002\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.1.18
+        dsl:
+          - "(\"ed705e7ded1c0be8beca0b7aa5942a0e\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"064785322a6691d3b2b2b982c9a875ef\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.15
+        dsl:
+          - "(\"35eeb7939ab09cb6a360df79a7bba676\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"1decaceecbb898c77ec5b51ed059e6f3\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"b77c9a63a2b9b0a79f79c08ab6db5e97\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"aa7ac429d50792b2471bcf0481727b4c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/media/yui/build/moodle-atto_media-button/moodle-atto_media-button.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.2
+        dsl:
+          - "(\"a8801019e9d7d13d0e60c7d3a2230484\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.1.18
+        dsl:
+          - "(\"852c8c1975d6f30aea9963319e1d4a71\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"59ed2b223af8c4dac1576153ced9d65d\" == md5(body))"
+      - type: dsl
+        name: 3.2.6 - 3.5.0
+        dsl:
+          - "(\"4655fad807f3bdc0f4844d8e645dddaf\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.15
+        dsl:
+          - "(\"5945a0633a2ef781d83b09b2253c74fb\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"ad57ed34973819f554b43a821f68b6cb\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"634ba4fcc90b33638a9ab9212c7663be\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"345ada19f8ec807490c83d1b81d6f49e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/media/yui/build/moodle-atto_media-button/moodle-atto_media-button-debug.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.2
+        dsl:
+          - "(\"a8801019e9d7d13d0e60c7d3a2230484\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.1.18
+        dsl:
+          - "(\"852c8c1975d6f30aea9963319e1d4a71\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"59ed2b223af8c4dac1576153ced9d65d\" == md5(body))"
+      - type: dsl
+        name: 3.2.6 - 3.5.0
+        dsl:
+          - "(\"4655fad807f3bdc0f4844d8e645dddaf\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.15
+        dsl:
+          - "(\"5945a0633a2ef781d83b09b2253c74fb\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"ad57ed34973819f554b43a821f68b6cb\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"634ba4fcc90b33638a9ab9212c7663be\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"345ada19f8ec807490c83d1b81d6f49e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/tool/task/tests/behat/clear_fail_delay.feature"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.5.15
+        dsl:
+          - "(\"9ea368453599c956883433313cda23a8\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"3336077c308ac7fedb7306cb7e15c679\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"e5290959e09e5e840f7fb139226d147b\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"d670485fd9f506639acdacaa5e00202c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/blocks/admin_bookmarks/tests/behat/bookmark_admin_pages.feature"
+    matchers:
+      - type: dsl
+        name: 2.9.5 - 3.5.15
+        dsl:
+          - "(\"f4c4bc2e4930abd8543664d36aa5cdb6\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"8f8e622c516da94e446d7b3a7ab6366d\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"07c88c5e677a1557e1bc8b890785217a\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"1cf7247832fc08afb4d9da84c61f0d1a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/templates/settings_search_results.mustache"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.5.15
+        dsl:
+          - "(\"0b1da7607dc5c7de5a1c52c819b94d25\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"2b2938d5f6781f67d7e7c9c27a8f6ece\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"bbe1715267b854b92958dedacae9025f\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"8b4147b8898c99009dd2f5599de6eccf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/blocks/recentlyaccesseditems/tests/behat/block_recentlyaccesseditems_dashboard.feature"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"fc5e8d1c2fd14230ff30aea95049fc59\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"4ca29192e9e66aae8ce16928337ba1ae\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"9130c51b9c0843681837d24ad4f6f281\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/blocks/myoverview/templates/nav-sort-selector.mustache"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"51f8dc173ce6e382f62229ceba80e359\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"f900e2279d62b0187e8cab9ba8979935\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.2
+        dsl:
+          - "(\"57b1dbddf0ec80bbf2137b4061ab4fc1\" == md5(body))"
+      - type: dsl
+        name: 3.9.3 - 3.10.0
+        dsl:
+          - "(\"fa56b43cf13c8b910e8d222b36230adf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/customfield/field/date/tests/behat/field.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"88dc053984345155fa5b361950e836f1\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4f8c1a8c9870734607bbdacdf8132cf6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/customfield/tests/behat/unique_field.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"ae2230fa2b59972e8b0fee2932b0bfab\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4e20d89845c5b563b5f087cbb504621e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/enrol/database/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"eeba594bd58d3f7f177c932a9a83d4d4\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"5a59d2cfb8df7a9d885f53421015abdb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/blocks/myoverview/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"90fc64bbf7d35fb5f1b797a6e7b4e7a9\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"216a48b29eff2550499895878a6498ea\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/templates/tasklogs.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"f8c9eb5d28ab0940d394d2baf3a34d4a\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"623b936258a774e05ac94dd6a748e4e7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/boost/tests/behat/tour_filter.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"e4a657dc6fb30c511434c2e16ea77c83\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"373a655414664234e1e4305b3386e9aa\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/classic/templates/contentonly.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.2
+        dsl:
+          - "(\"1765854e5aa1b7a8759d55b660608ade\" == md5(body))"
+      - type: dsl
+        name: 3.7.3 - 3.8.6
+        dsl:
+          - "(\"111eea5283dfeaa232e8f8cfbe6a3f46\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"a447799652bd0b912f6aa178be9b37d6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/classic/templates/navbar-secure.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.0
+        dsl:
+          - "(\"e5f154a2267b4c74f3e0e0dde78409e9\" == md5(body))"
+      - type: dsl
+        name: 3.7.4 - 3.8.6
+        dsl:
+          - "(\"d138dd3d7f090326937f79efb38cb5ae\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2898e58c6403dc622b174444510290a3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/classic/scss/classic/post.scss"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"caf90ca580dcd0cbbf007594b69b3f89\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"601d2e338935cf3b6323824e44272183\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-advcheckbox-inline.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"40ff294f4602448aa5e96fa789bef6f3\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"1244a4a894d20824eda9f172748b3a8d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-text.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"7d53cb29c22999da2777d26574cd5e57\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"f19f591f6daf1883e6ecdeaac3801edb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-password.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.2
+        dsl:
+          - "(\"2f129651efc0df279e49f0304ed3c4c5\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.8.3
+        dsl:
+          - "(\"06fc943af5c978e5c10b4cee4c3b4324\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"b2ca3e171fa98b89853a395da1e090de\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-group.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.2
+        dsl:
+          - "(\"03ed7606a784143e57426067d2463f06\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.8.3
+        dsl:
+          - "(\"a885e42d563f76ff708856b520488b24\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"f4052ebf3fb2d8942047621a91b986ce\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-checkbox-inline.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"70467dd4069e371d747e174e484a6061\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"f936b54986a6cbd2b46212f0b411a924\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-url.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"d508b993164ad7effb93f556d3c6d3c0\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"1b0fb8c6902ba8dd3e6cf2cfb7c37068\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-group-inline.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"6a210d13a707e46cc41d762ef3b21848\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"2d91def7c3c0b1cf8b4518dde2258c0c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-filepicker.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"9cd229f3eea1494f28969eda7332de86\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"e2ba9c3dc6c3107f9879ac3808340591\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-filemanager.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"9cd229f3eea1494f28969eda7332de86\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"fa4ea2149a25c49aa1ee137f6ec9dfd2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/templates/element-text-inline.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"db35f406f263a8d19211bf4a2332d380\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"77451bb0f6bbd27c716b3677a060fb8f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/navbar.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.2
+        dsl:
+          - "(\"eff4350674279ad6d9bd3aa31063920e\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.8.6
+        dsl:
+          - "(\"f13f5a6493b3cec9ac2517907f136d7c\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"5870c33223ffa45a66e85688d33ffe73\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/async_backup_progress.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"4f8f0b92a1b180aca57ca4394b81d634\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"ab415644ab01f0bcf4278fc1ba36019e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/php-jwt/composer.json"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"d5c1437719e0ee00165ce0c0543af247\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4423f5a313bcb2a71b64aca3d6402d74\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/php-jwt/README.md"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"ee3a8060404e2cc21f99c70f18f30a93\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2b2461f664c830376998f2e40a353823\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/badges/tests/behat/criteria_competency.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"7567d370a2aa9b7a417747293b52b0c7\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"0f8534bcf0d696a033863b4cf6478069\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/tests/behat/add_forum_inline.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"ad9dafdb6120cda57cf0bb63832b9554\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"feb610807ad4780924bdf2ee10456f4a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/tests/behat/inpage_reply.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"143f3b58358860980d3b7400695b10df\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"f285d899d59c2d973ae8a4a9662cd932\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/tests/behat/favourite_discussion.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"de4fd029e59c905c5ab7ec1bcab7ec09\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"304705dfff7ab649a0f5256f2570acbd\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/templates/forum_discussion_threaded_post.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"6549f7b0be7abf256ad2b5837803b1e6\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"3cf62a40654d78e549ee1c579e6e306e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/question/format/aiken/tests/behat/aiken_import.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.6
+        dsl:
+          - "(\"0b73e2e040a54eb7de96b1581fb45c4f\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2d4ae0591ef783f0a1429fcbf1a0fb85\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/question/type/multichoice/amd/src/clearchoice.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.2
+        dsl:
+          - "(\"9ba5023ae3901c9fc0f077a4d9bbb3bd\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.8.3
+        dsl:
+          - "(\"6be5a0500dadbd9aeb791139013d622e\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.9.1
+        dsl:
+          - "(\"6d3c7ef777437e41ac72fab86a0f1168\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.9.2
+        dsl:
+          - "(\"3204f0b809cc314d9d96086758fd9186\" == md5(body))"
+      - type: dsl
+        name: 3.8.6 - 3.10.0
+        dsl:
+          - "(\"4f73f9d01c74f530e2ad07e57cefa8f1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/yui/src/formchangechecker/js/formchangechecker.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.7.0
+        dsl:
+          - "(\"f522dad800e6748d7f56398324c0240d\" == md5(body))"
+      - type: dsl
+        name: 3.1.2 - 3.1.18
+        dsl:
+          - "(\"189a092e1021d9a73a4ff63a601e4013\" == md5(body))"
+      - type: dsl
+        name: 2.9.3 - 3.1.1
+        dsl:
+          - "(\"9d886bf3da59d628f005c56ab29d3dd1\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.2
+        dsl:
+          - "(\"6781cf81934416d6fd003e3c14f3bf07\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"341fbbc9de33a22751c36c8125031c47\" == md5(body))"
+      - type: dsl
+        name: 2.5.4 - 2.6.11
+        dsl:
+          - "(\"649267d9abe0b1c4d285dd142794b279\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.6.0
+        dsl:
+          - "(\"907f58ada7c57d0680070297a7a67db4\" == md5(body))"
+      - type: dsl
+        name: 3.7.1 - 3.8.6
+        dsl:
+          - "(\"2440afb7cd2e8ee0fade66b9136735db\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"931b771c8a1b7cc2fd09d03b202f63c8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/yui/build/moodle-core-formchangechecker/moodle-core-formchangechecker-debug.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.7.0
+        dsl:
+          - "(\"da051546e8d4476cd2258f3d1eea68de\" == md5(body))"
+      - type: dsl
+        name: 3.1.2 - 3.1.18
+        dsl:
+          - "(\"6a9c4771adb39ecde3903315979d7796\" == md5(body))"
+      - type: dsl
+        name: 2.9.3 - 3.1.1
+        dsl:
+          - "(\"28f79ed428151cca3d238a6939125a7a\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.2
+        dsl:
+          - "(\"dcceed9172c71afe8f8083e2af9b5b32\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"803f95e89801b85fd0ad9ae85188d6c8\" == md5(body))"
+      - type: dsl
+        name: 2.5.4 - 2.6.11
+        dsl:
+          - "(\"0ad1b9fdb9773ee0c0308178969b51fd\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.6.0
+        dsl:
+          - "(\"01b00e16dc55fe9df9421e9872129257\" == md5(body))"
+      - type: dsl
+        name: 3.7.1 - 3.8.6
+        dsl:
+          - "(\"d88ecd0488ae421d0b222b7f520fa4ce\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"e0add48a4c36e9c563bb252adc284479\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/yui/build/moodle-core-formchangechecker/moodle-core-formchangechecker.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.7.0
+        dsl:
+          - "(\"da051546e8d4476cd2258f3d1eea68de\" == md5(body))"
+      - type: dsl
+        name: 3.1.2 - 3.1.18
+        dsl:
+          - "(\"6a9c4771adb39ecde3903315979d7796\" == md5(body))"
+      - type: dsl
+        name: 2.9.3 - 3.1.1
+        dsl:
+          - "(\"28f79ed428151cca3d238a6939125a7a\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.2
+        dsl:
+          - "(\"dcceed9172c71afe8f8083e2af9b5b32\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"803f95e89801b85fd0ad9ae85188d6c8\" == md5(body))"
+      - type: dsl
+        name: 2.5.4 - 2.6.11
+        dsl:
+          - "(\"0ad1b9fdb9773ee0c0308178969b51fd\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.6.0
+        dsl:
+          - "(\"01b00e16dc55fe9df9421e9872129257\" == md5(body))"
+      - type: dsl
+        name: 3.7.1 - 3.8.6
+        dsl:
+          - "(\"d88ecd0488ae421d0b222b7f520fa4ce\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"e0add48a4c36e9c563bb252adc284479\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/yui/build/moodle-core-formchangechecker/moodle-core-formchangechecker-min.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.7.0
+        dsl:
+          - "(\"80510c0131a1cf0f38916ac04d788ef5\" == md5(body))"
+      - type: dsl
+        name: 3.1.2 - 3.1.18
+        dsl:
+          - "(\"383956aeb9837dce1bd6c2c10b0cfa13\" == md5(body))"
+      - type: dsl
+        name: 2.9.3 - 3.1.1
+        dsl:
+          - "(\"988d6d8f1ccf4c02f4df4ff294b7f705\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.2
+        dsl:
+          - "(\"725889de2f7faf0464eb519854babcf4\" == md5(body))"
+      - type: dsl
+        name: 2.5.4 - 2.8.12
+        dsl:
+          - "(\"1251d9773cf5b45ff4caedbdbe8c35b7\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.6.0
+        dsl:
+          - "(\"84346ec7aeac7f8e3e31048c81b13ac4\" == md5(body))"
+      - type: dsl
+        name: 3.7.1 - 3.8.6
+        dsl:
+          - "(\"49187a1380118ca350832cad857f908d\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"9aa4b38c46dfd3cc875bef3f610116d7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/templates/activity_navigation.mustache"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.5.15
+        dsl:
+          - "(\"f74a7f1c8a024c6d5accf0b206ec4ee4\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"2a7900e82d7b3e6f3e5f09f0b999c86a\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.7.1
+        dsl:
+          - "(\"af5ed2282de93091cb7bab8dd6b6bd1d\" == md5(body))"
+      - type: dsl
+        name: 3.7.2 - 3.8.6
+        dsl:
+          - "(\"cbb8dc832bc6cc0808fd7f5568dac8cc\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"dd54c9529c32d578f96b9bf2fbe5379a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/cache/stores/mongodb/thirdpartylibs.xml"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.1
+        dsl:
+          - "(\"9c1ce0599119382071bd5d9e5f3b7f49\" == md5(body))"
+      - type: dsl
+        name: 3.7.2 - 3.8.6
+        dsl:
+          - "(\"23588eaf5b27b9c1740cd11cb0c88563\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"770c08d4fe934581334c903f06781640\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/tests/behat/app_behat_runtime.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.1
+        dsl:
+          - "(\"533bd87d053c96e22fee8868d8ced7fc\" == md5(body))"
+      - type: dsl
+        name: 3.7.2 - 3.8.1
+        dsl:
+          - "(\"91d2d2ae4b5a265f6f6d39c4d8965bd0\" == md5(body))"
+      - type: dsl
+        name: 3.7.5 - 3.8.3
+        dsl:
+          - "(\"97706675b825ff4a51aca8e77cf840a3\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"14ac6d65c20fb86b00eae1219cc82ae5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/tests/behat/message_manage_notification_preferences.feature"
+    matchers:
+      - type: dsl
+        name: 3.7.4 - 3.8.6
+        dsl:
+          - "(\"1f86257e7f4d906b03a0560be1b66250\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"cf04bad70c44514117c68a5b7747168e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/output/popup/amd/build/notification_popover_controller.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.1
+        dsl:
+          - "(\"355812bdc01410f49f6ad7de09c3ae02\" == md5(body))"
+      - type: dsl
+        name: 3.8.2 - 3.8.6
+        dsl:
+          - "(\"4213f248ff4c6b044c671500b07a8e30\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"31f23e20b9facd13e83ba7e878462245\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/h5p/tests/behat/h5p_libraries.feature"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.1
+        dsl:
+          - "(\"b7161702a462056cf1ef7f5425a448f5\" == md5(body))"
+      - type: dsl
+        name: 3.8.2 - 3.8.6
+        dsl:
+          - "(\"ce17660be19d5885132cf84cd26da3fe\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"b5ebf36da8dc80c44e0ef06007fc66b8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/question/tests/behat/edit_questions.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.8
+        dsl:
+          - "(\"49fb6af4aba499a94eaa16a32b9a824e\" == md5(body))"
+      - type: dsl
+        name: 2.7.8 - 3.2.9
+        dsl:
+          - "(\"695107146b11fe2e0d41a64a487486a1\" == md5(body))"
+      - type: dsl
+        name: 2.7.4 - 2.8.5
+        dsl:
+          - "(\"08b23989dc24b75442178b6602773509\" == md5(body))"
+      - type: dsl
+        name: 2.7.3 - 2.8.1
+        dsl:
+          - "(\"85d1735b7671aa0ccc0d78f344a56d19\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.7.2
+        dsl:
+          - "(\"b80a065f15a81424a926f0650af0b341\" == md5(body))"
+      - type: dsl
+        name: 2.6.6 - 2.6.11
+        dsl:
+          - "(\"5ea8c624c4d20430e2fbcef052527dc4\" == md5(body))"
+      - type: dsl
+        name: 2.6.1 - 2.6.5
+        dsl:
+          - "(\"3f1c98bdfe1ba88999ae1b5239c9d8f2\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.6.0
+        dsl:
+          - "(\"a428b70ea71693ba4e1e270e23f4bf3e\" == md5(body))"
+      - type: dsl
+        name: 2.5.4 - 2.5.9
+        dsl:
+          - "(\"ff9683aca10bbfd39e4afc9aa70e2001\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.7.2
+        dsl:
+          - "(\"71b0bdfad3c1104703354cdc07dec83d\" == md5(body))"
+      - type: dsl
+        name: 3.6.7 - 3.8.1
+        dsl:
+          - "(\"5ed0a7e7cd0df16a7c9ff3899a708b6a\" == md5(body))"
+      - type: dsl
+        name: 3.5.9 - 3.5.15
+        dsl:
+          - "(\"3d9a00b80f6d59eb66f174687538ef79\" == md5(body))"
+      - type: dsl
+        name: 3.8.2 - 3.8.3
+        dsl:
+          - "(\"b890bf5bb435c438db8421b8a96f77c4\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"7e319e20872e588c77239b6d013836ab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/report/summary/tests/behat/summary_filter_no_groups.feature"
+    matchers:
+      - type: dsl
+        name: 3.8.2 - 3.8.6
+        dsl:
+          - "(\"2be84a7d7fa661725884640fa7e9ac23\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"558c84ea3f9c845743d6b52546c54430\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/report/summary/tests/behat/summary_filter_groups.feature"
+    matchers:
+      - type: dsl
+        name: 3.8.2 - 3.8.6
+        dsl:
+          - "(\"1a6e28026909963b07caf41922a80132\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2c3b76097825c1980178f9b28f3ae3ab\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/output/popup/amd/build/notification_popover_controller.min.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.4
+        dsl:
+          - "(\"8f601e372d6253e64d9598f026d30bfd\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.4.1
+        dsl:
+          - "(\"4b6f8a4d0db87f60906a6e74295f4d3d\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.5.0
+        dsl:
+          - "(\"03439459e5ff1a299cc0da14bde0f631\" == md5(body))"
+      - type: dsl
+        name: 3.3.5 - 3.3.9
+        dsl:
+          - "(\"6ecb3ca0615eb135ecc64c64ed3afa82\" == md5(body))"
+      - type: dsl
+        name: 3.4.4 - 3.5.1
+        dsl:
+          - "(\"bb3ba694902a741ff779fcd78a0fc245\" == md5(body))"
+      - type: dsl
+        name: 3.4.5 - 3.5.2
+        dsl:
+          - "(\"6406757c3bce7bd6989f32f5bfda01f7\" == md5(body))"
+      - type: dsl
+        name: 3.4.6 - 3.7.4
+        dsl:
+          - "(\"bec4ebdb4b7a52b8858024057ddc10b8\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.1
+        dsl:
+          - "(\"51aca0b35b9c904efae94f2f87275a5f\" == md5(body))"
+      - type: dsl
+        name: 3.8.2 - 3.8.6
+        dsl:
+          - "(\"8c9fc36816a91123d45800a388287124\" == md5(body))"
+      - type: dsl
+        name: 3.7.5 - 3.7.9
+        dsl:
+          - "(\"768cb2a8a17180b5476b7733afe5d779\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"646c6f6a39cdec94cc3dac770ea2009c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/boost/scss/moodle/drawer.scss"
+    matchers:
+      - type: dsl
+        name: 3.2.4 - 3.4.5
+        dsl:
+          - "(\"7fefa236352464710a61b8137608a002\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.3.0
+        dsl:
+          - "(\"aeee816e84997bd0534542a26a2d7688\" == md5(body))"
+      - type: dsl
+        name: 3.5.0 - 3.5.2
+        dsl:
+          - "(\"81aae29faf81ebc1c8354bb277cf4e0a\" == md5(body))"
+      - type: dsl
+        name: 3.5.3 - 3.6.3
+        dsl:
+          - "(\"f1ada308638bfbaea9681596c6a40b60\" == md5(body))"
+      - type: dsl
+        name: 3.4.6 - 3.4.9
+        dsl:
+          - "(\"179c601a12447e3b24e705194a4eb0e9\" == md5(body))"
+      - type: dsl
+        name: 3.5.6 - 3.7.0
+        dsl:
+          - "(\"f1f9b70b8ad52962f35c36f5eebccb5c\" == md5(body))"
+      - type: dsl
+        name: 3.6.5 - 3.7.1
+        dsl:
+          - "(\"731569c9a1f8e66fa1887a124a0dbb81\" == md5(body))"
+      - type: dsl
+        name: 3.6.6 - 3.7.4
+        dsl:
+          - "(\"ad8440e1d81a4553a06682f421f39693\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.1
+        dsl:
+          - "(\"7353fedd06418cf34ee7a065e2341686\" == md5(body))"
+      - type: dsl
+        name: 3.8.2 - 3.8.6
+        dsl:
+          - "(\"ffe1b4c62c1931661f0e94b18494302a\" == md5(body))"
+      - type: dsl
+        name: 3.7.5 - 3.7.9
+        dsl:
+          - "(\"15cfd8f8b3fbf57265b1c817ebb6647c\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"7e245d43dc9defcfe7a62bd516cb672e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/tool/capability/tests/behat/show_contexts.feature"
+    matchers:
+      - type: dsl
+        name: 3.8.2 - 3.8.6
+        dsl:
+          - "(\"6642b9079ceb4f4a89610f0ce01b1bba\" == md5(body))"
+      - type: dsl
+        name: 3.7.5 - 3.7.9
+        dsl:
+          - "(\"c7b0bf6b7ac16bf09d4cd49ead8490c5\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"d2e7261a88f3ee30eb2856f3a2d35384\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/amd/build/sectionlistener.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"527110babc60aa518d077f0cfce4ce23\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/templates/month_mini.mustache"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.4.2
+        dsl:
+          - "(\"fd80e6ba97e80c12731661ece070bc72\" == md5(body))"
+      - type: dsl
+        name: 3.4.3 - 3.6.6
+        dsl:
+          - "(\"c422d2ebefc6f7ef247c9adecec4c1e9\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.7.2
+        dsl:
+          - "(\"482e7c5730da43a31524492c9d7b2c79\" == md5(body))"
+      - type: dsl
+        name: 3.7.3 - 3.8.0
+        dsl:
+          - "(\"8838aab2decd7c7f2314be1ae53a532a\" == md5(body))"
+      - type: dsl
+        name: 3.6.7 - 3.6.10
+        dsl:
+          - "(\"ed3cb44fef83a23ef2dfed752eb23d42\" == md5(body))"
+      - type: dsl
+        name: 3.8.1 - 3.8.2
+        dsl:
+          - "(\"553e4f3df501060b535789dabd4b5edb\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.9.1
+        dsl:
+          - "(\"27a71bda92e6cf1b304029e87af04c1c\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"d2dbda54fdcc814ec1386dfc9faec037\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.10.0
+        dsl:
+          - "(\"8de8aaf65640879ead1c0a3d4ab7ae62\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/grade/grading/form/rubric/styles.css"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.6.1
+        dsl:
+          - "(\"ec02e00e0d209eeafaa61dcd9c2c51c0\" == md5(body))"
+      - type: dsl
+        name: 3.0.0 - 3.1.18
+        dsl:
+          - "(\"672d99312a6c403609f9890e281f68b7\" == md5(body))"
+      - type: dsl
+        name: 2.4.6 - 2.9.9
+        dsl:
+          - "(\"5bb5dec6dda2574d7fb55255eefe462a\" == md5(body))"
+      - type: dsl
+        name: 2.4.0 - 2.5.1
+        dsl:
+          - "(\"2b13c748a92be17ef2fb3031f719e9aa\" == md5(body))"
+      - type: dsl
+        name: 2.2.2 - 2.3.11
+        dsl:
+          - "(\"367b79c72fc7232bc93138e42f049719\" == md5(body))"
+      - type: dsl
+        name: 2.2.0 - 2.2.1
+        dsl:
+          - "(\"f6bbc43c744fea621af6cef5bcbf4d00\" == md5(body))"
+      - type: dsl
+        name: 3.5.4 - 3.7.5
+        dsl:
+          - "(\"77ba267c850cc9ad11ad3e1649dfaa57\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"e6ba9ab03b098b8085f78b93946d4dee\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.10.0
+        dsl:
+          - "(\"c7176e2c389f7dd40162fca66b50d500\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"da9b2d350962f80cb92a56f0faeaf19b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/boost/templates/flat_navigation.mustache"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.9
+        dsl:
+          - "(\"241c5e3aaa9c4d6f0468f580aff2b7af\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.4.9
+        dsl:
+          - "(\"5c304177f8533f83a84231d767817832\" == md5(body))"
+      - type: dsl
+        name: 3.5.0 - 3.6.10
+        dsl:
+          - "(\"52c128c8304ba6fbf097df20f78a8b5b\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.7.5
+        dsl:
+          - "(\"ff534f2d7f320594ad4caa5989ba8661\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"caa3df606ce7d5e3aad12813e8fbaa0a\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.10.0
+        dsl:
+          - "(\"449a6545cd9cf07ad5c7c344d834ec5d\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"8463fa7770276aac2a05bdb0994153cf\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/custom_menu_item.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.5
+        dsl:
+          - "(\"a7e7006785aad22bec70dc994534e9f0\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"0475aabd1d4fe5386816a154198ce481\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.10.0
+        dsl:
+          - "(\"5b9d9b39cabf1fa16aaaf8bf197f89e8\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"ba9819382d6a250386eba41694d1e7e5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/amd/build/local/grades/local/grader/user_picker.min.js"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"f228ae0628c699545768a357b11018fd\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"85aed2751672351e2bf63197b33baec5\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"7e14c492b4bbd939ae091afe718d34f8\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/amd/build/local/grades/local/grader/user_picker.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"9639b9a3f70821c1bf57b331fbda8bab\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"35eac825a51c1abffc8837c70c9e7f88\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"d9a19d638536cb891703b30ae6b35ef6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/amd/build/local/grades/grader.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"c521b9af412a3cebae5c5a5da7308c60\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"a3cfbf426d81240f7bf296acd4926441\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"7d24f486a8bbddae3885bd63eaffb59b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/amd/build/local/grades/grader.min.js"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"b564a20e24f22c4c1f8c685f46257863\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"b6e1e8b1dbe3a13fe6e0d0669d283f0c\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"5aa80d65353f168357495872dab63d47\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/amd/src/local/grades/grader.js"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"1213b46ee1677994a595859f665afeae\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"53fa759c7d9cda516c781b5e2062ef36\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"6ca23d3dd8bc1d251a8e02d4efed2758\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/amd/build/message_drawer.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"7024b5f54f5d694d60ea850e1fa7bcbf\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"0b7703c7914f1d3333e3ce45c0a09cf1\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"ae73ef4280243d379433979948647bd2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/amd/build/actions.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"36394cef247971912dc51b0e0f1b1dca\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"78d5623809114effe5706497a0695787\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"eeeaad01ace364250f3c9b01b6e9834e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/enrol/manual/amd/build/quickenrolment.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"6a11ab414da776c8cbb3f04e3d06174f\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"80c1d8eb1edf9fce9cc31e47cdc517eb\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"aa0e1b32b61cb9df78229413da9981f7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/enrol/manual/amd/build/quickenrolment.min.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.4.1
+        dsl:
+          - "(\"9199ad2efe0a662a84a947a34f428ea0\" == md5(body))"
+      - type: dsl
+        name: 3.4.2 - 3.7.5
+        dsl:
+          - "(\"459335d6a9405c0f6f214b76c28f1e0d\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"b967e7022da480be39347a7ec81cc895\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"b76434a3c4d42eac3170474b17f4775e\" == md5(body))"
+      - type: dsl
+        name: 3.5.12 - 3.7.9
+        dsl:
+          - "(\"d2d90953f592cb1b768923830b59023b\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2ef8a5dd79a624f96473fe1c0c6815d5\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/amd/build/sectionlistener.min.js"
+    matchers:
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"669c735780cc44589583699ab45ce449\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"fd2e54f2a51393e7df865575e8a27d6e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/portfolio/googledocs/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"236bd81a6ba9fa710bf07ef7036e1c70\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"7235c4203ad782be56db97668c257146\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"98ff6f048e631d419e2ce9b6d01872a7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/amd/build/actions.min.js"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.7
+        dsl:
+          - "(\"dab9702d7f02f954eb573ff9e51c534c\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.5.1
+        dsl:
+          - "(\"d3410fc3a63b836223ae491595fe9299\" == md5(body))"
+      - type: dsl
+        name: 3.4.5 - 3.6.3
+        dsl:
+          - "(\"724afd3453a641a362d3fefb064fb061\" == md5(body))"
+      - type: dsl
+        name: 3.3.8 - 3.3.9
+        dsl:
+          - "(\"698169b831aa896329e59e96aa8a9e11\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.7.5
+        dsl:
+          - "(\"4ae13824c19f2eb4171061c8c1cace14\" == md5(body))"
+      - type: dsl
+        name: 3.5.6 - 3.6.10
+        dsl:
+          - "(\"d35cf44dc0f7eedb3aa4bc9369f1a6b8\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"188423a4b62d81e8a38705bf1020184f\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"bfbb78b6600572ed4b11e8f3835b0170\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"3cc9cbb519e3c7afff0d945981bd4fa8\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"36da8fbdea68398dd049608f15b18659\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/templates/minicalendar_day_link.mustache"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.9
+        dsl:
+          - "(\"c9656474ec51bd52eb7e81c2bc412239\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.6.10
+        dsl:
+          - "(\"94de821f074dc68114c6f4f4ddeff3c8\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.7.5
+        dsl:
+          - "(\"345d56fa244910a8cb7eabe2ac7d0af3\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.2
+        dsl:
+          - "(\"4372221b06a12f4b41f9f2179e68aa61\" == md5(body))"
+      - type: dsl
+        name: 3.8.3 - 3.8.6
+        dsl:
+          - "(\"0fe6940200e482350876a3f10613d578\" == md5(body))"
+      - type: dsl
+        name: 3.7.6 - 3.7.9
+        dsl:
+          - "(\"a6bde034244d8d29eba8ccf2cb71a2ae\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"f3042e10b0bba3f8feb2cbb3acdabdd2\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/h5p/js/jquery.js"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.3
+        dsl:
+          - "(\"894a5d14e3d6eb29c92ce37f952c2425\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"94fcf8e70ab9b222fd21b3ed91278b34\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/tests/behat/paged_course_navigation.feature"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.3.5
+        dsl:
+          - "(\"17029a58bdad50ea00a1b023891b0808\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.2.9
+        dsl:
+          - "(\"0ae8dcdc225e48cabc57f0694f8beab3\" == md5(body))"
+      - type: dsl
+        name: 2.7.6 - 2.8.12
+        dsl:
+          - "(\"dd1c170e5f79a593bed24fa32b2e1cd1\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.3
+        dsl:
+          - "(\"b042308e1e49bb95a84446aecf532a9f\" == md5(body))"
+      - type: dsl
+        name: 2.6.0 - 2.6.11
+        dsl:
+          - "(\"ed6c44901a1681921b9cfb03ae722d84\" == md5(body))"
+      - type: dsl
+        name: 2.5.0 - 2.5.9
+        dsl:
+          - "(\"9b8c3491da43b4cd83ab3492c411651a\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.4.2
+        dsl:
+          - "(\"7764146f3ad784e2ce7b4b0cd3af8188\" == md5(body))"
+      - type: dsl
+        name: 3.4.3 - 3.9.0
+        dsl:
+          - "(\"2cf1271e65323f1aed3d4bdb981457d8\" == md5(body))"
+      - type: dsl
+        name: 3.3.6 - 3.3.9
+        dsl:
+          - "(\"99df4ca12dfd4ded69b0cba44d6a978f\" == md5(body))"
+      - type: dsl
+        name: 3.9.1 - 3.10.0
+        dsl:
+          - "(\"e79a7d45abef544aefc68b8c852599fe\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/amd/src/calendar_filter.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.7.2
+        dsl:
+          - "(\"1a483db1c18f49fda7bc32b3b3c5a686\" == md5(body))"
+      - type: dsl
+        name: 3.6.7 - 3.9.0
+        dsl:
+          - "(\"b91b383c3388a2f323134947b4213412\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.10.0
+        dsl:
+          - "(\"3a9cf8612a5e59b11d7986d65a5731de\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.5.15
+        dsl:
+          - "(\"74ed531e98e2ea08176c3157e5c345b3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/tool/usertours/templates/tourstep.mustache"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.6.10
+        dsl:
+          - "(\"bc3d5065c4f25144b2dabf5f1e024c95\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.10.0
+        dsl:
+          - "(\"013b89f9a2f6ec5d8996675fb78bcddf\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.5.15
+        dsl:
+          - "(\"ef0f354e1908ea00a64bbc8bf6317dc1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/report/competency/amd/src/grading_popup.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.9
+        dsl:
+          - "(\"275f6a51db4c0f06e7fa605ac44482d3\" == md5(body))"
+      - type: dsl
+        name: 3.1.0 - 3.1.18
+        dsl:
+          - "(\"4125db8a027e6302c1f876e1077009a4\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.6.10
+        dsl:
+          - "(\"7faa5ba129418b090ebae967673699a6\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.9.0
+        dsl:
+          - "(\"f693ce88ea0bfd6ff5c396a65cde4d6d\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.10.0
+        dsl:
+          - "(\"a23b96d173ec01b07660adf979f049ab\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.5.15
+        dsl:
+          - "(\"1ec3edc076d16f12bb5b640a2ea530be\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/forum/report/summary/tests/behat/summary_data_post_dates.feature"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.3
+        dsl:
+          - "(\"a0599eb4352e458d6de4d8d4e64cc50c\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"6591f446cd630beaf8049a7139327373\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"12d508f75a8f14f818c1e6fff5063ecc\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/build/adapter.min.js"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.7.9
+        dsl:
+          - "(\"3d44dd60b2093006acc7535ad703f4ae\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.3
+        dsl:
+          - "(\"1f872e9e54b4668d483924d07a57c618\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"86b992be553d62f7e058144ef307ab78\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"546423dbc9b7eff569f006043b3d951e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/build/popper.min.js"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.7.9
+        dsl:
+          - "(\"8567cb3c561ae9625041ad07fc36b6d5\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.3
+        dsl:
+          - "(\"e6fb70ed76463d0beb7dfa7177c15cbb\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"f24652c54d3c8912418cbd5e55eb7fd4\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"03040f1544f2c3d05c7edebc2fd6e1a1\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/filemanager_fileselect.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.9
+        dsl:
+          - "(\"716ad3606898f86ce21239ee7d1ea23e\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.3
+        dsl:
+          - "(\"24f967d3389896f2054a007708e484cc\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"95039eab5f44b100d8dc0c68f1fcc070\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"ebdf49f40bc380ba25b713d0166cbdb6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/filemanager_selectlayout.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.9
+        dsl:
+          - "(\"5e1cbad55505eabf4ba756aeb9141821\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.3
+        dsl:
+          - "(\"22d218df52b392ea6d25ad24236922fd\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"c0e3ce4daa9370485e977413d082a679\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"bb51ac9d7e5fea2b56a750278f91164e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/tool/usertours/upgrade.txt"
+    matchers:
+      - type: dsl
+        name: 3.5.0 - 3.8.3
+        dsl:
+          - "(\"6ecef36be8e518024bd6074866e40330\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"53cba8ad145f10e3294c080221d80fd9\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"404e5e813038da6c89cd0930ec4dd34e\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/message/templates/message_drawer_view_settings_body_content.mustache"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.8.3
+        dsl:
+          - "(\"9c84ca9beac6caaec68e17541784886e\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"2676bfd573dc0f68b0f3271927a01681\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"9044ddb5d2002cfa40b0852cf01dd420\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/templates/setting.mustache"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.6.10
+        dsl:
+          - "(\"4849c8c72315d5cba84e008e12a813d3\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"c6c0796ed419dcbaf8b45a7f201daf56\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"bd4bb18d67f033f3f8c75d7fb218d25a\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"6bfdb3a60525140bb3ee4ddbc3fb001d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/editor/atto/plugins/media/yui/build/moodle-atto_media-button/moodle-atto_media-button-min.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.3.2
+        dsl:
+          - "(\"f346eec98e37d2e0b0159254662746b3\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 3.1.18
+        dsl:
+          - "(\"db16f84d1a2317ea72c29669f2560189\" == md5(body))"
+      - type: dsl
+        name: 2.7.0 - 2.8.12
+        dsl:
+          - "(\"fd68093bdf029b912853a5f723e78c9e\" == md5(body))"
+      - type: dsl
+        name: 3.2.6 - 3.5.0
+        dsl:
+          - "(\"b1248e500a2844a263b678fb61404c7f\" == md5(body))"
+      - type: dsl
+        name: 3.5.1 - 3.5.15
+        dsl:
+          - "(\"11f9f88f9a13ec9e809ce9cff3f8bc98\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"db67d10b80829b3f164552cb2629c3f2\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"291751f697cddce09a3e328bdfa07576\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"c577709ef76a2912ee85d91adca0e4f2\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"ca81d76dc71207aa07c4b0d94655a23d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/classic/templates/secure.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.2
+        dsl:
+          - "(\"fb4291fa267c0d61b1f6ade1f51169a0\" == md5(body))"
+      - type: dsl
+        name: 3.7.3 - 3.8.3
+        dsl:
+          - "(\"8af8214269ee9d3669f6dee26c384e01\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"720f18654f9c561f2099a225a92fbbe3\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"6c1bc050eb5bdc6c6740e6a55ad6038c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/theme/classic/templates/columns.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.2
+        dsl:
+          - "(\"300db2801923a69bd2022f32e4391efb\" == md5(body))"
+      - type: dsl
+        name: 3.7.3 - 3.8.0
+        dsl:
+          - "(\"53f3ab64664323ca4f069644eb7cefcc\" == md5(body))"
+      - type: dsl
+        name: 3.7.4 - 3.8.3
+        dsl:
+          - "(\"4e11c5a098bac9ed9112fd88f5d3c136\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.10.0
+        dsl:
+          - "(\"4bc8d830ae19d7691b51203e74ebedb1\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"49d9c800116d4522029cc887a9618cf9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/calendar/amd/build/calendar_filter.min.js"
+    matchers:
+      - type: dsl
+        name: 3.4.0 - 3.7.2
+        dsl:
+          - "(\"7c31a039bf46396b0ab94b8a619e0815\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.9.0
+        dsl:
+          - "(\"311533bc210206a891cbe82895242823\" == md5(body))"
+      - type: dsl
+        name: 3.6.7 - 3.7.6
+        dsl:
+          - "(\"2b40ad5bcfcd8a04942b39261cba756c\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"04cb5e5664debb4998a79c43bec1a3d9\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.7.9
+        dsl:
+          - "(\"dcb2604294b4a76f956ed10ee1bceecc\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.5.15
+        dsl:
+          - "(\"0bb5bd4cb185f671b1e1e29a5facb5e3\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/report/competency/amd/build/grading_popup.min.js"
+    matchers:
+      - type: dsl
+        name: 3.1.15 - 3.3.9
+        dsl:
+          - "(\"2942592c0b91ea6895fea75fde554163\" == md5(body))"
+      - type: dsl
+        name: 3.1.0 - 3.1.14
+        dsl:
+          - "(\"acafe601c4d113d18030a3b51936b0ef\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.6.10
+        dsl:
+          - "(\"30ed1ce5961758b10f7db5e4e9f2c2d8\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.7.6
+        dsl:
+          - "(\"0825049e470e2239876ff0753888900f\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.9.0
+        dsl:
+          - "(\"92baff3f8f116ee7e2992091f69bd382\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.10.0
+        dsl:
+          - "(\"a34be0f601f4475df7fa338cc6f1a635\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.7.9
+        dsl:
+          - "(\"1a0c5036e3489319f7705b8730031b2c\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.5.15
+        dsl:
+          - "(\"f65e8f94774e8cc6d54601f7c527f5cb\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/src/tag.js"
+    matchers:
+      - type: dsl
+        name: 3.3.0 - 3.5.0
+        dsl:
+          - "(\"29441575038d30ea4634116a7c0364ed\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.2.9
+        dsl:
+          - "(\"32c184657804e8e004e1f026474d9c7b\" == md5(body))"
+      - type: dsl
+        name: 3.1.0 - 3.1.12
+        dsl:
+          - "(\"18ec26e2a3d23246e233766f190bbe27\" == md5(body))"
+      - type: dsl
+        name: 3.0.0 - 3.0.10
+        dsl:
+          - "(\"1c6e7af6e3abd3fdd0503df492ca6204\" == md5(body))"
+      - type: dsl
+        name: 3.4.4 - 3.5.1
+        dsl:
+          - "(\"be1b05b38882dc1cb86e33ae1f98392b\" == md5(body))"
+      - type: dsl
+        name: 3.3.7 - 3.3.9
+        dsl:
+          - "(\"6fd06612bfb55bde943c823e615ef072\" == md5(body))"
+      - type: dsl
+        name: 3.1.13 - 3.1.18
+        dsl:
+          - "(\"19e0cb7f923dc6c196e463026dfda083\" == md5(body))"
+      - type: dsl
+        name: 3.5.2 - 3.5.9
+        dsl:
+          - "(\"98c862713b44d8bce26ba57141678cc2\" == md5(body))"
+      - type: dsl
+        name: 3.4.5 - 3.4.9
+        dsl:
+          - "(\"3516ab48d3f5255f0ce0940e152149de\" == md5(body))"
+      - type: dsl
+        name: 3.6.0 - 3.8.0
+        dsl:
+          - "(\"dc4e3bbd4337745404464a5db3a96777\" == md5(body))"
+      - type: dsl
+        name: 3.8.1 - 3.8.3
+        dsl:
+          - "(\"df612a88b422e17a2d6863797c291617\" == md5(body))"
+      - type: dsl
+        name: 3.6.8 - 3.7.6
+        dsl:
+          - "(\"9a32bba108d8f97cd5b17402c64e6625\" == md5(body))"
+      - type: dsl
+        name: 3.5.10 - 3.5.12
+        dsl:
+          - "(\"0c68330cae587087da046c9848eed75b\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.10.0
+        dsl:
+          - "(\"fb8aad26abdc4b548d919569e7c94a50\" == md5(body))"
+      - type: dsl
+        name: 3.8.4 - 3.8.6
+        dsl:
+          - "(\"2527464a552f4abeb1064e5ab90015b1\" == md5(body))"
+      - type: dsl
+        name: 3.5.13 - 3.5.15
+        dsl:
+          - "(\"d163ab657961a595556f6a701da989e7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/user/tests/behat/table_column_visibility.feature"
+    matchers:
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"b69557a8537cfa43e0cec8b47d02bd17\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pix/i/star-o.png"
+    matchers:
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"7b51ed8515ffaf4420dd3771e302738c\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pix/i/star-o.svg"
+    matchers:
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"542bf730c9ee24f84247f36e96e500a9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pix/e/cancel_solid_circle.png"
+    matchers:
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"18b768eab30fb3e9662e920e9e8c861b\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/pix/e/cancel_solid_circle.svg"
+    matchers:
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"8b3e741832a6d0d99e1b0b021c5718d0\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/templates/local/activitychooser/error.mustache"
+    matchers:
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"867053733531758de880237178a6aac4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/build/showhidesettings.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.9.1
+        dsl:
+          - "(\"da2f29df184d21e170538b3d72e5bfe2\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"a21a4e7fb79ae0ac7e86f7c280560af7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/src/showhidesettings.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.9
+        dsl:
+          - "(\"ce2ebf1a4302950b1b26cd922bfd9304\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.9.1
+        dsl:
+          - "(\"a2dda6ca7971946c5c41a2fc890f40c4\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"6427a6ad843e24497cc25640949adb6a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/build/showhidesettings.min.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.9
+        dsl:
+          - "(\"a3cd0e10911b6a2e348fae26de7df794\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.9.1
+        dsl:
+          - "(\"52898657209ad4198bc697f800f1afdd\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"1352e19bfc4accf015cb6c2047e933ef\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/mod/quiz/accessrule/seb/db/install.xml"
+    matchers:
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"70b9b2130ad6044affbea99b27a8f3ae\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"58cca36bb3bf7bf6ce190aed7b35ce12\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/table/amd/build/dynamic.min.js"
+    matchers:
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"a155ddf16444a8bf6ca0aee194c8abb0\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"d0cbd0472815e8657bf0f7ab462fd51d\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/table/amd/build/dynamic.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"71c82eecf871d20df384183492488c10\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"e22527a8f03bbe7efe904c1998cca824\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/table/amd/src/dynamic.js"
+    matchers:
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"29bb729c802ec0c7a186c22dec5091c7\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"92862147d6729c0c2bec7a8448a878a9\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/course/tests/behat/search_recommended_activities.feature"
+    matchers:
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"bdded74dc4feb42bf8a432969f4029b4\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"a5bd0db94b548121d55f7f82fda116db\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/backup/util/ui/amd/build/async_backup.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.6
+        dsl:
+          - "(\"4814fb87cd79d1b379246bc69833b310\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"e1a23ff10788b4c03f3685e24b52dbd2\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"0a5614ee8a4f98645c80e091fcc536ff\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/backup/util/ui/amd/src/async_backup.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.1
+        dsl:
+          - "(\"68eca9738dd5ca4462f3979d11c8e8a3\" == md5(body))"
+      - type: dsl
+        name: 3.7.2 - 3.7.9
+        dsl:
+          - "(\"733749b1bd9c72cd313afb1e4da14555\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.6
+        dsl:
+          - "(\"6f9c03b939ddebd8f7c8bfe084c9b67d\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"af7cd154f58f5ad2388e5cad19e23605\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"40167b3e807c77f3e9341dd12a050770\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/backup/util/ui/amd/build/async_backup.min.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.1
+        dsl:
+          - "(\"c83a433756078e37901be07ca0ac7820\" == md5(body))"
+      - type: dsl
+        name: 3.7.2 - 3.7.9
+        dsl:
+          - "(\"68260c428a623b1264c2d75a926a140b\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.6
+        dsl:
+          - "(\"12f372b51eaaa2b5fd9a764b48255fe0\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"691b1056b46d7012b62bb5899f091938\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"d48d235f5ce67990b5330c08de91d86a\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/badges/templates/external_backpacks_page.mustache"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.8.3
+        dsl:
+          - "(\"860a9a1db7cc74d0878cc149f777e469\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"91eafbd5b18b57942e94cd9a9138a93a\" == md5(body))"
+      - type: dsl
+        name: 3.7.7 - 3.8.6
+        dsl:
+          - "(\"722ca461f52a256ff9b2f271a8cd1b1a\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"768e25dea16c5159e3723176a3a56aad\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/build/checkbox-toggleall.min.js.map"
+    matchers:
+      - type: dsl
+        name: 3.8.0 - 3.8.4
+        dsl:
+          - "(\"8c1f68bead483e35950e473732d4e120\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"4e5e63eddded806e18ca12cd1c027329\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"987f0c238c3990a29c82b09386dec9e4\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"0937d9f43903028447599dd21583721f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/src/checkbox-toggleall.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.9
+        dsl:
+          - "(\"cec1769255d0eb2426e61114a197e03d\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.4
+        dsl:
+          - "(\"55c22d5189f02c9d197b76b9e4b2cc04\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"6afb5aec2bf14c9794e0d9400261f7da\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"4481a37d90add203bb7ca123f9843a76\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"72cb6772ad03f543d64e99fc09a7deb6\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/amd/build/checkbox-toggleall.min.js"
+    matchers:
+      - type: dsl
+        name: 3.7.0 - 3.7.9
+        dsl:
+          - "(\"04169acf75df37406491faf6edd68469\" == md5(body))"
+      - type: dsl
+        name: 3.8.0 - 3.8.4
+        dsl:
+          - "(\"542eb26f042e6c0d140d505416af5053\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"69aea6b2fb0d6fce1c5ba4624330c805\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"66fa262262fe04d9e5266532236379e5\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"c20f23fa4721f2d40b060ff6adf621a7\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/yui/src/dateselector/js/calendar.js"
+    matchers:
+      - type: dsl
+        name: 3.2.0 - 3.8.4
+        dsl:
+          - "(\"d0c7f99622b61edfa6e812e15d573082\" == md5(body))"
+      - type: dsl
+        name: 2.8.0 - 3.1.18
+        dsl:
+          - "(\"f0d3883ae19e79becc366363dd2cf770\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"0ecbf73f66265a2ae9bd7dd0ca3deaf1\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"8c815b8186c6d3a3cffa9ccf78e53c69\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"ec101682bd1a1476331cdaaf22d1e419\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/yui/build/moodle-form-dateselector/moodle-form-dateselector-debug.js"
+    matchers:
+      - type: dsl
+        name: 3.2.5 - 3.3.9
+        dsl:
+          - "(\"2f5205c7ff64ad0bc0cce411e6df7b17\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.3.1
+        dsl:
+          - "(\"46b8898c97ea5ecbbc5f92155218fd29\" == md5(body))"
+      - type: dsl
+        name: 3.0.7 - 3.1.18
+        dsl:
+          - "(\"506ec5542242737d8e801d56c0935ac1\" == md5(body))"
+      - type: dsl
+        name: 2.9.2 - 3.1.2
+        dsl:
+          - "(\"f8e8eca98197ecc652ccb43782f1e1f4\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.1
+        dsl:
+          - "(\"57f0d499cd5bca1ee948eb5973ba0c62\" == md5(body))"
+      - type: dsl
+        name: 2.8.8 - 2.8.12
+        dsl:
+          - "(\"9034a6421d4cd8e60965abe6bdff3a2f\" == md5(body))"
+      - type: dsl
+        name: 2.8.0 - 2.8.7
+        dsl:
+          - "(\"304dfd3a19121803308495c4fdb73899\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.4
+        dsl:
+          - "(\"5eb148497ad9b8b3bb5d97e6f0d84952\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"1dc714706ab71bca0e8abd119dcf21b3\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"18dfae7cd29648b02ba65ef8affcb670\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"bc6372b8dc655db4db87b50277e2b22f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/yui/build/moodle-form-dateselector/moodle-form-dateselector.js"
+    matchers:
+      - type: dsl
+        name: 3.2.5 - 3.3.9
+        dsl:
+          - "(\"2f5205c7ff64ad0bc0cce411e6df7b17\" == md5(body))"
+      - type: dsl
+        name: 3.2.0 - 3.3.1
+        dsl:
+          - "(\"46b8898c97ea5ecbbc5f92155218fd29\" == md5(body))"
+      - type: dsl
+        name: 3.0.7 - 3.1.18
+        dsl:
+          - "(\"506ec5542242737d8e801d56c0935ac1\" == md5(body))"
+      - type: dsl
+        name: 2.9.2 - 3.1.2
+        dsl:
+          - "(\"f8e8eca98197ecc652ccb43782f1e1f4\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.1
+        dsl:
+          - "(\"57f0d499cd5bca1ee948eb5973ba0c62\" == md5(body))"
+      - type: dsl
+        name: 2.8.8 - 2.8.12
+        dsl:
+          - "(\"9034a6421d4cd8e60965abe6bdff3a2f\" == md5(body))"
+      - type: dsl
+        name: 2.8.0 - 2.8.7
+        dsl:
+          - "(\"304dfd3a19121803308495c4fdb73899\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.4
+        dsl:
+          - "(\"5eb148497ad9b8b3bb5d97e6f0d84952\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"1dc714706ab71bca0e8abd119dcf21b3\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"18dfae7cd29648b02ba65ef8affcb670\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"bc6372b8dc655db4db87b50277e2b22f\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/form/yui/build/moodle-form-dateselector/moodle-form-dateselector-min.js"
+    matchers:
+      - type: dsl
+        name: 3.2.5 - 3.3.9
+        dsl:
+          - "(\"946bdb46cbdf5db893f78815319857a9\" == md5(body))"
+      - type: dsl
+        name: 2.9.2 - 3.3.1
+        dsl:
+          - "(\"72b1a1c979218b6b61080b894991871f\" == md5(body))"
+      - type: dsl
+        name: 2.9.0 - 2.9.1
+        dsl:
+          - "(\"cdf03812f56f8136296b706b9972ca01\" == md5(body))"
+      - type: dsl
+        name: 2.8.8 - 2.8.12
+        dsl:
+          - "(\"34aa828266de0ef17a3cab5ae80e4d5a\" == md5(body))"
+      - type: dsl
+        name: 2.8.0 - 2.8.7
+        dsl:
+          - "(\"a493844db384996df2410cd4573205d2\" == md5(body))"
+      - type: dsl
+        name: 3.4.0 - 3.8.4
+        dsl:
+          - "(\"ceec6b4d96692b7f336c911117216e93\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"973d724876cdb578598ea588a53de019\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"bc00b16958a2338fd51281f19ccb4a2d\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"65a7f66649b6d7dafdb0a3f2ad03b6f4\" == md5(body))"
+  - method: GET
+    path:
+      - "{{BaseURL}}/lib/templates/paging_bar.mustache"
+    matchers:
+      - type: dsl
+        name: 3.6.0 - 3.6.10
+        dsl:
+          - "(\"87b0c425a8eddfe36fa33d6d46e39728\" == md5(body))"
+      - type: dsl
+        name: 3.7.0 - 3.8.4
+        dsl:
+          - "(\"c2caf273c1a377f4699ff6a214c8e486\" == md5(body))"
+      - type: dsl
+        name: 3.9.0 - 3.9.1
+        dsl:
+          - "(\"aad1496b5686508c5570cbfac85d797a\" == md5(body))"
+      - type: dsl
+        name: 3.9.2 - 3.10.0
+        dsl:
+          - "(\"dfdd1c2f973a203e0c9bc5f6e02b6805\" == md5(body))"
+      - type: dsl
+        name: 3.8.5 - 3.8.6
+        dsl:
+          - "(\"8edeaa07da6d6beaa64787298b6a971e\" == md5(body))"
