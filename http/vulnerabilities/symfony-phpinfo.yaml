@@ -7,7 +7,7 @@ info:
   description: Check if /app_dev.php/_profiler/phpinfo exist
   tags: phpinfo,symfony
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/app_dev.php/_profiler/phpinfo"

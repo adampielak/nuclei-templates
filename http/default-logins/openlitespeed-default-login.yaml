@@ -1,4 +1,5 @@
 id: openlitespeed-default-login
+
 info:
   name: OpenLiteSpeed WebAdmin - Default Login
   author: 0x_Akoko
@@ -8,27 +9,28 @@ info:
   reference:
     - https://www.digitalocean.com/community/tutorials/how-to-install-the-openlitespeed-web-server-on-ubuntu-18-04
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)OpenLiteSpeed WebAdmin"})
-    fofa-query: title="OpenLiteSpeed WebAdmin"
-    max-request: 1
     verified: true
-  tags: default-login,litespeed,openlitespeed,vuln,webadmin
-variables:
-  password: "123456"
-  username: admin
-http:
-  - matchers:
-      - condition: and
-        # digest: 4a0a00473045022043e5aa7b5b833aacecace64f59c1c65e65dcd3c0eff28686de2534259d5538f50221008647c6e22843fdd741a061fe71b4a5325f80f1437ea452dca5100a45587b7b31:922c64590222798bb761d5b6d8e72950
+    max-request: 1
+    fofa-query: title="OpenLiteSpeed WebAdmin"
+  tags: default-login,openlitespeed,litespeed,webadmin
 
-        dsl:
-          - status_code == 302
-          - 'contains_all(header, "LSID", "LSPA", "Location: /index.php")'
-        type: dsl
-    raw:
+variables:
+  username: "admin"
+  password: "123456"
+
+http:
+  - raw:
       - |
         POST /login.php HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
 
         userid={{username}}&pass={{password}}
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 302'
+          - 'contains_all(header, "LSID", "LSPA", "Location: /index.php")'
+        condition: and
+# digest: 4a0a0047304502210086e3f15499d21f86845420b2b801a30bea4392bbffaaf580b9d2787f532a4054022042c2cb22efc6196bfc12685dbf97e3b0eb4de9a64e9a4a2868ff0214a91e85c3:922c64590222798bb761d5b6d8e72950
