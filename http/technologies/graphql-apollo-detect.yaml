@@ -5,42 +5,38 @@ info:
   severity: info
   reference:
     - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
-  tags: tech,graphql,apollo
-
+  tags: apollo,discovery,graphql,tech
 http:
-  - method: POST
-    path:
-      - "{{BaseURL}}/graphql"
-      - "{{BaseURL}}/api/graphql"
-      - "{{BaseURL}}/query"
-      - "{{BaseURL}}/"
-    body: '{"query":"query @skip {__typename}"}'
+  - body: '{"query":"query @skip {__typename}"}'
     headers:
       Content-Type: application/json
-    redirects: true
-
-    matchers-condition: and
     matchers:
-      - type: status
-        status:
+      - status:
           - 200
-
-      - type: word
+        type: status
+      - part: body
+        type: word
         words:
-          - 'Directive "@skip" argument "if" of type "Boolean!" is required, but it was not provided.'
-        part: body
-
-      - type: word
+          - Directive "@skip" argument "if" of type "Boolean!" is required, but it was not provided.
+      - negative: true
+        part: header
+        type: word
         words:
           - 'Content-Type: text/html'
-        part: header
+      - condition: or
         negative: true
+        # digest: 4a0a0047304502210097fe2cf9e1c69f772f86bbeeef688670fa90e21e47797976af9db7cbf69c088e02201c83d21476d3ba64021b6d34f3c0983fab241cd6d64b0e608ab40f842701451b:922c64590222798bb761d5b6d8e72950
 
-      - type: word
-        words:
-          - '<html'
-          - '<body'
         part: body
-        condition: or
-        negative: true
-# digest: 4a0a00473045022100b7f6082bae42aa175132ebc8b08e106849e20c4c66c581d3f624cc9d357f321f022038aebd86230dd34714907a6adaec0a024549ab0d07e2bb7931927774be025493:922c64590222798bb761d5b6d8e72950
+        type: word
+        words:
+          - <html
+          - <body
+    matchers-condition: and
+    method: POST
+    path:
+      - '{{BaseURL}}/graphql'
+      - '{{BaseURL}}/api/graphql'
+      - '{{BaseURL}}/query'
+      - '{{BaseURL}}/'
+    redirects: true

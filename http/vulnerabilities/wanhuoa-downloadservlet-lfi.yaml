@@ -1,7 +1,7 @@
 id: wanhuoa-downloadservlet-lfi
 
 info:
-  name: Wanhu OA DownloadServlet - Remote File Disclosure
+  name: Wanhu OA DownloadServlet - Local File Inclusion
   author: wpsec
   severity: high
   description: |
@@ -27,4 +27,4 @@ http:
           - "contains(body,'ccerp.password')"
           - "contains(header,'application/x-msdownload')"
         condition: and
-# digest: 490a00463044022023f900148f184a1841f80b416631f69daa7f48c95eb810ee86e8a2665b5970a802203f3e5c98f906d1711ef1b1c903c544b5d031cc7e45742790034c0cd4aca95e6e:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402207ef85b10290ca27c74e792fd73923534c7c0a6b2a5a956fcf633a99fcdf3db3b022053a023013b4748f72e9176b59d85e916207ea716156797085c744a011c3f54e7:922c64590222798bb761d5b6d8e72950

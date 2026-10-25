@@ -6,7 +6,7 @@ info:
   severity: info
   tags: tech,itop
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/pages/UI.php"

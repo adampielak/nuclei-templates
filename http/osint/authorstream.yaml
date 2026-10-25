@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-social,authorstream,discovery
+  tags: osint,osint-social,authorstream
 
 self-contained: true
 
@@ -31,3 +31,4 @@ http:
         words:
           - "Presentations on authorSTREAM"
 
+# digest: 4a0a00473045022069a3b53a0a99e3fe7ba24bf94114655b2a19d24ee38c4f131860917db561cf1b022100f9c0b9e71167ce375a76685c5ef7fe268021daa4a79a6595376cc6c716f01d5d:922c64590222798bb761d5b6d8e72950
