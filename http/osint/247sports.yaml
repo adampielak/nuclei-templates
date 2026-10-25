@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-hobby,247sports
+  tags: osint,osint-hobby,247sports,discovery
 
 self-contained: true
 
@@ -30,5 +30,4 @@ http:
         part: body
         words:
           - "<meta property="
-
-# digest: 4a0a00473045022034c3948050df48574e8e46d89313720e80548d6435f152ae2ca64e1c4cbc0979022100dc572f0e4d109585d9f658ff768f7c4a6027fa207d38cc1fe0d22310cda8ec03:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022068d73ca44d2e31661c8f2122fe5f793dd148a18dc1ae4faa43907761637bfde4022100a97b617d29de546f4a24b059c1e711a2aeff341a31754a7f135cf2e8fba0ddc8:922c64590222798bb761d5b6d8e72950

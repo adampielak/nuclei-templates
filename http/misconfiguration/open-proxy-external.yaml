@@ -15,7 +15,7 @@ info:
     cwe-id: CWE-441
   metadata:
     max-request: 3
-  tags: exposure,config,proxy,misconfig
+  tags: exposure,config,proxy,misconfig,vuln
 
 http:
   - raw:
@@ -37,14 +37,13 @@ http:
     matchers:
       - type: dsl
         dsl:
-          - contains(body_1, "<HostId>") || contains(body_1, "</HostId>")
+          - contains_any(body_1, "<HostId>", "</HostId>")
           - contains(header_2, "X-Interactsh-Version")
-        condition: or
+        condition: and
 
       - type: dsl
         dsl:
           - '!contains(body_3, "<HostId>")'
           - '!contains(header_3, "X-Interactsh-Version")'
         condition: and
-
-# digest: 4b0a00483046022100e09e086df53cace2d5906791dee1b9c1de19a458985b96759b0d7770488c89080221008595e80e921acb3473272372967c5986797680701459f8e93a1e9245cbf75678:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221009c334d422de259e9e0db330c1ae0037f0db60a76d589624d8403c934641f9cf802201aaedae19e8e25247022914f87483e932e12d2010635223a2401e97b75a6f5ba:922c64590222798bb761d5b6d8e72950

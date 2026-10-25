@@ -1,10 +1,8 @@
 id: servfail-refused-hosts
-
 info:
   name: Servfail Host Finder
   author: mzack9999
   severity: info
-
 dns:
   - name: "{{FQDN}}"
     type: A

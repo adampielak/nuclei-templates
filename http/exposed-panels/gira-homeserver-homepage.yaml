@@ -7,13 +7,15 @@ info:
   description: Gira HomeServer 4 login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:o:gira:gira_home_server_firmware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Gira HomeServer 4"
-  tags: panel,gira
+    product: gira_home_server_firmware
+    vendor: gira
+  tags: panel,gira,discovery
 
 http:
   - method: GET
@@ -37,5 +39,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a0047304502201b565d2660ae9b6ae68ef3c5ad27013b4c506a42c8d58171e37333aed81abbf2022100e1edb93866d48f5f0f5abff54c31611dc3b206f72ac6b2ad75bdc51312c74d7e:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210087b4578c9fa9a782ff15377f1a4e867db35f5e86dfff55420b7d160802f148d1022100c2e0fbc8d298f6ef712a6b812f748988156a661889bf456c1654a25de6548a27:922c64590222798bb761d5b6d8e72950

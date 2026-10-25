@@ -10,15 +10,19 @@ info:
     - https://www.opencart.com
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:opencart:opencart:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     vendor: opencart
     product: opencart
-    shodan-query: html:"OpenCart"
-  tags: panel,opencart
+    shodan-query:
+      - html:"OpenCart"
+      - http.html:"opencart"
+      - cpe:"cpe:2.3:a:opencart:opencart"
+    fofa-query: body="opencart"
+  tags: panel,opencart,discovery
 
 http:
   - method: GET
@@ -35,4 +39,4 @@ http:
           - '(?i)footer\s.*OpenCart.*All.Rights.Reserved|img\s.*logo.*\salt=.*OpenCart'
           - "(?i)Powered.By.*http.*OpenCart"
         condition: or
-# digest: 4b0a00483046022100a754f7372d2abbe0d9055b2b458e82ce571abd3ca3faf09d8dfc7ae8b58ba43d022100e6cf52cba1050e8e7a43d993a13c9ade7dcbd314036d7b29b225b4c49dd6f751:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502206d3b5b82ff7b127498a718a79a563832cabe0d0805268f884d9a0404f0552e4b022100b0b47670818e4b1703c4289d3b1a9e205238e84fa47a42e3eba9f3f118898ff2:922c64590222798bb761d5b6d8e72950

@@ -7,7 +7,7 @@ info:
   description: Searches for JavaServer Faces content on a URL.
   metadata:
     max-request: 1
-  tags: jsf,tech,primefaces,richfaces
+  tags: jsf,tech,primefaces,richfaces,discovery
 
 http:
   - method: GET
@@ -37,5 +37,4 @@ http:
           - "contains(body, 'richfaces')"
           - "contains(body, 'javax.faces.resource') || contains(body, 'javax.faces.ViewState')"
         condition: and
-
-# digest: 4b0a00483046022100c6c79025ccefbeb0f29e2930e1c0a9749cf789bfbb4005be7a5bb75918c3b04d022100d78229cfd91929b427b693c2268af9f8057266d8aa94f5821e40f910d3ee9a17:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220036ca5c7aaca1fcb03644a48ff785c05926d775685cd83584f1a0a51456f4954022064deefacbfea5befad677f09f02428f79456916fcbf4b373706a040bf6f521bd:922c64590222798bb761d5b6d8e72950

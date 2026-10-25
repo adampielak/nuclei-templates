@@ -9,7 +9,6 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)Alamos GmbH \\| FE2"})
     max-request: 1
     shodan-query: http.title:"Alamos GmbH | FE2"
   tags: panel,alamos,login,detect,discovery
@@ -25,4 +24,4 @@ http:
           - 'contains(body, "<title>Alamos GmbH | FE2")'
           - 'status_code == 200'
         condition: and
-
+# digest: 4a0a00473045022100d0bd6b9f1d77cf59a0faf393be2d3a62c170f8923d0214c05805e0614fe094b902206b29bcd0af13ad22e98ffb2612331215c81f1f4e4ea09c45ced7de59931bbf82:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,15 @@ info:
     Limesurvey is the number one open-source survey software. Advanced features like branching and multiple question types make it a valuable partner for survey-creation.
   reference:
     - https://github.com/LimeSurvey/LimeSurvey
+  classification:
+    cpe: cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: limesurvey
+    product: limesurvey
     shodan-query: http.favicon.hash:1781653957
-  tags: tech,limesurvey
+  tags: tech,limesurvey,discovery
 
 http:
   - method: GET
@@ -36,5 +40,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100c785935a42c9693f0bfd8dc790217cb13b8524ec59a862d42b0980b290c4b58602203a031943f0c70c1cae370d25197e1454f98980705027ddabca0e72bad0c11ac8:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100d602c7e555a1d49e3743653a232bf97bb8628edf0c085c6e5c1ae55e847789a1022100dd6a1b9ea6efcde653d0f8e8ae3adcf99afe0701542d57a718f5d18c5c1a1330:922c64590222798bb761d5b6d8e72950

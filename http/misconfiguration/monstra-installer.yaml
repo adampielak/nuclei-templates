@@ -5,11 +5,15 @@ info:
   author: ritikchaddha
   severity: high
   description: Monstra is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:monstra:monstra_cms:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: monstra
+    product: monstra_cms
     shodan-query: 'title:"Monstra :: Install"'
-  tags: misconfig,monstra,install
+  tags: misconfig,monstra,install,vuln
 
 http:
   - method: GET
@@ -26,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bde458deeb31935fe9079daf09f7029dd803802fa2210784fbd7f3eda92be34a022100835d08ae3cf17f7f69a80f48806e60a464b1ea1fe6612b13dfd3b187e8fa5a90:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220111c754070829f675ccf57c4977b247752a45cc57f53105d62639e945ead435a02203ae2b9b523ab396f344b6f95f1be33397c2fb46db90bb3e35bbe5c84985226cc:922c64590222798bb761d5b6d8e72950

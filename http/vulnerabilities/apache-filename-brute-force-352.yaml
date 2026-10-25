@@ -9,7 +9,7 @@ info:
   severity: low
   tags: apache
 
-requests:
+http:
   - method: GET
     headers:
       Accept: "fake/value"

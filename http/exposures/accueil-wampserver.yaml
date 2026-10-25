@@ -12,11 +12,14 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:wampserver:wampserver:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Accueil WAMPSERVER"
-  tags: exposure,accueil,wampserver,config
+    product: wampserver
+    vendor: wampserver
+  tags: exposure,accueil,wampserver,config,vuln
 
 http:
   - method: GET
@@ -35,5 +38,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100b3484e80378b21223fc948a17cc26cafd384e5ef141966841b6d28689d2e3a40022100e92562ace83a095aa14d8c7883622fbe3ba9c2c525491c1048a5c2f399a64ea6:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022023429ce28d613954762f91ba2458055749ae24b1fa29087c264a6ffbf457bb97022100a2d1d3c5f3ce9a1625de58fcfa886ecb30d213b5abca0b5e707c87e6d07ee321:922c64590222798bb761d5b6d8e72950

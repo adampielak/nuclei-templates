@@ -12,11 +12,14 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:rubocop_project:rubocop:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"rubocop.yml"
-  tags: exposure,files,config,ruby
+    product: rubocop
+    vendor: rubocop_project
+  tags: exposure,files,config,ruby,vuln
 
 http:
   - method: GET
@@ -36,5 +39,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a00473045022100bdff48f210d9f69bc48242af4413cac4b3591b7e033f31ca13d71516c31fa1800220563f6c43af54d64099634c3d0550eb4e9a9cc4b7a9bf6aabaa1a165de9c64881:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502210095b96b06505c3a4931ead6440c6be66b62884b39910e6d41d416c4dbdd44c3c80220265f48eb37762ba76c13a2df70033def1eee557892d0acd5c4b0d3574153c076:922c64590222798bb761d5b6d8e72950

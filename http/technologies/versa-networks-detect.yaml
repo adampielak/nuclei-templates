@@ -6,15 +6,20 @@ info:
   severity: info
   reference:
     - https://versa-networks.com/products/components/
+  classification:
+    cpe: cpe:2.3:a:versa-networks:versa_analytics:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 7
+    vendor: versa-networks
+    product: versa_analytics
     shodan-query: html:"Versa Networks"
-  tags: tech,versa
+  tags: tech,versa,discovery
 
 http:
   - method: GET
     path:
+      - "{{BaseURL}}/favicon.ico"
       - "{{BaseURL}}/favicon.png"
       - "{{BaseURL}}/images/versalogo.png"
       - "{{BaseURL}}/images/versalogo2.png"
@@ -26,6 +31,7 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: versa-analytics
         dsl:
           - "status_code==200 && (\"-1053531639\" == mmh3(base64_py(body)))"
           - "status_code==200 && (\"-1086395444\" == mmh3(base64_py(body)))"
@@ -33,4 +39,8 @@ http:
           - "status_code==200 && (\"2033952700\" == mmh3(base64_py(body)))"
         condition: or
 
-# digest: 490a00463044022073727bfe428dc68d01ab28f8094d76f2e53323f856d13580948caf899066b34e02203e42d2c797fb23715438e957763facf8cecc3ee4035de5b2d7e95d76dc638fc7:922c64590222798bb761d5b6d8e72950
+      - type: dsl
+        name: versa-concerto
+        dsl:
+          - "status_code==200 && (\"-534530225\" == mmh3(base64_py(body)))"
+# digest: 4a0a00473045022100ca77e4fe197058ede3b07a4a88a620d46904bac027fe21b35f097e494d67936102203dd4c5fc2210bf5e38624661a0102ee70a78a4a2eefe03bb4d104b32ae0f26bc:922c64590222798bb761d5b6d8e72950

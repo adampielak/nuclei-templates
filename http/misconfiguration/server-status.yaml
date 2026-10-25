@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"ServerStatus"
-  tags: misconfig,serverstatus
+  tags: misconfig,serverstatus,vuln
 
 http:
   - method: GET
@@ -37,5 +37,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4b0a00483046022100d704c054c1424ff76909331259b1b5578e7f30331cb45571c8a2f2b143af0fe8022100e4007ae96795ecc3c25ca0718dc12a7bb757c9f0bd7e470a90799e1447ba8405:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b4e66bab60ba8c9010425e459769b3152a7c653097de2d0c66baf4724e5935d4022100f1cd25a7efe70f7aefd11402ad33d7a5625e2b94a3f7b1b8fe419372c5f89e4a:922c64590222798bb761d5b6d8e72950

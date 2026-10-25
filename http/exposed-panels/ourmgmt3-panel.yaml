@@ -7,13 +7,12 @@ info:
   description: OurMGMT3 admin login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.title:"OurMGMT3"
-  tags: panel,ourmgmt3
+  tags: panel,ourmgmt3,discovery
 
 http:
   - method: GET
@@ -33,5 +32,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 4a0a004730450221009ad9e2d2b1c699dc09599783a6fe17979241cc8c7f4e98b7d7458030d1c59fc3022044da716cceba424f55d7845ac54f29e1e5bdd9211c1ca9c50a7e84b4918e1b44:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e3bce716c7319eddde9f9dd990d8541ca4a47b92cb7bfac734e21b5a20f97417022100a43d2a0299b20a98c87c399dd63025069b5413c6b565949b1052372501221acf:922c64590222798bb761d5b6d8e72950

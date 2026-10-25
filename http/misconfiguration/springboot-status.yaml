@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: title:"Eureka"
-  tags: misconfig,springboot,exposure
+  tags: misconfig,springboot,exposure,vuln
 
 http:
   - method: GET
@@ -35,5 +35,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a00463044022032502b42ceda7654c508ae2a47f133e5283263b7510df09e203ee193e759f287022029a8ab583e8cbd42152dea1a483055def75ff07747fe74a3cfd7706195e7bb09:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ca2cbf90e42ae172764bb17279d43fb34e670d418ca6114e46eccb294b54e35b02200cbd0195654bfd90a2be1a78fc5d2cd49d8c950428f548f6e295bf9ee53a30f4:922c64590222798bb761d5b6d8e72950

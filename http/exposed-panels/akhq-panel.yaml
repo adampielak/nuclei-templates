@@ -7,7 +7,6 @@ info:
   description: |
     AKHQ Panel was discovered.
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "855432563"
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:855432563
@@ -31,4 +30,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a00473045022071df130460f9e20aa55f3c8aa3b43e60cd5bd298b22c09846b86017b4b9be71a022100d75f8b28f2ab846bb4aeab10436d41a74a7832e08513fc2db0b25a08ab8aa09a:922c64590222798bb761d5b6d8e72950

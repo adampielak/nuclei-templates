@@ -1,4 +1,5 @@
 id: cyberpanel-panel
+
 info:
   name: Cyberpanel Login Panel - Detect
   author: mailler
@@ -11,22 +12,25 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
-    runzero-match: any(each(service["http.bodies"]), {# matches "(?i)cyberpanel"})
-    fofa-query: app="Cyberpanel"
     max-request: 1
-    product: cyberpanel
     shodan-query: html:"cyberpanel"
-  tags: cyberpanel,detect,discovery,login,panel
+    fofa-query: app="Cyberpanel"
+    product: cyberpanel
+  tags: cyberpanel,panel,login,detect,discovery
+
 http:
-  - matchers:
-      - part: body
-        regex:
-          - <title>(.*)CyberPanel(.*)</title>
-        type: regex
-      - status:
-          - 200
-        type: status
-    matchers-condition: and
-    method: GET
+  - method: GET
     path:
-      - '{{BaseURL}}'
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - "<title>(.*)CyberPanel(.*)</title>"
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100fc455b0ac7e377808481985ca1ab25e0903e13a46908e9f0dd8e56845fdad9c0022043899cbf51fe6137200c670e9e12225540872e1712da3c2419a1849f2b79a5b0:922c64590222798bb761d5b6d8e72950
