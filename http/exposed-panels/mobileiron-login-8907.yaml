@@ -1,9 +1,11 @@
 id: mobileiron-login
+
 info:
   name: MobileIron Login
   author: dhiyaneshDK & @dwisiswant0
   Severity: info
   tags: panel
+
 requests:
   - method: GET
     path:

@@ -2,14 +2,13 @@ id: espec-web-controller-panel
 
 info:
   name: Espec Web Controller - Panel
-  author: darses
   severity: info
+  author: darses
   description: |
     Espec Web Controller panel was discovered.
   reference:
     - https://espec.com/na/products/option_detail/web_controller/
   metadata:
-    runzero-match: service["favicon.ico.image.mmh3"] == "529766441" || any(each(service["html.titles"]), {# matches "(?i)Espec Web Controller"})
     max-request: 2
     vendor: espec
     product: web_controller
@@ -42,4 +41,4 @@ http:
         group: 1
         regex:
           - "Version: ([\\d\\.]+)"
-
+# digest: 490a004630440220243a8f9488352510eea42357308e2a2a6fd0a013386080621c0bf0c09d3ebae6022033f4a9724ee5cb52a3263a0e361374a347fc5871189b772f7adfe5ce325b3255:922c64590222798bb761d5b6d8e72950

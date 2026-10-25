@@ -7,12 +7,11 @@ info:
   reference:
     - https://wordpress.org/plugins/woosidebars/
   metadata:
-    max-request: 1
     plugin_namespace: woosidebars
     wpscan: https://wpscan.com/plugin/woosidebars
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
 
     path:
