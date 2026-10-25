@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="WISEGIGA-NAS"
-  tags: wisegiga,lfi,nas,vuln
+  tags: wisegiga,lfi,nas
 
 http:
   - method: GET
@@ -35,3 +35,4 @@ http:
         status:
           - 200
 
+# digest: 4a0a00473045022055f2bd39a51514092fdb0c73c22531b19e8c2fe2fa43749baff49f4c82a2a11b022100c86014508412564ff80c6822e983ae9924c54f625eababe94eae75e1d978ea34:922c64590222798bb761d5b6d8e72950
