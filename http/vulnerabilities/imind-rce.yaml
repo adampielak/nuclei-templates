@@ -9,7 +9,7 @@ info:
   - https://bdu.fstec.ru/vul/2023-05317
   severity: Critical
   tags: imind,rce
-requests:
+http:
 - extractors:
   - name: version
     part: body

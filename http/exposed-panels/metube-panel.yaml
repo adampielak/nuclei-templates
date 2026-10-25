@@ -9,7 +9,6 @@ info:
   reference:
     - https://github.com/alexta69/metube
   metadata:
-    runzero-match: any(each(service["html.titles"]), {# matches "(?i)MeTube"})
     verified: true
     shodan-query: http.title:MeTube
     max-request: 1
@@ -30,4 +29,4 @@ http:
       - type: status
         status:
           - 200
-
+# digest: 4a0a0047304502206c916be37f097a3436626b1bc3721cf576c720917e23414a3c86235e315a62ec022100f52837f587abc1136500bb2401c445cff4e4cb6303487dcd2e90fa7b1fa6f509:922c64590222798bb761d5b6d8e72950

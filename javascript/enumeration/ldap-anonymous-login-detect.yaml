@@ -1,11 +1,12 @@
 id: ldap-anonymous-login-detect
+
 info:
   name: LDAP Anonymous Login - Detect
-  author: pussycat0x,s0obi,0x_Akoko
+  author: pussycat0x,s0obi
   severity: medium
   description: |
-    Detects whether an LDAP server allows anonymous bind (login without credentials). Anonymous access can expose sensitive directory information and should be restricted
-    unless explicitly intended. Both plaintext LDAP and implicit-TLS LDAPS ports are covered.
+    Detects whether an LDAP server allows anonymous bind (login without credentials).Anonymous access can expose sensitive directory information and should be restricted
+    unless explicitly intended.
   reference:
     - https://ldap.com/ldapv3-wire-protocol-reference-bind/#anonymous
     - https://docs.projectdiscovery.io/templates/protocols/javascript/modules/ldap.Client#getadgroups
@@ -13,46 +14,24 @@ info:
     max-request: 1
     shodan-query: ldap
     verified: true
-  tags: enum,js,ldap,network,vuln
+  tags: js,network,ldap,enum,vuln
+
 javascript:
-  - args:
-      Host: '{{Host}}'
-      Realm: anonymous
-      TargetPort: '{{Port}}'
-    code: |
-      const ldap = require('nuclei/ldap');
+  - code: |
+      let ldap = require('nuclei/ldap');
+      let cfg = ldap.Config();
+      cfg.Upgrade = true;
+      let client = ldap.Client(Host, Port, cfg);
+      let result = client.Authenticate('', '');
+      let metadata = client.CollectMetadata();
+      Export(metadata);
 
-      // 636 and 3269 (AD global catalog) are implicit TLS. 389 and 3268 are
-      // plaintext with an optional StartTLS upgrade, which cfg.Upgrade requests.
-      const tlsPorts = ['636', '3269'];
+    args:
+      Host: "ldap://{{Host}}"
+      Port: 389
 
-      function tryPort(port) {
-        const scheme = tlsPorts.indexOf(String(port)) !== -1 ? 'ldaps://' : 'ldap://';
-        const cfg = new ldap.Config();
-        // The module ignores Upgrade when the scheme is already ldaps.
-        cfg.Upgrade = true;
-        const client = new ldap.Client(scheme + Host + ':' + port, Realm, cfg);
-        client.Authenticate('', '');
-        return client.CollectMetadata();
-      }
-
-      // Honour the scanned port when there is one, otherwise cover the common pair.
-      const ports = TargetPort ? [TargetPort] : ['389', '636'];
-
-      for (let i = 0; i < ports.length; i++) {
-        try {
-          const metadata = tryPort(ports[i]);
-          if (metadata) {
-            Export(metadata);
-            break;
-          }
-        } catch (e) {
-          // port closed, wrong scheme, or bind refused - try the next one
-        }
-      }
     matchers:
-      - dsl:
-          - success == true
-        # digest: 4a0a004730450220209ce0c906175d6edcc1f383b392883c6dbdca3539a122151018a4c6146a83f6022100939b2cf03e7651ed330cb8c456e2af8455e69dd4f2077dcc502c0870b0c74862:922c64590222798bb761d5b6d8e72950
-
-        type: dsl
+      - type: dsl
+        dsl:
+          - "success == true"
+# digest: 4a0a0047304502200d97a1da36ebd37f8565b06571bbc4c981e2bd0feaca3dfbf58fcbc16fe92560022100a2acf40f456c88741b6a0447dc1951b0a1e6ae7ff83f0b20a26bcd81b252d507:922c64590222798bb761d5b6d8e72950

@@ -1,4 +1,5 @@
 id: hp-laserjet-config
+
 info:
   name: HP LaserJet Configuration Exposure
   author: DhiyaneshDk
@@ -14,32 +15,35 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    fofa-query: title="HP LaserJet"
-    google-query: intitle:"HP LaserJet" inurl:info_configuration
+    verified: true
     max-request: 3
+    vendor: hp
     product: laserjet
     shodan-query: http.title:"HP LaserJet"
-    vendor: hp
-    verified: true
-  tags: config,exposure,hp,intrusive,iot,laserjet,misconfig,printer,vuln
-http:
-  - matchers:
-      - condition: or
-        part: body
-        type: word
-        words:
-          - Configuration Page
-          - Device Configuration
-          - set_config_deviceinfo
-      - status:
-          - 200
-        # digest: 4a0a0047304502201a17e6b033db0c350bf4382a7de1fdf8caf9f6b5f160b4e13f62c34cba7781a2022100a628df5fa8881093ea4b94225a72fc838498da37f193dd096c59b59af5cb3679:922c64590222798bb761d5b6d8e72950
+    fofa-query: title="HP LaserJet"
+    google-query: intitle:"HP LaserJet" inurl:info_configuration
+  tags: hp,laserjet,printer,iot,config,exposure,misconfig
 
-        type: status
-    matchers-condition: and
-    method: GET
+http:
+  - method: GET
     path:
-      - '{{BaseURL}}/hp/device/this.LCDispatcher?nav=hp.Config'
-      - '{{BaseURL}}/info_configuration.html?tab=Home&menu=DevConfig'
-      - '{{BaseURL}}/SSI/info_configuration.htm'
+      - "{{BaseURL}}/hp/device/this.LCDispatcher?nav=hp.Config"
+      - "{{BaseURL}}/info_configuration.html?tab=Home&menu=DevConfig"
+      - "{{BaseURL}}/SSI/info_configuration.htm"
+
     stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Configuration Page"
+          - "Device Configuration"
+          - "set_config_deviceinfo"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100c86818d2ec705c56eb0da64fd937ab91fcb04736fc62da52306bb1c53db9f72f022079bf623eb860aba0ca4ebd2d80cee3d15aa4ce3c6d46c602b354a06ebdb98868:922c64590222798bb761d5b6d8e72950
