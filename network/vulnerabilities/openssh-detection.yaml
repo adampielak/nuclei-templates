@@ -11,8 +11,6 @@ info:
     - https://nvd.nist.gov/vuln/detail/CVE-2018-15473
     - http://seclists.org/fulldisclosure/2016/Jul/51
   tags: network,ssh,openssh
-  metadata:
-  mongoid: 0000
 
 network:
   - host:

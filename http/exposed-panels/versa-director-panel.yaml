@@ -14,16 +14,18 @@ info:
     cpe: cpe:2.3:a:versa-networks:versa_director:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 1
+    max-requests: 1
     vendor: versa-networks
     product: versa_director
     shodan-query:
+      - http.favicon.hash:-1053531639
       - http.title:"Versa Director"
       - "Set-Cookie: VD-CSRF-TOKEN"
     fofa-query:
+      - icon_hash="-1053531639"
       - title="Versa Director"
       - "Set-Cookie: VD-CSRF-TOKEN"
-  tags: panel,panel,versa-networks,director
+  tags: panel,versa-networks,director
 
 http:
   - method: GET
@@ -35,7 +37,7 @@ http:
       - type: word
         words:
           - "versa-login-logo"
-          - "Login"
+          - "DIRECTOR"
         condition: and
 
       - type: status

