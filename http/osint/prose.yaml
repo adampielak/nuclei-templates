@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-blog,prose
+  tags: osint,osint-blog,prose,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "blog-title"
 
-# digest: 4a0a0047304502210082ecca015e1c2e6782ba12062dca27e69e7bcf90fa250cd3dcf063dedef09d2702205ce0474a399b01cd7f61f44af40162540698ca3fdb9ddf7f630fef1d7a764158:922c64590222798bb761d5b6d8e72950

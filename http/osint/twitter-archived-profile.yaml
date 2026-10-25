@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-archived,twitter-archived-profile
+  tags: osint,osint-archived,twitter-archived-profile,discovery
 
 self-contained: true
 
@@ -31,4 +31,3 @@ http:
         words:
           - "\"archived_snapshots\": {\"closest\""
 
-# digest: 4a0a00473045022100e6b97c763dc1c2294ca72770e6379595f0168430c1cdc5939026d0970d6b6fcc022075f89c387cc2b86fd886cda0c4b192e7ae1a4f80cd66f167ac8f1e03a8c3de08:922c64590222798bb761d5b6d8e72950
