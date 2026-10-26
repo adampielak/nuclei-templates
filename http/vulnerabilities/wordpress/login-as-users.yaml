@@ -1,15 +1,15 @@
-id: login-as-users
+id: login-as-users-3804ad09541bb9264bfd45c8f07af403
 
 info:
   name: >
-    Login As Users <= 1.4.2 - Authentication Bypass
+    Login As Users <= 1.4.3 - Missing Authorization to Privielge Escalation via Account Takeover
   author: topscoder
-  severity: critical
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/73a0d7a9-374b-430d-a7e5-3c7cdaff5785?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/88d9f0b1-040d-4f95-95dd-021ceb0cdb39?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/login-as-users/"
     google-query: inurl:"/wp-content/plugins/login-as-users/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,login-as-users,critical
+  tags: cve,wordpress,wp-plugin,login-as-users,high
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.2')
+          - compare_versions(version, '<= 1.4.3')

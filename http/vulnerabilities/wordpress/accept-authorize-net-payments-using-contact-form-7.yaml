@@ -1,15 +1,15 @@
-id: accept-authorize-net-payments-using-contact-form-7
+id: accept-authorize-net-payments-using-contact-form-7-079f5b47ae75dd1bef0177216408c1b4
 
 info:
   name: >
-    Accept Authorize.NET Payments Using Contact Form 7 <= 2.2 - Unauthenticated Information Exposure
+    Accept Authorize.NET Payments Using Contact Form 7 <= 2.5 - Unauthenticated Information Exposure
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d8801b9a-afcb-483b-a018-4f68448e96de?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9f486c8-0d7d-4116-8420-6af60e1cdd63?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2')
+          - compare_versions(version, '<= 2.5')

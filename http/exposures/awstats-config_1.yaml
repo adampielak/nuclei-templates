@@ -1,36 +1,31 @@
-id: awstats-config
-
+id: awstats-config 1
 info:
-  name: AWStats Config - Detect
   author: sheikhrishad
+  name: AWStats config
   severity: info
-  description: AWStats configuration information was detected.
-  reference: https://www.awstats.org/
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  metadata:
-    max-request: 2
-  tags: config,exposure,awstats
+  tags: config,exposure
+requests:
+- attack: sniper
+  matchers:
+  - condition: and
+    type: word
+    words:
+    - AWSTATS CONFIGURE
+    - MAIN SETUP SECTION
+  - condition: and
+    type: word
+    words:
+    - Index of /awstats
+    - Parent Directory
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /awstats/ HTTP/1.1
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/awstats/"
-      - "{{BaseURL}}/awstats.conf"
+    Host: {{Subdomains}}
 
-    matchers:
-      - type: word
-        words:
-          - "AWSTATS CONFIGURE"
-          - "MAIN SETUP SECTION"
-        condition: and
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101
+    Firefox/55
 
-      - type: word
-        words:
-          - "Index of /awstats"
-          - "Parent Directory"
-        condition: and
-
-# digest: 4a0a0047304502206b7aad743ab80b0e99d36916f873a93b404aef56265091294d37d197bf03cf9b0221008d3f8603824fc2ddb96488acbb6699bdfd4e0fa0b46d2a1cef249ecc8a3f84be:922c64590222798bb761d5b6d8e72950
+    '
+  threads: 100

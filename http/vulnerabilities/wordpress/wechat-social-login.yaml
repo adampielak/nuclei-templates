@@ -1,15 +1,15 @@
-id: wechat-social-login
+id: wechat-social-login-2479cb4475d9844014f0ac9a888921a0
 
 info:
   name: >
-    Wechat Social login <= 1.3.0 - Authentication Bypass
+    Wechat Social login <= 1.3.0 - Unauthenticated Arbitrary File Upload
   author: topscoder
   severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1bd44471-1a9c-4465-a52a-be64d51e7ea1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/06881386-3c92-426b-948d-58e8a8bee624?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
