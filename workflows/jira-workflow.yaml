@@ -8,4 +8,4 @@ info:
 workflows:
   - template: exposed-panels/jira-detect.yaml
     subtemplates:
-      - tags: jira
+      -

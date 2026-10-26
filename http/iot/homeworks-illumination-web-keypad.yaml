@@ -1,0 +1,37 @@
+# gap: homeworks-illumination-web-keypad
+id: homeworks-illumination-web-keypad
+
+info:
+  name: Lutron HomeWorks Illumination Web Keypad Exposed
+  author: TyrusRC
+  severity: low
+  description: |
+    Detects a Lutron HomeWorks Illumination Web Keypad reachable on
+    the open internet. These IoT lighting controllers were not
+    intended to be exposed publicly and typically lack authentication
+    on the keypad UI, allowing anyone with network reach to toggle
+    scenes and load presets.
+  reference:
+    - https://github.com/geeknik/the-nuclei-templates/blob/main/homeworks-illumination-web-keypad.yaml
+    - https://www.lutron.com/en-US/products/pages/wholehomesystems/homeworks/overview.aspx
+  tags: custom,exposures,iot,lutron,homeworks
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        case-insensitive: true
+        words:
+          - "homeworks illumination web keypad"
+      - type: word
+        part: body
+        case-insensitive: true
+        words:
+          - "lutron"

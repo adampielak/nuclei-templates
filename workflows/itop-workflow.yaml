@@ -8,4 +8,4 @@ info:
 workflows:
   - template: exposed-panels/itop-panel.yaml
     subtemplates:
-      - tags: itop
+      -

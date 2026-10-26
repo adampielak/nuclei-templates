@@ -4,9 +4,8 @@ info:
   name: Global Domains International XSS
   author: princechaddha
   severity: medium
-  reference:
-    - https://cxsecurity.com/issue/WLB-2018020247
-  tags: globaldomains,xss
+  reference: https://cxsecurity.com/issue/WLB-2018020247
+ 
 
 requests:
   - method: GET

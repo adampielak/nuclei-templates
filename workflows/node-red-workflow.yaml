@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/node-red-detect.yaml
     subtemplates:
-      - tags: node-red-dashboard
+      -

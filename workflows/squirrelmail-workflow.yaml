@@ -8,4 +8,4 @@ info:
 workflows:
   - template: exposed-panels/squirrelmail-login.yaml
     subtemplates:
-      - tags: squirrelmail
+      -

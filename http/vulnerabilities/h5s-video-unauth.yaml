@@ -8,7 +8,7 @@ info:
     - https://github.com/workcha/crossCompile/blob/e1ad2ecb6d4e083913aa52ae7c9ed0e93cf735c3/project/fscan/WebScan/pocs/h5s-video-platform-cnvd-2020-67113-unauth.yml
   tags: H5S,unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/api/v1/GetSrc"

@@ -7,7 +7,7 @@ info:
   severity: high
   tags: npm,auth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.npmrc"

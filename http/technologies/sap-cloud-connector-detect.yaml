@@ -6,7 +6,7 @@ info:
   severity: info
   tags: sap,webserver,sapcloud,tech
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}:8443'

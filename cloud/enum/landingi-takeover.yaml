@@ -1,0 +1,29 @@
+# gap: landingi-takeover
+id: landingi-takeover
+
+info:
+  name: Landingi Subdomain Takeover Detection
+  author: TyrusRC
+  severity: high
+  description: |
+    Detects a dangling CNAME pointing to Landingi that returns the
+    "It looks like you're lost..." fingerprint, indicating the subdomain can
+    be claimed by creating a landing page under the missing domain in Landingi.
+  reference:
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/117
+    - https://support.landingi.com/hc/en-us/articles/360003612252
+  tags: custom,takeover,landingi,cloud
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 404
+      - type: word
+        part: body
+        words:
+          - "It looks like you're lost..."

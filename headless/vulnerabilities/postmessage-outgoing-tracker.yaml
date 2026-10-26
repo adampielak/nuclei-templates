@@ -5,7 +5,7 @@ info:
   author: LogicalHunter
   severity: info
   reference: https://appcheck-ng.com/html5-cross-document-messaging-vulnerabilities/
-  tags: headless,postmessage
+ 
 
 headless:
   - steps:

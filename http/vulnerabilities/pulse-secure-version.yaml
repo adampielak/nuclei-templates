@@ -4,7 +4,7 @@ info:
   name: Pulse Secure Version
   author: dadevel
   severity: info
-  tags: pulse
+ 
 
 requests:
   - method: GET

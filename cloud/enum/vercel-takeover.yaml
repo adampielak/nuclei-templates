@@ -1,0 +1,28 @@
+# gap: vercel-takeover
+id: vercel-takeover
+
+info:
+  name: Vercel Subdomain Takeover Detection
+  author: TyrusRC
+  severity: high
+  description: |
+    Detects a dangling CNAME pointing to Vercel that returns the
+    "DEPLOYMENT_NOT_FOUND" error code. This fingerprint confirms the
+    subdomain can be claimed by deploying a new Vercel project.
+  reference:
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/183
+  tags: custom,takeover,vercel,cloud
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 404
+      - type: word
+        part: body
+        words:
+          - "DEPLOYMENT_NOT_FOUND"

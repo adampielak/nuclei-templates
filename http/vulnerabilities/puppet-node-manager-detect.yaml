@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     fofa-dork: 'app="puppet-Node-Manager"'
-  tags: node,tech
+ 
 
 requests:
   - method: GET

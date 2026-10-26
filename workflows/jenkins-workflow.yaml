@@ -9,4 +9,4 @@ workflows:
 
   - template: technologies/jenkins-detect.yaml
     subtemplates:
-      - tags: jenkins
+      -

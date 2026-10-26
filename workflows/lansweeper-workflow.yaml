@@ -8,4 +8,4 @@ info:
 workflows:
   - template: exposed-panels/lansweeper-login.yaml
     subtemplates:
-      - tags: lansweeper
+      -

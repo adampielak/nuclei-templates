@@ -5,7 +5,7 @@ info:
   author: pdteam
   severity: medium
   reference: https://github.com/msrkp/PPScan
-  tags: headless
+ 
 
 headless:
   - steps:

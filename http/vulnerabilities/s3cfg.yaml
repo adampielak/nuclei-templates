@@ -7,7 +7,7 @@ info:
   severity: high
   tags: amazon,s3,auth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.s3cfg"

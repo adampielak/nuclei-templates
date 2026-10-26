@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/fingerprinthub-web-fingerprints.yaml
     subtemplates:
-      - tags: gsoap
+      -

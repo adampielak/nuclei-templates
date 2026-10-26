@@ -4,7 +4,7 @@ info:
   name: MS Active Directory Certificate Services Detector
   author: divya_mudgal
   severity: info
-  tags: microsoft,ad,panel
+ 
 
 requests:
   - method: GET

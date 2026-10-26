@@ -8,4 +8,4 @@ info:
 workflows:
   - template: exposed-panels/openemr-detect.yaml
     subtemplates:
-      - tags: openemr
+      -

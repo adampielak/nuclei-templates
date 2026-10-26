@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/kong-detect.yaml
     subtemplates:
-      - tags: kong
+      -

@@ -5,6 +5,8 @@ info:
   author: pdteam
   severity: low
   tags: network,memcached
+  metadata: 
+  mongoid: 0000
 
 network:
   - inputs:

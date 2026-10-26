@@ -8,7 +8,7 @@ info:
     fofa-query: title=="Thruk Monitoring Webinterface"
   tags: thruk,tech
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

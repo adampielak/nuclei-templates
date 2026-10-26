@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/pega-detect.yaml
     subtemplates:
-      - tags: pega
+      -

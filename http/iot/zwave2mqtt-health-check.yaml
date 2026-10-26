@@ -1,0 +1,56 @@
+# gap: zwave2mqtt-health-check
+id: zwave2mqtt-health-check
+
+info:
+  name: Zwave2MQTT Health-Check Endpoints Exposed
+  author: TyrusRC
+  severity: info
+  description: |
+    Detects a Z-Wave to MQTT bridge (zwave2mqtt / zwave-js-ui) that
+    exposes its /health/mqtt and /health/zwave probes to the open
+    internet. The endpoints leak the presence and status of the
+    bridge, which often runs alongside an unauthenticated admin UI
+    that controls home-automation devices. Nuclei applies AND
+    semantics across separate http blocks, so both endpoints must
+    respond for the template to fire.
+  reference:
+    - https://github.com/geeknik/the-nuclei-templates/blob/main/zwave2mqtt-health-check.yaml
+    - https://zwave-js.github.io/zwave-js-ui/
+  tags: custom,exposures,iot,zwave,mqtt
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/health/mqtt"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        case-insensitive: true
+        words:
+          - "application/json"
+      - type: word
+        part: body
+        words:
+          - '"status"'
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/health/zwave"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        case-insensitive: true
+        words:
+          - "application/json"
+      - type: word
+        part: body
+        words:
+          - '"status"'

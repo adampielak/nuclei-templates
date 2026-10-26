@@ -7,7 +7,7 @@ info:
   severity: high
   tags: atom,sftp,scp,ssh,ftp
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.remote-sync.json"

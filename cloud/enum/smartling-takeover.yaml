@@ -1,0 +1,29 @@
+# gap: smartling-takeover
+id: smartling-takeover
+
+info:
+  name: Smartling Subdomain Takeover Detection
+  author: TyrusRC
+  severity: high
+  description: |
+    Detects a dangling CNAME pointing to Smartling that returns the
+    "Domain is not configured" fingerprint, indicating the subdomain can be
+    claimed by registering the target domain within a Smartling account.
+  reference:
+    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/67
+    - https://help.smartling.com/hc/en-us/articles/360008003993
+  tags: custom,takeover,smartling,cloud
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 404
+      - type: word
+        part: body
+        words:
+          - "Domain is not configured"

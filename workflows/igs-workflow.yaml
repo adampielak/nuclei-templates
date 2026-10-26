@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/sap/sap-igs-detect.yaml
     subtemplates:
-      - tags: igs
+      -

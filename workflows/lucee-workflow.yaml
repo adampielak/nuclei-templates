@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/lucee-detect.yaml
     subtemplates:
-      - tags: lucee
+      -

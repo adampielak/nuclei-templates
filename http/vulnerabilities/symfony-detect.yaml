@@ -3,7 +3,7 @@ info:
   name: Detect Symfony Software
   author: grant
   severity: info
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/_fragment"

@@ -10,7 +10,7 @@ info:
     - https://github.com/vulhub/vulhub/tree/scf-spel/spring/spring-cloud-function-spel-injection
   tags: springcloud,rce
 
-requests:
+http:
   - raw:
       - |
         POST /functionRouter HTTP/1.1

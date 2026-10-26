@@ -6,4 +6,4 @@ info:
   description: A simple workflow that runs all Ruijie related nuclei templates on a given target.
 
 workflows:
-  - tags: ruijie
+  -

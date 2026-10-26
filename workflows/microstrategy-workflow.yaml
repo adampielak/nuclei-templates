@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/microstrategy-detect.yaml
     subtemplates:
-      - tags: microstrategy
+      -

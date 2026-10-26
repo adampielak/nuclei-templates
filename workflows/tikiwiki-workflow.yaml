@@ -8,4 +8,4 @@ info:
 workflows:
   - template: exposed-panels/tikiwiki-cms.yaml
     subtemplates:
-      - tags: tikiwiki
+      -

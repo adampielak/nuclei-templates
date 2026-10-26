@@ -4,7 +4,7 @@ info:
   author: grant
   severity: high
 
-requests:
+http:
   - method: GET
     path:
       - "http://{{BaseURL}}/zone_status.htm?b"

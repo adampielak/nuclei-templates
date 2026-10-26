@@ -4,7 +4,7 @@ info:
   name: Blackboard ParentLink Reflected XSS
   author: r3naissance
   severity: medium
-  tags: blackboard,parentlink,xss
+ 
   reference: https://help.blackboard.com/Community_Engagement/Administrator/Release_Notes
 
 requests:

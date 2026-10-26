@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/apache/apache-tapestry-detect.yaml
     subtemplates:
-      - tags: tapestry
+      -

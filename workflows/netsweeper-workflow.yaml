@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/netsweeper-webadmin-detect.yaml
     subtemplates:
-      - tags: netsweeper
+      -

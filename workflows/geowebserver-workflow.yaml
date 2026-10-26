@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/geo-webserver.yaml
     subtemplates:
-      - tags: geowebserver
+      -

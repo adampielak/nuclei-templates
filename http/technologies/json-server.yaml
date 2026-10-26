@@ -1,24 +1,27 @@
-http:
-- matchers:
-  - part: body
-    type: word
-    words:
-    - <title>JSON Server</title>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
 id: json-server
+
 info:
-  author: DhiyaneshDK
-  metadata:
-    max-request: 1
-    shodan-query: title:"JSON Server"
-    verified: true
   name: Json Server
-  reference: https://www.exploit-db.com/ghdb/4550
+  author: DhiyaneshDK
   severity: low
+  reference: https://www.exploit-db.com/ghdb/4550
+  metadata:
+    verified: true
+    shodan-query: title:"JSON Server"
   tags: exposure,devops,tech
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>JSON Server</title>"
+
+      - type: status
+        status:
+          - 200

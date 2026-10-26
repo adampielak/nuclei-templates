@@ -8,4 +8,4 @@ info:
 workflows:
   - template: exposed-panels/rancher-panel.yaml
     subtemplates:
-      - tags: rancher
+      -

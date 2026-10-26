@@ -7,4 +7,4 @@ info:
 workflows:
   - template: exposed-panels/gocd-login.yaml
     subtemplates:
-      - tags: gocd
+      -

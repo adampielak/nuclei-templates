@@ -12,7 +12,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: 'X-Served-By: cache'
-  tags: fastly,cdn,exposure,misconfig
+  tags: fastly,cdn,exposure,misconfig,vuln
 
 http:
   - method: GET
@@ -41,4 +41,4 @@ http:
         part: header
         regex:
           - '(?i)fastly-debug-digest:\s*.+'
-# digest: 4a0a00473045022100a27fc35b36475f6380b6351c9e36ee0bfcda1987b3dfaafad8c852c2f29f960202204112b3adac131b3d7f343cb99b091eb1af77f5e04884cf0546f397a519185c4d:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402205a20182da2c3c4cd1a2f0166d9916fc641450bee947a775238d9c77d877fe62502206a36b1a59b2a77f0e9a2314e4ee52f233795bf1327156047d55c4422f5a5b56e:922c64590222798bb761d5b6d8e72950

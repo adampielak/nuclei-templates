@@ -9,6 +9,7 @@ info:
   metadata:
     shodan-query: http.title:"GitLab"
   tags: gitlab,enum,misconfig,fuzz
+  mongoid: 0000
 
 requests:
   - raw:

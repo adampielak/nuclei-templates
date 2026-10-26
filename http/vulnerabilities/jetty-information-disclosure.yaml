@@ -7,7 +7,7 @@ info:
   severity: low
   tags: jetty
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/context/%2e/WEB-INF/web.xml"

@@ -1,0 +1,29 @@
+id: package-json 
+
+info:
+  name: Check for package.json
+  author: tedm.infosec
+  severity: info 
+requests:
+  - raw:
+      - |
+        GET /package.json HTTP 2.0
+        Host: {{Hostname}}
+      - |
+        GET /js/package.json HTTP 2.0
+        Host: {{Hostname}}
+      - |
+        GET /assets/package.json HTTP 2.0
+        Host: {{Hostname}}
+      - |
+        GET /src/package.json HTTP 2.0
+        Host: {{Hostname}}
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "\"dependencies\": {"
+        part: body
+      - type: status
+        status:
+          - 200

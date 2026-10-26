@@ -7,7 +7,7 @@ info:
   description: this endpoint to retrieve the migrations
   tags: springboot,exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/actuator/flyway"
