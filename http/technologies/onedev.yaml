@@ -5,18 +5,17 @@ info:
   tags: detect,tech,onedev
   severity: info
   metadata:
-    fofa-query:
-    - title="onedev"
     product: onedev
     shodan-query:
-    - title:"onedev"
-    vendor: onedev_project
+    - html:"onedev.io"
+    vendor: onedev
     verified: true
 http:
 - method: GET
   path:
   - '{{BaseURL}}/'
   matchers:
-  - type: regex
-    regex:
-    - (?mi)<title[^>]*>onedev.*?</title>
+  - type: word
+    words:
+    - onedev.io
+    case-insensitive: true

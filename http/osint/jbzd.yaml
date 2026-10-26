@@ -3,18 +3,17 @@ id: jbzd
 info:
   name: JBZD User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: JBZD user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-images,jbzd
   metadata:
     max-request: 1
-  tags: osint,osint-images,jbzd,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "Dzidy użytkownika"
-# digest: 4a0a0047304502201ff511a91b94e4463f7266bffc282928c2fb3a00c8ce2f20fb1ea6c4dd6093010221008a2adf7623bc88fa332f2140cef08a2a618f09062a1ef7de2cc27d8468f7decc:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs 03/17/2023

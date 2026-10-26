@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: html:XploitSPY
-  tags: xploitspy,default-login,vuln
+  tags: xploitspy,default-login
 
 http:
   - raw:
@@ -24,6 +24,7 @@ http:
 
         username={{user}}&password={{pass}}&hostname={{Hostname}}
 
+    cookie-reuse: true
     attack: pitchfork
     payloads:
       user:
@@ -40,10 +41,10 @@ http:
         words:
           - "Change Password"
           - "Logout"
-          - "XploitSPY"
         condition: and
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402204bc6556accb96ce20d491d2dce90b2226146f46487c8b069c41bbf2765cee41b02204bd7d9465f31e731831e81bf1c6ec6d7917df2bb35a8bd3f5c47257eea72ddc4:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022051299f637e239766fd113ec08d4d295cd7abc8aae3f429994237f46ea7c005c7022100d119a802acdb4376b35abc6b59fa4da1fca58fd0a9b4e696a5c4a9dae88d4836:922c64590222798bb761d5b6d8e72950

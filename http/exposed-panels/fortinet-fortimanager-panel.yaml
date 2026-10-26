@@ -10,15 +10,11 @@ info:
     - https://www.fortinet.com/br/products/management/fortimanager
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:fortinet:fortimanager:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    vendor: fortinet
-    product: fortimanager
-    shodan-query: 'http.html_hash:-1527157728 "Model: FMG-VM"'
-    fofa-query: title="FortiManager-"
-  tags: panel,fortinet,fortios,fortimanager,detect,discovery
+  tags: panel,fortinet,fortios,fortimanager,detect
 
 http:
   - method: GET
@@ -42,4 +38,5 @@ http:
         group: 1
         regex:
           - '<span class="platform">(.*?)</span>'
-# digest: 4a0a0047304502206af4b21c7e78d51306f7eb3696606e5d036b8757a62c61459ddcf8b18e0a8d53022100c6c32bd841af065ea49ce5b3f5a1495bc3fa48427e0f7ede09db82f828a10200:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a004730450220622f17059fc0aa798e081ad6672b0a3869054a2e7e978f01c8916c0afa6889f2022100a6c8a4a74261ccd4363d9138d9b85e400a6514430a1adc7a8a097d0b1b9ba91f:922c64590222798bb761d5b6d8e72950

@@ -17,7 +17,7 @@ info:
   metadata:
     max-request: 12
     shodan-query: 'HTTP/1.0 401 Please Authenticate\r\nWWW-Authenticate: Basic realm="Please Login"'
-  tags: default-login,goip,gsm,vuln
+  tags: default-login,goip,gsm
 
 http:
   - raw:
@@ -39,6 +39,7 @@ http:
         - 1234
     host-redirects: true
     max-redirects: 2
+    cookie-reuse: true
 
     matchers-condition: and
     matchers:
@@ -49,8 +50,10 @@ http:
           - "Summary"
           - "Logout"
         condition: and
+        case-insensitive: true
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022074037455479f69b573c31b8d5a5ebec7cf47583f21d4c85c0776ee49a94c74a8022100a634ba39b743499c36382902ef1c3f60fe18298be23e5b7bc37ce77cc0b43cb6:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a0046304402200da9672f010a0eac63a38a3eb432ae493e34e10c62d4f79fbed9293167fe46b9022059e5d4d555e03bc74b31e487c90f33464a461e623e963534472ff048541265b7:922c64590222798bb761d5b6d8e72950

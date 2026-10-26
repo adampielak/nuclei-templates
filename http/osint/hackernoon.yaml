@@ -3,18 +3,17 @@ id: hackernoon
 info:
   name: Hackernoon User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: Hackernoon user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-tech,hackernoon
   metadata:
     max-request: 1
-  tags: osint,osint-tech,hackernoon,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "\"profile\""
-# digest: 4b0a00483046022100bf8cd1d02f8c7e15cc8d49f7317c5877603a3d118a5a5991314d6fb13c629e050221009d71afa00bf14e6d6c4bb1d6b94956b815cfbc7a022144647603eb3ce166e4cd:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs 03/17/2023

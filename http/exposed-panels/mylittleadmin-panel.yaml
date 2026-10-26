@@ -1,26 +1,19 @@
 id: mylittleadmin-panel
 
 info:
-  name: myLittleAdmin Login Panel - Detect
+  name: myLittleAdmin Panel
   author: nullfuzz
   severity: info
   description: |
-    myLittleAdmin login panel was detected.
+    myLittleAdmin  is a third-party tool that you can use to manipulate MS SQL databases.
   reference:
     - http://mylittleadmin.com/en/overview.aspx
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cwe-id: CWE-200
-    cpe: cpe:2.3:a:mylittletools:mylittleadmin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 2
     shodan-query: http.html:"myLittleAdmin"
-    product: mylittleadmin
-    vendor: mylittletools
-  tags: panel,mylittleadmin,login,discovery
+  tags: panel,mylittleadmin,login
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -35,4 +28,3 @@ http:
           - "status_code == 200"
           - "contains(body, '<title>myLittleAdmin for SQL Server')"
         condition: and
-# digest: 4a0a004730450221009906dc64c498d2abf8a8ab472ff215527d544dc6b7daad882ced7cb78133260102205000751f5eed5e05ca827b1b528e1bd2972528305129aba89146131719b66c40:922c64590222798bb761d5b6d8e72950

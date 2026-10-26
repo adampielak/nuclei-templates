@@ -3,18 +3,17 @@ id: grandprof
 info:
   name: Grandprof User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: Grandprof user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-misc,grandprof
   metadata:
     max-request: 1
-  tags: osint,osint-misc,grandprof,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "s Profile"
-# digest: 4a0a00473045022100fceb46da9f246a2b379dc7411e8bfcc74d51fcf50075665e748fc9f333938ead02204d0ee459ed5c09871630133372352f4f64171a016ab2d1fc1129ad3ff5efb0c0:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs 03/17/2023

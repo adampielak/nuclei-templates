@@ -1,0 +1,35 @@
+id: magnolia-panel
+
+info:
+  name: Magnolia Panel - Detect
+  author: rix4uni
+  severity: info
+  description: Mangnolia CMS default credentials were discovered.
+  reference:
+    - https://www.magnolia-cms.com
+  metadata:
+    shodan-query:
+      - http.favicon.hash:1545970007
+    fofa-query:
+      - body="<title>Magnolia 6</title>"
+      - body="<title>Magnolia 5</title>"
+  tags: magnolia,default-login
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/.magnolia/admincentral"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Magnolia 6</title>"
+          - "<title>Magnolia 5</title>"
+
+      - type: status
+        status:
+          - 401

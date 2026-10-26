@@ -8,19 +8,11 @@ info:
     Fortinet FortiDDoS panel was detected.
   reference:
     - https://www.fortinet.com/products/ddos/fortiddos
-  classification:
-    cpe: cpe:2.3:a:fortinet:fortiddos:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
-    vendor: fortinet
-    product: fortiddos
-    shodan-query:
-      - http.title:"FortiDDoS"
-      - http.title:"fortiddos"
-    fofa-query: title="fortiddos"
-    google-query: intitle:"fortiddos"
-  tags: panel,fortinet,fortiddos,login,discovery
+    shodan-query: http.title:"FortiDDoS"
+  tags: panel,fortinet,fortiddos,login
 
 http:
   - method: GET
@@ -40,4 +32,5 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022048085325d9e2c72747e2ae7e63ca183f0e646e55e7874151ae19c15f6f6ebc190220696f3e8ed75fc25818058ca73846347adafc9f6b5b7ccdf8f4c7218ee35f56f3:922c64590222798bb761d5b6d8e72950
+
+# digest: 490a004630440220039af53bd3ddd7fb523d62cdeef575ee621b360160c6a95a707eb362d8e7def702205956b29c8a6e924fa32165a08d17b38b5f8feb5a9792cd723fdd4f3c6ddf3351:922c64590222798bb761d5b6d8e72950

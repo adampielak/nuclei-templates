@@ -7,16 +7,13 @@ info:
   description: Icecast Streaming Media Server information panel was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:xiph:icecast:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: title:"Icecast Streaming Media Server"
-    product: icecast
-    vendor: xiph
-  tags: tech,icecast,media-server,detect,discovery
+  tags: tech,icecast,media-server,detect
 
 http:
   - method: GET
@@ -39,4 +36,5 @@ http:
         part: body
         regex:
           - "Icecast ([0-9.]+)"
-# digest: 4b0a004830460221008d694c437849c68727b1572fff63e361308e8e7803e70f4a321e4379dd8970c6022100ca57413f81a738f23d9dc446d356c4f32260e59dd8d8069a98a6a95efbcdd452:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/03/29

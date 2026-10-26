@@ -3,18 +3,17 @@ id: plurk
 info:
   name: Plurk User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: Plurk user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-social,plurk
   metadata:
     max-request: 1
-  tags: osint,osint-social,plurk,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "Profile views"
-# digest: 4a0a00473045022100fb827595c876cef69ceb349f4c1c5346f8e4f492cdee696070ed5162705ae6eb02202a820f50882d04cb23469fb124e4296af455e6db0efff74c733f9de115f662e0:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs 03/17/2023

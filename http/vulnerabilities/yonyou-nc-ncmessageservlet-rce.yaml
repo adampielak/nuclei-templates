@@ -8,11 +8,16 @@ info:
     UFIDA NC is in the process of processing client request data. Insufficient checking and filtering when deserializing user-supplied data can lead to malicious deserialization operations and execution of commands on the operating system. After analysis, security researchers found that the system has many exploit points for deserialization. Currently, the official vulnerability fix plan is to perform deserialization whitelist control on known exploit points and repair some exploit chain dependencies. The possibility of similar problems occurring in the system in the future is still high.
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/yonyou-nc-ncmessageservlet-rce.yaml
+  classification:
+    cpe: cpe:2.3:a:yonyou:ufida-nc:*:*:*:*:*:*:*:*
+    cwe-id: CWE-78,CWE-502
   metadata:
     verified: true
     max-request: 2
+    vendor: yonyou
+    product: ufida-nc
     fofa-query: app="用友-UFIDA-NC
-  tags: yonyou,rce,deserialization
+  tags: yonyou,rce,deserialization,vuln
 
 http:
   - raw:
@@ -41,5 +46,4 @@ http:
           - 'status_code_1 == 200 && contains(header_1,"X-T0ken") && contains(header_1,"MTc5Njc2NTUwNg==")'
           - 'status_code_2 == 200 && contains(header_2,"X-T0ken") && contains(header_2,"MTc5Njc2NTUwNQ==")'
         condition: or
-
-# digest: 490a00463044022030de43a15056ab8c85ca3db1438ad602e9f55af19ce951b485c8b1a1400336ac02204d9b2f9df87c66b8851194b0008a4d307d7d5ca3c818274d9f75c69398651fc8:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a0048304602210097b54909771557c8ae0e437421539a19d036010bfa1202287f590fb920fa18ad022100fb83c2e6272b54b8cea834e4e3d182b2ec9dc5ea0cb9aeea976ff0bed229806a:922c64590222798bb761d5b6d8e72950

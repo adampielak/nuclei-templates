@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     verified: "true"
-    shodan-query: title:"Login - SAP SuccessFactors"
+    shodan-dork: title:"Login - SAP SuccessFactors"
   tags: sap,detect
 
 requests:

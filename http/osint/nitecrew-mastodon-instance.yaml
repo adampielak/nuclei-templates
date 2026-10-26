@@ -3,18 +3,17 @@ id: nitecrew-mastodon-instance
 info:
   name: Nitecrew (Mastodon Instance) User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: Nitecrew (Mastodon Instance) user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-social,nitecrew-mastodon-instance
   metadata:
     max-request: 1
-  tags: osint,osint-social,nitecrew-mastodon-instance,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "display_name"
-# digest: 4a0a00473045022040325f9e387deb27196ce89d0e1c983bd08b3cbf24e0a41b7db7538b73ca5d7c022100ffa6706e5a7f91b89624c62cd5fcb18e6b5a9457f3955fee925cad4823765740:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs 03/17/2023

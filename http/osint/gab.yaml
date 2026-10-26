@@ -3,18 +3,17 @@ id: gab
 info:
   name: Gab User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: Gab user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-political,gab
   metadata:
     max-request: 1
-  tags: osint,osint-political,gab,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "followers_count"
-# digest: 4a0a0047304502210098b2cf0d2b359d31cb64285cefac929a4cbf2551ec1bb8b3318976f87669a84b0220231efa4e34a431bfc1132c9b7652db27973d426f5ba2c20bdd5393fb4190bb88:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs 03/17/2023

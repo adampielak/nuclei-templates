@@ -3,18 +3,17 @@ id: patriots-win
 info:
   name: Patriots Win User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: Patriots Win user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-political,patriots-win
   metadata:
     max-request: 1
-  tags: osint,osint-political,patriots-win,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "nav-user active register"
-# digest: 490a0046304402202d9a6dc162f222e289036c8047751e48f2cb7cb806d791296315a050a868d5f302206c8a5d2f9c3cdf065a39fce0faa51085db2e03aa670b6a72bec46b5a39bd359e:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by cs 03/17/2023

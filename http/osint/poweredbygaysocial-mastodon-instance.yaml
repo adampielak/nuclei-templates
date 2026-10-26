@@ -3,18 +3,17 @@ id: poweredbygaysocial-mastodon-instance
 info:
   name: Poweredbygay.social (Mastodon Instance) User Name Information - Detect
   author: dwisiswant0
-  severity: info
   description: Poweredbygay.social (Mastodon Instance) user name information check was conducted.
+  severity: info
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
+    cvss-score: 0.0
     cwe-id: CWE-200
+  tags: osint,osint-social,poweredbygaysocial-mastodon-instance
   metadata:
     max-request: 1
-  tags: osint,osint-social,poweredbygaysocial-mastodon-instance,discovery
 
 self-contained: true
-
 http:
   - method: GET
     path:
@@ -30,4 +29,5 @@ http:
         part: body
         words:
           - "display_name"
-# digest: 490a0046304402204bdba79fc6fba09f12bca5191c8f64eb2e9b7439323b5ab016394603c0d074e20220023a333d1d8246c21169966201ae13794315b9dfe2ae86b258e0a9a34ace311c:922c64590222798bb761d5b6d8e72950
+
+# Enhanced by md on 2023/03/15
