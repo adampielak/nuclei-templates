@@ -14,18 +14,13 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/wordpress-rest-api-user-enumeration/
     - https://wordpress.org/plugins/stop-user-enumeration/
     - https://www.afteractive.com/wordpress-user-enumeration-vulnerability/
-  classification:
-    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     vendor: wordpress
     product: wordpress
-    shodan-query:
-      - http.component:"WordPress"
-      - http.component:"wordpress"
-      - cpe:"cpe:2.3:a:wordpress:wordpress"
-  tags: cve2017,cve,wordpress,wp,edb,vuln
+    shodan-query: http.component:"WordPress"
+  tags: cve2017,cve,wordpress,wp,edb
 
 http:
   - method: GET
@@ -42,7 +37,7 @@ http:
         words:
           - '"id":'
           - '"name":'
-          - '"slug":'
+          - '"avatar_urls":'
         condition: and
 
       - type: word
@@ -61,4 +56,4 @@ http:
           - '.[] | .slug'
           - '.[].name'
         part: body
-# digest: 4a0a0047304502203d2fe66d48262a3c6ce29d12bc9dc6503b051b5628726b610b4c4676d786e094022100d4eb296c423c2dcdeb7951dc149c42dc866ecc873b1ff4986ab3be8fbc0be2ed:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220739ef9fd058cf4027e5393103ef4001283e4f20793f7fbd7cc6e0242181f692d022100f91de73bf7e60b6afe94fc098b11f5b8151f0ddaef43cc52d282aff64f8023a1:922c64590222798bb761d5b6d8e72950
