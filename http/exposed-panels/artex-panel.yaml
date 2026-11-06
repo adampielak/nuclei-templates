@@ -1,0 +1,59 @@
+id: artex-panel
+
+info:
+  name: ARTEX Login Panel - Detect
+  author: darses
+  severity: info
+  description: |
+    ARTEX autonomous penetration testing console was detected. Version information is extracted from the unauthenticated health endpoint.
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: artex
+    product: artex
+    shodan-query:
+      - http.favicon.hash:-1898746557
+      - http.html:"ARTEX"
+      - http.html:"自主渗透测试控制台"
+  reference:
+    - https://github.com/BaaRai/ARTEX
+    - https://github.com/Hinln/ARTEX
+    - https://github.com/RuoJi6/ARTEX
+    - https://github.com/trhhubsd/ARTEX
+  tags: panel,artex,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/health"
+      - "{{BaseURL}}"
+
+    stop-at-first-match: true
+
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: health
+        dsl:
+          - "status_code == 200"
+          - 'contains(content_type, "application/json")'
+          - 'contains(body, "\"service\":\"artex\"") || contains(body, "\"service\": \"artex\"")'
+        condition: and
+
+      - type: dsl
+        name: panel
+        dsl:
+          - "status_code == 200"
+          - 'contains(body, "<title>ARTEX")'
+          - 'contains(body, "自主渗透测试控制台") || contains(body, "Autonomous Penetration Testing") || contains(body, "NEXT_REDIRECT;replace;/function/tasks")'
+        condition: and
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - '"version"\s*:\s*"([^"]+)"'

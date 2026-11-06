@@ -18,6 +18,7 @@ info:
     shodan-query:
       - title:"XWEB" html:"login-alarms"
       - http.favicon.hash:1154397117
+      - http.favicon.hash:-1539785716
   tags: panel,copeland,dixell,emerson,xweb,iot,detect,discovery
 
 http:
