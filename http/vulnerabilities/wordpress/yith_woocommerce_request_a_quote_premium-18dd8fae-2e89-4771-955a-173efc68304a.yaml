@@ -1,8 +1,8 @@
-id: yith_woocommerce_request_a_quote-18dd8fae-2e89-4771-955a-173efc68304a
+id: yith_woocommerce_request_a_quote_premium-18dd8fae-2e89-4771-955a-173efc68304a
 
 info:
   name: >
-    YITH Request a Quote for WooCommerce < 4.46.1 - Unauthenticated Insecure Direct Object Reference
+    YITH Request a Quote for WooCommerce (Premium) < 4.46.1 - Unauthenticated Insecure Direct Object Reference
   author: topscoder
   severity: low
   description: >
@@ -15,17 +15,17 @@ info:
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/plugins/yith-woocommerce-request-a-quote/"
-    google-query: inurl:"/wp-content/plugins/yith-woocommerce-request-a-quote/"
-    shodan-query: 'http.html:"wp-content/plugins/yith-woocommerce-request-a-quote/"'
-  tags: cve,wordpress,wp-plugin,yith-woocommerce-request-a-quote,low,candidate
+    fofa-query: "wp-content/plugins/yith-woocommerce-request-a-quote-premium/"
+    google-query: inurl:"/wp-content/plugins/yith-woocommerce-request-a-quote-premium/"
+    shodan-query: 'http.html:"wp-content/plugins/yith-woocommerce-request-a-quote-premium/"'
+  tags: cve,wordpress,wp-plugin,yith-woocommerce-request-a-quote-premium,low,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/plugins/yith-woocommerce-request-a-quote/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/yith-woocommerce-request-a-quote-premium/readme.txt"
 
     extractors:
       - type: regex
@@ -43,7 +43,7 @@ http:
 
       - type: word
         words:
-          - "yith-woocommerce-request-a-quote"
+          - "yith-woocommerce-request-a-quote-premium"
         part: body
 
       - type: dsl
