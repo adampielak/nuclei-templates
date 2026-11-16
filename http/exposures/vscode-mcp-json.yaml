@@ -8,27 +8,33 @@ info:
   reference:
     - https://code.visualstudio.com/docs/copilot/chat/mcp-servers
     - https://modelcontextprotocol.io/
+    - https://code.visualstudio.com/docs/copilot/reference/mcp-configuration
   metadata:
-    max-request: 2
+    max-request: 3
     shodan-query: html:"mcp.json"
     verified: true
   tags: ai,config,exposure,mcp,vscode,vuln
 http:
   - matchers:
-      - condition: and
+      - part: body
+        regex:
+          - '"(?:mcpServers|servers)"\s*:\s*\{'
+        type: regex
+      - condition: or
         part: body
-        type: word
-        words:
-          - '"mcpServers": {'
-          - '"args":'
+        regex:
+          - '"(?:command|args)"\s*:'
+          - '"type"\s*:\s*"(?:stdio|http|sse)"'
+        type: regex
       - status:
           - 200
-        # digest: 4b0a00483046022100c75c747be858b535cc0879b524a82319af9543d431724626e533186fb5b92ef3022100df6b06eb52858a54b5ddce6e2234844a6dc480ee520d2250951aa5bb1d45658c:922c64590222798bb761d5b6d8e72950
+        # digest: 4b0a00483046022100fd72fe13c550d40c88dcbfd94c7985e24ac3aa9cc6f790d0d397bbdfad38c85802210091c38a2dc70460a7b29101543ed7765805f34b330fddf70d977b93daed607dac:922c64590222798bb761d5b6d8e72950
 
         type: status
     matchers-condition: and
     method: GET
     path:
+      - '{{BaseURL}}/.vscode/mcp.json'
       - '{{BaseURL}}/mcp.json'
       - '{{BaseURL}}/.mcp.json'
     stop-at-first-match: true
