@@ -1,0 +1,38 @@
+scanner:
+  timeout: 10
+  concurrency: 10
+  log_level: "info"
+  aggressive: false
+
+proxy:
+  # http: "http://127.0.0.1:8080"
+  # https: "http://127.0.0.1:8080"
+  # socks5: "socks5://127.0.0.1:9050"
+
+payload:
+  # file: "payloads.yaml"
+  enable_mutation: true
+
+graph:
+  export_mermaid: false
+  export_json: true
+  # output_dir: "./reports"
+
+profile:
+  quick:
+    scanner:
+      timeout: 5
+      concurrency: 30
+
+  stealth:
+    scanner:
+      timeout: 30
+      concurrency: 2
+    proxy:
+      socks5: "socks5://127.0.0.1:9050"
+
+  full:
+    scanner:
+      timeout: 20
+      concurrency: 15
+      aggressive: true
