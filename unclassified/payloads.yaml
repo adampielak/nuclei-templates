@@ -1,6 +1,4 @@
-# payloads.yaml — All attack payloads for LobsterGuard.
-# This file is NOT committed to git. Run `go run scripts/gen_payloads.go`
-# to generate pkg/payload/registry_gen.go (XOR-obfuscated).
+# Root payload pack (legacy name). Prefer payloads/*.yaml via payload.file in config.
 
 # ═══════════════════════════════════════════════════════════════
 # Fuzzer payloads (pkg/fuzzer/ai_fuzzer.go)

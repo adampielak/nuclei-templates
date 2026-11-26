@@ -1,16 +1,28 @@
+# CatchClaw config — copy to catchclaw.yaml and pass --config.
+# CLI flags override these values. Profiles overlay scanner/proxy/graph/payload.
+
+target:
+  # host: "127.0.0.1"
+  # port: 8080
+  tls: false
+  # token: ""                    # or CATCHCLAW_TOKEN
+
 scanner:
-  timeout: 10
+  timeout: 10                    # seconds
   concurrency: 10
-  log_level: "info"
-  aggressive: false
+  log_level: "info"              # info | debug | trace | warn | error | quiet
+  aggressive: false              # extra obfuscation / noisier payloads
+  tls_skip_verify: true          # lab/self-signed default; set false or pass --tls-verify
+  # callback_url: "https://oast.example/catchclaw"
 
 proxy:
+  # HTTP(S) proxies only. http.Transport does not speak SOCKS;
+  # a socks5:// URL here is treated as an HTTP proxy URL.
   # http: "http://127.0.0.1:8080"
   # https: "http://127.0.0.1:8080"
-  # socks5: "socks5://127.0.0.1:9050"
 
 payload:
-  # file: "payloads.yaml"
+  # file: "../payloads"
   enable_mutation: true
 
 graph:
@@ -18,19 +30,18 @@ graph:
   export_json: true
   # output_dir: "./reports"
 
+# Overlay with: catchclaw scan -t host:port --config catchclaw.yaml --profile stealth
 profile:
   quick:
     scanner:
       timeout: 5
       concurrency: 30
-
   stealth:
     scanner:
       timeout: 30
       concurrency: 2
     proxy:
-      socks5: "socks5://127.0.0.1:9050"
-
+      http: "http://127.0.0.1:8080"
   full:
     scanner:
       timeout: 20
